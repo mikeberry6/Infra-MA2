@@ -53,6 +53,8 @@ describe("focused dashboard operations workflows", () => {
     expect(source).toContain("dashboard:sync:dry-run");
     expect(source).toContain("verify-dashboard-health.ts");
     expect(source).toContain("--min-success-rate=0.95");
+    expect(source).toContain("DASHBOARD_RELIABILITY_START_DATE");
+    expect(source).toContain('--start-date="$DASHBOARD_RELIABILITY_START_DATE"');
     expect(source).toContain("dashboard-run-context.json");
     expect(source).toContain("GITHUB_STEP_SUMMARY");
     expect(source).toContain("steps.sync.outcome");
@@ -90,6 +92,8 @@ describe("focused dashboard operations workflows", () => {
     }
     expect(release).toContain("dashboard:verify -- --require-complete");
     expect(release).toContain("verify-dashboard-health.ts");
+    expect(release).toContain("DASHBOARD_RELIABILITY_START_DATE");
+    expect(release).toContain('--start-date="$DASHBOARD_RELIABILITY_START_DATE"');
     for (const source of [release, rollback]) {
       expect(source).toContain("vercel@51.7.0 link");
       expect(source).toContain("--project \"$EXPECTED_VERCEL_PROJECT_ID\"");

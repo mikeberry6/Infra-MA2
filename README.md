@@ -18,6 +18,8 @@ npm run news:scan
 
 Both commands scan published portfolio companies, fund managers, and funds from Prisma. The scanner crawls only bounded public surfaces: official websites, stored source URLs, `sitemap.xml`, and common news or press paths. It respects `robots.txt`, applies per-origin delays, skips direct LinkedIn crawling, and only records LinkedIn URLs found on public pages.
 
+Large scheduled scans use deterministic `--shard-count` and `--shard-index` options. Every tracked entity belongs to exactly one rotating shard, and the reliability gate fails instead of silently dropping entities if `--max-targets` is too low for the selected shard.
+
 Results are written to `NewsItem` and `NewsMention` records and displayed on `/news`. The scanner does not create deals. Use `--review-only` for ad hoc discovery that should remain unpublished; newly generated items remain `DRAFT`, and rescans preserve the editorial status of existing items.
 
 ```bash

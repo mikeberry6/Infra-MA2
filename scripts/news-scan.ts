@@ -16,6 +16,7 @@ import {
   normalizeNewsText,
   type NewsMatchCandidate,
 } from "../src/lib/news-utils";
+import { selectNewsScanEntities } from "../src/lib/news-scan-selection";
 import type { NewsConfidence, NewsMentionType, NewsMentionView } from "../src/modules/shared/types";
 
 setDefaultResultOrder("ipv4first");
@@ -48,6 +49,8 @@ type Options = {
   searchConcurrency: number;
   searchDelayMs: number;
   searchMaxResultsPerEntity: number;
+  shardCount: number;
+  shardIndex: number;
   maxTargets?: number;
   sinceDays?: number;
 };
@@ -122,6 +125,14 @@ type RunSummary = {
     fundManagers: number;
     funds: number;
     deals: number;
+  };
+  selection: {
+    totalEntities: number;
+    eligibleEntities: number;
+    selectedEntities: number;
+    shardCount: number;
+    shardIndex: number;
+    cappedByMaxTargets: boolean;
   };
   crawl: {
     queuedUrls: number;
@@ -209,6 +220,20 @@ function parseArgs(): Options {
     const parsed = raw ? Number(raw) : fallback;
     return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
   };
+  const integerOption = (
+    name: string,
+    envName: string,
+    fallback: number,
+    minimum: number,
+  ): number => {
+    const arg = process.argv.find((value) => value.startsWith(`${name}=`));
+    const raw = arg?.split("=")[1] ?? process.env[envName];
+    const parsed = raw === undefined ? fallback : Number(raw);
+    if (!Number.isInteger(parsed) || parsed < minimum) {
+      throw new Error(`${name} must be an integer greater than or equal to ${minimum}.`);
+    }
+    return parsed;
+  };
   const booleanOption = (name: string, envName: string, fallback: boolean): boolean => {
     const arg = process.argv.find((value) => value === name || value.startsWith(`${name}=`));
     const raw = arg?.includes("=") ? arg.split("=")[1] : process.env[envName];
@@ -223,6 +248,11 @@ function parseArgs(): Options {
   const sinceDaysRaw = process.argv.find((value) => value.startsWith("--since-days="))?.split("=")[1]
     ?? process.env.NEWS_SCAN_SINCE_DAYS;
   const sinceDays = sinceDaysRaw && Number(sinceDaysRaw) > 0 ? Number(sinceDaysRaw) : undefined;
+  const shardCount = integerOption("--shard-count", "NEWS_SCAN_SHARD_COUNT", 1, 1);
+  const shardIndex = integerOption("--shard-index", "NEWS_SCAN_SHARD_INDEX", 0, 0);
+  if (shardIndex >= shardCount) {
+    throw new Error("--shard-index must be less than --shard-count.");
+  }
 
   return {
     dryRun: args.has("--dry-run"),
@@ -238,6 +268,8 @@ function parseArgs(): Options {
     searchConcurrency: optionValue("--search-concurrency", "NEWS_SCAN_SEARCH_CONCURRENCY", 1),
     searchDelayMs: optionValue("--search-delay-ms", "NEWS_SCAN_SEARCH_DELAY_MS", 500),
     searchMaxResultsPerEntity: optionValue("--search-max-results-per-entity", "NEWS_SCAN_SEARCH_MAX_RESULTS_PER_ENTITY", 5),
+    shardCount,
+    shardIndex,
     maxTargets,
     sinceDays,
   };
@@ -259,6 +291,14 @@ async function main() {
     dryRun: options.dryRun,
     options,
     tracked: { companies: 0, fundManagers: 0, funds: 0, deals: 0 },
+    selection: {
+      totalEntities: 0,
+      eligibleEntities: 0,
+      selectedEntities: 0,
+      shardCount: options.shardCount,
+      shardIndex: options.shardIndex,
+      cappedByMaxTargets: false,
+    },
     crawl: {
       queuedUrls: 0,
       websites: 0,
@@ -290,13 +330,14 @@ async function main() {
   };
 
   try {
-    const context = await buildTrackedContext(prisma, options.maxTargets);
+    const context = await buildTrackedContext(prisma, options);
     summary.tracked = {
       companies: context.counts.companies,
       fundManagers: context.counts.fundManagers,
       funds: context.counts.funds,
       deals: context.counts.deals,
     };
+    summary.selection = context.selection;
 
     const extractedCandidates: ExtractedCandidate[] = [];
 
@@ -338,7 +379,10 @@ async function main() {
   console.log(JSON.stringify(summary, null, 2));
 }
 
-async function buildTrackedContext(prisma: PrismaClient, maxTargets?: number) {
+async function buildTrackedContext(
+  prisma: PrismaClient,
+  options: Pick<Options, "maxTargets" | "shardCount" | "shardIndex">,
+) {
   const [companies, managers, funds, deals] = await Promise.all([
     prisma.company.findMany({
       where: { status: "PUBLISHED" },
@@ -506,13 +550,21 @@ async function buildTrackedContext(prisma: PrismaClient, maxTargets?: number) {
     });
   }
 
-  const selectedEntities = maxTargets ? entities.slice(0, maxTargets) : entities;
+  const selection = selectNewsScanEntities(entities, options);
   const candidateByKey = new Map(candidates.map((candidate) => [`${candidate.type}:${candidate.id}`, candidate]));
 
   return {
-    entities: selectedEntities,
+    entities: selection.entities,
     candidates,
     candidateByKey,
+    selection: {
+      totalEntities: selection.totalEntities,
+      eligibleEntities: selection.eligibleEntities,
+      selectedEntities: selection.selectedEntities,
+      shardCount: selection.shardCount,
+      shardIndex: selection.shardIndex,
+      cappedByMaxTargets: selection.cappedByMaxTargets,
+    },
     counts: {
       companies: companies.length,
       fundManagers: managers.length,

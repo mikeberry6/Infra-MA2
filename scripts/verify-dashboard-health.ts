@@ -31,8 +31,12 @@ async function main() {
   const windowDays = numericOption("window-days", 30);
   const maxAgeHours = numericOption("max-age-hours", 36);
   const minSuccessRate = numericOption("min-success-rate", 0.95);
+  const configuredStartDate = option("start-date");
   if (!Number.isInteger(windowDays) || windowDays < 1) throw new Error("window-days must be a positive integer.");
   if (minSuccessRate > 1) throw new Error("min-success-rate must be between 0 and 1.");
+  if (configuredStartDate !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(configuredStartDate)) {
+    throw new Error("start-date must use YYYY-MM-DD.");
+  }
 
   const now = new Date();
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
@@ -55,8 +59,9 @@ async function main() {
       .map(dashboardRefreshWindow)
       .filter((value): value is string => Boolean(value))
       .sort()[0];
-    const eligibleWindows = firstRecordedWindow
-      ? scheduled.filter((window) => window >= firstRecordedWindow)
+    const reliabilityStartDate = configuredStartDate ?? firstRecordedWindow;
+    const eligibleWindows = reliabilityStartDate
+      ? scheduled.filter((window) => window >= reliabilityStartDate)
       : scheduled;
     const expectedCriticalSources = Object.values(DASHBOARD_SOURCES)
       .filter((source) => "critical" in source && source.critical === true)
@@ -77,6 +82,7 @@ async function main() {
       windowDays,
       maxAgeHours,
       minSuccessRate,
+      reliabilityStartDate,
       sourceRunCount: rows.length,
       expectedCriticalSources,
     }, null, 2)}\n`);

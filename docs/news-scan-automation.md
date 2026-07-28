@@ -1,6 +1,6 @@
 # News Scan Daily Automation
 
-This repo's News Feed scanner persists review-queue records only to `NewsItem` and `NewsMention`.
+This repo's News Feed scanner persists public-news records only to `NewsItem` and `NewsMention`.
 
 ## GitHub Actions automation
 
@@ -13,6 +13,8 @@ The workflow:
 - limits targets, pages, links, per-site work, concurrency, and search results;
 - retries only transient command failures, with three bounded attempts;
 - fails visibly if neither crawl nor news search completes useful work;
+- rotates deterministically across two entity shards, covering the full published universe every two nights with a three-day lookback;
+- fails visibly if the per-run target cap would omit any entity from the selected shard;
 - uploads `tmp/news-scan-summary.json` for 30 days, even after failure.
 
 Live writes require the same existing protected database secret and target variables used by the production data workflows. Do not put database URLs in workflow inputs, variables, logs, or artifacts.
