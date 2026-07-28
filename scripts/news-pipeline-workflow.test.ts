@@ -13,7 +13,11 @@ describe("nightly news pipeline workflow", () => {
     expect(workflow).toContain("group: news-pipeline-production");
     expect(workflow).toContain("cancel-in-progress: false");
     expect(workflow).toContain("timeout-minutes: 45");
-    expect(workflow).toContain("--max-targets=750");
+    expect(workflow).toContain("shard_count=2");
+    expect(workflow).toContain("epoch_day % shard_count");
+    expect(workflow).toContain('--shard-count="$shard_count"');
+    expect(workflow).toContain('--shard-index="$shard_index"');
+    expect(workflow).toContain("--max-targets=800");
     expect(workflow).toContain("--max-pages=500");
     expect(workflow).toContain("--max-pages-per-site=4");
     expect(workflow).toContain("--search-max-results-per-entity=3");
@@ -29,6 +33,7 @@ describe("nightly news pipeline workflow", () => {
     expect(workflow).toContain("actions/upload-artifact");
 
     expect(scanner).toContain('reviewOnly: booleanOption("--review-only"');
+    expect(scanner).toContain("selectNewsScanEntities(entities, options)");
     expect(scanner).toContain('status: options.reviewOnly ? "DRAFT" : "PUBLISHED"');
     expect(scanner).not.toContain('status: "PUBLISHED" as const');
   });

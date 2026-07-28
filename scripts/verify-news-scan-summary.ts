@@ -10,6 +10,14 @@ type NewsScanSummary = {
     fundManagers?: number;
     funds?: number;
   };
+  selection?: {
+    totalEntities?: number;
+    eligibleEntities?: number;
+    selectedEntities?: number;
+    shardCount?: number;
+    shardIndex?: number;
+    cappedByMaxTargets?: boolean;
+  };
   crawl?: {
     pagesFetched?: number;
     failedFetches?: number;
@@ -63,6 +71,7 @@ const tracked =
   count(summary.tracked?.companies)
   + count(summary.tracked?.fundManagers)
   + count(summary.tracked?.funds);
+const selectedEntities = count(summary.selection?.selectedEntities);
 const pagesFetched = count(summary.crawl?.pagesFetched);
 const failedFetches = count(summary.crawl?.failedFetches);
 const queriesRun = count(summary.search?.queriesRun);
@@ -79,6 +88,16 @@ if (requireReviewOnly && summary.options?.reviewOnly !== true) {
 if (tracked === 0) {
   failures.push("no published companies, fund managers, or funds were available to scan");
 }
+if (selectedEntities === 0) {
+  failures.push("the selected nightly shard contained no entities");
+}
+if (summary.selection?.cappedByMaxTargets === true) {
+  failures.push(
+    `nightly target cap omitted ${
+      count(summary.selection?.eligibleEntities) - selectedEntities
+    } eligible entities; increase the cap or shard count`,
+  );
+}
 if (pagesFetched === 0 && successfulQueries === 0) {
   failures.push("neither source crawling nor public-news search completed a successful request");
 }
@@ -91,7 +110,9 @@ const report = [
   "",
   `- Mode: \`${summary.dryRun ? "dry-run" : "live"}\``,
   `- Review-only writes: \`${summary.options?.reviewOnly === true}\``,
-  `- Tracked entities: \`${tracked}\``,
+  `- Published entity universe: \`${tracked}\``,
+  `- Scanned shard: \`${count(summary.selection?.shardIndex) + 1}/${count(summary.selection?.shardCount)}\``,
+  `- Entities scanned: \`${selectedEntities}/${count(summary.selection?.eligibleEntities)}\` eligible`,
   `- Source pages: \`${pagesFetched}\` fetched, \`${failedFetches}\` failed`,
   `- Search queries: \`${queriesRun}\` issued, \`${failedQueries}\` failed`,
   `- Candidates: \`${count(summary.results?.candidateNewsItems)}\``,

@@ -82,9 +82,15 @@ jobs:
           MODE: ${{ steps.mode.outputs.mode }}
         shell: bash
         run: |
+          epoch_day=$(( $(date -u +%s) / 86400 ))
+          shard_count=2
+          shard_index=$(( epoch_day % shard_count ))
+
           scan_args=(
-            --since-days=2
-            --max-targets=750
+            --since-days=3
+            --shard-count="$shard_count"
+            --shard-index="$shard_index"
+            --max-targets=800
             --max-pages=500
             --max-pages-per-site=4
             --max-links-per-page=8
