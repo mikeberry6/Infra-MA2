@@ -22,6 +22,8 @@ describe("nightly news pipeline workflow", () => {
     expect(workflow).toContain("--max-pages=150");
     expect(workflow).toContain("--max-pages-per-site=3");
     expect(workflow).toContain("--search-max-results-per-entity=3");
+    expect(workflow).toContain("--search-concurrency=2");
+    expect(workflow).toContain("--search-delay-ms=1500");
   });
 
   it("guards live writes and retains an optional editorial-review mode", () => {

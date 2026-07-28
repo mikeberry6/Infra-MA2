@@ -17,6 +17,7 @@ import {
   type NewsMatchCandidate,
 } from "../src/lib/news-utils";
 import { selectNewsScanEntities } from "../src/lib/news-scan-selection";
+import { shouldAcceptPublicNewsMatch } from "../src/lib/news-search-eligibility";
 import type { NewsConfidence, NewsMentionType, NewsMentionView } from "../src/modules/shared/types";
 
 setDefaultResultOrder("ipv4first");
@@ -912,7 +913,20 @@ function candidateFromNewsSearchArticle(
     mentions,
     hasParsedDate: true,
   });
-  if (classification.category === "LOW_CONFIDENCE_NEEDS_REVIEW" && !titleHasEntity) return null;
+  const sourceOrigin = originOf(sourceUrl);
+  const officialSource = !!sourceOrigin && entity.urls.some((entry) => originOf(entry.url) === sourceOrigin);
+  const strongEventSignal = TRANSACTION_RE.test(`${title} ${searchSummary}`)
+    || FUNDRAISING_RE.test(`${title} ${searchSummary}`)
+    || RUMOR_RE.test(`${title} ${searchSummary}`);
+  if (!shouldAcceptPublicNewsMatch({
+    entityLabel: entity.label,
+    title,
+    summary: searchSummary,
+    confidence: classification.confidence,
+    category: classification.category,
+    officialSource,
+    strongEventSignal,
+  })) return null;
 
   return {
     title: trimTo(title, 220),

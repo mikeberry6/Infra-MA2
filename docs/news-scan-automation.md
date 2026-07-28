@@ -14,6 +14,8 @@ The workflow:
 - retries only transient command failures, with three bounded attempts;
 - fails visibly if neither crawl nor news search completes useful work;
 - rotates deterministically across three entity shards, covering the full published universe every three nights with a four-day lookback;
+- overlaps two public-news requests while preserving the same aggregate request pacing, so network latency does not consume the workflow budget;
+- rejects low-confidence public-search matches and ambiguous short-name collisions before any live write;
 - fails visibly if the per-run target cap would omit any entity from the selected shard;
 - uploads `tmp/news-scan-summary.json` for 30 days, even after failure.
 

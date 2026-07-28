@@ -98,8 +98,8 @@ jobs:
             --max-sitemap-urls-per-site=6
             --concurrency=3
             --delay-ms=900
-            --search-concurrency=1
-            --search-delay-ms=750
+            --search-concurrency=2
+            --search-delay-ms=1500
             --search-max-results-per-entity=3
           )
           if [ "$MODE" = "dry-run" ]; then
