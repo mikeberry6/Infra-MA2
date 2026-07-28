@@ -82,6 +82,7 @@ jobs:
           MODE: ${{ steps.mode.outputs.mode }}
         shell: bash
         run: |
+          rm -f tmp/news-scan-summary.json
           epoch_day=$(( $(date -u +%s) / 86400 ))
           shard_count=2
           shard_index=$(( epoch_day % shard_count ))
@@ -131,5 +132,5 @@ jobs:
         with:
           name: news-scan-${{ github.run_id }}
           path: tmp/news-scan-summary.json
-          if-no-files-found: warn
+          if-no-files-found: error
           retention-days: 30
