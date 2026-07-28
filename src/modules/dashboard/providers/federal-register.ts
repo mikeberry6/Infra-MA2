@@ -55,6 +55,11 @@ export function federalRegisterProvider(
             throw new Error(`Federal Register returned an invalid result count for term "${term}".`);
           }
 
+          // The Federal Register API omits `results` for a valid empty search
+          // and returns only `{ count: 0, description: ... }`.
+          if (count === 0 && json.results === undefined) {
+            json.results = [];
+          }
           if (!Array.isArray(json.results)) {
             throw new Error(`Federal Register returned no results array for term "${term}".`);
           }

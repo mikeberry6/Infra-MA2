@@ -69,6 +69,24 @@ describe("Federal Register provider fixtures", () => {
     expect(result.signals).toEqual([]);
   });
 
+  it("accepts the API's count-only shape for an empty search", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({
+      count: 0,
+      description: "Federal Register documents matching your search",
+    }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    })));
+
+    const result = await federalRegisterProvider(
+      new Date("2026-07-28T11:30:00.000Z"),
+      ["broadband infrastructure"],
+    ).fetch();
+
+    expect(result.observations[0]).toMatchObject({ value: 0, unit: "count" });
+    expect(result.signals).toEqual([]);
+  });
+
   it("counts only notices and rules while ignoring other matching document types", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({
       count: 4,
@@ -94,7 +112,7 @@ describe("Federal Register provider fixtures", () => {
   });
 
   it("rejects a malformed HTTP-200 response instead of publishing a zero count", async () => {
-    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({ count: 0 }), {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({ count: 1 }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     })));

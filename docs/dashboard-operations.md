@@ -1,6 +1,6 @@
 # Dashboard source operations
 
-The `/dashboard` feed runs from official-source adapters at **07:30 America/New_York every weekday**. GitHub Actions schedules both possible UTC times and admits only the slot matching the current Eastern offset, so the cadence remains stable through daylight-saving changes.
+The `/dashboard` feed runs from official-source adapters at **07:30 America/New_York every weekday**. GitHub Actions schedules both possible UTC times and classifies each invocation before starting a workload. Only the slot matching the current Eastern offset runs `Weekday dashboard synchronization`; the inactive slot records its reason in the run summary and leaves the synchronization job skipped. Do not count the inactive slot as a successful refresh.
 
 ## Protected configuration
 
@@ -41,7 +41,7 @@ Keep the GitHub `production` environment protected by a required reviewer. Never
 4. Review the manifest and dispatch **Stage Dashboard Schema** with its `manifestSha256`, the three exact SHAs, and confirmation `STAGE`.
 5. Dispatch **Dashboard Data Pipeline** with `source-audit`. This is a live, read-only fetch from every configured source and deliberately does not require a populated dashboard.
 6. Inspect the retained `dashboard-source-audit-*` artifact. Resolve every critical-source failure, malformed response, missing required metric, or stale release.
-7. Set `DASHBOARD_WRITES_ENABLED=true`, then dispatch the `dashboard` pipeline once.
+7. Set `DASHBOARD_WRITES_ENABLED=true`, then dispatch the `dashboard` pipeline once with `write_confirmation` set exactly to `SYNC-PRODUCTION`. The typed confirmation is required only for a manually dispatched production write; scheduled admitted runs still require the protected write flag.
 8. Inspect the sync and reliability artifact, then dispatch `verify`. Every visible metric must have valid, fresh official-source data; sample values are forbidden.
 9. Build a production-target Vercel candidate without assigning the canonical alias. Dispatch **Promote Dashboard Release** with the immutable `*.vercel.app` deployment URL, exact `main` SHA, and confirmation `PROMOTE`.
 10. Open `/admin/dashboard-signals`. Newly discovered filings, documents, awards, and opportunities remain `PENDING` until an analyst approves or rejects them. Do not bulk-approve qualitative signals.
@@ -50,16 +50,17 @@ The schema-stage job verifies protected-main provenance, the required GitHub Act
 
 ## Recurring operations
 
-- **Weekdays at 07:30 Eastern:** fetch all sources with at most three bounded attempts. Objective observations publish only after schema, unit, range, date, and freshness validation. A failed provider leaves the last valid observation cached and marked stale.
+- **Weekdays at 07:30 Eastern:** the admitted synchronization fetches all sources with at most three bounded attempts. Objective observations publish only after schema, unit, range, date, and freshness validation. A failed provider leaves the last valid observation cached and marked stale.
 - **Sunday:** require complete public data and evaluate the last 30 days of `DashboardSourceRun` records.
 - **First day of each month at 08:00 Eastern:** perform an all-source live dry-run and retain evidence for 90 days.
 - **Monthly:** confirm source terms, endpoints, owners, expected lag, staleness thresholds, and secrets against `source-registry.ts`.
 
-Retries with the same Eastern date share one refresh window. Reliability uses the latest attempt for each source in that window, requires all critical sources, enforces a 95% rolling success rate, and fails after two consecutive missing or unhealthy critical-source windows. GitHub Actions failures are the operational alert; enable repository workflow-failure notifications for the dashboard owner and backup reviewer.
+Retries with the same Eastern date share one refresh window. Reliability uses the latest attempt for each source in that window, requires all critical sources, enforces a 95% rolling success rate, and fails after two consecutive missing or unhealthy critical-source windows. Each admitted run writes a GitHub step summary; synchronization runs also retain a non-sensitive context file plus any sync and reliability reports in `dashboard-sync-*`. GitHub Actions failures are the operational alert; enable repository workflow-failure notifications for the dashboard owner and backup reviewer.
 
 ## Failure and recovery
 
-- Leave `DASHBOARD_WRITES_ENABLED=false` if the initial source audit has not passed.
+- Leave `DASHBOARD_WRITES_ENABLED=false` if the initial source audit has not passed. An admitted scheduled synchronization will then fail visibly at the write guard; it must not be interpreted as a provider or database failure.
+- A run containing only `Classify dashboard pipeline invocation` with an inactive DST reason is expected and is not a refresh attempt.
 - For a provider failure, inspect `dashboard-sync-summary.json`; correct credentials or adapter behavior, rerun `source-audit`, then rerun `dashboard` with the same refresh date.
 - For a freshness failure, do not insert sample data or approve stale observations. The public dashboard keeps the last validated cached value and exposes its stale state.
 - For a bad application release, dispatch **Roll Back Dashboard Release** with a previously verified immutable deployment or deployment ID, its exact Git SHA, and confirmation `ROLLBACK`. Additive migrations remain in place.

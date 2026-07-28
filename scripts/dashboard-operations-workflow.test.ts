@@ -4,15 +4,65 @@ import { describe, expect, it } from "vitest";
 const workflow = (name: string) => readFileSync(`.github/workflows/${name}`, "utf8");
 
 describe("focused dashboard operations workflows", () => {
-  it("schedules a DST-safe weekday refresh and read-only source audit", () => {
+  it("classifies paired DST schedules without reporting an inactive slot as a sync", () => {
     const source = workflow("data-pipelines.yml");
+    const admission = source.slice(
+      source.indexOf("\n  admission:"),
+      source.indexOf("\n  dashboard:"),
+    );
     expect(source).toContain('cron: "30 11 * * 1-5"');
     expect(source).toContain('cron: "30 12 * * 1-5"');
     expect(source).toContain("TZ=America/New_York");
+    expect(source).toContain("Classify dashboard pipeline invocation");
+    expect(source).toContain("admitted: ${{ steps.classify.outputs.admitted }}");
+    expect(source).toContain("daylight-schedule-not-current");
+    expect(source).toContain("standard-schedule-not-current");
+    expect(source).toContain(
+      "if: needs.admission.outputs.operation == 'dashboard' && needs.admission.outputs.admitted == 'true'",
+    );
+    expect(source).not.toContain("if: steps.cadence.outputs.run == 'true'");
+    expect(source).not.toContain('echo "run=$should_run"');
+    expect(admission).not.toContain("DATABASE_URL");
+    expect(admission).not.toContain("secrets.");
+  });
+
+  it("requires an enabled write flag and typed confirmation for manual production syncs", () => {
+    const source = workflow("data-pipelines.yml");
+    const dashboard = source.slice(
+      source.indexOf("\n  dashboard:"),
+      source.indexOf("\n  verify:"),
+    );
+
     expect(source).toContain("DASHBOARD_WRITES_ENABLED");
+    expect(source).toContain("write_confirmation:");
+    expect(dashboard).toContain('[ "$DASHBOARD_WRITES_ENABLED" != "true" ]');
+    expect(dashboard).toContain('[ "$EVENT_NAME" = "workflow_dispatch" ]');
+    expect(dashboard).toContain('[ "$WRITE_CONFIRMATION" != "SYNC-PRODUCTION" ]');
+    expect(dashboard).toContain("scripts/assert-database-target.ts");
+    expect(dashboard.indexOf("scripts/assert-database-target.ts"))
+      .toBeLessThan(dashboard.indexOf("dashboard:sync"));
+    expect(dashboard.indexOf("Require explicit production writes"))
+      .toBeLessThan(dashboard.indexOf("Install locked dependencies"));
+    expect(dashboard).toContain("node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync");
+  });
+
+  it("keeps source audits read-only and emits durable run evidence and summaries", () => {
+    const source = workflow("data-pipelines.yml");
+    const sourceAudit = source.slice(source.indexOf("\n  source-audit:"));
+
     expect(source).toContain("dashboard:sync:dry-run");
     expect(source).toContain("verify-dashboard-health.ts");
     expect(source).toContain("--min-success-rate=0.95");
+    expect(source).toContain("dashboard-run-context.json");
+    expect(source).toContain("GITHUB_STEP_SUMMARY");
+    expect(source).toContain("steps.sync.outcome");
+    expect(source).toContain("steps.reliability.outcome");
+    expect(sourceAudit).toContain("scripts/assert-database-target.ts");
+    expect(sourceAudit).toContain(
+      "node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync:dry-run",
+    );
+    expect(sourceAudit).not.toContain("DASHBOARD_WRITES_ENABLED");
+    expect(sourceAudit).not.toContain("SYNC-PRODUCTION");
     expect(source).not.toContain("dashboard:verify -- --require-complete\n          npm run dashboard:sync:dry-run");
     expect(source).not.toContain("NEWS_SCAN");
   });

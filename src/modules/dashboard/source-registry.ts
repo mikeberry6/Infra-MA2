@@ -73,7 +73,10 @@ const fred = (
   unit: string,
   nativeCadence: string,
   staleAfterDays: number,
-  options: Partial<Pick<DashboardSourceRegistryEntry, "transform" | "fredUnits" | "minValue" | "maxValue">> = {},
+  options: Partial<Pick<
+    DashboardSourceRegistryEntry,
+    "transform" | "fredUnits" | "minValue" | "maxValue" | "expectedLagHours"
+  >> = {},
 ): DashboardSourceRegistryEntry => ({
   metricId,
   sourceId: "fred",
@@ -82,7 +85,8 @@ const fred = (
   unit,
   transform: options.transform ?? "IDENTITY",
   nativeCadence,
-  expectedLagHours: nativeCadence === "Daily" ? 36 : nativeCadence === "Weekly" ? 96 : nativeCadence === "Monthly" ? 1_080 : 2_880,
+  expectedLagHours: options.expectedLagHours
+    ?? (nativeCadence === "Daily" ? 36 : nativeCadence === "Weekly" ? 96 : nativeCadence === "Monthly" ? 1_080 : 2_880),
   staleAfterDays,
   authEnv: "FRED_API_KEY",
   revisionPolicy: "Upsert the latest FRED/ALFRED value for the same series and observation date.",
@@ -141,9 +145,24 @@ export const DASHBOARD_SOURCE_REGISTRY: DashboardSourceRegistryEntry[] = [
   fred("hy_oas", "BAMLH0A0HYM2", "bp", "Daily", 5, { transform: "MULTIPLY_100", minValue: 0, maxValue: 10_000 }),
   fred("vix", "VIXCLS", "index", "Daily", 5, { minValue: 0, maxValue: 200 }),
   fred("sp500", "SP500", "index", "Daily", 5, { minValue: 0, maxValue: 100_000 }),
-  fred("henry_hub", "DHHNGSP", "$/MMBtu", "Daily", 7, { minValue: -100, maxValue: 1_000 }),
-  fred("wti", "DCOILWTICO", "$/bbl", "Daily", 7, { minValue: -200, maxValue: 1_000 }),
-  fred("brent", "DCOILBRENTEU", "$/bbl", "Daily", 7, { minValue: -200, maxValue: 1_000 }),
+  // These are daily observations delivered in a weekly EIA/FRED release.
+  // Ten calendar days covers the release interval plus a weekend without
+  // hiding a missed weekly publication.
+  fred("henry_hub", "DHHNGSP", "$/MMBtu", "Daily", 10, {
+    expectedLagHours: 216,
+    minValue: -100,
+    maxValue: 1_000,
+  }),
+  fred("wti", "DCOILWTICO", "$/bbl", "Daily", 10, {
+    expectedLagHours: 216,
+    minValue: -200,
+    maxValue: 1_000,
+  }),
+  fred("brent", "DCOILBRENTEU", "$/bbl", "Daily", 10, {
+    expectedLagHours: 216,
+    minValue: -200,
+    maxValue: 1_000,
+  }),
   fred("gdp", "A191RL1Q225SBEA", "%", "Quarterly", 120, { minValue: -100, maxValue: 100 }),
   fred("final_sales_private_domestic", "PB0000031Q225SBEA", "%", "Quarterly", 120, { minValue: -100, maxValue: 100 }),
   fred("pce", "PCEPI", "%", "Monthly", 60, { fredUnits: "pc1", minValue: -20, maxValue: 30 }),

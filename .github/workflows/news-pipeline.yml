@@ -1,0 +1,129 @@
+name: Nightly News Pipeline
+
+on:
+  schedule:
+    # 02:30 UTC is 22:30 Eastern during daylight time and 21:30 during
+    # standard time, after the U.S. workday in either season.
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Run a read-only scan or update the public news feed
+        required: true
+        default: dry-run
+        type: choice
+        options:
+          - dry-run
+          - live
+
+permissions:
+  contents: read
+
+concurrency:
+  group: news-pipeline-production
+  cancel-in-progress: false
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+  EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+  FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+  FORBIDDEN_DATABASE_HOST_2: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+
+jobs:
+  scan:
+    name: Discover and update public news
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Resolve scan mode
+        id: mode
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REQUESTED_MODE: ${{ inputs.mode }}
+        shell: bash
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            mode=live
+          else
+            mode="$REQUESTED_MODE"
+          fi
+
+          case "$mode" in
+            dry-run|live) ;;
+            *)
+              echo "::error::Unsupported news pipeline mode: $mode"
+              exit 1
+              ;;
+          esac
+
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Verify exact production target immediately before live writes
+        if: steps.mode.outputs.mode == 'live'
+        run: node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Run bounded discovery with transient retries
+        id: scan
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+        shell: bash
+        run: |
+          scan_args=(
+            --since-days=2
+            --max-targets=750
+            --max-pages=500
+            --max-pages-per-site=4
+            --max-links-per-page=8
+            --max-sitemap-urls-per-site=8
+            --concurrency=3
+            --delay-ms=900
+            --search-concurrency=1
+            --search-delay-ms=750
+            --search-max-results-per-entity=3
+          )
+          if [ "$MODE" = "dry-run" ]; then
+            scan_args+=(--dry-run)
+          fi
+
+          node scripts/run-with-retry.mjs \
+            --attempts=3 \
+            --base-delay-ms=5000 \
+            -- npm run news:scan -- "${scan_args[@]}"
+
+      - name: Validate and summarize discovery
+        if: always() && steps.scan.outcome != 'skipped'
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+        shell: bash
+        run: |
+          expected_dry_run=false
+          if [ "$MODE" = "dry-run" ]; then
+            expected_dry_run=true
+          fi
+
+          node --experimental-strip-types scripts/verify-news-scan-summary.ts \
+            --summary=tmp/news-scan-summary.json \
+            --expect-dry-run="$expected_dry_run"
+
+      - name: Upload news scan evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: news-scan-${{ github.run_id }}
+          path: tmp/news-scan-summary.json
+          if-no-files-found: warn
+          retention-days: 30

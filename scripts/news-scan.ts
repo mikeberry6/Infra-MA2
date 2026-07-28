@@ -36,6 +36,7 @@ type SeedKind = "official" | "source" | "sitemap" | "common-path" | "discovered"
 
 type Options = {
   dryRun: boolean;
+  reviewOnly: boolean;
   sourceCrawl: boolean;
   newsSearch: boolean;
   concurrency: number;
@@ -225,6 +226,7 @@ function parseArgs(): Options {
 
   return {
     dryRun: args.has("--dry-run"),
+    reviewOnly: booleanOption("--review-only", "NEWS_SCAN_REVIEW_ONLY", false),
     sourceCrawl: !args.has("--skip-source-crawl") && booleanOption("--source-crawl", "NEWS_SCAN_SOURCE_CRAWL", true),
     newsSearch: !args.has("--no-news-search") && booleanOption("--news-search", "NEWS_SCAN_SEARCH_ENABLED", true),
     concurrency: optionValue("--concurrency", "NEWS_SCAN_CONCURRENCY", 3),
@@ -322,7 +324,7 @@ async function main() {
       sourceUrl: item.sourceUrl,
     }));
 
-    const persisted = await persistCandidates(prisma, candidates, context.candidateByKey, options.dryRun);
+    const persisted = await persistCandidates(prisma, candidates, context.candidateByKey, options);
     summary.results = {
       ...summary.results,
       ...persisted,
@@ -1263,7 +1265,7 @@ async function persistCandidates(
   prisma: PrismaClient,
   candidates: ExtractedCandidate[],
   candidateByKey: Map<string, MentionCandidate>,
-  dryRun: boolean,
+  options: Pick<Options, "dryRun" | "reviewOnly">,
 ) {
   if (candidates.length === 0) {
     return { existingSourceUrlMatches: 0, created: 0, updated: 0 };
@@ -1276,7 +1278,7 @@ async function persistCandidates(
   });
   const existingByUrl = new Map(existing.map((item) => [item.sourceUrl, item.id]));
 
-  if (dryRun) {
+  if (options.dryRun) {
     return {
       existingSourceUrlMatches: existing.length,
       created: candidates.length - existing.length,
@@ -1299,7 +1301,6 @@ async function persistCandidates(
       publishedAt: candidate.publishedAt,
       isRumor: candidate.isRumor,
       confidence: candidate.confidence,
-      status: "PUBLISHED" as const,
     };
 
     const newsItem = existingId
@@ -1308,6 +1309,7 @@ async function persistCandidates(
         data: {
           legacyId: legacyIdFor(candidate),
           ...data,
+          status: options.reviewOnly ? "DRAFT" : "PUBLISHED",
         },
       });
 
