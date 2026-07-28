@@ -13,6 +13,7 @@ describe("nightly news pipeline workflow", () => {
     expect(workflow).toContain("group: news-pipeline-production");
     expect(workflow).toContain("cancel-in-progress: false");
     expect(workflow).toContain("timeout-minutes: 45");
+    expect(workflow).toContain("rm -f tmp/news-scan-summary.json");
     expect(workflow).toContain("shard_count=2");
     expect(workflow).toContain("epoch_day % shard_count");
     expect(workflow).toContain('--shard-count="$shard_count"');
@@ -31,6 +32,7 @@ describe("nightly news pipeline workflow", () => {
     expect(workflow).toContain("scripts/verify-news-scan-summary.ts");
     expect(workflow).toContain("if: always()");
     expect(workflow).toContain("actions/upload-artifact");
+    expect(workflow).toContain("if-no-files-found: error");
 
     expect(scanner).toContain('reviewOnly: booleanOption("--review-only"');
     expect(scanner).toContain("selectNewsScanEntities(entities, options)");
