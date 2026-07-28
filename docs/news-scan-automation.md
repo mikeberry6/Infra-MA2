@@ -2,12 +2,27 @@
 
 This repo's News Feed scanner persists review-queue records only to `NewsItem` and `NewsMention`.
 
+## GitHub Actions automation
+
+`.github/workflows/news-pipeline.yml` runs nightly at 02:30 UTC. Scheduled runs update the public news feed but never create deals. Manual dispatches default to a read-only dry run and also offer an explicit live choice. For ad hoc discovery that should remain unpublished, pass `--review-only`; new items are then stored as `DRAFT`, while rescans preserve the editorial status of existing items.
+
+The workflow:
+
+- serializes scheduled and manual runs with a production news-pipeline concurrency lock;
+- verifies the exact approved production database host and name immediately before live writes;
+- limits targets, pages, links, per-site work, concurrency, and search results;
+- retries only transient command failures, with three bounded attempts;
+- fails visibly if neither crawl nor news search completes useful work;
+- uploads `tmp/news-scan-summary.json` for 30 days, even after failure.
+
+Live writes require the same existing protected database secret and target variables used by the production data workflows. Do not put database URLs in workflow inputs, variables, logs, or artifacts.
+
 ## Daily command
 
 Run this command at the end of each day:
 
 ```sh
-cd /Users/mikeberry6/Infra-MA2 && npm run news:scan -- --since-days=2 --max-pages=5000
+cd /Users/mikeberry6/Infra-MA2 && npm run news:scan -- --since-days=2 --max-pages=500
 ```
 
 Use `--since-days=2` for the daily job so late-posted items are still picked up on the next run. The scanner performs both source-site crawling and exact-name public-news search by default, so the daily job screens tracked companies, fund managers, and funds even when their own websites do not expose recent news pages.
@@ -30,7 +45,7 @@ The template:
 
 - Runs daily at 7:30 PM local Mac time.
 - Uses `/Users/mikeberry6/Infra-MA2` as `WorkingDirectory`.
-- Runs `/opt/homebrew/bin/npm run news:scan -- --since-days=2 --max-pages=5000`.
+- Runs `/opt/homebrew/bin/npm run news:scan -- --review-only --since-days=2 --max-pages=500` so the optional local automation cannot publish without a separate editorial action.
 - Writes stdout to `tmp/news-scan.log`.
 - Writes stderr to `tmp/news-scan-error.log`.
 - Relies on `scripts/news-scan.ts` loading `.env` from the repo via `dotenv/config`.
@@ -42,7 +57,7 @@ Before loading it manually, verify:
 ```sh
 cd /Users/mikeberry6/Infra-MA2
 mkdir -p tmp
-npm run news:scan:dry-run -- --since-days=2 --max-pages=5000
+npm run news:scan:dry-run -- --review-only --since-days=2 --max-pages=500
 ```
 
 If approved later, it can be loaded with:

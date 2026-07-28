@@ -56,4 +56,15 @@ describe("dashboard source registry", () => {
       .filter((entry) => entry.sourceId === "treasury")
       .every((entry) => entry.staleAfterDays === 5)).toBe(true);
   });
+
+  it("matches the weekly EIA release lag for daily commodity observations", () => {
+    const entries = new Map(DASHBOARD_SOURCE_REGISTRY.map((entry) => [entry.metricId, entry]));
+    for (const metricId of ["henry_hub", "wti", "brent"]) {
+      expect(entries.get(metricId)).toMatchObject({
+        nativeCadence: "Daily",
+        expectedLagHours: 216,
+        staleAfterDays: 10,
+      });
+    }
+  });
 });
