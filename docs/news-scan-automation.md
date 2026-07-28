@@ -10,7 +10,7 @@ The workflow:
 
 - serializes scheduled and manual runs with a production news-pipeline concurrency lock;
 - verifies the exact approved production database host and name immediately before live writes;
-- limits targets, pages, links, per-site work, concurrency, and search results;
+- limits targets, pages, links, per-site work, concurrency, and search results; direct-site crawling uses a stable mixed-entity 150-page nightly budget while public-news search covers every entity in the selected shard;
 - retries only transient command failures, with three bounded attempts;
 - fails visibly if neither crawl nor news search completes useful work;
 - rotates deterministically across two entity shards, covering the full published universe every two nights with a three-day lookback;
