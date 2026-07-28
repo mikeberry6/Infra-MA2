@@ -13,7 +13,7 @@ The workflow:
 - limits targets, pages, links, per-site work, concurrency, and search results; direct-site crawling uses a stable mixed-entity 150-page nightly budget while public-news search covers every entity in the selected shard;
 - retries only transient command failures, with three bounded attempts;
 - fails visibly if neither crawl nor news search completes useful work;
-- rotates deterministically across two entity shards, covering the full published universe every two nights with a three-day lookback;
+- rotates deterministically across three entity shards, covering the full published universe every three nights with a four-day lookback;
 - fails visibly if the per-run target cap would omit any entity from the selected shard;
 - uploads `tmp/news-scan-summary.json` for 30 days, even after failure.
 

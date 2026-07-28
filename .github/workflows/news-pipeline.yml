@@ -84,14 +84,14 @@ jobs:
         run: |
           rm -f tmp/news-scan-summary.json
           epoch_day=$(( $(date -u +%s) / 86400 ))
-          shard_count=2
+          shard_count=3
           shard_index=$(( epoch_day % shard_count ))
 
           scan_args=(
-            --since-days=3
+            --since-days=4
             --shard-count="$shard_count"
             --shard-index="$shard_index"
-            --max-targets=800
+            --max-targets=600
             --max-pages=150
             --max-pages-per-site=3
             --max-links-per-page=6
