@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "U.S. bottleless water cooler market",
+    description:
+      "Market-size overview and competitor taxonomy covering dedicated POU platforms, regional operators, service bundlers, dealer networks, and hardware alternatives.",
+    href: "/one-off-requests/us-bottleless-water-cooler-market-outlook.html",
+    format: "Outlook HTML",
+    date: "Jul 2026",
+  },
+  {
     title: "TEN 2026 specialized fleet disclosure guide",
     description:
       "BamSEC reading list focused on TEN's LNG carriers and DP2 shuttle tankers, with priority pages, slides, and Q&A.",
