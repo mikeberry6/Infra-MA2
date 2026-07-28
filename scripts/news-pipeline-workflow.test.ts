@@ -19,8 +19,8 @@ describe("nightly news pipeline workflow", () => {
     expect(workflow).toContain('--shard-count="$shard_count"');
     expect(workflow).toContain('--shard-index="$shard_index"');
     expect(workflow).toContain("--max-targets=800");
-    expect(workflow).toContain("--max-pages=500");
-    expect(workflow).toContain("--max-pages-per-site=4");
+    expect(workflow).toContain("--max-pages=150");
+    expect(workflow).toContain("--max-pages-per-site=3");
     expect(workflow).toContain("--search-max-results-per-entity=3");
   });
 

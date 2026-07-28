@@ -15,7 +15,10 @@ export type NewsScanSelection<T> = {
 
 export function stableNewsEntityShard(entity: ShardableNewsEntity, shardCount: number): number {
   assertShardConfiguration(shardCount, 0);
+  return stableNewsEntityHash(entity) % shardCount;
+}
 
+function stableNewsEntityHash(entity: ShardableNewsEntity): number {
   const key = `${entity.type}:${entity.id}`;
   let hash = 2166136261;
   for (let index = 0; index < key.length; index += 1) {
@@ -23,7 +26,7 @@ export function stableNewsEntityShard(entity: ShardableNewsEntity, shardCount: n
     hash = Math.imul(hash, 16777619);
   }
 
-  return (hash >>> 0) % shardCount;
+  return hash >>> 0;
 }
 
 export function selectNewsScanEntities<T extends ShardableNewsEntity>(
@@ -45,7 +48,10 @@ export function selectNewsScanEntities<T extends ShardableNewsEntity>(
 
   const eligible = entities.filter(
     (entity) => stableNewsEntityShard(entity, options.shardCount) === options.shardIndex,
-  );
+  ).sort((left, right) => {
+    const byHash = stableNewsEntityHash(left) - stableNewsEntityHash(right);
+    return byHash || `${left.type}:${left.id}`.localeCompare(`${right.type}:${right.id}`);
+  });
   const selected = options.maxTargets ? eligible.slice(0, options.maxTargets) : eligible;
 
   return {

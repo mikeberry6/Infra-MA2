@@ -32,6 +32,9 @@ describe("news scan entity selection", () => {
       entities.map((entity) => `${entity.type}:${entity.id}`).sort(),
     );
     expect(new Set(selectedKeys).size).toBe(entities.length);
+    expect(
+      selectNewsScanEntities([...entities].reverse(), { shardCount: 2, shardIndex: 0 }).entities,
+    ).toEqual(shardZero.entities);
   });
 
   it("reports when a nightly cap would silently omit eligible records", () => {
