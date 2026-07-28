@@ -340,15 +340,21 @@ async function main() {
     summary.selection = context.selection;
 
     const extractedCandidates: ExtractedCandidate[] = [];
+    const [crawl, search] = await Promise.all([
+      options.sourceCrawl
+        ? crawlTrackedSources(context.entities, context.candidates, context.candidateByKey, options)
+        : Promise.resolve(null),
+      options.newsSearch
+        ? searchTrackedNews(context.entities, context.candidates, options)
+        : Promise.resolve(null),
+    ]);
 
-    if (options.sourceCrawl) {
-      const crawl = await crawlTrackedSources(context.entities, context.candidates, context.candidateByKey, options);
+    if (crawl) {
       summary.crawl = { ...summary.crawl, ...crawl.crawlSummary };
       extractedCandidates.push(...crawl.candidates);
     }
 
-    if (options.newsSearch) {
-      const search = await searchTrackedNews(context.entities, context.candidates, options);
+    if (search) {
       summary.search = { ...summary.search, ...search.searchSummary };
       extractedCandidates.push(...search.candidates);
     }
