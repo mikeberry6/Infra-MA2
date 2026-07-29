@@ -35,7 +35,9 @@
     "db:generate": "npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
     "db:studio": "npx prisma studio",
-    "admin:create": "npx tsx scripts/create-admin.ts"
+    "admin:create": "npx tsx scripts/create-admin.ts",
+    "companies:cleanup:report": "npx tsx scripts/report-company-cleanup-approval.ts",
+    "companies:cleanup": "npx tsx scripts/merge-duplicate-companies.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

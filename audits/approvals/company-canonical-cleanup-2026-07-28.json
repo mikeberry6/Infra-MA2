@@ -1,0 +1,1259 @@
+{
+  "schemaVersion": 2,
+  "scope": "ALL_COMPANY_RECORD_STATUSES",
+  "generatedAt": "2026-07-29T03:30:00.000Z",
+  "reviewedAt": "2026-07-29T03:30:00.000Z",
+  "reviewedBy": "User-authorized Codex research review",
+  "instructions": [
+    "This single hash-bound artifact records all 21 reviewed duplicate clusters.",
+    "MERGE retires only the listed IDs; KEEP_SEPARATE preserves every candidate and applies only the listed normalization.",
+    "Explicit relation deletions are evidence-reviewed exceptions. All other automatic deletions must be materially exact duplicates.",
+    "Any candidate, relation, or snapshot change invalidates this approval before the first write."
+  ],
+  "decisions": [
+    {
+      "kind": "MERGE",
+      "reviewKey": "01-alpha-generation",
+      "candidates": [
+        {
+          "id": "cmnva0slh00nmm8lzew8x0vm3",
+          "name": "Alpha Generation, LLC",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:00:55.604Z",
+          "snapshotSha256": "05bc3515c137d63170ca27acde98ea79fbcefd5e9bb0456746c415cf823b5557",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 11,
+            "newsMentions": 1,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbxfm6004k171f6yqbqr3i",
+          "name": "Alpha Generation (AlphaGen)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:15:42.414Z",
+          "snapshotSha256": "2bf64a23ec24b10c50a6a8c836c010012833d50db1926df59e3d2a1e96102ac0",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 6,
+            "newsMentions": 1,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0slh00nmm8lzew8x0vm3",
+      "retiredIds": [
+        "cmoqbxfm6004k171f6yqbqr3i"
+      ],
+      "canonicalUpdates": {},
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "ArcLight formed Alpha Generation, LLC (AlphaGen) as one platform. Both rows represent that same platform and their attached facts belong on the legal-name record.",
+      "sources": [
+        "https://www.alphagen.com/newsroom/press-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states/"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "02-astp",
+      "candidates": [
+        {
+          "id": "cmnva0yw700y8m8lz066tfhwl",
+          "name": "American Student Transportation Partners (ASTP)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:02:43.782Z",
+          "snapshotSha256": "88c42ee0a698b956f54070c0607f52bbf400095ef579a98d8fef3550c6ccea67",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 10,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbyrxz00ep171f0j0xkh9o",
+          "name": "American Student Transportation Partners",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:16:45.047Z",
+          "snapshotSha256": "d6549482b06220e6d8783e08c3529638c03fe5765d84b79bff13d767effd41a9",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 8,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0yw700y8m8lz066tfhwl",
+      "retiredIds": [
+        "cmoqbyrxz00ep171f0j0xkh9o"
+      ],
+      "canonicalUpdates": {},
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "The names expand to the same student-transportation operator, with matching founding, operating footprint, and CVC DIF acquisition evidence.",
+      "sources": [
+        "https://www.cvc.com/media/news/2025/cvc-dif-agrees-to-acquire-premier-us-student-transportation-operator-astp-from-access-holdings/"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "03-boldyn-networks",
+      "candidates": [
+        {
+          "id": "cmoqbx3az001x171fmlp3rf24",
+          "name": "Boldyn Networks",
+          "country": "United States / Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:15:26.459Z",
+          "snapshotSha256": "5590a2105ea0f753987660c368fe036f94223f5d851a2a7cedfef9128a7e176e",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 10,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmnva0nf200fgm8lzckud2zgk",
+          "name": "Boldyn Networks (US)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-27T02:07:49.454Z",
+          "snapshotSha256": "63449affde4c746174735dd778285edc40efb7e0e05c56fb03fa23daf2ef488e",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 11,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmoqbx3az001x171fmlp3rf24",
+      "retiredIds": [
+        "cmnva0nf200fgm8lzckud2zgk"
+      ],
+      "canonicalUpdates": {},
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Boldyn describes one worldwide platform whose U.S. operations sit inside the combined business. The broad platform record survives while the U.S. financing evidence is preserved as attached history.",
+      "sources": [
+        "https://www.boldyn.com/about-us",
+        "https://www.boldyn.com/us/company-values-history",
+        "https://www.manulifeim.com/institutional/global/en/about-us/press-releases/cpp-investments-aimco-and-manulife-im-increase-commitment-to-boldyn-networks-to-support-continued-growth-in-the-us"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "04-cleco",
+      "candidates": [
+        {
+          "id": "cmnva0ng800fim8lz95b1no81",
+          "name": "Cleco Corporate Holdings LLC",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-18T16:41:07.894Z",
+          "snapshotSha256": "22bd885432f9569d1829dd88d29053e2c8ae4373c1b410e2fcf6dcc61926c0ba",
+          "counts": {
+            "ownershipPeriods": 3,
+            "milestones": 6,
+            "managementRoles": 6,
+            "citations": 7,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbxwj50084171fwym9a80l",
+          "name": "Cleco Corporation",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-18T16:41:07.894Z",
+          "snapshotSha256": "16f3ea7a80672c498c3232f82405a10547a9968e18904d56ed471f4f3362050a",
+          "counts": {
+            "ownershipPeriods": 3,
+            "milestones": 6,
+            "managementRoles": 6,
+            "citations": 7,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0ng800fim8lz95b1no81",
+      "retiredIds": [
+        "cmoqbxwj50084171fwym9a80l"
+      ],
+      "canonicalUpdates": {},
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Cleco Corporation is the historical name; Cleco Corporate Holdings LLC is the current holding company and the appropriate survivor for the shared group history.",
+      "sources": [
+        "https://www.cleco.com/about/our-company"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "05-coastal-gaslink",
+      "candidates": [
+        {
+          "id": "cmnva0psl00jcm8lzi01srw0p",
+          "name": "Coastal GasLink Pipeline Project",
+          "country": "Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-27T02:07:51.816Z",
+          "snapshotSha256": "bad378cbdbe7a3f6c5933869151ef066c854328f52ed11089b1c6c4d4f58562d",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 14,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqc06f300pj171fz77p460g",
+          "name": "Coastal GasLink Pipeline",
+          "country": "Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:17:50.463Z",
+          "snapshotSha256": "6b80ae2f0cbf03d7a0bcf2f711da889ff204c3a388a9620c762ed598a9c40437",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 8,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0psl00jcm8lzi01srw0p",
+      "retiredIds": [
+        "cmoqc06f300pj171fz77p460g"
+      ],
+      "canonicalUpdates": {
+        "name": "Coastal GasLink Pipeline"
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [
+          "cmoel9zxu00970slzkgbd4oi4"
+        ],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Both rows describe the same 670-km pipeline. The KKR/AIMCo sale was announced in 2019 and completed in 2020, so the reviewed 2020 ownership row replaces the conflicting 2019 row.",
+      "sources": [
+        "https://www.coastalgaslink.com/whats-new/news-stories/2019/Partial-Monetization-of-CGL-Announced/",
+        "https://www.coastalgaslink.com/about/faqs/"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "06-convergent-energy-and-power",
+      "candidates": [
+        {
+          "id": "cmoqbyx6l00fv171f32ezu2ch",
+          "name": "Convergent Energy and Power",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:16:51.837Z",
+          "snapshotSha256": "37769861f000763690a2fcad8be48ae11c7ff5fc0422aab09804290b26e7d723",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 3,
+            "managementRoles": 0,
+            "citations": 12,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmnva0o2700ghm8lzwp37rpx9",
+          "name": "Convergent Energy and Power",
+          "country": "North America",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-12T04:41:22.639Z",
+          "snapshotSha256": "1f93ce9ecaddbb7537e464977b09ecd079be02bb0105be7e692241b37fee2f2b",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 0,
+            "managementRoles": 0,
+            "citations": 6,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmoqbyx6l00fv171f32ezu2ch",
+      "retiredIds": [
+        "cmnva0o2700ghm8lzwp37rpx9"
+      ],
+      "canonicalUpdates": {
+        "country": "United States / Canada",
+        "countryTags": [
+          "United States",
+          "Canada"
+        ]
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [
+          "cmoqc2xqb01dn171fzwydfbat"
+        ],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "The records describe the same ECP-owned platform. Its public operating scope spans the United States and Canada; the redundant generic ECP ownership row is removed in favor of the more specific record.",
+      "sources": [
+        "https://www.ecpgp.com/equity/portfolio/convergent",
+        "https://convergentep.com/news/ecp",
+        "https://convergentep.com/canada"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "07-coolco",
+      "candidates": [
+        {
+          "id": "cmnva12qt0152m8lzwh32rl0d",
+          "name": "CoolCo",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:03:43.621Z",
+          "snapshotSha256": "c670cdfbd523b6f351d8c78c2bbdb4ebde26b31776442ca2f66049664a38beaa",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 8,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbzq6100m1171fx36pzrsj",
+          "name": "CoolCo (Cincinnati District Energy)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:17:29.401Z",
+          "snapshotSha256": "ea9a1ab06af68006128e806398f8fe19f3fc22014f96f06a79fbf3a604c59ca8",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 3,
+            "managementRoles": 0,
+            "citations": 8,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva12qt0152m8lzwh32rl0d",
+      "retiredIds": [
+        "cmoqbzq6100m1171fx36pzrsj"
+      ],
+      "canonicalUpdates": {},
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [
+          "cmoqc3on801kc171fck2z0e2z"
+        ],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Both rows are the same Cincinnati district-energy business. The explanatory parenthetical is not a separate entity, and the second Harrison Street ownership row is redundant.",
+      "sources": [
+        "https://coolco.com/about-us/"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "08-dcli",
+      "candidates": [
+        {
+          "id": "cmnva0qc300k8m8lz0ukvcrlw",
+          "name": "Direct ChassisLink, Inc.",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:05:28.366Z",
+          "snapshotSha256": "0ef07f003fc7c5537e6e1a28626012932edb9eb1de841f86c0f296b134aafda8",
+          "counts": {
+            "ownershipPeriods": 3,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 12,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbzgu500k1171fs4ccuw39",
+          "name": "Direct ChassisLink Inc. (DCLI)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:17:17.309Z",
+          "snapshotSha256": "53ee9b5408e079c573ec554486e3007ddfd63a0876abb180896c0f241a058176",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 8,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0qc300k8m8lz0ukvcrlw",
+      "retiredIds": [
+        "cmoqbzgu500k1171fs4ccuw39"
+      ],
+      "canonicalUpdates": {
+        "name": "Direct ChassisLink, Inc. (DCLI)"
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "DCLI and Direct ChassisLink, Inc. are the abbreviation and legal name for the same chassis operating company; the record with the complete three-owner evidence survives.",
+      "sources": [
+        "https://dcli.com/",
+        "https://dcli.com/investor-information/"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "09-extenet",
+      "candidates": [
+        {
+          "id": "cmnva0mwt00elm8lz2xp3ijr4",
+          "name": "ExteNet Systems",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:02:51.005Z",
+          "snapshotSha256": "2b444f81f836a860cd7ba7e826baca197bbaac6ee22e90c171cfeff50174205a",
+          "counts": {
+            "ownershipPeriods": 4,
+            "milestones": 6,
+            "managementRoles": 0,
+            "citations": 11,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqc0y7100vi171flkm8xuz4",
+          "name": "Extenet",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:18:26.461Z",
+          "snapshotSha256": "7ee44a697037b5a5510da6f267f45dc8cccbc39138341f4114a76b1ce7b62ecd",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 0,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0mwt00elm8lz2xp3ijr4",
+      "retiredIds": [
+        "cmoqc0y7100vi171flkm8xuz4"
+      ],
+      "canonicalUpdates": {
+        "name": "Extenet (formerly ExteNet Systems)"
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [
+          "cmoqc4sgr01uk171f6n908ew6"
+        ],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "ExteNet Systems officially rebranded as Extenet in 2022. The legacy row carries the richer history, but the current brand is made canonical and the redundant Stonepeak row is removed.",
+      "sources": [
+        "https://extenet.com/extenet-systems-is-now-extenet/"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "10-gct-global-container-terminals",
+      "candidates": [
+        {
+          "id": "cmoqbxwza0088171ffl39qhda",
+          "name": "GCT Global Container Terminals Inc.",
+          "country": "Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-18T16:41:07.894Z",
+          "snapshotSha256": "faa8850c0654b980d4992ecf2c467e33a9a0c6a8771e1cc9a61c510aa0530155",
+          "counts": {
+            "ownershipPeriods": 3,
+            "milestones": 4,
+            "managementRoles": 5,
+            "citations": 5,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmnva13lf016gm8lz8ws9mnx2",
+          "name": "GCT Global Container Terminals",
+          "country": "Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-18T16:41:07.894Z",
+          "snapshotSha256": "24360053914fb0168db63991e8573ca5c277887add9d2323b9bf40a3c526154c",
+          "counts": {
+            "ownershipPeriods": 3,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 5,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqc0put00tn171ffyt56gok",
+          "name": "GCT Global Container Terminals",
+          "country": "Canada / United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:18:15.653Z",
+          "snapshotSha256": "f7a7cd272c3c722d4549a482f604eefea5887498866e039d24550a21bec9b2cd",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 7,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmoqbxwza0088171ffl39qhda",
+      "retiredIds": [
+        "cmnva13lf016gm8lz8ws9mnx2",
+        "cmoqc0put00tn171ffyt56gok"
+      ],
+      "canonicalUpdates": {
+        "country": "Canada",
+        "countryTags": [
+          "Canada"
+        ]
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [
+          "cmoqc4l8k01sn171foat95hlb",
+          "cmoqc4lc401so171flf7yqc1n"
+        ],
+        "milestones": [
+          "cmp1h8uy302qjw41f0zw51f56",
+          "cmp1h8uy302qkw41fidslg10a"
+        ],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "The three records are one corporate operator across a changing footprint. After the 2023 U.S. terminal sale, Canada is the current operating country; the U.S. history remains in milestones. Incomplete duplicate ownership rows are removed.",
+      "sources": [
+        "https://globalterminals.com/ifm-investors-bci-join-ontario-teachers-equity-partners-gct-global-container-terminals-inc/",
+        "https://globalterminals.com/gct-successfully-concludes-sale-of-new-york-terminals-to-cma-cgm/"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "11-gulf-coast-express",
+      "candidates": [
+        {
+          "id": "cmnva0rsh00m5m8lzrh4iikgq",
+          "name": "Gulf Coast Express Pipeline LLC",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:04:39.760Z",
+          "snapshotSha256": "2d7c6af7e7d447162b72c631fd4bc3255795d7f4cfe14833b4f1cb391770c834",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 16,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbxg4x004p171fzy5wwte4",
+          "name": "Gulf Coast Express Pipeline (GCX)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:15:43.089Z",
+          "snapshotSha256": "22faff456c041206a2a07e34e52f84b826fd04b025bfd697c09c335144859f58",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 8,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0rsh00m5m8lzrh4iikgq",
+      "retiredIds": [
+        "cmoqbxg4x004p171fzy5wwte4"
+      ],
+      "canonicalUpdates": {
+        "name": "Gulf Coast Express Pipeline LLC (GCX)"
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [
+          "cmoel6csn0026w2lziqq2ot9a"
+        ],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "The records identify the same Texas pipeline. The legal-name row survives, with GCX retained as an alias; the reviewed 2025 ArcLight ownership row replaces the undated duplicate.",
+      "sources": [
+        "https://www.kindermorgan.com/Operations/Natural-Gas/Index"
+      ]
+    },
+    {
+      "kind": "KEEP_SEPARATE",
+      "reviewKey": "12-jw-water-and-robson-utilities",
+      "candidates": [
+        {
+          "id": "cmnva0z1n00yim8lzbh3yfx1c",
+          "name": "JW Water Holdings (incl. Robson Utilities)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:02:47.057Z",
+          "snapshotSha256": "00a2a0faff8e3c9abbcc95dfd72e70ccb25a56402f557110d8dfbb470c8a0f49",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 6,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbytnp00f3171fjyn934yg",
+          "name": "JW Water Holdings",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:16:47.269Z",
+          "snapshotSha256": "02b3182c23bef8d9b2f596b99d43bf778728e457b46d3fd3f257babc5867cc89",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 6,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "companyUpdates": [
+        {
+          "id": "cmnva0z1n00yim8lzbh3yfx1c",
+          "changes": {
+            "name": "Robson Utilities Portfolio",
+            "description": "Robson Utilities Portfolio comprises eight regulated water and wastewater utilities in Arizona acquired by CVC DIF through DIF Infrastructure VII in 2024. CVC DIF reported that these utilities served more than 41,000 customers at signing. The assets were acquired alongside, but are legally and operationally distinct from, JW Water Holdings; JW Water was expected to manage the combined 18-utility platform after closing.",
+            "yearFounded": null
+          }
+        }
+      ],
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [
+          "cmp1h7z0701d1w41f22qym0tf",
+          "cmp1h7z0701d2w41f8mub017r"
+        ],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "CVC DIF documented concurrent but distinct acquisitions: JW Water's 10 utilities and eight Robson utilities. The combined-platform row is normalized to the Robson portfolio rather than destructively merged into JW Water.",
+      "sources": [
+        "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "13-landmark-dividend",
+      "candidates": [
+        {
+          "id": "cmoqbx33h001v171f207gs2e3",
+          "name": "Landmark Dividend LLC",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:15:26.189Z",
+          "snapshotSha256": "282136eaace5912f93093799583a609662d6610c1a83f1a1b39945c593a0dfe6",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 12,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmnva0zyr0105m8lz7mzz7ea2",
+          "name": "Landmark Dividend",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:02:51.409Z",
+          "snapshotSha256": "9c3fdb97747ea98618942e89f4adffa0cf9ff3483b3f471df71159d0f21d9d72",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 0,
+            "managementRoles": 0,
+            "citations": 5,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmoqbx33h001v171f207gs2e3",
+      "retiredIds": [
+        "cmnva0zyr0105m8lz7mzz7ea2"
+      ],
+      "canonicalUpdates": {
+        "yearFounded": 2010
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Both rows are Landmark Dividend LLC. The richer legal-name record survives, and its unsupported 2002 founding year is corrected to the sourced 2010 date.",
+      "sources": [
+        "https://www.digitalbridge.com/news/2024-04-02-adia-completes-acquisition-of-40-stake-in-landmark-dividend-alongside-digitalbridge",
+        "https://ir.digitalbridge.com/node/10936/html"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "14-luminace",
+      "candidates": [
+        {
+          "id": "cmoqby8li00ao171flqpuqq6j",
+          "name": "Luminace",
+          "country": "United States / Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:16:19.974Z",
+          "snapshotSha256": "c901838dff6fd777c657a204c0b059ea912677e3237abda9d0f19eb9e3bcbdc3",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 12,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmnva0nyo00gbm8lz6vln8d8d",
+          "name": "Luminace Holdings, LLC",
+          "country": "United States / Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:27:04.851Z",
+          "snapshotSha256": "040ab1d55cb78844ecf84b191bc5cc0bedeb63ed2d8112935e0e4442aea2c622",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 0,
+            "managementRoles": 0,
+            "citations": 5,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmoqby8li00ao171flqpuqq6j",
+      "retiredIds": [
+        "cmnva0nyo00gbm8lz6vln8d8d"
+      ],
+      "canonicalUpdates": {},
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Luminace is the public brand for Luminace Holdings, LLC. The brand record carries the richer evidence while the legal form remains represented in its source history.",
+      "sources": [
+        "https://luminace.com/applicant-data-protection-policy-and-privacy-notice/",
+        "https://bep.brookfield.com/sites/brookfield-bep-v2/files/Brookfield-BEP-IR-V2/form-20-fs/bep-2025-annual-20-f.pdf"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "15-northview-energy",
+      "candidates": [
+        {
+          "id": "cmoqbxxhq008d171ffvxr3rv9",
+          "name": "Northview Energy",
+          "country": "United States / Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-18T16:41:07.894Z",
+          "snapshotSha256": "a1816efd1127ddde17a6a795eb747d9604ba18ab962657413492095a7a684e0d",
+          "counts": {
+            "ownershipPeriods": 3,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 6,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmnva0xvs00wgm8lzqdgowwv1",
+          "name": "Northview Energy",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-27T02:07:52.739Z",
+          "snapshotSha256": "d92e0b8108d051a2a59eb272ce29af90301ac079692c7765190ffe45b60d4e69",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 0,
+            "managementRoles": 0,
+            "citations": 5,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmoqbxxhq008d171ffvxr3rv9",
+      "retiredIds": [
+        "cmnva0xvs00wgm8lzqdgowwv1"
+      ],
+      "canonicalUpdates": {
+        "country": "United States / Canada",
+        "countryTags": [
+          "United States",
+          "Canada"
+        ]
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [
+          "cmoel70350073wrlz8oui1pyf",
+          "cmoel704s0074wrlz2ivmvgau"
+        ],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Both rows represent the same 2026 Brookfield/BCI/NBIM platform. The complete one-third ownership records survive, and the country scope reflects the U.S. seed portfolio and U.S./Canada mandate.",
+      "sources": [
+        "https://bep.brookfield.com/press-releases/bepc/bci-norges-bank-investment-management-and-brookfield-partner-launch-northview"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "16-pattern-energy",
+      "candidates": [
+        {
+          "id": "cmnva0stf00nzm8lz2pthnja0",
+          "name": "Pattern Energy Group LP",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-27T02:07:54.031Z",
+          "snapshotSha256": "f384149a8f75b0e34ad8c7362816efa275db4bc37ba3c3de7d3abf78c8990f97",
+          "counts": {
+            "ownershipPeriods": 3,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 10,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbyqsa00ef171fswry13u5",
+          "name": "Pattern Energy Group",
+          "country": "United States / Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:16:43.546Z",
+          "snapshotSha256": "757c43021d7d38c79ccbc7913966ea0f47d693e28f57c6359d3493401f435cc3",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 8,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0stf00nzm8lz2pthnja0",
+      "retiredIds": [
+        "cmoqbyqsa00ef171fswry13u5"
+      ],
+      "canonicalUpdates": {
+        "name": "Pattern Energy Group LP (Pattern Energy)",
+        "country": "United States / Canada",
+        "countryTags": [
+          "United States",
+          "Canada"
+        ]
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [
+          "cmoel649600bkvflzwjj5wony"
+        ],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Pattern's official announcement identifies Pattern Energy Group LP and Pattern Energy as the same operating entity. The duplicate APG consortium row is removed in favor of the more precise transaction record.",
+      "sources": [
+        "https://patternenergy.com/pattern-energy-announces-closing-of-equity-investment-from-consortium-headed-by-apg-and-art/"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "17-pearl-ruby-solar",
+      "candidates": [
+        {
+          "id": "cmnva0tjn00p9m8lz7d3k3svi",
+          "name": "Pearl/Ruby Solar Portfolio",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:01:15.275Z",
+          "snapshotSha256": "66521e802fabbafe849d80d0d3112e917f14d8464e166ae3ea354227e1f47402",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 2,
+            "managementRoles": 0,
+            "citations": 6,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbxnxb006a171fwojc3elz",
+          "name": "Pearl / Ruby solar portfolio",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:15:53.183Z",
+          "snapshotSha256": "67e340ec90b60008f91f2738dae22530ffb5dcf9401b907e87d20c6f5a04ee7e",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 1,
+            "managementRoles": 0,
+            "citations": 6,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0tjn00p9m8lz7d3k3svi",
+      "retiredIds": [
+        "cmoqbxnxb006a171fwojc3elz"
+      ],
+      "canonicalUpdates": {},
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Both records describe Argo's same 114-MW, 134-site Pearl/Ruby distributed-solar portfolio investment announced in 2019.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/marathon-capital-announces-argos-investment-in-a-114-mw-distributed-solar-portfolio-300790298.html"
+      ]
+    },
+    {
+      "kind": "KEEP_SEPARATE",
+      "reviewKey": "18-puget-energy-and-pse",
+      "candidates": [
+        {
+          "id": "cmnva0pnm00j4m8lzk4vmiuoa",
+          "name": "Puget Sound Energy",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-18T16:41:07.894Z",
+          "snapshotSha256": "c4e3438a487618c1d00639286e39c53b63770c324465d6ed555fada8af5b963c",
+          "counts": {
+            "ownershipPeriods": 6,
+            "milestones": 6,
+            "managementRoles": 0,
+            "citations": 9,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmnva0pr700jam8lzjb1yb2n1",
+          "name": "Puget Energy / Puget Sound Energy",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-18T16:41:07.894Z",
+          "snapshotSha256": "c30495291083db740ec16c6d30b808a444fba9ea7de8b0df7cb8ee3b72f61b38",
+          "counts": {
+            "ownershipPeriods": 2,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 7,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "companyUpdates": [
+        {
+          "id": "cmnva0pr700jam8lzjb1yb2n1",
+          "changes": {
+            "name": "Puget Energy"
+          }
+        }
+      ],
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Puget Energy is the holding company and Puget Sound Energy is its regulated utility subsidiary. Their similar names do not establish one legal entity, so both records remain and the parent record is named precisely.",
+      "sources": [
+        "https://www.pse.com/-/media/PDFs/PugetEnergy/PE-10K-20231231.pdf"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "19-skyservice-us",
+      "candidates": [
+        {
+          "id": "cmnva0ols00hem8lz203dcggi",
+          "name": "Skyservice US (formerly Leading Edge Jet Center)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:04:06.561Z",
+          "snapshotSha256": "fbb3eeadcccc56c4b1f1294318e46a8f8102cd01639823d088e6269687bf12f2",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 5,
+            "managementRoles": 0,
+            "citations": 10,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqc03lb00ow171fge71941i",
+          "name": "Skyservice US",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:17:46.799Z",
+          "snapshotSha256": "e18a64ba3035426b6abdc58b30b0fd20ab4c594fef6c71869ea676bbc06af2d5",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 3,
+            "managementRoles": 0,
+            "citations": 5,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0ols00hem8lz203dcggi",
+      "retiredIds": [
+        "cmoqc03lb00ow171fge71941i"
+      ],
+      "canonicalUpdates": {
+        "name": "Skyservice US"
+      },
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [
+          "cmoqc40h101na171fjdhwhdmi"
+        ],
+        "milestones": [
+          "cmp1h8kjl028uw41fjz8278sh",
+          "cmp1h8khi028pw41fv9ssaqmd",
+          "cmp1h8khi028qw41fewk0zs4a"
+        ],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "The rows describe the same U.S. FBO business formerly known as Leading Edge Jet Center. The current Skyservice US name survives; redundant investment/founding events and the contradicted 2019 standalone-founding claim are removed.",
+      "sources": [
+        "https://www.ainonline.com/aviation-news/business-aviation/2021-11-10/canadas-skyservice-expands-us"
+      ]
+    },
+    {
+      "kind": "MERGE",
+      "reviewKey": "20-transportation-equipment-network",
+      "candidates": [
+        {
+          "id": "cmnva0pwi00jjm8lzomcojs56",
+          "name": "Transportation Equipment Network",
+          "country": "United States / Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:04:40.992Z",
+          "snapshotSha256": "3e4bb97f844e049773d6a678a3bf169961d3614dfbd812a1aae043dea1e6b18c",
+          "counts": {
+            "ownershipPeriods": 3,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 17,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmoqbzvsz00n9171f6oiy98aw",
+          "name": "Transportation Equipment Network (TEN)",
+          "country": "United States / Canada",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:17:36.707Z",
+          "snapshotSha256": "2a09a40c7576ce210447ce71951155f40dd7da3fd872b73c69cb176dd7803117",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 4,
+            "managementRoles": 0,
+            "citations": 6,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "canonicalId": "cmnva0pwi00jjm8lzomcojs56",
+      "retiredIds": [
+        "cmoqbzvsz00n9171f6oiy98aw"
+      ],
+      "canonicalUpdates": {},
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "Transportation Equipment Network and TEN are the full name and abbreviation for the same I Squared trailer-leasing platform.",
+      "sources": [
+        "https://isquaredcapital.com/news/i-squared-portfolio-companies-transportation-equipment-network-ten-and-tip-canada-combine-operations-now-the-second-largest-full-service-trailer-lessor-in-north-america/"
+      ]
+    },
+    {
+      "kind": "KEEP_SEPARATE",
+      "reviewKey": "21-medcraft-and-montecito-portfolios",
+      "candidates": [
+        {
+          "id": "cmoqbzd9p00j9171fy63wi359",
+          "name": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-05-03T22:17:12.685Z",
+          "snapshotSha256": "0da5eec73fcb4112fe46d16991754da3c5a463714b2f33c04943cbfcccf2b15f",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 3,
+            "managementRoles": 0,
+            "citations": 6,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        },
+        {
+          "id": "cmnva11ml0133m8lzhltgjdef",
+          "name": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+          "country": "United States",
+          "status": "PUBLISHED",
+          "updatedAt": "2026-04-25T17:03:21.054Z",
+          "snapshotSha256": "a77e6b3ed354918821fddf458b9b59b2675a2c99aa88b4f49078bd7167c7875e",
+          "counts": {
+            "ownershipPeriods": 1,
+            "milestones": 3,
+            "managementRoles": 0,
+            "citations": 9,
+            "newsMentions": 0,
+            "redirects": 0
+          }
+        }
+      ],
+      "companyUpdates": [
+        {
+          "id": "cmoqbzd9p00j9171fy63wi359",
+          "changes": {
+            "name": "MedCraft Medical Outpatient Portfolio"
+          }
+        },
+        {
+          "id": "cmnva11ml0133m8lzhltgjdef",
+          "changes": {
+            "name": "Montecito Medical Outpatient Portfolio"
+          }
+        }
+      ],
+      "explicitRelationDeleteIds": {
+        "ownershipPeriods": [],
+        "milestones": [],
+        "managementRoles": [],
+        "citations": [],
+        "newsMentions": []
+      },
+      "rationale": "These are distinct 2025 Fengate acquisitions: 24 MedCraft facilities in two states and 16 Montecito facilities across 10 states. Similar asset class and sponsor do not justify a merge.",
+      "sources": [
+        "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+        "https://fengate.com/news/fengate-acquires-16-medical-outpatient-facilities-in-the-united-states"
+      ]
+    }
+  ]
+}
