@@ -1,5 +1,8 @@
 import type { DashboardMetric, DashboardSection, DashboardSource } from "@/modules/dashboard/types";
-import { ACTIVE_DASHBOARD_METRIC_IDS } from "@/modules/dashboard/source-registry";
+import {
+  ACTIVE_DASHBOARD_METRIC_IDS,
+  FRED_QUARTERLY_STALE_AFTER_DAYS,
+} from "@/modules/dashboard/source-registry";
 
 export const DASHBOARD_SECTIONS: Array<{
   id: DashboardSection;
@@ -192,8 +195,8 @@ export const DASHBOARD_METRICS: DashboardMetric[] = [
   metric("treasury_refunding_notes", "Treasury Refunding / Auction Notes", "capital-markets", "Funding", "text", "text", manual, "Manual analyst notes for refunding and auction-size pressure.", 14),
   metric("muni_market_health", "Muni Market Health", "capital-markets", "Funding", "text", "text", manual, "Manual/import fallback for EMMA/MSRB muni-market health.", 7),
 
-  metric("gdp", "GDP", "macro-backdrop", "Growth", "%", "percent", fred, "Quarterly annualized gross domestic product growth.", 120),
-  metric("final_sales_private_domestic", "Final Sales / Private Domestic Demand", "macro-backdrop", "Growth", "%", "percent", fred, "Final sales and private domestic demand proxy.", 120),
+  metric("gdp", "GDP", "macro-backdrop", "Growth", "%", "percent", fred, "Quarterly annualized gross domestic product growth.", FRED_QUARTERLY_STALE_AFTER_DAYS),
+  metric("final_sales_private_domestic", "Final Sales / Private Domestic Demand", "macro-backdrop", "Growth", "%", "percent", fred, "Final sales and private domestic demand proxy.", FRED_QUARTERLY_STALE_AFTER_DAYS),
   metric("pce", "PCE Inflation", "macro-backdrop", "Inflation", "%", "percent", fred, "Personal consumption expenditures price index.", 60),
   metric("core_pce", "Core PCE", "macro-backdrop", "Inflation", "%", "percent", fred, "PCE price index excluding food and energy.", 60),
   metric("cpi", "CPI", "macro-backdrop", "Inflation", "%", "percent", fred, "Consumer Price Index.", 45),

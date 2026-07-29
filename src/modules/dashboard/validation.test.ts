@@ -184,4 +184,51 @@ describe("dashboard provider validation", () => {
     expect(health.staleMetricIds).toEqual([]);
     expect(health.currentMetricIds).toHaveLength(fridayObservations.length);
   });
+
+  it("keeps the latest official quarterly GDP release current until its successor is due", () => {
+    const quarterlyObservations = [
+      {
+        ...validObservation,
+        metricId: "gdp",
+        sourceId: "fred",
+        periodEnd: "2026-03-31T00:00:00.000Z",
+      },
+      {
+        ...validObservation,
+        metricId: "final_sales_private_domestic",
+        sourceId: "fred",
+        periodEnd: "2026-03-31T00:00:00.000Z",
+      },
+    ];
+
+    const beforeAdvanceRelease = inspectRequiredDashboardMetrics(
+      "fred",
+      quarterlyObservations,
+      new Date("2026-07-30T11:30:00.000Z"),
+    );
+    expect(beforeAdvanceRelease.currentMetricIds).toEqual(expect.arrayContaining([
+      "gdp",
+      "final_sales_private_domestic",
+    ]));
+    expect(beforeAdvanceRelease.staleMetricIds).not.toContain("gdp");
+    expect(beforeAdvanceRelease.staleMetricIds).not.toContain("final_sales_private_domestic");
+
+    const atDeliveryBoundary = inspectRequiredDashboardMetrics(
+      "fred",
+      quarterlyObservations,
+      new Date("2026-08-03T00:00:00.000Z"),
+    );
+    expect(atDeliveryBoundary.staleMetricIds).not.toContain("gdp");
+    expect(atDeliveryBoundary.staleMetricIds).not.toContain("final_sales_private_domestic");
+
+    const afterDeliveryBuffer = inspectRequiredDashboardMetrics(
+      "fred",
+      quarterlyObservations,
+      new Date("2026-08-03T11:30:00.000Z"),
+    );
+    expect(afterDeliveryBuffer.staleMetricIds).toEqual(expect.arrayContaining([
+      "gdp",
+      "final_sales_private_domestic",
+    ]));
+  });
 });
