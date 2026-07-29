@@ -16,7 +16,7 @@ describe("rehomeCompanyRedirects", () => {
     };
 
     await rehomeCompanyRedirects(
-      tx as Parameters<typeof rehomeCompanyRedirects>[0],
+      tx as unknown as Parameters<typeof rehomeCompanyRedirects>[0],
       "retired-company",
       "canonical-company",
     );

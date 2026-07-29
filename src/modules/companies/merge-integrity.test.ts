@@ -20,13 +20,13 @@ function companySnapshot(
   return {
     id,
     name: id === "canonical" ? "Acme LLC" : "Acme Inc.",
-    sector: "Digital",
+    sector: "DIGITAL",
     subsector: "Fiber",
-    region: "North America",
+    region: "NORTH_AMERICA",
     country: "United States",
     countryTags: ["United States"],
     description: "Shared description",
-    companyStatus: "Active",
+    companyStatus: "ACTIVE",
     website: "https://example.com",
     yearFounded: 2020,
     headquarters: "New York",
@@ -39,22 +39,22 @@ function companySnapshot(
     citations: [],
     newsMentions: [],
     redirects: [],
-  } as CompanyCleanupSnapshot;
+  };
 }
 
-const canonicalMilestone = {
+const canonicalMilestone: CompanyCleanupSnapshot["milestones"][number] = {
   id: "milestone-canonical",
   date: "2025",
   event: "Initial investment",
-  category: "Financing",
+  category: "FINANCING",
   sortDate: new Date("2025-01-01T00:00:00.000Z"),
 };
 
-const conflictingRetiredMilestone = {
+const conflictingRetiredMilestone: CompanyCleanupSnapshot["milestones"][number] = {
   id: "milestone-retired",
   date: "2025",
   event: "Initial investment",
-  category: "Acquisition",
+  category: "ACQUISITION",
   sortDate: new Date("2025-01-01T00:00:00.000Z"),
 };
 
