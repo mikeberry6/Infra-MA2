@@ -14,9 +14,10 @@
  *   npx tsx scripts/merge-duplicate-companies.ts --apply \
  *     --approval-file=<reviewed JSON> --approval-sha256=<exact digest>
  *
- * The approval is the single authorization artifact. Its exact bytes, all 21
- * candidate snapshots, every merge/keep-separate decision, and every reviewed
- * relation deletion are revalidated inside one serializable transaction.
+ * The approval is the single authorization artifact. Its exact bytes, every
+ * approved candidate snapshot, every merge/keep-separate decision, and every
+ * reviewed relation deletion are revalidated inside one serializable
+ * transaction.
  */
 import "dotenv/config";
 import { readFile } from "node:fs/promises";
