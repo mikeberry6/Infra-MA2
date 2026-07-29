@@ -21,8 +21,12 @@ import {
 import {
   REVIEWED_COMPANY_DECISION_SPECS,
 } from "./company-canonical-decisions";
+import {
+  REVIEWED_LIVE_COMPANY_DECISION_SPECS,
+} from "./company-canonical-live-decisions";
 
-const REVIEW_TIMESTAMP = "2026-07-29T03:30:00.000Z";
+const PRIMARY_REVIEW_TIMESTAMP = "2026-07-29T03:30:00.000Z";
+const LIVE_REVIEW_TIMESTAMP = "2026-07-29T04:00:00.000Z";
 
 function option(name: string): string | undefined {
   return process.argv
@@ -39,12 +43,26 @@ async function main(): Promise<void> {
     adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL }),
   });
   try {
+    const decisionSet = option("decision-set") ?? "primary";
+    const decisionSetConfig = {
+      primary: {
+        specs: REVIEWED_COMPANY_DECISION_SPECS,
+        reviewTimestamp: PRIMARY_REVIEW_TIMESTAMP,
+      },
+      "vercel-live-2026-07-29": {
+        specs: REVIEWED_LIVE_COMPANY_DECISION_SPECS,
+        reviewTimestamp: LIVE_REVIEW_TIMESTAMP,
+      },
+    }[decisionSet];
+    if (!decisionSetConfig) {
+      throw new Error(`Unknown company cleanup decision set ${decisionSet}`);
+    }
     const companies = await prisma.company.findMany({
       select: COMPANY_CLEANUP_SNAPSHOT_SELECT,
     });
     const byId = new Map(companies.map((company) => [company.id, company]));
     const decisions: CompanyCleanupDecision[] =
-      REVIEWED_COMPANY_DECISION_SPECS.map((spec) => {
+      decisionSetConfig.specs.map((spec) => {
         const candidates = spec.candidateIds.map((id) => {
           const company = byId.get(id);
           if (!company) {
@@ -68,6 +86,7 @@ async function main(): Promise<void> {
             canonicalId: spec.canonicalId,
             retiredIds: spec.retiredIds,
             canonicalUpdates: spec.canonicalUpdates,
+            citationPrimaryResolution: spec.citationPrimaryResolution,
             explicitRelationDeleteIds: spec.explicitRelationDeleteIds,
             rationale: spec.rationale,
             sources: spec.sources,
@@ -91,11 +110,11 @@ async function main(): Promise<void> {
     const approval: CompanyCleanupApproval = {
       schemaVersion: COMPANY_CLEANUP_SCHEMA_VERSION,
       scope: COMPANY_CLEANUP_SCOPE,
-      generatedAt: REVIEW_TIMESTAMP,
-      reviewedAt: REVIEW_TIMESTAMP,
+      generatedAt: decisionSetConfig.reviewTimestamp,
+      reviewedAt: decisionSetConfig.reviewTimestamp,
       reviewedBy: "User-authorized Codex research review",
       instructions: [
-        "This single hash-bound artifact records all 21 reviewed duplicate clusters.",
+        `This single hash-bound artifact records all ${decisions.length} reviewed duplicate clusters for decision set ${decisionSet}.`,
         "MERGE retires only the listed IDs; KEEP_SEPARATE preserves every candidate and applies only the listed normalization.",
         "Explicit relation deletions are evidence-reviewed exceptions. All other automatic deletions must be materially exact duplicates.",
         "Any candidate, relation, or snapshot change invalidates this approval before the first write.",

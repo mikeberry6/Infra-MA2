@@ -136,6 +136,11 @@ export interface ExplicitRelationDeletes {
   newsMentions: string[];
 }
 
+export interface CitationPrimaryResolution {
+  keepPrimaryId: string;
+  demotePrimaryIds: string[];
+}
+
 interface CleanupDecisionBase {
   reviewKey: string;
   candidates: CompanyCleanupCandidate[];
@@ -149,6 +154,7 @@ export interface MergeCompanyDecision extends CleanupDecisionBase {
   canonicalId: string;
   retiredIds: string[];
   canonicalUpdates: CompanyScalarUpdates;
+  citationPrimaryResolution?: CitationPrimaryResolution;
 }
 
 export interface KeepSeparateCompanyDecision extends CleanupDecisionBase {
@@ -550,6 +556,36 @@ function parseExplicitRelationDeletes(
   };
 }
 
+function parseCitationPrimaryResolution(
+  value: unknown,
+  label: string,
+): CitationPrimaryResolution {
+  const resolution = objectValue(value, label);
+  assertOnlyKeys(
+    resolution,
+    ["keepPrimaryId", "demotePrimaryIds"],
+    label,
+  );
+  const keepPrimaryId = stringValue(
+    resolution.keepPrimaryId,
+    `${label}.keepPrimaryId`,
+    200,
+  );
+  const demotePrimaryIds = stringArray(
+    resolution.demotePrimaryIds,
+    `${label}.demotePrimaryIds`,
+  );
+  if (demotePrimaryIds.includes(keepPrimaryId)) {
+    throw new Error(
+      `${label}.keepPrimaryId cannot also be demoted`,
+    );
+  }
+  return {
+    keepPrimaryId,
+    demotePrimaryIds,
+  };
+}
+
 function equalDigest(actual: string, expected: string): boolean {
   const actualBuffer = Buffer.from(actual, "hex");
   const expectedBuffer = Buffer.from(expected, "hex");
@@ -634,7 +670,13 @@ export function parseCompanyCleanupApproval(
       if (kind === "MERGE") {
         assertOnlyKeys(
           decision,
-          [...baseKeys, "canonicalId", "retiredIds", "canonicalUpdates"],
+          [
+            ...baseKeys,
+            "canonicalId",
+            "retiredIds",
+            "canonicalUpdates",
+            "citationPrimaryResolution",
+          ],
           label,
         );
       } else if (kind === "KEEP_SEPARATE") {
@@ -710,6 +752,13 @@ export function parseCompanyCleanupApproval(
             decision.canonicalUpdates,
             `${label}.canonicalUpdates`,
           );
+        const citationPrimaryResolution =
+          decision.citationPrimaryResolution === undefined
+            ? undefined
+            : parseCitationPrimaryResolution(
+              decision.citationPrimaryResolution,
+              `${label}.citationPrimaryResolution`,
+            );
         return {
           kind,
           reviewKey,
@@ -720,6 +769,7 @@ export function parseCompanyCleanupApproval(
           canonicalId,
           retiredIds,
           canonicalUpdates,
+          citationPrimaryResolution,
         };
       }
 

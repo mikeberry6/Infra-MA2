@@ -106,6 +106,95 @@ describe("parseCompanyCleanupApproval", () => {
         new Date("2026-07-22T00:00:00.000Z"),
       )).toThrow("does not match the reviewed digest");
   });
+
+  it("binds an explicit primary-citation resolution to a merge", () => {
+    const companies = [
+      companySnapshot("company-a", "Acme LLC", {
+        citations: [
+          {
+            id: "citation-a",
+            sourceId: "source-a",
+            purpose: "COMPANY_PROFILE",
+            evidenceLabel: "Acme profile",
+            source: {
+              id: "source-a",
+              label: "Acme",
+              url: "https://example.com/acme",
+              type: "WEBSITE",
+            },
+          },
+        ],
+      }),
+      companySnapshot("company-b", "Acme Inc.", {
+        citations: [
+          {
+            id: "citation-b",
+            sourceId: "source-b",
+            purpose: "COMPANY_PROFILE",
+            evidenceLabel: "Acme Inc. profile",
+            source: {
+              id: "source-b",
+              label: "Acme Inc.",
+              url: "https://example.com/acme-inc",
+              type: "WEBSITE",
+            },
+          },
+        ],
+      }),
+    ];
+    const approval: CompanyCleanupApproval = {
+      ...keepSeparateApproval([{ key: "acme", companies }]),
+      decisions: [
+        {
+          kind: "MERGE",
+          reviewKey: "acme",
+          candidates: companies.map(cleanupCandidateFromSnapshot),
+          canonicalId: "company-a",
+          retiredIds: ["company-b"],
+          canonicalUpdates: {},
+          citationPrimaryResolution: {
+            keepPrimaryId: "citation-a",
+            demotePrimaryIds: ["citation-b"],
+          },
+          rationale: "The reviewed records are one legal entity.",
+          sources: ["https://example.com/review"],
+          explicitRelationDeleteIds: EMPTY_DELETES,
+        },
+      ],
+    };
+    const raw = JSON.stringify(approval);
+    const parsed = parseCompanyCleanupApproval(
+      raw,
+      sha256Text(raw),
+      new Date("2026-07-22T00:00:00.000Z"),
+    );
+
+    expect(parsed.approval.decisions[0]).toMatchObject({
+      citationPrimaryResolution: {
+        keepPrimaryId: "citation-a",
+        demotePrimaryIds: ["citation-b"],
+      },
+    });
+
+    const mergeDecision = approval.decisions[0];
+    if (mergeDecision.kind !== "MERGE") {
+      throw new Error("Expected merge decision");
+    }
+    approval.decisions[0] = {
+      ...mergeDecision,
+      citationPrimaryResolution: {
+        keepPrimaryId: "citation-a",
+        demotePrimaryIds: ["citation-a"],
+      },
+    };
+    const invalidRaw = JSON.stringify(approval);
+    expect(() =>
+      parseCompanyCleanupApproval(
+        invalidRaw,
+        sha256Text(invalidRaw),
+        new Date("2026-07-22T00:00:00.000Z"),
+      )).toThrow("cannot also be demoted");
+  });
 });
 
 describe("assertApprovalMatchesAllDetectedClusters", () => {

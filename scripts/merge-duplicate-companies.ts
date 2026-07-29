@@ -14,13 +14,14 @@
  *   npx tsx scripts/merge-duplicate-companies.ts --apply \
  *     --approval-file=<reviewed JSON> --approval-sha256=<exact digest>
  *
- * The approval is the single authorization artifact. Its exact bytes, all 21
- * candidate snapshots, every merge/keep-separate decision, and every reviewed
- * relation deletion are revalidated inside one serializable transaction.
+ * The approval is the single authorization artifact. Its exact bytes, every
+ * approved candidate snapshot, every merge/keep-separate decision, and every
+ * reviewed relation deletion are revalidated inside one serializable
+ * transaction.
  */
 import "dotenv/config";
 import { readFile } from "node:fs/promises";
-import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
+import { Prisma, PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 import {
@@ -363,6 +364,89 @@ async function assertMergeReplay(
       `Merge replay for ${decision.reviewKey} has no exact hash-bound audit`,
     );
   }
+  if (decision.citationPrimaryResolution) {
+    const primaryRows = await tx.$queryRaw<Array<{ id: string }>>(
+      Prisma.sql`
+        SELECT id
+        FROM "Citation"
+        WHERE id = ${decision.citationPrimaryResolution.keepPrimaryId}
+          AND "companyId" = ${decision.canonicalId}
+          AND "isPrimary" = TRUE
+      `,
+    );
+    if (primaryRows.length !== 1) {
+      throw new Error(
+        `Merge replay for ${decision.reviewKey} does not retain the reviewed primary citation`,
+      );
+    }
+  }
+}
+
+async function assertPendingCitationPrimaryResolution(
+  tx: Prisma.TransactionClient,
+  decision: MergeCompanyDecision,
+  companies: CompanyCleanupSnapshot[],
+): Promise<void> {
+  const resolution = decision.citationPrimaryResolution;
+  if (!resolution) return;
+  const candidateIds = companies.map((company) => company.id);
+  const attachedCitationIds = new Set(
+    companies.flatMap((company) =>
+      company.citations.map((citation) => citation.id)),
+  );
+  const reviewedIds = [
+    resolution.keepPrimaryId,
+    ...resolution.demotePrimaryIds,
+  ];
+  if (reviewedIds.some((id) => !attachedCitationIds.has(id))) {
+    throw new Error(
+      `Primary citation resolution for ${decision.reviewKey} references a citation outside the reviewed cluster`,
+    );
+  }
+  if (
+    decision.explicitRelationDeleteIds.citations.includes(
+      resolution.keepPrimaryId,
+    )
+  ) {
+    throw new Error(
+      `Primary citation resolution for ${decision.reviewKey} deletes its retained primary citation`,
+    );
+  }
+  const primaryRows = await tx.$queryRaw<
+    Array<{ id: string; companyId: string }>
+  >(
+    Prisma.sql`
+      SELECT id, "companyId"
+      FROM "Citation"
+      WHERE "companyId" IN (${Prisma.join(candidateIds)})
+        AND "isPrimary" = TRUE
+      ORDER BY id
+    `,
+  );
+  const actualIds = primaryRows.map((row) => row.id).sort();
+  const expectedIds = [...reviewedIds].sort();
+  if (actualIds.join("\0") !== expectedIds.join("\0")) {
+    throw new Error(
+      `Primary citation state changed for ${decision.reviewKey}`,
+    );
+  }
+  const retained = primaryRows.find(
+    (row) => row.id === resolution.keepPrimaryId,
+  );
+  if (retained?.companyId !== decision.canonicalId) {
+    throw new Error(
+      `Retained primary citation is not attached to the canonical company in ${decision.reviewKey}`,
+    );
+  }
+  if (
+    primaryRows
+      .filter((row) => resolution.demotePrimaryIds.includes(row.id))
+      .some((row) => !decision.retiredIds.includes(row.companyId))
+  ) {
+    throw new Error(
+      `A demoted primary citation is not attached to a retiring company in ${decision.reviewKey}`,
+    );
+  }
 }
 
 async function prepareCleanup(
@@ -402,6 +486,11 @@ async function prepareCleanup(
         canonical,
         ...decision.retiredIds.map((id) => byId.get(id)!),
       ];
+      await assertPendingCitationPrimaryResolution(
+        tx,
+        decision,
+        clusterCompanies,
+      );
       merges.push({
         decision,
         companies: clusterCompanies,
@@ -507,6 +596,29 @@ async function applyRelationPlan(
   }
 }
 
+async function applyCitationPrimaryResolution(
+  tx: Prisma.TransactionClient,
+  decision: MergeCompanyDecision,
+): Promise<number> {
+  const resolution = decision.citationPrimaryResolution;
+  if (!resolution) return 0;
+  const demoted = await tx.$executeRaw(
+    Prisma.sql`
+      UPDATE "Citation"
+      SET "isPrimary" = FALSE
+      WHERE id IN (${Prisma.join(resolution.demotePrimaryIds)})
+        AND "companyId" IN (${Prisma.join(decision.retiredIds)})
+        AND "isPrimary" = TRUE
+    `,
+  );
+  if (demoted !== resolution.demotePrimaryIds.length) {
+    throw new Error(
+      `Primary citation demotion set changed inside ${decision.reviewKey}`,
+    );
+  }
+  return demoted;
+}
+
 async function assertNoRetiredRelations(
   tx: Prisma.TransactionClient,
   retiredIds: string[],
@@ -593,6 +705,10 @@ async function applyMerge(
     where: { companyId: { in: decision.retiredIds } },
   });
   const canonicalBeforeSha256 = companyCleanupSnapshotSha256(canonical);
+  const primaryCitationsDemoted = await applyCitationPrimaryResolution(
+    tx,
+    decision,
+  );
 
   await applyRelationPlan(
     tx.ownershipPeriod,
@@ -712,6 +828,9 @@ async function applyMerge(
           companyCleanupSnapshotSha256(canonicalAfter),
         companyUpdates,
         relationChanges: stats,
+        citationPrimaryResolution:
+          decision.citationPrimaryResolution ?? null,
+        primaryCitationsDemoted,
         directRedirectsCreated: decision.retiredIds.length,
         olderRedirectsRehomed: redirectsRehomed,
       },
