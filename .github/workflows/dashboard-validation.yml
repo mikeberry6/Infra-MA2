@@ -14,9 +14,11 @@ on:
       - "prisma/schema.prisma"
       - "prisma/migrations/**"
       - "scripts/assert-database-target.ts"
+      - "scripts/verify-auth-throttle-schema.ts"
       - "scripts/backfill-dashboard-signal-approvals.ts"
       - "scripts/dashboard-*.ts"
       - "scripts/quarantine-dashboard-methodology-history.ts"
+      - "src/lib/auth-throttle-schema*"
       - "src/app/admin/dashboard-signals/**"
       - "src/app/admin/page.tsx"
       - "src/app/dashboard/**"
@@ -81,6 +83,8 @@ jobs:
         run: |
           mkdir -p tmp/dashboard-validation
           set -o pipefail
+          npx tsx scripts/verify-auth-throttle-schema.ts \
+            --output=tmp/dashboard-validation/auth-throttle-schema-preflight.json
           for pass in initial repeat; do
             npx prisma migrate deploy 2>&1 | tee "tmp/dashboard-validation/migrate-deploy-${pass}.log"
             npx tsx scripts/quarantine-dashboard-methodology-history.ts 2>&1 | tee "tmp/dashboard-validation/methodology-cutover-${pass}.log"

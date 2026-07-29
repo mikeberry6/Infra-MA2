@@ -76,9 +76,21 @@ describe("focused dashboard operations workflows", () => {
     expect(source.match(/verify-migration-baseline\.ts/g)?.length).toBeGreaterThanOrEqual(2);
     expect(source).toContain("quarantine-dashboard-methodology-history.ts");
     expect(source).toContain("backfill-dashboard-signal-approvals.ts");
+    expect(source).toContain("verify-auth-throttle-schema.ts");
+    expect(source.indexOf("verify-auth-throttle-schema.ts"))
+      .toBeLessThan(source.indexOf("prisma migrate deploy"));
     expect(source).not.toContain("source-coverage-report");
     expect(source).not.toContain("company-merge");
     expect(source).not.toContain("citation");
+  });
+
+  it("preflights the AuthThrottle catalog before validation migrations", () => {
+    const source = workflow("dashboard-validation.yml");
+    const preflight = source.indexOf("verify-auth-throttle-schema.ts");
+    const deploy = source.indexOf("prisma migrate deploy");
+    expect(preflight).toBeGreaterThan(source.indexOf("assert-database-target.ts"));
+    expect(preflight).toBeLessThan(deploy);
+    expect(source).toContain("auth-throttle-schema-preflight.json");
   });
 
   it("promotes and rolls back only verified immutable deployments", () => {

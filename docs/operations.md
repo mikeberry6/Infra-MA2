@@ -39,3 +39,29 @@ npm run build
 - GitHub Actions should match that runtime.
 - Admin, import, and export routes require NextAuth roles.
 - Database writes should go through explicit scripts or admin actions, never ad hoc manual edits without a logged command path.
+
+## Administrative Authentication
+
+- Privileged JWTs have an eight-hour absolute lifetime. Deploying the
+  versioned-session format invalidates older 30-day tokens and requires a new
+  login.
+- Every admin page, server action, import, and export re-reads the current
+  `User` row. Deleting a user, changing a role, or rotating a password through
+  `npm run admin:create` invalidates the older session snapshot immediately.
+- Five failed attempts for either the account or client-IP HMAC bucket within
+  15 minutes create a 15-minute lock. Responses remain the same generic denial
+  for an unknown account, bad password, or active lock.
+- Throttle keys are HMAC pseudonyms derived from `NEXTAUTH_SECRET`; raw email
+  addresses and IP addresses are not stored. Failed-login rows older than 24
+  hours are pruned opportunistically, at most once per hour after a successful
+  prune in each application process, with a five-minute failure backoff. Window
+  and lock timestamps use the database clock.
+- Vercel's protected `x-vercel-forwarded-for` value supplies the IP bucket.
+  Outside Vercel, set `TRUST_PROXY_HEADERS=true` only when a trusted edge proxy
+  strips and rewrites `X-Forwarded-For`; otherwise throttling remains
+  account-based and ignores the spoofable header.
+- Apply `20260729210000_auth_hardening` before promoting the application code.
+  The credential path fails closed if its throttle table is unavailable.
+- Prefer `npm run admin:create` for credential rotation. Direct SQL password
+  changes do not advance Prisma's `updatedAt`; if emergency SQL is unavoidable,
+  also rotate `NEXTAUTH_SECRET` and redeploy to revoke all sessions.
