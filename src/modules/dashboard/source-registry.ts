@@ -40,6 +40,12 @@ const SAM_ENDPOINT = "https://api.sam.gov/opportunities/v2/search";
 const SEC_ENDPOINT = "https://data.sec.gov/submissions";
 const SEC_COMPANYFACTS_ENDPOINT = "https://data.sec.gov/api/xbrl/companyfacts";
 
+// A quarterly period remains the latest official value until the following
+// quarter's advance release. The weekday sync can run one hour before a release
+// roughly 121.5 days after the prior period end, so allow the release and
+// delivery weekend but flag the old quarter at the next Monday refresh.
+export const FRED_QUARTERLY_STALE_AFTER_DAYS = 125;
+
 const treasury = (
   metricId: string,
   seriesId: string,
@@ -163,8 +169,8 @@ export const DASHBOARD_SOURCE_REGISTRY: DashboardSourceRegistryEntry[] = [
     minValue: -200,
     maxValue: 1_000,
   }),
-  fred("gdp", "A191RL1Q225SBEA", "%", "Quarterly", 120, { minValue: -100, maxValue: 100 }),
-  fred("final_sales_private_domestic", "PB0000031Q225SBEA", "%", "Quarterly", 120, { minValue: -100, maxValue: 100 }),
+  fred("gdp", "A191RL1Q225SBEA", "%", "Quarterly", FRED_QUARTERLY_STALE_AFTER_DAYS, { minValue: -100, maxValue: 100 }),
+  fred("final_sales_private_domestic", "PB0000031Q225SBEA", "%", "Quarterly", FRED_QUARTERLY_STALE_AFTER_DAYS, { minValue: -100, maxValue: 100 }),
   fred("pce", "PCEPI", "%", "Monthly", 60, { fredUnits: "pc1", minValue: -20, maxValue: 30 }),
   fred("core_pce", "PCEPILFE", "%", "Monthly", 60, { fredUnits: "pc1", minValue: -20, maxValue: 30 }),
   fred("cpi", "CPIAUCSL", "%", "Monthly", 45, { fredUnits: "pc1", minValue: -20, maxValue: 30 }),

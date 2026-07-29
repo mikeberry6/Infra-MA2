@@ -3,6 +3,7 @@ import { ACTIVE_DASHBOARD_METRICS, DASHBOARD_METRICS } from "@/modules/dashboard
 import {
   applyDashboardValueTransform,
   DASHBOARD_SOURCE_REGISTRY,
+  FRED_QUARTERLY_STALE_AFTER_DAYS,
 } from "@/modules/dashboard/source-registry";
 
 describe("dashboard source registry", () => {
@@ -65,6 +66,18 @@ describe("dashboard source registry", () => {
         expectedLagHours: 216,
         staleAfterDays: 10,
       });
+    }
+  });
+
+  it("keeps quarterly FRED data current through the next advance-release window", () => {
+    const entries = new Map(DASHBOARD_SOURCE_REGISTRY.map((entry) => [entry.metricId, entry]));
+    for (const metricId of ["gdp", "final_sales_private_domestic"]) {
+      expect(entries.get(metricId)).toMatchObject({
+        nativeCadence: "Quarterly",
+        staleAfterDays: FRED_QUARTERLY_STALE_AFTER_DAYS,
+      });
+      expect(ACTIVE_DASHBOARD_METRICS.find((metric) => metric.id === metricId)?.staleAfterDays)
+        .toBe(FRED_QUARTERLY_STALE_AFTER_DAYS);
     }
   });
 });
