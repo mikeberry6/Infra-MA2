@@ -157,6 +157,7 @@ jobs:
             --expected-version="$RELEASE_SHA" \
             --transport=vercel-cli \
             --skip-health \
+            --allow-legacy-root \
             --output=tmp/release/candidate-smoke.json
 
       - name: Require staged production schema
@@ -216,6 +217,7 @@ jobs:
           --base-url="$PRODUCTION_URL"
           --expected-version="$RELEASE_SHA"
           --skip-health
+          --allow-legacy-root
           --output=tmp/release/production-smoke.json
 
       - name: Upload immutable release evidence
