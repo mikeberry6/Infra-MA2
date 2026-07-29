@@ -2,10 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import bcrypt from "bcryptjs";
 
 const mocks = vi.hoisted(() => ({
-  clearLoginThrottle: vi.fn(),
   findUnique: vi.fn(),
-  isLoginThrottled: vi.fn(),
-  recordFailedLogin: vi.fn(),
+  releaseSuccessfulLogin: vi.fn(),
+  reserveLoginAttempt: vi.fn(),
   requestIp: vi.fn(),
 }));
 
@@ -13,9 +12,8 @@ vi.mock("@/lib/prisma", () => ({
   prisma: { user: { findUnique: mocks.findUnique } },
 }));
 vi.mock("@/modules/auth/throttle", () => ({
-  clearLoginThrottle: mocks.clearLoginThrottle,
-  isLoginThrottled: mocks.isLoginThrottled,
-  recordFailedLogin: mocks.recordFailedLogin,
+  releaseSuccessfulLogin: mocks.releaseSuccessfulLogin,
+  reserveLoginAttempt: mocks.reserveLoginAttempt,
   requestIp: mocks.requestIp,
 }));
 
@@ -39,7 +37,7 @@ describe("NextAuth privileged-session configuration", () => {
     vi.clearAllMocks();
     vi.useFakeTimers();
     vi.setSystemTime(new Date("2026-07-29T12:00:00Z"));
-    mocks.isLoginThrottled.mockResolvedValue(false);
+    mocks.reserveLoginAttempt.mockResolvedValue(true);
     mocks.requestIp.mockReturnValue("203.0.113.7");
   });
 
@@ -80,27 +78,30 @@ describe("NextAuth privileged-session configuration", () => {
       { headers: {} },
     )).resolves.toBeNull();
 
-    expect(mocks.recordFailedLogin).toHaveBeenCalledWith(
+    expect(mocks.reserveLoginAttempt).toHaveBeenCalledWith(
       "unknown@example.com",
       "203.0.113.7",
     );
-    expect(mocks.clearLoginThrottle).not.toHaveBeenCalled();
+    expect(mocks.releaseSuccessfulLogin).not.toHaveBeenCalled();
   });
 
   it("returns the same denial for a locked account without querying the user", async () => {
-    mocks.isLoginThrottled.mockResolvedValue(true);
+    const compare = vi.spyOn(bcrypt, "compare");
+    mocks.reserveLoginAttempt.mockResolvedValue(false);
     await expect(authorizeCallback()(
       { email: "admin@example.com", password: "possible-password" },
       { headers: {} },
     )).resolves.toBeNull();
 
     expect(mocks.findUnique).not.toHaveBeenCalled();
-    expect(mocks.recordFailedLogin).not.toHaveBeenCalled();
+    expect(mocks.releaseSuccessfulLogin).not.toHaveBeenCalled();
+    expect(compare).not.toHaveBeenCalled();
+    compare.mockRestore();
   });
 
   it("does not expose database errors through the credentials callback", async () => {
     const errorLog = vi.spyOn(console, "error").mockImplementation(() => undefined);
-    mocks.isLoginThrottled.mockRejectedValue(
+    mocks.reserveLoginAttempt.mockRejectedValue(
       new Error("postgresql://admin:secret@private-db/auth"),
     );
 
@@ -147,6 +148,9 @@ describe("NextAuth privileged-session configuration", () => {
       id: "admin-1",
       authVersion: new Date("2026-07-29T11:00:00Z").getTime(),
     });
-    expect(mocks.clearLoginThrottle).toHaveBeenCalledWith("admin@example.com");
+    expect(mocks.releaseSuccessfulLogin).toHaveBeenCalledWith(
+      "admin@example.com",
+      "203.0.113.7",
+    );
   });
 });

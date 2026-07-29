@@ -5,9 +5,8 @@ import { normalizeNextAuthRedirect } from "@/lib/base-path";
 import { prisma } from "@/lib/prisma";
 import { exceedsBcryptPasswordLimit } from "@/modules/auth/password-policy";
 import {
-  clearLoginThrottle,
-  isLoginThrottled,
-  recordFailedLogin,
+  releaseSuccessfulLogin,
+  reserveLoginAttempt,
   requestIp,
 } from "@/modules/auth/throttle";
 import { PRIVILEGED_SESSION_MAX_AGE_SECONDS } from "@/modules/auth/session";
@@ -56,10 +55,7 @@ export const authOptions: NextAuthOptions = {
         try {
           const ip = requestIp(request.headers);
 
-          if (await isLoginThrottled(email, ip)) {
-            await bcrypt.compare(INVALID_PASSWORD, DUMMY_PASSWORD_HASH);
-            return null;
-          }
+          if (!(await reserveLoginAttempt(email, ip))) return null;
 
           const user = await prisma.user.findUnique({
             where: { email },
@@ -71,14 +67,10 @@ export const authOptions: NextAuthOptions = {
             passwordExceedsLimit ? DUMMY_PASSWORD_HASH : user?.passwordHash ?? DUMMY_PASSWORD_HASH,
           );
           if (!user || passwordExceedsLimit || !isValid) {
-            await recordFailedLogin(email, ip);
             return null;
           }
 
-          // A valid account resets that account's failures. The shared IP
-          // bucket remains intact so one valid credential cannot erase spray
-          // attempts.
-          await clearLoginThrottle(email);
+          await releaseSuccessfulLogin(email, ip);
 
           return {
             id: user.id,

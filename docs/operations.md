@@ -53,7 +53,13 @@ npm run build
   for an unknown account, bad password, or active lock.
 - Throttle keys are HMAC pseudonyms derived from `NEXTAUTH_SECRET`; raw email
   addresses and IP addresses are not stored. Failed-login rows older than 24
-  hours are pruned opportunistically.
+  hours are pruned opportunistically, at most once per hour after a successful
+  prune in each application process, with a five-minute failure backoff. Window
+  and lock timestamps use the database clock.
+- Vercel's protected `x-vercel-forwarded-for` value supplies the IP bucket.
+  Outside Vercel, set `TRUST_PROXY_HEADERS=true` only when a trusted edge proxy
+  strips and rewrites `X-Forwarded-For`; otherwise throttling remains
+  account-based and ignores the spoofable header.
 - Apply `20260729210000_auth_hardening` before promoting the application code.
   The credential path fails closed if its throttle table is unavailable.
 - Prefer `npm run admin:create` for credential rotation. Direct SQL password
