@@ -2,23 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAllCompanies } from "@/modules/companies/queries";
 import { toCsv } from "@/lib/csv";
 import { canExportData } from "@/modules/auth/guards";
+import {
+  IMPORT_CONTRACTS,
+  importFieldNames,
+} from "@/modules/imports/contracts";
 
-const PORTFOLIO_COLUMNS = [
-  "name",
-  "investmentFirm",
-  "sector",
-  "subsector",
-  "region",
-  "country",
-  "countryTags",
-  "ownershipVehicle",
-  "status",
-  "description",
-  "website",
-  "yearFounded",
-  "investmentYear",
-  "headquarters",
-];
+const PORTFOLIO_COLUMNS = importFieldNames(IMPORT_CONTRACTS.portfolio);
 
 export async function GET(request: NextRequest) {
   try {
@@ -31,16 +20,36 @@ export async function GET(request: NextRequest) {
     const wantsJson = searchParams.get("format") === "json";
 
     const companies = await getAllCompanies();
+    const rows = companies.map((company) => ({
+      name: company.name,
+      investmentFirm: company.investmentFirm || null,
+      sector: company.sector,
+      subsector: company.subsector,
+      region: company.region,
+      country: company.country,
+      countryTags: company.countryTags,
+      ownershipVehicle: company.ownershipVehicle || null,
+      status: company.status,
+      description: company.description,
+      website: company.website ?? null,
+      yearFounded: company.yearFounded ?? null,
+      investmentYear: company.investmentYear ?? null,
+      headquarters: company.headquarters ?? null,
+    }));
 
     if (wantsJson) {
       return NextResponse.json({
-        data: companies,
-        count: companies.length,
+        data: rows,
+        count: rows.length,
         exportedAt: new Date().toISOString(),
       });
     }
 
-    const csvString = toCsv(companies, PORTFOLIO_COLUMNS);
+    const csvRows = rows.map((row) => ({
+      ...row,
+      countryTags: row.countryTags.join("; "),
+    }));
+    const csvString = toCsv(csvRows, PORTFOLIO_COLUMNS);
     const date = new Date().toISOString().slice(0, 10);
 
     return new Response(csvString, {

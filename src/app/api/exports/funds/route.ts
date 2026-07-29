@@ -2,24 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAllFunds } from "@/modules/funds/queries";
 import { toCsv } from "@/lib/csv";
 import { canExportData } from "@/modules/auth/guards";
+import {
+  IMPORT_CONTRACTS,
+  importFieldNames,
+} from "@/modules/imports/contracts";
 
-const FUND_COLUMNS = [
-  "legacyId",
-  "managerName",
-  "fundName",
-  "strategies",
-  "structure",
-  "status",
-  "size",
-  "sizeUsdMm",
-  "vintage",
-  "sectors",
-  "regions",
-  "investmentStrategy",
-  "sourceUrls",
-  "ticker",
-  "strategyUrl",
-];
+const FUND_COLUMNS = importFieldNames(IMPORT_CONTRACTS.funds);
 
 export async function GET(request: NextRequest) {
   try {
@@ -32,25 +20,41 @@ export async function GET(request: NextRequest) {
     const wantsJson = searchParams.get("format") === "json";
 
     const funds = await getAllFunds();
+    const rows = funds.map((fund) => ({
+      legacyId: fund.legacyId,
+      managerName: fund.managerName,
+      fundName: fund.fundName,
+      strategies: fund.strategies,
+      structure: fund.structure,
+      status: fund.status,
+      size: fund.size,
+      sizeUsdMm: fund.sizeUsdMm,
+      vintage: fund.vintage,
+      sectors: fund.sectors,
+      regions: fund.regions,
+      investmentStrategy: fund.investmentStrategy,
+      sourceUrls: fund.sourceUrls,
+      ticker: fund.ticker,
+      strategyUrl: fund.strategyUrl || null,
+    }));
 
     if (wantsJson) {
       return NextResponse.json({
-        data: funds,
-        count: funds.length,
+        data: rows,
+        count: rows.length,
         exportedAt: new Date().toISOString(),
       });
     }
 
-    // Flatten array fields for CSV output
-    const rows = funds.map((f) => ({
-      ...f,
-      strategies: Array.isArray(f.strategies) ? f.strategies.join("; ") : f.strategies,
-      sectors: Array.isArray(f.sectors) ? f.sectors.join("; ") : f.sectors,
-      regions: Array.isArray(f.regions) ? f.regions.join("; ") : f.regions,
-      sourceUrls: Array.isArray(f.sourceUrls) ? f.sourceUrls.join("; ") : f.sourceUrls,
+    const csvRows = rows.map((row) => ({
+      ...row,
+      strategies: row.strategies.join("; "),
+      sectors: row.sectors.join("; "),
+      regions: row.regions.join("; "),
+      sourceUrls: row.sourceUrls.join("; "),
     }));
 
-    const csvString = toCsv(rows, FUND_COLUMNS);
+    const csvString = toCsv(csvRows, FUND_COLUMNS);
     const date = new Date().toISOString().slice(0, 10);
 
     return new Response(csvString, {

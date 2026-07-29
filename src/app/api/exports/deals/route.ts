@@ -2,31 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAllDeals } from "@/modules/deals/queries";
 import { toCsv } from "@/lib/csv";
 import { canExportData } from "@/modules/auth/guards";
+import {
+  IMPORT_CONTRACTS,
+  importFieldNames,
+} from "@/modules/imports/contracts";
 
-const DEAL_COLUMNS = [
-  "legacyId",
-  "title",
-  "target",
-  "buyer",
-  "seller",
-  "sector",
-  "subsector",
-  "region",
-  "category",
-  "date",
-  "status",
-  "description",
-  "country",
-  "enterpriseValue",
-  "equityValue",
-  "stake",
-  "closingDate",
-  "assetScale",
-  "valuationMultiple",
-  "fundVehicle",
-  "sourceName",
-  "sourceUrl",
-];
+const DEAL_COLUMNS = importFieldNames(IMPORT_CONTRACTS.deals);
 
 export async function GET(request: NextRequest) {
   try {
@@ -39,22 +20,48 @@ export async function GET(request: NextRequest) {
     const wantsJson = searchParams.get("format") === "json";
 
     const deals = await getAllDeals();
+    const rows = deals.map((deal) => ({
+      legacyId: deal.legacyId,
+      title: deal.title,
+      target: deal.target,
+      buyer: deal.buyer,
+      seller: deal.seller,
+      sector: deal.sector,
+      subsector: deal.subsector,
+      region: deal.region,
+      category: deal.category,
+      date: deal.date,
+      status: deal.status,
+      description: deal.description,
+      targetDescription: deal.targetDescription,
+      country: deal.country,
+      enterpriseValue: deal.enterpriseValue,
+      equityValue: deal.equityValue,
+      stake: deal.stake,
+      closingDate: deal.closingDate,
+      assetScale: deal.assetScale,
+      valuationMultiple: deal.valuationMultiple,
+      fundVehicle: deal.fundVehicle,
+      keyHighlights: deal.keyHighlights ?? [],
+      sourceName: deal.sourceName || null,
+      sourceUrl: deal.sourceUrl || null,
+    }));
 
     if (wantsJson) {
       return NextResponse.json({
-        data: deals,
-        count: deals.length,
+        data: rows,
+        count: rows.length,
         exportedAt: new Date().toISOString(),
       });
     }
 
-    // Flatten category arrays for CSV output
-    const rows = deals.map((d) => ({
-      ...d,
-      category: Array.isArray(d.category) ? d.category.join("; ") : d.category,
+    const csvRows = rows.map((row) => ({
+      ...row,
+      category: row.category.join("; "),
+      keyHighlights: row.keyHighlights.join("; "),
     }));
 
-    const csvString = toCsv(rows, DEAL_COLUMNS);
+    const csvString = toCsv(csvRows, DEAL_COLUMNS);
     const date = new Date().toISOString().slice(0, 10);
 
     return new Response(csvString, {

@@ -1,0 +1,45 @@
+name: Import Preview Retention
+
+on:
+  schedule:
+    - cron: "15 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: import-preview-retention-production
+  cancel-in-progress: false
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+  EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+  FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+  FORBIDDEN_DATABASE_HOST_2: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+
+jobs:
+  cleanup:
+    name: Delete expired import previews
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Verify exact production database target
+        run: node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Delete only retention-eligible rows in bounded batches
+        run: npm run imports:cleanup
