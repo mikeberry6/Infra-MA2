@@ -138,6 +138,7 @@ describe("focused dashboard operations workflows", () => {
     expect(release).toContain("verify-dashboard-health.ts");
     expect(release).toContain("DASHBOARD_RELIABILITY_START_DATE");
     expect(release).toContain('--start-date="$DASHBOARD_RELIABILITY_START_DATE"');
+    expect(release.match(/--allow-legacy-root/g)).toHaveLength(2);
     for (const source of [release, rollback]) {
       expect(source).toContain("vercel@51.7.0 link");
       expect(source).toContain("--project \"$EXPECTED_VERCEL_PROJECT_ID\"");
