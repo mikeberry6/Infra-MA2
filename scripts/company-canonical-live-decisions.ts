@@ -1,4 +1,5 @@
 import type {
+  CitationPrimaryResolution,
   CompanyScalarUpdates,
   ExplicitRelationDeletes,
 } from "../src/modules/companies/canonical-cleanup";
@@ -40,6 +41,7 @@ function merge(
     canonicalId: string;
     retiredIds: string[];
     canonicalUpdates?: CompanyScalarUpdates;
+    citationPrimaryResolution: CitationPrimaryResolution;
     explicitRelationDeleteIds?: ExplicitRelationDeletes;
     rationale?: string;
   },
@@ -55,6 +57,7 @@ function merge(
     retiredIds: input.retiredIds,
     canonicalUpdates:
       input.canonicalUpdates ?? reviewed.canonicalUpdates,
+    citationPrimaryResolution: input.citationPrimaryResolution,
     explicitRelationDeleteIds:
       input.explicitRelationDeleteIds ?? deletes(),
     rationale: input.rationale ?? reviewed.rationale,
@@ -100,6 +103,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpj46m00g5ivhe8bi5r2wb",
       retiredIds: ["cmrxpj67d00iyivhe208h0356"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpok3m06uvivhedx08v81i",
+        demotePrimaryIds: ["cmrxpoys707gkivhe04ebogtv"],
+      },
     }),
     merge("02-astp", {
       candidateIds: [
@@ -108,6 +115,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpjct700t4ivhe097ggvuj",
       retiredIds: ["cmrxpjcqb00t3ivhe6qiqp9nq"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpqfj709kpivhesf14lc0y",
+        demotePrimaryIds: ["cmrxpqffc09khivheazdltp8f"],
+      },
     }),
     merge("03-boldyn-networks", {
       candidateIds: [
@@ -116,6 +127,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpj4cg00gbivhe0f3aiyud",
       retiredIds: ["cmrxpjkje014zivhe0c68yrfp"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpol6k06wkivhem3ymce9b",
+        demotePrimaryIds: ["cmrxps36i0c22ivhe43k410jn"],
+      },
     }),
     merge("04-cleco", {
       candidateIds: [
@@ -124,6 +139,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpjkkg0151ivhenxskmy7x",
       retiredIds: ["cmrxpj8iu00miivhefl7xhjri"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxps3e10c2givheaxyj7554",
+        demotePrimaryIds: ["cmrxppfyh086fivhexvrn436e"],
+      },
     }),
     merge("05-coastal-gaslink", {
       candidateIds: [
@@ -132,6 +151,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpj4e100geivhe4lo6qn4w",
       retiredIds: ["cmrxpjjse013tivhew5dent2f"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpoln006x8ivhen2ho9pvw",
+        demotePrimaryIds: ["cmrxprwwb0bseivhejq02q10z"],
+      },
       rationale:
         "Both rows describe the same 670-km pipeline. The richer project record survives under the current operating name, with the distinct 2020 KKR and AIMCo ownership evidence preserved.",
     }),
@@ -142,6 +165,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpjhii010civhek48qprav",
       retiredIds: ["cmrxpjhj5010divhe5p72rvmt"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxprgjy0b3wivhe3frgetlq",
+        demotePrimaryIds: ["cmrxprgne0b43ivheghlut91u"],
+      },
       explicitRelationDeleteIds: deletes({
         ownershipPeriods: ["cmrxpk3fn01z4ivhedhc0jgxg"],
       }),
@@ -153,6 +180,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpjoz401c3ivhemhei5kyo",
       retiredIds: ["cmrxpjg8u00ydivhe473ah8ub"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpt3zr0dm7ivhe6keodcop",
+        demotePrimaryIds: ["cmrxpr7b00apxivhexgwolru7"],
+      },
       rationale:
         "DCLI and Direct ChassisLink, Inc. are the abbreviation and legal name for the same chassis operating company. The legal-name record survives and the non-duplicate ownership and operating evidence is consolidated into it.",
     }),
@@ -163,6 +194,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpjdak00twivheazjbfqum",
       retiredIds: ["cmrxpjnj4019sivheei4wmjpj"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpqj2i09q3ivhenku9n5rp",
+        demotePrimaryIds: ["cmrxpssae0d4aivhe0pgwug8c"],
+      },
     }),
     merge("10-gct-global-container-terminals", {
       candidateIds: [
@@ -171,6 +206,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpj8l000mmivhe1cfe4xs6",
       retiredIds: ["cmrxpjmcu017xivheetlsltdn"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxppgnd087givhezj6ym2im",
+        demotePrimaryIds: ["cmrxpsiyb0cptivhevuvikr8y"],
+      },
       explicitRelationDeleteIds: deletes({
         milestones: [
           "cmrxpmjxf050fivhep3941ukk",
@@ -187,6 +226,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpjln4016sivhe00yic3tw",
       retiredIds: ["cmrxpj6cn00j3ivhegemd6wso"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpsd5f0cgwivhelaebmxrx",
+        demotePrimaryIds: ["cmrxpozb607heivheuwzramgc"],
+      },
       rationale:
         "The records identify the same Texas pipeline. The legal-name row survives with GCX retained as an alias, and the distinct 2025 ArcLight and Mubadala ownership evidence is preserved.",
     }),
@@ -220,6 +263,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpj5g400htivhen2tours6",
       retiredIds: ["cmrxpjckv00stivhese6a2evl"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpospb077nivheedvux7lq",
+        demotePrimaryIds: ["cmrxpqdtt09i8ivhe8gl2jd3f"],
+      },
       rationale:
         "Pattern's official announcement identifies Pattern Energy Group LP and Pattern Energy as the same operating entity. The records are consolidated while preserving the distinct APG and CPP Investments ownership evidence.",
     }),
@@ -230,6 +277,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpj5xm00igivhejhjldefv",
       retiredIds: ["cmrxpj7cn00koivhe1netbo47"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpowcv07cyivhelph8w7hd",
+        demotePrimaryIds: ["cmrxpp6s807sbivheqfw0494s"],
+      },
     }),
     keepSeparate("18-puget-energy-and-pse", {
       candidateIds: [
@@ -252,6 +303,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpjjen0137ivheavgfck2x",
       retiredIds: ["cmrxpjje30136ivheq0equtbk"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxprtll0bnkivheey40twgq",
+        demotePrimaryIds: ["cmrxprthz0bneivhe9jaqhrnj"],
+      },
       explicitRelationDeleteIds: deletes({
         milestones: [
           "cmrxpm5ki04iuivhez5wfy037",
@@ -267,6 +322,10 @@ export const REVIEWED_LIVE_COMPANY_DECISION_SPECS:
       ],
       canonicalId: "cmrxpjlqb016uivhebyrmz01k",
       retiredIds: ["cmrxpjibj011kivheeiracbrz"],
+      citationPrimaryResolution: {
+        keepPrimaryId: "cmrxpsdkb0chjivheii29pm3d",
+        demotePrimaryIds: ["cmrxprlk30bbjivhe3q3radua"],
+      },
     }),
     keepSeparate("21-medcraft-and-montecito-portfolios", {
       candidateIds: [

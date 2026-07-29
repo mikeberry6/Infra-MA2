@@ -22,10 +22,14 @@ cleanup; branch reconciliation is a separate data-migration project.
 - Approval file:
   `audits/approvals/company-canonical-cleanup-live-2026-07-29.json`
 - SHA-256:
-  `c01e449e88aee4f700c280efb710576f1c4580a51c6666d6c6c13bbbabe8148f`
+  `dcad044c6d9e94cdc6e0e2938c6e2aacc2787c8b79b0ae814901d4cbe0505010`
 - Decision set: `vercel-live-2026-07-29`
 - Reviewed scope: all 17 detected duplicate clusters
 - Outcomes: 14 merges and three keep-separate normalizations
+- Each merge explicitly keeps the reviewed canonical primary citation and
+  demotes the retiring row's primary citation before moving it. This preserves
+  the live branch's one-primary-citation-per-company constraint without
+  deleting valid evidence.
 
 Never edit the approval in place. Any candidate or relation change makes the
 snapshot stale and requires a new dated approval.

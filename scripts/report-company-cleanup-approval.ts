@@ -86,6 +86,7 @@ async function main(): Promise<void> {
             canonicalId: spec.canonicalId,
             retiredIds: spec.retiredIds,
             canonicalUpdates: spec.canonicalUpdates,
+            citationPrimaryResolution: spec.citationPrimaryResolution,
             explicitRelationDeleteIds: spec.explicitRelationDeleteIds,
             rationale: spec.rationale,
             sources: spec.sources,

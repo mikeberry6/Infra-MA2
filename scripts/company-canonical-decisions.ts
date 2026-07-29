@@ -1,4 +1,5 @@
 import type {
+  CitationPrimaryResolution,
   CompanyScalarUpdates,
   ExplicitRelationDeletes,
 } from "../src/modules/companies/canonical-cleanup";
@@ -10,6 +11,7 @@ export interface ReviewedMergeSpec {
   canonicalId: string;
   retiredIds: string[];
   canonicalUpdates: CompanyScalarUpdates;
+  citationPrimaryResolution?: CitationPrimaryResolution;
   explicitRelationDeleteIds: ExplicitRelationDeletes;
   rationale: string;
   sources: string[];
