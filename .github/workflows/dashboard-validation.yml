@@ -85,8 +85,13 @@ jobs:
           set -o pipefail
           npx tsx scripts/verify-auth-throttle-schema.ts \
             --output=tmp/dashboard-validation/auth-throttle-schema-preflight.json
+          npx tsx scripts/verify-import-preview-schema.ts \
+            --output=tmp/dashboard-validation/import-preview-schema-preflight.json
           for pass in initial repeat; do
             npx prisma migrate deploy 2>&1 | tee "tmp/dashboard-validation/migrate-deploy-${pass}.log"
+            npx tsx scripts/verify-import-preview-schema.ts \
+              --require-state=final \
+              --output="tmp/dashboard-validation/import-preview-schema-final-${pass}.json"
             npx tsx scripts/quarantine-dashboard-methodology-history.ts 2>&1 | tee "tmp/dashboard-validation/methodology-cutover-${pass}.log"
             npx tsx scripts/backfill-dashboard-signal-approvals.ts 2>&1 | tee "tmp/dashboard-validation/signal-backfill-${pass}.log"
           done

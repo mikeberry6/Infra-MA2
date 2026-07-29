@@ -185,7 +185,12 @@ jobs:
           mkdir -p tmp/schema-stage
           npx tsx scripts/verify-auth-throttle-schema.ts \
             --output=tmp/schema-stage/auth-throttle-schema-preflight.json
+          npx tsx scripts/verify-import-preview-schema.ts \
+            --output=tmp/schema-stage/import-preview-schema-preflight.json
           npx prisma migrate deploy 2>&1 | tee tmp/schema-stage/migrate-deploy.log
+          npx tsx scripts/verify-import-preview-schema.ts \
+            --require-state=final \
+            --output=tmp/schema-stage/import-preview-schema-final.json
           npx tsx scripts/quarantine-dashboard-methodology-history.ts 2>&1 | tee tmp/schema-stage/dashboard-methodology-cutover.log
           npx tsx scripts/backfill-dashboard-signal-approvals.ts 2>&1 | tee tmp/schema-stage/dashboard-signal-backfill.log
           npx prisma migrate status 2>&1 | tee tmp/schema-stage/migrate-status.log

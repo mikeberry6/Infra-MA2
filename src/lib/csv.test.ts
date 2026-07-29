@@ -43,6 +43,20 @@ describe("toCsv", () => {
     const out = toCsv([{ a: 1, b: 2, c: 3 }], ["c", "a"]);
     expect(out).toBe("c,a\n3,1\n");
   });
+
+  it.each([
+    ["equals", "=HYPERLINK(\"https://example.com\")"],
+    ["plus", "+SUM(1,2)"],
+    ["minus", "-2+3"],
+    ["at", "@SUM(1,2)"],
+    ["leading spaces", "  =1+1"],
+    ["leading tab", "\t+1+1"],
+    ["leading newline", "\n@SUM(1,2)"],
+    ["leading carriage return", "\r-1+1"],
+  ])("neutralizes spreadsheet formulas beginning with %s", (_label, value) => {
+    const parsed = parseCsv(toCsv([{ value }]));
+    expect(parsed).toEqual([{ value: `'${value}` }]);
+  });
 });
 
 describe("parseCsv", () => {

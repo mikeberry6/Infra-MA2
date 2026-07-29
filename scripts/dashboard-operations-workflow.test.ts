@@ -79,6 +79,22 @@ describe("focused dashboard operations workflows", () => {
     expect(source).toContain("verify-auth-throttle-schema.ts");
     expect(source.indexOf("verify-auth-throttle-schema.ts"))
       .toBeLessThan(source.indexOf("prisma migrate deploy"));
+    const importPreviewPreflight = source.indexOf(
+      "verify-import-preview-schema.ts",
+    );
+    const migration = source.indexOf("prisma migrate deploy");
+    const importPreviewFinal = source.indexOf(
+      "verify-import-preview-schema.ts",
+      importPreviewPreflight + 1,
+    );
+    expect(importPreviewPreflight).toBeGreaterThan(
+      source.indexOf("verify-auth-throttle-schema.ts"),
+    );
+    expect(importPreviewPreflight).toBeLessThan(migration);
+    expect(importPreviewFinal).toBeGreaterThan(migration);
+    expect(source.slice(importPreviewFinal)).toContain("--require-state=final");
+    expect(source).toContain("import-preview-schema-preflight.json");
+    expect(source).toContain("import-preview-schema-final.json");
     expect(source).not.toContain("source-coverage-report");
     expect(source).not.toContain("company-merge");
     expect(source).not.toContain("citation");
@@ -91,6 +107,22 @@ describe("focused dashboard operations workflows", () => {
     expect(preflight).toBeGreaterThan(source.indexOf("assert-database-target.ts"));
     expect(preflight).toBeLessThan(deploy);
     expect(source).toContain("auth-throttle-schema-preflight.json");
+  });
+
+  it("proves ImportPreview before and after each validation migration pass", () => {
+    const source = workflow("dashboard-validation.yml");
+    const preflight = source.indexOf("verify-import-preview-schema.ts");
+    const deploy = source.indexOf("prisma migrate deploy");
+    const finalVerification = source.indexOf(
+      "verify-import-preview-schema.ts",
+      preflight + 1,
+    );
+    expect(preflight).toBeGreaterThan(source.indexOf("assert-database-target.ts"));
+    expect(preflight).toBeLessThan(deploy);
+    expect(finalVerification).toBeGreaterThan(deploy);
+    expect(source.slice(finalVerification)).toContain("--require-state=final");
+    expect(source).toContain("import-preview-schema-preflight.json");
+    expect(source).toContain("import-preview-schema-final-${pass}.json");
   });
 
   it("promotes and rolls back only verified immutable deployments", () => {

@@ -36,6 +36,8 @@
     "db:migrate": "npx prisma migrate dev",
     "db:studio": "npx prisma studio",
     "admin:create": "npx tsx scripts/create-admin.ts",
+    "imports:cleanup": "npx tsx scripts/cleanup-import-previews.ts",
+    "imports:verify-atomicity": "npx tsx scripts/verify-import-atomicity.ts",
     "companies:cleanup:report": "npx tsx scripts/report-company-cleanup-approval.ts",
     "companies:cleanup": "npx tsx scripts/merge-duplicate-companies.ts"
   },

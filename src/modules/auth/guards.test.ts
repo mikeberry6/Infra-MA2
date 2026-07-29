@@ -19,6 +19,7 @@ import {
   hasAnyRole,
   isAuthorizationError,
   requireAdmin,
+  requireAdminIdentity,
 } from "@/modules/auth/guards";
 
 describe("authentication role guards", () => {
@@ -60,6 +61,10 @@ describe("authentication role guards", () => {
       role: "ADMIN",
     });
     await expect(requireAdmin()).resolves.toBeUndefined();
+    await expect(requireAdminIdentity()).resolves.toEqual({
+      id: "admin-1",
+      role: "ADMIN",
+    });
   });
 
   it("keeps exports limited to ADMIN and ANALYST", async () => {

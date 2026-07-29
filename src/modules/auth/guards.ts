@@ -35,6 +35,15 @@ export async function requireAdmin(): Promise<void> {
   if (role !== "ADMIN") throw new AuthorizationError();
 }
 
+export async function requireAdminIdentity(): Promise<{
+  id: string;
+  role: "ADMIN";
+}> {
+  const identity = await getSessionIdentity();
+  if (!identity || identity.role !== "ADMIN") throw new AuthorizationError();
+  return { id: identity.id, role: "ADMIN" };
+}
+
 export async function hasAnyRole(roles: string[]): Promise<boolean> {
   const role = await getSessionRole();
   return !!role && roles.includes(role);

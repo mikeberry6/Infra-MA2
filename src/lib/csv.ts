@@ -17,10 +17,14 @@ function escapeField(value: unknown): string {
   }
 
   const str = String(value);
-  if (str.includes(",") || str.includes('"') || str.includes("\n") || str.includes("\r")) {
-    return `"${str.replace(/"/g, '""')}"`;
+  // Spreadsheet applications may evaluate cells beginning with these
+  // characters as formulas, even after leading spaces or control whitespace.
+  // Prefixing an apostrophe keeps exported user-authored content inert.
+  const safe = /^[\t\n\r ]*[=+\-@]/.test(str) ? `'${str}` : str;
+  if (safe.includes(",") || safe.includes('"') || safe.includes("\n") || safe.includes("\r")) {
+    return `"${safe.replace(/"/g, '""')}"`;
   }
-  return str;
+  return safe;
 }
 
 /**
