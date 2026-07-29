@@ -62,4 +62,24 @@ describe("LoginForm NextAuth endpoint", () => {
     });
     expect(navigate).toHaveBeenCalledWith("/Infra-MA2/admin?from=login");
   });
+
+  it("recovers from a login network failure with the generic denial", async () => {
+    mocks.signIn.mockRejectedValue(
+      new Error("private adapter or network details"),
+    );
+    const { LoginForm } = await import("./LoginForm");
+
+    render(<LoginForm callbackUrl="/Infra-MA2/admin" />);
+    await userEvent.type(
+      screen.getByRole("textbox", { name: "Email address" }),
+      "admin@example.com",
+    );
+    await userEvent.type(screen.getByLabelText("Password"), "strong-test-password");
+    await userEvent.click(screen.getByRole("button", { name: "Sign In" }));
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "The email or password was not recognized.",
+    );
+    expect(screen.getByRole("button", { name: "Sign In" })).toBeEnabled();
+  });
 });

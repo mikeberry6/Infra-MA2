@@ -41,21 +41,25 @@ function LoginFields({
     setError("");
     setLoading(true);
 
-    const result = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-      callbackUrl,
-    });
+    try {
+      const result = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+        callbackUrl,
+      });
 
-    setLoading(false);
+      if (result?.error) {
+        setError("The email or password was not recognized.");
+        return;
+      }
 
-    if (result?.error) {
+      navigate(result?.url ?? callbackUrl);
+    } catch {
       setError("The email or password was not recognized.");
-      return;
+    } finally {
+      setLoading(false);
     }
-
-    navigate(result?.url ?? callbackUrl);
   }
 
   return (

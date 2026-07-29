@@ -1,5 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
+import { hasUsableSignedAuthSnapshot } from "@/modules/auth/session";
+
+function applyPrivilegedNoStore(response: NextResponse): NextResponse {
+  response.headers.set("Cache-Control", "private, no-store");
+  response.headers.set("Pragma", "no-cache");
+  return response;
+}
 
 function requestPathWithBasePath(request: NextRequest): string {
   const basePath = request.nextUrl.basePath || "";
@@ -23,28 +30,49 @@ export async function middleware(request: NextRequest) {
   const nextAuthSecret = process.env.NEXTAUTH_SECRET;
   if (!nextAuthSecret) {
     console.error("NEXTAUTH_SECRET is not configured");
-    return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+    return applyPrivilegedNoStore(
+      NextResponse.json({ error: "Server misconfigured" }, { status: 500 }),
+    );
   }
 
-  const token = await getToken({ req: request, secret: nextAuthSecret });
-  const role = (token?.role as string | undefined) ?? null;
+  let token: Awaited<ReturnType<typeof getToken>> = null;
+  try {
+    token = await getToken({ req: request, secret: nextAuthSecret });
+  } catch {
+    // A malformed or undecodable cookie is unauthenticated. Never let token
+    // parser details reach the response.
+    console.error(JSON.stringify({
+      task: "authentication",
+      operation: "decode_privileged_session",
+      status: 401,
+      errorClassification: "invalid_session",
+    }));
+  }
+  // Edge middleware performs a fast signed-snapshot check. The admin layout,
+  // API handlers, and server actions perform the authoritative current-User
+  // database check before reading or mutating privileged data.
+  const role = hasUsableSignedAuthSnapshot(token) ? token.role : null;
 
   if (pathname.startsWith("/admin") && role !== "ADMIN") {
     const loginUrl = request.nextUrl.clone();
     loginUrl.pathname = "/login";
     loginUrl.searchParams.set("callbackUrl", requestPathWithBasePath(request));
-    return NextResponse.redirect(loginUrl);
+    return applyPrivilegedNoStore(NextResponse.redirect(loginUrl));
   }
 
   if (pathname.startsWith("/api/imports") && role !== "ADMIN") {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    return applyPrivilegedNoStore(
+      NextResponse.json({ error: "Forbidden" }, { status: 403 }),
+    );
   }
 
   if (pathname.startsWith("/api/exports") && role !== "ADMIN" && role !== "ANALYST") {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    return applyPrivilegedNoStore(
+      NextResponse.json({ error: "Forbidden" }, { status: 403 }),
+    );
   }
 
-  return NextResponse.next();
+  return applyPrivilegedNoStore(NextResponse.next());
 }
 
 export const config = {
