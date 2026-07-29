@@ -246,9 +246,19 @@ export function dedupeExactPortCoSources<T extends SourceLike>(sources: T[]): {
   const removed: Array<{ source: T; reason: string }> = [];
 
   for (const source of sources) {
-    const key = `${source.url.trim()}|${(source.label || "").trim().toLowerCase()}`;
+    const key = [
+      source.url.trim(),
+      (source.label || "").trim().toLowerCase(),
+      source.type || "",
+      source.purpose || "",
+      (source.evidenceLabel || "").trim().toLowerCase(),
+    ].join("|");
     if (seen.has(key)) {
-      removed.push({ source, reason: "Exact duplicate label and URL for the same portfolio company." });
+      removed.push({
+        source,
+        reason:
+          "Exact duplicate source metadata for the same portfolio company.",
+      });
       continue;
     }
     seen.add(key);
