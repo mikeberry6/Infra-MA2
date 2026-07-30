@@ -72,6 +72,7 @@ export interface PortCoOwner {
   exitYear?: number;
   stake?: string;
   status: PortCoStatus;
+  transactionState?: "CLOSED_ACTIVE" | "SIGNED_PENDING_EXIT" | "REALIZED";
 }
 
 export interface PortCo {

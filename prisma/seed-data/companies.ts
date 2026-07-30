@@ -1,4 +1,5 @@
 import type { PortCo } from "./portco-types";
+import { applyApprovedPortCoAfterImages } from "./approved-portco-after-images.ts";
 import { applyJuly2026PortfolioDealUpdates } from "./july-2026-portfolio-deal-updates.ts";
 import { appendJuly2026NewNorthAmericaCompanies } from "./july-2026-new-north-america-companies.ts";
 
@@ -84511,6 +84512,8 @@ const baseCompanies: PortCo[] = [
   },
 ];
 
-export const companies: PortCo[] = appendJuly2026NewNorthAmericaCompanies(
-  applyJuly2026PortfolioDealUpdates(baseCompanies),
+export const companies: PortCo[] = applyApprovedPortCoAfterImages(
+  appendJuly2026NewNorthAmericaCompanies(
+    applyJuly2026PortfolioDealUpdates(baseCompanies),
+  ),
 );
