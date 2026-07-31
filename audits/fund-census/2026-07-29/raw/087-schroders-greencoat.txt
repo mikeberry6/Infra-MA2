@@ -1,0 +1,97 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Schroders Greencoat",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Schroders Greencoat",
+"Schroders Greencoat LLP",
+"Greencoat Capital",
+"Greencoat Capital LLP"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope classification",
+"issue": "The supplied repository snapshot marks the requested manager as unknown (knownManager=false, canonicalManager=null) despite the name appearing in the supplied manager universe list, creating a scope inconsistency for census inclusion.",
+"sourceUrls": [],
+"recommendedResolution": "Resolve the manager’s status in the FUND_MANIFEST (set a canonical manager or confirm exclusion) before performing fund-level reconciliation."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 0,
+"searchQueriesRun": 0,
+"notes": [
+"Per scope rules, research stopped after documenting manager identity ambiguity because knownManager=false in the supplied snapshot."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Schroders Greencoat — North American direct infrastructure fund census
+Conclusion
+No funds are included. The supplied repository snapshot explicitly classifies the requested manager as unknown (knownManager=false), which triggers the scope rule to halt fund-level census work and return OUT_OF_SCOPE_UNKNOWN_MANAGER. As a result, no direct-equity infrastructure funds or programs are enumerated or proposed.
+This determination is based directly on the provided scope contract and snapshot Pasted text.
+Included funds
+No qualifying funds. Manager excluded from census due to scope classification.
+Repository reconciliation
+The repository snapshot contains no fund rows for this manager, and none are proposed or matched due to the out-of-scope status.
+Exclusions and unresolved issues
+
+
+Manager scope inconsistency: The snapshot flags the manager as unknown while the supplied manager universe list includes “Schroders Greencoat.” This inconsistency prevents reconciliation and fund inclusion.
+
+
+No fund-level exclusions were evaluated because the census did not proceed past manager scope validation.
+
+
+Completeness
+
+
+Fund-page coverage: not performed due to scope halt.
+
+
+Fundraising / close sources: not reviewed.
+
+
+Holding attribution: not reviewed.
+
+
+Manager aliases: reviewed at a high level to confirm identity ambiguity.
+
+
+Parallel / feeder vehicles: not reviewed.
+
+
+Inaccessible sources: none; research intentionally curtailed per scope rules.
+
+
+</fund_census_report>

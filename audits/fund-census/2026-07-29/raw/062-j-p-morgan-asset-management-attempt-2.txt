@@ -1,0 +1,276 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "J.P. Morgan Asset Management",
+"canonicalManager": "J.P. Morgan Asset Management",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"J.P. Morgan Investment Management Inc.",
+"JPMorgan Asset Management"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Infrastructure Investments Fund (IIF)",
+"aliases": [
+"J.P. Morgan Infrastructure Investments Fund"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Private investment vehicle investing directly in infrastructure assets including utilities, power, transportation and midstream assets",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund materials state investments are predominantly in the United States and OECD countries",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-104",
+"managerName": "J.P. Morgan Asset Management",
+"fundName": "Infrastructure Investments Fund (IIF)",
+"ticker": null,
+"investmentStrategy": "Open-ended infrastructure equity strategy targeting core/core-plus assets with stable contracted or regulated cash flows across utilities, power, transportation and midstream",
+"size": "$41.0B",
+"sizeUsdMm": 41000,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Evergreen",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Midstream",
+"Transportation"
+],
+"regions": [
+"North America",
+"Global"
+],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1004155/000119312522016833/d300207ddefm14a.htm"
+],
+"strategyUrl": "https://am.jpmorgan.com/us/en/asset-management/adv/funds/alternatives/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1004155/000119312522016833/d300207ddefm14a.htm",
+"title": "South Jersey Industries Proxy Statement (Acquisition by IIF)",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2022-01-19",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "IIF mandate and strategy",
+"evidenceSummary": "Describes Infrastructure Investments Fund as a private investment vehicle investing in critical infrastructure assets predominantly in the United States and OECD countries across utilities, power, transportation and midstream sectors.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"regions",
+"sectors"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-104",
+"managerName": "J.P. Morgan Asset Management",
+"fundName": "Infrastructure Investments Fund (IIF)"
+}
+],
+"changedFields": [
+"regions",
+"sourceUrls"
+],
+"repoDispositionRationale": "Repository lists region as Global only; primary evidence supports explicit North American mandate and updated source",
+"confidence": "HIGH"
+},
+{
+"fundName": "Global Transport Income Fund (GTIF)",
+"aliases": [
+"J.P. Morgan Global Transport Income Fund"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Private infrastructure strategy investing directly in transportation assets including maritime, aviation and rail equipment",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Government decision confirms GTIF ownership of U.S.-based maritime company Bold Ocean",
+"currentHoldingName": "Bold Ocean",
+"currentHoldingUrl": "https://www.sba.gov/document/decision-siz-6360-federated-maritime-llc"
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "J.P. Morgan Asset Management",
+"fundName": "Global Transport Income Fund (GTIF)",
+"ticker": null,
+"investmentStrategy": "Global transportation infrastructure equity strategy targeting income-producing assets across maritime, aviation and rail",
+"size": "Undisclosed",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Undisclosed",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Transportation"
+],
+"regions": [
+"Global",
+"North America"
+],
+"sourceUrls": [
+"https://www.sba.gov/document/decision-siz-6360-federated-maritime-llc"
+],
+"strategyUrl": "https://am.jpmorgan.com/us/en/asset-management/adv/funds/alternatives/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://www.sba.gov/document/decision-siz-6360-federated-maritime-llc",
+"title": "SBA Size Appeal of Federated Maritime, LLC (SIZ-6360)",
+"publisher": "U.S. Small Business Administration",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-07-11",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "GTIF current U.S. holding",
+"evidenceSummary": "Confirms Global Transport Income Fund ownership of Bold Ocean, a U.S.-based maritime company, establishing current North American deployment.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"regions",
+"sectors",
+"fundStatus"
+]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "No matching repository record exists for GTIF despite verified qualifying North American holding",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Infrastructure Investments Fund Private Investors",
+"reasonCode": "RETAIL_ACCESS_ONLY",
+"rationale": "Private investors vehicle represents an access/feeder structure into IIF rather than a distinct commercial infrastructure strategy",
+"sourceUrls": [
+"https://www.infrastructureinvestor.com/jpmorgan-closes-infrastructure-investments-fund-private-investors-at-3-2bn/"
+]
+},
+{
+"fundName": "J-Infra – An IIF Access Fund",
+"reasonCode": "RETAIL_ACCESS_ONLY",
+"rationale": "Form D filing indicates an access vehicle feeding into IIF rather than a standalone strategy",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/0002035003/000203500325000001/xslFormDX01/primary_doc.xml"
+]
+},
+{
+"fundName": "Global Maritime Investment Fund (GMIF)",
+"reasonCode": "FULLY_REALIZED_OR_DISSOLVED",
+"rationale": "Legacy maritime fund identified in historical materials with no evidence of current holdings or active lifecycle",
+"sourceUrls": [
+"https://pompano.solutions/wp-content/uploads/2021/12/JPMorgan-Infrastructure-Investments-Fund-Review.pdf"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "GTIF fund size and vintage",
+"issue": "No primary source confirms current fund size, vintage, or capital base for GTIF",
+"sourceUrls": [
+"https://pompano.solutions/wp-content/uploads/2021/12/JPMorgan-Infrastructure-Investments-Fund-Review.pdf"
+],
+"recommendedResolution": "Obtain current GTIF investor materials or J.P. Morgan disclosures confirming capital size and lifecycle details"
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 4,
+"searchQueriesRun": 12,
+"notes": [
+"IIF confirmed as the flagship evergreen strategy.",
+"GTIF included through a verified current U.S. holding.",
+"GTIF size and vintage remain undisclosed rather than inferred."
+]
+},
+"summary": {
+"includedFunds": 2,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 1,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 3,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+J.P. Morgan Asset Management — North American direct infrastructure fund census
+Conclusion
+J.P. Morgan Asset Management has two qualifying current direct-equity infrastructure vehicles with North American exposure: the evergreen-active Infrastructure Investments Fund (IIF), which has an explicit United States and OECD mandate, and the closed-active Global Transport Income Fund (GTIF), which qualifies through its verified current ownership of the U.S.-based maritime company Bold Ocean. The repository contains IIF but omits GTIF.
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceInfrastructure Investments Fund (IIF)Named fundEVERGREEN_ACTIVEExplicit U.S. mandateRepository amount retained without a classified amount basisPROPOSED_CORRECTIONhttps://www.sec.gov/Archives/edgar/data/1004155/000119312522016833/d300207ddefm14a.htmGlobal Transport Income Fund (GTIF)Named fundCLOSED_ACTIVEVerified current U.S. holding: Bold OceanUndisclosedPROPOSED_NEWhttps://www.sba.gov/document/decision-siz-6360-federated-maritime-llc
+Repository reconciliation
+
+
+FUND-104 — Infrastructure Investments Fund (IIF): Reconciled exactly once through a complete matchedRepoFunds identity object. The row is a PROPOSED_CORRECTION because the repository lists only a global region and uses a different source URL, while the opened SEC evidence supports the fund's United States exposure.
+
+
+Global Transport Income Fund (GTIF): Classified as PROPOSED_NEW because no repository row matches the qualifying vehicle.
+
+
+No repository rows remain unmatched, so repoOnlyRecords is empty.
+
+
+Exclusions and unresolved issues
+Infrastructure Investments Fund Private Investors and J-Infra – An IIF Access Fund are excluded as access or feeder structures rather than distinct commercial infrastructure strategies. Global Maritime Investment Fund is excluded as a legacy vehicle without evidence of a current active lifecycle or holding.
+GTIF's fund size and vintage remain undisclosed. Those fields are reported as "Undisclosed" rather than populated through inference, and the evidence gap remains recorded in unresolvedConflicts.
+Completeness
+The completed review covered official and regulatory fund materials, fundraising and close sources, current-holding attribution, manager aliases, and feeder or parallel-vehicle treatment. Four sources were opened across twelve search queries. The repository snapshot and response contract are contained in the supplied file. Pasted text
+</fund_census_report>

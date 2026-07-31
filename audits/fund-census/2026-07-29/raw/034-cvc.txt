@@ -1,0 +1,1408 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "CVC",
+"canonicalManager": "CVC DIF",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"CVC",
+"CVC DIF",
+"DIF Capital Partners"
+],
+"overlappingSuppliedManagers": [
+"DIF"
+],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "DIF CIF II",
+"aliases": [
+"DIF Core Infrastructure Fund II",
+"CIF II"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Named closed-end direct-equity infrastructure growth fund in the predecessor DIF Core Infrastructure Fund series, investing in scalable mid-market infrastructure companies and platforms.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official CVC DIF materials place the CIF or current Value-Add strategy in Europe and North America. The official portfolio review also attributed the current Indiana fiber investment Joink, LLC to DIF CIF II.",
+"currentHoldingName": "Joink, LLC",
+"currentHoldingUrl": "https://www.cvcdif.com/portfolio"
+},
+"snapshot": {
+"legacyId": "FUND-059A",
+"managerName": "CVC DIF",
+"fundName": "DIF CIF II",
+"ticker": null,
+"investmentStrategy": "Core-plus infrastructure growth vehicle focused on scalable mid-market companies, with CVC DIF history materials identifying the final close at €1.0B.",
+"size": "€1.0B final close",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "1000000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2026-07-29",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2021",
+"strategies": [
+"Value-Add"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Digital",
+"Midstream",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://www.cvcdif.com/about-us",
+"https://www.cvcdif.com/",
+"https://www.cvcdif.com/portfolio"
+],
+"strategyUrl": "https://www.cvcdif.com/"
+},
+"evidence": [
+{
+"url": "https://www.cvcdif.com/about-us",
+"title": "About us",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Official fund-series history and final-close amount",
+"evidenceSummary": "The current official CVC DIF history identifies DIF CIF II as a named predecessor-platform fund and reports its €1.0 billion final close. The source does not state a USD equivalent or an explicit FX rate and date.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"structure",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/",
+"title": "CVC DIF infrastructure investment strategies",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Value-Add strategy and geographic mandate",
+"evidenceSummary": "The official strategy materials describe the CIF successor or Value-Add strategy as direct infrastructure equity focused on growth-oriented mid-market platforms in Europe and North America.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"investmentStrategy",
+"strategies",
+"sectors",
+"regions",
+"strategyUrl",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/portfolio",
+"title": "Portfolio",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current Joink fund attribution",
+"evidenceSummary": "The official current portfolio materials attribute Joink, LLC, an Indiana fiber infrastructure company, to DIF CIF II, corroborating both current lifecycle and North American deployment.",
+"supports": [
+"FUND_IDENTITY",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-059A",
+"managerName": "CVC DIF",
+"fundName": "DIF CIF II"
+}
+],
+"changedFields": [
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+],
+"repoDispositionRationale": "The commercial vehicle matches FUND-059A. The repository amount is correctly directional but lacks final-close semantics and native-currency fields, and its USD value is not supported by a source-stated equivalent or an explicit FX rate and date. Fund-specific strategy and current-holding evidence were added.",
+"confidence": "HIGH"
+},
+{
+"fundName": "DIF CIF III",
+"aliases": [
+"DIF Core Infrastructure Fund III",
+"CIF III"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Named closed-end direct-equity infrastructure value-add fund focused on growth platforms and buy-and-build investments in infrastructure-related mid-market companies.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "The official final-close announcement describes the named fund's infrastructure growth strategy and regional investment scope, including North America. Current official portfolio materials attribute Tonaquint Data Centers in the United States to DIF CIF III.",
+"currentHoldingName": "Tonaquint Data Centers",
+"currentHoldingUrl": "https://www.cvcdif.com/portfolio"
+},
+"snapshot": {
+"legacyId": "FUND-059",
+"managerName": "CVC DIF",
+"fundName": "DIF CIF III",
+"ticker": null,
+"investmentStrategy": "Legacy-CIF / current Value-Add growth infrastructure fund focused on buy-and-build platforms, especially in digital infrastructure, alongside transport and other growth infrastructure niches.",
+"size": "€1.6B final close",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "1600000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2026-07-29",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2022",
+"strategies": [
+"Value-Add"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Digital",
+"Midstream",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+"https://www.cvcdif.com/",
+"https://www.cvcdif.com/portfolio"
+],
+"strategyUrl": "https://www.cvcdif.com/"
+},
+"evidence": [
+{
+"url": "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+"title": "DIF Capital Partners raises EUR 6.8 billion for its latest infrastructure funds",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "CIF III final close and mandate",
+"evidenceSummary": "The official announcement identifies DIF CIF III as a distinct direct-equity infrastructure fund, reports a €1.6 billion final close, and describes its value-add infrastructure strategy and geographic mandate. The aggregate €6.8 billion figure also includes separately disclosed co-investment capital and is not used as CIF III fund size.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"strategies",
+"structure",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls",
+"strategyUrl"
+]
+},
+{
+"url": "https://www.cvcdif.com/portfolio",
+"title": "Portfolio",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current Tonaquint fund attribution",
+"evidenceSummary": "The official portfolio materials attribute the current U.S. digital-infrastructure investment Tonaquint Data Centers to DIF CIF III.",
+"supports": [
+"FUND_IDENTITY",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-059",
+"managerName": "CVC DIF",
+"fundName": "DIF CIF III"
+}
+],
+"changedFields": [
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+],
+"repoDispositionRationale": "The commercial vehicle matches FUND-059. The official source supports a €1.6 billion final close, while the repository omits amount semantics and native-currency fields and contains an unsupported converted USD amount. Current fund-attributed U.S. deployment evidence was also added.",
+"confidence": "HIGH"
+},
+{
+"fundName": "DIF Infrastructure IV",
+"aliases": [
+"DIF IV"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Named closed-end direct-equity infrastructure fund in the traditional DIF series, focused on assets and project companies supported by long-term contracted, concession-based, or regulated cash flows.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official CVC DIF history and strategy materials identify DIF Infrastructure IV as part of the direct infrastructure series whose mandate included North America. The completed official portfolio review confirmed that the vehicle had not been reduced to a historical or dissolved fund entry.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-059B",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure IV",
+"ticker": null,
+"investmentStrategy": "Traditional DIF infrastructure strategy targeting stable long-term contracted or regulated assets, including PPP, concessions, utilities and renewable energy projects.",
+"size": "€1.15B final close",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "1150000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2026-07-29",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2015",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://www.cvcdif.com/about-us",
+"https://www.cvcdif.com/",
+"https://www.cvcdif.com/portfolio"
+],
+"strategyUrl": "https://www.cvcdif.com/"
+},
+"evidence": [
+{
+"url": "https://www.cvcdif.com/about-us",
+"title": "About us",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Infrastructure IV identity and final-close history",
+"evidenceSummary": "The current official platform history identifies DIF Infrastructure IV as a named traditional DIF infrastructure fund and reports its €1.15 billion final close. No source-stated USD equivalent or explicit FX rate and date was preserved.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"structure",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/",
+"title": "CVC DIF infrastructure investment strategies",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Traditional Infrastructure strategy mandate",
+"evidenceSummary": "The official strategy materials describe the traditional Infrastructure series as direct equity in contracted, regulated, concession, utility, transport, social, and energy-transition infrastructure, with North America included in the investment region.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"investmentStrategy",
+"strategies",
+"sectors",
+"regions",
+"strategyUrl",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/portfolio",
+"title": "Portfolio",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current portfolio-status check",
+"evidenceSummary": "The completed official portfolio review retained active investments attributed to the named fund, supporting treatment as closed but active rather than fully realized or dissolved.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-059B",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure IV"
+}
+],
+"changedFields": [
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+],
+"repoDispositionRationale": "The commercial vehicle matches FUND-059B. The repository amount requires classification as a final close, native EUR fields, a dated amount record, and removal of the unsupported converted USD amount. Current portfolio evidence was added to support the older fund's active lifecycle.",
+"confidence": "HIGH"
+},
+{
+"fundName": "DIF Infrastructure V",
+"aliases": [
+"DIF V"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Named closed-end direct-equity infrastructure fund investing in operational and development-stage infrastructure supported by contracted, concession-based, or regulated revenue.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official fund-series materials identify North America as part of the traditional DIF Infrastructure investment mandate, and the completed current-portfolio review confirmed that DIF Infrastructure V remained an active holding vehicle.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-059C",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure V",
+"ticker": null,
+"investmentStrategy": "Traditional DIF infrastructure strategy targeting contracted and concession-based infrastructure projects and companies across energy, utilities, transport and social infrastructure.",
+"size": "€1.9B final close",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "1900000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2026-07-29",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2018",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://www.cvcdif.com/about-us",
+"https://www.cvcdif.com/",
+"https://www.cvcdif.com/portfolio"
+],
+"strategyUrl": "https://www.cvcdif.com/"
+},
+"evidence": [
+{
+"url": "https://www.cvcdif.com/about-us",
+"title": "About us",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Infrastructure V identity and final-close history",
+"evidenceSummary": "The official CVC DIF history identifies DIF Infrastructure V and reports its €1.9 billion final close. The reviewed sources do not supply a USD equivalent or an explicit FX rate and date.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"structure",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/",
+"title": "CVC DIF infrastructure investment strategies",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Traditional Infrastructure strategy and region",
+"evidenceSummary": "The official strategy materials support classification of the traditional Infrastructure series as direct infrastructure equity with a North American mandate.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"investmentStrategy",
+"strategies",
+"sectors",
+"regions",
+"strategyUrl",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/portfolio",
+"title": "Portfolio",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current portfolio-status check",
+"evidenceSummary": "The official portfolio review retained active investments attributed to DIF Infrastructure V, supporting a closed-active lifecycle as of the census date.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-059C",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure V"
+}
+],
+"changedFields": [
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+],
+"repoDispositionRationale": "The commercial vehicle matches FUND-059C. The fund size is supported as a €1.9 billion final close, but the repository lacks amount semantics, native-currency fields, and a size date and includes an unsupported USD conversion. Current-lifecycle evidence was added.",
+"confidence": "HIGH"
+},
+{
+"fundName": "DIF Infrastructure VI",
+"aliases": [
+"DIF VI"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Named closed-end direct-equity infrastructure fund focused on long-duration contracted or regulated infrastructure assets and companies across energy, utilities, transportation, and social infrastructure.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official strategy materials include North America in the traditional Infrastructure series mandate. Official current portfolio attribution to Kingfisher Wind in Oklahoma, as well as Bernhard, LLC, corroborates active U.S. deployment by DIF Infrastructure VI.",
+"currentHoldingName": "Kingfisher Wind",
+"currentHoldingUrl": "https://www.cvcdif.com/portfolio"
+},
+"snapshot": {
+"legacyId": "FUND-059D",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure VI",
+"ticker": null,
+"investmentStrategy": "Traditional DIF infrastructure strategy focused on long-term contracted or regulated income streams across PPP, concessions, utilities and renewable energy assets.",
+"size": "€3.0B final close",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "3000000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2026-07-29",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2020",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://www.cvcdif.com/about-us",
+"https://www.cvcdif.com/",
+"https://www.cvcdif.com/portfolio"
+],
+"strategyUrl": "https://www.cvcdif.com/"
+},
+"evidence": [
+{
+"url": "https://www.cvcdif.com/about-us",
+"title": "About us",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Infrastructure VI fund history and size",
+"evidenceSummary": "The current official history identifies DIF Infrastructure VI and reports its €3.0 billion final close. No source-stated USD equivalent or explicit FX rate and date was retained.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"structure",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/",
+"title": "CVC DIF infrastructure investment strategies",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Traditional Infrastructure strategy mandate",
+"evidenceSummary": "The official strategy materials support classification as core-plus direct infrastructure equity across contracted and regulated sectors, including North America.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"investmentStrategy",
+"strategies",
+"sectors",
+"regions",
+"strategyUrl",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/portfolio",
+"title": "Portfolio",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current U.S. holdings attributed to Infrastructure VI",
+"evidenceSummary": "The official portfolio review attributed current U.S. investments including Kingfisher Wind and Bernhard, LLC to DIF Infrastructure VI, confirming the fund remains active and has North American deployment.",
+"supports": [
+"FUND_IDENTITY",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-059D",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure VI"
+}
+],
+"changedFields": [
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+],
+"repoDispositionRationale": "The commercial vehicle matches FUND-059D. The repository size must be classified as a €3.0 billion final close with native EUR fields and a size date; the unsupported converted USD amount is removed. Current U.S. holdings provide additional lifecycle corroboration.",
+"confidence": "HIGH"
+},
+{
+"fundName": "DIF Infrastructure VII",
+"aliases": [
+"DIF VII"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Named closed-end core-plus direct-equity infrastructure fund targeting essential assets and businesses with contracted or regulated downside protection and operational value-creation potential.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "The official final-close announcement identifies North America within the named fund's investment mandate. Current official portfolio attribution also includes ASTP, a U.S. student-transportation platform, and U.S. regulated utility investments.",
+"currentHoldingName": "ASTP",
+"currentHoldingUrl": "https://www.cvcdif.com/portfolio"
+},
+"snapshot": {
+"legacyId": "FUND-060",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure VII",
+"ticker": null,
+"investmentStrategy": "Core-plus flagship targeting contracted, downside-protected essential infrastructure across CVC DIF's mid-market platform, with yield plus longer-term value creation.",
+"size": "€4.4B final close",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "4400000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2026-07-29",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2022",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+"https://www.cvcdif.com/",
+"https://www.cvcdif.com/portfolio"
+],
+"strategyUrl": "https://www.cvcdif.com/"
+},
+"evidence": [
+{
+"url": "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+"title": "DIF Capital Partners raises EUR 6.8 billion for its latest infrastructure funds",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Infrastructure VII final close and mandate",
+"evidenceSummary": "The official announcement identifies DIF Infrastructure VII as a distinct core-plus direct infrastructure fund, reports its €4.4 billion final close, and describes its regional investment mandate, including North America. The broader €6.8 billion announcement total includes other fund and co-investment capital and is not used as DIF VII size.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"strategies",
+"structure",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls",
+"strategyUrl"
+]
+},
+{
+"url": "https://www.cvcdif.com/portfolio",
+"title": "Portfolio",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current U.S. portfolio attribution",
+"evidenceSummary": "The official portfolio review attributed current North American investments including ASTP and the J.W. Water Holdings or Robson Utilities portfolio to DIF Infrastructure VII.",
+"supports": [
+"FUND_IDENTITY",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-060",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure VII"
+}
+],
+"changedFields": [
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+],
+"repoDispositionRationale": "The commercial vehicle matches FUND-060. Its supported fund size is the €4.4 billion final close, not the announcement's larger aggregate amount. Native-currency semantics and a size date are added, and the unsupported repository USD conversion is removed.",
+"confidence": "HIGH"
+},
+{
+"fundName": "DIF Infrastructure VIII",
+"aliases": [
+"DIF VIII"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "Named successor closed-end core-plus direct-equity infrastructure fund targeting diversified essential infrastructure investments with contracted or regulated cash flows.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund-specific Pennsylvania and New Jersey institutional materials explicitly identify Europe and North America as investment regions. Current portfolio attribution to SBA Canada additionally corroborates North American deployment.",
+"currentHoldingName": "SBA Canada",
+"currentHoldingUrl": "https://www.cvcdif.com/portfolio"
+},
+"snapshot": {
+"legacyId": "FUND-061",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure VIII",
+"ticker": null,
+"investmentStrategy": "Successor core-plus vehicle targeting €6B of commitments for a diversified portfolio of roughly 20 positions, with public LP materials emphasizing renewable energy, utilities and transport across Europe and North America.",
+"size": "€6.0B target",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "6000000000",
+"sizeBasis": "TARGET",
+"sizeAsOf": "2026-07-29",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2025",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Transportation"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf",
+"https://nj.gov/njbonds/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf",
+"https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+"https://www.cvcdif.com/portfolio"
+],
+"strategyUrl": "https://www.cvcdif.com/"
+},
+"evidence": [
+{
+"url": "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf",
+"title": "PSERB Resolution 2025-58 — DIF Infrastructure Fund VIII SCSp",
+"publisher": "Pennsylvania Public School Employees' Retirement System",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund VIII institutional underwriting",
+"evidenceSummary": "The fund-specific institutional record identifies DIF Infrastructure VIII, its core-plus direct infrastructure strategy, €6.0 billion target, closed-end structure, and Europe and North America mandate.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"strategies",
+"structure",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls",
+"strategyUrl"
+]
+},
+{
+"url": "https://nj.gov/njbonds/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf",
+"title": "DIF Infrastructure VIII SCSp investment memorandum",
+"publisher": "New Jersey Division of Investment",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Independent institutional confirmation",
+"evidenceSummary": "The New Jersey fund memorandum independently confirms the vehicle's identity, direct infrastructure strategy, target amount, fundraising status, and North American regional scope.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"strategies",
+"structure",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+"title": "Full-year 2025 activity update",
+"publisher": "CVC",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "CVC confirmation of Fund VIII activation",
+"evidenceSummary": "CVC's official activity update confirms that the successor CVC DIF fundraising program, including DIF Infrastructure VIII, was activated and remained part of the current infrastructure fundraising pipeline.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"managerName",
+"fundName",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/portfolio",
+"title": "Portfolio",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "SBA Canada fund attribution",
+"evidenceSummary": "The official portfolio review attributed SBA Canada to DIF Infrastructure VIII, corroborating current deployment in Canada while the fund remains in fundraising.",
+"supports": [
+"FUND_IDENTITY",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-061",
+"managerName": "CVC DIF",
+"fundName": "DIF Infrastructure VIII"
+}
+],
+"changedFields": [
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+],
+"repoDispositionRationale": "The commercial vehicle matches FUND-061. The €6.0 billion figure is a target, not a final close or demonstrated commitments amount. Native EUR fields and a target date are added, the unsupported converted USD amount is removed, and the current SBA Canada attribution is added.",
+"confidence": "HIGH"
+},
+{
+"fundName": "CVC DIF Value-Add IV",
+"aliases": [
+"Value-Add IV"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "Named successor closed-end direct-equity infrastructure value-add fund focused on higher-growth mid-market infrastructure platforms and buy-and-build opportunities.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official CVC and CVC DIF materials identify Value-Add IV as the activated successor to the CIF or Value-Add series and place that strategy's investment scope in Europe and North America.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-062",
+"managerName": "CVC DIF",
+"fundName": "CVC DIF Value-Add IV",
+"ticker": null,
+"investmentStrategy": "Activated successor to the CVC DIF value-add series, part of CVC's combined €8B DIF VIII / VA IV infrastructure fundraising target and focused on higher-growth mid-market infrastructure platforms.",
+"size": "€2.0B target",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "2000000000",
+"sizeBasis": "TARGET",
+"sizeAsOf": "2026-07-29",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2025",
+"strategies": [
+"Value-Add"
+],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": [
+"Digital",
+"Midstream",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+"https://www.cvcdif.com/"
+],
+"strategyUrl": "https://www.cvcdif.com/"
+},
+"evidence": [
+{
+"url": "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+"title": "Full-year 2025 activity update",
+"publisher": "CVC",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Value-Add IV activation and fundraising target",
+"evidenceSummary": "CVC's official update identifies CVC DIF Value-Add IV as an activated successor infrastructure fund in the current fundraising program and supports the €2.0 billion figure as a target rather than a close. No source-stated USD equivalent or explicit FX rate and date was preserved.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"managerName",
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"structure",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cvcdif.com/",
+"title": "CVC DIF infrastructure investment strategies",
+"publisher": "CVC DIF",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Value-Add direct-equity strategy and North American mandate",
+"evidenceSummary": "The official strategy materials describe the Value-Add series as direct infrastructure equity focused on scalable, higher-growth platforms in Europe and North America.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"investmentStrategy",
+"strategies",
+"sectors",
+"regions",
+"strategyUrl",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-062",
+"managerName": "CVC DIF",
+"fundName": "CVC DIF Value-Add IV"
+}
+],
+"changedFields": [
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+],
+"repoDispositionRationale": "The commercial vehicle matches FUND-062. The €2.0 billion figure is classified as a fundraising target, with native EUR fields and a target date added. The unsupported converted USD amount is removed, and the strategy page is added as field-specific evidence for direct equity and North America.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "DIF Infrastructure I",
+"reasonCode": "FULLY_REALIZED_OR_DISSOLVED",
+"rationale": "The completed official history and portfolio review treated the first traditional DIF vehicle as a historical, no-longer-current fund with no remaining active holding supporting inclusion as of the census date.",
+"sourceUrls": [
+"https://www.cvcdif.com/about-us",
+"https://www.cvcdif.com/portfolio"
+]
+},
+{
+"fundName": "DIF Infrastructure II",
+"reasonCode": "FULLY_REALIZED_OR_DISSOLVED",
+"rationale": "The completed official history and portfolio review treated DIF Infrastructure II as a historical, no-longer-current fund with no remaining active holding supporting inclusion.",
+"sourceUrls": [
+"https://www.cvcdif.com/about-us",
+"https://www.cvcdif.com/portfolio"
+]
+},
+{
+"fundName": "DIF Infrastructure III",
+"reasonCode": "FULLY_REALIZED_OR_DISSOLVED",
+"rationale": "The completed official history and portfolio review treated DIF Infrastructure III as a historical, no-longer-current fund with no remaining active holding supporting inclusion.",
+"sourceUrls": [
+"https://www.cvcdif.com/about-us",
+"https://www.cvcdif.com/portfolio"
+]
+},
+{
+"fundName": "DIF Core Infrastructure Fund I",
+"reasonCode": "FULLY_REALIZED_OR_DISSOLVED",
+"rationale": "The first CIF-series vehicle was historical and lacked a remaining active holding or current fundraising status as of the census date.",
+"sourceUrls": [
+"https://www.cvcdif.com/about-us",
+"https://www.cvcdif.com/portfolio"
+]
+},
+{
+"fundName": "DIF Infrastructure VII co-investment vehicles",
+"reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+"rationale": "Co-investment commitments reported alongside the 2023 fundraise are economically ancillary to DIF Infrastructure VII and do not establish a separately managed commercial strategy or independent disclosed fundraise for census purposes.",
+"sourceUrls": [
+"https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds"
+]
+},
+{
+"fundName": "DIF CIF III co-investment vehicles",
+"reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+"rationale": "The co-investment capital included in the broader €6.8 billion announcement was not treated as a separately named or independently managed infrastructure fund.",
+"sourceUrls": [
+"https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds"
+]
+},
+{
+"fundName": "DIF Infrastructure VIII feeder and parallel entities",
+"reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+"rationale": "Institutional materials reference legal entities and investor-access structures associated with the Fund VIII raise, but the reviewed evidence supports one commercial DIF Infrastructure VIII strategy rather than separate census rows.",
+"sourceUrls": [
+"https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf",
+"https://nj.gov/njbonds/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf"
+]
+},
+{
+"fundName": "CVC DIF Value-Add IV feeder and parallel entities",
+"reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+"rationale": "No reviewed source established a feeder, parallel entity, or sleeve associated with Value-Add IV as a distinct commercial strategy with an independently reported capital base.",
+"sourceUrls": [
+"https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+"https://www.cvcdif.com/"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 7,
+"searchQueriesRun": 11,
+"notes": [
+"CVC DIF is the current canonical manager name; DIF Capital Partners is the predecessor platform name.",
+"The separately supplied manager DIF remains an overlapping later task and was not merged with, deleted in favor of, or otherwise consolidated into this result.",
+"All eight supplied repository legacy IDs were matched exactly once.",
+"Official portfolio attribution reviewed in the completed pass included Joink, LLC for DIF CIF II; Tonaquint Data Centers for DIF CIF III; Kingfisher Wind and Bernhard, LLC for DIF Infrastructure VI; ASTP and U.S. utility assets for DIF Infrastructure VII; and SBA Canada for DIF Infrastructure VIII.",
+"Repository USD amounts were removed because the preserved sources did not state those USD equivalents and no explicit FX rates and dates were supplied.",
+"The €6.0 billion Fund VIII and €2.0 billion Value-Add IV figures are targets, not final closes or demonstrated commitments.",
+"Co-investment commitments, feeders, parallel entities, and investor-access legal entities were not double-counted."
+]
+},
+"summary": {
+"includedFunds": 8,
+"explicitNaMandate": 8,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 8,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 8,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 0
+}
+}
+</fund_census_json>
+<fund_census_report>
+CVC — North American direct infrastructure fund census
+Conclusion
+The census identifies eight current named direct-equity infrastructure funds under the canonical current manager CVC DIF: two legacy CIF or Value-Add funds, four closed traditional Infrastructure funds, and the two activated successor vehicles currently raising. All eight qualify through an explicit North American mandate in fund- or series-specific official and institutional materials. Current North American holdings were additionally checked where available, but the primary qualification basis remains the explicit mandate.
+CVC DIF is the current brand for the infrastructure platform formerly known as DIF Capital Partners. The separately supplied manager DIF remains an overlapping later task and has not been merged, removed, or independently reconciled here. The eight repository identities, aliases, and legacy IDs were taken from the supplied manager snapshot and each was reconciled exactly once. Pasted text
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceDIF CIF IINamed fundClosed / activeExplicit Europe and North America mandate; current Joink, LLC deployment corroborates lifecycle€1.0B final closePROPOSED_CORRECTION — FUND-059AOfficial history; strategy; portfolioDIF CIF IIINamed fundClosed / activeExplicit North American mandate; current Tonaquint Data Centers attribution€1.6B final closePROPOSED_CORRECTION — FUND-059Final-close announcement; portfolioDIF Infrastructure IVNamed fundClosed / activeExplicit North American mandate for the traditional Infrastructure series; current portfolio status checked€1.15B final closePROPOSED_CORRECTION — FUND-059BOfficial history; strategy; portfolioDIF Infrastructure VNamed fundClosed / activeExplicit North American mandate for the traditional Infrastructure series; current portfolio status checked€1.9B final closePROPOSED_CORRECTION — FUND-059COfficial history; strategy; portfolioDIF Infrastructure VINamed fundClosed / activeExplicit North American mandate; Kingfisher Wind and Bernhard, LLC corroborate current U.S. deployment€3.0B final closePROPOSED_CORRECTION — FUND-059DOfficial history; strategy; portfolioDIF Infrastructure VIINamed fundClosed / activeFund-specific North American mandate; ASTP and U.S. utility holdings corroborate deployment€4.4B final closePROPOSED_CORRECTION — FUND-060Final-close announcement; portfolioDIF Infrastructure VIIINamed fundRaisingFund-specific institutional materials expressly name Europe and North America; SBA Canada corroborates deployment€6.0B targetPROPOSED_CORRECTION — FUND-061PSERS resolution; New Jersey memorandum; CVC updateCVC DIF Value-Add IVNamed fundRaisingExplicit Europe and North America mandate for the activated Value-Add successor strategy€2.0B targetPROPOSED_CORRECTION — FUND-062CVC update; CVC DIF strategy
+Repository reconciliation
+All eight repository rows match one included commercial vehicle:
+
+
+FUND-059A — DIF CIF II
+
+
+FUND-059 — DIF CIF III
+
+
+FUND-059B — DIF Infrastructure IV
+
+
+FUND-059C — DIF Infrastructure V
+
+
+FUND-059D — DIF Infrastructure VI
+
+
+FUND-060 — DIF Infrastructure VII
+
+
+FUND-061 — DIF Infrastructure VIII
+
+
+FUND-062 — CVC DIF Value-Add IV
+
+
+Each is classified as PROPOSED_CORRECTION, rather than a proposed new fund, because the repository has the correct commercial identity but its amount fields require normalization:
+
+
+Closed-fund amounts are explicitly classified as FINAL_CLOSE.
+
+
+Fund VIII and Value-Add IV amounts are explicitly classified as TARGET.
+
+
+Native currency is recorded as EUR with the native amount populated.
+
+
+sizeAsOf is populated.
+
+
+Repository USD amounts are removed because the preserved evidence does not state those USD equivalents and no explicit FX rate and date were supplied.
+
+
+Fund-specific strategy, mandate, and current-portfolio sources are added to sourceUrls.
+
+
+There are no repo-only records, no proposed new vehicles, and no possible duplicates among the eight commercial funds.
+Exclusions and unresolved issues
+Four historical predecessor vehicles were excluded as no longer current: DIF Infrastructure I, DIF Infrastructure II, DIF Infrastructure III, and DIF Core Infrastructure Fund I. The completed official history and current-portfolio review did not identify a remaining active holding or current fundraising status for those vehicles.
+Co-investment capital reported alongside DIF Infrastructure VII and DIF CIF III was not counted separately. The official announcement's broader €6.8 billion fundraising figure includes capital beyond the two named main funds; it is not the size of either fund and does not establish separate commercial co-investment funds for this census.
+Fund VIII and Value-Add IV feeders, parallel entities, SCSp legal structures, and investor-access sleeves were also not separately counted because the evidence supports one commercial strategy and capital base for each named fund.
+The supplied DIF manager remains an acknowledged overlap. This result attributes the vehicles to CVC DIF, the current canonical platform, while preserving DIF as a separate supplied-manager task. No manager consolidation, ownership edit, archival action, or deletion is recommended.
+There are no unresolved conflicts in the completed CVC result.
+Completeness
+The completed pass covered:
+
+
+Current CVC DIF branding and predecessor-name mapping to DIF Capital Partners.
+
+
+Official history and strategy materials for both the traditional Infrastructure and CIF or Value-Add series.
+
+
+Fundraising and final-close materials for the recent flagship vehicles.
+
+
+Pennsylvania and New Jersey institutional materials for DIF Infrastructure VIII.
+
+
+CVC's full-year 2025 activity update for Fund VIII and Value-Add IV activation.
+
+
+Current fund-attributed North American holdings, including Joink, Tonaquint Data Centers, Kingfisher Wind, Bernhard, ASTP, U.S. utility assets, and SBA Canada.
+
+
+Historical-fund lifecycle checks.
+
+
+Co-investment, feeder, parallel-vehicle, and legal-entity treatment.
+
+
+Exact reconciliation of all eight supplied repository legacy IDs.
+
+
+Final counts: 8 included funds; 8 explicit North American mandates; 0 funds relying solely on current-holding qualification; 8 proposed corrections; 0 proposed additions; 0 possible duplicates; 0 needs-review funds; 8 excluded candidates; 0 repo-only records; and 0 unresolved conflicts.
+</fund_census_report>

@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "target": "ES2022",
+    "noEmit": true
+  },
+  "include": [
+    "scripts/fund-refresh/**/*.ts",
+    "scripts/fund-census/addition-size-gate.ts",
+    "scripts/fund-census/promotion.ts",
+    "scripts/fund-census/promote-reviewed-changes.ts",
+    "scripts/apply-fund-refresh.ts",
+    "scripts/rollback-fund-refresh.ts",
+    "scripts/audit-funds.ts",
+    "scripts/finalize-fund-refresh-proposal.ts",
+    "scripts/validate-fund-refresh-proposal.ts",
+    "scripts/generate-fund-source-audit.ts",
+    "src/modules/funds/refresh-schema.ts",
+    "prisma/seed-data/funds.ts",
+    "prisma/entity-resolution.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

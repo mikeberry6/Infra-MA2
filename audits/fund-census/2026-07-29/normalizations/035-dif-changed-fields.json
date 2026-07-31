@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "DIF",
+  "createdAt": "2026-07-30T18:10:26.212Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/035-dif-unsupported-reverted.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/035-dif-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-059",
+      "field": "changedFields",
+      "from": [
+        "fundName",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "sizeUsdMm"
+      ],
+      "value": [
+        "fundName",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "rationale": "The existing changedFields list was a strict subset of the deterministic field diff between the researched snapshot and its single matched repository row."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-060",
+      "field": "changedFields",
+      "from": [
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "sizeUsdMm"
+      ],
+      "value": [
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "rationale": "The existing changedFields list was a strict subset of the deterministic field diff between the researched snapshot and its single matched repository row."
+    },
+    {
+      "fundIndex": 2,
+      "legacyId": "FUND-061",
+      "field": "changedFields",
+      "from": [
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "sizeUsdMm"
+      ],
+      "value": [
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "rationale": "The existing changedFields list was a strict subset of the deterministic field diff between the researched snapshot and its single matched repository row."
+    }
+  ]
+}

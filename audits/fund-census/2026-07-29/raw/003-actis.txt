@@ -1,0 +1,86 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Actis",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Actis",
+"Actis LLP",
+"Actis GP LLP",
+"Actis Capital LLP",
+"CDC Group plc",
+"General Atlantic Sustainable Infrastructure business"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Actis manager identity and FUND_MANIFEST scope",
+"issue": "The supplied FUND_MANIFEST snapshot sets knownManager to false and canonicalManager to null, although the supplied manager universe names Actis and current official sources identify Actis as an active sustainable-infrastructure manager. General Atlantic acquired Actis in 2024, but Actis continues as General Atlantic's Sustainable Infrastructure business, retains independence over investment decisions and operates its funds under the Actis brand. The mandatory unknown-manager rule therefore prevents this result from including or proposing any Actis fund despite the externally verified manager identity.",
+"sourceUrls": [
+"https://www.act.is/",
+"https://www.act.is/privacy-policy/",
+"https://www.act.is/2024/10/02/general-atlantic-completes-actis-acquisition/",
+"https://www.generalatlantic.com/infrastructure/",
+"https://www.gov.uk/government/speeches/andrew-mitchell-sale-of-actis"
+],
+"recommendedResolution": "The repository owner should manually reconcile the inconsistency between knownManager=false and Actis's presence in the supplied manager universe, establish the canonical manifest identity and document the General Atlantic ownership and Actis-brand relationship, then rerun the fund census. Do not automatically add Actis or any Actis fund from this result."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 9,
+"searchQueriesRun": 16,
+"notes": [
+"The mandatory unknown-manager branch was applied because the supplied repository snapshot sets knownManager=false and canonicalManager=null.",
+"Official materials were opened for Actis's current business, legal identities, General Atlantic acquisition, predecessor relationship and a representative current fund closing.",
+"Vehicle-level North American holding attribution and parallel-or-feeder reconciliation were not completed because the output contract prohibits fund inclusion or proposals for an unknown manager.",
+"The Actis NextStream portfolio page and Long Life Infrastructure strategy page timed out when directly opened and were not relied upon as evidence."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Actis — North American direct infrastructure fund census
+Conclusion
+This is an out-of-scope unknown-manager result, not a substantive finding that Actis has no qualifying North American infrastructure vehicles. The supplied repository snapshot sets knownManager: false, leaves canonicalManager null and expressly requires an empty funds array with no proposed manager or fund. Pasted text
+Official sources nevertheless confirm that Actis is an active sustainable-infrastructure investment platform. Actis identifies Energy Infrastructure, Long Life Infrastructure, Digital Infrastructure and Real Estate as current strategies; its legal materials identify Actis LLP and Actis GP LLP; and the completed General Atlantic acquisition left Actis operating as General Atlantic's Sustainable Infrastructure business, with independent investment decisions and funds continuing under the Actis brand. General Atlantic+4Actis+4Actis+4
+The result therefore records a manifest-scope conflict requiring human resolution before a substantive Actis vehicle census can be returned.
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceNone—————Manager-scope rule prevents fund rows
+Repository reconciliation
+The supplied snapshot contains no repository fund records, so there are no matched funds and no repoOnlyRecords. No additions, corrections, duplicate classifications or fund-level review items were proposed because the snapshot's mandatory unknown-manager rule applies.
+A human manifest review should establish the canonical manager identity before rerunning the census. That review should preserve the distinction between General Atlantic's ownership of Actis and the continued Actis branding and fund-level investment authority documented by the acquisition announcement. Actis
+Exclusions and unresolved issues
+No vehicle was classified as an excluded candidate because research stopped at the required manager-scope boundary rather than reaching fund-level inclusion or exclusion decisions.
+Actis was created in 2004 as a spin-out from CDC Group plc and was identified by the UK government as Actis Capital LLP. The relevant current legal identities include Actis LLP and Actis GP LLP. General Atlantic is the current owner and successor platform, but it is not a separately listed manager in the supplied manager universe, so overlappingSuppliedManagers remains empty. GOV.UK+2Actis+2
+Completeness
+Nine sources were successfully opened across 16 search queries. The review covered current Actis materials, legal identities, the CDC predecessor relationship, the General Atlantic acquisition and successor-platform treatment, current infrastructure-strategy materials and a representative current fund close. Actis's May 2025 announcement confirms that its second Long Life Infrastructure Fund completed fundraising with US$1.7 billion of commitments, but that vehicle was not evaluated for inclusion because the unknown-manager rule prohibits fund rows. Actis
+Current-holding attribution and parallel-or-feeder review were not completed. The NextStream portfolio page and Long Life Infrastructure strategy page timed out on direct opening and were not used as evidence.
+</fund_census_report>

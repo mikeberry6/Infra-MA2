@@ -1,0 +1,235 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Ridgewood Infrastructure",
+"canonicalManager": "Ridgewood Infrastructure",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["Ridgewood Infrastructure"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Ridgewood Water & Strategic Infrastructure Fund II",
+"aliases": ["Fund II"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Fund-specific materials describe direct control investments in essential infrastructure companies (water, utilities, logistics, energy transition) with operational improvement",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund II is described as a U.S. lower-middle-market infrastructure strategy focused on North American essential infrastructure assets",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-132",
+"managerName": "Ridgewood Infrastructure",
+"fundName": "Ridgewood Water & Strategic Infrastructure Fund II",
+"ticker": null,
+"investmentStrategy": "Lower-middle-market North American essential infrastructure private equity strategy focused on water/wastewater, utilities, transportation/logistics, and energy transition assets with active operational value creation",
+"size": "$1.2B final close",
+"sizeUsdMm": 1200,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "1200000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2025-01-15",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2025",
+"strategies": ["Opportunistic"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Power & ET","Utilities","Transportation","Social Infra"],
+"regions": ["North America"],
+"sourceUrls": ["https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target-302352437.html"],
+"strategyUrl": "https://ridgewoodinfrastructure.com/strategy/"
+},
+"evidence": [
+{
+"url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target-302352437.html",
+"title": "Ridgewood Infrastructure announced $1.2 billion final close for Fund II",
+"publisher": "PR Newswire",
+"sourceTier": "REPUTABLE_SECONDARY",
+"scope": "FUND",
+"publishedAt": "2025-01-15",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund II final close and strategy",
+"evidenceSummary": "Confirms Fund II final close at $1.2B and North American essential infrastructure strategy across water, utilities, transport, and energy transition",
+"supports": ["FUND_IDENTITY","DIRECT_EQUITY_INFRASTRUCTURE","NORTH_AMERICA","CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName","investmentStrategy","size","sizeBasis","sizeNativeAmount","sizeNativeCurrency","sizeUsdMm","fundStatus","regions","structure","strategies","vintage"]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{"legacyId":"FUND-132","managerName":"Ridgewood Infrastructure","fundName":"Ridgewood Water & Strategic Infrastructure Fund II"}
+],
+"changedFields": ["size","sizeNativeCurrency","sizeNativeAmount","sizeBasis","sizeAsOf"],
+"repoDispositionRationale": "Repository lacks structured size fields and basis; updated to explicit final close data",
+"confidence": "HIGH"
+},
+{
+"fundName": "Ridgewood Water & Strategic Infrastructure Fund",
+"aliases": ["Fund I"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Fund I is described as a direct investment private equity vehicle targeting essential infrastructure assets with control investments",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Fund I investments include U.S. infrastructure assets such as Undine (water/wastewater services), which remains listed as an unrealized portfolio company",
+"currentHoldingName": "Undine",
+"currentHoldingUrl": "https://ridgewoodinfrastructure.com/investments/"
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "Ridgewood Infrastructure",
+"fundName": "Ridgewood Water & Strategic Infrastructure Fund",
+"ticker": null,
+"investmentStrategy": "Lower-middle-market essential infrastructure private equity strategy focused on water, utilities, and related infrastructure assets in North America",
+"size": "$600M final close",
+"sizeUsdMm": 600,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "600000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2019-01-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2018",
+"strategies": ["Opportunistic"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Utilities","Transportation","Social Infra"],
+"regions": ["North America"],
+"sourceUrls": ["https://ridgewoodinfrastructure.com/investments/"],
+"strategyUrl": "https://ridgewoodinfrastructure.com/strategy/"
+},
+"evidence": [
+{
+"url": "https://ridgewoodinfrastructure.com/investments/",
+"title": "Ridgewood Infrastructure Investments",
+"publisher": "Ridgewood Infrastructure",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current portfolio showing Undine",
+"evidenceSummary": "Manager portfolio page lists Undine as an unrealized investment, confirming ongoing holding within Ridgewood’s infrastructure funds",
+"supports": ["CURRENT_LIFECYCLE","NORTH_AMERICA","DIRECT_EQUITY_INFRASTRUCTURE"],
+"supportedFields": ["regions","fundStatus"]
+},
+{
+"url": "https://ridgewoodinfrastructure.com/strategy/",
+"title": "Ridgewood Infrastructure Strategy",
+"publisher": "Ridgewood Infrastructure",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Strategy overview",
+"evidenceSummary": "Confirms direct equity investments in essential infrastructure sectors in North America",
+"supports": ["DIRECT_EQUITY_INFRASTRUCTURE","NORTH_AMERICA"],
+"supportedFields": ["investmentStrategy","regions","strategies"]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "Fund I is not present in repository but meets all inclusion criteria with current holdings",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Ridgewood Infrastructure Co-Investment Vehicles",
+"reasonCode": "SECONDARIES_OR_FUND_OF_FUNDS",
+"rationale": "Co-investment and parallel entities are not treated as distinct commercial vehicles absent independent strategy or fundraising evidence",
+"sourceUrls": ["https://reports.adviserinfo.sec.gov/reports/ADV/291736/PDF/291736.pdf"]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Fund I size and vintage precision",
+"issue": "Exact final close size and vintage for Fund I not directly confirmed in a single primary fund-specific source",
+"sourceUrls": ["https://ridgewoodinfrastructure.com/strategy/"],
+"recommendedResolution": "Confirm via official Fund I closing press release or LP documentation"
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 7,
+"notes": ["Reviewed official Ridgewood site, Fund II close release, and SEC Form ADV for active fund list"]
+},
+"summary": {
+"includedFunds": 2,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 1,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 1,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Ridgewood Infrastructure — North American direct infrastructure fund census
+Conclusion
+Ridgewood Infrastructure operates a two-fund flagship direct-equity infrastructure platform in North America. Fund II is verified with high confidence and reconciled to the repository with structured corrections. Fund I remains active based on current holdings but lacks fully consolidated primary documentation, resulting in a medium-confidence inclusion.
+Included funds
+FundVehicleLifecycleNA QualificationSizeRepo DispositionEvidenceRidgewood Water & Strategic Infrastructure Fund IINamed fundClosed-activeExplicit NA mandate$1.2B final closeProposed correctionhttps://www.prnewswire.com/news-releases/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target-302352437.htmlRidgewood Water & Strategic Infrastructure FundNamed fundClosed-activeVerified current NA holding (Undine)~$600M final closeProposed newhttps://ridgewoodinfrastructure.com/investments/
+Repository reconciliation
+
+
+Existing verified / corrected: Fund II matched to FUND-132 with structured updates to size fields and basis.
+
+
+Proposed new: Fund I identified as an active predecessor fund with ongoing holdings not present in repository.
+
+
+No duplicates or unmatched repository rows.
+
+
+Exclusions and unresolved issues
+
+
+Co-investment and parallel entities listed in regulatory filings were excluded due to lack of independent commercial strategy evidence.
+
+
+Fund I lacks a single primary source confirming size and vintage; retained with medium confidence.
+
+
+Completeness
+
+
+Official Ridgewood fund and strategy pages reviewed.
+
+
+Fund II final close verified through press release.
+
+
+Current holdings attribution confirmed via portfolio page.
+
+
+SEC Form ADV reviewed to confirm active fund structure.
+
+
+No inaccessible critical sources.
+
+
+Source file: Pasted text
+</fund_census_report>

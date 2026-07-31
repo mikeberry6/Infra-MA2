@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Acadia Infrastructure Capital",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Acadia Infrastructure Capital",
+    "Acadia Infrastructure Capital LP"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Acadia Infrastructure Capital manager identity and manifest scope",
+      "issue": "The supplied manager universe names Acadia Infrastructure Capital, while the authoritative repository snapshot has canonicalManager null and knownManager false. Under the contract, the snapshot flag controls, requiring OUT_OF_SCOPE_UNKNOWN_MANAGER and prohibiting any fund or program additions.",
+      "sourceUrls": [
+        "https://www.acadiainfrastructure.com/",
+        "https://adviserinfo.sec.gov/firm/summary/326032",
+        "https://reports.adviserinfo.sec.gov/reports/ADV/326032/PDF/326032.pdf",
+        "https://www.acadiainfrastructure.com/news",
+        "https://newprojectmedia.com/interview-acadia-infrastructure-founder-discusses-opportunities-in-capital-markets-dislocation-for-clean-energy-projects/"
+      ],
+      "recommendedResolution": "Have the fund-manifest owner perform a controlled review of Acadia Infrastructure Capital LP and decide whether to add it as a canonical manager. If approved, rerun the census to evaluate its bespoke structured-equity mandates and the Climate and Communities Investment Coalition without automatically treating either as a distinct fund."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 8,
+    "searchQueriesRun": 15,
+    "notes": [
+      "Applied the snapshot's knownManager=false override; no fund or program was added.",
+      "Reviewed official manager materials, regulatory filings, fundraising and close references, current deal-attribution materials, and manager aliases.",
+      "No vehicle-level fund classification was returned because the manager-scope override precedes the inclusion test.",
+      "Current deal announcements were checked for fund or program attribution, but no vehicle-level result is returned under the override."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

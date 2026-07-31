@@ -1,0 +1,109 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Kimmeridge Energy",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Kimmeridge Energy",
+"Kimmeridge",
+"Kimmeridge Energy Management Company, LLC",
+"Kimmeridge Energy Management Ltd."
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager universe membership vs snapshot scope",
+"issue": "The supplied snapshot sets canonicalManager=null and knownManager=false with a sourceNote stating the manager is absent from the universe, yet the supplied manager universe explicitly includes "Kimmeridge Energy," creating a governance inconsistency that prevents fund-level inclusion.",
+"sourceUrls": [
+"https://kimmeridge.com",
+"https://adviserinfo.sec.gov/"
+],
+"recommendedResolution": "Repository governance should reconcile the manager manifest entry (identity, canonical name, and inclusion flag) before any fund census is performed; do not auto-add or infer vehicles until the manager is formally recognized."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 8,
+"notes": [
+"Scope-gated: research verified manager identity and active platform but did not populate fund rows due to OUT_OF_SCOPE_UNKNOWN_MANAGER rule."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Kimmeridge Energy — North American direct infrastructure fund census
+Conclusion
+No fund vehicles are returned. The governing snapshot explicitly marks the requested manager as out of scope (knownManager=false, canonicalManager=null), which contractually requires OUT_OF_SCOPE_UNKNOWN_MANAGER and prohibits adding funds. This is a governance gate, not a research gap.
+Independent source review confirms that “Kimmeridge Energy” corresponds to an active investment manager (commonly “Kimmeridge Energy Management Company, LLC”), but that verification cannot override the manifest constraint. Pasted text
+Included funds
+None. Inclusion is blocked by scope status.
+Repository reconciliation
+
+
+No repository fund rows were supplied in the snapshot.
+
+
+No matches, additions, or corrections are permitted under the out-of-scope rule.
+
+
+The only actionable item is a manifest-level conflict (see below).
+
+
+Exclusions and unresolved issues
+Primary unresolved conflict (governance):
+
+
+The supplied snapshot states the manager is absent from the universe, yet the supplied manager universe list includes “Kimmeridge Energy.” Pasted text
+
+
+External sources (official website and regulatory listings) corroborate that Kimmeridge operates as an established investment manager platform, reinforcing that the issue is repository governance rather than real-world absence.
+
+
+Implication:
+
+
+Until the manifest is reconciled, any fund-level census would violate the contract (no automatic manager additions or inferred coverage).
+
+
+Completeness
+
+
+Official manager materials and platform disclosures were reviewed to confirm identity and active investment operations.
+
+
+Fundraising and strategy materials were scanned at the manager level to validate that relevant vehicles likely exist, but no fund-level rows were constructed due to scope rules.
+
+
+Holding attribution, aliases, and parallel-vehicle considerations were reviewed sufficiently to confirm that a full census would be feasible once the manager is admitted to the universe.
+
+
+All research steps were intentionally limited to scope validation per the knownManager=false instruction.
+</fund_census_report>

@@ -1,0 +1,204 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Cube Infrastructure Managers",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Cube Infrastructure Managers",
+"Cube Infrastructure Managers S.A.",
+"Cube IM",
+"Cube",
+"Natixis Environment & Infrastructure Luxembourg"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [
+{
+"fundName": "Cube Infrastructure Fund",
+"reasonCode": "FULLY_REALIZED_OR_DISSOLVED",
+"rationale": "Cube Infrastructure Managers' official history states that Cube Infrastructure Fund, also referred to as Cube I, was fully realized in 2021, so it is not current as of the census date.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/"
+]
+},
+{
+"fundName": "Cube Infrastructure Fund II",
+"reasonCode": "OUTSIDE_NORTH_AMERICA",
+"rationale": "Primary manager materials identify Cube II as a current European mid-market infrastructure fund, while the official portfolio attributes its current investments to European countries rather than the United States, Canada, or Mexico.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/wp-content/uploads/2025/07/24_CubeESG_AR-2024.pdf",
+"https://www.cubeinfrastructure.com/portfolio/"
+]
+},
+{
+"fundName": "Cube Infrastructure Fund III",
+"reasonCode": "OUTSIDE_NORTH_AMERICA",
+"rationale": "The official final-close announcement defines Cube III's mandate as European brownfield infrastructure, and the current official portfolio attributes European, rather than North American, holdings to the fund.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/news/cube-infrastructure-managers-closes-cube-infrastructure-fund-iii-at-e1-35-billion/",
+"https://www.cubeinfrastructure.com/portfolio/"
+]
+},
+{
+"fundName": "Connecting Europe Broadband Fund",
+"reasonCode": "OUTSIDE_NORTH_AMERICA",
+"rationale": "The official launch materials limit the fund's investment guidelines to the European Union, Norway, and Iceland, and the current official portfolio shows European broadband holdings.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/news/connecting-europe-broadband-fund-holds-its-first-close/",
+"https://www.cubeinfrastructure.com/portfolio/"
+]
+},
+{
+"fundName": "Cube Infrastructure Fund IV",
+"reasonCode": "OUTSIDE_NORTH_AMERICA",
+"rationale": "Official 2026 fund and regulatory disclosures identify Cube IV as a direct infrastructure vehicle focused predominantly on infrastructure companies in the European Union or wider European region and, more specifically, essential brownfield infrastructure assets across Europe.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/wp-content/uploads/2026/07/Cube-Infrastructure-Fund-IV-sustainability-related-disclosures_v1.0.pdf",
+"https://www.cubeinfrastructure.com/wp-content/uploads/2026/03/Form-20-Cube-Gp4.pdf"
+]
+},
+{
+"fundName": "Cube III Feeder Fund LP S.C.S",
+"reasonCode": "SECONDARIES_OR_FUND_OF_FUNDS",
+"rationale": "The official regulatory disclosure classifies this feeder as a fund of funds established solely to invest in the master Cube Infrastructure Fund III; it is not a distinct direct-investment strategy.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/wp-content/uploads/2026/02/Form-20_Cube-GP3.pdf"
+]
+},
+{
+"fundName": "Cube IV Feeder Fund L.P. SCSp",
+"reasonCode": "SECONDARIES_OR_FUND_OF_FUNDS",
+"rationale": "The official regulatory disclosure classifies this feeder as a fund of funds established solely to invest in the master Cube Infrastructure Fund IV; it is not a distinct direct-investment strategy.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/wp-content/uploads/2026/03/Form-20-Cube-Gp4.pdf"
+]
+},
+{
+"fundName": "Cube Eagle Partnership",
+"reasonCode": "OUTSIDE_NORTH_AMERICA",
+"rationale": "Official disclosures identify Cube Eagle as a single-asset co-investment vehicle that invests exclusively alongside Cube III in CubIKSolar, a solar photovoltaic and battery-storage platform deployed in Germany and Northern Italy; no North American mandate or current North American holding is disclosed.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/wp-content/uploads/2025/11/Cube-Eagle-Partnership-%E2%80%93-Sustainability-related-disclosures.pdf",
+"https://www.cubeinfrastructure.com/news/cube-infrastructure-managers-raises-e150-million-of-co-investment-commitments-for-solar-pv-and-bess-platform-cubiks/"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Cube Infrastructure Managers manager-scope registration",
+"issue": "The supplied FUND_MANIFEST snapshot sets knownManager to false and canonicalManager to null even though official current materials identify Cube Infrastructure Managers as an active Luxembourg infrastructure manager. The output contract therefore requires an out-of-scope result and prohibits proposing an automatic manager or fund addition.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/legal-notice/",
+"https://www.cubeinfrastructure.com/"
+],
+"recommendedResolution": "Have the repository-governance owner determine whether Cube Infrastructure Managers should be added to the canonical manager manifest; if approved, rerun the census under the newly recognized canonical manager."
+},
+{
+"subject": "Cube NORD Partnership and Cube NVK Partnership",
+"issue": "Official privacy and GP-account materials establish these partnership names and their relationship to Cube GP3, but the opened public materials do not establish each partnership's investment strategy, geography, capital base, current holdings, or economic distinctness.",
+"sourceUrls": [
+"https://www.cubeinfrastructure.com/privacy-notice/",
+"https://www.cubeinfrastructure.com/wp-content/uploads/2026/02/Form-21-3-Cube-GP3-AA-2024.pdf"
+],
+"recommendedResolution": "Review the partnership agreements, offering documents, or asset-specific co-investment disclosures before deciding whether either partnership is merely a Cube III sidecar or a separately reportable commercial vehicle."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 19,
+"searchQueriesRun": 20,
+"notes": [
+"The controlling repository snapshot sets knownManager=false and canonicalManager=null; the required scope gate therefore leaves funds empty and bars proposed manager or fund additions.",
+"Official materials reviewed covered Cube Infrastructure Funds I-IV, Connecting Europe Broadband Fund, master-feeder entities, current fund-attributed portfolio holdings, and the Cube Eagle co-investment vehicle.",
+"No repository fund rows were supplied, so matched repository funds and repo-only records are both empty.",
+"Canadian pension-fund participation in a European co-investment vehicle was treated as investor domicile, not evidence of a North American investment mandate or deployment.",
+"No event occurring after 2026-07-29 was used to change the census outcome."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 8,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 2
+}
+}
+</fund_census_json>
+<fund_census_report>
+Cube Infrastructure Managers — North American direct infrastructure fund census
+Conclusion
+The controlling repository snapshot expressly sets knownManager to false, leaves canonicalManager as null, and supplies no repository fund rows. Under the requested scope rule, Cube Infrastructure Managers must therefore be returned as OUT_OF_SCOPE_UNKNOWN_MANAGER, with no vehicles in funds and no proposed manager or fund additions. Pasted text
+Independent research confirms that Cube Infrastructure Managers is an active Luxembourg infrastructure asset manager. Its official history also identifies the predecessor name Natixis Environment & Infrastructure Luxembourg and the subsequent management buyout. This external evidence documents the manifest scope gap but does not override the supplied repository gate. Cube Infrastructure Managers+2Cube Infrastructure Managers+2
+Within the official materials opened, Cube's named current strategies are focused on European infrastructure. Fund-specific close, sustainability, regulatory, and current-portfolio materials did not establish an explicit North American mandate or a fund-attributed current holding in the United States, Canada, or Mexico. Cube Infrastructure Managers+3Cube Infrastructure Managers+3Cube Infrastructure Managers+3
+The CubIKS co-investment announcement refers to Canadian pension funds as investors in a European solar and battery-storage platform. Investor domicile does not constitute North American investment geography and was not used as qualifying evidence. Cube Infrastructure Managers
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceNone——No qualifying mandate or fund-attributed current holding established—Scope-gated; no proposal permittedSupplied manifest scope rule and official Europe-focused fund materials. Pasted text Cube Infrastructure Managers+1
+Repository reconciliation
+The supplied snapshot contains zero fund rows. Accordingly:
+
+
+matchedRepoFunds: no entries because no included fund rows are permitted.
+
+
+repoOnlyRecords: zero.
+
+
+PROPOSED_NEW, PROPOSED_CORRECTION, POSSIBLE_DUPLICATE, and fund-level NEEDS_REVIEW: zero.
+
+
+canonicalManager remains null; adding Cube Infrastructure Managers to the canonical manager universe requires a separate repository-governance decision. Pasted text
+
+
+Official sources support the existence and current legal identity of the manager, but repository context—not external manager existence—controls whether new vehicles may be proposed in this run. Cube Infrastructure Managers+1
+Exclusions and unresolved issues
+CandidateExclusionEvidence-based rationaleCube Infrastructure Fund / Cube IFULLY_REALIZED_OR_DISSOLVEDThe official manager history states that Cube I was fully realized in 2021. Cube Infrastructure ManagersCube Infrastructure Fund IIOUTSIDE_NORTH_AMERICAPrimary materials identify the fund within Cube's European mid-market strategy, and the official current portfolio attributes European holdings to Cube II. Cube Infrastructure Managers+1Cube Infrastructure Fund IIIOUTSIDE_NORTH_AMERICAThe official final-close announcement defines the strategy as European brownfield infrastructure; the current portfolio likewise shows European deployment. Cube Infrastructure Managers+1Connecting Europe Broadband FundOUTSIDE_NORTH_AMERICAIts official investment guidelines cover the European Union, Norway, and Iceland, and its disclosed holdings are European broadband assets. Cube Infrastructure Managers+1Cube Infrastructure Fund IVOUTSIDE_NORTH_AMERICAOfficial 2026 disclosures describe direct investment in infrastructure companies predominantly in the European region and essential brownfield infrastructure assets across Europe. Cube Infrastructure Managers+1Cube III Feeder Fund LP S.C.SSECONDARIES_OR_FUND_OF_FUNDSThe feeder is expressly established solely to invest in the Cube III master fund. Cube Infrastructure ManagersCube IV Feeder Fund L.P. SCSpSECONDARIES_OR_FUND_OF_FUNDSThe feeder is expressly established solely to invest in the Cube IV master fund. Cube Infrastructure ManagersCube Eagle PartnershipOUTSIDE_NORTH_AMERICAThe vehicle invests exclusively alongside Cube III in CubIKSolar, whose disclosed deployment is in Germany and Northern Italy. Cube Infrastructure Managers+1
+There are two unresolved matters. First, the official evidence and supplied repository disagree only as to manager-universe recognition: the manager clearly exists, but the manifest marks it unknown. That requires a governance decision rather than an automatic census addition. Pasted text Cube Infrastructure Managers+1
+Second, official materials name Cube NORD Partnership and Cube NVK Partnership, but the opened disclosures do not establish their strategies, geographies, separately reported capital bases, current holdings, or economic independence from Cube III. They therefore were not treated as distinct funds or assigned an unsupported exclusion classification. Cube Infrastructure Managers+1
+No overlapping supplied manager was identified.
+Completeness
+The research pass opened 19 sources through 20 searches and covered:
+
+
+the official manager homepage, history, legal identity, predecessor name, and management-buyout history;
+
+
+annual-report descriptions of the platform and current managed funds;
+
+
+Cube III close materials, CEBF launch materials, and current official fund-attributed holdings;
+
+
+Cube IV fund-level sustainability and regulatory disclosures;
+
+
+Cube III and Cube IV feeder structures;
+
+
+Cube Eagle and the related CubIKS co-investment announcement; and
+
+
+privacy and GP-account references to other named partnership entities.
+
+
+The official materials consistently characterize Cube's investment platform as European and provide no qualifying fund-specific North American mandate or current North American deployment. Cube Infrastructure Managers+3Cube Infrastructure Managers+3Cube Infrastructure Managers+3
+Parallel, feeder, and co-investment treatment was specifically reviewed. The Cube III and Cube IV feeders were confirmed as vehicles investing solely in their respective master funds, while Cube Eagle was separately assessed as a disclosed single-asset co-investment vehicle rather than silently merged into the flagship-fund review. Cube Infrastructure Managers+2Cube Infrastructure Managers+2
+No inaccessible public source prevented the manager-scope or North American qualification determination. Non-public partnership agreements and offering documents would, however, be required to resolve the separate economic identity of Cube NORD Partnership and Cube NVK Partnership.
+</fund_census_report>

@@ -1,0 +1,391 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "CBRE Investment Management",
+"canonicalManager": "CBRE Investment Management",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"CBRE Investment Management",
+"CBRE Global Investors",
+"CBRE Caledon",
+"CBRE Caledon Capital Management Inc.",
+"Caledon Capital Management"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "CBRE Global Infrastructure Fund",
+"aliases": [
+"CBRE GIF",
+"CGIF",
+"CBRE Global Infrastructure Fund Holdings I, LP",
+"CBRE Caledon Global Infrastructure Fund Holdings I, LP"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "CBRE Investment Management describes the strategy as direct private infrastructure investing, and public-utility ownership filings identify the fund's master vehicle as an indirect equity owner of WANRack, LLC and of the upstream infrastructure vehicle that owns GW Operating, LLC.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Pennsylvania and Georgia utility filings attribute current ownership of the U.S. fiber-network operator WANRack, LLC and its affiliate GW Operating, LLC to CBRE Global Infrastructure Fund Holdings I, LP; the Georgia filing states that the internal restructuring does not change ultimate ownership or control.",
+"currentHoldingName": "WANRack, LLC",
+"currentHoldingUrl": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557"
+},
+"snapshot": {
+"legacyId": "FUND-054",
+"managerName": "CBRE Investment Management",
+"fundName": "CBRE Global Infrastructure Fund",
+"ticker": null,
+"investmentStrategy": "Evergreen global direct private infrastructure strategy targeting mid-market core and core-plus OECD assets across digital infrastructure, energy transition and transportation.",
+"size": "$5.102B current gross asset value (reported 2026-03-31)",
+"sizeUsdMm": 5102.216829,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "5102216829",
+"sizeBasis": "AUM",
+"sizeAsOf": "2026-03-31",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Core",
+"Core-Plus"
+],
+"structure": "Open-End",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Digital",
+"Transportation"
+],
+"regions": [
+"North America",
+"Global"
+],
+"sourceUrls": [
+"https://www.cbreim.com/strategies-and-solutions/private-infrastructure-global-direct-private-infrastructure",
+"https://www.cbreim.com/press-releases/cbre-im-awarded-500-million-global-real-estate-mandate-by-wales-pension-partnership",
+"https://www.nbfwm.ca/content/dam/fbngp/microsites/patrimoine-dalpe-et-associes/pdf/rapport-trimestriel/fond-sabius/Sabius%20Q2-25%20Report_EN.pdf",
+"https://reports.adviserinfo.sec.gov/reports/ADV/158495/PDF/158495.pdf",
+"https://www.puc.pa.gov/pcdocs/1860507.pdf",
+"https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557"
+],
+"strategyUrl": "https://www.cbreim.com/strategies-and-solutions/private-infrastructure-global-direct-private-infrastructure"
+},
+"evidence": [
+{
+"url": "https://www.cbreim.com/strategies-and-solutions/private-infrastructure-global-direct-private-infrastructure",
+"title": "Global Direct Private Infrastructure",
+"publisher": "CBRE Investment Management",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current global direct private infrastructure strategy",
+"evidenceSummary": "The current strategy page describes direct investments through pooled vehicles and separately managed accounts in mid-market core and core-plus infrastructure across the Americas, EMEA and Asia-Pacific, including renewable energy, transportation, digital, social and utility assets.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"managerName",
+"investmentStrategy",
+"strategies",
+"sectors",
+"regions",
+"sourceUrls",
+"strategyUrl"
+]
+},
+{
+"url": "https://www.cbreim.com/press-releases/cbre-im-awarded-500-million-global-real-estate-mandate-by-wales-pension-partnership",
+"title": "CBRE IM awarded £500 million global real estate mandate by Wales Pension Partnership",
+"publisher": "CBRE Investment Management",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-08-16",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Official commercial fund-name evidence",
+"evidenceSummary": "CBRE Investment Management states that Wales Pension Partnership had invested in the CBRE Global Infrastructure Fund in the prior year, confirming the commercial fund name and continuing institutional use.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"managerName",
+"fundName",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.nbfwm.ca/content/dam/fbngp/microsites/patrimoine-dalpe-et-associes/pdf/rapport-trimestriel/fond-sabius/Sabius%20Q2-25%20Report_EN.pdf",
+"title": "Sabius Private Equity Fund — Q2 2025 Report",
+"publisher": "National Bank Financial Wealth Management",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2025-06-30",
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Institutional open-end fund description",
+"evidenceSummary": "The institutional report identifies CBRE Global Infrastructure Fund as a diversified global open-end fund investing in mid-market core and core-plus infrastructure in OECD countries, with digital infrastructure, energy transition and transportation themes.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"vintage",
+"strategies",
+"structure",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://reports.adviserinfo.sec.gov/reports/ADV/158495/PDF/158495.pdf",
+"title": "Form ADV — CBRE Investment Management Infrastructure Inc.",
+"publisher": "U.S. Securities and Exchange Commission Investment Adviser Public Disclosure",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2026-03-31",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current master-fund and gross-asset-value filing",
+"evidenceSummary": "The annual amendment lists CBRE Global Infrastructure Fund Holdings I, LP as the master private infrastructure fund, reports $5,102,216,829 of current gross asset value for the arrangement, and lists related feeder and aggregator entities. The filing date is used as the reporting date because no separate valuation date is stated.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"managerName",
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.puc.pa.gov/pcdocs/1860507.pdf",
+"title": "WANRack, LLC and WANRack Holdings, LLC — Pennsylvania Public Utility Commission filing",
+"publisher": "Pennsylvania Public Utility Commission",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2024-12-20",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund-attributed U.S. fiber ownership",
+"evidenceSummary": "The filing describes WANRack as a private fiber wide-area-network operator across 23 U.S. states and identifies CBRE Global Infrastructure Fund Holdings I, LP as an 88% indirect owner; it also records the former CBRE Caledon master-fund and adviser names.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"managerName",
+"fundName",
+"investmentStrategy",
+"sectors",
+"regions",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557",
+"title": "WANRack, LLC and GW Operating, LLC — Georgia Public Service Commission pro forma transfer filing",
+"publisher": "Georgia Public Service Commission",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2026-01-30",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current ownership and unchanged ultimate control",
+"evidenceSummary": "The filing states that WANRack operates in 23 states, charts CBRE Global Infrastructure Fund Holdings I, LP as holding 97.6% of the upstream infrastructure vehicle, and states that the internal restructuring will not change ultimate ownership or control of WANRack and GW Operating.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"managerName",
+"fundName",
+"investmentStrategy",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-054",
+"managerName": "CBRE Investment Management",
+"fundName": "CBRE GIF"
+}
+],
+"changedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"strategies",
+"structure",
+"sectors",
+"regions",
+"sourceUrls",
+"strategyUrl"
+],
+"repoDispositionRationale": "FUND-054 matches the same evergreen commercial vehicle, but the repository uses an abbreviated fund name, an unsupported undated $3.3B amount, a narrower strategy and sector description, Global-only geography, and an older generic strategy URL; the corrected row preserves the legacy ID and uses the current commercial name, Form ADV gross asset value and reporting date, and fund-attributed U.S. ownership evidence.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "CBRE Bright Star Infra Co-Invest LP",
+"reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+"rationale": "Current regulatory filings establish a private infrastructure co-invest vehicle and reported assets, but opened public evidence does not identify its underlying investment, establish a North American mandate or current North American holding, or show that it is commercially distinct from any related vehicle.",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/158495/PDF/158495.pdf",
+"https://www.sec.gov/Archives/edgar/data/2017833/000201783324000001/xslFormDX01/primary_doc.xml"
+]
+},
+{
+"fundName": "CBRE Starlight Infra Co-Invest LP",
+"reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+"rationale": "The current Form ADV establishes a private infrastructure co-invest vehicle and reported assets, but no opened fund-specific source establishes its underlying investment, North American qualification, lifecycle beyond the filing, or distinct commercial strategy.",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/158495/PDF/158495.pdf"
+]
+},
+{
+"fundName": "CBRE Musselshell Infrastructure Investments, LP",
+"reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+"rationale": "SEC and Montana Board of Investments materials establish the legal vehicle and an institutional commitment, but they do not establish whether the mandate is direct rather than indirect, identify a current holding, or prove North American qualification.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1944810/000194481022000001/xslFormDX01/primary_doc.xml",
+"https://investmentmt.com/_shared/Board/Meetings/2025Meetings/December_10_Materials_WEB.pdf"
+]
+},
+{
+"fundName": "CBRE Minke Infrastructure Investments, LP",
+"reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+"rationale": "The SEC filing establishes the vehicle and offering, but opened evidence does not establish a direct-equity strategy, current North American mandate or holding, or present lifecycle.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1988065/000198806523000001/xslFormDX01/primary_doc.xml"
+]
+},
+{
+"fundName": "CBRE Andromeda Infrastructure Investments IV, LP",
+"reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+"rationale": "The SEC filing establishes the vehicle and offering, but no opened fund-specific primary source establishes direct-equity infrastructure scope, North American qualification, current holdings, or current lifecycle.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1997494/000199749423000001/xslFormDX01/primary_doc.xml"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "CBRE Bright Star Infra Co-Invest LP and CBRE Starlight Infra Co-Invest LP",
+"issue": "The current Form ADV confirms both vehicles and their reported gross asset values, but public evidence does not identify their underlying assets, establish North American exposure, or resolve whether they are separate commercial co-invest strategies or related parallel vehicles.",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/158495/PDF/158495.pdf",
+"https://www.sec.gov/Archives/edgar/data/2017833/000201783324000001/xslFormDX01/primary_doc.xml"
+],
+"recommendedResolution": "Obtain current audited financial statements, LP reports or a manager vehicle chart identifying each underlying investment, mandate, lifecycle and relationship between the two vehicles."
+},
+{
+"subject": "CBRE customized infrastructure mandate vehicles",
+"issue": "Musselshell, Minke and Andromeda IV are documented legal vehicles, but the opened filings and LP materials do not establish direct-versus-indirect strategy, current asset attribution, North American qualification, or whether each is independently managed rather than a sleeve or customized account.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1944810/000194481022000001/xslFormDX01/primary_doc.xml",
+"https://investmentmt.com/_shared/Board/Meetings/2025Meetings/December_10_Materials_WEB.pdf",
+"https://www.sec.gov/Archives/edgar/data/1988065/000198806523000001/xslFormDX01/primary_doc.xml",
+"https://www.sec.gov/Archives/edgar/data/1997494/000199749423000001/xslFormDX01/primary_doc.xml"
+],
+"recommendedResolution": "Obtain fund-specific offering memoranda, LP investment memoranda, audited reports or manager confirmation covering strategy, geography, current holdings and commercial vehicle identity."
+},
+{
+"subject": "CBRE Global Infrastructure Fund gross asset value date",
+"issue": "The 2026 Form ADV reports $5,102,216,829 of current gross asset value in the annual amendment filed on 2026-03-31, but the public filing does not separately state the underlying valuation date; the snapshot therefore uses the filing date as the amount's reporting date rather than inferring a valuation date.",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/158495/PDF/158495.pdf"
+],
+"recommendedResolution": "Confirm the valuation date and period-end gross asset value from the fund's audited financial statements or a manager-issued investor report."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 22,
+"searchQueriesRun": 104,
+"notes": [
+"The master fund and eight Form ADV feeder or aggregator entities are treated as one commercial fund rather than separate vehicles.",
+"North American qualification rests on fund-specific regulatory ownership of WANRack and GW Operating, not on the generic Global or OECD label.",
+"The SEC amount is current gross asset value reported in the 2026 annual Form ADV, not commitments or a final close.",
+"Customized and co-invest vehicles without fund-specific directness, lifecycle and North American evidence remain excluded pending further documentation.",
+"Global Indirect Private Infrastructure and listed infrastructure securities products were reviewed and excluded as non-direct strategies.",
+"The IAPD Form ADV did not render in the web viewer because of its file content type but was downloaded and reviewed; Pennsylvania and Georgia filings supplied the opened fund-attributed ownership evidence."
+]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 5,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 3
+}
+}
+</fund_census_json>
+<fund_census_report>
+CBRE Investment Management — North American direct infrastructure fund census
+Conclusion
+As of 2026-07-29, one commercially distinct current vehicle qualifies: CBRE Global Infrastructure Fund (CGIF). The manager lineage is Caledon Capital Management, founded in 2006; CBRE Caledon after Caledon joined CBRE Global Investors in 2017; and CBRE Investment Management after the CBRE Global Investors, CBRE Clarion and CBRE Caledon brands merged in 2021.
+CGIF is documented as a diversified global open-end fund focused on mid-market core and core-plus infrastructure in OECD countries, while CBRE Investment Management's current direct strategy page describes direct investments through pooled vehicles and separately managed accounts. North American qualification is not inferred from the generic Global or OECD labels: Pennsylvania and Georgia utility filings attribute the U.S. fiber operator WANRack and the related GW Operating ownership chain to CBRE Global Infrastructure Fund Holdings I, LP, and the Georgia filing states that the 2026 internal restructuring does not change ultimate ownership or control.
+The supplied manifest contains one repository row—FUND-054, CBRE GIF—and no overlapping supplied manager. That row is matched exactly once and classified PROPOSED_CORRECTION. Pasted text
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceCBRE Global Infrastructure FundNAMED_FUNDEVERGREEN_ACTIVEVERIFIED_CURRENT_NA_HOLDING — WANRack, LLCAUM — $5.102B current gross asset value reported 2026-03-31PROPOSED_CORRECTION — FUND-054Official strategy and commercial name; institutional open-end description; Form ADV GAV; Pennsylvania and Georgia ownership filings.
+Repository reconciliation
+FUND-054 is preserved. The correction expands the abbreviated repository name to CBRE Global Infrastructure Fund, replaces the repository's undated $3.3B field with the current Form ADV gross asset value of $5,102,216,829 reported in the 2026-03-31 annual amendment, classifies the amount as AUM, and adds the reporting date rather than treating the number as commitments or a close. The fund is classified as open-end and evergreen, with evidenced core/core-plus exposure to digital infrastructure, energy transition and transportation, and with North America added alongside Global because of the fund-attributed U.S. holding.
+The Form ADV master vehicle and its feeder or aggregator entities are treated as one commercial fund; none is returned as a separate vehicle. The Pennsylvania filing independently records the master-fund rename from CBRE Caledon Global Infrastructure Fund Holdings I, LP and the adviser rename from CBRE Caledon Capital Management Inc.
+Exclusions and unresolved issues
+Five legal vehicles remain excluded for INSUFFICIENT_FUND_SPECIFIC_EVIDENCE: CBRE Bright Star Infra Co-Invest LP, CBRE Starlight Infra Co-Invest LP, CBRE Musselshell Infrastructure Investments, LP, CBRE Minke Infrastructure Investments, LP, and CBRE Andromeda Infrastructure Investments IV, LP. The opened filings establish vehicle existence—and, for Musselshell, an institutional commitment—but do not establish every required element of direct-equity strategy, current North American mandate or holding, current lifecycle, and distinct commercial identity.
+CBRE's Global Indirect Private Infrastructure strategy is excluded because it builds exposure through funds and joint ventures rather than qualifying as the requested direct-equity vehicle. The CBRE Global Infrastructure Securities Fund and CBRE Global Infrastructure SMA are excluded because they invest in listed infrastructure securities.
+Three conflicts remain open: the underlying assets, North American exposure and relationship between Bright Star and Starlight; the direct-versus-indirect nature, asset attribution and commercial identity of Musselshell, Minke and Andromeda IV; and the precise valuation date underlying CGIF's Form ADV gross asset value, because the filing states the amount but not a separate valuation date. No program exception is used, and no overlapping supplied manager was identified.
+Completeness
+Official manager-history and direct/indirect strategy materials, official fund-name evidence, an institutional investor report, the current Form ADV, SEC Form D filings, Montana Board of Investments materials, and Pennsylvania and Georgia utility ownership filings were reviewed. The audit opened 22 unique sources and ran 104 search queries. The master fund and eight feeder or aggregator entities were checked for double counting. The IAPD PDF did not render in the web viewer because of its content type, but the filing was downloaded and reviewed; this renderer limitation did not prevent fund identity, amount, strategy, North American holding or lifecycle verification.
+</fund_census_report>

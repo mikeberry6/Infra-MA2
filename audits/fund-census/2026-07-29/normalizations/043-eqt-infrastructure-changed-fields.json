@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "EQT Infrastructure",
+  "createdAt": "2026-07-30T19:32:30.128Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/043-eqt-infrastructure-unsupported-reverted.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/043-eqt-infrastructure-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-073",
+      "field": "changedFields",
+      "from": [
+        "fundName",
+        "size",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeAsOf"
+      ],
+      "value": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-071",
+      "field": "changedFields",
+      "from": [
+        "fundName",
+        "sizeBasis",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "structure",
+        "fundStatus",
+        "vintage"
+      ],
+      "value": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "vintage",
+        "strategies",
+        "structure",
+        "fundStatus"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    },
+    {
+      "fundIndex": 2,
+      "legacyId": "FUND-072",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeBasis",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeUsdMm",
+        "sizeAsOf",
+        "regions",
+        "strategies"
+      ],
+      "value": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "strategies",
+        "regions"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    }
+  ]
+}

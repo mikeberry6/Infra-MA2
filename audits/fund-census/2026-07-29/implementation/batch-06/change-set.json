@@ -1,0 +1,1583 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_PROMOTION_BATCH",
+  "sourceAsOfDate": "2026-07-29",
+  "policyHash": "5965b8701941fc2b9a8bdfc9c09cab079451c00715c79638a6364e27a860398b",
+  "batch": 6,
+  "summary": {
+    "batch": 6,
+    "creates": 0,
+    "updates": 13,
+    "actionable": 13,
+    "baseFundCount": 200,
+    "resultingFundCount": 200,
+    "changeRatio": 0.065
+  },
+  "candidates": [
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-106",
+      "before": {
+        "legacyId": "FUND-106",
+        "managerName": "KKR",
+        "fundName": "KKR Global Climate Transition Fund",
+        "ticker": null,
+        "investmentStrategy": "Climate-transition infrastructure strategy launched in 2023 to back scalable decarbonization solutions across the physical economy; disclosed investments so far skew toward renewables/storage and transport electrification.",
+        "size": "$7.0B",
+        "sizeUsdMm": 7000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Raising",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/2015282/000201528325000005/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.kkr.com/businesses/infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-106",
+        "managerName": "KKR",
+        "fundName": "KKR Global Climate Transition Fund (USD) SCSp",
+        "ticker": null,
+        "investmentStrategy": "Climate-transition infrastructure equity fund targeting decarbonization assets across power, transport and digital",
+        "size": "$3.0B amount sold",
+        "sizeUsdMm": 2979,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2979000000",
+        "sizeBasis": "AMOUNT_SOLD",
+        "sizeAsOf": "2026-06-24",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/2015282/000201528325000005/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.kkr.com/businesses/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "regions",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_133b3373399e36189450",
+          "url": "https://www.kkr.com/global-perspectives/publications/sustainability-report-2025",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "strategies"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-06-23",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Strategy description"
+        },
+        {
+          "sourceId": "fundsrc_5217c8b5bf449a773324",
+          "url": "https://www.sec.gov/Archives/edgar/data/2015283/000201528326000001/xslFormDX01/primary_doc.xml",
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-06-24",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Form D amount sold"
+        }
+      ],
+      "rationale": "Repository uses target size and incomplete identity; the Form D provides the current amount sold and official name",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-110",
+      "before": {
+        "legacyId": "FUND-110",
+        "managerName": "La Caisse de dépôt (CDPQ)",
+        "fundName": "CDPQ Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Evergreen direct infrastructure program focused on tangible assets with stable long-term income across transport, power/renewables, public transit and, increasingly, telecom/data centres.",
+        "size": "C$75B",
+        "sizeUsdMm": 55500,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.cdpq.com/en/investments/infrastructure"
+        ],
+        "strategyUrl": "https://www.cdpq.com/en/investments/infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-110",
+        "managerName": "La Caisse de dépôt (CDPQ)",
+        "fundName": "CDPQ Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Evergreen direct infrastructure program focused on tangible assets with stable long-term income across transport, power/renewables, public transit and, increasingly, telecom/data centres.",
+        "size": "C$74.506B net assets under management",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "CAD",
+        "sizeNativeAmount": "74505861000",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2025-12-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "Global",
+          "Latin America",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cdpq.com/en/investments/infrastructure"
+        ],
+        "strategyUrl": "https://www.cdpq.com/en/investments/infrastructure"
+      },
+      "changedFields": [
+        "regions",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm"
+      ],
+      "suppressedFields": [
+        "fundName",
+        "vintage"
+      ],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_9110b716b2ad2d83af16",
+          "url": "https://www.lacaisse.com/en/investments/infrastructure",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Official current infrastructure-program page"
+        },
+        {
+          "sourceId": "fundsrc_00130ae439df61ad97ac",
+          "url": "https://www.lacaisse.com/en/news/pressreleases/vertical-bridge-announces-15-billion-strategic-equity-investment-kkr",
+          "supportedFields": [
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-04-22",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current United States direct-equity holding"
+        },
+        {
+          "sourceId": "fundsrc_f6a849948ed9cc344cca",
+          "url": "https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2025_lacaisse_annual_report.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-05-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Official specialized-portfolio identity, assets, mandate and geography"
+        }
+      ],
+      "rationale": "FUND-110 represents the same evergreen infrastructure program, but official reporting provides the formal Infrastructure Specialized Portfolio name, exact CAD net assets and measurement date, a 2010 creation year, and evidenced regional exposure. The repository's USD amount is removed because the reviewed primary sources do not state that USD equivalent or an applicable FX rate and date.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-119A",
+      "before": {
+        "legacyId": "FUND-119A",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "fundName": "North Haven Infrastructure Partners II (NHIP II)",
+        "ticker": null,
+        "investmentStrategy": "Second Morgan Stanley Infrastructure Partners North Haven vehicle, publicly identified as the fund vehicle for Brazos Midstream's 2018 Delaware Basin transaction.",
+        "size": "$3.6B",
+        "sizeUsdMm": 3600,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2018",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://brazosmidstream.com/news/brazos-midstream-completes-sale-delaware-basin-subsidiaries-morgan-stanley-infrastructure"
+        ],
+        "strategyUrl": "https://www.morganstanley.com/im/en-us/institutional-investor/about-us/investment-teams/real-assets/private-infrastructure-team.html"
+      },
+      "after": {
+        "legacyId": "FUND-119A",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "fundName": "North Haven Infrastructure Partners II (NHIP II)",
+        "ticker": null,
+        "investmentStrategy": "Second Morgan Stanley Infrastructure Partners North Haven vehicle, publicly identified as the fund vehicle for Brazos Midstream's 2018 Delaware Basin transaction.",
+        "size": "$3.6B",
+        "sizeUsdMm": 3600,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "3600000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2016-03-03",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2018",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://brazosmidstream.com/news/brazos-midstream-completes-sale-delaware-basin-subsidiaries-morgan-stanley-infrastructure"
+        ],
+        "strategyUrl": "https://www.morganstanley.com/im/en-us/institutional-investor/about-us/investment-teams/real-assets/private-infrastructure-team.html"
+      },
+      "changedFields": [
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_3e015be7f5a4c7744362",
+          "url": "https://www.morganstanley.com/press-releases/msip-second-fund-close",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2016-03-03",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "NHIP II close"
+        }
+      ],
+      "rationale": "Repository missing canonical size classification fields.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-123",
+      "before": {
+        "legacyId": "FUND-123",
+        "managerName": "Mubadala Investment Company",
+        "fundName": "Mubadala Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Scaling direct real-assets platform with highest conviction in digital infrastructure and energy transition, alongside power and transport.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"
+        ],
+        "strategyUrl": "https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-123",
+        "managerName": "Mubadala Investment Company",
+        "fundName": "Mubadala Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Scaling direct real-assets platform with highest conviction in digital infrastructure and energy transition, alongside power and transport.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"
+        ],
+        "strategyUrl": "https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"
+      },
+      "changedFields": [
+        "regions"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_48758d3a9380d3421f8b",
+          "url": "https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+          "supportedFields": [
+            "investmentStrategy",
+            "sectors"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-03-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Direct infrastructure equity ownership"
+        },
+        {
+          "sourceId": "fundsrc_48758d3a9380d3421f8b",
+          "url": "https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-03-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Primary audited program-level infrastructure disclosure"
+        },
+        {
+          "sourceId": "fundsrc_903fc419b063a834a66d",
+          "url": "https://www.isquaredcapital.com/news/ten-closes-inaugural-financing/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2024-07-15",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "North American direct-equity infrastructure deployment"
+        }
+      ],
+      "rationale": "The repository row matches the documented evergreen infrastructure program, but its generic Global region classification does not expressly classify North America. Primary audited program-level evidence names North America, Europe, and Asia, so the canonical regions field should expressly include North America.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-125",
+      "before": {
+        "legacyId": "FUND-125",
+        "managerName": "Northleaf Capital Partners",
+        "fundName": "Northleaf NEIF",
+        "ticker": null,
+        "investmentStrategy": "Evergreen open-end fund for mature mid-market infrastructure with stable cash flows, lower-risk profiles, and a portfolio that publicly appears centered on contracted digital, transport and energy-transition assets.",
+        "size": ">$1.0B",
+        "sizeUsdMm": 1000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.kirkland.com/news/press-release/2021/11/kirkland-advises-northleaf-on-infra-fund"
+        ],
+        "strategyUrl": "https://www.northleafcapital.com/infrastructure/"
+      },
+      "after": {
+        "legacyId": "FUND-125",
+        "managerName": "Northleaf Capital Partners",
+        "fundName": "Northleaf Essential Infrastructure Fund",
+        "ticker": null,
+        "investmentStrategy": "Evergreen open-end fund for mature mid-market infrastructure with stable cash flows, lower-risk profiles, and a portfolio that publicly appears centered on contracted digital, transport and energy-transition assets.",
+        "size": ">$1.0B",
+        "sizeUsdMm": 1000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.kirkland.com/news/press-release/2021/11/kirkland-advises-northleaf-on-infra-fund"
+        ],
+        "strategyUrl": "https://www.northleafcapital.com/infrastructure/"
+      },
+      "changedFields": [
+        "fundName"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_b7279a3ae58f9fc9e8e3",
+          "url": "https://www.kirkland.com/news/press-release/2021/11/kirkland-advises-northleaf-on-infra-fund",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "strategies",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "NEIF launch and strategy"
+        }
+      ],
+      "rationale": "Repository uses abbreviated name; evidence supports full official name",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-126",
+      "before": {
+        "legacyId": "FUND-126",
+        "managerName": "Northleaf Capital Partners",
+        "fundName": "Northleaf NICP IV",
+        "ticker": null,
+        "investmentStrategy": "Northleaf's largest infrastructure vehicle; a control-oriented, contracted mid-market strategy mainly in North America, with actual deployment concentrated in digital, transport and energy-transition assets.",
+        "size": "$2.6B",
+        "sizeUsdMm": 2600,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.northleafcapital.com/news/northleaf-hits-hard-cap-final-close-its-us26-billion-infrastructure-fund"
+        ],
+        "strategyUrl": "https://www.northleafcapital.com/infrastructure/"
+      },
+      "after": {
+        "legacyId": "FUND-126",
+        "managerName": "Northleaf Capital Partners",
+        "fundName": "Northleaf Infrastructure Capital Partners IV",
+        "ticker": null,
+        "investmentStrategy": "Northleaf's largest infrastructure vehicle; a control-oriented, contracted mid-market strategy mainly in North America, with actual deployment concentrated in digital, transport and energy-transition assets.",
+        "size": "$2.6B",
+        "sizeUsdMm": 2600,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.northleafcapital.com/news/northleaf-hits-hard-cap-final-close-its-us26-billion-infrastructure-fund"
+        ],
+        "strategyUrl": "https://www.northleafcapital.com/infrastructure/"
+      },
+      "changedFields": [
+        "fundName"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_3f3039f19098666973c2",
+          "url": "https://www.northleafcapital.com/news/northleaf-hits-hard-cap-final-close-its-us26-billion-infrastructure-fund",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "size",
+            "strategies",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "NICP IV final close"
+        }
+      ],
+      "rationale": "Repository uses abbreviated name; evidence supports full official name",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-127",
+      "before": {
+        "legacyId": "FUND-127",
+        "managerName": "OMERS Infrastructure",
+        "fundName": "OMERS Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Broad evergreen direct platform spanning energy, digital, transport and other government-regulated services, with a long current-and-realized portfolio history.",
+        "size": "C$33B",
+        "sizeUsdMm": 24420,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.omersinfrastructure.com/"
+        ],
+        "strategyUrl": "https://www.omersinfrastructure.com/"
+      },
+      "after": {
+        "legacyId": "FUND-127",
+        "managerName": "OMERS Infrastructure",
+        "fundName": "OMERS Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Evergreen direct infrastructure equity program investing in large-scale regulated and contracted assets with long-term ownership and active stewardship.",
+        "size": "C$32.5B infrastructure investments",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": "2025-12-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.omersinfrastructure.com/"
+        ],
+        "strategyUrl": "https://www.omersinfrastructure.com/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "regions",
+        "size",
+        "sizeAsOf",
+        "sizeUsdMm"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_8b8f6ea92cd220588200",
+          "url": "https://www.omers.com/wp-content/uploads/2026/03/2025-OMERS-Annual-Report.pdf",
+          "supportedFields": [
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-03-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Infrastructure asset class and mandate"
+        },
+        {
+          "sourceId": "fundsrc_9d6872538ab582f95301",
+          "url": "https://www.omersinfrastructure.com/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Direct infrastructure investing model"
+        }
+      ],
+      "rationale": "Repository row lacks current size basis and North America-specific regional classification supported by primary sources.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-128",
+      "before": {
+        "legacyId": "FUND-128",
+        "managerName": "Ontario Teachers' Pension Plan",
+        "fundName": "OTPP Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Global core/core-plus essential-infrastructure platform across transport, utilities, water and renewables, now with a meaningful digital infrastructure sleeve.",
+        "size": "C$32B",
+        "sizeUsdMm": 23680,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/"
+        ],
+        "strategyUrl": "https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/"
+      },
+      "after": {
+        "legacyId": "FUND-128",
+        "managerName": "Ontario Teachers' Pension Plan",
+        "fundName": "Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Global direct-equity infrastructure program focused on core and core-plus assets, taking significant positions, including majority or co-control positions, across energy, transport and logistics, water and wastewater, and related infrastructure sectors.",
+        "size": "C$34.5B net investments",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "CAD",
+        "sizeNativeAmount": "34500000000",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2025-12-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/"
+        ],
+        "strategyUrl": "https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/"
+      },
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm"
+      ],
+      "suppressedFields": [
+        "strategies"
+      ],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_6909c7db12f06205072f",
+          "url": "https://www.otpp.com/en-ca/annual-report/2025/",
+          "supportedFields": [
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-04-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Infrastructure portfolio size and activity"
+        },
+        {
+          "sourceId": "fundsrc_1235ce8084a3b87465e3",
+          "url": "https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "strategies",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Official infrastructure program overview"
+        }
+      ],
+      "rationale": "Repository row reflects the same underlying evergreen infrastructure program but uses a non-official name and outdated size, and omits the explicit North America mandate and updated strategy details.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-131",
+      "before": {
+        "legacyId": "FUND-131",
+        "managerName": "Quinbrook Infrastructure Partners",
+        "fundName": "Quinbrook Net Zero Power Fund (NZPF)",
+        "ticker": null,
+        "investmentStrategy": "Value-add net-zero-power strategy that held final close in August 2024 with USD 3B across the fund and co-investment vehicles, focused on solar+storage, grid support, battery storage, renewable fuels and renewable-powered hyperscale data-center infrastructure.",
+        "size": "$3.0B",
+        "sizeUsdMm": 3000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/"
+        ],
+        "strategyUrl": "https://www.quinbrook.com/"
+      },
+      "after": {
+        "legacyId": "FUND-131",
+        "managerName": "Quinbrook Infrastructure Partners",
+        "fundName": "Quinbrook Net Zero Power Fund (NZPF)",
+        "ticker": null,
+        "investmentStrategy": "Value-add net-zero-power strategy focused on solar+storage, grid support, battery storage, renewable fuels and renewable-powered hyperscale data-center infrastructure.",
+        "size": "$3.0B capital commitments",
+        "sizeUsdMm": 3000,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "3000000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2024-08-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/"
+        ],
+        "strategyUrl": "https://www.quinbrook.com/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_d85d6bc18cd183058fe7",
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-08-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "NZPF final close announcement"
+        }
+      ],
+      "rationale": "Repository row matches the fund but omits size basis, native currency/amount, as-of date, and contains a longer strategy/size expression than the normalized evidence-backed snapshot.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-142",
+      "before": {
+        "legacyId": "FUND-142",
+        "managerName": "Tallvine Partners",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "ticker": null,
+        "investmentStrategy": "Inaugural value-add middle-market infrastructure vehicle building North American platforms across transport/logistics, digital infrastructure, and eventually energy/utilities.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Raising",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Digital",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/2017078/000201707825000003/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.tallvinepartners.com/"
+      },
+      "after": {
+        "legacyId": "FUND-142",
+        "managerName": "Tallvine Partners",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "ticker": null,
+        "investmentStrategy": "Value-add middle-market infrastructure strategy focused on building North American platforms across transportation/logistics, digital infrastructure, and utilities.",
+        "size": "$701.7M amount sold",
+        "sizeUsdMm": 701.7,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "701700000",
+        "sizeBasis": "AMOUNT_SOLD",
+        "sizeAsOf": "2025-08-28",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Digital",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/2017078/000201707825000003/xslFormDX01/primary_doc.xml",
+          "https://www.tallvinepartners.com/"
+        ],
+        "strategyUrl": "https://www.tallvinepartners.com/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_56eab949c0e9124444f1",
+          "url": "https://www.sec.gov/Archives/edgar/data/2017078/000201707825000003/xslFormDX01/primary_doc.xml",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-08-28",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "SEC filing with offering and fundraising data"
+        },
+        {
+          "sourceId": "fundsrc_b93b87a2603906742591",
+          "url": "https://www.tallvinepartners.com/",
+          "supportedFields": [
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Manager strategy description"
+        }
+      ],
+      "rationale": "Repository record matches the same fund but lacks size detail, updated strategy wording, vintage precision, expanded sector coverage, and complete source URL set; SEC filing and manager website provide these fields.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-145",
+      "before": {
+        "legacyId": "FUND-145",
+        "managerName": "TPG",
+        "fundName": "TPG Peppertree Fund X",
+        "ticker": null,
+        "investmentStrategy": "Specialized digital infrastructure strategy focused on wireless communications towers and adjacent communication assets such as fiber, DAS, spectrum, and rooftop rights.",
+        "size": "$2.0B",
+        "sizeUsdMm": 2000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000011/tpg-20251231.htm",
+          "https://www.sec.gov/Archives/edgar/data/1985097/000198509724000001/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.tpg.com/platforms/impact/rise-climate"
+      },
+      "after": {
+        "legacyId": "FUND-145",
+        "managerName": "TPG",
+        "fundName": "TPG Peppertree Fund X",
+        "ticker": null,
+        "investmentStrategy": "Specialized digital infrastructure strategy focused on wireless communications towers and adjacent communication assets such as fiber, DAS, spectrum, and rooftop rights.",
+        "size": "$2.0B",
+        "sizeUsdMm": 2000,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2000000000",
+        "sizeBasis": "AMOUNT_SOLD",
+        "sizeAsOf": "2024-01-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000011/tpg-20251231.htm",
+          "https://www.sec.gov/Archives/edgar/data/1985097/000198509724000001/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.tpg.com/platforms/impact/rise-climate"
+      },
+      "changedFields": [
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_93b4ce8e2271c24bbeca",
+          "url": "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000011/tpg-20251231.htm",
+          "supportedFields": [
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "strategies",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-12-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "TPG filing describing Peppertree strategy"
+        },
+        {
+          "sourceId": "fundsrc_1d6e750fe2a8016b0ad8",
+          "url": "https://www.sec.gov/Archives/edgar/data/1985097/000198509724000001/xslFormDX01/primary_doc.xml",
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "SEC Form D filing"
+        }
+      ],
+      "rationale": "Repository omits size basis and native amount details that are explicitly supported by SEC Form D.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-148B",
+      "before": {
+        "legacyId": "FUND-148B",
+        "managerName": "Vision Ridge Partners",
+        "fundName": "Sustainable Asset Fund III",
+        "ticker": null,
+        "investmentStrategy": "Third Vision Ridge sustainable real-assets fund focused on scalable energy transition, transportation transition, and resource-efficiency platforms across North America.",
+        "size": "$0.7B",
+        "sizeUsdMm": 700,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.wsj.com/articles/vision-ridge-raises-700-million-for-third-sustainable-asset-fund-11618834014"
+        ],
+        "strategyUrl": "https://vision-ridge.com/"
+      },
+      "after": {
+        "legacyId": "FUND-148B",
+        "managerName": "Vision Ridge Partners",
+        "fundName": "Sustainable Asset Fund III",
+        "ticker": null,
+        "investmentStrategy": "Sustainable real-assets strategy targeting energy transition, transportation transition, and resource-efficiency platforms across North America.",
+        "size": "$1.25B final close",
+        "sizeUsdMm": 1250,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1250000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2021-01-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.wsj.com/articles/vision-ridge-raises-700-million-for-third-sustainable-asset-fund-11618834014"
+        ],
+        "strategyUrl": "https://vision-ridge.com/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_a8ca89dff547e95185ac",
+          "url": "https://vision-ridge.com/vision-ridge-partners-announces-final-close-of-1-25-billion-for-sustainable-asset-fund-iii/",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund III final close and mandate"
+        }
+      ],
+      "rationale": "Repository understates fund size at $0.7B and lacks basis; primary source confirms $1.25B final close.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 6,
+      "legacyId": "FUND-149",
+      "before": {
+        "legacyId": "FUND-149",
+        "managerName": "Vision Ridge Partners",
+        "fundName": "Sustainable Asset Fund IV",
+        "ticker": null,
+        "investmentStrategy": "Flagship sustainable real-assets strategy that closed in February 2026 with approximately $2.4B across the fund and related vehicles, targeting the transition of energy, transportation and agriculture.",
+        "size": "$2.4B",
+        "sizeUsdMm": 2400,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2026",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.streetinsider.com/Business%2BWire/Vision%2BRidge%2BPartners%2BRaises%2B~%242.4%2BBillion%2Bfor%2BFlagship%2BSustainable%2BReal%2BAssets%2BStrategy/25980007.html"
+        ],
+        "strategyUrl": "https://vision-ridge.com/"
+      },
+      "after": {
+        "legacyId": "FUND-149",
+        "managerName": "Vision Ridge Partners",
+        "fundName": "Sustainable Asset Fund IV",
+        "ticker": null,
+        "investmentStrategy": "Flagship sustainable real-assets strategy targeting energy, transportation, and agriculture transition platforms.",
+        "size": "$2.4B final close",
+        "sizeUsdMm": 2400,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2400000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2026-02-11",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2026",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.streetinsider.com/Business%2BWire/Vision%2BRidge%2BPartners%2BRaises%2B~%242.4%2BBillion%2Bfor%2BFlagship%2BSustainable%2BReal%2BAssets%2BStrategy/25980007.html"
+        ],
+        "strategyUrl": "https://vision-ridge.com/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_9dafbf8cba9422aefe48",
+          "url": "https://vision-ridge.com/vision-ridge-partners-raises-2-4-billion-for-flagship-sustainable-real-assets-strategy/",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-02-11",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund IV final close and holdings"
+        }
+      ],
+      "rationale": "Repository lacks size basis; primary source confirms final close amount.",
+      "sizeGate": null
+    }
+  ]
+}

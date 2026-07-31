@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_NORTH_AMERICA_REPO_REVIEW_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Stonepeak",
+  "createdAt": "2026-07-31T01:24:09.913Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/090-stonepeak-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/090-stonepeak-unsupported-na-review-normalized.txt",
+  "allowedFields": [
+    "funds",
+    "repoOnlyRecords",
+    "unresolvedConflicts",
+    "summary"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-137",
+      "fundName": "Stonepeak Infrastructure Fund V",
+      "field": "funds",
+      "dispositionFrom": "PROPOSED_CORRECTION",
+      "dispositionValue": "REPO_ONLY_NEEDS_REVIEW",
+      "unsupportedClaim": "NORTH_AMERICA",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2003495/000200349525000001/xslFormDX01/primary_doc.xml"
+      ],
+      "rationale": "Opened evidence for Stonepeak Infrastructure Fund V does not support the mandatory fund-specific NORTH_AMERICA claim; the supplied repository row is retained for review only."
+    },
+    {
+      "fundIndex": 2,
+      "legacyId": "FUND-136",
+      "fundName": "Stonepeak Core Fund",
+      "field": "funds",
+      "dispositionFrom": "PROPOSED_CORRECTION",
+      "dispositionValue": "REPO_ONLY_NEEDS_REVIEW",
+      "unsupportedClaim": "NORTH_AMERICA",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2074413/000207441325000001/xslFormDX01/primary_doc.xml"
+      ],
+      "rationale": "Opened evidence for Stonepeak Core Fund does not support the mandatory fund-specific NORTH_AMERICA claim; the supplied repository row is retained for review only."
+    }
+  ]
+}

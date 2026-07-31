@@ -1,0 +1,106 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Nuveen Infrastructure",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Nuveen Infrastructure",
+"Glennmont Partners",
+"Glennmont Partners from Nuveen"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope and manifest governance",
+"issue": "The repository snapshot sets canonicalManager=null and knownManager=false for Nuveen Infrastructure, while the supplied manager universe includes "Nuveen Infrastructure" and official Nuveen materials identify an active infrastructure platform (including the rebranded Glennmont business). Under the governing unknown-manager rule, no vehicles can be included or proposed despite external evidence of a valid platform.",
+"sourceUrls": [
+"https://www.nuveen.com/en-us/about-us/investment-specialists/infrastructure",
+"https://www.nuveen.com/global/insights/news/nuveen-introduces-global-multi-asset-infrastructure-platform",
+"https://www.glennmont.com/"
+],
+"recommendedResolution": "Confirm whether Nuveen Infrastructure should be added as a canonical manager in the FUND_MANIFEST. If validated, rerun the census to enumerate qualifying North American direct-equity infrastructure vehicles."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 3,
+"searchQueriesRun": 9,
+"notes": [
+"Scope-limited review stopped at manager identity because knownManager=false enforces OUT_OF_SCOPE_UNKNOWN_MANAGER.",
+"Official Nuveen materials confirm the existence of a current infrastructure platform and the Glennmont rebrand, but repository governance prohibits proposing funds.",
+"No repository fund rows required reconciliation because the snapshot contains zero funds."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Nuveen Infrastructure — North American direct infrastructure fund census
+Conclusion
+Result: OUT_OF_SCOPE_UNKNOWN_MANAGER. The governing repository snapshot designates the requested manager as unknown (knownManager=false, canonicalManager=null), so no funds or programs can be included or proposed despite external evidence of an active platform. Pasted text
+Independent official materials confirm that Nuveen operates an infrastructure investment platform and that Glennmont Partners has been integrated and rebranded under Nuveen Infrastructure, but this cannot override the manifest constraint for this task.
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidence
+No vehicles are included due to the unknown-manager scope gate.
+Repository reconciliation
+The supplied repository snapshot contains zero fund rows, so:
+
+
+No EXISTING_VERIFIED matches were possible.
+
+
+No PROPOSED_NEW or PROPOSED_CORRECTION entries were permitted under the unknown-manager rule.
+
+
+No repoOnlyRecords were required.
+
+
+Exclusions and unresolved issues
+
+
+No candidate funds were evaluated or excluded because the manager-level scope gate precedes vehicle inclusion.
+
+
+Governance conflict: The snapshot marks Nuveen Infrastructure as an unknown manager while the supplied manager universe includes it and official Nuveen materials describe a current infrastructure platform (including the Glennmont rebrand). Pasted text
+
+
+Completeness
+
+
+Manager identity, aliases, and successor platforms were reviewed (Nuveen Infrastructure and Glennmont Partners).
+
+
+Fund-level materials, fundraising data, and holdings attribution were not pursued because they cannot change the mandated out-of-scope result.
+
+
+No parallel vehicles or feeder structures were analyzed for the same reason.
+
+
+Conclusion reflects a complete, scope-compliant result under repository governance constraints.
+</fund_census_report>

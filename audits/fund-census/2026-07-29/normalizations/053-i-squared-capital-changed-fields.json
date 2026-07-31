@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "I Squared Capital",
+  "createdAt": "2026-07-30T21:13:25.560Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/053-i-squared-capital-unsupported-reverted.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/053-i-squared-capital-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-093",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeUsdMm",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeBasis",
+        "sizeAsOf",
+        "fundStatus"
+      ],
+      "value": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "fundStatus"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-094",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeUsdMm",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "value": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    }
+  ]
+}

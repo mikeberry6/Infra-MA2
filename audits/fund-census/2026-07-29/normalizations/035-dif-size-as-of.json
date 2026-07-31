@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_SIZE_AS_OF_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "DIF",
+  "createdAt": "2026-07-30T18:08:55.625Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/035-dif-evidence-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/035-dif-size-as-of-normalized.txt",
+  "allowedFields": [
+    "snapshot.sizeAsOf",
+    "evidence[].supportedFields[].sizeAsOf"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-059",
+      "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+      "field": "sizeAsOf",
+      "from": "2024-03-05",
+      "value": "2024-03-05",
+      "rationale": "The model supplied a size-as-of date that no evidence row supports; the amount is anchored instead to the publication date of the single opened primary or institutional fund source supporting the classified native amount."
+    },
+    {
+      "fundIndex": 1,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-060",
+      "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+      "field": "sizeAsOf",
+      "from": "2022-03-23",
+      "value": "2024-03-05",
+      "rationale": "The model supplied a size-as-of date that no evidence row supports; the amount is anchored instead to the publication date of the single opened primary or institutional fund source supporting the classified native amount."
+    },
+    {
+      "fundIndex": 2,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-061",
+      "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf",
+      "field": "sizeAsOf",
+      "from": "2025-01-01",
+      "value": "2025-03-01",
+      "rationale": "The model supplied a size-as-of date that no evidence row supports; the amount is anchored instead to the publication date of the single opened primary or institutional fund source supporting the classified native amount."
+    }
+  ]
+}

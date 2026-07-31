@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_EXPLICIT_NORTH_AMERICA_BASIS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "KKR",
+  "createdAt": "2026-07-30T22:32:55.651Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/064-kkr-evidence-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/064-kkr-explicit-na-basis-normalized.txt",
+  "allowedFields": [
+    "funds[].northAmericaQualification.basis",
+    "funds[].northAmericaQualification.currentHoldingName",
+    "funds[].northAmericaQualification.currentHoldingUrl",
+    "summary.explicitNaMandate",
+    "summary.verifiedCurrentNaHolding"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "fundName": "KKR Global Climate Transition Fund (USD) SCSp",
+      "field": "northAmericaQualification.basis",
+      "from": "VERIFIED_CURRENT_NA_HOLDING",
+      "value": "EXPLICIT_NA_MANDATE",
+      "evidenceUrl": "https://www.kkr.com/global-perspectives/publications/sustainability-report-2025",
+      "rationale": "Opened fund-specific evidence explicitly connects the vehicle's investment strategy to North America; no holding inference is required."
+    }
+  ]
+}

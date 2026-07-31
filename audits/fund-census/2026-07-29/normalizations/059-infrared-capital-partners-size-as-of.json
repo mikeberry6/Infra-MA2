@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_SIZE_AS_OF_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "InfraRed Capital Partners",
+  "createdAt": "2026-07-30T21:56:55.619Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/059-infrared-capital-partners-excluded-reason-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/059-infrared-capital-partners-size-as-of-normalized.txt",
+  "allowedFields": [
+    "snapshot.sizeAsOf",
+    "evidence[].supportedFields[].sizeAsOf"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-102",
+      "url": "https://www.hicl.com/wp-content/uploads/2026/06/HICL-Annual-Report-2026.pdf",
+      "field": "sizeAsOf",
+      "from": "2026-03-31",
+      "value": "2026-06-01",
+      "rationale": "The model supplied a size-as-of date that no evidence row supports; the amount is anchored instead to the publication date of the single opened primary or institutional fund source supporting the classified native amount."
+    }
+  ]
+}

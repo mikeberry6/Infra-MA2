@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_NORTH_AMERICA_HOLDING_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "EIG Global Energy Partners",
+  "createdAt": "2026-07-30T18:36:25.437Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/038-eig-global-energy-partners-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/038-eig-global-energy-partners-unsupported-holding-excluded.txt",
+  "allowedFields": [
+    "funds",
+    "excludedCandidates",
+    "unresolvedConflicts",
+    "summary"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "fundName": "EIG Energy Transition Fund",
+      "field": "funds",
+      "dispositionFrom": "PROPOSED_NEW",
+      "dispositionValue": "EXCLUDED",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "sourceUrls": [
+        "https://www.eigpartners.com/"
+      ],
+      "rationale": "Opened evidence does not establish that Avantus is a current North American holding attributed specifically to EIG Energy Transition Fund."
+    }
+  ]
+}

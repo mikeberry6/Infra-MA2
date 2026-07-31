@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "InfraVia Capital Partners",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "InfraVia Capital Partners"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "InfraVia Capital Partners manager-governance status",
+      "issue": "The authoritative repository snapshot sets knownManager to false and canonicalManager to null, while the separately supplied manager-universe list includes InfraVia Capital Partners. Under the explicit knownManager=false scope rule, the manager must be returned as OUT_OF_SCOPE_UNKNOWN_MANAGER, with no proposed manager addition and no proposed fund records.",
+      "sourceUrls": [],
+      "recommendedResolution": "A repository-governance owner should reconcile the FUND_MANIFEST manager registry with the supplied manager-universe list. After InfraVia Capital Partners is formally added to the canonical manager manifest, rerun the fund census under the resulting known-manager snapshot."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": false,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 1,
+    "searchQueriesRun": 0,
+    "notes": [
+      "The supplied FUND_MANIFEST snapshot and manager-universe data were reviewed.",
+      "The snapshot contains no repository fund rows, so there are no matchedRepoFunds or repoOnlyRecords to reconcile.",
+      "Fund-level inclusion research and vehicle proposals are contractually inapplicable because the governing snapshot sets knownManager to false.",
+      "No evidence URLs were invented or inferred."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

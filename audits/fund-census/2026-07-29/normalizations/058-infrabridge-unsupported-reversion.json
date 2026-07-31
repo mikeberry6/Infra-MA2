@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "InfraBridge",
+  "createdAt": "2026-07-30T21:45:55.097Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/058-infrabridge-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/058-infrabridge-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099B",
+      "field": "investmentStrategy",
+      "from": "Global diversified infrastructure equity strategy across digital infrastructure, energy transition and transport assets.",
+      "value": "Second legacy AMP Capital global infrastructure equity vehicle, now associated with InfraBridge, with public disclosures identifying investments including Invenergy AMPCI Thermal Power and Expedient.",
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099B",
+      "field": "size",
+      "from": "$3.4B final close",
+      "value": "$3.4B",
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099B",
+      "field": "sizeNativeCurrency",
+      "from": "USD",
+      "value": null,
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099B",
+      "field": "sizeNativeAmount",
+      "from": "3400000000",
+      "value": null,
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099B",
+      "field": "sizeBasis",
+      "from": "FINAL_CLOSE",
+      "value": null,
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099B",
+      "field": "sizeAsOf",
+      "from": "2019-12-01",
+      "value": null,
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099B",
+      "field": "regions",
+      "from": [
+        "North America",
+        "Global"
+      ],
+      "value": [
+        "Global"
+      ],
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099B",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion",
+        "https://www.infrabridge.com/portfolio"
+      ],
+      "value": [
+        "https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion"
+      ],
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    }
+  ]
+}

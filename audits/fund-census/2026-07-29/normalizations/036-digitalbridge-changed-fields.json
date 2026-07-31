@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "DigitalBridge",
+  "createdAt": "2026-07-30T18:19:27.967Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/036-digitalbridge-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/036-digitalbridge-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-063",
+      "field": "changedFields",
+      "from": [
+        "fundName",
+        "size",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sizeAsOf",
+        "vintage",
+        "regions",
+        "sourceUrls"
+      ],
+      "value": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "vintage",
+        "regions",
+        "sourceUrls"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    }
+  ]
+}

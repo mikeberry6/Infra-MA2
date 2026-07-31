@@ -1,0 +1,119 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "BCI",
+"canonicalManager": "BCI",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"BCI"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "BLOCKED",
+"blockers": [
+"No opened fund-specific primary or institutional evidence is available in this conversation beyond the supplied repository snapshot, which the methodology treats only as reconciliation context and not as proof. The transport-completion instruction prohibits additional browsing, searching, or tool use."
+],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-030",
+"repoFundName": "Infrastructure & Renewable Resources",
+"disposition": "NEEDS_REVIEW",
+"rationale": "The repository row could not be matched to an included fund or program because no opened fund-specific evidence establishes that Infrastructure & Renewable Resources is a documented investable direct-infrastructure program, confirms its current lifecycle, or supports either an explicit North American mandate or a current North American holding attributed to the program. The repository's approximately C$32 billion amount also lacks supported amount semantics, native amount fields, and an as-of date.",
+"evidenceUrls": [
+"https://www.bci.ca/investments/infrastructure-renewable-resources/"
+]
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "Infrastructure & Renewable Resources program qualification",
+"issue": "The repository characterizes Infrastructure & Renewable Resources as BCI's evergreen direct-investment program, but no opened primary evidence in this conversation confirms that the named program itself is an investable direct-equity infrastructure mandate eligible for PROGRAM_EXCEPTION treatment, rather than a broad portfolio or asset-class reporting category.",
+"sourceUrls": [
+"https://www.bci.ca/investments/infrastructure-renewable-resources/"
+],
+"recommendedResolution": "Open and review BCI's official strategy page, annual report, investment inventory, governance materials, and any program-level mandate documents to establish program identity, direct-equity authority, structure, sectors, and lifecycle."
+},
+{
+"subject": "Infrastructure & Renewable Resources North American qualification and current lifecycle",
+"issue": "No opened fund-specific source establishes an explicit North American mandate or attributes a current United States, Canadian, or Mexican direct-equity holding to the named program. The repository's Global region and Evergreen status are not independently sufficient evidence under the census rules.",
+"sourceUrls": [
+"https://www.bci.ca/investments/infrastructure-renewable-resources/"
+],
+"recommendedResolution": "Obtain primary program-level evidence naming North America in the mandate or identify a current North American holding that an official source reliably attributes to Infrastructure & Renewable Resources; separately verify that the program remains active as of 2026-07-29."
+},
+{
+"subject": "Infrastructure & Renewable Resources size",
+"issue": "The repository reports approximately C$32 billion and a USD estimate of 23,680 million, but supplies no native amount, size basis, size as-of date, stated USD equivalent, FX rate, or FX date. It is therefore unresolved whether the amount represents AUM, commitments, net assets, invested capital, or another portfolio measure.",
+"sourceUrls": [
+"https://www.bci.ca/investments/infrastructure-renewable-resources/"
+],
+"recommendedResolution": "Locate the dated primary disclosure supporting the C$32 billion figure, classify it only as TARGET, AMOUNT_SOLD, FIRST_CLOSE, FINAL_CLOSE, AUM, or COMMITMENTS, populate the native amount and as-of date, and omit USD fields unless the source states a USD equivalent or supplies an explicit FX rate and date."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": false,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 0,
+"searchQueriesRun": 0,
+"notes": [
+"The only available manager and vehicle information is the supplied FUND_MANIFEST snapshot.",
+"Repository information was used solely to identify and reconcile legacyId FUND-030 and was not treated as evidence supporting inclusion.",
+"No qualifying vehicle was inferred from BCI's manager-level description, Global region label, Evergreen designation, or approximate portfolio amount.",
+"This result does not establish that BCI lacks a qualifying North American direct-infrastructure program; it records that the inclusion tests could not be verified from opened evidence available under the transport-only restriction."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 1,
+"unresolvedConflicts": 3
+}
+}
+</fund_census_json>
+<fund_census_report>
+BCI — North American direct infrastructure fund census
+Conclusion
+No BCI vehicle can be included on the evidence available in this conversation. The supplied repository identifies one row, Infrastructure & Renewable Resources (FUND-030), but repository data is reconciliation context rather than proof. No opened fund-specific primary or institutional source establishes all four required elements: vehicle or program identity, direct-equity infrastructure scope, current lifecycle, and North American qualification.
+Accordingly, this is not a substantive finding that BCI has no qualifying North American direct-infrastructure mandate. It is a blocked evidence result under the transport-only restriction. The sole repository row is preserved as NEEDS_REVIEW, and no unsupported program classification, size semantic, date, or North American deployment has been inferred.
+Included funds
+Fund or programVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceNone verified—————No opened fund-specific evidence was available
+Repository reconciliation
+The supplied snapshot contains exactly one legacy record, and it has been reconciled exactly once:
+Legacy IDRepository fund nameDispositionRationaleFUND-030Infrastructure & Renewable ResourcesNEEDS_REVIEWThe available material does not independently establish that the name denotes a qualifying direct-investment program, confirm current lifecycle, or support an explicit North American mandate or fund-attributed current North American holding. The approximately C$32 billion figure also lacks supported amount semantics and a dated basis.
+There are no verified existing rows, proposed additions, proposed corrections, or possible duplicates. The existing legacy ID has not been deleted, archived, renamed, or reassigned.
+Exclusions and unresolved issues
+No candidate was affirmatively excluded because the available evidence does not establish a sufficiently complete candidate universe or support a specific exclusion reason.
+Three material issues remain unresolved:
+
+
+Program identity and direct-equity scope. Primary evidence is needed to determine whether Infrastructure & Renewable Resources is itself BCI's documented investable direct-infrastructure mandate eligible for PROGRAM_EXCEPTION, rather than a broad asset-class or portfolio-reporting category.
+
+
+North American qualification and lifecycle. A Global label does not qualify by itself. Primary evidence must either state a North American mandate or attribute at least one current U.S., Canadian, or Mexican direct-equity holding to the named program. The program's active or evergreen status also requires independent verification as of July 29, 2026.
+
+
+Size classification. The repository's approximately C$32 billion figure cannot be classified without a dated source specifying whether it represents AUM, commitments, or another permitted amount basis. The repository's USD estimate cannot be retained as an evidence-backed USD amount without a stated USD equivalent or an explicit FX rate and date.
+
+
+No overlapping supplied manager was identified from the snapshot. Predecessor names, successor platforms, fund-series aliases, parallel vehicles, feeders, and sidecars were not independently reviewed and therefore were not inferred.
+Completeness
+Official fund and program materials were not opened in the available conversation record. Fundraising and close sources, current-holding attribution, aliases and successors, and parallel or feeder structures consequently could not be verified. No web searches or additional tools were used for this transport-completion response.
+The official URL preserved in the repository snapshot is:
+https://www.bci.ca/investments/infrastructure-renewable-resources/
+That URL is retained as the starting point for human review, not treated here as opened evidence. The census remains blocked pending primary-source review of BCI's program mandate, current investment inventory, annual reporting, North American holding attribution, and the dated basis for the reported portfolio amount.
+</fund_census_report>

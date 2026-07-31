@@ -1,0 +1,203 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "H.I.G. Capital",
+"canonicalManager": "H.I.G. Capital",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["H.I.G. Capital"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "H.I.G. Infrastructure Partners",
+"aliases": ["H.I.G. Infrastructure Partners I", "H.I.G. Infrastructure Partners Fund I"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Official fund materials describe control-oriented infrastructure equity investments with operational value creation in middle-market infrastructure businesses.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official closing materials state the fund invests across North America and Europe.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-089",
+"managerName": "H.I.G. Capital",
+"fundName": "H.I.G. Infrastructure Partners",
+"ticker": null,
+"investmentStrategy": "Inaugural H.I.G. infrastructure vehicle pursuing control-oriented middle-market value-add/core-plus investments in North America and Europe, with a broad mandate beyond traditional TMT, power and transport.",
+"size": "$1.3B aggregate capital commitments (including separately managed accounts)",
+"sizeUsdMm": 1300,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "1300000000",
+"sizeBasis": "COMMITMENTS",
+"sizeAsOf": "2024-06-24",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2021",
+"strategies": ["Value-Add"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Power & ET", "Digital", "Transportation"],
+"regions": ["North America", "Europe"],
+"sourceUrls": ["https://higinfrastructure.com/news/h-i-g-capital-raises-1-3-billion-for-infrastructure-fund/"],
+"strategyUrl": "https://higinfrastructure.com/"
+},
+"evidence": [
+{
+"url": "https://www.hig.com/news/h-i-g-capital-closes-its-inaugural-infrastructure-fund-at-1-3-billion",
+"title": "H.I.G. Capital Closes Its Inaugural Infrastructure Fund at $1.3 Billion",
+"publisher": "H.I.G. Capital",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-06-24",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund close, size, strategy, geography",
+"evidenceSummary": "Confirms fund identity, $1.3B aggregate capital commitments (including SMAs), control-oriented infrastructure equity strategy, and mandate across North America and Europe.",
+"supports": ["FUND_IDENTITY", "DIRECT_EQUITY_INFRASTRUCTURE", "NORTH_AMERICA", "CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName", "investmentStrategy", "size", "sizeUsdMm", "sizeNativeCurrency", "sizeNativeAmount", "sizeBasis", "sizeAsOf", "regions", "fundStatus", "structure"]
+},
+{
+"url": "https://www.hig.com/news/h-i-g-capital-launches-infrastructure-investment-platform",
+"title": "H.I.G. Capital Launches Infrastructure Investment Platform",
+"publisher": "H.I.G. Capital",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2022-03-22",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Launch timing and vintage",
+"evidenceSummary": "States the infrastructure platform and fund were launched in 2021, supporting vintage timing.",
+"supports": ["FUND_IDENTITY", "DIRECT_EQUITY_INFRASTRUCTURE"],
+"supportedFields": ["vintage", "fundName"]
+},
+{
+"url": "https://www.higinfrastructure.com/strategy/",
+"title": "H.I.G. Infrastructure Strategy",
+"publisher": "H.I.G. Infrastructure",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Strategy and sector focus",
+"evidenceSummary": "Describes value-add and core-plus infrastructure equity strategy targeting sectors including digital (TMT), power, and transportation.",
+"supports": ["DIRECT_EQUITY_INFRASTRUCTURE"],
+"supportedFields": ["investmentStrategy", "strategies", "sectors"]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-089",
+"managerName": "H.I.G. Capital",
+"fundName": "H.I.G. Infrastructure Partners Fund I"
+}
+],
+"changedFields": ["fundName", "size", "sizeNativeCurrency", "sizeNativeAmount", "sizeBasis", "sizeAsOf", "sectors"],
+"repoDispositionRationale": "Repository fund name and size semantics are simplified; official materials confirm canonical fund name and that $1.3B represents aggregate commitments including SMAs with a specific as-of date. Sector list refined to evidenced sectors.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "H.I.G. Infrastructure Partners II",
+"issue": "A second infrastructure fund is registered for marketing in Europe as of June 2026, but no fund-specific primary evidence was found confirming direct-equity strategy details or explicit North American mandate tied to the named vehicle.",
+"sourceUrls": [
+"https://www.fma.gv.at/en/investor-information/supervision-of-capital-markets/prospectus-database/",
+"https://www.fi.ee/en/supervision-registers/investment-funds"
+],
+"recommendedResolution": "Obtain fund-specific materials (LP presentation, Form D, or official announcement) confirming strategy, geography, and lifecycle to determine inclusion."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 3,
+"searchQueriesRun": 12,
+"notes": ["Single confirmed closed-end infrastructure fund; successor fund identified but lacks sufficient fund-specific evidence for inclusion."]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+H.I.G. Capital — North American direct infrastructure fund census
+Conclusion
+H.I.G. Capital has one confirmed current direct-equity infrastructure fund meeting all inclusion criteria: its inaugural H.I.G. Infrastructure Partners vehicle, which closed in 2024 and remains active. A successor fund (H.I.G. Infrastructure Partners II) is identified but cannot be included due to insufficient fund-specific evidence confirming mandate and strategy.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepo DispositionEvidenceH.I.G. Infrastructure PartnersNamed FundClosed ActiveExplicit NA mandateCommitmentsProposed Correctionhttps://www.hig.com/news/h-i-g-capital-closes-its-inaugural-infrastructure-fund-at-1-3-billion
+Repository reconciliation
+
+
+FUND-089 matched and corrected:
+
+
+Canonical fund name standardized to “H.I.G. Infrastructure Partners”.
+
+
+Size clarified as $1.3B aggregate commitments (including SMAs) with COMMITMENTS basis and 2024-06-24 as-of date.
+
+
+Sector classification refined to evidenced sectors (Power & ET, Digital, Transportation).
+
+
+
+
+No additional repository rows required reconciliation.
+
+
+Exclusions and unresolved issues
+
+
+No excluded candidates identified.
+
+
+Unresolved: H.I.G. Infrastructure Partners II is confirmed as a marketed vehicle (Europe registration as of June 2026), but lacks sufficient fund-specific evidence for strategy and North American mandate. It is therefore not included pending further documentation.
+
+
+Completeness
+
+
+Official fund pages and close announcements reviewed.
+
+
+Strategy and sector coverage validated from primary materials.
+
+
+North American mandate explicitly confirmed.
+
+
+Manager aliases and platform evolution reviewed.
+
+
+No parallel or feeder duplication identified.
+
+
+Key limitation: absence of public fund-specific materials for the second infrastructure fund prevents inclusion.
+
+
+Pasted text
+</fund_census_report>

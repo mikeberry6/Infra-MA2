@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "IFM Investors",
+  "createdAt": "2026-07-30T21:29:00.205Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/055-ifm-investors-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/055-ifm-investors-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-097",
+      "field": "size",
+      "from": "[TBD]",
+      "value": "$73.6B",
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-097",
+      "field": "sizeUsdMm",
+      "from": null,
+      "value": 73600,
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-097",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.ifminvestors.com/capabilities/infrastructure/",
+        "https://www.ifminvestors.com/newsroom/ifm-investors-completes-acquisition-of-buckeye-partners/",
+        "https://www.ifminvestors.com/portfolio/buckeye-partners/"
+      ],
+      "value": [
+        "https://www.ifminvestors.com/capabilities/know-how/",
+        "https://www.green.ch/en/about-green/who-we-are/ifm-investors"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-097",
+      "field": "strategyUrl",
+      "from": "https://www.ifminvestors.com/capabilities/infrastructure/",
+      "value": "https://www.ifminvestors.com/capabilities/know-how/",
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-097",
+      "field": "changedFields",
+      "from": [
+        "regions",
+        "sourceUrls"
+      ],
+      "value": [
+        "regions"
+      ],
+      "rationale": "Changed fields whose unsupported snapshot differences were reverted are removed from changedFields."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-096",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.ifminvestors.com/newsroom/ifm-investors-acquires-stake-in-swift-current-energy/",
+        "https://www.ifminvestors.com/capabilities/infrastructure/"
+      ],
+      "value": [
+        "https://www.ifminvestors.com/capabilities/know-how/"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-096",
+      "field": "strategyUrl",
+      "from": "https://www.ifminvestors.com/capabilities/infrastructure/",
+      "value": "https://www.ifminvestors.com/capabilities/know-how/",
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-096",
+      "field": "changedFields",
+      "from": [
+        "fundName",
+        "regions",
+        "sourceUrls"
+      ],
+      "value": [
+        "fundName",
+        "regions"
+      ],
+      "rationale": "Changed fields whose unsupported snapshot differences were reverted are removed from changedFields."
+    }
+  ]
+}

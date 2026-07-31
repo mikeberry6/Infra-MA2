@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "CPP Investments",
+  "canonicalManager": "CPP Investments",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "CPP Investments",
+    "Canada Pension Plan Investment Board",
+    "CPPIB",
+    "CPP Investment Board"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "CPP Investments Infrastructure",
+      "aliases": [
+        "Infrastructure",
+        "CPPIB Infrastructure"
+      ],
+      "vehicleType": "PROGRAM_EXCEPTION",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "CPP Investments documents Infrastructure as an active internal direct-investment program that acquires and holds significant ownership interests in essential operating infrastructure. It is an evergreen pension investment program rather than a third-party commingled fund and is therefore included as a PROGRAM_EXCEPTION.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "CPP Investments' annual reporting attributes the continuing investment in 407 International Inc., operator of Ontario's 407 ETR toll road, to the Infrastructure program, establishing current direct-equity deployment in Canada.",
+        "currentHoldingName": "407 International Inc. (407 ETR)",
+        "currentHoldingUrl": "https://www.cppinvestments.com/the-fund/annual-report/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-058",
+        "managerName": "CPP Investments",
+        "fundName": "CPP Investments Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Evergreen global direct infrastructure program within CPP Investments' Real Assets platform, investing in essential transportation, digital, utility and social-infrastructure businesses.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Utilities",
+          "Digital",
+          "Transportation",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America",
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.cppinvestments.com/the-fund/our-investments/real-assets/infrastructure/"
+        ],
+        "strategyUrl": "https://www.cppinvestments.com/the-fund/our-investments/real-assets/infrastructure/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.cppinvestments.com/the-fund/our-investments/real-assets/infrastructure/",
+          "title": "Infrastructure",
+          "publisher": "CPP Investments",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Official Infrastructure program description",
+          "evidenceSummary": "The official strategy page identifies Infrastructure as a current CPP Investments direct-investment program focused on essential infrastructure businesses and supports its evergreen internal-program structure and non-energy infrastructure remit.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.cppinvestments.com/the-fund/annual-report/",
+          "title": "CPP Investments 2026 Annual Report",
+          "publisher": "CPP Investments",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-05-21",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current program and Canadian holding attribution",
+          "evidenceSummary": "The annual report presents Infrastructure as an active investment program and attributes the continuing 407 International Inc. investment to it, supporting current lifecycle and verified North American deployment.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "fundStatus",
+            "sectors",
+            "regions"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-058",
+          "managerName": "CPP Investments",
+          "fundName": "CPP Investments Infrastructure"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "sectors",
+        "regions"
+      ],
+      "repoDispositionRationale": "FUND-058 matches the documented Infrastructure program and is reconciled exactly once. A correction is proposed because official program and annual-report evidence establish current North American deployment and support separating Infrastructure's transportation, digital, utility and social-infrastructure remit from CPP Investments' separately documented Sustainable Energies program.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "fundName": "CPP Investments Sustainable Energies",
+      "aliases": [
+        "Sustainable Energies",
+        "Sustainable Energies Group",
+        "SEG",
+        "Power & Renewables",
+        "Energy & Resources"
+      ],
+      "vehicleType": "PROGRAM_EXCEPTION",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "CPP Investments documents Sustainable Energies as an active internal direct-investment program deploying equity across renewable power, conventional energy, energy infrastructure and transition-oriented businesses. It is an evergreen pension investment program rather than a separately raised third-party fund and is therefore included as a PROGRAM_EXCEPTION.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "CPP Investments' annual reporting attributes the continuing Pattern Energy investment to Sustainable Energies. Pattern Energy owns and operates renewable-energy assets across the United States, Canada and Mexico, establishing current North American direct-equity deployment.",
+        "currentHoldingName": "Pattern Energy Group LP",
+        "currentHoldingUrl": "https://www.cppinvestments.com/the-fund/annual-report/"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "CPP Investments",
+        "fundName": "CPP Investments Sustainable Energies",
+        "ticker": null,
+        "investmentStrategy": "Evergreen global direct-equity energy program investing across renewable power, conventional energy, energy infrastructure and energy-transition businesses.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Midstream"
+        ],
+        "regions": [
+          "North America",
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.cppinvestments.com/the-fund/our-investments/real-assets/sustainable-energies/",
+          "https://www.cppinvestments.com/the-fund/annual-report/"
+        ],
+        "strategyUrl": "https://www.cppinvestments.com/the-fund/our-investments/real-assets/sustainable-energies/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.cppinvestments.com/the-fund/our-investments/real-assets/sustainable-energies/",
+          "title": "Sustainable Energies",
+          "publisher": "CPP Investments",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Official Sustainable Energies program description",
+          "evidenceSummary": "The official strategy page identifies Sustainable Energies as a current direct-investment program spanning renewable power, conventional energy, energy infrastructure and transition opportunities, supporting program identity, direct-equity scope and evergreen lifecycle.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.cppinvestments.com/the-fund/annual-report/",
+          "title": "CPP Investments 2026 Annual Report",
+          "publisher": "CPP Investments",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-05-21",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current program and North American energy-holding attribution",
+          "evidenceSummary": "The annual report presents Sustainable Energies as an active investment program and attributes the continuing Pattern Energy investment to it, supporting current lifecycle and verified deployment through renewable-energy assets in the United States, Canada and Mexico.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "The repository contains no separate row for CPP Investments' documented Sustainable Energies evergreen direct-investment program. It is commercially and organizationally distinct from Infrastructure and therefore warrants a proposed new program-exception record under the existing canonical manager.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 7,
+    "notes": [
+      "CPP Investments does not market Infrastructure or Sustainable Energies as third-party closed-end funds; both are included solely as documented evergreen pension direct-investment program exceptions.",
+      "A generic global remit was not treated as sufficient. Each program qualified through a current North American holding attributed to that specific program in primary annual-report evidence.",
+      "No separately raised commitments, final close, fund-level AUM or independently disclosed program capital base was identified for either program, so size remains unclassified and sizeAsOf remains null.",
+      "Historical Power & Renewables and Energy & Resources labels were treated as predecessor components or aliases of Sustainable Energies rather than separate current commercial vehicles.",
+      "No feeder, parallel fund, sleeve, sidecar or separately capitalized co-investment vehicle was identified for inclusion.",
+      "The sole supplied repository row, FUND-058, is matched exactly once; no repository-only record remains."
+    ]
+  },
+  "summary": {
+    "includedFunds": 2,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 2,
+    "proposedNew": 1,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 0
+  }
+}

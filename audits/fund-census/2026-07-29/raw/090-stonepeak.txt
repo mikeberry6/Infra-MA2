@@ -1,0 +1,296 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Stonepeak",
+"canonicalManager": "Stonepeak",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["Stonepeak Partners LP", "Stonepeak Infrastructure Partners"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Stonepeak Infrastructure Fund IV",
+"aliases": ["Stonepeak Fund IV"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Flagship diversified infrastructure private equity fund investing in control and significant minority equity stakes in infrastructure assets.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund IV is a flagship North American-focused infrastructure strategy per official close materials.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "Stonepeak",
+"fundName": "Stonepeak Infrastructure Fund IV",
+"ticker": null,
+"investmentStrategy": "Diversified North American infrastructure strategy targeting high-barrier assets across energy, transport, and digital sectors.",
+"size": "$14.0B final close",
+"sizeUsdMm": 14000,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "14000000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2022-05-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2022",
+"strategies": ["Core-Plus"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Power & ET", "Digital", "Transportation"],
+"regions": ["North America"],
+"sourceUrls": ["https://stonepeak.com/news/stonepeak-closes-14-billion-infrastructure-fund-iv/"],
+"strategyUrl": "https://stonepeak.com/"
+},
+"evidence": [
+{
+"url": "https://stonepeak.com/news/stonepeak-closes-14-billion-infrastructure-fund-iv/",
+"title": "Stonepeak closes $14 billion Infrastructure Fund IV",
+"publisher": "Stonepeak",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2022-05-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund IV close announcement",
+"evidenceSummary": "Confirms fund identity, strategy focus, North American mandate, and final close size of $14B.",
+"supports": ["FUND_IDENTITY", "DIRECT_EQUITY_INFRASTRUCTURE", "NORTH_AMERICA", "CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName", "investmentStrategy", "size", "sizeBasis", "sizeNativeAmount", "sizeNativeCurrency", "sizeUsdMm", "strategies", "regions", "structure", "vintage"]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "Not present in repository snapshot despite being a current flagship fund.",
+"confidence": "HIGH"
+},
+{
+"fundName": "Stonepeak Infrastructure Fund V",
+"aliases": ["Stonepeak Fund V"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "Flagship diversified infrastructure private equity fund targeting equity investments in infrastructure.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund V continues Stonepeak’s North American flagship strategy.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-137",
+"managerName": "Stonepeak",
+"fundName": "Stonepeak Infrastructure Fund V",
+"ticker": null,
+"investmentStrategy": "Fifth flagship North American infrastructure strategy.",
+"size": "$7.29B amount sold",
+"sizeUsdMm": 7286,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "7286600000",
+"sizeBasis": "AMOUNT_SOLD",
+"sizeAsOf": "2025-01-10",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2023",
+"strategies": ["Core-Plus"],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": ["Power & ET", "Digital", "Transportation"],
+"regions": ["North America"],
+"sourceUrls": ["https://www.sec.gov/Archives/edgar/data/2003495/000200349525000001/xslFormDX01/primary_doc.xml"],
+"strategyUrl": "https://stonepeak.com/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/2003495/000200349525000001/xslFormDX01/primary_doc.xml",
+"title": "Form D – Stonepeak Infrastructure Fund V",
+"publisher": "SEC",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-01-10",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Form D filing",
+"evidenceSummary": "Confirms fund identity, ongoing fundraising, and $7.29B amount sold.",
+"supports": ["FUND_IDENTITY", "CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName", "sizeNativeAmount", "sizeNativeCurrency", "sizeUsdMm", "sizeBasis", "fundStatus"]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-137",
+"managerName": "Stonepeak",
+"fundName": "Stonepeak Fund V"
+}
+],
+"changedFields": ["fundName", "size", "sizeUsdMm", "sizeNativeCurrency", "sizeNativeAmount", "sizeBasis", "sizeAsOf"],
+"repoDispositionRationale": "Repository uses non-canonical name and lacks structured size fields.",
+"confidence": "HIGH"
+},
+{
+"fundName": "Stonepeak Core Fund",
+"aliases": [],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "EVERGREEN",
+"directEquityBasis": "Open-ended infrastructure equity fund investing directly in core infrastructure assets.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Core Fund invests in U.S. infrastructure assets such as digital and port platforms.",
+"currentHoldingName": "U.S. infrastructure assets (digital/ports)",
+"currentHoldingUrl": "https://stonepeak.com/"
+},
+"snapshot": {
+"legacyId": "FUND-136",
+"managerName": "Stonepeak",
+"fundName": "Stonepeak Core Fund",
+"ticker": null,
+"investmentStrategy": "Open-ended global core infrastructure fund.",
+"size": "$4.82B amount sold",
+"sizeUsdMm": 4821,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "4821731955",
+"sizeBasis": "AMOUNT_SOLD",
+"sizeAsOf": "2026-03-31",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": ["Core"],
+"structure": "Evergreen",
+"fundStatus": "Evergreen",
+"sectors": ["Digital", "Transportation"],
+"regions": ["Global", "North America"],
+"sourceUrls": ["https://www.sec.gov/Archives/edgar/data/2074413/000207441325000001/xslFormDX01/primary_doc.xml"],
+"strategyUrl": "https://stonepeak.com/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/2074413/000207441325000001/xslFormDX01/primary_doc.xml",
+"title": "Form D – Stonepeak Core Fund",
+"publisher": "SEC",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-03-31",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Form D filing",
+"evidenceSummary": "Confirms evergreen structure and capital raised to date.",
+"supports": ["FUND_IDENTITY", "CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName", "structure", "fundStatus", "sizeNativeAmount", "sizeBasis"]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-136",
+"managerName": "Stonepeak",
+"fundName": "Stonepeak Core Fund"
+}
+],
+"changedFields": ["size", "sizeUsdMm", "sizeNativeCurrency", "sizeNativeAmount", "sizeBasis", "sizeAsOf", "regions"],
+"repoDispositionRationale": "Repository uses estimated size and lacks updated Form D values.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Stonepeak-Plus Infrastructure Fund",
+"reasonCode": "RETAIL_ACCESS_ONLY",
+"rationale": "Semi-liquid/retail-oriented infrastructure vehicle without clear direct-investment-only mandate.",
+"sourceUrls": ["https://www.sec.gov/Archives/edgar/data/2045458/000204545826000001/spif-20251231.htm"]
+}
+],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-138",
+"repoFundName": "Stonepeak Global Renewables Fund II",
+"disposition": "NEEDS_REVIEW",
+"rationale": "Insufficient fund-specific evidence tying current NA holdings directly to Fund II.",
+"evidenceUrls": []
+},
+{
+"legacyId": "FUND-139",
+"repoFundName": "Stonepeak Opportunities Fund II",
+"disposition": "NEEDS_REVIEW",
+"rationale": "Insufficient primary evidence linking NA investments to this specific fund.",
+"evidenceUrls": []
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "Global Renewables Fund II",
+"issue": "Unclear attribution of North American holdings at fund level.",
+"sourceUrls": [],
+"recommendedResolution": "Obtain LP report or deal attribution explicitly naming Fund II."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 6,
+"notes": ["Coverage includes flagship, core, and raising vehicles."]
+},
+"summary": {
+"includedFunds": 3,
+"explicitNaMandate": 2,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 1,
+"proposedCorrections": 2,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 1,
+"repoOnlyRecords": 2,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Stonepeak — North American direct infrastructure fund census
+Conclusion
+The census identifies three confirmed current North American direct-equity infrastructure vehicles at Stonepeak: Infrastructure Fund IV, Infrastructure Fund V, and the Core Fund. Additional repository vehicles (Global Renewables Fund II and Opportunities Fund II) could not be conclusively verified at the fund-specific level and are classified as NEEDS_REVIEW. Pasted text
+Included funds
+FundVehicleLifecycleNA QualificationSize BasisRepo DispositionSourcesInfrastructure Fund IVClosed-EndClosed ActiveExplicit NA mandateFinal closeProposed Newhttps://stonepeak.com/news/stonepeak-closes-14-billion-infrastructure-fund-iv/Infrastructure Fund VClosed-EndRaisingExplicit NA mandateAmount soldCorrectionSEC Form DCore FundEvergreenActiveVerified NA holdingsAmount soldCorrectionSEC Form D
+Repository reconciliation
+
+
+Verified / corrected: Fund V and Core Fund required structured updates to naming and size fields.
+
+
+Proposed new: Infrastructure Fund IV (missing from repository).
+
+
+Needs review: Global Renewables Fund II and Opportunities Fund II lack fund-specific NA attribution evidence.
+
+
+Exclusions and unresolved issues
+
+
+Stonepeak-Plus Infrastructure Fund excluded as retail-access structure without clear direct-equity-only mandate.
+
+
+Renewable and Opportunities strategies likely qualify but lack fund-level attribution evidence for North America.
+
+
+Completeness
+
+
+Reviewed official Stonepeak fund announcements, SEC Form D filings, and strategy disclosures.
+
+
+Verified flagship and core vehicles thoroughly.
+
+
+Remaining gaps relate to fund-level attribution of global strategies.
+
+
+</fund_census_report>

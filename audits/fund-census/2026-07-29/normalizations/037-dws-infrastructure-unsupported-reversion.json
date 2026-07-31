@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "DWS Infrastructure",
+  "createdAt": "2026-07-30T18:25:17.520Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/037-dws-infrastructure-size-as-of-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/037-dws-infrastructure-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-065",
+      "field": "sectors",
+      "from": [
+        "Transportation",
+        "Power & ET",
+        "Utilities",
+        "Digital",
+        "Social Infra"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Digital",
+        "Transportation",
+        "Social Infra"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-065",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.dws.com/AssetDownload/Index?assetGuid=0612b36b-92ef-428c-9981-9c75ed30a267&consumer=E-Library",
+        "https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3",
+        "https://group.dws.com/ir/en/media/media-releases/detail/DWS-Launches-Recommendation-for-Cash-Acquisition-of-Stagecoach/"
+      ],
+      "value": [
+        "https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3",
+        "https://www.dws.com/AssetDownload/Index?assetGuid=0612b36b-92ef-428c-9981-9c75ed30a267&consumer=E-Library"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

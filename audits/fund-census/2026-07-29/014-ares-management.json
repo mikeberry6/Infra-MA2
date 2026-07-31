@@ -1,0 +1,911 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Ares Management",
+  "canonicalManager": "Ares Management",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Ares Management Corporation",
+    "Ares Management LLC",
+    "Ares Infrastructure and Power",
+    "Ares Infrastructure Opportunities",
+    "Ares Infrastructure and Energy",
+    "Ares EIF Group",
+    "Energy Investors Funds",
+    "Ares Digital Infrastructure",
+    "GCP International",
+    "GLP Capital Partners"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Ares Core Infrastructure Fund",
+      "aliases": [
+        "ACI"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "ACI is a perpetual-life core infrastructure vehicle whose SEC filing states that it primarily makes equity investments, including controlling and significant minority positions, in infrastructure assets and companies with long-duration contracted or rate-regulated cash flows.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "ACI's SEC-filed investment guidelines provide that approximately 70% to 100% of investments will be sourced in North America, while the official fund page describes the portfolio as predominantly North American.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-021",
+        "managerName": "Ares Management",
+        "fundName": "Ares Core Infrastructure Fund",
+        "ticker": null,
+        "investmentStrategy": "Perpetual-life core infrastructure income strategy investing primarily through direct equity in contracted or rate-regulated infrastructure assets and companies, with approximately 70% to 100% of investments sourced in North America.",
+        "size": "Not disclosed on an allowed basis",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Core",
+          "Retail Act '40"
+        ],
+        "structure": "Open-End",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation"
+        ],
+        "regions": [
+          "North America",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.ares.com/us/our-strategies/ares-core-infrastructure-fund",
+          "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000015/aci-20251231.htm"
+        ],
+        "strategyUrl": "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ares.com/us/our-strategies/ares-core-infrastructure-fund",
+          "title": "Ares Core Infrastructure Fund",
+          "publisher": "Ares Management",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official ACI product page",
+          "evidenceSummary": "The official page identifies ACI as a perpetual-life private core infrastructure vehicle, gives an August 28, 2024 inception date, describes continuous subscriptions and periodic liquidity, states that the portfolio is predominantly North American, and reports $7.3 billion of gross asset value rather than an allowed commitments, close, target, amount-sold, or AUM figure.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000015/aci-20251231.htm",
+          "title": "Ares Core Infrastructure Fund Annual Report for the Year Ended December 31, 2025",
+          "publisher": "U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "ACI SEC annual report",
+          "evidenceSummary": "The filing states that ACI commenced operations on August 28, 2024, primarily makes equity investments in infrastructure, and generally expects 70% to 100% of investments to be sourced in North America. It legally describes ACI as a non-exchange-traded closed-end business development company while also documenting a perpetual offering and periodic repurchases.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-021",
+          "managerName": "Ares Management",
+          "fundName": "Ares Core Infrastructure Fund (ACI)"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "vintage",
+        "strategies",
+        "sectors",
+        "regions",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "repoDispositionRationale": "The repository row matches ACI, but the canonical official name treats ACI as an alias, the vehicle began operations in 2024 rather than having an Evergreen vintage, and current primary evidence supports a predominantly North American direct-equity core strategy. The repository's $3.9 billion figure has no documented allowed amount basis in the opened current materials; Ares now reports $7.3 billion of gross asset value, which is outside the permitted amount classifications, so the normalized size states that no allowed-basis amount was disclosed and the remaining normalized amount fields are null.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Ares Climate Infrastructure Partners II, L.P.",
+      "aliases": [
+        "ACIP II"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "RAISING",
+      "directEquityBasis": "ACIP II is a value-add climate infrastructure fund designed to provide flexible capital for the development, construction, acquisition and scaling of energy-transition infrastructure assets and companies. Its strategy includes common and preferred equity, alongside other flexible-capital instruments.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "CalSTRS reported an Ares-managed ACIP II co-investment in its North America energy portfolio for the six months ended December 31, 2025. The underlying asset and exact allocation among the main fund, parallel funds and co-investment vehicle were not disclosed.",
+        "currentHoldingName": "ACIP II co-investment (underlying asset undisclosed)",
+        "currentHoldingUrl": "https://www.calstrs.com/files/b2ae88223/semi122025P%2B-%2BSISS.pdf"
+      },
+      "snapshot": {
+        "legacyId": "FUND-022",
+        "managerName": "Ares Management",
+        "fundName": "Ares Climate Infrastructure Partners II, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Value-add climate infrastructure strategy providing flexible capital for the development, construction, acquisition and scaling of renewable energy, storage, electrification, efficiency, transmission and related infrastructure assets and companies.",
+        "size": "$1.6B commitments",
+        "sizeUsdMm": 1600,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1600000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2025-12-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Value-Add",
+          "Greenfield"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1970645/000092963824004318/xslFormDX01/primary_doc.xml",
+          "https://ir.ares.com/media/document/50beddd5-38eb-4c35-9666-41c40d692222/assets/Q4-25_Earnings_Presentation_Website.pdf?disposition=inline",
+          "https://www.fidante.com/sites/default/files/2023-10/ARES-FF-ACIPII_0.pdf",
+          "https://www.calstrs.com/files/b2ae88223/semi122025P%2B-%2BSISS.pdf"
+        ],
+        "strategyUrl": "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1970645/000092963824004318/xslFormDX01/primary_doc.xml",
+          "title": "Ares Climate Infrastructure Partners II, L.P. Form D/A",
+          "publisher": "U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-08-13",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "ACIP II private-fund filing",
+          "evidenceSummary": "The filing identifies Ares Climate Infrastructure Partners II, L.P. and related II-A and II-B issuers, records the main vehicle's 2022 formation, classifies the offering as pooled investment fund interests and shows that the offering remained ongoing.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "vintage",
+            "structure",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://ir.ares.com/media/document/50beddd5-38eb-4c35-9666-41c40d692222/assets/Q4-25_Earnings_Presentation_Website.pdf?disposition=inline",
+          "title": "Fourth Quarter and Full Year 2025 Earnings Presentation",
+          "publisher": "Ares Management Corporation",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-02-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current ACIP II fundraising disclosure",
+          "evidenceSummary": "Ares reported approximately $700 million of ACIP II equity commitments during the fourth quarter of 2025, bringing total equity commitments to approximately $1.6 billion, and identified the fund as an active fundraising vehicle.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.fidante.com/sites/default/files/2023-10/ARES-FF-ACIPII_0.pdf",
+          "title": "Ares Climate Infrastructure Partners II Fund Facts",
+          "publisher": "Fidante and Ares Investment Management LLC",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2023-10-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "ACIP II fund-strategy materials",
+          "evidenceSummary": "Fund-specific materials describe a $3 billion target and a value-add strategy that develops, constructs, acquires and scales assets and companies across renewable energy, storage, electrification, resource efficiency, transmission, digital enablement and related energy-transition sectors. The target is not treated as committed capital.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.calstrs.com/files/b2ae88223/semi122025P%2B-%2BSISS.pdf",
+          "title": "CalSTRS Semi-Annual Investment Report for the Six Months Ended December 31, 2025",
+          "publisher": "California State Teachers' Retirement System",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2026-02-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current North American ACIP II deployment",
+          "evidenceSummary": "CalSTRS lists an ACIP II co-investment managed by Ares in the energy sector and North America, supporting current North American deployment at the ACIP II fund-complex level.",
+          "supports": [
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "NEEDS_REVIEW",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-022",
+          "managerName": "Ares Management",
+          "fundName": "Ares Climate Infrastructure Partners II"
+        }
+      ],
+      "changedFields": [],
+      "repoDispositionRationale": "The repository row matches the ACIP II commercial fundraise. Current Ares evidence confirms active fundraising and $1.6 billion of equity commitments, while institutional reporting confirms ACIP II-labeled North American deployment. Human review remains appropriate because the disclosed North American position is a co-investment whose underlying asset and allocation among the main, parallel and co-investment vehicles are not public.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "fundName": "Ares Climate Infrastructure Partners, L.P.",
+      "aliases": [
+        "ACIP",
+        "ACIP I",
+        "Ares Climate Infrastructure Partners Fund"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "ACIP is a closed value-add climate infrastructure fund that directly originates investments and provides common equity, preferred equity and other flexible capital to develop, construct, acquire and scale energy-transition infrastructure assets and companies.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Ares's ACIP portfolio reporting describes the acquisition of a controlling stake in U.S.-based Apex Clean Energy, and a current Ares investment-committee member remains an Apex board member. The precise allocation among the main fund, parallel funds and ACIP Apex co-investment accounts is not publicly separated.",
+        "currentHoldingName": "Apex Clean Energy",
+        "currentHoldingUrl": "https://www.areswms.com.au/wp-content/uploads/Ares_Sustainability_Report-vF-2021F.pdf"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "Ares Management",
+        "fundName": "Ares Climate Infrastructure Partners, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Value-add climate infrastructure strategy directly originating flexible-capital investments in renewable energy, energy efficiency, storage, electric-vehicle infrastructure, transmission and other energy-transition assets and companies.",
+        "size": "$1.4B final close",
+        "sizeUsdMm": 1400,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1400000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2021-12-16",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2018",
+        "strategies": [
+          "Value-Add",
+          "Greenfield"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.businesswire.com/news/home/20211215006088/en/Ares-Management-Corporation-Raises-%242.2-Billion-of-Climate-Infrastructure-Capital",
+          "https://www.sec.gov/Archives/edgar/data/1810559/000156761921012462/xslFormDX01/primary_doc.xml",
+          "https://www.areswms.com.au/wp-content/uploads/Ares_Sustainability_Report-vF-2021F.pdf",
+          "https://www.ares.com/us/who-we-are/our-people/keith-derman-100906"
+        ],
+        "strategyUrl": "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.businesswire.com/news/home/20211215006088/en/Ares-Management-Corporation-Raises-%242.2-Billion-of-Climate-Infrastructure-Capital",
+          "title": "Ares Management Corporation Raises $2.2 Billion of Climate Infrastructure Capital",
+          "publisher": "Ares Management Corporation via Business Wire",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-12-16",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "ACIP final-close announcement",
+          "evidenceSummary": "Ares announced the final closing of ACIP at approximately $1.4 billion, plus approximately $800 million in related transaction vehicles, and described the fund as a value-add climate infrastructure strategy investing equity, preferred equity and other flexible capital in energy-transition assets and companies.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1810559/000156761921012462/xslFormDX01/primary_doc.xml",
+          "title": "Ares Climate Infrastructure Partners, L.P. Form D/A",
+          "publisher": "U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-06-30",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "ACIP legal identity and vintage",
+          "evidenceSummary": "The filing confirms the legal fund name, identifies Ares as investment manager, records the main fund's 2018 formation and separately identifies its parallel vehicles.",
+          "supports": [
+            "FUND_IDENTITY"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "vintage",
+            "structure",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.areswms.com.au/wp-content/uploads/Ares_Sustainability_Report-vF-2021F.pdf",
+          "title": "Ares 2021 Sustainability Report",
+          "publisher": "Ares Management Corporation",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "ACIP portfolio and Apex case study",
+          "evidenceSummary": "The report identifies ACIP as Ares's flagship climate infrastructure fund, describes the strategy's development of energy-transition assets and companies, and presents the controlling investment in U.S.-based Apex Clean Energy within the ACIP portfolio-reporting context.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.ares.com/us/who-we-are/our-people/keith-derman-100906",
+          "title": "Keith Derman",
+          "publisher": "Ares Management",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current ACIP governance and Apex board continuity",
+          "evidenceSummary": "Ares identifies Keith Derman as a member of the ACIP investment committee and a current board member of Apex Clean Energy, corroborating ongoing Ares oversight of the U.S. platform.",
+          "supports": [
+            "CURRENT_LIFECYCLE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No repository row matches ACIP I. Primary evidence establishes a separately named $1.4 billion commercial fund, and Ares portfolio materials support current North American deployment through Apex at the ACIP complex level. The vehicle is proposed under the existing Ares Management manager, with medium confidence because public materials do not separate the Apex allocation among the main fund, parallel funds and related co-investment accounts.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "fundName": "Ares Energy Investors Fund V, L.P.",
+      "aliases": [
+        "EIF V",
+        "Ares EIF V"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "EIF V is an Ares infrastructure private-equity vehicle in the acquired Energy Investors Funds series. Ares's historical strategy reporting places it in the control-oriented U.S. power and energy infrastructure strategy, and current reporting shows substantial unrealized investments remaining.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Ares historically reported EIF V within its U.S. power and energy infrastructure strategy, which targeted control-oriented investments in U.S. power and energy infrastructure assets.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "Ares Management",
+        "fundName": "Ares Energy Investors Fund V, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Control-oriented private-equity investments in U.S. power and energy infrastructure assets and companies, including operating assets and development or construction opportunities.",
+        "size": "$801M commitments",
+        "sizeUsdMm": 801,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "801000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2026-03-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2015",
+        "strategies": [
+          "Opportunistic",
+          "Greenfield"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Midstream"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1176948/000162828026029083/a2026q1-ex992earningspre.htm",
+          "https://www.sec.gov/Archives/edgar/data/1176948/000119312518143824/d574895dex992.htm"
+        ],
+        "strategyUrl": "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1176948/000162828026029083/a2026q1-ex992earningspre.htm",
+          "title": "Ares Management Corporation First Quarter 2026 Earnings Presentation",
+          "publisher": "Ares Management Corporation",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current EIF V fund table",
+          "evidenceSummary": "Ares identifies EIF V as Ares Energy Investors Fund V, L.P., assigns a 2015 vintage, reports $801 million of original commitments and $537 million of unrealized value as of March 31, 2026, and classifies the vehicle as harvesting investments.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "structure",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1176948/000119312518143824/d574895dex992.htm",
+          "title": "Ares Management, L.P. First Quarter 2018 Earnings Presentation",
+          "publisher": "Ares Management, L.P.",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2018-05-03",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "EIF V U.S. infrastructure strategy classification",
+          "evidenceSummary": "Ares's fund reporting places EIF V in its U.S. power and energy infrastructure strategy, supporting direct private-equity infrastructure scope and an explicit U.S. geographic mandate.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No repository row matches EIF V. Current Ares reporting shows that the closed 2015 fund still has $537 million of unrealized investments, and Ares's fund-specific historical reporting places EIF V within its U.S. power and energy infrastructure strategy.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "fundName": "U.S. Power Fund IV, L.P.",
+      "aliases": [
+        "USPF IV",
+        "Ares EIF U.S. Power Fund IV",
+        "EIF United States Power Fund IV, L.P."
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "USPF IV is a control-oriented U.S. power infrastructure private-equity fund investing in operating and development-stage generation, transmission, natural-gas pipeline, storage and related energy assets.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "The fund's institutional strategy description expressly focuses on control-oriented U.S. power-sector opportunities, including both operating assets and development or construction investments.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "Ares Management",
+        "fundName": "U.S. Power Fund IV, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Control-oriented U.S. power and energy infrastructure private equity focused on generation, transmission, natural-gas pipelines, storage and related operating or development-stage assets.",
+        "size": "$1.688B commitments",
+        "sizeUsdMm": 1688,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1688000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2025-12-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2010",
+        "strategies": [
+          "Opportunistic",
+          "Greenfield"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Midstream"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1176948/000162828026005596/a2025q4-ex992earningspre.htm",
+          "https://www.sec.gov/Archives/edgar/data/1176948/000162828026029083/a2026q1-ex992earningspre.htm",
+          "https://nic.nebraska.gov/sites/default/files/doc/2022%20Overview%20of%20Strategies%20DB%2BCBB%20Plans.pdf"
+        ],
+        "strategyUrl": "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1176948/000162828026005596/a2025q4-ex992earningspre.htm",
+          "title": "Ares Management Corporation Fourth Quarter and Full Year 2025 Earnings Presentation",
+          "publisher": "Ares Management Corporation",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-02-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current USPF IV fund table",
+          "evidenceSummary": "Ares reports USPF IV as a 2010 infrastructure fund with $1.688 billion of original commitments, $299 million of unrealized value as of December 31, 2025 and a harvesting-investments status.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "structure",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1176948/000162828026029083/a2026q1-ex992earningspre.htm",
+          "title": "Ares Management Corporation First Quarter 2026 Earnings Presentation",
+          "publisher": "Ares Management Corporation",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "USPF IV official name",
+          "evidenceSummary": "Ares's fund glossary identifies USPF IV as U.S. Power Fund IV, L.P. and explains that fund references can include the main fund and related parallel, feeder and co-investment vehicles.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://nic.nebraska.gov/sites/default/files/doc/2022%20Overview%20of%20Strategies%20DB%2BCBB%20Plans.pdf",
+          "title": "Overview of Investment Strategies",
+          "publisher": "Nebraska Investment Council",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2022-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "USPF IV direct-equity U.S. mandate",
+          "evidenceSummary": "The institutional description states that Ares EIF U.S. Power Fund IV focuses on control-oriented U.S. power opportunities, including generation and transmission, natural-gas pipelines and storage, related energy infrastructure and both operating and development or construction investments.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No repository row matches USPF IV. Current Ares reporting confirms that the 2010 fund retains $299 million of unrealized investments, while institutional fund-specific materials establish its control-oriented U.S. power infrastructure mandate.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Ares Core Infrastructure Fund – ACI-AUT access class",
+      "reasonCode": "RETAIL_ACCESS_ONLY",
+      "rationale": "ACI-AUT is an access or distribution class for the underlying ACI strategy rather than a separately managed commercial infrastructure vehicle.",
+      "sourceUrls": [
+        "https://www.ares.com/us/our-strategies/ares-core-infrastructure-fund-aci-aut"
+      ]
+    },
+    {
+      "fundName": "Ares Climate Infrastructure Partners II-A, L.P. and Ares Climate Infrastructure Partners II-B, L.P.",
+      "reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+      "rationale": "SEC filings present II-A and II-B as related issuers in the same ACIP II commercial offering; no evidence establishes independently managed strategies or separately reported commercial capital bases.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1970645/000092963824004318/xslFormDX01/primary_doc.xml"
+      ]
+    },
+    {
+      "fundName": "ACIP Parallel Fund A, L.P., ACIP Parallel Fund B, L.P., ACIP Apex Co-Investment, L.P. and Ares Apex Pooling, L.P.",
+      "reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+      "rationale": "These entities are disclosed as parallel, pooling or transaction-specific co-investment entities associated with the ACIP commercial strategy and are not separately counted.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1810559/000156761921012462/xslFormDX01/primary_doc.xml",
+        "https://www.areswms.com.au/wp-content/uploads/Ares_Sustainability_Report-vF-2021F.pdf"
+      ]
+    },
+    {
+      "fundName": "Ares Climate Infrastructure Strategies Fund (C), L.P.",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The filing establishes a private pooled vehicle but the opened evidence does not establish a distinct commercial direct-infrastructure strategy, current lifecycle and North American mandate or current North American holding.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1987624/000156761923006960/xslFormDX01/primary_doc.xml"
+      ]
+    },
+    {
+      "fundName": "Ares Digital Infrastructure Global Opportunities Fund",
+      "reasonCode": "GLOBAL_WITHOUT_NA_EVIDENCE",
+      "rationale": "The 2026 filing establishes a newly formed global private fund whose first sale had not yet occurred. A global label alone does not establish a North American mandate, and no current fund-attributed North American holding was found.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2137532/000213753226000001/xslFormDX01/primary_doc.xml"
+      ]
+    },
+    {
+      "fundName": "Japan DC Partners I, L.P.",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "The documented investment program is focused on Japanese data-center development rather than a North American mandate or deployment.",
+      "sourceUrls": [
+        "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      ]
+    },
+    {
+      "fundName": "Ares Infrastructure Debt Fund V and successor infrastructure debt funds",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "These vehicles provide infrastructure credit and debt capital and do not satisfy the direct-equity requirement.",
+      "sourceUrls": [
+        "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      ]
+    },
+    {
+      "fundName": "Ares Secondaries Infrastructure Solutions III, L.P.",
+      "reasonCode": "SECONDARIES_OR_FUND_OF_FUNDS",
+      "rationale": "This is an infrastructure secondaries vehicle rather than a primary direct-equity infrastructure fund.",
+      "sourceUrls": [
+        "https://www.ares.com/us/businesses-and-products/our-businesses/secondaries"
+      ]
+    },
+    {
+      "fundName": "EIF U.S. Power Fund II and EIF United States Power Fund III",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The vehicles historically pursued U.S. power infrastructure, but no reliable fund-specific evidence was found that either retained a current investment as of July 29, 2026.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1176948/000119312518143824/d574895dex992.htm"
+      ]
+    },
+    {
+      "fundName": "Ares Energy Opportunities Fund, L.P.",
+      "reasonCode": "NON_DIRECT_EQUITY",
+      "rationale": "Current Ares reporting classifies Ares Energy Opportunities Fund within corporate private equity rather than the infrastructure fund platform, so it is not included in this direct-infrastructure census.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1176948/000162828026029083/a2026q1-ex992earningspre.htm"
+      ]
+    },
+    {
+      "fundName": "Unnamed Ares Infrastructure Opportunities U.S. transactions",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "Manager-level U.S. infrastructure transactions without reliable attribution to a named fund or documented direct-investment program cannot qualify a vehicle.",
+      "sourceUrls": [
+        "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      ]
+    },
+    {
+      "fundName": "Commonwealth LNG signed acquisition",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The transaction was signed but was not established as closed and currently held as of the census date, and the opened materials did not attribute it to a qualifying named Ares fund.",
+      "sourceUrls": [
+        "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Ares Core Infrastructure Fund structure",
+      "issue": "ACI is legally organized and SEC-registered as a non-exchange-traded closed-end business development company, but commercially operates as a perpetual-life vehicle with continuous subscriptions and periodic liquidity. The normalized snapshot preserves the repository's commercial Open-End classification.",
+      "sourceUrls": [
+        "https://www.ares.com/us/our-strategies/ares-core-infrastructure-fund",
+        "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000015/aci-20251231.htm"
+      ],
+      "recommendedResolution": "Confirm whether the repository's structure field is intended to capture legal Investment Company Act form or commercial subscription and redemption mechanics."
+    },
+    {
+      "subject": "Ares Core Infrastructure Fund size",
+      "issue": "The repository reports $3.9 billion without an amount basis, while Ares currently reports $7.3 billion of gross asset value as of June 30, 2026. Gross asset value is not one of the contract's permitted amount bases.",
+      "sourceUrls": [
+        "https://www.ares.com/us/our-strategies/ares-core-infrastructure-fund"
+      ],
+      "recommendedResolution": "Obtain a primary source stating ACI net assets, AUM or commitments with an as-of date and an allowed amount classification before repopulating the numeric size fields."
+    },
+    {
+      "subject": "ACIP II North American fund attribution",
+      "issue": "CalSTRS identifies an ACIP II co-investment in North America, but does not disclose the underlying asset or distinguish capital allocation among ACIP II, II-A, II-B and the co-investment entity.",
+      "sourceUrls": [
+        "https://www.calstrs.com/files/b2ae88223/semi122025P%2B-%2BSISS.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1970645/000092963824004318/xslFormDX01/primary_doc.xml"
+      ],
+      "recommendedResolution": "Obtain an Ares portfolio schedule, investor report or institutional commitment memorandum that names the North American asset and attributes it to the ACIP II commercial fund complex."
+    },
+    {
+      "subject": "ACIP I Apex allocation",
+      "issue": "Ares materials place Apex Clean Energy within ACIP portfolio reporting and current Ares governance continues at Apex, but public evidence does not separate the investment among the main ACIP fund, parallel funds and Apex-specific co-investment or pooling entities.",
+      "sourceUrls": [
+        "https://www.areswms.com.au/wp-content/uploads/Ares_Sustainability_Report-vF-2021F.pdf",
+        "https://www.ares.com/us/who-we-are/our-people/keith-derman-100906"
+      ],
+      "recommendedResolution": "Review an ACIP portfolio schedule, audited financial statement or LP report that assigns Apex to the relevant legal entities."
+    },
+    {
+      "subject": "New climate and digital vehicle boundaries",
+      "issue": "Ares Climate Infrastructure Strategies Fund (C), L.P., Ares Digital Infrastructure Global Opportunities Fund and unnamed U.S. digital transactions lack sufficient opened evidence to establish distinct qualifying commercial vehicles with both current lifecycle and North American qualification.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1987624/000156761923006960/xslFormDX01/primary_doc.xml",
+        "https://www.sec.gov/Archives/edgar/data/2137532/000213753226000001/xslFormDX01/primary_doc.xml",
+        "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      ],
+      "recommendedResolution": "Monitor later closes, official fund pages, investor presentations and fund-attributed portfolio announcements for explicit North American mandate or deployment evidence."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 30,
+    "searchQueriesRun": 24,
+    "notes": [
+      "Reviewed Ares's current infrastructure platform pages, ACI product materials and SEC reports, Ares 2025 and 2026 earnings presentations, fund Form D filings, institutional pension disclosures and Energy Investors Funds predecessor materials.",
+      "Ares's acquisition history through Energy Investors Funds, GCP International and GLP Capital Partners was reviewed; the first three GCP U.S. funds had previously been sold to Blackstone and were not treated as current Ares vehicles.",
+      "Ares states that some reported fund references include the principal fund together with parallel, feeder and co-investment entities. Related entities were consolidated into their commercial fundraises unless separate strategy evidence was available.",
+      "One large institutional source was inaccessible because of file-size limits and was not relied upon.",
+      "The census and reconciliation were completed under the supplied user-authored contract and repository snapshot. Pasted text"
+    ]
+  },
+  "summary": {
+    "includedFunds": 5,
+    "explicitNaMandate": 3,
+    "verifiedCurrentNaHolding": 2,
+    "proposedNew": 3,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 1,
+    "excludedCandidates": 12,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 5
+  }
+}

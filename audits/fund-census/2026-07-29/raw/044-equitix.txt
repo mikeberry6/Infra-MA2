@@ -1,0 +1,82 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Equitix",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Equitix",
+"Equitix Investment Management Ltd",
+"EIML"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Canonical manager scope for Equitix",
+"issue": "The authoritative FUND_MANIFEST snapshot sets knownManager to false and canonicalManager to null, while the separate supplied manager-universe list contains the label Equitix. The universe list is expressly limited to overlap identification and therefore cannot cure the manifest scope gap.",
+"sourceUrls": [
+"https://equitix.com/",
+"https://equitix.com/about/"
+],
+"recommendedResolution": "Complete a human repository-governance review and add or map a canonical Equitix manager record in FUND_MANIFEST before any fund-level additions, corrections, or matches are proposed."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 7,
+"notes": [
+"Applied the mandatory unknown-manager scope gate from the supplied repository snapshot; no vehicle was eligible for inclusion or repository proposal.",
+"Official corporate identity, named-fund, final-close, and North American deployment materials were opened to confirm that the scope issue is substantive.",
+"Official North American asset evidence did not identify the investing Equitix fund and therefore could not provide fund-specific attribution.",
+"Associated co-investment funds and vehicles disclosed for a European vintage were reviewed for duplicate-treatment context, but no vehicle-level census was produced because the unknown-manager gate controls."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Equitix — North American direct infrastructure fund census
+Conclusion
+The supplied FUND_MANIFEST snapshot marks knownManager as false and provides no canonical manager. The mandatory scope rule therefore requires OUT_OF_SCOPE_UNKNOWN_MANAGER, an empty funds array, and no proposed manager or fund additions. Equitix's appearance in the separate supplied manager-universe list does not override that result because the list is expressly limited to identifying overlaps. Pasted text
+Official materials nevertheless establish that Equitix is a substantive infrastructure manager rather than an unidentifiable name: the firm describes itself as an infrastructure investor and fund manager, and its legal disclosure states that Equitix is a trading name of Equitix Investment Management Ltd, or EIML. This public identity evidence documents the repository scope gap but cannot cure it automatically. Equitix+1
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceNone — unknown-manager scope gate applied————No fund-level disposition permittedFUND_MANIFEST snapshot Pasted text
+Repository reconciliation
+The repository snapshot contains no Equitix fund rows. Accordingly, there are no matchedRepoFunds, no repoOnlyRecords, and no legacy IDs requiring reconciliation. No PROPOSED_NEW, PROPOSED_CORRECTION, POSSIBLE_DUPLICATE, or fund-level NEEDS_REVIEW disposition has been returned.
+The sole unresolved matter is manager governance: a human review must establish or map a canonical Equitix manager record in FUND_MANIFEST before a later vehicle-level census can propose additions or corrections.
+Exclusions and unresolved issues
+No vehicle was placed in excludedCandidates, because the contract's unknown-manager rule terminates fund classification before inclusion or exclusion decisions are made.
+Official North American deployment evidence was reviewed to test whether the scope gap was substantive. Equitix's April 2026 release states that the Equitix–John Laing jointly owned JLIL reached financial close on an increased interest in Florida's I-4 Ultimate Project and describes the United States as a key growth market. The release does not identify the Equitix fund or separately documented investment program supplying the capital, so it would not satisfy the required fund-specific attribution test even absent the scope gate. Equitix
+Official named-fund materials were also checked. Equitix Fund VII is described as the seventh vintage of the firm's core infrastructure equity franchise and is tied to UK assets, while Equitix Euro Fund II and its associated co-investment vehicles are expressly European. These sources demonstrate active fund structures and informed the parallel-vehicle review, but neither establishes a qualifying North American vehicle. Equitix+1
+No overlapping supplied manager was recorded for a fund-level vehicle.
+Completeness
+Six official Equitix sources were opened across corporate identity, legal naming, named funds, fundraising and final-close materials, co-investment vehicle treatment, and North American deployment. Seven searches were run. The manager aliases reviewed were Equitix, Equitix Investment Management Ltd, and EIML.
+Fundraising and parallel-vehicle treatment were checked through the official Euro Fund II final-close announcement, which groups the commingled fund with associated co-investment funds and vehicles as one European vintage. Equitix Current North American deployment was checked through the official I-4 source, but no fund attribution was disclosed. Equitix
+No cited source was inaccessible. The completed result is intentionally limited to documenting the canonical-manager scope failure required by the repository snapshot.
+</fund_census_report>

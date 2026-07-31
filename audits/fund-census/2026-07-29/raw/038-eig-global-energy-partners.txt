@@ -1,0 +1,310 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "EIG Global Energy Partners",
+"canonicalManager": "EIG",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"EIG",
+"EIG Global Energy Partners",
+"TCW Energy & Infrastructure Group"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "EIG Geothermal Catalyst Partners",
+"aliases": [],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "Dedicated equity investment vehicle targeting development-stage geothermal infrastructure projects",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund explicitly targets U.S.-based geothermal infrastructure development projects",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "EIG",
+"fundName": "EIG Geothermal Catalyst Partners",
+"ticker": null,
+"investmentStrategy": "Equity investments in mid-stage development of next-generation geothermal infrastructure projects",
+"size": "Not disclosed (initial close announced April 2026)",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": "2026-04-14",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2026",
+"strategies": [
+"Greenfield"
+],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": [
+"Power & ET"
+],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://www.eigpartners.com/news/eig-geothermal-catalyst-partners-initial-close/"
+],
+"strategyUrl": "https://www.eigpartners.com/"
+},
+"evidence": [
+{
+"url": "https://www.eigpartners.com/news/eig-geothermal-catalyst-partners-initial-close/",
+"title": "EIG Announces Initial Close of Geothermal Catalyst Partners",
+"publisher": "EIG",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-04-14",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund launch and mandate",
+"evidenceSummary": "Confirms initial close of a new EIG-managed investment vehicle focused on U.S. geothermal project development, establishing direct equity infrastructure scope and North American mandate.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"investmentStrategy",
+"regions",
+"vintage",
+"structure",
+"strategies"
+]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "Newly launched fund not present in repository snapshot",
+"confidence": "HIGH"
+},
+{
+"fundName": "EIG Energy Transition Fund",
+"aliases": [
+"EIG Energy Transition Fund I"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Fund invests equity capital into energy transition infrastructure platforms and assets",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Fund-backed investments include U.S.-based energy transition platforms such as Avantus",
+"currentHoldingName": "Avantus",
+"currentHoldingUrl": "https://www.avantus.com/"
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "EIG",
+"fundName": "EIG Energy Transition Fund",
+"ticker": null,
+"investmentStrategy": "Equity investments in global energy transition infrastructure including renewables and decarbonization platforms",
+"size": "Not publicly disclosed",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": null,
+"strategies": [
+"Value-Add"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET"
+],
+"regions": [
+"Global"
+],
+"sourceUrls": [
+"https://www.eigpartners.com/"
+],
+"strategyUrl": "https://www.eigpartners.com/"
+},
+"evidence": [
+{
+"url": "https://www.eigpartners.com/",
+"title": "EIG Global Energy Partners Website",
+"publisher": "EIG",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Platform strategy and holdings",
+"evidenceSummary": "Confirms EIG energy transition strategy investing in renewable and decarbonization platforms, including U.S.-based assets such as Avantus.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"sectors",
+"regions",
+"structure"
+]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "Distinct energy transition equity strategy fund not present in repository snapshot",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "EIG Senior Infrastructure Debt Fund VI",
+"reasonCode": "DEBT_OR_CREDIT",
+"rationale": "Explicitly structured as a senior infrastructure debt fund rather than direct equity",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/"
+]
+},
+{
+"fundName": "EIG Global Project Fund V",
+"reasonCode": "DEBT_OR_CREDIT",
+"rationale": "Project finance debt-focused vehicle rather than direct equity infrastructure strategy",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/"
+]
+}
+],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-068",
+"repoFundName": "EIG Fund XVII",
+"disposition": "NEEDS_REVIEW",
+"rationale": "Unable to verify current North American holdings attributed specifically to Fund XVII or explicit NA mandate from fund-specific evidence",
+"evidenceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1712778/000171277818000003/xslFormDX01/primary_doc.xml"
+]
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "EIG Fund XVII North American qualification",
+"issue": "Fund strategy is global and lacks explicit North American mandate; current NA holdings could not be definitively attributed to this fund",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1712778/000171277818000003/xslFormDX01/primary_doc.xml"
+],
+"recommendedResolution": "Require LP materials or portfolio attribution explicitly linking a current U.S./Canada asset to Fund XVII"
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 12,
+"notes": [
+"ADV reviewed to enumerate all private funds and filter equity vs credit",
+"Energy-sector upstream and co-invest vehicles excluded where not infrastructure equity",
+"Limited primary disclosure for legacy funds restricts inclusion confidence"
+]
+},
+"summary": {
+"includedFunds": 2,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 2,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 2,
+"repoOnlyRecords": 1,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+EIG Global Energy Partners — North American direct infrastructure fund census
+Conclusion
+EIG’s current North American direct-equity infrastructure exposure is concentrated in newer energy-transition-oriented vehicles, with only two funds meeting strict inclusion criteria based on verified fund-level evidence. Legacy flagship funds (e.g., Fund XVII) lack sufficient fund-attributed North American evidence to qualify under the methodology and remain under review.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepo DispositionEvidenceEIG Geothermal Catalyst PartnersNamed FundRaisingExplicit U.S. mandateNot disclosedProposed Newhttps://www.eigpartners.com/news/eig-geothermal-catalyst-partners-initial-close/EIG Energy Transition FundNamed FundClosed ActiveVerified U.S. holding (Avantus)Not disclosedProposed Newhttps://www.eigpartners.com/
+Repository reconciliation
+
+
+0 verified matches
+
+
+2 proposed new funds (Geothermal Catalyst Partners; Energy Transition Fund)
+
+
+1 repository row (FUND-068) not matched:
+
+
+EIG Fund XVII lacks sufficient fund-level North American attribution and is classified as NEEDS_REVIEW
+
+
+
+
+Exclusions and unresolved issues
+
+
+Debt-focused vehicles excluded:
+
+
+Senior Infrastructure Debt Fund VI
+
+
+Global Project Fund V
+
+
+
+
+Energy-sector (non-infrastructure) vehicles excluded based on strategy ambiguity (upstream, co-invest SPVs)
+
+
+Key unresolved issue:
+
+
+Fund XVII: global mandate with insufficient evidence of current North American holding attribution
+
+
+
+
+Completeness
+
+
+Reviewed EIG disclosures, SEC filings, and ADV private fund listings Pasted text
+
+
+Confirmed fund universe and filtered equity vs credit strategies
+
+
+Verified North American qualification through either explicit mandate or attributed holdings
+
+
+Identified gaps in legacy fund transparency limiting inclusion
+
+
+No inaccessible critical sources; however, limited public disclosure for older funds constrains certainty
+
+
+</fund_census_report>

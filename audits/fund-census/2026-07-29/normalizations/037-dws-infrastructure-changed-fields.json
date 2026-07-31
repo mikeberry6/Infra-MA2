@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "DWS Infrastructure",
+  "createdAt": "2026-07-30T18:25:17.903Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/037-dws-infrastructure-unsupported-reverted.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/037-dws-infrastructure-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-065",
+      "field": "changedFields",
+      "from": [
+        "fundName",
+        "sizeBasis",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeAsOf"
+      ],
+      "value": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Tiger Infrastructure Partners",
+  "createdAt": "2026-07-31T01:49:44.159Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/093-tiger-infrastructure-partners-secondary-only-review-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/093-tiger-infrastructure-partners-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-144",
+      "field": "investmentStrategy",
+      "from": "Growth infrastructure equity fund investing in digital infrastructure, energy transition, and transportation.",
+      "value": "Latest fund in a lineage investing growth capital in essential-service infrastructure platforms across digital infrastructure, energy transition, and transportation.",
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-144",
+      "field": "size",
+      "from": "$2.0B target",
+      "value": "[$2.0B]",
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-144",
+      "field": "sizeNativeCurrency",
+      "from": "USD",
+      "value": null,
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-144",
+      "field": "sizeNativeAmount",
+      "from": "2000000000",
+      "value": null,
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-144",
+      "field": "sizeBasis",
+      "from": "TARGET",
+      "value": null,
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-144",
+      "field": "strategies",
+      "from": [
+        "Value-Add",
+        "Growth"
+      ],
+      "value": [
+        "Value-Add"
+      ],
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-144",
+      "field": "sectors",
+      "from": [
+        "Digital",
+        "Power & ET",
+        "Transportation"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Digital",
+        "Transportation",
+        "Social Infra"
+      ],
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-144",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.sec.gov/Archives/edgar/data/1995540/000199554025000003/xslFormDX01/primary_doc.xml",
+        "https://www.federalregister.gov/documents/2025/06/06/2025-10486/notice-of-intent-to-grant-exclusive-patent-license-bolder-industries-llc"
+      ],
+      "value": [
+        "https://www.sec.gov/Archives/edgar/data/1995540/000199554025000003/xslFormDX01/primary_doc.xml"
+      ],
+      "rationale": "The model classified this row as EXISTING_VERIFIED with no changedFields, so every snapshot field must exactly reproduce the supplied repository record."
+    }
+  ]
+}

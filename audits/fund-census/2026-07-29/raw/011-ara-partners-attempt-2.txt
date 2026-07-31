@@ -1,0 +1,620 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Ara Partners",
+"canonicalManager": "Ara Partners",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Ara Partners",
+"Ara",
+"Ara Partners Group",
+"Ara Partners Group, LLC",
+"Argus Energy Managers"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Ara Infrastructure Fund I",
+"aliases": [
+"Ara Infrastructure Fund I, LP",
+"Ara Infrastructure Fund I-A, SCSp",
+"Infra Fund I"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Ara identifies the vehicle as its debut infrastructure fund; SEC filings classify the main and parallel issuers as private-equity pooled funds offering equity interests; and the fund builds new and repurposes operating mid-market infrastructure assets.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Ara's current portfolio attributes active North American investments, including Centric Fiber, Lincoln Terminal and USD Clean Fuels, to Infra Fund I.",
+"currentHoldingName": "Centric Fiber",
+"currentHoldingUrl": "https://www.arapartners.com/portfolio/"
+},
+"snapshot": {
+"legacyId": "FUND-017",
+"managerName": "Ara Partners",
+"fundName": "Ara Infrastructure Fund I",
+"ticker": null,
+"investmentStrategy": "Mid-market value-add and greenfield infrastructure focused on building new and repurposing high-quality legacy assets for industrial decarbonization, with contracted-revenue and cash-flow characteristics across North America and Europe.",
+"size": "$800M+ aggregate commitments for Ara Infrastructure Fund I and associated co-investment vehicles",
+"sizeUsdMm": 800,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "800000000",
+"sizeBasis": "COMMITMENTS",
+"sizeAsOf": "2025-05-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2022",
+"strategies": [
+"Value-Add",
+"Greenfield"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Digital",
+"Midstream",
+"Transportation"
+],
+"regions": [
+"North America",
+"Europe"
+],
+"sourceUrls": [
+"https://www.arapartners.com/news/ara-partners-reaches-final-close-for-inaugural-infrastructure-fund-surpassing-target/",
+"https://www.arapartners.com/news/ara-partners-q2-newsletter/",
+"https://www.arapartners.com/what-we-do/strategies/infrastructure/",
+"https://www.arapartners.com/portfolio/",
+"https://www.sec.gov/Archives/edgar/data/1944099/000194409922000002/xslFormDX01/primary_doc.xml",
+"https://www.sec.gov/Archives/edgar/data/1944107/000194410724000002/xslFormDX08/primary_doc.xml"
+],
+"strategyUrl": "https://www.arapartners.com/what-we-do/strategies/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://www.arapartners.com/news/ara-partners-reaches-final-close-for-inaugural-infrastructure-fund-surpassing-target/",
+"title": "Ara Partners Reaches Final Close for Inaugural Infrastructure Fund, Surpassing Target",
+"publisher": "Ara Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-05-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Official final-close release",
+"evidenceSummary": "Names Ara Infrastructure Fund I; reports the final close; states that Ara raised over $800 million for the infrastructure strategy, including the fund and associated co-investment vehicles; says the strategy launched in 2022; and attributes 12 operational assets across North America and Europe to the fund.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"strategies",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.arapartners.com/news/ara-partners-q2-newsletter/",
+"title": "Quarterly Updates: Q2 2025",
+"publisher": "Ara Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Official commitment and close clarification",
+"evidenceSummary": "States that Ara Infrastructure Fund I and associated co-investment vehicles closed with over $800 million in commitments, confirming that the disclosed amount is aggregate and commitment-based rather than a fund-only capital figure.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.arapartners.com/what-we-do/strategies/infrastructure/",
+"title": "Infrastructure",
+"publisher": "Ara Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Official infrastructure strategy",
+"evidenceSummary": "Describes an asset-focused strategy that builds new infrastructure and repurposes legacy assets, targets mid-market businesses with classic infrastructure characteristics, and explicitly covers North America and Europe.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"investmentStrategy",
+"strategies",
+"sectors",
+"regions",
+"strategyUrl"
+]
+},
+{
+"url": "https://www.arapartners.com/portfolio/",
+"title": "Portfolio",
+"publisher": "Ara Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current fund-attributed North American holdings",
+"evidenceSummary": "Attributes active North American investments including Centric Fiber, Lincoln Terminal and USD Clean Fuels to the Infrastructure strategy and Infra Fund I.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"sectors",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1944099/000194409922000002/xslFormDX01/primary_doc.xml",
+"title": "Form D — Ara Infrastructure Fund I, LP",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2022-09-12",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Main fund legal identity and equity structure",
+"evidenceSummary": "Identifies Ara Infrastructure Fund I, LP as a 2022 Cayman exempted limited partnership and private-equity pooled investment fund offering equity and pooled investment fund interests.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE"
+],
+"supportedFields": [
+"fundName",
+"vintage",
+"structure",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1944107/000194410724000002/xslFormDX08/primary_doc.xml",
+"title": "Form D — Ara Infrastructure Fund I-A, SCSp",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-09-16",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Parallel vehicle identity",
+"evidenceSummary": "Identifies the Luxembourg I-A issuer as a 2022 private-equity pooled fund offering equity interests, supporting treatment as a parallel legal vehicle within the same commercial fundraise rather than a separate census row.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE"
+],
+"supportedFields": [
+"fundName",
+"vintage",
+"structure",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-017",
+"managerName": "Ara Partners",
+"fundName": "Ara Infrastructure Fund I"
+}
+],
+"changedFields": [
+"investmentStrategy",
+"size",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"strategies",
+"sectors",
+"sourceUrls"
+],
+"repoDispositionRationale": "FUND-017 matches the commercial vehicle, but official sources establish a 2022 launch and show that the $800 million-plus disclosure is aggregate commitments for the fund and associated co-investment vehicles, not an exact fund-only size; strategy, sector and source metadata also require correction.",
+"confidence": "HIGH"
+},
+{
+"fundName": "Ara Energy Fund I",
+"aliases": [
+"Ara Energy Fund I, LP",
+"Ara Energy Fund I-A, SCSp",
+"Ara Energy Decarbonization Fund I",
+"Ara Energy"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "SEC filings identify the main and parallel issuers as private-equity pooled funds offering equity interests; Ara's official Energy strategy owns, operates and optimizes critical power, biofuels and fuels-distribution infrastructure; and StepStone classifies the parallel fund as a North American Infrastructure Assets primary investment.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Ara's official Energy materials state a strong North American presence and describe acquisition of energy businesses and assets across North America and Europe.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-016",
+"managerName": "Ara Partners",
+"fundName": "Ara Energy Fund I",
+"ticker": null,
+"investmentStrategy": "Value-add acquisition, ownership and operational optimization of existing cash-generating conventional power, biofuels, and fuels-delivery and distribution businesses and assets, with economic decarbonization where viable.",
+"size": "Undisclosed",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Not disclosed",
+"strategies": [
+"Value-Add"
+],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Midstream",
+"Transportation"
+],
+"regions": [
+"North America",
+"Europe"
+],
+"sourceUrls": [
+"https://www.arapartners.com/what-we-do/strategies/energy/",
+"https://www.arapartners.com/news/ara-partners-launches-new-strategy-to-decarbonize-conventional-energy-value-chain-in-partnership-with-hf-capital/",
+"https://www.arapartners.com/news/liberty-mutual-investments-and-ara-partners-form-strategic-partnership/",
+"https://www.sec.gov/Archives/edgar/data/2088778/000095010325016053/xslFormDX08/primary_doc.xml",
+"https://www.sec.gov/Archives/edgar/data/2088818/000095010325016054/xslFormDX08/primary_doc.xml",
+"https://www.sec.gov/Archives/edgar/data/1957892/000119312526081487/structurenport.htm",
+"https://www.infrastructureinvestor.com/institution-profiles/ara-partners.html",
+"https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+"https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B30A9BC9E-0000-CC16-BB77-8FA1D20967F3%7D&DocTitle=Declaratory+Ruling+on+Transfer+Transaction"
+],
+"strategyUrl": "https://www.arapartners.com/what-we-do/strategies/energy/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/2088778/000095010325016053/xslFormDX08/primary_doc.xml",
+"title": "Form D — Ara Energy Fund I, LP",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-12-11",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Official main-fund identity and live offering",
+"evidenceSummary": "Identifies the official issuer as Ara Energy Fund I, LP, formed in 2025, and as a private-equity pooled fund offering equity interests. The filing reports an indefinite offering, zero amount sold and first sale yet to occur; it does not state a fund target, final close or fund vintage.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"vintage",
+"structure",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.sec.gov/Archives/edgar/data/2088818/000095010325016054/xslFormDX08/primary_doc.xml",
+"title": "Form D — Ara Energy Fund I-A, SCSp",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-12-11",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Parallel vehicle identity",
+"evidenceSummary": "Identifies Ara Energy Fund I-A, SCSp as a 2025 Luxembourg private-equity pooled fund offering equity interests under the same fund series, supporting consolidation with the main vehicle rather than a separate census row.",
+"supports": [
+"FUND_IDENTITY"
+],
+"supportedFields": [
+"fundName",
+"structure",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.arapartners.com/what-we-do/strategies/energy/",
+"title": "Energy",
+"publisher": "Ara Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Official direct infrastructure and geography mandate",
+"evidenceSummary": "States that Ara Energy acquires existing cash-generating power, biofuels and distribution businesses; owns, operates and optimizes critical energy infrastructure; focuses on fully operational assets; and has a strong presence in North America.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"strategies",
+"sectors",
+"regions",
+"strategyUrl"
+]
+},
+{
+"url": "https://www.arapartners.com/news/ara-partners-launches-new-strategy-to-decarbonize-conventional-energy-value-chain-in-partnership-with-hf-capital/",
+"title": "Ara Partners Launches New Strategy to Decarbonize Conventional Energy Value Chain in Partnership with HF Capital",
+"publisher": "Ara Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-09-16",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Official strategy launch and North American scope",
+"evidenceSummary": "Launches Ara Energy to acquire, optimize and decarbonize energy businesses and assets across North America, initially targeting power generation, merchant biofuels, and supply and distribution businesses. The separate $725 million HF Capital commitment is to Ara's strategies and is not treated as the fund's size.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"sectors",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.arapartners.com/news/liberty-mutual-investments-and-ara-partners-form-strategic-partnership/",
+"title": "Liberty Mutual Investments and Ara Partners Form Strategic Partnership",
+"publisher": "Ara Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-02-10",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Named anchor investment and current regional scope",
+"evidenceSummary": "Names an anchor investment in Ara Energy Fund I and states that Ara Energy acquires, optimizes and decarbonizes energy businesses and assets across North America and Europe.",
+"supports": [
+"FUND_IDENTITY",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1957892/000119312526081487/structurenport.htm",
+"title": "StepStone Private Infrastructure Fund — Consolidated Schedule of Investments",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2025-12-31",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Institutional infrastructure classification and commitment",
+"evidenceSummary": "Lists Ara Energy Fund I-A, SCSp as a North American primary investment classified as Infrastructure Assets and marks it as committed but not fully funded. It separately lists an Ara Energy co-investment, which is not counted as a separate commercial fund.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"regions",
+"structure",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.infrastructureinvestor.com/institution-profiles/ara-partners.html",
+"title": "Ara Partners — Institution Profile",
+"publisher": "Infrastructure Investor",
+"sourceTier": "REPUTABLE_SECONDARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Current fundraising status cross-check",
+"evidenceSummary": "Lists Ara Energy Fund I as Ara Partners' single fund in market and Ara Infrastructure Fund I as closed in May 2025.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+"title": "Ara Energy to Acquire Gate City Power, Gate City Renewable Fuels, and Interest in JET Retail Network for Approximately $875 Million",
+"publisher": "Ara Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-03-11",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Signed direct-equity deployment context",
+"evidenceSummary": "Describes equity-funded acquisitions across power, biofuels and fuel distribution for Ara's Energy strategy, but states that the transactions remain subject to regulatory approvals and customary closing conditions; they are not counted as current holdings.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"sectors",
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-016",
+"managerName": "Ara Partners",
+"fundName": "Ara Energy Decarbonization Fund I"
+}
+],
+"changedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"vintage",
+"regions",
+"sourceUrls",
+"strategyUrl"
+],
+"repoDispositionRationale": "FUND-016 represents the same commercial vehicle, but the official legal and market name is Ara Energy Fund I. Primary evidence does not establish a $1.5 billion fund size or a 2026 vintage; the offering amount is indefinite, the manager has not announced a final close, and official materials now describe a North America-and-Europe strategy with a dedicated Energy strategy page.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Ara Fund III",
+"reasonCode": "OTHER",
+"rationale": "Fund-specific primary evidence identifies Ara Fund III as the manager's third private-equity fund, focused on buyout and growth investments in industrial companies; Ara's current portfolio likewise labels Fund III investments as Strategy Private Equity. A North American footprint therefore does not satisfy the direct-infrastructure inclusion test.",
+"sourceUrls": [
+"https://www.prnewswire.com/news-releases/ara-partners-closes-over-3-billion-of-new-capital-commitments-302013523.html",
+"https://www.arapartners.com/portfolio/"
+]
+}
+],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-015",
+"repoFundName": "Ara Fund III",
+"disposition": "ARCHIVE_REVIEW",
+"rationale": "This repository row is not matched to an included direct-infrastructure vehicle because primary evidence classifies the fund as private-equity buyout and growth. Review its placement in the direct-infrastructure manifest without automatic deletion or archival.",
+"evidenceUrls": [
+"https://www.prnewswire.com/news-releases/ara-partners-closes-over-3-billion-of-new-capital-commitments-302013523.html",
+"https://www.arapartners.com/portfolio/"
+]
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "Ara Energy Fund I amount, vintage and close status",
+"issue": "The December 2025 Form D reports an indefinite offering, zero amount sold and no stated fund vintage or final close. StepStone and Liberty Mutual materials establish commitments or an anchor investment, while Infrastructure Investor reported both an up-to-$1.5-billion market figure and, later, that Ara declined to disclose a target. No primary fund-size or final-close disclosure was located.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2088778/000095010325016053/xslFormDX08/primary_doc.xml",
+"https://www.sec.gov/Archives/edgar/data/1957892/000119312526081487/structurenport.htm",
+"https://www.arapartners.com/news/liberty-mutual-investments-and-ara-partners-form-strategic-partnership/",
+"https://www.infrastructureinvestor.com/ara-partners-eyes-up-to-1-5bn-for-new-energy-fund-exclusive/",
+"https://www.infrastructureinvestor.com/ara-and-liberty-mutual-investments-to-go-big-on-decarbonisation/",
+"https://www.infrastructureinvestor.com/institution-profiles/ara-partners.html"
+],
+"recommendedResolution": "Obtain an Ara fund close notice, audited fund report, amended Form D or institutional LP approval document that expressly states target or committed capital, vintage and close status before populating those fields."
+},
+{
+"subject": "Ara Energy Gate City Power, Gate City Renewable Fuels and JET transaction closing",
+"issue": "Ara's March 2026 release states that the acquisitions were subject to regulatory approvals and customary conditions. The New York Public Service Commission's June 2026 ruling continued to describe the transfer as proposed and required notice after completion; no completion notice or fund-attributed closing release was located by the as-of date.",
+"sourceUrls": [
+"https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+"https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B30A9BC9E-0000-CC16-BB77-8FA1D20967F3%7D&DocTitle=Declaratory+Ruling+on+Transfer+Transaction"
+],
+"recommendedResolution": "Require a closing announcement or filed regulatory completion notice that confirms consummation and attributes the resulting ownership to Ara Energy Fund I before using any of these assets as a verified current holding."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 31,
+"searchQueriesRun": 63,
+"notes": [
+"Two commercially distinct current vehicles met all inclusion tests: Ara Infrastructure Fund I and Ara Energy Fund I.",
+"Ara Infrastructure Fund I-A, SCSp and Ara Energy Fund I-A, SCSp were treated as parallel legal vehicles within their respective fundraises; associated co-investment vehicles were not counted as separate funds.",
+"The $800 million-plus infrastructure disclosure is aggregate commitments for Ara Infrastructure Fund I and associated co-investment vehicles, not an exact fund-only final-close amount.",
+"The $1.5 billion figure associated with Ara Energy Fund I was not adopted because no primary fund-specific amount disclosure was located and the manager later declined to disclose a target.",
+"No separately named Ara Infrastructure Fund II or Ara Energy Fund II was located in official materials, regulatory filings, current fundraising sources or current portfolio attribution as of the as-of date.",
+"The Gate City Power, Gate City Renewable Fuels and JET transactions remain contextual signed-deal evidence and were not treated as current holdings absent closing evidence.",
+"Argus Energy Managers was reviewed as the 2018 predecessor name; historic affiliate-manager funds were not merged into Ara without fund-specific successor attribution."
+]
+},
+"summary": {
+"includedFunds": 2,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 0,
+"proposedCorrections": 2,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 1,
+"repoOnlyRecords": 1,
+"unresolvedConflicts": 2
+}
+}
+</fund_census_json>
+<fund_census_report>
+Ara Partners — North American direct infrastructure fund census
+Conclusion
+As of 2026-07-29, the census includes two commercially distinct vehicles: Ara Infrastructure Fund I and Ara Energy Fund I. Infrastructure Fund I is closed and active, with multiple active North American holdings attributed to the fund. Energy Fund I is a live named fund in market with an explicit North American mandate, but no signed acquisition was counted as a current holding without closing evidence. Ara Fund III is excluded because fund-specific primary evidence classifies it as the manager's third private-equity buyout and growth fund, not the separate Infrastructure or Energy strategy. Ara Partners is the canonical current manager name; Argus Energy Managers is the documented 2018 predecessor name. (arapartners.com)
+Included funds
+FundVehicle typeLifecycleNorth American qualificationAmount / basisRepository dispositionDirect evidenceAra Infrastructure Fund INAMED_FUNDCLOSED_ACTIVEVERIFIED_CURRENT_NA_HOLDING — Centric Fiber; Ara also attributes active Lincoln Terminal and USD Clean Fuels investments to Infra Fund I$800M+ aggregate commitments for the fund and associated co-investment vehicles; COMMITMENTS, not an exact fund-only amountPROPOSED_CORRECTIONFinal close · Commitment clarification · Strategy · Portfolio · Main Form DAra Energy Fund INAMED_FUNDRAISINGEXPLICIT_NA_MANDATE — official strategy has a strong North American presence and covers North America and Europe; no pending acquisition is treated as a current holdingUndisclosed; the primary Form D uses an indefinite offering amount and no primary final-close or target amount was locatedPROPOSED_CORRECTIONEnergy strategy · Official launch · LMI anchor investment · Main Form D · StepStone schedule
+The infrastructure fund's identity, 2022 formation, final close, amount semantics and active North American deployment are supported by official manager and SEC materials. The Energy fund's official legal name and live equity offering are supported by its Form D; Ara's strategy page and StepStone's filed schedule support direct-infrastructure classification and North American scope, while current fundraising status is corroborated by Infrastructure Investor. (arapartners.com)
+Repository reconciliation
+FUND-017 is retained but corrected: official evidence supports a 2022 launch/formation rather than 2025, and the disclosed $800 million-plus amount covers Ara Infrastructure Fund I together with associated co-investment vehicles. FUND-016 is retained under the official name Ara Energy Fund I rather than “Ara Energy Decarbonization Fund I”; the unsupported $1.5 billion canonical size and 2026 vintage are removed, Europe is added to the documented mandate, and the Energy strategy page replaces the Infrastructure strategy page. FUND-015 is reconciled once as a repo-only ARCHIVE_REVIEW row because Ara Fund III does not pass the direct-infrastructure test. (arapartners.com)
+Exclusions and unresolved issues
+Ara Fund III is excluded under the OTHER reason code because Ara describes it as an oversubscribed third private-equity fund focused on buyout and growth investments, and the current portfolio labels Fund III holdings as Strategy Private Equity. (arapartners.com)
+Two items remain for human follow-up. First, Ara Energy Fund I's target, committed capital, vintage and final-close status remain undisclosed in primary fund materials: the Form D reported an indefinite offering and zero sold at filing; StepStone and Liberty Mutual subsequently evidence commitments, while Infrastructure Investor reported an up-to-$1.5 billion figure and later reported that Ara declined to disclose the target. Second, the Gate City Power, Gate City Renewable Fuels and JET acquisitions were announced as conditional; the June 2026 New York ruling still described the transfer as proposed and required notice after completion, and no completion notice was located by the as-of date. (sec.gov)
+There is no program exception and no overlapping supplied manager. The I-A issuers and named co-investment entities are parallel or associated vehicles within the two commercial fundraises and are not separately counted.
+Completeness
+The review covered official fund and strategy materials, the live manager portfolio, fundraising and close announcements, SEC Form D filings, an institutional private-infrastructure schedule of investments, current fundraising sources, manager aliases and the 2018 rebrand, current holding attribution, signed-deal closing status, and parallel/co-investment structures. 31 sources were opened and 63 search queries were run. No separately named Ara Infrastructure Fund II or Ara Energy Fund II was located. Paywalled secondary material was used only as a cross-check or conflict flag, not to populate unsupported canonical amount fields. The supplied contract and repository snapshot governed the output and reconciliation. Pasted text
+</fund_census_report>

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_SNAPSHOT_IDENTITY_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "3i Infrastructure",
+  "createdAt": "2026-07-29T16:40:51.777Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/001-3i-infrastructure-attempt-4.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/001-3i-infrastructure-snapshot-normalized.txt",
+  "allowedFields": [
+    "managerName",
+    "fundName"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "matchIndex": 0,
+      "legacyId": "FUND-001",
+      "field": "managerName",
+      "value": "3i Group"
+    },
+    {
+      "fundIndex": 1,
+      "matchIndex": 0,
+      "legacyId": "FUND-002",
+      "field": "managerName",
+      "value": "3i Group"
+    }
+  ]
+}

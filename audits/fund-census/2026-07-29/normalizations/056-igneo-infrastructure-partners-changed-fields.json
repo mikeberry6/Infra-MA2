@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Igneo Infrastructure Partners",
+  "createdAt": "2026-07-30T21:35:52.548Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/056-igneo-infrastructure-partners-unsupported-reverted.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/056-igneo-infrastructure-partners-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-098",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "regions"
+      ],
+      "value": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "regions"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "fundStatus"
+      ],
+      "value": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "fundStatus"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    }
+  ]
+}

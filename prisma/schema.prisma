@@ -114,6 +114,33 @@ enum FundRegionEnum {
   GLOBAL
 }
 
+enum FundSizeBasis {
+  TARGET
+  AMOUNT_SOLD
+  FIRST_CLOSE
+  FINAL_CLOSE
+  AUM
+  COMMITMENTS
+}
+
+enum FundEvidenceSourceTier {
+  PRIMARY
+  INSTITUTIONAL
+  REPUTABLE_SECONDARY
+  OTHER_SECONDARY
+}
+
+enum FundEvidenceConfidence {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum FundEvidenceScope {
+  FUND
+  PROGRAM_EXCEPTION
+}
+
 model Fund {
   id                 String           @id @default(cuid())
   legacyId           String           @unique
@@ -124,6 +151,15 @@ model Fund {
   investmentStrategy String           @default("")
   size               String
   sizeUsdMm          Float?
+  /// ISO 4217 code for the currency in which the fund size was disclosed.
+  sizeNativeCurrency String?          @db.VarChar(3)
+  /// Full native-currency units, not millions.
+  sizeNativeAmount   Decimal?         @db.Decimal(24, 4)
+  sizeBasis          FundSizeBasis?
+  sizeAsOf           DateTime?        @db.Date
+  /// USD per native-currency unit, recorded once for the associated FX date.
+  sizeUsdFxRate      Decimal?         @db.Decimal(20, 10)
+  sizeUsdFxDate      DateTime?        @db.Date
   vintage            String
   strategies         FundStrategy[]
   structure          FundStructure
@@ -140,9 +176,54 @@ model Fund {
 
   ownershipPeriods OwnershipPeriod[]
   newsMentions     NewsMention[]
+  evidence         FundEvidence[]
+  revisions        FundRevision[]
 
   @@index([managerId])
   @@index([fundName])
+}
+
+model FundEvidence {
+  id              String                 @id @default(cuid())
+  fundId          String
+  fund            Fund                   @relation(fields: [fundId], references: [id])
+  sourceId        String
+  source          Source                 @relation(fields: [sourceId], references: [id])
+  supportedFields String[]
+  sourceTier      FundEvidenceSourceTier
+  scope           FundEvidenceScope
+  publishedAt     DateTime?
+  retrievedAt     DateTime
+  confidence      FundEvidenceConfidence
+  evidenceLabel   String
+  pipelineRunId   String?
+  pipelineRun     PipelineRun?           @relation(fields: [pipelineRunId], references: [id], onDelete: SetNull)
+  createdAt       DateTime               @default(now())
+
+  @@unique([fundId, sourceId, evidenceLabel])
+  @@index([fundId])
+  @@index([sourceId])
+  @@index([pipelineRunId])
+  @@index([retrievedAt])
+}
+
+model FundRevision {
+  id            String       @id @default(cuid())
+  fundId        String
+  fund          Fund         @relation(fields: [fundId], references: [id])
+  proposalHash  String
+  beforeJson    Json?
+  afterJson     Json
+  changedFields String[]
+  approver      String
+  appliedAt     DateTime     @default(now())
+  pipelineRunId String?
+  pipelineRun   PipelineRun? @relation(fields: [pipelineRunId], references: [id], onDelete: SetNull)
+
+  @@unique([fundId, proposalHash])
+  @@index([proposalHash])
+  @@index([pipelineRunId])
+  @@index([appliedAt])
 }
 
 // ── Company (Portfolio Company) ─────────────────────────
@@ -412,7 +493,8 @@ model Source {
   type      SourceType @default(ARTICLE)
   createdAt DateTime   @default(now())
 
-  citations Citation[]
+  citations    Citation[]
+  fundEvidence FundEvidence[]
 }
 
 model Citation {
@@ -647,6 +729,9 @@ model PipelineRun {
   metadata     Json?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
+
+  fundEvidence  FundEvidence[]
+  fundRevisions FundRevision[]
 
   @@index([pipeline, startedAt])
   @@index([status, startedAt])

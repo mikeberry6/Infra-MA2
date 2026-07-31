@@ -1,0 +1,215 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Tallvine",
+"canonicalManager": "Tallvine Partners",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["Tallvine", "Tallvine Partners"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Tallvine Middle Market Infrastructure Fund I, L.P.",
+"aliases": ["Tallvine Middle Market Infrastructure Fund I"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "Manager and fund materials describe building and owning infrastructure platforms via control equity investments.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Manager strategy materials describe a North American middle-market infrastructure focus across transport, digital, and utilities sectors.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-142",
+"managerName": "Tallvine Partners",
+"fundName": "Tallvine Middle Market Infrastructure Fund I",
+"ticker": null,
+"investmentStrategy": "Value-add middle-market infrastructure strategy focused on building North American platforms across transportation/logistics, digital infrastructure, and utilities.",
+"size": "$701.7M amount sold",
+"sizeUsdMm": 701.7,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "701700000",
+"sizeBasis": "AMOUNT_SOLD",
+"sizeAsOf": "2025-08-28",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2024",
+"strategies": ["Value-Add"],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": ["Digital", "Transportation", "Utilities"],
+"regions": ["North America"],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2017078/000201707825000003/xslFormDX01/primary_doc.xml",
+"https://www.tallvinepartners.com/"
+],
+"strategyUrl": "https://www.tallvinepartners.com/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/2017078/000201707825000003/xslFormDX01/primary_doc.xml",
+"title": "Form D — Tallvine Middle Market Infrastructure Fund I, L.P.",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-08-28",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "SEC filing with offering and fundraising data",
+"evidenceSummary": "Identifies the fund, shows first sale date April 18, 2024, and reports total amount sold of $701,700,000 with the offering ongoing.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.tallvinepartners.com/",
+"title": "Tallvine Partners website",
+"publisher": "Tallvine Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Manager strategy description",
+"evidenceSummary": "Describes Tallvine’s strategy of building middle-market infrastructure platforms in North America across transportation/logistics, digital infrastructure, and utilities sectors.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"managerName",
+"investmentStrategy",
+"regions",
+"sectors",
+"strategies",
+"structure",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-142",
+"managerName": "Tallvine Partners",
+"fundName": "Tallvine Middle Market Infrastructure Fund I"
+}
+],
+"changedFields": [
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"sectors",
+"sourceUrls"
+],
+"repoDispositionRationale": "Repository record matches the same fund but lacks size detail, updated strategy wording, vintage precision, expanded sector coverage, and complete source URL set; SEC filing and manager website provide these fields.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 2,
+"searchQueriesRun": 3,
+"notes": ["Single identified flagship fund; no distinct parallel or co-investment vehicles evidenced as separate commercial strategies."]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 0
+}
+}
+</fund_census_json>
+<fund_census_report>
+Tallvine — North American direct infrastructure fund census
+Conclusion
+Tallvine Partners has one qualifying direct-equity infrastructure fund currently raising with a North American mandate. No additional qualifying vehicles were identified from the reviewed materials. Pasted text
+Included funds
+FundVehicleLifecycleNA QualificationSize BasisRepo DispositionEvidenceTallvine Middle Market Infrastructure Fund I, L.P.Named FundRaisingExplicit NA mandate$701.7M amount sold (Form D, 2025-08-28)Proposed correctionhttps://www.sec.gov/Archives/edgar/data/2017078/000201707825000003/xslFormDX01/primary_doc.xml ; https://www.tallvinepartners.com/
+Repository reconciliation
+
+
+Matched and corrected (1):
+
+
+FUND-142 (Tallvine Middle Market Infrastructure Fund I)
+
+
+Updated fields: investmentStrategy, size, sizeUsdMm, sizeNativeCurrency, sizeNativeAmount, sizeBasis, sizeAsOf, vintage, sectors, sourceUrls.
+
+
+Corrections supported by SEC Form D and manager website evidence. Pasted text
+
+
+
+
+
+
+No additional repository records require reconciliation.
+
+
+Exclusions and unresolved issues
+
+
+No excluded candidates identified.
+
+
+No unresolved conflicts based on available evidence.
+
+
+Completeness
+
+
+Reviewed SEC filing and official manager website.
+
+
+Verified fundraising status and size via Form D.
+
+
+Confirmed North American mandate via strategy description.
+
+
+Evaluated potential parallel or related vehicles; none supported as distinct funds.
+
+
+Coverage is complete for the requested manager given available sources.
+</fund_census_report>
+

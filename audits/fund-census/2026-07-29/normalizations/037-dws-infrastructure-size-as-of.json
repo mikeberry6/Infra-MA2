@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_SIZE_AS_OF_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "DWS Infrastructure",
+  "createdAt": "2026-07-30T18:25:01.273Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/037-dws-infrastructure.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/037-dws-infrastructure-size-as-of-normalized.txt",
+  "allowedFields": [
+    "snapshot.sizeAsOf",
+    "evidence[].supportedFields[].sizeAsOf"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-065",
+      "url": "https://group.dws.com/ir/en/media/media-releases/detail/DWS-Launches-Recommendation-for-Cash-Acquisition-of-Stagecoach/",
+      "field": "sizeAsOf",
+      "from": "2021-06-30",
+      "value": "2022-03-09",
+      "rationale": "The model supplied a size-as-of date that no evidence row supports; the amount is anchored instead to the publication date of the single opened primary or institutional fund source supporting the classified native amount."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Sixth Street",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Sixth Street",
+    "TPG Sixth Street Partners",
+    "TSSP"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager scope — Sixth Street",
+      "issue": "The supplied repository snapshot explicitly marks knownManager=false and canonicalManager=null for Sixth Street despite its presence in the supplied manager universe, prohibiting inclusion or proposal of any fund vehicles under the contract.",
+      "sourceUrls": [],
+      "recommendedResolution": "Confirm whether Sixth Street should be added to the canonical manager universe; if yes, re-run the census with knownManager=true to permit fund identification and reconciliation."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 2,
+    "searchQueriesRun": 8,
+    "notes": [
+      "Manager excluded per repository instruction; no fund-level inclusion permitted."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

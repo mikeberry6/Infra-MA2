@@ -1,0 +1,1026 @@
+name: Apply Reviewed Fund Refresh
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: Exact 40-character merged commit SHA now contained in the default branch
+        required: true
+        type: string
+      pull_request_number:
+        description: Pull request containing the reviewed proposal
+        required: true
+        type: string
+      proposal_path:
+        description: Repository-relative path to the reviewed fund refresh JSON proposal
+        required: true
+        type: string
+      proposal_sha256:
+        description: Exact lowercase canonical SHA-256 stored in proposal.proposalHash
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+  deployments: read
+  pull-requests: read
+
+concurrency:
+  group: fund-refresh-production
+  cancel-in-progress: false
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+  REVIEWED_COMMIT_SHA: ${{ inputs.commit_sha }}
+  REVIEWED_PR_NUMBER: ${{ inputs.pull_request_number }}
+  REVIEWED_PROPOSAL_PATH: ${{ inputs.proposal_path }}
+  REVIEWED_PROPOSAL_SHA256: ${{ inputs.proposal_sha256 }}
+
+jobs:
+  authorize:
+    name: Bind PR, proposal, digest, and Pro approval
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      pro_review_id: ${{ steps.pr.outputs.pro_review_id }}
+      reviewed_head_sha: ${{ steps.pr.outputs.reviewed_head_sha }}
+      reviewed_proposal_blob_sha: ${{ steps.proposal_blob.outputs.reviewed_proposal_blob_sha }}
+      pr_url: ${{ steps.pr.outputs.pr_url }}
+    steps:
+      - name: Require dispatch from the protected default branch
+        env:
+          DISPATCH_REF: ${{ github.ref }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        shell: bash
+        run: |
+          expected_ref="refs/heads/$DEFAULT_BRANCH"
+          if [ "$DISPATCH_REF" != "$expected_ref" ]; then
+            echo "::error::Dispatch this workflow from $expected_ref, not $DISPATCH_REF."
+            exit 1
+          fi
+
+      - name: Validate immutable input shapes
+        shell: bash
+        run: |
+          if [[ ! "$REVIEWED_COMMIT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::commit_sha must be an exact lowercase 40-character Git SHA."
+            exit 1
+          fi
+          if [[ ! "$REVIEWED_PR_NUMBER" =~ ^[1-9][0-9]*$ ]]; then
+            echo "::error::pull_request_number must be a positive integer."
+            exit 1
+          fi
+          if [[ ! "$REVIEWED_PROPOSAL_SHA256" =~ ^[0-9a-f]{64}$ ]]; then
+            echo "::error::proposal_sha256 must be an exact lowercase SHA-256 digest."
+            exit 1
+          fi
+          if [[ ! "$REVIEWED_PROPOSAL_PATH" =~ ^audits/fund-refresh/[A-Za-z0-9._-]+/proposal\.json$ ]]; then
+            echo "::error::proposal_path must be audits/fund-refresh/<safe-run-id>/proposal.json."
+            exit 1
+          fi
+
+      - name: Bind the pull request head and GPT-5.6 Pro PASS review
+        id: pr
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          HEAD_SHA: ${{ inputs.commit_sha }}
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+          PROPOSAL_PATH: ${{ inputs.proposal_path }}
+          PROPOSAL_SHA256: ${{ inputs.proposal_sha256 }}
+          PRO_REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_PRO_REVIEWER_LOGIN }}
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pull_number = Number(process.env.PR_NUMBER);
+            const mergedSha = process.env.HEAD_SHA;
+            const proposalPath = process.env.PROPOSAL_PATH;
+            const proposalSha256 = process.env.PROPOSAL_SHA256;
+            const proReviewerLogin = process.env.PRO_REVIEWER_LOGIN;
+
+            if (!proReviewerLogin) {
+              core.setFailed("Repository variable FUND_REFRESH_PRO_REVIEWER_LOGIN is required.");
+              return;
+            }
+
+            let productionEnvironment;
+            try {
+              const response = await github.request(
+                "GET /repos/{owner}/{repo}/environments/{environment_name}",
+                {
+                  owner,
+                  repo,
+                  environment_name: "fund-refresh-production",
+                },
+              );
+              productionEnvironment = response.data;
+            } catch (error) {
+              core.setFailed(`The fund-refresh-production environment must exist before dispatch: ${error.message}`);
+              return;
+            }
+            const approvalRule = (productionEnvironment.protection_rules || [])
+              .find((rule) => rule.type === "required_reviewers");
+            if (!approvalRule || !approvalRule.reviewers?.length) {
+              core.setFailed("fund-refresh-production must have at least one required reviewer.");
+              return;
+            }
+            if (!approvalRule.prevent_self_review) {
+              core.setFailed("fund-refresh-production must prevent self-review.");
+              return;
+            }
+            if (productionEnvironment.can_admins_bypass !== false) {
+              core.setFailed("fund-refresh-production must explicitly report administrator bypass disabled.");
+              return;
+            }
+
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number });
+            if (!pr.labels.some((label) => (typeof label === "string" ? label : label.name) === "fund-refresh")) {
+              core.setFailed(`PR #${pull_number} must retain the fund-refresh label.`);
+              return;
+            }
+            if (pr.base.ref !== context.payload.repository.default_branch) {
+              core.setFailed(`PR #${pull_number} targets ${pr.base.ref}, not the default branch.`);
+              return;
+            }
+            if (pr.head.repo?.full_name !== `${owner}/${repo}`) {
+              core.setFailed(`PR #${pull_number} must originate from this repository.`);
+              return;
+            }
+            if (!pr.merged || !pr.merged_at || !pr.merge_commit_sha) {
+              core.setFailed(`PR #${pull_number} must be merged before this workflow can run.`);
+              return;
+            }
+            if (pr.merge_commit_sha !== mergedSha) {
+              core.setFailed(`PR merged commit ${pr.merge_commit_sha} does not match requested commit ${mergedSha}.`);
+              return;
+            }
+            const reviewedHeadSha = pr.head.sha;
+            const expectedMarker = `FUND_REFRESH_PRO_PASS pr=${pull_number} head_sha=${reviewedHeadSha} proposal_path=${proposalPath} proposal_sha256=${proposalSha256}`;
+
+            const { data: defaultBranchState } = await github.rest.repos.getBranch({
+              owner,
+              repo,
+              branch: context.payload.repository.default_branch,
+            });
+            if (!defaultBranchState.protected || defaultBranchState.commit.sha !== mergedSha) {
+              core.setFailed(`Merged commit ${mergedSha} must be the current protected default-branch head.`);
+              return;
+            }
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner,
+              repo,
+              pull_number,
+              per_page: 100,
+            });
+            if (!files.some((file) => file.filename === proposalPath && file.status !== "removed")) {
+              core.setFailed(`${proposalPath} is not a live file in PR #${pull_number}.`);
+              return;
+            }
+            const allowedStaticFiles = new Set([
+              'prisma/seed-data/funds.manifest.json',
+              'prisma/seed-data/fund-evidence.manifest.json',
+              'docs/fund-source-audit.csv',
+              'docs/fund-source-audit.md',
+            ]);
+            const allowedArtifact = (filename) =>
+              /^audits\/fund-refresh\/[A-Za-z0-9._-]+\/[A-Za-z0-9._/-]+\.(json|csv|md)$/.test(filename) &&
+              !filename.split('/').includes('..');
+            const disallowedFiles = files.filter((file) => {
+              const paths = [file.filename, file.previous_filename].filter(Boolean);
+              return paths.some((filename) => !allowedStaticFiles.has(filename) && !allowedArtifact(filename));
+            });
+            if (disallowedFiles.length > 0) {
+              core.setFailed(`Fund-refresh PRs are data-only; disallowed paths: ${disallowedFiles.map((file) => file.filename).join(', ')}`);
+              return;
+            }
+            const removedDesiredState = files.filter((file) =>
+              file.status === 'removed' && allowedStaticFiles.has(file.filename),
+            );
+            if (removedDesiredState.length > 0) {
+              core.setFailed(`Fund-refresh PR cannot remove desired-state files: ${removedDesiredState.map((file) => file.filename).join(', ')}`);
+              return;
+            }
+
+            const reviews = await github.paginate(github.rest.pulls.listReviews, {
+              owner,
+              repo,
+              pull_number,
+              per_page: 100,
+            });
+            const markerLine = (body) => (body || "")
+              .split(/\r?\n/)
+              .map((line) => line.trim())
+              .includes(expectedMarker);
+            const passingReviews = reviews.filter((review) =>
+              review.state === "APPROVED" &&
+              review.commit_id === reviewedHeadSha &&
+              review.user?.login === proReviewerLogin &&
+              markerLine(review.body),
+            );
+            if (passingReviews.length === 0) {
+              core.setFailed(`No APPROVED review on ${reviewedHeadSha} contains the exact Pro marker: ${expectedMarker}`);
+              return;
+            }
+            const passingReview = passingReviews.sort((left, right) => {
+              const timeDelta = Date.parse(left.submitted_at || 0) - Date.parse(right.submitted_at || 0);
+              return timeDelta || Number(left.id) - Number(right.id);
+            }).at(-1);
+            const laterProReview = reviews.some((review) => {
+              if (review.commit_id !== reviewedHeadSha || review.user?.login !== proReviewerLogin) return false;
+              const reviewTime = Date.parse(review.submitted_at || 0);
+              const passTime = Date.parse(passingReview.submitted_at || 0);
+              return reviewTime > passTime || (reviewTime === passTime && Number(review.id) > Number(passingReview.id));
+            });
+            if (laterProReview) {
+              core.setFailed(`A later review by ${proReviewerLogin} invalidates Pro PASS review ${passingReview.id}.`);
+              return;
+            }
+
+            core.setOutput("pro_review_id", String(passingReview.id));
+            core.setOutput("reviewed_head_sha", reviewedHeadSha);
+            core.setOutput("pr_commit_count", String(pr.commits));
+            core.setOutput("pr_url", pr.html_url);
+            await core.summary
+              .addHeading("Fund refresh authorization")
+              .addTable([
+                [{ data: "Binding", header: true }, { data: "Value", header: true }],
+                ["Pull request", pr.html_url],
+                ["Reviewed PR head", reviewedHeadSha],
+                ["Merged commit", mergedSha],
+                ["Proposal", proposalPath],
+                ["Proposal SHA-256", proposalSha256],
+                ["Pro reviewer", proReviewerLogin],
+                ["Pro PASS review", String(passingReview.id)],
+                ["Production approval", `${approvalRule.reviewers.length} required reviewer(s); self-review and administrator bypass blocked`],
+              ])
+              .write();
+
+      - name: Checkout the exact reviewed commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.commit_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify checked-out commit and proposal digest
+        env:
+          PR_COMMIT_COUNT: ${{ steps.pr.outputs.pr_commit_count }}
+        shell: bash
+        run: |
+          actual_commit="$(git rev-parse HEAD)"
+          if [ "$actual_commit" != "$REVIEWED_COMMIT_SHA" ]; then
+            echo "::error::Checked-out commit $actual_commit does not match $REVIEWED_COMMIT_SHA."
+            exit 1
+          fi
+          git ls-files --error-unmatch -- "$REVIEWED_PROPOSAL_PATH" >/dev/null
+          if [ ! -f "$REVIEWED_PROPOSAL_PATH" ] || [ -L "$REVIEWED_PROPOSAL_PATH" ]; then
+            echo "::error::Proposal must be a tracked regular file, not a symlink."
+            exit 1
+          fi
+          parent_count="$(git rev-list --parents -n 1 "$REVIEWED_COMMIT_SHA" | awk '{print NF - 1}')"
+          if [ "$parent_count" -eq 1 ] && [ "$PR_COMMIT_COUNT" -ne 1 ]; then
+            echo "::error::A one-parent fund-refresh merge is accepted only for a single-commit PR; use a merge commit for multi-commit PRs."
+            exit 1
+          fi
+          if [ "$parent_count" -lt 1 ] || [ "$parent_count" -gt 2 ]; then
+            echo "::error::Fund-refresh commit must have one parent (single-commit PR) or two parents (merge commit)."
+            exit 1
+          fi
+          actual_digest="$(node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(typeof value.proposalHash === "string" ? value.proposalHash : "")' "$REVIEWED_PROPOSAL_PATH")"
+          if [ "$actual_digest" != "$REVIEWED_PROPOSAL_SHA256" ]; then
+            echo "::error::Proposal canonical hash $actual_digest does not match $REVIEWED_PROPOSAL_SHA256."
+            exit 1
+          fi
+          proposal_base="$(node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(typeof value.baseCommit === "string" ? value.baseCommit : "")' "$REVIEWED_PROPOSAL_PATH")"
+          protected_parent="$(git rev-parse "$REVIEWED_COMMIT_SHA^1")"
+          if [ "$proposal_base" != "$protected_parent" ]; then
+            echo "::error::proposal.baseCommit $proposal_base must equal the reviewed merge's protected default-branch parent $protected_parent. Rebase and obtain a new Pro verdict."
+            exit 1
+          fi
+          while IFS= read -r -d '' changed_path; do
+            case "$changed_path" in
+              prisma/seed-data/funds.manifest.json|prisma/seed-data/fund-evidence.manifest.json|docs/fund-source-audit.csv|docs/fund-source-audit.md)
+                ;;
+              audits/fund-refresh/*)
+                if [[ ! "$changed_path" =~ ^audits/fund-refresh/[A-Za-z0-9._-]+/[A-Za-z0-9._/-]+\.(json|csv|md)$ ]] || [[ "$changed_path" == *".."* ]]; then
+                  echo "::error::Disallowed fund-refresh artifact path: $changed_path"
+                  exit 1
+                fi
+                ;;
+              *)
+                echo "::error::Fund-refresh merge contains executable or non-data change: $changed_path"
+                exit 1
+                ;;
+            esac
+            if git cat-file -e "HEAD:$changed_path" 2>/dev/null; then
+              if [ -L "$changed_path" ] || [ ! -f "$changed_path" ]; then
+                echo "::error::Fund-refresh data files must be regular, non-symbolic-link files: $changed_path"
+                exit 1
+              fi
+            elif [[ "$changed_path" == prisma/seed-data/* || "$changed_path" == docs/fund-source-audit.* ]]; then
+              echo "::error::Fund-refresh PR cannot remove desired-state or generated-audit files: $changed_path"
+              exit 1
+            fi
+          done < <(git diff --no-renames --name-only -z "$protected_parent" "$REVIEWED_COMMIT_SHA")
+
+      - name: Bind the complete reviewed PR-head proposal blob
+        id: proposal_blob
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          REVIEWED_HEAD_SHA: ${{ steps.pr.outputs.reviewed_head_sha }}
+          PROPOSAL_PATH: ${{ inputs.proposal_path }}
+          PROPOSAL_SHA256: ${{ inputs.proposal_sha256 }}
+        with:
+          script: |
+            const response = await github.rest.repos.getContent({
+              ...context.repo,
+              path: process.env.PROPOSAL_PATH,
+              ref: process.env.REVIEWED_HEAD_SHA,
+            });
+            if (Array.isArray(response.data) || response.data.type !== 'file' || !response.data.content) {
+              core.setFailed('Reviewed proposal is not a regular file at the reviewed PR head.');
+              return;
+            }
+            const reviewedBytes = Buffer.from(response.data.content, response.data.encoding || 'base64');
+            const value = JSON.parse(reviewedBytes.toString('utf8'));
+            if (value.proposalHash !== process.env.PROPOSAL_SHA256) {
+              core.setFailed('Reviewed PR-head proposal hash differs from the merged proposal hash.');
+              return;
+            }
+            if (!/^[0-9a-f]{40,64}$/.test(response.data.sha || '')) {
+              core.setFailed('GitHub did not return a valid immutable blob ID for the reviewed proposal.');
+              return;
+            }
+            core.setOutput('reviewed_proposal_blob_sha', response.data.sha);
+
+      - name: Require byte-for-byte identity with the reviewed proposal
+        env:
+          REVIEWED_PROPOSAL_BLOB_SHA: ${{ steps.proposal_blob.outputs.reviewed_proposal_blob_sha }}
+        shell: bash
+        run: |
+          local_blob_sha="$(git hash-object -- "$REVIEWED_PROPOSAL_PATH")"
+          if [ "$local_blob_sha" != "$REVIEWED_PROPOSAL_BLOB_SHA" ]; then
+            echo "::error::Merged proposal blob $local_blob_sha differs from reviewed PR-head blob $REVIEWED_PROPOSAL_BLOB_SHA."
+            exit 1
+          fi
+
+  validate:
+    name: Apply and verify on isolated Neon validation branch
+    needs: authorize
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: fund-refresh-validation-${{ github.repository_id }}
+      cancel-in-progress: false
+    env:
+      EXPECTED_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      E2E_ADMIN_EMAIL: ${{ secrets.E2E_ADMIN_EMAIL }}
+      E2E_ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
+      NEON_VALIDATION_PARENT_BRANCH: ${{ vars.NEON_VALIDATION_PARENT_BRANCH }}
+      REVIEWED_PR_HEAD_SHA: ${{ needs.authorize.outputs.reviewed_head_sha }}
+      REVIEWED_PROPOSAL_BLOB_SHA: ${{ needs.authorize.outputs.reviewed_proposal_blob_sha }}
+      FUND_REFRESH_APPROVER: github-validation-run:${{ github.run_id }}
+      FUND_REFRESH_INITIATOR: ${{ github.actor }}
+    steps:
+      - name: Checkout the exact reviewed commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.commit_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Require ephemeral Neon branch configuration
+        env:
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+          NEON_PROJECT_ID: ${{ vars.NEON_PROJECT_ID }}
+        shell: bash
+        run: |
+          missing=0
+          for name in NEON_API_KEY NEON_PROJECT_ID NEON_VALIDATION_PARENT_BRANCH EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for ephemeral fund refresh validation."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+
+      - name: Calculate validation branch expiration
+        id: validation_expiration
+        shell: bash
+        run: echo "expires_at=$(date -u -d '+1 day' +'%Y-%m-%dT%H:%M:%SZ')" >> "$GITHUB_OUTPUT"
+
+      - name: Create an ephemeral Neon validation branch
+        id: create_validation_branch
+        uses: neondatabase/create-branch-action@72ed4f69a12b6be9c16aebfad893f6a21e9aba8b # v6.4.0
+        with:
+          project_id: ${{ vars.NEON_PROJECT_ID }}
+          api_key: ${{ secrets.NEON_API_KEY }}
+          branch_name: fund-refresh-${{ github.run_id }}-${{ github.run_attempt }}
+          parent_branch: ${{ vars.NEON_VALIDATION_PARENT_BRANCH }}
+          database: ${{ vars.MIGRATION_DATABASE_NAME }}
+          role: ${{ vars.MIGRATION_DATABASE_ROLE || 'neondb_owner' }}
+          prisma: true
+          expires_at: ${{ steps.validation_expiration.outputs.expires_at }}
+
+      - name: Bind the ephemeral validation target
+        env:
+          VALIDATION_DATABASE_URL: ${{ steps.create_validation_branch.outputs.db_url }}
+          VALIDATION_DATABASE_HOST: ${{ steps.create_validation_branch.outputs.db_host }}
+        shell: bash
+        run: |
+          if [ -z "$VALIDATION_DATABASE_URL" ] || [ -z "$VALIDATION_DATABASE_HOST" ]; then
+            echo "::error::Neon did not return the ephemeral branch connection details."
+            exit 1
+          fi
+          echo "::add-mask::$VALIDATION_DATABASE_URL"
+          printf 'DATABASE_URL=%s\nEXPECTED_DATABASE_HOST=%s\n' \
+            "$VALIDATION_DATABASE_URL" "$VALIDATION_DATABASE_HOST" >> "$GITHUB_ENV"
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Require isolated validation configuration
+        shell: bash
+        run: |
+          missing=0
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST REVIEWED_PR_HEAD_SHA REVIEWED_PROPOSAL_BLOB_SHA E2E_ADMIN_EMAIL E2E_ADMIN_PASSWORD; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for fund refresh validation."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Generate client and prove the isolated database target
+        run: |
+          npm run db:generate
+          npm run db:validate
+          node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Reconfirm the reviewed proposal bytes on the validation checkout
+        shell: bash
+        run: |
+          local_blob_sha="$(git hash-object -- "$REVIEWED_PROPOSAL_PATH")"
+          if [ "$local_blob_sha" != "$REVIEWED_PROPOSAL_BLOB_SHA" ]; then
+            echo "::error::Validation checkout proposal differs from the reviewed PR-head blob."
+            exit 1
+          fi
+
+      - name: Apply migrations to the isolated validation branch
+        shell: bash
+        run: |
+          mkdir -p tmp/fund-refresh/validation
+          set -o pipefail
+          npx prisma migrate deploy 2>&1 | tee tmp/fund-refresh/validation/migrate-deploy.log
+          npx prisma migrate status 2>&1 | tee tmp/fund-refresh/validation/migrate-status.log
+
+      - name: Validate the immutable proposal contract
+        run: >-
+          npx tsx scripts/validate-fund-refresh-proposal.ts
+          --proposal "$REVIEWED_PROPOSAL_PATH"
+          --expected-sha256 "$REVIEWED_PROPOSAL_SHA256"
+          --expected-head-sha "$REVIEWED_COMMIT_SHA"
+          --pr-number "$REVIEWED_PR_NUMBER"
+          --output tmp/fund-refresh/validation/proposal-validation.json
+
+      - name: Capture the validation baseline before applying the proposal
+        shell: bash
+        run: |
+          proposal_base="$(node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(value.baseCommit)' "$REVIEWED_PROPOSAL_PATH")"
+          npx tsx scripts/audit-funds.ts \
+            --data-commit "$proposal_base" \
+            --include-live-snapshots \
+            --output tmp/fund-refresh/validation/preapply-fund-audit.json \
+            > tmp/fund-refresh/validation/preapply-fund-audit.log
+
+      - name: Prove the real proposal rolls back at the validation failpoint
+        shell: bash
+        run: |
+          set -o pipefail
+          set +e
+          FUND_REFRESH_TEST_FAILPOINT=after-candidates npx tsx scripts/apply-fund-refresh.ts \
+            --proposal "$REVIEWED_PROPOSAL_PATH" \
+            --expected-sha256 "$REVIEWED_PROPOSAL_SHA256" \
+            --expected-head-sha "$REVIEWED_COMMIT_SHA" \
+            --reviewed-pr-head-sha "$REVIEWED_PR_HEAD_SHA" \
+            --pr-number "$REVIEWED_PR_NUMBER" \
+            --environment validation \
+            --apply \
+            --snapshot-output tmp/fund-refresh/validation/failpoint-before-snapshot.json \
+            --output tmp/fund-refresh/validation/failpoint-apply-summary.json \
+            2>&1 | tee tmp/fund-refresh/validation/failpoint-apply.log
+          failpoint_status=${PIPESTATUS[0]}
+          set -e
+          if [ "$failpoint_status" -eq 0 ]; then
+            echo "::error::The intentional real-apply failpoint unexpectedly committed."
+            exit 1
+          fi
+          if ! grep -Fq "FUND_REFRESH_INTENTIONAL_APPLY_FAILPOINT_AFTER_CANDIDATES" \
+            tmp/fund-refresh/validation/failpoint-apply.log; then
+            echo "::error::The validation apply failed before reaching the intentional post-candidate failpoint."
+            exit 1
+          fi
+          proposal_base="$(node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(value.baseCommit)' "$REVIEWED_PROPOSAL_PATH")"
+          npx tsx scripts/audit-funds.ts \
+            --require-complete \
+            --data-commit "$proposal_base" \
+            --allow-existing-findings-from tmp/fund-refresh/validation/preapply-fund-audit.json \
+            --include-live-snapshots \
+            --output tmp/fund-refresh/validation/failpoint-fund-audit.json \
+            > tmp/fund-refresh/validation/failpoint-fund-audit.log
+
+      - name: Apply proposal transactionally to validation branch
+        run: >-
+          npx tsx scripts/apply-fund-refresh.ts
+          --proposal "$REVIEWED_PROPOSAL_PATH"
+          --expected-sha256 "$REVIEWED_PROPOSAL_SHA256"
+          --expected-head-sha "$REVIEWED_COMMIT_SHA"
+          --reviewed-pr-head-sha "$REVIEWED_PR_HEAD_SHA"
+          --pr-number "$REVIEWED_PR_NUMBER"
+          --environment validation
+          --apply
+          --snapshot-output tmp/fund-refresh/validation/before-snapshot.json
+          --output tmp/fund-refresh/validation/apply-summary.json
+
+      - name: Verify the first validation apply committed exactly once
+        run: >-
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.applied !== true || value.idempotent !== false || !value.pipelineRunId) throw new Error("First validation apply did not report one committed non-idempotent transaction")'
+          tmp/fund-refresh/validation/apply-summary.json
+
+      - name: Run deterministic post-apply fund and database checks
+        shell: bash
+        run: |
+          set -o pipefail
+          npx tsx scripts/audit-funds.ts \
+            --require-complete \
+            --allow-existing-findings-from tmp/fund-refresh/validation/preapply-fund-audit.json \
+            --include-live-snapshots \
+            --check-links \
+            --output tmp/fund-refresh/validation/fund-audit.json \
+            2>&1 | tee tmp/fund-refresh/validation/fund-audit.log
+          npm run db:verify 2>&1 | tee tmp/fund-refresh/validation/database-verification.log
+          npm run funds:audit:generate -- --check 2>&1 | tee tmp/fund-refresh/validation/fund-source-audit-generation.log
+          npm run validate-portfolios 2>&1 | tee tmp/fund-refresh/validation/portfolio-validation.log
+          npm run audit:portfolio-fund-ownership 2>&1 | tee tmp/fund-refresh/validation/portfolio-fund-ownership.log
+
+      - name: Prove exact proposal retry is idempotent
+        shell: bash
+        run: |
+          npx tsx scripts/apply-fund-refresh.ts \
+            --proposal "$REVIEWED_PROPOSAL_PATH" \
+            --expected-sha256 "$REVIEWED_PROPOSAL_SHA256" \
+            --expected-head-sha "$REVIEWED_COMMIT_SHA" \
+            --reviewed-pr-head-sha "$REVIEWED_PR_HEAD_SHA" \
+            --pr-number "$REVIEWED_PR_NUMBER" \
+            --environment validation \
+            --apply \
+            --output tmp/fund-refresh/validation/idempotent-retry.json
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.applied !== false || value.idempotent !== true || !(value.revisions > 0)) throw new Error("Exact retry did not report a verified idempotent result")' \
+            tmp/fund-refresh/validation/idempotent-retry.json
+
+      - name: Create or rotate the isolated browser-test administrator
+        env:
+          ADMIN_EMAIL: ${{ secrets.E2E_ADMIN_EMAIL }}
+          ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
+          ADMIN_NAME: Fund Refresh Validation Administrator
+        shell: bash
+        run: |
+          e2e_auth_secret="$(openssl rand -hex 32)"
+          echo "::add-mask::$e2e_auth_secret"
+          echo "NEXTAUTH_SECRET=$e2e_auth_secret" >> "$GITHUB_ENV"
+          npm run admin:create
+
+      - name: Run application quality and build checks
+        run: |
+          npm run lint
+          npm run typecheck:fund-refresh
+          npm run test:fund-refresh
+          npm run typecheck
+          npm test
+          npm run build
+
+      - name: Exercise fund, portfolio, search, drawer, filter, and accessibility journeys
+        shell: bash
+        run: |
+          npx playwright install --with-deps chromium
+          export E2E_DATABASE_URL="$DATABASE_URL"
+          npx playwright test \
+            tests/e2e/public-databases.spec.ts \
+            tests/e2e/fund-refresh-validation.spec.ts \
+            tests/e2e/accessibility.spec.ts
+
+      - name: Upload validation evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: fund-refresh-validation-${{ inputs.commit_sha }}-${{ github.run_id }}
+          path: |
+            tmp/fund-refresh/validation/
+            playwright-report/
+            test-results/
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Delete the ephemeral Neon validation branch
+        if: always() && steps.create_validation_branch.outputs.branch_id != ''
+        env:
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+          NEON_PROJECT_ID: ${{ vars.NEON_PROJECT_ID }}
+          NEON_BRANCH_ID: ${{ steps.create_validation_branch.outputs.branch_id }}
+        shell: bash
+        run: |
+          mkdir -p tmp/fund-refresh/validation
+          if [[ ! "$NEON_BRANCH_ID" =~ ^br-[A-Za-z0-9-]+$ ]]; then
+            echo "::error::Refusing to delete an invalid Neon branch ID."
+            exit 1
+          fi
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --retry 3 --retry-delay 2 --retry-all-errors \
+            --request DELETE \
+            --header "Authorization: Bearer $NEON_API_KEY" \
+            "https://console.neon.tech/api/v2/projects/$NEON_PROJECT_ID/branches/$NEON_BRANCH_ID" \
+            > tmp/fund-refresh/validation/neon-branch-deletion.json
+
+  apply-production:
+    name: Approved production apply
+    needs: [authorize, validate]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      actions: read
+      contents: read
+      deployments: write
+      pull-requests: read
+    # Configure required reviewers and prevent self-review on this GitHub
+    # environment before enabling the workflow. Environment secrets are not
+    # exposed until that approval is granted.
+    environment:
+      name: fund-refresh-production
+    env:
+      DATABASE_URL: ${{ secrets.FUND_REFRESH_DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      PRO_PASS_REVIEW_ID: ${{ needs.authorize.outputs.pro_review_id }}
+      PRO_REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_PRO_REVIEWER_LOGIN }}
+      REVIEWED_PR_HEAD_SHA: ${{ needs.authorize.outputs.reviewed_head_sha }}
+      REVIEWED_PROPOSAL_BLOB_SHA: ${{ needs.authorize.outputs.reviewed_proposal_blob_sha }}
+      FUND_REFRESH_APPROVER: github-environment:fund-refresh-production/run-${{ github.run_id }}
+      FUND_REFRESH_INITIATOR: ${{ github.actor }}
+    steps:
+      - name: Checkout the exact reviewed commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.commit_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Reconfirm PR head and Pro PASS after environment approval
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          HEAD_SHA: ${{ inputs.commit_sha }}
+          REVIEWED_HEAD_SHA: ${{ needs.authorize.outputs.reviewed_head_sha }}
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+          PROPOSAL_PATH: ${{ inputs.proposal_path }}
+          PROPOSAL_SHA256: ${{ inputs.proposal_sha256 }}
+          PRO_PASS_REVIEW_ID: ${{ needs.authorize.outputs.pro_review_id }}
+          PRO_REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_PRO_REVIEWER_LOGIN }}
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pull_number = Number(process.env.PR_NUMBER);
+            const defaultBranch = context.payload.repository.default_branch;
+            const expectedMarker = `FUND_REFRESH_PRO_PASS pr=${pull_number} head_sha=${process.env.REVIEWED_HEAD_SHA} proposal_path=${process.env.PROPOSAL_PATH} proposal_sha256=${process.env.PROPOSAL_SHA256}`;
+
+            let productionEnvironment;
+            try {
+              const response = await github.request(
+                "GET /repos/{owner}/{repo}/environments/{environment_name}",
+                {
+                  owner,
+                  repo,
+                  environment_name: "fund-refresh-production",
+                },
+              );
+              productionEnvironment = response.data;
+            } catch (error) {
+              core.setFailed(`Could not re-read fund-refresh-production protection after approval: ${error.message}`);
+              return;
+            }
+            const approvalRule = (productionEnvironment.protection_rules || [])
+              .find((rule) => rule.type === "required_reviewers");
+            if (!approvalRule || !approvalRule.reviewers?.length || !approvalRule.prevent_self_review) {
+              core.setFailed("fund-refresh-production must still require reviewers and prevent self-review.");
+              return;
+            }
+            if (productionEnvironment.can_admins_bypass !== false) {
+              core.setFailed("fund-refresh-production must still report administrator bypass disabled.");
+              return;
+            }
+
+            const { data: defaultBranchState } = await github.rest.repos.getBranch({
+              owner,
+              repo,
+              branch: defaultBranch,
+            });
+            if (!defaultBranchState.protected) {
+              core.setFailed(`Default branch ${defaultBranch} must be protected at production apply time.`);
+              return;
+            }
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number });
+            if (!pr.labels.some((label) => (typeof label === "string" ? label : label.name) === "fund-refresh")) {
+              core.setFailed(`PR #${pull_number} no longer has the fund-refresh label.`);
+              return;
+            }
+            if (
+              pr.base.ref !== defaultBranch ||
+              pr.head.repo?.full_name !== `${owner}/${repo}` ||
+              !pr.merged ||
+              pr.merge_commit_sha !== process.env.HEAD_SHA ||
+              pr.head.sha !== process.env.REVIEWED_HEAD_SHA
+            ) {
+              core.setFailed(`PR merge/head binding changed after validation.`);
+              return;
+            }
+
+            if (defaultBranchState.commit.sha !== process.env.HEAD_SHA) {
+              core.setFailed(`Merged commit ${process.env.HEAD_SHA} is no longer the current ${defaultBranch} head.`);
+              return;
+            }
+
+            const { data: review } = await github.rest.pulls.getReview({
+              owner,
+              repo,
+              pull_number,
+              review_id: Number(process.env.PRO_PASS_REVIEW_ID),
+            });
+            const hasMarker = (review.body || "")
+              .split(/\r?\n/)
+              .map((line) => line.trim())
+              .includes(expectedMarker);
+            if (
+              review.state !== "APPROVED" ||
+              review.commit_id !== process.env.REVIEWED_HEAD_SHA ||
+              review.user?.login !== process.env.PRO_REVIEWER_LOGIN ||
+              !hasMarker
+            ) {
+              core.setFailed(`Pro PASS review ${review.id} is no longer valid for the approved inputs.`);
+              return;
+            }
+
+            const reviews = await github.paginate(github.rest.pulls.listReviews, {
+              owner,
+              repo,
+              pull_number,
+              per_page: 100,
+            });
+            const passTime = Date.parse(review.submitted_at || 0);
+            const laterProReview = reviews.some((candidate) => {
+              if (candidate.commit_id !== process.env.REVIEWED_HEAD_SHA || candidate.user?.login !== process.env.PRO_REVIEWER_LOGIN) return false;
+              const candidateTime = Date.parse(candidate.submitted_at || 0);
+              return candidateTime > passTime || (candidateTime === passTime && Number(candidate.id) > Number(review.id));
+            });
+            if (laterProReview) {
+              core.setFailed(`A later review by ${process.env.PRO_REVIEWER_LOGIN} invalidates Pro PASS review ${review.id}.`);
+              return;
+            }
+
+            core.info(`Post-approval gate passed with ${approvalRule.reviewers.length} required environment reviewer(s).`);
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Require approved production configuration
+        env:
+          REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
+          REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
+        shell: bash
+        run: |
+          missing=0
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME REVIEWED_PR_HEAD_SHA REVIEWED_PROPOSAL_BLOB_SHA REVALIDATE_URL REVALIDATE_TOKEN; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for the approved production apply."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Generate client and prove the production database target
+        shell: bash
+        run: |
+          mkdir -p tmp/fund-refresh/production
+          set -o pipefail
+          npm run db:generate
+          npm run db:validate
+          node --experimental-strip-types scripts/assert-database-target.ts
+          npx prisma migrate status 2>&1 | tee tmp/fund-refresh/production/migrate-status.log
+
+      - name: Reconfirm the reviewed proposal bytes on the production checkout
+        shell: bash
+        run: |
+          local_blob_sha="$(git hash-object -- "$REVIEWED_PROPOSAL_PATH")"
+          if [ "$local_blob_sha" != "$REVIEWED_PROPOSAL_BLOB_SHA" ]; then
+            echo "::error::Production checkout proposal differs from the reviewed PR-head blob."
+            exit 1
+          fi
+
+      - name: Revalidate the immutable proposal after approval
+        run: >-
+          npx tsx scripts/validate-fund-refresh-proposal.ts
+          --proposal "$REVIEWED_PROPOSAL_PATH"
+          --expected-sha256 "$REVIEWED_PROPOSAL_SHA256"
+          --expected-head-sha "$REVIEWED_COMMIT_SHA"
+          --pr-number "$REVIEWED_PR_NUMBER"
+          --output tmp/fund-refresh/production/proposal-validation.json
+
+      - name: Capture the complete pre-apply database state and dry-run
+        shell: bash
+        run: |
+          mkdir -p tmp/fund-refresh/production/preapply
+          proposal_base="$(node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(value.baseCommit)' "$REVIEWED_PROPOSAL_PATH")"
+          npx tsx scripts/audit-funds.ts \
+            --data-commit "$proposal_base" \
+            --include-live-snapshots \
+            --output tmp/fund-refresh/production/preapply/live-state.json \
+            > tmp/fund-refresh/production/preapply/live-state.log
+          npx tsx scripts/apply-fund-refresh.ts \
+            --proposal "$REVIEWED_PROPOSAL_PATH" \
+            --expected-sha256 "$REVIEWED_PROPOSAL_SHA256" \
+            --expected-head-sha "$REVIEWED_COMMIT_SHA" \
+            --reviewed-pr-head-sha "$REVIEWED_PR_HEAD_SHA" \
+            --pr-number "$REVIEWED_PR_NUMBER" \
+            --environment production \
+            --snapshot-output tmp/fund-refresh/production/preapply/before-snapshot.json \
+            --output tmp/fund-refresh/production/preapply/dry-run.json
+
+      - name: Prove cache revalidation readiness before database mutation
+        env:
+          REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
+          REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
+        shell: bash
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --retry 3 \
+            --retry-delay 2 \
+            --retry-all-errors \
+            --request GET \
+            --header "Authorization: Bearer $REVALIDATE_TOKEN" \
+            "$REVALIDATE_URL" \
+            > tmp/fund-refresh/production/preapply/cache-preflight.json
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.ready !== true) throw new Error("Cache preflight did not confirm readiness")' \
+            tmp/fund-refresh/production/preapply/cache-preflight.json
+
+      - name: Upload immutable pre-apply restore evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: fund-refresh-preapply-${{ inputs.commit_sha }}-${{ github.run_id }}
+          path: |
+            tmp/fund-refresh/production/preapply/
+            tmp/fund-refresh/production/migrate-status.log
+            tmp/fund-refresh/production/proposal-validation.json
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Final immutable authorization recheck immediately before mutation
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          HEAD_SHA: ${{ inputs.commit_sha }}
+          REVIEWED_HEAD_SHA: ${{ needs.authorize.outputs.reviewed_head_sha }}
+          REVIEWED_BLOB_SHA: ${{ needs.authorize.outputs.reviewed_proposal_blob_sha }}
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+          PROPOSAL_PATH: ${{ inputs.proposal_path }}
+          PROPOSAL_SHA256: ${{ inputs.proposal_sha256 }}
+          PRO_PASS_REVIEW_ID: ${{ needs.authorize.outputs.pro_review_id }}
+          PRO_REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_PRO_REVIEWER_LOGIN }}
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pull_number = Number(process.env.PR_NUMBER);
+            const defaultBranch = context.payload.repository.default_branch;
+            const { data: branch } = await github.rest.repos.getBranch({ owner, repo, branch: defaultBranch });
+            if (!branch.protected || branch.commit.sha !== process.env.HEAD_SHA) {
+              core.setFailed('Reviewed merge is no longer the current protected default-branch head.');
+              return;
+            }
+            const environment = (await github.request(
+              'GET /repos/{owner}/{repo}/environments/{environment_name}',
+              { owner, repo, environment_name: 'fund-refresh-production' },
+            )).data;
+            const approvalRule = (environment.protection_rules || []).find((rule) => rule.type === 'required_reviewers');
+            if (!approvalRule?.reviewers?.length || !approvalRule.prevent_self_review || environment.can_admins_bypass !== false) {
+              core.setFailed('Production environment approval protections changed before mutation.');
+              return;
+            }
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number });
+            if (!pr.labels.some((label) => (typeof label === 'string' ? label : label.name) === 'fund-refresh')) {
+              core.setFailed('Reviewed PR no longer has the fund-refresh label.');
+              return;
+            }
+            if (!pr.merged || pr.merge_commit_sha !== process.env.HEAD_SHA || pr.head.sha !== process.env.REVIEWED_HEAD_SHA || pr.base.ref !== defaultBranch) {
+              core.setFailed('Reviewed PR binding changed before mutation.');
+              return;
+            }
+            const { data: review } = await github.rest.pulls.getReview({
+              owner,
+              repo,
+              pull_number,
+              review_id: Number(process.env.PRO_PASS_REVIEW_ID),
+            });
+            const marker = `FUND_REFRESH_PRO_PASS pr=${pull_number} head_sha=${process.env.REVIEWED_HEAD_SHA} proposal_path=${process.env.PROPOSAL_PATH} proposal_sha256=${process.env.PROPOSAL_SHA256}`;
+            const markerPresent = (review.body || '').split(/\r?\n/).map((line) => line.trim()).includes(marker);
+            if (review.state !== 'APPROVED' || review.commit_id !== process.env.REVIEWED_HEAD_SHA || review.user?.login !== process.env.PRO_REVIEWER_LOGIN || !markerPresent) {
+              core.setFailed('Pro PASS is no longer valid immediately before mutation.');
+              return;
+            }
+            const reviews = await github.paginate(github.rest.pulls.listReviews, { owner, repo, pull_number, per_page: 100 });
+            const passTime = Date.parse(review.submitted_at || 0);
+            if (reviews.some((candidate) => {
+              if (candidate.commit_id !== process.env.REVIEWED_HEAD_SHA || candidate.user?.login !== process.env.PRO_REVIEWER_LOGIN) return false;
+              const candidateTime = Date.parse(candidate.submitted_at || 0);
+              return candidateTime > passTime || (candidateTime === passTime && Number(candidate.id) > Number(review.id));
+            })) {
+              core.setFailed('A later review by the configured Pro reviewer invalidates Pro PASS.');
+              return;
+            }
+            const proposal = await github.rest.repos.getContent({ owner, repo, path: process.env.PROPOSAL_PATH, ref: process.env.REVIEWED_HEAD_SHA });
+            if (Array.isArray(proposal.data) || proposal.data.sha !== process.env.REVIEWED_BLOB_SHA) {
+              core.setFailed('Reviewed proposal blob binding changed before mutation.');
+            }
+
+      - name: Apply the approved proposal transactionally
+        id: apply_transaction
+        run: >-
+          npx tsx scripts/apply-fund-refresh.ts
+          --proposal "$REVIEWED_PROPOSAL_PATH"
+          --expected-sha256 "$REVIEWED_PROPOSAL_SHA256"
+          --expected-head-sha "$REVIEWED_COMMIT_SHA"
+          --reviewed-pr-head-sha "$REVIEWED_PR_HEAD_SHA"
+          --pr-number "$REVIEWED_PR_NUMBER"
+          --environment production
+          --apply
+          --snapshot-output tmp/fund-refresh/production/before-snapshot.json
+          --output tmp/fund-refresh/production/apply-summary.json
+
+      - name: Verify production fund integrity after apply
+        if: always() && steps.apply_transaction.outcome != 'skipped'
+        shell: bash
+        run: |
+          set -o pipefail
+          npx tsx scripts/audit-funds.ts \
+            --require-complete \
+            --allow-existing-findings-from tmp/fund-refresh/production/preapply/live-state.json \
+            --include-live-snapshots \
+            --output tmp/fund-refresh/production/fund-audit.json \
+            2>&1 | tee tmp/fund-refresh/production/fund-audit.log
+          npm run db:verify 2>&1 | tee tmp/fund-refresh/production/database-verification.log
+
+      - name: Revalidate public fund caches
+        if: always() && steps.apply_transaction.outcome != 'skipped'
+        env:
+          REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
+          REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
+        shell: bash
+        run: |
+          if [ -z "$REVALIDATE_URL" ] || [ -z "$REVALIDATE_TOKEN" ]; then
+            echo "::error::FUND_REFRESH_REVALIDATE_URL and FUND_REFRESH_REVALIDATE_TOKEN are required."
+            exit 1
+          fi
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --retry 3 \
+            --retry-delay 2 \
+            --retry-all-errors \
+            --request POST \
+            --header "Authorization: Bearer $REVALIDATE_TOKEN" \
+            "$REVALIDATE_URL" \
+            > tmp/fund-refresh/production/cache-revalidation.json
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.revalidated !== true) throw new Error("Cache endpoint did not confirm revalidation")' \
+            tmp/fund-refresh/production/cache-revalidation.json
+
+      - name: Upload immutable production apply evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: fund-refresh-production-${{ inputs.proposal_sha256 }}-${{ inputs.commit_sha }}-${{ github.run_id }}
+          path: tmp/fund-refresh/production/
+          if-no-files-found: error
+          retention-days: 90

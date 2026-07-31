@@ -1,0 +1,336 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "BCI",
+  "canonicalManager": "BCI",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "BCI",
+    "British Columbia Investment Management Corporation",
+    "bcIMC"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Infrastructure & Renewable Resources Program",
+      "aliases": [
+        "Infrastructure and Renewable Resources Program",
+        "Infrastructure & Renewable Resources (I&RR)",
+        "I&RR Program",
+        "Infrastructure Program",
+        "Renewable Resource Program"
+      ],
+      "vehicleType": "PROGRAM_EXCEPTION",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "BCI's audited 2025 program statements state that the Program primarily invests directly in privately held companies and report C$24.531 billion of direct private equity investments at December 31, 2025. The qualifying strategy is direct core infrastructure and renewable-resources equity; listed infrastructure, private infrastructure debt, and external-fund investments are complementary exposures within the broader program.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "BCI stated on April 21, 2026 that its Infrastructure & Renewable Resources program has been a shareholder in Global Container Terminals since 2017 and continues to support the Canadian container-terminal operator.",
+        "currentHoldingName": "Global Container Terminals (GCT)",
+        "currentHoldingUrl": "https://www.bci.ca/insights/article/gateway-to-growth/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-030",
+        "managerName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources Program",
+        "ticker": null,
+        "investmentStrategy": "Global core infrastructure and renewable-resources program focused primarily on direct investments in privately held essential-service businesses and tangible real assets, generally through meaningful positions with governance rights and anticipated multi-decade holding periods; listed infrastructure, private infrastructure debt, and selective external-fund investments complement the direct portfolio.",
+        "size": "C$36.5B AUM",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "CAD",
+        "sizeNativeAmount": "36500000000",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2025-12-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation"
+        ],
+        "regions": [
+          "North America",
+          "Europe",
+          "Asia-Pacific",
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.bci.ca/investments/infrastructure-renewable-resources/overview/",
+          "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+          "https://www.bci.ca/insights/article/bci-infrastructure-renewable-resources-named-10th-largest-institutional-infrastructure-investor-worldwide/",
+          "https://www.bci.ca/insights/article/gateway-to-growth/"
+        ],
+        "strategyUrl": "https://www.bci.ca/investments/infrastructure-renewable-resources/overview/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.bci.ca/investments/infrastructure-renewable-resources/overview/",
+          "title": "Infrastructure & Renewable Resources — Overview",
+          "publisher": "BCI",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current program mandate, AUM date, sectors, and geographic footprint",
+          "evidenceSummary": "BCI identifies I&RR as a $36.5 billion global program that invests primarily in core infrastructure and renewable resources, targets privately held assets with meaningful governance rights and holding periods exceeding 20 years, names its principal sectors, includes North America in its asset distribution, and states that program assets are valued annually at December 31, 2025.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeBasis",
+            "sizeAsOf",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+          "title": "Infrastructure & Renewable Resources Program — Combined Financial Statements, December 2025",
+          "publisher": "BCI",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-06-24",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Audited program identity, formation, structure, and direct-equity exposure",
+          "evidenceSummary": "The audited statements say the Infrastructure Program and Renewable Resource Program were consolidated in 2020 to create I&RR, that the Program moved to Open Participation in 2021, that it primarily invests directly in privately held companies, and that direct private equity investments were C$24.531 billion at December 31, 2025. They also state that the combined Program is not itself a legal entity and list its constituent investment entities.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "vintage",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.bci.ca/insights/article/bci-infrastructure-renewable-resources-named-10th-largest-institutional-infrastructure-investor-worldwide/",
+          "title": "BCI Infrastructure & Renewable Resources named 10th-largest institutional infrastructure investor worldwide",
+          "publisher": "BCI",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-07-07",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current C$36.5 billion AUM and regional deployment",
+          "evidenceSummary": "BCI reports that I&RR AUM grew to C$36.5 billion, identifies the figure as AUM rather than commitments or a close, and names North America, Europe, Asia, and select emerging markets as current portfolio regions. The source gives no USD equivalent, so no USD amount or FX conversion is recorded.",
+          "supports": [
+            "FUND_IDENTITY",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.bci.ca/insights/article/gateway-to-growth/",
+          "title": "Gateway to growth: GCT and Canada's West Coast port expansion strategy",
+          "publisher": "BCI",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-04-21",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current Canadian holding attributed to I&RR",
+          "evidenceSummary": "BCI states that the I&RR program has been a shareholder in Global Container Terminals since 2017 and continues to support the Canadian operator of GCT Deltaport and GCT Vanterm at the Port of Vancouver.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-030",
+          "managerName": "BCI",
+          "fundName": "Infrastructure & Renewable Resources"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "vintage",
+        "structure",
+        "sectors",
+        "regions",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "repoDispositionRationale": "FUND-030 is the same BCI program, but current primary materials use the program name, report C$36.5 billion expressly as AUM, provide no source-stated USD equivalent, date the current asset data to December 31, 2025, document the 2020 consolidation and an ongoing Open Participation program structure, and support updated sector, regional, and source fields. The snapshot structure is normalized to Evergreen because Open Participation is not an available repository structure enum.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Investment Grade Private Credit Fund",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "BCI describes this as a dedicated investment-grade private-credit strategy investing in corporate credit and asset-backed financing. Its primary North American and European focus does not cure the absence of direct infrastructure equity.",
+      "sourceUrls": [
+        "https://www.bci.ca/news/article/bci-launches-investment-grade-private-credit-fund/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Infrastructure & Renewable Resources Program size measures",
+      "issue": "BCI's July 2026 program update reports C$36.5 billion of AUM, while the audited December 2025 combined statements report C$35.337 billion of program net assets and C$35.404 billion of investments. The public sources do not reconcile these differently defined measures.",
+      "sourceUrls": [
+        "https://www.bci.ca/insights/article/bci-infrastructure-renewable-resources-named-10th-largest-institutional-infrastructure-investor-worldwide/",
+        "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf"
+      ],
+      "recommendedResolution": "Retain C$36.5 billion only with the AUM label and do not substitute audited net assets or investments; obtain BCI's AUM-to-net-assets reconciliation before comparing these measures."
+    },
+    {
+      "subject": "Renewable Resources Investment Fund constituent status",
+      "issue": "The 2024 program statements disclosed an intention to wind up the Renewable Resources Investment Fund after December 31, 2024, with the wind-up date unconfirmed. The 2025 program statements still list that fund among the investment entities comprising I&RR but do not expressly confirm whether the wind-up occurred.",
+      "sourceUrls": [
+        "https://www.bci.ca/wp-content/uploads/2018/03/IRR-Program-FS-2024_Secured.pdf",
+        "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf"
+      ],
+      "recommendedResolution": "Obtain BCI confirmation of the constituent fund's legal wind-up status if internal pooled entities are maintained in a separate legal-vehicle repository; this does not alter the one-row program-level census."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 14,
+    "searchQueriesRun": 20,
+    "notes": [
+      "One current qualifying direct-equity infrastructure program was identified; no conventional third-party fund series was identified.",
+      "The 2025 audited statements combine Bolsena Fund, Bolsena (Australia) Fund, Bolsena (Public) Fund, Renewable Resources Investment Fund, Orto (S-NPC) Fund, and various structured entities and individual investments; these were reviewed as internal constituents and not double-counted.",
+      "Global Container Terminals was verified as a current Canadian holding specifically attributed to the I&RR program.",
+      "The current Investment Grade Private Credit Fund was excluded because it is a credit strategy rather than direct infrastructure equity.",
+      "The regional taxonomy records Asia as Asia-Pacific and represents the program's expressly global footprint, including unspecified select emerging markets, with the allowed Global enum rather than assigning unsupported emerging-market subregions.",
+      "No overlapping supplied-manager identity applies.",
+      "No essential primary source remained inaccessible."
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 0,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 2
+  }
+}
+</fund_census_json>
+<fund_census_report>
+BCI — North American direct infrastructure fund census
+Conclusion
+As of July 29, 2026, the census identifies one current qualifying BCI vehicle: the Infrastructure & Renewable Resources Program, included as a PROGRAM_EXCEPTION rather than a conventional third-party named fund. BCI describes I&RR as an active global program focused primarily on core infrastructure and renewable-resource assets, while its audited statements confirm that it primarily invests directly in privately held companies and held C$24.531 billion of direct private equity at December 31, 2025. Because the statements also say the combined Program is not itself a legal entity, its overall confidence is capped at MEDIUM. (bci.ca)
+The program qualifies through VERIFIED_CURRENT_NA_HOLDING: BCI stated in April 2026 that I&RR has been a shareholder in Global Container Terminals since 2017 and continues to support the Canadian operator of two Port of Vancouver container terminals. (bci.ca)
+The canonical manifest identity remains BCI. Its legal name is British Columbia Investment Management Corporation, its historical abbreviation was bcIMC, and its 2017–2018 annual report records the rebrand to BCI. No overlapping supplied-manager identity applies. (bci.ca) The repository baseline and required contract are taken from the supplied brief. Pasted text
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceInfrastructure & Renewable Resources ProgramPROGRAM_EXCEPTIONEVERGREEN_ACTIVEVERIFIED_CURRENT_NA_HOLDING — Global Container Terminals, CanadaC$36.5B AUM, dated 2025-12-31; no sourced USD equivalentPROPOSED_CORRECTION — FUND-030Program overview; 2025 audited program statements; 2026 AUM update; current GCT holding
+BCI reports C$36.5 billion specifically as AUM and identifies North America, Europe, Asia, and select emerging markets as current portfolio regions. The current program overview identifies utilities, digital infrastructure, energy, renewable resources, and transportation as the principal operating sectors and states that assets are valued annually at December 31. The structured snapshot uses the permitted Asia-Pacific enum for the disclosed Asia exposure and Global for the expressly global mandate and unspecified select emerging-market deployment, rather than inventing unsupported Latin American or Middle East and African allocations. (bci.ca)
+The audited statements establish the program's commercial history: the Infrastructure Program was established in 2005, the Renewable Resource Program was created in 2013, the two were consolidated into I&RR in 2020, and the participation model changed to Open Participation in 2021 for most existing and all future investments. The structured snapshot uses the permitted Evergreen structure enum to represent the ongoing program; Open Participation remains the source-described participation model rather than an allowed structure value. (bci.ca)
+Repository reconciliation
+The single repository row, FUND-030, is matched exactly once and retained under BCI. It is classified PROPOSED_CORRECTION, not a proposed addition or archive candidate. Its complete matched repository identity is FUND-030, manager name BCI, and fund name Infrastructure & Renewable Resources.
+The corrected fields are fundName, investmentStrategy, size, sizeUsdMm, sizeNativeCurrency, sizeNativeAmount, sizeBasis, sizeAsOf, vintage, structure, sectors, regions, sourceUrls, and strategyUrl. The principal corrections are:
+
+
+The official program-level name includes Program.
+
+
+The current amount is C$36.5B AUM, not an unclassified approximation of C$32B.
+
+
+sizeUsdMm is cleared because no cited primary source states a USD equivalent or an applicable FX rate and date.
+
+
+The 2020 consolidation is used as the program vintage.
+
+
+The source-described Open Participation model is normalized to the allowed Evergreen structure enum.
+
+
+Asia is normalized to the allowed Asia-Pacific enum, while the expressly global footprint and unspecified select emerging markets are represented by Global rather than unsupported regional assumptions.
+
+
+Current sector and source fields replace stale or unsupported repository classifications and links.
+
+
+There are no PROPOSED_NEW, POSSIBLE_DUPLICATE, NEEDS_REVIEW, or repository-only records.
+Exclusions and unresolved issues
+Investment Grade Private Credit Fund is excluded under DEBT_OR_CREDIT. BCI describes it as a dedicated investment-grade corporate-credit and asset-backed-financing strategy, primarily focused on North America and Europe; that geographic scope does not make it direct infrastructure equity. (bci.ca)
+The audited I&RR statements list Bolsena Fund, Bolsena (Australia) Fund, Bolsena (Public) Fund, Renewable Resources Investment Fund, Orto (S-NPC) Fund, and various structured entities and individual investments as the entities comprising the combined program. They are not counted as separate commercial rows because the same statements present them within one combined program, say the Program is not itself a legal entity, and do not provide each constituent with an independently evidenced commercial strategy, capital base, lifecycle, and North American holding attribution. (bci.ca)
+Two disclosure issues remain:
+
+
+BCI reports C$36.5B AUM, while its audited statements report C$35.337B of program net assets and C$35.404B of investments at December 31, 2025. These are differently defined measures, and no public reconciliation was located. The census therefore preserves C$36.5B strictly as AUM, rather than recasting it as net assets, investments, commitments, or a close amount. (bci.ca)
+
+
+The 2024 statements said BCI intended to wind up the Renewable Resources Investment Fund, with the date unconfirmed. The 2025 statements still list it as an I&RR constituent without expressly confirming whether the legal wind-up occurred. This does not alter the one-row program census but warrants confirmation if internal pooled entities are separately maintained in the repository. (bci.ca)
+
+
+Completeness
+The review covered BCI's current I&RR overview, its July 2026 AUM update, the audited 2025 program statements, the 2023–2025 program-report index, current fund-attributed Canadian holding evidence, historical manager-name and rebranding records, the constituent-vehicle structure, the 2024 wind-up disclosure, and the current North America-focused private-credit launch. BCI's direct-investment, lifecycle, current-holding, alias, and parallel-entity evidence was therefore tested from primary sources. (bci.ca)
+No essential primary source remained inaccessible. The review found one qualifying program, no separate qualifying BCI fund series, no duplicate feeder or sidecar row, and complete reconciliation of the sole supplied legacy ID.
+</fund_census_report>

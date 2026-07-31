@@ -1,0 +1,109 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Pantheon Ventures",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Pantheon Ventures"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope inconsistency",
+"issue": "The repository snapshot sets knownManager=false and canonicalManager=null, while the supplied manager universe explicitly includes Pantheon Ventures.",
+"sourceUrls": [],
+"recommendedResolution": "Reconcile the FUND_MANIFEST generation logic with the supplied manager universe and establish a canonical manager entry before rerunning the fund census."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": false,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 1,
+"searchQueriesRun": 0,
+"notes": [
+"The supplied snapshot is authoritative for scope and sets knownManager=false with no repository fund rows.",
+"Per contract, no fund-level research or inclusion is permitted when the manager is out of scope.",
+"No external sources were required to determine the scope outcome."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Pantheon Ventures — North American direct infrastructure fund census
+Conclusion
+Result: OUT_OF_SCOPE_UNKNOWN_MANAGER. The supplied FUND_MANIFEST snapshot sets knownManager=false and canonicalManager=null and contains no repository fund rows; under the task contract, this requires an empty funds array and prohibits proposing a manager or any vehicles. Pasted text
+A governance inconsistency exists because the supplied manager universe separately includes “Pantheon Ventures,” but the snapshot excludes it from the canonical manager set. Pasted text
+Included funds
+FundVehicle typeLifecycleNA qualificationSize basisRepo dispositionDirect evidenceNone—————Governed by snapshot scope
+Repository reconciliation
+
+
+Repository snapshot contains no fund rows for this manager.
+
+
+Therefore:
+
+
+matchedRepoFunds: none
+
+
+repoOnlyRecords: none
+
+
+No proposed additions, corrections, duplicates, or review items
+
+
+
+
+The only reconciliation issue is the manager-level scope inconsistency described above.
+Exclusions and unresolved issues
+
+
+No candidates were evaluated or excluded because the out-of-scope rule prevents fund-level classification.
+
+
+Unresolved conflict: mismatch between snapshot (knownManager=false) and supplied manager universe (includes Pantheon Ventures). Pasted text
+
+
+Resolution required: align manager manifest before any census can proceed.
+
+
+Completeness
+
+
+Scope determination relied solely on the supplied repository snapshot. Pasted text
+
+
+No fund-page, fundraising, or holdings attribution review was performed, as prohibited under out-of-scope conditions.
+
+
+No parallel/feeder or alias analysis conducted due to contract constraints.
+
+
+</fund_census_report>

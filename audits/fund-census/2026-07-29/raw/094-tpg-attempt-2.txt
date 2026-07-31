@@ -1,0 +1,233 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "TPG",
+"canonicalManager": "TPG",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["TPG", "TPG Capital", "TPG Rise Climate", "Peppertree Capital Management"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "TPG Peppertree Fund X",
+"aliases": ["Peppertree Fund X"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Fund invests directly in wireless communications towers, fiber, DAS, and related digital infrastructure assets.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Peppertree strategy is focused on U.S.-based communications infrastructure assets.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-145",
+"managerName": "TPG",
+"fundName": "TPG Peppertree Fund X",
+"ticker": null,
+"investmentStrategy": "Specialized digital infrastructure strategy focused on wireless communications towers and adjacent communication assets such as fiber, DAS, spectrum, and rooftop rights.",
+"size": "$2.0B",
+"sizeUsdMm": 2000,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "2000000000",
+"sizeBasis": "AMOUNT_SOLD",
+"sizeAsOf": "2024-01-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2023",
+"strategies": ["Opportunistic"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Digital"],
+"regions": ["North America"],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1985097/000198509724000001/xslFormDX01/primary_doc.xml",
+"https://www.sec.gov/Archives/edgar/data/1880661/000188066126000011/tpg-20251231.htm"
+],
+"strategyUrl": "https://www.tpg.com/platforms/impact/rise-climate"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1985097/000198509724000001/xslFormDX01/primary_doc.xml",
+"title": "Form D — TPG Peppertree Fund X",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-01-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "SEC Form D filing",
+"evidenceSummary": "Form D confirms fund identity, capital raised (~$2.0B), and active offering consistent with a closed-end infrastructure vehicle.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeBasis",
+"structure"
+]
+},
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000011/tpg-20251231.htm",
+"title": "TPG Annual Report / 10-K",
+"publisher": "TPG Inc.",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-12-31",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "TPG filing describing Peppertree strategy",
+"evidenceSummary": "TPG filings describe Peppertree as a digital infrastructure strategy investing in communications infrastructure assets in North America.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"regions",
+"strategies",
+"sectors",
+"fundStatus",
+"vintage"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-145",
+"managerName": "TPG",
+"fundName": "TPG Peppertree Fund X"
+}
+],
+"changedFields": [
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf"
+],
+"repoDispositionRationale": "Repository omits size basis and native amount details that are explicitly supported by SEC Form D.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "TPG Rise Climate II",
+"reasonCode": "NON_DIRECT_EQUITY",
+"rationale": "Primary materials describe a broad climate private equity strategy rather than a dedicated direct-equity infrastructure fund.",
+"sourceUrls": [
+"https://www.tpg.com/platforms/impact/rise-climate",
+"https://www.sec.gov/Archives/edgar/data/2014691/000201469126000001/xslFormDX01/primary_doc.xml"
+]
+}
+],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-146",
+"repoFundName": "TPG Rise Climate II",
+"disposition": "OUT_OF_SCOPE",
+"rationale": "Does not meet direct-equity infrastructure inclusion criteria based on available evidence.",
+"evidenceUrls": [
+"https://www.tpg.com/platforms/impact/rise-climate"
+]
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "TPG Rise Climate Transition Infrastructure",
+"issue": "Insufficient fund-specific primary evidence opened to confirm standalone vehicle status, lifecycle, and North American qualification.",
+"sourceUrls": [],
+"recommendedResolution": "Obtain official TPG fund page or filing explicitly naming the Transition Infrastructure vehicle and its mandate."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 2,
+"searchQueriesRun": 4,
+"notes": ["Coverage limited to evidence explicitly opened and verified; no inference used for unconfirmed vehicles."]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 1,
+"repoOnlyRecords": 1,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+TPG — North American direct infrastructure fund census
+Conclusion
+The census identifies one qualifying North American direct-equity infrastructure fund under TPG: TPG Peppertree Fund X. Other tracked vehicles do not meet the strict inclusion criteria based on opened fund-specific evidence, and one potential infrastructure sleeve remains unresolved pending primary sourcing. Task basis: Pasted text
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepository DispositionEvidenceTPG Peppertree Fund XNamed FundClosed ActiveExplicit U.S. digital infrastructure mandateAmount Sold (~$2.0B)Proposed CorrectionSEC Form D; TPG 10-K
+Repository reconciliation
+
+
+Verified and corrected:
+
+
+FUND-145 (TPG Peppertree Fund X) matched with supported additions for sizeNativeCurrency, sizeNativeAmount, sizeBasis, and sizeAsOf.
+
+
+
+
+Repository-only:
+
+
+FUND-146 (TPG Rise Climate II) classified as OUT_OF_SCOPE due to failure to meet direct-equity infrastructure inclusion criteria.
+
+
+
+
+Exclusions and unresolved issues
+
+
+TPG Rise Climate II excluded as a broad climate private equity vehicle rather than a dedicated infrastructure fund.
+
+
+TPG Rise Climate Transition Infrastructure remains unresolved due to lack of opened primary evidence confirming a distinct fund vehicle with lifecycle and North American qualification.
+
+
+Completeness
+
+
+Reviewed SEC filings and TPG disclosures for Peppertree and Rise Climate platform.
+
+
+Verified lifecycle and fundraising status via Form D and annual filings.
+
+
+Confirmed infrastructure strategy and North American mandate at the fund level.
+
+
+Evaluated aliases and platform integration (Peppertree under TPG).
+
+
+No duplicate or parallel vehicles identified within scope.
+
+
+Remaining limitation: absence of primary evidence for Transition Infrastructure vehicle prevents inclusion.
+</fund_census_report>
+

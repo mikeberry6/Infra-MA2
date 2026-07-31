@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_EVIDENCE_FIELD_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Ontario Teachers Pension Plan",
+  "createdAt": "2026-07-31T00:30:43.364Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/076-ontario-teachers-pension-plan-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/076-ontario-teachers-pension-plan-evidence-normalized.txt",
+  "allowedFields": [
+    "evidence[].supportedFields[].sizeUsdMm"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 1,
+      "legacyId": "FUND-128",
+      "url": "https://www.otpp.com/en-ca/annual-report/2025/",
+      "field": "sizeUsdMm",
+      "rationale": "Existing primary or institutional fund evidence supports the native-currency amount and amount basis but states no USD equivalent, so the stale repository USD conversion is removed."
+    }
+  ]
+}

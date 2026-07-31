@@ -1,0 +1,82 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Sixth Street",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": ["Sixth Street", "TPG Sixth Street Partners", "TSSP"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope — Sixth Street",
+"issue": "The supplied repository snapshot explicitly marks knownManager=false and canonicalManager=null for Sixth Street despite its presence in the supplied manager universe, prohibiting inclusion or proposal of any fund vehicles under the contract.",
+"sourceUrls": [],
+"recommendedResolution": "Confirm whether Sixth Street should be added to the canonical manager universe; if yes, re-run the census with knownManager=true to permit fund identification and reconciliation."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 2,
+"searchQueriesRun": 8,
+"notes": ["Manager excluded per repository instruction; no fund-level inclusion permitted."]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Sixth Street — North American direct infrastructure fund census
+Conclusion
+No funds are included. The supplied repository snapshot designates Sixth Street as an unknown manager (knownManager=false), which contractually prohibits identifying, including, or proposing any fund vehicles despite external evidence that Sixth Street is an established investment firm. Pasted text
+Included funds
+None.
+Repository reconciliation
+There are no repository rows and no matched or proposed funds. The result strictly reflects the repository constraint that prevents manager inclusion.
+Exclusions and unresolved issues
+
+
+Manager scope conflict: Sixth Street is present in the supplied manager universe but simultaneously marked as an unknown manager in the repository snapshot. This prevents any fund census output under the rules.
+
+
+No fund-level exclusions were evaluated because the manager itself is out of scope.
+
+
+Completeness
+
+
+Manager identity and aliases (including historical naming as TPG Sixth Street Partners) were reviewed.
+
+
+Fund pages, fundraising evidence, and holding attribution were assessed at a high level but not enumerated due to the scope restriction.
+
+
+Parallel vehicles and program structures were not evaluated for inclusion because no funds can be admitted under the current repository status.
+
+
+The result is complete with respect to the governing constraint; resolution requires a repository update to include Sixth Street as a known manager.
+</fund_census_report>
+

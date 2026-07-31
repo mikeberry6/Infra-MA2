@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Infratil",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Infratil",
+    "Infratil Limited"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager manifest scope",
+      "issue": "The repository snapshot marks Infratil with canonicalManager:null and knownManager:false, which contractually prohibits inclusion or proposal of any funds, while official sources confirm Infratil Limited is an active listed infrastructure investment company with an external manager.",
+      "sourceUrls": [
+        "https://www.nzx.com/companies/IFT",
+        "https://infratil.com/about-infratil/our-manager/",
+        "https://infratil.com/about-infratil/governance/"
+      ],
+      "recommendedResolution": "Governance owner should reconcile the FUND_MANIFEST to assign a canonical manager identity (or explicitly exclude the platform), then rerun the census to permit fund-level inclusion."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 5,
+    "searchQueriesRun": 4,
+    "notes": [
+      "Research confirmed Infratil Limited’s current corporate identity and governance structure, including its delegated external manager, sufficient to document the scope conflict.",
+      "Fund-level inclusion tests, fundraising evidence, and North American qualification analysis were not performed due to the mandatory unknown-manager governance stop."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

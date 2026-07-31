@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_SUMMARY_COUNT_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Morgan Stanley Infrastructure Partners",
+  "createdAt": "2026-07-30T23:22:31.349Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/069-morgan-stanley-infrastructure-partners-size-as-of-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/069-morgan-stanley-infrastructure-partners-summary-counts-normalized.txt",
+  "allowedFields": [
+    "summary.*"
+  ],
+  "changes": [
+    {
+      "field": "summary.needsReview",
+      "from": 1,
+      "value": 0,
+      "rationale": "The summary counter is deterministically recomputed from the result arrays and classifications."
+    }
+  ]
+}

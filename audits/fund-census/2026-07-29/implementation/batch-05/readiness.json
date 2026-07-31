@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_PROMOTION_READINESS",
+  "batch": 5,
+  "executableProposalReady": false,
+  "blockers": [
+    "TRUSTED_LIVE_AUDIT_REQUIRED",
+    "ACTION_CANDIDATE_CONTRACT_ERRORS",
+    "RAISING_VERIFY_CANDIDATES_REQUIRED",
+    "OWNERSHIP_REFERENCE_DRIFT",
+    "SOURCE_REOPEN_AND_HEALTH_CLASSIFICATION_REQUIRED",
+    "GPT_5_6_PRO_AND_HUMAN_REVIEW_REQUIRED"
+  ],
+  "actionCandidates": 20,
+  "blockingActionIssueCount": 3,
+  "candidateIssues": [
+    {
+      "severity": "error",
+      "code": "FUND_PRIMARY_REQUIRED",
+      "message": "Changed fundName requires fund-specific primary or filing-grade evidence",
+      "legacyId": "FUND-082"
+    },
+    {
+      "severity": "error",
+      "code": "STATUS_TRANSITION",
+      "message": "Status transition Financial Close -> Raising requires manual resolution",
+      "legacyId": "FUND-093"
+    },
+    {
+      "severity": "error",
+      "code": "STATUS_TRANSITION",
+      "message": "Status transition Financial Close -> Raising requires manual resolution",
+      "legacyId": "FUND-099"
+    }
+  ],
+  "requiredRaisingReviewIds": [
+    "FUND-013",
+    "FUND-016",
+    "FUND-022",
+    "FUND-029",
+    "FUND-035",
+    "FUND-037",
+    "FUND-038",
+    "FUND-042",
+    "FUND-044",
+    "FUND-052",
+    "FUND-061",
+    "FUND-062",
+    "FUND-067",
+    "FUND-069",
+    "FUND-070",
+    "FUND-074",
+    "FUND-084",
+    "FUND-091",
+    "FUND-100",
+    "FUND-101",
+    "FUND-106",
+    "FUND-107",
+    "FUND-116",
+    "FUND-122",
+    "FUND-124",
+    "FUND-130",
+    "FUND-133",
+    "FUND-134",
+    "FUND-135",
+    "FUND-137",
+    "FUND-138",
+    "FUND-139",
+    "FUND-140",
+    "FUND-141",
+    "FUND-142",
+    "FUND-144",
+    "FUND-146",
+    "FUND-150",
+    "FUND-151",
+    "FUND-158",
+    "FUND-162"
+  ],
+  "raisingFundsMissingEvidence": [],
+  "notes": [
+    "This is a deterministic promotion preflight, not a FundRefreshProposal.",
+    "No OwnershipPeriod or production database mutation is authorized."
+  ]
+}

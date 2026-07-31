@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "QIC Global Infrastructure",
+  "canonicalManager": "QIC",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "QIC",
+    "QIC Global Infrastructure"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "QIC Global Infrastructure Fund",
+      "aliases": [
+        "QGIF",
+        "QIC Global Infrastructure Fund I"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Closed-end global infrastructure equity fund investing directly in operating infrastructure assets across sectors including energy, transport, and utilities.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Fund-attributed ownership of U.S. district energy platform CenTrio constitutes a current North American direct-equity infrastructure holding.",
+        "currentHoldingName": "CenTrio",
+        "currentHoldingUrl": "https://www.qic.com/insights/qic-acquires-us-district-energy-platform-centrio"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "QIC",
+        "fundName": "QIC Global Infrastructure Fund",
+        "ticker": null,
+        "investmentStrategy": "Global core-plus direct infrastructure equity strategy targeting brownfield and value-add infrastructure assets across OECD markets.",
+        "size": "Not publicly disclosed",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Unknown",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Utilities",
+          "Transportation",
+          "Power & ET"
+        ],
+        "regions": [
+          "North America",
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.qic.com/insights/qic-acquires-us-district-energy-platform-centrio",
+          "https://www.qic.com/investment-capabilities/infrastructure"
+        ],
+        "strategyUrl": "https://www.qic.com/investment-capabilities/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.qic.com/insights/qic-acquires-us-district-energy-platform-centrio",
+          "title": "QIC acquires U.S. district energy platform CenTrio",
+          "publisher": "QIC",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-10-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CenTrio acquisition attributed to QIC Global Infrastructure strategy",
+          "evidenceSummary": "Confirms QIC Global Infrastructure Fund investment in U.S.-based CenTrio, evidencing direct infrastructure equity ownership and current North American deployment.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No matching repository entry exists for QIC Global Infrastructure Fund despite clear evidence of an active fund with current North American holdings.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "QIC Global Infrastructure Fund II",
+      "reasonCode": "GLOBAL_WITHOUT_NA_EVIDENCE",
+      "rationale": "Available evidence indicates an Asia-Pacific-focused mandate with no verified current North American holding at the fund level.",
+      "sourceUrls": [
+        "https://www.cefc.com.au/media/media-release/cefc-backs-new-qic-infrastructure-investment-to-accelerate-energy-transition/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-130",
+      "repoFundName": "QIC QGIF II",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Repository includes QGIF II but lacks fund-specific evidence supporting a North American mandate or current North American holding.",
+      "evidenceUrls": [
+        "https://www.cefc.com.au/media/media-release/cefc-backs-new-qic-infrastructure-investment-to-accelerate-energy-transition/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "QIC Global Infrastructure Fund size and vintage",
+      "issue": "Public disclosures do not clearly confirm final close size or vintage year for QGIF I",
+      "sourceUrls": [
+        "https://www.qic.com/investment-capabilities/infrastructure"
+      ],
+      "recommendedResolution": "Review LP disclosures or audited fund reports for definitive size and vintage confirmation"
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 2,
+    "searchQueriesRun": 6,
+    "notes": [
+      "Analysis grounded in supplied task file and primary QIC disclosures"
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 1,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 1,
+    "unresolvedConflicts": 1
+  }
+}

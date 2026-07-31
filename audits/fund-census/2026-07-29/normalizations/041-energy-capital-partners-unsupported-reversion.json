@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Energy Capital Partners",
+  "createdAt": "2026-07-30T18:57:20.309Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/041-energy-capital-partners-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/041-energy-capital-partners-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-066",
+      "field": "sectors",
+      "from": [
+        "Power & ET"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Midstream",
+        "Social Infra"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

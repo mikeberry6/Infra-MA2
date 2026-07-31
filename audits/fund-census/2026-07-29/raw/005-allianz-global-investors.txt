@@ -1,0 +1,80 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Allianz Global Investors",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Allianz Global Investors",
+"AllianzGI",
+"Allianz Global Investors GmbH",
+"AGI U.S.",
+"Allianz Capital Partners",
+"Allianz Capital Partners of America LLC"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Allianz Global Investors manager-scope registration",
+"issue": "The supplied FUND_MANIFEST snapshot marks knownManager=false and canonicalManager=null even though the supplied manager universe names Allianz Global Investors and current official materials identify AllianzGI and Allianz Capital Partners as an active infrastructure platform. The contract's unknown-manager gate therefore controls this run and prevents vehicle inclusion.",
+"sourceUrls": [
+"https://www.allianzcapitalpartners.com/",
+"https://www.allianzcapitalpartners.com/en/our-business/infrastructure",
+"https://de.allianzgi.com/en/ueber-uns/presse/20260521-allianz-global-diversified-infrastructure-equity-fund-iii-halt-drittes-closing-bei-rund-1-mrd-euro",
+"https://www.allianzgi.com/en/press-centre/media/press-releases/20250715-allianz-acquires-a-stake-in-global-data-centre-platform-yondr-group",
+"https://www.voya.com/news/2022/07/voya-financial-completes-transfer-majority-allianz-global-investors-us-business-begins"
+],
+"recommendedResolution": "Reconcile the supplied manager universe with the canonical FUND_MANIFEST registry. If Allianz Global Investors is approved as a known canonical manager, rerun the census and evaluate fund candidates from primary evidence; do not import any manager or vehicle automatically from this result."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 8,
+"searchQueriesRun": 20,
+"notes": [
+"The supplied knownManager=false rule controlled the result; no fund could be included or proposed.",
+"Official AllianzGI and Allianz Capital Partners materials were reviewed to document the manager-scope gap, including current fund and holding examples.",
+"The Voya U.S.-business transfer and disclosed related transaction vehicles were reviewed without merging a successor, feeder, parallel entity, or sidecar into the manifest."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Allianz Global Investors — North American direct infrastructure fund census
+Conclusion
+No fund rows were admitted. The supplied snapshot sets knownManager:false and canonicalManager:null; the contract therefore requires OUT_OF_SCOPE_UNKNOWN_MANAGER and forbids proposing a manager or fund. Pasted text Official sources nevertheless confirm that Allianz Capital Partners is part of AllianzGI and manages direct infrastructure equity, making this a manifest-scope result rather than evidence that the platform lacks infrastructure activity. Allianz Capital Partners+1
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionNone—————
+Repository reconciliation
+No repository fund rows were supplied; none were matched or left repo-only.
+Exclusions and unresolved issues
+No vehicle exclusions were recorded because the unknown-manager gate superseded adjudication. One conflict remains: official materials show active AllianzGI infrastructure vehicles and a fund-attributed Yondr investment with US and Canadian operations, while the manifest has no canonical manager. Allianz Global Investors+1 Voya’s 2022 transfer covered specified income-and-growth, fundamental-equity, and private-placement teams; ACP infrastructure remains within AllianzGI. Voya Financial+1
+Completeness
+Reviewed eight opened sources across 20 searches, covering fund closes, holding attribution, aliases, successor scope, and related transaction vehicles. No access blocker affected the scoped result.
+</fund_census_report>

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "MEAG",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "MEAG",
+    "MEAG MUNICH ERGO AssetManagement GmbH",
+    "MEAG MUNICH ERGO Kapitalanlagegesellschaft mbH"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager universe governance",
+      "issue": "The supplied repository snapshot designates the requested manager as knownManager=false with canonicalManager=null, yet the supplied manager universe includes MEAG and official sources confirm it is an active institutional asset manager with infrastructure equity capability including North America.",
+      "sourceUrls": [
+        "https://www.meag.com/en/inform/portraet.html",
+        "https://www.meag.com/en/invest/institutional/infrastructure-equity.html"
+      ],
+      "recommendedResolution": "Human curation required to reconcile the fund-manager manifest: confirm and add the canonical MEAG manager record to the version-controlled universe, then rerun the census under a KNOWN_MANAGER scope. Do not auto-add."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 4,
+    "searchQueriesRun": 4,
+    "notes": [
+      "Mandatory scope disposition applied due to knownManager=false in supplied snapshot; vehicle-level census not performed beyond documenting scope issue."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

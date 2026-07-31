@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_SIZE_AS_OF_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Fengate Asset Management",
+  "createdAt": "2026-07-30T19:56:08.409Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/045-fengate-asset-management-source-date-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/045-fengate-asset-management-size-as-of-normalized.txt",
+  "allowedFields": [
+    "snapshot.sizeAsOf",
+    "evidence[].supportedFields[].sizeAsOf"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-076",
+      "url": "https://fengate.com/news/fengate-announces-final-close-of-us1-1-billion-flagship-infrastructure-fund-above-target",
+      "field": "sizeAsOf",
+      "from": "2025-01-23",
+      "value": "2025-01-23",
+      "rationale": "The model supplied a size-as-of date that no evidence row supports; the amount is anchored instead to the publication date of the single opened primary or institutional fund source supporting the classified native amount."
+    }
+  ]
+}

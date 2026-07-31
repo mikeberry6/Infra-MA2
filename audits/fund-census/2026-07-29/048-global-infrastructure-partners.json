@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Global Infrastructure Partners",
+  "canonicalManager": "BlackRock (GIP)",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Global Infrastructure Partners",
+    "GIP",
+    "BlackRock (GIP)",
+    "BlackRock GIP"
+  ],
+  "overlappingSuppliedManagers": [
+    "BlackRock"
+  ],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "GIP V",
+      "aliases": [
+        "Global Infrastructure Partners V",
+        "Global Infrastructure Partners V-C, L.P."
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Flagship closed-end private equity infrastructure fund investing directly in infrastructure assets across energy, utilities, digital and transport.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "GIP V is explicitly identified as an acquiring fund for ALLETE, a U.S.-based regulated utility, and the transaction has closed, evidencing current North American ownership.",
+        "currentHoldingName": "ALLETE",
+        "currentHoldingUrl": "https://www.allete.com/investor-news/gip-completes-acquisition-of-allete/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-036",
+        "managerName": "BlackRock (GIP)",
+        "fundName": "GIP V",
+        "ticker": null,
+        "investmentStrategy": "Fifth flagship global infrastructure fund pursuing core/core-plus investments across energy, utilities, digital and transportation sectors.",
+        "size": "$25.2B",
+        "sizeUsdMm": 25200,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1950567/000195056725000002/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.global-infra.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.allete.com/investor-news/gip-completes-acquisition-of-allete/",
+          "title": "GIP completes acquisition of ALLETE",
+          "publisher": "ALLETE",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-07-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Closed U.S. utility acquisition by GIP V",
+          "evidenceSummary": "Public company disclosure confirms Global Infrastructure Partners V funds as acquirers of ALLETE, a U.S. regulated utility, and confirms transaction completion, evidencing direct-equity ownership in North America.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "regions",
+            "fundStatus",
+            "investmentStrategy"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-036",
+          "managerName": "BlackRock (GIP)",
+          "fundName": "GIP V"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "regions"
+      ],
+      "repoDispositionRationale": "Repository classifies region as Global only; evidence supports explicit North American deployment.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Global AI Infrastructure Investment Partnership",
+      "aliases": [
+        "GAIIP",
+        "AI Infrastructure Partnership"
+      ],
+      "vehicleType": "PROGRAM_EXCEPTION",
+      "lifecycle": "RAISING",
+      "directEquityBasis": "Documented direct-investment partnership mobilizing private equity capital into infrastructure assets including data centers and power systems.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Primary announcement states investments will be primarily in the United States with expansion to partner countries.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-038",
+        "managerName": "BlackRock (GIP)",
+        "fundName": "Global AI Infrastructure Investment Partnership (GAIIP)",
+        "ticker": null,
+        "investmentStrategy": "Partnership seeking to mobilize private equity capital for AI data centers and supporting power infrastructure.",
+        "size": "[$30.0B]",
+        "sizeUsdMm": 30000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-global-infrastructure-partners-microsoft-and-mgx-launch-new-ai"
+        ],
+        "strategyUrl": "https://www.global-infra.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-global-infrastructure-partners-microsoft-and-mgx-launch-new-ai",
+          "title": "BlackRock, GIP, Microsoft and MGX launch AI infrastructure partnership",
+          "publisher": "BlackRock",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2024-09-17",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Program mandate includes U.S. infrastructure investment",
+          "evidenceSummary": "Official release states the partnership will initially invest primarily in the United States in AI data centers and power infrastructure, evidencing a North American mandate.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "regions",
+            "investmentStrategy"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-038",
+          "managerName": "BlackRock (GIP)",
+          "fundName": "Global AI Infrastructure Investment Partnership (GAIIP)"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "regions"
+      ],
+      "repoDispositionRationale": "Repository classifies region as Global; primary evidence supports explicit U.S.-first mandate.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "GIP Capital Solutions Fund",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "Credit-oriented infrastructure financing strategy rather than direct-equity investment.",
+      "sourceUrls": [
+        "https://www.global-infra.com/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-034",
+      "repoFundName": "GIP Core Fund",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "No fund-specific evidence of North American mandate or attributable current holdings.",
+      "evidenceUrls": []
+    },
+    {
+      "legacyId": "FUND-035",
+      "repoFundName": "GIP Mid-Market Fund V",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Insufficient fund-specific evidence of North American mandate or closed attributable holdings as of the as-of date.",
+      "evidenceUrls": []
+    },
+    {
+      "legacyId": "FUND-037",
+      "repoFundName": "GIP Transition Fund",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Insufficient fund-specific evidence of North American mandate or closed attributable holdings as of the as-of date.",
+      "evidenceUrls": []
+    }
+  ],
+  "unresolvedConflicts": [],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 10,
+    "notes": [
+      "Primary corporate disclosures used for fund attribution",
+      "Repository-only funds moved to review due to insufficient fund-specific NA evidence"
+    ]
+  },
+  "summary": {
+    "includedFunds": 2,
+    "explicitNaMandate": 1,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 0,
+    "proposedCorrections": 2,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 3,
+    "unresolvedConflicts": 0
+  }
+}

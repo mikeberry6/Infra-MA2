@@ -1,0 +1,94 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "InfraVia Capital Partners",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"InfraVia Capital Partners"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "InfraVia Capital Partners manager-governance status",
+"issue": "The authoritative repository snapshot sets knownManager to false and canonicalManager to null, while the separately supplied manager-universe list includes InfraVia Capital Partners. Under the explicit knownManager=false scope rule, the manager must be returned as OUT_OF_SCOPE_UNKNOWN_MANAGER, with no proposed manager addition and no proposed fund records.",
+"sourceUrls": [],
+"recommendedResolution": "A repository-governance owner should reconcile the FUND_MANIFEST manager registry with the supplied manager-universe list. After InfraVia Capital Partners is formally added to the canonical manager manifest, rerun the fund census under the resulting known-manager snapshot."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": false,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 1,
+"searchQueriesRun": 0,
+"notes": [
+"The supplied FUND_MANIFEST snapshot and manager-universe data were reviewed.",
+"The snapshot contains no repository fund rows, so there are no matchedRepoFunds or repoOnlyRecords to reconcile.",
+"Fund-level inclusion research and vehicle proposals are contractually inapplicable because the governing snapshot sets knownManager to false.",
+"No evidence URLs were invented or inferred."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+InfraVia Capital Partners — North American direct infrastructure fund census
+Conclusion
+InfraVia Capital Partners is contractually out of scope for this assignment because the governing FUND_MANIFEST snapshot records knownManager: false and canonicalManager: null. The required result is therefore OUT_OF_SCOPE_UNKNOWN_MANAGER, with no included funds, no proposed manager addition, and no proposed fund records. Pasted text
+The supplied manager-universe list separately contains InfraVia Capital Partners. That inconsistency is reported as a governance conflict rather than resolved through inference or an automatic manifest change.
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceNone—————Inclusion prohibited by the knownManager=false scope rule
+Repository reconciliation
+The supplied repository snapshot contains zero fund records. Accordingly:
+
+
+Matched repository funds: 0
+
+
+Repository-only records: 0
+
+
+Proposed additions: 0
+
+
+Proposed corrections: 0
+
+
+Possible duplicates: 0
+
+
+Fund-level review items: 0
+
+
+Every repository legacy ID has been reconciled exactly once because the snapshot contains no legacy IDs.
+Exclusions and unresolved issues
+No fund candidate was classified as an excluded product because the manager-scope gate applies before vehicle-level inclusion or exclusion analysis.
+One unresolved governance conflict remains: InfraVia Capital Partners appears in the supplied manager-universe list but is absent from the canonical FUND_MANIFEST snapshot. A repository-governance owner must reconcile those two inputs before any vehicle can be included or proposed under this manager.
+There are no overlapping supplied managers, program exceptions, inaccessible evidence URLs, or inferred fund records in this result.
+Completeness
+The repository snapshot and supplied manager-universe information were reviewed. The snapshot contained no fund rows and expressly prohibited an automatic manager addition. Consequently, fund-page coverage, fundraising and close searches, current-holding attribution, and parallel-vehicle analysis were not used to create census records. No missing evidence was replaced with inference, and all summary counts reconcile to the returned arrays.
+</fund_census_report>

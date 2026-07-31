@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Ridgemont Equity Partners",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Ridgemont Equity Partners"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager scope",
+      "issue": "Requested manager is not present in the version-controlled infrastructure manager universe and no repository records exist for reconciliation.",
+      "sourceUrls": [],
+      "recommendedResolution": "Add or confirm manager inclusion in the infrastructure manager universe before performing fund-level census."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 1,
+    "searchQueriesRun": 1,
+    "notes": [
+      "Research limited by OUT_OF_SCOPE_UNKNOWN_MANAGER instruction; no fund-level inclusion permitted."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

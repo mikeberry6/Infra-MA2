@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_VERIFIED_HOLDING_NA_REGION_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "QIC Global Infrastructure",
+  "createdAt": "2026-07-31T00:53:09.323Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/082-qic-global-infrastructure-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/082-qic-global-infrastructure-na-region-normalized.txt",
+  "allowedFields": [
+    "funds[].snapshot.regions",
+    "funds[].repoDisposition",
+    "funds[].changedFields",
+    "funds[].repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": null,
+      "field": "snapshot.regions",
+      "from": [
+        "Global"
+      ],
+      "value": [
+        "North America",
+        "Global"
+      ],
+      "repoDispositionFrom": "PROPOSED_NEW",
+      "repoDispositionValue": "PROPOSED_NEW",
+      "rationale": "The fund already qualifies through a named current North American holding whose exact PRIMARY or INSTITUTIONAL source supports the canonical regions field."
+    }
+  ]
+}

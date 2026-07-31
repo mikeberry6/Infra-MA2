@@ -1,0 +1,316 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Northleaf Capital",
+"canonicalManager": "Northleaf Capital Partners",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Northleaf Capital",
+"Northleaf Capital Partners"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Northleaf Essential Infrastructure Fund",
+"aliases": [
+"Northleaf NEIF"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Open-end infrastructure fund investing directly in essential infrastructure assets with stable contracted cash flows",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund described as focused on mid-market infrastructure assets primarily in North America",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-125",
+"managerName": "Northleaf Capital Partners",
+"fundName": "Northleaf Essential Infrastructure Fund",
+"ticker": null,
+"investmentStrategy": "Evergreen open-end fund for mature mid-market infrastructure with stable cash flows, lower-risk profiles, and a portfolio that publicly appears centered on contracted digital, transport and energy-transition assets.",
+"size": ">$1.0B",
+"sizeUsdMm": 1000,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Core"
+],
+"structure": "Evergreen",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Digital",
+"Transportation"
+],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://www.kirkland.com/news/press-release/2021/11/kirkland-advises-northleaf-on-infra-fund"
+],
+"strategyUrl": "https://www.northleafcapital.com/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://www.kirkland.com/news/press-release/2021/11/kirkland-advises-northleaf-on-infra-fund",
+"title": "Kirkland advises Northleaf on infrastructure fund",
+"publisher": "Kirkland & Ellis",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "NEIF launch and strategy",
+"evidenceSummary": "Confirms launch of an open-end Northleaf infrastructure fund focused on mid-market assets in North America",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"regions",
+"structure",
+"strategies",
+"fundStatus"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-125",
+"managerName": "Northleaf Capital Partners",
+"fundName": "Northleaf NEIF"
+}
+],
+"changedFields": [
+"fundName"
+],
+"repoDispositionRationale": "Repository uses abbreviated name; evidence supports full official name",
+"confidence": "HIGH"
+},
+{
+"fundName": "Northleaf Infrastructure Capital Partners IV",
+"aliases": [
+"Northleaf NICP IV"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Closed-end infrastructure fund investing directly in mid-market infrastructure assets",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund disclosures confirm a North American infrastructure investment focus",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-126",
+"managerName": "Northleaf Capital Partners",
+"fundName": "Northleaf Infrastructure Capital Partners IV",
+"ticker": null,
+"investmentStrategy": "Northleaf's largest infrastructure vehicle; a control-oriented, contracted mid-market strategy mainly in North America, with actual deployment concentrated in digital, transport and energy-transition assets.",
+"size": "$2.6B",
+"sizeUsdMm": 2600,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2023",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Midstream",
+"Transportation"
+],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://www.northleafcapital.com/news/northleaf-hits-hard-cap-final-close-its-us26-billion-infrastructure-fund"
+],
+"strategyUrl": "https://www.northleafcapital.com/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://www.northleafcapital.com/news/northleaf-hits-hard-cap-final-close-its-us26-billion-infrastructure-fund",
+"title": "Northleaf hits hard cap final close its US$2.6 billion infrastructure fund",
+"publisher": "Northleaf Capital Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "NICP IV final close",
+"evidenceSummary": "Confirms $2.6B final close and North American infrastructure investment strategy",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"regions",
+"strategies",
+"fundStatus",
+"vintage"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-126",
+"managerName": "Northleaf Capital Partners",
+"fundName": "Northleaf NICP IV"
+}
+],
+"changedFields": [
+"fundName"
+],
+"repoDispositionRationale": "Repository uses abbreviated name; evidence supports full official name",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Mackenzie Northleaf Private Infrastructure Fund",
+"reasonCode": "FUND_OF_FUNDS",
+"rationale": "Retail access vehicle investing into underlying Northleaf funds rather than directly in infrastructure assets",
+"sourceUrls": [
+"https://www.mackenzieinvestments.com/en/products/mutual-funds/mackenzie-northleaf-private-infrastructure-fund"
+]
+},
+{
+"fundName": "Northleaf WASH Co-Investment LP",
+"reasonCode": "PARALLEL_OR_FEEDER",
+"rationale": "Deal-specific co-investment vehicle without independent strategy distinct from underlying funds",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2046779/000204677925000001/xslFormDX01/primary_doc.xml"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Northleaf Infrastructure Capital Partners III",
+"issue": "Insufficient fund-attributed evidence confirming current lifecycle or North American holdings tied specifically to the fund",
+"sourceUrls": [
+"https://www.northleafcapital.com/news/northleaf-closes-its-third-infrastructure-fund-at-us14-billion",
+"https://www.northleafcapital.com/portfolio/amarok"
+],
+"recommendedResolution": "Obtain fund-specific disclosure or LP reporting confirming current holdings attributed to NICP III"
+},
+{
+"subject": "Northleaf Infrastructure Capital Partners II",
+"issue": "Insufficient fund-attributed evidence confirming current lifecycle or North American holdings tied specifically to the fund",
+"sourceUrls": [
+"https://www.northleafcapital.com/news/northleaf-closes-second-infrastructure-fund",
+"https://www.northleafcapital.com/portfolio/canadian-breaks"
+],
+"recommendedResolution": "Obtain fund-specific disclosure or LP reporting confirming current holdings attributed to NICP II"
+},
+{
+"subject": "Northleaf Infrastructure Capital Partners I",
+"issue": "No reliable evidence confirming current lifecycle or holdings",
+"sourceUrls": [],
+"recommendedResolution": "Verify whether the fund still holds assets via official Northleaf or LP disclosures"
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 9,
+"searchQueriesRun": 12,
+"notes": [
+"Older Northleaf fund vintages lack publicly attributable current holding evidence at the fund level",
+"Census limited to vehicles with fully supported lifecycle and North America qualification"
+]
+},
+"summary": {
+"includedFunds": 2,
+"explicitNaMandate": 2,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 2,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 2,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 3
+}
+}
+</fund_census_json>
+<fund_census_report>
+Northleaf Capital — North American direct infrastructure fund census
+Conclusion
+Two Northleaf infrastructure vehicles meet the full inclusion criteria with fund-specific evidence: the evergreen Northleaf Essential Infrastructure Fund and the closed-end Northleaf Infrastructure Capital Partners IV. Earlier vintage funds lack sufficient fund-attributed current lifecycle evidence and are conservatively excluded pending verification.
+Included funds
+FundVehicleLifecycleNA QualificationSizeRepo DispositionEvidenceNorthleaf Essential Infrastructure FundEvergreenEVERGREEN_ACTIVEExplicit NA mandate>$1.0BPROPOSED_CORRECTIONhttps://www.kirkland.com/news/press-release/2021/11/kirkland-advises-northleaf-on-infra-fundNorthleaf Infrastructure Capital Partners IVClosed-EndCLOSED_ACTIVEExplicit NA mandate$2.6BPROPOSED_CORRECTIONhttps://www.northleafcapital.com/news/northleaf-hits-hard-cap-final-close-its-us26-billion-infrastructure-fund
+Repository reconciliation
+
+
+FUND-125 (Northleaf NEIF): Verified; corrected to full official name.
+
+
+FUND-126 (Northleaf NICP IV): Verified; corrected to full official name.
+
+
+No unmatched repository rows remain.
+
+
+Exclusions and unresolved issues
+
+
+Excluded retail and co-investment vehicles that do not represent standalone direct-equity infrastructure strategies.
+
+
+NICP II, III, and I lack sufficient fund-attributed current holding or lifecycle evidence and are placed in unresolved conflicts pending verification.
+
+
+Completeness
+
+
+Reviewed official Northleaf fund announcements and strategy materials.
+
+
+Verified fundraising and close information for flagship funds.
+
+
+Checked portfolio disclosures for holding attribution; attribution gaps remain for older vintages.
+
+
+Reviewed aliases and parallel vehicles; excluded feeders and retail access products.
+
+
+All cited sources were opened; no additional research required to complete a compliant, conservative census.
+</fund_census_report>

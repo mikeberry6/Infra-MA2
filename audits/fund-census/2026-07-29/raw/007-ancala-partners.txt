@@ -1,0 +1,444 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Ancala Partners",
+"canonicalManager": "Ancala Partners",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Ancala",
+"Ancala Partners LLP",
+"Ancala Partners LLC"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Ancala Infrastructure Fund III",
+"aliases": [
+"Ancala Infrastructure Fund III SCSp",
+"Fund III"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Fund III's regulatory disclosure states that the master fund makes low-risk mid-market infrastructure investments through fully controlled, majority, or significant-minority positions and applies active asset management; SEC filings classify the vehicle as a private equity fund.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Phoenix Rail is a current Ancala-controlled U.S. rail infrastructure platform, and specialist fund reporting attributes the investment to Fund III. A 2026 public-pension report independently classifies a Fund III co-investment vehicle as United States. Because no publicly accessible primary Fund III holdings report names Phoenix Rail, the attribution remains review-grade.",
+"currentHoldingName": "Phoenix Rail (Lehigh Valley Rail Management)",
+"currentHoldingUrl": "https://ancala.com/portfolio/phoenix-rail/"
+},
+"snapshot": {
+"legacyId": "FUND-006",
+"managerName": "Ancala Partners",
+"fundName": "Ancala Infrastructure Fund III",
+"ticker": null,
+"investmentStrategy": "Third flagship Ancala fund pursuing bilaterally sourced, downside-protected mid-market infrastructure across essential sectors, with active value creation rather than a narrow single-theme approach.",
+"size": "€1.4B",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "1400000000",
+"sizeBasis": "COMMITMENTS",
+"sizeAsOf": "2024-02-06",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2022",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Transportation",
+"Circular Economy"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://ancala.com/ancala-announces-final-close-of-third-flagship-infrastructure-fund/",
+"https://iqeq.com/wp-content/uploads/2023/10/Ancala-Infrastructure-Fund-Feeder-Sub-Fund-I-SFDR-Art.-8-website-disclosures-March-2023.pdf",
+"https://www.sec.gov/Archives/edgar/data/1906975/000190697523000002/xslFormDX01/primary_doc.xml",
+"https://reports.adviserinfo.sec.gov/reports/ADV/308380/PDF/308380.pdf",
+"https://ancala.com/ancala-forms-short-line-rail-platform/",
+"https://ancala.com/portfolio/phoenix-rail/",
+"https://www.infrastructureinvestordeals.com/deals/ancala-makes-second-foray-into-us-infra-amid-plans-for-best-in-class-rail",
+"https://comptroller.nyc.gov/wp-content/uploads/documents/06.17.2026-NYC-Employees-Retirement-System-Investment-Meeting-Agenda-Package-Public.pdf"
+],
+"strategyUrl": "https://www.ancala.com/"
+},
+"evidence": [
+{
+"url": "https://ancala.com/ancala-announces-final-close-of-third-flagship-infrastructure-fund/",
+"title": "Ancala announces final close of third flagship infrastructure fund",
+"publisher": "Ancala",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-02-06",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund III identity, close and commitments",
+"evidenceSummary": "Ancala identifies Fund III as its third flagship co-mingled infrastructure fund, reports a final close with €1.4 billion of commitments, and describes a bilateral, downside-protected infrastructure strategy across renewable energy and energy transition, transport, utilities and the circular economy. The source states no final-close USD equivalent.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"managerName",
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"fundStatus",
+"sectors",
+"sourceUrls"
+]
+},
+{
+"url": "https://iqeq.com/wp-content/uploads/2023/10/Ancala-Infrastructure-Fund-Feeder-Sub-Fund-I-SFDR-Art.-8-website-disclosures-March-2023.pdf",
+"title": "Fund III Feeder Article 8 Website Disclosures",
+"publisher": "Ancala Partners LLP / IQ-EQ",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Master-fund strategy and control rights",
+"evidenceSummary": "The disclosure says the feeder invests fully in Ancala Infrastructure Fund III SCSp and that the master fund targets low-risk mid-market infrastructure in Europe through controlled, majority or significant-minority positions and active asset management.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"strategies",
+"structure",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1906975/000190697523000002/xslFormDX01/primary_doc.xml",
+"title": "Form D/A — Ancala Infrastructure Fund III SCSp",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2023-02-14",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Legal identity, private-equity classification and vintage",
+"evidenceSummary": "The filing identifies Ancala Infrastructure Fund III SCSp as a Luxembourg limited partnership and private equity fund, with first sale on 1 February 2022. Its 2023 USD figures are offering and amount-sold values, not the later final-close commitments.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE"
+],
+"supportedFields": [
+"fundName",
+"vintage",
+"structure",
+"sourceUrls"
+]
+},
+{
+"url": "https://reports.adviserinfo.sec.gov/reports/ADV/308380/PDF/308380.pdf",
+"title": "Form ADV — Ancala Partners LLC",
+"publisher": "U.S. Securities and Exchange Commission / IAPD",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-06-30",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current Fund III lifecycle",
+"evidenceSummary": "The current adviser filing lists Ancala Infrastructure Fund III SCSp as an existing private equity fund with gross asset value of $1.654 billion as of 30 June 2026. Gross asset value is used only to confirm ongoing activity, not as the fund's commitment size.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"managerName",
+"fundName",
+"fundStatus",
+"structure",
+"sourceUrls"
+]
+},
+{
+"url": "https://ancala.com/ancala-forms-short-line-rail-platform/",
+"title": "Ancala forms US-based short line rail platform Phoenix Rail",
+"publisher": "Ancala",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-01-28",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Completed U.S. infrastructure acquisition",
+"evidenceSummary": "Ancala states that Phoenix Rail completed the acquisition of Lehigh Valley Rail Management, a Pennsylvania rail and intermodal infrastructure operator, and identifies the transaction as Ancala's second North American infrastructure investment. The release does not name the investing fund.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"sectors",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://ancala.com/portfolio/phoenix-rail/",
+"title": "Phoenix Rail — Short Line Rail Specialist",
+"publisher": "Ancala",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current U.S. holding status",
+"evidenceSummary": "Ancala's current portfolio page identifies Phoenix Rail as a U.S.-based platform owning and operating Lehigh Valley Rail Management and states that Ancala is actively working with the company on its value-creation plan.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"sectors",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.infrastructureinvestordeals.com/deals/ancala-makes-second-foray-into-us-infra-amid-plans-for-best-in-class-rail",
+"title": "Ancala makes second foray into US infra amid plans for 'best in class' rail",
+"publisher": "Infrastructure Investor Deals",
+"sourceTier": "REPUTABLE_SECONDARY",
+"scope": "FUND",
+"publishedAt": "2025-01-28",
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Phoenix Rail fund attribution",
+"evidenceSummary": "The publisher's deal record attributes the Phoenix Rail investment to Ancala Infrastructure Fund III. Public access does not expose the full article body, so the attribution is treated as review-grade rather than sufficient for an automatic repository correction.",
+"supports": [
+"FUND_IDENTITY",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://comptroller.nyc.gov/wp-content/uploads/documents/06.17.2026-NYC-Employees-Retirement-System-Investment-Meeting-Agenda-Package-Public.pdf",
+"title": "NYC Employees' Retirement System Investment Meeting Agenda Package — Public",
+"publisher": "Office of the New York City Comptroller",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2026-06-17",
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Independent U.S. Fund III-series deployment corroboration",
+"evidenceSummary": "The public investment report classifies Ancala Fund III Co-Investment H1 SCSp as a United States private investment dated November 2025. It independently corroborates current U.S. deployment in the Fund III series but does not identify the underlying asset.",
+"supports": [
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.newswire.ca/news-releases/canada-growth-fund-announces-canada-s-first-carbon-policy-contract-for-difference-in-markham-ontario-865665158.html",
+"title": "Canada Growth Fund announces Canada's first carbon policy contract for difference",
+"publisher": "Canada Growth Fund Inc.",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2024-06-26",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Historical Canadian Fund III holding attribution",
+"evidenceSummary": "Canada Growth Fund identifies Ancala Infrastructure Fund III as Noventa Energy Partners' majority shareholder in 2024. This confirms fund-specific Canadian deployment historically, but Noventa is not used as the sole current holding because it entered bankruptcy in March 2026.",
+"supports": [
+"FUND_IDENTITY",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"fundName",
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "NEEDS_REVIEW",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-006",
+"managerName": "Ancala Partners",
+"fundName": "Ancala Infrastructure Fund III"
+}
+],
+"changedFields": [
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sectors",
+"regions",
+"sourceUrls"
+],
+"repoDispositionRationale": "FUND-006 is the unique commercial match. The final-close source supports native-currency commitment semantics but not the repository's USD conversion, and current evidence supports adding North America. Because the publicly accessible fund-to-current-holding attribution remains partly secondary and the original Fund III disclosure names Europe, the record is held in NEEDS_REVIEW rather than automatically corrected.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Ancala Infrastructure Fund IV",
+"reasonCode": "NO_VERIFIED_NA_QUALIFICATION",
+"rationale": "The vehicle was reported as launched in April 2026 with a €2 billion target and a European core-plus focus. No opened primary fund material established an explicit North American mandate or a current North American investment by the as-of date.",
+"sourceUrls": [
+"https://www.infrastructureinvestor.com/ancala-launches-e2bn-fourth-flagship-fund-exclusive/",
+"https://www.dakota.com/resources/blog/top-10-funds-to-watch-in-may-2026"
+]
+},
+{
+"fundName": "Ancala Essential Growth Infrastructure Fund",
+"reasonCode": "OUTSIDE_NORTH_AMERICA",
+"rationale": "The £551 million vehicle was created to support only Portsmouth Water, Biogen and Leep Utilities, all UK businesses; North American investor commitments do not establish a North American investment mandate.",
+"sourceUrls": [
+"https://ancala.com/ancala-announces-551m-growth-fund-to-increase-support-for-portfolio-companies-focused-on-the-energy-transition/"
+]
+},
+{
+"fundName": "Ancala Infrastructure Fund II",
+"reasonCode": "OUTSIDE_NORTH_AMERICA",
+"rationale": "Ancala's fund-specific transaction releases identify the vehicle as European Infrastructure Fund II and attribute European investments to it; no current North American holding or North American mandate was found.",
+"sourceUrls": [
+"https://ancala.com/ancala-partners-agrees-to-acquire-hector-rail-ab/",
+"https://ancala.com/ancala-partners-acquires-majority-stake-in-holmleigh-care-group/"
+]
+},
+{
+"fundName": "Ancala Infrastructure Fund I",
+"reasonCode": "OUTSIDE_NORTH_AMERICA",
+"rationale": "Fund I closed in 2016 and had exited six of ten investments by November 2024; reviewed current and continuation-fund materials showed UK/European assets and no fund-attributed North American holding.",
+"sourceUrls": [
+"https://ancala.com/ancala-wins-fund-performance-of-the-year/",
+"https://ancala.com/ancala-announces-551m-growth-fund-to-increase-support-for-portfolio-companies-focused-on-the-energy-transition/"
+]
+},
+{
+"fundName": "Ancala Infrastructure Fund Feeder SCA SICAV RAIF – Sub-Fund I",
+"reasonCode": "FEEDER_OR_PARALLEL",
+"rationale": "The disclosure states that the sub-fund is fully invested in Ancala Infrastructure Fund III SCSp; it is therefore a feeder to the same commercial vehicle, not a separate fund row.",
+"sourceUrls": [
+"https://iqeq.com/wp-content/uploads/2023/10/Ancala-Infrastructure-Fund-Feeder-Sub-Fund-I-SFDR-Art.-8-website-disclosures-March-2023.pdf"
+]
+},
+{
+"fundName": "Ancala Fund III Co-Investment H1 SCSp",
+"reasonCode": "CO_INVESTMENT_SIDECAR",
+"rationale": "The SEC filing identifies a separately incorporated private-equity co-investment entity under the Fund III GP, but no distinct broad strategy, independently reported capital base or independently managed mandate was established; it is consolidated with Fund III.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2081151/000208115125000001/xslFormDX08/primary_doc.xml",
+"https://comptroller.nyc.gov/wp-content/uploads/documents/06.17.2026-NYC-Employees-Retirement-System-Investment-Meeting-Agenda-Package-Public.pdf"
+]
+},
+{
+"fundName": "Ancala Fund III Co-Investment H2 SCSp",
+"reasonCode": "CO_INVESTMENT_SIDECAR",
+"rationale": "The SEC filing identifies a separately incorporated private-equity co-investment entity under the Fund III GP, but no distinct broad strategy, independently reported capital base or independently managed mandate was established; it is consolidated with Fund III.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2081148/000208114825000001/0002081148-25-000001-index.htm"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Fund III attribution of Phoenix Rail and Valentra",
+"issue": "Ancala's primary sources establish that Phoenix Rail and Valentra are current U.S. infrastructure holdings and that Fund III remains active. Specialist fund reporting attributes both investments to Fund III, and institutional reporting corroborates current U.S. Fund III-series deployment, but no publicly accessible primary Fund III portfolio report or audited schedule names either asset.",
+"sourceUrls": [
+"https://ancala.com/portfolio/phoenix-rail/",
+"https://ancala.com/portfolio/valentra/",
+"https://www.infrastructureinvestordeals.com/deals/ancala-makes-second-foray-into-us-infra-amid-plans-for-best-in-class-rail",
+"https://www.infrastructureinvestordeals.com/deals/not-a-typical-infrastructure-deal-ancala-acquires-us-chemical-midstream-business",
+"https://comptroller.nyc.gov/wp-content/uploads/documents/06.17.2026-NYC-Employees-Retirement-System-Investment-Meeting-Agenda-Package-Public.pdf"
+],
+"recommendedResolution": "Retain Fund III as NEEDS_REVIEW and obtain a Fund III quarterly report, audited investment schedule, LP notice or SPV ownership chart that explicitly names Phoenix Rail and/or Valentra before applying the repository correction automatically."
+},
+{
+"subject": "Noventa Energy Partners lifecycle",
+"issue": "Institutional evidence identifies Fund III as Noventa's majority shareholder in 2024, but the Noventa group assigned itself into bankruptcy effective 20 March 2026. Public materials do not establish whether Fund III's equity was extinguished, written off, transferred or remains a legal residual interest.",
+"sourceUrls": [
+"https://www.newswire.ca/news-releases/canada-growth-fund-announces-canada-s-first-carbon-policy-contract-for-difference-in-markham-ontario-865665158.html",
+"https://mnpdebt.ca/en/corporate/corporate-engagements/noventa-group"
+],
+"recommendedResolution": "Do not use Noventa as the sole current North American holding. Obtain the trustee's shareholder treatment, an updated ownership register or a Fund III report confirming realization, write-off or continuing ownership."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 31,
+"searchQueriesRun": 112,
+"notes": [
+"Reviewed Ancala fund-close, strategy, sustainability, deployment, portfolio and transaction materials; SEC Form D and Form ADV filings; institutional pension reporting; transaction counsel; and specialist infrastructure sources.",
+"The Fund III feeder disclosure, current Form ADV and large public-pension PDFs were reviewed at document/page level; web-renderer size limits were recorded where applicable.",
+"No predecessor or successor manager identity was found. Vontobel's minority investment did not replace the Ancala manager identity.",
+"Fund III feeders and H1/H2 co-investment entities were reviewed and consolidated rather than double-counted.",
+"Fund IV was reviewed as an active fundraising candidate but excluded because opened evidence did not establish North American qualification."
+]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 1,
+"excludedCandidates": 7,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 2
+}
+}
+</fund_census_json>
+<fund_census_report>
+Ancala Partners — North American direct infrastructure fund census
+Conclusion
+One vehicle is included: Ancala Infrastructure Fund III, on a NEEDS_REVIEW basis. Its identity, direct-equity infrastructure strategy, €1.4 billion final commitments and current lifecycle are supported by Ancala’s close announcement, the Fund III regulatory disclosure and Ancala’s June 30, 2026 Form ADV. Ancala+2IQ-EQ+2
+North American qualification rests on Phoenix Rail: Ancala’s current portfolio identifies it as an actively managed U.S. rail platform, while specialist fund reporting attributes the investment to Fund III and public-pension reporting corroborates current U.S. deployment in the Fund III series. Because no publicly accessible primary Fund III investment schedule names Phoenix Rail, the classification remains medium-confidence rather than an automatic repository correction. NYC Comptroller Mark Levine+3Ancala+3Ancala+3
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceAncala Infrastructure Fund IIINAMED_FUNDCLOSED_ACTIVEVERIFIED_CURRENT_NA_HOLDING — Phoenix Rail; review-grade fund attribution€1.4B commitmentsNEEDS_REVIEWFinal close; strategy disclosure; SEC Form ADV; Phoenix Rail; fund attribution
+Repository reconciliation
+The supplied manifest contains one Ancala row, FUND-006, and it is matched exactly by manager and fund identity. Pasted text Candidate field changes are the unsupported repository USD conversion, newly documented native-currency amount semantics and date, evidence-backed sectors, North America, and expanded sources. The official close states €1.4 billion of commitments but provides no final-close USD equivalent; the earlier Form D USD figures describe an offering amount and amount sold, not the eventual final close. Ancala+1
+There are no proposed-new or repository-only records. The correction is withheld pending primary confirmation of the current U.S. asset attribution.
+Exclusions and unresolved issues
+Fund IV was reported as an April 2026, €2 billion European core-plus raise, but no primary North American mandate or fund-attributed North American investment was found. The Essential Growth Infrastructure Fund supports three UK companies only; Fund II is expressly European; and reviewed Fund I materials showed no North American holding. Ancala+4Infrastructure Investor+4Dakota+4
+The Fund III feeder and H1/H2 co-investment entities were not double-counted because the feeder invests entirely in the master fund and the sidecars lack evidence of an independently managed commercial strategy or separately reported capital base. IQ-EQ+2SEC+2
+Noventa was Fund III’s Canadian majority-owned investment in 2024, but its March 20, 2026 bankruptcy leaves the current equity treatment unresolved; it was therefore not used as the sole current-holding proof. Newswire+1
+Completeness
+The review covered official close and strategy materials, current portfolio and deployment pages, SEC filings, institutional reporting, fundraising sources, manager legal identities, feeders, parallel entities and co-investment vehicles. Ancala Partners LLP remains the canonical platform; Ancala Partners LLC is its wholly owned U.S. subsidiary, and Vontobel’s minority investment did not create a successor manager. Ancala+1
+Thirty-one sources were opened across 112 search queries. Subscription restrictions on the specialist fund-attribution records and web-renderer limits for large regulatory PDFs are reflected in the MEDIUM confidence and NEEDS_REVIEW disposition.
+</fund_census_report>

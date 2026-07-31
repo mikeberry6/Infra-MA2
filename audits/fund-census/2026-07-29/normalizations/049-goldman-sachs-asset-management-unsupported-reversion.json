@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Goldman Sachs Asset Management",
+  "createdAt": "2026-07-30T20:32:10.568Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/049-goldman-sachs-asset-management-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/049-goldman-sachs-asset-management-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-088",
+      "field": "sourceUrls",
+      "from": [
+        "https://am.gs.com/en-us/advisors/news/press-release/2026/goldman-sachs-alternatives-announces-first-close-of-west-street-infrastructure-partners-v"
+      ],
+      "value": [
+        "https://www.sec.gov/Archives/edgar/data/2081965/000208196525000001/xslFormDX01/primary_doc.xml"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

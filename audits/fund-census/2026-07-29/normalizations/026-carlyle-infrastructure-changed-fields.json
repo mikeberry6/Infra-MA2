@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Carlyle Infrastructure",
+  "createdAt": "2026-07-30T14:14:36.707Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/026-carlyle-infrastructure-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/026-carlyle-infrastructure-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-051",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "value": [
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "rationale": "The existing changedFields list was a strict subset of the deterministic field diff between the researched snapshot and its single matched repository row."
+    },
+    {
+      "fundIndex": 3,
+      "legacyId": "FUND-053",
+      "field": "changedFields",
+      "from": [
+        "fundName",
+        "size",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "value": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "rationale": "The existing changedFields list was a strict subset of the deterministic field diff between the researched snapshot and its single matched repository row."
+    }
+  ]
+}

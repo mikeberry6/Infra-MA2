@@ -1,0 +1,335 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "InfraRed Capital Partners",
+  "canonicalManager": "InfraRed Capital Partners",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "InfraRed Capital Partners",
+    "HSBC Specialist Investments (predecessor)"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "InfraRed Infrastructure Fund VI",
+      "aliases": [
+        "InfraRed Infrastructure VI"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Manager-operated private value-add infrastructure equity fund investing directly in assets across energy transition, digital and transport infrastructure.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Official fund materials state Fund VI invests across Western Europe and North America.",
+        "currentHoldingName": "Public Safety Towers",
+        "currentHoldingUrl": "https://www.ircp.com/news/infrared-closes-infrastructure-fund-vi/"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "InfraRed Capital Partners",
+        "fundName": "InfraRed Infrastructure Fund VI",
+        "ticker": null,
+        "investmentStrategy": "Value-add infrastructure equity strategy targeting energy transition, digital and transport assets across OECD markets including North America.",
+        "size": "$1.8B final close",
+        "sizeUsdMm": 1800,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1800000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2024-03-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Transportation",
+          "Power & ET"
+        ],
+        "regions": [
+          "North America",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.ircp.com/news/infrared-closes-infrastructure-fund-vi/",
+          "https://www.ircp.com/wp-content/uploads/2026/06/InfraRed-2026-Sustainability-Report.pdf"
+        ],
+        "strategyUrl": "https://www.ircp.com/investments/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ircp.com/news/infrared-closes-infrastructure-fund-vi/",
+          "title": "InfraRed closes Infrastructure Fund VI",
+          "publisher": "InfraRed Capital Partners",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-03-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund VI close and mandate",
+          "evidenceSummary": "Confirms Fund VI final close at $1.8bn and mandate across Western Europe and North America for value-add infrastructure investments.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "structure",
+            "strategies",
+            "fundStatus",
+            "vintage"
+          ]
+        },
+        {
+          "url": "https://www.ircp.com/wp-content/uploads/2026/06/InfraRed-2026-Sustainability-Report.pdf",
+          "title": "InfraRed Sustainability Report 2026",
+          "publisher": "InfraRed Capital Partners",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund VI current investments",
+          "evidenceSummary": "Confirms Fund VI completed investments and includes North American asset Public Safety Towers (U.S.), demonstrating current active deployment.",
+          "supports": [
+            "CURRENT_LIFECYCLE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "regions"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "Fund VI is a current flagship vehicle with North American mandate and active holdings but is not present in the repository snapshot.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "HICL Infrastructure PLC",
+      "aliases": [],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "Listed investment company managed by InfraRed that directly owns infrastructure equity assets.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Annual report confirms active U.S. infrastructure holdings including Texas Nevada Transmission and other North American assets.",
+        "currentHoldingName": "Texas Nevada Transmission",
+        "currentHoldingUrl": "https://www.hicl.com/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-102",
+        "managerName": "InfraRed Capital Partners",
+        "fundName": "HICL Infrastructure PLC",
+        "ticker": "HICL.L",
+        "investmentStrategy": "Core infrastructure equity strategy delivering stable income through a diversified portfolio of infrastructure assets.",
+        "size": "£3.03B NAV",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "GBP",
+        "sizeNativeAmount": "3033500000",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2026-06-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Listed / Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Utilities",
+          "Transportation",
+          "Digital",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.hicl.com/",
+          "https://www.hicl.com/wp-content/uploads/2026/06/HICL-Annual-Report-2026.pdf"
+        ],
+        "strategyUrl": "https://www.ircp.com/investments/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hicl.com/wp-content/uploads/2026/06/HICL-Annual-Report-2026.pdf",
+          "title": "HICL Infrastructure PLC Annual Report 2026",
+          "publisher": "HICL Infrastructure PLC",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-06-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "HICL portfolio and geography",
+          "evidenceSummary": "Confirms HICL owns infrastructure assets including U.S. and North American investments and reports total portfolio value/NAV.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "regions",
+            "investmentStrategy",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "structure",
+            "strategies",
+            "fundStatus"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-102",
+          "managerName": "InfraRed Capital Partners",
+          "fundName": "HICL Infrastructure PLC"
+        }
+      ],
+      "changedFields": [
+        "size",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "repoDispositionRationale": "Repository size fields are outdated and lack basis; updated NAV and basis supported by latest annual report.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "InfraRed Infrastructure Fund VII",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "Fund VII is referenced in repository but lacks sufficient fund-specific primary evidence confirming explicit North American mandate or current holdings.",
+      "sourceUrls": [
+        "https://www.ircp.com/who-we-are/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-101",
+      "repoFundName": "InfraRed Fund VII",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Insufficient primary evidence to confirm North American qualification or lifecycle for Fund VII.",
+      "evidenceUrls": [
+        "https://www.ircp.com/who-we-are/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "InfraRed Fund VII",
+      "issue": "Repository includes Fund VII with North America region but no primary fund-specific evidence confirms mandate or holdings.",
+      "sourceUrls": [
+        "https://www.ircp.com/who-we-are/"
+      ],
+      "recommendedResolution": "Obtain official Fund VII fundraising materials or regulatory filings confirming geographic mandate."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 4,
+    "searchQueriesRun": 8,
+    "notes": [
+      "Confirmed Fund VI and HICL as current NA-qualified vehicles.",
+      "Fund VII lacks sufficient fund-specific evidence and is conservatively excluded."
+    ]
+  },
+  "summary": {
+    "includedFunds": 2,
+    "explicitNaMandate": 1,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 1,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 1,
+    "unresolvedConflicts": 1
+  }
+}
+</fund_census_json>
+<fund_census_report>
+InfraRed Capital Partners — North American direct infrastructure fund census
+Conclusion
+InfraRed Capital Partners currently has two verified direct-equity infrastructure vehicles with North American qualification: InfraRed Infrastructure Fund VI and HICL Infrastructure PLC. Fund VII cannot be validated with sufficient fund-specific evidence and is therefore classified conservatively for review.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepo DispositionEvidenceInfraRed Infrastructure Fund VINamed FundClosed ActiveExplicit mandateFinal closeProposed Newhttps://www.ircp.com/news/infrared-closes-infrastructure-fund-vi/HICL Infrastructure PLCNamed FundEvergreen ActiveVerified holdingNAV/AUMProposed Correctionhttps://www.hicl.com/wp-content/uploads/2026/06/HICL-Annual-Report-2026.pdf
+Repository reconciliation
+
+
+FUND-102 (HICL Infrastructure PLC): matched with updated size and basis fields (PROPOSED_CORRECTION).
+
+
+FUND-101 (InfraRed Fund VII): no sufficient evidence; classified as repo-only NEEDS_REVIEW.
+
+
+InfraRed Infrastructure Fund VI: missing from repository; added as PROPOSED_NEW.
+
+
+Exclusions and unresolved issues
+
+
+Fund VII: excluded due to lack of fund-specific evidence supporting North American mandate or holdings.
+
+
+No program exceptions included due to insufficient lifecycle clarity for structured vehicles (e.g., Pantheon partnership).
+
+
+No overlapping manager conflicts identified.
+
+
+Completeness
+
+
+Official InfraRed materials, sustainability report, and HICL annual report reviewed.
+
+
+Fundraising and close sources verified for Fund VI.
+
+
+Current holdings attribution confirmed for HICL and Fund VI.
+
+
+Manager aliases and historical lineage reviewed.
+
+
+Parallel vehicles and listed strategies assessed.
+
+
+No inaccessible sources prevented inclusion decisions.
+</fund_census_report>

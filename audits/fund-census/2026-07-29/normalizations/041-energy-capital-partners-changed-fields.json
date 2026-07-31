@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Energy Capital Partners",
+  "createdAt": "2026-07-30T18:57:20.692Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/041-energy-capital-partners-unsupported-reverted.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/041-energy-capital-partners-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-066",
+      "field": "changedFields",
+      "from": [
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "strategies"
+      ],
+      "value": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "strategies"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    }
+  ]
+}

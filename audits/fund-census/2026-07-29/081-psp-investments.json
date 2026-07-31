@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "PSP Investments",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "PSP Investments",
+    "Public Sector Pension Investment Board",
+    "PSPIB"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager manifest scope",
+      "issue": "Official sources establish PSP Investments (Public Sector Pension Investment Board) as an active global infrastructure investor with direct investments, but the supplied repository snapshot records canonicalManager:null and knownManager:false, preventing inclusion of any vehicles under the contract.",
+      "sourceUrls": [
+        "https://www.investpsp.com/en/",
+        "https://www.investpsp.com/en/our-business/infrastructure/"
+      ],
+      "recommendedResolution": "Add or correct PSP Investments in the governed fund-manager universe outside this task, then rerun the census to allow fund or program inclusion under the canonical manager."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 4,
+    "searchQueriesRun": 3,
+    "notes": [
+      "Research intentionally stopped at manager-scope validation per contract because knownManager=false.",
+      "Official PSP materials confirm existence of a direct infrastructure investment program, but no fund or program rows can be returned under current manifest constraints.",
+      "The supplied manager universe lists PSP Investments, but the repository snapshot simultaneously flags it as unknown; the repository snapshot scope control was followed.",
+      "The supplied repository snapshot contains no fund rows, so there are no repository legacy IDs to match or place in repoOnlyRecords."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

@@ -1,0 +1,394 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Harbert Management Corp",
+"canonicalManager": "Harbert Management Corporation",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Harbert Management Corp",
+"Harbert Management Corporation",
+"Harbert Power",
+"Harbert Infrastructure"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Harbert Power Fund V, LLC",
+"aliases": [
+"Harbert Infrastructure Fund V",
+"HIF V",
+"HPF V"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Form ADV classifies the vehicle as a private equity fund and Harbert disclosures attribute direct ownership of power generation assets.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Harbert Responsible Investment Report attributes U.S. renewable power assets to Fund V.",
+"currentHoldingName": "Panoche Valley Solar",
+"currentHoldingUrl": "https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdf"
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "Harbert Management Corporation",
+"fundName": "Harbert Power Fund V, LLC",
+"ticker": null,
+"investmentStrategy": "North American power and renewable energy infrastructure equity strategy investing in utility-scale assets.",
+"size": "Not disclosed",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Not disclosed",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET"
+],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/110577/PDF/110577.pdf",
+"https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdf"
+],
+"strategyUrl": "https://www.harbert.net/investment-strategies/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://reports.adviserinfo.sec.gov/reports/ADV/110577/PDF/110577.pdf",
+"title": "Form ADV Part 1A – Harbert Fund Advisors, LLC",
+"publisher": "U.S. SEC",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2026-05-20",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund V listing",
+"evidenceSummary": "Lists Harbert Power Fund V, LLC as an active private equity fund.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"structure",
+"fundStatus"
+]
+},
+{
+"url": "https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdf",
+"title": "2024 Responsible Investment Report",
+"publisher": "Harbert Management Corporation",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-07-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund V NA assets",
+"evidenceSummary": "Attributes U.S. renewable energy assets to Fund V, confirming North American deployment.",
+"supports": [
+"NORTH_AMERICA",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"regions",
+"investmentStrategy",
+"sectors"
+]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "Active predecessor infrastructure fund not present in repository snapshot.",
+"confidence": "HIGH"
+},
+{
+"fundName": "Harbert Infrastructure Fund VI, LP",
+"aliases": [
+"Harbert HIF VI"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Official final close announcement describes direct equity investment in power and renewable infrastructure assets.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund materials explicitly state North American power and renewable infrastructure mandate.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-090",
+"managerName": "Harbert Management Corporation",
+"fundName": "Harbert Infrastructure Fund VI, LP",
+"ticker": null,
+"investmentStrategy": "North American power and renewable energy fund investing across renewable and dispatchable generation.",
+"size": "$0.9B final close",
+"sizeUsdMm": 900,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "900000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2022-10-06",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2020",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities"
+],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://www.globenewswire.com/news-release/2022/10/06/2529666/0/en/harbert-infrastructure-fund-vi-lp-announces-final-close.html"
+],
+"strategyUrl": "https://www.harbert.net/investment-strategies/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://www.globenewswire.com/news-release/2022/10/06/2529666/0/en/harbert-infrastructure-fund-vi-lp-announces-final-close.html",
+"title": "Harbert Infrastructure Fund VI final close",
+"publisher": "GlobeNewswire",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2022-10-06",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund VI close",
+"evidenceSummary": "Confirms $900M final close on 2022-10-06 and North American infrastructure mandate.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeUsdMm",
+"sizeAsOf",
+"regions",
+"investmentStrategy",
+"fundStatus"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-090",
+"managerName": "Harbert Management Corporation",
+"fundName": "Harbert HIF VI"
+}
+],
+"changedFields": [
+"fundName",
+"size",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeAsOf"
+],
+"repoDispositionRationale": "Repository uses alias name and lacks full size semantics; corrected to official name and final close details.",
+"confidence": "HIGH"
+},
+{
+"fundName": "Gulf Pacific Power, LLC",
+"aliases": [
+"GPP"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Form ADV classifies the vehicle as a private equity fund and Harbert disclosures attribute direct ownership of power assets.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Harbert Responsible Investment Report attributes U.S. power assets to the vehicle.",
+"currentHoldingName": "Desert Sunlight Solar",
+"currentHoldingUrl": "https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdf"
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "Harbert Management Corporation",
+"fundName": "Gulf Pacific Power, LLC",
+"ticker": null,
+"investmentStrategy": "North American power infrastructure investment vehicle targeting renewable and conventional generation.",
+"size": "$2.113B AUM",
+"sizeUsdMm": 2113.01,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "2113006249",
+"sizeBasis": "AUM",
+"sizeAsOf": "2026-03-31",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Not disclosed",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET"
+],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/110577/PDF/110577.pdf",
+"https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdf"
+],
+"strategyUrl": "https://www.harbert.net/investment-strategies/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://reports.adviserinfo.sec.gov/reports/ADV/110577/PDF/110577.pdf",
+"title": "Form ADV Part 1A – Harbert Fund Advisors, LLC",
+"publisher": "U.S. SEC",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2026-05-20",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "GPP listing",
+"evidenceSummary": "Lists Gulf Pacific Power, LLC as an active private equity fund with gross asset value.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeUsdMm",
+"fundStatus"
+]
+},
+{
+"url": "https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdf",
+"title": "2024 Responsible Investment Report",
+"publisher": "Harbert Management Corporation",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-07-01",
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "GPP NA assets",
+"evidenceSummary": "Attributes U.S. renewable power assets to Harbert-managed vehicles including GPP.",
+"supports": [
+"NORTH_AMERICA",
+"DIRECT_EQUITY_INFRASTRUCTURE"
+],
+"supportedFields": [
+"regions",
+"investmentStrategy"
+]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "Active infrastructure investment vehicle not represented in repository snapshot.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-091",
+"repoFundName": "Harbert HIF VII",
+"disposition": "NEEDS_REVIEW",
+"rationale": "Retained Form D evidence establishes identity and fundraising but does not provide fund-specific North America mandate or current holding attribution.",
+"evidenceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2080982/000208098225000001/xslFormDX01/primary_doc.xml",
+"https://www.sec.gov/Archives/edgar/data/2080982/000208098225000002/xslFormDX01/primary_doc.xml"
+]
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "Harbert Power Fund VII, LP",
+"issue": "Insufficient retained fund-specific evidence to confirm North American mandate or current holding attribution.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2080982/000208098225000001/xslFormDX01/primary_doc.xml"
+],
+"recommendedResolution": "Obtain fund-specific materials or portfolio attribution confirming North American deployment."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 0,
+"notes": [
+"Transport-completion pass used retained sources; no new searches executed."
+]
+},
+"summary": {
+"includedFunds": 3,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 2,
+"proposedNew": 2,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 1,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Harbert Management Corp — North American direct infrastructure fund census
+Conclusion
+Three current direct-equity infrastructure vehicles are supported with fund-specific North American qualification. One repository successor fund, FUND-091, remains unresolved because the retained evidence does not establish a fund-specific North American mandate or current North American holding.
+Included funds
+FundVehicleLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceHarbert Power Fund V, LLCNAMED_FUNDCLOSED_ACTIVEVerified current North American holding: Panoche Valley SolarNot disclosedPROPOSED_NEWhttps://reports.adviserinfo.sec.gov/reports/ADV/110577/PDF/110577.pdf; https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdfHarbert Infrastructure Fund VI, LPNAMED_FUNDCLOSED_ACTIVEExplicit North American mandate$0.9B final close as of 2022-10-06PROPOSED_CORRECTIONhttps://www.globenewswire.com/news-release/2022/10/06/2529666/0/en/harbert-infrastructure-fund-vi-lp-announces-final-close.htmlGulf Pacific Power, LLCNAMED_FUNDCLOSED_ACTIVEVerified current North American holding: Desert Sunlight Solar$2.113B AUM as of 2026-03-31PROPOSED_NEWhttps://reports.adviserinfo.sec.gov/reports/ADV/110577/PDF/110577.pdf; https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdf
+Repository reconciliation
+
+
+FUND-090 — Harbert HIF VI: matched exactly once and corrected to the official fund name, final-close size description, native-currency amount, size basis, and dated size reference.
+
+
+FUND-091 — Harbert HIF VII: reconciled exactly once in repoOnlyRecords as NEEDS_REVIEW because retained Form D evidence supports identity and fundraising but not the required fund-specific North American qualification.
+
+
+Proposed additions are Harbert Power Fund V, LLC and Gulf Pacific Power, LLC.
+
+
+No possible duplicates were identified.
+
+
+Exclusions and unresolved issues
+No candidates were placed in excludedCandidates. Harbert Power Fund VII, LP remains an unresolved evidence issue pending fund-specific materials or portfolio attribution establishing a North American mandate or current North American deployment.
+Completeness
+Official fund materials, regulatory filings, fundraising announcements, current-holding attribution, manager aliases, fund-series continuity, and parallel or feeder duplication risk were reviewed in the retained research pass. Six sources were opened. No new searches were performed during this validator-repair pass.
+</fund_census_report>

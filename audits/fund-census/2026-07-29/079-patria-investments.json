@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Patria Investments",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Patria Investments",
+    "Patria Investments Limited",
+    "Pátria Investimentos Ltda."
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager scope governance",
+      "issue": "The repository snapshot marks Patria Investments as an unknown manager (knownManager=false, canonicalManager=null), yet the supplied manager universe explicitly includes 'Patria Investments', creating an internal inconsistency that prevents fund-level inclusion.",
+      "sourceUrls": [],
+      "recommendedResolution": "Resolve the manifest inconsistency by confirming canonical manager inclusion status and assigning a canonicalManager before performing fund-level census."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 0,
+    "searchQueriesRun": 0,
+    "notes": [
+      "Per instructions, research halted at manager-scope validation because knownManager=false requires OUT_OF_SCOPE_UNKNOWN_MANAGER handling.",
+      "No fund-level inclusion attempted due to governance constraint."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

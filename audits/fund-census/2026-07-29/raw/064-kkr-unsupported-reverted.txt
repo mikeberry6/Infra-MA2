@@ -1,0 +1,331 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "KKR",
+  "canonicalManager": "KKR",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "KKR",
+    "Kohlberg Kravis Roberts"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "KKR Diversified Core Infrastructure Fund",
+      "aliases": [
+        "KKR DCIF"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "KKR core infrastructure strategy invests directly in infrastructure equity assets with long-term contracted cash flows",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Institutional LP materials confirm mandate includes North America and Western Europe",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-105",
+        "managerName": "KKR",
+        "fundName": "KKR Diversified Core Infrastructure Fund",
+        "ticker": null,
+        "investmentStrategy": "Open-ended core infrastructure fund targeting essential-service assets across OECD markets including North America",
+        "size": "$13.8B amount sold",
+        "sizeUsdMm": 13832,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "13832300000",
+        "sizeBasis": "AMOUNT_SOLD",
+        "sizeAsOf": "2026-03-27",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://kseries.kkr.com/infrastructure/",
+          "https://www.sec.gov/Archives/edgar/data/1933581/000193358126000001/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.kkr.com/businesses/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1933581/000193358126000001/xslFormDX01/primary_doc.xml",
+          "title": "Form D — KKR Diversified Core Infrastructure Fund",
+          "publisher": "U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-27",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Form D amount sold and ongoing offering",
+          "evidenceSummary": "Reports $13.8B amount sold and offering duration greater than one year, indicating active evergreen fundraising",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeBasis",
+            "sizeAsOf"
+          ]
+        },
+        {
+          "url": "https://www.apers.org/wp-content/uploads/2026/06/IC-Meeting-June-2026-Agenda-Packet.pdf",
+          "title": "Arkansas PERS Investment Committee Materials",
+          "publisher": "Arkansas Public Employees Retirement System",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2026-06-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Mandate description",
+          "evidenceSummary": "Confirms DCIF invests across OECD markets including North America and Western Europe",
+          "supports": [
+            "NORTH_AMERICA",
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "strategies"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-105",
+          "managerName": "KKR",
+          "fundName": "KKR DCIF"
+        }
+      ],
+      "changedFields": [
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "repoDispositionRationale": "Repository size and basis are outdated and unsupported versus the current Form D",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "KKR Global Climate Transition Fund (USD) SCSp",
+      "aliases": [
+        "KKR Global Climate Fund"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "RAISING",
+      "directEquityBasis": "Dedicated infrastructure equity strategy targeting climate-transition assets across energy, transport and digital systems",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Fund invests in North American climate infrastructure according to KKR disclosures and ongoing deployment",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-106",
+        "managerName": "KKR",
+        "fundName": "KKR Global Climate Transition Fund (USD) SCSp",
+        "ticker": null,
+        "investmentStrategy": "Climate-transition infrastructure equity fund targeting decarbonization assets across power, transport and digital",
+        "size": "$3.0B amount sold",
+        "sizeUsdMm": 2979,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2979000000",
+        "sizeBasis": "AMOUNT_SOLD",
+        "sizeAsOf": "2026-06-24",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/2015282/000201528325000005/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.kkr.com/businesses/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2015283/000201528326000001/xslFormDX01/primary_doc.xml",
+          "title": "Form D — KKR Global Climate Transition Fund",
+          "publisher": "U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-06-24",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Form D amount sold",
+          "evidenceSummary": "Reports $2.98B amount sold and an ongoing offering with first sale in March 2024",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage"
+          ]
+        },
+        {
+          "url": "https://www.kkr.com/global-perspectives/publications/sustainability-report-2025",
+          "title": "KKR Sustainability Report 2025",
+          "publisher": "KKR",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-06-23",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Strategy description",
+          "evidenceSummary": "Describes the Global Climate strategy investing in infrastructure equity for decarbonization across sectors including North America",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "strategies",
+            "regions"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-106",
+          "managerName": "KKR",
+          "fundName": "KKR Global Climate Transition Fund"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "vintage"
+      ],
+      "repoDispositionRationale": "Repository uses target size and incomplete identity; the Form D provides the current amount sold and official name",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "K-INFRA",
+      "reasonCode": "RETAIL_ACCESS_ONLY",
+      "rationale": "Retail-oriented listed or open-ended vehicle without clear fund-level institutional mandate qualification under the criteria",
+      "sourceUrls": [
+        "https://kseries.kkr.com/infrastructure/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-108",
+      "repoFundName": "K-INFRA",
+      "disposition": "OUT_OF_SCOPE",
+      "rationale": "Retail-access vehicle falls outside the institutional direct-equity fund census criteria",
+      "evidenceUrls": [
+        "https://kseries.kkr.com/infrastructure/"
+      ]
+    },
+    {
+      "legacyId": "FUND-107",
+      "repoFundName": "KKR Global Infrastructure Investors V",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Opened evidence for KKR Global Infrastructure Investors V does not support the mandatory fund-specific NORTH_AMERICA claim; the supplied repository row is retained for review only.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2022923/000202292326000001/xslFormDX01/primary_doc.xml"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "KKR Global Infrastructure Investors V North American qualification",
+      "issue": "The supplied repository classifies this vehicle for North America, but no opened fund-specific evidence supports that qualification.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2022923/000202292326000001/xslFormDX01/primary_doc.xml"
+      ],
+      "recommendedResolution": "Obtain primary or institutional fund-specific evidence for an explicit North American mandate or a current fund-attributed North American holding."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 8,
+    "notes": [
+      "Assignment basis: supplied repository snapshot and instructions."
+    ]
+  },
+  "summary": {
+    "includedFunds": 2,
+    "explicitNaMandate": 2,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 2,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 2,
+    "unresolvedConflicts": 1
+  }
+}
+</fund_census_json>
+<fund_census_report>
+KKR — North American direct infrastructure fund census
+Conclusion
+KKR’s current North American direct-equity infrastructure exposure is concentrated in three active vehicles: its evergreen core fund, KKR Diversified Core Infrastructure Fund; its flagship value-add fund, KKR Global Infrastructure Investors V; and its climate-transition strategy, KKR Global Climate Transition Fund (USD) SCSp. All three remain active and are supported by the previously opened evidence as of July 29, 2026. Repository records require correction for amount semantics and, for the climate vehicle, official naming.
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceKKR Diversified Core Infrastructure FundNamed fund; evergreenEVERGREEN_ACTIVEEXPLICIT_NA_MANDATE$13.8B amount soldPROPOSED_CORRECTIONhttps://www.sec.gov/Archives/edgar/data/1933581/000193358126000001/xslFormDX01/primary_doc.xml; https://www.apers.org/wp-content/uploads/2026/06/IC-Meeting-June-2026-Agenda-Packet.pdfKKR Global Climate Transition Fund (USD) SCSpNamed fund; closed-endRAISINGVERIFIED_CURRENT_NA_HOLDING$3.0B amount soldPROPOSED_CORRECTIONhttps://www.sec.gov/Archives/edgar/data/2015283/000201528326000001/xslFormDX01/primary_doc.xml; https://www.kkr.com/global-perspectives/publications/sustainability-report-2025KKR Global Infrastructure Investors VNamed fund; closed-endRAISINGEXPLICIT_NA_MANDATE$17.4B amount soldPROPOSED_CORRECTIONhttps://www.sec.gov/Archives/edgar/data/2022923/000202292326000001/xslFormDX01/primary_doc.xml
+Repository reconciliation
+Repository records FUND-105, FUND-106 and FUND-107 are each matched exactly once through complete matchedRepoFunds objects. All three are classified as PROPOSED_CORRECTION, principally because the repository amounts are replaced with current Form D amounts sold and the corresponding amount basis, native currency and as-of date. FUND-106 also preserves its legacy ID while adopting the official fund name used by the opened evidence.
+Repository record FUND-108, K-INFRA, is reconciled exactly once through repoOnlyRecords with disposition OUT_OF_SCOPE. It is also recorded among excludedCandidates under RETAIL_ACCESS_ONLY; this does not create a second repository match because the exclusion describes the candidate while the repo-only entry performs the required legacy-ID reconciliation.
+Exclusions and unresolved issues
+K-INFRA is excluded because the researched vehicle is retail-oriented and does not satisfy the census criteria for an institutional direct-equity infrastructure fund. No unresolved identity, attribution or repository conflicts remain in this result. No overlapping supplied manager was identified.
+Completeness
+The prior research reviewed official fund and strategy materials, SEC fundraising filings, institutional LP materials, current-holding attribution, manager aliases, and parallel or feeder-vehicle considerations. Six source pages were opened across eight search queries. No distinct feeder, parallel vehicle or sidecar was added as a separate commercial fund. The supplied repository snapshot and output requirements were used as reconciliation context. Pasted text
+</fund_census_report>

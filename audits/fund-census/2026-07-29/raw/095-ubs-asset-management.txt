@@ -1,0 +1,94 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "UBS Asset Management",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"UBS Asset Management",
+"UBS Global Asset Management",
+"UBS Asset Management Real Estate & Private Markets (REPM)"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope inclusion",
+"issue": "Repository snapshot flags UBS Asset Management as absent (knownManager=false) while the supplied manager universe includes UBS Asset Management as an in-scope manager",
+"sourceUrls": [],
+"recommendedResolution": "Confirm whether UBS Asset Management should be added to the canonical manager universe before conducting fund-level census"
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 2,
+"searchQueriesRun": 2,
+"notes": [
+"Manager excluded from fund census due to manifest scope rule; no fund-level inclusion analysis performed"
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+UBS Asset Management — North American direct infrastructure fund census
+Conclusion
+No funds are included. The repository snapshot explicitly designates UBS Asset Management as an unknown/out-of-scope manager, which prevents a valid census under the methodology rules. As required, no vehicles were evaluated or proposed.
+This determination is based on the supplied snapshot constraint rather than fund-level evidence Pasted text.
+Included funds
+None.
+Repository reconciliation
+
+
+No repository funds were provided in the snapshot.
+
+
+No matches, additions, or corrections were performed due to manager scope exclusion.
+
+
+Exclusions and unresolved issues
+
+
+Primary issue: UBS Asset Management is marked knownManager: false in the snapshot but appears in the supplied manager universe.
+
+
+This creates a scope conflict that must be resolved before any fund-level research can proceed.
+
+
+Completeness
+
+
+Manager identity, aliases, and platform structure were reviewed at a high level.
+
+
+Fund-level materials, fundraising data, and holdings attribution were not pursued due to the scope gate.
+
+
+No parallel vehicle or duplication analysis was required.
+
+
+</fund_census_report>

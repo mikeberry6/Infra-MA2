@@ -1,0 +1,207 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "CIM Group",
+"canonicalManager": "CIM Group",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["CIM Group"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "CIM Infrastructure Fund III, L.P.",
+"aliases": ["CIM Infrastructure Fund III"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Fund-specific filings and official infrastructure strategy materials describe direct-equity investment in renewable energy, digital infrastructure, and resource-efficiency assets.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund-specific materials and filings describe a North American infrastructure mandate across U.S.-based energy, digital, and resource-efficiency assets.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-055",
+"managerName": "CIM Group",
+"fundName": "CIM Infrastructure Fund III",
+"ticker": null,
+"investmentStrategy": "North American value-add infrastructure fund targeting renewables, digital, waste/water, and transport/social infrastructure.",
+"size": "NEEDS_REVIEW — SEC Form D reports $1,757,609,274 amount sold; filing date not preserved in opened evidence",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2021",
+"strategies": ["Value-Add"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Power & ET", "Digital", "Transportation", "Social Infra"],
+"regions": ["North America"],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1900624/000190062423000003/xslFormDX01/primary_doc.xml",
+"https://www.cimgroup.com/investment-platforms/infrastructure"
+],
+"strategyUrl": "https://www.cimgroup.com/investment-platforms/infrastructure"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1900624/000190062423000003/xslFormDX01/primary_doc.xml",
+"title": "Form D — CIM Infrastructure Fund III, L.P.",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Form D amount sold disclosure",
+"evidenceSummary": "SEC Form D filing reports total amount sold of $1,757,609,274, including contingent commitments and related vehicles; however, the exact filing date was not preserved in the opened evidence.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.cimgroup.com/investment-platforms/infrastructure",
+"title": "CIM Group Infrastructure Platform",
+"publisher": "CIM Group",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Infrastructure strategy and geography",
+"evidenceSummary": "Official CIM Group infrastructure platform materials describe North American infrastructure investments across energy, digital, and resource-efficiency sectors.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"investmentStrategy",
+"regions",
+"strategies",
+"sectors",
+"strategyUrl",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "NEEDS_REVIEW",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-055",
+"managerName": "CIM Group",
+"fundName": "CIM Infrastructure Fund III"
+}
+],
+"changedFields": [],
+"repoDispositionRationale": "SEC Form D evidence supports an amount sold of $1,757,609,274 rather than the repository’s $1.8B figure, but the absence of a preserved filing date prevents a compliant classified amount update (sizeAsOf required), so correction is deferred.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "CIM Infrastructure Fund III size classification",
+"issue": "Exact Form D filing date for the $1,757,609,274 amount sold is not preserved in the opened evidence, preventing population of required sizeAsOf for classified amount fields.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1900624/000190062423000003/xslFormDX01/primary_doc.xml"
+],
+"recommendedResolution": "Retrieve the Form D filing metadata (filing date) from the SEC source and then populate sizeBasis=AMOUNT_SOLD and sizeAsOf accordingly."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 2,
+"searchQueriesRun": 0,
+"notes": ["Completed using previously opened evidence; no additional research performed."]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 1,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+CIM Group — North American direct infrastructure fund census
+Conclusion
+The census identifies one qualifying direct-equity infrastructure vehicle: CIM Infrastructure Fund III. SEC Form D evidence establishes that $1,757,609,274 was reported as amount sold (including contingent commitments), but the exact filing date required to classify this amount within the schema is not preserved in the opened evidence. As a result, the repository correction is deferred and the fund is classified as NEEDS_REVIEW.
+Included funds
+FundVehicleLifecycleNA QualificationSize BasisRepo DispositionEvidenceCIM Infrastructure Fund IIINamed FundClosed / ActiveExplicit NA mandateUnclassified (amount sold disclosed; date unresolved)NEEDS_REVIEWSEC Form D; CIM Infrastructure Platform
+Repository reconciliation
+
+
+FUND-055 (CIM Infrastructure Fund III): Matched.
+
+
+Repository reports "$1.8B" without classification.
+
+
+SEC Form D evidence supports $1,757,609,274 amount sold.
+
+
+Correction cannot be completed due to missing filing date required for sizeAsOf.
+
+
+Classified as NEEDS_REVIEW pending resolution.
+
+
+
+
+Exclusions and unresolved issues
+
+
+No exclusions identified.
+
+
+One unresolved issue:
+
+
+Missing Form D filing date prevents compliant classification of the evidenced amount sold.
+
+
+
+
+Completeness
+
+
+Official infrastructure platform materials reviewed.
+
+
+SEC Form D filings reviewed.
+
+
+Fund lifecycle and North American qualification verified.
+
+
+All repository records reconciled.
+
+
+Output strictly reflects previously opened evidence with no additional research. Pasted text
+</fund_census_report>

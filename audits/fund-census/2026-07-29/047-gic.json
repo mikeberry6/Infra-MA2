@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "GIC",
+  "canonicalManager": "GIC",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Government of Singapore Investment Corporation",
+    "GIC Private Limited"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Infrastructure",
+      "aliases": [
+        "GIC Infrastructure"
+      ],
+      "vehicleType": "PROGRAM_EXCEPTION",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "GIC’s official Infrastructure investment group executes direct equity investments in private infrastructure assets with cash-flow visibility and active ownership, including co-investments and platform investments.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Duke Energy’s 2025 annual report confirms that, as of December 31, 2025, an affiliate of GIC holds a 19.9% minority interest in Duke Energy Indiana, and original transaction materials attribute the investment to GIC’s Infrastructure investment leadership.",
+        "currentHoldingName": "Duke Energy Indiana",
+        "currentHoldingUrl": "https://www.sec.gov/Archives/edgar/data/1326160/000110465926032452/tm2528215d2_ars.pdf"
+      },
+      "snapshot": {
+        "legacyId": "FUND-082",
+        "managerName": "GIC",
+        "fundName": "Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Global direct infrastructure investment program targeting private assets with stable cash flows and inflation linkage across sectors including utilities, energy, transport, and digital infrastructure.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation"
+        ],
+        "regions": [
+          "North America",
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.gic.com.sg/what-we-do/investment-groups/infrastructure/"
+        ],
+        "strategyUrl": "https://www.gic.com.sg/what-we-do/investment-groups/infrastructure/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.gic.com.sg/uploads/2026/07/GIC_AR_2025-26_PRINT.pdf",
+          "title": "GIC Report on the Management of the Government’s Portfolio 2025/26",
+          "publisher": "GIC",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-07-24",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Official Infrastructure program description",
+          "evidenceSummary": "Describes GIC’s Infrastructure investment group as investing mainly in private infrastructure assets with cash-flow visibility, across developed and emerging markets, confirming the existence and active status of the program.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "fundStatus",
+            "structure",
+            "strategies",
+            "regions"
+          ]
+        },
+        {
+          "url": "https://www.gic.com.sg/what-we-do/investment-groups/infrastructure/",
+          "title": "Infrastructure – GIC Investment Group",
+          "publisher": "GIC",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Infrastructure strategy and sector scope",
+          "evidenceSummary": "Details GIC’s infrastructure strategy including direct investments in utilities, renewable energy, transport, and digital infrastructure platforms, supporting sector scope and direct-equity classification.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "sectors",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1326160/000110465926032452/tm2528215d2_ars.pdf",
+          "title": "Duke Energy Corporation 2025 Annual Report",
+          "publisher": "Duke Energy",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2026-02-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current North American holding attribution",
+          "evidenceSummary": "Confirms that as of December 31, 2025, an affiliate of GIC owns a 19.9% minority interest in Duke Energy Indiana, evidencing an active United States infrastructure equity holding and supporting North America as an evidenced strategy region for the included program.",
+          "supports": [
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "regions"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-082",
+          "managerName": "GIC",
+          "fundName": "GIC Infrastructure"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "sectors",
+        "regions"
+      ],
+      "repoDispositionRationale": "Repository uses non-official naming ('GIC Infrastructure'), includes unsupported sector 'Social Infra' while omitting evidenced sector exposure such as Midstream, and classifies only Global despite verified current North American deployment; updated to align with official program naming, sector evidence, and the evidenced North American holding.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Infrastructure Fund Investments (GIC)",
+      "reasonCode": "SECONDARIES_OR_FUND_OF_FUNDS",
+      "rationale": "Represents LP commitments to external infrastructure funds rather than direct-equity investments.",
+      "sourceUrls": [
+        "https://www.gic.com.sg/what-we-do/investment-groups/infrastructure/"
+      ]
+    },
+    {
+      "fundName": "Infrastructure Credit / Debt Investments (GIC)",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "Represents infrastructure debt and credit strategies, which are explicitly excluded from the direct-equity census.",
+      "sourceUrls": [
+        "https://www.gic.com.sg/what-we-do/investment-groups/infrastructure/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 3,
+    "searchQueriesRun": 4,
+    "notes": [
+      "Single sovereign infrastructure program; no discrete closed-end fund series identified."
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 0,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 2,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 0
+  }
+}

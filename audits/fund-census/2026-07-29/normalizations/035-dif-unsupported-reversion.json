@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "DIF",
+  "createdAt": "2026-07-30T18:10:25.825Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/035-dif-size-as-of-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/035-dif-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-059",
+      "field": "investmentStrategy",
+      "from": "Core-plus / value-add infrastructure fund focused on scalable mid-market infrastructure platforms including digital, transport and energy.",
+      "value": "Legacy-CIF / current Value-Add growth infrastructure fund focused on buy-and-build platforms, especially in digital infrastructure, alongside transport and other growth infrastructure niches.",
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-059",
+      "field": "sectors",
+      "from": [
+        "Digital",
+        "Transportation",
+        "Utilities"
+      ],
+      "value": [
+        "Digital",
+        "Midstream",
+        "Transportation",
+        "Social Infra"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-060",
+      "field": "investmentStrategy",
+      "from": "Core-plus infrastructure fund targeting essential contracted infrastructure assets across energy, utilities, transport and digital.",
+      "value": "Core-plus flagship targeting contracted, downside-protected essential infrastructure across CVC DIF's mid-market platform, with yield plus longer-term value creation.",
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-060",
+      "field": "sectors",
+      "from": [
+        "Power & ET",
+        "Utilities",
+        "Transportation",
+        "Digital"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Digital",
+        "Transportation",
+        "Social Infra"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 2,
+      "legacyId": "FUND-061",
+      "field": "investmentStrategy",
+      "from": "Core-plus infrastructure fund targeting diversified assets across Europe and North America.",
+      "value": "Successor core-plus vehicle targeting €6B of commitments for a diversified portfolio of roughly 20 positions, with public LP materials emphasizing renewable energy, utilities and transport across Europe and North America.",
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 2,
+      "legacyId": "FUND-061",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf"
+      ],
+      "value": [
+        "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf",
+        "https://nj.gov/njbonds/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf",
+        "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

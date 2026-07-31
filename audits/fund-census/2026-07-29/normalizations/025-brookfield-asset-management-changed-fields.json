@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Brookfield Asset Management",
+  "createdAt": "2026-07-30T13:35:54.135Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/025-brookfield-asset-management-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/025-brookfield-asset-management-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-044A",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "regions"
+      ],
+      "value": [
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "regions",
+        "sourceUrls"
+      ],
+      "rationale": "The existing changedFields list was a strict subset of the deterministic field diff between the researched snapshot and its single matched repository row."
+    },
+    {
+      "fundIndex": 2,
+      "legacyId": "FUND-045",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "regions"
+      ],
+      "value": [
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "regions",
+        "sourceUrls"
+      ],
+      "rationale": "The existing changedFields list was a strict subset of the deterministic field diff between the researched snapshot and its single matched repository row."
+    },
+    {
+      "fundIndex": 3,
+      "legacyId": "FUND-046",
+      "field": "changedFields",
+      "from": [
+        "fundName",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "regions"
+      ],
+      "value": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "regions",
+        "sourceUrls"
+      ],
+      "rationale": "The existing changedFields list was a strict subset of the deterministic field diff between the researched snapshot and its single matched repository row."
+    }
+  ]
+}

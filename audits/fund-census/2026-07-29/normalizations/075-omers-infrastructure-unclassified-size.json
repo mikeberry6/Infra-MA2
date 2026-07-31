@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNCLASSIFIED_SIZE_STRUCTURE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "OMERS Infrastructure",
+  "createdAt": "2026-07-31T00:18:49.056Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/075-omers-infrastructure-program-identity-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/075-omers-infrastructure-unclassified-size-normalized.txt",
+  "allowedFields": [
+    "snapshot.sizeUsdMm",
+    "snapshot.sizeNativeCurrency",
+    "snapshot.sizeNativeAmount",
+    "snapshot.sizeUsdFxRate",
+    "snapshot.sizeUsdFxDate"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "fundName": "OMERS Infrastructure",
+      "field": "sizeNativeCurrency",
+      "from": "CAD",
+      "value": null,
+      "rationale": "The descriptive size is evidenced, but no source maps an allowed amount basis; structured numeric fields are removed instead of inventing one."
+    },
+    {
+      "fundIndex": 0,
+      "fundName": "OMERS Infrastructure",
+      "field": "sizeNativeAmount",
+      "from": "32500000000",
+      "value": null,
+      "rationale": "The descriptive size is evidenced, but no source maps an allowed amount basis; structured numeric fields are removed instead of inventing one."
+    }
+  ]
+}

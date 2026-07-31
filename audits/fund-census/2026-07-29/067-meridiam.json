@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Meridiam",
+  "canonicalManager": "Meridiam",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Meridiam"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-118",
+      "repoFundName": "Meridiam MINA IV",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Fund identity and North American mandate are indicated in repository context, but no fund-specific primary evidence was retained in the already opened materials to support required fields (size basis, sizeAsOf date, and lifecycle) to contract standard.",
+      "evidenceUrls": [
+        "https://www.meridiam.com/news/meridiam-successfully-closes-mina-iv-its-flagship-north-america-infrastructure-fund-raising-more-than-1-8-billion/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Meridiam MINA IV",
+      "issue": "Repository indicates a current North American flagship fund, but required fund-specific primary evidence fields (amount classification, as-of date, and lifecycle confirmation) were not available in the already opened evidence set.",
+      "sourceUrls": [
+        "https://www.meridiam.com/news/meridiam-successfully-closes-mina-iv-its-flagship-north-america-infrastructure-fund-raising-more-than-1-8-billion/"
+      ],
+      "recommendedResolution": "Open and extract full official Meridiam release and/or fund page to confirm sizeBasis, exact close date (sizeAsOf), and lifecycle status."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 0,
+    "searchQueriesRun": 0,
+    "notes": [
+      "Result constrained to repository snapshot and no retained opened primary evidence."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 1,
+    "unresolvedConflicts": 1
+  }
+}

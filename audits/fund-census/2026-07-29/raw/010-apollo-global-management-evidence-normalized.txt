@@ -1,0 +1,919 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Apollo Global Management",
+  "canonicalManager": "Apollo Global Management",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Apollo Global Management, Inc.",
+    "Apollo Global Management, LLC",
+    "Apollo Asset Management, Inc.",
+    "Apollo",
+    "Apollo Infrastructure",
+    "Apollo Sustainability & Infrastructure"
+  ],
+  "overlappingSuppliedManagers": [
+    "Argo Infrastructure Partners"
+  ],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Apollo Infrastructure Opportunities Fund II",
+      "aliases": [
+        "AIOF II",
+        "Apollo Infrastructure Opportunities Fund II LP",
+        "Apollo Infrastructure Opportunities Fund II, L.P."
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Apollo's fund-specific closing release identifies AIOF II as a dedicated mid-market infrastructure fund investing in communications, power and renewables, and transportation businesses and assets. Apollo's March 31, 2026 investment record reports remaining invested cost and unrealized value, and US Wind remains owned by funds managed by Apollo after having been specifically attributed to AIOF II.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Apollo specifically attributed US Wind to AIOF II. US Wind's current ownership page identifies it as a Maryland offshore-wind developer owned by funds managed by Apollo and Renexia.",
+        "currentHoldingName": "US Wind",
+        "currentHoldingUrl": "https://uswindinc.com/about-us/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-010A",
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Opportunities Fund II",
+        "ticker": null,
+        "investmentStrategy": "Mid-market core-plus and value-add infrastructure equity across communications, power and renewables, and transportation, with a current fund-attributed U.S. offshore-wind investment in US Wind.",
+        "size": "$2.542B committed capital",
+        "sizeUsdMm": 2542,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2542000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2026-03-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Core-Plus",
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Digital",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://ir.apollo.com/news-events/press-releases/detail/38/apollo-closes-second-dedicated-infrastructure-fund-with",
+          "https://www.sec.gov/Archives/edgar/data/1858681/000185868126000021/agmearningsrelease1q2026.htm",
+          "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "https://uswindinc.com/about-us/"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://ir.apollo.com/news-events/press-releases/detail/38/apollo-closes-second-dedicated-infrastructure-fund-with",
+          "title": "Apollo Closes Second Dedicated Infrastructure Fund with More Than $2.5 Billion in Capital Commitments",
+          "publisher": "Apollo Global Management",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-01-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "AIOF II closing and portfolio attribution",
+          "evidenceSummary": "Identifies AIOF II, approximately $2.54 billion of commitments, its mid-market infrastructure strategy and sectors, and fund-attributed investments including US Wind, Broad Reach Power, IonicBlue, Great Bay Renewables and FirstDigital.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "strategies",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1858681/000185868126000021/agmearningsrelease1q2026.htm",
+          "title": "Apollo Global Management, Inc. Reports First Quarter 2026 Results",
+          "publisher": "Apollo Global Management and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "March 2026 Apollo investment record",
+          "evidenceSummary": "Reports AIOF II as a 2020 vintage fund with $2.542 billion of committed capital, $1.658 billion of remaining invested cost and $2.026 billion of unrealized value as of March 31, 2026.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "title": "Apollo 2024 Investor Day Presentation",
+          "publisher": "Apollo Global Management and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-10-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Apollo infrastructure strategy taxonomy",
+          "evidenceSummary": "Classifies the AIOF strategy as core-plus and value-add infrastructure.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "strategies",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://uswindinc.com/about-us/",
+          "title": "About US Wind",
+          "publisher": "US Wind",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current U.S. holding ownership",
+          "evidenceSummary": "Describes US Wind as a Maryland offshore-wind developer owned by funds managed by Apollo and Renexia, supporting current North American deployment when combined with Apollo's specific attribution of US Wind to AIOF II.",
+          "supports": [
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-010A",
+          "managerName": "Apollo Global Management",
+          "fundName": "Apollo Infrastructure Opportunities Fund II"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "vintage",
+        "strategies",
+        "sectors",
+        "regions",
+        "sourceUrls"
+      ],
+      "repoDispositionRationale": "The repository identity matches, but Apollo's March 2026 investment record provides exact commitment semantics, date and vintage; Apollo's strategy taxonomy supports core-plus as well as value-add; and fund-specific evidence supports a current North American holding while not independently substantiating the repository's Europe field.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Apollo Infrastructure Opportunities Fund III",
+      "aliases": [
+        "AIOF III",
+        "Apollo Infrastructure Opportunities Fund III, L.P."
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Apollo classifies AIOF as its core-plus and value-add infrastructure strategy. Apollo's March 31, 2026 investment record reports substantial remaining invested cost and unrealized value for AIOF III, and institutional LP materials identify the named fund's geographic focus as North America.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Santa Barbara County Employees' Retirement System materials identify Apollo Infrastructure Opportunities Fund III as an infrastructure fund with a North America geographic focus.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-014",
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Opportunities Fund III",
+        "ticker": null,
+        "investmentStrategy": "Mid-market core-plus and value-add infrastructure equity with a fund-specific North American geographic focus and active investments.",
+        "size": "$2.399B committed capital",
+        "sizeUsdMm": 2399,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2399000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2026-03-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Core-Plus",
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1858681/000185868126000021/agmearningsrelease1q2026.htm",
+          "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "https://www.sbcers.org/wp-content/uploads/SBCERS-2025-PRR-Strategic-Plan-.pdf",
+          "https://www.infrastructureinvestor.com/apollo-reaches-2-4bn-final-close-on-third-infra-fund-exclusive/"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1858681/000185868126000021/agmearningsrelease1q2026.htm",
+          "title": "Apollo Global Management, Inc. Reports First Quarter 2026 Results",
+          "publisher": "Apollo Global Management and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "March 2026 AIOF III investment record",
+          "evidenceSummary": "Reports AIOF III as a 2024 vintage fund with $2.399 billion of committed capital, $913 million of remaining invested cost and $1.092 billion of unrealized value as of March 31, 2026.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "title": "Apollo 2024 Investor Day Presentation",
+          "publisher": "Apollo Global Management and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-10-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "AIOF strategy classification",
+          "evidenceSummary": "Classifies AIOF as Apollo's core-plus and value-add infrastructure strategy.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "strategies",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.sbcers.org/wp-content/uploads/SBCERS-2025-PRR-Strategic-Plan-.pdf",
+          "title": "SBCERS 2025 Private Real Return Strategic Plan",
+          "publisher": "Santa Barbara County Employees' Retirement System",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2025-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund-specific North American mandate",
+          "evidenceSummary": "Lists Apollo Infrastructure Opportunities Fund III as an infrastructure investment with North America as its geographic focus and records a June 28, 2024 closing date for SBCERS' commitment.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.infrastructureinvestor.com/apollo-reaches-2-4bn-final-close-on-third-infra-fund-exclusive/",
+          "title": "Apollo Reaches $2.4bn Final Close on Third Infrastructure Fund",
+          "publisher": "Infrastructure Investor",
+          "sourceTier": "REPUTABLE_SECONDARY",
+          "scope": "FUND",
+          "publishedAt": "2025-10-02",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "AIOF III final-close corroboration",
+          "evidenceSummary": "Reports a $2.4 billion final close for AIOF III and deployment across North America and Europe. The exact commitment amount used in the snapshot comes from Apollo's primary March 2026 investment record.",
+          "supports": [
+            "FUND_IDENTITY",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-014",
+          "managerName": "Apollo Global Management",
+          "fundName": "Apollo Infrastructure Opportunities Fund III"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "vintage",
+        "strategies",
+        "sectors",
+        "regions",
+        "sourceUrls"
+      ],
+      "repoDispositionRationale": "The repository identity matches, but Apollo's primary investment record supports a 2024 vintage and $2.399 billion of committed capital as of March 31, 2026. Institutional evidence supports North America, while the repository's detailed sector list is not established by the opened fund-specific materials and is therefore cleared rather than inferred.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Apollo Infrastructure Company",
+      "aliases": [
+        "AIC",
+        "Apollo Infrastructure Company LLC",
+        "Apollo Infrastructure Company (AIC)"
+      ],
+      "vehicleType": "PROGRAM_EXCEPTION",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "AIC is an evergreen operating-company program that seeks to own, operate and provide capital to infrastructure assets. Its SEC filing describes majority-controlled infrastructure businesses, assets, holding companies and special-purpose vehicles, direct equity acquisitions and active governance, while also permitting financing investments.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "AIC's SEC filing states that its global footprint focuses primarily on North America, Western Europe and other OECD markets.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-011",
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Company",
+        "ticker": null,
+        "investmentStrategy": "Evergreen operating-company program pursuing control-oriented ownership, operation and capital provision to infrastructure assets, with primary geographic focus on North America, Western Europe and other OECD markets.",
+        "size": "$1.9B total net asset value; not classified as fund size",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Core",
+          "Core-Plus"
+        ],
+        "structure": "Open-End",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Transportation",
+          "Digital",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.apollo.com/wealth/strategies/products/apollo-infrastructure-company",
+          "https://www.sec.gov/Archives/edgar/data/1971381/000119312525068918/d888030d10k.htm",
+          "https://www.sec.gov/Archives/edgar/data/1971381/000119312526224382/0001193125-26-224382-index.htm",
+          "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.apollo.com/wealth/strategies/products/apollo-infrastructure-company",
+          "title": "Apollo Infrastructure Company",
+          "publisher": "Apollo Global Management",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current AIC product description",
+          "evidenceSummary": "Describes AIC as an operating company seeking to own, operate and provide capital to infrastructure assets globally, reports a November 1, 2023 inception date and displays $1.9 billion of total net asset value.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "vintage",
+            "structure",
+            "fundStatus",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1971381/000119312525068918/d888030d10k.htm",
+          "title": "Apollo Infrastructure Company LLC Annual Report",
+          "publisher": "Apollo Infrastructure Company LLC and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2025-04-04",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "AIC mandate and direct-ownership structure",
+          "evidenceSummary": "States that AIC was formed in April 2023, targets power and renewables, transportation, digital and social infrastructure, focuses primarily on North America, Western Europe and other OECD markets, and may own majority-controlled operating businesses and assets and make equity acquisitions with active governance.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "title": "Apollo 2024 Investor Day Presentation",
+          "publisher": "Apollo Global Management and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2024-10-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "AIC strategy classification",
+          "evidenceSummary": "Classifies AIC as Apollo's core and core-plus infrastructure strategy.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "strategies",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1971381/000119312526224382/0001193125-26-224382-index.htm",
+          "title": "Apollo Infrastructure Company LLC Quarterly Report Filing Index",
+          "publisher": "Apollo Infrastructure Company LLC and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-05-14",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current 2026 filing",
+          "evidenceSummary": "The March 31, 2026 quarterly-report filing establishes that AIC remained an active reporting vehicle in 2026.",
+          "supports": [
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundStatus",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-011",
+          "managerName": "Apollo Global Management",
+          "fundName": "Apollo Infrastructure Company (AIC)"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "vintage",
+        "strategies",
+        "sectors",
+        "regions",
+        "sourceUrls"
+      ],
+      "repoDispositionRationale": "The repository row matches AIC but uses a parenthetical name, treats displayed net asset value as a $1.7 billion fund-size amount, assigns a retail-product strategy, and records only a generic global region. Primary materials instead support the official name, 2023 inception, core/core-plus infrastructure classification, direct control-oriented ownership and a primary North American, Western European and OECD focus. AIC remains a program exception because it is an operating-company vehicle rather than a conventional commingled private fund.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "fundName": "Apollo Starmoon CEPF Co-Invest (Overseas), L.P.",
+      "aliases": [
+        "Apollo Core Infrastructure Fund, L.P.",
+        "Apollo Core Infrastructure Feeder Fund, L.P.",
+        "Apollo Starmoon CEPF Co-Invest"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Primary legal documents identify the current co-investment vehicle as formerly Apollo Core Infrastructure Fund, tie the investor chain to Apollo CIF entities, and document Class B equity ownership in Star Moon Holdings. Apollo's transaction release describes an $816 million convertible-equity portfolio financing covering U.S. wind, solar and battery-storage assets and states that it was invested outside AIOF II.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "The underlying portfolio comprises utility-scale wind, solar and battery-storage assets across nine U.S. states. XPLR's March 31, 2026 filing continues to report 50% third-party noncontrolling ownership in Star Moon Holdings and Class B entities owning and operating the renewable portfolio.",
+        "currentHoldingName": "Star Moon Holdings / XPLR renewable portfolio",
+        "currentHoldingUrl": "https://www.sec.gov/Archives/edgar/data/1603145/000160314526000018/xplr-20260331.htm"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Starmoon CEPF Co-Invest (Overseas), L.P.",
+        "ticker": null,
+        "investmentStrategy": "Single-portfolio infrastructure co-investment holding Class B equity interests in a U.S. utility-scale wind, solar and battery-storage portfolio.",
+        "size": "No fund size disclosed; $816M was a transaction first-close amount",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Co-Investments"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1278752/000119312525054632/d923905d40app.htm",
+          "https://www.sec.gov/Archives/edgar/data/1603145/000160314521000075/exhibit101tonepdated12x22x.htm",
+          "https://ir.apollo.com/news-events/press-releases/detail/40/apollo-funds-announce-first-close-of-816-million",
+          "https://ir.apollo.com/news-events/press-releases/detail/38/apollo-closes-second-dedicated-infrastructure-fund-with",
+          "https://www.sec.gov/Archives/edgar/data/1603145/000160314526000018/xplr-20260331.htm"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1278752/000119312525054632/d923905d40app.htm",
+          "title": "Apollo Registered Fund Filing",
+          "publisher": "Apollo and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-03-27",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current legal name and former fund name",
+          "evidenceSummary": "Identifies Apollo Starmoon CEPF Co-Invest (Overseas), L.P. as formerly Apollo Core Infrastructure Fund, L.P., and identifies Apollo Core Infrastructure Advisors as general partner.",
+          "supports": [
+            "FUND_IDENTITY"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1603145/000160314521000075/exhibit101tonepdated12x22x.htm",
+          "title": "Amended and Restated Limited Liability Company Agreement of Star Moon Holdings LLC",
+          "publisher": "XPLR Infrastructure and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-12-29",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Apollo CIF legal chain and Class B equity",
+          "evidenceSummary": "Names Apollo CIF CEPF Intermediate LLC as the initial investor acquiring Class B membership interests and defines the investor parent as Apollo Core Infrastructure Fund, L.P. or Apollo Core Infrastructure Feeder Fund, L.P.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://ir.apollo.com/news-events/press-releases/detail/40/apollo-funds-announce-first-close-of-816-million",
+          "title": "Apollo Funds Announce First Close of $816 Million Renewable Energy Portfolio Financing",
+          "publisher": "Apollo Global Management",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-12-29",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "U.S. renewable-equity transaction",
+          "evidenceSummary": "Describes the first close of an $816 million convertible-equity portfolio financing covering utility-scale wind, solar and battery-storage assets across nine U.S. states. The transaction amount is not treated as disclosed fund size.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "size",
+            "vintage",
+            "strategies",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://ir.apollo.com/news-events/press-releases/detail/38/apollo-closes-second-dedicated-infrastructure-fund-with",
+          "title": "Apollo Closes Second Dedicated Infrastructure Fund with More Than $2.5 Billion in Capital Commitments",
+          "publisher": "Apollo Global Management",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-01-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Commercial separation from AIOF II",
+          "evidenceSummary": "States that the NextEra Energy Partners convertible-equity portfolio investment was made outside AIOF II, supporting treatment of the Apollo Core Infrastructure or Starmoon co-investment chain as commercially distinct from AIOF II.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1603145/000160314526000018/xplr-20260331.htm",
+          "title": "XPLR Infrastructure, LP Quarterly Report for the Period Ended March 31, 2026",
+          "publisher": "XPLR Infrastructure, LP and U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-04-29",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Star Moon portfolio ownership",
+          "evidenceSummary": "Reports continued 50% third-party noncontrolling ownership in Star Moon Holdings and Class B entities owning and operating 4,427 MW of wind and solar generation plus 120 MW of battery storage as of March 31, 2026.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No repository row matches this commercially distinct, fund-named co-investment vehicle. Primary legal records connect its current and former names to the Class B equity ownership chain, and Apollo expressly distinguished the transaction from AIOF II. Parallel and feeder identities are consolidated into this single row.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Apollo Infrastructure Opportunities Fund I",
+      "reasonCode": "FULLY_REALIZED_OR_DISSOLVED",
+      "rationale": "Apollo's March 31, 2026 investment record reports zero remaining invested cost and zero unrealized value for AIOF I. It therefore does not satisfy the current-fund or current-holding test.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1858681/000185868126000021/agmearningsrelease1q2026.htm"
+      ]
+    },
+    {
+      "fundName": "Apollo Clean Transition Capital",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "Apollo's investor-day taxonomy classifies ACT Capital as credit and structured solutions rather than direct-equity infrastructure. Apollo's launch materials describe flexible financing and capital solutions, not a qualifying direct-equity vehicle.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+        "https://ir.apollo.com/news-events/press-releases/detail/443/apollo-launches-clean-transition-capital-strategy-to"
+      ]
+    },
+    {
+      "fundName": "Apollo Clean Transition Equity Partners I",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "Apollo identifies ACT Equity as private equity, but the opened evidence does not establish that the named first fund is a direct-equity infrastructure vehicle with either an explicit North American mandate or a reliably fund-attributed current North American holding. The repository's $4.0 billion amount appears to originate from ACT Capital strategy materials rather than ACT Equity I.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+        "https://ir.apollo.com/news-events/press-releases/detail/443/apollo-launches-clean-transition-capital-strategy-to"
+      ]
+    },
+    {
+      "fundName": "Apollo Clean Transition Equity Partners II",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The SEC filing establishes a fundraising entity, but not the direct-infrastructure strategy, current lifecycle amount or North American qualification required by the census. The identifiable Purmo investment chain is European and does not establish North American deployment.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2002112/0000950142-24-002977-index.htm",
+        "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+        "https://www.purmogroup.com/mfn_news/correction-purmo-group-plc-notification-pursuant-to-chapter-9-section-10-of-the-securities-markets-act/"
+      ]
+    },
+    {
+      "fundName": "Apollo Digital Origin Partners",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The Form D establishes a legal fundraising entity but the opened evidence does not establish its commercial strategy, a direct-equity infrastructure mandate, current lifecycle or a fund-attributed current North American holding. Apollo's public Brightspeed materials attribute that investment to Apollo private equity funds rather than to Digital Origin Partners.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1938529/000095014222003119/xslFormDX01/primary_doc.xml"
+      ]
+    },
+    {
+      "fundName": "AIOF II and AIOF III feeder, parallel, alternative-investment and overseas entities",
+      "reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+      "rationale": "Regulatory schedules list multiple legal entities associated with the same AIOF II and AIOF III commercial fundraises. No opened evidence establishes a distinct strategy or independently managed capital base, so they are consolidated into the flagship fund rows.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1278752/000119312525054632/d923905d40app.htm"
+      ]
+    },
+    {
+      "fundName": "Apollo Clean Transition Equity ELTIF",
+      "reasonCode": "RETAIL_ACCESS_ONLY",
+      "rationale": "The ELTIF is a wealth-access wrapper associated with Apollo's clean-transition equity strategy, not evidence of a separately managed underlying direct-investment vehicle with its own North American mandate or current North American holding.",
+      "sourceUrls": [
+        "https://www.apollo.com/wealth/emea/strategies/products/apollo-clean-transition-equity-eltif"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-012",
+      "repoFundName": "Apollo Clean Transition Equity Partners I",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "The row was not matched because the opened fund-specific evidence does not satisfy the direct-infrastructure and North American qualification tests. Apollo classifies ACT Equity as private equity, while the repository's $4.0 billion figure appears associated with the separate ACT Capital credit and structured-solutions strategy.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+        "https://ir.apollo.com/news-events/press-releases/detail/443/apollo-launches-clean-transition-capital-strategy-to"
+      ]
+    },
+    {
+      "legacyId": "FUND-013",
+      "repoFundName": "Apollo Clean Transition Equity Partners II",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "The SEC filing supports the entity's existence and fundraising activity, but no opened source establishes a final fund size, a direct-equity infrastructure mandate or an explicit North American mandate or fund-attributed current North American holding. The identifiable Purmo ownership chain is European.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2002112/0000950142-24-002977-index.htm",
+        "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+        "https://www.purmogroup.com/mfn_news/correction-purmo-group-plc-notification-pursuant-to-chapter-9-section-10-of-the-securities-markets-act/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Apollo Clean Transition Equity strategy boundary",
+      "issue": "Apollo classifies ACT Equity as private equity, but the opened fund-specific sources do not establish whether ACT Equity I or II should be treated as direct infrastructure rather than broader transition-oriented buyout or growth equity.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+        "https://www.sec.gov/Archives/edgar/data/2002112/0000950142-24-002977-index.htm"
+      ],
+      "recommendedResolution": "Obtain the ACT Equity I and II private-placement memoranda, audited fund financial statements or an Apollo fund-level portfolio schedule that defines eligible investments and attributes qualifying infrastructure holdings."
+    },
+    {
+      "subject": "Apollo Clean Transition Equity Partners I repository size",
+      "issue": "The repository records $4.0 billion, but the opened Apollo material associates the $4 billion clean-transition launch with ACT Capital, which Apollo separately classifies as credit and structured solutions.",
+      "sourceUrls": [
+        "https://ir.apollo.com/news-events/press-releases/detail/443/apollo-launches-clean-transition-capital-strategy-to",
+        "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm"
+      ],
+      "recommendedResolution": "Locate a primary ACT Equity I closing notice, audited capital-account disclosure or Form ADV private-fund schedule before assigning a size or size basis."
+    },
+    {
+      "subject": "Apollo Clean Transition Equity Partners II lifecycle and North American qualification",
+      "issue": "The Form D establishes an offering but does not prove a final close, current committed amount, infrastructure classification or North American mandate. Available Purmo evidence concerns a European investment.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2002112/0000950142-24-002977-index.htm",
+        "https://www.purmogroup.com/mfn_news/correction-purmo-group-plc-notification-pursuant-to-chapter-9-section-10-of-the-securities-markets-act/"
+      ],
+      "recommendedResolution": "Review the current Form ADV, fund financial statements, LP materials or an Apollo fund-specific fundraising release and identify a current North American holding attributable to ACT Equity II."
+    },
+    {
+      "subject": "Apollo Starmoon co-investment commercial and legal identity",
+      "issue": "Primary documents support the rename from Apollo Core Infrastructure Fund to Apollo Starmoon CEPF Co-Invest and connect Apollo CIF entities to the Class B interests, but the complete current limited-partner structure and treatment of the feeder are not publicly disclosed.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1278752/000119312525054632/d923905d40app.htm",
+        "https://www.sec.gov/Archives/edgar/data/1603145/000160314521000075/exhibit101tonepdated12x22x.htm",
+        "https://www.sec.gov/Archives/edgar/data/1603145/000160314526000018/xplr-20260331.htm"
+      ],
+      "recommendedResolution": "Confirm the current fund name, commercial capital base and feeder relationship from the latest partnership financial statements or Apollo Form ADV schedule before elevating confidence above medium."
+    },
+    {
+      "subject": "Argo Infrastructure Partners acquisition and manager overlap",
+      "issue": "Apollo announced a signed acquisition of Argo in January 2025, but the opened official release described closing as prospective and no official closing announcement or fund-by-fund successor attribution was located.",
+      "sourceUrls": [
+        "https://www.apollo.com/insights-news/pressreleases/2025/01/apollo-to-acquire-argo-infrastructure-partners-3008446"
+      ],
+      "recommendedResolution": "Preserve Argo Infrastructure Partners as a separate supplied manager until an official closing notice and fund-specific management or successor documentation support reattribution."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 33,
+    "searchQueriesRun": 29,
+    "notes": [
+      "Apollo's March 31, 2026 official investment record was used to test the current lifecycle of each AIOF vintage and to distinguish commitments from AUM.",
+      "US Wind and XPLR filings were reviewed for current North American holding evidence attributable through fund-specific Apollo sources and legal documents.",
+      "The SBCERS fund table was opened and visually reviewed to confirm AIOF III's North American geographic focus.",
+      "AIOF parallel, feeder, overseas and alternative-investment entities were consolidated, and AIC Series I and Series II were not treated as separate portfolios.",
+      "ACT Equity I and II were not included because the opened materials did not satisfy both the direct-infrastructure and North American fund-specific evidence tests.",
+      "The signed Argo acquisition was recorded as an overlap rather than used to merge Argo funds into Apollo."
+    ]
+  },
+  "summary": {
+    "includedFunds": 4,
+    "explicitNaMandate": 2,
+    "verifiedCurrentNaHolding": 2,
+    "proposedNew": 1,
+    "proposedCorrections": 3,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 7,
+    "repoOnlyRecords": 2,
+    "unresolvedConflicts": 5
+  }
+}
+</fund_census_json>
+<fund_census_report>
+Apollo Global Management — North American direct infrastructure fund census
+Conclusion
+Four current Apollo vehicles satisfy the fund-specific inclusion test: AIOF II, AIOF III, Apollo Infrastructure Company and the Apollo Starmoon CEPF co-investment vehicle formerly named Apollo Core Infrastructure Fund. Three match repository rows but require corrections; Starmoon is proposed as a new row. The two repository ACT Equity rows remain review items because the available evidence does not establish both direct-infrastructure scope and North American qualification. The supplied repository identities and fields were reconciled under the attached contract. Pasted text
+Apollo's March 31, 2026 investment record shows active unrealized value in AIOF II and III, while AIOF I has no remaining invested cost or unrealized value. Apollo separately classifies AIOF as core-plus/value-add infrastructure, AIC as core/core-plus infrastructure, ACT Equity as private equity and ACT Capital as credit and structured solutions. (sec.gov)
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceApollo Infrastructure Opportunities Fund IINamed fundClosed activeCurrent US Wind holding$2.542B commitments at March 31, 2026Proposed correctionApollo specifically attributed US Wind and other infrastructure investments to AIOF II; US Wind currently identifies Apollo-managed funds as an owner. (ir.apollo.com)Apollo Infrastructure Opportunities Fund IIINamed fundClosed activeExplicit North American focus$2.399B commitments at March 31, 2026Proposed correctionSBCERS identifies North America as the fund's geographic focus; Apollo reports active invested cost and unrealized value. (sbcers.org)Apollo Infrastructure CompanyProgram exceptionEvergreen activePrimary focus includes North America$1.9B net asset value, not treated as fund sizeProposed correctionAIC's materials describe direct and control-oriented infrastructure ownership, an evergreen operating-company structure and primary focus on North America, Western Europe and other OECD markets. (apollo.com)Apollo Starmoon CEPF Co-Invest (Overseas), L.P.Named co-investment fundClosed activeCurrent U.S. renewable portfolioNo fund size disclosedProposed newPrimary records document its former Apollo Core Infrastructure Fund name, Apollo CIF investor chain, Class B equity interests and a current U.S. wind, solar and storage portfolio. (sec.gov)
+Repository reconciliation
+AIOF II is corrected to a 2020 vintage and $2.542 billion of commitments; AIOF III to a 2024 vintage and $2.399 billion of commitments. Both receive Apollo's core-plus/value-add classification. AIC is corrected to its official name, 2023 inception and core/core-plus operating-company program classification. Its displayed net asset value is not presented as fund commitments or AUM.
+ACT Equity I and II are each reconciled once as repository-only NEEDS_REVIEW records. The Form D for ACT Equity II establishes an offering entity, but does not establish a final close, infrastructure mandate or North American qualification. Purmo evidence concerns a European investment. (sec.gov)
+Exclusions and unresolved issues
+AIOF I is excluded as fully realized. ACT Capital is excluded as credit or structured solutions. ACT Equity I and II, Digital Origin Partners and the ACT Equity ELTIF fail the fund-specific inclusion standard; parallel AIOF legal entities are consolidated.
+Starmoon remains medium confidence because the public legal chain supports the rename and equity ownership but does not disclose the complete current LP structure. Apollo's signed acquisition of Argo is preserved as an overlap rather than a merger of manager results because the official announcement described closing as prospective and no fund-level successor evidence was located. (apollo.com)
+Completeness
+Official Apollo fund materials, SEC filings, fundraising and close sources, current holding records, manager aliases, legal renames, feeder and parallel entities, AIC share series and the Argo overlap were reviewed. Thirty-three sources were opened across 29 searches. Critical inclusion findings rely on primary Apollo, SEC or institutional evidence; the secondary AIOF III final-close report is corroborative rather than the source of the exact commitment amount.
+</fund_census_report>

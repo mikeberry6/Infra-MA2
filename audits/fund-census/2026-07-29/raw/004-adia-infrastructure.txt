@@ -1,0 +1,242 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "ADIA Infrastructure",
+"canonicalManager": "Abu Dhabi Investment Authority (ADIA)",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Abu Dhabi Investment Authority",
+"Abu Dhabi Investment Authority (ADIA)",
+"ADIA",
+"ADIA Infrastructure",
+"Infrastructure Department",
+"Infrastructure Division",
+"Real Estate & Infrastructure Department"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Infrastructure Department",
+"aliases": [
+"ADIA Direct Infrastructure",
+"ADIA Infrastructure",
+"Infrastructure Division",
+"Real Estate & Infrastructure Department"
+],
+"vehicleType": "PROGRAM_EXCEPTION",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "ADIA's current infrastructure materials state that the Infrastructure Department takes minority stakes in infrastructure assets, either independently or alongside partners in full acquisitions; its Sempra Infrastructure case study documents a completed 10% non-controlling equity investment.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "ADIA's current Infrastructure portfolio identifies Sempra Infrastructure as a North American holding and attributes the completed 10% non-controlling stake to the Infrastructure Department; Sempra confirmed on 2026-07-09 that ADIA's existing 10% stake would remain while a separate majority-sale transaction was still pending.",
+"currentHoldingName": "Sempra Infrastructure Partners",
+"currentHoldingUrl": "https://www.adia.ae/en/investments/infrastructure/portfolio/case-studies/sempra-infrastructure"
+},
+"snapshot": {
+"legacyId": "FUND-003",
+"managerName": "Abu Dhabi Investment Authority (ADIA)",
+"fundName": "Infrastructure Department",
+"ticker": null,
+"investmentStrategy": "Evergreen direct infrastructure program making minority investments across transport, utilities, energy, and digital infrastructure, with a substantial renewables theme.",
+"size": "—",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Core"
+],
+"structure": "Permanent Capital",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Transportation"
+],
+"regions": [
+"Global"
+],
+"sourceUrls": [
+"https://www.adia.ae/en/investments/infrastructure"
+],
+"strategyUrl": "https://www.adia.ae/en/investments/infrastructure"
+},
+"evidence": [
+{
+"url": "https://www.adia.ae/en/investments/infrastructure",
+"title": "Infrastructure",
+"publisher": "Abu Dhabi Investment Authority",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM_EXCEPTION",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current Infrastructure Department mandate and portfolio",
+"evidenceSummary": "The current ADIA page identifies the Infrastructure Department, states that it takes minority stakes in infrastructure assets independently or alongside partners, describes its transport, utilities, energy and digital focus, and presents Sempra Infrastructure as a North American portfolio holding.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"sectors",
+"regions",
+"sourceUrls",
+"strategyUrl"
+]
+},
+{
+"url": "https://www.adia.ae/en/pr/2024/pdf/adia-annual-review-2024_final.pdf",
+"title": "2024 ADIA Review",
+"publisher": "Abu Dhabi Investment Authority",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM_EXCEPTION",
+"publishedAt": "2025-09-17",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Active Infrastructure Department deployment",
+"evidenceSummary": "ADIA's latest annual review describes the Infrastructure Department as actively deploying capital from a strong capital position, continuing to hold core strategic positions, and having finalised a 40% equity acquisition in digital and renewable infrastructure.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"strategies",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.adia.ae/en/investments/infrastructure/portfolio/case-studies/sempra-infrastructure",
+"title": "Sempra Infrastructure",
+"publisher": "Abu Dhabi Investment Authority",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM_EXCEPTION",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Program-attributed North American equity holding",
+"evidenceSummary": "ADIA states that a wholly owned subsidiary completed the acquisition of a 10% non-controlling stake in Sempra Infrastructure Partners in June 2022 and explicitly ties the investment to the Infrastructure Department's energy-transition focus.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"sectors",
+"regions",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.sempra.com/newsroom/press-releases/sempra-advances-strategic-priorities-key-leadership-appointments",
+"title": "Sempra Advances Strategic Priorities with Key Leadership Appointments",
+"publisher": "Sempra",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM_EXCEPTION",
+"publishedAt": "2026-07-09",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current ownership confirmation",
+"evidenceSummary": "Sempra described Sempra Infrastructure as a North American infrastructure platform, said a separate KKR transaction remained pending for the third quarter of 2026, and confirmed that an ADIA affiliate's existing 10% stake would remain in place.",
+"supports": [
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-003",
+"managerName": "Abu Dhabi Investment Authority (ADIA)",
+"fundName": "ADIA Direct Infrastructure"
+}
+],
+"changedFields": [
+"fundName"
+],
+"repoDispositionRationale": "The repository row matches the same sovereign infrastructure program, but current primary materials identify the official program as the Infrastructure Department rather than 'ADIA Direct Infrastructure'. The legacy ID is preserved and no other canonical repository field is changed.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 14,
+"searchQueriesRun": 31,
+"notes": [
+"No separately named external fundraise or closed-end vehicle was disclosed; the only qualifying row is ADIA's sovereign Infrastructure Department program.",
+"North American qualification rests on the program-attributed Sempra Infrastructure holding, with current ownership cross-checked against Sempra's 2026 disclosure.",
+"Renewable-energy, listed-infrastructure, private-credit, secondary and fund exposures were reviewed as segments or access modes of the same department, not as separately capitalised commercial vehicles.",
+"The repository's sole row is reconciled to FUND-003; the evidence supports a fundName correction only.",
+"Source-opening counts treat repeated opens of the same document as one source."
+]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 0
+}
+}
+</fund_census_json>
+<fund_census_report>
+ADIA Infrastructure — North American direct infrastructure fund census
+Conclusion
+One qualifying current vehicle or program was identified: ADIA's Infrastructure Department. It is a sovereign direct-investment PROGRAM_EXCEPTION, rather than a separately capitalised named fund, and qualifies through VERIFIED_CURRENT_NA_HOLDING. ADIA documents a completed 10% non-controlling investment in Sempra Infrastructure Partners and presents Sempra Infrastructure as a North American portfolio holding; Sempra confirmed on July 9, 2026 that the ADIA affiliate's existing 10% stake would remain while the separate KKR majority transaction was still pending. ADIA+2ADIA+2
+The program is classified EVERGREEN_ACTIVE. ADIA's latest review describes an active Infrastructure Department with a strong capital position, continuing core strategic holdings and ongoing equity deployment. Overall confidence is MEDIUM because the included row is a sovereign program exception rather than a disclosed commercial fund. ADIA
+Included funds
+Fund or programVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceInfrastructure DepartmentPROGRAM_EXCEPTIONEVERGREEN_ACTIVEVERIFIED_CURRENT_NA_HOLDING — Sempra Infrastructure PartnersNot disclosedPROPOSED_CORRECTION — fundName onlyADIA infrastructure mandate; ADIA Sempra case study; Sempra current ownership confirmation; 2024 ADIA Review
+ADIA's current materials state that the Department takes minority infrastructure stakes independently or alongside partners and focuses on transportation, utilities, energy and digital infrastructure. The Sempra case study supplies the required program-level attribution, while Sempra's July 2026 disclosure establishes that the North American holding remained current on the census date. ADIA+2ADIA+2
+Repository reconciliation
+The sole supplied repository record, FUND-003 / ADIA Direct Infrastructure, is matched to the included program, so there are no repository-only records. Pasted text
+A PROPOSED_CORRECTION is recorded for fundName only: ADIA Direct Infrastructure → Infrastructure Department. Current primary materials use “Infrastructure Department”; historical ADIA materials show earlier nomenclature including “Real Estate & Infrastructure Department” and “Infrastructure Division.” The legacy ID and every other repository field are preserved. ADIA+2ADIA+2
+There are no proposed-new funds, possible duplicates or needs-review dispositions.
+Exclusions and unresolved issues
+No separate fund candidate qualified for an additional row. ADIA's official reviews describe direct investments, existing platforms, externally managed funds and listed assets as different access modes within the same Infrastructure Department; they also describe selective private-credit and secondary activity. The fund, listed, credit and secondary exposures are not separate North American direct-equity commercial vehicles and were not double-counted. Renewable Energy is likewise a segment of the Department's portfolio, not a separately capitalised vehicle. ADIA+3ADIA+3ADIA+3
+The 2024 review described AlphaGen only as an agreed investment, so that transaction was not relied upon as a current holding. Sempra Infrastructure Partners provided the independently verified current North American qualification instead. ADIA+1
+There are no overlapping supplied-manager identities and no unresolved conflicts.
+Completeness
+The review covered ADIA's current Infrastructure page, annual-review materials from the historical Real Estate & Infrastructure Department and Infrastructure Division periods through the current Infrastructure Department, current and historical direct-investment descriptions, renewable-energy materials, the Sempra case study and Sempra's July 2026 ownership disclosure. Sempra+7ADIA+7ADIA+7
+No separately named fundraise, close, feeder, parallel vehicle or sidecar was found in the opened materials. Fourteen distinct sources were opened and 31 search queries were run; no material cited source was inaccessible.
+</fund_census_report>

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Generate Capital",
+  "createdAt": "2026-07-30T20:03:23.932Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/046-generate-capital-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/046-generate-capital-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-081",
+      "field": "size",
+      "from": "approximately $10B platform capital",
+      "value": "$10.0B",
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-081",
+      "field": "sizeNativeCurrency",
+      "from": "USD",
+      "value": null,
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-081",
+      "field": "sizeNativeAmount",
+      "from": "10000000000",
+      "value": null,
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-081",
+      "field": "sizeBasis",
+      "from": "AUM",
+      "value": null,
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-081",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeBasis",
+        "sizeNativeCurrency",
+        "sizeNativeAmount"
+      ],
+      "value": [],
+      "rationale": "Changed fields whose unsupported snapshot differences were reverted are removed from changedFields."
+    }
+  ]
+}

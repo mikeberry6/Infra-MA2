@@ -1,0 +1,195 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "iCON Infrastructure",
+"canonicalManager": "iCON Infrastructure",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["iCON Infrastructure LLP"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "iCON Infrastructure Partners VII",
+"aliases": ["iCON Infrastructure Fund VII"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Official manager materials describe long-term equity investments in private mid-market infrastructure businesses.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official manager materials explicitly state Europe and North America as core geographic mandate.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-095",
+"managerName": "iCON Infrastructure",
+"fundName": "iCON Infrastructure Partners VII",
+"ticker": null,
+"investmentStrategy": "Mid-market direct equity infrastructure strategy investing across transport, utilities, telecoms, energy & environment and social infrastructure in Europe and North America.",
+"size": "$3.7B commitments",
+"sizeUsdMm": 3700,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "3700000000",
+"sizeBasis": "COMMITMENTS",
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2025",
+"strategies": ["Core-Plus"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
+"regions": ["Europe", "North America"],
+"sourceUrls": ["https://www.iconinfrastructure.com/"],
+"strategyUrl": "https://www.iconinfrastructure.com/"
+},
+"evidence": [
+{
+"url": "https://www.iconinfrastructure.com/",
+"title": "iCON Infrastructure official website",
+"publisher": "iCON Infrastructure",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund VII commitments and mandate",
+"evidenceSummary": "Manager states its latest fund has $3.7B of commitments and invests in private mid-market infrastructure businesses across Europe and North America.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"regions",
+"size",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeUsdMm",
+"structure",
+"strategies",
+"fundStatus",
+"vintage"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-095",
+"managerName": "iCON Infrastructure",
+"fundName": "iCON Infrastructure Fund VII"
+}
+],
+"changedFields": ["fundName", "sizeBasis", "sizeNativeAmount", "sizeNativeCurrency", "fundStatus", "vintage"],
+"repoDispositionRationale": "Repository uses outdated naming and lifecycle; official materials confirm closed fund with commitments and 2025 vintage.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Earlier iCON fund vintages (III–VI)",
+"issue": "Multiple prior funds appear to have current North American holdings but lack fully up-to-date fund-attributed lifecycle and holding evidence meeting strict inclusion criteria as of the as-of date.",
+"sourceUrls": ["https://www.iconinfrastructure.com/"],
+"recommendedResolution": "Obtain current portfolio attribution or recent company disclosures explicitly tying holdings to specific fund vehicles."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 2,
+"searchQueriesRun": 6,
+"notes": ["Strict evidence standard limits inclusion to Fund VII with explicit mandate evidence."]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+iCON Infrastructure — North American direct infrastructure fund census
+Conclusion
+One fund—iCON Infrastructure Partners VII—meets the strict inclusion criteria with high-confidence primary evidence of a North American mandate and current lifecycle. Earlier iCON fund vintages likely qualify based on known portfolios, but they cannot be included under the methodology without current fund-attributed holding or lifecycle evidence.
+Included funds
+FundVehicleLifecycleNA QualificationSizeRepo DispositionEvidenceiCON Infrastructure Partners VIINamed FundClosed ActiveExplicit NA mandate$3.7B commitmentsProposed Correctionhttps://www.iconinfrastructure.com/
+The manager confirms its latest fund has $3.7B of commitments and targets private mid-market infrastructure investments across Europe and North America .
+Repository reconciliation
+
+
+FUND-095 updated:
+
+
+Corrected name to “iCON Infrastructure Partners VII”
+
+
+Updated lifecycle to Financial Close
+
+
+Updated size basis to commitments
+
+
+Updated vintage to 2025
+
+
+
+
+No additional funds could be conclusively matched or added under strict evidence requirements.
+
+
+Repository snapshot reference: Pasted text
+Exclusions and unresolved issues
+
+
+Earlier funds (III–VI) were not included due to insufficient current, fund-attributed evidence tying holdings and lifecycle to specific vehicles as of the as-of date.
+
+
+No debt, secondaries, or non-direct-equity vehicles identified.
+
+
+Completeness
+
+
+Official manager materials reviewed: yes
+
+
+Fundraising and close data: verified
+
+
+Holding attribution: incomplete for earlier vintages
+
+
+Manager aliases: reviewed (iCON Infrastructure LLP)
+
+
+Parallel vehicles: no distinct vehicles identified
+
+
+Sources opened: official website and portfolio materials
+
+
+The result is intentionally conservative to maintain full compliance with the evidence standard.
+</fund_census_report>

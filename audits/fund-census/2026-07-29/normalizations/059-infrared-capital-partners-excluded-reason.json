@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_EXCLUDED_REASON_CODE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "InfraRed Capital Partners",
+  "createdAt": "2026-07-30T21:56:37.796Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/059-infrared-capital-partners-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/059-infrared-capital-partners-excluded-reason-normalized.txt",
+  "allowedFields": [
+    "excludedCandidates[].reasonCode"
+  ],
+  "changes": [
+    {
+      "excludedCandidateIndex": 0,
+      "fundName": "InfraRed Infrastructure Fund VII",
+      "field": "reasonCode",
+      "from": "NEEDS_REVIEW",
+      "value": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The exclusion narrative and opened source URLs explicitly describe missing fund-specific evidence for current North American qualification."
+    }
+  ]
+}

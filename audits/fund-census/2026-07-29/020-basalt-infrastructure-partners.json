@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Basalt Infrastructure Partners",
+  "canonicalManager": "Basalt Infrastructure Partners",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Basalt Infrastructure Partners",
+    "Balfour Beatty Infrastructure Partners",
+    "BBIP"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Basalt BIP IV",
+      "aliases": [
+        "Basalt Infrastructure Partners IV",
+        "BIP IV"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "The opened Basalt fund transparency disclosure identifies BIP IV as a closed-end vehicle making direct equity investments in infrastructure businesses and assets across power, utilities, digital and telecommunications, transportation, midstream and related infrastructure sectors.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Fund-specific materials describe a transatlantic investment mandate that expressly includes North America alongside Western Europe.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-028",
+        "managerName": "Basalt Infrastructure Partners",
+        "fundName": "Basalt BIP IV",
+        "ticker": null,
+        "investmentStrategy": "Transatlantic mid-market direct infrastructure equity vehicle investing across power, utilities, digital and telecommunications, transportation, midstream and related infrastructure in North America and Western Europe.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation",
+          "Social Infra"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.basaltinfra.com/wp-content/uploads/2026/01/Public-Full-Transparency-Report-Basalt-Infrastructure-Partners-2.pdf"
+        ],
+        "strategyUrl": "https://www.basaltinfra.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.basaltinfra.com/wp-content/uploads/2026/01/Public-Full-Transparency-Report-Basalt-Infrastructure-Partners-2.pdf",
+          "title": "Public Full Transparency Report — Basalt Infrastructure Partners",
+          "publisher": "Basalt Infrastructure Partners",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "BIP IV fund identity, strategy, geography and active lifecycle",
+          "evidenceSummary": "The opened official disclosure identifies Basalt Infrastructure Partners IV, supports its closed-end direct-infrastructure-equity strategy, expressly includes North America in its transatlantic geographic scope and supports its current active lifecycle. The source set does not establish the repository's $4.0 billion figure with a permitted amount classification and associated date.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "NEEDS_REVIEW",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-028",
+          "managerName": "Basalt Infrastructure Partners",
+          "fundName": "Basalt BIP IV"
+        }
+      ],
+      "changedFields": [],
+      "repoDispositionRationale": "FUND-028 is the single matching repository record, and its vehicle identity, direct-equity infrastructure scope, North American mandate and current lifecycle are supported. The opened evidence does not classify or date the repository's $4.0 billion amount as TARGET, AMOUNT_SOLD, FIRST_CLOSE, FINAL_CLOSE, AUM or COMMITMENTS, so the size has not been adopted and the record remains NEEDS_REVIEW rather than being inferred or treated as an automatic correction.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-029",
+      "repoFundName": "Basalt BIP V",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "The opened Companies House record supports the existence of a V-series limited partnership, but the opened evidence does not provide fund-specific support for a direct-equity infrastructure strategy, an explicit North American mandate, a verified current North American holding or the stated raising lifecycle. Generic manager or predecessor-series strategy descriptions cannot substitute for vehicle-specific evidence, so the repository row is not counted as an included fund.",
+      "evidenceUrls": [
+        "https://find-and-update.company-information.service.gov.uk/company/LP024280",
+        "https://www.basaltinfra.com/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Basalt BIP IV size",
+      "issue": "The repository records a $4.0 billion size, but the opened evidence does not establish whether that amount is a target, amount sold, first close, final close, AUM or commitments, and does not supply a corresponding sizeAsOf date or independently supported native amount and currency.",
+      "sourceUrls": [
+        "https://www.basaltinfra.com/wp-content/uploads/2026/01/Public-Full-Transparency-Report-Basalt-Infrastructure-Partners-2.pdf"
+      ],
+      "recommendedResolution": "Obtain an official Fund IV close release, audited fund report, regulatory filing or public institutional-investor memorandum that expressly states the amount, currency, amount basis and applicable date before retaining or correcting the repository size."
+    },
+    {
+      "subject": "Basalt BIP V strategy, North American mandate and lifecycle",
+      "issue": "Companies House confirms a registered V-series legal vehicle, but the opened source set does not conclusively tie that vehicle to Basalt's direct-equity infrastructure strategy, establish an explicit North American mandate or current North American holding, or independently substantiate that it is actively raising.",
+      "sourceUrls": [
+        "https://find-and-update.company-information.service.gov.uk/company/LP024280",
+        "https://www.basaltinfra.com/"
+      ],
+      "recommendedResolution": "Obtain fund-specific primary documentation such as an official fundraising announcement, private-placement memorandum, institutional-investor commitment memorandum, regulatory offering filing or Basalt report expressly naming Fund V and describing its strategy, geographic mandate and current fundraising status."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 3,
+    "searchQueriesRun": 0,
+    "notes": [
+      "This completion used only the evidence previously opened in the conversation and ran no additional searches or tools.",
+      "Fund IV is included because its vehicle-specific identity, direct-equity infrastructure scope, North American mandate and current lifecycle are supported; its size remains unclassified and therefore unresolved.",
+      "Fund V remains a repository-only NEEDS_REVIEW record because legal-entity existence does not independently establish the required strategy, geography and lifecycle tests.",
+      "No separately capitalized feeder, parallel vehicle, sidecar, continuation fund, co-investment fund or program exception was supported as a distinct commercial vehicle.",
+      "No overlapping supplied manager was identified."
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 1,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 1,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 1,
+    "unresolvedConflicts": 2
+  }
+}

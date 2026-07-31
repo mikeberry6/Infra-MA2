@@ -1,0 +1,295 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "DWS Infrastructure",
+"canonicalManager": "DWS",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"DWS",
+"DWS Infrastructure",
+"Deutsche Asset Management",
+"Deutsche AM Infrastructure",
+"RREEF Infrastructure"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "DWS Pan-European Infrastructure Fund III",
+"aliases": [
+"DWS PEIF III",
+"Pan-European Infrastructure Fund III"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Official DWS materials describe the fund as part of a series of unlisted infrastructure equity funds investing directly in infrastructure assets.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official DWS transaction documentation states the PEIF series (including PEIF III) targets infrastructure investments across Europe and North America; EIB materials further indicate allowance for selective North American deployment.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-065",
+"managerName": "DWS",
+"fundName": "DWS Pan-European Infrastructure Fund III",
+"ticker": null,
+"investmentStrategy": "Value-add direct equity infrastructure strategy investing in transportation, utilities, energy transition, and digital infrastructure assets.",
+"size": "€3.1B final close",
+"sizeUsdMm": 3410,
+"sizeNativeCurrency": "EUR",
+"sizeNativeAmount": "3100000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2021-06-30",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2021",
+"strategies": [
+"Value-Add"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Transportation",
+"Power & ET",
+"Utilities",
+"Digital",
+"Social Infra"
+],
+"regions": [
+"Europe",
+"North America"
+],
+"sourceUrls": [
+"https://www.dws.com/AssetDownload/Index?assetGuid=0612b36b-92ef-428c-9981-9c75ed30a267&consumer=E-Library",
+"https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3",
+"https://group.dws.com/ir/en/media/media-releases/detail/DWS-Launches-Recommendation-for-Cash-Acquisition-of-Stagecoach/"
+],
+"strategyUrl": "https://www.dws.com/en-gb/capabilities/alternatives/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://group.dws.com/ir/en/media/media-releases/detail/DWS-Launches-Recommendation-for-Cash-Acquisition-of-Stagecoach/",
+"title": "DWS launches recommendation for acquisition of Stagecoach",
+"publisher": "DWS",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2022-03-09",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "DWS PEIF III mandate and size",
+"evidenceSummary": "Confirms PEIF III final close at €3.1B and describes the fund as part of a series targeting infrastructure investments across Europe and North America.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"regions",
+"size",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeUsdMm",
+"structure",
+"strategies",
+"vintage"
+]
+},
+{
+"url": "https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3",
+"title": "Pan-European Infrastructure Fund III",
+"publisher": "European Investment Bank",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2021-01-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "EIB PEIF III fund profile",
+"evidenceSummary": "Confirms PEIF III as a direct infrastructure equity fund investing in mature infrastructure assets, with geographic scope primarily Europe but allowing selective investment outside Europe.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"structure",
+"strategies",
+"vintage"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-065",
+"managerName": "DWS",
+"fundName": "DWS PEIF III"
+}
+],
+"changedFields": [
+"fundName",
+"sizeBasis",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeAsOf"
+],
+"repoDispositionRationale": "Repository record omits structured size fields and uses abbreviated fund name; corrected to official name and complete size semantics with evidence.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "DWS Pan-European Infrastructure Fund II",
+"reasonCode": "GLOBAL_WITHOUT_NA_EVIDENCE",
+"rationale": "Evidence supports European focus with limited non-European allocation allowance but no explicit North American mandate or verified current North American holding.",
+"sourceUrls": [
+"https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-fund-ii"
+]
+},
+{
+"fundName": "DWS Pan-European Infrastructure Fund IV",
+"reasonCode": "GLOBAL_WITHOUT_NA_EVIDENCE",
+"rationale": "Fund is actively raising with European infrastructure focus; no fund-specific evidence of North American mandate or holdings as of the as-of date.",
+"sourceUrls": [
+"https://download.dws.com/download?elib-assetguid=7a03cc14d08a41c7942890c58b7109ee&blobheadername1=Content-Disposition&blobheadername2=Content-Type&blobheadervalue1=inline%3Bfilename%3D%22DWS_FY2025_Q1_Investor_Presentation.pdf%22&blobheadervalue2=application%2Fpdf"
+]
+},
+{
+"fundName": "DWS Sustainable Growth Infrastructure Fund",
+"reasonCode": "OUTSIDE_NORTH_AMERICA",
+"rationale": "Strategy explicitly targets European energy transition and infrastructure investments with no North American mandate.",
+"sourceUrls": [
+"https://download.dws.com/download?elib-assetguid=7a03cc14d08a41c7942890c58b7109ee"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "PEIF III geographic mandate",
+"issue": "Primary DWS materials indicate Europe and North America mandate, while EIB materials emphasize European focus; extent of North American deployment remains unclear.",
+"sourceUrls": [
+"https://group.dws.com/ir/en/media/media-releases/detail/DWS-Launches-Recommendation-for-Cash-Acquisition-of-Stagecoach/",
+"https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3"
+],
+"recommendedResolution": "Obtain fund PPM or LP reporting confirming geographic allocation limits and actual North American deployment."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 6,
+"notes": [
+"DWS infrastructure equity platform primarily Europe-focused; only PEIF III has sufficient mandate evidence for North America inclusion."
+]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 3,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+DWS Infrastructure — North American direct infrastructure fund census
+Conclusion
+Only one current DWS direct-equity infrastructure vehicle meets the North American inclusion test as of 2026‑07‑29: DWS Pan-European Infrastructure Fund III (PEIF III).
+While DWS operates a broader private infrastructure platform, most vehicles are Europe-focused. PEIF III uniquely has fund-specific primary evidence supporting a mandate that includes North America, albeit with some conflicting geographic descriptions requiring further confirmation.
+Included funds
+FundVehicle TypeLifecycleNorth America QualificationSize BasisRepository DispositionEvidenceDWS Pan-European Infrastructure Fund IIINamed FundClosed / ActiveExplicit mandate includes Europe and North America€3.1B Final Close (Jun 2021)Proposed CorrectionDWS Stagecoach release; EIB fund page
+Repository reconciliation
+
+
+FUND-065 (DWS PEIF III) matched and corrected:
+
+
+Updated to official fund name.
+
+
+Completed structured size fields (currency, basis, date).
+
+
+
+
+No additional qualifying funds identified.
+
+
+No duplicate or unmatched repository entries remain.
+
+
+Exclusions and unresolved issues
+Excluded candidates
+
+
+PEIF II: European focus; no explicit North American mandate or verified holding.
+
+
+PEIF IV: Currently raising; no fund-specific evidence of North American mandate.
+
+
+Sustainable Growth Infrastructure Fund: Europe-only energy transition strategy.
+
+
+Unresolved conflict
+
+
+PEIF III geography:
+
+
+DWS primary materials indicate Europe + North America mandate.
+
+
+EIB materials emphasize European focus with selective external allocation.
+
+
+Further LP-level documentation is required to confirm extent of North American deployment.
+
+
+
+
+Completeness
+
+
+Reviewed DWS official infrastructure pages, investor presentations, and transaction releases.
+
+
+Reviewed institutional (EIB) fund documentation for PEIF II and III.
+
+
+Assessed fundraising disclosures and lifecycle status through 2026 Q2 reporting.
+
+
+Evaluated current holdings attribution where available.
+
+
+Reviewed manager aliases (DWS, Deutsche AM, RREEF) and fund series structure.
+
+
+Checked for parallel vehicles and feeder duplication.
+
+
+Repository snapshot and task contract provided by user: Pasted text
+</fund_census_report>

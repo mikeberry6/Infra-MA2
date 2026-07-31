@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Charlesbank Capital Partners",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Charlesbank Capital Partners",
+    "Charlesbank",
+    "Harvard Private Capital Group"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [
+    {
+      "fundName": "Charlesbank Credit Opportunities Fund III",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "Charlesbank describes the vehicle as an opportunistic credit fund that provides flexible capital to primarily North American borrowers and invests across the capital structure. It is therefore a credit strategy rather than a direct-equity infrastructure fund.",
+      "sourceUrls": [
+        "https://www.charlesbank.com/news/charlesbank-capital-partners-closes-credit-opportunities-fund-iii-at-1-5-billion/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Repository manager scope for Charlesbank Capital Partners",
+      "issue": "The supplied manager universe names Charlesbank Capital Partners, but the governing repository snapshot sets canonicalManager to null and knownManager to false. Under the explicit scope rule, the manager must therefore be treated as out of scope and no fund rows or automatic manager additions may be proposed.",
+      "sourceUrls": [
+        "https://www.charlesbank.com/",
+        "https://www.charlesbank.com/strategies/"
+      ],
+      "recommendedResolution": "Review and, if appropriate, amend the version-controlled manager manifest to establish a canonical Charlesbank Capital Partners manager record, then rerun the fund census under KNOWN_MANAGER status."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 16,
+    "notes": [
+      "The repository snapshot's knownManager=false instruction controls the disposition; no manager or fund addition was proposed.",
+      "Official Charlesbank materials identified Flagship Private Equity and Credit as the firm's current strategies; the reviewed materials did not establish a separately named direct-equity infrastructure fund or documented infrastructure program.",
+      "Technology & Tech Infrastructure appears as a sector vertical within the broad Flagship Private Equity strategy, not as a separately disclosed infrastructure vehicle.",
+      "The former Technology Opportunities strategy and its two funds completed a legal separation from Charlesbank and were rebranded under Eterna Growth Partners effective 2026-02-03.",
+      "Related, companion, overage and co-investment vehicles were reviewed for potential double counting; none was eligible for inclusion under the governing scope status.",
+      "No cited source was inaccessible."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

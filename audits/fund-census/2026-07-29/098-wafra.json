@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Wafra",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Wafra",
+    "Wafra Inc.",
+    "Wafra Investment Advisory Group, Inc."
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager scope vs supplied universe",
+      "issue": "The repository snapshot marks Wafra as an unknown manager (knownManager=false; canonicalManager=null) and prohibits proposing a new manager or funds, while the supplied manager universe separately lists Wafra. This creates a scope contradiction preventing inclusion of any vehicles despite evidence that Wafra operates real assets and infrastructure strategies.",
+      "sourceUrls": [],
+      "recommendedResolution": "Confirm whether Wafra should be added to the version-controlled manager universe with a canonical identity; if approved, re-run the census allowing fund-level inclusion."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 0,
+    "searchQueriesRun": 0,
+    "notes": [
+      "Research intentionally limited to documenting scope per instructions because manager is out-of-scope in repository snapshot",
+      "No fund-level inclusion permitted under OUT_OF_SCOPE_UNKNOWN_MANAGER rule"
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}
