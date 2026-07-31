@@ -1,6 +1,7 @@
 import type { PortCo } from "./portco-types";
+import { applyApprovedPortCoAfterImages } from "./approved-portco-after-images.ts";
 
-export const companies: PortCo[] = [
+const baseCompanies: PortCo[] = [
   {
     name: "Amwaste LLC",
     investmentFirm: "3i Infrastructure",
@@ -34048,3 +34049,7 @@ export const companies: PortCo[] = [
     ],
   }
 ];
+
+export const companies: PortCo[] = applyApprovedPortCoAfterImages(
+  baseCompanies,
+);
