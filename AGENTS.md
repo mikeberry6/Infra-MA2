@@ -30,12 +30,14 @@
 - Weekly email briefings are static HTML files in `public/email-format/`. Use `public/email-format/template.html` as the starting point for each new issue.
 - Preserve the visual and editorial style established in `public/email-format/2026-05-02.html` and `public/email-format/2026-05-09.html`: Guggenheim purple/gold accents, bordered sector cards, compact metadata lines, grey body text, simple horizontal YTD bars, and a factual advisory tone.
 - Do not rewrite historical weekly email files unless the user explicitly asks for historical cleanup.
+- Use lowercase `mm` for millions and `bn` for billions throughout visible briefing copy and human-readable `data-scale-note` annotations (for example, `US$800mm`, `US$16bn`, `1mm households`, and `3.5mm tonnes`). Do not alter source URLs or machine-readable `data-scale-unit` values merely because they contain `million` or `billion`.
 
 ### Key Themes
 
-- Key themes should highlight the week's strongest capital deployment angles, not just sector volume.
-- When U.S. transactions are present, explicitly touch on **U.S. deployment** in the second/final theme paragraph with named transactions.
-- Name the strongest U.S. operating-asset, platform, and portfolio-company transactions; use non-U.S. platform activity only as contrast.
+- Key Themes must contain exactly two short, succinct paragraphs, normally one sentence each.
+- Paragraph 1 must lead with the week's largest-scale transactions, prioritizing disclosed transaction or project value and using physical scale only when economics are undisclosed.
+- When U.S. transactions are present, paragraph 2 (the final paragraph) must focus on **U.S. deployment** and name the strongest U.S. operating-asset, platform, and portfolio-company transactions.
+- Use non-U.S. platform activity only as selective contrast in paragraph 1.
 - Distinguish new U.S. capital deployment and operating-asset/platform acquisitions from secondaries, exits, and broad platform announcements when writing theme language.
 
 ### Weekly Section Ordering
