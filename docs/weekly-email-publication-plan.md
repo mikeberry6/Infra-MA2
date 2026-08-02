@@ -131,13 +131,13 @@ Store or maintain the validator's scale metadata on each deal card so the orderi
 
 The following are standing user-directed editorial preferences, not observations limited to the July 24 copy.
 
-- Keep the themes succinct: normally two short paragraphs.
-- Use the first paragraph for the strongest capital-deployment and valuation signals, not a catalogue of every deal.
+- Keep the themes succinct: exactly two short paragraphs, normally one sentence each.
+- Use the first paragraph for the week's largest-scale transactions, prioritizing disclosed transaction or project value and using physical scale only when economics are undisclosed.
 - When U.S. transactions are present, use the second/final paragraph for named U.S. deployment across operating assets, platforms, and portfolio-company transactions.
 - Do not append a generic European or non-U.S. roundup to the final paragraph unless the user explicitly requests it. Non-U.S. activity can be used selectively as contrast in the first paragraph.
 - Bold only infrastructure fund or fund-manager names in theme body copy.
 - Do not bold targets, transaction names, values, capacities, deal-count phrases, or entire clauses.
-- In themes, abbreviate `billion` to `bn` and `approximately` to `~` (for example, `~US$7bn`, `US$1bn`, and `€5bn`).
+- Throughout visible briefing copy and human-readable `data-scale-note` annotations, abbreviate millions as lowercase `mm` and billions as lowercase `bn` (for example, `US$800mm`, `~US$7bn`, `1mm households`, and `3.5mm tonnes`). Continue to abbreviate `approximately` as `~` in themes. Do not alter source URLs or machine-readable `data-scale-unit` values.
 - Redraft the themes after every material addition or removal; do not merely patch the old deal count.
 
 ## Canonical concise sponsor names
