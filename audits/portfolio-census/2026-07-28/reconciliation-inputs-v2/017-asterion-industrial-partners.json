@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 17,
+  "requestedManager": "Asterion Industrial Partners",
+  "canonicalManager": "Asterion Industrial Partners",
+  "aliasesSearched": [
+    "Asterion Industrial Partners",
+    "Asterion Industrial Partners SGEIC, S.A.",
+    "Asterion Industrial",
+    "Asterion",
+    "AIP",
+    "Asterion Industrial Infra Fund I, FCR",
+    "Asterion Industrial Infra Fund II, FCR",
+    "Asterion Industrial Infra Fund III, FCR"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6a2617-b458-83ea-a880-5293239de15d",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "6954576e4bc37b7bfa2a5a03b01dd0a98847ea4dd1abd6ed7e268b55ced18511"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [],
+  "reconciliationInputVersion": 2,
+  "sourceResult": {
+    "acceptedResultPath": "audits/portfolio-census/2026-07-28/017-asterion-industrial-partners.json",
+    "acceptedResultSha256": "45190f743a3d67eef960a699238ab8203cd890841806bfef6d921d9fb31a8a04",
+    "acceptedResponseSha256": "6954576e4bc37b7bfa2a5a03b01dd0a98847ea4dd1abd6ed7e268b55ced18511",
+    "recoveredInputV1Sha256": "fe96d2e88a80d3d0ce7922ec3e516ffdba27abfe5a4c9dbef63fc354dbc4963b"
+  },
+  "repoOnlyRecords": [],
+  "excludedCandidates": [
+    {
+      "excludedCandidateId": "017-asterion-industrial-partners:excluded:001:nabiax",
+      "sourceOrdinal": 1,
+      "companyName": "Nabiax",
+      "reasonCode": "REALIZED",
+      "rationale": "Asterion’s data-center platform historically included assets in the United States and Mexico, but those Americas assets were sold in 2023 and the remaining platform was fully exited in March 2025; therefore no current ownership remains as of the as-of date.",
+      "evidenceUrls": [
+        "https://www.asterionindustrial.com/portfolio/"
+      ]
+    },
+    {
+      "excludedCandidateId": "017-asterion-industrial-partners:excluded:002:bluelease",
+      "sourceOrdinal": 2,
+      "companyName": "Bluelease",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Asterion’s aviation platform is headquartered in Ireland and leases aircraft to global airlines; available evidence identifies European and Asian lessees rather than a platform primarily based in or dedicated to the United States, Canada, or Mexico.",
+      "evidenceUrls": [
+        "https://www.asterionindustrial.com/portfolio/"
+      ]
+    },
+    {
+      "excludedCandidateId": "017-asterion-industrial-partners:excluded:003:southern-water",
+      "sourceOrdinal": 3,
+      "companyName": "Southern Water",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Asterion signed a binding investment (pending completion) in Southern Water, a UK water and wastewater utility serving Southeast England; the asset is outside North America.",
+      "evidenceUrls": [
+        "https://www.asterionindustrial.com/asterion-industrial-partners-joins-macquarie-led-consortium-to-deliver-1-2-billion-equity-support-for-southern-water-a-uk-water-and-wastewater-utility/"
+      ]
+    },
+    {
+      "excludedCandidateId": "017-asterion-industrial-partners:excluded:004:energy-assets-group",
+      "sourceOrdinal": 4,
+      "companyName": "Energy Assets Group",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Asterion agreed the sale of Energy Assets Group (signed pending exit) which operates energy metering infrastructure in the United Kingdom; it is outside North America.",
+      "evidenceUrls": [
+        "https://www.asterionindustrial.com/consortium-of-asterion-industrial-partners-swiss-life-asset-managers-and-edf-invest-agrees-sale-of-energy-assets-group-to-macquarie-asset-management/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "2b4749406b8494c4a910fb31665b30919941b38419b67d5e6099cd67b214ddd8"
+}

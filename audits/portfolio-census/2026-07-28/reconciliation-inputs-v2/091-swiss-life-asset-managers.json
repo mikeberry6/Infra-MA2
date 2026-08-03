@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 91,
+  "requestedManager": "Swiss Life Asset Managers",
+  "canonicalManager": "Swiss Life Asset Managers",
+  "aliasesSearched": [
+    "Swiss Life Asset Managers",
+    "Swiss Life AM Infrastructure Equity",
+    "Fontavis"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6af8bd-16a0-83ea-acd6-40a70efebfd9",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "ef31b22131cf3f13fdb9af3e3b153455abfa6200b1be7594cdebd6c640fbeabf"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [
+    {
+      "holdingId": "091-swiss-life-asset-managers:holding:001:jfk-new-terminal-one",
+      "companyName": "JFK New Terminal One",
+      "aliases": [],
+      "canonicalName": "JFK New Terminal One",
+      "investmentLevel": "STANDALONE_ASSET",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Swiss Life Asset Managers",
+        "organizationName": "Swiss Life Asset Managers",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentDate": null,
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.swisslife-am.com/dam/jcr:6b2e5e90-8e33-4bb4-b9d3-0e7a68c4c41d/20250116_Swiss%20Life%20AM_IAM%20Infrastructure%20Equity_Q4%202025.pdf",
+          "title": "Swiss Life AM Infrastructure Equity Q4 2025 Factsheet",
+          "publisher": "Swiss Life Asset Managers",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Lists 'JLC Terminal One' as a direct co-investment under Infrastructure Equity holdings.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.anewjfk.com/",
+          "title": "JFK New Terminal One Project",
+          "publisher": "New Terminal One",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms the asset is a New York-based airport terminal infrastructure project.",
+          "supports": [
+            "NORTH_AMERICA"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompanyIds": [],
+      "rationale": "No repository records exist; this is a confirmed direct co-investment.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "091-swiss-life-asset-managers:holding:002:databank",
+      "companyName": "DataBank",
+      "aliases": [],
+      "canonicalName": "DataBank",
+      "investmentLevel": "PLATFORM",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Swiss Life Asset Managers",
+        "organizationName": "Swiss Life Asset Managers",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentDate": "2022",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.digitalbridge.com/news-and-events/news/2022/10-03-2022-140546216",
+          "title": "DigitalBridge Announces Sale of Minority Stake in DataBank",
+          "publisher": "DigitalBridge",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2022-10-03",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms Swiss Life Asset Managers (via affiliates) acquired a minority equity stake in DataBank as part of a consortium.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY"
+          ]
+        },
+        {
+          "url": "https://www.databank.com/company/investors/",
+          "title": "DataBank Investors",
+          "publisher": "DataBank",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Lists Swiss Life Asset Managers among current equity investors in DataBank.",
+          "supports": [
+            "OWNERSHIP",
+            "OWNERSHIP_STATE",
+            "NORTH_AMERICA"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompanyIds": [],
+      "rationale": "Direct platform-level co-investment confirmed; no repository record exists.",
+      "confidence": "HIGH"
+    }
+  ],
+  "reconciliationInputVersion": 2,
+  "sourceResult": {
+    "acceptedResultPath": "audits/portfolio-census/2026-07-28/091-swiss-life-asset-managers.json",
+    "acceptedResultSha256": "1bd4023b0dc3ca18bc8de75c3d99100f624cfc45cbd6b251a502ec535bc3935f",
+    "acceptedResponseSha256": "ef31b22131cf3f13fdb9af3e3b153455abfa6200b1be7594cdebd6c640fbeabf",
+    "recoveredInputV1Sha256": "f07881b93afb972777c86000b12ff02ab8918e676e02b38dede44966d991ec6a"
+  },
+  "repoOnlyRecords": [],
+  "excludedCandidates": [
+    {
+      "excludedCandidateId": "091-swiss-life-asset-managers:excluded:001:atlas-renewable-energy",
+      "sourceOrdinal": 1,
+      "companyName": "Atlas Renewable Energy",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Atlas Renewable Energy operates primarily in Latin America and is not a North American-dedicated platform.",
+      "evidenceUrls": [
+        "https://www.atlasrenewableenergy.com/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Flamingo (Swiss Life codename)",
+      "issue": "Swiss Life disclosures reference a U.S. investment labeled 'Flamingo' without identifying the legal entity or sector; cannot map to a confirmed operating company.",
+      "recommendedResolution": "Review fund-level investor reports or co-investment disclosures to identify the underlying entity behind the Flamingo codename.",
+      "evidenceUrls": [
+        "https://www.swisslife-am.com/dam/jcr:6b2e5e90-8e33-4bb4-b9d3-0e7a68c4c41d/20250116_Swiss%20Life%20AM_IAM%20Infrastructure%20Equity_Q4%202025.pdf"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "89bf7647c9b24638aff5ea5ede5b83df62d51e44645229a0facbfbf964ceb9f1"
+}

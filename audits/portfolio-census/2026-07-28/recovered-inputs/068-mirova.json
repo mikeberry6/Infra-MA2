@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 68,
+  "requestedManager": "Mirova",
+  "canonicalManager": "Mirova",
+  "aliasesSearched": [
+    "Mirova",
+    "Mirova SA",
+    "Natixis Investment Managers",
+    "Natixis Investment Managers International",
+    "Natixis Asset Management ESG / Responsible Investing division"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6ad010-ca54-83ea-b3d7-2eb1b7212ba5",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "ddbe9b1e422d3916a000138251645c0983b153102e54864d0a73d7ebccb64152"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [],
+  "excludedCandidates": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Undisclosed North American minority co-investments",
+      "issue": "Mirova may hold minority co-investments in North American renewable assets that are not publicly disclosed at the platform or company level, particularly through club deals or co-invest structures.",
+      "recommendedResolution": "Review underlying MET fund investor reports, LP disclosures, or regulatory filings to identify any undisclosed North American minority co-investments.",
+      "evidenceUrls": [
+        "https://www.mirova.com/en/investments/energy-transition",
+        "https://www.mirova.com/en/our-expertise/private-assets"
+      ]
+    },
+    {
+      "subject": "MET fund North American SPVs not publicly branded",
+      "issue": "Mirova Energy Transition (MET) funds may deploy capital via special purpose vehicles (SPVs) that are not branded or disclosed as standalone portfolio companies, obscuring potential North American exposure.",
+      "recommendedResolution": "Inspect MET fund-level reports, asset lists, and transaction disclosures to determine whether any SPVs correspond to North American infrastructure equity holdings.",
+      "evidenceUrls": [
+        "https://www.mirova.com/en/investments/energy-transition",
+        "https://www.mirova.com/sites/default/files/2024-06/mirova-impact-report-2023.pdf"
+      ]
+    },
+    {
+      "subject": "Project-versus-platform disclosure risk",
+      "issue": "Mirova frequently reports investments at the project level rather than platform/company level, which may mask ownership of broader operating platforms that could qualify as North American infrastructure holdings.",
+      "recommendedResolution": "Cross-reference project-level disclosures with corporate ownership structures to determine whether any aggregated platforms meet inclusion criteria.",
+      "evidenceUrls": [
+        "https://www.mirova.com/en/investments/energy-transition",
+        "https://www.mirova.com/en/our-expertise/private-assets"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "20f23b99eb7c4a8105f296e707fb13da1a637b3cd05137ff546f0fda0e739b5b"
+}

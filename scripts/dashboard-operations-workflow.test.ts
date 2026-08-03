@@ -83,6 +83,9 @@ describe("focused dashboard operations workflows", () => {
       "verify-import-preview-schema.ts",
     );
     const migration = source.indexOf("prisma migrate deploy");
+    const lifecycleFinalization = source.indexOf(
+      "finalize-portco-lifecycle-schema.ts",
+    );
     const importPreviewFinal = source.indexOf(
       "verify-import-preview-schema.ts",
       importPreviewPreflight + 1,
@@ -91,6 +94,8 @@ describe("focused dashboard operations workflows", () => {
       source.indexOf("verify-auth-throttle-schema.ts"),
     );
     expect(importPreviewPreflight).toBeLessThan(migration);
+    expect(lifecycleFinalization).toBeGreaterThan(migration);
+    expect(lifecycleFinalization).toBeLessThan(importPreviewFinal);
     expect(importPreviewFinal).toBeGreaterThan(migration);
     expect(source.slice(importPreviewFinal)).toContain("--require-state=final");
     expect(source).toContain("import-preview-schema-preflight.json");
@@ -113,16 +118,42 @@ describe("focused dashboard operations workflows", () => {
     const source = workflow("dashboard-validation.yml");
     const preflight = source.indexOf("verify-import-preview-schema.ts");
     const deploy = source.indexOf("prisma migrate deploy");
+    const lifecycleFinalization = source.indexOf(
+      "finalize-portco-lifecycle-schema.ts",
+      deploy,
+    );
     const finalVerification = source.indexOf(
       "verify-import-preview-schema.ts",
       preflight + 1,
     );
     expect(preflight).toBeGreaterThan(source.indexOf("assert-database-target.ts"));
     expect(preflight).toBeLessThan(deploy);
+    expect(lifecycleFinalization).toBeGreaterThan(deploy);
+    expect(lifecycleFinalization).toBeLessThan(finalVerification);
     expect(finalVerification).toBeGreaterThan(deploy);
     expect(source.slice(finalVerification)).toContain("--require-state=final");
     expect(source).toContain("import-preview-schema-preflight.json");
     expect(source).toContain("import-preview-schema-final-${pass}.json");
+  });
+
+  it("finalizes PortCo lifecycle columns after every migration deploy", () => {
+    for (const name of [
+      "stage-production-schema.yml",
+      "dashboard-validation.yml",
+      "fund-refresh-apply.yml",
+      "fund-refresh-rollback.yml",
+    ]) {
+      const source = workflow(name);
+      let deploy = source.indexOf("prisma migrate deploy");
+      expect(deploy, name).toBeGreaterThanOrEqual(0);
+      while (deploy >= 0) {
+        const nextDeploy = source.indexOf("prisma migrate deploy", deploy + 1);
+        const finalizer = source.indexOf("finalize-portco-lifecycle-schema.ts", deploy);
+        expect(finalizer, name).toBeGreaterThan(deploy);
+        if (nextDeploy >= 0) expect(finalizer, name).toBeLessThan(nextDeploy);
+        deploy = nextDeploy;
+      }
+    }
   });
 
   it("promotes and rolls back only verified immutable deployments", () => {

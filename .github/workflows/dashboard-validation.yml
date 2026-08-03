@@ -14,6 +14,7 @@ on:
       - "prisma/schema.prisma"
       - "prisma/migrations/**"
       - "scripts/assert-database-target.ts"
+      - "scripts/finalize-portco-lifecycle-schema.ts"
       - "scripts/verify-auth-throttle-schema.ts"
       - "scripts/backfill-dashboard-signal-approvals.ts"
       - "scripts/dashboard-*.ts"
@@ -89,6 +90,8 @@ jobs:
             --output=tmp/dashboard-validation/import-preview-schema-preflight.json
           for pass in initial repeat; do
             npx prisma migrate deploy 2>&1 | tee "tmp/dashboard-validation/migrate-deploy-${pass}.log"
+            npx tsx scripts/finalize-portco-lifecycle-schema.ts \
+              --output="tmp/dashboard-validation/portco-lifecycle-schema-finalization-${pass}.json"
             npx tsx scripts/verify-import-preview-schema.ts \
               --require-state=final \
               --output="tmp/dashboard-validation/import-preview-schema-final-${pass}.json"

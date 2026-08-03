@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { auditAdditiveMigrationSql } from "./migration-safety";
 
@@ -49,5 +50,13 @@ describe("additive migration safety", () => {
   it("rejects malformed SQL instead of guessing", () => {
     expect(auditAdditiveMigrationSql("CREATE TABLE \"Run\" (\"id\" TEXT;")[0]?.reason).toMatch(/parenthesized|permitted/i);
     expect(auditAdditiveMigrationSql("CREATE TABLE \"Run\" ('unterminated")[0]?.reason).toMatch(/unterminated/i);
+  });
+
+  it("keeps the PortCo lifecycle foundation migration strictly additive", () => {
+    const sql = readFileSync(
+      "prisma/migrations/20260803010000_portco_lifecycle_foundations/migration.sql",
+      "utf8",
+    );
+    expect(auditAdditiveMigrationSql(sql)).toEqual([]);
   });
 });

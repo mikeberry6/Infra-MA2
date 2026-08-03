@@ -46,11 +46,12 @@ model Organization {
   createdAt    DateTime     @default(now())
   updatedAt    DateTime     @updatedAt
 
-  managedFunds       Fund[]
-  dealParticipations DealParticipant[]
-  ownershipPeriods   OwnershipPeriod[]
-  aliases            Alias[]
-  newsMentions       NewsMention[]
+  managedFunds                 Fund[]
+  dealParticipations           DealParticipant[]
+  ownershipPeriods             OwnershipPeriod[]
+  pendingOwnershipTransactions PendingOwnershipTransaction[] @relation("PendingOwnershipCounterparty")
+  aliases                      Alias[]
+  newsMentions                 NewsMention[]
 
   @@index([name])
 }
@@ -253,6 +254,7 @@ enum CompanyStatus {
 model Company {
   id             String        @id @default(cuid())
   name           String
+  aliases        String[]      @default([])
   sector         CompanySector
   subsector      String        @default("")
   region         CompanyRegion
@@ -268,12 +270,14 @@ model Company {
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @updatedAt
 
-  ownershipPeriods OwnershipPeriod[]
-  milestones       Milestone[]
-  managementRoles  ManagementRole[]
-  citations        Citation[]
-  newsMentions     NewsMention[]
-  redirects        CompanyRedirect[]
+  ownershipPeriods             OwnershipPeriod[]
+  pendingOwnershipTransactions PendingOwnershipTransaction[]
+  milestones                   Milestone[]
+  managementRoles              ManagementRole[]
+  citations                    Citation[]
+  newsMentions                 NewsMention[]
+  redirects                    CompanyRedirect[]
+  revisions                    CompanyRevision[]
 
   @@unique([name, country])
   @@index([name])
@@ -282,25 +286,82 @@ model Company {
 
 // ── OwnershipPeriod ─────────────────────────────────────
 
+enum OwnershipPeriodState {
+  CLOSED_ACTIVE
+  SIGNED_PENDING_EXIT
+  REALIZED
+}
+
 model OwnershipPeriod {
-  id             String        @id @default(cuid())
-  fundId         String?
-  fund           Fund?         @relation(fields: [fundId], references: [id])
-  organizationId String?
-  organization   Organization? @relation(fields: [organizationId], references: [id])
-  companyId      String
-  company        Company       @relation(fields: [companyId], references: [id])
-  vehicleName    String?
-  stake          String?
-  investmentYear Int?
-  exitYear       Int?
-  isActive       Boolean       @default(true)
-  createdAt      DateTime      @default(now())
+  id               String               @id @default(cuid())
+  fundId           String?
+  fund             Fund?                @relation(fields: [fundId], references: [id])
+  organizationId   String?
+  organization     Organization?        @relation(fields: [organizationId], references: [id])
+  companyId        String
+  company          Company              @relation(fields: [companyId], references: [id])
+  vehicleName      String?
+  stake            String?
+  investmentYear   Int?
+  exitYear         Int?
+  isActive         Boolean              @default(true)
+  transactionState OwnershipPeriodState @default(CLOSED_ACTIVE)
+  createdAt        DateTime             @default(now())
 
   @@unique([companyId, organizationId, vehicleName])
   @@index([fundId])
   @@index([organizationId])
   @@index([companyId])
+  @@index([companyId, transactionState])
+}
+
+// ── Signed, not-yet-closed ownership transactions ───────
+
+enum PendingOwnershipDirection {
+  INCOMING
+  EXIT
+}
+
+enum PendingOwnershipTransactionState {
+  SIGNED_PENDING_INCOMING
+  SIGNED_PENDING_EXIT
+}
+
+model PendingOwnershipTransaction {
+  id                         String                           @id @default(cuid())
+  companyId                  String
+  company                    Company                          @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  direction                  PendingOwnershipDirection
+  state                      PendingOwnershipTransactionState
+  counterpartyName           String
+  counterpartyOrganizationId String?
+  counterpartyOrganization   Organization?                    @relation("PendingOwnershipCounterparty", fields: [counterpartyOrganizationId], references: [id], onDelete: SetNull)
+  vehicleName                String?
+  stake                      String?
+  transactionDescription     String
+  announcedAt                DateTime?                        @db.Date
+  expectedClosing            String?
+  relatedOwnershipPeriodIds  String[]                         @default([])
+  createdAt                  DateTime                         @default(now())
+  updatedAt                  DateTime                         @updatedAt
+
+  citations PendingOwnershipTransactionCitation[]
+
+  @@index([companyId, direction, counterpartyName, announcedAt])
+  @@index([companyId, state])
+  @@index([counterpartyOrganizationId])
+  @@index([announcedAt])
+}
+
+model PendingOwnershipTransactionCitation {
+  pendingOwnershipTransactionId String
+  pendingOwnershipTransaction   PendingOwnershipTransaction @relation(fields: [pendingOwnershipTransactionId], references: [id], onDelete: Cascade)
+  citationId                    String
+  citation                      Citation                    @relation(fields: [citationId], references: [id], onDelete: Cascade)
+  createdAt                     DateTime                    @default(now())
+
+  @@id([pendingOwnershipTransactionId, citationId])
+  @@index([citationId])
 }
 
 // ── Deal ────────────────────────────────────────────────
@@ -431,15 +492,27 @@ enum MilestoneCategory {
 }
 
 model Milestone {
-  id        String            @id @default(cuid())
+  id        String              @id @default(cuid())
   companyId String
-  company   Company           @relation(fields: [companyId], references: [id])
+  company   Company             @relation(fields: [companyId], references: [id])
   date      String
   event     String
   category  MilestoneCategory
   sortDate  DateTime?
+  citations MilestoneCitation[]
 
   @@index([companyId])
+}
+
+model MilestoneCitation {
+  milestoneId String
+  milestone   Milestone @relation(fields: [milestoneId], references: [id], onDelete: Cascade)
+  citationId  String
+  citation    Citation  @relation(fields: [citationId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+
+  @@id([milestoneId, citationId])
+  @@index([citationId])
 }
 
 // ── Person + ManagementRole ─────────────────────────────
@@ -453,17 +526,31 @@ model Person {
 }
 
 model ManagementRole {
-  id        String    @id @default(cuid())
+  id        String                   @id @default(cuid())
   personId  String
-  person    Person    @relation(fields: [personId], references: [id])
+  person    Person                   @relation(fields: [personId], references: [id])
   companyId String
-  company   Company   @relation(fields: [companyId], references: [id])
+  company   Company                  @relation(fields: [companyId], references: [id])
   title     String
   startDate DateTime?
   endDate   DateTime?
+  isCurrent Boolean                  @default(true)
+  citations ManagementRoleCitation[]
 
   @@index([companyId])
+  @@index([companyId, isCurrent])
   @@index([personId])
+}
+
+model ManagementRoleCitation {
+  managementRoleId String
+  managementRole   ManagementRole @relation(fields: [managementRoleId], references: [id], onDelete: Cascade)
+  citationId       String
+  citation         Citation       @relation(fields: [citationId], references: [id], onDelete: Cascade)
+  createdAt        DateTime       @default(now())
+
+  @@id([managementRoleId, citationId])
+  @@index([citationId])
 }
 
 // ── Source + Citation ───────────────────────────────────
@@ -508,6 +595,10 @@ model Citation {
   isPrimary     Boolean         @default(false)
   purpose       CitationPurpose @default(SUPPORTING_CONTEXT)
   evidenceLabel String?
+
+  pendingOwnershipTransactions PendingOwnershipTransactionCitation[]
+  milestones                   MilestoneCitation[]
+  managementRoles              ManagementRoleCitation[]
 
   @@index([sourceId])
   @@index([dealId])
@@ -730,11 +821,31 @@ model PipelineRun {
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 
-  fundEvidence  FundEvidence[]
-  fundRevisions FundRevision[]
+  fundEvidence     FundEvidence[]
+  fundRevisions    FundRevision[]
+  companyRevisions CompanyRevision[]
 
   @@index([pipeline, startedAt])
   @@index([status, startedAt])
+}
+
+model CompanyRevision {
+  id            String       @id @default(cuid())
+  companyId     String
+  company       Company      @relation(fields: [companyId], references: [id])
+  proposalHash  String
+  beforeJson    Json?
+  afterJson     Json
+  changedFields String[]
+  approver      String
+  appliedAt     DateTime     @default(now())
+  pipelineRunId String?
+  pipelineRun   PipelineRun? @relation(fields: [pipelineRunId], references: [id], onDelete: SetNull)
+
+  @@unique([companyId, proposalHash])
+  @@index([proposalHash])
+  @@index([pipelineRunId])
+  @@index([appliedAt])
 }
 
 model AuthThrottle {

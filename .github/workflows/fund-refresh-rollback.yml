@@ -276,6 +276,8 @@ jobs:
           mkdir -p tmp/fund-refresh/rollback-validation
           set -o pipefail
           npx prisma migrate deploy 2>&1 | tee tmp/fund-refresh/rollback-validation/migrate-deploy.log
+          npx tsx scripts/finalize-portco-lifecycle-schema.ts \
+            --output=tmp/fund-refresh/rollback-validation/portco-lifecycle-schema-finalization.json
           npx prisma migrate status 2>&1 | tee tmp/fund-refresh/rollback-validation/migrate-status.log
 
       - name: Capture the rollback validation baseline

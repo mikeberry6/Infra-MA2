@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 96,
+  "requestedManager": "Vauban Infrastructure Partners",
+  "canonicalManager": "Vauban Infrastructure Partners",
+  "aliasesSearched": [
+    "Vauban Infrastructure",
+    "Vauban Infrastructure Partners",
+    "Mirova Infrastructure"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6b0163-4a48-83ea-a5fa-5b6dd9559a79",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "06d5bdae15bb2a5368d401b1abdb244b7e3c3da50eafb579946dfcfd72a0dae5"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [
+    {
+      "holdingId": "096-vauban-infrastructure-partners:holding:001:cartier-u-s-district-energy-platform",
+      "companyName": "Cartier (U.S. District Energy Platform)",
+      "aliases": [],
+      "canonicalName": "Cartier (U.S. District Energy Platform)",
+      "investmentLevel": "PLATFORM",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Vauban Infrastructure Partners",
+        "organizationName": "Vauban Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentDate": null,
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.vauban-ip.com/en/investment/cartier/",
+          "title": "Cartier — Vauban Infrastructure Partners investment page",
+          "publisher": "Vauban Infrastructure Partners",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms Cartier as a Vauban investment comprising a portfolio of U.S. district energy systems, establishing ownership, infrastructure nature, and North American scope.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.vauban-ip.com/en/news/vauban-infrastructure-partners-acquires-us-district-energy-platform/",
+          "title": "Vauban Infrastructure Partners acquires U.S. district energy platform",
+          "publisher": "Vauban Infrastructure Partners",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Describes acquisition of a portfolio of eight U.S. district energy systems and identifies Pantheon as a co-investor, supporting ownership, infrastructure classification, and platform scope.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://www.vauban-ip.com/en/investments/",
+          "title": "Vauban Infrastructure Partners — Investments portfolio listing",
+          "publisher": "Vauban Infrastructure Partners",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Lists Cartier among Vauban's active investments with no disclosed exit, supporting current ownership status.",
+          "supports": [
+            "OWNERSHIP",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompanyIds": [],
+      "rationale": "No repository companies exist; this is a newly identified in-scope holding.",
+      "confidence": "HIGH"
+    }
+  ],
+  "reconciliationInputVersion": 2,
+  "sourceResult": {
+    "acceptedResultPath": "audits/portfolio-census/2026-07-28/096-vauban-infrastructure-partners.json",
+    "acceptedResultSha256": "8135a96f5620929d4fc89a1ba2c1849143c7c4da81d01b776b4c651ccf1171b7",
+    "acceptedResponseSha256": "06d5bdae15bb2a5368d401b1abdb244b7e3c3da50eafb579946dfcfd72a0dae5",
+    "recoveredInputV1Sha256": "0c8722a21cc74d4fcc47420e961561258fb8aa92db703094bc24089b9e134700"
+  },
+  "repoOnlyRecords": [],
+  "excludedCandidates": [
+    {
+      "excludedCandidateId": "096-vauban-infrastructure-partners:excluded:001:cartier-energy-quebec-wind",
+      "sourceOrdinal": 1,
+      "companyName": "Cartier Energy (Québec wind)",
+      "reasonCode": "OTHER",
+      "rationale": "False-match name collision: Vauban's confirmed holding 'Cartier' is a U.S. district energy platform, while the Québec wind business is a separate entity with no supported Vauban ownership.",
+      "evidenceUrls": [
+        "https://www.vauban-ip.com/en/investment/cartier/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Cartier platform asset composition",
+      "issue": "The eight underlying U.S. district energy systems are not fully enumerated in a single primary source.",
+      "recommendedResolution": "Identify individual system names through regulatory filings or asset-level operator disclosures.",
+      "evidenceUrls": [
+        "https://www.vauban-ip.com/en/investment/cartier/"
+      ]
+    },
+    {
+      "subject": "Cartier ownership structure",
+      "issue": "The legal SPV ownership vehicle and Vauban/Pantheon stake percentages are undisclosed.",
+      "recommendedResolution": "Review transaction filings or investor disclosures for the ownership vehicle and stake breakdown.",
+      "evidenceUrls": [
+        "https://www.vauban-ip.com/en/news/vauban-infrastructure-partners-acquires-us-district-energy-platform/"
+      ]
+    },
+    {
+      "subject": "Pantheon co-invest structure",
+      "issue": "Pantheon is disclosed as a co-investor, but its economic terms and governance rights are not public.",
+      "recommendedResolution": "Locate co-investment announcements or Pantheon disclosures for further detail.",
+      "evidenceUrls": [
+        "https://www.vauban-ip.com/en/news/vauban-infrastructure-partners-acquires-us-district-energy-platform/"
+      ]
+    },
+    {
+      "subject": "Mirova versus Vauban North America boundary",
+      "issue": "No evidence was identified that Mirova-origin North American assets transferred to Vauban; manager separation is maintained, but the absence of transfers is not exhaustively enumerated in a single disclosure.",
+      "recommendedResolution": "Cross-reference future Mirova and Vauban portfolio disclosures to confirm that no overlapping North American holdings emerge.",
+      "evidenceUrls": [
+        "https://www.mirova.com/en/our-offer/infrastructure"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "7db313a0942dd5fd2c4650c5844bad66ca2bb0afaf6a51c91b90047cbe82791e"
+}

@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 63,
+  "requestedManager": "Kimmeridge Energy",
+  "canonicalManager": "Kimmeridge Energy Management Company, LLC",
+  "aliasesSearched": [
+    "Kimmeridge Energy",
+    "Kimmeridge",
+    "Kimmeridge Energy Management",
+    "Kimmeridge Funds",
+    "SoTex HoldCo",
+    "Caturus HoldCo"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6ac13e-09f4-83ea-a852-b46ccb2b6a0c",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "a2f9b19c7719bd1399694edd5da1d51e7dda1e408734c91ef9492804e3c02b16"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [
+    {
+      "holdingId": "063-kimmeridge-energy:holding:001:caturus",
+      "companyName": "Caturus",
+      "aliases": [],
+      "canonicalName": "Caturus",
+      "investmentLevel": "PLATFORM",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Kimmeridge Energy Management Company, LLC",
+        "organizationName": "Kimmeridge Energy Management Company, LLC",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentDate": "2025",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.kimmeridge.com/select-investments",
+          "title": "Select Investments",
+          "publisher": "Kimmeridge",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Lists Caturus as a Kimmeridge-controlled integrated natural gas and LNG company within its Private Investments portfolio, indicating active ownership and infrastructure exposure.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.kimmeridge.com/news/kimmeridge-forms-caturus",
+          "title": "Kimmeridge forms Caturus integrated gas and LNG platform",
+          "publisher": "Kimmeridge",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2025-08-07",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Announces formation of Caturus combining upstream gas assets and Commonwealth LNG into a single platform, confirming ownership, U.S. focus, and active development status.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompanyIds": [],
+      "rationale": "No existing repository record; newly identified manager-level platform. Commonwealth LNG is a subsidiary and not separately counted.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "holdingId": "063-kimmeridge-energy:holding:002:38-degrees-north",
+      "companyName": "38 Degrees North",
+      "aliases": [],
+      "canonicalName": "38 Degrees North",
+      "investmentLevel": "PLATFORM",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Kimmeridge Energy Management Company, LLC",
+        "organizationName": "Kimmeridge Energy Management Company, LLC",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentDate": "2025",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.kimmeridge.com/select-investments",
+          "title": "Select Investments",
+          "publisher": "Kimmeridge",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Identifies 38 Degrees North as a current Kimmeridge portfolio company focused on distributed energy infrastructure in the U.S.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/kimmeridge-invests-in-38-degrees-north-302115939.html",
+          "title": "Kimmeridge invests in 38 Degrees North",
+          "publisher": "PR Newswire",
+          "sourceTier": "RELIABLE_MEDIA",
+          "health": "WORKING",
+          "publishedAt": "2025-05-15",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Announces Kimmeridge growth investment in 38 Degrees North to expand distributed solar and storage platform, confirming ownership, U.S. operations, infrastructure asset base, and active status.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompanyIds": [],
+      "rationale": "No repository match; qualifies as a distinct North American infrastructure platform under Kimmeridge ownership.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "companyName": "SYSO Technologies",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Software and optimization platform for energy assets without direct ownership of infrastructure assets.",
+      "evidenceUrls": [
+        "https://www.sysotechnologies.com/"
+      ]
+    },
+    {
+      "companyName": "Chestnut Carbon",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Nature-based carbon and forestry platform focused on carbon credits rather than core infrastructure ownership.",
+      "evidenceUrls": [
+        "https://www.chestnutcarbon.com/"
+      ]
+    },
+    {
+      "companyName": "LandGate",
+      "reasonCode": "REALIZED",
+      "rationale": "Data and analytics platform that was sold and is no longer an active holding.",
+      "evidenceUrls": []
+    },
+    {
+      "companyName": "Commonwealth LNG",
+      "reasonCode": "SUBSIDIARY_OR_PROJECT",
+      "rationale": "LNG export project counted within the Caturus platform and not a standalone manager-level investment.",
+      "evidenceUrls": [
+        "https://www.commonwealthlng.com/"
+      ]
+    },
+    {
+      "companyName": "Kimmeridge Texas Gas",
+      "reasonCode": "DUPLICATE_PLATFORM",
+      "rationale": "Legacy platform name consolidated into and replaced by Caturus.",
+      "evidenceUrls": [
+        "https://www.kimmeridge.com/"
+      ]
+    },
+    {
+      "companyName": "Civitas Resources",
+      "reasonCode": "PUBLIC_SECURITY",
+      "rationale": "Publicly traded company associated with activist/public equity strategy rather than direct infrastructure ownership.",
+      "evidenceUrls": [
+        "https://www.civitasresources.com/"
+      ]
+    },
+    {
+      "companyName": "SilverBow Resources",
+      "reasonCode": "PUBLIC_SECURITY",
+      "rationale": "Publicly traded upstream company held through activist/public equity strategy, not a direct infrastructure platform.",
+      "evidenceUrls": [
+        "https://www.sbow.com/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Caturus mixed upstream/LNG platform boundary",
+      "issue": "Caturus combines upstream natural gas production with LNG export infrastructure, creating ambiguity over whether the full platform or only its infrastructure components should be counted.",
+      "recommendedResolution": "Include the full platform but explicitly disclose mixed upstream and infrastructure exposure without separately counting Commonwealth LNG.",
+      "evidenceUrls": [
+        "https://www.kimmeridge.com/news/kimmeridge-forms-caturus"
+      ]
+    },
+    {
+      "subject": "Infrastructure-strategy attribution without dedicated infrastructure fund",
+      "issue": "Kimmeridge does not operate a dedicated infrastructure fund, and infrastructure investments are made through broader private investments and energy transition strategies.",
+      "recommendedResolution": "Allow deal-level inclusion based on asset ownership rather than requiring a labeled infrastructure fund strategy.",
+      "evidenceUrls": [
+        "https://www.kimmeridge.com/select-investments"
+      ]
+    },
+    {
+      "subject": "SYSO asset-ownership classification",
+      "issue": "SYSO provides optimization software to energy assets but does not clearly own infrastructure, raising classification uncertainty.",
+      "recommendedResolution": "Exclude unless evidence emerges demonstrating direct ownership or control of physical infrastructure assets.",
+      "evidenceUrls": [
+        "https://www.sysotechnologies.com/"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "3efbdedf02641e8ee91829ec3c9984587084ca266931e8db1d1dd476b8b9a6cb"
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_CENSUS_RESULT",
+  "methodologyVersion": "NA_INFRA_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "requestedManager": "Cube Infrastructure Managers",
+  "canonicalManager": "Cube Infrastructure Managers",
+  "aliasesResearched": [
+    "Cube Infrastructure Managers",
+    "Cube IM",
+    "Natixis Environment & Infrastructure Luxembourg"
+  ],
+  "overlappingSuppliedManagers": [
+    "I Squared Capital"
+  ],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "DATABASE",
+  "sourceStandard": "ONE_RELIABLE_SOURCE_MINIMUM",
+  "holdings": [],
+  "excludedCandidates": [
+    {
+      "companyName": "Boralex Europe",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Cube Infrastructure Managers invested in Boralex’s European renewable energy platform; despite Boralex being Canadian-listed, the investment scope and underlying assets are European and therefore out of North America scope.",
+      "sourceUrl": "https://cubeinfrastructure.com/"
+    },
+    {
+      "companyName": "Cube Hydro Partners",
+      "reasonCode": "OTHER",
+      "rationale": "Cube Hydro Partners is a U.S. hydropower platform associated with I Squared Capital and unrelated to Cube Infrastructure Managers despite similar naming.",
+      "sourceUrl": "https://www.cubehydro.com/"
+    },
+    {
+      "companyName": "Cube District Energy",
+      "reasonCode": "OTHER",
+      "rationale": "Cube District Energy is a North American energy platform backed by I Squared Capital and is not affiliated with Cube Infrastructure Managers.",
+      "sourceUrl": "https://cubedistrictenergy.com/"
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Cube-branded infrastructure platforms in North America",
+      "issue": "Multiple North American infrastructure platforms (e.g., Cube Hydro, Cube District Energy) use the Cube name but are not affiliated with Cube Infrastructure Managers, creating potential attribution confusion.",
+      "sourceUrls": [
+        "https://www.cubehydro.com/",
+        "https://cubedistrictenergy.com/",
+        "https://cubeinfrastructure.com/"
+      ],
+      "recommendedResolution": "Maintain strict attribution to Cube Infrastructure Managers’ official portfolio disclosures and exclude similarly named but unaffiliated platforms."
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "dispositionsSearched": true,
+    "managerAliasesSearched": true,
+    "paginationOrAlphabeticCoverageChecked": true,
+    "sourcesOpened": 12,
+    "searchQueriesRun": 8,
+    "notes": [
+      "Official Cube Infrastructure Managers portfolio and strategy pages confirm a Europe-focused investment mandate with no disclosed North American direct infrastructure holdings.",
+      "Acquisition and exit searches across aliases and historical name (Natixis Environment & Infrastructure Luxembourg) yielded no North American investments.",
+      "All identifiable portfolio companies are European platforms or assets.",
+      "Name confusion with Cube Hydro and Cube District Energy resolved as unrelated to the manager."
+    ]
+  },
+  "summary": {
+    "includedHoldings": 0,
+    "closedActive": 0,
+    "signedPendingIncoming": 0,
+    "signedPendingExit": 0,
+    "proposedNew": 0,
+    "excludedCandidates": 3,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

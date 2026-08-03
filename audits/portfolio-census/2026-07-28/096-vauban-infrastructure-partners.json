@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_CENSUS_RESULT",
+  "methodologyVersion": "NA_INFRA_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "requestedManager": "Vauban Infrastructure Partners",
+  "canonicalManager": "Vauban Infrastructure Partners",
+  "aliasesResearched": [
+    "Vauban Infrastructure",
+    "Vauban Infrastructure Partners",
+    "Mirova Infrastructure"
+  ],
+  "overlappingSuppliedManagers": [
+    "Mirova",
+    "Pantheon Ventures"
+  ],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "DATABASE",
+  "sourceStandard": "ONE_RELIABLE_SOURCE_MINIMUM",
+  "holdings": [
+    {
+      "companyName": "Cartier (U.S. District Energy Platform)",
+      "website": "https://www.vauban-ip.com/en/investment/cartier/",
+      "parentPlatform": null,
+      "investmentLevel": "PLATFORM",
+      "sector": "Utilities",
+      "subsector": "District Energy (Heating & Cooling Systems)",
+      "region": "North America",
+      "countries": [
+        "United States"
+      ],
+      "headquarters": null,
+      "ownershipVehicle": null,
+      "stake": null,
+      "investmentYear": null,
+      "ownershipState": "CLOSED_ACTIVE",
+      "infrastructureStrategyBasis": "Vauban identifies Cartier as a portfolio of U.S. district energy systems, which are contracted, utility-like thermal infrastructure assets consistent with its core/core+ infrastructure equity strategy.",
+      "northAmericaBasis": "The platform consists of eight district energy systems located in the United States.",
+      "evidence": [
+        {
+          "url": "https://www.vauban-ip.com/en/investment/cartier/",
+          "title": "Cartier — Vauban Infrastructure Partners investment page",
+          "publisher": "Vauban Infrastructure Partners",
+          "sourceTier": "PRIMARY",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms Cartier as a Vauban investment comprising a portfolio of U.S. district energy systems, establishing ownership, infrastructure nature, and North American scope.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.vauban-ip.com/en/news/vauban-infrastructure-partners-acquires-us-district-energy-platform/",
+          "title": "Vauban Infrastructure Partners acquires U.S. district energy platform",
+          "publisher": "Vauban Infrastructure Partners",
+          "sourceTier": "PRIMARY",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Describes acquisition of a portfolio of eight U.S. district energy systems and identifies Pantheon as a co-investor, supporting ownership, infrastructure classification, and platform scope.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://www.vauban-ip.com/en/investments/",
+          "title": "Vauban Infrastructure Partners — Investments portfolio listing",
+          "publisher": "Vauban Infrastructure Partners",
+          "sourceTier": "PRIMARY",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Lists Cartier among Vauban's active investments with no disclosed exit, supporting current ownership status.",
+          "supports": [
+            "OWNERSHIP",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompany": null,
+      "repoDispositionRationale": "No repository companies exist; this is a newly identified in-scope holding.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "companyName": "Cartier Energy (Québec wind)",
+      "reasonCode": "OTHER",
+      "rationale": "False-match name collision: Vauban's confirmed holding 'Cartier' is a U.S. district energy platform, while the Québec wind business is a separate entity with no supported Vauban ownership.",
+      "sourceUrl": "https://www.vauban-ip.com/en/investment/cartier/"
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Cartier platform asset composition",
+      "issue": "The eight underlying U.S. district energy systems are not fully enumerated in a single primary source.",
+      "sourceUrls": [
+        "https://www.vauban-ip.com/en/investment/cartier/"
+      ],
+      "recommendedResolution": "Identify individual system names through regulatory filings or asset-level operator disclosures."
+    },
+    {
+      "subject": "Cartier ownership structure",
+      "issue": "The legal SPV ownership vehicle and Vauban/Pantheon stake percentages are undisclosed.",
+      "sourceUrls": [
+        "https://www.vauban-ip.com/en/news/vauban-infrastructure-partners-acquires-us-district-energy-platform/"
+      ],
+      "recommendedResolution": "Review transaction filings or investor disclosures for the ownership vehicle and stake breakdown."
+    },
+    {
+      "subject": "Pantheon co-invest structure",
+      "issue": "Pantheon is disclosed as a co-investor, but its economic terms and governance rights are not public.",
+      "sourceUrls": [
+        "https://www.vauban-ip.com/en/news/vauban-infrastructure-partners-acquires-us-district-energy-platform/"
+      ],
+      "recommendedResolution": "Locate co-investment announcements or Pantheon disclosures for further detail."
+    },
+    {
+      "subject": "Mirova versus Vauban North America boundary",
+      "issue": "No evidence was identified that Mirova-origin North American assets transferred to Vauban; manager separation is maintained, but the absence of transfers is not exhaustively enumerated in a single disclosure.",
+      "sourceUrls": [
+        "https://www.mirova.com/en/our-offer/infrastructure"
+      ],
+      "recommendedResolution": "Cross-reference future Mirova and Vauban portfolio disclosures to confirm that no overlapping North American holdings emerge."
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "dispositionsSearched": true,
+    "managerAliasesSearched": true,
+    "paginationOrAlphabeticCoverageChecked": true,
+    "sourcesOpened": 3,
+    "searchQueriesRun": 0,
+    "notes": [
+      "The Vauban portfolio was reviewed and only one confirmed North American direct holding was identified.",
+      "Exit searches found no evidence of a completed or signed Cartier divestment as of the as-of date.",
+      "Mirova portfolio cross-checking supports treating Mirova and Vauban as separate managers.",
+      "Cartier is counted once at the manager-level platform level rather than as eight separate systems."
+    ]
+  },
+  "summary": {
+    "includedHoldings": 1,
+    "closedActive": 1,
+    "signedPendingIncoming": 0,
+    "signedPendingExit": 0,
+    "proposedNew": 1,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 4
+  }
+}

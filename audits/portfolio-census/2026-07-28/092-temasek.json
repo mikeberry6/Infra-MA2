@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_CENSUS_RESULT",
+  "methodologyVersion": "NA_INFRA_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "requestedManager": "Temasek",
+  "canonicalManager": "Temasek Holdings (Private) Limited",
+  "aliasesResearched": [
+    "Temasek",
+    "Temasek Holdings",
+    "Temasek International"
+  ],
+  "overlappingSuppliedManagers": [
+    "Brookfield Asset Management",
+    "Energy Capital Partners",
+    "BlackRock"
+  ],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "DATABASE",
+  "sourceStandard": "ONE_RELIABLE_SOURCE_MINIMUM",
+  "holdings": [
+    {
+      "companyName": "Luminace",
+      "website": "https://luminace.com/",
+      "parentPlatform": null,
+      "investmentLevel": "COMPANY",
+      "sector": "Power & ET",
+      "subsector": "Distributed solar, storage, and energy-as-a-service",
+      "region": "North America",
+      "countries": [
+        "United States",
+        "Canada"
+      ],
+      "headquarters": "Multiple US states",
+      "ownershipVehicle": null,
+      "stake": null,
+      "investmentYear": 2025,
+      "ownershipState": "CLOSED_ACTIVE",
+      "infrastructureStrategyBasis": "Luminace owns and operates distributed solar and storage assets under long-term contracted energy-as-a-service arrangements, meeting core infrastructure criteria of asset ownership and contracted cash flows.",
+      "northAmericaBasis": "Luminace is a North American-focused platform operating distributed energy assets across the United States and Canada.",
+      "evidence": [
+        {
+          "url": "https://competition-cases.ec.europa.eu/cases/M.12179",
+          "title": "M.12179 Temasek / Brookfield / Luminace",
+          "publisher": "European Commission",
+          "sourceTier": "PRIMARY",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms Temasek and Brookfield joint control over Luminace following a transaction resulting in shared ownership.",
+          "supports": [
+            "OWNERSHIP",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://luminace.com/about-us/",
+          "title": "About Luminace",
+          "publisher": "Luminace",
+          "sourceTier": "PRIMARY",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Describes Luminace as a distributed energy platform providing solar, storage, and energy-as-a-service solutions across North America.",
+          "supports": [
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://op.europa.eu/en/publication-detail/-/publication/09fff9b3-b64e-11f0-b37f-01aa75ed71a1/language-en",
+          "title": "EU Merger Decision Temasek / Brookfield / Luminace",
+          "publisher": "European Union",
+          "sourceTier": "PRIMARY",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Details the transaction structure and confirms Temasek participation in ownership of Luminace.",
+          "supports": [
+            "OWNERSHIP"
+          ]
+        }
+      ],
+      "repoDisposition": "EXISTING_VERIFIED",
+      "matchedRepoCompany": {
+        "repoCompanyId": "cmoqby8li00ao171flqpuqq6j",
+        "name": "Luminace",
+        "country": "United States / Canada"
+      },
+      "repoDispositionRationale": "Repository record aligns with current ownership, geography, and infrastructure classification.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "companyName": "Atlantica Sustainable Infrastructure plc",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Atlantica operates a globally diversified portfolio across North America, Europe, South America and other regions; despite significant North American assets, it is not primarily based in or dedicated to North America.",
+      "sourceUrl": "https://www.atlantica.com/wp-content/uploads/2025/09/Atlantica-Investor-Presentation-September-2025.pdf"
+    },
+    {
+      "companyName": "Eavor Technologies Inc.",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Eavor is a geothermal technology developer without a portfolio of owned operating infrastructure assets.",
+      "sourceUrl": "https://eavor.com/press-releases/capital-raise-of-182-million-confirms-eavor-as-the-leader-in-scalable-geothermal/"
+    },
+    {
+      "companyName": "Neoen S.A.",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Neoen is a global renewable energy company with diversified operations across Europe, Australia, and other regions; not primarily North American.",
+      "sourceUrl": "https://neoen.com/en/about-us-3/"
+    },
+    {
+      "companyName": "PSA International Pte Ltd",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "PSA is a global port operator headquartered in Singapore with worldwide operations; North America is only a subset of its portfolio.",
+      "sourceUrl": "https://www.globalpsa.com/psa-international/"
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "repoCompanyName": "Atlantica Sustainable Infrastructure plc",
+      "repoCountry": "North America",
+      "disposition": "OUT_OF_SCOPE",
+      "rationale": "Global platform not primarily based in or dedicated to North America despite Temasek co-investment.",
+      "evidenceUrls": [
+        "https://www.atlantica.com/wp-content/uploads/2025/09/Atlantica-Investor-Presentation-September-2025.pdf"
+      ]
+    },
+    {
+      "repoCompanyName": "Eavor Technologies Inc.",
+      "repoCountry": "Canada",
+      "disposition": "OUT_OF_SCOPE",
+      "rationale": "Technology company lacking infrastructure asset ownership.",
+      "evidenceUrls": [
+        "https://eavor.com/press-releases/capital-raise-of-182-million-confirms-eavor-as-the-leader-in-scalable-geothermal/"
+      ]
+    },
+    {
+      "repoCompanyName": "Neoen S.A.",
+      "repoCountry": "Canada / Mexico",
+      "disposition": "OUT_OF_SCOPE",
+      "rationale": "Global renewable platform not North America-dedicated.",
+      "evidenceUrls": [
+        "https://neoen.com/en/about-us-3/"
+      ]
+    },
+    {
+      "repoCompanyName": "PSA International Pte Ltd",
+      "repoCountry": "Canada / United States",
+      "disposition": "OUT_OF_SCOPE",
+      "rationale": "Global transportation platform not North America-dedicated.",
+      "evidenceUrls": [
+        "https://www.globalpsa.com/psa-international/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Luminace ownership structure",
+      "issue": "Exact Temasek stake percentage and ownership vehicle not publicly disclosed",
+      "sourceUrls": [
+        "https://competition-cases.ec.europa.eu/cases/M.12179"
+      ],
+      "recommendedResolution": "Review detailed transaction filings or regulatory disclosures for ownership breakdown"
+    },
+    {
+      "subject": "Temasek infrastructure mandate boundary",
+      "issue": "Temasek operates via balance-sheet investing without a clearly defined infrastructure fund strategy boundary",
+      "sourceUrls": [
+        "https://www.temasek.com.sg/en/sustainability/sustainability-in-our-investments/investing-with-tomorrow-in-mind"
+      ],
+      "recommendedResolution": "Cross-reference internal Temasek portfolio segmentation disclosures"
+    },
+    {
+      "subject": "Temasek co-invest disclosure completeness",
+      "issue": "Potential undisclosed co-investments or SMAs not fully publicly enumerated",
+      "sourceUrls": [
+        "https://www.temasek.com.sg/en/our-investments/our-portfolio"
+      ],
+      "recommendedResolution": "Review fund-level and co-investment disclosures or regulatory filings"
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "dispositionsSearched": true,
+    "managerAliasesSearched": true,
+    "paginationOrAlphabeticCoverageChecked": true,
+    "sourcesOpened": 8,
+    "searchQueriesRun": 4,
+    "notes": [
+      "Comprehensive review of Temasek disclosures and portfolio materials completed Pasted text"
+    ]
+  },
+  "summary": {
+    "includedHoldings": 1,
+    "closedActive": 1,
+    "signedPendingIncoming": 0,
+    "signedPendingExit": 0,
+    "proposedNew": 0,
+    "excludedCandidates": 4,
+    "repoOnlyRecords": 4,
+    "unresolvedConflicts": 3
+  }
+}

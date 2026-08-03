@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 42,
+  "requestedManager": "Energy Infrastructure Partners",
+  "canonicalManager": "Energy Infrastructure Partners AG",
+  "aliasesSearched": [
+    "EIP",
+    "Energy Infrastructure Partners AG",
+    "Credit Suisse Energy Infrastructure Partners"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6a8b2f-9fd8-83ea-baad-cb26172fb553",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "21dfa8bfa03a88e157ab818f267af595e0db126d91761c3b81f90904ea8c7de5"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [],
+  "reconciliationInputVersion": 2,
+  "sourceResult": {
+    "acceptedResultPath": "audits/portfolio-census/2026-07-28/042-energy-infrastructure-partners.json",
+    "acceptedResultSha256": "1b35ace9c8e422d49b46f6259a9ba60a8597c861baab4757f2b9c2fd0b2f3bba",
+    "acceptedResponseSha256": "21dfa8bfa03a88e157ab818f267af595e0db126d91761c3b81f90904ea8c7de5",
+    "recoveredInputV1Sha256": "bec94446d525c582b612c50e1fbfd1b20e9b813052b7268dd21305b8bd8cc681"
+  },
+  "repoOnlyRecords": [],
+  "excludedCandidates": [
+    {
+      "excludedCandidateId": "042-energy-infrastructure-partners:excluded:001:fluxys",
+      "sourceOrdinal": 1,
+      "companyName": "Fluxys",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Belgian gas transmission operator; portfolio exposure is European and not a North American-dedicated platform.",
+      "evidenceUrls": [
+        "https://energy-infrastructure-partners.com/portfolio/"
+      ]
+    },
+    {
+      "excludedCandidateId": "042-energy-infrastructure-partners:excluded:002:plenitude-eni-gas-power-renewables-business",
+      "sourceOrdinal": 2,
+      "companyName": "Plenitude (Eni gas & power / renewables business)",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Italy-based integrated energy transition platform with global footprint; not primarily North American.",
+      "evidenceUrls": [
+        "https://energy-infrastructure-partners.com/portfolio/"
+      ]
+    },
+    {
+      "excludedCandidateId": "042-energy-infrastructure-partners:excluded:003:baywa-r-e",
+      "sourceOrdinal": 3,
+      "companyName": "BayWa r.e.",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Germany-headquartered renewables developer with global operations including the U.S., but not a North America-dedicated platform.",
+      "evidenceUrls": [
+        "https://energy-infrastructure-partners.com/portfolio/"
+      ]
+    },
+    {
+      "excludedCandidateId": "042-energy-infrastructure-partners:excluded:004:repsol-renewables-jv",
+      "sourceOrdinal": 4,
+      "companyName": "Repsol Renewables JV",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Spain-based renewable platform; global asset base but not a North America-dedicated entity.",
+      "evidenceUrls": [
+        "https://energy-infrastructure-partners.com/portfolio/"
+      ]
+    },
+    {
+      "excludedCandidateId": "042-energy-infrastructure-partners:excluded:005:alpiq",
+      "sourceOrdinal": 5,
+      "companyName": "Alpiq",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Swiss power generation and trading company; European focus.",
+      "evidenceUrls": [
+        "https://energy-infrastructure-partners.com/portfolio/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "798116206ca3d49010bef7becd94274ed09958239717bbb400c04960dda2ee76"
+}
