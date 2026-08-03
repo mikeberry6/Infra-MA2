@@ -681,7 +681,10 @@ function validateCandidate(candidate: FundRefreshCandidate, issues: ValidationIs
   }
   if (candidate.after) {
     validateSize(candidate.after, computedFields, issues, candidate);
-    if (!(candidate.after.vintage === "Evergreen" || /^\d{4}$/.test(candidate.after.vintage))) {
+    const validVintage = candidate.after.vintage === "Evergreen" || /^\d{4}$/.test(candidate.after.vintage);
+    const unchangedLegacyVerification = candidate.action === "VERIFY_NO_CHANGE" &&
+      candidate.before?.vintage === candidate.after.vintage;
+    if (!validVintage && !unchangedLegacyVerification) {
       addIssue(issues, "INVALID_VINTAGE", `After vintage must be a four-digit year or Evergreen, got ${candidate.after.vintage}`, candidate);
     }
   }

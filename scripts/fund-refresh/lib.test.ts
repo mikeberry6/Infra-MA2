@@ -191,6 +191,21 @@ describe("fund refresh historical forward cases", () => {
     expect(result.issues.filter((issue) => issue.severity === "error")).toEqual([]);
   });
 
+  it("allows a legacy vintage placeholder only for an exact no-change verification", () => {
+    const legacy = { ...base, vintage: "Raising" };
+    const verified = parseAndValidateProposal(proposal([
+      candidate("VERIFY_NO_CHANGE", legacy, legacy, [], evidence(["fundName"])),
+    ]), manifest);
+    expect(verified.issues.map((issue) => issue.code)).not.toContain("INVALID_VINTAGE");
+
+    const updated = { ...legacy, investmentStrategy: `${legacy.investmentStrategy} Updated` };
+    const updatedFields = snapshotChangedFields(legacy, updated);
+    const rejected = parseAndValidateProposal(proposal([
+      candidate("UPDATE", legacy, updated, updatedFields, evidence(updatedFields)),
+    ]), manifest);
+    expect(rejected.issues.map((issue) => issue.code)).toContain("INVALID_VINTAGE");
+  });
+
   it("allows a reviewed base-manager alias to move to its canonical identity", () => {
     const aliasRecord = manifest.funds.find((fund) => canonicalManagerKey(fund.managerName) !== normalizeIdentity(fund.managerName));
     expect(aliasRecord).toBeDefined();
