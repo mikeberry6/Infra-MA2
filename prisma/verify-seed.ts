@@ -72,8 +72,11 @@ async function main() {
   // can include retired references, so verify broad coverage plus integrity.
   check("Deals", Math.floor(deals.length * 0.9), dealCount);
   check("Deal participants", dealCount, participantCount);
-  check("Users", 1, userCount);
 
+  // Public database integrity does not depend on an administrator account.
+  // Production may intentionally have zero users; validation creates its
+  // isolated browser-test administrator later in the protected workflow.
+  console.log(`  Users: ${userCount}`);
   console.log(`\n  Aliases: ${aliasCount}`);
   console.log(`  Ownership Periods: ${ownershipCount}`);
   console.log(`  Milestones: ${milestoneCount}`);
