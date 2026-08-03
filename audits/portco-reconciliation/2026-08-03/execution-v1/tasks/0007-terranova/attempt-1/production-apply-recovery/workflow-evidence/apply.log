@@ -1,0 +1,7 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0007-terranova-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0007-terranova-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0007-terranova/production-snapshot.json --proposal-sha256=15e2ce045765c8a7dc601ddee85154ff4cad846c6285f265bdd7f21a1732f89d --approval-sha256=3745b76f5e71d43d905377ea83eb3c675691bb52063638104fd6f4ed3c8d057f --snapshot-sha256=f5833f2a747e5ef2a1ccd3fc2b9919958065173968ec34d16b1164c6df96f1e9 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_CHANGE --receipt=tmp/portco-reconciliation/production/apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3135) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Detail API verification failed: Detail API returned HTTP 404
