@@ -112,6 +112,23 @@ function assertExactlyOnePrimary(image: CompanyImage): void {
   }
 }
 
+const supportedSourceTypes = new Set([
+  "ARTICLE",
+  "PRESS_RELEASE",
+  "SEC_FILING",
+  "PRESENTATION",
+  "WEBSITE",
+  "OTHER",
+]);
+
+function assertSupportedSourceTypes(image: CompanyImage): void {
+  for (const citation of image.citations) {
+    if (!supportedSourceTypes.has(citation.sourceType)) {
+      throw new Error(`Approved citation source type is not supported by the database: ${citation.sourceType}`);
+    }
+  }
+}
+
 function assertEvidenceCoverage(image: CompanyImage): void {
   const citationUrls = new Set(image.citations.map((citation) => citation.url));
   for (const [label, rows] of [
@@ -433,6 +450,7 @@ export function planApprovedApply(input: {
   }
   assertExactlyOnePrimary(proposal.afterImage);
   assertEvidenceCoverage(proposal.afterImage);
+  assertSupportedSourceTypes(proposal.afterImage);
 
   const originalById = new Map(snapshot.companies.flatMap((company) => company.id
     ? [[company.id, company] as const]
