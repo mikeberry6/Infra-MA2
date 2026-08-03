@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-08-03T22:43:11.000Z",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "rationale": "Correct the existing Catalyze record while preserving both current owners. Current official portfolio pages identify Catalyze as a current Actis and EnCap Energy Transition holding. Actis discloses that it acquired a co-control stake through Energy Fund 5 in February 2023, while EnCap discloses an initial investment in 2019. Catalyze's current official company page identifies its corporate headquarters in Houston, Texas and its website. A fresh acquisition-and-exit search found no announced or completed disposition by either owner. The correction records the disclosed Actis stake, replaces an operating-footprint phrase with the actual headquarters, adds the official website, links the entry milestones to direct evidence, and adds current Actis portfolio evidence as the primary citation without inferring an EnCap stake percentage or more specific vehicle.",
+  "evidence": [
+    {
+      "url": "https://www.act.is/about-us/portfolio/catalyze/",
+      "purpose": "Current official Actis portfolio and exit-status check",
+      "supports": [
+        "Actis current ownership",
+        "February 2023 investment date",
+        "co-control stake",
+        "Energy Fund 5 infrastructure strategy",
+        "no disclosed exit"
+      ]
+    },
+    {
+      "url": "https://www.act.is/2023/02/28/actis-and-encap-invest-in-us-solar-platform-catalyze/",
+      "purpose": "Official transaction and strategy evidence",
+      "supports": [
+        "Actis co-control investment alongside EnCap",
+        "February 2023 announcement",
+        "Energy Fund 5",
+        "United States energy infrastructure basis"
+      ]
+    },
+    {
+      "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/current/catalyze",
+      "purpose": "Current official EnCap portfolio and exit-status check",
+      "supports": [
+        "EnCap current ownership",
+        "2019 initial investment",
+        "Energy Transition strategy",
+        "no disclosed exit"
+      ]
+    },
+    {
+      "url": "https://catalyze.com/company/about-us/",
+      "purpose": "Official company identity, website, founding year, and headquarters evidence",
+      "supports": [
+        "Catalyze identity",
+        "official website",
+        "2017 founding year",
+        "Houston corporate headquarters"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "website": "https://catalyze.com/",
+    "headquarters": "Houston, Texas",
+    "description": "Catalyze develops, finances, owns, and operates distributed solar, battery storage, and EV charging assets in the United States. Its customer base includes commercial and industrial real estate owners, business operators, public-sector counterparties, and community-solar subscribers. The company follows an asset-heavy independent power producer and developer model, with revenues supported by long-term contracts, leases, and other recurring project cash flows. Public materials describe a national platform active across more than 30 states, and recent financings support portfolios including 79 MW of New York community-solar projects and 100 MW of projects in New York, Illinois, California, and Virginia. Catalyze was founded in 2017 and has expanded through project development, operating portfolio growth, and structured financing transactions. EnCap invested in 2019, and Actis acquired a co-control stake alongside EnCap in February 2023 through Actis Energy 5; percentage ownership is not publicly disclosed.",
+    "lastVerifiedAt": "2026-08-03T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjp7401chivheuf819lak",
+      "set": {
+        "stake": "Co-control (with EnCap Investments)"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpkcfh02czivhecnr9amvp",
+      "set": {
+        "evidenceUrls": [
+          "https://www.encapinvestments.com/about/energy-transition/portfolio/current/catalyze"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkcfy02d0ivhejcloxxo4",
+      "set": {
+        "evidenceUrls": [
+          "https://www.act.is/2023/02/28/actis-and-encap-invest-in-us-solar-platform-catalyze/"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpojjw06u4ivhe3eik1t9c",
+      "set": {
+        "label": "Catalyze — Company Overview",
+        "evidenceLabel": "Official company identity, founding year, and Houston headquarters",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Actis — Catalyze Current Portfolio",
+      "url": "https://www.act.is/about-us/portfolio/catalyze/",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Actis current co-control ownership through Energy Fund 5",
+      "isPrimary": true
+    }
+  ]
+}

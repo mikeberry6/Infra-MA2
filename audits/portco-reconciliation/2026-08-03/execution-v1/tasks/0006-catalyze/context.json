@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0006:catalyze:fe44d150",
+  "taskIndex": 6,
+  "companyName": "Catalyze",
+  "generatedAt": "2026-08-03T22:42:19.065Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0006-catalyze/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 6,
+    "taskId": "ledger:0006:catalyze:fe44d150",
+    "canonicalKey": "catalyze|united-states",
+    "companyName": "Catalyze",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 3,
+    "managers": [
+      "Actis",
+      "EnCap Investments"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "003-actis:holding:001:catalyze",
+      "040-encap-investments:holding:005:catalyze"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj45000g2ivhe0fxyhw7o"
+    ],
+    "seedKeys": [
+      "catalyze|United States"
+    ],
+    "evidenceUrls": [
+      "https://catalyze.com/company/about-us/",
+      "https://www.act.is/2023/02/28/actis-and-encap-invest-in-us-solar-platform-catalyze/",
+      "https://www.act.is/about-us/portfolio/catalyze/",
+      "https://www.encapinvestments.com/about/energy-transition/portfolio/current/catalyze"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj45000g2ivhe0fxyhw7o",
+    "name": "Catalyze",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed solar, battery storage, and EV charging infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Catalyze develops, finances, owns, and operates distributed solar, battery storage, and EV charging assets in the United States. Its customer base includes commercial and industrial real estate owners, business operators, public-sector counterparties, and community-solar subscribers. The company follows an asset-heavy independent power producer and developer model, with revenues supported by long-term contracts, leases, and other recurring project cash flows. Public materials describe a national platform active across more than 30 states, and recent financings support portfolios including 79 MW of New York community-solar projects and 100 MW of projects in New York, Illinois, California, and Virginia. Catalyze was founded in 2017 and has expanded through a combination of project development, operating portfolio growth, and structured financing transactions. Actis invested alongside EnCap in February 2023 through Actis Energy 5, and current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2017,
+    "headquarters": "Multi-state U.S. operations, including New York, Illinois, California, Virginia, and Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp7401chivheuf819lak",
+        "managerName": "Actis",
+        "organizationName": "Actis",
+        "fundName": null,
+        "vehicleName": "Actis Energy 5",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjp7k01ciivhegsza9ynq",
+        "managerName": "EnCap Investments",
+        "organizationName": "EnCap Investments",
+        "fundName": null,
+        "vehicleName": "EnCap Energy Transition",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkcf202cyivheer1xztzr",
+        "date": "2017",
+        "event": "Catalyze was founded as a distributed renewable-energy developer and independent power producer.",
+        "category": "FOUNDING",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcfh02czivhecnr9amvp",
+        "date": "2019",
+        "event": "EnCap made its initial investment in Catalyze.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcfy02d0ivhejcloxxo4",
+        "date": "Feb 2023",
+        "event": "Actis and EnCap announced a co-control investment in Catalyze targeting the build-out of roughly 600 MW of solar and storage capacity.",
+        "category": "FINANCING",
+        "sortDate": "2023-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcgj02d1ivhenxnfztax",
+        "date": "May 2024",
+        "event": "NY Green Bank committed $100 million of financing for a 79 MW community distributed-generation portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2024-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkch302d2ivhe998wxla1",
+        "date": "Jan 2026",
+        "event": "Catalyze closed a 100 MW distributed-solar tax-equity financing with RBC Community Investments.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpojjw06u4ivhe3eik1t9c",
+        "label": "Catalyze — Catalyze",
+        "url": "https://catalyze.com/company/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Catalyze company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpojl606u6ivhe3yudlcjh",
+        "label": "Announcement date source — Actis — Catalyze",
+        "url": "https://www.act.is/2023/02/28/actis-and-encap-invest-in-us-solar-platform-catalyze/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Actis transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojmc06u8ivheekkep9ik",
+        "label": "Catalyze — Catalyze",
+        "url": "https://catalyze.com/2024/05/15/catalyze-announces-transaction-to-support-community-distributed-generation-portfolio/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Catalyze operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojp406u9ivhexl5mdqmi",
+        "label": "Catalyze",
+        "url": "https://catalyze.com/2026/01/26/catalyze-closes-100-mw-distributed-solar-tax-equity-financing-with-rbc/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Catalyze financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojq606ubivhep1oto6jz",
+        "label": "Investment date source — EnCap Investments — Catalyze",
+        "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/current/catalyze",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EnCap Investments initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojr906udivhei10hz6qc",
+        "label": "Encapinvestments — Catalyze",
+        "url": "https://www.encapinvestments.com/news/catalyze-acquires-permacity-advances-market-consolidation-strategy",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Encapinvestments transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Catalyze",
+    "investmentFirm": "Actis",
+    "sector": "Power & ET",
+    "subsector": "Distributed solar, battery storage, and EV charging infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Actis Energy 5",
+    "description": "Catalyze develops, finances, owns, and operates distributed solar, battery storage, and EV charging assets in the United States. Its customer base includes commercial and industrial real estate owners, business operators, public-sector counterparties, and community-solar subscribers. The company follows an asset-heavy independent power producer and developer model, with revenues supported by long-term contracts, leases, and other recurring project cash flows. Public materials describe a national platform active across more than 30 states, and recent financings support portfolios including 79 MW of New York community-solar projects and 100 MW of projects in New York, Illinois, California, and Virginia. Catalyze was founded in 2017 and has expanded through a combination of project development, operating portfolio growth, and structured financing transactions. Actis invested alongside EnCap in February 2023 through Actis Energy 5, and current ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2017,
+    "investmentYear": 2023,
+    "headquarters": "Multi-state U.S. operations, including New York, Illinois, California, Virginia, and Texas",
+    "milestones": [
+      {
+        "date": "2017",
+        "event": "Catalyze was founded as a distributed renewable-energy developer and independent power producer.",
+        "category": "Founding"
+      },
+      {
+        "date": "2019",
+        "event": "EnCap made its initial investment in Catalyze.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 2023",
+        "event": "Actis and EnCap announced a co-control investment in Catalyze targeting the build-out of roughly 600 MW of solar and storage capacity.",
+        "category": "Financing"
+      },
+      {
+        "date": "May 2024",
+        "event": "NY Green Bank committed $100 million of financing for a 79 MW community distributed-generation portfolio.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jan 2026",
+        "event": "Catalyze closed a 100 MW distributed-solar tax-equity financing with RBC Community Investments.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Catalyze — Catalyze",
+        "url": "https://catalyze.com/company/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Actis — Catalyze",
+        "url": "https://www.act.is/2023/02/28/actis-and-encap-invest-in-us-solar-platform-catalyze/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Catalyze — Catalyze",
+        "url": "https://catalyze.com/2024/05/15/catalyze-announces-transaction-to-support-community-distributed-generation-portfolio/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Catalyze — Catalyze",
+        "url": "https://catalyze.com/2026/01/26/catalyze-closes-100-mw-distributed-solar-tax-equity-financing-with-rbc/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Investment date source — EnCap Investments — Catalyze",
+        "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/current/catalyze",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Encapinvestments — Catalyze",
+        "url": "https://www.encapinvestments.com/news/catalyze-acquires-permacity-advances-market-consolidation-strategy",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Actis",
+        "ownershipVehicle": "Actis Energy 5",
+        "investmentYear": 2023,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "EnCap Investments",
+        "ownershipVehicle": "EnCap Energy Transition",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpif4s0041ivheo1wu6c3q",
+        "name": "Actis",
+        "updatedAt": "2026-07-23T16:09:26.812Z"
+      },
+      {
+        "id": "cmrxpifcq0043ivhe5112opir",
+        "name": "EnCap Investments",
+        "updatedAt": "2026-07-23T16:09:27.098Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0006:catalyze:fe44d150",
+    "taskIndex": 6,
+    "canonicalKey": "catalyze|united-states",
+    "capturedAt": "2026-08-03T22:42:19.065Z",
+    "databaseRevision": "company-state:298de95690aa611c41462be338790ceef2409ac4ef3ffcfa2c9b5539005d6df3",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "b63aa5e5cb8a9ada3dab2b6df8cc09d430db5921267540b4a0088bded839ba79",
+    "productionSnapshotSha256": "e0cbe9c1c6310a9a4e7b5c1d8558bf4ccd586c64683ef1223ca9d208f5c1b9ed",
+    "targetCompanySnapshotSha256": "298de95690aa611c41462be338790ceef2409ac4ef3ffcfa2c9b5539005d6df3",
+    "seedEntrySha256": "2f1d1f7e19da607336df36fba6f40d1cedac0fd66d26b1936b382afb8fbb4087",
+    "dependencies": {
+      "ownershipPeriodsSha256": "b84a31bd3ca1ed7ca0bb1f826c3199178e69eefc36c593c3fa8a5c84bfc804f8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "042ac4f945f79e0f3efb903ec9b4d9822212aa5b0caa4bc1effd1707ca1ae75b",
+      "citationsSha256": "bd78f3dddcd38f0f12172719ed57e582640fb81528c0d5ec47e8f69fa2c42e7c",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1ce4b8acce6594dc06e3479fdfb7468484af42043cb3a5aed4a7d625659d3d8a",
+    "stateSha256": "8b5e3ae88a7e6ceb4485b093c02f7920874c16b7fc1e559974a5c0270f6d05fc",
+    "taskSnapshotSha256": "241c079ee4f0586f6671054e8fc3edaff77a06cd831345ec7dd034f875e72204"
+  },
+  "contextSha256": "b07b71b2b1d89b6eeabb976ec235db18cd02f2fd741fe3a62fbe0242a4a9a937"
+}
