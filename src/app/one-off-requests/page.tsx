@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Company X illustrative CIM table of contents",
+    description:
+      "Outlook-friendly confidential information memorandum outline with nine numbered sections and one-click copying.",
+    href: "/one-off-requests/company-x-illustrative-cim-table-of-contents.html",
+    format: "Outlook HTML",
+    date: "Aug 2026",
+  },
+  {
     title: "U.S. bottleless water cooler market",
     description:
       "Market-size overview and competitor taxonomy covering dedicated POU platforms, regional operators, service bundlers, dealer networks, and hardware alternatives.",
@@ -152,7 +160,7 @@ export default function OneOffRequestsPage() {
           },
           {
             label: "Latest",
-            value: "Jul 2026",
+            value: "Aug 2026",
             detail: "Most recent one-off",
             color: "#B4A87D",
           },

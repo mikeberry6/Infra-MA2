@@ -32,7 +32,10 @@ async function main(): Promise<void> {
     throw new Error("--expected-sha, --expected-project-id, and --expected-github-repository-id are required.");
   }
   const deployment = deploymentReference();
-  const response = await fetch(`https://api.vercel.com/v13/deployments/${encodeURIComponent(deployment.reference)}`, {
+  const endpoint = new URL(`https://api.vercel.com/v13/deployments/${encodeURIComponent(deployment.reference)}`);
+  const vercelScope = process.env.VERCEL_SCOPE?.trim();
+  if (vercelScope) endpoint.searchParams.set("slug", vercelScope);
+  const response = await fetch(endpoint, {
     signal: AbortSignal.timeout(30_000),
     headers: {
       Authorization: `Bearer ${token}`,

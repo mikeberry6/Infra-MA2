@@ -14,6 +14,28 @@
   - `/search` — Cross-database search
   - `/earnings` — Earnings page
 
+## Codex Release Authorization
+
+- When the user explicitly says **ship**, **push**, **deploy**, or **publish** a
+  scoped change, that instruction authorizes Codex to complete the routine
+  release without asking for the same permission again: create or use a scoped
+  branch, commit only the intended files, push, open a pull request, enable
+  squash auto-merge, monitor the required check, wait for the matching Vercel
+  Production deployment, and run the canonical smoke test.
+- Routine code, UI, copy, and editorial releases use protected `main`, one
+  required pull-request build, and Vercel's automatic deployment. Never dispatch
+  a separate code-only production promotion workflow.
+- If `main` advances, update the branch and rerun checks without asking unless a
+  conflict changes user-authored content or materially expands scope.
+- Address actionable pull-request conversations within scope and allow
+  auto-merge to continue; ask only when a thread requires a product decision or
+  materially different implementation.
+- Stop for user input only when required by an unresolved merge conflict, a
+  material scope change, a failed check that needs a product decision, or the
+  single protected approval for a production schema/data write or rollback.
+- These instructions do not authorize unrequested production database writes,
+  destructive actions, or unrelated changes.
+
 ## Weekly Briefing Page (`/`)
 
 - Historical note: the current `/` route no longer renders the Weekly Briefing; it renders the Deal Database landing view from Prisma-backed deal data.
@@ -30,12 +52,14 @@
 - Weekly email briefings are static HTML files in `public/email-format/`. Use `public/email-format/template.html` as the starting point for each new issue.
 - Preserve the visual and editorial style established in `public/email-format/2026-05-02.html` and `public/email-format/2026-05-09.html`: Guggenheim purple/gold accents, bordered sector cards, compact metadata lines, grey body text, simple horizontal YTD bars, and a factual advisory tone.
 - Do not rewrite historical weekly email files unless the user explicitly asks for historical cleanup.
+- Use lowercase `mm` for millions and `bn` for billions throughout visible briefing copy and human-readable `data-scale-note` annotations (for example, `US$800mm`, `US$16bn`, `1mm households`, and `3.5mm tonnes`). Do not alter source URLs or machine-readable `data-scale-unit` values merely because they contain `million` or `billion`.
 
 ### Key Themes
 
-- Key themes should highlight the week's strongest capital deployment angles, not just sector volume.
-- When U.S. transactions are present, explicitly touch on **U.S. deployment** in the second/final theme paragraph with named transactions.
-- Name the strongest U.S. operating-asset, platform, and portfolio-company transactions; use non-U.S. platform activity only as contrast.
+- Key Themes must contain exactly two short, succinct paragraphs, normally one sentence each.
+- Paragraph 1 must lead with the week's largest-scale transactions, prioritizing disclosed transaction or project value and using physical scale only when economics are undisclosed.
+- When U.S. transactions are present, paragraph 2 (the final paragraph) must focus on **U.S. deployment** and name the strongest U.S. operating-asset, platform, and portfolio-company transactions.
+- Use non-U.S. platform activity only as selective contrast in paragraph 1.
 - Distinguish new U.S. capital deployment and operating-asset/platform acquisitions from secondaries, exits, and broad platform announcements when writing theme language.
 
 ### Weekly Section Ordering
