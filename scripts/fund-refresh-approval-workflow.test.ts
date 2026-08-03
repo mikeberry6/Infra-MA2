@@ -10,6 +10,13 @@ const rollbackWorkflow = readFileSync(
   resolve(process.cwd(), ".github/workflows/fund-refresh-rollback.yml"),
   "utf8",
 );
+const packageScripts = Object.keys(
+  JSON.parse(readFileSync(resolve(process.cwd(), "package.json"), "utf8"))
+    .scripts as Record<string, string>,
+);
+
+const workflowNpmScripts = (workflow: string) =>
+  [...workflow.matchAll(/npm run ([A-Za-z0-9:_-]+)/g)].map((match) => match[1]);
 
 describe("fund refresh owner-operated approval policy", () => {
   it("binds approval to an exact owner comment and immutable proposal identity", () => {
@@ -33,6 +40,17 @@ describe("fund refresh owner-operated approval policy", () => {
       expect(workflow).toContain("approvalRule.prevent_self_review !== false");
       expect(workflow).toContain("can_admins_bypass !== false");
       expect(workflow).toContain("approvalRule.reviewers?.length");
+    }
+  });
+
+  it("only invokes npm scripts that exist and validates Prisma directly", () => {
+    for (const workflow of [applyWorkflow, rollbackWorkflow]) {
+      for (const script of workflowNpmScripts(workflow)) {
+        expect(packageScripts).toContain(script);
+      }
+
+      expect(workflow).toContain("npx prisma validate");
+      expect(workflow).not.toContain("npm run db:validate");
     }
   });
 });
