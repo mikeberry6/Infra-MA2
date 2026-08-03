@@ -78,8 +78,9 @@ describe("protected PortCo production apply workflow", () => {
       'if [ "$APPROVAL_PATH" != "$run_root/approvals/$proposal_key.json" ]',
     );
     expect(workflow).toContain(
-      'if [ "$PRODUCTION_SNAPSHOT_PATH" != "$run_root/snapshots/production-snapshot.json" ]',
+      '^${run_root}/execution-[A-Za-z0-9._-]+/tasks/[0-9]{4}-[A-Za-z0-9._-]+/production-snapshot\\.json$',
     );
+    expect(workflow).toContain('if [[ "$proposal_key" != "$snapshot_task_key"-* ]]');
     for (const hash of [
       "PROPOSAL_SHA256",
       "APPROVAL_SHA256",
