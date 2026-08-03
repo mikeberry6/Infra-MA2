@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0008:valia-energia:39ddd7f2",
+  "taskIndex": 8,
+  "asOfDate": "2026-08-03",
+  "generatedAt": "2026-08-03T23:36:42.000Z",
+  "canonicalKey": "valia-energia|mexico",
+  "companyName": "Valia Energía",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "003-actis:holding:002:valia-energia"
+  ],
+  "retiredCompanyIds": [],
+  "rationale": "Correct Valia Energía's headquarters from an asset-footprint string to the documented corporate headquarters in Mexico City, add the official company website, and record the 2026-08-03 verification date. Preserve the canonical identity, active status, Mexico geography, operating description, 3.2 GW platform scale, Actis Energy 5 ownership beginning in 2022, and undisclosed stake. Link the initial investment milestone to Actis' acquisition-closing announcement and make the current Actis portfolio page the primary ownership citation. A fresh acquisition-and-exit check confirms Actis still marks Valia as current and stated in May 2026 that it had no short-term plans to exit; no signed sale or completed disposition was found.",
+  "evidence": [
+    {
+      "url": "https://www.act.is/about-us/portfolio/valia-energia/",
+      "purpose": "Current official ownership, infrastructure strategy, investment date, geography, and scale",
+      "supports": [
+        "Actis current ownership",
+        "November 2022 investment date",
+        "Actis buy-and-build energy-infrastructure strategy",
+        "Mexico focus",
+        "more than 3.2 GW across seven generation assets and gas transport infrastructure"
+      ]
+    },
+    {
+      "url": "https://www.act.is/2022/11/10/actis-completes-acquisition-of-mt-falcon-holdings-from-mitsui-and-partners/",
+      "purpose": "Official acquisition closing and vehicle evidence",
+      "supports": [
+        "Actis completed the acquisition on November 10, 2022",
+        "business was rebranded Valia Energía",
+        "investment was funded through Actis Energy 5"
+      ]
+    },
+    {
+      "url": "https://valiaenergia.com/en/",
+      "purpose": "Official company website, headquarters, identity, and operating scale",
+      "supports": [
+        "official website",
+        "Mexico City headquarters",
+        "3.2 GW installed capacity",
+        "Mexican operating footprint"
+      ]
+    },
+    {
+      "url": "https://www.act.is/content-hub/actis-in-the-media/alberto-estefan-coverage-in-mergermarket-actis-targets-mid-market-renewable-energy-platforms-in-latin-america/",
+      "purpose": "Current official exit check",
+      "supports": [
+        "Actis stated on May 27, 2026 that it had no short-term plans to exit Valia Energía"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "3a94d85d837df8451ba491fb436ff24bf5b628308cf90ba759fbe05e83eaf088",
+  "currentCompanySnapshotSha256": "a84c9c54896d862d5c37b0761505665bda61b10520404513f343ab4c84998864",
+  "beforeImage": {
+    "id": "cmrxpj46200g4ivhejhwvldqp",
+    "name": "Valia Energía",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Independent power generation and gas transportation",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Valia Energía is a Mexican independent power producer operating natural gas-fired combined-cycle generation assets and a related gas pipeline. Its customers are power purchasers in Mexico's electricity market and other users of reliable dispatchable generation rather than retail end users. The operating model is asset-heavy and infrastructure based, with cash flows tied to large-scale generating plants and associated fuel transportation assets. Actis and company materials state that the platform has 3.2 GW of installed capacity across seven plants and a 58-kilometer gas pipeline. Actis created the platform in 2022 through the acquisition of MT Falcon and expanded it in 2023 through the acquisition of EVM Energia; the current ownership percentage is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Tamaulipas, Coahuila, and State of Mexico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp8i01ckivheq4m7iwoo",
+        "managerName": "Actis",
+        "organizationName": "Actis",
+        "fundName": null,
+        "vehicleName": "Actis Energy 5",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkck202d6ivhezv0qm6qn",
+        "date": "Nov 2022",
+        "event": "Actis completed the acquisition of MT Falcon and launched Valia Energía.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkckn02d7ivhekxs6p3ms",
+        "date": "Jul 2023",
+        "event": "Valia Energía acquired EVM Energia.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcl702d8ivhez705kwxs",
+        "date": "Oct 2023",
+        "event": "Valia announced completion of EVM integration and a 3.2 GW operating platform.",
+        "category": "EXPANSION",
+        "sortDate": "2023-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcln02d9ivhec7ds36u4",
+        "date": "Jan 2024",
+        "event": "Valia completed a $530 million project bond financing.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpojx006univheebaecrsl",
+        "label": "Valiaenergia — Valia Energía",
+        "url": "https://valiaenergia.com/en/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Valiaenergia — Valia Energía",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpojy606upivhenjxnvsmj",
+        "label": "Investment date source — Actis — Valia Energía",
+        "url": "https://www.act.is/about-us/portfolio/valia-energia/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Actis initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojz706urivhef1g4c65l",
+        "label": "Valiaenergia — Valia Energía",
+        "url": "https://valiaenergia.com/wp-content/uploads/2023/10/Valia-Energia-Press-Release-ENGLISH-VF.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Valiaenergia — Valia Energía",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpok0a06utivheed89f4uu",
+        "label": "Milbank — Valia Energía",
+        "url": "https://www.milbank.com/en/news/milbank-advises-valia-energia-on-dollar530m-project-bond-financing-to-expand-footprint-in-mexican-energy-market.html",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Milbank financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "a84c9c54896d862d5c37b0761505665bda61b10520404513f343ab4c84998864",
+  "afterImage": {
+    "id": "cmrxpj46200g4ivhejhwvldqp",
+    "name": "Valia Energía",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Independent power generation and gas transportation",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Valia Energía is a Mexican independent power producer operating natural gas-fired combined-cycle generation assets and a related gas pipeline. Its customers are power purchasers in Mexico's electricity market and other users of reliable dispatchable generation rather than retail end users. The operating model is asset-heavy and infrastructure based, with cash flows tied to large-scale generating plants and associated fuel transportation assets. Actis and company materials state that the platform has 3.2 GW of installed capacity across seven plants and a 58-kilometer gas pipeline. Actis created the platform in 2022 through the acquisition of MT Falcon and expanded it in 2023 through the acquisition of EVM Energia; the current ownership percentage is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://valiaenergia.com/en/",
+    "yearFounded": 2022,
+    "headquarters": "Mexico City, Mexico",
+    "lastVerifiedAt": "2026-08-03T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp8i01ckivheq4m7iwoo",
+        "managerName": "Actis",
+        "organizationName": "Actis",
+        "fundName": null,
+        "vehicleName": "Actis Energy 5",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkck202d6ivhezv0qm6qn",
+        "date": "Nov 2022",
+        "event": "Actis completed the acquisition of MT Falcon and launched Valia Energía.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.act.is/2022/11/10/actis-completes-acquisition-of-mt-falcon-holdings-from-mitsui-and-partners/"
+        ]
+      },
+      {
+        "id": "cmrxpkckn02d7ivhekxs6p3ms",
+        "date": "Jul 2023",
+        "event": "Valia Energía acquired EVM Energia.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcl702d8ivhez705kwxs",
+        "date": "Oct 2023",
+        "event": "Valia announced completion of EVM integration and a 3.2 GW operating platform.",
+        "category": "EXPANSION",
+        "sortDate": "2023-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcln02d9ivhec7ds36u4",
+        "date": "Jan 2024",
+        "event": "Valia completed a $530 million project bond financing.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpojx006univheebaecrsl",
+        "label": "Valiaenergia — Valia Energía",
+        "url": "https://valiaenergia.com/en/",
+        "sourceType": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official company profile, operating scale, and Mexico City headquarters",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojy606upivhenjxnvsmj",
+        "label": "Investment date source — Actis — Valia Energía",
+        "url": "https://www.act.is/about-us/portfolio/valia-energia/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Actis ownership, November 2022 investment, infrastructure strategy, and platform scale",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpojz706urivhef1g4c65l",
+        "label": "Valiaenergia — Valia Energía",
+        "url": "https://valiaenergia.com/wp-content/uploads/2023/10/Valia-Energia-Press-Release-ENGLISH-VF.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Valiaenergia — Valia Energía",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpok0a06utivheed89f4uu",
+        "label": "Milbank — Valia Energía",
+        "url": "https://www.milbank.com/en/news/milbank-advises-valia-energia-on-dollar530m-project-bond-financing-to-expand-footprint-in-mexican-energy-market.html",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Milbank financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Actis — Valia Energía acquisition closing",
+        "url": "https://www.act.is/2022/11/10/actis-completes-acquisition-of-mt-falcon-holdings-from-mitsui-and-partners/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Actis completed the MT Falcon acquisition through Actis Energy 5 in November 2022",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Actis — Valia Energía current ownership and exit outlook",
+        "url": "https://www.act.is/content-hub/actis-in-the-media/alberto-estefan-coverage-in-mergermarket-actis-targets-mid-market-renewable-energy-platforms-in-latin-america/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Actis stated in May 2026 that it had no short-term plans to exit Valia Energía",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "060ab94141dabe734d1a39635fd30e3106857426cb0c594589da9415569bc090",
+  "proposalSha256": "0f6b5b9020423dd9728dc4fddd9bab53e54836b9ec0168010224a6908273db2c"
+}
