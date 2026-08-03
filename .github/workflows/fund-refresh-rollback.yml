@@ -271,7 +271,7 @@ jobs:
         run: |
           npm ci
           npm run db:generate
-          npm run db:validate
+          npx prisma validate
           node --experimental-strip-types scripts/assert-database-target.ts
           mkdir -p tmp/fund-refresh/rollback-validation
           set -o pipefail
@@ -447,7 +447,7 @@ jobs:
         run: |
           npm ci
           npm run db:generate
-          npm run db:validate
+          npx prisma validate
           node --experimental-strip-types scripts/assert-database-target.ts
           mkdir -p tmp/fund-refresh/rollback-production/preapply
           npx prisma migrate status > tmp/fund-refresh/rollback-production/migrate-status.log
