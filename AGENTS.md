@@ -14,6 +14,28 @@
   - `/search` — Cross-database search
   - `/earnings` — Earnings page
 
+## Codex Release Authorization
+
+- When the user explicitly says **ship**, **push**, **deploy**, or **publish** a
+  scoped change, that instruction authorizes Codex to complete the routine
+  release without asking for the same permission again: create or use a scoped
+  branch, commit only the intended files, push, open a pull request, enable
+  squash auto-merge, monitor the required check, wait for the matching Vercel
+  Production deployment, and run the canonical smoke test.
+- Routine code, UI, copy, and editorial releases use protected `main`, one
+  required pull-request build, and Vercel's automatic deployment. Never dispatch
+  a separate code-only production promotion workflow.
+- If `main` advances, update the branch and rerun checks without asking unless a
+  conflict changes user-authored content or materially expands scope.
+- Address actionable pull-request conversations within scope and allow
+  auto-merge to continue; ask only when a thread requires a product decision or
+  materially different implementation.
+- Stop for user input only when required by an unresolved merge conflict, a
+  material scope change, a failed check that needs a product decision, or the
+  single protected approval for a production schema/data write or rollback.
+- These instructions do not authorize unrequested production database writes,
+  destructive actions, or unrelated changes.
+
 ## Weekly Briefing Page (`/`)
 
 - Historical note: the current `/` route no longer renders the Weekly Briefing; it renders the Deal Database landing view from Prisma-backed deal data.
