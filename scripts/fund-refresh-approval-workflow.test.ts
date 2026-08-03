@@ -95,4 +95,11 @@ describe("fund refresh owner-operated approval policy", () => {
       /candidate\.action === "VERIFY_NO_CHANGE"\s+\? \{ lastVerifiedAt: verifiedAt \}/,
     );
   });
+
+  it("does not fail a scoped apply on unrelated global source-link drift", () => {
+    expect(applyWorkflow).not.toContain("--check-links");
+    expect(applyWorkflow).toContain("Validate the immutable proposal contract");
+    expect(proposalValidator).toContain("SOURCE_HEALTH_MISSING");
+    expect(proposalValidator).toContain("UNOPENED_CANDIDATE_EVIDENCE");
+  });
 });

@@ -589,7 +589,6 @@ jobs:
             --require-complete \
             --allow-existing-findings-from tmp/fund-refresh/validation/preapply-fund-audit.json \
             --include-live-snapshots \
-            --check-links \
             --output tmp/fund-refresh/validation/fund-audit.json \
             2>&1 | tee tmp/fund-refresh/validation/fund-audit.log
           npm run db:verify 2>&1 | tee tmp/fund-refresh/validation/database-verification.log
