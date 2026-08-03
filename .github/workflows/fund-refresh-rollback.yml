@@ -415,10 +415,10 @@ jobs:
             if (
               !approvalRule ||
               !approvalRule.reviewers?.length ||
-              !approvalRule.prevent_self_review ||
+              approvalRule.prevent_self_review !== false ||
               response.data.can_admins_bypass !== false
             ) {
-              core.setFailed("fund-refresh-production must require reviewers and disable self-review and administrator bypass.");
+              core.setFailed("fund-refresh-production must require reviewers, allow owner self-review, and disable administrator bypass.");
             }
 
       - name: Setup Node
@@ -518,7 +518,7 @@ jobs:
               { owner, repo, environment_name: 'fund-refresh-production' },
             )).data;
             const approvalRule = (environment.protection_rules || []).find((rule) => rule.type === 'required_reviewers');
-            if (!approvalRule?.reviewers?.length || !approvalRule.prevent_self_review || environment.can_admins_bypass !== false) {
+            if (!approvalRule?.reviewers?.length || approvalRule.prevent_self_review !== false || environment.can_admins_bypass !== false) {
               core.setFailed('Production environment approval protections changed before rollback mutation.');
             }
 
