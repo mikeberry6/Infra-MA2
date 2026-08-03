@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 86,
+  "requestedManager": "Riverstone Holdings",
+  "canonicalManager": "Riverstone Holdings LLC",
+  "aliasesSearched": [
+    "Riverstone Holdings",
+    "Riverstone Energy Limited",
+    "Riverstone Global Energy & Power",
+    "Riverstone Earth"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6aef8f-7774-83ea-92e4-5ca6ead6e026",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "2bd36ebe5b09d1154499f28769a33b45bf4fc191eb5e4fe53fd076720a64a5f1"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [],
+  "reconciliationInputVersion": 2,
+  "sourceResult": {
+    "acceptedResultPath": "audits/portfolio-census/2026-07-28/086-riverstone-holdings.json",
+    "acceptedResultSha256": "3e4b4bf1c7b3e2e0eba6d23ee7ec57f3a1d7c044582de229a416dadf10558c3e",
+    "acceptedResponseSha256": "2bd36ebe5b09d1154499f28769a33b45bf4fc191eb5e4fe53fd076720a64a5f1",
+    "recoveredInputV1Sha256": "837929fcc2471fe8610c284fa96b18caa5cca6d564906cf813fcefedcb612c0e"
+  },
+  "repoOnlyRecords": [],
+  "excludedCandidates": [
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:001:energia-real",
+      "sourceOrdinal": 1,
+      "companyName": "Energia Real",
+      "reasonCode": "INSUFFICIENT_EVIDENCE",
+      "rationale": "Identified in Riverstone ESG disclosures as a monitored investment but no current-source evidence confirms Riverstone retains direct equity ownership or that the platform owns infrastructure assets (versus development/services) as of 2026-07-28.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/media/2024-esg-report.pdf"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:002:vemo",
+      "sourceOrdinal": 2,
+      "companyName": "VEMO",
+      "reasonCode": "INSUFFICIENT_EVIDENCE",
+      "rationale": "EV mobility platform appears in Riverstone ESG portfolio list; however, available disclosures do not confirm asset-level infrastructure ownership or continuing Riverstone equity stake as of the as-of date.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/media/2024-esg-report.pdf"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:003:a2-renovables",
+      "sourceOrdinal": 3,
+      "companyName": "A2 Renovables",
+      "reasonCode": "INSUFFICIENT_EVIDENCE",
+      "rationale": "Renewables platform referenced in ESG materials, but no direct evidence confirms current Riverstone ownership or operating asset base versus development-stage activity.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/media/2024-esg-report.pdf"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:004:white-river-renewables",
+      "sourceOrdinal": 4,
+      "companyName": "White River Renewables",
+      "reasonCode": "INSUFFICIENT_EVIDENCE",
+      "rationale": "Listed as a monitored company, but no current ownership confirmation or operating asset evidence located; status may be realized or development-only.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/media/2024-esg-report.pdf"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:005:ric-energy",
+      "sourceOrdinal": 5,
+      "companyName": "RIC Energy",
+      "reasonCode": "INSUFFICIENT_EVIDENCE",
+      "rationale": "Referenced in Riverstone ESG report; ownership, stake, and North American infrastructure asset base not confirmed through current sources.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/media/2024-esg-report.pdf"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:006:em-power",
+      "sourceOrdinal": 6,
+      "companyName": "EM Power",
+      "reasonCode": "INSUFFICIENT_EVIDENCE",
+      "rationale": "Board affiliation suggests possible Riverstone involvement, but no direct ownership or infrastructure asset confirmation available.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/team"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:007:imtt",
+      "sourceOrdinal": 7,
+      "companyName": "IMTT",
+      "reasonCode": "REALIZED",
+      "rationale": "Riverstone acquired IMTT in 2020; subsequent disclosures indicate exit/recapitalization and lack of current ownership confirmation as of 2026.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/news/riverstone-acquires-imtt"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:008:pattern-energy",
+      "sourceOrdinal": 8,
+      "companyName": "Pattern Energy",
+      "reasonCode": "REALIZED",
+      "rationale": "Riverstone sold Pattern Energy to CPP Investments in 2020; no continuing ownership.",
+      "evidenceUrls": [
+        "https://www.cppinvestments.com/newsroom/cpp-investments-completes-acquisition-of-pattern-energy/"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:009:lotus-midstream",
+      "sourceOrdinal": 9,
+      "companyName": "Lotus Midstream",
+      "reasonCode": "REALIZED",
+      "rationale": "Midstream platform sold by Riverstone; no ongoing ownership as of the as-of date.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/news"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:010:meritage-midstream",
+      "sourceOrdinal": 10,
+      "companyName": "Meritage Midstream",
+      "reasonCode": "REALIZED",
+      "rationale": "Riverstone exited Meritage Midstream through sale to Williams; no ongoing ownership.",
+      "evidenceUrls": [
+        "https://www.williams.com/press-releases/williams-completes-acquisition-of-meritage-midstream/"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:011:buckeye-partners",
+      "sourceOrdinal": 11,
+      "companyName": "Buckeye Partners",
+      "reasonCode": "REALIZED",
+      "rationale": "Riverstone previously invested in Buckeye but does not retain a direct ownership stake.",
+      "evidenceUrls": [
+        "https://www.ifminvestors.com/news/buckeye-partners-acquisition/"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:012:abaco-fcv-amber",
+      "sourceOrdinal": 12,
+      "companyName": "Abaco FCV (Amber)",
+      "reasonCode": "INSUFFICIENT_EVIDENCE",
+      "rationale": "Continuation vehicle identified in ESG disclosures; underlying assets not disclosed and may include non-infrastructure or upstream exposures.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/media/2024-esg-report.pdf"
+      ]
+    },
+    {
+      "excludedCandidateId": "086-riverstone-holdings:excluded:013:ilx-fcv-nolan",
+      "sourceOrdinal": 13,
+      "companyName": "ILX FCV (Nolan)",
+      "reasonCode": "INSUFFICIENT_EVIDENCE",
+      "rationale": "Continuation vehicle identified in ESG disclosures with undisclosed underlying assets; infrastructure qualification cannot be established.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/media/2024-esg-report.pdf"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Riverstone decarbonization strategy holdings",
+      "issue": "Multiple platforms (Energia Real, VEMO, A2 Renovables, White River Renewables, RIC Energy) appear in ESG disclosures but lack clear evidence of current ownership and/or infrastructure asset ownership versus development or service models.",
+      "recommendedResolution": "Obtain portfolio-company ownership disclosures or transaction-level confirmations demonstrating Riverstone equity ownership and asset-level infrastructure control.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/media/2024-esg-report.pdf"
+      ]
+    },
+    {
+      "subject": "Continuation vehicles (Amber / Nolan)",
+      "issue": "Underlying assets are not publicly disclosed; risk of upstream or non-infrastructure exposure prevents inclusion.",
+      "recommendedResolution": "Identify underlying portfolio companies within each FCV and test each individually against infrastructure criteria.",
+      "evidenceUrls": [
+        "https://www.riverstonellc.com/media/2024-esg-report.pdf"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "9c340bb693243b8be44d9ee089cfd7f868ebfc6d1f0a47bb0aca7f00445f8320"
+}

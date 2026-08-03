@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 1,
+  "requestedManager": "3i Infrastructure",
+  "canonicalManager": "3i Group plc",
+  "aliasesSearched": [
+    "3i Group plc",
+    "3i Group",
+    "3i",
+    "3i Infrastructure",
+    "3i North American Infrastructure",
+    "3i North American Infrastructure Partners, LLC",
+    "3i Corporation"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a696657-8bcc-83ea-afd4-918adfbd1f99",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "bf43ed1ac6ea32082d8a21591e3244017c9000069fa232b4b677483bee374e49"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [
+    {
+      "holdingId": "001-3i-infrastructure:holding:001:amwaste-llc",
+      "companyName": "Amwaste, LLC",
+      "aliases": [],
+      "canonicalName": "Amwaste LLC",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "3i Group plc",
+        "organizationName": "3i Group plc",
+        "fundName": null,
+        "vehicleName": "3i North American Infrastructure Fund (NAIF)",
+        "stake": null,
+        "investmentDate": "2023",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.3i.com/infrastructure/our-portfolio/amwaste/",
+          "title": "Amwaste",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Current manager portfolio page states Social Infrastructure, year invested 2023, North America, status Current, West Point headquarters, southeastern U.S. operations, and the infrastructure investment rationale.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "title": "3i Group Press Release FY26",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2026-05-14",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "FY2026 reporting discusses Amwaste within North American Infrastructure and states that the North American Infrastructure Fund includes Amwaste, Regional Rail, and EC Waste.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoCompanyIds": [
+        "cmnva0sj900nim8lz2hp0d0ik"
+      ],
+      "rationale": "The repository correctly matches the company, active status, 2023 investment year, United States geography, and NAIF vehicle. Its headquarters field lists the three-state operating footprint rather than the corporate headquarters; official 3i disclosure identifies West Point, Georgia.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "001-3i-infrastructure:holding:002:ec-waste",
+      "companyName": "EC Waste",
+      "aliases": [],
+      "canonicalName": "EC Waste",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "3i Group plc",
+        "organizationName": "3i Group plc",
+        "fundName": null,
+        "vehicleName": "3i North American Infrastructure Fund (NAIF)",
+        "stake": "Majority",
+        "investmentDate": "2021",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.3i.com/infrastructure/our-portfolio/ec-waste/",
+          "title": "EC Waste",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Current manager portfolio page states Social Infrastructure, year invested 2021, North America, status Current, Puerto Rico operations, and the infrastructure rationale.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.3i.com/media/news/2021/3i-partners-with-ec-waste-to-support-the-company-s-growth/",
+          "title": "3i partners with EC Waste to support the company's growth",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2021-12-01",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "3i announced that it had closed a majority investment in EC Waste through its North American Infrastructure business; the release describes the Puerto Rico operating footprint and infrastructure assets.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "title": "3i Group Press Release FY26",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2026-05-14",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "FY2026 reporting discusses EC Waste's current performance within North American Infrastructure and states that NAIF includes EC Waste.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.ecwaste.com/contact-us",
+          "title": "Contact Us",
+          "publisher": "EC Waste",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Company contact page identifies the main office in Cataño, Puerto Rico and lists operating locations throughout Puerto Rico.",
+          "supports": [
+            "NORTH_AMERICA"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoCompanyIds": [
+        "cmnva0sju00njm8lzcla71d6g"
+      ],
+      "rationale": "The repository correctly matches identity, active lifecycle, 2021 investment year, United States/Puerto Rico geography, and NAIF vehicle, but its null stake omits a material disclosed fact: 3i's official closing release describes the investment as majority. Headquarters should remain null unless an explicit headquarters disclosure is found; the company site identifies only a main office in Cataño.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "001-3i-infrastructure:holding:003:regional-rail-llc",
+      "companyName": "Regional Rail, LLC",
+      "aliases": [],
+      "canonicalName": "Regional Rail, LLC",
+      "investmentLevel": "PLATFORM",
+      "countries": [
+        "United States",
+        "Canada"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "3i Group plc",
+        "organizationName": "3i Group plc",
+        "fundName": null,
+        "vehicleName": "3i North American Infrastructure Fund (NAIF)",
+        "stake": null,
+        "investmentDate": "2019",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.3i.com/infrastructure/our-portfolio/regional-rail/",
+          "title": "Regional Rail",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Current manager portfolio page states Transport & Logistics, year invested 2019, North America, status Current, U.S. and western Canadian operations, and the infrastructure investment rationale.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.3i.com/media/news/2019/3i-agrees-to-invest-in-regional-rail-to-support-growth/",
+          "title": "3i agrees to invest in Regional Rail to support growth",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2019-04-01",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "3i identifies Regional Rail as its North American rail infrastructure platform and identifies Kennett Square, Pennsylvania as headquarters.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "title": "3i Group Press Release FY26",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2026-05-14",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "FY2026 reporting discusses Regional Rail's current operations and refinancing within North American Infrastructure and states that NAIF includes Regional Rail.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoCompanyIds": [
+        "cmnva0skb00nkm8lz16x05cr8"
+      ],
+      "rationale": "The repository correctly matches identity, active status, 2019 investment year, U.S./Canada footprint, and NAIF vehicle. Its headquarters field combines operating states and provinces; official 3i disclosure identifies the corporate headquarters as Kennett Square, Pennsylvania.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "001-3i-infrastructure:holding:004:smarte-group",
+      "companyName": "Smarte Group",
+      "aliases": [],
+      "canonicalName": "Smarte Carte International Holdings, Inc.",
+      "investmentLevel": "PLATFORM",
+      "countries": [
+        "United States",
+        "Canada"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "3i Group plc",
+        "organizationName": "3i Group plc",
+        "fundName": null,
+        "vehicleName": "3i Group proprietary capital",
+        "stake": null,
+        "investmentDate": "2017",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.3i.com/infrastructure/our-portfolio/smarte-carte/",
+          "title": "Smarte Carte",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Current manager portfolio page states Transport & Logistics, year invested 2017, North America, status Current, White Bear Lake headquarters, and leading North American airport concessions.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "title": "3i Group Press Release FY26",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2026-05-14",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "FY2026 reporting identifies the current holding as Smarte Group, formerly Smarte Carte, and places it in 3i's North American Infrastructure proprietary-capital portfolio.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.3i.com/media/news/2017/investment-in-smarte-carte/",
+          "title": "Investment in Smarte Carte",
+          "publisher": "3i Group plc",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2017-10-16",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "3i announced its first North American infrastructure transaction, investing alongside management; the release identifies White Bear Lake headquarters, U.S. and Canadian operations, 80% U.S. revenue, and initial balance-sheet funding.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://smarte-group.com/who-we-are/",
+          "title": "Who We Are",
+          "publisher": "Smarte Group",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Smarte Group identifies itself as the parent organization of Smarte Carte and describes the group as an infrastructure company serving high-traffic environments.",
+          "supports": [
+            "INFRASTRUCTURE_STRATEGY"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoCompanyIds": [
+        "cmnva0sks00nlm8lzthwg5fw4"
+      ],
+      "rationale": "The repository captures the 2017 proprietary-capital investment and active lifecycle, but current 3i reporting names the manager-level holding Smarte Group (formerly Smarte Carte), while Smarte Group identifies Smarte Carte as an operating portfolio beneath the parent. The headquarters should be White Bear Lake, Minnesota rather than a multi-region operating-footprint string.",
+      "confidence": "HIGH"
+    }
+  ],
+  "reconciliationInputVersion": 2,
+  "sourceResult": {
+    "acceptedResultPath": "audits/portfolio-census/2026-07-28/001-3i-infrastructure.json",
+    "acceptedResultSha256": "5b800f384b42f05bc965ec117f69e7db59230a23dccd5ceec46a984ed27cbb71",
+    "acceptedResponseSha256": "bf43ed1ac6ea32082d8a21591e3244017c9000069fa232b4b677483bee374e49",
+    "recoveredInputV1Sha256": "ff82ba93537faeb786b7a5930bc0ea75ba0dcaa7df14a13a202d8c31a5af1e1c"
+  },
+  "repoOnlyRecords": [],
+  "excludedCandidates": [
+    {
+      "excludedCandidateId": "001-3i-infrastructure:excluded:001:shared-tower",
+      "sourceOrdinal": 1,
+      "companyName": "Shared Tower",
+      "reasonCode": "REALIZED",
+      "rationale": "The Canadian communications-infrastructure platform is no longer owned by 3i. The manager's portfolio page states that 3i completed the sale of its stake to Northleaf-managed funds in February 2025.",
+      "evidenceUrls": [
+        "https://www.3i.com/infrastructure/our-portfolio/shared-tower/"
+      ]
+    },
+    {
+      "excludedCandidateId": "001-3i-infrastructure:excluded:002:3i-infrastructure-plc-3in",
+      "sourceOrdinal": 2,
+      "companyName": "3i Infrastructure plc (3iN)",
+      "reasonCode": "PUBLIC_SECURITY",
+      "rationale": "3iN is a separately listed investment company, and 3i Group's 29% interest is a quoted stake rather than a direct North American operating-company or asset investment. Its underlying investments were assessed separately for North American qualification.",
+      "evidenceUrls": [
+        "https://www.3i.com/infrastructure/our-funds/"
+      ]
+    },
+    {
+      "excludedCandidateId": "001-3i-infrastructure:excluded:003:tampnet",
+      "sourceOrdinal": 3,
+      "companyName": "Tampnet",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Although Tampnet operates in the Gulf of Mexico and the United States, 3i identifies its location and headquarters as Norway and its network is principally a North Sea and Gulf of Mexico platform; it is not primarily based in or dedicated to North America.",
+      "evidenceUrls": [
+        "https://www.3i.com/infrastructure/our-portfolio/tampnet/"
+      ]
+    },
+    {
+      "excludedCandidateId": "001-3i-infrastructure:excluded:004:smarte-carte",
+      "sourceOrdinal": 4,
+      "companyName": "Smarte Carte",
+      "reasonCode": "DUPLICATE_PLATFORM",
+      "rationale": "Smarte Carte is not counted separately from Smarte Group. Current 3i reporting calls the investment Smarte Group (formerly Smarte Carte), and Smarte Group identifies Smarte Carte as an operating portfolio beneath the parent.",
+      "evidenceUrls": [
+        "https://smarte-group.com/who-we-are/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Exact ownership percentages for Amwaste, Regional Rail, and Smarte Group",
+      "issue": "Primary sources establish current equity ownership but do not disclose exact percentage stakes. EC Waste is the only included holding explicitly described as a majority investment.",
+      "recommendedResolution": "Retain null stakes unless a primary 3i, fund, or portfolio-company disclosure provides exact ownership percentages.",
+      "evidenceUrls": [
+        "https://www.3i.com/infrastructure/our-portfolio/amwaste/",
+        "https://www.3i.com/infrastructure/our-portfolio/regional-rail/",
+        "https://www.3i.com/media/news/2017/investment-in-smarte-carte/"
+      ]
+    },
+    {
+      "subject": "EC Waste corporate headquarters",
+      "issue": "Primary sources establish island-wide Puerto Rico operations and identify a main office in Cataño, but the reviewed sources do not explicitly designate a corporate headquarters.",
+      "recommendedResolution": "Retain headquarters as null unless EC Waste or 3i expressly identifies a corporate headquarters.",
+      "evidenceUrls": [
+        "https://www.3i.com/infrastructure/our-portfolio/ec-waste/",
+        "https://www.ecwaste.com/contact-us"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "f8f0207a38e51819cada057b8695a363ac92da867eebf862b3a5bde42ff3ea5a"
+}

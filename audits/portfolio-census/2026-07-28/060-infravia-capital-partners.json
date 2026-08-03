@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_CENSUS_RESULT",
+  "methodologyVersion": "NA_INFRA_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "requestedManager": "InfraVia Capital Partners",
+  "canonicalManager": "InfraVia Capital Partners",
+  "aliasesResearched": [
+    "InfraVia Capital Partners",
+    "InfraVia",
+    "InfraVia Capital",
+    "InfraVia Partners",
+    "OFI InfraVia"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "DATABASE",
+  "sourceStandard": "ONE_RELIABLE_SOURCE_MINIMUM",
+  "holdings": [],
+  "excludedCandidates": [
+    {
+      "companyName": "Kyotherm",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "French-headquartered energy platform focused on Europe; any U.S. exposure exists only at the underlying project level and does not qualify as a North America–dedicated manager-level platform.",
+      "sourceUrl": "https://infraviacapital.com/companies/kyotherm/"
+    },
+    {
+      "companyName": "DataDome",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Cybersecurity software company held under InfraVia Growth strategy rather than a direct infrastructure mandate.",
+      "sourceUrl": "https://infraviacapital.com/companies/datadome/"
+    },
+    {
+      "companyName": "Botify",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Enterprise SEO software platform held under InfraVia Growth strategy, not infrastructure.",
+      "sourceUrl": "https://infraviacapital.com/companies/botify/"
+    },
+    {
+      "companyName": "SightCall",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Remote visual support SaaS platform categorized under Growth strategy rather than infrastructure.",
+      "sourceUrl": "https://infraviacapital.com/companies/sightcall/"
+    },
+    {
+      "companyName": "Ometria",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Retail marketing analytics SaaS platform under Growth strategy, not a qualifying infrastructure asset.",
+      "sourceUrl": "https://infraviacapital.com/companies/ometria/"
+    },
+    {
+      "companyName": "Brevo",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Email marketing and CRM software business (formerly Sendinblue) associated with growth technology investing rather than infrastructure.",
+      "sourceUrl": null
+    },
+    {
+      "companyName": "EasyPark",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Digital mobility/payment application platform categorized as growth technology rather than direct infrastructure ownership.",
+      "sourceUrl": null
+    },
+    {
+      "companyName": "Carester",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "French rare earth processing platform under Critical Metals strategy with European focus; not primarily North America–based.",
+      "sourceUrl": "https://infraviacapital.com/companies/carester/"
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Kyotherm North America boundary",
+      "issue": "Kyotherm owns and finances energy assets including projects located in the United States, but InfraVia presents the investment at the European platform level and does not disclose or elevate U.S. assets as standalone manager-level holdings.",
+      "sourceUrls": [
+        "https://infraviacapital.com/companies/kyotherm/"
+      ],
+      "recommendedResolution": "Exclude Kyotherm as an OUTSIDE_NORTH_AMERICA platform and do not elevate any underlying U.S. project assets into standalone holdings without explicit manager-level attribution."
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "dispositionsSearched": true,
+    "managerAliasesSearched": true,
+    "paginationOrAlphabeticCoverageChecked": true,
+    "sourcesOpened": 12,
+    "searchQueriesRun": 12,
+    "notes": [
+      "Reviewed InfraVia Capital Partners official portfolio and company pages across Infrastructure, Growth, and Critical Metals strategies.",
+      "Confirmed absence of any North America–dedicated infrastructure platforms.",
+      "Validated that identified candidates either fall under non-infrastructure strategies or are non-North-American platforms."
+    ]
+  },
+  "summary": {
+    "includedHoldings": 0,
+    "closedActive": 0,
+    "signedPendingIncoming": 0,
+    "signedPendingExit": 0,
+    "proposedNew": 0,
+    "excludedCandidates": 8,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

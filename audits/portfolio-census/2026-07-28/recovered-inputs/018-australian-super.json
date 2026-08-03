@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 18,
+  "requestedManager": "Australian Super",
+  "canonicalManager": "AustralianSuper",
+  "aliasesSearched": [
+    "Australian Super",
+    "AustralianSuper"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6a2807-3448-83ea-a6d5-e14f5bc575b6",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "539cb2aeb36b8c334fef095c7fa3bc18b52c10905a7215bbf7cffc97a7e0a347"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [
+    {
+      "holdingId": "018-australian-super:holding:001:databank",
+      "companyName": "DataBank",
+      "aliases": [],
+      "canonicalName": "DataBank",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "AustralianSuper",
+        "organizationName": "AustralianSuper",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentDate": null,
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv",
+          "title": "AustralianSuper Balanced option portfolio holdings disclosure (CSV)",
+          "publisher": "AustralianSuper",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Lists DataBank under Infrastructure / Unlisted / Internally Managed with classification Telco & Data and U.S. location, evidencing direct infrastructure ownership and active inclusion in the portfolio.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompanyIds": [],
+      "rationale": "No repository companies supplied; direct holding identified from official disclosure.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "018-australian-super:holding:002:generate-capital",
+      "companyName": "Generate Capital",
+      "aliases": [],
+      "canonicalName": "Generate Capital",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "AustralianSuper",
+        "organizationName": "AustralianSuper",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentDate": null,
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv",
+          "title": "AustralianSuper Balanced option portfolio holdings disclosure (CSV)",
+          "publisher": "AustralianSuper",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Lists Generate Capital under Infrastructure / Unlisted / Internally Managed with Electricity classification and U.S. location, evidencing direct infrastructure ownership and active status.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompanyIds": [],
+      "rationale": "No repository companies supplied; direct holding identified from official disclosure.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "018-australian-super:holding:003:transurban-chesapeake",
+      "companyName": "Transurban Chesapeake",
+      "aliases": [],
+      "canonicalName": "Transurban Chesapeake",
+      "investmentLevel": "PLATFORM",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "AustralianSuper",
+        "organizationName": "AustralianSuper",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentDate": null,
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv",
+          "title": "AustralianSuper Balanced option portfolio holdings disclosure (CSV)",
+          "publisher": "AustralianSuper",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Lists Transurban Chesapeake under Infrastructure / Unlisted / Internally Managed with Toll Road classification and U.S. location, evidencing direct infrastructure ownership and active portfolio inclusion.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompanyIds": [],
+      "rationale": "No repository companies supplied; direct holding identified from official disclosure.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "companyName": "Cirion",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Cirion is a Latin American digital infrastructure platform; despite disclosure labeling, its operations are not North American.",
+      "evidenceUrls": [
+        "https://www.ciriontechnologies.com/"
+      ]
+    },
+    {
+      "companyName": "Vantage EMEA Data Centers",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Explicitly identified as EMEA data center platform with Europe/UK location in disclosure.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "Transurban Group",
+      "reasonCode": "PUBLIC_SECURITY",
+      "rationale": "Listed equity holding; scope excludes public-market securities distinct from direct unlisted infrastructure platform.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "Brookfield",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Appears as externally managed infrastructure exposure rather than a direct portfolio company.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "IFM Investors",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Externally managed infrastructure exposure, not a direct operating asset.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "KKR",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Externally managed infrastructure exposure, not a direct asset.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "Macquarie Infrastructure",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Externally managed infrastructure exposure, not a direct company/platform.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "Morgan Stanley",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Externally managed infrastructure exposure, not a direct portfolio company.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "NIIF",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Externally managed infrastructure exposure, not a direct holding.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "Palisade Investment Partners Limited",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Externally managed infrastructure exposure, not a direct operating asset.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "Quinbrook",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Externally managed infrastructure exposure, not a direct holding.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "Stonepeak",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Externally managed infrastructure exposure, not a direct portfolio company.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "Foresight",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Externally managed infrastructure exposure, not a direct asset.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "companyName": "Perth Airport Property Fund (PAPF)",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "Fund-level exposure rather than direct infrastructure company/platform.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Ownership percentage fields (DataBank, Generate Capital, Transurban Chesapeake)",
+      "issue": "Disclosure reports percentage ownership figures that may represent option-level exposure rather than total legal stake; true equity stakes could not be independently verified.",
+      "recommendedResolution": "Confirm ownership stakes via transaction announcements or manager disclosures before populating stake fields.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv"
+      ]
+    },
+    {
+      "subject": "Cirion geographic classification",
+      "issue": "Official disclosure lists Cirion with United States location, while company operations are Latin American, creating ambiguity in geographic classification.",
+      "recommendedResolution": "Review legal entity and asset-level footprint to determine whether any U.S. operations justify inclusion; otherwise treat as Latin American platform.",
+      "evidenceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv",
+        "https://www.ciriontechnologies.com/"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "e3cbff7719bf96ce611f1f7fe9fdab1b1a022f5a778612cd96f67f9306a829bc"
+}

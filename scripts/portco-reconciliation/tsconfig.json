@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "noEmit": true,
+    "plugins": []
+  },
+  "include": [
+    "apply-plan.ts",
+    "approved-seed.ts",
+    "apply-executor.ts",
+    "prisma-company-image.ts",
+    "prisma-apply-store.ts",
+    "public-api-verifier.ts",
+    "git-seed-release.ts",
+    "apply-cli.ts"
+  ],
+  "exclude": []
+}

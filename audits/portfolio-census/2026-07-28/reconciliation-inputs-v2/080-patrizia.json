@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 80,
+  "requestedManager": "Patrizia",
+  "canonicalManager": "PATRIZIA SE",
+  "aliasesSearched": [
+    "Patrizia AG",
+    "Whitehelm Capital",
+    "Smart City Infrastructure Fund"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6ae462-5bf8-83ea-a55f-ed58d880fbc9",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "81443ec52647974aa29d32cb0c9d4cda06446020d48c1af8faab2c791e8363be"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [
+    {
+      "holdingId": "080-patrizia:holding:001:sifi-networks-america-limited",
+      "companyName": "SiFi Networks America Limited",
+      "aliases": [],
+      "canonicalName": "SiFi Networks America Limited",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "PATRIZIA SE",
+        "organizationName": "PATRIZIA SE",
+        "fundName": null,
+        "vehicleName": "Smart City Infrastructure Fund",
+        "stake": null,
+        "investmentDate": "2026",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.smartcityinfrafund.com/whitehelm-capital-finalises-deal-with-sifi-networks-to-fund-fibercity/",
+          "title": "Whitehelm Capital finalises deal with SiFi Networks",
+          "publisher": "Smart City Infrastructure Fund",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms Whitehelm (now PATRIZIA Infrastructure) investment in SiFi Networks via Smart City Infrastructure Fund supporting FiberCity rollout",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://apg.nl/en/publication/apg-investment-connects-1-million-american-households-to-fiber-optics/",
+          "title": "APG investment connects 1 million American households to fiber optics",
+          "publisher": "APG Asset Management",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Describes APG investment in SiFi Networks alongside infrastructure partners to deploy U.S. FTTH networks",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://sifinetworks.com/corporate/about-us-page-sifi-networks/",
+          "title": "About SiFi Networks",
+          "publisher": "SiFi Networks",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms SiFi operates open-access FTTH networks across U.S. cities",
+          "supports": [
+            "NORTH_AMERICA",
+            "INFRASTRUCTURE_STRATEGY"
+          ]
+        },
+        {
+          "url": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+          "title": "SiFi Networks America sold to new owners",
+          "publisher": "County Times",
+          "sourceTier": "RELIABLE_MEDIA",
+          "health": "WORKING",
+          "publishedAt": "2026-01-01",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Reports 2026 change of control of SiFi Networks America indicating ownership transition involving institutional investors",
+          "supports": [
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history",
+          "title": "SiFi Networks America Limited filing history",
+          "publisher": "UK Companies House",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Corporate filings reflect ownership changes and restructuring around 2026 timeframe",
+          "supports": [
+            "OWNERSHIP",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "EXISTING_VERIFIED",
+      "matchedRepoCompanyIds": [
+        "cmnva0stx00o0m8lzgjspbysk"
+      ],
+      "rationale": "Repository record correctly identifies PATRIZIA-linked exposure via Smart City Infrastructure Fund; 2026 transaction reflects change of control but continued institutional infrastructure ownership consistent with manager-linked mandate",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "reconciliationInputVersion": 2,
+  "sourceResult": {
+    "acceptedResultPath": "audits/portfolio-census/2026-07-28/080-patrizia.json",
+    "acceptedResultSha256": "19032626b0b70fab6cc3956a99592b42cc39bb42d5ae108a70edc0fe734444a0",
+    "acceptedResponseSha256": "81443ec52647974aa29d32cb0c9d4cda06446020d48c1af8faab2c791e8363be",
+    "recoveredInputV1Sha256": "b10209a3da7cf3e55a9cdfebea8dbf68f994b6edb3d9ca227a905f36981fecf9"
+  },
+  "repoOnlyRecords": [],
+  "excludedCandidates": [
+    {
+      "excludedCandidateId": "080-patrizia:excluded:001:nieuport-aviation",
+      "sourceOrdinal": 1,
+      "companyName": "Nieuport Aviation",
+      "reasonCode": "INSUFFICIENT_EVIDENCE",
+      "rationale": "No reliable evidence that PATRIZIA or Whitehelm Capital holds or held a direct equity stake; current ownership attributed to other institutional investors",
+      "evidenceUrls": [
+        "https://www.nieuport.com/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "SiFi Networks America Limited",
+      "issue": "2026 change of control creates ambiguity whether PATRIZIA is a direct equity holder or acting solely as manager for APG-backed capital",
+      "recommendedResolution": "Confirm post-transaction cap table or PATRIZIA disclosures specifying whether it retains equity versus advisory/manager role",
+      "evidenceUrls": [
+        "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+        "https://apg.nl/en/publication/apg-investment-connects-1-million-american-households-to-fiber-optics/"
+      ]
+    },
+    {
+      "subject": "Nieuport Aviation",
+      "issue": "Conflicting or absent evidence regarding any historical or current Whitehelm/PATRIZIA ownership",
+      "recommendedResolution": "Verify original concession consortium and subsequent secondary transactions to confirm whether Whitehelm ever held equity",
+      "evidenceUrls": [
+        "https://www.nieuport.com/"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "41bc365ef6c9d51478daa54729bf7698d982d70110cf2d334f29f6b06037b368"
+}

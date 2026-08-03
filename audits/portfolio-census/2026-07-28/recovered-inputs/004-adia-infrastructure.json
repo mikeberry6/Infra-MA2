@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 4,
+  "requestedManager": "ADIA Infrastructure",
+  "canonicalManager": "Abu Dhabi Investment Authority (ADIA)",
+  "aliasesSearched": [
+    "Abu Dhabi Investment Authority",
+    "ADIA",
+    "ADIA Infrastructure Department",
+    "Platinum Compass (ADIA vehicle)",
+    "ADIA Infrastructure"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a697dc5-c160-83ea-812a-c7495a8cda06",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 2,
+    "responseSha256": "5aa84b88f3064ab903d1f553a447c10468a0241c3229d449ce19d347410301af"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [
+    {
+      "holdingId": "004-adia-infrastructure:holding:001:alpha-generation-llc",
+      "companyName": "Alpha Generation, LLC",
+      "aliases": [],
+      "canonicalName": "Alpha Generation, LLC",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Abu Dhabi Investment Authority (ADIA)",
+        "organizationName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": null,
+        "vehicleName": "Black Volt B 2024 LLC (ADIA subsidiary)",
+        "stake": "16.8% direct; ~24.1% total including indirect fund exposure",
+        "investmentDate": "2025",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/arclight-announces-500mm-investment-by-a-wholly-owned-subsidiary-of-adia-in-11-gw-alphagen-power-infrastructure-platform-302348464.html",
+          "title": "ArcLight announces $500MM investment by a wholly owned subsidiary of ADIA in AlphaGen",
+          "publisher": "PR Newswire",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2025-01-13",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms ADIA subsidiary investment into AlphaGen’s 11 GW U.S. power infrastructure platform.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B00A61E9C-0000-C856-9EC0-AB998D2CF015%7D&DocTitle=Redacted+Black+Volt+B+2024+LLC+and+Black+Beacon+B+2024+LLC+-+2026+Annual+Report+%28PUBLIC+VERSION%29",
+          "title": "2026 Annual Report of Black Volt B 2024 LLC and Black Beacon B 2024 LLC",
+          "publisher": "New York State Public Service Commission",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2026-01-30",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Reports current ADIA-affiliate utility and generation interests as of January 23, 2026 and references the approved Alpha Generation transaction.",
+          "supports": [
+            "OWNERSHIP",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "EXISTING_VERIFIED",
+      "matchedRepoCompanyIds": [
+        "cmnva0slh00nmm8lzew8x0vm3"
+      ],
+      "rationale": "Repository correctly identifies company, timing, and active status; additional stake detail does not conflict.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "004-adia-infrastructure:holding:002:arevon-energy-inc",
+      "companyName": "Arevon Energy, Inc.",
+      "aliases": [],
+      "canonicalName": "Arevon Energy, Inc.",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Abu Dhabi Investment Authority (ADIA)",
+        "organizationName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": null,
+        "vehicleName": "Clean Energy Infrastructure JV",
+        "stake": null,
+        "investmentDate": "2021",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.calstrs.com/files/438447b83/calstrs-investment-case-study-arevon-energy.pdf",
+          "title": "CalSTRS investment case study – Arevon Energy",
+          "publisher": "CalSTRS",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms ADIA as a co-investor in Arevon alongside APG and CalSTRS and describes the U.S. renewable infrastructure platform.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://www.calstrs.com/files/9c4659b5f/INV%2B2025-05%2BItem%2B03b.00%2B-%2BNet%2BZero%2BStrategy%2B-%2BAnnual%2BBranch-Wide%2BUpdates.pdf",
+          "title": "Net Zero Strategy — Annual Branch-Wide Updates",
+          "publisher": "CalSTRS",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2025-05-07",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "States in the present tense that CalSTRS owns 33.3% of Arevon alongside APG and ADIA, identifies Arevon as a direct renewable energy infrastructure platform, and reports its operating U.S. portfolio and infrastructure NAV as of December 31, 2024.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "EXISTING_VERIFIED",
+      "matchedRepoCompanyIds": [
+        "cmnva0slz00nnm8lz3kcv63v9"
+      ],
+      "rationale": "Repository accurately reflects ownership structure and active status.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "004-adia-infrastructure:holding:003:chicago-parking-meters-llc",
+      "companyName": "Chicago Parking Meters, LLC",
+      "aliases": [],
+      "canonicalName": "Chicago Parking Meters, LLC",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "SIGNED_PENDING_EXIT",
+        "canonicalManager": "Abu Dhabi Investment Authority (ADIA)",
+        "organizationName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": null,
+        "vehicleName": "Consortium stake",
+        "stake": "24.9%",
+        "investmentDate": "2009",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://news.wttw.com/2026/07/13/proposed-sale-parking-meters-stalls-amid-widespread-opposition",
+          "title": "Proposed Sale of Parking Meters Stalls Amid Widespread Opposition",
+          "publisher": "WTTW",
+          "sourceTier": "RELIABLE_MEDIA",
+          "health": "WORKING",
+          "publishedAt": "2026-07-13",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms the proposed $2.53 billion transfer from Chicago Parking Meters LLC to Stonepeak remains subject to City Council approval.",
+          "supports": [
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.metroplanning.org/projects/innovative-infrastructure-delivery-chicago-parking-meter-analysis/",
+          "title": "Chicago Parking Meter analysis",
+          "publisher": "Metropolitan Planning Council",
+          "sourceTier": "INSTITUTIONAL",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms the ADIA-backed consortium ownership of the Chicago parking meter concession and the asset’s U.S. concession-infrastructure character.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoCompanyIds": [
+        "cmnva0ryg00mgm8lz1vnkvv29"
+      ],
+      "rationale": "Repository lists the asset as active but does not reflect the signed sale process, which remained pending City Council approval on the as-of date.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "004-adia-infrastructure:holding:004:firstenergy-transmission-llc",
+      "companyName": "FirstEnergy Transmission, LLC",
+      "aliases": [],
+      "canonicalName": "FirstEnergy Transmission, LLC",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Abu Dhabi Investment Authority (ADIA)",
+        "organizationName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": null,
+        "vehicleName": "NATFinCo / NATCo II (via Brookfield consortium)",
+        "stake": "10% indirect economic interest",
+        "investmentDate": "2024",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B00A61E9C-0000-C856-9EC0-AB998D2CF015%7D&DocTitle=Redacted+Black+Volt+B+2024+LLC+and+Black+Beacon+B+2024+LLC+-+2026+Annual+Report+%28PUBLIC+VERSION%29",
+          "title": "2026 Annual Report of Black Volt B 2024 LLC and Black Beacon B 2024 LLC",
+          "publisher": "New York State Public Service Commission",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2026-01-30",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Reports that ADIA held a 10% passive indirect economic interest in FirstEnergy Transmission on a look-through basis as of January 23, 2026.",
+          "supports": [
+            "OWNERSHIP",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.firstenergycorp.com/newsroom/news_articles/fe-closes-on-fe-transmission-interest-sale.html",
+          "title": "FirstEnergy closes on $3.5 billion FirstEnergy Transmission interest sale",
+          "publisher": "FirstEnergy",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2024-03-25",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms closing of the Brookfield Super-Core Infrastructure Partners investment and describes FET as essential electric transmission infrastructure serving U.S. Midwestern and Mid-Atlantic markets.",
+          "supports": [
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        },
+        {
+          "url": "https://www.brookfield.com/about-us/capabilities/infrastructure",
+          "title": "Infrastructure — FirstEnergy Transmission: A premier electric transmission platform",
+          "publisher": "Brookfield",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Brookfield’s infrastructure portfolio page identifies FirstEnergy Transmission as a premier regulated U.S. electric transmission platform comprising three federally regulated utilities spanning nearly 13,000 miles across several Mid-Atlantic states.",
+          "supports": [
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        }
+      ],
+      "repoDisposition": "EXISTING_VERIFIED",
+      "matchedRepoCompanyIds": [
+        "cmnva0smj00nom8lzeo1pq1xe"
+      ],
+      "rationale": "Repository correctly reflects ownership and active status.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "004-adia-infrastructure:holding:005:landmark-dividend-llc",
+      "companyName": "Landmark Dividend LLC",
+      "aliases": [],
+      "canonicalName": "Landmark Dividend LLC",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Abu Dhabi Investment Authority (ADIA)",
+        "organizationName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": null,
+        "vehicleName": "Direct minority stake",
+        "stake": "40%",
+        "investmentDate": "2024",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://ir.digitalbridge.com/news-releases/news-release-details/adia-completes-acquisition-40-stake-landmark-dividend-alongside/",
+          "title": "ADIA completes acquisition of 40% stake in Landmark Dividend",
+          "publisher": "DigitalBridge",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2024-04-02",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms ADIA’s completed acquisition of a 40% ownership stake in the U.S. digital infrastructure platform.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "EXISTING_VERIFIED",
+      "matchedRepoCompanyIds": [
+        "cmoqbx33h001v171f207gs2e3"
+      ],
+      "rationale": "Repository aligns with transaction details and active ownership.",
+      "confidence": "HIGH"
+    },
+    {
+      "holdingId": "004-adia-infrastructure:holding:006:sempra-infrastructure-partners-lp",
+      "companyName": "Sempra Infrastructure Partners, LP",
+      "aliases": [],
+      "canonicalName": "Sempra Infrastructure Partners, LP",
+      "investmentLevel": "COMPANY",
+      "countries": [
+        "United States",
+        "Mexico"
+      ],
+      "ownership": {
+        "state": "CLOSED_ACTIVE",
+        "canonicalManager": "Abu Dhabi Investment Authority (ADIA)",
+        "organizationName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": null,
+        "vehicleName": "Direct minority stake",
+        "stake": "10%",
+        "investmentDate": "2022",
+        "exitDate": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.sempra.com/sempra-completes-sale-non-controlling-interest-sempra-infrastructure-partners",
+          "title": "Sempra completes sale of non-controlling interest in Sempra Infrastructure Partners",
+          "publisher": "Sempra",
+          "sourceTier": "PRIMARY",
+          "health": "WORKING",
+          "publishedAt": "2022-06-01",
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms ADIA acquired a 10% stake in Sempra Infrastructure Partners; Sempra’s current disclosure continues to identify ADIA’s existing 10% stake and describes the platform’s North American energy infrastructure operations.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA",
+            "OWNERSHIP_STATE"
+          ]
+        }
+      ],
+      "repoDisposition": "EXISTING_VERIFIED",
+      "matchedRepoCompanyIds": [
+        "cmnva0rb800m0m8lza2qwngey"
+      ],
+      "rationale": "Repository reflects correct ownership and status.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "companyName": "Searchlight Fiber Alliance, LLC",
+      "reasonCode": "LP_OR_FUND_OF_FUNDS",
+      "rationale": "FCC ownership materials show ADIA’s Platinum Compass vehicle as a large insulated, non-voting investor in the Searchlight-managed Searchlight Fiber Alliance vehicle; because ADIA does not present it as a direct infrastructure platform investment, it was excluded as fund-like exposure.",
+      "evidenceUrls": [
+        "https://docs.fcc.gov/public/attachments/DA-24-820A1.pdf"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "e3939d1b57c09459b8720b4d66bcbd052fd7455449fa38463307a3becc8ad4a2"
+}

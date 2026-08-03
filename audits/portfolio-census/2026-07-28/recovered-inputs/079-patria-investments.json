@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 79,
+  "requestedManager": "Patria Investments",
+  "canonicalManager": "Patria Investments Ltd.",
+  "aliasesSearched": [
+    "Pátria Investimentos",
+    "Patria Infrastructure",
+    "Pátria Infraestrutura",
+    "Patria Infra",
+    "P2 Brasil"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6ae325-84c0-83ea-9a3c-fbdeb15b5ee2",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "95fcb17028507af35cd1620c083ee75cc532b107c206288b45d06c149abf3483"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [],
+  "excludedCandidates": [
+    {
+      "companyName": "ODATA",
+      "reasonCode": "REALIZED",
+      "rationale": "Patria developed and owned ODATA as an infrastructure platform including Mexico exposure, but signed its sale in 2022 and closed the transaction in 2023; therefore it is not a current holding as of 2026-07-28.",
+      "evidenceUrls": [
+        "https://aligneddc.com/press-release/aligned-data-centers-to-acquire-odata/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Undisclosed North American co-investments or managed accounts",
+      "issue": "Patria public disclosures indicate limited U.S. and Mexico exposure but do not provide a fully enumerated asset-level portfolio for all infrastructure vehicles, creating risk of undisclosed minority or co-investment positions in North America.",
+      "recommendedResolution": "Review fund-level investor reports, regulatory filings, and Mexican concession registries to confirm absence of minority co-investments.",
+      "evidenceUrls": [
+        "https://ir.patria.com/",
+        "https://www.patria.com/infrastructure/"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "0b3741561d8e6d400fc24d40d3709e3bd51257496c72997148d541962336140c"
+}

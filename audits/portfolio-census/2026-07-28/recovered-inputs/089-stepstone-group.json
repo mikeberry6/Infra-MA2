@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 89,
+  "requestedManager": "StepStone Group",
+  "canonicalManager": "StepStone Group",
+  "aliasesSearched": [
+    "StepStone Group",
+    "StepStone Group Real Assets",
+    "StepStone Group Real Assets LP",
+    "StepStone Infrastructure & Real Assets",
+    "StepStone Private Infrastructure Fund (STRUCTURE)",
+    "StepStone Private Markets (SPRIM)"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6af376-4748-83ea-a984-e8a2fb3f1669",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "15f494aef22b8a1295502868e9520d2816310badd06d6ec49de66be66e54e157"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [],
+  "excludedCandidates": [
+    {
+      "companyName": "sPower",
+      "reasonCode": "REALIZED",
+      "rationale": "StepStone publicly presents sPower only as a historical infrastructure co-investment case study. Current ownership as of the census date is not supported.",
+      "evidenceUrls": [
+        "https://www.stepstonegroup.com/wp-content/uploads/2023/06/Infrastructure-Case-Study-sPower-OPCO-A.pdf"
+      ]
+    },
+    {
+      "companyName": "Unnamed U.S. FBO platform",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Presented only as a SPRIM private-markets case study without a publicly identified operating company attributable to StepStone's infrastructure strategy under the census inclusion rules.",
+      "evidenceUrls": [
+        "https://www.stepstonegroup.com/wp-content/uploads/2023/06/Private-Markets-Case-Study-SPRIM-US-FBO.pdf"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Undisclosed infrastructure co-investments and SPVs",
+      "issue": "Official materials confirm infrastructure co-investment capability, but public disclosures generally stop at fund interests, SPVs, or aggregated portfolio descriptions rather than naming current operating companies, preventing asset-level attribution.",
+      "recommendedResolution": "Review confidential portfolio schedules or investor reporting that identifies the underlying operating companies for co-investment and continuation vehicles.",
+      "evidenceUrls": [
+        "https://www.stepstonegroup.com/what-we-do/solutions-services/private-wealth-solutions/stepstone-private-infrastructure-fund/",
+        "https://www.sec.gov/Archives/edgar/data/1957892/000119312525048243/d940296d424b3.htm"
+      ]
+    },
+    {
+      "subject": "Generic fund interests and opaque co-investment SPVs",
+      "issue": "Registered-fund disclosures include fund interests and investment vehicles without sufficient look-through information to identify specific North American infrastructure companies or platforms.",
+      "recommendedResolution": "Do not infer operating-company ownership absent public look-through disclosure.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1957892/000119312525048243/d940296d424b3.htm",
+        "https://www.stepstonegroup.com/what-we-do/solutions-services/private-wealth-solutions/stepstone-private-infrastructure-fund/"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "24d317b3f79b35edb7f96b4c151c5182615049ecc115d796eb64d237a7af01ae"
+}

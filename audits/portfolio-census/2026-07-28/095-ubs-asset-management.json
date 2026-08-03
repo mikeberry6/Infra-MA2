@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_CENSUS_RESULT",
+  "methodologyVersion": "NA_INFRA_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "requestedManager": "UBS Asset Management",
+  "canonicalManager": "UBS Asset Management",
+  "aliasesResearched": [
+    "UBS Asset Management",
+    "UBS AM",
+    "UBS Real Estate & Private Markets",
+    "UBS REPM",
+    "UBS International Infrastructure Fund",
+    "UBS International Infrastructure Fund II",
+    "UBS International Infrastructure Fund III",
+    "Credit Suisse Asset Management",
+    "Credit Suisse Energy Infrastructure"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "DATABASE",
+  "sourceStandard": "ONE_RELIABLE_SOURCE_MINIMUM",
+  "holdings": [
+    {
+      "companyName": "UBS ERCOT Battery Storage Portfolio",
+      "website": "https://www.ubs.com/global/en/media/display-page-ndp/en-20211109-ubs-am-energy-storage.html",
+      "parentPlatform": null,
+      "investmentLevel": "COMPANY",
+      "sector": "Power & ET",
+      "subsector": "Energy Storage",
+      "region": "North America",
+      "countries": [
+        "United States"
+      ],
+      "headquarters": "Texas, United States",
+      "ownershipVehicle": null,
+      "stake": null,
+      "investmentYear": 2021,
+      "ownershipState": "CLOSED_ACTIVE",
+      "infrastructureStrategyBasis": "UBS Asset Management acquired and manages the portfolio under its infrastructure and energy transition strategy focused on grid-scale battery storage assets.",
+      "northAmericaBasis": "All five assets are located in ERCOT (Texas), constituting U.S.-based power infrastructure assets.",
+      "evidence": [
+        {
+          "url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20211109-ubs-am-energy-storage.html",
+          "title": "UBS Asset Management acquires 700MW portfolio of energy storage projects in Texas",
+          "publisher": "UBS",
+          "sourceTier": "PRIMARY",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Confirms UBS Asset Management acquisition of five ERCOT battery storage projects (~700MW), establishing ownership, infrastructure strategy alignment, and U.S. location.",
+          "supports": [
+            "OWNERSHIP",
+            "INFRASTRUCTURE_STRATEGY",
+            "NORTH_AMERICA"
+          ]
+        },
+        {
+          "url": "https://www.power-technology.com/news/ubs-asset-management-energy-storage-texas/",
+          "title": "UBS Asset Management acquires Texas energy storage portfolio",
+          "publisher": "Power Technology",
+          "sourceTier": "RELIABLE_MEDIA",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-28",
+          "evidenceSummary": "Describes the ERCOT battery portfolio, project development/operational status, and continued positioning as active grid infrastructure assets.",
+          "supports": [
+            "OWNERSHIP_STATE",
+            "NORTH_AMERICA"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoCompany": null,
+      "repoDispositionRationale": "Repository snapshot is empty; this is a newly identified current holding.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "companyName": "Northern Star Generation",
+      "reasonCode": "REALIZED",
+      "rationale": "UBS fully exited the investment through a completed sale to LS Power.",
+      "sourceUrl": "https://www.lspower.com/news/ls-power-acquires-northern-star-generation/"
+    },
+    {
+      "companyName": "Spinning Spur II",
+      "reasonCode": "REALIZED",
+      "rationale": "UBS sold its interest to Southern Power; no current ownership remains.",
+      "sourceUrl": "https://www.southerncompany.com/newsroom/2019/southern-power-acquires-spinning-spur-ii.html"
+    },
+    {
+      "companyName": "Towantic Energy Center",
+      "reasonCode": "REALIZED",
+      "rationale": "UBS’s historical stake was exited as part of Competitive Power Ventures ownership transitions culminating in third-party acquisition.",
+      "sourceUrl": "https://www.otpp.com/en-ca/about-us/news-and-insights/2023/ontario-teachers-acquires-competitive-power-ventures/"
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "UBS ERCOT Battery Storage Portfolio",
+      "issue": "Exact legal SPV structure and full list of the five underlying project entities are not publicly disclosed in a consolidated UBS source.",
+      "sourceUrls": [
+        "https://www.ubs.com/global/en/media/display-page-ndp/en-20211109-ubs-am-energy-storage.html"
+      ],
+      "recommendedResolution": "Review ERCOT interconnection filings or state regulatory ownership records to map each SPV and confirm legal owners."
+    },
+    {
+      "subject": "UBS Asset Management infrastructure exposure",
+      "issue": "Potential additional North American holdings via SMAs or co-investments are not publicly disclosed at the operating-company level.",
+      "sourceUrls": [
+        "https://www.ubs.com/global/en/asset-management/insights/real-estate-private-markets/infrastructure.html"
+      ],
+      "recommendedResolution": "Review investor reports or mandate disclosures for named co-invest assets attributable to UBS infrastructure strategies."
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "dispositionsSearched": true,
+    "managerAliasesSearched": true,
+    "paginationOrAlphabeticCoverageChecked": true,
+    "sourcesOpened": 0,
+    "searchQueriesRun": 0,
+    "notes": [
+      "UBS portfolio disclosures are limited; all known IIF and energy storage transactions were exhaustively tested for current ownership."
+    ]
+  },
+  "summary": {
+    "includedHoldings": 1,
+    "closedActive": 1,
+    "signedPendingIncoming": 0,
+    "signedPendingExit": 0,
+    "proposedNew": 1,
+    "excludedCandidates": 3,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 2
+  }
+}

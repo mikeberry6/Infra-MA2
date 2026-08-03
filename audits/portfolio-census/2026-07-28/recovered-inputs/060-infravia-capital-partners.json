@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CENSUS_RECOVERED_INPUT",
+  "methodologyVersion": "NA_PORTCO_CENSUS_V1",
+  "asOfDate": "2026-07-28",
+  "managerIndex": 60,
+  "requestedManager": "InfraVia Capital Partners",
+  "canonicalManager": "InfraVia Capital Partners",
+  "aliasesSearched": [
+    "InfraVia Capital Partners",
+    "InfraVia",
+    "InfraVia Capital",
+    "InfraVia Partners",
+    "OFI InfraVia"
+  ],
+  "recovery": {
+    "kind": "TASK_ARCHIVE",
+    "recoveredAt": "2026-08-03T11:23:08.278Z",
+    "archiveTaskId": "019faa37-a18b-7cf0-b471-221e1b67ef11",
+    "conversationUrl": "https://chatgpt.com/c/6a6abc76-ca68-83ea-8dc3-24be91ddcb6b",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "acceptedAttempt": 1,
+    "responseSha256": "1d6a53c44900349e58875f9b224f768f4d6c4d3558f75683d01adfea5edf5c7e"
+  },
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "holdings": [],
+  "excludedCandidates": [
+    {
+      "companyName": "Kyotherm",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "French-headquartered energy platform focused on Europe; any U.S. exposure exists only at the underlying project level and does not qualify as a North America–dedicated manager-level platform.",
+      "evidenceUrls": [
+        "https://infraviacapital.com/companies/kyotherm/"
+      ]
+    },
+    {
+      "companyName": "DataDome",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Cybersecurity software company held under InfraVia Growth strategy rather than a direct infrastructure mandate.",
+      "evidenceUrls": [
+        "https://infraviacapital.com/companies/datadome/"
+      ]
+    },
+    {
+      "companyName": "Botify",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Enterprise SEO software platform held under InfraVia Growth strategy, not infrastructure.",
+      "evidenceUrls": [
+        "https://infraviacapital.com/companies/botify/"
+      ]
+    },
+    {
+      "companyName": "SightCall",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Remote visual support SaaS platform categorized under Growth strategy rather than infrastructure.",
+      "evidenceUrls": [
+        "https://infraviacapital.com/companies/sightcall/"
+      ]
+    },
+    {
+      "companyName": "Ometria",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Retail marketing analytics SaaS platform under Growth strategy, not a qualifying infrastructure asset.",
+      "evidenceUrls": [
+        "https://infraviacapital.com/companies/ometria/"
+      ]
+    },
+    {
+      "companyName": "Brevo",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Email marketing and CRM software business (formerly Sendinblue) associated with growth technology investing rather than infrastructure.",
+      "evidenceUrls": []
+    },
+    {
+      "companyName": "EasyPark",
+      "reasonCode": "NON_INFRASTRUCTURE_STRATEGY",
+      "rationale": "Digital mobility/payment application platform categorized as growth technology rather than direct infrastructure ownership.",
+      "evidenceUrls": []
+    },
+    {
+      "companyName": "Carester",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "French rare earth processing platform under Critical Metals strategy with European focus; not primarily North America–based.",
+      "evidenceUrls": [
+        "https://infraviacapital.com/companies/carester/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Kyotherm North America boundary",
+      "issue": "Kyotherm owns and finances energy assets including projects located in the United States, but InfraVia presents the investment at the European platform level and does not disclose or elevate U.S. assets as standalone manager-level holdings.",
+      "recommendedResolution": "Exclude Kyotherm as an OUTSIDE_NORTH_AMERICA platform and do not elevate any underlying U.S. project assets into standalone holdings without explicit manager-level attribution.",
+      "evidenceUrls": [
+        "https://infraviacapital.com/companies/kyotherm/"
+      ]
+    }
+  ],
+  "completenessChecks": {
+    "officialPortfolioReviewed": true,
+    "acquisitionsSearched": true,
+    "exitsSearched": true,
+    "northAmericaReviewed": true,
+    "infrastructureStrategyReviewed": true,
+    "subsidiariesDeduplicated": true,
+    "allEvidenceOpened": true
+  },
+  "artifactSha256": "064d40b3214e80ad61abac07eb1ec9634fe0abad33c0d8fda6cca1715d807904"
+}

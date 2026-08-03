@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0001:amwaste-llc:8c568a54",
+  "taskIndex": 1,
+  "asOfDate": "2026-08-03",
+  "generatedAt": "2026-08-03T16:16:00.000Z",
+  "canonicalKey": "amwaste-llc|united-states",
+  "companyName": "Amwaste LLC",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "001-3i-infrastructure:holding:001:amwaste-llc"
+  ],
+  "retiredCompanyIds": [],
+  "rationale": "Correct Amwaste's list-ready profile by adding its official website, replacing a three-state operating-footprint value with the official West Point, Georgia headquarters, and recording the 2026-07-28 verification date. Preserve the canonical name, detailed description, active 3i ownership, all milestones, management, and all four citations.",
+  "evidence": [
+    {
+      "url": "https://amwasteusa.com/",
+      "purpose": "Official company website and canonical company identity",
+      "supports": [
+        "website",
+        "company identity"
+      ]
+    },
+    {
+      "url": "https://www.3i.com/infrastructure/our-portfolio/amwaste/",
+      "purpose": "Official manager portfolio profile",
+      "supports": [
+        "headquarters",
+        "current ownership",
+        "North American infrastructure strategy"
+      ]
+    },
+    {
+      "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+      "purpose": "Current manager reporting",
+      "supports": [
+        "current ownership",
+        "North American Infrastructure Fund"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "41176be29d959f9724d1dbda0d41ab6bc03bd8eab183f8b20c2166c68eab70ff",
+  "currentCompanySnapshotSha256": "f398c4d070f6c8b155b3acbfcbab02de194b1e1d2d7e0d12f42b8fb44d7209ae",
+  "beforeImage": {
+    "id": "cmrxpj40p00fuivhezgldc4dl",
+    "name": "Amwaste LLC",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Solid waste collection, transfer, landfill, and recycling",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Amwaste provides non-hazardous solid waste collection, transfer, landfill, and recycling services in the Southeastern United States. Its customer base includes residential, commercial, construction and industrial end markets across Alabama, Georgia, and Louisiana. The business operates an asset-heavy, vertically integrated model supported by owned disposal sites, transfer stations, and recycling infrastructure. Public materials describe a platform with more than 300,000 customers, eight landfill sites, ten transfer stations, and a materials recovery facility. The company has expanded through bolt-on acquisitions and local contract wins to deepen density in its core Southeastern markets. 3i invested growth capital through the 3i North American Infrastructure Fund in July 2023, and current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2010,
+    "headquarters": "Alabama; Georgia; Louisiana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp2j01c9ivhe3f8q2cck",
+        "managerName": "3i Group",
+        "organizationName": "3i Group",
+        "fundName": "3i NA Infrastructure Fund",
+        "vehicleName": "3i NA Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkbpa02c0ivhecmzhlzgt",
+        "date": "2010",
+        "event": "Founded by Chip Russell as Matter Management Enterprises in the Birmingham market.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbpr02c1ivhehjdacs0w",
+        "date": "2020",
+        "event": "Acquired the Sylvan Springs Waste Complex from Meredith Environmental.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbq702c2ivhenr4ct6gk",
+        "date": "2023",
+        "event": "Acquired the Whitestone Valley C&D Landfill and four transfer stations from Cash Environmental Resources.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbqs02c3ivheaknxtik9",
+        "date": "Jul 2023",
+        "event": "3i North American Infrastructure Fund completed its growth-capital investment in Amwaste.",
+        "category": "FINANCING",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbrb02c4ivhehnztus2w",
+        "date": "Nov 2024",
+        "event": "Acquired Waste Away Environmental in Milledgeville, Georgia.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoibq06saivheboicwek7",
+        "label": "Amwasteusa — Amwaste LLC",
+        "url": "https://amwasteusa.com",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Amwasteusa company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoico06scivhe9zsi5glw",
+        "label": "Investment date source — 3i Infrastructure — Amwaste LLC",
+        "url": "https://www.3i.com/infrastructure/our-portfolio/amwaste/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "3i Infrastructure initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoidq06seivhesqcs2b3p",
+        "label": "Close date source — 3i Infrastructure — Amwaste LLC",
+        "url": "https://www.wastedive.com/news/amwaste-chip-russell-3i-north-american-infrastructure-investment/690067/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "3i Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoihb06sgivhehvxr2n6s",
+        "label": "Wastetodaymagazine — Amwaste LLC",
+        "url": "https://www.wastetodaymagazine.com/news/amwaste-acquires-waste-away-environmental/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Wastetodaymagazine transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "f398c4d070f6c8b155b3acbfcbab02de194b1e1d2d7e0d12f42b8fb44d7209ae",
+  "afterImage": {
+    "id": "cmrxpj40p00fuivhezgldc4dl",
+    "name": "Amwaste LLC",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Solid waste collection, transfer, landfill, and recycling",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Amwaste provides non-hazardous solid waste collection, transfer, landfill, and recycling services in the Southeastern United States. Its customer base includes residential, commercial, construction and industrial end markets across Alabama, Georgia, and Louisiana. The business operates an asset-heavy, vertically integrated model supported by owned disposal sites, transfer stations, and recycling infrastructure. Public materials describe a platform with more than 300,000 customers, eight landfill sites, ten transfer stations, and a materials recovery facility. The company has expanded through bolt-on acquisitions and local contract wins to deepen density in its core Southeastern markets. 3i invested growth capital through the 3i North American Infrastructure Fund in July 2023, and current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://amwasteusa.com/",
+    "yearFounded": 2010,
+    "headquarters": "West Point, Georgia",
+    "lastVerifiedAt": "2026-07-28T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp2j01c9ivhe3f8q2cck",
+        "managerName": "3i Group",
+        "organizationName": "3i Group",
+        "fundName": "3i NA Infrastructure Fund",
+        "vehicleName": "3i NA Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkbpa02c0ivhecmzhlzgt",
+        "date": "2010",
+        "event": "Founded by Chip Russell as Matter Management Enterprises in the Birmingham market.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbpr02c1ivhehjdacs0w",
+        "date": "2020",
+        "event": "Acquired the Sylvan Springs Waste Complex from Meredith Environmental.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbq702c2ivhenr4ct6gk",
+        "date": "2023",
+        "event": "Acquired the Whitestone Valley C&D Landfill and four transfer stations from Cash Environmental Resources.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbqs02c3ivheaknxtik9",
+        "date": "Jul 2023",
+        "event": "3i North American Infrastructure Fund completed its growth-capital investment in Amwaste.",
+        "category": "FINANCING",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbrb02c4ivhehnztus2w",
+        "date": "Nov 2024",
+        "event": "Acquired Waste Away Environmental in Milledgeville, Georgia.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoibq06saivheboicwek7",
+        "label": "Amwasteusa — Amwaste LLC",
+        "url": "https://amwasteusa.com",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Amwasteusa company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoico06scivhe9zsi5glw",
+        "label": "Investment date source — 3i Infrastructure — Amwaste LLC",
+        "url": "https://www.3i.com/infrastructure/our-portfolio/amwaste/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "3i Infrastructure initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoidq06seivhesqcs2b3p",
+        "label": "Close date source — 3i Infrastructure — Amwaste LLC",
+        "url": "https://www.wastedive.com/news/amwaste-chip-russell-3i-north-american-infrastructure-investment/690067/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "3i Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoihb06sgivhehvxr2n6s",
+        "label": "Wastetodaymagazine — Amwaste LLC",
+        "url": "https://www.wastetodaymagazine.com/news/amwaste-acquires-waste-away-environmental/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Wastetodaymagazine transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "1a836cf84a9b9425b4f33e1b7433d3991b14ea6d263f0ade91d10ce39aea0e4f",
+  "proposalSha256": "4bbdd8066970e93b6b1e0294b47454f5475aaf43630f89f0cd464d6362864ef7"
+}

@@ -336,7 +336,13 @@ export async function getAllCompanies(options: { detail?: boolean } = {}): Promi
     : getAllCompaniesDetailCached();
 }
 
-async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyView | null> {
+async function getCompanyByFocusIdRaw(
+  focusId: string,
+  // This value is intentionally unused by the query body. unstable_cache
+  // includes function arguments in its cache key, allowing a just-applied
+  // after-image hash to receive a fresh cache entry for verification.
+  _cacheVersion: string,
+): Promise<CompanyView | null> {
   const company = await prisma.company.findFirst({
     where: {
       status: "PUBLISHED",
@@ -356,8 +362,11 @@ const getCompanyByFocusIdCached = unstable_cache(
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
-export async function getCompanyByFocusId(focusId: string): Promise<CompanyView | null> {
-  return getCompanyByFocusIdCached(focusId);
+export async function getCompanyByFocusId(
+  focusId: string,
+  cacheVersion = "default",
+): Promise<CompanyView | null> {
+  return getCompanyByFocusIdCached(focusId, cacheVersion);
 }
 
 export async function getCompanyById(id: string): Promise<CompanyView | null> {
