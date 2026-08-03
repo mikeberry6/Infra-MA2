@@ -44,7 +44,15 @@ const nextConfig = {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
   async redirects() {
-    return [{ source: "/", destination: "/tracker", permanent: true }];
+    return [
+      {
+        source: "/",
+        destination: `${basePath}/tracker`,
+        permanent: true,
+        basePath: false,
+      },
+      { source: "/", destination: "/tracker", permanent: true },
+    ];
   },
 };
 
