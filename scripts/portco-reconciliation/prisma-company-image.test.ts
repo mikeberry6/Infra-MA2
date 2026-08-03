@@ -4,7 +4,10 @@ import {
   prismaCompanyRowToSnapshot,
   type RawPrismaCompanyImageRow,
 } from "./prisma-company-image";
-import { assertRelationEvidencePolicy } from "./prisma-apply-store";
+import {
+  assertRelationEvidencePolicy,
+  assertSharedSourceCompatible,
+} from "./prisma-apply-store";
 
 function rawCompany(): RawPrismaCompanyImageRow {
   const citation = {
@@ -120,5 +123,20 @@ describe("exact Prisma company image adapter", () => {
   it("allows preserved Amwaste-like milestone history without row-level evidence", () => {
     expect(() => assertRelationEvidencePolicy("HISTORICAL_FACT", [])).not.toThrow();
     expect(() => assertRelationEvidencePolicy("PENDING_TRANSACTION", [])).toThrow(/at least one/i);
+  });
+
+  it("rejects source-wide metadata changes before the mutation step", () => {
+    expect(() => assertSharedSourceCompatible({
+      url: "https://example.com/source",
+      desiredLabel: "Official source",
+      desiredType: "PRESS_RELEASE",
+      existing: { label: "Official source", type: "PRESS_RELEASE" },
+    })).not.toThrow();
+    expect(() => assertSharedSourceCompatible({
+      url: "https://example.com/source",
+      desiredLabel: "Changed label",
+      desiredType: "PRESS_RELEASE",
+      existing: { label: "Official source", type: "PRESS_RELEASE" },
+    })).toThrow("requires separate source review");
   });
 });

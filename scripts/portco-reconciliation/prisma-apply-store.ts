@@ -120,6 +120,42 @@ function existingIds<T extends { id: string | null }>(rows: readonly T[]): strin
   return rows.flatMap((row) => row.id ? [row.id] : []);
 }
 
+export function assertSharedSourceCompatible(input: {
+  url: string;
+  desiredLabel: string;
+  desiredType: string;
+  existing: { label: string; type: string } | null;
+}): void {
+  if (
+    input.existing
+    && (
+      input.existing.label !== input.desiredLabel
+      || input.existing.type !== input.desiredType
+    )
+  ) {
+    throw new Error(`Shared Source ${input.url} differs from the approved label/type; requires separate source review`);
+  }
+}
+
+async function assertCitationSourcesCompatible(
+  transaction: unknown,
+  image: CompanyImage,
+): Promise<void> {
+  const sources = delegate(transaction, "source");
+  for (const citation of image.citations) {
+    const existing = await sources.findUnique({
+      where: { url: citation.url },
+      select: { label: true, type: true },
+    }) as { label: string; type: string } | null;
+    assertSharedSourceCompatible({
+      url: citation.url,
+      desiredLabel: citation.label,
+      desiredType: citation.sourceType,
+      existing,
+    });
+  }
+}
+
 async function requiredUpdate(
   transaction: unknown,
   model: string,
@@ -216,12 +252,12 @@ async function syncCitations(
     const existingSource = await sources.findUnique({ where: { url: citation.url } }) as
       | { id: string; label: string; type: string }
       | null;
-    if (
-      existingSource
-      && (existingSource.label !== citation.label || existingSource.type !== citation.sourceType)
-    ) {
-      throw new Error(`Shared Source ${citation.url} differs from the approved label/type; requires separate source review`);
-    }
+    assertSharedSourceCompatible({
+      url: citation.url,
+      desiredLabel: citation.label,
+      desiredType: citation.sourceType,
+      existing: existingSource,
+    });
     const source = existingSource ?? await sources.create({
       data: { label: citation.label, url: citation.url, type: citation.sourceType },
     }) as { id: string };
@@ -540,6 +576,9 @@ export function createPrismaApprovedApplyStore(options: {
             proposal.afterImage.country,
           )
         : [];
+      if (proposal.afterImage) {
+        await assertCitationSourcesCompatible(transaction, proposal.afterImage);
+      }
       return {
         databaseTargetFingerprint: options.databaseTargetFingerprint,
         target,
