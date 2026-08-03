@@ -9,11 +9,13 @@ import {
 import { legacyFullCompanySnapshotToImage } from "./full-company-image";
 import { digestsEqual, sha256Canonical } from "./hash";
 import { verifyReconciliationManifest } from "./manifest";
-import type {
-  ReconciliationApplyReceipt,
-  ReconciliationApproval,
-  ReconciliationManifest,
-  ReconciliationProposal,
+import {
+  companyImageSchema,
+  type CompanyImage,
+  type ReconciliationApplyReceipt,
+  type ReconciliationApproval,
+  type ReconciliationManifest,
+  type ReconciliationProposal,
 } from "./schema";
 
 const nonEmpty = z.string().trim().min(1);
@@ -984,6 +986,18 @@ export interface RecoverCompletedTaskInput {
   >;
 }
 
+function recoveryBeforeImage(input: unknown): CompanyImage {
+  const direct = companyImageSchema.safeParse(input);
+  if (direct.success) return direct.data;
+  if (input && typeof input === "object" && "targetCompanyImage" in input) {
+    const contextImage = companyImageSchema.safeParse(
+      (input as { targetCompanyImage?: unknown }).targetCompanyImage,
+    );
+    if (contextImage.success) return contextImage.data;
+  }
+  return legacyFullCompanySnapshotToImage(input);
+}
+
 export function recoverCompletedExecutionTask(
   input: ExecutionManifest,
   recovery: RecoverCompletedTaskInput,
@@ -1000,8 +1014,12 @@ export function recoverCompletedExecutionTask(
     && digestsEqual(task.recovery.receiptSha256, receipt.receiptSha256)
     && task.recovery.auditEventId === receipt.auditEventId
     && task.recovery.transactionId === receipt.transactionId;
-  if (task.status !== "PENDING" && !rebindsExistingRecovery) {
-    throw new Error(`Recovery requires a pending task or the identical completed receipt; ${task.taskId} is ${task.status}`);
+  const recoverableInterruptedState = task.status === "PENDING"
+    || executionInFlightStatuses.includes(task.status)
+    || task.status === "FAILED"
+    || task.status === "BLOCKED";
+  if (!recoverableInterruptedState && !rebindsExistingRecovery) {
+    throw new Error(`Recovery requires a pending/interrupted task or the identical completed receipt; ${task.taskId} is ${task.status}`);
   }
   if (
     proposal.runId !== manifest.runId
@@ -1011,7 +1029,7 @@ export function recoverCompletedExecutionTask(
   ) {
     throw new Error("Recovery proposal does not match the execution task or source ledger");
   }
-  const beforeImage = legacyFullCompanySnapshotToImage(recovery.companySnapshot);
+  const beforeImage = recoveryBeforeImage(recovery.companySnapshot);
   if (!proposal.beforeImageSha256 || !digestsEqual(companyImageSha256(beforeImage), proposal.beforeImageSha256)) {
     throw new Error("Recovery company snapshot does not prove the proposal before-image");
   }

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  createPublicDetailApiVerifier,
   expectedPublicProjection,
   verifyPublicCompanyPayload,
 } from "./public-api-verifier";
@@ -59,5 +60,32 @@ describe("public PortCo detail API verifier", () => {
       afterImage: image,
       retiredCompanyIds: ["retired_acme"],
     })).toThrow(/render-critical/i);
+  });
+
+  it("treats a 404 as the required public result for an archived company", async () => {
+    const image = companyImageFixture();
+    image.recordStatus = "ARCHIVED";
+    const verify = createPublicDetailApiVerifier({
+      baseUrl: "https://example.com/Infra-MA2/",
+      attempts: 1,
+      fetchImpl: async () => new Response(null, { status: 404 }),
+    });
+
+    await expect(verify("company_acme", image, [])).resolves.toBeUndefined();
+  });
+
+  it("rejects an archived company that remains publicly retrievable", async () => {
+    const image = companyImageFixture();
+    image.recordStatus = "ARCHIVED";
+    const verify = createPublicDetailApiVerifier({
+      baseUrl: "https://example.com/Infra-MA2/",
+      attempts: 1,
+      fetchImpl: async () => new Response("{}", {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      }),
+    });
+
+    await expect(verify("company_acme", image, [])).rejects.toThrow(/remains available/i);
   });
 });

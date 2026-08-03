@@ -4,6 +4,7 @@ import {
   type ApprovedPortCoAfterImage,
 } from "../../prisma/seed-data/approved-portco-after-images";
 import type { PortCo } from "../../prisma/seed-data/portco-types";
+import { assertExpectedSeedEntry } from "./task-snapshot";
 
 function company(name: string, country = "Mexico"): PortCo {
   return {
@@ -44,6 +45,19 @@ describe("approved PortCo seed after-images", () => {
     );
 
     expect(result).toEqual([retained]);
+  });
+
+  it("allows an archived production target to be absent from evaluated seed data", () => {
+    expect(() => assertExpectedSeedEntry({
+      expectedSeedKeyCount: 1,
+      seedEntryPresent: false,
+      targetRecordStatus: "ARCHIVED",
+    })).not.toThrow();
+    expect(() => assertExpectedSeedEntry({
+      expectedSeedKeyCount: 1,
+      seedEntryPresent: false,
+      targetRecordStatus: "PUBLISHED",
+    })).toThrow(/missing or changed identity/i);
   });
 
   it("continues to upsert an approved canonical company", () => {

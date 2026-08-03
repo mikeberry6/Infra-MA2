@@ -68,6 +68,7 @@ export interface AuditEventWrite {
     databaseTargetFingerprint: string;
     seedArtifactPath: string;
     seedArtifactSha256: string;
+    transactionId: string;
     reviewedBy: string;
     reviewedAt: string;
   };
@@ -264,6 +265,7 @@ export async function executeApprovedApply<TransactionClient>(input: {
         databaseTargetFingerprint: fresh.databaseTargetFingerprint,
         seedArtifactPath: publication.artifactPath,
         seedArtifactSha256: publication.artifactSha256,
+        transactionId,
         reviewedBy: approval.reviewedBy,
         reviewedAt: approval.reviewedAt,
       },

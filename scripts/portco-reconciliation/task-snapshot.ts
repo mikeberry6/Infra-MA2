@@ -112,6 +112,20 @@ function finalizeContext(input: TaskContextWithoutHash): TaskSnapshotContext {
   return { ...input, contextSha256: sha256Canonical(input) };
 }
 
+export function assertExpectedSeedEntry(input: {
+  expectedSeedKeyCount: number;
+  seedEntryPresent: boolean;
+  targetRecordStatus: CompanyImage["recordStatus"] | null;
+}): void {
+  if (
+    input.expectedSeedKeyCount > 0
+    && !input.seedEntryPresent
+    && input.targetRecordStatus !== "ARCHIVED"
+  ) {
+    throw new Error("Expected evaluated seed entry is missing or changed identity");
+  }
+}
+
 export async function buildTaskSnapshotContext(input: {
   client: TaskSnapshotClient;
   manifest: ExecutionManifest;
@@ -199,9 +213,11 @@ export async function buildTaskSnapshotContext(input: {
     queueEntry.seedKeys.includes(seedKey(company.name, company.country)));
   if (seedCandidates.length > 1) throw new Error("Task resolves to more than one evaluated seed entry");
   const seedEntry = seedCandidates[0] ?? null;
-  if (queueEntry.seedKeys.length > 0 && !seedEntry) {
-    throw new Error("Expected evaluated seed entry is missing or changed identity");
-  }
+  assertExpectedSeedEntry({
+    expectedSeedKeyCount: queueEntry.seedKeys.length,
+    seedEntryPresent: seedEntry !== null,
+    targetRecordStatus: targetCompanyImage?.recordStatus ?? null,
+  });
   const funds = normalizeDependencies(
     read.ownershipDependencies.flatMap((dependency) => dependency.fund ? [dependency.fund] : []),
   ).filter((dependency, index, rows) => rows.findIndex((candidate) => candidate.id === dependency.id) === index);

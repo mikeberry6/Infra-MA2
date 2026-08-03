@@ -260,7 +260,11 @@ export function createPublicDetailApiVerifier(options: {
           headers: { accept: "application/json", "cache-control": "no-cache" },
           cache: "no-store",
         });
+        if (afterImage.recordStatus === "ARCHIVED" && response.status === 404) return;
         if (!response.ok) throw new Error(`Detail API returned HTTP ${response.status}`);
+        if (afterImage.recordStatus === "ARCHIVED") {
+          throw new Error("Archived company remains available from the public detail API");
+        }
         verifyPublicCompanyPayload({
           payload: await response.json(),
           companyId,
