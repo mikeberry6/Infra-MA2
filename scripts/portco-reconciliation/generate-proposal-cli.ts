@@ -11,7 +11,11 @@ import {
 import { verifyExecutionTaskSnapshot } from "./execution-control";
 import { digestsEqual, sha256Canonical } from "./hash";
 import { renderProposalMarkdown } from "./markdown";
-import { companyImageSchema } from "./schema";
+import {
+  citationImageSchema,
+  companyImageSchema,
+  ownershipPeriodImageSchema,
+} from "./schema";
 import type { TaskSnapshotContext } from "./task-snapshot";
 
 const sha256 = z.string().regex(/^[0-9a-f]{64}$/);
@@ -51,6 +55,10 @@ const ownershipPeriodUpdateSchema = z.strictObject({
     transactionState: z.enum(["CLOSED_ACTIVE", "SIGNED_PENDING_EXIT", "REALIZED"]).optional(),
   }),
 });
+const ownershipPeriodAdditionSchema = ownershipPeriodImageSchema.refine(
+  (period) => period.id === null,
+  { message: "New ownership periods must use id: null", path: ["id"] },
+);
 const milestoneUpdateSchema = z.strictObject({
   id: z.string().trim().min(1),
   set: z.strictObject({
@@ -61,6 +69,14 @@ const milestoneUpdateSchema = z.strictObject({
     evidenceUrls: z.array(httpsUrl).optional(),
   }),
 });
+const citationUpdateSchema = z.strictObject({
+  id: z.string().trim().min(1),
+  set: citationImageSchema.omit({ id: true }).partial(),
+});
+const citationAdditionSchema = citationImageSchema.refine(
+  (citation) => citation.id === null,
+  { message: "New citations must use id: null", path: ["id"] },
+);
 const proposalSpecSchema = z.strictObject({
   generatedAt: z.string().datetime({ offset: true }),
   actions: z.array(z.enum([
@@ -80,12 +96,22 @@ const proposalSpecSchema = z.strictObject({
   unresolvedQuestions: z.array(z.string().trim().min(1)).default([]),
   companyFieldUpdates: companyFieldUpdatesSchema.optional(),
   ownershipPeriodUpdates: z.array(ownershipPeriodUpdateSchema).default([]),
+  ownershipPeriodAdditions: z.array(ownershipPeriodAdditionSchema).default([]),
   milestoneUpdates: z.array(milestoneUpdateSchema).default([]),
+  citationUpdates: z.array(citationUpdateSchema).default([]),
+  citationAdditions: z.array(citationAdditionSchema).default([]),
   afterImage: companyImageSchema.optional(),
 }).superRefine((spec, context) => {
   if (
     spec.afterImage
-    && (spec.companyFieldUpdates || spec.ownershipPeriodUpdates.length > 0 || spec.milestoneUpdates.length > 0)
+    && (
+      spec.companyFieldUpdates
+      || spec.ownershipPeriodUpdates.length > 0
+      || spec.ownershipPeriodAdditions.length > 0
+      || spec.milestoneUpdates.length > 0
+      || spec.citationUpdates.length > 0
+      || spec.citationAdditions.length > 0
+    )
   ) {
     context.addIssue({ code: "custom", message: "Use either afterImage or patch updates, not both" });
   }
@@ -93,7 +119,10 @@ const proposalSpecSchema = z.strictObject({
     !spec.afterImage
     && !spec.companyFieldUpdates
     && spec.ownershipPeriodUpdates.length === 0
+    && spec.ownershipPeriodAdditions.length === 0
     && spec.milestoneUpdates.length === 0
+    && spec.citationUpdates.length === 0
+    && spec.citationAdditions.length === 0
   ) {
     context.addIssue({ code: "custom", message: "Proposal spec must define an after-image or at least one patch" });
   }
@@ -157,7 +186,7 @@ function verifyContext(input: unknown): TaskSnapshotContext {
   return context;
 }
 
-function applySpec(context: TaskSnapshotContext, specInput: unknown) {
+export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
   const spec = proposalSpecSchema.parse(specInput);
   const beforeImage = context.targetCompanyImage;
   let afterImage = spec.afterImage ?? null;
@@ -165,6 +194,7 @@ function applySpec(context: TaskSnapshotContext, specInput: unknown) {
     if (!beforeImage) throw new Error("Patch-based proposals require an existing target company");
     const ownershipUpdates = new Map(spec.ownershipPeriodUpdates.map((update) => [update.id, update.set]));
     const milestoneUpdates = new Map(spec.milestoneUpdates.map((update) => [update.id, update.set]));
+    const citationUpdates = new Map(spec.citationUpdates.map((update) => [update.id, update.set]));
     for (const id of ownershipUpdates.keys()) {
       if (!beforeImage.ownershipPeriods.some((period) => period.id === id)) {
         throw new Error(`Ownership update references unknown period ${id}`);
@@ -175,17 +205,26 @@ function applySpec(context: TaskSnapshotContext, specInput: unknown) {
         throw new Error(`Milestone update references unknown milestone ${id}`);
       }
     }
+    for (const id of citationUpdates.keys()) {
+      if (!beforeImage.citations.some((citation) => citation.id === id)) {
+        throw new Error(`Citation update references unknown citation ${id}`);
+      }
+    }
     afterImage = companyImageSchema.parse({
       ...beforeImage,
       ...(spec.companyFieldUpdates ?? {}),
       ownershipPeriods: beforeImage.ownershipPeriods.map((period) => ({
         ...period,
         ...(period.id ? ownershipUpdates.get(period.id) : undefined),
-      })),
+      })).concat(spec.ownershipPeriodAdditions),
       milestones: beforeImage.milestones.map((milestone) => ({
         ...milestone,
         ...(milestone.id ? milestoneUpdates.get(milestone.id) : undefined),
       })),
+      citations: beforeImage.citations.map((citation) => ({
+        ...citation,
+        ...(citation.id ? citationUpdates.get(citation.id) : undefined),
+      })).concat(spec.citationAdditions),
     });
   }
   if (spec.unresolvedQuestions.length > 0 && afterImage) {
