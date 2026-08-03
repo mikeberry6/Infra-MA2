@@ -601,7 +601,7 @@ async function main() {
   }
   const desiredById = new Map(manifest.funds.map((fund) => [fund.id, manifestRecordToSnapshot(fund)]));
   for (const candidate of proposal.candidates.filter((item) =>
-    item.action === "CREATE" || item.action === "UPDATE" || item.action === "VERIFY_NO_CHANGE",
+    item.action === "CREATE" || item.action === "UPDATE",
   )) {
     if (!candidate.after || canonicalJson(candidate.after) !== canonicalJson(desiredById.get(candidate.identity.legacyId))) {
       throw new Error(`${candidate.identity.legacyId}: reviewed after image does not match the merged manifest`);
