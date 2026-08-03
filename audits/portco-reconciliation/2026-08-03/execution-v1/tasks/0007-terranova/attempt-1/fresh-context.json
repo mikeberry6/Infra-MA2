@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0007:terranova:429078b6",
+  "taskIndex": 7,
+  "companyName": "TERRANOVA",
+  "generatedAt": "2026-08-03T23:12:49.958Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0007-terranova/attempt-1/fresh-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 7,
+    "taskId": "ledger:0007:terranova:429078b6",
+    "canonicalKey": "terranova|mexico",
+    "companyName": "TERRANOVA",
+    "country": "Mexico",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 3,
+    "managers": [
+      "Actis"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "003-actis:repo-only:001:terranova"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj45i00g3ivhe0qjt3g4o"
+    ],
+    "seedKeys": [
+      "terranova|Mexico"
+    ],
+    "evidenceUrls": [
+      "https://dcterranova.com/en/",
+      "https://www.act.is/2025/12/02/actis-launches-new-latin-american-hyperscale-data-center-platform-terranova-to-accelerate-latin-americas-digital-expansion/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Actis OUT_OF_SCOPE: Platform is explicitly Latin American (Brazil, Mexico, Chile) and not primarily North American.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj45i00g3ivhe0qjt3g4o",
+    "name": "TERRANOVA",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale data center development platform",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "TERRANOVA is a Latin American hyperscale data center platform being developed for cloud, AI, and enterprise computing demand. Its end markets are hyperscale cloud providers and other large digital infrastructure users that require large sites with secured land and power. The operating model is asset-heavy and development led, with value creation tied to site control, power access, construction, and eventual long-term customer occupancy. Actis disclosed at launch that the platform had secured land and power capable of supporting up to 1 GW across projects in Mexico, Brazil, and Chile, with the first campus located in Querétaro. Actis launched TERRANOVA in December 2025 through its digital infrastructure strategy, and the current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "Querétaro and Guanajuato, Mexico; São Paulo state, Brazil; Chile",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp8001cjivheq9pj9p68",
+        "managerName": "Actis",
+        "organizationName": "Actis",
+        "fundName": null,
+        "vehicleName": "Actis Digital Infrastructure",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkci202d3ivhewxfbfea3",
+        "date": "Dec 2025",
+        "event": "Actis launched TERRANOVA with a stated $1.5 billion investment commitment.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcik02d4ivhegaecz86u",
+        "date": "2026",
+        "event": "TERRANOVA advanced development of a second Mexican campus in San Miguel de Allende, Guanajuato.",
+        "category": "EXPANSION",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcj102d5ivhezllk9kq2",
+        "date": "Feb 2026",
+        "event": "TERRANOVA's first campus in Querétaro, Mexico entered operation.",
+        "category": "EXPANSION",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpojsg06ufivheti8n8j2h",
+        "label": "Dcterranova — TERRANOVA",
+        "url": "https://dcterranova.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Dcterranova company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpojtf06uhivheh1qkgu3u",
+        "label": "Announcement date source — Actis — TERRANOVA",
+        "url": "https://www.act.is/2025/12/02/actis-launches-new-latin-american-hyperscale-data-center-platform-terranova-to-accelerate-latin-americas-digital-expansion/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Actis transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojuj06ujivhe92qzpgle",
+        "label": "Data Center Dynamics — TERRANOVA",
+        "url": "https://www.datacenterdynamics.com/en/news/terranova-launches-in-mexico-with-its-first-data-center-campus/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Data Center Dynamics — TERRANOVA",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojvx06ulivhezad6g2jv",
+        "label": "Dcterranova — TERRANOVA",
+        "url": "https://dcterranova.com/en/blog/terranova-do-fundo-actis-entra-no-setor-de-data-centers-de-hiperescala",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Dcterranova — TERRANOVA",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "TERRANOVA",
+    "investmentFirm": "Actis",
+    "sector": "Digital",
+    "subsector": "Hyperscale data center development platform",
+    "region": "North America",
+    "country": "Mexico",
+    "ownershipVehicle": "Actis Digital Infrastructure",
+    "description": "TERRANOVA is a Latin American hyperscale data center platform being developed for cloud, AI, and enterprise computing demand. Its end markets are hyperscale cloud providers and other large digital infrastructure users that require large sites with secured land and power. The operating model is asset-heavy and development led, with value creation tied to site control, power access, construction, and eventual long-term customer occupancy. Actis disclosed at launch that the platform had secured land and power capable of supporting up to 1 GW across projects in Mexico, Brazil, and Chile, with the first campus located in Querétaro. Actis launched TERRANOVA in December 2025 through its digital infrastructure strategy, and the current ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "Mexico"
+    ],
+    "yearFounded": 2025,
+    "investmentYear": 2025,
+    "headquarters": "Querétaro and Guanajuato, Mexico; São Paulo state, Brazil; Chile",
+    "milestones": [
+      {
+        "date": "Dec 2025",
+        "event": "Actis launched TERRANOVA with a stated $1.5 billion investment commitment.",
+        "category": "Financing"
+      },
+      {
+        "date": "2026",
+        "event": "TERRANOVA advanced development of a second Mexican campus in San Miguel de Allende, Guanajuato.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Feb 2026",
+        "event": "TERRANOVA's first campus in Querétaro, Mexico entered operation.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Dcterranova — TERRANOVA",
+        "url": "https://dcterranova.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Actis — TERRANOVA",
+        "url": "https://www.act.is/2025/12/02/actis-launches-new-latin-american-hyperscale-data-center-platform-terranova-to-accelerate-latin-americas-digital-expansion/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Data Center Dynamics — TERRANOVA",
+        "url": "https://www.datacenterdynamics.com/en/news/terranova-launches-in-mexico-with-its-first-data-center-campus/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Dcterranova — TERRANOVA",
+        "url": "https://dcterranova.com/en/blog/terranova-do-fundo-actis-entra-no-setor-de-data-centers-de-hiperescala",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Actis",
+        "ownershipVehicle": "Actis Digital Infrastructure",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpif4s0041ivheo1wu6c3q",
+        "name": "Actis",
+        "updatedAt": "2026-07-23T16:09:26.812Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0007:terranova:429078b6",
+    "taskIndex": 7,
+    "canonicalKey": "terranova|mexico",
+    "capturedAt": "2026-08-03T23:12:49.958Z",
+    "databaseRevision": "company-state:3e134dc7bdbeb504069642d64053136aa6b16f502bd330e5f83978f3d4ec60b4",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1b694ee941a57f2438293858a84287ba280234e1981a7c85f7b14dd1b56ba1be",
+    "productionSnapshotSha256": "eaeeb566c81fa16b416411589aa0d63c507d07a507eb037d6c9c71de3b24958d",
+    "targetCompanySnapshotSha256": "3e134dc7bdbeb504069642d64053136aa6b16f502bd330e5f83978f3d4ec60b4",
+    "seedEntrySha256": "6bfc1b7f65ed138cff4aca83fa7ea75600b99e90900e53bf1d33b805791160d4",
+    "dependencies": {
+      "ownershipPeriodsSha256": "32b9da8e18f05487955c0f56b1b3353078df565513e44b93341165539325bed5",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5a92c206ab5812b146b83b458a7fecb73b29875e41a824b7dc806735b179df09",
+      "citationsSha256": "b3c616f6321e08ac1fcc0ed443aab4e7d172e95d7af0231540d6bf033ae63865",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "35823fd274c2ec4fadfc3381a862714b100c2a1f7411d86cb667ea38fd70ef68",
+    "stateSha256": "ddeba671f9016ffa81d94f30844d242e408a2cca621042172680e7990d9b50bd",
+    "taskSnapshotSha256": "40443786f465f9e5c3b53ab0ae3d85f939a729645ce8b9ea361c5ad86b5ff92b"
+  },
+  "contextSha256": "53dcc8d3f38545600fadae39a62278c5eef7fa73e836ca04edbebf700e28ecc8"
+}
