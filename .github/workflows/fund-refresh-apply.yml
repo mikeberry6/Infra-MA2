@@ -693,6 +693,8 @@ jobs:
       DATABASE_URL: ${{ secrets.FUND_REFRESH_DATABASE_URL }}
       EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
       EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.MIGRATION_DATABASE_HOST }}
       APPROVAL_COMMENT_ID: ${{ needs.authorize.outputs.approval_comment_id }}
       REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_REVIEWER_LOGIN }}
       REVIEWED_PR_HEAD_SHA: ${{ needs.authorize.outputs.reviewed_head_sha }}
@@ -837,7 +839,7 @@ jobs:
         shell: bash
         run: |
           missing=0
-          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME REVIEWED_PR_HEAD_SHA REVIEWED_PROPOSAL_BLOB_SHA REVALIDATE_URL REVALIDATE_TOKEN; do
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2 REVIEWED_PR_HEAD_SHA REVIEWED_PROPOSAL_BLOB_SHA REVALIDATE_URL REVALIDATE_TOKEN; do
             if [ -z "${!name:-}" ]; then
               echo "::error::$name is required for the approved production apply."
               missing=1
