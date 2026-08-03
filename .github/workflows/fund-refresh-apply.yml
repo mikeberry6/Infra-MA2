@@ -39,11 +39,11 @@ env:
 
 jobs:
   authorize:
-    name: Bind PR, proposal, digest, and Pro approval
+    name: Bind PR, proposal, digest, and owner approval
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
-      pro_review_id: ${{ steps.pr.outputs.pro_review_id }}
+      approval_comment_id: ${{ steps.pr.outputs.approval_comment_id }}
       reviewed_head_sha: ${{ steps.pr.outputs.reviewed_head_sha }}
       reviewed_proposal_blob_sha: ${{ steps.proposal_blob.outputs.reviewed_proposal_blob_sha }}
       pr_url: ${{ steps.pr.outputs.pr_url }}
@@ -80,7 +80,7 @@ jobs:
             exit 1
           fi
 
-      - name: Bind the pull request head and GPT-5.6 Pro PASS review
+      - name: Bind the pull request head and exact owner approval
         id: pr
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         env:
@@ -88,7 +88,7 @@ jobs:
           PR_NUMBER: ${{ inputs.pull_request_number }}
           PROPOSAL_PATH: ${{ inputs.proposal_path }}
           PROPOSAL_SHA256: ${{ inputs.proposal_sha256 }}
-          PRO_REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_PRO_REVIEWER_LOGIN }}
+          REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_REVIEWER_LOGIN }}
         with:
           script: |
             const owner = context.repo.owner;
@@ -97,10 +97,10 @@ jobs:
             const mergedSha = process.env.HEAD_SHA;
             const proposalPath = process.env.PROPOSAL_PATH;
             const proposalSha256 = process.env.PROPOSAL_SHA256;
-            const proReviewerLogin = process.env.PRO_REVIEWER_LOGIN;
+            const reviewerLogin = process.env.REVIEWER_LOGIN;
 
-            if (!proReviewerLogin) {
-              core.setFailed("Repository variable FUND_REFRESH_PRO_REVIEWER_LOGIN is required.");
+            if (!reviewerLogin) {
+              core.setFailed("Repository variable FUND_REFRESH_REVIEWER_LOGIN is required.");
               return;
             }
 
@@ -125,8 +125,8 @@ jobs:
               core.setFailed("fund-refresh-production must have at least one required reviewer.");
               return;
             }
-            if (!approvalRule.prevent_self_review) {
-              core.setFailed("fund-refresh-production must prevent self-review.");
+            if (approvalRule.prevent_self_review !== false) {
+              core.setFailed("fund-refresh-production must allow self-review for the selected owner-operated approval policy.");
               return;
             }
             if (productionEnvironment.can_admins_bypass !== false) {
@@ -156,7 +156,8 @@ jobs:
               return;
             }
             const reviewedHeadSha = pr.head.sha;
-            const expectedMarker = `FUND_REFRESH_PRO_PASS pr=${pull_number} head_sha=${reviewedHeadSha} proposal_path=${proposalPath} proposal_sha256=${proposalSha256}`;
+            const expectedMarker = `FUND_REFRESH_OWNER_PASS pr=${pull_number} head_sha=${reviewedHeadSha} proposal_path=${proposalPath} proposal_sha256=${proposalSha256}`;
+            const revocationMarker = `FUND_REFRESH_OWNER_REVOKE pr=${pull_number} head_sha=${reviewedHeadSha} proposal_path=${proposalPath} proposal_sha256=${proposalSha256}`;
 
             const { data: defaultBranchState } = await github.rest.repos.getBranch({
               owner,
@@ -202,42 +203,40 @@ jobs:
               return;
             }
 
-            const reviews = await github.paginate(github.rest.pulls.listReviews, {
+            const comments = await github.paginate(github.rest.issues.listComments, {
               owner,
               repo,
-              pull_number,
+              issue_number: pull_number,
               per_page: 100,
             });
-            const markerLine = (body) => (body || "")
+            const markerLine = (body, marker) => (body || "")
               .split(/\r?\n/)
               .map((line) => line.trim())
-              .includes(expectedMarker);
-            const passingReviews = reviews.filter((review) =>
-              review.state === "APPROVED" &&
-              review.commit_id === reviewedHeadSha &&
-              review.user?.login === proReviewerLogin &&
-              markerLine(review.body),
+              .includes(marker);
+            const passingComments = comments.filter((comment) =>
+              comment.user?.login === reviewerLogin &&
+              markerLine(comment.body, expectedMarker),
             );
-            if (passingReviews.length === 0) {
-              core.setFailed(`No APPROVED review on ${reviewedHeadSha} contains the exact Pro marker: ${expectedMarker}`);
+            if (passingComments.length === 0) {
+              core.setFailed(`No owner approval comment contains the exact marker: ${expectedMarker}`);
               return;
             }
-            const passingReview = passingReviews.sort((left, right) => {
-              const timeDelta = Date.parse(left.submitted_at || 0) - Date.parse(right.submitted_at || 0);
+            const passingComment = passingComments.sort((left, right) => {
+              const timeDelta = Date.parse(left.created_at || 0) - Date.parse(right.created_at || 0);
               return timeDelta || Number(left.id) - Number(right.id);
             }).at(-1);
-            const laterProReview = reviews.some((review) => {
-              if (review.commit_id !== reviewedHeadSha || review.user?.login !== proReviewerLogin) return false;
-              const reviewTime = Date.parse(review.submitted_at || 0);
-              const passTime = Date.parse(passingReview.submitted_at || 0);
-              return reviewTime > passTime || (reviewTime === passTime && Number(review.id) > Number(passingReview.id));
+            const laterRevocation = comments.some((comment) => {
+              if (comment.user?.login !== reviewerLogin || !markerLine(comment.body, revocationMarker)) return false;
+              const commentTime = Date.parse(comment.created_at || 0);
+              const passTime = Date.parse(passingComment.created_at || 0);
+              return commentTime > passTime || (commentTime === passTime && Number(comment.id) > Number(passingComment.id));
             });
-            if (laterProReview) {
-              core.setFailed(`A later review by ${proReviewerLogin} invalidates Pro PASS review ${passingReview.id}.`);
+            if (laterRevocation) {
+              core.setFailed(`A later revocation by ${reviewerLogin} invalidates owner approval comment ${passingComment.id}.`);
               return;
             }
 
-            core.setOutput("pro_review_id", String(passingReview.id));
+            core.setOutput("approval_comment_id", String(passingComment.id));
             core.setOutput("reviewed_head_sha", reviewedHeadSha);
             core.setOutput("pr_commit_count", String(pr.commits));
             core.setOutput("pr_url", pr.html_url);
@@ -250,9 +249,9 @@ jobs:
                 ["Merged commit", mergedSha],
                 ["Proposal", proposalPath],
                 ["Proposal SHA-256", proposalSha256],
-                ["Pro reviewer", proReviewerLogin],
-                ["Pro PASS review", String(passingReview.id)],
-                ["Production approval", `${approvalRule.reviewers.length} required reviewer(s); self-review and administrator bypass blocked`],
+                ["Configured reviewer", reviewerLogin],
+                ["Owner approval comment", String(passingComment.id)],
+                ["Production approval", `${approvalRule.reviewers.length} required reviewer(s); self-review allowed; administrator bypass blocked`],
               ])
               .write();
 
@@ -295,7 +294,7 @@ jobs:
           proposal_base="$(node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(typeof value.baseCommit === "string" ? value.baseCommit : "")' "$REVIEWED_PROPOSAL_PATH")"
           protected_parent="$(git rev-parse "$REVIEWED_COMMIT_SHA^1")"
           if [ "$proposal_base" != "$protected_parent" ]; then
-            echo "::error::proposal.baseCommit $proposal_base must equal the reviewed merge's protected default-branch parent $protected_parent. Rebase and obtain a new Pro verdict."
+            echo "::error::proposal.baseCommit $proposal_base must equal the reviewed merge's protected default-branch parent $protected_parent. Rebase and obtain a new owner approval."
             exit 1
           fi
           while IFS= read -r -d '' changed_path; do
@@ -662,17 +661,16 @@ jobs:
       contents: read
       deployments: write
       pull-requests: read
-    # Configure required reviewers and prevent self-review on this GitHub
-    # environment before enabling the workflow. Environment secrets are not
-    # exposed until that approval is granted.
+    # Configure required reviewers with owner self-review enabled on this
+    # environment. Environment secrets are not exposed until approval.
     environment:
       name: fund-refresh-production
     env:
       DATABASE_URL: ${{ secrets.FUND_REFRESH_DATABASE_URL }}
       EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
       EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
-      PRO_PASS_REVIEW_ID: ${{ needs.authorize.outputs.pro_review_id }}
-      PRO_REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_PRO_REVIEWER_LOGIN }}
+      APPROVAL_COMMENT_ID: ${{ needs.authorize.outputs.approval_comment_id }}
+      REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_REVIEWER_LOGIN }}
       REVIEWED_PR_HEAD_SHA: ${{ needs.authorize.outputs.reviewed_head_sha }}
       REVIEWED_PROPOSAL_BLOB_SHA: ${{ needs.authorize.outputs.reviewed_proposal_blob_sha }}
       FUND_REFRESH_APPROVER: github-environment:fund-refresh-production/run-${{ github.run_id }}
@@ -685,7 +683,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Reconfirm PR head and Pro PASS after environment approval
+      - name: Reconfirm PR head and owner approval after environment approval
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         env:
           HEAD_SHA: ${{ inputs.commit_sha }}
@@ -693,15 +691,16 @@ jobs:
           PR_NUMBER: ${{ inputs.pull_request_number }}
           PROPOSAL_PATH: ${{ inputs.proposal_path }}
           PROPOSAL_SHA256: ${{ inputs.proposal_sha256 }}
-          PRO_PASS_REVIEW_ID: ${{ needs.authorize.outputs.pro_review_id }}
-          PRO_REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_PRO_REVIEWER_LOGIN }}
+          APPROVAL_COMMENT_ID: ${{ needs.authorize.outputs.approval_comment_id }}
+          REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_REVIEWER_LOGIN }}
         with:
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const pull_number = Number(process.env.PR_NUMBER);
             const defaultBranch = context.payload.repository.default_branch;
-            const expectedMarker = `FUND_REFRESH_PRO_PASS pr=${pull_number} head_sha=${process.env.REVIEWED_HEAD_SHA} proposal_path=${process.env.PROPOSAL_PATH} proposal_sha256=${process.env.PROPOSAL_SHA256}`;
+            const expectedMarker = `FUND_REFRESH_OWNER_PASS pr=${pull_number} head_sha=${process.env.REVIEWED_HEAD_SHA} proposal_path=${process.env.PROPOSAL_PATH} proposal_sha256=${process.env.PROPOSAL_SHA256}`;
+            const revocationMarker = `FUND_REFRESH_OWNER_REVOKE pr=${pull_number} head_sha=${process.env.REVIEWED_HEAD_SHA} proposal_path=${process.env.PROPOSAL_PATH} proposal_sha256=${process.env.PROPOSAL_SHA256}`;
 
             let productionEnvironment;
             try {
@@ -720,8 +719,8 @@ jobs:
             }
             const approvalRule = (productionEnvironment.protection_rules || [])
               .find((rule) => rule.type === "required_reviewers");
-            if (!approvalRule || !approvalRule.reviewers?.length || !approvalRule.prevent_self_review) {
-              core.setFailed("fund-refresh-production must still require reviewers and prevent self-review.");
+            if (!approvalRule || !approvalRule.reviewers?.length || approvalRule.prevent_self_review !== false) {
+              core.setFailed("fund-refresh-production must still require reviewers and allow owner self-review.");
               return;
             }
             if (productionEnvironment.can_admins_bypass !== false) {
@@ -759,40 +758,41 @@ jobs:
               return;
             }
 
-            const { data: review } = await github.rest.pulls.getReview({
+            const { data: approvalComment } = await github.rest.issues.getComment({
               owner,
               repo,
-              pull_number,
-              review_id: Number(process.env.PRO_PASS_REVIEW_ID),
+              comment_id: Number(process.env.APPROVAL_COMMENT_ID),
             });
-            const hasMarker = (review.body || "")
+            const hasMarker = (approvalComment.body || "")
               .split(/\r?\n/)
               .map((line) => line.trim())
               .includes(expectedMarker);
             if (
-              review.state !== "APPROVED" ||
-              review.commit_id !== process.env.REVIEWED_HEAD_SHA ||
-              review.user?.login !== process.env.PRO_REVIEWER_LOGIN ||
+              approvalComment.user?.login !== process.env.REVIEWER_LOGIN ||
               !hasMarker
             ) {
-              core.setFailed(`Pro PASS review ${review.id} is no longer valid for the approved inputs.`);
+              core.setFailed(`Owner approval comment ${approvalComment.id} is no longer valid for the approved inputs.`);
               return;
             }
 
-            const reviews = await github.paginate(github.rest.pulls.listReviews, {
+            const comments = await github.paginate(github.rest.issues.listComments, {
               owner,
               repo,
-              pull_number,
+              issue_number: pull_number,
               per_page: 100,
             });
-            const passTime = Date.parse(review.submitted_at || 0);
-            const laterProReview = reviews.some((candidate) => {
-              if (candidate.commit_id !== process.env.REVIEWED_HEAD_SHA || candidate.user?.login !== process.env.PRO_REVIEWER_LOGIN) return false;
-              const candidateTime = Date.parse(candidate.submitted_at || 0);
-              return candidateTime > passTime || (candidateTime === passTime && Number(candidate.id) > Number(review.id));
+            const markerLine = (body, marker) => (body || "")
+              .split(/\r?\n/)
+              .map((line) => line.trim())
+              .includes(marker);
+            const passTime = Date.parse(approvalComment.created_at || 0);
+            const laterRevocation = comments.some((candidate) => {
+              if (candidate.user?.login !== process.env.REVIEWER_LOGIN || !markerLine(candidate.body, revocationMarker)) return false;
+              const candidateTime = Date.parse(candidate.created_at || 0);
+              return candidateTime > passTime || (candidateTime === passTime && Number(candidate.id) > Number(approvalComment.id));
             });
-            if (laterProReview) {
-              core.setFailed(`A later review by ${process.env.PRO_REVIEWER_LOGIN} invalidates Pro PASS review ${review.id}.`);
+            if (laterRevocation) {
+              core.setFailed(`A later revocation by ${process.env.REVIEWER_LOGIN} invalidates owner approval comment ${approvalComment.id}.`);
               return;
             }
 
@@ -909,8 +909,8 @@ jobs:
           PR_NUMBER: ${{ inputs.pull_request_number }}
           PROPOSAL_PATH: ${{ inputs.proposal_path }}
           PROPOSAL_SHA256: ${{ inputs.proposal_sha256 }}
-          PRO_PASS_REVIEW_ID: ${{ needs.authorize.outputs.pro_review_id }}
-          PRO_REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_PRO_REVIEWER_LOGIN }}
+          APPROVAL_COMMENT_ID: ${{ needs.authorize.outputs.approval_comment_id }}
+          REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_REVIEWER_LOGIN }}
         with:
           script: |
             const owner = context.repo.owner;
@@ -927,7 +927,7 @@ jobs:
               { owner, repo, environment_name: 'fund-refresh-production' },
             )).data;
             const approvalRule = (environment.protection_rules || []).find((rule) => rule.type === 'required_reviewers');
-            if (!approvalRule?.reviewers?.length || !approvalRule.prevent_self_review || environment.can_admins_bypass !== false) {
+            if (!approvalRule?.reviewers?.length || approvalRule.prevent_self_review !== false || environment.can_admins_bypass !== false) {
               core.setFailed('Production environment approval protections changed before mutation.');
               return;
             }
@@ -940,26 +940,26 @@ jobs:
               core.setFailed('Reviewed PR binding changed before mutation.');
               return;
             }
-            const { data: review } = await github.rest.pulls.getReview({
+            const { data: approvalComment } = await github.rest.issues.getComment({
               owner,
               repo,
-              pull_number,
-              review_id: Number(process.env.PRO_PASS_REVIEW_ID),
+              comment_id: Number(process.env.APPROVAL_COMMENT_ID),
             });
-            const marker = `FUND_REFRESH_PRO_PASS pr=${pull_number} head_sha=${process.env.REVIEWED_HEAD_SHA} proposal_path=${process.env.PROPOSAL_PATH} proposal_sha256=${process.env.PROPOSAL_SHA256}`;
-            const markerPresent = (review.body || '').split(/\r?\n/).map((line) => line.trim()).includes(marker);
-            if (review.state !== 'APPROVED' || review.commit_id !== process.env.REVIEWED_HEAD_SHA || review.user?.login !== process.env.PRO_REVIEWER_LOGIN || !markerPresent) {
-              core.setFailed('Pro PASS is no longer valid immediately before mutation.');
+            const marker = `FUND_REFRESH_OWNER_PASS pr=${pull_number} head_sha=${process.env.REVIEWED_HEAD_SHA} proposal_path=${process.env.PROPOSAL_PATH} proposal_sha256=${process.env.PROPOSAL_SHA256}`;
+            const revocationMarker = `FUND_REFRESH_OWNER_REVOKE pr=${pull_number} head_sha=${process.env.REVIEWED_HEAD_SHA} proposal_path=${process.env.PROPOSAL_PATH} proposal_sha256=${process.env.PROPOSAL_SHA256}`;
+            const markerLine = (body, expected) => (body || '').split(/\r?\n/).map((line) => line.trim()).includes(expected);
+            if (approvalComment.user?.login !== process.env.REVIEWER_LOGIN || !markerLine(approvalComment.body, marker)) {
+              core.setFailed('Owner approval is no longer valid immediately before mutation.');
               return;
             }
-            const reviews = await github.paginate(github.rest.pulls.listReviews, { owner, repo, pull_number, per_page: 100 });
-            const passTime = Date.parse(review.submitted_at || 0);
-            if (reviews.some((candidate) => {
-              if (candidate.commit_id !== process.env.REVIEWED_HEAD_SHA || candidate.user?.login !== process.env.PRO_REVIEWER_LOGIN) return false;
-              const candidateTime = Date.parse(candidate.submitted_at || 0);
-              return candidateTime > passTime || (candidateTime === passTime && Number(candidate.id) > Number(review.id));
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number: pull_number, per_page: 100 });
+            const passTime = Date.parse(approvalComment.created_at || 0);
+            if (comments.some((candidate) => {
+              if (candidate.user?.login !== process.env.REVIEWER_LOGIN || !markerLine(candidate.body, revocationMarker)) return false;
+              const candidateTime = Date.parse(candidate.created_at || 0);
+              return candidateTime > passTime || (candidateTime === passTime && Number(candidate.id) > Number(approvalComment.id));
             })) {
-              core.setFailed('A later review by the configured Pro reviewer invalidates Pro PASS.');
+              core.setFailed('A later owner revocation invalidates the approval.');
               return;
             }
             const proposal = await github.rest.repos.getContent({ owner, repo, path: process.env.PROPOSAL_PATH, ref: process.env.REVIEWED_HEAD_SHA });
