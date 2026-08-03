@@ -237,9 +237,24 @@ describe("Phase 1 execution control", () => {
 
   it("hard-stops on failure and retries the same company before later tasks", () => {
     const active = activateNextExecutionTask(recovered(), "2026-08-03T16:32:00.000Z");
-    const failed = transitionExecutionTask(
+    const locked = taskSnapshot(active);
+    const proposed = transitionExecutionTask(
       active,
       active.activeTaskId!,
+      "PROPOSED",
+      "2026-08-03T16:32:30.000Z",
+      {
+        taskSnapshot: locked,
+        artifacts: {
+          taskSnapshot: { location: "tmp/ec-waste-task-snapshot.json", sha256: locked.taskSnapshotSha256 },
+          proposal: { location: "tmp/ec-waste-proposal.json", sha256: "d".repeat(64) },
+          decision: { location: "tmp/ec-waste-research.json", sha256: "e".repeat(64) },
+        },
+      },
+    );
+    const failed = transitionExecutionTask(
+      proposed,
+      proposed.activeTaskId!,
       "FAILED",
       "2026-08-03T16:33:00.000Z",
       { reason: "Proposal schema failed twice." },
@@ -249,6 +264,15 @@ describe("Phase 1 execution control", () => {
     const retried = activateNextExecutionTask(failed, "2026-08-03T16:34:00.000Z");
     expect(retried.activeTaskId).toBe("ledger:0002:ec-waste:c202135b");
     expect(retried.tasks[1].attempts).toBe(2);
+    expect(retried.tasks[1].taskSnapshotSha256).toBeNull();
+    expect(retried.tasks[1].artifacts).toEqual({
+      taskSnapshot: null,
+      proposal: null,
+      approval: null,
+      applyReceipt: null,
+      decision: null,
+      companySnapshot: null,
+    });
   });
 
   it("binds proposal progress to the exact task snapshot and rejects stale approval state", () => {

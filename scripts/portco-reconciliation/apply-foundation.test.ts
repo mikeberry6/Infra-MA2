@@ -1,4 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import {
   companyImageSha256,
   finalizeApproval,
@@ -20,6 +23,7 @@ import {
 import {
   buildApprovedSeedEntry,
   renderApprovedSeedArtifact,
+  supersedeStagedApprovedSeedAfterImage,
   verifyApprovedSeedText,
 } from "./approved-seed";
 import {
@@ -388,6 +392,42 @@ describe("approved local seed after-image", () => {
     verifyApprovedSeedText(text, entry);
     expect(entry.canonicalAfterImage).toEqual(proposal.afterImage);
     expect(entry.afterImageSha256).toBe(proposal.afterImageSha256);
+  });
+
+  it("removes only the superseded staged proposal for the same exact task", async () => {
+    const directory = await mkdtemp(join(tmpdir(), "portco-approved-seed-"));
+    const artifactPath = join(directory, "approved-portco-after-images.json");
+    try {
+      const oldApproved = approvedCorrection();
+      const newApproved = approvedCorrection({
+        after: companyImageFixture("The corrected replacement after-image."),
+      });
+      const oldEntry = buildApprovedSeedEntry(oldApproved.proposal, oldApproved.approval);
+      const newEntry = buildApprovedSeedEntry(newApproved.proposal, newApproved.approval);
+      const unrelatedProposalSha256 = "f".repeat(64);
+      const unrelatedEntry = { ...newEntry, proposalSha256: unrelatedProposalSha256 };
+      await writeFile(
+        artifactPath,
+        `${JSON.stringify([oldEntry, newEntry, unrelatedEntry], null, 2)}\n`,
+        "utf8",
+      );
+
+      const result = await supersedeStagedApprovedSeedAfterImage({
+        artifactPath,
+        supersededProposal: oldApproved.proposal,
+        supersededApproval: oldApproved.approval,
+        supersedingProposal: newApproved.proposal,
+        supersedingApproval: newApproved.approval,
+      });
+      const remaining = JSON.parse(await readFile(artifactPath, "utf8")) as Array<{ proposalSha256: string }>;
+      expect(result.removedProposalSha256).toBe(oldApproved.proposal.proposalSha256);
+      expect(remaining.map((entry) => entry.proposalSha256)).toEqual([
+        newApproved.proposal.proposalSha256,
+        unrelatedProposalSha256,
+      ]);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
   });
 });
 
