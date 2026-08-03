@@ -407,6 +407,17 @@ describe("approved local seed after-image", () => {
     expect(entry.afterImageSha256).toBe(proposal.afterImageSha256);
   });
 
+  it("publishes an archived after-image as a seed removal", () => {
+    const archived = companyImageFixture("Archived outside the North American census scope.");
+    archived.recordStatus = "ARCHIVED";
+    const { proposal, approval } = approvedCorrection({ after: archived });
+
+    const entry = buildApprovedSeedEntry(proposal, approval, productionSnapshotFixture());
+
+    expect(entry.operation).toBe("ARCHIVE");
+    expect(entry.canonicalAfterImage.recordStatus).toBe("ARCHIVED");
+  });
+
   it("removes only the superseded staged proposal for the same exact task", async () => {
     const directory = await mkdtemp(join(tmpdir(), "portco-approved-seed-"));
     const artifactPath = join(directory, "approved-portco-after-images.json");

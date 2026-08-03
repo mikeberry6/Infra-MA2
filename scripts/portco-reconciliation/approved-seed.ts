@@ -90,7 +90,7 @@ export interface ApprovedSeedEntry {
   approvalSha256: string;
   afterImageSha256: string;
   taskId: string;
-  operation: "UPSERT" | "MERGE";
+  operation: "UPSERT" | "MERGE" | "ARCHIVE";
   company: SeedPortCo;
   retiredCompanies: Array<{ name: string; country: string }>;
   /**
@@ -190,7 +190,11 @@ export function buildApprovedSeedEntry(
     approvalSha256: verifiedApproval.approvalSha256,
     afterImageSha256,
     taskId: verifiedProposal.taskId,
-    operation: verifiedProposal.retiredCompanyIds.length > 0 ? "MERGE" : "UPSERT",
+    operation: verifiedProposal.afterImage.recordStatus === "ARCHIVED"
+      ? "ARCHIVE"
+      : verifiedProposal.retiredCompanyIds.length > 0
+        ? "MERGE"
+        : "UPSERT",
     company: seedPortCo(verifiedProposal.afterImage),
     retiredCompanies: verifiedProposal.retiredCompanyIds.map((id) => {
       const retired = snapshotById.get(id);

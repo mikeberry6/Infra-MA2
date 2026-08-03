@@ -4,7 +4,7 @@ import type { PortCo } from "./portco-types";
 export interface ApprovedPortCoAfterImage {
   proposalSha256: string;
   taskId: string;
-  operation: "UPSERT" | "MERGE";
+  operation: "UPSERT" | "MERGE" | "ARCHIVE";
   company: PortCo;
   retiredCompanies: Array<{ name: string; country: string }>;
 }
@@ -15,10 +15,13 @@ function key(name: string, country: string): string {
   return `${name.trim().toLowerCase()}\u0000${country.trim().toLowerCase()}`;
 }
 
-export function applyApprovedPortCoAfterImages(input: PortCo[]): PortCo[] {
+export function applyApprovedPortCoAfterImages(
+  input: PortCo[],
+  approvedAfterImages: readonly ApprovedPortCoAfterImage[] = afterImages,
+): PortCo[] {
   const companies = [...input];
   const appliedHashes = new Set<string>();
-  for (const entry of afterImages) {
+  for (const entry of approvedAfterImages) {
     if (!/^[a-f0-9]{64}$/.test(entry.proposalSha256)) {
       throw new Error(`Invalid approved PortCo proposal hash: ${entry.proposalSha256}`);
     }
@@ -28,11 +31,16 @@ export function applyApprovedPortCoAfterImages(input: PortCo[]): PortCo[] {
     appliedHashes.add(entry.proposalSha256);
 
     const retired = new Set(entry.retiredCompanies.map((company) => key(company.name, company.country)));
+    if (entry.operation === "ARCHIVE") {
+      retired.add(key(entry.company.name, entry.company.country));
+    }
     for (let index = companies.length - 1; index >= 0; index -= 1) {
       if (retired.has(key(companies[index].name, companies[index].country))) {
         companies.splice(index, 1);
       }
     }
+
+    if (entry.operation === "ARCHIVE") continue;
 
     const canonicalKey = key(entry.company.name, entry.company.country);
     const existingIndexes = companies
