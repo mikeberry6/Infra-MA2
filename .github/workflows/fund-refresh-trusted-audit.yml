@@ -1,0 +1,127 @@
+name: Capture Trusted Fund Refresh Audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: Exact 40-character protected main commit to audit
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: fund-refresh-trusted-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    name: Read-only production fund audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+
+    steps:
+      - name: Require an exact protected-main audit target
+        env:
+          REQUESTED_COMMIT: ${{ inputs.commit_sha }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          DISPATCH_REF: ${{ github.ref }}
+        shell: bash
+        run: |
+          if [[ ! "$REQUESTED_COMMIT" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::commit_sha must be an exact lowercase 40-character Git SHA."
+            exit 1
+          fi
+          if [ "$DISPATCH_REF" != "refs/heads/$DEFAULT_BRANCH" ]; then
+            echo "::error::Dispatch this audit from refs/heads/$DEFAULT_BRANCH."
+            exit 1
+          fi
+
+      - name: Checkout exact main commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.commit_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Bind checkout to the current protected main head
+        env:
+          REQUESTED_COMMIT: ${{ inputs.commit_sha }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = "$REQUESTED_COMMIT" || {
+            echo "::error::Checked-out commit does not match commit_sha."
+            exit 1
+          }
+          test "$(git rev-parse "origin/$DEFAULT_BRANCH")" = "$REQUESTED_COMMIT" || {
+            echo "::error::commit_sha is not the current protected default-branch head."
+            exit 1
+          }
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies and generate Prisma
+        run: |
+          npm ci
+          npx prisma generate
+
+      - name: Require the approved read-only production target
+        shell: bash
+        run: |
+          test -n "$DATABASE_URL" || { echo "::error::DATABASE_URL is required."; exit 1; }
+          node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Capture trusted live fund and ownership state
+        shell: bash
+        run: |
+          mkdir -p tmp/fund-refresh/trusted-audit
+          npx tsx scripts/audit-funds.ts \
+            --include-live-snapshots \
+            --output tmp/fund-refresh/trusted-audit/fund-audit.json \
+            > tmp/fund-refresh/trusted-audit/fund-audit.log
+          node - <<'NODE' | tee tmp/fund-refresh/trusted-audit/summary.json
+          const fs = require("node:fs");
+          const audit = JSON.parse(fs.readFileSync("tmp/fund-refresh/trusted-audit/fund-audit.json", "utf8"));
+          const summary = {
+            auditedCommit: process.env.GITHUB_SHA,
+            generatedAt: audit.generatedAt,
+            liveFunds: audit.database?.funds ?? null,
+            liveDatabaseFingerprint: audit.database?.fingerprint ?? null,
+            liveFundFingerprint: audit.database?.fundFingerprint ?? null,
+            ownershipFingerprint: audit.database?.ownership?.fingerprint ?? null,
+            ownershipRows: audit.database?.ownership?.total ?? null,
+            manifestOnly: audit.database?.manifestOnly?.length ?? null,
+            liveOnly: audit.database?.liveOnly?.length ?? null,
+            driftedFunds: audit.database?.drift?.length ?? null,
+          };
+          if (
+            summary.auditedCommit !== process.env.GITHUB_SHA ||
+            typeof summary.liveDatabaseFingerprint !== "string" ||
+            typeof summary.liveFundFingerprint !== "string" ||
+            typeof summary.ownershipFingerprint !== "string"
+          ) throw new Error("Trusted audit is missing an immutable production fingerprint");
+          process.stdout.write(JSON.stringify(summary, null, 2) + "\n");
+          NODE
+
+      - name: Upload immutable trusted audit
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: fund-refresh-trusted-audit-${{ inputs.commit_sha }}-${{ github.run_id }}
+          path: tmp/fund-refresh/trusted-audit/
+          if-no-files-found: error
+          retention-days: 30
