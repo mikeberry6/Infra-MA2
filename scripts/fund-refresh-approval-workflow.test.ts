@@ -10,6 +10,14 @@ const rollbackWorkflow = readFileSync(
   resolve(process.cwd(), ".github/workflows/fund-refresh-rollback.yml"),
   "utf8",
 );
+const proposalValidator = readFileSync(
+  resolve(process.cwd(), "scripts/validate-fund-refresh-proposal.ts"),
+  "utf8",
+);
+const proposalApply = readFileSync(
+  resolve(process.cwd(), "scripts/apply-fund-refresh.ts"),
+  "utf8",
+);
 const packageScripts = Object.keys(
   JSON.parse(readFileSync(resolve(process.cwd(), "package.json"), "utf8"))
     .scripts as Record<string, string>,
@@ -73,6 +81,18 @@ describe("fund refresh owner-operated approval policy", () => {
     );
     expect(applyWorkflow).toContain(
       "branch.commit.sha !== process.env.HEAD_SHA",
+    );
+  });
+
+  it("keeps verification-only candidates bound to live state without descriptive mutation", () => {
+    expect(proposalValidator).toContain(
+      'if (!["CREATE", "UPDATE"].includes(candidate.action)) continue;',
+    );
+    expect(proposalApply).toContain(
+      'item.action === "CREATE" || item.action === "UPDATE"',
+    );
+    expect(proposalApply).toMatch(
+      /candidate\.action === "VERIFY_NO_CHANGE"\s+\? \{ lastVerifiedAt: verifiedAt \}/,
     );
   });
 });

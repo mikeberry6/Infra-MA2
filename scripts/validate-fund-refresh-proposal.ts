@@ -114,7 +114,7 @@ function validateManifestAgreement(
   const manifest = loadFundManifest();
   const desiredById = new Map(manifest.funds.map((fund) => [fund.id, manifestRecordToSnapshot(fund)]));
   for (const candidate of proposal.candidates) {
-    if (!["CREATE", "UPDATE", "VERIFY_NO_CHANGE"].includes(candidate.action)) continue;
+    if (!["CREATE", "UPDATE"].includes(candidate.action)) continue;
     const desired = desiredById.get(candidate.identity.legacyId);
     if (!desired || !candidate.after || JSON.stringify(desired) !== JSON.stringify(candidate.after)) {
       issues.push({
