@@ -20,6 +20,14 @@ import type { TaskSnapshotContext } from "./task-snapshot";
 
 const sha256 = z.string().regex(/^[0-9a-f]{64}$/);
 const httpsUrl = z.string().url().refine((value) => value.startsWith("https://"));
+const supportedSourceTypeSchema = z.enum([
+  "ARTICLE",
+  "PRESS_RELEASE",
+  "SEC_FILING",
+  "PRESENTATION",
+  "WEBSITE",
+  "OTHER",
+]);
 const evidenceSchema = z.strictObject({
   url: httpsUrl,
   purpose: z.string().trim().min(1),
@@ -71,9 +79,13 @@ const milestoneUpdateSchema = z.strictObject({
 });
 const citationUpdateSchema = z.strictObject({
   id: z.string().trim().min(1),
-  set: citationImageSchema.omit({ id: true }).partial(),
+  set: citationImageSchema.omit({ id: true, sourceType: true }).partial().extend({
+    sourceType: supportedSourceTypeSchema.optional(),
+  }),
 });
-const citationAdditionSchema = citationImageSchema.refine(
+const citationAdditionSchema = citationImageSchema.extend({
+  sourceType: supportedSourceTypeSchema,
+}).refine(
   (citation) => citation.id === null,
   { message: "New citations must use id: null", path: ["id"] },
 );

@@ -65,7 +65,7 @@ describe("proposal patch ownership additions", () => {
       id: null,
       label: "Official current ownership",
       url: "https://acme.example.com/new-owner",
-      sourceType: "REPORT",
+      sourceType: "OTHER",
       purpose: "OWNERSHIP_INVESTMENT",
       evidenceLabel: "Current ownership",
       isPrimary: true,
@@ -78,5 +78,12 @@ describe("proposal patch ownership additions", () => {
       purpose: "OWNERSHIP_INVESTMENT",
       isPrimary: true,
     });
+  });
+
+  it("rejects citation source types that the database cannot store", () => {
+    const spec = baseSpec();
+    spec.citationUpdates = [{ id: "citation_1", set: { sourceType: "REPORT" } }];
+
+    expect(() => applySpec(contextFixture(), spec)).toThrow(/ARTICLE/);
   });
 });

@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0005:stillhouse-solar-project:4b89a5ea",
+  "taskIndex": 5,
+  "companyName": "Stillhouse Solar Project",
+  "generatedAt": "2026-08-03T22:25:25.051Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0005-stillhouse-solar-project/attempt-3-auto-approval-revalidation/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 5,
+    "taskId": "ledger:0005:stillhouse-solar-project:4b89a5ea",
+    "canonicalKey": "stillhouse-solar-project|united-states",
+    "companyName": "Stillhouse Solar Project",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 2,
+    "managers": [
+      "Acadia Infrastructure Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "002-acadia-infrastructure-capital:repo-only:001:stillhouse-solar-project"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj44e00g1ivhemq2gxire"
+    ],
+    "seedKeys": [
+      "stillhouse solar project|United States"
+    ],
+    "evidenceUrls": [
+      "https://matrixrenewables.com/press-releases/matrix-renewables-and-solv-energy-celebrate-completion-of-stillhouse-solar-in-bell-county-texas/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Acadia Infrastructure Capital PROPOSED_RETIRE: Repository attributes preferred equity ownership to Acadia, but current evidence shows Northleaf as investor and Acadia as arranger; no clear evidence of Acadia ownership.",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj44e00g1ivhemq2gxire",
+    "name": "Stillhouse Solar Project",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Stillhouse is a utility-scale solar project in Bell County, Texas. Its customer base is the ERCOT market and contracted corporate offtakers, including Hyundai affiliates under a long-term power purchase arrangement. The project follows an asset-heavy contracted generation model centered on long-lived photovoltaic infrastructure. Public disclosures describe a 210 megawatt AC and approximately 281 to 284 megawatt DC solar facility that reached completion in 2025. Matrix Renewables acquired the late-stage project from OCI in 2023 and later closed construction financing backed by debt, tax equity, and preferred equity. Acadia's role was publicly described as sourcing preferred equity in the 2024 financing package, while Matrix remained the project sponsor and owner.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2021,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp6j01cgivheoll14t81",
+        "managerName": "Acadia Infrastructure Capital",
+        "organizationName": "Acadia Infrastructure Capital",
+        "fundName": null,
+        "vehicleName": "Preferred Equity",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkcai02cuivhe26p9lm9e",
+        "date": "2021",
+        "event": "Stillhouse Solar Project was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcaz02cvivhearsz919u",
+        "date": "Jun 2023",
+        "event": "Matrix Renewables acquired the Stillhouse project from OCI Solar Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcbe02cwivhe5pp9tlzp",
+        "date": "Dec 3, 2024",
+        "event": "Matrix announced secured financing for the 210 MWac Stillhouse project, with Acadia Infrastructure Capital sourcing preferred equity.",
+        "category": "FINANCING",
+        "sortDate": "2024-12-03T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcby02cxivhetb38o9xf",
+        "date": "Oct 2025",
+        "event": "Matrix and SOLV Energy announced completion of Stillhouse Solar in Bell County, Texas.",
+        "category": "OTHER",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpojfi06twivhed1w4kgaw",
+        "label": "Matrixrenewables — Stillhouse Solar Project",
+        "url": "https://matrixrenewables.com/press-releases/matrix-renewables-announces-acquisition-of-stillhouse-solar-project-from-oci-solar-power/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Matrixrenewables transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpojgl06tyivhebbhpc1y9",
+        "label": "Announcement date source — Acadia Infrastructure Capital — Stillhouse Solar Project",
+        "url": "https://matrixrenewables.com/press-releases/matrix-renewables-secures-commitments-from-microsoft-and-mufg-led-lender-consortium-for-210mwac-solar-project-in-bell-county-texas/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Acadia Infrastructure Capital transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojhp06u0ivhehr3hw8ng",
+        "label": "Matrixrenewables — Stillhouse Solar Project",
+        "url": "https://matrixrenewables.com/press-releases/matrix-renewables-and-solv-energy-celebrate-completion-of-stillhouse-solar-in-bell-county-texas/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Matrixrenewables — Stillhouse Solar Project",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojit06u2ivhe4keto80u",
+        "label": "Matrixrenewables — Stillhouse Solar Project",
+        "url": "https://matrixrenewables.com/existing-projects/u-s/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Matrixrenewables operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Stillhouse Solar Project",
+    "investmentFirm": "Northleaf Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Stillhouse TEP LLC",
+    "description": "Stillhouse is a utility-scale solar project in Bell County, Texas. Its customer base is the ERCOT market and contracted corporate offtakers, including Hyundai affiliates under a long-term power purchase arrangement. The project follows an asset-heavy contracted generation model centered on long-lived photovoltaic infrastructure. Public disclosures describe a 210 megawatt AC and approximately 281 to 284 megawatt DC solar facility that reached completion in 2025 and commercial operations in 2026. Matrix Renewables acquired the late-stage project from OCI in 2023 and remains the project sponsor. Northleaf Capital Partners became a minority investor through the Stillhouse TEP LLC tax partnership in 2024; Acadia Infrastructure Capital sourced preferred equity and facilitated an environmental-attribute transaction but is not identified as an owner.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2021,
+    "investmentYear": 2024,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Stillhouse Solar Project was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jun 2023",
+        "event": "Matrix Renewables acquired the Stillhouse project from OCI Solar Power.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 3, 2024",
+        "event": "Matrix secured financing for Stillhouse; Northleaf Capital became the Class A investor through Stillhouse TEP LLC, while Acadia sourced preferred equity and facilitated environmental-attribute certificates.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 2025",
+        "event": "Matrix and SOLV Energy announced completion of Stillhouse Solar in Bell County, Texas.",
+        "category": "Other"
+      }
+    ],
+    "management": [],
+    "sources": [
+      {
+        "label": "Matrix Renewables — Stillhouse acquisition from OCI",
+        "url": "https://matrixrenewables.com/wp-content/uploads/2025/12/20230628-MATRIX-RENEWABLES-ANNOUNCES-ACQUISITION-OF-STILLHOUSE-SOLAR-PROJECT-FROM-OCI-SOLAR-POWER.pdf",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Matrix acquired Stillhouse from OCI in June 2023"
+      },
+      {
+        "label": "Matrix Renewables 2024 Sustainability Report",
+        "url": "https://matrixrenewables.com/wp-content/uploads/2025/05/2024-Sustainability-Report-VF_2.pdf",
+        "type": "REPORT",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Northleaf Capital is the Class A investor in Stillhouse TEP LLC"
+      },
+      {
+        "label": "Matrix Renewables — Stillhouse commercial operations and ownership",
+        "url": "https://matrixrenewables.com/matrix-renewables-announces-commercial-operations-and-investment-tax-credit-funding-with-concurrent-term-conversion-for-a-281mwdc-solar-project-in-bell-county-texas/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current project status and Northleaf minority investment"
+      },
+      {
+        "label": "Matrixrenewables — Stillhouse Solar Project",
+        "url": "https://matrixrenewables.com/existing-projects/u-s/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Matrixrenewables operations / asset details"
+      },
+      {
+        "label": "Acadia Infrastructure Capital — Stillhouse financing role",
+        "url": "https://www.acadiainfrastructure.com/news",
+        "type": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Acadia sourced preferred equity and facilitated environmental-attribute certificates"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Northleaf Capital Partners",
+        "ownershipVehicle": "Stillhouse TEP LLC",
+        "investmentYear": 2024,
+        "stake": "Minority",
+        "status": "Active",
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpif220040ivhehpx72639",
+        "name": "Acadia Infrastructure Capital",
+        "updatedAt": "2026-07-23T16:09:26.714Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0005:stillhouse-solar-project:4b89a5ea",
+    "taskIndex": 5,
+    "canonicalKey": "stillhouse-solar-project|united-states",
+    "capturedAt": "2026-08-03T22:25:25.051Z",
+    "databaseRevision": "company-state:5fe4dd48274bd47ab2aba8eab0a28907a39bdaba5acd4e6ed7362fa80f485013",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3e12ad22fc65f74439e3a0b4260cf8fe27f1ec662dd29c13ddf6c25745bd9c29",
+    "productionSnapshotSha256": "90d4c7e8de88175c932fb2a931c21d8058703cadbd338ebbebb38d5bddd1777f",
+    "targetCompanySnapshotSha256": "5fe4dd48274bd47ab2aba8eab0a28907a39bdaba5acd4e6ed7362fa80f485013",
+    "seedEntrySha256": "a9ef812895f089340659d6347cf0a96c3011b9ee9ee52d3f6e6a76f1e33dcfcd",
+    "dependencies": {
+      "ownershipPeriodsSha256": "ec39bea2cdcb22f5de192c3c2b4b65daa4d82923f28f928832a1b6394470703e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "a8f8ce074d5b66e03e4e41541553a3d15e10e67e7ce27cc5c419db7e8eea6ad7",
+      "citationsSha256": "603c1961864b957308e65d5be96cb9a9bfa0c177f9346cabeca3c9ab09a26544",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "37b6f620b700fc0cf07eb8d4ac5730b32a3190b11544504c407ff131d4969169",
+    "stateSha256": "fce2b211b1bf75c9f1721b5849997e9c892c67d721baf3d7c0d5cf26df35ac9d",
+    "taskSnapshotSha256": "f555e063a067f0a51dec409d994f84db9aacb9fe005d3c037d9cf1ad4aaa9184"
+  },
+  "contextSha256": "0ce4a5cca1724563e6dcd1398d8b6b7829291c6714e5338736ac314446e68092"
+}

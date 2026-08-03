@@ -123,6 +123,19 @@ describe("approved PortCo apply planner", () => {
     expect(plan.changedFields).toEqual(["description"]);
   });
 
+  it("rejects unsupported citation source types before opening the mutation path", () => {
+    const after = companyImageFixture("Approved, corrected company overview.");
+    after.citations[0].sourceType = "REPORT";
+    const { proposal, approval } = approvedCorrection({ after });
+
+    expect(() => planApprovedApply({
+      proposal,
+      approval,
+      approvedProductionSnapshot: productionSnapshotFixture(),
+      fresh: freshState(),
+    })).toThrow(/source type is not supported/i);
+  });
+
   it("rejects stale same-count relation content using the full before-image hash", () => {
     const { proposal, approval } = approvedCorrection();
     const stale = structuredClone(companyImageFixture());
