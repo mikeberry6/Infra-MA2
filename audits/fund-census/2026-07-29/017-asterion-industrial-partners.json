@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Asterion Industrial Partners",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Asterion Industrial Partners",
+    "Asterion Industrial Partners SGEIC, S.A.",
+    "AIP"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager-universe scope",
+      "issue": "The supplied FUND_MANIFEST marks Asterion Industrial Partners as knownManager=false with canonicalManager=null, while official regulatory and manager sources establish a live infrastructure investment manager under the legal name Asterion Industrial Partners SGEIC, S.A. The output contract therefore prevents any manager or fund proposal in this census.",
+      "sourceUrls": [
+        "https://www.cnmv.es/portal/consultas/ecr/gestora?lang=en&nif=A88155247",
+        "https://www.asterionindustrial.com/"
+      ],
+      "recommendedResolution": "The manifest owner should review the manager-universe scope outside this census. No automatic manager or fund addition is proposed; rerun only if a canonical manager is subsequently authorized."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 7,
+    "searchQueriesRun": 12,
+    "notes": [
+      "Scope-only result required because the supplied snapshot sets knownManager=false and canonicalManager=null.",
+      "Official manager identity, Fund I through Fund III close materials, current portfolio geography and exit status, and co-investment treatment were reviewed.",
+      "The repository snapshot contains no fund rows, so no matched or repo-only records were required.",
+      "No inaccessible source was relied upon."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

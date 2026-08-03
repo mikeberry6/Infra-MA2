@@ -1,0 +1,123 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Infratil",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": ["Infratil", "Infratil Limited"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager manifest scope",
+"issue": "The repository snapshot marks Infratil with canonicalManager:null and knownManager:false, which contractually prohibits inclusion or proposal of any funds, while official sources confirm Infratil Limited is an active listed infrastructure investment company with an external manager.",
+"sourceUrls": [
+"https://www.nzx.com/companies/IFT",
+"https://infratil.com/about-infratil/our-manager/",
+"https://infratil.com/about-infratil/governance/"
+],
+"recommendedResolution": "Governance owner should reconcile the FUND_MANIFEST to assign a canonical manager identity (or explicitly exclude the platform), then rerun the census to permit fund-level inclusion."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 5,
+"searchQueriesRun": 4,
+"notes": [
+"Research confirmed Infratil Limited’s current corporate identity and governance structure, including its delegated external manager, sufficient to document the scope conflict.",
+"Fund-level inclusion tests, fundraising evidence, and North American qualification analysis were not performed due to the mandatory unknown-manager governance stop."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Infratil — North American direct infrastructure fund census
+Conclusion
+As required by the supplied repository snapshot (knownManager: false), the result is OUT_OF_SCOPE_UNKNOWN_MANAGER.
+Although official sources confirm that Infratil Limited is an active listed infrastructure investment company (NZX/ASX: IFT) with delegated external management, the FUND_MANIFEST assigns no canonical manager and explicitly prohibits fund inclusion or proposal under this condition. Therefore, no fund or program rows are included. Pasted text
+Included funds
+FundVehicle typeLifecycleNA qualificationSize basisRepo dispositionDirect evidenceNone — governance stop under unknown manager status——————
+Repository reconciliation
+
+
+Matched / verified: None
+
+
+Proposed new: None (contractually disallowed)
+
+
+Corrections / duplicates: None
+
+
+Repo-only records: None
+
+
+All reconciliation is vacuously complete because the snapshot contains no fund rows and prohibits additions.
+Exclusions and unresolved issues
+
+
+Exclusions: None applied, as fund-level classification was not performed.
+
+
+Unresolved governance conflict:
+
+
+The supplied manager universe includes “Infratil,” yet the snapshot flags it as knownManager: false with no canonical identity.
+
+
+Official materials confirm Infratil Limited as a listed infrastructure investment platform with governance and an external manager, creating a manifest vs. real-world identity mismatch.
+
+
+
+
+Completeness
+
+
+Fund-page coverage: Not performed (blocked by governance rule)
+
+
+Fundraising / close sources: Not reviewed
+
+
+Holding attribution: Not performed
+
+
+Aliases / successors: Verified (Infratil / Infratil Limited)
+
+
+Parallel / feeder review: Not performed
+
+
+Sources opened: 5 (official company, governance, and listing materials)
+
+
+Search queries: 4
+
+
+The artifact is complete for its intended purpose: documenting the scope conflict and returning the required out-of-scope result without introducing unsupported fund records.
+</fund_census_report>

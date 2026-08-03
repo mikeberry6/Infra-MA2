@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_LIFECYCLE_REPO_REVIEW_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "J.P. Morgan Asset Management",
+  "createdAt": "2026-07-30T22:14:54.525Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/062-j-p-morgan-asset-management-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/062-j-p-morgan-asset-management-unsupported-lifecycle-review-normalized.txt",
+  "allowedFields": [
+    "funds",
+    "repoOnlyRecords",
+    "unresolvedConflicts",
+    "summary"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-104",
+      "fundName": "Infrastructure Investments Fund (IIF)",
+      "field": "funds",
+      "dispositionFrom": "PROPOSED_CORRECTION",
+      "dispositionValue": "REPO_ONLY_NEEDS_REVIEW",
+      "unsupportedClaim": "CURRENT_LIFECYCLE",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1004155/000119312522016833/d300207ddefm14a.htm"
+      ],
+      "rationale": "Opened evidence for Infrastructure Investments Fund (IIF) does not support the mandatory fund-specific CURRENT_LIFECYCLE claim; the supplied repository row is retained for review only."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_SIZE_AS_OF_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Morgan Stanley Infrastructure Partners",
+  "createdAt": "2026-07-30T23:22:20.762Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/069-morgan-stanley-infrastructure-partners-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/069-morgan-stanley-infrastructure-partners-size-as-of-normalized.txt",
+  "allowedFields": [
+    "snapshot.sizeAsOf",
+    "evidence[].supportedFields[].sizeAsOf"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-119A",
+      "url": "https://www.morganstanley.com/press-releases/msip-second-fund-close",
+      "field": "sizeAsOf",
+      "from": null,
+      "value": "2016-03-03",
+      "rationale": "The classified amount lacked its required size-as-of date; it is anchored to the publication date of the single opened primary or institutional fund source supporting the classified native amount."
+    }
+  ]
+}

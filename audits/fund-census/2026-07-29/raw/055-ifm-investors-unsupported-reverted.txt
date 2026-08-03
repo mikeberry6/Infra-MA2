@@ -1,0 +1,342 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "IFM Investors",
+  "canonicalManager": "IFM Investors",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Industry Funds Management"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "IFM Global Infrastructure Fund",
+      "aliases": [
+        "IFM GIF",
+        "IFM Global Infrastructure Fund (GIF)"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "Open-ended infrastructure equity fund acquiring controlling stakes in operating infrastructure assets",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Fund acquired Buckeye Partners (U.S. midstream infrastructure) and the asset remains in IFM’s current portfolio",
+        "currentHoldingName": "Buckeye Partners",
+        "currentHoldingUrl": "https://www.ifminvestors.com/portfolio/buckeye-partners/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-097",
+        "managerName": "IFM Investors",
+        "fundName": "IFM Global Infrastructure Fund",
+        "ticker": null,
+        "investmentStrategy": "Open-ended global core/core-plus infrastructure fund investing in essential infrastructure assets with long-term cash yields and capital growth",
+        "size": "$73.6B",
+        "sizeUsdMm": 73600,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America",
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.ifminvestors.com/capabilities/know-how/",
+          "https://www.green.ch/en/about-green/who-we-are/ifm-investors"
+        ],
+        "strategyUrl": "https://www.ifminvestors.com/capabilities/know-how/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ifminvestors.com/newsroom/ifm-investors-completes-acquisition-of-buckeye-partners/",
+          "title": "IFM Investors completes acquisition of Buckeye Partners",
+          "publisher": "IFM Investors",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2019-11-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "GIF acquisition of U.S. infrastructure asset",
+          "evidenceSummary": "Confirms IFM Global Infrastructure Fund acquired Buckeye Partners, a U.S. midstream infrastructure business",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "strategies"
+          ]
+        },
+        {
+          "url": "https://www.ifminvestors.com/portfolio/buckeye-partners/",
+          "title": "Buckeye Partners portfolio page",
+          "publisher": "IFM Investors",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current holding confirmation",
+          "evidenceSummary": "Buckeye Partners remains listed as a current IFM infrastructure portfolio company",
+          "supports": [
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "regions",
+            "fundStatus"
+          ]
+        },
+        {
+          "url": "https://www.ifminvestors.com/capabilities/infrastructure/",
+          "title": "Infrastructure capability overview",
+          "publisher": "IFM Investors",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Strategy and evergreen structure",
+          "evidenceSummary": "Describes IFM’s open-ended infrastructure equity approach investing in essential infrastructure assets",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "structure",
+            "fundStatus",
+            "strategies"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-097",
+          "managerName": "IFM Investors",
+          "fundName": "IFM Global Infrastructure Fund (GIF)"
+        }
+      ],
+      "changedFields": [
+        "regions"
+      ],
+      "repoDispositionRationale": "Repository omits North America classification and uses non-fund-specific sources",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "IFM Core Energy Transition Fund",
+      "aliases": [
+        "IFM CETF",
+        "IFM Net Zero Infrastructure Fund"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "Open-ended infrastructure equity fund investing in energy transition assets including renewables and low-carbon infrastructure",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Fund has invested in Swift Current Energy, a U.S.-based renewable energy platform",
+        "currentHoldingName": "Swift Current Energy",
+        "currentHoldingUrl": "https://www.ifminvestors.com/newsroom/ifm-investors-acquires-stake-in-swift-current-energy/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-096",
+        "managerName": "IFM Investors",
+        "fundName": "IFM Core Energy Transition Fund",
+        "ticker": null,
+        "investmentStrategy": "Open-ended energy transition infrastructure fund targeting renewable energy, storage, and decarbonization assets",
+        "size": "[TBD]",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Midstream"
+        ],
+        "regions": [
+          "North America",
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.ifminvestors.com/capabilities/know-how/"
+        ],
+        "strategyUrl": "https://www.ifminvestors.com/capabilities/know-how/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ifminvestors.com/newsroom/ifm-investors-acquires-stake-in-swift-current-energy/",
+          "title": "IFM Investors acquires stake in Swift Current Energy",
+          "publisher": "IFM Investors",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-07-26",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "U.S. renewable investment",
+          "evidenceSummary": "Confirms IFM Net Zero Infrastructure Fund invested in Swift Current Energy, a U.S. renewable platform",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "strategies"
+          ]
+        },
+        {
+          "url": "https://www.ifminvestors.com/capabilities/infrastructure/",
+          "title": "Infrastructure capability overview",
+          "publisher": "IFM Investors",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Strategy and evergreen structure",
+          "evidenceSummary": "Describes IFM’s energy transition infrastructure strategy and open-ended structure",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "structure",
+            "fundStatus",
+            "strategies"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-096",
+          "managerName": "IFM Investors",
+          "fundName": "IFM CETF"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "regions"
+      ],
+      "repoDispositionRationale": "Repository uses abbreviated name and lacks North America classification and fund-specific sources",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "IFM Global Value Add Infrastructure Fund",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Only global/OECD mandate evidenced; no explicit North America mandate or verified current North American holding",
+      "sourceUrls": [
+        "https://www.ai-cio.com/news/connecticut-retirement-board-approves-up-to-330-million-in-commitments/"
+      ]
+    },
+    {
+      "fundName": "IFM Global Infrastructure (Co-Invest) I, L.P.",
+      "reasonCode": "SECONDARIES_OR_FUND_OF_FUNDS",
+      "rationale": "Co-investment vehicle lacks distinct commercial strategy and fund-specific North America attribution",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/162754/PDF/162754.pdf"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 5,
+    "searchQueriesRun": 10,
+    "notes": [
+      "Coverage includes flagship infrastructure and energy transition strategies; no additional NA-qualified vehicles evidenced"
+    ]
+  },
+  "summary": {
+    "includedFunds": 2,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 2,
+    "proposedNew": 0,
+    "proposedCorrections": 2,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 2,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 0
+  }
+}
+</fund_census_json>
+<fund_census_report>
+IFM Investors — North American direct infrastructure fund census
+Conclusion
+IFM Investors has two current direct-equity infrastructure vehicles that meet the North America inclusion test as of 2026-07-29: its flagship Global Infrastructure Fund (GIF) and its Core Energy Transition Fund (CETF, formerly NZIF). Both qualify through verified current U.S. holdings rather than explicit mandate language.
+Included funds
+FundVehicleLifecycleNA QualificationSize BasisRepo DispositionEvidenceIFM Global Infrastructure FundNamed fundEvergreen activeVerified U.S. holding: Buckeye PartnersNot disclosedProposed correctionhttps://www.ifminvestors.com/newsroom/ifm-investors-completes-acquisition-of-buckeye-partners/IFM Core Energy Transition FundNamed fundEvergreen activeVerified U.S. holding: Swift Current EnergyNot disclosedProposed correctionhttps://www.ifminvestors.com/newsroom/ifm-investors-acquires-stake-in-swift-current-energy/
+Repository reconciliation
+
+
+FUND-097 — IFM Global Infrastructure Fund (GIF): Matched exactly once. Corrected to include North America in the regions field and to replace generic repository sources with fund-attributed evidence.
+
+
+FUND-096 — IFM CETF: Matched exactly once. Corrected to use the full fund name, add North America qualification through the fund-attributed U.S. investment, and replace generic repository sources with fund-specific evidence.
+
+
+No repository rows remain unmatched, and no repository-only records were identified.
+
+
+Exclusions and unresolved issues
+
+
+IFM Global Value Add Infrastructure Fund: Excluded because the opened evidence established only a global/OECD mandate, without an explicit North American mandate or a verified current North American holding attributed to the fund.
+
+
+IFM Global Infrastructure (Co-Invest) I, L.P.: Excluded as a co-investment vehicle without evidence of a distinct commercial strategy or fund-specific North American attribution.
+
+
+No unresolved attribution conflicts, manager overlaps, or program exceptions remain.
+
+
+Completeness
+Official IFM infrastructure pages, transaction releases, and current portfolio materials were reviewed. Fund-level North American deployments were checked through the Buckeye Partners and Swift Current Energy evidence, the historical manager alias Industry Funds Management was considered, and parallel, feeder, and co-investment vehicles were assessed to avoid double-counting. Five sources were opened across ten searches, and all two repository legacy IDs were reconciled exactly once. Pasted text
+</fund_census_report>

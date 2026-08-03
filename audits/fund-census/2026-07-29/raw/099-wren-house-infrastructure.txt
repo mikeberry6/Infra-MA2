@@ -1,0 +1,98 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Wren House Infrastructure",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Wren House Infrastructure",
+"Wren House Infrastructure Management Limited"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope",
+"issue": "Official sources indicate Wren House Infrastructure operates as a direct infrastructure investment platform (linked to Kuwait Investment Authority) with global/OECD deployment including North America, but the supplied repository snapshot designates knownManager=false and canonicalManager=null, preventing inclusion or proposal of any fund or program vehicles.",
+"sourceUrls": [
+"https://www.wrenhouseinfra.com/about/",
+"https://find-and-update.company-information.service.gov.uk/company/09036471"
+],
+"recommendedResolution": "Add Wren House Infrastructure as a canonical manager in the governed manager universe, then rerun the census to evaluate any qualifying direct-equity infrastructure vehicles or programs."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 2,
+"searchQueriesRun": 3,
+"notes": [
+"Manager-level materials reviewed; no fund-specific vehicles included due to OUT_OF_SCOPE_UNKNOWN_MANAGER constraint.",
+"No commercially distinct named funds identified with sufficient fund-level evidence under current scope rules."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Wren House Infrastructure — North American direct infrastructure fund census
+Conclusion
+No funds are returned. The supplied repository snapshot explicitly marks the requested manager as knownManager: false, which contractually requires classification as OUT_OF_SCOPE_UNKNOWN_MANAGER and prohibits proposing any fund or program vehicles, even where external evidence indicates an active infrastructure investment platform. Pasted text
+Included funds
+None.
+Repository reconciliation
+
+
+No repository rows exist for this manager.
+
+
+No matches, additions, or corrections are permitted under the current scope constraint.
+
+
+Exclusions and unresolved issues
+
+
+Primary issue: Manager scope conflict. Public sources indicate Wren House Infrastructure operates as a direct infrastructure investment platform (associated with Kuwait Investment Authority) with global/OECD investments including North America, but the repository does not recognize it as a known manager.
+
+
+As a result, no vehicles (including potential direct-investment programs) can be included or classified.
+
+
+Completeness
+
+
+Reviewed official manager materials and legal entity records.
+
+
+Confirmed existence of a direct infrastructure investment platform with global deployment.
+
+
+Verified absence of repository recognition prevents inclusion.
+
+
+No fund-level vehicles assessed due to scope constraint.
+</fund_census_report>
+

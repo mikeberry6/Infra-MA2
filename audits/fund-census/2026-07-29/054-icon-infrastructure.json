@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "iCON Infrastructure",
+  "canonicalManager": "iCON Infrastructure",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "iCON Infrastructure LLP"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "iCON Infrastructure Partners VII",
+      "aliases": [
+        "iCON Infrastructure Fund VII"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Official manager materials describe long-term equity investments in private mid-market infrastructure businesses.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Official manager materials explicitly state Europe and North America as core geographic mandate.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-095",
+        "managerName": "iCON Infrastructure",
+        "fundName": "iCON Infrastructure Partners VII",
+        "ticker": null,
+        "investmentStrategy": "Mid-market direct equity infrastructure strategy investing across transport, utilities, telecoms, energy & environment and social infrastructure in Europe and North America.",
+        "size": "$3.7B commitments",
+        "sizeUsdMm": 3700,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "3700000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2026-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2025",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation",
+          "Social Infra"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.iconinfrastructure.com/"
+        ],
+        "strategyUrl": "https://www.iconinfrastructure.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.iconinfrastructure.com/",
+          "title": "iCON Infrastructure official website",
+          "publisher": "iCON Infrastructure",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund VII commitments and mandate",
+          "evidenceSummary": "The manager states that its latest fund has $3.7B of commitments and invests in private mid-market infrastructure businesses across Europe and North America. The disclosure was observed on the official website when retrieved on 2026-07-29; that retrieval date is used as the amount observation date, not as a separately disclosed close date.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sizeAsOf",
+            "structure",
+            "strategies",
+            "fundStatus",
+            "vintage"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-095",
+          "managerName": "iCON Infrastructure",
+          "fundName": "iCON Infrastructure Fund VII"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "vintage",
+        "fundStatus"
+      ],
+      "repoDispositionRationale": "The repository uses an outdated fund name and lifecycle classification and does not classify the disclosed commitments amount. Official materials support the corrected name, financial-close status, commitments classification and 2025 vintage. Because the official website does not provide a separate date for the commitments figure, the 2026-07-29 retrieval date is recorded as the observation date.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Earlier iCON fund vintages (III–VI)",
+      "issue": "Multiple prior funds appear to have current North American holdings but lack fully up-to-date fund-attributed lifecycle and holding evidence meeting strict inclusion criteria as of the as-of date.",
+      "sourceUrls": [
+        "https://www.iconinfrastructure.com/"
+      ],
+      "recommendedResolution": "Obtain current portfolio attribution or recent company disclosures explicitly tying holdings to specific fund vehicles."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 2,
+    "searchQueriesRun": 6,
+    "notes": [
+      "Strict evidence standard limits inclusion to Fund VII with explicit mandate evidence.",
+      "The 2026-07-29 sizeAsOf value is the observation date of the current official website disclosure, not an inferred fund-close date."
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 1,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

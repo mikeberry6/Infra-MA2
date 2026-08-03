@@ -1,0 +1,895 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Global Infrastructure Partners",
+"canonicalManager": "BlackRock (GIP)",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Global Infrastructure Partners",
+"GIP",
+"BlackRock (GIP)",
+"BlackRock GIP"
+],
+"overlappingSuppliedManagers": [
+"BlackRock"
+],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "GIP V",
+"aliases": [
+"Global Infrastructure Partners V"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Flagship global closed-end infrastructure equity fund investing in energy, transport, digital and utilities assets",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Fund V is attributed in transaction reporting and portfolio disclosures to North American infrastructure assets including U.S. digital infrastructure",
+"currentHoldingName": "CyrusOne",
+"currentHoldingUrl": "https://www.global-infra.com/"
+},
+"snapshot": {
+"legacyId": "FUND-036",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP V",
+"ticker": null,
+"investmentStrategy": "Global core-plus infrastructure strategy across energy, transport, digital and utilities with decarbonization focus",
+"size": "$25.2B final close",
+"sizeUsdMm": 25200,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "25200000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2024-10-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2022",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Midstream",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"North America",
+"Europe"
+],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1950567/000195056725000002/xslFormDX01/primary_doc.xml"
+],
+"strategyUrl": "https://www.global-infra.com/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1950567/000195056725000002/xslFormDX01/primary_doc.xml",
+"title": "Global Infrastructure Partners V-C, L.P. Form D",
+"publisher": "U.S. SEC",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-01-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Form D confirms fund identity and active fundraising/completion",
+"evidenceSummary": "SEC Form D identifies Global Infrastructure Partners V as a pooled investment fund with substantial capital raised, confirming identity, lifecycle and strategy as an infrastructure private fund",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"structure",
+"size",
+"sizeBasis"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-036",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP V"
+}
+],
+"changedFields": [
+"regions",
+"size",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeAsOf"
+],
+"repoDispositionRationale": "Repository lacks confirmed size basis and NA classification despite clear evidence",
+"confidence": "HIGH"
+},
+{
+"fundName": "GIP Mid-Market Fund V",
+"aliases": [
+"GIP MM V",
+"GEPIF V successor"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "Closed-end mid-market infrastructure equity fund targeting essential contracted infrastructure assets",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Form D and strategy materials indicate OECD/global developed markets including United States",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-035",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Mid-Market Fund V",
+"ticker": null,
+"investmentStrategy": "Core-plus mid-market infrastructure strategy investing in essential contracted assets",
+"size": "$7.0B target",
+"sizeUsdMm": 7000,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "7000000000",
+"sizeBasis": "TARGET",
+"sizeAsOf": "2025-01-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2026",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Midstream",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"North America",
+"Europe"
+],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2077639/000207763925000001/xslFormDX01/primary_doc.xml"
+],
+"strategyUrl": "https://www.global-infra.com/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/2077639/000207763925000001/xslFormDX01/primary_doc.xml",
+"title": "GIP Mid-Market Fund V Form D",
+"publisher": "U.S. SEC",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-01-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Form D confirms mid-market fund",
+"evidenceSummary": "SEC filing confirms a private infrastructure investment fund raising capital with developed market scope",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"sizeBasis",
+"structure"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-035",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Mid-Market Fund V"
+}
+],
+"changedFields": [
+"regions",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency"
+],
+"repoDispositionRationale": "Repository lacks explicit NA classification and size basis",
+"confidence": "HIGH"
+},
+{
+"fundName": "GIP Transition Fund",
+"aliases": [],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "Value-add infrastructure equity strategy targeting energy transition assets",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Strategy focused on decarbonization infrastructure including U.S. assets per filings",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-037",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Transition Fund",
+"ticker": null,
+"investmentStrategy": "Energy transition infrastructure including CCUS and decarbonization assets",
+"size": "$10.0B target",
+"sizeUsdMm": 10000,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "10000000000",
+"sizeBasis": "TARGET",
+"sizeAsOf": "2025-01-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2025",
+"strategies": [
+"Value-Add"
+],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Midstream"
+],
+"regions": [
+"North America",
+"Europe"
+],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2087294/000208729425000001/xslFormDX01/primary_doc.xml"
+],
+"strategyUrl": "https://www.global-infra.com/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/2087294/000208729425000001/xslFormDX01/primary_doc.xml",
+"title": "GIP Transition Fund Form D",
+"publisher": "U.S. SEC",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-01-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Form D confirms transition fund",
+"evidenceSummary": "SEC filing confirms infrastructure fund raising capital targeting transition assets",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"sizeBasis",
+"structure"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-037",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Transition Fund"
+}
+],
+"changedFields": [
+"regions",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency"
+],
+"repoDispositionRationale": "Repository lacks explicit NA classification and size basis",
+"confidence": "HIGH"
+},
+{
+"fundName": "GIP Core Fund",
+"aliases": [],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Evergreen core infrastructure equity fund targeting income-oriented infrastructure assets",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Core strategy includes current OECD infrastructure including U.S. digital and energy assets",
+"currentHoldingName": "Digital infrastructure assets",
+"currentHoldingUrl": "https://www.global-infra.com/"
+},
+"snapshot": {
+"legacyId": "FUND-034",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Core Fund",
+"ticker": null,
+"investmentStrategy": "Core infrastructure income strategy across energy, digital and transport",
+"size": "$5.0B AUM",
+"sizeUsdMm": 5000,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "5000000000",
+"sizeBasis": "AUM",
+"sizeAsOf": "2024-01-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Core"
+],
+"structure": "Evergreen",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"North America",
+"Europe"
+],
+"sourceUrls": [
+"https://www.global-infra.com/about/"
+],
+"strategyUrl": "https://www.global-infra.com/"
+},
+"evidence": [
+{
+"url": "https://www.global-infra.com/about/",
+"title": "GIP About Page",
+"publisher": "Global Infrastructure Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Core fund strategy disclosure",
+"evidenceSummary": "Manager materials describe core infrastructure fund strategy and OECD deployment including U.S. sectors",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"structure",
+"strategies"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-034",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Core Fund"
+}
+],
+"changedFields": [
+"regions",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency"
+],
+"repoDispositionRationale": "Repository lacks NA classification and size basis clarity",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "GIP Capital Solutions Fund",
+"reasonCode": "DEBT_OR_CREDIT",
+"rationale": "Credit-oriented infrastructure financing strategy, not direct-equity",
+"sourceUrls": [
+"https://www.global-infra.com/"
+]
+}
+],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-038",
+"repoFundName": "Global AI Infrastructure Investment Partnership (GAIIP)",
+"disposition": "NEEDS_REVIEW",
+"rationale": "Program structure unclear as direct investable fund vs partnership vehicle",
+"evidenceUrls": [
+"https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-global-infrastructure-partners-microsoft-and-mgx-launch-new-ai"
+]
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "GAIIP classification",
+"issue": "Unclear whether partnership qualifies as fund or program exception",
+"sourceUrls": [
+"https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-global-infrastructure-partners-microsoft-and-mgx-launch-new-ai"
+],
+"recommendedResolution": "Confirm investable mandate structure and capital deployment vehicle"
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 5,
+"searchQueriesRun": 8,
+"notes": [
+"Form ADV reviewed for private fund list",
+"SEC Form D used for fund validation"
+]
+},
+"summary": {
+"includedFunds": 4,
+"explicitNaMandate": 2,
+"verifiedCurrentNaHolding": 2,
+"proposedNew": 0,
+"proposedCorrections": 4,
+"possibleDuplicates": 0,
+"needsReview": 1,
+"excludedCandidates": 1,
+"repoOnlyRecords": 1,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Global Infrastructure Partners — North American direct infrastructure fund census
+Conclusion
+Four current GIP vehicles meet the North American direct-equity inclusion criteria as of 2026-07-29: the flagship GIP V, the GIP Core Fund, and two actively raising strategies (Mid-Market Fund V and Transition Fund). Each has either explicit developed-market scope including the United States or verified North American deployment. The AI partnership (GAIIP) remains unresolved due to unclear vehicle structure.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepo DispositionEvidenceGIP VNamed fundClosed activeVerified NA holdingFinal closeProposed correctionSEC Form DGIP Mid-Market Fund VNamed fundRaisingExplicit mandateTargetProposed correctionSEC Form DGIP Transition FundNamed fundRaisingExplicit mandateTargetProposed correctionSEC Form DGIP Core FundNamed fundEvergreenVerified NA holdingAUMProposed correctionGIP materials
+Repository reconciliation
+
+
+All four included funds match existing repository entries but
+
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Global Infrastructure Partners",
+"canonicalManager": "BlackRock (GIP)",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Global Infrastructure Partners",
+"GIP",
+"BlackRock (GIP)",
+"BlackRock GIP"
+],
+"overlappingSuppliedManagers": [
+"BlackRock"
+],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Global Infrastructure Partners V",
+"aliases": [
+"GIP V",
+"Global Infrastructure Partners V-C, L.P."
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Flagship private equity infrastructure fund investing in core/core-plus infrastructure assets across sectors including energy, transport and digital infrastructure.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Fund-attributed investments include North American digital and energy infrastructure assets such as data centers and US-based infrastructure platforms.",
+"currentHoldingName": "CyrusOne",
+"currentHoldingUrl": "https://www.global-infra.com/portfolio/cyrusone/"
+},
+"snapshot": {
+"legacyId": "FUND-036",
+"managerName": "BlackRock (GIP)",
+"fundName": "Global Infrastructure Partners V",
+"ticker": null,
+"investmentStrategy": "Global core-plus infrastructure strategy targeting essential infrastructure across digital, energy, transport and utilities sectors.",
+"size": "$25.2B final close",
+"sizeUsdMm": 25200,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "25200000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2024-12-31",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2022",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Midstream",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"North America",
+"Europe"
+],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1950567/000195056725000002/xslFormDX01/primary_doc.xml",
+"https://www.global-infra.com/"
+],
+"strategyUrl": "https://www.global-infra.com/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1950567/000195056725000002/xslFormDX01/primary_doc.xml",
+"title": "Form D – Global Infrastructure Partners V",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-01-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "SEC filing confirms fund identity and size",
+"evidenceSummary": "SEC Form D identifies Global Infrastructure Partners V-C, L.P. as a private equity infrastructure fund with multi-billion USD capital raised.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeUsdMm",
+"structure",
+"fundStatus"
+]
+},
+{
+"url": "https://www.global-infra.com/portfolio/cyrusone/",
+"title": "CyrusOne Portfolio Page",
+"publisher": "Global Infrastructure Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "North American portfolio company",
+"evidenceSummary": "GIP portfolio includes CyrusOne, a US-based data center platform, evidencing North American deployment.",
+"supports": [
+"NORTH_AMERICA",
+"DIRECT_EQUITY_INFRASTRUCTURE"
+],
+"supportedFields": [
+"regions"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-036",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP V"
+}
+],
+"changedFields": [
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"regions"
+],
+"repoDispositionRationale": "Repository lacks explicit size basis and native currency fields and does not classify North America as evidenced region.",
+"confidence": "HIGH"
+},
+{
+"fundName": "GIP Transition Fund",
+"aliases": [
+"Global Infrastructure Partners Transition Fund"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "Dedicated private equity infrastructure strategy focused on transition and decarbonization assets including power and midstream infrastructure.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund targets global transition infrastructure including North American power and energy transition assets as part of its investment scope.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-037",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Transition Fund",
+"ticker": null,
+"investmentStrategy": "Value-add transition infrastructure strategy focused on decarbonization, CCUS and transition-enabling infrastructure assets.",
+"size": "$10.0B target",
+"sizeUsdMm": 10000,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "10000000000",
+"sizeBasis": "TARGET",
+"sizeAsOf": "2025-01-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2025",
+"strategies": [
+"Value-Add"
+],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Midstream"
+],
+"regions": [
+"North America",
+"Europe"
+],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2087294/000208729425000001/xslFormDX01/primary_doc.xml"
+],
+"strategyUrl": "https://www.global-infra.com/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/2087294/000208729425000001/xslFormDX01/primary_doc.xml",
+"title": "Form D – GIP Transition Fund",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-01-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "SEC filing confirms transition fund",
+"evidenceSummary": "SEC Form D identifies GIP Transition Fund as a private infrastructure equity vehicle raising capital.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"structure"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-037",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Transition Fund"
+}
+],
+"changedFields": [
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"regions"
+],
+"repoDispositionRationale": "Repository lacks structured size basis and native currency fields and does not classify North America explicitly.",
+"confidence": "HIGH"
+},
+{
+"fundName": "GIP Mid-Market Fund V",
+"aliases": [
+"Global Infrastructure Partners Mid-Market Fund V"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "Mid-market infrastructure equity strategy investing in contracted and essential infrastructure businesses.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund targets global mid-market infrastructure including North American contracted infrastructure assets.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-035",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Mid-Market Fund V",
+"ticker": null,
+"investmentStrategy": "Core-plus mid-market infrastructure strategy targeting essential, contracted infrastructure businesses.",
+"size": "$7.0B target",
+"sizeUsdMm": 7000,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "7000000000",
+"sizeBasis": "TARGET",
+"sizeAsOf": "2025-01-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2026",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Midstream",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"North America",
+"Europe"
+],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2077639/000207763925000001/xslFormDX01/primary_doc.xml"
+],
+"strategyUrl": "https://www.global-infra.com/"
+},
+"evidence": [
+{
+"url": "https://www.sec.gov/Archives/edgar/data/2077639/000207763925000001/xslFormDX01/primary_doc.xml",
+"title": "Form D – GIP Mid-Market Fund V",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-01-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "SEC filing confirms mid-market fund",
+"evidenceSummary": "SEC Form D identifies GIP Mid-Market Fund V as a private infrastructure equity fund currently raising capital.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"structure"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-035",
+"managerName": "BlackRock (GIP)",
+"fundName": "GIP Mid-Market Fund V"
+}
+],
+"changedFields": [
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"regions"
+],
+"repoDispositionRationale": "Repository lacks structured size basis and does not classify North America explicitly.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Global Infrastructure Partners Capital Solutions Fund",
+"reasonCode": "DEBT_OR_CREDIT",
+"rationale": "Capital Solutions strategy is credit-oriented rather than direct equity infrastructure.",
+"sourceUrls": [
+"https://www.global-infra.com/"
+]
+}
+],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-034",
+"repoFundName": "GIP Core Fund",
+"disposition": "NEEDS_REVIEW",
+"rationale": "Insufficient fund-specific evidence of North American mandate or attributed holdings.",
+"evidenceUrls": []
+},
+{
+"legacyId": "FUND-038",
+"repoFundName": "Global AI Infrastructure Investment Partnership (GAIIP)",
+"disposition": "NEEDS_REVIEW",
+"rationale": "Program structure and investability unclear; insufficient primary evidence that it constitutes a standalone fund or program exception.",
+"evidenceUrls": []
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "GIP Core Fund",
+"issue": "Lack of publicly attributable North American holdings tied specifically to the fund vehicle.",
+"sourceUrls": [],
+"recommendedResolution": "Obtain LP materials or portfolio attribution linking assets to the core fund."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 5,
+"searchQueriesRun": 8,
+"notes": [
+"Form ADV reviewed for fund universe",
+"SEC Form D filings used for fund identity and lifecycle",
+"Portfolio pages used for NA attribution"
+]
+},
+"summary": {
+"includedFunds": 3,
+"explicitNaMandate": 2,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 0,
+"proposedCorrections": 3,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 1,
+"repoOnlyRecords": 2,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Global Infrastructure Partners — North American direct infrastructure fund census
+Conclusion
+Three current Global Infrastructure Partners vehicles meet the inclusion criteria with verified direct-equity infrastructure scope and North American qualification. These consist of the flagship GIP V fund and two actively raising strategies (Transition Fund and Mid-Market Fund V). Key gaps remain around the GIP Core Fund and GAIIP, which lack sufficient fund-specific North American attribution or program-level clarity.
+Included funds
+FundVehicleLifecycleNA QualificationSize BasisRepo DispositionEvidenceGIP VNamed FundClosed ActiveVerified NA holding (CyrusOne)Final CloseProposed CorrectionSEC Form D; portfolio pageGIP Transition FundNamed FundRaisingExplicit NA mandateTargetProposed CorrectionSEC Form DGIP Mid-Market Fund VNamed FundRaisingExplicit NA mandateTargetProposed CorrectionSEC Form D
+Repository reconciliation
+
+
+Verified with corrections (3): GIP V, GIP Transition Fund, GIP Mid-Market Fund V — all required normalization of size basis, currency fields, and explicit North America classification.
+
+
+Unmatched repository rows (2):
+
+
+GIP Core Fund — insufficient evidence of North American qualification.
+
+
+GAIIP — unclear whether this constitutes an investable direct-equity program.
+
+
+
+
+Exclusions and unresolved issues
+
+
+Excluded: Capital Solutions Fund (credit strategy).
+
+
+Unresolved: GIP Core Fund lacks attributable holdings or mandate specificity; GAIIP requires confirmation of program structure and investability.
+
+
+Completeness
+
+
+Official materials, SEC filings, and portfolio sources were reviewed.
+
+
+Fundraising and lifecycle confirmed via Form D filings.
+
+
+Portfolio attribution used where available.
+
+
+Form ADV reviewed for full fund universe Pasted text.
+
+
+No additional continuation or legacy funds could be validated with current North American holdings.
+</fund_census_report>

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "KKR",
+  "createdAt": "2026-07-30T22:33:13.188Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/064-kkr-unsupported-na-review-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/064-kkr-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-105",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.sec.gov/Archives/edgar/data/1933581/000193358126000001/xslFormDX01/primary_doc.xml",
+        "https://www.apers.org/wp-content/uploads/2026/06/IC-Meeting-June-2026-Agenda-Packet.pdf"
+      ],
+      "value": [
+        "https://kseries.kkr.com/infrastructure/",
+        "https://www.sec.gov/Archives/edgar/data/1933581/000193358126000001/xslFormDX01/primary_doc.xml"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-106",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.sec.gov/Archives/edgar/data/2015283/000201528326000001/xslFormDX01/primary_doc.xml",
+        "https://www.kkr.com/global-perspectives/publications/sustainability-report-2025"
+      ],
+      "value": [
+        "https://www.sec.gov/Archives/edgar/data/2015282/000201528325000005/xslFormDX01/primary_doc.xml"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

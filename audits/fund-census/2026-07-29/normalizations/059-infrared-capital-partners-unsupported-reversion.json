@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "InfraRed Capital Partners",
+  "createdAt": "2026-07-30T21:57:11.909Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/059-infrared-capital-partners-size-as-of-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/059-infrared-capital-partners-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-102",
+      "field": "sizeUsdMm",
+      "from": null,
+      "value": 3120,
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-102",
+      "field": "sectors",
+      "from": [
+        "Utilities",
+        "Transportation",
+        "Digital",
+        "Social Infra"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Digital",
+        "Transportation",
+        "Social Infra"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-102",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.hicl.com/",
+        "https://www.hicl.com/wp-content/uploads/2026/06/HICL-Annual-Report-2026.pdf"
+      ],
+      "value": [
+        "https://www.hicl.com/"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Ontario Teachers Pension Plan",
+  "createdAt": "2026-07-31T00:31:07.553Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/076-ontario-teachers-pension-plan-evidence-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/076-ontario-teachers-pension-plan-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-128",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/",
+        "https://www.otpp.com/en-ca/annual-report/2025/"
+      ],
+      "value": [
+        "https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

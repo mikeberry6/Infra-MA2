@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_NORTH_AMERICA_REPO_REVIEW_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Fengate Asset Management",
+  "createdAt": "2026-07-30T19:56:08.802Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/045-fengate-asset-management-size-as-of-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/045-fengate-asset-management-unsupported-na-review-normalized.txt",
+  "allowedFields": [
+    "funds",
+    "repoOnlyRecords",
+    "unresolvedConflicts",
+    "summary"
+  ],
+  "changes": [
+    {
+      "fundIndex": 2,
+      "legacyId": "FUND-077",
+      "fundName": "Fengate Infrastructure Yield Fund",
+      "field": "funds",
+      "dispositionFrom": "NEEDS_REVIEW",
+      "dispositionValue": "REPO_ONLY_NEEDS_REVIEW",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/297333/PDF/297333.pdf"
+      ],
+      "rationale": "Opened evidence for Fengate Infrastructure Yield Fund does not support the mandatory fund-specific NORTH_AMERICA claim; the supplied repository row is retained for review only."
+    }
+  ]
+}

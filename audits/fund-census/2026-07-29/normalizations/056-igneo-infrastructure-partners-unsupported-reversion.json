@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Igneo Infrastructure Partners",
+  "createdAt": "2026-07-30T21:35:45.162Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/056-igneo-infrastructure-partners-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/056-igneo-infrastructure-partners-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-098",
+      "field": "sectors",
+      "from": [
+        "Power & ET",
+        "Utilities",
+        "Transportation"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Social Infra"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-098",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-announces-first-close-of-north-american-infrastructure-strategy.html",
+        "https://www.federalregister.gov/documents/2024/06/21/2024-13768/notice-of-filing-of-application-for-approval-of-continued-operation-and-control-exemption-patriot"
+      ],
+      "value": [
+        "https://www.igneoip.com/australia/en/institutional/news-and-insights/press/igneo-refinances-green-tranche-credit-facility.html"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-099",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-announces-first-close-of-north-american-infrastructure-strategy.html",
+        "https://www.sec.gov/Archives/edgar/data/2036260/000203626025000003/xslFormDX01/primary_doc.xml"
+      ],
+      "value": [
+        "https://www.sec.gov/Archives/edgar/data/2036260/000203626025000003/xslFormDX01/primary_doc.xml"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

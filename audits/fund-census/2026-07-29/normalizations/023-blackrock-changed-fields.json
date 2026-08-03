@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "BlackRock",
+  "createdAt": "2026-07-30T11:34:00.506Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/023-blackrock-program-scope-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/023-blackrock-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 11,
+      "legacyId": "FUND-033A",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "value": [
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "sectors",
+        "sourceUrls"
+      ],
+      "rationale": "The existing changedFields list was a strict subset of the deterministic field diff between the researched snapshot and its single matched repository row."
+    }
+  ]
+}

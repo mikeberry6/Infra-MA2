@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_VERIFIED_HOLDING_NA_REGION_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Blackstone",
+  "createdAt": "2026-07-30T12:38:36.986Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/024-blackstone-excluded-reason-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/024-blackstone-na-region-normalized.txt",
+  "allowedFields": [
+    "funds[].snapshot.regions",
+    "funds[].repoDisposition",
+    "funds[].changedFields",
+    "funds[].repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-039",
+      "field": "snapshot.regions",
+      "from": [
+        "Global"
+      ],
+      "value": [
+        "North America",
+        "Global"
+      ],
+      "repoDispositionFrom": "EXISTING_VERIFIED",
+      "repoDispositionValue": "PROPOSED_CORRECTION",
+      "rationale": "The fund already qualifies through a named current North American holding whose exact PRIMARY or INSTITUTIONAL source supports the canonical regions field."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-040",
+      "field": "snapshot.regions",
+      "from": [
+        "Global"
+      ],
+      "value": [
+        "North America",
+        "Global"
+      ],
+      "repoDispositionFrom": "PROPOSED_CORRECTION",
+      "repoDispositionValue": "PROPOSED_CORRECTION",
+      "rationale": "The fund already qualifies through a named current North American holding whose exact PRIMARY or INSTITUTIONAL source supports the canonical regions field."
+    }
+  ]
+}

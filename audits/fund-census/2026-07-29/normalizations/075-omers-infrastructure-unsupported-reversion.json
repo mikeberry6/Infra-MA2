@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "OMERS Infrastructure",
+  "createdAt": "2026-07-31T00:22:05.608Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/075-omers-infrastructure-evidence-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/075-omers-infrastructure-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-127",
+      "field": "vintage",
+      "from": "1999",
+      "value": "Evergreen",
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-127",
+      "field": "strategies",
+      "from": [
+        "Core"
+      ],
+      "value": [
+        "Core-Plus"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-127",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.omers.com/wp-content/uploads/2026/03/2025-OMERS-Annual-Report.pdf",
+        "https://www.omersinfrastructure.com/"
+      ],
+      "value": [
+        "https://www.omersinfrastructure.com/"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-127",
+      "field": "changedFields",
+      "from": [
+        "size",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeAsOf",
+        "regions"
+      ],
+      "value": [
+        "size",
+        "sizeAsOf",
+        "regions"
+      ],
+      "rationale": "Changed fields whose unsupported snapshot differences were reverted are removed from changedFields."
+    }
+  ]
+}

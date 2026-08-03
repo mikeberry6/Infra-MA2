@@ -1,0 +1,315 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "OMERS Infrastructure",
+"canonicalManager": "OMERS Infrastructure",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["Borealis Infrastructure"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "OMERS Infrastructure",
+"aliases": ["Borealis Infrastructure"],
+"vehicleType": "PROGRAM_EXCEPTION",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "OMERS annual report and official materials confirm a direct-investment infrastructure program deploying equity into operating infrastructure businesses globally with active ownership.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "OMERS discloses infrastructure investing across North America alongside Europe, Australia, and India as a core mandate.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-127",
+"managerName": "OMERS Infrastructure",
+"fundName": "OMERS Infrastructure",
+"ticker": null,
+"investmentStrategy": "Evergreen direct infrastructure equity program investing in large-scale regulated and contracted assets with long-term ownership and active stewardship.",
+"size": "C$32.5B infrastructure investments",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "CAD",
+"sizeNativeAmount": "32500000000",
+"sizeBasis": null,
+"sizeAsOf": "2025-12-31",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "1999",
+"strategies": ["Core"],
+"structure": "Permanent Capital",
+"fundStatus": "Evergreen",
+"sectors": ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
+"regions": ["North America", "Europe", "Asia-Pacific"],
+"sourceUrls": [
+"https://www.omers.com/wp-content/uploads/2026/03/2025-OMERS-Annual-Report.pdf",
+"https://www.omersinfrastructure.com/"
+],
+"strategyUrl": "https://www.omersinfrastructure.com/"
+},
+"evidence": [
+{
+"url": "https://www.omers.com/wp-content/uploads/2026/03/2025-OMERS-Annual-Report.pdf",
+"title": "OMERS 2025 Annual Report",
+"publisher": "OMERS",
+"sourceTier": "PRIMARY",
+"scope": "MANAGER",
+"publishedAt": "2026-03-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Infrastructure asset class and mandate",
+"evidenceSummary": "Discloses C$32.5B infrastructure investments and confirms direct investment across North America, Europe, Australia and India as part of OMERS’ infrastructure program.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"regions",
+"size",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeAsOf",
+"structure",
+"fundStatus"
+]
+},
+{
+"url": "https://www.omersinfrastructure.com/",
+"title": "OMERS Infrastructure Overview",
+"publisher": "OMERS Infrastructure",
+"sourceTier": "PRIMARY",
+"scope": "MANAGER",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Direct infrastructure investing model",
+"evidenceSummary": "Confirms OMERS Infrastructure directly invests in and actively manages infrastructure assets globally with long-term ownership.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"structure",
+"fundStatus"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-127",
+"managerName": "OMERS Infrastructure",
+"fundName": "OMERS Infrastructure"
+}
+],
+"changedFields": ["size", "sizeNativeAmount", "sizeNativeCurrency", "sizeAsOf", "regions"],
+"repoDispositionRationale": "Repository row lacks current size basis and North America-specific regional classification supported by primary sources.",
+"confidence": "MEDIUM"
+},
+{
+"fundName": "OMERS Infrastructure Strategic Partnership Program",
+"aliases": ["Strategic Partnership Program", "SPP"],
+"vehicleType": "PROGRAM_EXCEPTION",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Official program materials confirm direct co-investment alongside OMERS Infrastructure into operating infrastructure assets.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Program co-invests alongside OMERS in assets including U.S.-based Direct ChassisLink, which remains in the current OMERS portfolio.",
+"currentHoldingName": "Direct ChassisLink, Inc.",
+"currentHoldingUrl": "https://www.omersinfrastructure.com/portfolio/direct-chassislink/"
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "OMERS Infrastructure",
+"fundName": "OMERS Infrastructure Strategic Partnership Program",
+"ticker": null,
+"investmentStrategy": "Third-party capital co-investment program providing institutional partners access to OMERS Infrastructure direct equity deals.",
+"size": "Not disclosed",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2013",
+"strategies": ["Co-Investments"],
+"structure": "Open-End",
+"fundStatus": "Active",
+"sectors": ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
+"regions": ["Global"],
+"sourceUrls": [
+"https://www.omersinfrastructure.com/strategic-partnership-program/",
+"https://www.omersinfrastructure.com/news/omers-infrastructure-announces-final-close-of-strategic-partnership-program/"
+],
+"strategyUrl": "https://www.omersinfrastructure.com/strategic-partnership-program/"
+},
+"evidence": [
+{
+"url": "https://www.omersinfrastructure.com/strategic-partnership-program/",
+"title": "Strategic Partnership Program",
+"publisher": "OMERS Infrastructure",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Program structure and activity",
+"evidenceSummary": "Describes a long-standing program managing third-party capital through direct co-investments in infrastructure assets alongside OMERS.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"structure",
+"fundStatus",
+"strategies",
+"vintage"
+]
+},
+{
+"url": "https://www.omersinfrastructure.com/news/omers-infrastructure-announces-final-close-of-strategic-partnership-program/",
+"title": "OMERS Infrastructure Announces Final Close of Strategic Partnership Program",
+"publisher": "OMERS Infrastructure",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-03-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "North American co-investment example",
+"evidenceSummary": "Confirms SPP co-investment in U.S.-based Direct ChassisLink and other assets alongside OMERS Infrastructure.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"regions"
+]
+},
+{
+"url": "https://www.omersinfrastructure.com/portfolio/direct-chassislink/",
+"title": "Direct ChassisLink Portfolio Page",
+"publisher": "OMERS Infrastructure",
+"sourceTier": "PRIMARY",
+"scope": "MANAGER",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current U.S. holding",
+"evidenceSummary": "Confirms Direct ChassisLink remains a current OMERS Infrastructure U.S. portfolio company.",
+"supports": [
+"CURRENT_LIFECYCLE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"regions"
+]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "Distinct third-party capital co-investment program with separate capital base and strategy not represented in repository.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Global Strategic Investment Alliance",
+"reasonCode": "REALIZED_OR_INACTIVE",
+"rationale": "Historical co-investment alliance referenced in earlier disclosures; no evidence of current independent program activity or current North American holdings.",
+"sourceUrls": [
+"https://www.omersinfrastructure.com/news/omers-infrastructure-rebrands/"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "SEC-reported private funds (Borealis Ark Holdings B.V., Crane Fund US LP, Fitzgerald Fund US LP)",
+"issue": "Regulatory filings identify private funds but do not provide sufficient evidence of distinct commercial infrastructure fund strategies or North American mandates.",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/170309/PDF/170309.pdf"
+],
+"recommendedResolution": "Confirm whether these are asset-level SPVs or distinct co-investment funds with independent mandates and capital bases."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 6,
+"notes": ["Primary reliance on OMERS annual report and official infrastructure site."]
+},
+"summary": {
+"includedFunds": 2,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 1,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 1,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+OMERS Infrastructure — North American direct infrastructure fund census
+Conclusion
+OMERS Infrastructure operates primarily as an evergreen, balance-sheet direct infrastructure investment program (program exception), supplemented by a distinct third-party co-investment platform (Strategic Partnership Program). Both qualify as current direct-equity infrastructure vehicles with North American exposure, yielding two includable programs. The repository snapshot captures only the core program and requires correction.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepo DispositionEvidenceOMERS InfrastructureProgram exceptionEvergreen activeExplicit mandateNot classified (C$32.5B exposure)Proposed correctionAnnual report; official siteStrategic Partnership ProgramProgram exceptionEvergreen activeVerified U.S. holding (Direct ChassisLink)Not disclosedProposed newProgram page; press release; portfolio
+Repository reconciliation
+
+
+FUND-127 (OMERS Infrastructure): Verified but requires correction to size fields and regional classification supported by primary disclosures.
+
+
+New addition: Strategic Partnership Program qualifies as a distinct co-investment program with separate capital base and must be added.
+
+
+No duplicate or unmatched repository rows.
+
+
+Exclusions and unresolved issues
+
+
+Excluded: Global Strategic Investment Alliance — legacy co-investment structure without current independently evidenced activity.
+
+
+Unresolved: SEC Form ADV discloses three private funds (Borealis Ark Holdings B.V., Crane Fund US LP, Fitzgerald Fund US LP) that may represent SPVs or internal vehicles; insufficient public evidence to classify as standalone infrastructure funds.
+
+
+Completeness
+
+
+Official OMERS annual report and infrastructure website fully reviewed.
+
+
+Program-level and portfolio-level evidence confirms both mandate and current North American exposure.
+
+
+Co-investment structures and predecessor programs assessed.
+
+
+Regulatory filings reviewed for completeness, with unresolved items flagged.
+
+
+Source-derived task framing confirmed from uploaded brief. Pasted text
+</fund_census_report>

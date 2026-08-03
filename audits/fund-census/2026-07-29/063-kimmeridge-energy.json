@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Kimmeridge Energy",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Kimmeridge Energy",
+    "Kimmeridge",
+    "Kimmeridge Energy Management Company, LLC",
+    "Kimmeridge Energy Management Ltd."
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager universe membership vs snapshot scope",
+      "issue": "The supplied snapshot sets canonicalManager to null and knownManager to false with a source note stating that the manager is absent from the version-controlled universe, while the supplied manager universe separately includes Kimmeridge Energy. This governance inconsistency prevents fund-level inclusion under the required scope rule.",
+      "sourceUrls": [
+        "https://kimmeridge.com",
+        "https://adviserinfo.sec.gov/"
+      ],
+      "recommendedResolution": "Reconcile the manager manifest entry, canonical identity, and inclusion flag before performing a fund-level census. Do not automatically add the manager or infer fund vehicles."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 8,
+    "notes": [
+      "Scope-gated result: research verified manager identity and an active investment platform, but no fund rows were populated because the supplied snapshot requires OUT_OF_SCOPE_UNKNOWN_MANAGER treatment."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

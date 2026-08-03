@@ -1,0 +1,2676 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_PROMOTION_BATCH",
+  "sourceAsOfDate": "2026-07-29",
+  "policyHash": "5965b8701941fc2b9a8bdfc9c09cab079451c00715c79638a6364e27a860398b",
+  "batch": 4,
+  "summary": {
+    "batch": 4,
+    "creates": 0,
+    "updates": 20,
+    "actionable": 20,
+    "baseFundCount": 200,
+    "resultingFundCount": 200,
+    "changeRatio": 0.1
+  },
+  "candidates": [
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-053",
+      "before": {
+        "legacyId": "FUND-053",
+        "managerName": "Carlyle Group",
+        "fundName": "Carlyle CRSEF II",
+        "ticker": null,
+        "investmentStrategy": "Second dedicated Carlyle renewables vehicle focused on developed-market renewable and sustainable energy platforms across solar, wind, storage, EV charging and distributed-generation finance.",
+        "size": "$2.0B",
+        "sizeUsdMm": 2000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1933884/000193388423000002/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.carlyle.com/our-business/global-investment-solutions/infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-053",
+        "managerName": "Carlyle Group",
+        "fundName": "Carlyle Renewable & Sustainable Energy Fund II",
+        "ticker": null,
+        "investmentStrategy": "Second dedicated Carlyle renewable and sustainable energy vehicle focused on developed-market equity investments across solar, wind, storage, electric-vehicle charging and distributed-generation finance.",
+        "size": "$2.0B amount sold",
+        "sizeUsdMm": 2000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": "AMOUNT_SOLD",
+        "sizeAsOf": "2023-06-30",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1933884/000193388423000002/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.carlyle.com/our-business/global-investment-solutions/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeAsOf",
+        "sizeBasis"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_13fa9c96afff989cbb73",
+          "url": "https://www.carlyle.com/our-business/global-investment-solutions/infrastructure",
+          "supportedFields": [
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "CRSEF II strategy and geography"
+        },
+        {
+          "sourceId": "fundsrc_66600de86c2d4193e199",
+          "url": "https://www.sec.gov/Archives/edgar/data/1933884/000193388423000002/xslFormDX01/primary_doc.xml",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official issuer name and amount-sold disclosure"
+        }
+      ],
+      "rationale": "The repository abbreviation matches the SEC issuer, but the canonical name should be expanded to Carlyle Renewable & Sustainable Energy Fund II. The $2.0 billion disclosure is an amount sold under Form D and must not be presented as a final close.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-054",
+      "before": {
+        "legacyId": "FUND-054",
+        "managerName": "CBRE Investment Management",
+        "fundName": "CBRE GIF",
+        "ticker": null,
+        "investmentStrategy": "Evergreen global direct private infrastructure strategy targeting diversified core/core-plus OECD mid-market assets, with the verified public deal trail centered on digitalization and decarbonization themes.",
+        "size": "$3.3B",
+        "sizeUsdMm": 3300,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.cbreim.com/strategies-and-solutions/investment/private-infrastructure"
+        ],
+        "strategyUrl": "https://www.cbreim.com/strategies-and-solutions/investment/private-infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-054",
+        "managerName": "CBRE Investment Management",
+        "fundName": "CBRE Global Infrastructure Fund",
+        "ticker": null,
+        "investmentStrategy": "Evergreen global direct private infrastructure strategy targeting mid-market core and core-plus OECD assets across digital infrastructure, energy transition and transportation.",
+        "size": "$5.102B current gross asset value (reported 2026-03-31)",
+        "sizeUsdMm": 5102.216829,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "5102216829",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2026-03-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://reports.adviserinfo.sec.gov/reports/ADV/158495/PDF/158495.pdf",
+          "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557",
+          "https://www.cbreim.com/press-releases/cbre-im-awarded-500-million-global-real-estate-mandate-by-wales-pension-partnership",
+          "https://www.cbreim.com/strategies-and-solutions/private-infrastructure-global-direct-private-infrastructure",
+          "https://www.nbfwm.ca/content/dam/fbngp/microsites/patrimoine-dalpe-et-associes/pdf/rapport-trimestriel/fond-sabius/Sabius%20Q2-25%20Report_EN.pdf",
+          "https://www.puc.pa.gov/pcdocs/1860507.pdf"
+        ],
+        "strategyUrl": "https://www.cbreim.com/strategies-and-solutions/private-infrastructure-global-direct-private-infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "suppressedFields": [
+        "strategies",
+        "structure"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_02b7ffcae0ca3ec7b8a7",
+          "url": "https://reports.adviserinfo.sec.gov/reports/ADV/158495/PDF/158495.pdf",
+          "supportedFields": [
+            "fundName",
+            "managerName",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2026-03-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current master-fund and gross-asset-value filing"
+        },
+        {
+          "sourceId": "fundsrc_24f5612d3a635601807a",
+          "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2026-01-30",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current ownership and unchanged ultimate control"
+        },
+        {
+          "sourceId": "fundsrc_e8c5d8e7a1dbf12bc26d",
+          "url": "https://www.cbreim.com/press-releases/cbre-im-awarded-500-million-global-real-estate-mandate-by-wales-pension-partnership",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "managerName",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-08-16",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official commercial fund-name evidence"
+        },
+        {
+          "sourceId": "fundsrc_f617751290ec8b99943c",
+          "url": "https://www.cbreim.com/strategies-and-solutions/private-infrastructure-global-direct-private-infrastructure",
+          "supportedFields": [
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current global direct private infrastructure strategy"
+        },
+        {
+          "sourceId": "fundsrc_13e65467066aded3ffb7",
+          "url": "https://www.nbfwm.ca/content/dam/fbngp/microsites/patrimoine-dalpe-et-associes/pdf/rapport-trimestriel/fond-sabius/Sabius%20Q2-25%20Report_EN.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2025-06-30",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Institutional open-end fund description"
+        },
+        {
+          "sourceId": "fundsrc_f85cedf5d17087d23e42",
+          "url": "https://www.puc.pa.gov/pcdocs/1860507.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2024-12-20",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund-attributed U.S. fiber ownership"
+        }
+      ],
+      "rationale": "FUND-054 matches the same evergreen commercial vehicle, but the repository uses an abbreviated fund name, an unsupported undated $3.3B amount, a narrower strategy and sector description, Global-only geography, and an older generic strategy URL; the corrected row preserves the legacy ID and uses the current commercial name, Form ADV gross asset value and reporting date, and fund-attributed U.S. ownership evidence.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-056",
+      "before": {
+        "legacyId": "FUND-056",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure V (CI V)",
+        "ticker": null,
+        "investmentStrategy": "Global flagship greenfield renewable-energy infrastructure fund focused on large-scale contracted or regulated clean-energy and system-integration assets in low-risk OECD markets.",
+        "size": "€12.0B",
+        "sizeUsdMm": 13200,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.cip.com/funds/flagship-funds/"
+        ],
+        "strategyUrl": "https://www.cip.com/"
+      },
+      "after": {
+        "legacyId": "FUND-056",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure V (CI V)",
+        "ticker": null,
+        "investmentStrategy": "Global flagship greenfield renewable-energy infrastructure fund focused on large-scale contracted or regulated clean-energy and system-integration assets in low-risk OECD markets.",
+        "size": "€12.0B",
+        "sizeUsdMm": 13200,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cip.com/funds/flagship-funds/"
+        ],
+        "strategyUrl": "https://www.cip.com/"
+      },
+      "changedFields": [
+        "regions"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_da722280eaaa6b527e68",
+          "url": "https://www.cip.com/funds/flagship-funds/",
+          "supportedFields": [
+            "regions"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CI V official final close and North American mandate"
+        }
+      ],
+      "rationale": "The repository identity and rounded close amount remain supported; North America is added to regions because the official named-fund mandate explicitly includes it.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-056A",
+      "before": {
+        "legacyId": "FUND-056A",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure IV (CI IV)",
+        "ticker": null,
+        "investmentStrategy": "Fourth flagship greenfield renewable-energy infrastructure fund investing in offshore wind, onshore wind, solar PV, transmission, storage and waste-to-energy across low-risk OECD markets.",
+        "size": "€7.0B",
+        "sizeUsdMm": 7700,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.cip.com/funds/flagship-funds/"
+        ],
+        "strategyUrl": "https://www.cip.com/"
+      },
+      "after": {
+        "legacyId": "FUND-056A",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure IV (CI IV)",
+        "ticker": null,
+        "investmentStrategy": "Fourth flagship greenfield renewable-energy infrastructure fund investing in offshore wind, onshore wind, solar PV, transmission, storage and waste-to-energy across low-risk OECD markets.",
+        "size": "€7.0B",
+        "sizeUsdMm": 7700,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cip.com/funds/flagship-funds/"
+        ],
+        "strategyUrl": "https://www.cip.com/"
+      },
+      "changedFields": [
+        "regions"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_da722280eaaa6b527e68",
+          "url": "https://www.cip.com/funds/flagship-funds/",
+          "supportedFields": [
+            "regions"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CI IV official final close and North American mandate"
+        }
+      ],
+      "rationale": "The repository identity and rounded close amount remain supported; North America is added to regions because the official named-fund mandate explicitly includes it.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-058",
+      "before": {
+        "legacyId": "FUND-058",
+        "managerName": "CPP Investments",
+        "fundName": "CPP Investments Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Evergreen global direct infrastructure program inside CPP's Real Assets platform, deploying at scale across digital, transport, power/renewables, midstream and environmental-services assets.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.cppinvestments.com/the-fund/our-investments/real-assets/infrastructure/"
+        ],
+        "strategyUrl": "https://www.cppinvestments.com/the-fund/our-investments/real-assets/infrastructure/"
+      },
+      "after": {
+        "legacyId": "FUND-058",
+        "managerName": "CPP Investments",
+        "fundName": "CPP Investments Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Evergreen global direct infrastructure program within CPP Investments' Real Assets platform, investing in essential transportation, digital, utility and social-infrastructure businesses.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cppinvestments.com/the-fund/our-investments/real-assets/infrastructure/"
+        ],
+        "strategyUrl": "https://www.cppinvestments.com/the-fund/our-investments/real-assets/infrastructure/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "regions",
+        "sectors"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_b58d2a23dd54d72d0796",
+          "url": "https://www.cppinvestments.com/the-fund/annual-report/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-05-21",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current program and Canadian holding attribution"
+        },
+        {
+          "sourceId": "fundsrc_7cbf9900ea750157b058",
+          "url": "https://www.cppinvestments.com/the-fund/our-investments/real-assets/infrastructure/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Official Infrastructure program description"
+        }
+      ],
+      "rationale": "FUND-058 matches the documented Infrastructure program and is reconciled exactly once. A correction is proposed because official program and annual-report evidence establish current North American deployment and support separating Infrastructure's transportation, digital, utility and social-infrastructure remit from CPP Investments' separately documented Sustainable Energies program.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-059",
+      "before": {
+        "legacyId": "FUND-059",
+        "managerName": "CVC DIF",
+        "fundName": "DIF CIF III",
+        "ticker": null,
+        "investmentStrategy": "Legacy-CIF / current Value-Add growth infrastructure fund focused on buy-and-build platforms, especially in digital infrastructure, alongside transport and other growth infrastructure niches.",
+        "size": "€1.6B",
+        "sizeUsdMm": 1760,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "after": {
+        "legacyId": "FUND-059",
+        "managerName": "CVC DIF",
+        "fundName": "DIF CIF III",
+        "ticker": null,
+        "investmentStrategy": "Legacy-CIF / current Value-Add growth infrastructure fund focused on buy-and-build platforms, especially in digital infrastructure, alongside transport and other growth infrastructure niches.",
+        "size": "€1.6B final close",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "1600000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2026-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/",
+          "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+          "https://www.cvcdif.com/portfolio"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "changedFields": [
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_a0fee8f78c042719d930",
+          "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CIF III final close and mandate"
+        },
+        {
+          "sourceId": "fundsrc_f4759d2953a34ac81eef",
+          "url": "https://www.cvcdif.com/portfolio",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Tonaquint fund attribution"
+        }
+      ],
+      "rationale": "The commercial vehicle matches FUND-059. The official source supports a €1.6 billion final close, while the repository omits amount semantics and native-currency fields and contains an unsupported converted USD amount. Current fund-attributed U.S. deployment evidence was also added.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-059A",
+      "before": {
+        "legacyId": "FUND-059A",
+        "managerName": "CVC DIF",
+        "fundName": "DIF CIF II",
+        "ticker": null,
+        "investmentStrategy": "Core-plus infrastructure growth vehicle focused on scalable mid-market companies, with CVC DIF history materials identifying the final close at €1.0B.",
+        "size": "€1.0B",
+        "sizeUsdMm": 1100,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/about-us"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "after": {
+        "legacyId": "FUND-059A",
+        "managerName": "CVC DIF",
+        "fundName": "DIF CIF II",
+        "ticker": null,
+        "investmentStrategy": "Core-plus infrastructure growth vehicle focused on scalable mid-market companies, with CVC DIF history materials identifying the final close at €1.0B.",
+        "size": "€1.0B final close",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "1000000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2026-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/",
+          "https://www.cvcdif.com/about-us",
+          "https://www.cvcdif.com/portfolio"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "changedFields": [
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_4f5b8a87a0044a22e6d7",
+          "url": "https://www.cvcdif.com/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Value-Add strategy and geographic mandate"
+        },
+        {
+          "sourceId": "fundsrc_fc71f964dbafb68ef723",
+          "url": "https://www.cvcdif.com/about-us",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official fund-series history and final-close amount"
+        },
+        {
+          "sourceId": "fundsrc_f4759d2953a34ac81eef",
+          "url": "https://www.cvcdif.com/portfolio",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Joink fund attribution"
+        }
+      ],
+      "rationale": "The commercial vehicle matches FUND-059A. The repository amount is correctly directional but lacks final-close semantics and native-currency fields, and its USD value is not supported by a source-stated equivalent or an explicit FX rate and date. Fund-specific strategy and current-holding evidence were added.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-059B",
+      "before": {
+        "legacyId": "FUND-059B",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure IV",
+        "ticker": null,
+        "investmentStrategy": "Traditional DIF infrastructure strategy targeting stable long-term contracted or regulated assets, including PPP, concessions, utilities and renewable energy projects.",
+        "size": "€1.15B",
+        "sizeUsdMm": 1265,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2015",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/about-us"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "after": {
+        "legacyId": "FUND-059B",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure IV",
+        "ticker": null,
+        "investmentStrategy": "Traditional DIF infrastructure strategy targeting stable long-term contracted or regulated assets, including PPP, concessions, utilities and renewable energy projects.",
+        "size": "€1.15B final close",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "1150000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2026-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2015",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/",
+          "https://www.cvcdif.com/about-us",
+          "https://www.cvcdif.com/portfolio"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "changedFields": [
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_4f5b8a87a0044a22e6d7",
+          "url": "https://www.cvcdif.com/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Traditional Infrastructure strategy mandate"
+        },
+        {
+          "sourceId": "fundsrc_fc71f964dbafb68ef723",
+          "url": "https://www.cvcdif.com/about-us",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Infrastructure IV identity and final-close history"
+        },
+        {
+          "sourceId": "fundsrc_f4759d2953a34ac81eef",
+          "url": "https://www.cvcdif.com/portfolio",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current portfolio-status check"
+        }
+      ],
+      "rationale": "The commercial vehicle matches FUND-059B. The repository amount requires classification as a final close, native EUR fields, a dated amount record, and removal of the unsupported converted USD amount. Current portfolio evidence was added to support the older fund's active lifecycle.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-059C",
+      "before": {
+        "legacyId": "FUND-059C",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure V",
+        "ticker": null,
+        "investmentStrategy": "Traditional DIF infrastructure strategy targeting contracted and concession-based infrastructure projects and companies across energy, utilities, transport and social infrastructure.",
+        "size": "€1.9B",
+        "sizeUsdMm": 2090,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2018",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/about-us"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "after": {
+        "legacyId": "FUND-059C",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure V",
+        "ticker": null,
+        "investmentStrategy": "Traditional DIF infrastructure strategy targeting contracted and concession-based infrastructure projects and companies across energy, utilities, transport and social infrastructure.",
+        "size": "€1.9B final close",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "1900000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2026-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2018",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/",
+          "https://www.cvcdif.com/about-us",
+          "https://www.cvcdif.com/portfolio"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "changedFields": [
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_4f5b8a87a0044a22e6d7",
+          "url": "https://www.cvcdif.com/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Traditional Infrastructure strategy and region"
+        },
+        {
+          "sourceId": "fundsrc_fc71f964dbafb68ef723",
+          "url": "https://www.cvcdif.com/about-us",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Infrastructure V identity and final-close history"
+        },
+        {
+          "sourceId": "fundsrc_f4759d2953a34ac81eef",
+          "url": "https://www.cvcdif.com/portfolio",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current portfolio-status check"
+        }
+      ],
+      "rationale": "The commercial vehicle matches FUND-059C. The fund size is supported as a €1.9 billion final close, but the repository lacks amount semantics, native-currency fields, and a size date and includes an unsupported USD conversion. Current-lifecycle evidence was added.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-059D",
+      "before": {
+        "legacyId": "FUND-059D",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure VI",
+        "ticker": null,
+        "investmentStrategy": "Traditional DIF infrastructure strategy focused on long-term contracted or regulated income streams across PPP, concessions, utilities and renewable energy assets.",
+        "size": "€3.0B",
+        "sizeUsdMm": 3300,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/about-us"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "after": {
+        "legacyId": "FUND-059D",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure VI",
+        "ticker": null,
+        "investmentStrategy": "Traditional DIF infrastructure strategy focused on long-term contracted or regulated income streams across PPP, concessions, utilities and renewable energy assets.",
+        "size": "€3.0B final close",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "3000000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2026-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/",
+          "https://www.cvcdif.com/about-us",
+          "https://www.cvcdif.com/portfolio"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "changedFields": [
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_4f5b8a87a0044a22e6d7",
+          "url": "https://www.cvcdif.com/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Traditional Infrastructure strategy mandate"
+        },
+        {
+          "sourceId": "fundsrc_fc71f964dbafb68ef723",
+          "url": "https://www.cvcdif.com/about-us",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Infrastructure VI fund history and size"
+        },
+        {
+          "sourceId": "fundsrc_f4759d2953a34ac81eef",
+          "url": "https://www.cvcdif.com/portfolio",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current U.S. holdings attributed to Infrastructure VI"
+        }
+      ],
+      "rationale": "The commercial vehicle matches FUND-059D. The repository size must be classified as a €3.0 billion final close with native EUR fields and a size date; the unsupported converted USD amount is removed. Current U.S. holdings provide additional lifecycle corroboration.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-060",
+      "before": {
+        "legacyId": "FUND-060",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure VII",
+        "ticker": null,
+        "investmentStrategy": "Core-plus flagship targeting contracted, downside-protected essential infrastructure across CVC DIF's mid-market platform, with yield plus longer-term value creation.",
+        "size": "€4.4B",
+        "sizeUsdMm": 4840,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "after": {
+        "legacyId": "FUND-060",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure VII",
+        "ticker": null,
+        "investmentStrategy": "Core-plus flagship targeting contracted, downside-protected essential infrastructure across CVC DIF's mid-market platform, with yield plus longer-term value creation.",
+        "size": "€4.4B final close",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "4400000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2026-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvcdif.com/",
+          "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+          "https://www.cvcdif.com/portfolio"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "changedFields": [
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_a0fee8f78c042719d930",
+          "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Infrastructure VII final close and mandate"
+        },
+        {
+          "sourceId": "fundsrc_f4759d2953a34ac81eef",
+          "url": "https://www.cvcdif.com/portfolio",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current U.S. portfolio attribution"
+        }
+      ],
+      "rationale": "The commercial vehicle matches FUND-060. Its supported fund size is the €4.4 billion final close, not the announcement's larger aggregate amount. Native-currency semantics and a size date are added, and the unsupported repository USD conversion is removed.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-061",
+      "before": {
+        "legacyId": "FUND-061",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure VIII",
+        "ticker": null,
+        "investmentStrategy": "Successor core-plus vehicle targeting €6B of commitments for a diversified portfolio of roughly 20 positions, with public LP materials emphasizing renewable energy, utilities and transport across Europe and North America.",
+        "size": "[€6.0B]",
+        "sizeUsdMm": 6600,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2025",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://nj.gov/njbonds/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf",
+          "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "after": {
+        "legacyId": "FUND-061",
+        "managerName": "CVC DIF",
+        "fundName": "DIF Infrastructure VIII",
+        "ticker": null,
+        "investmentStrategy": "Successor core-plus vehicle targeting €6B of commitments for a diversified portfolio of roughly 20 positions, with public LP materials emphasizing renewable energy, utilities and transport across Europe and North America.",
+        "size": "€6.0B target",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "6000000000",
+        "sizeBasis": "TARGET",
+        "sizeAsOf": "2026-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2025",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://nj.gov/njbonds/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf",
+          "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+          "https://www.cvcdif.com/portfolio",
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "changedFields": [
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_e04b7901b09e8f8f5c9b",
+          "url": "https://nj.gov/njbonds/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sourceUrls",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Independent institutional confirmation"
+        },
+        {
+          "sourceId": "fundsrc_ed4be17871bee359c56f",
+          "url": "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "managerName",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CVC confirmation of Fund VIII activation"
+        },
+        {
+          "sourceId": "fundsrc_f4759d2953a34ac81eef",
+          "url": "https://www.cvcdif.com/portfolio",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "SBA Canada fund attribution"
+        },
+        {
+          "sourceId": "fundsrc_6732f0f170336afccf93",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund VIII institutional underwriting"
+        }
+      ],
+      "rationale": "The commercial vehicle matches FUND-061. The €6.0 billion figure is a target, not a final close or demonstrated commitments amount. Native EUR fields and a target date are added, the unsupported converted USD amount is removed, and the current SBA Canada attribution is added.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-062",
+      "before": {
+        "legacyId": "FUND-062",
+        "managerName": "CVC DIF",
+        "fundName": "CVC DIF Value-Add IV",
+        "ticker": null,
+        "investmentStrategy": "Activated successor to the CVC DIF value-add series, part of CVC's combined €8B DIF VIII / VA IV infrastructure fundraising target and focused on higher-growth mid-market infrastructure platforms.",
+        "size": "[€2.0B]",
+        "sizeUsdMm": 2200,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2025",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "after": {
+        "legacyId": "FUND-062",
+        "managerName": "CVC DIF",
+        "fundName": "CVC DIF Value-Add IV",
+        "ticker": null,
+        "investmentStrategy": "Activated successor to the CVC DIF value-add series, part of CVC's combined €8B DIF VIII / VA IV infrastructure fundraising target and focused on higher-growth mid-market infrastructure platforms.",
+        "size": "€2.0B target",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "2000000000",
+        "sizeBasis": "TARGET",
+        "sizeAsOf": "2026-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2025",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+          "https://www.cvcdif.com/"
+        ],
+        "strategyUrl": "https://www.cvcdif.com/"
+      },
+      "changedFields": [
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_ed4be17871bee359c56f",
+          "url": "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Value-Add IV activation and fundraising target"
+        },
+        {
+          "sourceId": "fundsrc_4f5b8a87a0044a22e6d7",
+          "url": "https://www.cvcdif.com/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Value-Add direct-equity strategy and North American mandate"
+        }
+      ],
+      "rationale": "The commercial vehicle matches FUND-062. The €2.0 billion figure is classified as a fundraising target, with native EUR fields and a target date added. The unsupported converted USD amount is removed, and the strategy page is added as field-specific evidence for direct equity and North America.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-063",
+      "before": {
+        "legacyId": "FUND-063",
+        "managerName": "DigitalBridge",
+        "fundName": "DigitalBridge Fund III",
+        "ticker": null,
+        "investmentStrategy": "Third flagship value-add digital infrastructure fund scaling into hyperscale data centers, fiber, towers and related connectivity assets across DigitalBridge's five-vertical digital stack.",
+        "size": "$7.2B",
+        "sizeUsdMm": 7200,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.digitalbridge.com/press"
+        ],
+        "strategyUrl": "https://www.digitalbridge.com/"
+      },
+      "after": {
+        "legacyId": "FUND-063",
+        "managerName": "DigitalBridge",
+        "fundName": "DigitalBridge Fund III",
+        "ticker": null,
+        "investmentStrategy": "Value-add digital infrastructure fund investing across data centers, fiber, towers and connectivity assets globally.",
+        "size": "$7.2B final close",
+        "sizeUsdMm": 7200,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "7200000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2025-10-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.digitalbridge.com/insights/news/digitalbridge-closes-dbp-iii",
+          "https://www.sec.gov/Archives/edgar/data"
+        ],
+        "strategyUrl": "https://www.digitalbridge.com/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "regions",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sourceUrls",
+        "vintage"
+      ],
+      "suppressedFields": [
+        "fundName"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_771e167ab17f17eb0a63",
+          "url": "https://www.digitalbridge.com/insights/news/digitalbridge-closes-dbp-iii",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-11-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "DBP III final close and portfolio"
+        }
+      ],
+      "rationale": "Repository uses non-canonical fund name and lacks final-close semantics and dated amount evidence.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-065",
+      "before": {
+        "legacyId": "FUND-065",
+        "managerName": "DWS",
+        "fundName": "DWS PEIF III",
+        "ticker": null,
+        "investmentStrategy": "Third flagship DWS Pan-European Infrastructure fund, which reached final close in June 2021 at approximately €3.1B and targets mature European infrastructure across transportation, power, utilities and digital infrastructure.",
+        "size": "€3.1B",
+        "sizeUsdMm": 3410,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.dws.com/AssetDownload/Index?assetGuid=0612b36b-92ef-428c-9981-9c75ed30a267&consumer=E-Library",
+          "https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3"
+        ],
+        "strategyUrl": "https://www.dws.com/en-gb/capabilities/alternatives/infrastructure/"
+      },
+      "after": {
+        "legacyId": "FUND-065",
+        "managerName": "DWS",
+        "fundName": "DWS Pan-European Infrastructure Fund III",
+        "ticker": null,
+        "investmentStrategy": "Value-add direct equity infrastructure strategy investing in transportation, utilities, energy transition, and digital infrastructure assets.",
+        "size": "€3.1B final close",
+        "sizeUsdMm": 3410,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "3100000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2022-03-09",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.dws.com/AssetDownload/Index?assetGuid=0612b36b-92ef-428c-9981-9c75ed30a267&consumer=E-Library",
+          "https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3"
+        ],
+        "strategyUrl": "https://www.dws.com/en-gb/capabilities/alternatives/infrastructure/"
+      },
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_f3895ce25d8edc88c4e0",
+          "url": "https://group.dws.com/ir/en/media/media-releases/detail/DWS-Launches-Recommendation-for-Cash-Acquisition-of-Stagecoach/",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-03-09",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "DWS PEIF III mandate and size"
+        },
+        {
+          "sourceId": "fundsrc_eaef77f1027a07ba832c",
+          "url": "https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2021-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "EIB PEIF III fund profile"
+        }
+      ],
+      "rationale": "Repository record omits structured size fields and uses abbreviated fund name; corrected to official name and complete size semantics with evidence.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-066",
+      "before": {
+        "legacyId": "FUND-066",
+        "managerName": "Energy Capital Partners",
+        "fundName": "ECP Fund V",
+        "ticker": null,
+        "investmentStrategy": "Fifth flagship ECP equity vehicle focused on value-add/control investments in electricity and sustainability infrastructure, especially conventional/renewable power, storage and decarbonization assets.",
+        "size": "$4.4B",
+        "sizeUsdMm": 4400,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise"
+        ],
+        "strategyUrl": "https://www.ecpgp.com/about/"
+      },
+      "after": {
+        "legacyId": "FUND-066",
+        "managerName": "Energy Capital Partners",
+        "fundName": "Energy Capital Partners V, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Value-add, control-oriented investments in power and sustainability infrastructure",
+        "size": "$4.4B final close",
+        "sizeUsdMm": 4400,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "4400000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2024-05-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise"
+        ],
+        "strategyUrl": "https://www.ecpgp.com/about/"
+      },
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency"
+      ],
+      "suppressedFields": [
+        "strategies"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_9758fb0a020dc38c8eff",
+          "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund V final close and North American investments"
+        }
+      ],
+      "rationale": "Repository lacks structured size fields and updated strategy classification supported by fund-specific disclosure",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-069A",
+      "before": {
+        "legacyId": "FUND-069A",
+        "managerName": "Ember Infrastructure Management",
+        "fundName": "Ember Infrastructure Fund I",
+        "ticker": null,
+        "investmentStrategy": "Inaugural Ember infrastructure fund investing in energy transition and resource-efficiency platforms, with public close materials identifying ReGenerate, Caban Systems, and SunShare among its first investments.",
+        "size": "$0.34B",
+        "sizeUsdMm": 340,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://ember-infra.com/e/ember-closes-fund-i"
+        ],
+        "strategyUrl": "https://www.ember-infra.com/"
+      },
+      "after": {
+        "legacyId": "FUND-069A",
+        "managerName": "Ember Infrastructure Management",
+        "fundName": "Ember Infrastructure Fund I",
+        "ticker": null,
+        "investmentStrategy": "Middle-market infrastructure strategy focused on energy transition, resource efficiency, and climate-resilient platforms.",
+        "size": "Over $340M final close",
+        "sizeUsdMm": 340,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "340000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2022-06-30",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://ember-infra.com/e/ember-closes-fund-i"
+        ],
+        "strategyUrl": "https://www.ember-infra.com/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_2a90ac6a3011768f55ea",
+          "url": "https://ember-infra.com/e/ember-closes-fund-i",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-06-30",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund I close announcement"
+        }
+      ],
+      "rationale": "Repository omits size basis, currency, and as-of date; primary close announcement provides these fields.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-070",
+      "before": {
+        "legacyId": "FUND-070",
+        "managerName": "Ember Infrastructure Management",
+        "fundName": "Ember Infrastructure Fund II",
+        "ticker": null,
+        "investmentStrategy": "Middle-market infrastructure strategy targeting lower-carbon, resource-efficient and climate-resilient platforms, with real deployment split between environmental-resource systems and selected clean-energy assets.",
+        "size": "$0.8B",
+        "sizeUsdMm": 800,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1991445/000199144525000002/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.ember-infra.com/"
+      },
+      "after": {
+        "legacyId": "FUND-070",
+        "managerName": "Ember Infrastructure Management",
+        "fundName": "Ember Infrastructure Fund II",
+        "ticker": null,
+        "investmentStrategy": "Middle-market infrastructure strategy targeting lower-carbon, resource-efficient and climate-resilient platforms.",
+        "size": "$830.7M amount sold (Form D)",
+        "sizeUsdMm": 830.721111,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "830721111",
+        "sizeBasis": "AMOUNT_SOLD",
+        "sizeAsOf": "2025-10-10",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1991445/000199144525000002/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.ember-infra.com/"
+      },
+      "changedFields": [
+        "fundStatus",
+        "investmentStrategy",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_33b3528d5fe0ea2f1df5",
+          "url": "https://surs.org/wp-content/uploads/Inv_120524.pdf",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2024-12-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund II strategy and mandate"
+        },
+        {
+          "sourceId": "fundsrc_8ce63172f654eadede71",
+          "url": "https://www.sec.gov/Archives/edgar/data/1991445/000199144525000002/xslFormDX01/primary_doc.xml",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-10-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund II Form D amount sold and first-sale timing"
+        }
+      ],
+      "rationale": "Repository treats Fund II as closed with $0.8B size; SEC filing shows $830.7M amount sold and ongoing offering, requiring lifecycle and size-basis correction.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-071",
+      "before": {
+        "legacyId": "FUND-071",
+        "managerName": "EQT",
+        "fundName": "EQT Active Core I",
+        "ticker": null,
+        "investmentStrategy": "Longer-hold core strategy focused on Europe and North America, centered on downside-protected essential-services infrastructure with stable yield, inflation protection, and low volatility.",
+        "size": "$3.2B",
+        "sizeUsdMm": 3200,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://eqtgroup.com/news/eqt-active-core-infrastructure-fund-holds-final-close-2024-09-24"
+        ],
+        "strategyUrl": "https://eqtgroup.com/en/infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-071",
+        "managerName": "EQT",
+        "fundName": "EQT Active Core I",
+        "ticker": null,
+        "investmentStrategy": "Core/core-plus infrastructure strategy focused on downside-protected essential services with stable yield.",
+        "size": "$3.2B commitments",
+        "sizeUsdMm": 3200,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "3200000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2024-09-24",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://eqtgroup.com/news/eqt-active-core-infrastructure-fund-holds-final-close-2024-09-24"
+        ],
+        "strategyUrl": "https://eqtgroup.com/en/infrastructure"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency"
+      ],
+      "suppressedFields": [
+        "fundName",
+        "fundStatus",
+        "strategies",
+        "structure",
+        "vintage"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_fc465ea125c214ebea21",
+          "url": "https://eqtgroup.com/news/eqt-active-core-infrastructure-fund-holds-final-close-2024-09-24",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-09-24",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "ACI I final close and mandate"
+        }
+      ],
+      "rationale": "Repository mislabels structure as evergreen and omits proper naming and amount semantics.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 4,
+      "legacyId": "FUND-072",
+      "before": {
+        "legacyId": "FUND-072",
+        "managerName": "EQT",
+        "fundName": "EQT AI Infrastructure Strategy",
+        "ticker": null,
+        "investmentStrategy": "Dedicated open-ended AI infrastructure strategy launched in 2026 and seeded by EQT Infrastructure portfolio company EdgeConneX, focused on building the foundation of the AI economy.",
+        "size": "[TBD]",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2026",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Open-End",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://eqtgroup.com/news/eqt-ab-publ-q1-annoucement-2026-2026-04-22"
+        ],
+        "strategyUrl": "https://eqtgroup.com/en/infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-072",
+        "managerName": "EQT",
+        "fundName": "EQT AI Infrastructure Strategy",
+        "ticker": null,
+        "investmentStrategy": "Open-ended AI infrastructure strategy focused on data centers and digital infrastructure supporting AI workloads.",
+        "size": "$9.4B AUM",
+        "sizeUsdMm": 9400,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "9400000000",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2026-04-22",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2026",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Open-End",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://eqtgroup.com/news/eqt-ab-publ-q1-annoucement-2026-2026-04-22"
+        ],
+        "strategyUrl": "https://eqtgroup.com/en/infrastructure"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "regions",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm"
+      ],
+      "suppressedFields": [
+        "strategies"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_783ec897fde5c80e760d",
+          "url": "https://eqtgroup.com/news/eqt-ab-publ-q1-annoucement-2026-2026-04-22",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-04-22",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "AI infrastructure strategy launch and AUM"
+        }
+      ],
+      "rationale": "Repository missing AUM disclosure and North America qualification details.",
+      "sizeGate": null
+    }
+  ]
+}

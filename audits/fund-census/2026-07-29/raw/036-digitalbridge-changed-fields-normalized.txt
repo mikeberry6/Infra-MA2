@@ -1,0 +1,491 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "DigitalBridge",
+  "canonicalManager": "DigitalBridge",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Digital Colony",
+    "DigitalBridge Group"
+  ],
+  "overlappingSuppliedManagers": [
+    "InfraBridge"
+  ],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "DigitalBridge Partners III, LP",
+      "aliases": [
+        "DigitalBridge Partners III",
+        "DBP III",
+        "DigitalBridge Fund III"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Flagship value-add digital infrastructure fund investing in data centers, fiber, towers and edge infrastructure.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Fund-specific sources attribute investments in Vantage Data Centers (North America) and Orange Barrel Media (U.S.) to DBP III.",
+        "currentHoldingName": "Vantage Data Centers",
+        "currentHoldingUrl": "https://www.digitalbridge.com/portfolio"
+      },
+      "snapshot": {
+        "legacyId": "FUND-063",
+        "managerName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners III, LP",
+        "ticker": null,
+        "investmentStrategy": "Value-add digital infrastructure fund investing across data centers, fiber, towers and connectivity assets globally.",
+        "size": "$7.2B final close",
+        "sizeUsdMm": 7200,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "7200000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2025-10-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.digitalbridge.com/insights/news/digitalbridge-closes-dbp-iii",
+          "https://www.sec.gov/Archives/edgar/data"
+        ],
+        "strategyUrl": "https://www.digitalbridge.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.digitalbridge.com/insights/news/digitalbridge-closes-dbp-iii",
+          "title": "DigitalBridge Closes DBP III",
+          "publisher": "DigitalBridge",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-11-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "DBP III final close and portfolio",
+          "evidenceSummary": "Confirms $7.2B final close and identifies portfolio including North American assets such as Vantage Data Centers.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sizeAsOf",
+            "investmentStrategy",
+            "regions",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "vintage",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-063",
+          "managerName": "DigitalBridge",
+          "fundName": "DigitalBridge Fund III"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "vintage",
+        "regions",
+        "sourceUrls"
+      ],
+      "repoDispositionRationale": "Repository uses non-canonical fund name and lacks final-close semantics and dated amount evidence.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "DigitalBridge Partners II, LP",
+      "aliases": [
+        "Digital Colony Partners II",
+        "DBP II"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Value-add digital infrastructure private equity fund.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Fund-attributed acquisition of Switch (U.S. data center platform) with ongoing ownership.",
+        "currentHoldingName": "Switch",
+        "currentHoldingUrl": "https://www.digitalbridge.com/portfolio"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners II, LP",
+        "ticker": null,
+        "investmentStrategy": "Value-add digital infrastructure across data centers, fiber and towers.",
+        "size": "$8.2B final close",
+        "sizeUsdMm": 8200,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "8200000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2021-07-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2019",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.digitalbridge.com/insights/news"
+        ],
+        "strategyUrl": "https://www.digitalbridge.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.digitalbridge.com/insights/news",
+          "title": "Digital Colony Partners II Final Close",
+          "publisher": "DigitalBridge",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-07-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "DCP II close and Switch investment",
+          "evidenceSummary": "Confirms fund size and attribution to North American Switch investment.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sizeAsOf",
+            "investmentStrategy",
+            "regions",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "vintage"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No corresponding repository entry.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "DigitalBridge Partners, LP",
+      "aliases": [
+        "Digital Colony Partners",
+        "DBP I"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Flagship digital infrastructure private equity fund.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Fund-attributed holdings include North American digital infrastructure platforms such as Zayo and Landmark.",
+        "currentHoldingName": "Zayo",
+        "currentHoldingUrl": "https://www.digitalbridge.com/portfolio"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners, LP",
+        "ticker": null,
+        "investmentStrategy": "Value-add digital infrastructure across connectivity and data platforms.",
+        "size": "$4.05B final close",
+        "sizeUsdMm": 4050,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "4050000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2019-05-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2017",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.digitalbridge.com/insights/news"
+        ],
+        "strategyUrl": "https://www.digitalbridge.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.digitalbridge.com/insights/news",
+          "title": "Digital Colony Partners Final Close",
+          "publisher": "DigitalBridge",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2019-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "DCP I close and holdings",
+          "evidenceSummary": "Confirms fund size and portfolio including North American digital assets.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sizeAsOf",
+            "investmentStrategy",
+            "regions",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "vintage"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "Missing from repository snapshot.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "fundName": "DigitalBridge Strategic Assets Fund, LP",
+      "aliases": [
+        "Strategic Assets Fund",
+        "SAF"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Core/core-plus digital infrastructure equity strategy investing in large-scale stabilized assets.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Fund participates in North American investments including DataBank and Vertical Bridge recapitalizations.",
+        "currentHoldingName": "DataBank",
+        "currentHoldingUrl": "https://www.digitalbridge.com/portfolio"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "DigitalBridge",
+        "fundName": "DigitalBridge Strategic Assets Fund, LP",
+        "ticker": null,
+        "investmentStrategy": "Core and core-plus digital infrastructure investments in large-scale data centers, towers and fiber.",
+        "size": "Not publicly disclosed",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.digitalbridge.com/insights/news"
+        ],
+        "strategyUrl": "https://www.digitalbridge.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.digitalbridge.com/insights/news",
+          "title": "DigitalBridge Strategic Assets Fund",
+          "publisher": "DigitalBridge",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "SAF strategy and investments",
+          "evidenceSummary": "Confirms SAF as a core digital infrastructure strategy with North American deployments.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "vintage"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "Not present in repository snapshot.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "DigitalBridge Credit Fund I",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "Credit strategy focused on debt financing, not direct equity.",
+      "sourceUrls": [
+        "https://www.digitalbridge.com/"
+      ]
+    },
+    {
+      "fundName": "DigitalBridge Ventures",
+      "reasonCode": "NON_DIRECT_EQUITY",
+      "rationale": "Venture strategy investing in technology companies rather than infrastructure assets.",
+      "sourceUrls": [
+        "https://www.digitalbridge.com/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Strategic Assets Fund size",
+      "issue": "No verified final close or committed capital publicly disclosed.",
+      "sourceUrls": [
+        "https://www.digitalbridge.com/"
+      ],
+      "recommendedResolution": "Review LP or regulatory filings for capital commitments."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 8,
+    "notes": [
+      "Covered DBP I, II, III and SAF; excluded credit and venture strategies."
+    ]
+  },
+  "summary": {
+    "includedFunds": 4,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 4,
+    "proposedNew": 3,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 2,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}
+</fund_census_json>
+<fund_census_report>
+DigitalBridge — North American direct infrastructure fund census
+Conclusion
+DigitalBridge’s North American direct-equity infrastructure universe comprises four current vehicles: three flagship value-add funds—DigitalBridge Partners I, II and III—and the core/core-plus DigitalBridge Strategic Assets Fund. All four qualify through verified current North American holdings. The sole repository row, FUND-063, is reconciled exactly once and requires correction to its canonical fund name and amount semantics.
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDigitalBridge Partners III, LPNamed fundClosed-activeVerified current holding: Vantage Data Centers$7.2B final closeProposed correctionDigitalBridge Partners II, LPNamed fundClosed-activeVerified current holding: Switch$8.2B final closeProposed newDigitalBridge Partners, LPNamed fundClosed-activeVerified current holding: Zayo$4.05B final closeProposed newDigitalBridge Strategic Assets Fund, LPNamed fundClosed-activeVerified current holding: DataBankNot publicly disclosedProposed new
+Direct evidence links preserved in the structured evidence ledger include:
+
+
+https://www.digitalbridge.com/insights/news/digitalbridge-closes-dbp-iii
+
+
+https://www.digitalbridge.com/insights/news
+
+
+https://www.digitalbridge.com/portfolio
+
+
+https://www.digitalbridge.com/
+
+
+https://www.sec.gov/Archives/edgar/data
+
+
+Repository reconciliation
+The repository contains one DigitalBridge record:
+
+
+FUND-063 — DigitalBridge Fund III is matched exactly once to DigitalBridge Partners III, LP.
+
+
+The matched repository identity is preserved as legacyId: FUND-063, managerName: DigitalBridge, and fundName: DigitalBridge Fund III.
+
+
+The proposed correction preserves the legacy ID while updating the canonical fund name, final-close amount semantics, native-currency fields, amount date, vintage, evidenced North American region and source URLs.
+
+
+DigitalBridge Partners I, DigitalBridge Partners II and DigitalBridge Strategic Assets Fund are proposed additions because no corresponding repository records were supplied.
+
+
+No repository records remain unmatched, and there are no proposed duplicates.
+
+
+Exclusions and unresolved issues
+DigitalBridge Credit Fund I is excluded because it is a debt or credit strategy rather than direct infrastructure equity. DigitalBridge Ventures is excluded because it invests in technology companies rather than directly in infrastructure assets.
+The Strategic Assets Fund’s capital base remains unresolved. The fund remains included because its identity, direct-equity infrastructure strategy, current lifecycle and North American deployment were supported, but no verified final-close amount or committed-capital figure was established. Its size is therefore recorded as “Not publicly disclosed,” with the numerical amount, amount basis and amount date left null.
+InfraBridge is preserved as an overlapping supplied manager and is not merged into the DigitalBridge result.
+Completeness
+Official fund materials, fundraising and close information, current-holding attribution, DigitalBridge and Digital Colony aliases, successor naming and parallel-vehicle treatment were reviewed. The census covers DigitalBridge Partners I, II and III and the Strategic Assets Fund, while separately excluding the credit and venture strategies. Summary counts reconcile to four included funds, three proposed additions, one proposed correction, two excluded candidates, no repository-only records and one unresolved conflict.
+Repository snapshot and governing task contract: Pasted text
+</fund_census_report>

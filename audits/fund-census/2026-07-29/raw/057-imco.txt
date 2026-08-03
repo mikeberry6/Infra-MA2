@@ -1,0 +1,122 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "IMCO",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"IMCO",
+"Investment Management Corporation of Ontario"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager identity vs supplied universe",
+"issue": "The supplied manager universe includes IMCO, but the authoritative repository snapshot marks knownManager=false and canonicalManager=null, which contractually prevents inclusion or proposal of any funds.",
+"sourceUrls": [],
+"recommendedResolution": "Resolve manager inclusion in the version-controlled fund-manager universe via governance review before running a full census."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 7,
+"searchQueriesRun": 5,
+"notes": [
+"Mandatory scope gate applied: repository snapshot indicates knownManager=false.",
+"Official IMCO materials reviewed to confirm canonical identity and existence of an infrastructure strategy, but no fund-level inclusion permitted under contract.",
+"Fund-level fundraising and vehicle enumeration halted after scope determination."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+IMCO — North American direct infrastructure fund census
+Conclusion
+No funds are included. The supplied repository snapshot explicitly marks the requested manager as knownManager=false, which contractually requires an OUT_OF_SCOPE_UNKNOWN_MANAGER result with zero fund rows and no proposed additions. Pasted text
+Primary-source review confirms that IMCO is the Investment Management Corporation of Ontario, a Canadian institutional investor with a dedicated infrastructure investment program (including direct investments and external partnerships). However, this only documents the scope gap and does not override the repository constraint.
+Included funds
+No included funds — mandatory manager-scope gate (unknown manager in repository snapshot).
+Repository reconciliation
+
+
+Verified matches: none
+
+
+Proposed additions: none (prohibited by scope gate)
+
+
+Corrections: none
+
+
+Duplicates: none
+
+
+Review items: one internal inconsistency between supplied manager universe and repository snapshot (see below)
+
+
+Exclusions and unresolved issues
+
+
+Manager scope conflict: The supplied manager universe includes IMCO, but the repository snapshot records knownManager=false. Under the contract, the snapshot governs eligibility, preventing fund inclusion. Pasted text
+
+
+Documented scope gap (from primary sources):
+
+
+IMCO (Investment Management Corporation of Ontario) operates a multi-asset investment platform including infrastructure.
+
+
+Its infrastructure strategy combines direct investments and external partnerships and has material exposure to North America (e.g., U.S. and Canada allocations in current reporting).
+
+
+Despite this, no fund or program can be enumerated or proposed until the manager is formally recognized in the repository universe.
+
+
+
+
+Completeness
+
+
+Manager materials reviewed: IMCO official website, infrastructure strategy pages, and most recent annual report (2025).
+
+
+Fundraising / close sources: Not pursued beyond scope gate (no permissible fund inclusion).
+
+
+Holdings attribution: High-level infrastructure holdings and geographic exposure reviewed to confirm existence of qualifying strategy.
+
+
+Aliases: Confirmed canonical name “Investment Management Corporation of Ontario” and abbreviation “IMCO.”
+
+
+Parallel vehicles / structures: Not evaluated due to scope restriction.
+
+
+Coverage note: Research sufficiently establishes that IMCO operates direct-equity infrastructure strategies with North American exposure, but the census cannot proceed until the manager is added to the governed universe.
+</fund_census_report>

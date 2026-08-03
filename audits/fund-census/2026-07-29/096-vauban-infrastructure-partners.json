@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Vauban Infrastructure Partners",
+  "canonicalManager": "Vauban Infrastructure Partners",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Vauban Infrastructure Partners",
+    "Mirova Core Infrastructure"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [
+    {
+      "fundName": "Vauban CIF IV",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Official materials describe CIF IV as a European core infrastructure fund with no fund-specific North American mandate or reliably attributed current North American holdings.",
+      "sourceUrls": [
+        "https://vauban-ip.com/en/about-us"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-148",
+      "repoFundName": "Vauban CIF IV",
+      "disposition": "OUT_OF_SCOPE",
+      "rationale": "Repository fund is a European-focused vehicle and does not meet North American inclusion criteria.",
+      "evidenceUrls": [
+        "https://vauban-ip.com/en/about-us"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 3,
+    "searchQueriesRun": 4,
+    "notes": [
+      "No fund-specific evidence identified tying any Vauban vehicle to a current North American mandate or holding.",
+      "Manager-level references to U.S. assets could not be attributed to a specific qualifying fund."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 1,
+    "unresolvedConflicts": 0
+  }
+}

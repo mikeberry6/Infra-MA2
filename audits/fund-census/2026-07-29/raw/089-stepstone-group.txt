@@ -1,0 +1,106 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "StepStone Group",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": ["StepStone Group", "StepStone Group Inc.", "StepStone Group LP"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope classification",
+"issue": "The repository snapshot sets knownManager=false and canonicalManager=null, while the supplied manager universe separately lists "StepStone Group". Under the explicit contract, the knownManager flag governs this run and prevents inclusion or proposal of funds.",
+"sourceUrls": [],
+"recommendedResolution": "Reconcile the repository snapshot so the knownManager flag and supplied manager universe are consistent, then rerun the census."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 6,
+"searchQueriesRun": 8,
+"notes": [
+"Scope gate applied: knownManager=false prohibits fund inclusion or proposal.",
+"Official materials were reviewed only to confirm the scope issue was substantive rather than a naming mismatch."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+StepStone Group — North American direct infrastructure fund census
+Conclusion
+The repository snapshot classifies the requested manager as unknown (knownManager=false), which contractually requires returning no included funds and no proposed vehicles. Research was limited to confirming that this is a genuine scope conflict rather than a naming error. As a result, the census yields zero included funds and flags a manager-scope inconsistency. Pasted text
+Included funds
+No funds included due to manager scope restriction.
+FundVehicle TypeLifecycleNA QualificationSize BasisRepo DispositionEvidenceNone——————
+Repository reconciliation
+
+
+Verified rows: 0
+
+
+Proposed new: 0
+
+
+Corrections: 0
+
+
+Duplicates: 0
+
+
+Review items: 0
+
+
+All repository requirements are satisfied by returning no matches because the manager is out of scope per the snapshot.
+Exclusions and unresolved issues
+
+
+No vehicle-level exclusions were performed because the scope rule prevents evaluating or classifying funds.
+
+
+Unresolved conflict: The snapshot marks StepStone Group as unknown while the supplied manager universe includes it. This inconsistency must be resolved upstream before a valid census can be conducted. Pasted text
+
+
+Completeness
+
+
+Official materials reviewed to validate manager identity and confirm the scope issue
+
+
+Fundraising/close sources checked at a high level
+
+
+Holdings attribution and parallel vehicle review not completed due to scope restriction
+
+
+Manager aliases reviewed (StepStone Group, StepStone Group Inc., StepStone Group LP)
+
+
+Searches performed: 8; sources opened: 6
+</fund_census_report>
+

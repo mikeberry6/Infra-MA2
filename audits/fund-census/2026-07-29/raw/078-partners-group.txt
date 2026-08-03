@@ -1,0 +1,206 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Partners Group",
+"canonicalManager": "Partners Group",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["Partners Group"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Partners Group Direct Infrastructure IV",
+"aliases": ["Partners Group Direct Infrastructure Fund IV", "PG Direct Infrastructure IV"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Manager-defined direct infrastructure equity strategy investing in infrastructure platforms across decarbonization, digitization, and essential services.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund materials and repository sources indicate a global strategy including North America as a core region.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-150",
+"managerName": "Partners Group",
+"fundName": "Partners Group Direct Infrastructure IV",
+"ticker": null,
+"investmentStrategy": "Global direct infrastructure strategy targeting core-plus and value-add investments across energy transition, digital infrastructure, and essential services.",
+"size": "Not disclosed (program-level close reported)",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2023",
+"strategies": ["Value-Add"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
+"regions": ["North America", "Europe", "Asia-Pacific"],
+"sourceUrls": [
+"https://www.partnersgroup.com/news-and-views/press-releases/corporate-news/detail?news_id=35550643-444b-49c8-9f72-1502c2e822a6",
+"https://www.sec.gov/Archives/edgar/data/1971296/000197129625000002/xslFormDX01/primary_doc.xml"
+],
+"strategyUrl": "https://www.partnersgroup.com/en/our-investments/infrastructure"
+},
+"evidence": [
+{
+"url": "https://www.partnersgroup.com/news-and-views/press-releases/corporate-news/detail?news_id=35550643-444b-49c8-9f72-1502c2e822a6",
+"title": "Partners Group infrastructure program close announcement",
+"publisher": "Partners Group",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Program close and strategy",
+"evidenceSummary": "Confirms fourth direct infrastructure strategy close and ongoing investment activity consistent with direct equity infrastructure strategy.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"fundStatus",
+"investmentStrategy",
+"structure",
+"strategies"
+]
+},
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1971296/000197129625000002/xslFormDX01/primary_doc.xml",
+"title": "SEC Form D filing",
+"publisher": "U.S. Securities and Exchange Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-01-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Legal entity and active fundraising/close",
+"evidenceSummary": "Identifies the Direct Infrastructure IV vehicle as an active closed-end fund structure with capital raised.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"structure",
+"fundStatus",
+"vintage"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-150",
+"managerName": "Partners Group",
+"fundName": "Partners Group Direct Infrastructure Fund IV"
+}
+],
+"changedFields": ["fundStatus", "fundName", "size"],
+"repoDispositionRationale": "Repository reflects fundraising status and target size; evidence indicates fund has reached close and program-level size disclosure supersedes prior target.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Fund IV size",
+"issue": "No fund-specific final close size disclosed; only program-level commitments reported",
+"sourceUrls": [
+"https://www.partnersgroup.com/news-and-views/press-releases/corporate-news/detail?news_id=35550643-444b-49c8-9f72-1502c2e822a6"
+],
+"recommendedResolution": "Obtain LP or audited fund reporting confirming final committed capital for the closed-end fund component"
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 2,
+"searchQueriesRun": 3,
+"notes": ["Limited fund-specific disclosure; program-level evidence used where necessary"]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Partners Group — North American direct infrastructure fund census
+Conclusion
+One current direct infrastructure fund (Direct Infrastructure IV) is identified as active and closed, with a global mandate including North America. Evidence confirms lifecycle and strategy, but fund-level size disclosure remains unresolved due to reliance on program-level reporting. Pasted text
+Included funds
+FundVehicleLifecycleNA QualificationSize BasisRepository DispositionEvidencePartners Group Direct Infrastructure IVNamed fundClosed activeExplicit mandate (global incl. NA)Not disclosed (program-level)Proposed correctionPartners Group PR; SEC Form D
+Repository reconciliation
+
+
+FUND-150 matched and corrected:
+
+
+Status updated from Raising → Financial Close
+
+
+Name standardized (removed “Fund” convention)
+
+
+Size field adjusted due to lack of fund-specific final close data
+
+
+
+
+No additional funds identified or unmatched repository rows.
+Exclusions and unresolved issues
+
+
+No excluded vehicles identified.
+
+
+Key unresolved issue: fund-specific committed capital vs program-level commitments (>USD 15B) not disaggregated.
+
+
+Completeness
+
+
+Official press releases and SEC filings reviewed
+
+
+Fundraising/close confirmed via primary sources
+
+
+No fund-attributed North American holdings directly evidenced
+
+
+Manager aliases and structure reviewed
+
+
+No parallel or duplicate vehicles identified
+
+
+Evidence coverage constrained by limited fund-specific disclosure
+
+
+</fund_census_report>

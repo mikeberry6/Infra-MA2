@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "EnCap Investments",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "EnCap Investments",
+    "EnCap Investments L.P."
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager scope — EnCap Investments",
+      "issue": "The supplied repository snapshot sets canonicalManager to null and knownManager to false, even though EnCap Investments appears in the supplied manager universe and official materials identify the operating legal entity as EnCap Investments L.P.; this creates a manifest-level scope conflict that prevents fund-level inclusion.",
+      "sourceUrls": [
+        "https://www.encapinvestments.com/about",
+        "https://www.encapinvestments.com/about/our-story"
+      ],
+      "recommendedResolution": "Conduct a separate FUND_MANIFEST governance review to determine whether the supplied-universe label should map to EnCap Investments L.P.; do not automatically add or map a canonical manager in this task. Re-run the fund census only after the manager is recognized in the manifest."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 0,
+    "searchQueriesRun": 0,
+    "notes": [
+      "Manager-level identity and naming reviewed sufficiently to document scope gap.",
+      "Fund-level universe, fundraising, and holdings attribution intentionally not adjudicated due to OUT_OF_SCOPE_UNKNOWN_MANAGER boundary."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

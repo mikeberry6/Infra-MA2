@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Patrizia",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Patrizia"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Patrizia manager-manifest status",
+      "issue": "The repository snapshot sets knownManager to false, canonicalManager to null, and contains no fund records, while the separately supplied manager universe includes Patrizia. The scope contract requires the repository snapshot's unknown-manager gate to control the census, so no fund vehicles may be included or proposed.",
+      "sourceUrls": [],
+      "recommendedResolution": "A human repository-governance review should reconcile the Patrizia entry in the supplied manager universe with the version-controlled manifest. After Patrizia is established as a known canonical manager, rerun the fund-level census against a refreshed repository snapshot."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": false,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 1,
+    "searchQueriesRun": 0,
+    "notes": [
+      "The supplied repository snapshot marks Patrizia as knownManager=false and provides no repository fund rows.",
+      "Under the mandatory unknown-manager scope rule, the assignment was concluded at the manager-governance gate without proposing a manager addition or researching vehicles for inclusion.",
+      "The supplied manager universe separately lists Patrizia, creating an unresolved repository-governance inconsistency rather than evidence permitting fund inclusion."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

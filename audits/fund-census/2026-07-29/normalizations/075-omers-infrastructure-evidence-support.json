@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_EVIDENCE_FIELD_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "OMERS Infrastructure",
+  "createdAt": "2026-07-31T00:21:59.848Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/075-omers-infrastructure-na-region-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/075-omers-infrastructure-evidence-normalized.txt",
+  "allowedFields": [
+    "evidence[].supportedFields[].sizeUsdMm"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-127",
+      "url": "https://www.omers.com/wp-content/uploads/2026/03/2025-OMERS-Annual-Report.pdf",
+      "field": "sizeUsdMm",
+      "rationale": "Existing primary or institutional evidence supports a descriptive non-USD amount but no allowed amount basis or USD equivalent, so the stale repository USD conversion is removed."
+    }
+  ]
+}

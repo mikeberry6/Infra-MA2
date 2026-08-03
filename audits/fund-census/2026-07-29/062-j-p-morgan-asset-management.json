@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "J.P. Morgan Asset Management",
+  "canonicalManager": "J.P. Morgan Asset Management",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "J.P. Morgan Investment Management Inc.",
+    "JPMorgan Asset Management"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Global Transport Income Fund (GTIF)",
+      "aliases": [
+        "J.P. Morgan Global Transport Income Fund"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Private infrastructure strategy investing directly in transportation assets including maritime, aviation and rail equipment",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Government decision confirms GTIF ownership of U.S.-based maritime company Bold Ocean",
+        "currentHoldingName": "Bold Ocean",
+        "currentHoldingUrl": "https://www.sba.gov/document/decision-siz-6360-federated-maritime-llc"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "J.P. Morgan Asset Management",
+        "fundName": "Global Transport Income Fund (GTIF)",
+        "ticker": null,
+        "investmentStrategy": "Global transportation infrastructure equity strategy targeting income-producing assets across maritime, aviation and rail",
+        "size": "Undisclosed",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Undisclosed",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Transportation"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sba.gov/document/decision-siz-6360-federated-maritime-llc"
+        ],
+        "strategyUrl": "https://am.jpmorgan.com/us/en/asset-management/adv/funds/alternatives/infrastructure/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sba.gov/document/decision-siz-6360-federated-maritime-llc",
+          "title": "SBA Size Appeal of Federated Maritime, LLC (SIZ-6360)",
+          "publisher": "U.S. Small Business Administration",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-07-11",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "GTIF current U.S. holding",
+          "evidenceSummary": "Confirms Global Transport Income Fund ownership of Bold Ocean, a U.S.-based maritime company, establishing current North American deployment.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "regions",
+            "sectors",
+            "fundStatus"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No matching repository record exists for GTIF despite verified qualifying North American holding",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Infrastructure Investments Fund Private Investors",
+      "reasonCode": "RETAIL_ACCESS_ONLY",
+      "rationale": "Private investors vehicle represents an access/feeder structure into IIF rather than a distinct commercial infrastructure strategy",
+      "sourceUrls": [
+        "https://www.infrastructureinvestor.com/jpmorgan-closes-infrastructure-investments-fund-private-investors-at-3-2bn/"
+      ]
+    },
+    {
+      "fundName": "J-Infra – An IIF Access Fund",
+      "reasonCode": "RETAIL_ACCESS_ONLY",
+      "rationale": "Form D filing indicates an access vehicle feeding into IIF rather than a standalone strategy",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/0002035003/000203500325000001/xslFormDX01/primary_doc.xml"
+      ]
+    },
+    {
+      "fundName": "Global Maritime Investment Fund (GMIF)",
+      "reasonCode": "FULLY_REALIZED_OR_DISSOLVED",
+      "rationale": "Legacy maritime fund identified in historical materials with no evidence of current holdings or active lifecycle",
+      "sourceUrls": [
+        "https://pompano.solutions/wp-content/uploads/2021/12/JPMorgan-Infrastructure-Investments-Fund-Review.pdf"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-104",
+      "repoFundName": "Infrastructure Investments Fund (IIF)",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Opened evidence for Infrastructure Investments Fund (IIF) does not support the mandatory fund-specific CURRENT_LIFECYCLE claim; the supplied repository row is retained for review only.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1004155/000119312522016833/d300207ddefm14a.htm"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "GTIF fund size and vintage",
+      "issue": "No primary source confirms current fund size, vintage, or capital base for GTIF",
+      "sourceUrls": [
+        "https://pompano.solutions/wp-content/uploads/2021/12/JPMorgan-Infrastructure-Investments-Fund-Review.pdf"
+      ],
+      "recommendedResolution": "Obtain current GTIF investor materials or J.P. Morgan disclosures confirming capital size and lifecycle details"
+    },
+    {
+      "subject": "Infrastructure Investments Fund (IIF) current lifecycle",
+      "issue": "The supplied repository includes this vehicle as active, but no opened fund-specific evidence supports a current qualifying lifecycle.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1004155/000119312522016833/d300207ddefm14a.htm"
+      ],
+      "recommendedResolution": "Obtain primary or institutional fund-specific evidence that the vehicle is raising, evergreen-active, or closed with unrealized holdings."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 4,
+    "searchQueriesRun": 12,
+    "notes": [
+      "IIF confirmed as the flagship evergreen strategy.",
+      "GTIF included through a verified current U.S. holding.",
+      "GTIF size and vintage remain undisclosed rather than inferred."
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 1,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 3,
+    "repoOnlyRecords": 1,
+    "unresolvedConflicts": 2
+  }
+}

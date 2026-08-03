@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Equitix",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Equitix",
+    "Equitix Investment Management Ltd",
+    "EIML"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Canonical manager scope for Equitix",
+      "issue": "The authoritative FUND_MANIFEST snapshot sets knownManager to false and canonicalManager to null, while the separate supplied manager-universe list contains the label Equitix. The universe list is expressly limited to overlap identification and therefore cannot cure the manifest scope gap.",
+      "sourceUrls": [
+        "https://equitix.com/",
+        "https://equitix.com/about/"
+      ],
+      "recommendedResolution": "Complete a human repository-governance review and add or map a canonical Equitix manager record in FUND_MANIFEST before any fund-level additions, corrections, or matches are proposed."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 7,
+    "notes": [
+      "Applied the mandatory unknown-manager scope gate from the supplied repository snapshot; no vehicle was eligible for inclusion or repository proposal.",
+      "Official corporate identity, named-fund, final-close, and North American deployment materials were opened to confirm that the scope issue is substantive.",
+      "Official North American asset evidence did not identify the investing Equitix fund and therefore could not provide fund-specific attribution.",
+      "Associated co-investment funds and vehicles disclosed for a European vintage were reviewed for duplicate-treatment context, but no vehicle-level census was produced because the unknown-manager gate controls."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

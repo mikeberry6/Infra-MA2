@@ -1,0 +1,363 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Fengate Asset Management",
+"canonicalManager": "Fengate Asset Management",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Fengate Capital Management Ltd.",
+"Fengate"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Fengate Infrastructure Fund IV",
+"aliases": [
+"Fengate Infrastructure Fund IV (U.S.) LP",
+"Fengate Infrastructure Fund IV (International) LP"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Official fund materials describe a flagship closed-end infrastructure equity strategy investing across multiple sectors.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official close announcement describes the fund as a North American infrastructure strategy.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-076",
+"managerName": "Fengate Asset Management",
+"fundName": "Fengate Infrastructure Fund IV",
+"ticker": null,
+"investmentStrategy": "Flagship North American closed-end infrastructure equity fund investing across social, transportation, energy transition, and digital infrastructure.",
+"size": "$1.1B",
+"sizeUsdMm": 1100,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "1100000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2025-01-23",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2021",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://fengate.com/news/fengate-announces-final-close-of-us1-1-billion-flagship-infrastructure-fund-above-target"
+],
+"strategyUrl": "https://fengate.com/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://fengate.com/news/fengate-announces-final-close-of-us1-1-billion-flagship-infrastructure-fund-above-target",
+"title": "Fengate announces final close of US$1.1 billion flagship infrastructure fund",
+"publisher": "Fengate Asset Management",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund IV final close and mandate",
+"evidenceSummary": "Confirms Fund IV as a North American infrastructure equity fund with US$1.1B final close.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"regions",
+"size",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeUsdMm",
+"fundStatus",
+"structure",
+"strategies"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-076",
+"managerName": "Fengate Asset Management",
+"fundName": "Fengate Infrastructure Fund IV"
+}
+],
+"changedFields": [
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf"
+],
+"repoDispositionRationale": "Repository row lacks size basis and as-of details explicitly confirmed in official close announcement.",
+"confidence": "HIGH"
+},
+{
+"fundName": "Fengate Infrastructure Fund V",
+"aliases": [
+"Fengate Infrastructure Fund V (U.S.) LP",
+"Fengate Infrastructure Fund V (International) LP"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "RAISING",
+"directEquityBasis": "SEC private fund reporting classifies the vehicle as private equity infrastructure; institutional sources identify it as an infrastructure fund.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Institutional investor materials identify the fund’s geographic focus as North America.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "Fengate Asset Management",
+"fundName": "Fengate Infrastructure Fund V",
+"ticker": null,
+"investmentStrategy": "North American diversified infrastructure equity strategy (specific style not fully disclosed in opened primary text).",
+"size": "First close completed; amount not disclosed in opened primary evidence",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2025",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Raising",
+"sectors": [],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://comptroller.nyc.gov/wp-content/uploads/documents/03.05.2026-NYC-Teachers-Retirement-System-Investment-Meeting-Agenda-Package-Public-1.pdf",
+"https://fengate.com/2025-sustainability-report/"
+],
+"strategyUrl": "https://fengate.com/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://comptroller.nyc.gov/wp-content/uploads/documents/03.05.2026-NYC-Teachers-Retirement-System-Investment-Meeting-Agenda-Package-Public-1.pdf",
+"title": "NYC Teachers Retirement System Investment Agenda (March 2026)",
+"publisher": "NYC Comptroller",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2026-03-05",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund V geography and vintage",
+"evidenceSummary": "Lists Fengate Infrastructure Fund V with 2025 vintage and North America geographic focus.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"regions",
+"vintage",
+"investmentStrategy"
+]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "No corresponding repository row exists for Fund V.",
+"confidence": "MEDIUM"
+},
+{
+"fundName": "Fengate Infrastructure Yield Fund",
+"aliases": [
+"Fengate Infrastructure Yield Fund (U.S.) LP"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Manager materials describe an infrastructure investment platform with active deployments; SEC filing confirms an active private equity fund vehicle.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Manager infrastructure platform and disclosed investments focus on North American assets, but fund-specific mandate wording not fully evidenced in opened sources.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-077",
+"managerName": "Fengate Asset Management",
+"fundName": "Fengate Infrastructure Yield Fund",
+"ticker": null,
+"investmentStrategy": "Evergreen core infrastructure strategy focused on long-duration contracted assets.",
+"size": "Not disclosed in opened primary evidence",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Core"
+],
+"structure": "Evergreen",
+"fundStatus": "Evergreen",
+"sectors": [
+"Digital",
+"Social Infra"
+],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://fengate.com/infrastructure/",
+"https://reports.adviserinfo.sec.gov/reports/ADV/297333/PDF/297333.pdf"
+],
+"strategyUrl": "https://fengate.com/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://reports.adviserinfo.sec.gov/reports/ADV/297333/PDF/297333.pdf",
+"title": "Form ADV – Fengate Capital Management Ltd.",
+"publisher": "SEC",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2026-03-31",
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Yield fund existence and active status",
+"evidenceSummary": "SEC filing confirms the existence of an active infrastructure yield fund private vehicle.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"structure",
+"fundStatus"
+]
+}
+],
+"repoDisposition": "NEEDS_REVIEW",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-077",
+"managerName": "Fengate Asset Management",
+"fundName": "Fengate Infrastructure Yield Fund"
+}
+],
+"changedFields": [],
+"repoDispositionRationale": "Fund-specific mandate, size, and strategy details are not fully supported by opened primary evidence.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Fengate Everest Co-Invest (International) LP",
+"reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+"rationale": "Co-investment vehicles appear as parallel sleeves of a broader transaction rather than distinct commercial funds.",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/297333/PDF/297333.pdf"
+]
+},
+{
+"fundName": "Fengate Everest Continuation Fund LP",
+"reasonCode": "GLOBAL_WITHOUT_NA_EVIDENCE",
+"rationale": "Insufficient opened evidence tying continuation vehicle to North American mandate or holdings at fund-specific level.",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/297333/PDF/297333.pdf"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Fengate Infrastructure Yield Fund size and mandate",
+"issue": "Repository reports C$1.2B size and clear mandate, but opened primary evidence does not confirm these fields.",
+"sourceUrls": [
+"https://fengate.com/infrastructure/",
+"https://reports.adviserinfo.sec.gov/reports/ADV/297333/PDF/297333.pdf"
+],
+"recommendedResolution": "Confirm yield fund size and mandate from official fund-level disclosures or audited reports."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 5,
+"searchQueriesRun": 3,
+"notes": [
+"Used official Fengate materials, SEC filings, and institutional investor documents. Pasted text"
+]
+},
+"summary": {
+"includedFunds": 3,
+"explicitNaMandate": 3,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 1,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 1,
+"excludedCandidates": 2,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Fengate Asset Management — North American direct infrastructure fund census
+Conclusion
+Fengate’s current North American direct-equity infrastructure platform consists of one confirmed closed flagship fund, Fengate Infrastructure Fund IV; one actively raising successor, Fengate Infrastructure Fund V; and one evergreen yield strategy that remains partially evidenced. Continuation and co-investment vehicles were excluded because the opened evidence did not establish a separate qualifying commercial fund or sufficient fund-level North American attribution.
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceFengate Infrastructure Fund IVNamed fundClosed activeExplicit North American mandateUS$1.1B final closeProposed correctionhttps://fengate.com/news/fengate-announces-final-close-of-us1-1-billion-flagship-infrastructure-fund-above-targetFengate Infrastructure Fund VNamed fundRaisingExplicit North American mandate in institutional materialsFirst close completed; amount not disclosed in opened evidenceProposed newhttps://comptroller.nyc.gov/wp-content/uploads/documents/03.05.2026-NYC-Teachers-Retirement-System-Investment-Meeting-Agenda-Package-Public-1.pdfFengate Infrastructure Yield FundNamed fundEvergreen activeClassified as explicit North American mandate, but fund-specific mandate support remains incompleteNot disclosed in opened primary evidenceNeeds reviewhttps://reports.adviserinfo.sec.gov/reports/ADV/297333/PDF/297333.pdf
+Repository reconciliation
+
+
+FUND-076 — Fengate Infrastructure Fund IV: matched exactly once and classified as PROPOSED_CORRECTION. The official final-close source supports the added native-currency, native-amount, size-basis, and size-as-of fields.
+
+
+Fengate Infrastructure Fund V: classified as PROPOSED_NEW; no repository row matches the named successor fund.
+
+
+FUND-077 — Fengate Infrastructure Yield Fund: matched exactly once and retained as NEEDS_REVIEW because the repository’s C$1.2B size and detailed mandate are not confirmed by the opened fund-level evidence.
+
+
+No repository records remain unmatched, and no included vehicle is classified as a possible duplicate.
+
+
+Exclusions and unresolved issues
+Fengate Everest Co-Invest (International) LP was excluded as a duplicate or parallel vehicle rather than a separately established commercial fund. Fengate Everest Continuation Fund LP was excluded because the opened evidence did not establish a qualifying North American mandate or current fund-attributed North American holding.
+The principal unresolved issue is the Fengate Infrastructure Yield Fund’s size and precise mandate. Official fund-level or audited evidence is needed before adopting the repository’s C$1.2B amount or its more detailed strategy description.
+Completeness
+Official manager materials, fundraising and close materials, SEC Form ADV reporting, and institutional investor documents were reviewed. Manager aliases, successor vehicles, current-holding attribution, and parallel or feeder structures were assessed. Fund V’s sector allocation was left empty because the opened evidence did not support classification into any permitted sector category.
+</fund_census_report>

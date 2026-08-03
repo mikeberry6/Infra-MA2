@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_EXCLUDED_REASON_CODE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Northleaf Capital",
+  "createdAt": "2026-07-30T23:49:01.652Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/071-northleaf-capital-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/071-northleaf-capital-excluded-reason-normalized.txt",
+  "allowedFields": [
+    "excludedCandidates[].reasonCode"
+  ],
+  "changes": [
+    {
+      "excludedCandidateIndex": 0,
+      "fundName": "Mackenzie Northleaf Private Infrastructure Fund",
+      "field": "reasonCode",
+      "from": "FUND_OF_FUNDS",
+      "value": "SECONDARIES_OR_FUND_OF_FUNDS",
+      "rationale": "The exclusion narrative and opened source URLs explicitly describe a fund-of-funds or underlying-fund access vehicle."
+    },
+    {
+      "excludedCandidateIndex": 1,
+      "fundName": "Northleaf WASH Co-Investment LP",
+      "field": "reasonCode",
+      "from": "PARALLEL_OR_FEEDER",
+      "value": "DUPLICATE_OR_PARALLEL_VEHICLE",
+      "rationale": "The exclusion narrative and opened source URLs explicitly describe a parallel, feeder, or deal-specific co-investment vehicle without an independent strategy."
+    }
+  ]
+}

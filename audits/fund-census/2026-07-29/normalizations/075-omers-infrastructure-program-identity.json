@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_PROGRAM_IDENTITY_EVIDENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "OMERS Infrastructure",
+  "createdAt": "2026-07-31T00:18:36.464Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/075-omers-infrastructure-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/075-omers-infrastructure-program-identity-normalized.txt",
+  "allowedFields": [
+    "evidence[].supports[].FUND_IDENTITY",
+    "evidence[].supportedFields[].fundName"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 1,
+      "fundName": "OMERS Infrastructure",
+      "url": "https://www.omersinfrastructure.com/",
+      "claimsAdded": [
+        "FUND_IDENTITY"
+      ],
+      "fieldsAdded": [
+        "fundName"
+      ],
+      "rationale": "The exact PRIMARY program-scoped evidence row names the documented program and already supports its direct-equity infrastructure strategy."
+    }
+  ]
+}

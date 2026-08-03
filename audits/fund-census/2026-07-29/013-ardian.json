@@ -1,0 +1,978 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Ardian",
+  "canonicalManager": "Ardian",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Ardian",
+    "AXA Private Equity"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Ardian Americas Infrastructure Fund IV (AAIF IV)",
+      "aliases": [
+        "Ardian Americas Infrastructure Fund IV",
+        "AAIF IV"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "The fund-specific closing release describes direct investments in essential transport and energy infrastructure, including creation of Skyline Renewables and acquisition of LBC Tank Terminals; Ardian's 2025 portfolio reporting continues to list Skyline.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "The fund-specific closing release states that AAIF IV is dedicated to the United States and other OECD American countries.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-018A",
+        "managerName": "Ardian",
+        "fundName": "Ardian Americas Infrastructure Fund IV (AAIF IV)",
+        "ticker": null,
+        "investmentStrategy": "Inaugural Ardian Americas infrastructure fund dedicated to US and other OECD American essential infrastructure assets, with early deployment across renewables and bulk liquid storage.",
+        "size": "$0.8B",
+        "sizeUsdMm": 800,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "800000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2018-05-15",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2018",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Midstream",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.ardian.com/sites/default/files/2020-04/PR-Americas-Infrastructure-Fund-IV-20180514-ENG.pdf"
+        ],
+        "strategyUrl": "https://www.ardian.com/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ardian.com/sites/default/files/2020-04/PR-Americas-Infrastructure-Fund-IV-20180514-ENG.pdf",
+          "title": "Ardian raises more than US$800 million for inaugural American infrastructure fund",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2018-05-15",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund close and mandate",
+          "evidenceSummary": "Official close release identifies AAIF IV, a completed fundraising above US$800 million, its US/OECD Americas mandate, essential-infrastructure sectors and initial direct investments.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.ardian.com/press-releases/ardian-closes-its-second-generation-americas-infrastructure-fund-us21bn",
+          "title": "Ardian closes its second-generation Americas Infrastructure fund at US$2.1bn",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-09-08",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Predecessor amount restatement",
+          "evidenceSummary": "Ardian's AAIF V final-close release identifies AAIF IV as the inaugural generation and restates that it raised exactly US$800 million in 2018.",
+          "supports": [
+            "FUND_IDENTITY"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "vintage",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.ardian.com/sites/default/files/2026-05/Ardian-2025-Integrated-Report.pdf",
+          "title": "Ardian 2025 Integrated Report",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current US holding",
+          "evidenceSummary": "Ardian's current infrastructure portfolio schedule lists Skyline Renewables, invested in January 2018, as a United States wind-energy investment, corroborating continued lifecycle after the original AAIF IV attribution.",
+          "supports": [
+            "CURRENT_LIFECYCLE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-018A",
+          "managerName": "Ardian",
+          "fundName": "Ardian Americas Infrastructure Fund IV (AAIF IV)"
+        }
+      ],
+      "changedFields": [
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "repoDispositionRationale": "The repository identity and substantive strategy fields match; the official close evidence supports completing the native-currency amount, amount basis and as-of date.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Ardian Americas Infrastructure Fund V (AAIF V)",
+      "aliases": [
+        "Ardian Americas Infrastructure Fund V",
+        "AAIF V"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "The final-close release describes direct investment in mid-market essential infrastructure and identifies the fund's acquisition of Unison; a separate official release attributes a 50% co-control equity investment in MXT Holdings to AAIF V.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "The final-close release explicitly mandates investment in mid-market US and other OECD American essential infrastructure.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-019",
+        "managerName": "Ardian",
+        "fundName": "Ardian Americas Infrastructure Fund V (AAIF V)",
+        "ticker": null,
+        "investmentStrategy": "Ardian's second-generation Americas mid-market essential-infrastructure fund, focused on telecom, transport and energy-transition assets across the US and other OECD American markets.",
+        "size": "$2.1B",
+        "sizeUsdMm": 2100,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2100000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2022-09-08",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.ardian.com/press-releases/ardian-closes-its-second-generation-americas-infrastructure-fund-us21bn"
+        ],
+        "strategyUrl": "https://www.ardian.com/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ardian.com/press-releases/ardian-closes-its-second-generation-americas-infrastructure-fund-us21bn",
+          "title": "Ardian closes its second-generation Americas Infrastructure fund at US$2.1bn",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-09-08",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Final close and Americas mandate",
+          "evidenceSummary": "Official final-close release identifies AAIF V, US$2.1 billion of capital, its US/OECD Americas mandate and direct essential-infrastructure strategy.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.ardian.com/news-insights/press-releases/ardian-acquires-50-stake-mxt-holdings-leading-mexican",
+          "title": "Ardian acquires a 50% stake in MXT Holdings, a leading Mexican telecommunications infrastructure company",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2023-07-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund-attributed Mexico equity investment",
+          "evidenceSummary": "Official transaction release identifies a 50% co-control equity investment in Mexican telecom infrastructure as AAIF V's second transaction.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.ardian.com/sites/default/files/2026-05/Ardian-2025-Integrated-Report.pdf",
+          "title": "Ardian 2025 Integrated Report",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Mexico holding",
+          "evidenceSummary": "Ardian's current infrastructure portfolio schedule lists MXT Holding, invested in October 2023, as a telecommunications-infrastructure company in the United States and Mexico.",
+          "supports": [
+            "CURRENT_LIFECYCLE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-019",
+          "managerName": "Ardian",
+          "fundName": "Ardian Americas Infrastructure Fund V (AAIF V)"
+        }
+      ],
+      "changedFields": [
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "repoDispositionRationale": "The repository identity and strategy match the official fund; final-close evidence supports completing the native USD amount, final-close basis and date.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Ardian Infrastructure Fund VI",
+      "aliases": [
+        "AIF VI",
+        "Ardian Infrastructure Fund VI (AIF VI)"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "The official final-close release identifies AIF VI as a direct essential-infrastructure fund and names Akuo as an AIF VI investment; Akuo subsequently confirmed completion of Ardian's acquisition of 100% of the company.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "AIF VI is fund-specifically attributed to Akuo, Ardian completed the 100% acquisition, and Akuo currently operates wind farms and offices in the United States.",
+        "currentHoldingName": "Akuo",
+        "currentHoldingUrl": "https://www.akuoenergy.com/en/akuo-in-the-world/americas-and-oceania/united-states"
+      },
+      "snapshot": {
+        "legacyId": "FUND-020",
+        "managerName": "Ardian",
+        "fundName": "Ardian Infrastructure Fund VI",
+        "ticker": null,
+        "investmentStrategy": "Ardian's flagship European infrastructure platform, continuing its long-running industrial approach across energy, transport and digital infrastructure.",
+        "size": "€11.5B",
+        "sizeUsdMm": 13500,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "11500000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2025-10-16",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation",
+          "Social Infra"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.ardian.com/news-insights/press-releases/ardian-raises-20bn-power-essential-european-infrastructure"
+        ],
+        "strategyUrl": "https://www.ardian.com/infrastructure"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ardian.com/news-insights/press-releases/ardian-raises-20bn-power-essential-european-infrastructure",
+          "title": "Ardian raises $20bn to power essential European infrastructure",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-10-16",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "AIF VI final close and fund attribution",
+          "evidenceSummary": "Official release states that AIF VI reached its $13.5 billion (€11.5 billion) hard cap, invests directly across energy, transport and digital infrastructure, remains actively deployed, and includes Akuo among its investments.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.ardian.com/expertise/real-assets/infrastructure/investments",
+          "title": "Infrastructure investments in transport, roads, energy, telecoms: case studies",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Ardian holding",
+          "evidenceSummary": "Ardian's maintained infrastructure portfolio marks Akuo as an infrastructure investment dated July 2025 and describes its development focus on Europe and America.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.akuoenergy.com/en/press/completion-akuo-groups-acquisition-ardian-and-appointment-bruno-bensasson-ceo",
+          "title": "Completion of the Akuo Group's acquisition by Ardian and appointment of Bruno Bensasson as CEO",
+          "publisher": "Akuo",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-07-04",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Completed 100% equity acquisition",
+          "evidenceSummary": "Akuo confirms completion of Ardian's acquisition of 100% of the founder and ICG-held capital and states that the group is focused on Europe and the Americas.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.akuoenergy.com/en/akuo-in-the-world/americas-and-oceania/united-states",
+          "title": "Akuo in the USA",
+          "publisher": "Akuo",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current US operations",
+          "evidenceSummary": "Akuo's maintained US page identifies its Chicago base and current wind farms in Illinois, Texas and New Mexico.",
+          "supports": [
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "regions",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-020",
+          "managerName": "Ardian",
+          "fundName": "Ardian Infrastructure Fund VI"
+        }
+      ],
+      "changedFields": [
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "repoDispositionRationale": "The official final close gives a stated US-dollar equivalent of $13.5 billion and native €11.5 billion hard-cap amount, final-close basis and date; the repository's $12.65 billion conversion is therefore corrected without introducing an inferred FX rate.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Averrhoa Nature-Based Solutions",
+      "aliases": [
+        "Ardian Nature Based Solutions",
+        "Averrhoa NBS",
+        "Averrhoa Fund"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Ardian describes Averrhoa as an Article 9 fund and nature-based-solutions equity partnership that finances and supports developers of capital-intensive, long-duration physical restoration projects through Ardian's Infrastructure platform.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Ardian's fund-specific 2025 reporting states that the planned reforestation portfolio targets Mexico, alongside other Latin American markets.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "Ardian",
+        "fundName": "Averrhoa Nature-Based Solutions",
+        "ticker": null,
+        "investmentStrategy": "Article 9 nature-based physical-asset strategy financing and supporting large-scale reforestation, agroforestry, wetland and mangrove restoration projects with long-duration carbon-credit cash flows.",
+        "size": "€200M commitments",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "200000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2026-06-30",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Greenfield"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [],
+        "regions": [
+          "North America",
+          "Latin America",
+          "Europe",
+          "Asia-Pacific",
+          "Middle East & Africa"
+        ],
+        "sourceUrls": [
+          "https://www.ardian.com/news-insights/press-releases/ardian-and-adryada-announce-launch-averrhoa-nature-based-solutions",
+          "https://www.ardian.com/news-insights/article/nature-based-solutions-new-pillar-environmental-transition",
+          "https://www.ardian.com/sites/default/files/2026-05/Ardian-2025-Integrated-Report.pdf"
+        ],
+        "strategyUrl": "https://www.ardian.com/expertise/real-assets/nature-based-solutions"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ardian.com/news-insights/press-releases/ardian-and-adryada-announce-launch-averrhoa-nature-based-solutions",
+          "title": "Ardian and aDryada announce the launch of Averrhoa Nature-Based Solutions, a strategy dedicated to large-scale nature-based projects",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2023-09-26",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund launch and project strategy",
+          "evidenceSummary": "Official launch identifies the named fund, Ardian France as manager, aDryada as adviser, and a direct project-development strategy across forests, wetlands and mangroves.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.ardian.com/sites/default/files/2026-05/Ardian-2025-Integrated-Report.pdf",
+          "title": "Ardian 2025 Integrated Report",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "First close and Mexico mandate",
+          "evidenceSummary": "The report states that Averrhoa reached €100 million of commitments in late 2025 and that its planned reforestation portfolio targets Mexico and other Latin American countries.",
+          "supports": [
+            "FUND_IDENTITY",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.ardian.com/news-insights/article/nature-based-solutions-new-pillar-environmental-transition",
+          "title": "Nature-Based Solutions: the new pillar of the environmental transition",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-06-30",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current commitments and direct-equity framing",
+          "evidenceSummary": "Ardian identifies the 2024 Article 9 fund, €200 million of investor commitments to date, a first close, an NBS equity partnership, and treatment of the projects as capital-intensive physical assets within Infrastructure.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.ardian.com/expertise/real-assets/nature-based-solutions",
+          "title": "Nature-Based Solutions",
+          "publisher": "Ardian",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Maintained strategy page",
+          "evidenceSummary": "Ardian's maintained strategy page says the fund invests directly in global afforestation, reforestation, wetland and mangrove projects and develops large natural carbon sinks.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "fundStatus",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No supplied Ardian repository row represents the commercially distinct Averrhoa fund; primary materials identify Ardian as manager and expressly include Mexico in its project mandate.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "fundName": "Clean H2 Infra Fund",
+      "aliases": [
+        "Clean Hydrogen Infrastructure Fund",
+        "Clean Hydrogen Infra Fund"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Hy24's fund-specific materials describe direct infrastructure investing throughout the hydrogen value chain and document direct equity stakes, including a 30% and later 80% controlling interest in Enagás Renovable.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "The fund made a US$50 million direct investment in StormFisher Hydrogen to develop facilities in the United States and Canada, and StormFisher remains listed in the fund's current portfolio.",
+        "currentHoldingName": "StormFisher Hydrogen",
+        "currentHoldingUrl": "https://www.hy24partners.com/portfolio-of-our-investments/clean-h2-infra-fund/"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "Hy24",
+        "fundName": "Clean H2 Infra Fund",
+        "ticker": null,
+        "investmentStrategy": "Direct infrastructure equity strategy investing across the clean-hydrogen value chain, including production, conversion, storage, distribution and end-use projects.",
+        "size": "€2.0B final close",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "2000000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2022-10-10",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Growth",
+          "Greenfield"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET"
+        ],
+        "regions": [
+          "North America",
+          "Europe",
+          "Asia-Pacific",
+          "Middle East & Africa"
+        ],
+        "sourceUrls": [
+          "https://www.hy24partners.com/assets/531df0ca-c102-41b8-936d-b9061c811f48.pdf",
+          "https://www.hy24partners.com/press-releases/storm-fisher-hydrogen-secures-us-50-million-commitment-from-hy24-to-deliver-pipeline-of-clean-fuel-production-projects-in-north-america/",
+          "https://www.hy24partners.com/assets/d740ca6f-17ea-43cd-b05e-dfe50f213a2f.pdf"
+        ],
+        "strategyUrl": "https://www.hy24partners.com/expertise-infrastructures/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hy24partners.com/assets/531df0ca-c102-41b8-936d-b9061c811f48.pdf",
+          "title": "Hy24 closes world's largest clean hydrogen infrastructure fund at €2 billion",
+          "publisher": "Hy24",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-10-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Final close and direct infrastructure scope",
+          "evidenceSummary": "Official final-close release identifies the Clean H2 Infra Fund, €2 billion of commitments, direct investment across the hydrogen infrastructure value chain, an Americas/Europe/Asia portfolio and management by Hy24, a 50/50 Ardian-FiveT joint venture.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.hy24partners.com/press-releases/storm-fisher-hydrogen-secures-us-50-million-commitment-from-hy24-to-deliver-pipeline-of-clean-fuel-production-projects-in-north-america/",
+          "title": "StormFisher Hydrogen secures US$50 million commitment from Hy24 to deliver pipeline of clean fuel production projects in North America",
+          "publisher": "Hy24",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-02-11",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "First direct North American investment",
+          "evidenceSummary": "Hy24 states that the Clean Hydrogen Infrastructure Fund made its first direct North American investment in StormFisher, covering projects in the United States and Canada.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.hy24partners.com/portfolio-of-our-investments/clean-h2-infra-fund/",
+          "title": "Clean Hydrogen Infrastructure Fund portfolio",
+          "publisher": "Hy24",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current portfolio attribution",
+          "evidenceSummary": "Hy24's maintained fund portfolio lists StormFisher under the Clean Hydrogen Infrastructure Fund and describes North America as one of the strategy's deployment regions.",
+          "supports": [
+            "FUND_IDENTITY",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.hy24partners.com/assets/d740ca6f-17ea-43cd-b05e-dfe50f213a2f.pdf",
+          "title": "Hy24 becomes majority shareholder in Spain's Enagás Renovable",
+          "publisher": "Hy24",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-04-21",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current direct-equity lifecycle",
+          "evidenceSummary": "Hy24 confirms that the fund completed an increase from 30% to an 80% controlling stake in Enagás Renovable and remains operational with €2 billion of allocations.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.hy24partners.com/expertise-infrastructures/",
+          "title": "The clean hydrogen infrastructure strategy",
+          "publisher": "Hy24",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Maintained infrastructure strategy page",
+          "evidenceSummary": "Hy24's maintained strategy page identifies the €2 billion Clean H2 Infra Fund, its 50/50 Ardian-FiveT manager structure, direct development of essential hydrogen infrastructure and current target regions including North America.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "strategies",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "NEEDS_REVIEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No supplied repository row matches, but fund-specific evidence names Hy24—not Ardian—as the manager; because Hy24 is a 50/50 Ardian/FiveT joint venture, manager attribution requires taxonomy review before any manifest addition.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Ardian Infrastructure Fund V",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Fund-specific closing materials define AIF V as a European infrastructure fund, and the current portfolio review found no fund-attributed United States, Canadian or Mexican holding.",
+      "sourceUrls": [
+        "https://www.ardian.com/sites/default/files/2020-04/PR-Infra-Fund-V-20190319-ENG.pdf"
+      ]
+    },
+    {
+      "fundName": "Ardian Clean Energy Evergreen Fund (ACEEF)",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "ACEEF is global with an explicit focus on Europe and has current Latin American deployment in Peru, Chile and Uruguay, but no fund-attributed United States, Canadian or Mexican holding was identified.",
+      "sourceUrls": [
+        "https://www.ardian.com/news-insights/press-releases/ardian-clean-energy-evergreen-fund-aceef-enters-german-renewables",
+        "https://www.ardian.com/news-insights/press-releases/ardian-clean-energy-evergreen-fund-aceef-enters-uruguayan-renewables"
+      ]
+    },
+    {
+      "fundName": "Ardian Access Infrastructure SICAV-RAIF",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "This evergreen access vehicle combines exposure to Ardian direct infrastructure and infrastructure secondaries, while the opened fund-specific materials do not attribute a current United States, Canadian or Mexican direct holding to the vehicle itself.",
+      "sourceUrls": [
+        "https://www.ardian.com/news-insights/press-releases/ardian-launches-ardian-access-infrastructure-sicav-raif-providing"
+      ]
+    },
+    {
+      "fundName": "Ardian Infrastructure TSH Fund",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "The current legal vehicle is documented, but its identified direct holding is the France-based TSH/Geosel hydrocarbon-storage platform and no North American holding was found.",
+      "sourceUrls": [
+        "https://www.ardian.com/sites/default/files/2026-06/Article_29_Loi_Energie_Climat_Rapport_Ardian_France_2025.pdf",
+        "https://www.ardian.com/news-insights/press-releases/ardian-and-edf-invest-acquire-further-stake-geosel-lyondellbasell"
+      ]
+    },
+    {
+      "fundName": "Ardian Infrastructure Secondaries vehicles (ASF VIII and ASF IX)",
+      "reasonCode": "SECONDARIES_OR_FUND_OF_FUNDS",
+      "rationale": "Ardian identifies the strategy as infrastructure secondaries and describes its Secondaries business as a fund-of-funds platform; legal feeders and parallel entities are not direct-equity infrastructure funds.",
+      "sourceUrls": [
+        "https://www.ardian.com/news-insights/press-releases/ardian-raises-record-525bn-infrastructure-secondaries-fund",
+        "https://www.ardian.com/sites/default/files/2026-06/Article_29_Loi_Energie_Climat_Rapport_Ardian_France_2025.pdf"
+      ]
+    },
+    {
+      "fundName": "Clean Hydrogen Equipment Fund",
+      "reasonCode": "NON_DIRECT_EQUITY",
+      "rationale": "The Hy24 vehicle targets hydrogen equipment and technology companies rather than direct infrastructure assets, and its first disclosed investment was a convertible bond in a manufacturer.",
+      "sourceUrls": [
+        "https://www.hy24partners.com/expertise-equipments/",
+        "https://www.hy24partners.com/press-releases/hy24s-clean-hydrogen-equipment-fund-makes-first-investment/"
+      ]
+    },
+    {
+      "fundName": "Ardian Infrastructure Debt Fund",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "The official Ardian regulatory product list identifies a separate Infrastructure Debt Fund, which is outside the direct-equity census.",
+      "sourceUrls": [
+        "https://www.ardian.com/sites/default/files/2026-06/Article_29_Loi_Energie_Climat_Rapport_Ardian_France_2025.pdf"
+      ]
+    },
+    {
+      "fundName": "Unnamed Ardian Infrastructure mid-cap strategy",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "Ardian disclosed only that a future mid-cap strategy combining US and European opportunities would enter the market; no official fund name, vehicle, close, size or investable lifecycle was disclosed.",
+      "sourceUrls": [
+        "https://www.ardian.com/news-insights/article/annual-general-meetings-2026-new-shape-value"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Averrhoa Nature-Based Solutions vintage",
+      "issue": "Ardian's September 2023 release announces the launch of Averrhoa, while Ardian's June 2026 article says the Article 9 fund was launched in 2024; the opened primary sources do not reconcile whether 2023 was the strategy announcement and 2024 the legal or investment vintage.",
+      "sourceUrls": [
+        "https://www.ardian.com/news-insights/press-releases/ardian-and-adryada-announce-launch-averrhoa-nature-based-solutions",
+        "https://www.ardian.com/news-insights/article/nature-based-solutions-new-pillar-environmental-transition",
+        "https://www.ardian.com/expertise/real-assets/nature-based-solutions"
+      ],
+      "recommendedResolution": "Confirm the legal fund inception or first-capital-call year from the fund's offering memorandum, audited financial statements or regulatory filing; the snapshot uses the later official source's stated 2024 fund launch pending that confirmation."
+    },
+    {
+      "subject": "Clean H2 Infra Fund manager attribution",
+      "issue": "Fund-specific primary sources identify Hy24 as the regulated manager and describe Hy24 as a 50/50 joint venture between Ardian and FiveT Hydrogen; the supplied manifest has no Hy24 manager row and permits proposed-new funds only under the supplied canonical manager.",
+      "sourceUrls": [
+        "https://www.hy24partners.com/assets/531df0ca-c102-41b8-936d-b9061c811f48.pdf",
+        "https://www.hy24partners.com/expertise-infrastructures/",
+        "https://www.hy24partners.com/assets/d740ca6f-17ea-43cd-b05e-dfe50f213a2f.pdf"
+      ],
+      "recommendedResolution": "Decide whether the manifest taxonomy treats controlled or jointly owned specialist managers as separate canonical managers; if separate, create or use a Hy24 manager record rather than adding this fund directly under Ardian."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 45,
+    "searchQueriesRun": 58,
+    "notes": [
+      "Reviewed Ardian fund close releases, current infrastructure and Nature-Based Solutions pages, the 2025 Integrated Report, the 2025 Article 29 product list, Hy24 fund materials and current portfolio evidence.",
+      "Consolidated AAIF V's Euro feeder; AIF VI, AIF VI B and its feeders; AIF VI co-investments raised alongside the flagship; Averrhoa compartments 1 and 2; TSH's feeder; and ASF IX legal variants rather than double-counting them.",
+      "AIF VI qualifies through its fund-attributed current ownership of Akuo and Akuo's current United States operations, not through an explicit North American fund mandate.",
+      "Clean H2 Infra Fund is included as an associated Ardian vehicle but remains NEEDS_REVIEW because Hy24 is the named manager.",
+      "No inaccessible primary source prevented a disposition.",
+      "Averrhoa's official sources conflict on whether launch or vintage is 2023 or 2024; the snapshot uses the later official source's stated 2024 fund launch and retains the conflict for legal-fund confirmation."
+    ]
+  },
+  "summary": {
+    "includedFunds": 5,
+    "explicitNaMandate": 3,
+    "verifiedCurrentNaHolding": 2,
+    "proposedNew": 1,
+    "proposedCorrections": 3,
+    "possibleDuplicates": 0,
+    "needsReview": 1,
+    "excludedCandidates": 8,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 2
+  }
+}

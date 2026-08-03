@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Vision Ridge Partners",
+  "createdAt": "2026-07-31T02:04:50.790Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/097-vision-ridge-partners-size-as-of-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/097-vision-ridge-partners-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-148B",
+      "field": "sectors",
+      "from": [
+        "Power & ET",
+        "Transportation",
+        "Utilities"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Transportation",
+        "Social Infra"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-148B",
+      "field": "sourceUrls",
+      "from": [
+        "https://vision-ridge.com/vision-ridge-partners-announces-final-close-of-1-25-billion-for-sustainable-asset-fund-iii/"
+      ],
+      "value": [
+        "https://www.wsj.com/articles/vision-ridge-raises-700-million-for-third-sustainable-asset-fund-11618834014"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-149",
+      "field": "sectors",
+      "from": [
+        "Power & ET",
+        "Transportation",
+        "Utilities"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Transportation",
+        "Social Infra"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-149",
+      "field": "sourceUrls",
+      "from": [
+        "https://vision-ridge.com/vision-ridge-partners-raises-2-4-billion-for-flagship-sustainable-real-assets-strategy/"
+      ],
+      "value": [
+        "https://www.streetinsider.com/Business%2BWire/Vision%2BRidge%2BPartners%2BRaises%2B~%242.4%2BBillion%2Bfor%2BFlagship%2BSustainable%2BReal%2BAssets%2BStrategy/25980007.html"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

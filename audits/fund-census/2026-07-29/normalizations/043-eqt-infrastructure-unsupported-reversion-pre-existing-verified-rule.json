@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "EQT Infrastructure",
+  "createdAt": "2026-07-30T19:30:44.476Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/043-eqt-infrastructure-size-as-of-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/043-eqt-infrastructure-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-073",
+      "field": "sectors",
+      "from": [
+        "Digital",
+        "Power & ET",
+        "Utilities",
+        "Transportation",
+        "Social Infra"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Digital",
+        "Midstream",
+        "Transportation",
+        "Social Infra"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-071",
+      "field": "sectors",
+      "from": [
+        "Utilities",
+        "Digital",
+        "Transportation",
+        "Power & ET"
+      ],
+      "value": [
+        "Power & ET",
+        "Utilities",
+        "Digital",
+        "Transportation"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    },
+    {
+      "fundIndex": 2,
+      "legacyId": "FUND-072",
+      "field": "sectors",
+      "from": [
+        "Digital",
+        "Power & ET"
+      ],
+      "value": [
+        "Power & ET",
+        "Digital"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

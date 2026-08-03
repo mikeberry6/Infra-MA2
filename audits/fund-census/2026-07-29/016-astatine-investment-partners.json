@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Astatine Investment Partners",
+  "canonicalManager": "Astatine Investment Partners",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Alinda Capital Partners",
+    "Alinda Capital Partners LLC",
+    "Astatine Investment Partners",
+    "Astatine Asset Management LLC"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Astatine Infrastructure Fund I",
+      "aliases": [
+        "Alinda Infrastructure Fund III",
+        "Astatine Infrastructure Fund I, L.P.",
+        "Astatine Infrastructure Parallel Fund I, L.P.",
+        "Astatine Infrastructure Fund I (Euro), SCSp SICAV-RAIF"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "The current adviser filing reports the renamed Fund I legal entities as infrastructure private funds, while the FCA-filed Astatine prospectus identifies predecessor Fund III as a direct mid-cap core-plus infrastructure fund and attributes portfolio investments to it.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "The Astatine prospectus attributes PECO Pallet to predecessor Fund III; legal-entity records map that family to Astatine Infrastructure Fund I; and Astatine's current investment page describes PECO as an active North American transportation-and-logistics investment.",
+        "currentHoldingName": "PECO Pallet, Inc.",
+        "currentHoldingUrl": "https://astatineip.com/investment/peco-pallet/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-024",
+        "managerName": "Astatine Investment Partners",
+        "fundName": "Astatine Infrastructure Fund I",
+        "ticker": null,
+        "investmentStrategy": "Mid-market core-plus direct infrastructure equity strategy investing in transportation and logistics, utility-related and digital infrastructure in North America and Europe.",
+        "size": "Not disclosed",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2016",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Transportation",
+          "Utilities",
+          "Digital"
+        ],
+        "regions": [
+          "North America",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://reports.adviserinfo.sec.gov/reports/ADV/156918/PDF/156918.pdf",
+          "https://indialei.in/detailed-information/925864/549300SV4UTFCXD4MF73/astatine-infrastructure-fund-i-l-p/",
+          "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf",
+          "https://astatineip.com/investment/peco-pallet/",
+          "https://www.sec.gov/Archives/edgar/data/1670287/000167028717000001/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://astatineip.com/infrastructure/"
+      },
+      "evidence": [
+        {
+          "url": "https://reports.adviserinfo.sec.gov/reports/ADV/156918/PDF/156918.pdf",
+          "title": "Form ADV — Astatine Investment Partners / Alinda Capital Partners Ltd.",
+          "publisher": "U.S. Securities and Exchange Commission, Investment Adviser Public Disclosure",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Fund I regulatory filing",
+          "evidenceSummary": "The filing lists Astatine Infrastructure Fund I, its parallel fund, Euro fund and AIV as current private funds and classifies the reported vehicles as infrastructure.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://indialei.in/detailed-information/925864/549300SV4UTFCXD4MF73/astatine-infrastructure-fund-i-l-p/",
+          "title": "Astatine Infrastructure Fund I, L.P. — LEI record",
+          "publisher": "India LEI / Global LEI System data",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund III-to-Fund I legal-name mapping",
+          "evidenceSummary": "The LEI history records the legal-name change from Alinda Infrastructure Fund III, L.P. to Astatine Infrastructure Fund I, L.P.",
+          "supports": [
+            "FUND_IDENTITY"
+          ],
+          "supportedFields": [
+            "fundName",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf",
+          "title": "AT85 Global Mid-Market Infrastructure Income plc Prospectus",
+          "publisher": "AT85 Global Mid-Market Infrastructure Income plc",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2023-01-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund III strategy and PECO attribution",
+          "evidenceSummary": "The prospectus defines AF3 as Alinda Infrastructure Fund III, states that Astatine focused exclusively on mid-cap core-plus investing beginning with Fund III, and names PECO as an AF3 North American transportation-and-logistics investment.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://astatineip.com/investment/peco-pallet/",
+          "title": "PECO Pallet",
+          "publisher": "Astatine Investment Partners",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current North American holding",
+          "evidenceSummary": "Astatine labels PECO as active and describes its North American pallet-pooling network across all 50 U.S. states.",
+          "supports": [
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1670287/000167028717000001/xslFormDX01/primary_doc.xml",
+          "title": "Form D — Alinda Infrastructure Parallel Fund III, L.P.",
+          "publisher": "U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2017-03-29",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund III first-sale date",
+          "evidenceSummary": "The filing reports the parallel Fund III vehicle's first sale on April 14, 2016, supporting a 2016 commercial-family vintage without treating entity-level amount sold as the fund family's final close.",
+          "supports": [
+            "FUND_IDENTITY"
+          ],
+          "supportedFields": [
+            "vintage",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "NEEDS_REVIEW",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-024",
+          "managerName": "Astatine Investment Partners",
+          "fundName": "Alinda Infrastructure Fund III"
+        }
+      ],
+      "changedFields": [],
+      "repoDispositionRationale": "The repository row matches the commercial family, but the official legal family is now numbered Astatine Infrastructure Fund I rather than Alinda Infrastructure Fund III. Primary evidence supports a 2016 first-sale vintage and core-plus strategy, while no opened primary source classifies the repository's $1.0B as final-close commitments; the rename and field updates should therefore be reviewed together rather than auto-applied.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "fundName": "Astatine Infrastructure Fund II",
+      "aliases": [
+        "Alinda Infrastructure Fund IV",
+        "Astatine Infrastructure Fund II, L.P.",
+        "Astatine Infrastructure Parallel Fund II, L.P.",
+        "Astatine Infrastructure Fund II (Euro), SCSp"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "The FCA-filed prospectus describes Fund IV, now renamed Astatine Infrastructure Fund II, as a closed-end unlisted core-plus infrastructure fund; the current SFDR disclosure and Form ADV identify the main, parallel and Euro vehicles as one Fund II commercial family investing directly in portfolio assets.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Fund-specific primary materials target approximately 70% of capital to North America and 30% to Europe; a 2025 institutional investor report confirms four North American investments remained in the fund.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-025",
+        "managerName": "Astatine Investment Partners",
+        "fundName": "Astatine Infrastructure Fund II",
+        "ticker": null,
+        "investmentStrategy": "Closed-end mid-market core-plus direct infrastructure equity strategy targeting transportation and logistics, utility-related and digital infrastructure, principally in North America and Europe.",
+        "size": "$1.0B target",
+        "sizeUsdMm": 1000,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1000000000",
+        "sizeBasis": "TARGET",
+        "sizeAsOf": "2023-01-10",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Transportation",
+          "Utilities",
+          "Digital"
+        ],
+        "regions": [
+          "North America",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://reports.adviserinfo.sec.gov/reports/ADV/311095/PDF/311095.pdf",
+          "https://lei.bloomberg.com/leis/view/25490063IN6CXME7XY41",
+          "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf",
+          "https://www.fundrock-lis.com/media/n1reuqvn/afii-sfdr-website-disclosures-3-jun-2025-lba.pdf",
+          "https://starlightcapital.com/files/251/download/48915/2025-Management%E2%80%99s-Discussion-and-Analysis-of-Operations-and-Financial-Condition-%28disponible-en-anglais-seulement%29?preview=1"
+        ],
+        "strategyUrl": "https://astatineip.com/sustainability-related-disclosures/"
+      },
+      "evidence": [
+        {
+          "url": "https://reports.adviserinfo.sec.gov/reports/ADV/311095/PDF/311095.pdf",
+          "title": "Form ADV — Astatine Investment Partners / Astatine Asset Management LLC",
+          "publisher": "U.S. Securities and Exchange Commission, Investment Adviser Public Disclosure",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Fund II regulatory filing",
+          "evidenceSummary": "The filing lists Astatine Infrastructure Fund II, its parallel fund and Euro fund as current private funds and classifies each reported vehicle as infrastructure.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://lei.bloomberg.com/leis/view/25490063IN6CXME7XY41",
+          "title": "Astatine Infrastructure Fund II (Euro), SCSp — LEI",
+          "publisher": "Bloomberg LEI",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund IV-to-Fund II legal-name mapping",
+          "evidenceSummary": "The LEI record identifies Alinda Infrastructure Fund IV (Euro), SCSp as the previous legal name of Astatine Infrastructure Fund II (Euro), SCSp.",
+          "supports": [
+            "FUND_IDENTITY"
+          ],
+          "supportedFields": [
+            "fundName",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf",
+          "title": "AT85 Global Mid-Market Infrastructure Income plc Prospectus",
+          "publisher": "AT85 Global Mid-Market Infrastructure Income plc",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2023-01-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund IV mandate, target, structure and initial close",
+          "evidenceSummary": "The prospectus defines AF4 as Alinda Infrastructure Fund IV, describes a closed-end core-plus infrastructure strategy, targets approximately 70% North America and 30% Europe, states a roughly $1.0B commitments target, and gives an initial closing date of December 8, 2020.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.fundrock-lis.com/media/n1reuqvn/afii-sfdr-website-disclosures-3-jun-2025-lba.pdf",
+          "title": "Sustainability-Related Disclosures — Astatine Infrastructure Fund II",
+          "publisher": "FundRock LIS / Astatine Investment Partners",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-06-03",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Commercial-family and direct portfolio-investment disclosure",
+          "evidenceSummary": "The disclosure defines the Euro partnership, Delaware main fund, parallel funds and AIVs collectively as Fund II and describes investment in transportation and logistics, utility-related and digital infrastructure portfolio assets.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "structure",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://starlightcapital.com/files/251/download/48915/2025-Management%E2%80%99s-Discussion-and-Analysis-of-Operations-and-Financial-Condition-%28disponible-en-anglais-seulement%29?preview=1",
+          "title": "Global Real Assets Trust — 2025 Management's Discussion and Analysis",
+          "publisher": "Starlight Capital",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Fund II deployment",
+          "evidenceSummary": "The report describes Astatine Infrastructure Parallel Fund II's direct infrastructure objective and states that, as of December 31, 2025, it had four North American investments and one United Kingdom investment.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "NEEDS_REVIEW",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-025",
+          "managerName": "Astatine Investment Partners",
+          "fundName": "Alinda Infrastructure Fund IV"
+        }
+      ],
+      "changedFields": [],
+      "repoDispositionRationale": "The repository row matches the commercial family, but official records now name it Astatine Infrastructure Fund II. Primary evidence supports a 2020 initial close, a core-plus strategy and a $1.0B target, whereas the repository's $586M has no stated amount basis and could represent a later commitments or closing figure. A primary final-closing notice or audited commitment schedule is needed before replacing the repository amount.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "fundName": "Boulevard Digital Co-Investment A, L.P.",
+      "aliases": [
+        "Boulevard Digital Co-Investment A LP",
+        "Boulevard Co-Investment"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "The current adviser filing reports Boulevard as a separate infrastructure private fund with its own general partner, and an FCC ownership order documents the fund's direct equity interest in the holding company that owns Everfast Fiber Networks.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "The FCC order attributes 41.18% of Everfast's parent to Boulevard Digital Co-Investment A, L.P.; Astatine currently identifies Everfast as an active Kansas City digital-infrastructure investment.",
+        "currentHoldingName": "Everfast Fiber Networks",
+        "currentHoldingUrl": "https://astatineip.com/investment/everfast-fiber-networks/"
+      },
+      "snapshot": {
+        "legacyId": null,
+        "managerName": "Astatine Investment Partners",
+        "fundName": "Boulevard Digital Co-Investment A, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Single-asset direct infrastructure co-investment holding an equity interest in the parent of Everfast Fiber Networks, a Kansas City broadband network.",
+        "size": "Not disclosed",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Not disclosed",
+        "strategies": [
+          "Co-Investments"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://reports.adviserinfo.sec.gov/reports/ADV/311095/PDF/311095.pdf",
+          "https://docs.fcc.gov/public/attachments/DA-22-1179A1.pdf",
+          "https://astatineip.com/investment/everfast-fiber-networks/"
+        ],
+        "strategyUrl": "https://docs.fcc.gov/public/attachments/DA-22-1179A1.pdf"
+      },
+      "evidence": [
+        {
+          "url": "https://reports.adviserinfo.sec.gov/reports/ADV/311095/PDF/311095.pdf",
+          "title": "Form ADV — Astatine Investment Partners / Astatine Asset Management LLC",
+          "publisher": "U.S. Securities and Exchange Commission, Investment Adviser Public Disclosure",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current separate infrastructure co-investment fund",
+          "evidenceSummary": "The filing lists Boulevard Digital Co-Investment A, L.P. as a current infrastructure private fund with a separately named general partner and separately reported gross asset value.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "fundStatus",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://docs.fcc.gov/public/attachments/DA-22-1179A1.pdf",
+          "title": "FCC Order and Grant — Everfast Fiber Networks ownership",
+          "publisher": "Federal Communications Commission",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2022-11-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Direct equity and North American asset attribution",
+          "evidenceSummary": "The FCC order states that Boulevard Digital Co-Investment A, L.P. owns 41.18% of Everfast's parent company and documents the Astatine-controlled general-partner chain.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://astatineip.com/investment/everfast-fiber-networks/",
+          "title": "Everfast Fiber Networks",
+          "publisher": "Astatine Investment Partners",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current active Kansas City holding",
+          "evidenceSummary": "Astatine labels Everfast active, classifies it as digital infrastructure and identifies the network as a U.S. Kansas City asset.",
+          "supports": [
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_NEW",
+      "matchedRepoFunds": [],
+      "changedFields": [],
+      "repoDispositionRationale": "No repository row matches this separately reported co-investment fund. Its separate regulatory reporting, distinct general partner and documented direct 41.18% equity interest establish a commercially distinct vehicle rather than a Fund II parallel or feeder.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Astatine Infrastructure Fund III (Euro), SCSp",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "A Swedish regulatory register shows an active 2026 EEA marketing notification and Astatine's team page references a Fund III investment committee, but no opened fund-specific source establishes a North American mandate, a current North American holding, fundraising terms, or how the Euro entity maps to the commercial family.",
+      "sourceUrls": [
+        "https://www.fi.se/sv/vara-register/foretagsregistret/details?id=683467",
+        "https://astatineip.com/team/"
+      ]
+    },
+    {
+      "fundName": "Logistics Partners Co-Investment A, L.P.",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The 2026 Form ADV classifies it as a current infrastructure private fund and pension disclosures show a continuing investment, but no opened source identifies its underlying company or verifies United States, Canadian or Mexican deployment.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/156918/PDF/156918.pdf",
+        "https://www.fifepensionfund.org/media/0rte2ygh/investments-as-at-31st-march-2026.pdf"
+      ]
+    },
+    {
+      "fundName": "Ribble Co-Invest Vehicle A, LP",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The 2026 Form ADV and pension holdings establish a current separately reported infrastructure co-investment vehicle, but no opened source reliably attributes a North American underlying investment.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/311095/PDF/311095.pdf",
+        "https://www.fifepensionfund.org/media/0rte2ygh/investments-as-at-31st-march-2026.pdf"
+      ]
+    },
+    {
+      "fundName": "ATA I, L.P.",
+      "reasonCode": "OTHER",
+      "rationale": "Astatine presents ATA as part of its separate global equipment-leasing and tangible-assets business rather than its mid-market direct-infrastructure strategy.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/156918/PDF/156918.pdf",
+        "https://astatineip.com/equipment-leasing/"
+      ]
+    },
+    {
+      "fundName": "ATA 2 LP",
+      "reasonCode": "OTHER",
+      "rationale": "Although the adviser filing uses the broad Form ADV 'infrastructure' category, Astatine's own strategy materials place ATA in the separate equipment-leasing and tangible-assets business, so it is outside this direct-infrastructure census.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/311095/PDF/311095.pdf",
+        "https://astatineip.com/equipment-leasing/"
+      ]
+    },
+    {
+      "fundName": "Alinda Infrastructure Fund II and associated parallel/AIV entities",
+      "reasonCode": "FULLY_REALIZED_OR_DISSOLVED",
+      "rationale": "The current adviser filing states that the legacy Alinda Infrastructure Fund II main, parallel and AIV entities were formally dissolved in 2025.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/156918/PDF/156918.pdf"
+      ]
+    },
+    {
+      "fundName": "Astatine Infrastructure Fund I and II parallel, Euro and AIV legal entities",
+      "reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+      "rationale": "Current filings and Fund II's SFDR disclosure identify these entities as parallel funds or alternative-investment vehicles within the two commercial flagship families; counting them separately would duplicate the same fundraises.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/156918/PDF/156918.pdf",
+        "https://reports.adviserinfo.sec.gov/reports/ADV/311095/PDF/311095.pdf",
+        "https://www.fundrock-lis.com/media/n1reuqvn/afii-sfdr-website-disclosures-3-jun-2025-lba.pdf"
+      ]
+    },
+    {
+      "fundName": "AT85 Global Mid-Market Infrastructure Income plc",
+      "reasonCode": "RETAIL_ACCESS_ONLY",
+      "rationale": "The 2023 prospectus describes a proposed listed access company that would invest in Astatine-managed funds and co-investments; it is not itself a qualifying manager-sponsored direct-investment program, and no current launch evidence was found.",
+      "sourceUrls": [
+        "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "FUND-024 / Astatine Infrastructure Fund I canonical fields",
+      "issue": "The Fund III-to-Fund I rename is evidenced, but the repository's 2018 vintage and $1.0B amount conflict with a 2016 first-sale date and lack a primary amount-basis source; the repository's Value-Add label also differs from Astatine's fund-specific core-plus description.",
+      "sourceUrls": [
+        "https://indialei.in/detailed-information/925864/549300SV4UTFCXD4MF73/astatine-infrastructure-fund-i-l-p/",
+        "https://www.sec.gov/Archives/edgar/data/1670287/000167028717000001/xslFormDX01/primary_doc.xml",
+        "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf"
+      ],
+      "recommendedResolution": "Obtain the Fund III final-closing notice, audited commitments schedule or LPA cover page, then approve one coordinated rename/vintage/strategy/size-basis correction under legacyId FUND-024."
+    },
+    {
+      "subject": "FUND-025 / Astatine Infrastructure Fund II amount and vintage",
+      "issue": "Primary evidence gives a December 8, 2020 initial close and an approximately $1.0B target, while the repository records 2021 and $586M without an amount basis. No opened primary source establishes whether $586M is a first close, final close, commitments or another measure.",
+      "sourceUrls": [
+        "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf",
+        "https://www.fundrock-lis.com/media/n1reuqvn/afii-sfdr-website-disclosures-3-jun-2025-lba.pdf",
+        "https://reports.adviserinfo.sec.gov/reports/ADV/311095/PDF/311095.pdf"
+      ],
+      "recommendedResolution": "Obtain the Fund IV/Fund II final-closing announcement or audited capital-commitment schedule and then determine whether the repository amount should be retained, rebased or replaced."
+    },
+    {
+      "subject": "Astatine Infrastructure Fund III successor family",
+      "issue": "An active 2026 Euro AIF marketing registration and a current team reference establish that a Fund III exists, but they do not establish a North American mandate, current North American deployment, direct-equity terms, fundraising status or the complete commercial-family identity.",
+      "sourceUrls": [
+        "https://www.fi.se/sv/vara-register/foretagsregistret/details?id=683467",
+        "https://astatineip.com/team/"
+      ],
+      "recommendedResolution": "Request the Fund III PPM, first-close notice, latest Form ADV update or fund-specific portfolio attribution before proposing a new census row."
+    },
+    {
+      "subject": "Logistics Partners and Ribble co-investment geography",
+      "issue": "Both vehicles are current infrastructure private funds in regulatory and pension records, but their underlying assets and geographic deployment were not disclosed in opened sources; the names alone cannot establish North America.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/156918/PDF/156918.pdf",
+        "https://reports.adviserinfo.sec.gov/reports/ADV/311095/PDF/311095.pdf",
+        "https://www.fifepensionfund.org/media/0rte2ygh/investments-as-at-31st-march-2026.pdf"
+      ],
+      "recommendedResolution": "Obtain GP confirmation, side-letter schedules, ownership filings or portfolio-company cap-table evidence identifying each underlying asset and country."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 43,
+    "searchQueriesRun": 188,
+    "notes": [
+      "The manager-level rebrand from Alinda Capital Partners to Astatine Investment Partners and the later legal-family renumbering from Alinda Fund III/IV to Astatine Fund I/II were reviewed separately.",
+      "Form ADV gross asset values were not aggregated or relabeled as commitments, final closes or AUM.",
+      "Fund I's repository $1.0B and Fund II's repository $586M remain unresolved amount semantics rather than inferred final-close figures.",
+      "Current co-investment vehicles were tested individually; only Boulevard had opened evidence tying the named vehicle to a current North American asset.",
+      "The active 2026 Fund III Euro registration was screened but excluded pending fund-specific North American evidence."
+    ]
+  },
+  "summary": {
+    "includedFunds": 3,
+    "explicitNaMandate": 1,
+    "verifiedCurrentNaHolding": 2,
+    "proposedNew": 1,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 2,
+    "excludedCandidates": 8,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 4
+  }
+}

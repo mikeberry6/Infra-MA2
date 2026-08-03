@@ -1,0 +1,1996 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_PROMOTION_BATCH",
+  "sourceAsOfDate": "2026-07-29",
+  "policyHash": "5965b8701941fc2b9a8bdfc9c09cab079451c00715c79638a6364e27a860398b",
+  "batch": 1,
+  "summary": {
+    "batch": 1,
+    "creates": 17,
+    "updates": 0,
+    "actionable": 17,
+    "baseFundCount": 179,
+    "resultingFundCount": 196,
+    "changeRatio": 0.09497206703910614
+  },
+  "candidates": [
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-151",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-151",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Mid Cap Fund II",
+        "ticker": null,
+        "investmentStrategy": "Second dedicated mid cap infrastructure fund pursuing Antin's established-company strategy across Europe and North America through smaller and medium-sized equity investments in energy and environment, digital, transportation, and social infrastructure.",
+        "size": "€2.5B target",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "2500000000",
+        "sizeBasis": "TARGET",
+        "sizeAsOf": "2026-03-12",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2026",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/regulatory-disclosures",
+          "https://www.antin-ip.com/who-we-are/strategies/mid-cap",
+          "https://www.antin-ip.com/wp-content/uploads/2025/12/Antin-FY25-Results-Transcript-1.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/06/Antin-IP-SA-2025-URD.pdf"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/who-we-are/strategies/mid-cap"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_c6a335727e09421e3dfd",
+          "url": "https://www.antin-ip.com/regulatory-disclosures",
+          "supportedFields": [
+            "fundName",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Formal Mid Cap II vehicle identity"
+        },
+        {
+          "sourceId": "fundsrc_8ba4c0df8448b3995ae8",
+          "url": "https://www.antin-ip.com/who-we-are/strategies/mid-cap",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Mid Cap direct-equity geography"
+        },
+        {
+          "sourceId": "fundsrc_667360bfd94012a845a5",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2025/12/Antin-FY25-Results-Transcript-1.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Mid Cap II target and fundraising"
+        },
+        {
+          "sourceId": "fundsrc_970a4978ca41dc0ad4ff",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Active Mid Cap II fundraising"
+        },
+        {
+          "sourceId": "fundsrc_7d0ccaa67ec4a3cb61e8",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/06/Antin-IP-SA-2025-URD.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-06-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Named successor fund and Mid Cap mandate"
+        }
+      ],
+      "rationale": "No repository row matches this actively raising second Mid Cap vintage, while the canonical Antin manager already exists in the repository universe.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "NATIVE_EUR_GBP_BILLION_SCALE_INDICATION",
+        "rationale": "€2.5B target; disclosed EUR amount is at least 1B (no USD conversion asserted)"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-152",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-152",
+        "managerName": "ArcLight Capital Partners",
+        "fundName": "ArcLight Energy Partners Fund V, L.P.",
+        "ticker": null,
+        "investmentStrategy": "North American value-added energy infrastructure investments across power and midstream assets.",
+        "size": "$3.3B investor commitments",
+        "sizeUsdMm": 3300,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "3300000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2011-11-02",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2011",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream",
+          "Power & ET"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://arclight.com/investments/",
+          "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+          "https://reports.adviserinfo.sec.gov/reports/ADV/161228/PDF/161228.pdf",
+          "https://www.prnewswire.com/news-releases/arclight-closes-fund-v-at-33-billion-in-commitments-133075573.html"
+        ],
+        "strategyUrl": "https://www.prnewswire.com/news-releases/arclight-closes-fund-v-at-33-billion-in-commitments-133075573.html"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_0ce96b8d7a1344af80ce",
+          "url": "https://reports.adviserinfo.sec.gov/reports/ADV/161228/PDF/161228.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "managerName",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-07-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Latest regulatory fund listing"
+        },
+        {
+          "sourceId": "fundsrc_2c778ea43eb1c6833e40",
+          "url": "https://www.prnewswire.com/news-releases/arclight-closes-fund-v-at-33-billion-in-commitments-133075573.html",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategyUrl",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2011-11-02",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund V final close and mandate"
+        }
+      ],
+      "rationale": "The supplied repository contains only Fund VIII; no Fund V row exists.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$3.3B investor commitments; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-153",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-153",
+        "managerName": "ArcLight Capital Partners",
+        "fundName": "ArcLight Energy Partners Fund VI, L.P.",
+        "ticker": null,
+        "investmentStrategy": "North American value-added energy infrastructure investments across power and midstream assets.",
+        "size": "$5.575B commitments",
+        "sizeUsdMm": 5575,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "5575000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2015-07-29",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2015",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream",
+          "Power & ET"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://arclight.com/investments/",
+          "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+          "https://reports.adviserinfo.sec.gov/reports/ADV/161228/PDF/161228.pdf",
+          "https://www.prnewswire.com/news-releases/arclight-closes-sixth-fund-with-56-billion-in-commitments-300120201.html"
+        ],
+        "strategyUrl": "https://www.prnewswire.com/news-releases/arclight-closes-sixth-fund-with-56-billion-in-commitments-300120201.html"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_0ce96b8d7a1344af80ce",
+          "url": "https://reports.adviserinfo.sec.gov/reports/ADV/161228/PDF/161228.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "managerName",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-07-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Latest regulatory fund listing"
+        },
+        {
+          "sourceId": "fundsrc_72edd5d84a4e3a068130",
+          "url": "https://www.prnewswire.com/news-releases/arclight-closes-sixth-fund-with-56-billion-in-commitments-300120201.html",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategyUrl",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2015-07-29",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund VI final close and North American focus"
+        }
+      ],
+      "rationale": "The supplied repository contains no Fund VI row.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$5.575B commitments; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-154",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-154",
+        "managerName": "ArcLight Capital Partners",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Value-added direct investments in power, renewable and midstream infrastructure.",
+        "size": "Approximately $3.4B commitments",
+        "sizeUsdMm": 3400,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "3400000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2020-02-03",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream",
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://arclight.com/investments/",
+          "https://arclight.com/portfolio-services/",
+          "https://reports.adviserinfo.sec.gov/reports/ADV/161228/PDF/161228.pdf",
+          "https://www.prnewswire.com/news-releases/arclight-closes-seventh-fund-with-3-4-billion-in-commitments-300997414.html"
+        ],
+        "strategyUrl": "https://www.prnewswire.com/news-releases/arclight-closes-seventh-fund-with-3-4-billion-in-commitments-300997414.html"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_bb08639f76501e07c762",
+          "url": "https://arclight.com/portfolio-services/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund VII North American holding attribution"
+        },
+        {
+          "sourceId": "fundsrc_0ce96b8d7a1344af80ce",
+          "url": "https://reports.adviserinfo.sec.gov/reports/ADV/161228/PDF/161228.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "managerName",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-07-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Latest regulatory fund listing"
+        },
+        {
+          "sourceId": "fundsrc_189777ae8c205cc56023",
+          "url": "https://www.prnewswire.com/news-releases/arclight-closes-seventh-fund-with-3-4-billion-in-commitments-300997414.html",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategyUrl",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2020-02-03",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund VII final close and infrastructure scope"
+        }
+      ],
+      "rationale": "The supplied repository contains no Fund VII row.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "Approximately $3.4B commitments; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-155",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-155",
+        "managerName": "Ares Management",
+        "fundName": "Ares Climate Infrastructure Partners, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Value-add climate infrastructure strategy directly originating flexible-capital investments in renewable energy, energy efficiency, storage, electric-vehicle infrastructure, transmission and other energy-transition assets and companies.",
+        "size": "$1.4B final close",
+        "sizeUsdMm": 1400,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1400000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2021-12-16",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2018",
+        "strategies": [
+          "Greenfield",
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.ares.com/us/who-we-are/our-people/keith-derman-100906",
+          "https://www.areswms.com.au/wp-content/uploads/Ares_Sustainability_Report-vF-2021F.pdf",
+          "https://www.businesswire.com/news/home/20211215006088/en/Ares-Management-Corporation-Raises-%242.2-Billion-of-Climate-Infrastructure-Capital",
+          "https://www.sec.gov/Archives/edgar/data/1810559/000156761921012462/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_ff93ebc3ceeab09fab04",
+          "url": "https://www.ares.com/us/who-we-are/our-people/keith-derman-100906",
+          "supportedFields": [
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current ACIP governance and Apex board continuity"
+        },
+        {
+          "sourceId": "fundsrc_e735ddc97ad16184da23",
+          "url": "https://www.areswms.com.au/wp-content/uploads/Ares_Sustainability_Report-vF-2021F.pdf",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "ACIP portfolio and Apex case study"
+        },
+        {
+          "sourceId": "fundsrc_5ed75604245aafd66aa9",
+          "url": "https://www.businesswire.com/news/home/20211215006088/en/Ares-Management-Corporation-Raises-%242.2-Billion-of-Climate-Infrastructure-Capital",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-12-16",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "ACIP final-close announcement"
+        },
+        {
+          "sourceId": "fundsrc_ae94a268ea82dcdb17d2",
+          "url": "https://www.sec.gov/Archives/edgar/data/1810559/000156761921012462/xslFormDX01/primary_doc.xml",
+          "supportedFields": [
+            "fundName",
+            "managerName",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-06-30",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "ACIP legal identity and vintage"
+        }
+      ],
+      "rationale": "No repository row matches ACIP I. Primary evidence establishes a separately named $1.4 billion commercial fund, and Ares portfolio materials support current North American deployment through Apex at the ACIP complex level. The vehicle is proposed under the existing Ares Management manager, with medium confidence because public materials do not separate the Apex allocation among the main fund, parallel funds and related co-investment accounts.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$1.4B final close; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-156",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-156",
+        "managerName": "Ares Management",
+        "fundName": "U.S. Power Fund IV, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Control-oriented U.S. power and energy infrastructure private equity focused on generation, transmission, natural-gas pipelines, storage and related operating or development-stage assets.",
+        "size": "$1.688B commitments",
+        "sizeUsdMm": 1688,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1688000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2025-12-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2010",
+        "strategies": [
+          "Greenfield",
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream",
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://nic.nebraska.gov/sites/default/files/doc/2022%20Overview%20of%20Strategies%20DB%2BCBB%20Plans.pdf",
+          "https://www.sec.gov/Archives/edgar/data/1176948/000162828026005596/a2025q4-ex992earningspre.htm",
+          "https://www.sec.gov/Archives/edgar/data/1176948/000162828026029083/a2026q1-ex992earningspre.htm"
+        ],
+        "strategyUrl": "https://www.ares.com/us/businesses-and-products/our-businesses/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_07b0a7da5cae211aa390",
+          "url": "https://nic.nebraska.gov/sites/default/files/doc/2022%20Overview%20of%20Strategies%20DB%2BCBB%20Plans.pdf",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2022-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "USPF IV direct-equity U.S. mandate"
+        },
+        {
+          "sourceId": "fundsrc_1185be1e5f4118839ba9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1176948/000162828026005596/a2025q4-ex992earningspre.htm",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "managerName",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-02-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current USPF IV fund table"
+        },
+        {
+          "sourceId": "fundsrc_f11a6e9e25960e234317",
+          "url": "https://www.sec.gov/Archives/edgar/data/1176948/000162828026029083/a2026q1-ex992earningspre.htm",
+          "supportedFields": [
+            "fundName",
+            "managerName",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "USPF IV official name"
+        }
+      ],
+      "rationale": "No repository row matches USPF IV. Current Ares reporting confirms that the 2010 fund retains $299 million of unrealized investments, while institutional fund-specific materials establish its control-oriented U.S. power infrastructure mandate.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$1.688B commitments; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-157",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-157",
+        "managerName": "Argo Infrastructure Partners",
+        "fundName": "AIA Energy North America LLC",
+        "ticker": null,
+        "investmentStrategy": "Dedicated direct-equity energy-infrastructure vehicle holding regulated and contracted North American transmission assets.",
+        "size": "$1,497,903,289 current gross asset value",
+        "sizeUsdMm": 1497.903289,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1497903289",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2026-05-08",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Not disclosed",
+        "strategies": [
+          "Co-Investments"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B198100FB-C22C-4570-A201-71888F747C84%7D",
+          "https://reports.adviserinfo.sec.gov/reports/ADV/171246/PDF/171246.pdf",
+          "https://www.businesswire.com/news/home/20260304732241/en/Cross-Sound-Cable-Plans-a-System-Redevelopment-to-Upgrade-Interregional-Connectivity-in-the-Northeast"
+        ],
+        "strategyUrl": "https://www.argoip.com/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_f58de89025777139d48c",
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B198100FB-C22C-4570-A201-71888F747C84%7D",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2015-04-22",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund purpose and direct ownership"
+        },
+        {
+          "sourceId": "fundsrc_77c1e2bcc25543245643",
+          "url": "https://reports.adviserinfo.sec.gov/reports/ADV/171246/PDF/171246.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategyUrl",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-08",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current private-fund filing"
+        },
+        {
+          "sourceId": "fundsrc_fee785874a2aa80f84c2",
+          "url": "https://www.businesswire.com/news/home/20260304732241/en/Cross-Sound-Cable-Plans-a-System-Redevelopment-to-Upgrade-Interregional-Connectivity-in-the-Northeast",
+          "supportedFields": [
+            "fundStatus",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-04",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current North American holding"
+        }
+      ],
+      "rationale": "No repository fund row matches this separately reported current private infrastructure vehicle; its identity, current gross asset value, and current North American deployment are directly documented.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$1,497,903,289 current gross asset value; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-158",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-158",
+        "managerName": "BlackRock",
+        "fundName": "AI Infrastructure Partnership",
+        "ticker": null,
+        "investmentStrategy": "Direct-equity AI infrastructure partnership investing in data centers and supporting energy and grid infrastructure, initially focused on the United States and partner countries.",
+        "size": "$30.0B equity target",
+        "sizeUsdMm": 30000,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "30000000000",
+        "sizeBasis": "TARGET",
+        "sizeAsOf": "2024-09-17",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Greenfield",
+          "Growth"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://news.microsoft.com/2024/09/17/blackrock-global-infrastructure-partners-microsoft-and-mgx-launch-new-ai-partnership-to-invest-in-data-centers-and-supporting-power-infrastructure/",
+          "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/ai-infrastructure-partnership-to-acquire-aligned-data-centers",
+          "https://www.blackrock.com/institutions/en-us/strategies/alternatives/infrastructure"
+        ],
+        "strategyUrl": "https://www.blackrock.com/institutions/en-us/strategies/alternatives/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_b4adae73f8c9e80e9367",
+          "url": "https://news.microsoft.com/2024/09/17/blackrock-global-infrastructure-partners-microsoft-and-mgx-launch-new-ai-partnership-to-invest-in-data-centers-and-supporting-power-infrastructure/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-09-17",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "AI Infrastructure Partnership identity, mandate, and target"
+        },
+        {
+          "sourceId": "fundsrc_50765ce68f582b5a1f36",
+          "url": "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/ai-infrastructure-partnership-to-acquire-aligned-data-centers",
+          "supportedFields": [
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2025-10-15",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "U.S. data-center acquisition attribution"
+        }
+      ],
+      "rationale": "The repository has no row for this separately named direct-investment partnership. It is counted once as a program exception and not merged into GIF IV, GRP IV, Evergreen, or a GIP flagship fund.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$30.0B equity target; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-159",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-159",
+        "managerName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "ticker": null,
+        "investmentStrategy": "Global direct-equity energy and power infrastructure fund investing across power, energy-transition, utility, and midstream infrastructure.",
+        "size": "$5.1B final close",
+        "sizeUsdMm": 5100,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "5100000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2020-04-16",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream",
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.blackrock.com/corporate/literature/whitepaper/blackrock-infrastructure-impact-report.pdf",
+          "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-raises-usd-5-1-billion-for-global-energy-and-power-infrastructure-fund-iii",
+          "https://www.blackrock.com/institutions/en-us/strategies/alternatives/infrastructure"
+        ],
+        "strategyUrl": "https://www.blackrock.com/institutions/en-us/strategies/alternatives/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_e8c60775fdcd955284ca",
+          "url": "https://www.blackrock.com/corporate/literature/whitepaper/blackrock-infrastructure-impact-report.pdf",
+          "supportedFields": [
+            "fundStatus",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-12-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "GEPIF III continuing portfolio evidence"
+        },
+        {
+          "sourceId": "fundsrc_7b3c7529edea08037c58",
+          "url": "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-raises-usd-5-1-billion-for-global-energy-and-power-infrastructure-fund-iii",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2020-04-16",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "GEPIF III final close and strategy"
+        }
+      ],
+      "rationale": "No repository row represents GEPIF III, and primary fund-specific evidence supports a distinct current qualifying vehicle.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$5.1B final close; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-160",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-160",
+        "managerName": "BlackRock",
+        "fundName": "BlackRock Global Renewable Power Fund III",
+        "ticker": null,
+        "investmentStrategy": "Global direct-equity renewable-power, storage, and grid infrastructure fund with a documented North American mandate.",
+        "size": "$4.8B final close",
+        "sizeUsdMm": 4800,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "4800000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2021-04-08",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Core-Plus",
+          "Greenfield"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.blackrock.com/corporate/literature/whitepaper/blackrock-infrastructure-impact-report.pdf",
+          "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-raises-usd-4-8-billion-for-global-renewable-power-fund-iii",
+          "https://www.blackrock.com/institutions/en-us/strategies/alternatives/infrastructure"
+        ],
+        "strategyUrl": "https://www.blackrock.com/institutions/en-us/strategies/alternatives/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_e8c60775fdcd955284ca",
+          "url": "https://www.blackrock.com/corporate/literature/whitepaper/blackrock-infrastructure-impact-report.pdf",
+          "supportedFields": [
+            "fundStatus",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-12-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "GRP III continuing portfolio evidence"
+        },
+        {
+          "sourceId": "fundsrc_0e69416f1076f6ec81db",
+          "url": "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-raises-usd-4-8-billion-for-global-renewable-power-fund-iii",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-04-08",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "GRP III final close and investment mandate"
+        }
+      ],
+      "rationale": "No repository row represents GRP III, while primary fund-specific evidence supports its separate current qualifying identity.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$4.8B final close; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-161",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-161",
+        "managerName": "Brookfield",
+        "fundName": "Brookfield Infrastructure Fund IV",
+        "ticker": null,
+        "investmentStrategy": "Fourth flagship global infrastructure equity fund applying Brookfield's operations-oriented and value-focused investment model across utility, transport, midstream and data infrastructure.",
+        "size": "$20.0B final close",
+        "sizeUsdMm": 20000,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "20000000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2020-02-12",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://bam.brookfield.com/press-releases/brookfield-closes-20-billion-infrastructure-fund",
+          "https://www.brookfield.com/about-us/investments/genesee-wyoming"
+        ],
+        "strategyUrl": "https://www.brookfield.com/our-businesses/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_0d0be733a785fbd118b7",
+          "url": "https://bam.brookfield.com/press-releases/brookfield-closes-20-billion-infrastructure-fund",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2020-02-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "BIF IV final close and investment attribution"
+        },
+        {
+          "sourceId": "fundsrc_0c5f45ccc1db108a8230",
+          "url": "https://www.brookfield.com/about-us/investments/genesee-wyoming",
+          "supportedFields": [
+            "fundStatus",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current North American rail-platform evidence"
+        }
+      ],
+      "rationale": "No repository row matches BIF IV. The official final-close source and fund-attributed current North American rail investment support adding the commercially distinct fourth flagship fund under the existing Brookfield manager.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$20.0B final close; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-162",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-162",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure Advanced Bioenergy Fund II (CI ABF II)",
+        "ticker": null,
+        "investmentStrategy": "Raising direct-equity advanced-bioenergy infrastructure fund targeting biomethane and advanced biofuels from waste feedstocks in Europe and North America.",
+        "size": "€1.5B target",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2025",
+        "strategies": [
+          "Greenfield",
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Midstream",
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cip.com/funds/advanced-bioenergy-funds/"
+        ],
+        "strategyUrl": "https://www.cip.com/funds/advanced-bioenergy-funds/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_35497c45e04198158c80",
+          "url": "https://www.cip.com/funds/advanced-bioenergy-funds/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CIP Advanced Bioenergy Funds official page"
+        }
+      ],
+      "rationale": "No repository row matches this commercially distinct current fund under the known canonical manager; official fund-specific evidence supports inclusion as a proposed new census record.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "NATIVE_EUR_GBP_BILLION_SCALE_INDICATION",
+        "rationale": "€1.5B target; disclosed EUR/GBP billion-scale amount indicates at least $1B without asserting a USD conversion"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-163",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-163",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure Energy Transition Fund I (CI ETF I)",
+        "ticker": null,
+        "investmentStrategy": "Closed-end direct-equity greenfield energy-transition fund investing in industrial-scale Power-to-X, clean hydrogen, advanced biofuels, carbon capture and related infrastructure in North America and other developed markets.",
+        "size": "€3.0B final close",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Greenfield",
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Midstream",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cip.com/funds/energy-transition-fund/",
+          "https://www.cip.com/sustainability-related-disclosures/ci-etf-i-sustainability-related-disclosures/"
+        ],
+        "strategyUrl": "https://www.cip.com/funds/energy-transition-fund/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_3a61e3a431f9b32daef0",
+          "url": "https://www.cip.com/funds/energy-transition-fund/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CI Energy Transition Fund I official strategy"
+        },
+        {
+          "sourceId": "fundsrc_78072a6efcf201f7fe5f",
+          "url": "https://www.cip.com/sustainability-related-disclosures/ci-etf-i-sustainability-related-disclosures/",
+          "supportedFields": [
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CI ETF I current disclosures"
+        }
+      ],
+      "rationale": "No repository row matches this commercially distinct current fund under the known canonical manager; official fund-specific evidence supports inclusion as a proposed new census record.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "NATIVE_EUR_GBP_BILLION_SCALE_INDICATION",
+        "rationale": "€3.0B final close; disclosed EUR/GBP billion-scale amount indicates at least $1B without asserting a USD conversion"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-164",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-164",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure II (CI II)",
+        "ticker": null,
+        "investmentStrategy": "Closed-end flagship direct-equity fund investing in regulated and contracted renewable-energy infrastructure, including large-scale wind and solar assets in North America and other low-risk OECD markets.",
+        "size": "€2.0B",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2014",
+        "strategies": [
+          "Core-Plus",
+          "Greenfield"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cip.com/funds/flagship-funds/",
+          "https://www.cip.com/sustainability-related-disclosures/ci-ii-sustainability-related-disclosures/"
+        ],
+        "strategyUrl": "https://www.cip.com/funds/flagship-funds/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_da722280eaaa6b527e68",
+          "url": "https://www.cip.com/funds/flagship-funds/",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CIP flagship-fund strategy and CI II lineage"
+        },
+        {
+          "sourceId": "fundsrc_266fb049ae3cb081bc98",
+          "url": "https://www.cip.com/sustainability-related-disclosures/ci-ii-sustainability-related-disclosures/",
+          "supportedFields": [
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CI II current sustainability and periodic disclosures"
+        }
+      ],
+      "rationale": "No repository row matches this commercially distinct current fund under the known canonical manager; official fund-specific evidence supports inclusion as a proposed new census record.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "NATIVE_EUR_GBP_BILLION_SCALE_INDICATION",
+        "rationale": "€2.0B; disclosed EUR/GBP billion-scale amount indicates at least $1B without asserting a USD conversion"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-165",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-165",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure III (CI III)",
+        "ticker": null,
+        "investmentStrategy": "Closed-end flagship direct-equity fund investing in large-scale offshore wind, onshore wind, solar, biomass, waste-to-energy, transmission and distribution, primarily in Northwestern Europe and North America.",
+        "size": "€3.5B final close",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2017",
+        "strategies": [
+          "Core-Plus",
+          "Greenfield"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.cip.com/funds/flagship-funds/",
+          "https://www.cip.com/sustainability-related-disclosures/ci-iii-sustainability-related-disclosures/"
+        ],
+        "strategyUrl": "https://www.cip.com/funds/flagship-funds/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_da722280eaaa6b527e68",
+          "url": "https://www.cip.com/funds/flagship-funds/",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CI III official fund terms and mandate"
+        },
+        {
+          "sourceId": "fundsrc_508b033071f4b9110b95",
+          "url": "https://www.cip.com/sustainability-related-disclosures/ci-iii-sustainability-related-disclosures/",
+          "supportedFields": [
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "CI III current sustainability and periodic disclosures"
+        }
+      ],
+      "rationale": "No repository row matches this commercially distinct current fund under the known canonical manager; official fund-specific evidence supports inclusion as a proposed new census record.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "NATIVE_EUR_GBP_BILLION_SCALE_INDICATION",
+        "rationale": "€3.5B final close; disclosed EUR/GBP billion-scale amount indicates at least $1B without asserting a USD conversion"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-166",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-166",
+        "managerName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners II, LP",
+        "ticker": null,
+        "investmentStrategy": "Value-add digital infrastructure across data centers, fiber and towers.",
+        "size": "$8.2B final close",
+        "sizeUsdMm": 8200,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "8200000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2021-07-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2019",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.digitalbridge.com/insights/news"
+        ],
+        "strategyUrl": "https://www.digitalbridge.com/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_00186740d1f791dc75a9",
+          "url": "https://www.digitalbridge.com/insights/news",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-07-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "DCP II close and Switch investment"
+        }
+      ],
+      "rationale": "No corresponding repository entry.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$8.2B final close; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 1,
+      "legacyId": "FUND-167",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-167",
+        "managerName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners, LP",
+        "ticker": null,
+        "investmentStrategy": "Value-add digital infrastructure across connectivity and data platforms.",
+        "size": "$4.05B final close",
+        "sizeUsdMm": 4050,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "4050000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2019-05-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2017",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.digitalbridge.com/insights/news"
+        ],
+        "strategyUrl": "https://www.digitalbridge.com/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_00186740d1f791dc75a9",
+          "url": "https://www.digitalbridge.com/insights/news",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2019-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "DCP I close and holdings"
+        }
+      ],
+      "rationale": "Missing from repository snapshot.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$4.05B final close; structured USD size is at least $1B"
+      }
+    }
+  ]
+}

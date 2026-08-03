@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_REPOSITORY_DIFFERENCE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "I Squared Capital",
+  "createdAt": "2026-07-30T21:13:18.950Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/053-i-squared-capital-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/053-i-squared-capital-unsupported-reverted.txt",
+  "allowedFields": [
+    "snapshot.*",
+    "changedFields",
+    "repoDisposition",
+    "repoDispositionRationale",
+    "summary.proposedCorrections"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-094",
+      "field": "sourceUrls",
+      "from": [
+        "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025.21%20pserb%20resolution%20i%20squared%20global%20infrastructure%20fund%20iv.pdf"
+      ],
+      "value": [
+        "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025.21%20pserb%20resolution%20i%20squared%20global%20infrastructure%20fund%20iv.pdf",
+        "https://www.sec.gov/Archives/edgar/data/2049770/000204977025000002/xslFormDX01/primary_doc.xml"
+      ],
+      "rationale": "The model changed this repository field without declaring it in changedFields or mapping any opened evidence to it, so the incidental rewrite is reverted."
+    }
+  ]
+}

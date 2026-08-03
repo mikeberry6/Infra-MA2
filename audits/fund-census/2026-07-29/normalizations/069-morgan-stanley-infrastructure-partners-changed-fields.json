@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REPOSITORY_CHANGED_FIELDS_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Morgan Stanley Infrastructure Partners",
+  "createdAt": "2026-07-30T23:22:47.389Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/069-morgan-stanley-infrastructure-partners-summary-counts-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/069-morgan-stanley-infrastructure-partners-changed-fields-normalized.txt",
+  "allowedFields": [
+    "changedFields"
+  ],
+  "changes": [
+    {
+      "fundIndex": 1,
+      "legacyId": "FUND-119A",
+      "field": "changedFields",
+      "from": [
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis"
+      ],
+      "value": [
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "rationale": "The changedFields list is replaced with the deterministic field diff between the researched snapshot and its single matched repository row; every added field is evidence-supported."
+    }
+  ]
+}

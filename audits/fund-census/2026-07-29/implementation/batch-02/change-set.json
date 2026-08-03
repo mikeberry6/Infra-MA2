@@ -1,0 +1,3046 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_PROMOTION_BATCH",
+  "sourceAsOfDate": "2026-07-29",
+  "policyHash": "5965b8701941fc2b9a8bdfc9c09cab079451c00715c79638a6364e27a860398b",
+  "batch": 2,
+  "summary": {
+    "batch": 2,
+    "creates": 4,
+    "updates": 15,
+    "actionable": 19,
+    "baseFundCount": 196,
+    "resultingFundCount": 200,
+    "changeRatio": 0.09693877551020408
+  },
+  "candidates": [
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-001",
+      "before": {
+        "legacyId": "FUND-001",
+        "managerName": "3i Group",
+        "fundName": "3i Infrastructure plc",
+        "ticker": "3IN.L",
+        "investmentStrategy": "London-listed evergreen core-plus vehicle investing in resilient economic infrastructure businesses across Europe and selectively elsewhere for long-term sustainable returns.",
+        "size": "£3.8B",
+        "sizeUsdMm": 4940,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Listed / Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.3i-infrastructure.com/investors/results-reports-presentations/annual-report-2025/",
+          "https://www.3i.com/infrastructure/our-funds/"
+        ],
+        "strategyUrl": "https://www.3i-infrastructure.com/"
+      },
+      "after": {
+        "legacyId": "FUND-001",
+        "managerName": "3i Group",
+        "fundName": "3i Infrastructure plc",
+        "ticker": "3IN.L",
+        "investmentStrategy": "London-listed evergreen direct-equity core-plus infrastructure vehicle investing principally in unquoted infrastructure businesses and assets, with a formal geographic focus on Europe, North America and Asia-Pacific.",
+        "size": "£3.071B AUM",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "GBP",
+        "sizeNativeAmount": "3071000000",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2026-03-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Listed / Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.3i-infrastructure.com/media/jb2dxwel/3in-annual-report-2026-press-release.pdf",
+          "https://www.3i.com/infrastructure/our-funds/",
+          "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf"
+        ],
+        "strategyUrl": "https://www.3i-infrastructure.com/investors/our-objectives-and-strategy/market-conditions/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "regions",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_640d4e181f84ccb4bc52",
+          "url": "https://www.3i-infrastructure.com/investors/our-objectives-and-strategy/market-conditions/",
+          "supportedFields": [
+            "investmentStrategy",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current core-plus strategy page"
+        },
+        {
+          "sourceId": "fundsrc_0bd1302ae90540b42b07",
+          "url": "https://www.3i-infrastructure.com/media/jb2dxwel/3in-annual-report-2026-press-release.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sourceUrls",
+            "strategies",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-05-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Formal investment policy and active listed-program status"
+        },
+        {
+          "sourceId": "fundsrc_df5bf035f9dbf4d2e7a7",
+          "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-05-14",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current AUM"
+        }
+      ],
+      "rationale": "The repository row matches the vehicle, but its £3.8 billion size and stated USD equivalent are superseded by the disclosed £3.071 billion AUM at 31 March 2026; the formal policy also expands the region field beyond Europe.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-002",
+      "before": {
+        "legacyId": "FUND-002",
+        "managerName": "3i Group",
+        "fundName": "3i NA Infrastructure Fund",
+        "ticker": null,
+        "investmentStrategy": "Inaugural North American mid-market infrastructure fund using 3i's core-plus/value-add approach; final close completed in December 2023.",
+        "size": "$739M",
+        "sizeUsdMm": 739,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.3i.com/infrastructure/our-funds/"
+        ],
+        "strategyUrl": "https://www.3i-infrastructure.com/"
+      },
+      "after": {
+        "legacyId": "FUND-002",
+        "managerName": "3i Group",
+        "fundName": "3i NA Infrastructure Fund",
+        "ticker": null,
+        "investmentStrategy": "Closed-end North American mid-market core-plus infrastructure fund making direct-equity investments in operating infrastructure businesses.",
+        "size": "$739M final commitments",
+        "sizeUsdMm": 739,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "739000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2024-03-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.3i.com/infrastructure/",
+          "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "https://www.3i.com/media/fkcntktr/infrastructure_business_review.pdf",
+          "https://www.sec.gov/Archives/edgar/data/1922071/000192207123000001/xslFormDX08/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.3i.com/infrastructure/our-approach/"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "suppressedFields": [
+        "fundName"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_0141b4187929c8ac1a75",
+          "url": "https://www.3i.com/infrastructure/our-approach/",
+          "supportedFields": [
+            "investmentStrategy",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Core-plus and control-oriented infrastructure approach"
+        },
+        {
+          "sourceId": "fundsrc_df5bf035f9dbf4d2e7a7",
+          "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-14",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current fund holdings and lifecycle"
+        },
+        {
+          "sourceId": "fundsrc_4e9ec7f29dfa7d40937c",
+          "url": "https://www.3i.com/media/fkcntktr/infrastructure_business_review.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Final close, commitments and fund-attributed investments"
+        },
+        {
+          "sourceId": "fundsrc_bff215ea31810723f38d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1922071/000192207123000001/xslFormDX08/primary_doc.xml",
+          "supportedFields": [
+            "fundName",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Private-equity limited-partnership structure"
+        }
+      ],
+      "rationale": "The repository row matches the commercial fund but uses an abbreviated name, omits the final-commitment amount semantics and native-currency fields, lacks the reporting date, includes Digital despite the current three-holding sector set, and points its strategy URL to the separate listed vehicle.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-003",
+      "before": {
+        "legacyId": "FUND-003",
+        "managerName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": "ADIA Direct Infrastructure",
+        "ticker": null,
+        "investmentStrategy": "Evergreen direct infrastructure program making minority investments across transport, utilities, energy, and digital infrastructure, with a substantial renewables theme.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.adia.ae/en/investments/infrastructure"
+        ],
+        "strategyUrl": "https://www.adia.ae/en/investments/infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-003",
+        "managerName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": "Infrastructure Department",
+        "ticker": null,
+        "investmentStrategy": "Evergreen direct infrastructure program making minority investments across transport, utilities, energy, and digital infrastructure, with a substantial renewables theme.",
+        "size": "—",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.adia.ae/en/investments/infrastructure"
+        ],
+        "strategyUrl": "https://www.adia.ae/en/investments/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "regions"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_920f268de1ce3f8a5df9",
+          "url": "https://www.adia.ae/en/investments/infrastructure",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current Infrastructure Department mandate and portfolio"
+        },
+        {
+          "sourceId": "fundsrc_23a72e193b263e98ed4a",
+          "url": "https://www.adia.ae/en/investments/infrastructure/portfolio/case-studies/sempra-infrastructure",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Program-attributed North American equity holding"
+        },
+        {
+          "sourceId": "fundsrc_91a964416a040d85fde1",
+          "url": "https://www.adia.ae/en/pr/2024/pdf/adia-annual-review-2024_final.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2025-09-17",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Active Infrastructure Department deployment"
+        },
+        {
+          "sourceId": "fundsrc_fe3a23e90cd28717c65a",
+          "url": "https://www.sempra.com/newsroom/press-releases/sempra-advances-strategic-priorities-key-leadership-appointments",
+          "supportedFields": [
+            "regions",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-07-09",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current ownership confirmation"
+        }
+      ],
+      "rationale": "The repository row matches the same sovereign infrastructure program, but current primary materials identify the official program as the Infrastructure Department rather than 'ADIA Direct Infrastructure'. The program has an evidenced current North American deployment through Sempra Infrastructure Partners, so North America is added to the existing Global region classification. The legacy ID is preserved and no other canonical repository field is changed.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-005",
+      "before": {
+        "legacyId": "FUND-005",
+        "managerName": "Amber Infrastructure Group",
+        "fundName": "International Public Partnerships (INPP)",
+        "ticker": "INPP.L",
+        "investmentStrategy": "Listed evergreen investor in public infrastructure seeking stable, inflation-linked returns; the observable book blends social PPPs with regulated utility, transport, wastewater and digital assets.",
+        "size": "£3.0B",
+        "sizeUsdMm": 3900,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Listed / Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.internationalpublicpartnerships.com/"
+        ],
+        "strategyUrl": "https://www.internationalpublicpartnerships.com/"
+      },
+      "after": {
+        "legacyId": "FUND-005",
+        "managerName": "Amber Infrastructure Group",
+        "fundName": "International Public Partnerships (INPP)",
+        "ticker": "INPP.L",
+        "investmentStrategy": "Listed evergreen investor in public infrastructure seeking stable, inflation-linked returns; the observable book blends social PPPs with regulated utility, transport, wastewater and digital assets.",
+        "size": "£2.7B NAV",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "GBP",
+        "sizeNativeAmount": "2700000000",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2025-12-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Listed / Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.internationalpublicpartnerships.com/"
+        ],
+        "strategyUrl": "https://www.internationalpublicpartnerships.com/"
+      },
+      "changedFields": [
+        "regions",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_3cdcf7739db35223dd6b",
+          "url": "https://www.amberinfrastructure.com/funds/international-public-partnerships/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategyUrl",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official manager fund page"
+        },
+        {
+          "sourceId": "fundsrc_f274d0f2f3a9dbe2075c",
+          "url": "https://www.internationalpublicpartnerships.com/media/nvyaj5am/inpp-sustainability-report-march-2026.pdf",
+          "supportedFields": [
+            "fundStatus",
+            "investmentStrategy",
+            "sectors",
+            "strategies"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-25",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund-level core-infrastructure classification"
+        },
+        {
+          "sourceId": "fundsrc_207f50ecea0e1ddfcaa1",
+          "url": "https://www.internationalpublicpartnerships.com/media/oeqitesp/inpp_fy-2025_kid-vf.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "managerName",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-26",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "2026 statutory product document"
+        },
+        {
+          "sourceId": "fundsrc_1a9acc7fcad403d01df0",
+          "url": "https://www.investegate.co.uk/announcement/rns/international-public-partnerships-ltd---inpp/full-year-results-to-year-ended-31-december-2025/9492544",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2026-03-26",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Latest full-year results"
+        }
+      ],
+      "rationale": "The repository identity is correct, but current evidence supports £2.7 billion of GBP NAV at 31 December 2025 with no sourced USD conversion and an explicit Europe, North America and Asia-Pacific footprint.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-006A",
+      "before": {
+        "legacyId": "FUND-006A",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Flagship Fund III",
+        "ticker": null,
+        "investmentStrategy": "Third Antin flagship infrastructure fund investing in established infrastructure companies across Europe and North America, with current and realized exposure across digital, transport, energy, and social infrastructure.",
+        "size": "€3.6B",
+        "sizeUsdMm": 3960,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2016",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://financialreports.eu/filings/835156/content/"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/"
+      },
+      "after": {
+        "legacyId": "FUND-006A",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Flagship Fund III",
+        "ticker": null,
+        "investmentStrategy": "Third Antin flagship infrastructure fund investing in established infrastructure companies across Europe and North America, with current and realized exposure across digital, transport, energy, and social infrastructure.",
+        "size": "€3.6B",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "3600000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2016-12-13",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2016",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/investments/firstlight-fiber",
+          "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-raises-e3-6-billion-fund",
+          "https://www.antin-ip.com/who-we-are/strategies/flagship",
+          "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/06/Antin-IP-SA-2025-URD.pdf"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/who-we-are/strategies/flagship"
+      },
+      "changedFields": [
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_f38b8da34b6a6fc038d5",
+          "url": "https://www.antin-ip.com/investments/firstlight-fiber",
+          "supportedFields": [
+            "fundName",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current North American holding page"
+        },
+        {
+          "sourceId": "fundsrc_ef29ef66ec24a4d3c44c",
+          "url": "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-raises-e3-6-billion-fund",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2016-12-13",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund III final close"
+        },
+        {
+          "sourceId": "fundsrc_fbd656d6193c98c20d58",
+          "url": "https://www.antin-ip.com/who-we-are/strategies/flagship",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Flagship direct-equity mandate"
+        },
+        {
+          "sourceId": "fundsrc_f8090535d22f27e57c08",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current fund statistics"
+        },
+        {
+          "sourceId": "fundsrc_7d0ccaa67ec4a3cb61e8",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/06/Antin-IP-SA-2025-URD.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-06-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Fund III and FirstLight attribution"
+        }
+      ],
+      "rationale": "The repository identity and core strategy match, but primary sources require native EUR amount metadata, final-close semantics and date, a null USD amount because no official USD equivalent was stated, and replacement of the indirect filing/homepage links with direct official fund and strategy sources.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-006B",
+      "before": {
+        "legacyId": "FUND-006B",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Fund III-B",
+        "ticker": null,
+        "investmentStrategy": "Continuation / companion vehicle associated with Antin Flagship Fund III portfolio holdings, including retained exposure to digital infrastructure assets such as FirstLight and CityFibre.",
+        "size": "€1.2B",
+        "sizeUsdMm": 1320,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://financialreports.eu/filings/835156/content/"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/"
+      },
+      "after": {
+        "legacyId": "FUND-006B",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Fund III-B",
+        "ticker": null,
+        "investmentStrategy": "Continuation / companion vehicle associated with Antin Flagship Fund III portfolio holdings, including retained exposure to digital infrastructure assets such as FirstLight and CityFibre.",
+        "size": "€1.2B",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "1200000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2025-12-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/investments/firstlight-fiber",
+          "https://www.antin-ip.com/who-we-are/strategies/flagship",
+          "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/06/Antin-IP-SA-2025-URD.pdf"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/who-we-are/strategies/flagship"
+      },
+      "changedFields": [
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_fbd656d6193c98c20d58",
+          "url": "https://www.antin-ip.com/who-we-are/strategies/flagship",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Flagship direct-equity mandate"
+        },
+        {
+          "sourceId": "fundsrc_f8090535d22f27e57c08",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund III-B identity, commitments and current value"
+        },
+        {
+          "sourceId": "fundsrc_970a4978ca41dc0ad4ff",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf",
+          "supportedFields": [
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Fund III-B lifecycle"
+        },
+        {
+          "sourceId": "fundsrc_7d0ccaa67ec4a3cb61e8",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/06/Antin-IP-SA-2025-URD.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-06-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current FirstLight co-attribution"
+        }
+      ],
+      "rationale": "The repository identity and continuation-vehicle description match, but primary sources require native EUR commitment metadata and an as-of date, a null USD amount because no official USD equivalent was stated, and direct official fund and strategy sources.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-006C",
+      "before": {
+        "legacyId": "FUND-006C",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Flagship Fund IV",
+        "ticker": null,
+        "investmentStrategy": "Fourth Antin flagship infrastructure fund focused on established infrastructure businesses across Europe and North America, with deployment across energy, environment, digital, transport, and social infrastructure.",
+        "size": "€6.5B",
+        "sizeUsdMm": 7150,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2019",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://financialreports.eu/filings/835156/content/"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/"
+      },
+      "after": {
+        "legacyId": "FUND-006C",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Flagship Fund IV",
+        "ticker": null,
+        "investmentStrategy": "Fourth Antin flagship infrastructure fund focused on established infrastructure businesses across Europe and North America, with deployment across energy, environment, digital, transport, and social infrastructure.",
+        "size": "€6.5B",
+        "sizeUsdMm": 7600,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "6500000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2020-07-28",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2019",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-successfully-closes-fourth-fund-hard-cap-raising-e65",
+          "https://www.antin-ip.com/who-we-are/strategies/flagship",
+          "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/who-we-are/strategies/flagship"
+      },
+      "changedFields": [
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_c984213752208c1e2c40",
+          "url": "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-successfully-closes-fourth-fund-hard-cap-raising-e65",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2020-07-28",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund IV final close and mandate"
+        },
+        {
+          "sourceId": "fundsrc_fbd656d6193c98c20d58",
+          "url": "https://www.antin-ip.com/who-we-are/strategies/flagship",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Flagship value-add strategy"
+        },
+        {
+          "sourceId": "fundsrc_f8090535d22f27e57c08",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Fund IV statistics"
+        },
+        {
+          "sourceId": "fundsrc_970a4978ca41dc0ad4ff",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf",
+          "supportedFields": [
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Fund IV lifecycle"
+        }
+      ],
+      "rationale": "The repository identity, strategy and native size match, but the official release states a $7.6 billion USD equivalent rather than $7.15 billion and supports native EUR amount, final-close semantics/date, and direct official source and strategy URLs.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-007",
+      "before": {
+        "legacyId": "FUND-007",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Flagship Fund V",
+        "ticker": null,
+        "investmentStrategy": "Large-ticket value-add fund investing in established infrastructure platforms across Europe and North America; typically writes ~€600m-€1bn+ equity checks.",
+        "size": "€10.2B",
+        "sizeUsdMm": 11220,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-flagship-fund-v-above-e10-billion-target"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/"
+      },
+      "after": {
+        "legacyId": "FUND-007",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Flagship Fund V",
+        "ticker": null,
+        "investmentStrategy": "Large-ticket value-add fund investing in established infrastructure platforms across Europe and North America; typically writes ~€600m-€1bn+ equity checks.",
+        "size": "€10.2B",
+        "sizeUsdMm": 10700,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "10200000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2024-12-19",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/media/our-news/antin-acquires-sapphire-gas-solutions-from-apollo-funds",
+          "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-flagship-fund-v-above-e10-billion-target",
+          "https://www.antin-ip.com/who-we-are/strategies/flagship",
+          "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/who-we-are/strategies/flagship"
+      },
+      "changedFields": [
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_b56ffdfcc42040de5e59",
+          "url": "https://www.antin-ip.com/media/our-news/antin-acquires-sapphire-gas-solutions-from-apollo-funds",
+          "supportedFields": [
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-04-02",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current United States Fund V acquisition"
+        },
+        {
+          "sourceId": "fundsrc_81a44d0fc915ccf9d77d",
+          "url": "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-flagship-fund-v-above-e10-billion-target",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-12-19",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund V final close and mandate"
+        },
+        {
+          "sourceId": "fundsrc_fbd656d6193c98c20d58",
+          "url": "https://www.antin-ip.com/who-we-are/strategies/flagship",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Flagship equity range and value-add strategy"
+        },
+        {
+          "sourceId": "fundsrc_f8090535d22f27e57c08",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Fund V statistics"
+        }
+      ],
+      "rationale": "The repository identity and strategy match, but the official final-close release states a $10.7 billion USD equivalent rather than $11.22 billion and supports native EUR amount, final-close semantics/date, and direct official source and strategy URLs.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-008",
+      "before": {
+        "legacyId": "FUND-008",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Mid Cap Fund I",
+        "ticker": null,
+        "investmentStrategy": "Smaller-ticket version of Antin's flagship strategy, targeting established infrastructure companies in Europe and North America with ~€50m-€300m equity tickets.",
+        "size": "€2.2B",
+        "sizeUsdMm": 2420,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-inaugural-mid-cap-fund-e22-billion-hard-cap"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/"
+      },
+      "after": {
+        "legacyId": "FUND-008",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin Mid Cap Fund I",
+        "ticker": null,
+        "investmentStrategy": "Smaller-ticket version of Antin's flagship strategy, targeting established infrastructure companies in Europe and North America with ~€50m-€300m equity tickets.",
+        "size": "€2.2B",
+        "sizeUsdMm": 2600,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "2200000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2021-06-30",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-inaugural-mid-cap-fund-e22-billion-hard-cap",
+          "https://www.antin-ip.com/who-we-are/strategies/mid-cap",
+          "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/who-we-are/strategies/mid-cap"
+      },
+      "changedFields": [
+        "sectors",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_9d4458a40372bf2449ed",
+          "url": "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-inaugural-mid-cap-fund-e22-billion-hard-cap",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2021-06-30",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Mid Cap I final close and mandate"
+        },
+        {
+          "sourceId": "fundsrc_8ba4c0df8448b3995ae8",
+          "url": "https://www.antin-ip.com/who-we-are/strategies/mid-cap",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Mid Cap equity mandate"
+        },
+        {
+          "sourceId": "fundsrc_f8090535d22f27e57c08",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Mid Cap I statistics"
+        },
+        {
+          "sourceId": "fundsrc_970a4978ca41dc0ad4ff",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf",
+          "supportedFields": [
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current Mid Cap I lifecycle"
+        }
+      ],
+      "rationale": "The repository identity and core strategy match, but the official release states a $2.6 billion USD equivalent rather than $2.42 billion, supports native EUR amount and final-close semantics/date, evidences energy-and-environment exposure mapped to Power & ET, and provides direct official source and strategy URLs.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-009",
+      "before": {
+        "legacyId": "FUND-009",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin NextGen Fund I",
+        "ticker": null,
+        "investmentStrategy": "Next-generation infrastructure strategy backing scalable, sustainability-linked platforms and technologies across Europe and North America.",
+        "size": "€1.2B",
+        "sizeUsdMm": 1320,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/media/our-news/antin-holds-final-close-on-inaugural-nextgen-fund-at-e1-2-billion-target"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/"
+      },
+      "after": {
+        "legacyId": "FUND-009",
+        "managerName": "Antin Infrastructure Partners",
+        "fundName": "Antin NextGen Fund I",
+        "ticker": null,
+        "investmentStrategy": "Next-generation infrastructure strategy backing scalable, sustainability-linked platforms and technologies across Europe and North America.",
+        "size": "€1.2B",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "EUR",
+        "sizeNativeAmount": "1200000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2023-11-30",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.antin-ip.com/media/our-news/antin-holds-final-close-on-inaugural-nextgen-fund-at-e1-2-billion-target",
+          "https://www.antin-ip.com/who-we-are/strategies/nextgen",
+          "https://www.antin-ip.com/wp-content/uploads/2025/01/Antin-IP-SA-2023-URD-site-Antin-EN-1.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf"
+        ],
+        "strategyUrl": "https://www.antin-ip.com/who-we-are/strategies/nextgen"
+      },
+      "changedFields": [
+        "sectors",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl"
+      ],
+      "suppressedFields": [
+        "strategies"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_2c13161b6109448c4e17",
+          "url": "https://www.antin-ip.com/media/our-news/antin-holds-final-close-on-inaugural-nextgen-fund-at-e1-2-billion-target",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2023-11-30",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "NextGen I final close and mandate"
+        },
+        {
+          "sourceId": "fundsrc_a7906dfbeb6c3ab1fd5a",
+          "url": "https://www.antin-ip.com/who-we-are/strategies/nextgen",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current NextGen mandate"
+        },
+        {
+          "sourceId": "fundsrc_e9a45be513e555e57a6d",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2025/01/Antin-IP-SA-2023-URD-site-Antin-EN-1.pdf",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-03-15",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Growth strategy and controlling ownership"
+        },
+        {
+          "sourceId": "fundsrc_f8090535d22f27e57c08",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-12",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current NextGen I statistics"
+        },
+        {
+          "sourceId": "fundsrc_970a4978ca41dc0ad4ff",
+          "url": "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf",
+          "supportedFields": [
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current NextGen I lifecycle"
+        }
+      ],
+      "rationale": "The repository identity, native size and geography match, but primary sources support Growth rather than Opportunistic, add Digital to the evidenced sector set, require native EUR amount and final-close semantics/date, require a null USD amount because no official USD equivalent was stated, and replace indirect links with direct official sources.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-010",
+      "before": {
+        "legacyId": "FUND-010",
+        "managerName": "APG Asset Management",
+        "fundName": "APG Direct Infrastructure Pool",
+        "ticker": null,
+        "investmentStrategy": "Closest public match is APG Infrastructure Pool 2020-2021 within APG's broader direct infrastructure program: a long-term global pool spanning multiple asset styles, sectors and regions, with major exposure to power, transport, social and digital themes.",
+        "size": "€33.0B",
+        "sizeUsdMm": 36300,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://assetmanagement.apg.nl/infrastructure/"
+        ],
+        "strategyUrl": "https://assetmanagement.apg.nl/infrastructure/"
+      },
+      "after": {
+        "legacyId": "FUND-010",
+        "managerName": "APG Asset Management",
+        "fundName": "APG Infrastructure Pool 2020-2021",
+        "ticker": null,
+        "investmentStrategy": "Long-term global infrastructure equity and equity-related investments, primarily non-listed, through companies, funds, joint ventures and co-investments, targeting stable and predictable returns.",
+        "size": "Undisclosed",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Asia-Pacific",
+          "Europe",
+          "Latin America",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://apg.nl/media/ei5b0cjd/20221221-sustainability-related-disclosures-of-apg-am-financial-products.pdf",
+          "https://assetmanagement.apg.nl/investments/apg-infrastructure-pool-2020-2021/",
+          "https://assetmanagement.apg.nl/media/dddfft1s/6230-pcd-2026-apg-infrastructure-pool-2020-2021.pdf",
+          "https://assetmanagement.apg.nl/media/mkgf0hap/6230-sfdr-pd-2025-apg-infrastructure-pool-2020-2021.pdf"
+        ],
+        "strategyUrl": "https://assetmanagement.apg.nl/investments/apg-infrastructure-pool-2020-2021/"
+      },
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "regions",
+        "size",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl",
+        "structure"
+      ],
+      "suppressedFields": [
+        "fundStatus",
+        "vintage"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_d79ba5db2c63cbcfa609",
+          "url": "https://apg.nl/media/ei5b0cjd/20221221-sustainability-related-disclosures-of-apg-am-financial-products.pdf",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "managerName",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-12-21",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Identity, infrastructure equity and North American mandate"
+        },
+        {
+          "sourceId": "fundsrc_24cdbd2e9b73b7fed00a",
+          "url": "https://assetmanagement.apg.nl/infrastructure/",
+          "supportedFields": [
+            "size",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Manager-level AUM semantics"
+        },
+        {
+          "sourceId": "fundsrc_35525dfe548ca4ce5300",
+          "url": "https://assetmanagement.apg.nl/investments/apg-infrastructure-pool-2020-2021/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "sourceUrls",
+            "strategyUrl",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official current product identity"
+        },
+        {
+          "sourceId": "fundsrc_b615982979f244ce1c6d",
+          "url": "https://assetmanagement.apg.nl/media/mkgf0hap/6230-sfdr-pd-2025-apg-infrastructure-pool-2020-2021.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current invested lifecycle"
+        }
+      ],
+      "rationale": "FUND-010 matches this pool, but the official name and fund fields differ; the repository's €33 billion is manager-level infrastructure AUM, not fund capital.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-010A",
+      "before": {
+        "legacyId": "FUND-010A",
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Opportunities Fund II",
+        "ticker": null,
+        "investmentStrategy": "Second dedicated Apollo infrastructure fund focused on mid-market communications, power and renewables, and transportation infrastructure assets, including Broad Reach Power, IonicBlue, US Wind, and FirstDigital.",
+        "size": "$2.54B",
+        "sizeUsdMm": 2540,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-010A",
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Opportunities Fund II",
+        "ticker": null,
+        "investmentStrategy": "Mid-market core-plus and value-add infrastructure equity across communications, power and renewables, and transportation, with a current fund-attributed U.S. offshore-wind investment in US Wind.",
+        "size": "$2.542B committed capital",
+        "sizeUsdMm": 2542,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2542000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2026-03-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2020",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://ir.apollo.com/news-events/press-releases/detail/38/apollo-closes-second-dedicated-infrastructure-fund-with",
+          "https://uswindinc.com/about-us/",
+          "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "https://www.sec.gov/Archives/edgar/data/1858681/000185868126000021/agmearningsrelease1q2026.htm"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "vintage"
+      ],
+      "suppressedFields": [
+        "strategies"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_493b5b23c54f926b7d05",
+          "url": "https://ir.apollo.com/news-events/press-releases/detail/38/apollo-closes-second-dedicated-infrastructure-fund-with",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-01-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "AIOF II closing and portfolio attribution"
+        },
+        {
+          "sourceId": "fundsrc_c0dac30e277a4cd6cb1b",
+          "url": "https://uswindinc.com/about-us/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current U.S. holding ownership"
+        },
+        {
+          "sourceId": "fundsrc_d135fb7f65224bd5bcf3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "supportedFields": [
+            "investmentStrategy",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-10-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Apollo infrastructure strategy taxonomy"
+        },
+        {
+          "sourceId": "fundsrc_f1903c8671c490f85da1",
+          "url": "https://www.sec.gov/Archives/edgar/data/1858681/000185868126000021/agmearningsrelease1q2026.htm",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "March 2026 Apollo investment record"
+        }
+      ],
+      "rationale": "The repository identity matches, but Apollo's March 2026 investment record provides exact commitment semantics, date and vintage; Apollo's strategy taxonomy supports core-plus as well as value-add; and fund-specific evidence supports a current North American holding while not independently substantiating the repository's Europe field.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-011",
+      "before": {
+        "legacyId": "FUND-011",
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Company (AIC)",
+        "ticker": null,
+        "investmentStrategy": "Evergreen Apollo infrastructure vehicle pursuing income and appreciation through control acquisitions, financings and strategic investments across essential infrastructure sectors.",
+        "size": "$1.7B",
+        "sizeUsdMm": 1700,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Retail Act '40"
+        ],
+        "structure": "Open-End",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.apollo.com/wealth/strategies/products/apollo-infrastructure-company"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-011",
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Company",
+        "ticker": null,
+        "investmentStrategy": "Evergreen operating-company program pursuing control-oriented ownership, operation and capital provision to infrastructure assets, with primary geographic focus on North America, Western Europe and other OECD markets.",
+        "size": "$1.9B total net asset value; not classified as fund size",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Retail Act '40"
+        ],
+        "structure": "Open-End",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.apollo.com/wealth/strategies/products/apollo-infrastructure-company",
+          "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "https://www.sec.gov/Archives/edgar/data/1971381/000119312525068918/d888030d10k.htm",
+          "https://www.sec.gov/Archives/edgar/data/1971381/000119312526224382/0001193125-26-224382-index.htm"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "regions",
+        "sectors",
+        "size",
+        "sizeUsdMm",
+        "sourceUrls"
+      ],
+      "suppressedFields": [
+        "strategies",
+        "vintage"
+      ],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_b2b572820204414ae2e9",
+          "url": "https://www.apollo.com/wealth/strategies/products/apollo-infrastructure-company",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "sourceUrls",
+            "strategyUrl",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current AIC product description"
+        },
+        {
+          "sourceId": "fundsrc_d135fb7f65224bd5bcf3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "supportedFields": [
+            "investmentStrategy",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2024-10-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "AIC strategy classification"
+        },
+        {
+          "sourceId": "fundsrc_679bf26300525a8a5b6d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1971381/000119312525068918/d888030d10k.htm",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2025-04-04",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "AIC mandate and direct-ownership structure"
+        },
+        {
+          "sourceId": "fundsrc_edfd189a78a28fdf7456",
+          "url": "https://www.sec.gov/Archives/edgar/data/1971381/000119312526224382/0001193125-26-224382-index.htm",
+          "supportedFields": [
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": "2026-05-14",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current 2026 filing"
+        }
+      ],
+      "rationale": "The repository row matches AIC but uses a parenthetical name, treats displayed net asset value as a $1.7 billion fund-size amount, assigns a retail-product strategy, and records only a generic global region. Primary materials instead support the official name, 2023 inception, core/core-plus infrastructure classification, direct control-oriented ownership and a primary North American, Western European and OECD focus. AIC remains a program exception because it is an operating-company vehicle rather than a conventional commingled private fund.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-014",
+      "before": {
+        "legacyId": "FUND-014",
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Opportunities Fund III",
+        "ticker": null,
+        "investmentStrategy": "Mid-market Apollo infrastructure fund providing flexible capital across power, renewables, transport and digital infrastructure in North America and Europe.",
+        "size": "$2.4B",
+        "sizeUsdMm": 2400,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2023",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Social Infra",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1961489/000095014225001711/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "after": {
+        "legacyId": "FUND-014",
+        "managerName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Opportunities Fund III",
+        "ticker": null,
+        "investmentStrategy": "Mid-market core-plus and value-add infrastructure equity with a fund-specific North American geographic focus and active investments.",
+        "size": "$2.399B committed capital",
+        "sizeUsdMm": 2399,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2399000000",
+        "sizeBasis": "COMMITMENTS",
+        "sizeAsOf": "2026-03-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.infrastructureinvestor.com/apollo-reaches-2-4bn-final-close-on-third-infra-fund-exclusive/",
+          "https://www.sbcers.org/wp-content/uploads/SBCERS-2025-PRR-Strategic-Plan-.pdf",
+          "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "https://www.sec.gov/Archives/edgar/data/1858681/000185868126000021/agmearningsrelease1q2026.htm"
+        ],
+        "strategyUrl": "https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"
+      },
+      "changedFields": [
+        "investmentStrategy",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "vintage"
+      ],
+      "suppressedFields": [
+        "strategies"
+      ],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_0fbf0812232fdc58b678",
+          "url": "https://www.infrastructureinvestor.com/apollo-reaches-2-4bn-final-close-on-third-infra-fund-exclusive/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ],
+          "sourceTier": "REPUTABLE_SECONDARY",
+          "scope": "FUND",
+          "publishedAt": "2025-10-02",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "AIOF III final-close corroboration"
+        },
+        {
+          "sourceId": "fundsrc_ab9017a164930a1871a3",
+          "url": "https://www.sbcers.org/wp-content/uploads/SBCERS-2025-PRR-Strategic-Plan-.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2025-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund-specific North American mandate"
+        },
+        {
+          "sourceId": "fundsrc_d135fb7f65224bd5bcf3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1527469/000152746924000083/apollo2024investordaypre.htm",
+          "supportedFields": [
+            "investmentStrategy",
+            "sourceUrls",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-10-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "AIOF strategy classification"
+        },
+        {
+          "sourceId": "fundsrc_f1903c8671c490f85da1",
+          "url": "https://www.sec.gov/Archives/edgar/data/1858681/000185868126000021/agmearningsrelease1q2026.htm",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeAsOf",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sourceUrls",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "March 2026 AIOF III investment record"
+        }
+      ],
+      "rationale": "The repository identity matches, but Apollo's primary investment record supports a 2024 vintage and $2.399 billion of committed capital as of March 31, 2026. Institutional evidence supports North America, while the repository's detailed sector list is not established by the opened fund-specific materials and is therefore cleared rather than inferred.",
+      "sizeGate": null
+    },
+    {
+      "action": "UPDATE",
+      "batch": 2,
+      "legacyId": "FUND-016",
+      "before": {
+        "legacyId": "FUND-016",
+        "managerName": "Ara Partners",
+        "fundName": "Ara Energy Decarbonization Fund I",
+        "ticker": null,
+        "investmentStrategy": "Inaugural Ara Energy vehicle focused on acquiring operating conventional-energy assets and decarbonizing them through operational optimization, fuel transition and retrofit pathways.",
+        "size": "$1.5B",
+        "sizeUsdMm": 1500,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2026",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Midstream",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.arapartners.com/what-we-do/strategies/energy/"
+        ],
+        "strategyUrl": "https://www.arapartners.com/what-we-do/strategies/infrastructure/"
+      },
+      "after": {
+        "legacyId": "FUND-016",
+        "managerName": "Ara Partners",
+        "fundName": "Ara Energy Fund I",
+        "ticker": null,
+        "investmentStrategy": "Value-add acquisition, ownership and operational optimization of existing cash-generating conventional power, biofuels, and fuels-delivery and distribution businesses and assets, with economic decarbonization where viable.",
+        "size": "Undisclosed",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Not disclosed",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Midstream",
+          "Power & ET",
+          "Transportation",
+          "Utilities"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B30A9BC9E-0000-CC16-BB77-8FA1D20967F3%7D&DocTitle=Declaratory+Ruling+on+Transfer+Transaction",
+          "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+          "https://www.arapartners.com/news/ara-partners-launches-new-strategy-to-decarbonize-conventional-energy-value-chain-in-partnership-with-hf-capital/",
+          "https://www.arapartners.com/news/liberty-mutual-investments-and-ara-partners-form-strategic-partnership/",
+          "https://www.arapartners.com/what-we-do/strategies/energy/",
+          "https://www.infrastructureinvestor.com/institution-profiles/ara-partners.html",
+          "https://www.sec.gov/Archives/edgar/data/1957892/000119312526081487/structurenport.htm",
+          "https://www.sec.gov/Archives/edgar/data/2088778/000095010325016053/xslFormDX08/primary_doc.xml",
+          "https://www.sec.gov/Archives/edgar/data/2088818/000095010325016054/xslFormDX08/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.arapartners.com/what-we-do/strategies/energy/"
+      },
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "regions",
+        "size",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategyUrl",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_f6eb3341080346bbcc40",
+          "url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-03-11",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Signed direct-equity deployment context"
+        },
+        {
+          "sourceId": "fundsrc_24c20d6cad4df6d0fb13",
+          "url": "https://www.arapartners.com/news/ara-partners-launches-new-strategy-to-decarbonize-conventional-energy-value-chain-in-partnership-with-hf-capital/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-09-16",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official strategy launch and North American scope"
+        },
+        {
+          "sourceId": "fundsrc_9908f870ae085104bab1",
+          "url": "https://www.arapartners.com/news/liberty-mutual-investments-and-ara-partners-form-strategic-partnership/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-02-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Named anchor investment and current regional scope"
+        },
+        {
+          "sourceId": "fundsrc_ca1281556825d3634f6d",
+          "url": "https://www.arapartners.com/what-we-do/strategies/energy/",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions",
+            "sectors",
+            "strategies",
+            "strategyUrl"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official direct infrastructure and geography mandate"
+        },
+        {
+          "sourceId": "fundsrc_5e368901109f2a587005",
+          "url": "https://www.infrastructureinvestor.com/institution-profiles/ara-partners.html",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "sourceUrls"
+          ],
+          "sourceTier": "REPUTABLE_SECONDARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "Current fundraising status cross-check"
+        },
+        {
+          "sourceId": "fundsrc_9948af2ff5d45b43293b",
+          "url": "https://www.sec.gov/Archives/edgar/data/1957892/000119312526081487/structurenport.htm",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2025-12-31",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Institutional infrastructure classification and commitment"
+        },
+        {
+          "sourceId": "fundsrc_e63b96c5addccad76955",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088778/000095010325016053/xslFormDX08/primary_doc.xml",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeUsdMm",
+            "sourceUrls",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-12-11",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official main-fund identity and live offering"
+        },
+        {
+          "sourceId": "fundsrc_861bd34b9cc89369fb50",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088818/000095010325016054/xslFormDX08/primary_doc.xml",
+          "supportedFields": [
+            "fundName",
+            "sourceUrls",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-12-11",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Parallel vehicle identity"
+        }
+      ],
+      "rationale": "FUND-016 represents the same commercial vehicle, but the official legal and market name is Ara Energy Fund I. Primary evidence does not establish a $1.5 billion fund size or a 2026 vintage; the offering amount is indefinite, the manager has not announced a final close, and official materials now describe a North America-and-Europe strategy with a dedicated Energy strategy page.",
+      "sizeGate": null
+    },
+    {
+      "action": "CREATE",
+      "batch": 2,
+      "legacyId": "FUND-168",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-168",
+        "managerName": "Harbert Management Corporation",
+        "fundName": "Gulf Pacific Power, LLC",
+        "ticker": null,
+        "investmentStrategy": "North American power infrastructure investment vehicle targeting renewable and conventional generation.",
+        "size": "$2.113B AUM",
+        "sizeUsdMm": 2113.01,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2113006249",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2026-03-31",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Not disclosed",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://reports.adviserinfo.sec.gov/reports/ADV/110577/PDF/110577.pdf",
+          "https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdf"
+        ],
+        "strategyUrl": "https://www.harbert.net/investment-strategies/infrastructure/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_ab6fba240d63977c3d64",
+          "url": "https://reports.adviserinfo.sec.gov/reports/ADV/110577/PDF/110577.pdf",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm"
+          ],
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2026-05-20",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "GPP listing"
+        },
+        {
+          "sourceId": "fundsrc_2892773572f24d597a9b",
+          "url": "https://www.harbert.net/wp-content/uploads/2024/07/2024-HMC-Responsible-Investment-Report.pdf",
+          "supportedFields": [
+            "investmentStrategy",
+            "regions"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-07-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "MEDIUM",
+          "evidenceLabel": "GPP NA assets"
+        }
+      ],
+      "rationale": "Active infrastructure investment vehicle not represented in repository snapshot.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$2.113B AUM; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 2,
+      "legacyId": "FUND-169",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-169",
+        "managerName": "InfraRed Capital Partners",
+        "fundName": "InfraRed Infrastructure Fund VI",
+        "ticker": null,
+        "investmentStrategy": "Value-add infrastructure equity strategy targeting energy transition, digital and transport assets across OECD markets including North America.",
+        "size": "$1.8B final close",
+        "sizeUsdMm": 1800,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "1800000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2024-03-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2021",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.ircp.com/news/infrared-closes-infrastructure-fund-vi/",
+          "https://www.ircp.com/wp-content/uploads/2026/06/InfraRed-2026-Sustainability-Report.pdf"
+        ],
+        "strategyUrl": "https://www.ircp.com/investments/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_075ab9b83fafd569d17f",
+          "url": "https://www.ircp.com/news/infrared-closes-infrastructure-fund-vi/",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-03-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund VI close and mandate"
+        },
+        {
+          "sourceId": "fundsrc_723e7bdac538ef670f88",
+          "url": "https://www.ircp.com/wp-content/uploads/2026/06/InfraRed-2026-Sustainability-Report.pdf",
+          "supportedFields": [
+            "regions"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund VI current investments"
+        }
+      ],
+      "rationale": "Fund VI is a current flagship vehicle with North American mandate and active holdings but is not present in the repository snapshot.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$1.8B final close; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 2,
+      "legacyId": "FUND-170",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-170",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "fundName": "North Haven Infrastructure Partners III",
+        "ticker": null,
+        "investmentStrategy": "Global value-add infrastructure equity fund investing in communications, energy, and transport infrastructure.",
+        "size": "$5.5B final close",
+        "sizeUsdMm": 5500,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "5500000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2019-12-10",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Not disclosed in opened evidence",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "Europe",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.morganstanley.com/press-releases/msim-closes-nhip-iii"
+        ],
+        "strategyUrl": "https://www.morganstanley.com/im/en-us/institutional-investor/about-us/investment-teams/real-assets/private-infrastructure-team.html"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_fa7c93321afb015abdde",
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B6A1F5A66-9F45-4E90-9F6A-8A9E0D8C2C4B%7D",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2020-12-15",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "NHIP III ownership of Lightpath"
+        },
+        {
+          "sourceId": "fundsrc_b7cb89aae19f52027f38",
+          "url": "https://www.morganstanley.com/press-releases/msim-closes-nhip-iii",
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2019-12-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "NHIP III final close"
+        }
+      ],
+      "rationale": "Missing from repository despite confirmed current holding.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$5.5B final close; structured USD size is at least $1B"
+      }
+    },
+    {
+      "action": "CREATE",
+      "batch": 2,
+      "legacyId": "FUND-171",
+      "before": null,
+      "after": {
+        "legacyId": "FUND-171",
+        "managerName": "Stonepeak",
+        "fundName": "Stonepeak Infrastructure Fund IV",
+        "ticker": null,
+        "investmentStrategy": "Diversified North American infrastructure strategy targeting high-barrier assets across energy, transport, and digital sectors.",
+        "size": "$14.0B final close",
+        "sizeUsdMm": 14000,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "14000000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2022-05-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://stonepeak.com/news/stonepeak-closes-14-billion-infrastructure-fund-iv/"
+        ],
+        "strategyUrl": "https://stonepeak.com/"
+      },
+      "changedFields": [
+        "fundName",
+        "fundStatus",
+        "investmentStrategy",
+        "legacyId",
+        "managerName",
+        "regions",
+        "sectors",
+        "size",
+        "sizeAsOf",
+        "sizeBasis",
+        "sizeNativeAmount",
+        "sizeNativeCurrency",
+        "sizeUsdMm",
+        "sourceUrls",
+        "strategies",
+        "strategyUrl",
+        "structure",
+        "vintage"
+      ],
+      "suppressedFields": [],
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "fundsrc_ae0c8e27249acd63dbeb",
+          "url": "https://stonepeak.com/news/stonepeak-closes-14-billion-infrastructure-fund-iv/",
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "vintage"
+          ],
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund IV close announcement"
+        }
+      ],
+      "rationale": "Not present in repository snapshot despite being a current flagship fund.",
+      "sizeGate": {
+        "eligible": true,
+        "basis": "DISCLOSED_USD_EQUIVALENT",
+        "rationale": "$14.0B final close; structured USD size is at least $1B"
+      }
+    }
+  ]
+}

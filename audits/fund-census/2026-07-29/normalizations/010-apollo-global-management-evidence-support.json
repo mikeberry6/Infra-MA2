@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_EVIDENCE_FIELD_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Apollo Global Management",
+  "createdAt": "2026-07-29T22:25:48.879Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/010-apollo-global-management-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/010-apollo-global-management-evidence-normalized.txt",
+  "allowedFields": [
+    "evidence[].supportedFields[].sizeUsdMm"
+  ],
+  "changes": [
+    {
+      "fundIndex": 2,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-011",
+      "url": "https://www.apollo.com/wealth/strategies/products/apollo-infrastructure-company",
+      "field": "sizeUsdMm",
+      "rationale": "Existing primary or institutional evidence states that the displayed amount is net asset value while the normalized snapshot explicitly does not classify it as fund size."
+    }
+  ]
+}

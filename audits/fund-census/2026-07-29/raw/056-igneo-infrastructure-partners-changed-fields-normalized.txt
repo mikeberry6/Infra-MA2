@@ -1,0 +1,329 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Igneo Infrastructure Partners",
+  "canonicalManager": "Igneo Infrastructure Partners",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "First Sentier Investors (direct infrastructure business)",
+    "First State Investments (infrastructure)",
+    "Colonial First State Global Asset Management (infrastructure platform legacy)"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Global Diversified Infrastructure Fund (GDIF)",
+      "aliases": [
+        "First State Global Diversified Infrastructure Fund",
+        "First Sentier Global Diversified Infrastructure Fund"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "Official materials describe GDIF as a direct infrastructure investment strategy investing in physical infrastructure assets globally across sectors such as energy, utilities and transport.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Government filing attributes U.S. rail operator Patriot Rail Company LLC to GDIF (North America) LP, and Igneo’s current portfolio confirms Patriot Rail as an active holding.",
+        "currentHoldingName": "Patriot Rail Company LLC",
+        "currentHoldingUrl": "https://www.igneoip.com/usa/en/institutional/our-assets/patriot-rail.html"
+      },
+      "snapshot": {
+        "legacyId": "FUND-098",
+        "managerName": "Igneo Infrastructure Partners",
+        "fundName": "Global Diversified Infrastructure Fund (GDIF)",
+        "ticker": null,
+        "investmentStrategy": "Open-ended global diversified direct infrastructure equity fund investing across energy, utilities and transport assets.",
+        "size": "$7.2B+ AUM",
+        "sizeUsdMm": 7200,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "7200000000",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2025-09-03",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Evergreen",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Social Infra"
+        ],
+        "regions": [
+          "Global",
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.igneoip.com/australia/en/institutional/news-and-insights/press/igneo-refinances-green-tranche-credit-facility.html"
+        ],
+        "strategyUrl": "https://www.igneoip.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-announces-first-close-of-north-american-infrastructure-strategy.html",
+          "title": "Igneo announces first close of North American infrastructure strategy",
+          "publisher": "Igneo Infrastructure Partners",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-09-03",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "GDIF AUM disclosure",
+          "evidenceSummary": "States Igneo’s global infrastructure strategy, including GDIF, manages over US$7.2 billion as of the September 3, 2025 publication date, confirming fund scale and ongoing activity.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sizeAsOf",
+            "structure",
+            "strategies",
+            "fundStatus"
+          ]
+        },
+        {
+          "url": "https://www.federalregister.gov/documents/2024/06/21/2024-13768/notice-of-filing-of-application-for-approval-of-continued-operation-and-control-exemption-patriot",
+          "title": "Federal Register notice – Patriot Rail control exemption",
+          "publisher": "U.S. Government",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2024-06-21",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "GDIF North America holding attribution",
+          "evidenceSummary": "Identifies Global Diversified Infrastructure Fund (North America) LP as the controlling owner of Patriot Rail Company LLC, establishing fund-level attribution of a U.S. infrastructure asset.",
+          "supports": [
+            "FUND_IDENTITY",
+            "NORTH_AMERICA",
+            "DIRECT_EQUITY_INFRASTRUCTURE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "regions"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-098",
+          "managerName": "Igneo Infrastructure Partners",
+          "fundName": "Global Diversified Infrastructure Fund (GDIF)"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "regions"
+      ],
+      "repoDispositionRationale": "Repository size and geography fields lack current evidenced AUM basis and North American attribution tied to a specific holding.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "North American Diversified Infrastructure Fund (NADIF)",
+      "aliases": [],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "RAISING",
+      "directEquityBasis": "Fund is described as a direct infrastructure equity strategy investing in North American infrastructure sectors including energy, transport and digital assets.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Fund-specific materials explicitly define the strategy as North American infrastructure.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-099",
+        "managerName": "Igneo Infrastructure Partners",
+        "fundName": "North American Diversified Infrastructure Fund (NADIF)",
+        "ticker": null,
+        "investmentStrategy": "Closed-end North American diversified direct infrastructure equity fund targeting lower middle-market assets across sectors.",
+        "size": "$600M first close",
+        "sizeUsdMm": 600,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "600000000",
+        "sizeBasis": "FIRST_CLOSE",
+        "sizeAsOf": "2025-09-03",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Transportation"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/2036260/000203626025000003/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.igneoip.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-announces-first-close-of-north-american-infrastructure-strategy.html",
+          "title": "Igneo announces first close of North American infrastructure strategy",
+          "publisher": "Igneo Infrastructure Partners",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-09-03",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "NADIF first close and mandate",
+          "evidenceSummary": "Confirms the US$600 million first close of Igneo’s North American infrastructure strategy and reports that amount as of the September 3, 2025 publication date while describing its focus on North American infrastructure sectors.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sizeAsOf",
+            "vintage",
+            "fundStatus",
+            "structure",
+            "strategies"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2036260/000203626025000003/xslFormDX01/primary_doc.xml",
+          "title": "Form D – Igneo North American Diversified Infrastructure Fund",
+          "publisher": "U.S. SEC",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2025-08-27",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "NADIF ongoing offering",
+          "evidenceSummary": "SEC Form D indicates offering commenced September 12, 2024 and is intended to last more than one year, supporting active fundraising lifecycle.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "vintage",
+            "fundStatus"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-099",
+          "managerName": "Igneo Infrastructure Partners",
+          "fundName": "North American Diversified Infrastructure Fund (NADIF)"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "fundStatus"
+      ],
+      "repoDispositionRationale": "Repository size and status fields are unsupported; primary evidence supports $600M first close and ongoing fundraising rather than final close.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "European Diversified Infrastructure Fund series",
+      "reasonCode": "OUTSIDE_NORTH_AMERICA",
+      "rationale": "Fund series is explicitly focused on European infrastructure and lacks North American mandate or holdings.",
+      "sourceUrls": [
+        "https://www.igneoip.com/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 12,
+    "notes": [
+      "Reviewed Igneo official press releases, SEC filings, and regulatory disclosures",
+      "Validated North American attribution via fund-level ownership filings"
+    ]
+  },
+  "summary": {
+    "includedFunds": 2,
+    "explicitNaMandate": 1,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 0,
+    "proposedCorrections": 2,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 0
+  }
+}
+</fund_census_json>
+<fund_census_report>
+Igneo Infrastructure Partners — North American direct infrastructure fund census
+Conclusion
+Igneo Infrastructure Partners has two current direct-equity infrastructure vehicles meeting the North American inclusion criteria as of 2026-07-29: one global evergreen flagship, GDIF, with a verified U.S. holding and one actively raising North American closed-end fund, NADIF. Both repository entries require correction, primarily for size semantics, size dates and lifecycle classification.
+Included funds
+FundVehicleLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceGlobal Diversified Infrastructure Fund (GDIF)Named evergreen fundEvergreen activeVerified current U.S. holding: Patriot Rail Company LLCAUM; $7.2B+ as of 2025-09-03Proposed correctionIgneo AUM release; Federal Register Patriot Rail filingNorth American Diversified Infrastructure Fund (NADIF)Named closed-end fundRaisingExplicit North American mandateFirst close; $600M as of 2025-09-03Proposed correctionIgneo first-close release; SEC Form D
+Repository reconciliation
+
+
+FUND-098 — Global Diversified Infrastructure Fund (GDIF): Matched exactly once. Correction reflects evidenced AUM, native-currency fields, AUM basis, size date and North American exposure through a fund-attributed current holding.
+
+
+FUND-099 — North American Diversified Infrastructure Fund (NADIF): Matched exactly once. Correction replaces the unsupported $1.0B amount with the evidenced $600M first close, supplies the associated size fields and size date, and classifies the fund as Raising based on its ongoing offering.
+
+
+No repository rows remain unmatched, and no additional qualifying vehicles or possible duplicates were identified.
+
+
+Exclusions and unresolved issues
+The European Diversified Infrastructure Fund series is excluded because its mandate is outside North America. No manager overlaps, program exceptions, repo-only records or unresolved conflicts remain.
+Completeness
+Official fund materials, fundraising and close disclosures, current-holding attribution, predecessor aliases and parallel or feeder vehicle issues were reviewed. Six sources were opened across twelve searches, including Igneo materials, an SEC filing and a U.S. government ownership filing. Pasted text
+</fund_census_report>

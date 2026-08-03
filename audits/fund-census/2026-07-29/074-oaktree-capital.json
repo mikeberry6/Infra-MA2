@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Oaktree Capital",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Oaktree Capital",
+    "Oaktree Capital Management",
+    "Oaktree Capital Management, L.P.",
+    "Oaktree Capital Group, LLC",
+    "Brookfield Oaktree Holdings, LLC"
+  ],
+  "overlappingSuppliedManagers": [
+    "Brookfield Asset Management"
+  ],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager manifest status",
+      "issue": "The repository snapshot sets knownManager=false and canonicalManager=null for Oaktree Capital, while the supplied manager universe explicitly includes Oaktree Capital. Contract rules require returning OUT_OF_SCOPE_UNKNOWN_MANAGER and prohibit proposing funds despite external evidence confirming a valid operating manager.",
+      "sourceUrls": [
+        "https://www.oaktreecapital.com/about",
+        "https://bam.brookfield.com/press-releases/brookfield-acquire-remaining-interest-oaktree"
+      ],
+      "recommendedResolution": "Review and correct the FUND_MANIFEST manager-status inconsistency for Oaktree Capital Management, L.P., then rerun the census. No automatic manager or fund additions should be made in this pass."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 4,
+    "searchQueriesRun": 6,
+    "notes": [
+      "Official manager identity and ownership overlap were validated from primary sources.",
+      "Fund-level research was intentionally not performed due to contractually required OUT_OF_SCOPE_UNKNOWN_MANAGER status."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

@@ -1,0 +1,571 @@
+name: Fund Refresh Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: Exact 40-character default-branch merge containing the reviewed manifest/evidence revert
+        required: true
+        type: string
+      pull_request_number:
+        description: Merged pull request containing only the reviewed rollback desired-state files
+        required: true
+        type: string
+      proposal_hash:
+        description: Exact lowercase SHA-256 of the previously applied proposal to restore
+        required: true
+        type: string
+      apply_production:
+        description: Apply after validation preview and protected production approval
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  actions: read
+  contents: read
+  deployments: read
+
+concurrency:
+  group: fund-refresh-production
+  cancel-in-progress: false
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+  ROLLBACK_COMMIT_SHA: ${{ inputs.commit_sha }}
+  ORIGINAL_PROPOSAL_HASH: ${{ inputs.proposal_hash }}
+
+jobs:
+  authorize:
+    name: Bind rollback to the protected default branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Validate dispatch and immutable input shapes
+        env:
+          DISPATCH_REF: ${{ github.ref }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+        shell: bash
+        run: |
+          if [ "$DISPATCH_REF" != "refs/heads/$DEFAULT_BRANCH" ]; then
+            echo "::error::Dispatch this workflow from refs/heads/$DEFAULT_BRANCH."
+            exit 1
+          fi
+          if [[ ! "$ROLLBACK_COMMIT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::commit_sha must be an exact lowercase 40-character Git SHA."
+            exit 1
+          fi
+          if [[ ! "$ORIGINAL_PROPOSAL_HASH" =~ ^[0-9a-f]{64}$ ]]; then
+            echo "::error::proposal_hash must be an exact lowercase SHA-256 digest."
+            exit 1
+          fi
+          if [[ ! "$PR_NUMBER" =~ ^[1-9][0-9]*$ ]]; then
+            echo "::error::pull_request_number must be a positive integer."
+            exit 1
+          fi
+
+      - name: Bind rollback to the current protected head and reviewed data-only PR
+        id: bind_pr
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          COMMIT_SHA: ${{ inputs.commit_sha }}
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const defaultBranch = context.payload.repository.default_branch;
+            const { data: branch } = await github.rest.repos.getBranch({ owner, repo, branch: defaultBranch });
+            if (!branch.protected) {
+              core.setFailed(`Default branch ${defaultBranch} must be protected.`);
+              return;
+            }
+            if (branch.commit.sha !== process.env.COMMIT_SHA) {
+              core.setFailed(`Rollback commit must be the current ${defaultBranch} head ${branch.commit.sha}.`);
+              return;
+            }
+            const pull_number = Number(process.env.PR_NUMBER);
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number });
+            if (
+              pr.base.ref !== defaultBranch ||
+              pr.head.repo?.full_name !== `${owner}/${repo}` ||
+              !pr.merged ||
+              pr.merge_commit_sha !== process.env.COMMIT_SHA
+            ) {
+              core.setFailed(`PR #${pull_number} is not the exact merged rollback PR at ${process.env.COMMIT_SHA}.`);
+              return;
+            }
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner,
+              repo,
+              pull_number,
+              per_page: 100,
+            });
+            const allowedStaticFiles = new Set([
+              'prisma/seed-data/funds.manifest.json',
+              'prisma/seed-data/fund-evidence.manifest.json',
+              'docs/fund-source-audit.csv',
+              'docs/fund-source-audit.md',
+            ]);
+            const allowedArtifact = (filename) =>
+              /^audits\/fund-rollback\/[A-Za-z0-9._-]+\/[A-Za-z0-9._/-]+\.(json|csv|md)$/.test(filename) &&
+              !filename.split('/').includes('..');
+            const disallowed = files.filter((file) =>
+              [file.filename, file.previous_filename]
+                .filter(Boolean)
+                .some((filename) => !allowedStaticFiles.has(filename) && !allowedArtifact(filename)),
+            );
+            if (disallowed.length > 0) {
+              core.setFailed(`Rollback PRs are data-only; disallowed paths: ${disallowed.map((file) => file.filename).join(', ')}`);
+              return;
+            }
+            if (files.some((file) => file.status === 'removed' && allowedStaticFiles.has(file.filename))) {
+              core.setFailed('Rollback PR cannot remove a desired-state manifest or generated matrix.');
+              return;
+            }
+            core.setOutput('pr_commit_count', String(pr.commits));
+
+      - name: Checkout the exact rollback merge without credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.commit_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Enforce the complete local rollback data-only diff
+        env:
+          COMMIT_SHA: ${{ inputs.commit_sha }}
+          PR_COMMIT_COUNT: ${{ steps.bind_pr.outputs.pr_commit_count }}
+        shell: bash
+        run: |
+          if [ "$(git rev-parse HEAD)" != "$COMMIT_SHA" ]; then
+            echo "::error::Checked-out rollback commit does not match the authorized SHA."
+            exit 1
+          fi
+          parent_count="$(git rev-list --parents -n 1 "$COMMIT_SHA" | awk '{print NF - 1}')"
+          if [ "$parent_count" -eq 1 ] && [ "$PR_COMMIT_COUNT" -ne 1 ]; then
+            echo "::error::A one-parent rollback merge is accepted only for a single-commit PR; use a merge commit for multi-commit rollback PRs."
+            exit 1
+          fi
+          if [ "$parent_count" -lt 1 ] || [ "$parent_count" -gt 2 ]; then
+            echo "::error::Rollback commit must have one parent (single-commit PR) or two parents (merge commit)."
+            exit 1
+          fi
+          protected_parent="$(git rev-parse "$COMMIT_SHA^1")"
+          while IFS= read -r -d '' changed_path; do
+            case "$changed_path" in
+              prisma/seed-data/funds.manifest.json|prisma/seed-data/fund-evidence.manifest.json|docs/fund-source-audit.csv|docs/fund-source-audit.md)
+                ;;
+              audits/fund-rollback/*)
+                if [[ ! "$changed_path" =~ ^audits/fund-rollback/[A-Za-z0-9._-]+/[A-Za-z0-9._/-]+\.(json|csv|md)$ ]] || [[ "$changed_path" == *"/../"* ]]; then
+                  echo "::error::Invalid rollback artifact path: $changed_path"
+                  exit 1
+                fi
+                ;;
+              *)
+                echo "::error::Rollback PRs are data-only; disallowed path: $changed_path"
+                exit 1
+                ;;
+            esac
+            if git cat-file -e "$COMMIT_SHA:$changed_path" 2>/dev/null; then
+              if [ -L "$changed_path" ] || [ ! -f "$changed_path" ]; then
+                echo "::error::Rollback data files must be regular, non-symbolic-link files: $changed_path"
+                exit 1
+              fi
+            elif [[ "$changed_path" == prisma/seed-data/* || "$changed_path" == docs/fund-source-audit.* ]]; then
+              echo "::error::Rollback PR cannot remove desired-state or generated-audit files: $changed_path"
+              exit 1
+            fi
+          done < <(git diff --no-renames --name-only -z "$protected_parent" "$COMMIT_SHA")
+
+  preview-validation:
+    name: Exercise rollback on an ephemeral Neon validation branch
+    needs: authorize
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      EXPECTED_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      NEON_VALIDATION_PARENT_BRANCH: ${{ vars.NEON_VALIDATION_PARENT_BRANCH }}
+      FUND_REFRESH_APPROVER: github-rollback-validation-run:${{ github.run_id }}
+      FUND_REFRESH_INITIATOR: ${{ github.actor }}
+    steps:
+      - name: Checkout the exact rollback implementation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.commit_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Require ephemeral Neon branch configuration
+        env:
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+          NEON_PROJECT_ID: ${{ vars.NEON_PROJECT_ID }}
+        shell: bash
+        run: |
+          missing=0
+          for name in NEON_API_KEY NEON_PROJECT_ID NEON_VALIDATION_PARENT_BRANCH EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for ephemeral rollback validation."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+
+      - name: Calculate validation branch expiration
+        id: validation_expiration
+        shell: bash
+        run: echo "expires_at=$(date -u -d '+1 day' +'%Y-%m-%dT%H:%M:%SZ')" >> "$GITHUB_OUTPUT"
+
+      - name: Create an ephemeral Neon rollback-validation branch
+        id: create_validation_branch
+        uses: neondatabase/create-branch-action@72ed4f69a12b6be9c16aebfad893f6a21e9aba8b # v6.4.0
+        with:
+          project_id: ${{ vars.NEON_PROJECT_ID }}
+          api_key: ${{ secrets.NEON_API_KEY }}
+          branch_name: fund-rollback-${{ github.run_id }}-${{ github.run_attempt }}
+          parent_branch: ${{ vars.NEON_VALIDATION_PARENT_BRANCH }}
+          database: ${{ vars.MIGRATION_DATABASE_NAME }}
+          role: ${{ vars.MIGRATION_DATABASE_ROLE || 'neondb_owner' }}
+          prisma: true
+          expires_at: ${{ steps.validation_expiration.outputs.expires_at }}
+
+      - name: Bind the ephemeral validation target
+        env:
+          VALIDATION_DATABASE_URL: ${{ steps.create_validation_branch.outputs.db_url }}
+          VALIDATION_DATABASE_HOST: ${{ steps.create_validation_branch.outputs.db_host }}
+        shell: bash
+        run: |
+          if [ -z "$VALIDATION_DATABASE_URL" ] || [ -z "$VALIDATION_DATABASE_HOST" ]; then
+            echo "::error::Neon did not return the ephemeral branch connection details."
+            exit 1
+          fi
+          echo "::add-mask::$VALIDATION_DATABASE_URL"
+          printf 'DATABASE_URL=%s\nEXPECTED_DATABASE_HOST=%s\n' \
+            "$VALIDATION_DATABASE_URL" "$VALIDATION_DATABASE_HOST" >> "$GITHUB_ENV"
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Require isolated validation configuration
+        shell: bash
+        run: |
+          missing=0
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for rollback validation."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+
+      - name: Install locked dependencies and prove the database target
+        shell: bash
+        run: |
+          npm ci
+          npm run db:generate
+          npm run db:validate
+          node --experimental-strip-types scripts/assert-database-target.ts
+          mkdir -p tmp/fund-refresh/rollback-validation
+          set -o pipefail
+          npx prisma migrate deploy 2>&1 | tee tmp/fund-refresh/rollback-validation/migrate-deploy.log
+          npx prisma migrate status 2>&1 | tee tmp/fund-refresh/rollback-validation/migrate-status.log
+
+      - name: Capture the rollback validation baseline
+        shell: bash
+        run: |
+          rollback_parent="$(git rev-parse "$ROLLBACK_COMMIT_SHA^1")"
+          npx tsx scripts/audit-funds.ts \
+            --data-commit "$rollback_parent" \
+            --include-live-snapshots \
+            --output tmp/fund-refresh/rollback-validation/preapply-fund-audit.json \
+            > tmp/fund-refresh/rollback-validation/preapply-fund-audit.log
+
+      - name: Generate guarded rollback preview
+        run: >-
+          npx tsx scripts/rollback-fund-refresh.ts
+          --proposal-hash "$ORIGINAL_PROPOSAL_HASH"
+          --base-commit "$(git rev-parse "$ROLLBACK_COMMIT_SHA^1")"
+          --environment validation
+          --output tmp/fund-refresh/rollback-validation/preview.json
+
+      - name: Exercise the guarded rollback transaction
+        run: >-
+          npx tsx scripts/rollback-fund-refresh.ts
+          --proposal-hash "$ORIGINAL_PROPOSAL_HASH"
+          --base-commit "$(git rev-parse "$ROLLBACK_COMMIT_SHA^1")"
+          --environment validation
+          --apply
+          --output tmp/fund-refresh/rollback-validation/apply-summary.json
+
+      - name: Verify rollback integrity on the ephemeral branch
+        shell: bash
+        run: |
+          set -o pipefail
+          npx tsx scripts/audit-funds.ts \
+            --require-complete \
+            --allow-existing-findings-from tmp/fund-refresh/rollback-validation/preapply-fund-audit.json \
+            --allow-reviewed-rollback-from "$ORIGINAL_PROPOSAL_HASH" \
+            --include-live-snapshots \
+            --output tmp/fund-refresh/rollback-validation/fund-audit.json \
+            2>&1 | tee tmp/fund-refresh/rollback-validation/fund-audit.log
+          npm run db:verify 2>&1 | tee tmp/fund-refresh/rollback-validation/database-verification.log
+          npm run funds:audit:generate -- --check 2>&1 | tee tmp/fund-refresh/rollback-validation/fund-source-audit-generation.log
+
+      - name: Upload validation preview
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: fund-refresh-rollback-validation-${{ inputs.proposal_hash }}-${{ github.run_id }}
+          path: tmp/fund-refresh/rollback-validation/
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Delete the ephemeral Neon validation branch
+        if: always() && steps.create_validation_branch.outputs.branch_id != ''
+        env:
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+          NEON_PROJECT_ID: ${{ vars.NEON_PROJECT_ID }}
+          NEON_BRANCH_ID: ${{ steps.create_validation_branch.outputs.branch_id }}
+        shell: bash
+        run: |
+          mkdir -p tmp/fund-refresh/rollback-validation
+          if [[ ! "$NEON_BRANCH_ID" =~ ^br-[A-Za-z0-9-]+$ ]]; then
+            echo "::error::Refusing to delete an invalid Neon branch ID."
+            exit 1
+          fi
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --retry 3 --retry-delay 2 --retry-all-errors \
+            --request DELETE \
+            --header "Authorization: Bearer $NEON_API_KEY" \
+            "https://console.neon.tech/api/v2/projects/$NEON_PROJECT_ID/branches/$NEON_BRANCH_ID" \
+            > tmp/fund-refresh/rollback-validation/neon-branch-deletion.json
+
+  apply-production:
+    name: Approved production rollback
+    if: inputs.apply_production == true
+    needs: [authorize, preview-validation]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      actions: read
+      contents: read
+      deployments: write
+      pull-requests: read
+    environment:
+      name: fund-refresh-production
+    env:
+      DATABASE_URL: ${{ secrets.FUND_REFRESH_DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      FUND_REFRESH_APPROVER: github-environment:fund-refresh-production/run-${{ github.run_id }}
+      FUND_REFRESH_INITIATOR: ${{ github.actor }}
+    steps:
+      - name: Checkout the exact rollback implementation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.commit_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Recheck protected-branch containment and environment policy after approval
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          COMMIT_SHA: ${{ inputs.commit_sha }}
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const defaultBranch = context.payload.repository.default_branch;
+            const { data: branch } = await github.rest.repos.getBranch({ owner, repo, branch: defaultBranch });
+            if (!branch.protected) {
+              core.setFailed(`Default branch ${defaultBranch} is no longer protected.`);
+              return;
+            }
+            if (branch.commit.sha !== process.env.COMMIT_SHA) {
+              core.setFailed(`Rollback commit is no longer the current protected default-branch head.`);
+              return;
+            }
+            const { data: pr } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number: Number(process.env.PR_NUMBER),
+            });
+            if (!pr.merged || pr.merge_commit_sha !== process.env.COMMIT_SHA || pr.base.ref !== defaultBranch) {
+              core.setFailed('Rollback PR binding changed after validation.');
+              return;
+            }
+            const response = await github.request(
+              "GET /repos/{owner}/{repo}/environments/{environment_name}",
+              { owner, repo, environment_name: "fund-refresh-production" },
+            );
+            const approvalRule = (response.data.protection_rules || [])
+              .find((rule) => rule.type === "required_reviewers");
+            if (
+              !approvalRule ||
+              !approvalRule.reviewers?.length ||
+              !approvalRule.prevent_self_review ||
+              response.data.can_admins_bypass !== false
+            ) {
+              core.setFailed("fund-refresh-production must require reviewers and disable self-review and administrator bypass.");
+            }
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Require approved production configuration
+        env:
+          REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
+          REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
+        shell: bash
+        run: |
+          missing=0
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME REVALIDATE_URL REVALIDATE_TOKEN; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for the approved production rollback."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+
+      - name: Install locked dependencies and prove the production target
+        shell: bash
+        run: |
+          npm ci
+          npm run db:generate
+          npm run db:validate
+          node --experimental-strip-types scripts/assert-database-target.ts
+          mkdir -p tmp/fund-refresh/rollback-production/preapply
+          npx prisma migrate status > tmp/fund-refresh/rollback-production/migrate-status.log
+
+      - name: Capture immutable pre-rollback state and rerun guards
+        shell: bash
+        run: |
+          rollback_parent="$(git rev-parse "$ROLLBACK_COMMIT_SHA^1")"
+          npx tsx scripts/audit-funds.ts \
+            --data-commit "$rollback_parent" \
+            --include-live-snapshots \
+            --output tmp/fund-refresh/rollback-production/preapply/live-state.json \
+            > tmp/fund-refresh/rollback-production/preapply/live-state.log
+          npx tsx scripts/rollback-fund-refresh.ts \
+            --proposal-hash "$ORIGINAL_PROPOSAL_HASH" \
+            --base-commit "$rollback_parent" \
+            --environment production \
+            --output tmp/fund-refresh/rollback-production/preapply/preview.json
+
+      - name: Prove cache revalidation readiness before database mutation
+        env:
+          REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
+          REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
+        shell: bash
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --retry 3 --retry-delay 2 --retry-all-errors \
+            --request GET \
+            --header "Authorization: Bearer $REVALIDATE_TOKEN" \
+            "$REVALIDATE_URL" \
+            > tmp/fund-refresh/rollback-production/preapply/cache-preflight.json
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.ready !== true) throw new Error("Cache preflight did not confirm readiness")' \
+            tmp/fund-refresh/rollback-production/preapply/cache-preflight.json
+
+      - name: Upload immutable pre-rollback restore evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: fund-refresh-prerollback-${{ inputs.proposal_hash }}-${{ github.run_id }}
+          path: |
+            tmp/fund-refresh/rollback-production/preapply/
+            tmp/fund-refresh/rollback-production/migrate-status.log
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Final rollback authorization recheck immediately before mutation
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          COMMIT_SHA: ${{ inputs.commit_sha }}
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const defaultBranch = context.payload.repository.default_branch;
+            const { data: branch } = await github.rest.repos.getBranch({ owner, repo, branch: defaultBranch });
+            if (!branch.protected || branch.commit.sha !== process.env.COMMIT_SHA) {
+              core.setFailed('Rollback merge is no longer the current protected default-branch head.');
+              return;
+            }
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number: Number(process.env.PR_NUMBER) });
+            if (!pr.merged || pr.merge_commit_sha !== process.env.COMMIT_SHA || pr.base.ref !== defaultBranch) {
+              core.setFailed('Rollback PR binding changed before mutation.');
+              return;
+            }
+            const environment = (await github.request(
+              'GET /repos/{owner}/{repo}/environments/{environment_name}',
+              { owner, repo, environment_name: 'fund-refresh-production' },
+            )).data;
+            const approvalRule = (environment.protection_rules || []).find((rule) => rule.type === 'required_reviewers');
+            if (!approvalRule?.reviewers?.length || !approvalRule.prevent_self_review || environment.can_admins_bypass !== false) {
+              core.setFailed('Production environment approval protections changed before rollback mutation.');
+            }
+
+      - name: Restore recorded before-images transactionally
+        id: rollback_transaction
+        run: >-
+          npx tsx scripts/rollback-fund-refresh.ts
+          --proposal-hash "$ORIGINAL_PROPOSAL_HASH"
+          --base-commit "$(git rev-parse "$ROLLBACK_COMMIT_SHA^1")"
+          --environment production
+          --apply
+          --output tmp/fund-refresh/rollback-production/apply-summary.json
+
+      - name: Verify production integrity after rollback
+        if: always() && steps.rollback_transaction.outcome != 'skipped'
+        shell: bash
+        run: |
+          set -o pipefail
+          npx tsx scripts/audit-funds.ts \
+            --require-complete \
+            --allow-existing-findings-from tmp/fund-refresh/rollback-production/preapply/live-state.json \
+            --allow-reviewed-rollback-from "$ORIGINAL_PROPOSAL_HASH" \
+            --include-live-snapshots \
+            --output tmp/fund-refresh/rollback-production/fund-audit.json \
+            2>&1 | tee tmp/fund-refresh/rollback-production/fund-audit.log
+          npm run db:verify 2>&1 | tee tmp/fund-refresh/rollback-production/database-verification.log
+
+      - name: Revalidate public fund caches
+        if: always() && steps.rollback_transaction.outcome != 'skipped'
+        env:
+          REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
+          REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
+        shell: bash
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --retry 3 --retry-delay 2 --retry-all-errors \
+            --request POST \
+            --header "Authorization: Bearer $REVALIDATE_TOKEN" \
+            "$REVALIDATE_URL" \
+            > tmp/fund-refresh/rollback-production/cache-revalidation.json
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.revalidated !== true) throw new Error("Cache endpoint did not confirm revalidation")' \
+            tmp/fund-refresh/rollback-production/cache-revalidation.json
+
+      - name: Upload rollback evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: fund-refresh-rollback-production-${{ inputs.proposal_hash }}-${{ github.run_id }}
+          path: tmp/fund-refresh/rollback-production/
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,245 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Mubadala",
+"canonicalManager": "Mubadala Investment Company",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Mubadala",
+"Mubadala Investment Company",
+"Real Estate & Infrastructure Investments",
+"Real Assets",
+"Infrastructure (business unit)",
+"Digital Infrastructure (former unit)",
+"Traditional Infrastructure (former unit)"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Mubadala Infrastructure",
+"aliases": [
+"Infrastructure (Real Assets platform)",
+"Mubadala Real Assets – Infrastructure",
+"Digital Infrastructure (legacy)",
+"Traditional Infrastructure (legacy)"
+],
+"vehicleType": "PROGRAM_EXCEPTION",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Audited segment disclosure confirms Mubadala deploys capital into infrastructure assets and portfolio companies (e.g., CityFibre, Aligned Energy), and transaction disclosures show Mubadala as an equity shareholder in infrastructure platforms.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Audited financial statements state the infrastructure platform is geographically diversified across North America, Europe, and Asia, with named U.S. infrastructure holdings.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-123",
+"managerName": "Mubadala Investment Company",
+"fundName": "Mubadala Infrastructure",
+"ticker": null,
+"investmentStrategy": "Scaling direct real-assets platform with highest conviction in digital infrastructure and energy transition, alongside power and transport.",
+"size": "—",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Value-Add"
+],
+"structure": "Permanent Capital",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Midstream",
+"Transportation"
+],
+"regions": [
+"Global"
+],
+"sourceUrls": [
+"https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"
+],
+"strategyUrl": "https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"
+},
+"evidence": [
+{
+"url": "https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+"title": "Mubadala Investment Company PJSC – Annual Financial Statements 2025 (via CityFibre RNS)",
+"publisher": "CityFibre / Mubadala",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-03-31",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Audited Real Assets platform disclosure",
+"evidenceSummary": "States Real Assets (including infrastructure) deploys capital into infrastructure assets and is geographically diversified across North America, Europe, and Asia, listing infrastructure portfolio companies such as Aligned Energy.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"regions",
+"sectors",
+"fundStatus",
+"structure"
+]
+},
+{
+"url": "https://www.isquaredcapital.com/news/ten-closes-inaugural-financing/",
+"title": "Transportation Equipment Network closes inaugural financing",
+"publisher": "I Squared Capital",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-07-15",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "North American infrastructure platform investment",
+"evidenceSummary": "Confirms Mubadala invested equity capital into a North American transportation equipment leasing platform, with attribution to Mubadala’s infrastructure investment team.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"regions",
+"sectors",
+"investmentStrategy"
+]
+},
+{
+"url": "https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+"title": "CityFibre Holdings Limited – Shareholder disclosure",
+"publisher": "CityFibre",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-03-31",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Equity ownership confirmation",
+"evidenceSummary": "Identifies Mubadala Investment Company as a minority shareholder in CityFibre, evidencing direct-equity ownership of infrastructure assets within the platform.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"sectors"
+]
+}
+],
+"repoDisposition": "EXISTING_VERIFIED",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-123",
+"managerName": "Mubadala Investment Company",
+"fundName": "Mubadala Infrastructure"
+}
+],
+"changedFields": [],
+"repoDispositionRationale": "Repository record accurately reflects Mubadala’s evergreen infrastructure investment program with no material field discrepancies.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Aligned Energy ownership status",
+"issue": "2025 financial statements list Aligned Energy as a portfolio asset, but announced 2025–2026 transactions suggest a sale to a BlackRock/GIP-led consortium; unclear if Mubadala retains exposure as of 2026-07-29.",
+"sourceUrls": [
+"https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+"https://www.datacenterdynamics.com/en/news/blackrock-and-mgx-to-acquire-aligned-data-centers/"
+],
+"recommendedResolution": "Confirm post-closing ownership status of Aligned Energy in updated Mubadala disclosures or portfolio pages."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 3,
+"searchQueriesRun": 12,
+"notes": [
+"Primary reliance on audited financial statements and transaction-level disclosures due to restricted access to Mubadala website pages.",
+"Program exception applied for sovereign evergreen infrastructure platform."
+]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Mubadala — North American direct infrastructure fund census
+Conclusion
+Mubadala operates a single qualifying direct-equity infrastructure investment program: its evergreen Mubadala Infrastructure platform (within the Real Assets business). This program meets all inclusion criteria through audited evidence of direct-equity infrastructure ownership and an explicit North American geographic scope.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepo DispositionKey EvidenceMubadala InfrastructureProgram ExceptionEvergreen ActiveExplicit mandate (global incl. North America)Not disclosedEXISTING_VERIFIEDAudited FS; TEN transaction; CityFibre ownership
+Repository reconciliation
+
+
+FUND-123 (Mubadala Infrastructure): Verified with no material differences.
+
+
+No new funds identified.
+
+
+No corrections required.
+
+
+Exclusions and unresolved issues
+
+
+No additional qualifying funds identified.
+
+
+Unresolved: Status of Aligned Energy holding following announced 2025–2026 sale; may affect current holding attribution but not program qualification.
+
+
+Completeness
+
+
+Official audited financial statements reviewed.
+
+
+Transaction-level disclosures (I Squared TEN, CityFibre) confirm direct-equity infrastructure activity.
+
+
+Manager platform evolution (Real Estate & Infrastructure → Real Assets; unit consolidation) validated.
+
+
+Website pages were indexed but partially inaccessible; corroborated via audited disclosures.
+
+
+No parallel or feeder vehicles identified.
+
+
+Source task file: Pasted text
+</fund_census_report>

@@ -1,0 +1,488 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Blackstone",
+  "canonicalManager": "Blackstone",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Blackstone",
+    "Blackstone Inc.",
+    "The Blackstone Group",
+    "Blackstone Infrastructure Partners",
+    "Blackstone Infrastructure Strategies",
+    "Blackstone Energy Partners",
+    "Blackstone Energy Transition Partners"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Blackstone Infrastructure Partners (BIP)",
+      "aliases": [
+        "Blackstone Infrastructure Partners L.P.",
+        "BIP"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "The opened Blackstone infrastructure materials describe a permanent-capital, long-duration direct infrastructure equity platform investing in operating digital, energy, transportation, utility and related infrastructure businesses. The SEC Form D identifies the named Blackstone Infrastructure Partners fundraising vehicle.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Blackstone's opened infrastructure portfolio materials identify QTS, a United States data-center platform, as a current infrastructure investment associated with the Blackstone Infrastructure Partners platform.",
+        "currentHoldingName": "QTS",
+        "currentHoldingUrl": "https://www.blackstone.com/our-businesses/infrastructure/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-039",
+        "managerName": "Blackstone",
+        "fundName": "Blackstone Infrastructure Partners (BIP)",
+        "ticker": null,
+        "investmentStrategy": "Permanent-capital, multi-sector infrastructure vehicle with a long-term buy-and-hold approach; public deployment is concentrated in digital, transport, utilities/midstream, and some waste/environmental assets.",
+        "size": "$77.0B",
+        "sizeUsdMm": 77000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Midstream",
+          "Transportation",
+          "Social Infra"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1735632/000173563225000001/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.blackstone.com/our-businesses/infrastructure/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1735632/000173563225000001/xslFormDX01/primary_doc.xml",
+          "title": "Blackstone Infrastructure Partners L.P. — Form D",
+          "publisher": "U.S. Securities and Exchange Commission",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Named BIP offering vehicle",
+          "evidenceSummary": "The opened regulatory filing identifies Blackstone Infrastructure Partners as a named offering vehicle and supports the repository's reported dollar figure. The amount is retained without recharacterizing it as a final close, commitments or AUM because the preserved evidence does not establish a supported amount basis and date.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "size",
+            "sizeUsdMm",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.blackstone.com/our-businesses/infrastructure/",
+          "title": "Infrastructure",
+          "publisher": "Blackstone",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "BIP strategy and current portfolio",
+          "evidenceSummary": "The opened Blackstone infrastructure page describes the permanent-capital direct infrastructure strategy and presents current portfolio exposure across digital, energy, transportation and utility infrastructure, including the North American QTS platform.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "EXISTING_VERIFIED",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-039",
+          "managerName": "Blackstone",
+          "fundName": "Blackstone Infrastructure Partners (BIP)"
+        }
+      ],
+      "changedFields": [],
+      "repoDispositionRationale": "FUND-039 matches the named permanent-capital infrastructure vehicle and no canonical repository field is changed. The $77.0 billion figure is retained with null amount basis and date rather than being strengthened into a final-close, commitment or AUM figure.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Blackstone Infrastructure Strategies ELTIF (BXINFRA)",
+      "aliases": [
+        "BXINFRA",
+        "Blackstone Infrastructure Strategies"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "The opened official fund page presents BXINFRA as a perpetual, semiliquid infrastructure investment vehicle with a portfolio of operating digital, energy, transportation and related infrastructure companies. It is not presented as a pure debt, secondaries or fund-of-funds product.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "The official BXINFRA page presents QTS, a United States data-center platform, among the fund's current infrastructure investments.",
+        "currentHoldingName": "QTS",
+        "currentHoldingUrl": "https://www.blackstone.com/fund/blackstone-infrastructure-strategies-eltif-bxinfra/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-040",
+        "managerName": "Blackstone",
+        "fundName": "Blackstone Infrastructure Strategies ELTIF (BXINFRA)",
+        "ticker": null,
+        "investmentStrategy": "Perpetual, semiliquid retail infrastructure vehicle targeting Blackstone's Digital, Energy, and Transportation themes; early portfolio construction is currently centered on transport, digital, and pipeline energy, with Urbaser adding environmental services.",
+        "size": "$4.1B",
+        "sizeUsdMm": 4100,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Core-Plus"
+        ],
+        "structure": "Open-End",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Digital",
+          "Midstream",
+          "Transportation",
+          "Social Infra"
+        ],
+        "regions": [
+          "Global"
+        ],
+        "sourceUrls": [
+          "https://www.blackstone.com/fund/blackstone-infrastructure-strategies-eltif-bxinfra/"
+        ],
+        "strategyUrl": "https://www.blackstone.com/our-businesses/infrastructure/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.blackstone.com/fund/blackstone-infrastructure-strategies-eltif-bxinfra/",
+          "title": "Blackstone Infrastructure Strategies ELTIF (BXINFRA)",
+          "publisher": "Blackstone",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Official BXINFRA fund page",
+          "evidenceSummary": "The official page supports the full marketed fund name, perpetual lifecycle, open-end infrastructure-equity strategy, reported size and current portfolio exposure, including a current North American digital-infrastructure investment.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.blackstone.com/our-businesses/infrastructure/",
+          "title": "Infrastructure",
+          "publisher": "Blackstone",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Underlying infrastructure strategy",
+          "evidenceSummary": "Blackstone's infrastructure materials support the direct-equity, long-duration infrastructure strategy underlying BXINFRA and its exposure to digital, energy and transportation infrastructure.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-040",
+          "managerName": "Blackstone",
+          "fundName": "BXINFRA"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "strategies"
+      ],
+      "repoDispositionRationale": "FUND-040 is the same commercial vehicle. The canonical fund name is expanded to the official Blackstone Infrastructure Strategies ELTIF name, with BXINFRA retained as an alias. The repository's Retail Act '40 strategy label is replaced with the evidenced direct-equity Core-Plus strategy because the opened official source identifies the product as an ELTIF and does not support an Investment Company Act of 1940 classification.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+      "aliases": [
+        "BETP IV",
+        "Blackstone Energy Partners IV",
+        "BEP IV"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Blackstone's official final-close release identifies BETP IV as an energy-transition private equity fund investing in businesses and infrastructure across the energy-transition value chain, including power, grid, reliability and enabling-services investments.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "The opened fund-specific final-close materials identify North America and Europe as the principal investment geographies for the BETP strategy.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-041",
+        "managerName": "Blackstone",
+        "fundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "ticker": null,
+        "investmentStrategy": "Energy-focused private equity fund backing businesses across the energy-transition value chain, but with actual deployment spanning grid equipment, transmission, gas-fired reliability power, software, and environmental services as well as renewable enablers.",
+        "size": "$5.6B final close",
+        "sizeUsdMm": 5600,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "5600000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2025-07-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2025",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Midstream",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/"
+        ],
+        "strategyUrl": "https://www.blackstone.com/our-businesses/infrastructure/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/",
+          "title": "Blackstone Announces $5.6 Billion Final Close for Blackstone Energy Transition Partners IV at Hard Cap",
+          "publisher": "Blackstone",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-07-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "BETP IV final close and strategy",
+          "evidenceSummary": "The official release identifies BETP IV, states a $5.6 billion final close at the hard cap, describes the direct energy-transition private equity strategy, identifies North America and Europe as principal geographies and documents deployment activity consistent with an active closed fund.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "vintage",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-041",
+          "managerName": "Blackstone",
+          "fundName": "Blackstone Energy Transition Partners IV (BETP IV)"
+        }
+      ],
+      "changedFields": [
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "repoDispositionRationale": "FUND-041 matches the official BETP IV vehicle. The official release expressly characterizes $5.6 billion as the final close at the hard cap, so the canonical snapshot records the amount as a USD final-close figure rather than leaving its semantics unclassified.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Blackstone Energy Partners III (BEP III)",
+      "reasonCode": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The opened BETP IV materials establish BEP III as a predecessor series, but the evidence preserved in this conversation does not establish a fund-attributed current North American holding or otherwise demonstrate that BEP III remained a current qualifying vehicle as of 2026-07-29. It is therefore not promoted into the census.",
+      "sourceUrls": [
+        "https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-042",
+      "repoFundName": "Blackstone Energy Transition Partners V (BETP V)",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "The opened SEC Form D establishes a named Blackstone Energy Transition Partners V offering and supports a raising lifecycle, but the preserved evidence does not independently establish that BETP V is a direct-equity infrastructure strategy, expressly includes North America in its mandate, or has a fund-attributed current North American holding. Prior-series strategy and geography cannot be imputed to BETP V.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2112720/000211272026000001/xslFormDX01/primary_doc.xml"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Blackstone Energy Transition Partners V (BETP V) — strategy and North American qualification",
+      "issue": "The Form D confirms vehicle identity and an active securities offering but does not state the fund's direct-equity infrastructure strategy or geographic mandate. The opened evidence also did not establish a BETP V-attributed current North American holding. Treating BETP V as the same strategy and geography as BETP IV would be an unsupported series-continuity inference.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2112720/000211272026000001/xslFormDX01/primary_doc.xml",
+        "https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/"
+      ],
+      "recommendedResolution": "Obtain a BETP V-specific Blackstone release, private-placement memorandum, institutional LP memorandum or other fund-specific primary material that states the investment strategy and geographic mandate. Include BETP V only after North America and direct-equity infrastructure scope are independently supported."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 5,
+    "searchQueriesRun": 0,
+    "notes": [
+      "This transport-completion response used only sources and findings already present in the conversation and ran no additional searches.",
+      "The prior evidence pass's search-query counter was not preserved in the uploaded worker contract; searchQueriesRun therefore records zero additional queries during serialization rather than asserting that the earlier research pass used no searches.",
+      "BIP and BXINFRA dollar figures are retained as disclosed figures with null sizeBasis and sizeAsOf; they are not strengthened into final-close, commitment or AUM classifications.",
+      "BETP V remains a repository-only NEEDS_REVIEW record because vehicle identity and fundraising alone do not satisfy the direct-equity infrastructure and North American inclusion tests.",
+      "No feeder, parallel legal entity, sidecar or co-investment entity was counted as a separate commercial vehicle.",
+      "No PROGRAM_EXCEPTION was required."
+    ]
+  },
+  "summary": {
+    "includedFunds": 3,
+    "explicitNaMandate": 1,
+    "verifiedCurrentNaHolding": 2,
+    "proposedNew": 0,
+    "proposedCorrections": 2,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 1,
+    "unresolvedConflicts": 1
+  }
+}
+</fund_census_json>
+<fund_census_report>
+Blackstone — North American direct infrastructure fund census
+Conclusion
+Three Blackstone vehicles satisfy the census inclusion test on the evidence preserved in the conversation:
+
+
+Blackstone Infrastructure Partners (BIP), an active permanent-capital infrastructure vehicle with verified current North American deployment.
+
+
+Blackstone Infrastructure Strategies ELTIF (BXINFRA), an active perpetual infrastructure-equity vehicle with a current North American portfolio investment.
+
+
+Blackstone Energy Transition Partners IV (BETP IV), a closed and active energy-transition private equity fund with a fund-specific North American and European mandate.
+
+
+Blackstone Energy Transition Partners V (BETP V) is not included. Its SEC Form D establishes the named vehicle and an active offering, but the opened evidence does not independently establish BETP V's direct-equity infrastructure strategy, North American mandate or a current North American holding attributed to the fund. FUND-042 is therefore retained as a repository-only NEEDS_REVIEW record rather than being completed through an inference from BETP IV.
+No program exception, feeder, parallel entity or sidecar is counted separately.
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceBlackstone Infrastructure Partners (BIP)Named fundEvergreen activeVerified current North American holding: QTS$77.0B retained as disclosed; basis and date not recharacterizedEXISTING_VERIFIED — FUND-039SEC Form D; Blackstone InfrastructureBlackstone Infrastructure Strategies ELTIF (BXINFRA)Named fundEvergreen activeVerified current North American holding: QTS$4.1B retained as disclosed; basis and date not recharacterizedPROPOSED_CORRECTION — FUND-040Official BXINFRA page; Blackstone InfrastructureBlackstone Energy Transition Partners IV (BETP IV)Named fundClosed activeExplicit North American and European mandate$5.6B FINAL_CLOSEPROPOSED_CORRECTION — FUND-041Official final-close release
+Blackstone Infrastructure Partners
+The named SEC offering vehicle and Blackstone's current infrastructure materials support a single permanent-capital BIP row. Current North American qualification is based on QTS, a United States data-center platform shown in Blackstone's active infrastructure portfolio. The repository's $77.0 billion figure is retained without relabelling it as final-close capital, commitments or AUM because the preserved evidence does not establish the required basis and date.
+Blackstone Infrastructure Strategies ELTIF
+BXINFRA is included as a separate commercial vehicle rather than as a BIP feeder or parallel legal entity because the official page presents it as a separately marketed perpetual infrastructure fund with its own portfolio, reported capital base and liquidity structure.
+FUND-040 receives two corrections:
+
+
+The canonical name becomes Blackstone Infrastructure Strategies ELTIF (BXINFRA), with BXINFRA retained as an alias.
+
+
+The strategy classification becomes Core-Plus. The repository's Retail Act '40 classification is not supported by the opened official source, which identifies the vehicle as an ELTIF rather than an Investment Company Act of 1940 fund.
+
+
+Blackstone Energy Transition Partners IV
+The official Blackstone release identifies a $5.6 billion final close at the hard cap. The repository amount is therefore classified as FINAL_CLOSE, with USD native amount fields populated. The release also supports a closed-active lifecycle and a North American and European investment mandate.
+Repository reconciliation
+All four supplied repository rows are reconciled exactly once:
+Legacy IDRepository managerRepository fund nameTreatmentFUND-039BlackstoneBlackstone Infrastructure Partners (BIP)Matched to the included BIP row as EXISTING_VERIFIED.FUND-040BlackstoneBXINFRAMatched to Blackstone Infrastructure Strategies ELTIF (BXINFRA) as PROPOSED_CORRECTION; the legacy ID is preserved.FUND-041BlackstoneBlackstone Energy Transition Partners IV (BETP IV)Matched as PROPOSED_CORRECTION to classify the $5.6 billion amount as a final close.FUND-042BlackstoneBlackstone Energy Transition Partners V (BETP V)Listed once in repoOnlyRecords as NEEDS_REVIEW; not included without BETP V-specific strategy and North American evidence.
+There are no proposed-new funds and no possible duplicates. The included-fund count is three, comprising one explicit North American mandate and two vehicles qualified through verified current North American holdings. There are two proposed corrections, one excluded candidate, one repository-only record and one unresolved conflict.
+Exclusions and unresolved issues
+Blackstone Energy Transition Partners V
+The BETP V Form D supports the vehicle's identity and raising status. It does not, on the evidence preserved here, establish:
+
+
+that BETP V is itself a direct-equity infrastructure strategy;
+
+
+that North America is expressly within its mandate; or
+
+
+that a current North American investment is attributed to BETP V.
+
+
+The BETP IV strategy and geography cannot be carried forward automatically to BETP V. Resolution requires a BETP V-specific Blackstone release, placement memorandum, institutional LP memorandum or other primary fund material.
+Blackstone Energy Partners III
+BETP IV's final-close materials identify Blackstone Energy Partners III as a predecessor series, but the opened evidence does not establish a current BEP III holding in North America or otherwise demonstrate a qualifying current lifecycle as of July 29, 2026. BEP III is recorded as an INSUFFICIENT_EVIDENCE exclusion rather than being presumed realized or active.
+Parallel and access structures
+No feeder, parallel partnership, alternative-investment vehicle, sleeve, sidecar or transaction-specific co-investment entity is counted as a separate fund. BXINFRA is retained separately because the official source presents it as a distinct commercial vehicle with its own name, structure, portfolio and reported size.
+Completeness
+The evidence pass covered Blackstone's official infrastructure strategy and portfolio materials, BIP's SEC offering filing, BXINFRA's official fund page, BETP IV's official final-close announcement, BETP V's SEC offering filing, manager and fund-series aliases, current North American holding attribution, fundraising and final-close status, and feeder, parallel and sidecar duplication risk.
+The five distinct evidence URLs serialized in the JSON were already opened before this transport-completion response. No additional browsing or searching was performed. The prior evidence pass's query count was not preserved, so the JSON records zero additional queries during serialization. The uploaded worker contract supplies the governing schema, inclusion rules and repository snapshot. Pasted text
+No source is treated as inaccessible. BETP V remains unresolved because the opened source lacks the required strategy and geography content, not because the filing could not be accessed.
+</fund_census_report>

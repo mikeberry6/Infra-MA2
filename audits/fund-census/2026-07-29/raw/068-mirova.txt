@@ -1,0 +1,145 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Mirova",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"Mirova",
+"Mirova US LLC",
+"Natixis Asset Management",
+"Ostrum Asset Management",
+"Thematics Asset Management"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope governance",
+"issue": "The authoritative repository snapshot sets knownManager=false and canonicalManager=null, while the separately supplied manager universe includes 'Mirova'. Under the contract, no fund rows or manager addition may be proposed despite clear evidence that Mirova is an active infrastructure investor.",
+"sourceUrls": [
+"https://www.mirova.com/en",
+"https://www.mirova.com/en/news/merger-mirova-thematics-am-US"
+],
+"recommendedResolution": "Add or restore Mirova as a canonical manager in a future version-controlled FUND_MANIFEST through governance review, then rerun the census; do not auto-add from this task."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 7,
+"searchQueriesRun": 6,
+"notes": [
+"Scope-gated result: repository snapshot knownManager=false; vehicle-level census intentionally not performed and no fund proposed.",
+"Official materials confirm Mirova is an active sustainable infrastructure investor but this cannot override manifest scope constraints.",
+"The supplied manager universe inclusion of Mirova conflicts with the canonical manifest and requires governance resolution."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Mirova — North American direct infrastructure fund census
+Conclusion
+The census is scope-gated. The authoritative repository snapshot flags Mirova as knownManager=false, which contractually requires an out-of-scope result with no fund rows.
+This holds even though official sources confirm that Mirova is an active global sustainable infrastructure investor and asset manager. The discrepancy between real-world activity and the repository manifest is recorded as a governance conflict rather than resolved within this task.
+Key identity observations from official materials:
+
+
+Mirova operates as a sustainable investment affiliate of Natixis Investment Managers.
+
+
+It has historical lineage within Natixis Asset Management / Ostrum Asset Management.
+
+
+As of January 2026, Thematics Asset Management was merged into Mirova, expanding the platform while retaining the Mirova name.
+Source: https://www.mirova.com/en/news/merger-mirova-thematics-am-US
+
+
+Included funds
+No included funds.
+Per contract, no vehicle-level census is performed when knownManager=false.
+FundVehicle typeLifecycleNA qualificationSize basisRepository dispositionEvidenceNone——————
+Repository reconciliation
+
+
+Verified rows: None (no repository entries provided).
+
+
+Proposed additions: None (prohibited under scope rules).
+
+
+Corrections / duplicates: None.
+
+
+Review items: One governance conflict — the manager exists in supplied universe but not in canonical manifest.
+
+
+Exclusions and unresolved issues
+
+
+No fund-level exclusions were evaluated due to scope gating.
+
+
+Primary unresolved issue:
+The repository manifest excludes Mirova (knownManager=false), while:
+
+
+The supplied manager universe includes “Mirova”
+
+
+Official sources confirm it is an active infrastructure investor
+(e.g., https://www.mirova.com/en)
+
+
+
+
+This conflict prevents fund identification and must be resolved via manifest governance, not analyst inference.
+
+
+Completeness
+
+
+Fund-page coverage: Limited to representative official materials (manager site and strategy disclosures) due to scope gate.
+
+
+Fundraising / close searches: Performed at a high level (e.g., infrastructure strategy materials), but not exhaustively enumerated.
+
+
+Holding attribution checks: Not performed (no fund census allowed).
+
+
+Aliases and successors: Reviewed and documented (Natixis AM lineage; Thematics merger).
+
+
+Parallel vehicle review: Not performed due to scope restriction.
+
+
+Inaccessible sources: None material.
+
+
+Overall, the result is complete and contract-valid: the absence of fund rows is intentional and required by the repository scope constraint.
+</fund_census_report>

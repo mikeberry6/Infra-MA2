@@ -45,6 +45,10 @@ describe("routine release CI contract", () => {
     }
   });
 
+  it("fetches complete history for deterministic data-release tests", () => {
+    expect(workflow).toContain("fetch-depth: 0");
+  });
+
   it("keeps routine deployment free of a manual promotion workflow", () => {
     expect(existsSync(retiredPromotionPath)).toBe(false);
     expect(workflow).not.toContain("PROMOTE-CODE-ONLY");

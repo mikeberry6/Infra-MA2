@@ -1,0 +1,176 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Blackstone",
+"canonicalManager": "Blackstone",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Blackstone"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "BLOCKED",
+"blockers": [
+"The available uploaded material contains the worker contract and repository snapshot but does not contain the completed source-evidence ledger, source excerpts, or prior research findings needed to serialize verified fund rows.",
+"Further browsing, searching, and tool use were expressly prohibited, and the worker contract states that repository data is reconciliation context rather than proof."
+],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-039",
+"repoFundName": "Blackstone Infrastructure Partners (BIP)",
+"disposition": "NEEDS_REVIEW",
+"rationale": "The repository identifies this as a permanent-capital infrastructure vehicle, but no opened fund-specific evidence ledger is available in the serialization context to verify vehicle identity, direct-equity scope, current lifecycle, North American qualification, or the semantics and as-of date of the stated $77.0 billion amount. The repository row therefore cannot be used as proof or matched to an included fund.",
+"evidenceUrls": []
+},
+{
+"legacyId": "FUND-040",
+"repoFundName": "BXINFRA",
+"disposition": "NEEDS_REVIEW",
+"rationale": "The repository characterizes BXINFRA as a perpetual retail infrastructure vehicle, but no opened fund-specific evidence ledger is available to determine whether it is an investable direct-infrastructure mandate qualifying under the program-exception rules or an excluded retail access vehicle without independent direct investment. North American deployment, lifecycle, and amount semantics also remain unverified.",
+"evidenceUrls": []
+},
+{
+"legacyId": "FUND-041",
+"repoFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+"disposition": "NEEDS_REVIEW",
+"rationale": "The repository reports a $5.6 billion final close and a North American and European energy-transition strategy, but no opened evidence ledger is available to verify that the named vehicle meets the direct-equity infrastructure test, establish its North American mandate or current fund-attributed North American deployment, or support each critical snapshot field. The repository row cannot independently establish inclusion.",
+"evidenceUrls": []
+},
+{
+"legacyId": "FUND-042",
+"repoFundName": "Blackstone Energy Transition Partners V (BETP V)",
+"disposition": "NEEDS_REVIEW",
+"rationale": "The repository describes BETP V as an in-market 2026 successor, but no opened evidence ledger is available to verify its official identity, fundraising status, direct-equity infrastructure mandate, North American scope, or any supported offering amount. Prior-series strategy cannot be imputed to the successor fund without fund-specific evidence.",
+"evidenceUrls": []
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "Completed Blackstone evidence ledger",
+"issue": "The serialization context does not contain the completed research ledger, opened-source excerpts, or source-by-source supported-field mapping referenced by the transport-completion request. Only the worker contract and repository snapshot are available, and the contract prohibits treating repository data as proof.",
+"sourceUrls": [],
+"recommendedResolution": "Restore the completed Blackstone evidence ledger or the preceding research messages containing the opened sources and supported findings, then serialize the fund rows without conducting new research."
+},
+{
+"subject": "Blackstone Infrastructure Partners (BIP)",
+"issue": "Vehicle identity, permanent-capital structure, current lifecycle, direct-equity infrastructure scope, North American qualification, and the classification and date of the repository's $77.0 billion amount cannot be verified from the available material.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1735632/000173563225000001/xslFormDX01/primary_doc.xml",
+"https://www.blackstone.com/our-businesses/infrastructure/"
+],
+"recommendedResolution": "Review the previously opened BIP fund, regulatory, strategy, and fund-attributed holding evidence and identify exactly what the $77.0 billion represents and as of what date."
+},
+{
+"subject": "BXINFRA",
+"issue": "The available material does not resolve whether BXINFRA qualifies as a primary-evidence-supported direct-investment program exception or must be excluded as a retail access vehicle. Its current North American deployment and the semantics and date of the repository's $4.1 billion amount are also unsupported.",
+"sourceUrls": [
+"https://www.blackstone.com/fund/blackstone-infrastructure-strategies-eltif-bxinfra/",
+"https://www.blackstone.com/our-businesses/infrastructure/"
+],
+"recommendedResolution": "Review the previously opened BXINFRA governing documents, portfolio disclosures, and offering materials to establish whether the vehicle itself directly makes infrastructure investments, whether a current investment is in North America, and what the stated capital amount represents."
+},
+{
+"subject": "Blackstone Energy Transition Partners IV (BETP IV)",
+"issue": "The repository's final-close amount and date, direct-equity infrastructure classification, current lifecycle, North American mandate or current fund-attributed North American holding, sector scope, and vintage cannot be independently supported from the available serialization material.",
+"sourceUrls": [
+"https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/",
+"https://www.blackstone.com/our-businesses/infrastructure/"
+],
+"recommendedResolution": "Restore the previously opened BETP IV final-close release and fund-attributed investment evidence, then map each supported critical field to the relevant source."
+},
+{
+"subject": "Blackstone Energy Transition Partners V (BETP V)",
+"issue": "The official fund identity, 2026 vintage, raising status, direct-equity infrastructure mandate, North American scope, and Form D amount semantics remain unresolved. Strategy and geography cannot be inferred solely from BETP IV or from the repository description.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2112720/000211272026000001/xslFormDX01/primary_doc.xml",
+"https://www.blackstone.com/our-businesses/infrastructure/"
+],
+"recommendedResolution": "Restore the previously opened BETP V Form D and any fund-specific fundraising materials, classify any disclosed amount strictly as offering amount or amount sold as applicable, and retain NEEDS_REVIEW unless fund-specific mandate evidence establishes North American qualification."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": false,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 0,
+"searchQueriesRun": 0,
+"notes": [
+"No new research or tool use was performed, consistent with the transport-completion instruction.",
+"The available uploaded material supplies the contract and four repository rows but not the completed evidence review needed to establish inclusion.",
+"All four repository legacy IDs are reconciled exactly once as repo-only NEEDS_REVIEW records.",
+"No fund was included because the required identity, direct-equity infrastructure, North American qualification, and current-lifecycle evidence could not be reconstructed without treating repository data as proof.",
+"No candidate was affirmatively excluded because the available material does not contain sufficient opened evidence to support an exclusion determination."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 4,
+"unresolvedConflicts": 5
+}
+}
+</fund_census_json>
+<fund_census_report>
+Blackstone — North American direct infrastructure fund census
+Conclusion
+No Blackstone vehicle can be placed in the included-fund census from the evidence available in the serialization context. The uploaded material contains the worker contract and repository snapshot, but not the completed source-evidence ledger or the findings from the previously opened sources. The contract expressly provides that repository data is reconciliation context rather than proof, so the four repository rows cannot be converted into verified fund records solely from their stored descriptions. Pasted text
+The result is therefore marked BLOCKED, with all four repository legacy IDs reconciled exactly once as NEEDS_REVIEW repo-only records. This preserves the supplied identities without inventing vehicle attributes, amount semantics, North American qualifications, or lifecycle conclusions.
+Included funds
+No fund satisfied the required four-part inclusion test on the evidence available here:
+
+
+verified named-vehicle identity;
+
+
+direct-equity infrastructure scope;
+
+
+current lifecycle; and
+
+
+an explicit North American mandate or verified current fund-attributed North American holding.
+
+
+The absence of included rows is not a conclusion that Blackstone has no qualifying vehicles. It reflects the absence of the completed evidence ledger in the material available for serialization.
+Repository reconciliation
+Legacy IDRepository fundDispositionPrincipal unresolved pointFUND-039Blackstone Infrastructure Partners (BIP)NEEDS_REVIEWFund-specific verification is unavailable for permanent-capital identity, direct-equity scope, current North American deployment, and the meaning and date of the reported $77.0 billion.FUND-040BXINFRANEEDS_REVIEWIt is unresolved whether the vehicle qualifies as a documented direct-investment program exception or is an excluded retail access vehicle; North American deployment and the $4.1 billion amount basis are also unverified.FUND-041Blackstone Energy Transition Partners IV (BETP IV)NEEDS_REVIEWThe final-close claim, direct-infrastructure classification, lifecycle, and North American qualification require the missing fund-specific evidence ledger.FUND-042Blackstone Energy Transition Partners V (BETP V)NEEDS_REVIEWOfficial identity, fundraising status, mandate, geography, and any Form D amount semantics remain unsupported in the available material.
+There are no proposed additions, proposed corrections, possible duplicates, or verified matches. No repository row has been omitted or reconciled more than once.
+Exclusions and unresolved issues
+No candidate is affirmatively excluded. The available material is insufficient to support a defensible finding that BXINFRA is merely a retail access product, that either BETP vehicle is outside the direct-infrastructure definition, or that any listed vehicle is inactive or fully realized.
+The central unresolved issue is the missing completed evidence ledger. Vehicle-specific issues that remain open include:
+
+
+whether BIP's reported $77.0 billion is AUM, commitments, offering capacity, or another measure, and the applicable as-of date;
+
+
+whether BXINFRA directly holds and manages infrastructure investments at the vehicle level and has verified current North American deployment;
+
+
+whether BETP IV's fund-specific strategy and investments satisfy the direct-equity infrastructure test and North American qualification;
+
+
+whether BETP V is officially raising, what any regulatory filing amount represents, and whether fund-specific materials establish a North American mandate; and
+
+
+whether any parallel entities, feeders, sidecars, or related structures should be aggregated with the named commercial vehicles.
+
+
+No overlap with another supplied manager was established from the available evidence.
+Completeness
+No new browsing, searches, source openings, or personal-context retrieval were performed. Consequently, official fund-page coverage, fundraising and close review, current-holding attribution, manager-alias review, and parallel-vehicle analysis cannot be certified in this serialized result.
+The four repository identities and their supplied source URLs have been preserved for human resolution. Completion requires restoring the previously opened Blackstone evidence and its field-level support mapping; it does not require treating the repository snapshot as evidence or inferring facts from prior fund series.
+</fund_census_report>

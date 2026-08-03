@@ -1,0 +1,237 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Energy Capital Partners",
+  "canonicalManager": "Energy Capital Partners",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "ECP",
+    "Energy Capital Partners Management, LP"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Energy Capital Partners V, L.P.",
+      "aliases": [
+        "ECP V",
+        "ECP Fund V"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Closed-end flagship direct infrastructure private equity fund investing in power and energy transition assets",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Fund-specific disclosure confirms investments in North American infrastructure including Harvestone Low Carbon Partners",
+        "currentHoldingName": "Harvestone Low Carbon Partners",
+        "currentHoldingUrl": "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise"
+      },
+      "snapshot": {
+        "legacyId": "FUND-066",
+        "managerName": "Energy Capital Partners",
+        "fundName": "Energy Capital Partners V, L.P.",
+        "ticker": null,
+        "investmentStrategy": "Value-add, control-oriented investments in power and sustainability infrastructure",
+        "size": "$4.4B final close",
+        "sizeUsdMm": 4400,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "4400000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2024-05-01",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Midstream",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise"
+        ],
+        "strategyUrl": "https://www.ecpgp.com/about/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise",
+          "title": "Energy Capital Partners completes $6.7 billion fundraise",
+          "publisher": "Energy Capital Partners",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2024-05-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund V final close and North American investments",
+          "evidenceSummary": "Press release confirms Fund V final close at $4.4bn and describes investments in North American infrastructure including Harvestone Low Carbon Partners",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "fundStatus",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sizeAsOf",
+            "structure",
+            "strategies",
+            "vintage"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-066",
+          "managerName": "Energy Capital Partners",
+          "fundName": "ECP Fund V"
+        }
+      ],
+      "changedFields": [
+        "fundName",
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "strategies"
+      ],
+      "repoDispositionRationale": "Repository lacks structured size fields and updated strategy classification supported by fund-specific disclosure",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "ECP Evergreen Yield",
+      "reasonCode": "GLOBAL_WITHOUT_NA_EVIDENCE",
+      "rationale": "No fund-specific evidence confirming North American mandate or current holding attribution",
+      "sourceUrls": [
+        "https://www.bridgepointgroup.com"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-067",
+      "repoFundName": "ECP Fund VI",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Form D evidence confirms active fundraising and disclosed amount sold but does not provide fund-specific North American mandate or holding attribution required for inclusion",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2002643/000200264325000001/xslFormDX01/primary_doc.xml",
+        "https://www.ecpgp.com/about/"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "ECP Fund VI — North American qualification",
+      "issue": "Available Form D evidence supports fundraising and identity but does not establish a fund-specific North American mandate or current holding attribution",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2002643/000200264325000001/xslFormDX01/primary_doc.xml"
+      ],
+      "recommendedResolution": "Obtain LP materials or manager disclosures explicitly linking Fund VI mandate or holdings to North America"
+    },
+    {
+      "subject": "ECP IV and earlier funds — fund-level attribution",
+      "issue": "Manager portfolio pages confirm North American assets but do not attribute holdings to specific legacy funds",
+      "sourceUrls": [
+        "https://www.ecpgp.com/portfolio/convergent-energy-power"
+      ],
+      "recommendedResolution": "Review fund-level disclosures or LP materials linking specific holdings to Fund IV or earlier vehicles"
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 5,
+    "searchQueriesRun": 12,
+    "notes": [
+      "Strict fund-level evidence applied; Fund VI and legacy funds excluded pending attribution"
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 0,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 1,
+    "unresolvedConflicts": 2
+  }
+}
+</fund_census_json>
+<fund_census_report>
+Energy Capital Partners — North American direct infrastructure fund census
+Conclusion
+Only Energy Capital Partners V, L.P. satisfies all four inclusion tests with fund-specific evidence supporting identity, direct-equity infrastructure scope, North American qualification, and current lifecycle. Fund VI and earlier funds lack sufficient fund-attributed North American evidence and are therefore not included pending review. Pasted text
+Included funds
+FundVehicleLifecycleNA QualificationSize BasisRepo DispositionEvidenceEnergy Capital Partners V, L.P.Closed-EndClosed activeVerified current NA holding (Harvestone)Final close ($4.4B)Proposed correctionhttps://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise
+Repository reconciliation
+
+
+FUND-066 (ECP Fund V): Matched and corrected with structured size fields, size-as-of date, and updated strategy classification.
+
+
+FUND-067 (ECP Fund VI): Not included; retained in repoOnlyRecords with NEEDS_REVIEW due to insufficient fund-level North American evidence.
+
+
+Exclusions and unresolved issues
+
+
+Excluded: ECP Evergreen Yield — no fund-specific North American mandate or holding evidence.
+
+
+Unresolved:
+
+
+Fund VI: Form D supports fundraising (amount sold) but not North American qualification.
+
+
+Fund IV and earlier: portfolio evidence confirms assets but not fund-level attribution.
+
+
+
+
+Completeness
+
+
+Reviewed manager press releases, SEC Form D filings, and portfolio disclosures.
+
+
+Verified final close and holdings attribution for Fund V.
+
+
+Tested Fund VI fundraising evidence and distinguished it from mandate qualification.
+
+
+Assessed legacy funds but excluded where fund-level attribution was not evidenced.
+</fund_census_report>

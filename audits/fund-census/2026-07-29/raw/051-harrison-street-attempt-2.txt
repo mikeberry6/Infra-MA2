@@ -1,0 +1,226 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Harrison Street",
+"canonicalManager": "Harrison Street",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Harrison Street Asset Management",
+"Harrison Street Real Estate Capital",
+"HSAM"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Harrison Street Infrastructure Fund, L.P.",
+"aliases": [
+"Harrison Street Social Infrastructure Fund, L.P."
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Primary materials describe direct ownership of infrastructure assets including district energy, renewable energy, digital and campus infrastructure serving institutional users.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Manager infrastructure strategy explicitly targets North American essential infrastructure including U.S. municipal, university, healthcare and digital assets.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-092",
+"managerName": "Harrison Street",
+"fundName": "Harrison Street Infrastructure Fund, L.P.",
+"ticker": null,
+"investmentStrategy": "Core-plus essential infrastructure strategy investing in North American social, utility, renewable and digital infrastructure assets serving institutional users.",
+"size": "$2.6071B amount sold",
+"sizeUsdMm": 2607.1,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "2607100000",
+"sizeBasis": "AMOUNT_SOLD",
+"sizeAsOf": "2026-02-04",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Evergreen",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Social Infra"
+],
+"regions": [
+"North America"
+],
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/1744140/000174414026000003/xslFormDX01/primary_doc.xml",
+"https://reports.adviserinfo.sec.gov/reports/ADV/157983/PDF/157983.pdf"
+],
+"strategyUrl": "https://www.harrisonst.com/infrastructure/"
+},
+"evidence": [
+{
+"url": "https://reports.adviserinfo.sec.gov/reports/ADV/157983/PDF/157983.pdf",
+"title": "Form ADV Part 1A — Harrison Street Advisors, LLC",
+"publisher": "U.S. SEC",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-03-31",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Official fund identity and rename",
+"evidenceSummary": "Identifies 'HARRISON STREET INFRASTRUCTURE FUND, L.P.' and confirms it was formerly 'Harrison Street Social Infrastructure Fund, L.P.' and is an active private fund advised by the manager.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"structure",
+"fundStatus",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.sec.gov/Archives/edgar/data/1744140/000174414026000003/xslFormDX01/primary_doc.xml",
+"title": "Form D/A — Harrison Street Infrastructure Fund (parallel vehicle)",
+"publisher": "U.S. SEC",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-02-04",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Aggregate fundraising amount",
+"evidenceSummary": "Reports total amount sold across fund and parallel vehicles of approximately $2.6071B, confirming active fundraising/evergreen capital base.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"size",
+"sizeBasis",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeUsdMm",
+"sizeAsOf",
+"sourceUrls"
+]
+},
+{
+"url": "https://www.harrisonst.com/infrastructure/",
+"title": "Harrison Street Infrastructure Strategy",
+"publisher": "Harrison Street",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Strategy and NA mandate",
+"evidenceSummary": "Describes North American infrastructure focus including social infrastructure, energy transition, and digital assets serving institutional users.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"investmentStrategy",
+"regions",
+"strategies",
+"sectors",
+"strategyUrl"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-092",
+"managerName": "Harrison Street",
+"fundName": "Harrison Street Social Infrastructure Fund"
+}
+],
+"changedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"sourceUrls"
+],
+"repoDispositionRationale": "Repository uses outdated fund name and unsupported size figure; primary SEC filings confirm rename and provide current fundraising amount semantics.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Harrison Street Core Property Fund, L.P.",
+"reasonCode": "NON_DIRECT_EQUITY",
+"rationale": "Real estate fund strategy, not infrastructure direct-equity.",
+"sourceUrls": [
+"https://reports.adviserinfo.sec.gov/reports/ADV/157983/PDF/157983.pdf"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "HS Digital Fund / HS Digital II and Data Center vehicles",
+"issue": "Evidence of additional digital infrastructure vehicles exists in regulatory filings but lacks fund-specific primary evidence confirming mandate, lifecycle and North American qualification.",
+"sourceUrls": [
+"https://www.sec.gov/Archives/edgar/data/2125402/000119312526120188/d882818d40app.htm"
+],
+"recommendedResolution": "Obtain Form D filings or official Harrison Street materials confirming strategy and lifecycle for HS Digital series."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 3,
+"searchQueriesRun": 12,
+"notes": [
+"Single confirmed infrastructure fund; additional digital vehicles require further primary evidence"
+]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 1,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Harrison Street — North American direct infrastructure fund census
+Conclusion
+Harrison Street currently has one confirmed, commercially distinct direct-equity infrastructure vehicle with a North American mandate: its evergreen Harrison Street Infrastructure Fund (formerly Harrison Street Social Infrastructure Fund). The repository row requires correction for the official fund name, amount-sold size semantics, and supporting source URLs. Pasted text
+Included funds
+FundVehicleLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceHarrison Street Infrastructure Fund, L.P.Named fundEvergreen activeExplicit North American mandate$2.6071B amount sold as of February 4, 2026Proposed correction to FUND-092SEC Form ADV; SEC Form D/A; Harrison Street infrastructure strategy page
+Repository reconciliation
+FUND-092 is reconciled exactly once to Harrison Street Infrastructure Fund, L.P. The matched repository identity is Harrison Street / Harrison Street Social Infrastructure Fund. The proposed correction preserves the legacy ID while updating the official fund name, replacing the unsupported $5.3B figure with the SEC-reported $2.6071B amount sold, adding the supported native-currency and as-of fields, and replacing the repository source list with the opened SEC Form ADV and Form D/A sources.
+No repository rows remain unmatched, and no proposed-new or possible-duplicate vehicles are included.
+Exclusions and unresolved issues
+Harrison Street Core Property Fund, L.P. is excluded because it is a real-estate fund rather than a qualifying direct-equity infrastructure vehicle.
+Regulatory evidence indicates that HS Digital Fund, HS Digital II, and related data-center vehicles may exist, but the opened evidence does not establish all required fund-specific elements: direct-equity infrastructure mandate, current lifecycle, and North American qualification. Those vehicles therefore remain in unresolvedConflicts rather than being inferred into the census.
+Completeness
+Official manager strategy materials, SEC fundraising filings, and the manager's Form ADV were reviewed. The analysis checked the official rename, current lifecycle, North American strategy, fundraising amount semantics, aliases, and parallel-vehicle treatment. One commercial vehicle is included, one non-infrastructure candidate is excluded, every supplied repository legacy ID is reconciled exactly once, and one potential digital-fund-series issue remains unresolved.
+</fund_census_report>

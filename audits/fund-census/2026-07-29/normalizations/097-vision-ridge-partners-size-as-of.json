@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_UNSUPPORTED_SIZE_AS_OF_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Vision Ridge Partners",
+  "createdAt": "2026-07-31T02:04:06.104Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/097-vision-ridge-partners-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/097-vision-ridge-partners-size-as-of-normalized.txt",
+  "allowedFields": [
+    "snapshot.sizeAsOf",
+    "evidence[].supportedFields[].sizeAsOf"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-148B",
+      "url": "https://vision-ridge.com/vision-ridge-partners-announces-final-close-of-1-25-billion-for-sustainable-asset-fund-iii/",
+      "field": "sizeAsOf",
+      "from": "2021-01-01",
+      "value": "2021-01-01",
+      "rationale": "The model supplied a size-as-of date that no evidence row supports; the amount is anchored instead to the publication date of the single opened primary or institutional fund source supporting the classified native amount."
+    },
+    {
+      "fundIndex": 1,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-149",
+      "url": "https://vision-ridge.com/vision-ridge-partners-raises-2-4-billion-for-flagship-sustainable-real-assets-strategy/",
+      "field": "sizeAsOf",
+      "from": "2026-02-11",
+      "value": "2026-02-11",
+      "rationale": "The model supplied a size-as-of date that no evidence row supports; the amount is anchored instead to the publication date of the single opened primary or institutional fund source supporting the classified native amount."
+    }
+  ]
+}

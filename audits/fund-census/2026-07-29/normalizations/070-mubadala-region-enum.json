@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_REGION_ENUM_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Mubadala",
+  "createdAt": "2026-07-30T23:35:10.233Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/070-mubadala-program-scope-normalized.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/070-mubadala-region-enum-normalized.txt",
+  "allowedFields": [
+    "funds[].snapshot.regions"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "fundName": "Mubadala Infrastructure",
+      "field": "snapshot.regions",
+      "from": [
+        "North America",
+        "Europe",
+        "Asia"
+      ],
+      "value": [
+        "North America",
+        "Europe",
+        "Asia-Pacific"
+      ],
+      "rationale": "The model used the unambiguous Asia shorthand for the contract's canonical Asia-Pacific region enum."
+    }
+  ]
+}

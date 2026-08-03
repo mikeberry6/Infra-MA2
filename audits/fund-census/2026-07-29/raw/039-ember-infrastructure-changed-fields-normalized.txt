@@ -1,0 +1,311 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Ember Infrastructure",
+  "canonicalManager": "Ember Infrastructure Management",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Ember Infrastructure",
+    "Ember Infrastructure Management"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Ember Infrastructure Fund I",
+      "aliases": [],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "CLOSED_ACTIVE",
+      "directEquityBasis": "Closed-end private equity infrastructure fund investing in control or significant minority positions in operating platforms.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Fund I strategy materials and close announcement describe North American middle-market infrastructure investments including U.S. platforms such as ReGenerate, Caban Systems, and SunShare.",
+        "currentHoldingName": "ReGenerate",
+        "currentHoldingUrl": "https://ember-infra.com/"
+      },
+      "snapshot": {
+        "legacyId": "FUND-069A",
+        "managerName": "Ember Infrastructure Management",
+        "fundName": "Ember Infrastructure Fund I",
+        "ticker": null,
+        "investmentStrategy": "Middle-market infrastructure strategy focused on energy transition, resource efficiency, and climate-resilient platforms.",
+        "size": "Over $340M final close",
+        "sizeUsdMm": 340,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "340000000",
+        "sizeBasis": "FINAL_CLOSE",
+        "sizeAsOf": "2022-06-30",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2022",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Financial Close",
+        "sectors": [
+          "Power & ET",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://ember-infra.com/e/ember-closes-fund-i"
+        ],
+        "strategyUrl": "https://www.ember-infra.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://ember-infra.com/e/ember-closes-fund-i",
+          "title": "Ember Closes Fund I",
+          "publisher": "Ember Infrastructure",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2022-06-30",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund I close announcement",
+          "evidenceSummary": "Confirms on June 30, 2022 that Fund I closed at over $340 million and invests in North American infrastructure platforms including ReGenerate, Caban Systems, and SunShare.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sizeAsOf",
+            "structure",
+            "strategies",
+            "vintage",
+            "fundStatus"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-069A",
+          "managerName": "Ember Infrastructure Management",
+          "fundName": "Ember Infrastructure Fund I"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf"
+      ],
+      "repoDispositionRationale": "Repository omits size basis, currency, and as-of date; primary close announcement provides these fields.",
+      "confidence": "HIGH"
+    },
+    {
+      "fundName": "Ember Infrastructure Fund II",
+      "aliases": [],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "RAISING",
+      "directEquityBasis": "Closed-end private equity infrastructure fund investing in middle-market platforms in energy transition and resource efficiency.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Institutional LP materials describe Fund II as targeting North American middle-market infrastructure across energy transition, environmental services, and climate-resilient systems.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-070",
+        "managerName": "Ember Infrastructure Management",
+        "fundName": "Ember Infrastructure Fund II",
+        "ticker": null,
+        "investmentStrategy": "Middle-market infrastructure strategy targeting lower-carbon, resource-efficient and climate-resilient platforms.",
+        "size": "$830.7M amount sold (Form D)",
+        "sizeUsdMm": 830.721111,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "830721111",
+        "sizeBasis": "AMOUNT_SOLD",
+        "sizeAsOf": "2025-10-10",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Opportunistic"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Power & ET",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1991445/000199144525000002/xslFormDX01/primary_doc.xml"
+        ],
+        "strategyUrl": "https://www.ember-infra.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1991445/000199144525000002/xslFormDX01/primary_doc.xml",
+          "title": "Form D – Ember Infrastructure Fund II, LP",
+          "publisher": "U.S. Securities and Exchange Commission",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-10-10",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund II Form D amount sold and first-sale timing",
+          "evidenceSummary": "Reports total amount sold of $830,721,111 for Ember Infrastructure Fund II, LP, a first-sale date in 2024, and ongoing offering duration, indicating capital raised but not necessarily final close.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "size",
+            "sizeBasis",
+            "sizeNativeAmount",
+            "sizeNativeCurrency",
+            "sizeUsdMm",
+            "sizeAsOf",
+            "vintage",
+            "fundStatus"
+          ]
+        },
+        {
+          "url": "https://surs.org/wp-content/uploads/Inv_120524.pdf",
+          "title": "SURS Investment Committee Materials",
+          "publisher": "State Universities Retirement System of Illinois",
+          "sourceTier": "INSTITUTIONAL",
+          "scope": "FUND",
+          "publishedAt": "2024-12-05",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund II strategy and mandate",
+          "evidenceSummary": "Describes Ember Infrastructure Fund II as targeting approximately $800 million for North American middle-market infrastructure investments in energy transition, environmental systems, and climate resilience.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "regions"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-070",
+          "managerName": "Ember Infrastructure Management",
+          "fundName": "Ember Infrastructure Fund II"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "vintage",
+        "fundStatus"
+      ],
+      "repoDispositionRationale": "Repository treats Fund II as closed with $0.8B size; SEC filing shows $830.7M amount sold and ongoing offering, requiring lifecycle and size-basis correction.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Ember Infrastructure Co-Investment SPVs",
+      "reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+      "rationale": "Form ADV identifies multiple co-investment SPVs, including Ember SPV I Co-Invest and OS2 Co-Invest vehicles, that are transaction-specific sidecars rather than distinct commercial funds.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/333753/PDF/333753.pdf"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Ember Infrastructure Fund II lifecycle",
+      "issue": "No primary evidence of final close; SEC filing indicates ongoing offering despite amount sold exceeding initial target.",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1991445/000199144525000002/xslFormDX01/primary_doc.xml"
+      ],
+      "recommendedResolution": "Confirm via manager announcement or LP materials whether Fund II has reached final close post-2025."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 5,
+    "searchQueriesRun": 12,
+    "notes": [
+      "Coverage includes manager site, SEC filings, LP materials, and regulatory ADV disclosures."
+    ]
+  },
+  "summary": {
+    "includedFunds": 2,
+    "explicitNaMandate": 2,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 2,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}
+</fund_census_json>
+<fund_census_report>
+Ember Infrastructure — North American direct infrastructure fund census
+Conclusion
+Ember Infrastructure Management currently operates two qualifying North American direct-equity infrastructure funds: Fund I, which is closed and active, and Fund II, which remained actively raising as of the latest SEC filing. Both meet the inclusion criteria through explicit North American mandates. The repository requires corrections to amount semantics and lifecycle classification, particularly for Fund II.
+Included funds
+FundVehicleLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceEmber Infrastructure Fund INamed fundClosed-activeExplicit North American mandate, including identified U.S. platform investmentsOver $340 million final close as of June 30, 2022Proposed correctionhttps://ember-infra.com/e/ember-closes-fund-iEmber Infrastructure Fund IINamed fundRaisingExplicit North American mandate in institutional LP materials$830.7 million amount sold as of October 10, 2025; not treated as a final closeProposed correctionhttps://www.sec.gov/Archives/edgar/data/1991445/000199144525000002/xslFormDX01/primary_doc.xml; https://surs.org/wp-content/uploads/Inv_120524.pdf
+Repository reconciliation
+
+
+FUND-069A — Ember Infrastructure Fund I: Matched exactly once. Identity, strategy, lifecycle, vintage, structure, sectors, regions, and repository legacy ID are preserved. The proposed correction supplies the final-close basis, USD currency, numeric native amount, and June 30, 2022 size date supported by the close announcement.
+
+
+FUND-070 — Ember Infrastructure Fund II: Matched exactly once. The SEC Form D supports a $830,721,111 amount sold, a 2024 first-sale vintage, and an ongoing offering rather than a verified final close. The repository status is therefore corrected from Financial Close to Raising, with the amount classified as AMOUNT_SOLD.
+
+
+No repository rows remain unmatched, and no additional qualifying successor fund was identified.
+
+
+Exclusions and unresolved issues
+
+
+Ember co-investment SPVs identified in the Form ADV are excluded as transaction-specific sidecars or parallel vehicles rather than independently marketed commercial funds.
+
+
+Fund II's ultimate final-close status remains unresolved. No opened primary manager announcement established a final close after the latest SEC filing, so the reported amount is not characterized as final committed capital.
+
+
+Completeness
+The review covered the manager's fund and strategy materials, the Fund I close announcement, Fund II SEC filings, institutional LP materials, current-holding attribution, manager aliases, and regulatory disclosures concerning parallel and co-investment vehicles. Five sources were opened across twelve research queries. Every supplied repository legacy ID is reconciled exactly once, and the summary counts match the result arrays.
+Pasted text
+</fund_census_report>

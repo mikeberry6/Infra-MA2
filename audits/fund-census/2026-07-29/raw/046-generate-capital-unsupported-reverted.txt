@@ -1,0 +1,235 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Generate Capital",
+  "canonicalManager": "Generate Capital",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Generate Capital",
+    "Generate Capital PBC",
+    "Generate Capital Advisors"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Generate Capital (permanent capital platform)",
+      "aliases": [
+        "Generate Capital PBC platform",
+        "Generate Capital investment program"
+      ],
+      "vehicleType": "PROGRAM_EXCEPTION",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "Primary sources describe Generate Capital as directly owning and financing distributed sustainable infrastructure assets (power, storage, mobility, water, waste, and industrial decarbonization) through balance-sheet equity investments rather than third-party commingled funds.",
+      "northAmericaQualification": {
+        "basis": "EXPLICIT_NA_MANDATE",
+        "rationale": "Manager materials and disclosures describe a core focus on U.S. and North American infrastructure deployment across energy transition, mobility, and sustainable infrastructure sectors.",
+        "currentHoldingName": null,
+        "currentHoldingUrl": null
+      },
+      "snapshot": {
+        "legacyId": "FUND-081",
+        "managerName": "Generate Capital",
+        "fundName": "Generate Capital (Permanent Capital)",
+        "ticker": null,
+        "investmentStrategy": "Permanent-capital sustainable infrastructure platform investing directly in distributed infrastructure assets across energy transition, mobility, waste, water, and industrial decarbonization.",
+        "size": "$10.0B",
+        "sizeUsdMm": 10000,
+        "sizeNativeCurrency": null,
+        "sizeNativeAmount": null,
+        "sizeBasis": null,
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Value-Add"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Utilities",
+          "Digital",
+          "Transportation",
+          "Social Infra"
+        ],
+        "regions": [
+          "North America"
+        ],
+        "sourceUrls": [
+          "https://generatecapital.com/"
+        ],
+        "strategyUrl": "https://generatecapital.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://generatecapital.com/",
+          "title": "Generate Capital official website",
+          "publisher": "Generate Capital",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Platform overview and strategy",
+          "evidenceSummary": "Official materials describe Generate Capital as a sustainable infrastructure platform deploying permanent capital into distributed infrastructure assets across North America, including energy, mobility, waste, and water systems.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "regions",
+            "structure",
+            "strategies",
+            "fundStatus",
+            "sectors",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-081",
+          "managerName": "Generate Capital",
+          "fundName": "Generate Capital (Permanent Capital)"
+        }
+      ],
+      "changedFields": [],
+      "repoDispositionRationale": "Repository entry lacks explicit size basis and currency semantics; platform capital is better classified as AUM with USD denomination rather than unspecified aggregate.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "Generate Strategic Credit Fund I-A, L.P.",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "Identified in SEC Form ADV as a credit fund; does not represent direct-equity infrastructure investment.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/318680/PDF/318680.pdf"
+      ]
+    },
+    {
+      "fundName": "Generate NX Fund I, LP",
+      "reasonCode": "NON_DIRECT_EQUITY",
+      "rationale": "SEC filing identifies vehicle but does not provide sufficient evidence of direct-equity infrastructure mandate or North American deployment; strategy classification unclear.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/318680/PDF/318680.pdf"
+      ]
+    },
+    {
+      "fundName": "Generate PGR Fund I, LP",
+      "reasonCode": "NON_DIRECT_EQUITY",
+      "rationale": "SEC filing identifies vehicle but lacks fund-specific evidence confirming direct-equity infrastructure mandate or qualifying North American deployment.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/318680/PDF/318680.pdf"
+      ]
+    },
+    {
+      "fundName": "GSCF PSG Co-Invest I, L.P.",
+      "reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+      "rationale": "Co-investment vehicle tied to a credit strategy (GSCF) and lacks independent evidence of a distinct direct-equity infrastructure fundraise.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/318680/PDF/318680.pdf"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Generate NX Fund I and Generate PGR Fund I classification",
+      "issue": "SEC Form ADV confirms existence and size but does not provide sufficient evidence of infrastructure equity strategy or North American mandate to meet inclusion criteria.",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/318680/PDF/318680.pdf"
+      ],
+      "recommendedResolution": "Obtain fund-specific materials or LP disclosures confirming strategy, sector focus, and geographic deployment."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 2,
+    "searchQueriesRun": 4,
+    "notes": [
+      "SEC Form ADV reviewed for full private fund universe Pasted text"
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 1,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 4,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}
+</fund_census_json>
+<fund_census_report>
+Generate Capital — North American direct infrastructure fund census
+Conclusion
+Generate Capital does not operate traditional closed-end infrastructure funds as its primary investment vehicle. Instead, it deploys capital through a permanent-capital platform that directly owns and finances distributed infrastructure assets, which qualifies as a PROGRAM_EXCEPTION under the methodology. No additional qualifying commingled direct-equity infrastructure funds could be verified with sufficient fund-level evidence.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepo DispositionEvidenceGenerate Capital (permanent capital platform)Program ExceptionEvergreen ActiveExplicit NA mandateAUMProposed Correctionhttps://generatecapital.com/
+Repository reconciliation
+
+
+FUND-081 matched to the permanent capital platform.
+
+
+Correction proposed to clarify size semantics (AUM vs unspecified), currency, and basis.
+
+
+No additional funds identified that meet inclusion criteria.
+
+
+Exclusions and unresolved issues
+
+
+Excluded (credit): Generate Strategic Credit Fund I-A (debt strategy).
+
+
+Excluded (insufficient evidence): Generate NX Fund I and Generate PGR Fund I lack confirmed infrastructure-equity mandate and North American qualification.
+
+
+Excluded (duplicate/linked vehicle): GSCF PSG Co-Invest I is a co-investment vehicle linked to a credit strategy.
+
+
+Unresolved: Strategy classification and infrastructure scope for the NX and PGR funds require further primary evidence.
+
+
+Completeness
+
+
+Official website and platform materials reviewed.
+
+
+SEC Form ADV reviewed for the full private-fund universe. Pasted text
+
+
+Fundraising and close searches performed, but no qualifying commingled infrastructure-equity funds were confirmed.
+
+
+No verifiable fund-level North American holdings were attributable to specific commingled vehicles.
+
+
+Parallel and feeder structures were assessed; none qualified independently.
+</fund_census_report>

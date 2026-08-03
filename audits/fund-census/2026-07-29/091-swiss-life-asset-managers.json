@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Swiss Life Asset Managers",
+  "canonicalManager": "Swiss Life Asset Managers",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Swiss Life Asset Managers",
+    "Swiss Life AM"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [
+    {
+      "fundName": "SwissLife GIO Growth II",
+      "reasonCode": "GLOBAL_WITHOUT_NA_EVIDENCE",
+      "rationale": "Available evidence indicates a Europe-focused strategy with no fund-specific North American mandate or verifiable current North American holding attributed to the vehicle.",
+      "sourceUrls": [
+        "https://www.swisslife-am.com/en/home/media/news/switzerland/institutional/2023/0502-infrastructure-fund.html"
+      ]
+    },
+    {
+      "fundName": "SwissLife GIO IV",
+      "reasonCode": "GLOBAL_WITHOUT_NA_EVIDENCE",
+      "rationale": "Repository and available materials reference OECD or Europe-oriented strategy language without fund-specific evidence of a North American mandate or a verifiable current North American holding attributed to this fund.",
+      "sourceUrls": [
+        "https://www.swisslife-am.com/en/home/media/news/corporate/company-news/2024/0704-gio-4.html"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-140",
+      "repoFundName": "SwissLife GIO Growth II",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Insufficient fund-specific evidence to confirm a North American mandate or current North American holding; repository classification may require update if additional evidence emerges.",
+      "evidenceUrls": []
+    },
+    {
+      "legacyId": "FUND-141",
+      "repoFundName": "SwissLife GIO IV",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "No verified fund-level North American qualification identified from available evidence; requires confirmation of mandate or holdings attribution.",
+      "evidenceUrls": []
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Swiss Life GIO platform North America exposure",
+      "issue": "Manager-level references to OECD or global investing may imply potential North American deployment, but no fund-attributed current holdings or explicit mandate language was confirmed.",
+      "sourceUrls": [],
+      "recommendedResolution": "Obtain fund-specific investor materials or portfolio disclosures confirming North American mandate or holdings attribution."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 1,
+    "searchQueriesRun": 1,
+    "notes": [
+      "No qualifying North American direct-equity infrastructure funds confirmed based on available evidence."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 2,
+    "repoOnlyRecords": 2,
+    "unresolvedConflicts": 1
+  }
+}

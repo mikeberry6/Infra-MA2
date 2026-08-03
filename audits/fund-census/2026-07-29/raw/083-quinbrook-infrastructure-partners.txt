@@ -1,0 +1,185 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Quinbrook Infrastructure Partners",
+"canonicalManager": "Quinbrook Infrastructure Partners",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["Quinbrook Infrastructure Partners"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Quinbrook Net Zero Power Fund (NZPF)",
+"aliases": ["NZPF"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Closed-end fund investing directly in renewable power, storage, and infrastructure assets including solar, battery storage, and data-center power infrastructure",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund strategy includes North America within its global mandate and invests in U.S. renewable and infrastructure assets",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-131",
+"managerName": "Quinbrook Infrastructure Partners",
+"fundName": "Quinbrook Net Zero Power Fund (NZPF)",
+"ticker": null,
+"investmentStrategy": "Value-add net-zero-power strategy focused on solar+storage, grid support, battery storage, renewable fuels and renewable-powered hyperscale data-center infrastructure.",
+"size": "$3.0B capital commitments",
+"sizeUsdMm": 3000,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "3000000000",
+"sizeBasis": "COMMITMENTS",
+"sizeAsOf": "2024-08-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2024",
+"strategies": ["Value-Add"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Power & ET", "Utilities", "Digital", "Social Infra"],
+"regions": ["North America", "Europe", "Asia-Pacific"],
+"sourceUrls": ["https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/"],
+"strategyUrl": "https://www.quinbrook.com/"
+},
+"evidence": [
+{
+"url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+"title": "Quinbrook exceeds target for Net Zero Power strategy raising USD 3 billion in capital commitments",
+"publisher": "Quinbrook Infrastructure Partners",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2024-08-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "NZPF final close announcement",
+"evidenceSummary": "Confirms NZPF strategy, sectors, global geographic scope including North America, and $3B capital commitments at final close in August 2024.",
+"supports": ["FUND_IDENTITY", "DIRECT_EQUITY_INFRASTRUCTURE", "NORTH_AMERICA", "CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName", "investmentStrategy", "regions", "size", "sizeBasis", "sizeNativeAmount", "sizeNativeCurrency", "sizeUsdMm", "fundStatus", "structure", "strategies", "vintage", "sizeAsOf"]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-131",
+"managerName": "Quinbrook Infrastructure Partners",
+"fundName": "Quinbrook Net Zero Power Fund (NZPF)"
+}
+],
+"changedFields": ["sizeBasis", "sizeNativeCurrency", "sizeNativeAmount", "sizeAsOf"],
+"repoDispositionRationale": "Repository row matches the fund but omits size basis, native currency/amount, and as-of date explicitly supported by the primary source.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "Quinbrook Low Carbon Power Fund",
+"reasonCode": "GLOBAL_WITHOUT_NA_EVIDENCE",
+"rationale": "Insufficient fund-specific evidence in reviewed materials to confirm current lifecycle and North American holdings attributable to this vehicle as of the as-of date.",
+"sourceUrls": []
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Quinbrook Low Carbon Power Fund lifecycle and holdings",
+"issue": "Unclear whether earlier flagship funds remain active with current North American holdings attributable at the fund level",
+"sourceUrls": [],
+"recommendedResolution": "Review fund-level portfolio attribution or LP reporting confirming active holdings and geography"
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 1,
+"searchQueriesRun": 1,
+"notes": ["Primary reliance on Quinbrook official NZPF close announcement; limited visibility on legacy funds"]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 1,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Quinbrook Infrastructure Partners — North American direct infrastructure fund census Pasted text
+Conclusion
+As of 2026-07-29, one current direct-equity infrastructure fund with a North American mandate is conclusively supported for Quinbrook Infrastructure Partners: the Quinbrook Net Zero Power Fund (NZPF). The fund is closed and active following its August 2024 final close and explicitly targets global deployment including North America.
+Legacy Quinbrook vehicles (e.g., Low Carbon Power Fund) could not be included due to insufficient fund-level evidence confirming current lifecycle status and North American holdings attribution.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepository DispositionEvidenceQuinbrook Net Zero Power Fund (NZPF)Named FundClosed ActiveExplicit NA mandate$3.0B commitments (Aug 2024)Proposed Correctionhttps://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/
+Repository reconciliation
+
+
+FUND-131 (NZPF): Matched and verified.
+
+
+Correction required to normalize size semantics and metadata:
+
+
+Add sizeBasis: COMMITMENTS
+
+
+Add sizeNativeCurrency: USD
+
+
+Add sizeNativeAmount: 3000000000
+
+
+Add sizeAsOf: 2024-08-01
+
+
+
+
+
+
+No additional repository rows required reconciliation.
+
+
+Exclusions and unresolved issues
+
+
+Excluded: Quinbrook Low Carbon Power Fund — insufficient evidence confirming current status and North American holdings attribution at the fund level.
+
+
+Unresolved: Whether earlier Quinbrook flagship funds remain active and hold North American assets attributable to those specific vehicles.
+
+
+Completeness
+
+
+Reviewed official Quinbrook press release for NZPF final close.
+
+
+Verified fund strategy, sectors, and global (including North America) mandate.
+
+
+Assessed lifecycle status as closed and active.
+
+
+Reviewed for parallel or feeder duplication (none identified).
+
+
+Conducted limited coverage of legacy funds; lack of fund-specific attribution prevents inclusion.
+
+
+Overall completeness is high for NZPF but limited for earlier Quinbrook fund vintages due to lack of accessible fund-level disclosure.
+</fund_census_report>

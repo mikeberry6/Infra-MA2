@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_SECONDARY_ONLY_REPO_REVIEW_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Ridgewood Infrastructure",
+  "createdAt": "2026-07-31T01:05:49.484Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/085-ridgewood-infrastructure-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/085-ridgewood-infrastructure-secondary-only-review-normalized.txt",
+  "allowedFields": [
+    "funds",
+    "repoOnlyRecords",
+    "unresolvedConflicts",
+    "summary"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-132",
+      "fundName": "Ridgewood Water & Strategic Infrastructure Fund II",
+      "field": "funds",
+      "dispositionFrom": "PROPOSED_CORRECTION",
+      "dispositionValue": "REPO_ONLY_NEEDS_REVIEW",
+      "unsupportedClaim": "SECONDARY_ONLY",
+      "sourceUrls": [
+        "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target-302352437.html"
+      ],
+      "rationale": "Opened evidence for Ridgewood Water & Strategic Infrastructure Fund II is secondary-only; the supplied repository row is retained for review only."
+    }
+  ]
+}

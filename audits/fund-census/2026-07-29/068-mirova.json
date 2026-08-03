@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Mirova",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Mirova",
+    "Mirova US LLC",
+    "Natixis Asset Management",
+    "Ostrum Asset Management",
+    "Thematics Asset Management"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager scope governance",
+      "issue": "The authoritative repository snapshot sets knownManager=false and canonicalManager=null, while the separately supplied manager universe includes 'Mirova'. Under the contract, no fund rows or manager addition may be proposed despite clear evidence that Mirova is an active infrastructure investor.",
+      "sourceUrls": [
+        "https://www.mirova.com/en",
+        "https://www.mirova.com/en/news/merger-mirova-thematics-am-US"
+      ],
+      "recommendedResolution": "Add or restore Mirova as a canonical manager in a future version-controlled FUND_MANIFEST through governance review, then rerun the census; do not auto-add from this task."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 7,
+    "searchQueriesRun": 6,
+    "notes": [
+      "Scope-gated result: repository snapshot knownManager=false; vehicle-level census intentionally not performed and no fund proposed.",
+      "Official materials confirm Mirova is an active sustainable infrastructure investor but this cannot override manifest scope constraints.",
+      "The supplied manager universe inclusion of Mirova conflicts with the canonical manifest and requires governance resolution."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

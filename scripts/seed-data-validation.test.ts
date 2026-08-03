@@ -219,6 +219,6 @@ describe("canonical seed manifest", () => {
     expect(report.errors).toEqual([]);
     expect(report.counts.companies).toBeGreaterThan(1000);
     expect(report.counts.deals).toBeGreaterThan(300);
-    expect(report.counts.funds).toBe(179);
+    expect(report.counts.funds).toBe(194);
   });
 });

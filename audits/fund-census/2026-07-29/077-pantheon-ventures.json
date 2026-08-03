@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Pantheon Ventures",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "Pantheon Ventures"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager scope inconsistency",
+      "issue": "The repository snapshot sets knownManager=false and canonicalManager=null, while the supplied manager universe explicitly includes Pantheon Ventures.",
+      "sourceUrls": [],
+      "recommendedResolution": "Reconcile the FUND_MANIFEST generation logic with the supplied manager universe and establish a canonical manager entry before rerunning the fund census."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": false,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": false,
+    "managerAliasesAndSuccessorsReviewed": false,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 1,
+    "searchQueriesRun": 0,
+    "notes": [
+      "The supplied snapshot is authoritative for scope and sets knownManager=false with no repository fund rows.",
+      "Per contract, no fund-level research or inclusion is permitted when the manager is out of scope.",
+      "No external sources were required to determine the scope outcome."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

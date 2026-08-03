@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_PROGRAM_EVIDENCE_SCOPE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Mubadala",
+  "createdAt": "2026-07-30T23:35:09.839Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/070-mubadala-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/070-mubadala-program-scope-normalized.txt",
+  "allowedFields": [
+    "evidence[].scope"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 0,
+      "url": "https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+      "field": "scope",
+      "from": "PROGRAM",
+      "value": "PROGRAM_EXCEPTION",
+      "rationale": "The PRIMARY evidence row explicitly supports program identity and direct-equity infrastructure scope for a PROGRAM_EXCEPTION vehicle."
+    },
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 1,
+      "url": "https://www.isquaredcapital.com/news/ten-closes-inaugural-financing/",
+      "field": "scope",
+      "from": "HOLDING",
+      "value": "PROGRAM_EXCEPTION",
+      "rationale": "The PRIMARY holding evidence explicitly attributes infrastructure deployment or ownership to the documented PROGRAM_EXCEPTION platform."
+    },
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 2,
+      "url": "https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+      "field": "scope",
+      "from": "HOLDING",
+      "value": "PROGRAM_EXCEPTION",
+      "rationale": "The PRIMARY holding evidence explicitly attributes infrastructure deployment or ownership to the documented PROGRAM_EXCEPTION platform."
+    }
+  ]
+}

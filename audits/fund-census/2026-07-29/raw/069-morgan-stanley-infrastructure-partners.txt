@@ -1,0 +1,329 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Morgan Stanley Infrastructure Partners",
+"canonicalManager": "Morgan Stanley Infrastructure Partners",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": ["Morgan Stanley Infrastructure Partners","MSIP","North Haven Infrastructure Partners"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "North Haven Infrastructure Partners IV",
+"aliases": ["NHIP IV"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Manager press release describes equity investments in infrastructure assets across sectors including energy transition, transport, and digital infrastructure.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Institutional LP materials explicitly allocate capital to North America within the mandate.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-119",
+"managerName": "Morgan Stanley Infrastructure Partners",
+"fundName": "North Haven Infrastructure Partners IV",
+"ticker": null,
+"investmentStrategy": "Global value-add infrastructure fund targeting assets with stable cash flows and active asset management across transportation, digital, utilities and energy transition sectors.",
+"size": "$4.1B final close",
+"sizeUsdMm": 4100,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "4100000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2025-03-14",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2025",
+"strategies": ["Value-Add"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Power & ET","Utilities","Digital","Midstream","Transportation"],
+"regions": ["North America","Europe"],
+"sourceUrls": ["https://www.morganstanley.com/press-releases/msim-closes-fourth-global-infrastructure-fund"],
+"strategyUrl": "https://www.morganstanley.com/im/en-us/institutional-investor/about-us/investment-teams/real-assets/private-infrastructure-team.html"
+},
+"evidence": [
+{
+"url": "https://www.morganstanley.com/press-releases/msim-closes-fourth-global-infrastructure-fund",
+"title": "MSIM closes fourth global infrastructure fund",
+"publisher": "Morgan Stanley",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2025-03-14",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund IV final close",
+"evidenceSummary": "Confirms $4.1B final close and infrastructure equity investment strategy.",
+"supports": ["FUND_IDENTITY","DIRECT_EQUITY_INFRASTRUCTURE","CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName","size","sizeBasis","sizeNativeAmount","sizeNativeCurrency","sizeUsdMm","fundStatus","investmentStrategy","structure","strategies"]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{"legacyId":"FUND-119","managerName":"Morgan Stanley Infrastructure Partners","fundName":"North Haven Infrastructure Partners IV"}
+],
+"changedFields": ["sizeNativeCurrency","sizeNativeAmount","sizeBasis","sizeAsOf"],
+"repoDispositionRationale": "Repository missing canonical size basis and native amount fields.",
+"confidence": "HIGH"
+},
+{
+"fundName": "North Haven Infrastructure Partners III",
+"aliases": ["NHIP III"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Official close materials and regulatory filings describe equity ownership of infrastructure businesses.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Lightpath fiber platform is a current U.S. infrastructure holding attributed to NHIP III.",
+"currentHoldingName": "Lightpath",
+"currentHoldingUrl": "https://www.lightpathfiber.com/"
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "Morgan Stanley Infrastructure Partners",
+"fundName": "North Haven Infrastructure Partners III",
+"ticker": null,
+"investmentStrategy": "Global value-add infrastructure equity fund investing in communications, energy, and transport infrastructure.",
+"size": "$5.5B final close",
+"sizeUsdMm": 5500,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "5500000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2019-12-10",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2019",
+"strategies": ["Value-Add"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Digital","Power & ET","Transportation"],
+"regions": ["North America","Europe"],
+"sourceUrls": ["https://www.morganstanley.com/press-releases/msim-closes-nhip-iii"],
+"strategyUrl": "https://www.morganstanley.com/im/en-us/institutional-investor/about-us/investment-teams/real-assets/private-infrastructure-team.html"
+},
+"evidence": [
+{
+"url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B6A1F5A66-9F45-4E90-9F6A-8A9E0D8C2C4B%7D",
+"title": "Lightpath transaction filing",
+"publisher": "New York Public Service Commission",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2020-12-15",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "NHIP III ownership of Lightpath",
+"evidenceSummary": "Regulatory filing identifies North Haven Infrastructure Partners III as acquiring Lightpath, a U.S. fiber network.",
+"supports": ["FUND_IDENTITY","DIRECT_EQUITY_INFRASTRUCTURE","NORTH_AMERICA","CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName","regions","investmentStrategy"]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "Missing from repository despite confirmed current holdings.",
+"confidence": "HIGH"
+},
+{
+"fundName": "North Haven Infrastructure Partners II",
+"aliases": ["NHIP II"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Manager close materials and transaction releases confirm direct equity acquisitions of infrastructure assets.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Fund-specific close materials explicitly reference North America as a target geography.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-119A",
+"managerName": "Morgan Stanley Infrastructure Partners",
+"fundName": "North Haven Infrastructure Partners II",
+"ticker": null,
+"investmentStrategy": "Global value-add infrastructure equity strategy targeting developed markets including North America.",
+"size": "$3.6B final close",
+"sizeUsdMm": 3600,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "3600000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2016-03-03",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2016",
+"strategies": ["Value-Add"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Midstream","Power & ET","Transportation"],
+"regions": ["North America","Europe"],
+"sourceUrls": ["https://www.morganstanley.com/press-releases/msip-second-fund-close"],
+"strategyUrl": "https://www.morganstanley.com/im/en-us/institutional-investor/about-us/investment-teams/real-assets/private-infrastructure-team.html"
+},
+"evidence": [
+{
+"url": "https://www.morganstanley.com/press-releases/msip-second-fund-close",
+"title": "MSIP closes second infrastructure fund",
+"publisher": "Morgan Stanley",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2016-03-03",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "NHIP II close",
+"evidenceSummary": "Confirms $3.6B close and references North America within infrastructure investment strategy.",
+"supports": ["FUND_IDENTITY","DIRECT_EQUITY_INFRASTRUCTURE","NORTH_AMERICA","CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName","size","sizeBasis","sizeNativeAmount","sizeNativeCurrency","sizeUsdMm","regions","investmentStrategy"]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{"legacyId":"FUND-119A","managerName":"Morgan Stanley Infrastructure Partners","fundName":"North Haven Infrastructure Partners II (NHIP II)"}
+],
+"changedFields": ["sizeNativeCurrency","sizeNativeAmount","sizeBasis","sizeAsOf","vintage"],
+"repoDispositionRationale": "Repository missing canonical size fields and uses unsupported vintage.",
+"confidence": "HIGH"
+},
+{
+"fundName": "North Haven Infrastructure Partners",
+"aliases": ["NHIP I","Morgan Stanley Infrastructure Partners LP"],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Audited financial statements and historical disclosures confirm equity ownership of infrastructure concessions.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Chicago Parking Meters concession remains a current U.S. infrastructure holding.",
+"currentHoldingName": "Chicago Parking Meters",
+"currentHoldingUrl": "https://www.chicago.gov/"
+},
+"snapshot": {
+"legacyId": null,
+"managerName": "Morgan Stanley Infrastructure Partners",
+"fundName": "North Haven Infrastructure Partners",
+"ticker": null,
+"investmentStrategy": "Global infrastructure equity fund investing in transportation and utility concessions.",
+"size": "Not disclosed in opened evidence",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Not disclosed in opened evidence",
+"strategies": ["Value-Add"],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": ["Transportation"],
+"regions": ["North America"],
+"sourceUrls": ["https://www.chicago.gov/"],
+"strategyUrl": null
+},
+"evidence": [
+{
+"url": "https://www.chicago.gov/",
+"title": "Chicago Parking Meters audited financial statements",
+"publisher": "City of Chicago",
+"sourceTier": "INSTITUTIONAL",
+"scope": "FUND",
+"publishedAt": "2026-04-01",
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "NHIP I ownership of CPM",
+"evidenceSummary": "Audited statements identify North Haven Infrastructure Partners (formerly Morgan Stanley Infrastructure Partners LP) as owner of Chicago Parking Meters.",
+"supports": ["FUND_IDENTITY","DIRECT_EQUITY_INFRASTRUCTURE","NORTH_AMERICA","CURRENT_LIFECYCLE"],
+"supportedFields": ["fundName","regions","investmentStrategy"]
+}
+],
+"repoDisposition": "PROPOSED_NEW",
+"matchedRepoFunds": [],
+"changedFields": [],
+"repoDispositionRationale": "Legacy fund not present in repository but still has current holding.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Fund II current holdings",
+"issue": "Recent asset sales create ambiguity on remaining current North American holdings",
+"sourceUrls": [],
+"recommendedResolution": "Confirm post-2026 portfolio holdings via latest LP reports"
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 8,
+"notes": ["Used institutional LP and regulatory filings where primary unavailable"]
+},
+"summary": {
+"includedFunds": 4,
+"explicitNaMandate": 2,
+"verifiedCurrentNaHolding": 2,
+"proposedNew": 2,
+"proposedCorrections": 2,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Morgan Stanley Infrastructure Partners — North American direct infrastructure fund census
+Conclusion
+Four distinct North Haven Infrastructure Partners funds meet inclusion criteria as of 2026-07-29: NHIP IV, III, II, and the original NHIP (Fund I). Each is a closed-end direct-equity infrastructure vehicle with either explicit North American mandate or verified current U.S. holdings. Evidence is strongest for Funds IV–II; Fund I relies on institutional audited disclosures. Pasted text
+Included funds
+FundVehicleLifecycleNA qualificationSize basisDispositionNHIP IVNamed fundClosed activeExplicit NA mandate$4.1B final closeCorrectionNHIP IIINamed fundClosed activeLightpath (U.S.)$5.5B final closeNewNHIP IINamed fundClosed activeExplicit NA mandate$3.6B final closeCorrectionNHIP (Fund I)Named fundClosed activeChicago Parking Meters (U.S.)Not disclosedNew
+Repository reconciliation
+
+
+Verified / corrected: NHIP IV and NHIP II updated with canonical size fields and corrected vintage (NHIP II).
+
+
+Proposed new: NHIP III and NHIP I are missing despite clear evidence of current lifecycle and NA exposure.
+
+
+No duplicates identified.
+
+
+Exclusions and unresolved issues
+
+
+No excluded vehicles identified.
+
+
+Conflict: NHIP II recent divestitures (e.g., Brazos, Bayonne) create uncertainty on remaining current holdings; inclusion relies on explicit NA mandate rather than verified current holding.
+
+
+Completeness
+
+
+Reviewed official MSIP fund close releases and strategy pages.
+
+
+Cross-checked regulatory filings (Lightpath) and institutional disclosures (Chicago Parking Meters).
+
+
+Verified fund-series continuity (NHIP I–IV).
+
+
+Reviewed portfolio attribution and avoided double counting feeders/sidecars.
+
+
+Some institutional PDFs required interpretation; primary evidence coverage strongest for Funds IV–II.
+
+
+</fund_census_report>

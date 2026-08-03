@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Australian Super",
+  "canonicalManager": "AustralianSuper",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Australian Super",
+    "AustralianSuper",
+    "Australian Retirement Fund (ARF)",
+    "Superannuation Trust of Australia (STA)",
+    "Club Plus Super",
+    "LUCRF Super"
+  ],
+  "overlappingSuppliedManagers": [
+    "Generate Capital",
+    "IFM Investors"
+  ],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "AustralianSuper Infrastructure Portfolio",
+      "aliases": [
+        "AustralianSuper infrastructure portfolio",
+        "the Fund's infrastructure portfolio"
+      ],
+      "vehicleType": "PROGRAM_EXCEPTION",
+      "lifecycle": "EVERGREEN_ACTIVE",
+      "directEquityBasis": "AustralianSuper's official portfolio materials describe a large portfolio of directly owned unlisted real assets and identify DataBank Data Centers and Transurban Chesapeake as direct investment highlights. Its Chesapeake acquisition release states that AustralianSuper acquired a 25% stake and explicitly describes the benefits of directly owning infrastructure.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "AustralianSuper's current North America and portfolio-capability pages identify DataBank Data Centers and a 25% interest in Transurban Chesapeake as North American direct-investment highlights as at 31 December 2025. DataBank's current investor page also lists AustralianSuper, and AustralianSuper's FY26 performance update confirms that infrastructure investments remained active and contributed during the year ended 30 June 2026.",
+        "currentHoldingName": "DataBank Data Centers",
+        "currentHoldingUrl": "https://www.australiansuper.com/global-investors/who-we-are/north-america"
+      },
+      "snapshot": {
+        "legacyId": "FUND-026",
+        "managerName": "AustralianSuper",
+        "fundName": "AustralianSuper Infrastructure Portfolio",
+        "ticker": null,
+        "investmentStrategy": "Evergreen pension direct-investment program using internally managed direct equity and co-investment positions in unlisted infrastructure across digital infrastructure, transportation and energy-transition assets; externally managed infrastructure exposures are reported at the broader portfolio level but are outside the direct-equity component.",
+        "size": "A$48.265B AUM (level 3 infrastructure)",
+        "sizeUsdMm": null,
+        "sizeNativeCurrency": "AUD",
+        "sizeNativeAmount": "48265000000",
+        "sizeBasis": "AUM",
+        "sizeAsOf": "2025-06-30",
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "Evergreen",
+        "strategies": [
+          "Co-Investments"
+        ],
+        "structure": "Permanent Capital",
+        "fundStatus": "Evergreen",
+        "sectors": [
+          "Power & ET",
+          "Digital",
+          "Transportation"
+        ],
+        "regions": [
+          "Global",
+          "North America",
+          "Asia-Pacific",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.australiansuper.com/global-investors/capabilities/portfolio-asset-class-capabilities",
+          "https://www.australiansuper.com/global-investors/who-we-are/north-america",
+          "https://www.australiansuper.com/-/media/australian-super/files/about-us/financial-statements/2025-fund-annual-financial-report.pdf",
+          "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf",
+          "https://www.databank.com/about-databank/our-investors/",
+          "https://www.australiansuper.com/investments/investment-articles/2026/07/fy26-investment-performance"
+        ],
+        "strategyUrl": "https://www.australiansuper.com/global-investors/capabilities/portfolio-asset-class-capabilities"
+      },
+      "evidence": [
+        {
+          "url": "https://www.australiansuper.com/global-investors/capabilities/portfolio-asset-class-capabilities",
+          "title": "Portfolio & asset class capabilities",
+          "publisher": "AustralianSuper",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current direct-investment capability and holdings",
+          "evidenceSummary": "AustralianSuper describes a large portfolio of directly owned unlisted real assets, ongoing deployment supported by recurring cash inflows, and current United States direct-investment highlights including DataBank Data Centers and a 25% interest in Transurban Chesapeake. The page supports treating the pension mandate as a continuing permanent-capital program rather than a closed-end fund.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "managerName",
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "structure",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls",
+            "strategyUrl"
+          ]
+        },
+        {
+          "url": "https://www.australiansuper.com/global-investors/who-we-are/north-america",
+          "title": "Our North American presence",
+          "publisher": "AustralianSuper",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "North American direct deployment",
+          "evidenceSummary": "AustralianSuper reports more than 45 direct unlisted investments in the Americas since 2020, states an appetite for direct and co-investment opportunities, identifies DataBank and Chesapeake as North American direct-investment highlights as at 31 December 2025, and describes the North American Real Assets team's sector focus.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "strategies",
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.australiansuper.com/-/media/australian-super/files/about-us/financial-statements/2025-fund-annual-financial-report.pdf",
+          "title": "Annual Financial Report 30 June 2025",
+          "publisher": "AustralianSuper",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Audited infrastructure AUM and current equity holdings",
+          "evidenceSummary": "The audited report presents A$23.684 billion of Australian infrastructure and A$24.581 billion of international infrastructure at 30 June 2025, totaling A$48.265 billion of level 3 infrastructure across internally and externally managed investments. It reports 25% ownership of Transurban Chesapeake and does not state a USD equivalent for the infrastructure total.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "size",
+            "sizeUsdMm",
+            "sizeNativeCurrency",
+            "sizeNativeAmount",
+            "sizeBasis",
+            "sizeAsOf",
+            "fundStatus",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf",
+          "title": "AustralianSuper acquires a stake in Chesapeake toll roads",
+          "publisher": "AustralianSuper",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2020-12-17",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Direct-equity infrastructure acquisition",
+          "evidenceSummary": "AustralianSuper announced its acquisition of a 25% stake in Transurban's Chesapeake toll-road assets in the United States, attributed the investment to the Fund's infrastructure portfolio, and expressly described the benefits of directly owning infrastructure and deploying growth capital.",
+          "supports": [
+            "FUND_IDENTITY",
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "fundName",
+            "investmentStrategy",
+            "strategies",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.databank.com/about-databank/our-investors/",
+          "title": "Meet DataBank's Investors: Driving Strategic Growth and Innovation",
+          "publisher": "DataBank",
+          "sourceTier": "PRIMARY",
+          "scope": "PROGRAM_EXCEPTION",
+          "publishedAt": null,
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current DataBank investor attribution",
+          "evidenceSummary": "DataBank's current investor page lists AustralianSuper among the investors in the North American data-center platform, corroborating current manager-level ownership of the holding used for North American qualification.",
+          "supports": [
+            "NORTH_AMERICA",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundStatus",
+            "sectors",
+            "regions",
+            "sourceUrls"
+          ]
+        },
+        {
+          "url": "https://www.australiansuper.com/investments/investment-articles/2026/07/fy26-investment-performance",
+          "title": "FY26 Performance Update",
+          "publisher": "AustralianSuper",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2026-07-03",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Current infrastructure lifecycle",
+          "evidenceSummary": "AustralianSuper's FY26 update states that infrastructure investments in seaports, airports and toll roads continued to perform during the financial year ended 30 June 2026, supporting an active current lifecycle.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "investmentStrategy",
+            "fundStatus",
+            "sectors",
+            "sourceUrls"
+          ]
+        }
+      ],
+      "repoDisposition": "PROPOSED_CORRECTION",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-026",
+          "managerName": "AustralianSuper",
+          "fundName": "AustralianSuper Infrastructure Portfolio"
+        }
+      ],
+      "changedFields": [
+        "investmentStrategy",
+        "size",
+        "sizeUsdMm",
+        "sizeNativeCurrency",
+        "sizeNativeAmount",
+        "sizeBasis",
+        "sizeAsOf",
+        "strategies",
+        "sectors",
+        "regions",
+        "sourceUrls"
+      ],
+      "repoDispositionRationale": "FUND-026 matches the only qualifying commercially distinct infrastructure program, but its >$30.0B size label and 30,000 sizeUsdMm presentation should be replaced by the audited A$48.265 billion level 3 infrastructure AUM at 30 June 2025, with no inferred USD conversion. The strategy, sector, region and source fields are also revised to reflect direct/co-investment evidence, current North American deployment and current official sources.",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "fundName": "AustralianSuper Mid-Risk portfolio",
+      "reasonCode": "OTHER",
+      "rationale": "The Mid-Risk portfolio combines Real Assets and Private Credit and is an asset-allocation platform above the infrastructure program, not a commercially distinct direct-equity infrastructure vehicle.",
+      "sourceUrls": [
+        "https://www.australiansuper.com/global-investors/capabilities/portfolio-asset-class-capabilities"
+      ]
+    },
+    {
+      "fundName": "AustralianSuper North American Real Assets portfolio",
+      "reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+      "rationale": "AustralianSuper describes North American Real Assets as a regional team and portfolio within the merged global Real Assets capability. No separately capitalized fund, independent program, feeder, sidecar or distinct commercial vehicle was disclosed.",
+      "sourceUrls": [
+        "https://www.australiansuper.com/global-investors/who-we-are/north-america",
+        "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-real-asset-team-merges-property-and-infrastructure-portfolios.pdf"
+      ]
+    },
+    {
+      "fundName": "AustralianSuper Private Credit capability",
+      "reasonCode": "DEBT_OR_CREDIT",
+      "rationale": "The North American Private Credit capability invests across credit instruments and is outside the direct-equity infrastructure census.",
+      "sourceUrls": [
+        "https://www.australiansuper.com/global-investors/who-we-are/north-america"
+      ]
+    },
+    {
+      "fundName": "Member Direct property and infrastructure products",
+      "reasonCode": "RETAIL_ACCESS_ONLY",
+      "rationale": "Member Direct provides member access to listed ETFs and an externally managed listed infrastructure fund; it is not AustralianSuper's direct-equity infrastructure mandate.",
+      "sourceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/tools-and-advice/forms-and-fact-sheets/superannuation/guides/member-direct-investment-menu.pdf"
+      ]
+    },
+    {
+      "fundName": "AS Infra and AS Infrastructure holding trusts",
+      "reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+      "rationale": "The audited report identifies these controlled entities as legal holding or operating structures used to hold underlying investments; it does not establish separate commercial strategies or independently managed vehicles.",
+      "sourceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/about-us/financial-statements/2025-fund-annual-financial-report.pdf"
+      ]
+    },
+    {
+      "fundName": "IFM-managed infrastructure portfolios",
+      "reasonCode": "OTHER",
+      "rationale": "AustralianSuper's audited report identifies IFM Investors as an external manager of infrastructure and other portfolios on behalf of AustralianSuper. Those vehicles remain attributable to IFM Investors rather than to AustralianSuper's direct-investment program.",
+      "sourceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/about-us/financial-statements/2025-fund-annual-financial-report.pdf"
+      ]
+    },
+    {
+      "fundName": "Generate Capital manager vehicles",
+      "reasonCode": "OTHER",
+      "rationale": "AustralianSuper's audited report shows a 23% equity holding in Generate Capital. Generate Capital's own funds and programs remain attributable to the separately supplied Generate Capital manager; the stake is a holding within AustralianSuper's program, not a separate AustralianSuper vehicle.",
+      "sourceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/about-us/financial-statements/2025-fund-annual-financial-report.pdf"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "AustralianSuper Infrastructure Portfolio direct-only capital base",
+      "issue": "The audited A$48.265 billion figure is total level 3 infrastructure AUM across internally and externally managed investments. AustralianSuper does not disclose a separate current amount for the direct-equity component alone, and internally managed infrastructure is not explicitly defined as identical to direct equity.",
+      "sourceUrls": [
+        "https://www.australiansuper.com/-/media/australian-super/files/about-us/financial-statements/2025-fund-annual-financial-report.pdf",
+        "https://www.australiansuper.com/global-investors/capabilities/portfolio-asset-class-capabilities"
+      ],
+      "recommendedResolution": "Store A$48.265 billion strictly as program-level level 3 infrastructure AUM, not as direct-only commitments or fundraise size; leave direct-only capital undisclosed unless AustralianSuper publishes a current direct-equity split."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 16,
+    "searchQueriesRun": 40,
+    "notes": [
+      "No separate named North American infrastructure fund, feeder, parallel vehicle, sidecar, continuation vehicle or independently capitalized co-investment fund was found.",
+      "The pension infrastructure program is included once; Mid-Risk, regional Real Assets teams and controlled holding entities are not double-counted.",
+      "North American qualification rests on fund-attributed current DataBank and Transurban Chesapeake holdings, not on a generic Global label.",
+      "The latest audited infrastructure AUM is dated 30 June 2025; the 3 July 2026 performance update supports an active lifecycle through FY26.",
+      "IFM Investors and Generate Capital overlaps were preserved under their own supplied-manager identities and not merged into AustralianSuper.",
+      "No material cited source was inaccessible."
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 0,
+    "proposedCorrections": 1,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 7,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

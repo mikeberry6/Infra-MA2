@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_LIFECYCLE_ENUM_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "EQT Infrastructure",
+  "createdAt": "2026-07-30T19:28:06.791Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/043-eqt-infrastructure.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/043-eqt-infrastructure-lifecycle-normalized.txt",
+  "allowedFields": [
+    "funds[].lifecycle"
+  ],
+  "changes": [
+    {
+      "fundIndex": 2,
+      "fundName": "EQT AI Infrastructure Strategy",
+      "field": "lifecycle",
+      "from": "OPEN_ENDED_ACTIVE",
+      "value": "EVERGREEN_ACTIVE",
+      "rationale": "OPEN_ENDED_ACTIVE is an unambiguous synonym for the contract's EVERGREEN_ACTIVE lifecycle when structure is Open-End and status is Evergreen."
+    }
+  ]
+}

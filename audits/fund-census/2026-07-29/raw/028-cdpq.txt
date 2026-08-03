@@ -1,0 +1,284 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "CDPQ",
+"canonicalManager": "La Caisse de dépôt (CDPQ)",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"CDPQ",
+"La Caisse",
+"La Caisse de dépôt (CDPQ)",
+"Caisse de dépôt et placement du Québec",
+"La Caisse de dépôt et placement du Québec"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Infrastructure Specialized Portfolio",
+"aliases": [
+"Infrastructure portfolio",
+"CDPQ Infrastructure"
+],
+"vehicleType": "PROGRAM_EXCEPTION",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Official program materials state that the infrastructure team makes direct investments and that the specialized portfolio holds interests in listed and unlisted companies operating utility-type infrastructure assets. The portfolio may hold a limited allocation to investment funds, but its documented mandate and current holdings establish a direct-equity infrastructure program.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "The 2025 portfolio reports material United States and Canadian exposure, and an April 2026 primary-source release confirms that La Caisse remained an equity sponsor and long-term partner of Vertical Bridge, a United States wireless-infrastructure owner and operator.",
+"currentHoldingName": "Vertical Bridge",
+"currentHoldingUrl": "https://www.lacaisse.com/en/news/pressreleases/vertical-bridge-announces-15-billion-strategic-equity-investment-kkr"
+},
+"snapshot": {
+"legacyId": "FUND-110",
+"managerName": "La Caisse de dépôt (CDPQ)",
+"fundName": "Infrastructure Specialized Portfolio",
+"ticker": null,
+"investmentStrategy": "Evergreen direct infrastructure program focused on tangible assets with stable long-term income across transport, power/renewables, public transit and, increasingly, telecom/data centres.",
+"size": "C$74.506B net assets under management",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "CAD",
+"sizeNativeAmount": "74505861000",
+"sizeBasis": "AUM",
+"sizeAsOf": "2025-12-31",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2010",
+"strategies": [
+"Core"
+],
+"structure": "Permanent Capital",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Midstream",
+"Transportation",
+"Social Infra"
+],
+"regions": [
+"North America",
+"Europe",
+"Asia-Pacific",
+"Latin America",
+"Global"
+],
+"sourceUrls": [
+"https://www.cdpq.com/en/investments/infrastructure"
+],
+"strategyUrl": "https://www.cdpq.com/en/investments/infrastructure"
+},
+"evidence": [
+{
+"url": "https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2025_lacaisse_annual_report.pdf",
+"title": "2025 Annual Report",
+"publisher": "La Caisse",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM_EXCEPTION",
+"publishedAt": "2026-05-06",
+"retrievedAt": "2026-07-30",
+"confidence": "HIGH",
+"evidenceLabel": "Official specialized-portfolio identity, assets, mandate and geography",
+"evidenceSummary": "The annual report identifies the Infrastructure Specialized Portfolio, reports C$74,505,861,000 of net assets under management at December 31, 2025, gives a July 1, 2010 creation date, describes direct interests in listed and unlisted infrastructure companies and utility-type assets, and reports current exposure across Canada, the United States, Europe, Asia-Pacific and Latin America.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"strategies",
+"structure",
+"fundStatus",
+"sectors",
+"regions"
+]
+},
+{
+"url": "https://www.lacaisse.com/en/investments/infrastructure",
+"title": "Infrastructure",
+"publisher": "La Caisse",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM_EXCEPTION",
+"publishedAt": null,
+"retrievedAt": "2026-07-30",
+"confidence": "HIGH",
+"evidenceLabel": "Official current infrastructure-program page",
+"evidenceSummary": "The official page states that the infrastructure team makes direct investments in companies, describes the Infrastructure portfolio's stable-income and inflation-protection objectives, reports C$74.5 billion of net assets at December 31, 2025, and identifies dedicated North American infrastructure leadership.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"strategies",
+"structure",
+"fundStatus",
+"sectors",
+"regions",
+"sourceUrls",
+"strategyUrl"
+]
+},
+{
+"url": "https://www.lacaisse.com/en/news/pressreleases/vertical-bridge-announces-15-billion-strategic-equity-investment-kkr",
+"title": "Vertical Bridge Announces $1.5 Billion Strategic Equity Investment from KKR",
+"publisher": "La Caisse",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM_EXCEPTION",
+"publishedAt": "2026-04-22",
+"retrievedAt": "2026-07-30",
+"confidence": "HIGH",
+"evidenceLabel": "Current United States direct-equity holding",
+"evidenceSummary": "The release states that existing sponsors La Caisse and DigitalBridge participated in the investment and remained long-term partners of Vertical Bridge, the largest private owner and operator of wireless communications infrastructure in the United States.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"sectors",
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-110",
+"managerName": "La Caisse de dépôt (CDPQ)",
+"fundName": "CDPQ Infrastructure"
+}
+],
+"changedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"vintage",
+"regions"
+],
+"repoDispositionRationale": "FUND-110 represents the same evergreen infrastructure program, but official reporting provides the formal Infrastructure Specialized Portfolio name, exact CAD net assets and measurement date, a 2010 creation year, and evidenced regional exposure. The repository's USD amount is removed because the reviewed primary sources do not state that USD equivalent or an applicable FX rate and date.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [
+{
+"fundName": "CDPQ Infra",
+"reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+"rationale": "CDPQ Infra is a wholly owned project-development subsidiary of La Caisse. Official reporting treats the investment in that subsidiary as part of La Caisse's infrastructure activities and does not disclose it as a separately capitalized investable fund or sovereign-program capital pool.",
+"sourceUrls": [
+"https://cdpqinfra.com/en/our-approach",
+"https://cdpqinfra.com/en/about-us/governance",
+"https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2025_lacaisse_annual_report.pdf"
+]
+},
+{
+"fundName": "Sustainable Land Management initiative",
+"reasonCode": "DUPLICATE_OR_PARALLEL_VEHICLE",
+"rationale": "La Caisse expressly describes this initiative as having been established within its Infrastructure portfolio. No independently reported capital base or commercially separate vehicle was established in the reviewed primary evidence.",
+"sourceUrls": [
+"https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under"
+]
+},
+{
+"fundName": "Infrastructure Financing mandate",
+"reasonCode": "DEBT_OR_CREDIT",
+"rationale": "Official fixed-income and annual-report materials classify Infrastructure Financing as a credit mandate providing senior and subordinated debt to infrastructure issuers rather than direct infrastructure equity.",
+"sourceUrls": [
+"https://www.lacaisse.com/en/investments/fixed-income",
+"https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2025_lacaisse_annual_report.pdf"
+]
+}
+],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Infrastructure Specialized Portfolio strategy taxonomy",
+"issue": "Official materials describe stable and predictable current yields, inflation protection and long-term capital appreciation but do not expressly label the program as Core. Core is therefore an analytical mapping into the required strategy taxonomy rather than a quoted manager classification.",
+"sourceUrls": [
+"https://www.lacaisse.com/en/investments/infrastructure",
+"https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2025_lacaisse_annual_report.pdf"
+],
+"recommendedResolution": "Retain Core as the closest taxonomy mapping unless manager-issued material expressly using a different permitted strategy label is obtained."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 12,
+"searchQueriesRun": 32,
+"notes": [
+"The qualifying structure is a sovereign/pension specialized portfolio rather than a commingled infrastructure fund series.",
+"CDPQ Infra and the Sustainable Land Management initiative were reviewed as nested structures and were not double-counted.",
+"The April 2026 Vertical Bridge release provides current United States direct-equity holding attribution."
+]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 1,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 3,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+CDPQ — North American direct infrastructure fund census
+Conclusion
+The census identifies one qualifying current direct-equity infrastructure program: the Infrastructure Specialized Portfolio. It is included as a PROGRAM_EXCEPTION because it is La Caisse's evergreen sovereign/pension specialized portfolio rather than a third-party commingled fund. The 2025 annual report identifies the formal portfolio name, reports C$74.506 billion of net assets under management at December 31, 2025, and states that the portfolio was created on July 1, 2010. Its mandate consists principally of interests in listed and unlisted companies operating infrastructure and utility-type assets. La Caisse+2La Caisse+2
+North American qualification rests on verified current deployment, not merely a generic global label. The annual report reports 30% United States and 21% Canadian exposure at December 31, 2025. An April 22, 2026 release also confirms that La Caisse remained an equity sponsor and long-term partner of Vertical Bridge, a United States wireless-infrastructure owner and operator. La Caisse+1
+The manager's current public brand is La Caisse, formerly CDPQ, while its governing legal entity remains the Caisse de dépôt et placement du Québec. The supplied manifest identity, La Caisse de dépôt (CDPQ), is retained as the canonical repository manager rather than treated as a separate organization. La Caisse+1
+Included funds
+Fund or programVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceInfrastructure Specialized PortfolioProgram exceptionEvergreen activeVerified current North American holding: Vertical Bridge; 2025 portfolio exposure also includes the United States and CanadaC$74.506B AUM as of December 31, 2025PROPOSED_CORRECTION to FUND-1102025 Annual Report; Infrastructure program; Vertical Bridge holding evidence
+The direct-investment page, annual-report portfolio disclosure and Vertical Bridge release collectively support program identity, direct-equity infrastructure scope, current lifecycle and North American deployment. La Caisse+4La Caisse+4La Caisse+4
+Repository reconciliation
+The sole repository record, FUND-110 — CDPQ Infrastructure, is matched to the official Infrastructure Specialized Portfolio. The proposed correction preserves the legacy ID and changes nine fields:
+fundName, size, sizeUsdMm, sizeNativeCurrency, sizeNativeAmount, sizeBasis, sizeAsOf, vintage, and regions.
+Official reporting supports C$74,505,861,000 of net assets under management at December 31, 2025 and a July 1, 2010 creation date. The repository's US$55.5 billion value is cleared because the reviewed annual report presents portfolio assets in Canadian dollars and does not supply that USD equivalent with an explicit FX rate and date. La Caisse+2La Caisse+2
+There are no proposed-new funds, possible duplicates, unmatched repository records or NEEDS_REVIEW fund rows.
+Exclusions and unresolved issues
+CandidateTreatmentBasisCDPQ InfraDUPLICATE_OR_PARALLEL_VEHICLEWholly owned project-development subsidiary nested within La Caisse's infrastructure activities; no separately reported investable capital poolSustainable Land Management initiativeDUPLICATE_OR_PARALLEL_VEHICLEOfficially established within the Infrastructure portfolio rather than disclosed as an independent vehicleInfrastructure Financing mandateDEBT_OR_CREDITSenior and subordinated infrastructure-debt mandate within fixed income/credit
+CDPQ Infra's own materials identify La Caisse as its sole shareholder, while La Caisse's reporting treats the subsidiary as part of its infrastructure assets. The Sustainable Land Management initiative is expressly described as being within the Infrastructure portfolio. Infrastructure Financing is expressly described as senior and subordinated debt. La Caisse+4CDPQ Infra+4CDPQ Infra+4
+One non-dispositive classification issue remains: official materials describe stable and predictable current income, inflation protection and long-term capital appreciation, but do not use the permitted taxonomy label Core. The result maps those characteristics to Core while recording the mapping as an unresolved taxonomy issue. La Caisse+1
+No overlapping supplied manager was identified in the repository snapshot.
+Completeness
+The review covered the official infrastructure program page, 2025 annual report and portfolio tables, current North American holding attribution, current and predecessor manager names, CDPQ Infra's corporate status, the Sustainable Land Management sleeve, and the Infrastructure Financing debt mandate. It also tested whether those nested structures had separately reported capital bases before excluding them.
+A total of 32 searches were run and 12 sources were opened. All sources cited in the result were opened, and annual-report tables and portfolio-composition pages were visually inspected. No cited source was inaccessible. The governing scope, schema, supplied manager universe and FUND-110 repository baseline came from the attached task specification. Pasted text
+</fund_census_report>

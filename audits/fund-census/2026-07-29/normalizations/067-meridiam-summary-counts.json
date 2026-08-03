@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_SUMMARY_COUNT_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Meridiam",
+  "createdAt": "2026-07-30T23:09:21.849Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/067-meridiam-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/067-meridiam-summary-counts-normalized.txt",
+  "allowedFields": [
+    "summary.*"
+  ],
+  "changes": [
+    {
+      "field": "summary.needsReview",
+      "from": 1,
+      "value": 0,
+      "rationale": "The summary counter is deterministically recomputed from the result arrays and classifications."
+    }
+  ]
+}

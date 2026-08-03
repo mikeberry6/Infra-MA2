@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_PROGRAM_EVIDENCE_SCOPE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "BlackRock",
+  "createdAt": "2026-07-30T11:30:53.237Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/023-blackrock-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/023-blackrock-program-scope-normalized.txt",
+  "allowedFields": [
+    "evidence[].scope"
+  ],
+  "changes": [
+    {
+      "fundIndex": 8,
+      "evidenceIndex": 0,
+      "url": "https://www.blackrock.com/corporate/literature/whitepaper/blackrock-infrastructure-impact-report.pdf",
+      "field": "scope",
+      "from": "FUND",
+      "value": "PROGRAM_EXCEPTION",
+      "rationale": "The PRIMARY, MEDIUM-confidence evidence row explicitly supports program identity and direct-equity infrastructure scope for a PROGRAM_EXCEPTION vehicle."
+    },
+    {
+      "fundIndex": 9,
+      "evidenceIndex": 0,
+      "url": "https://www.blackrock.com/corporate/literature/whitepaper/blackrock-infrastructure-impact-report.pdf",
+      "field": "scope",
+      "from": "FUND",
+      "value": "PROGRAM_EXCEPTION",
+      "rationale": "The PRIMARY, MEDIUM-confidence evidence row explicitly supports program identity and direct-equity infrastructure scope for a PROGRAM_EXCEPTION vehicle."
+    },
+    {
+      "fundIndex": 10,
+      "evidenceIndex": 0,
+      "url": "https://www.blackrock.com/corporate/literature/whitepaper/blackrock-infrastructure-impact-report.pdf",
+      "field": "scope",
+      "from": "FUND",
+      "value": "PROGRAM_EXCEPTION",
+      "rationale": "The PRIMARY, MEDIUM-confidence evidence row explicitly supports program identity and direct-equity infrastructure scope for a PROGRAM_EXCEPTION vehicle."
+    }
+  ]
+}

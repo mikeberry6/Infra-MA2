@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_EXCLUDED_REASON_CODE_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Blackstone",
+  "createdAt": "2026-07-30T12:35:51.808Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/024-blackstone-attempt-3.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/024-blackstone-excluded-reason-normalized.txt",
+  "allowedFields": [
+    "excludedCandidates[].reasonCode"
+  ],
+  "changes": [
+    {
+      "excludedCandidateIndex": 0,
+      "fundName": "Blackstone Energy Partners III (BEP III)",
+      "field": "reasonCode",
+      "from": "INSUFFICIENT_EVIDENCE",
+      "value": "INSUFFICIENT_FUND_SPECIFIC_EVIDENCE",
+      "rationale": "The exclusion narrative and opened source URLs explicitly describe missing fund-specific evidence for current North American qualification."
+    }
+  ]
+}

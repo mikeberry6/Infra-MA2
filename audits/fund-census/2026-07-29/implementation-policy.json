@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "minimumAdditionSizeUsdMm": 1000,
+  "sizeGateScope": "ADDITIONS_ONLY",
+  "excludedExistingFields": [
+    "strategies"
+  ],
+  "preserveBaselineEvergreenFields": [
+    "vintage",
+    "structure",
+    "fundStatus"
+  ],
+  "evergreenOverrideLegacyIds": [],
+  "deferredLinkedRenameLegacyIds": [
+    "FUND-002",
+    "FUND-030",
+    "FUND-063",
+    "FUND-071",
+    "FUND-073",
+    "FUND-092",
+    "FUND-097",
+    "FUND-099A",
+    "FUND-110"
+  ],
+  "newLegacyIdStart": 151,
+  "expected": {
+    "baselineFunds": 179,
+    "includedAdditions": 21,
+    "excludedAdditions": 37,
+    "existingCorrections": 88,
+    "finalFunds": 200,
+    "suppressedStrategyChanges": 14,
+    "suppressedEvergreenChanges": 12,
+    "knownDeferredRenames": 9,
+    "knownOwnershipReferences": 64,
+    "batches": [
+      17,
+      19,
+      20,
+      20,
+      20,
+      13
+    ]
+  }
+}

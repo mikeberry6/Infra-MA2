@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_EVIDENCE_FIELD_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "KKR",
+  "createdAt": "2026-07-30T22:32:50.932Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/064-kkr-attempt-2.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/064-kkr-evidence-normalized.txt",
+  "allowedFields": [
+    "evidence[].supportedFields[].sizeUsdMm"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-105",
+      "url": "https://www.sec.gov/Archives/edgar/data/1933581/000193358126000001/xslFormDX01/primary_doc.xml",
+      "field": "sizeUsdMm",
+      "rationale": "Existing primary or institutional fund evidence supports an exact native USD amount whose deterministic rounded millions-value equals sizeUsdMm."
+    },
+    {
+      "fundIndex": 1,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-106",
+      "url": "https://www.sec.gov/Archives/edgar/data/2015283/000201528326000001/xslFormDX01/primary_doc.xml",
+      "field": "sizeUsdMm",
+      "rationale": "Existing primary or institutional fund evidence supports an exact native USD amount whose deterministic rounded millions-value equals sizeUsdMm."
+    },
+    {
+      "fundIndex": 2,
+      "evidenceIndex": 0,
+      "legacyId": "FUND-107",
+      "url": "https://www.sec.gov/Archives/edgar/data/2022923/000202292326000001/xslFormDX01/primary_doc.xml",
+      "field": "sizeUsdMm",
+      "rationale": "Existing primary or institutional fund evidence supports an exact native USD amount whose deterministic rounded millions-value equals sizeUsdMm."
+    }
+  ]
+}

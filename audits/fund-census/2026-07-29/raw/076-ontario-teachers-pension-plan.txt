@@ -1,0 +1,254 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Ontario Teachers Pension Plan",
+"canonicalManager": "Ontario Teachers' Pension Plan",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Ontario Teachers Pension Plan",
+"Ontario Teachers'",
+"Ontario Teachers' Pension Plan",
+"OTPP",
+"Ontario Teachers' Pension Plan Board"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Infrastructure",
+"aliases": [
+"OTPP Infrastructure",
+"Ontario Teachers' Infrastructure"
+],
+"vehicleType": "PROGRAM_EXCEPTION",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Official infrastructure program invests directly in companies and assets, taking significant (often majority or co-control) equity positions across infrastructure sectors.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Official program materials explicitly state active investment across North America alongside other global regions.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-128",
+"managerName": "Ontario Teachers' Pension Plan",
+"fundName": "Infrastructure",
+"ticker": null,
+"investmentStrategy": "Global direct-equity infrastructure program focused on core and core-plus assets, taking significant positions (majority or co-control) across energy, transport/logistics, water and wastewater, and related infrastructure sectors.",
+"size": "C$34.5B net investments",
+"sizeUsdMm": null,
+"sizeNativeCurrency": "CAD",
+"sizeNativeAmount": "34500000000",
+"sizeBasis": "AUM",
+"sizeAsOf": "2025-12-31",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Core",
+"Core-Plus"
+],
+"structure": "Permanent Capital",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Transportation",
+"Water & Wastewater"
+],
+"regions": [
+"Global",
+"North America"
+],
+"sourceUrls": [
+"https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/",
+"https://www.otpp.com/en-ca/annual-report/2025/"
+],
+"strategyUrl": "https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/"
+},
+"evidence": [
+{
+"url": "https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/",
+"title": "Infrastructure & Natural Resources — Ontario Teachers'",
+"publisher": "Ontario Teachers' Pension Plan",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM_EXCEPTION",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Official infrastructure program overview",
+"evidenceSummary": "Describes infrastructure investing via significant equity ownership (majority/co-control) and confirms geographic activity including North America.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"regions",
+"strategies",
+"structure",
+"fundStatus"
+]
+},
+{
+"url": "https://www.otpp.com/en-ca/annual-report/2025/",
+"title": "2025 Annual Report — Ontario Teachers' Pension Plan",
+"publisher": "Ontario Teachers' Pension Plan",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM_EXCEPTION",
+"publishedAt": "2026-04-01",
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Infrastructure portfolio size and activity",
+"evidenceSummary": "Annual report states infrastructure portfolio valued at C$34.5B (net investments) as of Dec 31, 2025 and confirms ongoing active investment program.",
+"supports": [
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"size",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeBasis",
+"sizeAsOf"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-128",
+"managerName": "Ontario Teachers' Pension Plan",
+"fundName": "OTPP Infrastructure"
+}
+],
+"changedFields": [
+"fundName",
+"investmentStrategy",
+"size",
+"sizeUsdMm",
+"sizeNativeCurrency",
+"sizeNativeAmount",
+"sizeBasis",
+"sizeAsOf",
+"strategies",
+"sectors",
+"regions"
+],
+"repoDispositionRationale": "Repository row reflects the same underlying evergreen infrastructure program but uses a non-official name and outdated size, and omits explicit North America mandate and updated strategy details.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "sizeBasis classification",
+"issue": "Annual report reports 'net investments' rather than explicitly labeling the figure as AUM; classification as AUM is a schema mapping decision.",
+"sourceUrls": [
+"https://www.otpp.com/en-ca/annual-report/2025/"
+],
+"recommendedResolution": "Confirm internal schema guidance for mapping pension asset-class net investment values to AUM classification."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 2,
+"searchQueriesRun": 3,
+"notes": [
+"Single evergreen infrastructure program identified; no separately capitalized North America-specific vehicles.",
+"Greenfield and renewables activities treated as internal sub-strategy, not separate commercial vehicle."
+]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Ontario Teachers Pension Plan — North American direct infrastructure fund census
+Conclusion
+Ontario Teachers’ Pension Plan operates a single evergreen direct-equity infrastructure investment program (“Infrastructure”) that meets all inclusion criteria. It explicitly invests in North America and remains active as of 2026. The repository contains this program under a non-official name with outdated attributes, requiring correction.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepo DispositionEvidenceInfrastructureProgram ExceptionEvergreen ActiveExplicit mandate (North America listed)AUM (C$34.5B net investments, 2025)Proposed CorrectionOfficial program page; 2025 annual report
+Repository reconciliation
+
+
+FUND-128 (“OTPP Infrastructure”) → matched and corrected
+
+
+Rename to official program name (“Infrastructure”)
+
+
+Update size to C$34.5B (2025 net investments)
+
+
+Add explicit North America regional mandate
+
+
+Expand strategy from Core to Core + Core-Plus
+
+
+Update sectors to reflect water/wastewater and current positioning
+
+
+
+
+No additional infrastructure funds or programs meeting inclusion criteria were identified.
+Exclusions and unresolved issues
+
+
+No separate North America-dedicated funds, sidecars, or co-invest vehicles were identified.
+
+
+Internal teams (e.g., greenfield/renewables) are treated as sub-strategies within the same program and not separate commercial vehicles.
+
+
+Unresolved: classification of “net investments” as AUM for schema purposes.
+
+
+Completeness
+
+
+Official infrastructure program materials reviewed.
+
+
+Annual report reviewed for size, lifecycle, and holdings context.
+
+
+No separate fundraising or close processes (permanent capital program).
+
+
+Holdings attribution confirmed at program level.
+
+
+Manager aliases and legal identity verified.
+
+
+No parallel or feeder vehicles identified.
+
+
+Source task specification: Pasted text
+</fund_census_report>

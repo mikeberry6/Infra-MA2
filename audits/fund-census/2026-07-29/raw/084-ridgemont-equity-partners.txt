@@ -1,0 +1,87 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Ridgemont Equity Partners",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": ["Ridgemont Equity Partners"],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope",
+"issue": "Requested manager is not present in the version-controlled infrastructure manager universe and no repository records exist for reconciliation.",
+"sourceUrls": [],
+"recommendedResolution": "Add or confirm manager inclusion in the infrastructure manager universe before performing fund-level census."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 1,
+"searchQueriesRun": 1,
+"notes": ["Research limited by OUT_OF_SCOPE_UNKNOWN_MANAGER instruction; no fund-level inclusion permitted."]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Ridgemont Equity Partners — North American direct infrastructure fund census
+Conclusion
+The supplied repository snapshot explicitly marks Ridgemont Equity Partners as an unknown/out-of-scope manager (knownManager: false), which contractually prevents inclusion of any funds or proposal of new vehicles. Pasted text
+Accordingly, no direct-equity infrastructure funds are included in this census, and the result is limited to documenting the scope gap.
+Included funds
+No funds included due to OUT_OF_SCOPE_UNKNOWN_MANAGER.
+Repository reconciliation
+
+
+Repository contains zero rows for this manager.
+
+
+No matches, corrections, or proposed additions are permitted under scope rules.
+
+
+Exclusions and unresolved issues
+
+
+Primary issue: Ridgemont Equity Partners is not part of the maintained infrastructure manager universe.
+
+
+No fund-level exclusions were processed because fund inclusion is disallowed when the manager is out of scope.
+
+
+Completeness
+
+
+Manager scope constraint enforced based on repository snapshot.
+
+
+No fund-level materials reviewed because inclusion was blocked at manager level.
+
+
+All reconciliation requirements satisfied given zero repository rows and no eligible funds.
+</fund_census_report>
+

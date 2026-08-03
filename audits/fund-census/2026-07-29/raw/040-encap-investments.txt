@@ -1,0 +1,126 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "EnCap Investments",
+"canonicalManager": null,
+"managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+"aliasesResearched": [
+"EnCap Investments",
+"EnCap Investments L.P."
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Manager scope — EnCap Investments",
+"issue": "The supplied repository snapshot sets canonicalManager to null and knownManager to false, even though EnCap Investments appears in the supplied manager universe and official materials identify the operating legal entity as EnCap Investments L.P.; this creates a manifest-level scope conflict that prevents fund-level inclusion.",
+"sourceUrls": [
+"https://www.encapinvestments.com/about",
+"https://www.encapinvestments.com/about/our-story"
+],
+"recommendedResolution": "Conduct a separate FUND_MANIFEST governance review to determine whether the supplied-universe label should map to EnCap Investments L.P.; do not automatically add or map a canonical manager in this task. Re-run the fund census only after the manager is recognized in the manifest."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 0,
+"searchQueriesRun": 0,
+"notes": [
+"Manager-level identity and naming reviewed sufficiently to document scope gap.",
+"Fund-level universe, fundraising, and holdings attribution intentionally not adjudicated due to OUT_OF_SCOPE_UNKNOWN_MANAGER boundary."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+EnCap Investments — North American direct infrastructure fund census
+Conclusion
+This result is an out-of-scope manager boundary, not a fund-level census. The supplied repository snapshot explicitly sets canonicalManager: null and knownManager: false for EnCap Investments Pasted text. Under the contract, this requires managerScopeStatus: OUT_OF_SCOPE_UNKNOWN_MANAGER, zero included funds, and no proposal of a new manager or fund.
+Manager-level review confirms the real-world identity (EnCap Investments / EnCap Investments L.P.), but this does not override the manifest; fund-level evaluation is intentionally not performed.
+Included funds
+FundVehicle TypeLifecycleNA QualificationSize BasisRepository DispositionEvidenceNone—————Fund-level inclusion not performed due to manifest scope boundary
+Repository reconciliation
+
+
+Supplied repository rows: none
+
+
+Matched rows: none
+
+
+Proposed additions: none
+
+
+Corrections: none
+
+
+Duplicates: none
+
+
+Review items: none
+
+
+All reconciliation arrays are empty because the manager is out of scope in the manifest.
+Exclusions and unresolved issues
+
+
+No candidate funds were evaluated or excluded; this is not a judgment on EnCap’s real-world fund universe.
+
+
+No overlapping supplied managers identified.
+
+
+No program exceptions assessed.
+
+
+Unresolved conflict (material):
+
+
+The manager appears in the supplied manager universe but is simultaneously absent from the version-controlled manifest (knownManager: false). This prevents any compliant fund-level census and requires separate governance resolution before proceeding.
+
+
+Completeness
+
+
+Manager identity and alias review: completed
+
+
+Fund-page coverage: not performed (by design)
+
+
+Fundraising/close verification: not performed
+
+
+Current holdings attribution: not performed
+
+
+Parallel/feeder analysis: not performed
+
+
+This reflects a deliberate halt at the manager-scope validation stage in accordance with the unknown-manager boundary.
+</fund_census_report>

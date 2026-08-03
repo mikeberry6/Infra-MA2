@@ -1,0 +1,237 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Mubadala",
+"canonicalManager": "Mubadala Investment Company",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Mubadala",
+"Mubadala Investment Company",
+"Real Estate & Infrastructure Investments",
+"Real Assets",
+"Infrastructure",
+"Digital Infrastructure",
+"Traditional Infrastructure"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "Mubadala Infrastructure",
+"aliases": [
+"Infrastructure",
+"Infrastructure within the Real Assets platform",
+"Digital Infrastructure",
+"Traditional Infrastructure"
+],
+"vehicleType": "PROGRAM_EXCEPTION",
+"lifecycle": "EVERGREEN_ACTIVE",
+"directEquityBasis": "Mubadala's audited program-level disclosure describes its Real Assets infrastructure program as deploying capital directly into infrastructure assets and portfolio companies, while transaction disclosures identify Mubadala as an equity investor and shareholder in infrastructure platforms.",
+"northAmericaQualification": {
+"basis": "EXPLICIT_NA_MANDATE",
+"rationale": "Primary audited program-level disclosure states that the infrastructure activities within Mubadala's Real Assets platform are geographically diversified across North America, Europe, and Asia.",
+"currentHoldingName": null,
+"currentHoldingUrl": null
+},
+"snapshot": {
+"legacyId": "FUND-123",
+"managerName": "Mubadala Investment Company",
+"fundName": "Mubadala Infrastructure",
+"ticker": null,
+"investmentStrategy": "Scaling direct real-assets platform with highest conviction in digital infrastructure and energy transition, alongside power and transport.",
+"size": "—",
+"sizeUsdMm": null,
+"sizeNativeCurrency": null,
+"sizeNativeAmount": null,
+"sizeBasis": null,
+"sizeAsOf": null,
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "Evergreen",
+"strategies": [
+"Value-Add"
+],
+"structure": "Permanent Capital",
+"fundStatus": "Evergreen",
+"sectors": [
+"Power & ET",
+"Utilities",
+"Digital",
+"Midstream",
+"Transportation"
+],
+"regions": [
+"North America",
+"Europe",
+"Asia"
+],
+"sourceUrls": [
+"https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"
+],
+"strategyUrl": "https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"
+},
+"evidence": [
+{
+"url": "https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+"title": "Mubadala Investment Company PJSC Annual Financial Statements 2025",
+"publisher": "Mubadala Investment Company PJSC",
+"sourceTier": "PRIMARY",
+"scope": "PROGRAM",
+"publishedAt": "2026-03-31",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Primary audited program-level infrastructure disclosure",
+"evidenceSummary": "The audited statements describe Mubadala's Real Assets infrastructure program, state that it deploys capital into infrastructure assets and portfolio companies, and identify geographic diversification across North America, Europe, and Asia, with named infrastructure holdings including Aligned Energy and CityFibre.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"regions",
+"sectors",
+"fundStatus",
+"structure"
+]
+},
+{
+"url": "https://www.isquaredcapital.com/news/ten-closes-inaugural-financing/",
+"title": "Transportation Equipment Network Closes Inaugural Financing",
+"publisher": "I Squared Capital",
+"sourceTier": "PRIMARY",
+"scope": "HOLDING",
+"publishedAt": "2024-07-15",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "North American direct-equity infrastructure deployment",
+"evidenceSummary": "The transaction disclosure confirms that Mubadala invested equity capital in Transportation Equipment Network, a North American transportation-equipment leasing platform, and attributes the investment to Mubadala's infrastructure investment team.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"regions",
+"sectors"
+]
+},
+{
+"url": "https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+"title": "CityFibre Holdings Limited Shareholder Disclosure",
+"publisher": "CityFibre",
+"sourceTier": "PRIMARY",
+"scope": "HOLDING",
+"publishedAt": "2026-03-31",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Direct infrastructure equity ownership",
+"evidenceSummary": "The disclosure identifies Mubadala Investment Company as a minority shareholder in CityFibre, supporting direct-equity ownership of infrastructure assets within the documented infrastructure program.",
+"supports": [
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"investmentStrategy",
+"sectors"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-123",
+"managerName": "Mubadala Investment Company",
+"fundName": "Mubadala Infrastructure"
+}
+],
+"changedFields": [
+"regions"
+],
+"repoDispositionRationale": "The repository row matches the documented evergreen infrastructure program, but its generic Global region classification does not expressly classify North America. Primary audited program-level evidence names North America, Europe, and Asia, so the canonical regions field should expressly include North America.",
+"confidence": "MEDIUM"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [],
+"unresolvedConflicts": [
+{
+"subject": "Aligned Energy ownership status",
+"issue": "Mubadala's 2025 audited financial statements list Aligned Energy as a portfolio asset, while announced 2025-2026 transaction materials indicate a proposed sale to a BlackRock/GIP-led consortium. The already opened evidence does not establish whether Mubadala retained an interest as of 2026-07-29.",
+"sourceUrls": [
+"https://otp.tools.investis.com/clients/uk/cityfibre1/rns/regulatory-story.aspx?cid=1695&newsid=1969796",
+"https://www.datacenterdynamics.com/en/news/blackrock-and-mgx-to-acquire-aligned-data-centers/"
+],
+"recommendedResolution": "Confirm the transaction's closing status and Mubadala's post-closing ownership through an updated Mubadala filing, portfolio disclosure, or completed-transaction announcement."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 3,
+"searchQueriesRun": 12,
+"notes": [
+"Primary audited program-level evidence supports the PROGRAM_EXCEPTION classification and expressly identifies North America as a strategy region.",
+"Transaction-level primary disclosures corroborate direct-equity infrastructure activity.",
+"No separately capitalized parallel, feeder, sidecar, or additional named infrastructure vehicle was established by the opened evidence.",
+"The Mubadala strategy webpage was retained from the repository record but was partially inaccessible during research."
+]
+},
+"summary": {
+"includedFunds": 1,
+"explicitNaMandate": 1,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 0,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Mubadala — North American direct infrastructure fund census
+Conclusion
+One current qualifying direct-equity infrastructure program was identified: Mubadala Infrastructure, the repository label for Mubadala's evergreen infrastructure activities within its Real Assets platform. The PROGRAM_EXCEPTION classification is supported by primary audited program-level evidence describing direct infrastructure deployment and expressly naming North America among the program's strategy regions.
+The repository row remains matched to FUND-123, but its regions field requires correction from the generic Global label to an evidence-based classification expressly including North America, together with Europe and Asia.
+Included funds
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidenceMubadala InfrastructurePROGRAM_EXCEPTIONEVERGREEN_ACTIVEEXPLICIT_NA_MANDATE — audited program disclosure names North America, Europe, and AsiaNot disclosedPROPOSED_CORRECTIONAudited 2025 financial statements; TEN transaction disclosure
+Repository reconciliation
+
+
+FUND-123 — Mubadala Investment Company / Mubadala Infrastructure: matched exactly once.
+
+
+Proposed correction: regions.
+
+
+Existing repository value: ["Global"].
+
+
+Evidence-backed canonical value: ["North America", "Europe", "Asia"].
+
+
+No additional repository records remain unmatched, and no new or duplicate vehicles were identified.
+
+
+The repository identity and legacy ID were reproduced from the supplied snapshot. Pasted text
+Exclusions and unresolved issues
+No additional qualifying fund or separately capitalized infrastructure vehicle was established from the opened evidence.
+Aligned Energy's ownership status remains unresolved. Mubadala's audited 2025 statements list it as a portfolio asset, while later transaction materials describe a proposed sale to a BlackRock/GIP-led consortium. This conflict does not affect the program's qualification because the primary audited disclosure independently establishes an explicit North American strategy region, and other transaction evidence corroborates direct-equity infrastructure activity.
+Completeness
+Official strategy materials, audited financial disclosures, fundraising and close references, current-holding attribution, manager and platform aliases, and potential parallel or feeder vehicles were reviewed. Three source documents were opened across twelve searches. Primary audited program-level evidence now supports the program exception, and the included snapshot expressly classifies North America as an evidenced strategy region. The Mubadala strategy webpage retained in the repository record was partially inaccessible during the research.
+</fund_census_report>

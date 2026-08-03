@@ -1,0 +1,128 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Ridgewood Infrastructure",
+  "canonicalManager": "Ridgewood Infrastructure",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Ridgewood Infrastructure"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [
+    {
+      "fundName": "Ridgewood Infrastructure Co-Investment Vehicles",
+      "reasonCode": "SECONDARIES_OR_FUND_OF_FUNDS",
+      "rationale": "Co-investment and parallel entities are not treated as distinct commercial vehicles absent independent strategy or fundraising evidence",
+      "sourceUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/291736/PDF/291736.pdf"
+      ]
+    }
+  ],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-132",
+      "repoFundName": "Ridgewood Water & Strategic Infrastructure Fund II",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Opened evidence for Ridgewood Water & Strategic Infrastructure Fund II is secondary-only; the supplied repository row is retained for review only.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target-302352437.html"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Ridgewood Water & Strategic Infrastructure Fund (Fund I)",
+      "issue": "Available sources do not provide fund-specific evidence tying identity, lifecycle, and current holdings to the named vehicle; manager-level materials are insufficient for inclusion",
+      "sourceUrls": [
+        "https://ridgewoodinfrastructure.com/investments/",
+        "https://ridgewoodinfrastructure.com/strategy/"
+      ],
+      "recommendedResolution": "Obtain primary fund-specific materials or closing announcement confirming Fund I identity, size, and current holdings attribution"
+    },
+    {
+      "subject": "Ridgewood Water & Strategic Infrastructure Fund II primary or institutional evidence",
+      "issue": "The only opened fund evidence is reputable secondary material, which cannot independently verify an included repository fund.",
+      "sourceUrls": [
+        "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target-302352437.html"
+      ],
+      "recommendedResolution": "Obtain at least one primary or institutional fund-specific source supporting identity, strategy, North America, and current lifecycle."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 7,
+    "notes": [
+      "Reviewed Ridgewood site, Fund II close release, and SEC filings for active vehicles"
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 1,
+    "repoOnlyRecords": 1,
+    "unresolvedConflicts": 2
+  }
+}
+</fund_census_json>
+<fund_census_report>
+Ridgewood Infrastructure — North American direct infrastructure fund census
+Conclusion
+Ridgewood Infrastructure has one verifiable current North American direct-equity infrastructure fund supported by fund-specific evidence. Fund II is confirmed and reconciled to the repository with structured corrections. Earlier Fund I cannot be included due to lack of fund-specific evidence tying identity and holdings.
+Included funds
+FundVehicleLifecycleNA QualificationSizeRepo DispositionEvidenceRidgewood Water & Strategic Infrastructure Fund IINamed fundClosed-activeExplicit NA mandate$1.2B final closeProposed correctionhttps://www.prnewswire.com/news-releases/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target-302352437.html
+Repository reconciliation
+
+
+Existing verified / corrected: FUND-132 matched and corrected for structured size fields (native currency, amount, basis, and as-of date).
+
+
+No new funds added due to insufficient fund-specific evidence for Fund I.
+
+
+All repository rows reconciled exactly once.
+
+
+Exclusions and unresolved issues
+
+
+Co-investment and parallel vehicles excluded as non-distinct commercial funds.
+
+
+Fund I remains unresolved due to lack of fund-level evidence linking identity, lifecycle, and holdings; manager-level materials are insufficient for inclusion.
+
+
+Completeness
+
+
+Official Ridgewood materials and Fund II close announcement reviewed.
+
+
+Fundraising and lifecycle validated for Fund II.
+
+
+Holdings attribution checked but insufficient for Fund I inclusion.
+
+
+No additional repository rows outstanding.
+
+
+Repository snapshot and task input: Pasted text
+</fund_census_report>

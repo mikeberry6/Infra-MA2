@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_SECONDARY_ONLY_REPO_REVIEW_NORMALIZATION",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Tiger Infrastructure Partners",
+  "createdAt": "2026-07-31T01:49:32.383Z",
+  "inputPath": "audits/fund-census/2026-07-29/raw/093-tiger-infrastructure-partners-attempt-3.txt",
+  "outputPath": "audits/fund-census/2026-07-29/raw/093-tiger-infrastructure-partners-secondary-only-review-normalized.txt",
+  "allowedFields": [
+    "funds",
+    "repoOnlyRecords",
+    "unresolvedConflicts",
+    "summary"
+  ],
+  "changes": [
+    {
+      "fundIndex": 0,
+      "legacyId": "FUND-143C",
+      "fundName": "Tiger Infrastructure Partners Fund III",
+      "field": "funds",
+      "dispositionFrom": "EXISTING_VERIFIED",
+      "dispositionValue": "REPO_ONLY_NEEDS_REVIEW",
+      "unsupportedClaim": "SECONDARY_ONLY",
+      "sourceUrls": [
+        "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html"
+      ],
+      "rationale": "Opened evidence for Tiger Infrastructure Partners Fund III is secondary-only; the supplied repository row is retained for review only."
+    }
+  ]
+}

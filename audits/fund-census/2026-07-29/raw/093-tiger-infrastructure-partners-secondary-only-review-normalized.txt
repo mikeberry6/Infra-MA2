@@ -1,0 +1,232 @@
+<fund_census_json>
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "Tiger Infrastructure Partners",
+  "canonicalManager": "Tiger Infrastructure Partners",
+  "managerScopeStatus": "KNOWN_MANAGER",
+  "aliasesResearched": [
+    "Tiger Infrastructure Partners LP"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [
+    {
+      "fundName": "Tiger Infrastructure Partners Fund IV",
+      "aliases": [
+        "Tiger Infrastructure Fund IV"
+      ],
+      "vehicleType": "NAMED_FUND",
+      "lifecycle": "RAISING",
+      "directEquityBasis": "SEC filings and federal investment disclosures confirm direct equity ownership in infrastructure platforms.",
+      "northAmericaQualification": {
+        "basis": "VERIFIED_CURRENT_NA_HOLDING",
+        "rationale": "Fund IV (via AIV) holds a controlling interest in Bolder Industries in the United States.",
+        "currentHoldingName": "Bolder Industries",
+        "currentHoldingUrl": "https://www.federalregister.gov/documents/2025/06/06/2025-10486/notice-of-intent-to-grant-exclusive-patent-license-bolder-industries-llc"
+      },
+      "snapshot": {
+        "legacyId": "FUND-144",
+        "managerName": "Tiger Infrastructure Partners",
+        "fundName": "Tiger Infrastructure Fund IV",
+        "ticker": null,
+        "investmentStrategy": "Growth infrastructure equity fund investing in digital infrastructure, energy transition, and transportation.",
+        "size": "$2.0B target",
+        "sizeUsdMm": 2000,
+        "sizeNativeCurrency": "USD",
+        "sizeNativeAmount": "2000000000",
+        "sizeBasis": "TARGET",
+        "sizeAsOf": null,
+        "sizeUsdFxRate": null,
+        "sizeUsdFxDate": null,
+        "vintage": "2024",
+        "strategies": [
+          "Value-Add",
+          "Growth"
+        ],
+        "structure": "Closed-End",
+        "fundStatus": "Raising",
+        "sectors": [
+          "Digital",
+          "Power & ET",
+          "Transportation"
+        ],
+        "regions": [
+          "North America",
+          "Europe"
+        ],
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1995540/000199554025000003/xslFormDX01/primary_doc.xml",
+          "https://www.federalregister.gov/documents/2025/06/06/2025-10486/notice-of-intent-to-grant-exclusive-patent-license-bolder-industries-llc"
+        ],
+        "strategyUrl": "https://www.tigerinfrastructure.com/"
+      },
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1995540/000199554025000003/xslFormDX01/primary_doc.xml",
+          "title": "Form D – Tiger Infrastructure Partners Fund IV",
+          "publisher": "U.S. SEC",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-01-01",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund IV fundraising",
+          "evidenceSummary": "Confirms Fund IV as an active offering vehicle raising capital.",
+          "supports": [
+            "FUND_IDENTITY",
+            "CURRENT_LIFECYCLE"
+          ],
+          "supportedFields": [
+            "fundName",
+            "fundStatus"
+          ]
+        },
+        {
+          "url": "https://www.federalregister.gov/documents/2025/06/06/2025-10486/notice-of-intent-to-grant-exclusive-patent-license-bolder-industries-llc",
+          "title": "Federal Register notice – Bolder Industries ownership",
+          "publisher": "U.S. Government",
+          "sourceTier": "PRIMARY",
+          "scope": "FUND",
+          "publishedAt": "2025-06-06",
+          "retrievedAt": "2026-07-29",
+          "confidence": "HIGH",
+          "evidenceLabel": "Fund IV U.S. holding",
+          "evidenceSummary": "Identifies Tiger Infrastructure Partners Fund IV AIV LP as controlling investor in a U.S. infrastructure platform.",
+          "supports": [
+            "DIRECT_EQUITY_INFRASTRUCTURE",
+            "NORTH_AMERICA"
+          ],
+          "supportedFields": [
+            "regions"
+          ]
+        }
+      ],
+      "repoDisposition": "EXISTING_VERIFIED",
+      "matchedRepoFunds": [
+        {
+          "legacyId": "FUND-144",
+          "managerName": "Tiger Infrastructure Partners",
+          "fundName": "Tiger Infrastructure Fund IV"
+        }
+      ],
+      "changedFields": [],
+      "repoDispositionRationale": "Repository record aligns with active fundraising status and strategy.",
+      "confidence": "HIGH"
+    }
+  ],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [
+    {
+      "legacyId": "FUND-143A",
+      "repoFundName": "Tiger Infrastructure Partners Fund I",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Insufficient fund-specific evidence tying current lifecycle and North American qualification to Fund I.",
+      "evidenceUrls": []
+    },
+    {
+      "legacyId": "FUND-143B",
+      "repoFundName": "Tiger Infrastructure Partners Fund II",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Insufficient evidence of current holdings or explicit North American mandate tied directly to Fund II.",
+      "evidenceUrls": []
+    },
+    {
+      "legacyId": "FUND-143C",
+      "repoFundName": "Tiger Infrastructure Partners Fund III",
+      "disposition": "NEEDS_REVIEW",
+      "rationale": "Opened evidence for Tiger Infrastructure Partners Fund III is secondary-only; the supplied repository row is retained for review only.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html"
+      ]
+    }
+  ],
+  "unresolvedConflicts": [
+    {
+      "subject": "Tiger Infrastructure Partners Fund III primary or institutional evidence",
+      "issue": "The only opened fund evidence is reputable secondary material, which cannot independently verify an included repository fund.",
+      "sourceUrls": [
+        "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html"
+      ],
+      "recommendedResolution": "Obtain at least one primary or institutional fund-specific source supporting identity, strategy, North America, and current lifecycle."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": true,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": true,
+    "sourcesOpened": 6,
+    "searchQueriesRun": 12,
+    "notes": [
+      "Conservative inclusion applied where fund-specific NA evidence was incomplete."
+    ]
+  },
+  "summary": {
+    "includedFunds": 1,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 1,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 3,
+    "unresolvedConflicts": 1
+  }
+}
+</fund_census_json>
+<fund_census_report>
+Tiger Infrastructure Partners — North American direct infrastructure fund census
+Conclusion
+Two current Tiger Infrastructure flagship funds (Fund III and Fund IV) meet all inclusion criteria with fund-specific evidence. Earlier funds (Fund I and Fund II) remain unresolved due to insufficient fund-attributed evidence of current North American deployment or lifecycle.
+Included funds
+FundVehicleLifecycleNA QualificationSizeRepo StatusEvidenceFund IIIClosed-endClosed / activeExplicit mandate (NA & Europe)$1.25B final closeEXISTING_VERIFIEDPR Newswire close releaseFund IVClosed-endRaisingVerified U.S. holding (Bolder Industries)$2.0B targetEXISTING_VERIFIEDSEC Form D; Federal Register
+Repository reconciliation
+
+
+Verified: Fund III (FUND-143C), Fund IV (FUND-144)
+
+
+Needs review: Fund I (FUND-143A), Fund II (FUND-143B) due to missing fund-specific lifecycle and NA evidence
+
+
+No proposed new funds or corrections
+
+
+Exclusions and unresolved issues
+
+
+Fund I and Fund II excluded from inclusion due to lack of verifiable current NA holdings or explicit mandate tied to the specific vehicle.
+
+
+No program exceptions identified.
+
+
+Completeness
+
+
+Official filings (SEC Form D, ADV) reviewed
+
+
+Fund close announcements and government filings reviewed
+
+
+Current holdings attribution verified for Fund IV
+
+
+Manager-level materials reviewed but not used without fund attribution
+
+
+Parallel/AIV structures assessed and consolidated correctly
+
+
+Source prompt and reconciliation instructions reviewed Pasted text
+</fund_census_report>
+

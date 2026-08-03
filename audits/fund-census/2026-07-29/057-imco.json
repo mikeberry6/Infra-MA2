@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FUND_CENSUS_RESULT",
+  "methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+  "asOfDate": "2026-07-29",
+  "requestedManager": "IMCO",
+  "canonicalManager": null,
+  "managerScopeStatus": "OUT_OF_SCOPE_UNKNOWN_MANAGER",
+  "aliasesResearched": [
+    "IMCO",
+    "Investment Management Corporation of Ontario"
+  ],
+  "overlappingSuppliedManagers": [],
+  "taskStatus": "COMPLETE",
+  "blockers": [],
+  "repoSnapshotSource": "FUND_MANIFEST",
+  "sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+  "funds": [],
+  "excludedCandidates": [],
+  "repoOnlyRecords": [],
+  "unresolvedConflicts": [
+    {
+      "subject": "Manager identity vs supplied universe",
+      "issue": "The supplied manager universe includes IMCO, but the authoritative repository snapshot marks knownManager=false and canonicalManager=null, which contractually prevents inclusion or proposal of any funds.",
+      "sourceUrls": [],
+      "recommendedResolution": "Resolve manager inclusion in the version-controlled fund-manager universe via governance review before running a full census."
+    }
+  ],
+  "completenessChecks": {
+    "officialFundMaterialsReviewed": true,
+    "fundraisingAndCloseSourcesReviewed": false,
+    "currentHoldingsAttributionReviewed": true,
+    "managerAliasesAndSuccessorsReviewed": true,
+    "parallelAndFeederVehiclesReviewed": false,
+    "sourcesOpened": 7,
+    "searchQueriesRun": 5,
+    "notes": [
+      "Mandatory scope gate applied: repository snapshot indicates knownManager=false.",
+      "Official IMCO materials reviewed to confirm canonical identity and existence of an infrastructure strategy, but no fund-level inclusion permitted under contract.",
+      "Fund-level fundraising and vehicle enumeration halted after scope determination."
+    ]
+  },
+  "summary": {
+    "includedFunds": 0,
+    "explicitNaMandate": 0,
+    "verifiedCurrentNaHolding": 0,
+    "proposedNew": 0,
+    "proposedCorrections": 0,
+    "possibleDuplicates": 0,
+    "needsReview": 0,
+    "excludedCandidates": 0,
+    "repoOnlyRecords": 0,
+    "unresolvedConflicts": 1
+  }
+}

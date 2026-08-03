@@ -1,0 +1,125 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "Copenhagen Infrastructure Partners",
+"canonicalManager": "Copenhagen Infrastructure Partners",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"Copenhagen Infrastructure Partners"
+],
+"overlappingSuppliedManagers": [],
+"taskStatus": "BLOCKED",
+"blockers": [
+"The completed fund-level evidence ledger, opened-source metadata, and enumerated nine-vehicle candidate list are not present in the accessible conversation record. Only the governing request, the repository snapshot, and a transport note stating that nine likely vehicles were identified are available. Reconstructing the missing vehicle names, classifications, dates, amounts, holdings, evidence summaries, and source URLs would require unsupported inference."
+],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [],
+"excludedCandidates": [],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-056A",
+"repoFundName": "Copenhagen Infrastructure IV (CI IV)",
+"disposition": "NEEDS_REVIEW",
+"rationale": "The repository row is reconciled here exactly once, but it cannot be matched to an included census vehicle from the available transport record. The snapshot is reconciliation context rather than proof, and the completed fund-specific evidence for current lifecycle, direct-equity scope, North American qualification, amount basis, and field-level corrections is not present.",
+"evidenceUrls": [
+"https://www.cip.com/funds/flagship-funds/",
+"https://www.cip.com/"
+]
+},
+{
+"legacyId": "FUND-056",
+"repoFundName": "Copenhagen Infrastructure V (CI V)",
+"disposition": "NEEDS_REVIEW",
+"rationale": "The repository row is reconciled here exactly once, but it cannot be matched to an included census vehicle from the available transport record. The snapshot is reconciliation context rather than proof, and the completed fund-specific evidence for current lifecycle, direct-equity scope, North American qualification, final-close or other amount semantics, and field-level corrections is not present.",
+"evidenceUrls": [
+"https://www.cip.com/funds/flagship-funds/",
+"https://www.cip.com/"
+]
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "Nine-vehicle Copenhagen Infrastructure Partners candidate universe and completed evidence ledger",
+"issue": "The transport note states that nine likely commercial vehicles were identified, including CI VI and specialist equity strategies, but it does not enumerate those vehicles or reproduce the opened evidence needed to establish fund identity, direct-equity infrastructure scope, North American mandate or fund-attributed current deployment, lifecycle, close status, size basis, successor treatment, and parallel-vehicle treatment. The missing record also prevents determining which candidates should be included, excluded, consolidated, or classified as NEEDS_REVIEW.",
+"sourceUrls": [
+"https://www.cip.com/funds/flagship-funds/",
+"https://www.cip.com/"
+],
+"recommendedResolution": "Restore the completed research transcript or structured evidence ledger and then serialize each identified vehicle with its opened fund-specific sources. Match FUND-056A and FUND-056 only where the restored evidence supports the repository identities, and classify all remaining commercial vehicles without inference."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": false,
+"fundraisingAndCloseSourcesReviewed": false,
+"currentHoldingsAttributionReviewed": false,
+"managerAliasesAndSuccessorsReviewed": false,
+"parallelAndFeederVehiclesReviewed": false,
+"sourcesOpened": 0,
+"searchQueriesRun": 0,
+"notes": [
+"The user reports that the underlying evidence pass was completed, but the fund-level evidence ledger and source-opening record are not contained in the accessible transport context.",
+"No additional research, browsing, searching, or tool use was performed in response to the transport-completion instruction.",
+"No likely vehicle was promoted into funds because the required identity, strategy, North American qualification, and current-lifecycle evidence could not be reproduced from the available record.",
+"FUND-056A and FUND-056 are each reconciled exactly once as repository-only NEEDS_REVIEW records."
+]
+},
+"summary": {
+"includedFunds": 0,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 0,
+"proposedNew": 0,
+"proposedCorrections": 0,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 2,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+Copenhagen Infrastructure Partners — North American direct infrastructure fund census
+Conclusion
+The available transport record does not contain the completed fund-level evidence ledger needed to serialize the reported nine-vehicle Copenhagen Infrastructure Partners universe. It contains the governing methodology, the two-row repository snapshot, and the statement that nine likely commercial vehicles—including CI VI and specialist equity strategies—had been identified, but it does not enumerate those vehicles or preserve their opened sources, close evidence, North American mandate or holding attribution, lifecycle conclusions, successor analysis, or parallel-vehicle determinations.
+Accordingly, no vehicle has been included through unsupported reconstruction. The result is marked BLOCKED, and both supplied repository rows are preserved as repository-only review records rather than being treated as evidence-backed matches. The governing contract and repository snapshot are contained in the uploaded request. Pasted text
+Included funds
+No fund was serialized into the included-funds array because the accessible record does not reproduce the evidence required for all four inclusion tests.
+FundVehicle typeLifecycleNorth American qualificationSize basisRepository dispositionDirect evidence linksNone serialized——————
+The statement that nine likely vehicles were identified is insufficient by itself to determine which vehicles qualify, which are successors or parallel entities, which remain current, and which specialist strategies have an explicit North American mandate or a reliably fund-attributed current North American holding.
+Repository reconciliation
+Both repository identities are reconciled exactly once:
+Legacy IDRepository fundDispositionReasonFUND-056ACopenhagen Infrastructure IV (CI IV)NEEDS_REVIEW / repository-onlyThe repository snapshot cannot serve as proof of current lifecycle, North American qualification, amount basis, or any proposed correction. The completed fund-specific evidence is absent from the transport record.FUND-056Copenhagen Infrastructure V (CI V)NEEDS_REVIEW / repository-onlyThe repository snapshot cannot establish whether the reported €12.0 billion is a target, first close, final close, commitments, or another amount classification, nor can it independently prove current North American qualification.
+Neither repository row has been matched through matchedRepoFunds, duplicated, deleted, or automatically archived.
+Exclusions and unresolved issues
+No candidate was placed in excludedCandidates because the accessible record does not contain enough vehicle-level evidence to support a specific exclusion reason.
+The central unresolved issue is the missing nine-vehicle evidence ledger. Without that ledger, the following determinations cannot be reproduced safely:
+
+
+the complete names and aliases of the nine likely commercial vehicles;
+
+
+whether CI VI was actively raising as of July 29, 2026 and the precise evidence-backed mandate, target, or close status;
+
+
+which flagship predecessors remained current through an active holding;
+
+
+which specialist equity strategies qualified through an explicit North American mandate or a fund-attributed current United States, Canadian, or Mexican holding;
+
+
+whether any growth-markets, energy-transition, advanced-bioenergy, co-investment, sidecar, feeder, or parallel vehicle was commercially distinct;
+
+
+which credit products or non-North-American strategies should be excluded; and
+
+
+the exact corrections, if any, required for FUND-056A and FUND-056.
+
+
+Completeness
+No new research or source retrieval was performed. The available material confirms the requested manager is a known repository manager and supplies the two repository identities, but it does not preserve the completed source-opening record. Therefore, official-fund-material coverage, fundraising and close checks, current-holding attribution, alias and successor review, and parallel-vehicle review are recorded as unverified in this transport artifact rather than being asserted without the underlying evidence.
+</fund_census_report>

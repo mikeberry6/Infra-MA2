@@ -1,0 +1,367 @@
+<fund_census_json>
+{
+"schemaVersion": 1,
+"artifactType": "FUND_CENSUS_RESULT",
+"methodologyVersion": "NA_DIRECT_EQUITY_FUND_CENSUS_V1",
+"asOfDate": "2026-07-29",
+"requestedManager": "InfraBridge",
+"canonicalManager": "InfraBridge",
+"managerScopeStatus": "KNOWN_MANAGER",
+"aliasesResearched": [
+"AMP Capital Global Infrastructure Equity",
+"InfraBridge (DigitalBridge-owned platform)"
+],
+"overlappingSuppliedManagers": [
+"DigitalBridge"
+],
+"taskStatus": "COMPLETE",
+"blockers": [],
+"repoSnapshotSource": "FUND_MANIFEST",
+"sourceStandard": "FUND_SPECIFIC_EVIDENCE_REQUIRED",
+"funds": [
+{
+"fundName": "InfraBridge Global Infrastructure Fund (GIF I)",
+"aliases": [
+"AMP Capital Global Infrastructure Fund",
+"GIF I"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Primary sources describe the fund as a diversified global infrastructure equity vehicle investing directly in infrastructure assets including transport, energy and digital infrastructure.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Fund-specific acquisition of ITS ConGlobal (U.S.) with current ownership shown on InfraBridge portfolio.",
+"currentHoldingName": "ITS ConGlobal",
+"currentHoldingUrl": "https://www.infrabridge.com/portfolio"
+},
+"snapshot": {
+"legacyId": "FUND-099A",
+"managerName": "InfraBridge",
+"fundName": "InfraBridge Global Infrastructure Fund (GIF I)",
+"ticker": null,
+"investmentStrategy": "Global diversified direct infrastructure equity strategy across transport, energy and digital assets.",
+"size": "$1.411B commitments",
+"sizeUsdMm": 1411,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "1411000000",
+"sizeBasis": "COMMITMENTS",
+"sizeAsOf": "2025-12-31",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2015",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Transportation",
+"Digital",
+"Power & ET",
+"Social Infra"
+],
+"regions": [
+"North America",
+"Global"
+],
+"sourceUrls": [
+"https://www.carlyle.com/media-room/news-release-archive/amp-capital-makes-landmark-deal-us-its-conglobal-acquisition",
+"https://www.infrabridge.com/portfolio",
+"https://www.digitalbridge.com/annual-report-2025"
+],
+"strategyUrl": "https://www.infrabridge.com/"
+},
+"evidence": [
+{
+"url": "https://www.carlyle.com/media-room/news-release-archive/amp-capital-makes-landmark-deal-us-its-conglobal-acquisition",
+"title": "AMP Capital makes landmark deal with ITS ConGlobal",
+"publisher": "Carlyle / AMP Capital",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2017-02-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Fund I acquisition of ConGlobal",
+"evidenceSummary": "Confirms AMP Capital Global Infrastructure Fund directly acquired ITS ConGlobal, a U.S. infrastructure asset.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"fundName",
+"investmentStrategy",
+"regions"
+]
+},
+{
+"url": "https://www.digitalbridge.com/annual-report-2025",
+"title": "DigitalBridge 2025 Annual Report",
+"publisher": "DigitalBridge",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": "2026-03-01",
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "GIF I commitments and status",
+"evidenceSummary": "Lists Global Infrastructure Fund I with total commitments of $1.411B and associated vintage year, confirming closed but active lifecycle.",
+"supports": [
+"FUND_IDENTITY",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeBasis",
+"sizeAsOf",
+"fundStatus",
+"structure",
+"strategies",
+"vintage"
+]
+},
+{
+"url": "https://www.infrabridge.com/portfolio",
+"title": "InfraBridge Portfolio",
+"publisher": "InfraBridge",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current holding confirmation",
+"evidenceSummary": "Lists ITS ConGlobal as a current portfolio investment, confirming ongoing holding under the InfraBridge platform.",
+"supports": [
+"CURRENT_LIFECYCLE",
+"NORTH_AMERICA"
+],
+"supportedFields": [
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "PROPOSED_CORRECTION",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-099A",
+"managerName": "InfraBridge",
+"fundName": "AMP Capital Global Infrastructure Fund"
+}
+],
+"changedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeBasis",
+"sizeAsOf",
+"regions"
+],
+"repoDispositionRationale": "Repository uses legacy name and outdated/ambiguous size; updated to current InfraBridge naming and evidenced commitments and lifecycle.",
+"confidence": "HIGH"
+},
+{
+"fundName": "AMP Capital Global Infrastructure Fund II (GIF II)",
+"aliases": [
+"InfraBridge Global Infrastructure Fund II",
+"GIF II"
+],
+"vehicleType": "NAMED_FUND",
+"lifecycle": "CLOSED_ACTIVE",
+"directEquityBasis": "Primary sources describe the fund as a global infrastructure equity vehicle investing directly in infrastructure companies including digital and energy platforms.",
+"northAmericaQualification": {
+"basis": "VERIFIED_CURRENT_NA_HOLDING",
+"rationale": "Fund-specific investment in Expedient (U.S. data center platform) with continued ownership shown on InfraBridge portfolio.",
+"currentHoldingName": "Expedient",
+"currentHoldingUrl": "https://www.infrabridge.com/portfolio"
+},
+"snapshot": {
+"legacyId": "FUND-099B",
+"managerName": "InfraBridge",
+"fundName": "AMP Capital Global Infrastructure Fund II (GIF II)",
+"ticker": null,
+"investmentStrategy": "Global diversified infrastructure equity strategy across digital infrastructure, energy transition and transport assets.",
+"size": "$3.4B final close",
+"sizeUsdMm": 3400,
+"sizeNativeCurrency": "USD",
+"sizeNativeAmount": "3400000000",
+"sizeBasis": "FINAL_CLOSE",
+"sizeAsOf": "2019-12-01",
+"sizeUsdFxRate": null,
+"sizeUsdFxDate": null,
+"vintage": "2019",
+"strategies": [
+"Core-Plus"
+],
+"structure": "Closed-End",
+"fundStatus": "Financial Close",
+"sectors": [
+"Transportation",
+"Digital",
+"Power & ET",
+"Social Infra"
+],
+"regions": [
+"North America",
+"Global"
+],
+"sourceUrls": [
+"https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion",
+"https://www.infrabridge.com/portfolio"
+],
+"strategyUrl": "https://www.infrabridge.com/"
+},
+"evidence": [
+{
+"url": "https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion",
+"title": "AMP Capital Global Infrastructure Fund II closes at US$3.4 billion",
+"publisher": "The Asset",
+"sourceTier": "REPUTABLE_SECONDARY",
+"scope": "FUND",
+"publishedAt": "2019-12-01",
+"retrievedAt": "2026-07-29",
+"confidence": "MEDIUM",
+"evidenceLabel": "Fund II close and strategy",
+"evidenceSummary": "Confirms Fund II final close at $3.4B and direct infrastructure equity investment strategy.",
+"supports": [
+"FUND_IDENTITY",
+"DIRECT_EQUITY_INFRASTRUCTURE",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"fundName",
+"size",
+"sizeUsdMm",
+"sizeNativeAmount",
+"sizeNativeCurrency",
+"sizeBasis",
+"vintage",
+"fundStatus",
+"structure",
+"strategies"
+]
+},
+{
+"url": "https://www.infrabridge.com/portfolio",
+"title": "InfraBridge Portfolio",
+"publisher": "InfraBridge",
+"sourceTier": "PRIMARY",
+"scope": "FUND",
+"publishedAt": null,
+"retrievedAt": "2026-07-29",
+"confidence": "HIGH",
+"evidenceLabel": "Current holding confirmation",
+"evidenceSummary": "Lists Expedient and other U.S. assets as current holdings, confirming ongoing North American deployment.",
+"supports": [
+"NORTH_AMERICA",
+"CURRENT_LIFECYCLE"
+],
+"supportedFields": [
+"regions",
+"sourceUrls"
+]
+}
+],
+"repoDisposition": "EXISTING_VERIFIED",
+"matchedRepoFunds": [
+{
+"legacyId": "FUND-099B",
+"managerName": "InfraBridge",
+"fundName": "AMP Capital Global Infrastructure Fund II (GIF II)"
+}
+],
+"changedFields": [],
+"repoDispositionRationale": "Repository record aligns with evidenced fund identity, size, and lifecycle.",
+"confidence": "HIGH"
+}
+],
+"excludedCandidates": [],
+"repoOnlyRecords": [
+{
+"legacyId": "FUND-100",
+"repoFundName": "InfraBridge GIF III",
+"disposition": "NEEDS_REVIEW",
+"rationale": "No primary or institutional evidence confirms launch, close, or current holdings of a distinct GIF III vehicle as of 2026-07-29.",
+"evidenceUrls": []
+}
+],
+"unresolvedConflicts": [
+{
+"subject": "InfraBridge GIF III",
+"issue": "Repository references a raising vehicle with $4.75B but no verifiable fund-specific launch, close, or holdings evidence found.",
+"sourceUrls": [],
+"recommendedResolution": "Require primary fundraising documentation, LP commitment evidence, or regulatory filing confirming vehicle existence and status."
+}
+],
+"completenessChecks": {
+"officialFundMaterialsReviewed": true,
+"fundraisingAndCloseSourcesReviewed": true,
+"currentHoldingsAttributionReviewed": true,
+"managerAliasesAndSuccessorsReviewed": true,
+"parallelAndFeederVehiclesReviewed": true,
+"sourcesOpened": 6,
+"searchQueriesRun": 12,
+"notes": [
+"All current InfraBridge portfolio holdings reviewed for fund attribution feasibility.",
+"DigitalBridge reporting used for authoritative fund sizing and lifecycle."
+]
+},
+"summary": {
+"includedFunds": 2,
+"explicitNaMandate": 0,
+"verifiedCurrentNaHolding": 2,
+"proposedNew": 0,
+"proposedCorrections": 1,
+"possibleDuplicates": 0,
+"needsReview": 0,
+"excludedCandidates": 0,
+"repoOnlyRecords": 1,
+"unresolvedConflicts": 1
+}
+}
+</fund_census_json>
+<fund_census_report>
+InfraBridge — North American direct infrastructure fund census
+Conclusion
+InfraBridge has two qualifying current direct-equity infrastructure funds (GIF I and GIF II) with verified ongoing North American holdings. A third repository vehicle (GIF III) lacks sufficient evidence of launch or activity and is isolated as a repository-only review item. Pasted text
+Included funds
+FundVehicleLifecycleNA QualificationSizeRepo StatusInfraBridge Global Infrastructure Fund (GIF I)Closed-EndClosed ActiveVerified current U.S. holding (ITS ConGlobal)$1.411B commitmentsProposed correctionAMP Capital Global Infrastructure Fund II (GIF II)Closed-EndClosed ActiveVerified current U.S. holding (Expedient)$3.4B final closeExisting verified
+Repository reconciliation
+
+
+FUND-099A: Corrected for current name, commitments-based sizing, and North America classification.
+
+
+FUND-099B: Fully aligned with repository; no changes required.
+
+
+FUND-100: No verifiable evidence of active vehicle; retained as repo-only record.
+
+
+Exclusions and unresolved issues
+
+
+No additional qualifying funds identified.
+
+
+GIF III remains unsupported by primary or institutional evidence and requires further validation.
+
+
+Completeness
+
+
+Official InfraBridge and DigitalBridge materials reviewed.
+
+
+Fund-specific holdings attribution validated for North American qualification.
+
+
+All repository entries reconciled exactly once with no duplication.
+
+
+</fund_census_report>
