@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ExternalLink, FileText } from "lucide-react";
+import { Download, ExternalLink, FileText } from "lucide-react";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
 import { withBasePath } from "@/lib/base-path";
 
@@ -8,6 +8,24 @@ export const metadata: Metadata = {
 };
 
 const ONE_OFF_REQUESTS = [
+  {
+    title: "CIM table of contents — box format",
+    description:
+      "Editable 4:3 PowerPoint template with the final polished nine-box CIM table-of-contents layout.",
+    href: "/one-off-requests/box-format.pptx",
+    format: "PowerPoint",
+    date: "Aug 2026",
+    download: true,
+  },
+  {
+    title: "Pre-launch workstream — timeline format",
+    description:
+      "Editable 4:3 PowerPoint template with movable timeline bars and slide text removed.",
+    href: "/one-off-requests/timeline-format.pptx",
+    format: "PowerPoint",
+    date: "Aug 2026",
+    download: true,
+  },
   {
     title: "Company X illustrative CIM table of contents",
     description:
@@ -144,7 +162,7 @@ export default function OneOffRequestsPage() {
       <DatabaseIntelligenceHeader
         eyebrow="Reusable outputs"
         title="One-Off Requests"
-        summary="A small library for standalone email builds, tables, and other ad hoc deliverables that sit outside the weekly briefing archive."
+        summary="A small library for standalone presentations, email builds, tables, and other ad hoc deliverables that sit outside the weekly briefing archive."
         metrics={[
           {
             label: "Items",
@@ -154,8 +172,8 @@ export default function OneOffRequestsPage() {
           },
           {
             label: "Primary format",
-            value: "PDF + HTML",
-            detail: "Review and Outlook",
+            value: "PPT + PDF + HTML",
+            detail: "Editable, review, and Outlook",
             color: "#442142",
           },
           {
@@ -172,6 +190,7 @@ export default function OneOffRequestsPage() {
           <a
             key={item.href}
             href={withBasePath(item.href)}
+            download={item.download ? "" : undefined}
             className="block surface px-4 py-3 transition-colors hover:bg-[var(--bg-subtle)] group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
           >
             <div className="mb-2 flex flex-wrap items-center gap-2">
@@ -188,7 +207,11 @@ export default function OneOffRequestsPage() {
                 </h2>
                 <p className="type-meta mt-1">{item.description}</p>
               </div>
-              <ExternalLink className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--text-tertiary)] transition-colors group-hover:text-[var(--accent)]" />
+              {item.download ? (
+                <Download className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--text-tertiary)] transition-colors group-hover:text-[var(--accent)]" />
+              ) : (
+                <ExternalLink className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--text-tertiary)] transition-colors group-hover:text-[var(--accent)]" />
+              )}
             </div>
           </a>
         ))}
