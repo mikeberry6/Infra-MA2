@@ -2,9 +2,9 @@
 
 This directory defines the fail-closed artifact contracts and application
 workflow used to recover the manager census, reconcile it against production
-and evaluated seed snapshots, and apply only an individually approved change.
+and evaluated seed snapshots, and apply only a validated, hash-bound change.
 Every command is read-only or dry-run by default; the apply path requires its
-explicit write token and all release gates described below.
+explicit write token and all release safeguards described below.
 
 Core invariants:
 
@@ -16,11 +16,120 @@ Core invariants:
   snapshot, and exact after-image.
 - An apply receipt can be finalized only from an approved proposal and proves
   identical database and seed after-images.
-- The manifest permits at most one research, approval, apply, or verification
+- The manifest permits at most one research, release, apply, or verification
   task in flight.
 
 The deterministic Markdown renderers are local review views. JSON remains the
 machine-readable source of truth.
+
+## Sequential execution manifest
+
+The ledger-run manifest and proposal index are immutable planning artifacts.
+`execution-control-cli.ts` derives a separate, hash-bound execution manifest
+that records operational progress without editing either source. The execution
+state machine is:
+
+```text
+PENDING -> ACTIVE -> PROPOSED -> AWAITING_APPROVAL -> RELEASING
+        -> APPLYING -> VERIFYING -> COMPLETED
+```
+
+`VERIFIED_NO_CHANGE`, `EXCLUDED`, `DEFERRED`, and `SUPERSEDED` are resolved
+terminal outcomes. `FAILED` and `BLOCKED` are hard stops: the same task must be
+retried to `ACTIVE` or explicitly moved to `DEFERRED`; they never permit a later
+company to start. All active/research/release/apply states count as in flight,
+and both the library and file-locking CLI enforce concurrency of exactly one.
+
+Initialize a derived run and inspect its next task:
+
+```sh
+npm run portco:reconciliation:control -- init \
+  --source-manifest=audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json \
+  --proposal-index=audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/proposal-index.json \
+  --output=audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json \
+  --created-at=2026-08-03T16:30:00.000Z
+
+npm run portco:reconciliation:control -- status \
+  --manifest=audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json
+
+npm run portco:reconciliation:control -- next \
+  --manifest=audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json \
+  --activate \
+  --at=2026-08-03T16:31:00.000Z
+```
+
+Before drafting a proposal, capture a fresh production baseline plus the exact
+target company, evaluated seed entry, ownership, pending transaction, fund,
+organization, citation, redirect, and company-revision dependencies. The
+database URL is read only from the named environment variable, its host and
+database are independently pinned, and all production queries run in
+repeatable-read, database-enforced read-only transactions:
+
+```sh
+PORTCO_PRODUCTION_DATABASE_URL='<secret>' \
+npm run portco:reconciliation:control -- snapshot \
+  --manifest=audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json \
+  --as-of=2026-08-03 \
+  --production-output=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0002-ec-waste/production-snapshot.json \
+  --output=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0002-ec-waste/task-snapshot.json \
+  --context-output=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0002-ec-waste/context.json \
+  --database-url-env=PORTCO_PRODUCTION_DATABASE_URL \
+  --database-target-label=production-readonly \
+  --expected-host='<independently verified host>' \
+  --expected-database='<independently verified database>'
+```
+
+The proposal binds the production baseline and full company before-image. When
+the proposal is recorded, the execution manifest additionally locks the task
+snapshot artifact and its target/dependency state digest. Release and apply
+transitions require the expected lock hash and a freshly recaptured task
+snapshot with the same state digest. Capture time and the newly serialized
+production artifact may change; target, seed, database revision, or dependency
+changes fail as stale.
+
+For this run, the user's standing instruction removes the per-company approval
+gate. Install the immutable authorization policy once, then use `auto-approve`
+after every proposal validates and a fresh observed task snapshot proves that
+the target and its dependencies have not changed. The command creates the same
+hash-bound approval artifact required by the protected release and advances the
+task to `RELEASING`; it refuses proposals with unresolved questions, missing
+after-images, or stale state:
+
+```sh
+npm run portco:reconciliation:control -- install-policy \
+  --manifest=audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json \
+  --policy=audits/portco-reconciliation/2026-08-03/execution-v1/approval-policy.json \
+  --at='<ISO-8601 timestamp>'
+
+npm run portco:reconciliation:control -- auto-approve \
+  --manifest=audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json \
+  --proposal=audits/portco-reconciliation/2026-08-03/proposals/0002-ec-waste-v1/proposal.json \
+  --output=audits/portco-reconciliation/2026-08-03/approvals/0002-ec-waste-v1.json \
+  --reviewed-at='<ISO-8601 timestamp>' \
+  --observed-task-snapshot='<fresh task-snapshot.json>' \
+  --expected-task-snapshot-sha256='<locked task snapshot SHA-256>'
+```
+
+The legacy `decide` command remains available for explicitly manual runs and
+for recording a reviewer-directed rejection or deferral, but it is not a gate
+in the active automatically authorized run.
+
+Historical successful writes are recovered only from the complete proposal,
+approval, pre-write company snapshot, and apply receipt chain. Recovery verifies
+the receipt's database, seed, and public-detail API results and stores its
+transaction and durable `AuditEvent` identifiers. For example:
+
+```sh
+npm run portco:reconciliation:control -- recover \
+  --manifest=audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json \
+  --proposal=audits/portco-reconciliation/2026-08-03/proposals/0001-amwaste-llc-v4/proposal.json \
+  --approval=audits/portco-reconciliation/2026-08-03/approvals/0001-amwaste-llc-v4.json \
+  --company-snapshot=audits/portco-reconciliation/2026-08-03/company-snapshots/0001-amwaste-llc-production.json \
+  --receipt='<downloaded protected-workflow apply-receipt.json>' \
+  --receipt-location='https://github.com/mikeberry6/Infra-MA2/actions/runs/30827237947' \
+  --workflow-run-url='https://github.com/mikeberry6/Infra-MA2/actions/runs/30827237947' \
+  --at=2026-08-03T16:32:00.000Z
+```
 
 ## Read-only baseline snapshots
 
@@ -79,7 +188,7 @@ Signed but unclosed ownership changes live in the company after-image as
 `pendingOwnershipTransactions`, separate from legal ownership periods. This
 keeps the incumbent owner active, prevents an incoming buyer from appearing as
 a closed owner, and makes the later closing or termination an explicit,
-individually approved `RESOLVE_PENDING_TRANSACTION` action.
+separately validated `RESOLVE_PENDING_TRANSACTION` action.
 
 Legacy before-images may contain milestones or management roles whose source
 association was never stored by the original schema, so their nested
@@ -139,15 +248,15 @@ npm run portco:reconciliation:apply -- \
 ```
 
 Production application is intentionally a second step. The exact staged seed
-artifact must first be reviewed, committed, and pushed. The production command
+artifact must first be committed and pushed. The production command
 then additionally requires the explicit `APPLY_APPROVED_PORTCO_CHANGE` token,
 an independently pinned database target, the protected approval hash, a new
 receipt path, and the public detail API URL. It executes through the project's
 serializable transaction wrapper, writes the revision and audit event, verifies
 the exact Prisma after-image, and verifies the render-critical public API
-projection before a receipt can be created. Never set the protected production
-approval environment value before the user has approved both the exact company
-proposal and the production schema/data write.
+projection before a receipt can be created. The protected production approval
+value is supplied only by the protected workflow after it verifies the standing
+authorization, the exact proposal, the fresh snapshot, and the deployed release.
 
 Production writes run only through
 `.github/workflows/portco-reconciliation-apply.yml` from protected `main` after

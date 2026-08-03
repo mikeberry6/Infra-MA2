@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0002:ec-waste:c202135b",
+  "taskIndex": 2,
+  "companyName": "EC Waste",
+  "generatedAt": "2026-08-03T16:27:55.677Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0002-ec-waste/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 2,
+    "taskId": "ledger:0002:ec-waste:c202135b",
+    "canonicalKey": "ec-waste|united-states",
+    "companyName": "EC Waste",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 1,
+    "managers": [
+      "3i Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "001-3i-infrastructure:holding:002:ec-waste"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj41b00fvivhe1q7x5nxw"
+    ],
+    "seedKeys": [
+      "ec waste|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.3i.com/infrastructure/our-portfolio/ec-waste/",
+      "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+      "https://www.3i.com/media/news/2021/3i-partners-with-ec-waste-to-support-the-company-s-growth/",
+      "https://www.ecwaste.com/contact-us"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj41b00fvivhe1q7x5nxw",
+    "name": "EC Waste",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Solid waste collection, transfer, and landfill services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "EC Waste provides non-hazardous solid waste collection, transfer, recycling, and disposal services across Puerto Rico. Its customers include residential, commercial, industrial, and municipal accounts served through an island-wide operating footprint. The business uses an asset-heavy, vertically integrated model supported by disposal sites, transfer infrastructure, hauling operations, and related environmental services. 3i has described the company as the largest vertically integrated waste-services provider in Puerto Rico, with more than 80,000 customers and multiple disposal and transfer assets. The platform has grown through acquisitions, including the 2020 purchase of Republic Services of Puerto Rico and the 2025 acquisition of ARB Waste Services. 3i acquired a majority interest through the 3i North American Infrastructure Fund in 2021, with management reinvesting alongside the fund.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1961,
+    "headquarters": "Puerto Rico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp3601caivhek02rzmhq",
+        "managerName": "3i Group",
+        "organizationName": "3i Group",
+        "fundName": "3i NA Infrastructure Fund",
+        "vehicleName": "3i NA Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkbse02c5ivhee5fnuizo",
+        "date": "1961",
+        "event": "Founded in Humacao, Puerto Rico as El Coqui Waste Disposal.",
+        "category": "FOUNDING",
+        "sortDate": "1961-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbsr02c6ivhevbt3kwow",
+        "date": "Apr 2014",
+        "event": "Post Capital Partners and CEO Randy Jensen acquired EC Waste from Waste Management, Inc.",
+        "category": "FINANCING",
+        "sortDate": "2014-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbt702c7ivhedy26dgq5",
+        "date": "Sep 2020",
+        "event": "Acquired Republic Services of Puerto Rico, adding landfills, a transfer station, and hauling operations.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbtn02c8ivhexyto8ww5",
+        "date": "Nov 2021",
+        "event": "3i acquired a majority stake in EC Waste through the 3i North American Infrastructure Fund.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbu302c9ivhedzuv0r4s",
+        "date": "Jul 2025",
+        "event": "EC Waste acquired ARB Waste Services in Puerto Rico.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoiie06siivhefeyzg3ts",
+        "label": "Ecwaste — EC Waste",
+        "url": "https://www.ecwaste.com",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ecwaste company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoiji06skivheapk7ly68",
+        "label": "Close date source — 3i Infrastructure — EC Waste",
+        "url": "https://www.3i.com/media/news/2021/3i-partners-with-ec-waste-to-support-the-company-s-growth/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "3i Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoikh06smivhes0297sly",
+        "label": "3I — EC Waste",
+        "url": "https://www.3i.com/media/news/2025/3i-backed-ec-waste-acquires-arb-waste-services-in-puerto-rico/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "3i transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoile06soivhewm4tuncp",
+        "label": "Postcp — EC Waste",
+        "url": "https://www.postcp.com/article?ID=528966",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Postcp — EC Waste",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "EC Waste",
+    "investmentFirm": "3i Infrastructure",
+    "sector": "Social Infra",
+    "subsector": "Solid waste collection, transfer, and landfill services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "3i NA Infrastructure Fund",
+    "description": "EC Waste provides non-hazardous solid waste collection, transfer, recycling, and disposal services across Puerto Rico. Its customers include residential, commercial, industrial, and municipal accounts served through an island-wide operating footprint. The business uses an asset-heavy, vertically integrated model supported by disposal sites, transfer infrastructure, hauling operations, and related environmental services. 3i has described the company as the largest vertically integrated waste-services provider in Puerto Rico, with more than 80,000 customers and multiple disposal and transfer assets. The platform has grown through acquisitions, including the 2020 purchase of Republic Services of Puerto Rico and the 2025 acquisition of ARB Waste Services. 3i acquired a majority interest through the 3i North American Infrastructure Fund in 2021, with management reinvesting alongside the fund.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1961,
+    "investmentYear": 2021,
+    "headquarters": "Puerto Rico",
+    "milestones": [
+      {
+        "date": "1961",
+        "event": "Founded in Humacao, Puerto Rico as El Coqui Waste Disposal.",
+        "category": "Founding"
+      },
+      {
+        "date": "Apr 2014",
+        "event": "Post Capital Partners and CEO Randy Jensen acquired EC Waste from Waste Management, Inc.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 2020",
+        "event": "Acquired Republic Services of Puerto Rico, adding landfills, a transfer station, and hauling operations.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 2021",
+        "event": "3i acquired a majority stake in EC Waste through the 3i North American Infrastructure Fund.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 2025",
+        "event": "EC Waste acquired ARB Waste Services in Puerto Rico.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ecwaste — EC Waste",
+        "url": "https://www.ecwaste.com",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — 3i Infrastructure — EC Waste",
+        "url": "https://www.3i.com/media/news/2021/3i-partners-with-ec-waste-to-support-the-company-s-growth/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "3I — EC Waste",
+        "url": "https://www.3i.com/media/news/2025/3i-backed-ec-waste-acquires-arb-waste-services-in-puerto-rico/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Postcp — EC Waste",
+        "url": "https://www.postcp.com/article?ID=528966",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "3i Infrastructure",
+        "ownershipVehicle": "3i NA Infrastructure Fund",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj0q100awivhe614f48xf",
+        "fundName": "3i NA Infrastructure Fund",
+        "managerId": "cmrxpi2by0000ivhe4ee92jpo",
+        "updatedAt": "2026-07-23T16:09:54.793Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2by0000ivhe4ee92jpo",
+        "name": "3i Group",
+        "updatedAt": "2026-07-23T16:09:10.222Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0002:ec-waste:c202135b",
+    "taskIndex": 2,
+    "canonicalKey": "ec-waste|united-states",
+    "capturedAt": "2026-08-03T16:27:55.677Z",
+    "databaseRevision": "company-state:6c014b4734569a40d7bd7fc62cc5dcca216e49fd2ea60a7bb659228ee8605f7c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "bd9cb26f0514e8e254e140cbf543875310503b5693bb0e07e66d6d513651a748",
+    "productionSnapshotSha256": "e32766967623c53a8678417e22351d304b2ecae7d198dd1889988349b1574f23",
+    "targetCompanySnapshotSha256": "6c014b4734569a40d7bd7fc62cc5dcca216e49fd2ea60a7bb659228ee8605f7c",
+    "seedEntrySha256": "88eb32af9587fdd211090e131469e97b8f364317fa753e60c73fed9afffed0f2",
+    "dependencies": {
+      "ownershipPeriodsSha256": "5b4b94bfb9176720ace65014dbeda93c8d12488619abb81b6a34ddb074109108",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "82aeed358e07a2bd93edc5482624a5aa3ee2ab9ffce5c082088732ab02fa99ee",
+      "organizationsSha256": "53710a62a2f2208f46ccf17f3459fe013eb7fe16eb0a40b36375201169fece11",
+      "citationsSha256": "397bd915706dcc8933446ce880e15e60ed914842c3b70d5a028f5a8a7b4a44db",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "cc9747eb26553235772b73cb7303144a8a7d98558b75fc3be32f1a88b370d542",
+    "stateSha256": "f42a31f7aa752405334ffbd858b46ba83d2ce6179df1f13c551362df87c65f4f",
+    "taskSnapshotSha256": "40899261b9b635f5bf7fa8a4000a58b946f04e675f5514cbe94dc9ac93ea5dc8"
+  },
+  "contextSha256": "fa6a3c6930eb7b591bfb73f17ccd6590d82969d80104bb49f9e9f19f2c80fecd"
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_EXECUTION_APPROVAL_POLICY",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "mode": "USER_AUTHORIZED_AUTOMATIC_APPROVAL",
+  "authorizedBy": "mikeberry6",
+  "authorizedAt": "2026-08-03T20:36:55.000Z",
+  "authorizationSource": "USER_INSTRUCTION",
+  "instruction": "remove approval gate",
+  "instructionSha256": "ab574cb0ec602b90d624458a465aa57c9b39c14004028d8519d6a420e467648b",
+  "scope": "ALL_REMAINING_RECONCILIATION_TASKS",
+  "requirements": {
+    "validatedProposal": true,
+    "noUnresolvedQuestions": true,
+    "freshTargetAndDependencySnapshot": true,
+    "scopedProtectedRelease": true,
+    "serializableTargetPinnedApply": true,
+    "databaseSeedApiAndDrawerVerification": true
+  },
+  "policySha256": "2b62b9dd4ed863b6403e3ce6e5cf1b7e9dcbd53596adec43617a689f02540a0a"
+}
