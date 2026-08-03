@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0008:valia-energia:39ddd7f2",
+  "taskIndex": 8,
+  "companyName": "Valia Energía",
+  "generatedAt": "2026-08-03T23:35:47.586Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0008-valia-energia/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 8,
+    "taskId": "ledger:0008:valia-energia:39ddd7f2",
+    "canonicalKey": "valia-energia|mexico",
+    "companyName": "Valia Energía",
+    "country": "Mexico",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 3,
+    "managers": [
+      "Actis"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "003-actis:holding:002:valia-energia"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj46200g4ivhejhwvldqp"
+    ],
+    "seedKeys": [
+      "valia energía|Mexico"
+    ],
+    "evidenceUrls": [
+      "https://valiaenergia.com/en/",
+      "https://www.act.is/2022/11/10/actis-completes-acquisition-of-mt-falcon-holdings-from-mitsui-and-partners/",
+      "https://www.act.is/about-us/portfolio/valia-energia/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj46200g4ivhejhwvldqp",
+    "name": "Valia Energía",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Independent power generation and gas transportation",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Valia Energía is a Mexican independent power producer operating natural gas-fired combined-cycle generation assets and a related gas pipeline. Its customers are power purchasers in Mexico's electricity market and other users of reliable dispatchable generation rather than retail end users. The operating model is asset-heavy and infrastructure based, with cash flows tied to large-scale generating plants and associated fuel transportation assets. Actis and company materials state that the platform has 3.2 GW of installed capacity across seven plants and a 58-kilometer gas pipeline. Actis created the platform in 2022 through the acquisition of MT Falcon and expanded it in 2023 through the acquisition of EVM Energia; the current ownership percentage is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Tamaulipas, Coahuila, and State of Mexico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp8i01ckivheq4m7iwoo",
+        "managerName": "Actis",
+        "organizationName": "Actis",
+        "fundName": null,
+        "vehicleName": "Actis Energy 5",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkck202d6ivhezv0qm6qn",
+        "date": "Nov 2022",
+        "event": "Actis completed the acquisition of MT Falcon and launched Valia Energía.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkckn02d7ivhekxs6p3ms",
+        "date": "Jul 2023",
+        "event": "Valia Energía acquired EVM Energia.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcl702d8ivhez705kwxs",
+        "date": "Oct 2023",
+        "event": "Valia announced completion of EVM integration and a 3.2 GW operating platform.",
+        "category": "EXPANSION",
+        "sortDate": "2023-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcln02d9ivhec7ds36u4",
+        "date": "Jan 2024",
+        "event": "Valia completed a $530 million project bond financing.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpojx006univheebaecrsl",
+        "label": "Valiaenergia — Valia Energía",
+        "url": "https://valiaenergia.com/en/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Valiaenergia — Valia Energía",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpojy606upivhenjxnvsmj",
+        "label": "Investment date source — Actis — Valia Energía",
+        "url": "https://www.act.is/about-us/portfolio/valia-energia/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Actis initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpojz706urivhef1g4c65l",
+        "label": "Valiaenergia — Valia Energía",
+        "url": "https://valiaenergia.com/wp-content/uploads/2023/10/Valia-Energia-Press-Release-ENGLISH-VF.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Valiaenergia — Valia Energía",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpok0a06utivheed89f4uu",
+        "label": "Milbank — Valia Energía",
+        "url": "https://www.milbank.com/en/news/milbank-advises-valia-energia-on-dollar530m-project-bond-financing-to-expand-footprint-in-mexican-energy-market.html",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Milbank financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Valia Energía",
+    "investmentFirm": "Actis",
+    "sector": "Utilities",
+    "subsector": "Independent power generation and gas transportation",
+    "region": "North America",
+    "country": "Mexico",
+    "ownershipVehicle": "Actis Energy 5",
+    "description": "Valia Energía is a Mexican independent power producer operating natural gas-fired combined-cycle generation assets and a related gas pipeline. Its customers are power purchasers in Mexico's electricity market and other users of reliable dispatchable generation rather than retail end users. The operating model is asset-heavy and infrastructure based, with cash flows tied to large-scale generating plants and associated fuel transportation assets. Actis and company materials state that the platform has 3.2 GW of installed capacity across seven plants and a 58-kilometer gas pipeline. Actis created the platform in 2022 through the acquisition of MT Falcon and expanded it in 2023 through the acquisition of EVM Energia; the current ownership percentage is not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "Mexico"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "Tamaulipas, Coahuila, and State of Mexico",
+    "milestones": [
+      {
+        "date": "Nov 2022",
+        "event": "Actis completed the acquisition of MT Falcon and launched Valia Energía.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 2023",
+        "event": "Valia Energía acquired EVM Energia.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 2023",
+        "event": "Valia announced completion of EVM integration and a 3.2 GW operating platform.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jan 2024",
+        "event": "Valia completed a $530 million project bond financing.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Valiaenergia — Valia Energía",
+        "url": "https://valiaenergia.com/en/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — Actis — Valia Energía",
+        "url": "https://www.act.is/about-us/portfolio/valia-energia/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Valiaenergia — Valia Energía",
+        "url": "https://valiaenergia.com/wp-content/uploads/2023/10/Valia-Energia-Press-Release-ENGLISH-VF.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Milbank — Valia Energía",
+        "url": "https://www.milbank.com/en/news/milbank-advises-valia-energia-on-dollar530m-project-bond-financing-to-expand-footprint-in-mexican-energy-market.html",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Actis",
+        "ownershipVehicle": "Actis Energy 5",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpif4s0041ivheo1wu6c3q",
+        "name": "Actis",
+        "updatedAt": "2026-07-23T16:09:26.812Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0008:valia-energia:39ddd7f2",
+    "taskIndex": 8,
+    "canonicalKey": "valia-energia|mexico",
+    "capturedAt": "2026-08-03T23:35:47.586Z",
+    "databaseRevision": "company-state:a84c9c54896d862d5c37b0761505665bda61b10520404513f343ab4c84998864",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6249123135ba677eee07abf9fa6ab65d1dfb52681bed1088a67cf9c3f441bd94",
+    "productionSnapshotSha256": "3a94d85d837df8451ba491fb436ff24bf5b628308cf90ba759fbe05e83eaf088",
+    "targetCompanySnapshotSha256": "a84c9c54896d862d5c37b0761505665bda61b10520404513f343ab4c84998864",
+    "seedEntrySha256": "5f45415c981893723206ed3b84180868c57242569768aaeafc621a284924ad74",
+    "dependencies": {
+      "ownershipPeriodsSha256": "caac5d1fca5a1d02b87aa49a3766bb42fc60db066f1ca4222644c3c70c2618a6",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5a92c206ab5812b146b83b458a7fecb73b29875e41a824b7dc806735b179df09",
+      "citationsSha256": "d543f312f95abfb0ae5b43bba3b27d57af38d7158fc9aaea70c25fec70ef1a07",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "57173bd2e026a7a9794b52696728d349939e47b4fcb6a68577aca1a4d004c977",
+    "stateSha256": "589be1497679bcdc8bd515fdbf49d9394c19735c642783b1d040efbd984a8f8e",
+    "taskSnapshotSha256": "be146c4bd9a9d305b1326d9d222472f3ba2e4b262472865192db64e53040875c"
+  },
+  "contextSha256": "8c69a3c96983e6afcef25afa0acac67ec885897b4bfb5d9e82346a62f7bde19c"
+}
