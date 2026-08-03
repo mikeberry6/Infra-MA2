@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-03T21:34:30.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0004:smarte-carte-international-holdings-inc:974ec539",
+  "updatedAt": "2026-08-03T21:40:50.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -454,11 +454,11 @@
       "managerIndex": 1,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ed076f3ce7a50fdb45d7ca541eea8e0f90f457afadaf5538791606967b9f1e4a",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-03T21:31:30.000Z",
-      "updatedAt": "2026-08-03T21:34:30.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-03T21:40:50.000Z",
+      "completedAt": "2026-08-03T21:40:50.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "adb25e24c3f8f3239c76fb68ee9f0aa68058742648269c2d26036eda33cb4a76",
@@ -475,7 +475,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0004-smarte-carte-international-holdings-inc-v1.json",
           "sha256": "31bde8b5368c93fd6befe1c6214d6b2744328e16b9ab9ecdb6a88265419aa907"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0004-smarte-carte-international-holdings-inc/production-apply/apply-receipt.json",
+          "sha256": "cd329834ed93904db0c2c2fb4d13d9465522b44a58f206eb966a758321b39ffa"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -534,6 +537,40 @@
           "evidenceSha256": [
             "31bde8b5368c93fd6befe1c6214d6b2744328e16b9ab9ecdb6a88265419aa907"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-03T21:40:34.215Z",
+          "reason": null,
+          "taskSnapshotSha256": "adb25e24c3f8f3239c76fb68ee9f0aa68058742648269c2d26036eda33cb4a76",
+          "evidenceSha256": [
+            "adb25e24c3f8f3239c76fb68ee9f0aa68058742648269c2d26036eda33cb4a76"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-03T21:40:49.745Z",
+          "reason": null,
+          "taskSnapshotSha256": "adb25e24c3f8f3239c76fb68ee9f0aa68058742648269c2d26036eda33cb4a76",
+          "evidenceSha256": [
+            "cd329834ed93904db0c2c2fb4d13d9465522b44a58f206eb966a758321b39ffa"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-03T21:40:50.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "adb25e24c3f8f3239c76fb68ee9f0aa68058742648269c2d26036eda33cb4a76",
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -19235,5 +19272,5 @@
       ]
     }
   ],
-  "manifestSha256": "32edaf3653e0ae032c4262a886313853ac7f8891b0526694fe961e44e80f59ec"
+  "manifestSha256": "6398b8df13fdc0a68a1ed4764924569718b4d84db0658cdbbdc4645381a3a0fa"
 }
