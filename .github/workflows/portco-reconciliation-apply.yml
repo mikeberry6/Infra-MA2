@@ -130,11 +130,12 @@ jobs:
           fi
           legacy_snapshot="$run_root/snapshots/production-snapshot.json"
           if [ "$PRODUCTION_SNAPSHOT_PATH" != "$legacy_snapshot" ]; then
-            snapshot_task_key="$(basename "$(dirname "$PRODUCTION_SNAPSHOT_PATH")")"
-            if [[ ! "$PRODUCTION_SNAPSHOT_PATH" =~ ^${run_root}/execution-[A-Za-z0-9._-]+/tasks/[0-9]{4}-[A-Za-z0-9._-]+/production-snapshot\.json$ ]]; then
+            if [[ ! "$PRODUCTION_SNAPSHOT_PATH" =~ ^${run_root}/execution-[A-Za-z0-9._-]+/tasks/[0-9]{4}-[A-Za-z0-9._-]+/(attempt-[1-9][0-9]*/)?production-snapshot\.json$ ]]; then
               echo "::error::production_snapshot_path must be the same run's legacy snapshot or a task-scoped execution snapshot."
               exit 1
             fi
+            snapshot_relative="${PRODUCTION_SNAPSHOT_PATH#*/tasks/}"
+            snapshot_task_key="${snapshot_relative%%/*}"
             if [[ "$proposal_key" != "$snapshot_task_key"-* ]]; then
               echo "::error::task-scoped production snapshot does not match the proposal key."
               exit 1
