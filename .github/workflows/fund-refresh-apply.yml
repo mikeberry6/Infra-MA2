@@ -637,7 +637,7 @@ jobs:
         run: |
           npx playwright install --with-deps chromium
           export E2E_DATABASE_URL="$DATABASE_URL"
-          npx playwright test \
+          npm run test:e2e -- \
             tests/e2e/public-databases.spec.ts \
             tests/e2e/fund-refresh-validation.spec.ts \
             tests/e2e/accessibility.spec.ts
