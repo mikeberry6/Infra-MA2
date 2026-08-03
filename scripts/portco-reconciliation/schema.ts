@@ -586,7 +586,7 @@ export const canonicalLedgerSchema = z.strictObject({
 
 export type CanonicalLedger = z.infer<typeof canonicalLedgerSchema>;
 
-const ownershipPeriodImageSchema = z.strictObject({
+export const ownershipPeriodImageSchema = z.strictObject({
   id: optionalText,
   managerName: nonEmpty,
   organizationName: optionalText,
@@ -668,7 +668,7 @@ const managementRoleImageSchema = z.strictObject({
   evidenceUrls: z.array(httpsUrl),
 });
 
-const citationImageSchema = z.strictObject({
+export const citationImageSchema = z.strictObject({
   id: optionalText,
   label: nonEmpty,
   url: httpsUrl,

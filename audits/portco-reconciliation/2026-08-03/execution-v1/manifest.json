@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-03T21:40:50.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-03T22:13:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0005:stillhouse-solar-project:4b89a5ea",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -583,18 +583,27 @@
       "managerIndex": 2,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "3e12ad22fc65f74439e3a0b4260cf8fe27f1ec662dd29c13ddf6c25745bd9c29",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-03T22:11:01.000Z",
+      "updatedAt": "2026-08-03T22:13:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d48ea74b19505fd9aa9b79339638ccb5f03669418424714fc2cf466769216db8",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0005-stillhouse-solar-project/attempt-2/task-snapshot.json",
+          "sha256": "d48ea74b19505fd9aa9b79339638ccb5f03669418424714fc2cf466769216db8"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0005-stillhouse-solar-project-v2/proposal.json",
+          "sha256": "1de5951559fffad38e970e5bfc44a62327f26925bca87dae25549d163b21566f"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0005-stillhouse-solar-project-v2.json",
+          "sha256": "02649ab8d8803ea45e9916aa550283320b87ecf3ded5a8bc27fcc42f039db698"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -610,6 +619,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-03T21:59:04.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-03T22:09:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "650e172d27f0c4ce93a09650b24a09d57af637a8e8aaff01252565deda2399b1",
+          "evidenceSha256": [
+            "1040418fd9d66c3c0cc096282f2ef59d985a52c6cf19961bf65d1b1b3b6cca52",
+            "650e172d27f0c4ce93a09650b24a09d57af637a8e8aaff01252565deda2399b1"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-03T22:09:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "650e172d27f0c4ce93a09650b24a09d57af637a8e8aaff01252565deda2399b1",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-03T22:10:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "650e172d27f0c4ce93a09650b24a09d57af637a8e8aaff01252565deda2399b1",
+          "evidenceSha256": [
+            "4db7899ccffca092ae4d2bd91e8b3498f4a476d69d1661644b7a9046c5a89047"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-03T22:11:00.000Z",
+          "reason": "Dry-run validation rejected a milestone evidence URL that was not also registered as a company citation; no seed or database write occurred.",
+          "taskSnapshotSha256": "650e172d27f0c4ce93a09650b24a09d57af637a8e8aaff01252565deda2399b1",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-03T22:11:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-03T22:12:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d48ea74b19505fd9aa9b79339638ccb5f03669418424714fc2cf466769216db8",
+          "evidenceSha256": [
+            "1de5951559fffad38e970e5bfc44a62327f26925bca87dae25549d163b21566f",
+            "d48ea74b19505fd9aa9b79339638ccb5f03669418424714fc2cf466769216db8"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-03T22:12:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d48ea74b19505fd9aa9b79339638ccb5f03669418424714fc2cf466769216db8",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-03T22:13:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d48ea74b19505fd9aa9b79339638ccb5f03669418424714fc2cf466769216db8",
+          "evidenceSha256": [
+            "02649ab8d8803ea45e9916aa550283320b87ecf3ded5a8bc27fcc42f039db698"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -19272,5 +19381,5 @@
       ]
     }
   ],
-  "manifestSha256": "6398b8df13fdc0a68a1ed4764924569718b4d84db0658cdbbdc4645381a3a0fa"
+  "manifestSha256": "281401a3c5c94ee978b65e81dae3c532d471776bbd089bd7ddf024df223ce506"
 }
