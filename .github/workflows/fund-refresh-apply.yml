@@ -45,6 +45,7 @@ jobs:
     outputs:
       approval_comment_id: ${{ steps.pr.outputs.approval_comment_id }}
       reviewed_head_sha: ${{ steps.pr.outputs.reviewed_head_sha }}
+      reviewed_merge_sha: ${{ steps.pr.outputs.reviewed_merge_sha }}
       reviewed_proposal_blob_sha: ${{ steps.proposal_blob.outputs.reviewed_proposal_blob_sha }}
       pr_url: ${{ steps.pr.outputs.pr_url }}
     steps:
@@ -94,7 +95,7 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const pull_number = Number(process.env.PR_NUMBER);
-            const mergedSha = process.env.HEAD_SHA;
+            const currentMainSha = process.env.HEAD_SHA;
             const proposalPath = process.env.PROPOSAL_PATH;
             const proposalSha256 = process.env.PROPOSAL_SHA256;
             const reviewerLogin = process.env.REVIEWER_LOGIN;
@@ -151,10 +152,6 @@ jobs:
               core.setFailed(`PR #${pull_number} must be merged before this workflow can run.`);
               return;
             }
-            if (pr.merge_commit_sha !== mergedSha) {
-              core.setFailed(`PR merged commit ${pr.merge_commit_sha} does not match requested commit ${mergedSha}.`);
-              return;
-            }
             const reviewedHeadSha = pr.head.sha;
             const expectedMarker = `FUND_REFRESH_OWNER_PASS pr=${pull_number} head_sha=${reviewedHeadSha} proposal_path=${proposalPath} proposal_sha256=${proposalSha256}`;
             const revocationMarker = `FUND_REFRESH_OWNER_REVOKE pr=${pull_number} head_sha=${reviewedHeadSha} proposal_path=${proposalPath} proposal_sha256=${proposalSha256}`;
@@ -164,8 +161,17 @@ jobs:
               repo,
               branch: context.payload.repository.default_branch,
             });
-            if (!defaultBranchState.protected || defaultBranchState.commit.sha !== mergedSha) {
-              core.setFailed(`Merged commit ${mergedSha} must be the current protected default-branch head.`);
+            if (!defaultBranchState.protected || defaultBranchState.commit.sha !== currentMainSha) {
+              core.setFailed(`Requested commit ${currentMainSha} must be the current protected default-branch head.`);
+              return;
+            }
+            const comparison = await github.rest.repos.compareCommitsWithBasehead({
+              owner,
+              repo,
+              basehead: `${pr.merge_commit_sha}...${currentMainSha}`,
+            });
+            if (!['identical', 'ahead'].includes(comparison.data.status)) {
+              core.setFailed(`Reviewed data merge ${pr.merge_commit_sha} must be an ancestor of current main ${currentMainSha}.`);
               return;
             }
             const files = await github.paginate(github.rest.pulls.listFiles, {
@@ -238,6 +244,7 @@ jobs:
 
             core.setOutput("approval_comment_id", String(passingComment.id));
             core.setOutput("reviewed_head_sha", reviewedHeadSha);
+            core.setOutput("reviewed_merge_sha", pr.merge_commit_sha);
             core.setOutput("pr_commit_count", String(pr.commits));
             core.setOutput("pr_url", pr.html_url);
             await core.summary
@@ -246,7 +253,8 @@ jobs:
                 [{ data: "Binding", header: true }, { data: "Value", header: true }],
                 ["Pull request", pr.html_url],
                 ["Reviewed PR head", reviewedHeadSha],
-                ["Merged commit", mergedSha],
+                ["Reviewed data merge", pr.merge_commit_sha],
+                ["Current main apply commit", currentMainSha],
                 ["Proposal", proposalPath],
                 ["Proposal SHA-256", proposalSha256],
                 ["Configured reviewer", reviewerLogin],
@@ -265,6 +273,7 @@ jobs:
       - name: Verify checked-out commit and proposal digest
         env:
           PR_COMMIT_COUNT: ${{ steps.pr.outputs.pr_commit_count }}
+          REVIEWED_MERGE_SHA: ${{ steps.pr.outputs.reviewed_merge_sha }}
         shell: bash
         run: |
           actual_commit="$(git rev-parse HEAD)"
@@ -277,7 +286,11 @@ jobs:
             echo "::error::Proposal must be a tracked regular file, not a symlink."
             exit 1
           fi
-          parent_count="$(git rev-list --parents -n 1 "$REVIEWED_COMMIT_SHA" | awk '{print NF - 1}')"
+          if ! git merge-base --is-ancestor "$REVIEWED_MERGE_SHA" "$REVIEWED_COMMIT_SHA"; then
+            echo "::error::Reviewed data merge $REVIEWED_MERGE_SHA is not an ancestor of current main $REVIEWED_COMMIT_SHA."
+            exit 1
+          fi
+          parent_count="$(git rev-list --parents -n 1 "$REVIEWED_MERGE_SHA" | awk '{print NF - 1}')"
           if [ "$parent_count" -eq 1 ] && [ "$PR_COMMIT_COUNT" -ne 1 ]; then
             echo "::error::A one-parent fund-refresh merge is accepted only for a single-commit PR; use a merge commit for multi-commit PRs."
             exit 1
@@ -292,7 +305,7 @@ jobs:
             exit 1
           fi
           proposal_base="$(node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(typeof value.baseCommit === "string" ? value.baseCommit : "")' "$REVIEWED_PROPOSAL_PATH")"
-          protected_parent="$(git rev-parse "$REVIEWED_COMMIT_SHA^1")"
+          protected_parent="$(git rev-parse "$REVIEWED_MERGE_SHA^1")"
           if [ "$proposal_base" != "$protected_parent" ]; then
             echo "::error::proposal.baseCommit $proposal_base must equal the reviewed merge's protected default-branch parent $protected_parent. Rebase and obtain a new owner approval."
             exit 1
@@ -321,7 +334,19 @@ jobs:
               echo "::error::Fund-refresh PR cannot remove desired-state or generated-audit files: $changed_path"
               exit 1
             fi
-          done < <(git diff --no-renames --name-only -z "$protected_parent" "$REVIEWED_COMMIT_SHA")
+          done < <(git diff --no-renames --name-only -z "$protected_parent" "$REVIEWED_MERGE_SHA")
+
+          proposal_directory="$(dirname "$REVIEWED_PROPOSAL_PATH")"
+          if ! git diff --quiet "$REVIEWED_MERGE_SHA" "$REVIEWED_COMMIT_SHA" -- \
+            "$REVIEWED_PROPOSAL_PATH" \
+            "$proposal_directory" \
+            prisma/seed-data/funds.manifest.json \
+            prisma/seed-data/fund-evidence.manifest.json \
+            docs/fund-source-audit.csv \
+            docs/fund-source-audit.md; then
+            echo "::error::Reviewed fund data or proposal artifacts changed after data merge $REVIEWED_MERGE_SHA."
+            exit 1
+          fi
 
       - name: Bind the complete reviewed PR-head proposal blob
         id: proposal_blob
@@ -672,6 +697,7 @@ jobs:
       APPROVAL_COMMENT_ID: ${{ needs.authorize.outputs.approval_comment_id }}
       REVIEWER_LOGIN: ${{ vars.FUND_REFRESH_REVIEWER_LOGIN }}
       REVIEWED_PR_HEAD_SHA: ${{ needs.authorize.outputs.reviewed_head_sha }}
+      REVIEWED_MERGE_SHA: ${{ needs.authorize.outputs.reviewed_merge_sha }}
       REVIEWED_PROPOSAL_BLOB_SHA: ${{ needs.authorize.outputs.reviewed_proposal_blob_sha }}
       FUND_REFRESH_APPROVER: github-environment:fund-refresh-production/run-${{ github.run_id }}
       FUND_REFRESH_INITIATOR: ${{ github.actor }}
@@ -688,6 +714,7 @@ jobs:
         env:
           HEAD_SHA: ${{ inputs.commit_sha }}
           REVIEWED_HEAD_SHA: ${{ needs.authorize.outputs.reviewed_head_sha }}
+          REVIEWED_MERGE_SHA: ${{ needs.authorize.outputs.reviewed_merge_sha }}
           PR_NUMBER: ${{ inputs.pull_request_number }}
           PROPOSAL_PATH: ${{ inputs.proposal_path }}
           PROPOSAL_SHA256: ${{ inputs.proposal_sha256 }}
@@ -746,7 +773,7 @@ jobs:
               pr.base.ref !== defaultBranch ||
               pr.head.repo?.full_name !== `${owner}/${repo}` ||
               !pr.merged ||
-              pr.merge_commit_sha !== process.env.HEAD_SHA ||
+              pr.merge_commit_sha !== process.env.REVIEWED_MERGE_SHA ||
               pr.head.sha !== process.env.REVIEWED_HEAD_SHA
             ) {
               core.setFailed(`PR merge/head binding changed after validation.`);
@@ -905,6 +932,7 @@ jobs:
         env:
           HEAD_SHA: ${{ inputs.commit_sha }}
           REVIEWED_HEAD_SHA: ${{ needs.authorize.outputs.reviewed_head_sha }}
+          REVIEWED_MERGE_SHA: ${{ needs.authorize.outputs.reviewed_merge_sha }}
           REVIEWED_BLOB_SHA: ${{ needs.authorize.outputs.reviewed_proposal_blob_sha }}
           PR_NUMBER: ${{ inputs.pull_request_number }}
           PROPOSAL_PATH: ${{ inputs.proposal_path }}
@@ -936,7 +964,7 @@ jobs:
               core.setFailed('Reviewed PR no longer has the fund-refresh label.');
               return;
             }
-            if (!pr.merged || pr.merge_commit_sha !== process.env.HEAD_SHA || pr.head.sha !== process.env.REVIEWED_HEAD_SHA || pr.base.ref !== defaultBranch) {
+            if (!pr.merged || pr.merge_commit_sha !== process.env.REVIEWED_MERGE_SHA || pr.head.sha !== process.env.REVIEWED_HEAD_SHA || pr.base.ref !== defaultBranch) {
               core.setFailed('Reviewed PR binding changed before mutation.');
               return;
             }

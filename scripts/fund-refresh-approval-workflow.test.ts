@@ -21,7 +21,9 @@ const workflowNpmScripts = (workflow: string) =>
 describe("fund refresh owner-operated approval policy", () => {
   it("binds approval to an exact owner comment and immutable proposal identity", () => {
     expect(applyWorkflow).toContain("FUND_REFRESH_REVIEWER_LOGIN");
-    expect(applyWorkflow).toContain("FUND_REFRESH_OWNER_PASS pr=${pull_number} head_sha=${reviewedHeadSha}");
+    expect(applyWorkflow).toContain(
+      "FUND_REFRESH_OWNER_PASS pr=${pull_number} head_sha=${reviewedHeadSha}",
+    );
     expect(applyWorkflow).toContain("github.rest.issues.listComments");
     expect(applyWorkflow).toContain("github.rest.issues.getComment");
     expect(applyWorkflow).toContain("approval_comment_id");
@@ -32,7 +34,9 @@ describe("fund refresh owner-operated approval policy", () => {
   it("supports an exact later owner revocation", () => {
     expect(applyWorkflow).toContain("FUND_REFRESH_OWNER_REVOKE");
     expect(applyWorkflow).toContain("laterRevocation");
-    expect(applyWorkflow).toContain("A later owner revocation invalidates the approval.");
+    expect(applyWorkflow).toContain(
+      "A later owner revocation invalidates the approval.",
+    );
   });
 
   it("requires an environment reviewer while allowing self-review and blocking administrator bypass", () => {
@@ -52,5 +56,23 @@ describe("fund refresh owner-operated approval policy", () => {
       expect(workflow).toContain("npx prisma validate");
       expect(workflow).not.toContain("npm run db:validate");
     }
+  });
+
+  it("permits a reviewed data merge recovery only from unchanged data on current main", () => {
+    expect(applyWorkflow).toContain("reviewed_merge_sha");
+    expect(applyWorkflow).toContain("compareCommitsWithBasehead");
+    expect(applyWorkflow).toContain("git merge-base --is-ancestor");
+    expect(applyWorkflow).toContain(
+      'git diff --quiet "$REVIEWED_MERGE_SHA" "$REVIEWED_COMMIT_SHA"',
+    );
+    expect(applyWorkflow).toContain(
+      'proposal_directory="$(dirname "$REVIEWED_PROPOSAL_PATH")"',
+    );
+    expect(applyWorkflow).toContain(
+      "pr.merge_commit_sha !== process.env.REVIEWED_MERGE_SHA",
+    );
+    expect(applyWorkflow).toContain(
+      "branch.commit.sha !== process.env.HEAD_SHA",
+    );
   });
 });
