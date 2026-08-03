@@ -644,7 +644,8 @@ describe("fund refresh historical forward cases", () => {
   });
 
   it("blocks an actionable proposal affecting more than ten percent of the universe", () => {
-    const candidates = manifest.funds.slice(0, 18).map((fund) => {
+    const overThresholdCount = Math.floor(manifest.funds.length * 0.1) + 1;
+    const candidates = manifest.funds.slice(0, overThresholdCount).map((fund) => {
       const before = manifestRecordToSnapshot(fund);
       const after = { ...before, investmentStrategy: `${before.investmentStrategy} Reviewed` };
       return candidate("UPDATE", before, after, ["investmentStrategy"]);

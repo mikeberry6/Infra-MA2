@@ -2,13 +2,13 @@
 
 Generated from `prisma/seed-data/funds.manifest.json` and `prisma/seed-data/fund-evidence.manifest.json`.
 
-As-of date for migrated evidence: 2026-05-09
+As-of date for migrated evidence: 2026-08-02
 
 ## Coverage Summary
 
-- Manifest funds: 179
-- Funds with migrated evidence: 150
-- Normalized per-source evidence rows: 172
+- Manifest funds: 194
+- Funds with migrated evidence: 165
+- Normalized per-source evidence rows: 207
 - Funds missing migrated evidence: 29
 - Program-exception-scope evidence rows: 15
 - Unresolved manager-level fallback funds: 2

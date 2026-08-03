@@ -2,8 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
-  loadFundEvidenceManifest,
-  loadFundManifest,
+  loadFundEvidenceManifestAtCommit,
+  loadFundManifestAtCommit,
   snapshotChangedFields,
   validateFundRefreshCandidate,
   validateFundEvidenceManifest,
@@ -16,6 +16,16 @@ import {
 } from "./promotion";
 import { REPO_ROOT } from "./lib";
 
+const REVIEW_BASELINE_COMMIT = "f60d699908b3b8814370d558fc6cde267b9a6225";
+
+function loadReviewBaselineManifest() {
+  return loadFundManifestAtCommit(REVIEW_BASELINE_COMMIT);
+}
+
+function loadReviewBaselineEvidence() {
+  return loadFundEvidenceManifestAtCommit(REVIEW_BASELINE_COMMIT);
+}
+
 function loadPlan() {
   const runDirectory = path.join(
     REPO_ROOT,
@@ -25,7 +35,7 @@ function loadPlan() {
     aggregate: JSON.parse(
       fs.readFileSync(path.join(runDirectory, "aggregate.json"), "utf8"),
     ) as AggregateArtifact,
-    baselineManifest: loadFundManifest(),
+    baselineManifest: loadReviewBaselineManifest(),
     policy: JSON.parse(
       fs.readFileSync(
         path.join(runDirectory, "implementation-policy.json"),
@@ -130,8 +140,8 @@ describe("reviewed fund census promotion", () => {
 
   it("materializes the first two batches to 196 and then 200 funds", () => {
     const plan = loadPlan();
-    const baselineManifest = loadFundManifest();
-    const baselineEvidence = loadFundEvidenceManifest();
+    const baselineManifest = loadReviewBaselineManifest();
+    const baselineEvidence = loadReviewBaselineEvidence();
     const first = applyPromotionBatch({
       plan,
       batch: 1,
@@ -151,8 +161,8 @@ describe("reviewed fund census promotion", () => {
   it("materializes all six batches without evidence-manifest drift", () => {
     const plan = loadPlan();
     let state = {
-      manifest: loadFundManifest(),
-      evidenceManifest: loadFundEvidenceManifest(),
+      manifest: loadReviewBaselineManifest(),
+      evidenceManifest: loadReviewBaselineEvidence(),
     };
     for (let batch = 1; batch <= 6; batch += 1) {
       state = applyPromotionBatch({

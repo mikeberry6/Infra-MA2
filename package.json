@@ -35,6 +35,7 @@
     "fund:census:aggregate": "npx tsx scripts/fund-census/aggregate-results.ts",
     "fund:census:change-log": "npx tsx scripts/fund-census/generate-major-change-log.ts",
     "fund:census:promote": "npx tsx scripts/fund-census/promote-reviewed-changes.ts",
+    "fund:census:promote-lineage": "npx tsx scripts/fund-census/promote-lineage-additions.ts",
     "test:fund-census": "vitest run scripts/fund-census/*.test.ts",
     "audit:portfolio-years": "node --experimental-strip-types scripts/audit-portfolio-investment-years.ts",
     "audit:portfolio-fund-ownership": "node --experimental-strip-types scripts/audit-portfolio-fund-ownership.ts",

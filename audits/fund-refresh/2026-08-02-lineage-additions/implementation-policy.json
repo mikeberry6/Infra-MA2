@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-08-02-lineage-additions",
+  "baseCommit": "f60d699908b3b8814370d558fc6cde267b9a6225",
+  "sourceCensusPlan": "audits/fund-census/2026-07-29/implementation/promotion-plan.json",
+  "retrievedAt": "2026-08-02",
+  "selectionRule": "Include only approximately $1B-plus vehicles that are genuine predecessors, successors, or same-series peers of funds already present in the 179-fund baseline.",
+  "includedLegacyIds": [
+    "FUND-151",
+    "FUND-152",
+    "FUND-153",
+    "FUND-154",
+    "FUND-155",
+    "FUND-159",
+    "FUND-160",
+    "FUND-161",
+    "FUND-164",
+    "FUND-165",
+    "FUND-166",
+    "FUND-167",
+    "FUND-169",
+    "FUND-170",
+    "FUND-171"
+  ],
+  "excludedReviewedCandidates": [
+    {
+      "legacyId": "FUND-156",
+      "fundName": "Ares U.S. Power Fund IV",
+      "reason": "Distinct power strategy rather than a same-series peer of an existing website fund."
+    },
+    {
+      "legacyId": "FUND-157",
+      "fundName": "Argo AIA Energy North America LLC",
+      "reason": "Distinct vehicle lineage rather than a same-series peer of an existing website fund."
+    },
+    {
+      "legacyId": "FUND-158",
+      "fundName": "BlackRock AI Infrastructure Partnership",
+      "reason": "Alias/duplicate of the existing Global AI Infrastructure Investment Partnership record."
+    },
+    {
+      "legacyId": "FUND-162",
+      "fundName": "CI Advanced Bioenergy Fund II",
+      "reason": "Distinct specialist strategy rather than a CIP flagship-series predecessor."
+    },
+    {
+      "legacyId": "FUND-163",
+      "fundName": "CI Energy Transition Fund I",
+      "reason": "Distinct specialist strategy rather than a CIP flagship-series predecessor."
+    },
+    {
+      "legacyId": "FUND-168",
+      "fundName": "Harbert Gulf Pacific Power LLC",
+      "reason": "Distinct asset-holding vehicle rather than a same-series fund."
+    }
+  ],
+  "expected": {
+    "baselineFunds": 179,
+    "includedAdditions": 15,
+    "finalFunds": 194,
+    "affectedRatio": 0.08379888268156424,
+    "newOwnershipLinks": 0
+  },
+  "releasePolicy": {
+    "manifestMaterialization": true,
+    "productionApply": false,
+    "ownershipMutation": false,
+    "requiresTrustedLiveAudit": true,
+    "requiresGpt56ProReview": true,
+    "requiresHumanReview": true
+  }
+}
