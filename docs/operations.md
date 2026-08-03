@@ -20,19 +20,72 @@ Do not commit `.vercel/` or `.env.local`.
 
 ## Standard Verification
 
-Run the local gate before pushing application changes:
+The required routine gate mirrors CI:
 
 ```bash
-npm run lint
-npm test
-npx tsc --noEmit
 npm run db:seed:validate
-npm run validate-portfolios
-npm run db:verify
+npm run typecheck
+npm test
 npm run build
 ```
 
+Also run `npm run lint` for JavaScript or TypeScript changes,
+`npm run validate-portfolios` when portfolio seed content changes, and
+`npm run db:verify` only when the task intentionally validates a selected,
+populated database. UI, copy, workflow, and other schema-free changes do not
+require live database verification.
+
 `npm run doctor` checks local GitHub/Vercel auth, env names, typecheck, and tests.
+
+## Release Lanes
+
+### Routine code and content
+
+An explicit user instruction to ship, push, deploy, or publish a scoped change
+authorizes the complete routine release sequence:
+
+1. Create a branch from current `main`, commit the scoped change, and push it.
+2. Open a pull request targeting `main` and enable squash auto-merge.
+3. Let the single required pull-request `build` check complete. Superseded runs
+   for the same pull request are cancelled automatically.
+4. GitHub squash-merges automatically after the required build passes and all
+   actionable conversations are resolved. Vercel's Git integration deploys the
+   resulting `main` SHA to Production; do not dispatch a separate promotion job.
+5. Confirm the GitHub Production deployment references the merged SHA, then run
+   the public smoke test:
+
+   ```bash
+   node scripts/release-smoke.mjs \
+     --base-url=https://infra-ma-2.vercel.app \
+     --skip-health \
+     --allow-legacy-root
+   ```
+
+   If a newer `main` deployment supersedes the requested SHA before the check
+   completes, verify that the active production SHA descends from the requested
+   merge, then smoke-test the active deployment.
+
+Feature-branch pushes do not run CI on their own. The automatic post-merge
+`main` build is retained as exact-SHA provenance for protected schema and data
+workflows; it requires no operator action and is not a second promotion gate.
+
+There is no `Promote Code-Only Release` workflow. Merging a routine change to
+`main` is the production promotion.
+
+### Schema and production data
+
+Operator-initiated changes that write production schema or curated production
+data remain on the protected migration or mutation path. Use the applicable
+workflow from protected `main`, retain database-target and migration-lineage
+checks, and wait for the single `production` environment approval before its
+write. Routine UI, copy, editorial, and schema-free application changes must
+not use this lane. Scheduled bounded pipelines retain their existing automatic
+admission, target verification, and write guards; they are not release-lane
+approvals.
+
+Rollback remains a protected operation. If Vercel deploys successfully but the
+canonical smoke test fails, use **Roll Back Dashboard Release** with a verified
+deployment and SHA; additive migrations remain in place.
 
 ## Production Notes
 
