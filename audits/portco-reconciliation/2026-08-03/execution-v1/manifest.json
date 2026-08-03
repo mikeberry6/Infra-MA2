@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-03T22:26:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0005:stillhouse-solar-project:4b89a5ea",
+  "updatedAt": "2026-08-03T22:34:44.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -583,11 +583,11 @@
       "managerIndex": 2,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "3e12ad22fc65f74439e3a0b4260cf8fe27f1ec662dd29c13ddf6c25745bd9c29",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 3,
       "startedAt": "2026-08-03T22:24:01.000Z",
-      "updatedAt": "2026-08-03T22:26:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-03T22:34:44.000Z",
+      "completedAt": "2026-08-03T22:34:44.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "c5588eb651c7ddd539a0221991894f82a5f923289828e2e0b834745de58f7887",
@@ -604,7 +604,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0005-stillhouse-solar-project-v3.json",
           "sha256": "74050a7554dccd6ef5543fcf7e6080b12cce76649263380e08a0df09666ca3d2"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0005-stillhouse-solar-project/production-apply/apply-receipt.json",
+          "sha256": "1b073a1e9d785a0766c7308d22714be648d07d0d70e0e85831d3508902728fae"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -773,6 +776,38 @@
           "evidenceSha256": [
             "74050a7554dccd6ef5543fcf7e6080b12cce76649263380e08a0df09666ca3d2"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 16,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-03T22:34:41.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c5588eb651c7ddd539a0221991894f82a5f923289828e2e0b834745de58f7887",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 17,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-03T22:34:43.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c5588eb651c7ddd539a0221991894f82a5f923289828e2e0b834745de58f7887",
+          "evidenceSha256": [
+            "1b073a1e9d785a0766c7308d22714be648d07d0d70e0e85831d3508902728fae"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 18,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-03T22:34:44.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c5588eb651c7ddd539a0221991894f82a5f923289828e2e0b834745de58f7887",
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -19436,5 +19471,5 @@
       ]
     }
   ],
-  "manifestSha256": "941701375f42fa15d9ad5aac30ec738b49a9bce0a567078775d159dbe18590bd"
+  "manifestSha256": "80123b25841ab6088e29525b7d7aada1028b723f955dc43d30a97ae8c0297b47"
 }
