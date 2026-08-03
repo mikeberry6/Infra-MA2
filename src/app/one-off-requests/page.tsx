@@ -10,8 +10,7 @@ export const metadata: Metadata = {
 const ONE_OFF_REQUESTS = [
   {
     title: "CIM table of contents — box format",
-    description:
-      "Editable 4:3 PowerPoint template with the final polished nine-box CIM table-of-contents layout.",
+    description: "Box format",
     href: "/one-off-requests/box-format.pptx",
     format: "PowerPoint",
     date: "Aug 2026",
@@ -19,8 +18,7 @@ const ONE_OFF_REQUESTS = [
   },
   {
     title: "Pre-launch workstream — timeline format",
-    description:
-      "Editable 4:3 PowerPoint template with movable timeline bars and slide text removed.",
+    description: "Timeline format",
     href: "/one-off-requests/timeline-format.pptx",
     format: "PowerPoint",
     date: "Aug 2026",
