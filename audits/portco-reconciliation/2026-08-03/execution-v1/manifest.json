@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-03T20:53:55.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-03T21:09:36.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0003:regional-rail-llc:e66e1eb4",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -250,18 +250,27 @@
       "managerIndex": 1,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "db465e31fccd1e8c6e712a2cb2b401e4cb2b6b734caf611570628f9c43990da3",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 3,
+      "startedAt": "2026-08-03T21:08:14.000Z",
+      "updatedAt": "2026-08-03T21:09:36.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "4f70948dfc39f042240e58a4b3b2e3a423ca81f4e35a69eb8b7c097873d3ff60",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0003-regional-rail-llc/attempt-3/task-snapshot.json",
+          "sha256": "4f70948dfc39f042240e58a4b3b2e3a423ca81f4e35a69eb8b7c097873d3ff60"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0003-regional-rail-llc-v3/proposal.json",
+          "sha256": "105fd7716797e82a693a8be6147c0388655aecdb42722994b0e50143c1d8a0f4"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0003-regional-rail-llc-v3.json",
+          "sha256": "d63d307a3fe565df541f292acd509a44431fd960f1aeb52e3dfc0b23cf201220"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -277,6 +286,126 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-03T20:59:41.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-03T21:04:55.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "5a51fdca50a189cadfa04cb0b48b4f7bb832fab164a91863bbdc0743e17edd64",
+          "evidenceSha256": [
+            "5a51fdca50a189cadfa04cb0b48b4f7bb832fab164a91863bbdc0743e17edd64",
+            "c6d033834e34d49f5ecc6cf934bfa7ab34857fcd04a3c00cb1b05fdcf0cc3852"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-03T21:04:57.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "5a51fdca50a189cadfa04cb0b48b4f7bb832fab164a91863bbdc0743e17edd64",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-03T21:05:19.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "5a51fdca50a189cadfa04cb0b48b4f7bb832fab164a91863bbdc0743e17edd64",
+          "evidenceSha256": [
+            "72ba9598c06b6644735b06d89081586c85fdaba50405bf0d86bcb49a4cec0070"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-03T21:06:44.000Z",
+          "reason": "Proposal rationale promised removal of the unsupported 100% ownership assertion, but the after-image retained that assertion in an historical milestone.",
+          "taskSnapshotSha256": "5a51fdca50a189cadfa04cb0b48b4f7bb832fab164a91863bbdc0743e17edd64",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-03T21:06:45.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "5a51fdca50a189cadfa04cb0b48b4f7bb832fab164a91863bbdc0743e17edd64",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "FAILED",
+          "at": "2026-08-03T21:08:13.000Z",
+          "reason": "Retry activation retained the prior failed proposal artifacts; controller fixed to clear volatile artifacts before retry.",
+          "taskSnapshotSha256": "5a51fdca50a189cadfa04cb0b48b4f7bb832fab164a91863bbdc0743e17edd64",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-03T21:08:14.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-03T21:09:11.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4f70948dfc39f042240e58a4b3b2e3a423ca81f4e35a69eb8b7c097873d3ff60",
+          "evidenceSha256": [
+            "105fd7716797e82a693a8be6147c0388655aecdb42722994b0e50143c1d8a0f4",
+            "4f70948dfc39f042240e58a4b3b2e3a423ca81f4e35a69eb8b7c097873d3ff60"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-03T21:09:12.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4f70948dfc39f042240e58a4b3b2e3a423ca81f4e35a69eb8b7c097873d3ff60",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-03T21:09:36.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4f70948dfc39f042240e58a4b3b2e3a423ca81f4e35a69eb8b7c097873d3ff60",
+          "evidenceSha256": [
+            "d63d307a3fe565df541f292acd509a44431fd960f1aeb52e3dfc0b23cf201220"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -19015,5 +19144,5 @@
       ]
     }
   ],
-  "manifestSha256": "971f6b1bdbdb95dd35b6f1661b395691a7039b578144f5ce65035b6871af99a5"
+  "manifestSha256": "e5b55925e2c0374eab6eccf4966d7661c67f0d4844468789b26cd6e80f5bdb6f"
 }

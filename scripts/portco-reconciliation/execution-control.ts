@@ -720,8 +720,21 @@ export function transitionExecutionTask(
     }
   }
 
-  const mergedArtifacts = { ...current.artifacts, ...options.artifacts };
-  let taskSnapshotSha256 = current.taskSnapshotSha256;
+  const retryingFailedTask = targetStatus === "ACTIVE"
+    && (current.status === "FAILED" || current.status === "BLOCKED");
+  const clearedRetryArtifacts: ExecutionTask["artifacts"] = {
+    taskSnapshot: null,
+    proposal: null,
+    approval: null,
+    applyReceipt: null,
+    decision: null,
+    companySnapshot: null,
+  };
+  const mergedArtifacts = {
+    ...(retryingFailedTask ? clearedRetryArtifacts : current.artifacts),
+    ...options.artifacts,
+  };
+  let taskSnapshotSha256 = retryingFailedTask ? null : current.taskSnapshotSha256;
   if (targetStatus === "PROPOSED") {
     if (!options.taskSnapshot || !mergedArtifacts.taskSnapshot || !mergedArtifacts.proposal) {
       throw new Error("PROPOSED requires a task snapshot and proposal artifacts");

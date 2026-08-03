@@ -87,6 +87,25 @@ snapshot with the same state digest. Capture time and the newly serialized
 production artifact may change; target, seed, database revision, or dependency
 changes fail as stale.
 
+Generate a deterministic proposal from the locked task context and a narrow
+research decision specification. The generator accepts scalar company-field,
+ownership-period, and milestone patches (or a complete after-image), rejects
+unknown relation IDs and unresolved mutating proposals, and writes new files
+exclusively so an existing proposal cannot be overwritten:
+
+```sh
+npm run portco:reconciliation:proposal -- \
+  --context=<task-context.json> \
+  --spec=<research-decision.json> \
+  --json=<new-proposal.json> \
+  --markdown=<new-proposal.md>
+```
+
+If an attempt fails or becomes blocked, retrying the same task clears its
+volatile snapshot, proposal, approval, receipt, decision, and company-snapshot
+references before a fresh attempt begins. Durable history remains in the
+manifest; no artifact from a failed attempt can satisfy the new attempt.
+
 For this run, the user's standing instruction removes the per-company approval
 gate. Install the immutable authorization policy once, then use `auto-approve`
 after every proposal validates and a fresh observed task snapshot proves that
@@ -246,6 +265,12 @@ npm run portco:reconciliation:apply -- \
   --snapshot-sha256=<snapshot hash> \
   --stage-seed
 ```
+
+If a staged proposal fails before production application and a corrected
+proposal for the exact same task is subsequently staged, remove only the old
+entry with `--supersede-staged-seed`, supplying both proposal/approval pairs.
+The command refuses cross-task replacement and proves that both immutable
+entries are present and unchanged before rewriting the local seed overlay.
 
 Production application is intentionally a second step. The exact staged seed
 artifact must first be committed and pushed. The production command

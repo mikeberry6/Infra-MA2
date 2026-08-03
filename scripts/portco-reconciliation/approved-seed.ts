@@ -303,3 +303,66 @@ export async function verifyPublishedApprovedSeedAfterImage(
   }
   verifyApprovedSeedText(text, publication);
 }
+
+export async function supersedeStagedApprovedSeedAfterImage(input: {
+  artifactPath: string;
+  supersededProposal: ReconciliationProposal;
+  supersededApproval: ReconciliationApproval;
+  supersedingProposal: ReconciliationProposal;
+  supersedingApproval: ReconciliationApproval;
+}): Promise<{ artifactPath: string; artifactSha256: string; removedProposalSha256: string }> {
+  const artifactPath = resolve(input.artifactPath);
+  if (!artifactPath.endsWith(`/${APPROVED_SEED_BASENAME}`)) {
+    throw new Error(`Seed writes are target-pinned to ${APPROVED_SEED_BASENAME}`);
+  }
+  const superseded = buildApprovedSeedEntry(input.supersededProposal, input.supersededApproval);
+  const superseding = buildApprovedSeedEntry(input.supersedingProposal, input.supersedingApproval);
+  if (
+    superseded.taskId !== superseding.taskId
+    || input.supersededProposal.taskIndex !== input.supersedingProposal.taskIndex
+    || input.supersededProposal.companyName !== input.supersedingProposal.companyName
+  ) {
+    throw new Error("Only proposals for the same exact task may supersede a staged seed entry");
+  }
+  if (superseded.proposalSha256 === superseding.proposalSha256) {
+    throw new Error("Superseded and superseding proposal hashes must differ");
+  }
+  const current: unknown = JSON.parse(await readFile(artifactPath, "utf8"));
+  if (!Array.isArray(current) || current.some((item) => !isRecord(item))) {
+    throw new Error("Approved PortCo seed artifact must be a JSON array of objects");
+  }
+  const oldMatches = current.filter((item) => item.proposalSha256 === superseded.proposalSha256);
+  const newMatches = current.filter((item) => item.proposalSha256 === superseding.proposalSha256);
+  if (oldMatches.length !== 1 || sha256Canonical(oldMatches[0]) !== sha256Canonical(superseded)) {
+    throw new Error("Superseded staged seed entry is missing or changed");
+  }
+  if (newMatches.length !== 1 || sha256Canonical(newMatches[0]) !== sha256Canonical(superseding)) {
+    throw new Error("Superseding staged seed entry is missing or changed");
+  }
+  const rendered = `${JSON.stringify(
+    current.filter((item) => item.proposalSha256 !== superseded.proposalSha256),
+    null,
+    2,
+  )}\n`;
+  const temporaryPath = `${artifactPath}.supersede-${process.pid}-${Date.now()}`;
+  const handle = await open(temporaryPath, "wx", 0o600);
+  try {
+    await handle.writeFile(rendered, "utf8");
+    await handle.sync();
+  } finally {
+    await handle.close();
+  }
+  await rename(temporaryPath, artifactPath);
+  const directory = await open(dirname(artifactPath), "r");
+  try {
+    await directory.sync();
+  } finally {
+    await directory.close();
+  }
+  verifyApprovedSeedText(await readFile(artifactPath, "utf8"), superseding);
+  return {
+    artifactPath,
+    artifactSha256: sha256Text(rendered),
+    removedProposalSha256: superseded.proposalSha256,
+  };
+}

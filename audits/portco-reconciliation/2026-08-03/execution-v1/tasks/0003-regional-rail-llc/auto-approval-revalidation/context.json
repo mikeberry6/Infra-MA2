@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0003:regional-rail-llc:e66e1eb4",
+  "taskIndex": 3,
+  "companyName": "Regional Rail, LLC",
+  "generatedAt": "2026-08-03T21:05:10.826Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0003-regional-rail-llc/auto-approval-revalidation/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 3,
+    "taskId": "ledger:0003:regional-rail-llc:e66e1eb4",
+    "canonicalKey": "regional-rail-llc|united-states",
+    "companyName": "Regional Rail, LLC",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 1,
+    "managers": [
+      "3i Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "001-3i-infrastructure:holding:003:regional-rail-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj41q00fwivhexqyc15b2"
+    ],
+    "seedKeys": [
+      "regional rail, llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.3i.com/infrastructure/our-portfolio/regional-rail/",
+      "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+      "https://www.3i.com/media/news/2019/3i-agrees-to-invest-in-regional-rail-to-support-growth/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj41q00fwivhexqyc15b2",
+    "name": "Regional Rail, LLC",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Short-line freight railroads",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Regional Rail owns and operates short-line freight railroads and related rail services across the United States and Canada. Its customer base spans industrial, agricultural, chemicals, aggregates, food, and logistics end markets that depend on local freight connectivity and transload services. The company follows an asset-heavy operating model built around owned and leased track, rail-served industrial infrastructure, and operating railroad franchises. Public disclosures describe a network of more than 875 route miles, 17 railroad operations, and approximately 65,000 annual carloads as of 2023. The footprint expanded materially after 2019 through acquisitions in Florida, the Midwest, Ohio, Indiana, and western Canada. 3i agreed to acquire 100% of Regional Rail in 2019 as its North American rail infrastructure platform and remains the disclosed owner.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2007,
+    "headquarters": "Pennsylvania; Florida; Illinois; Indiana; Ohio; Minnesota; Saskatchewan; Alberta",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp3t01cbivhertzicggz",
+        "managerName": "3i Group",
+        "organizationName": "3i Group",
+        "fundName": "3i NA Infrastructure Fund",
+        "vehicleName": "3i NA Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkbv602caivhedfnztqu0",
+        "date": "Apr 2007",
+        "event": "Regional Rail was formed and acquired East Penn Railroad as its first operating railroad.",
+        "category": "ACQUISITION",
+        "sortDate": "2007-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbvs02cbivhemzlsr16g",
+        "date": "Oct 2019",
+        "event": "Acquired Pinsly Railroad Company's Florida operations.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbw702ccivhejj1jenp6",
+        "date": "Apr 2019",
+        "event": "3i announced its agreement to acquire 100% of Regional Rail.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkbws02cdivhevad4nh8o",
+        "date": "Jul 2019",
+        "event": "3i invested in Regional Rail after announcing its agreement to acquire the company.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoimk06sqivhenl1zyldm",
+        "label": "Regional Rail — Regional Rail, LLC",
+        "url": "https://regional-rail.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Regional Rail company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoino06ssivheg03urebh",
+        "label": "3I — Regional Rail, LLC",
+        "url": "https://www.3i.com/infrastructure/our-portfolio/regional-rail/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "3i operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoior06suivhens5lm2w0",
+        "label": "Announcement date source — 3i Infrastructure — Regional Rail, LLC",
+        "url": "https://www.3i.com/media/news/2019/3i-agrees-to-invest-in-regional-rail-to-support-growth/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "3i Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoips06swivhe30qix8sv",
+        "label": "Investment date source — 3i Infrastructure — Regional Rail, LLC",
+        "url": "https://www.3i.com/media/news/2019/regional-rail-expands-its-geographic-footprint-through-acquisition-of-pinsly-railroad-company-s-florida-operations/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "3i Infrastructure initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoiqy06syivhe0t47gzb2",
+        "label": "Regional Rail — Regional Rail, LLC",
+        "url": "https://regional-rail.com/2026/01/16/regional-rail-expands-its-network-in-the-midwest-via-the-acquisition-of-several-short-line-freight-railroads/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Regional Rail transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Regional Rail, LLC",
+    "investmentFirm": "3i Infrastructure",
+    "sector": "Transportation",
+    "subsector": "Short-line freight railroads",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "3i NA Infrastructure Fund",
+    "description": "Regional Rail owns and operates short-line freight railroads and related rail services across the United States and Canada. Its customer base spans industrial, agricultural, chemicals, aggregates, food, and logistics end markets that depend on local freight connectivity and transload services. The company follows an asset-heavy operating model built around owned and leased track, rail-served industrial infrastructure, and operating railroad franchises. Public disclosures describe a network of more than 875 route miles, 17 railroad operations, and approximately 65,000 annual carloads as of 2023. The footprint expanded materially after 2019 through acquisitions in Florida, the Midwest, Ohio, Indiana, and western Canada. 3i agreed to acquire 100% of Regional Rail in 2019 as its North American rail infrastructure platform and remains the disclosed owner.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2007,
+    "investmentYear": 2019,
+    "headquarters": "Pennsylvania; Florida; Illinois; Indiana; Ohio; Minnesota; Saskatchewan; Alberta",
+    "milestones": [
+      {
+        "date": "Apr 2007",
+        "event": "Regional Rail was formed and acquired East Penn Railroad as its first operating railroad.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 2019",
+        "event": "Acquired Pinsly Railroad Company's Florida operations.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Apr 2019",
+        "event": "3i announced its agreement to acquire 100% of Regional Rail.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 2019",
+        "event": "3i invested in Regional Rail after announcing its agreement to acquire the company.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Regional Rail — Regional Rail, LLC",
+        "url": "https://regional-rail.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "3I — Regional Rail, LLC",
+        "url": "https://www.3i.com/infrastructure/our-portfolio/regional-rail/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — 3i Infrastructure — Regional Rail, LLC",
+        "url": "https://www.3i.com/media/news/2019/3i-agrees-to-invest-in-regional-rail-to-support-growth/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — 3i Infrastructure — Regional Rail, LLC",
+        "url": "https://www.3i.com/media/news/2019/regional-rail-expands-its-geographic-footprint-through-acquisition-of-pinsly-railroad-company-s-florida-operations/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Regional Rail — Regional Rail, LLC",
+        "url": "https://regional-rail.com/2026/01/16/regional-rail-expands-its-network-in-the-midwest-via-the-acquisition-of-several-short-line-freight-railroads/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "3i Infrastructure",
+        "ownershipVehicle": "3i NA Infrastructure Fund",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj0q100awivhe614f48xf",
+        "fundName": "3i NA Infrastructure Fund",
+        "managerId": "cmrxpi2by0000ivhe4ee92jpo",
+        "updatedAt": "2026-07-23T16:09:54.793Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2by0000ivhe4ee92jpo",
+        "name": "3i Group",
+        "updatedAt": "2026-07-23T16:09:10.222Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0003:regional-rail-llc:e66e1eb4",
+    "taskIndex": 3,
+    "canonicalKey": "regional-rail-llc|united-states",
+    "capturedAt": "2026-08-03T21:05:10.826Z",
+    "databaseRevision": "company-state:8e390bf7af18627cc50b5e4bbf2b5e9b03deafd013b325c9af06438dca36ad7b",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "db465e31fccd1e8c6e712a2cb2b401e4cb2b6b734caf611570628f9c43990da3",
+    "productionSnapshotSha256": "5488d7fc671a8063a4004ff826915456c4ef2aa3bc5836484c54211d8239f8b4",
+    "targetCompanySnapshotSha256": "8e390bf7af18627cc50b5e4bbf2b5e9b03deafd013b325c9af06438dca36ad7b",
+    "seedEntrySha256": "87211f377aac2778bec7600877fd00942b11053a6f5d5ba75ad8c4e796b3719c",
+    "dependencies": {
+      "ownershipPeriodsSha256": "2a4e56ea214b45deeb01998980af92712d0d55e3d01b18f0ab18fe0d7b415e63",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "82aeed358e07a2bd93edc5482624a5aa3ee2ab9ffce5c082088732ab02fa99ee",
+      "organizationsSha256": "53710a62a2f2208f46ccf17f3459fe013eb7fe16eb0a40b36375201169fece11",
+      "citationsSha256": "5df17d6955b67e49b76271181b4e3f5b65e0008ee043c38d87e67e34408bf12e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "b4dda0e46c9c21bfb549d49da7e3698070cc819eca83abdd4a116b7d2e7915be",
+    "stateSha256": "9f3eb8d32ae280e89c2f573f66869c11ecbf82b0c1b910e0dc3f561cec2b867f",
+    "taskSnapshotSha256": "b0a919bbf5c7f535334d505fdbbbc6493f3a850ee5ffbda787b3ed88af69575f"
+  },
+  "contextSha256": "597af9df5d9ac4ecf9dea016e54d2d30d3d1258231556a560cc44d23c0e6b247"
+}
