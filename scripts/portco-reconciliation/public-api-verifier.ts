@@ -1,5 +1,6 @@
 import type { CompanyImage } from "./schema";
 import { companyImageSha256 } from "./artifacts";
+import { dedupeMilestoneViews } from "../../src/modules/companies/milestone-view";
 
 interface PublicOwner {
   firm: string;
@@ -119,11 +120,11 @@ export function expectedPublicProjection(input: {
     investmentYear: primary?.investmentYear ?? null,
     headquarters: input.afterImage.headquarters,
     owners,
-    milestones: sortStrings(input.afterImage.milestones.map((milestone) => JSON.stringify({
+    milestones: sortStrings(dedupeMilestoneViews(input.afterImage.milestones.map((milestone) => ({
       date: milestone.date,
       event: milestone.event,
       category: display(milestone.category, milestoneDisplay),
-    }))),
+    }))).map((milestone) => JSON.stringify(milestone))),
     management: sortStrings(input.afterImage.managementRoles.map((role) => JSON.stringify({
       name: role.personName,
       title: role.title,
