@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0009:alpha-generation-llc:0b0f73d5",
+  "taskIndex": 9,
+  "companyName": "Alpha Generation, LLC",
+  "generatedAt": "2026-08-03T23:57:37.283Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0009-alpha-generation-llc/attempt-2/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 9,
+    "taskId": "ledger:0009:alpha-generation-llc:0b0f73d5",
+    "canonicalKey": "alpha-generation-llc|united-states",
+    "companyName": "Alpha Generation, LLC",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 4,
+    "managers": [
+      "ADIA Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "004-adia-infrastructure:holding:001:alpha-generation-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj46m00g5ivhe8bi5r2wb"
+    ],
+    "seedKeys": [
+      "alpha generation, llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B00A61E9C-0000-C856-9EC0-AB998D2CF015%7D&DocTitle=Redacted+Black+Volt+B+2024+LLC+and+Black+Beacon+B+2024+LLC+-+2026+Annual+Report+%28PUBLIC+VERSION%29",
+      "https://www.prnewswire.com/news-releases/arclight-announces-500mm-investment-by-a-wholly-owned-subsidiary-of-adia-in-11-gw-alphagen-power-infrastructure-platform-302348464.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Heuristic identity overlap with alpha-generation-alphagen|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Heuristic identity overlap with alpha-generation-alphagen|united-states; no automatic merge was made."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj46m00g5ivhe8bi5r2wb",
+    "name": "Alpha Generation, LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Thermal generation infrastructure and independent power production",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "AlphaGen manages and operates a large portfolio of gas- and oil-fired generation assets in major U.S. power markets. Its customer base is primarily wholesale power, capacity, and ancillary-services markets across PJM, NYISO, ISO-NE, and CAISO rather than retail end users. The platform follows an asset-heavy model built around dispatchable generating facilities and associated development, repowering, and grid-upgrade opportunities. Public disclosures describe approximately 13 to 14 gigawatts of capacity across 23 to 24 facilities in six states and nearly $2 billion of annual revenue at formation. The portfolio is concentrated in strategic markets where reliability, peaking capacity, and time-to-power have gained importance as electricity demand has risen. ArcLight created AlphaGen in January 2024, and ADIA agreed a $500 million minority investment in January 2025; public disclosures indicate ArcLight remains the controlling sponsor while current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2024,
+    "headquarters": "California; Connecticut; Maryland; New Jersey; New York; Ohio",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjp8z01clivhehijovpc5",
+        "managerName": "Abu Dhabi Investment Authority (ADIA)",
+        "organizationName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjr8n01ftivhesc0diq54",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "ArcLight Energy Partners Fund VII",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkcmk02daivhej55esz7z",
+        "date": "Oct 2024",
+        "event": "AlphaGen completed $3.7 billion of inaugural corporate financing.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcn602dbivhefzblnglm",
+        "date": "Jan 2024",
+        "event": "ArcLight created AlphaGen to manage its U.S. power infrastructure portfolio.",
+        "category": "FOUNDING",
+        "sortDate": "2024-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkcnj02dcivhet4s21bv7",
+        "date": "Jan 2025",
+        "event": "ADIA agreed a $500 million minority investment in AlphaGen.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkco202ddivhe5bgaekd6",
+        "date": "Oct 2025",
+        "event": "CPP Investments announced a $1.0 billion investment in AlphaGen.",
+        "category": "FINANCING",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkl2u02nnivhebnspfajq",
+        "date": "2024",
+        "event": "ArcLight stated that AlphaGen would oversee approximately 14 GW of power infrastructure across four U.S. markets.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkl3b02noivhe9pndzt0g",
+        "date": "2024",
+        "event": "Public disclosures also described the managed portfolio as generating nearly $2 billion of annual revenue.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkl3t02npivheviimuubr",
+        "date": "2024",
+        "event": "Alpha Generation (AlphaGen) was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkl4b02nqivhefbplw6nu",
+        "date": "Jan 10, 2024",
+        "event": "ArcLight announced the formation of Alpha Generation as an ArcLight-owned platform to oversee its power infrastructure portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-10T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpok3m06uvivhedx08v81i",
+        "label": "Alphagen — Alpha Generation, LLC",
+        "url": "https://www.alphagen.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Alphagen company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpok4o06uxivheo76dyqve",
+        "label": "Alphagen — Alpha Generation, LLC",
+        "url": "https://www.alphagen.com/portfolio/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Alphagen operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpok5v06uzivheb6xt0rpr",
+        "label": "Alphagen — Alpha Generation, LLC",
+        "url": "https://www.alphagen.com/newsroom/press-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Alphagen — Alpha Generation, LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpok6u06v1ivhe3yt88l1b",
+        "label": "Announcement date source — ADIA Infrastructure — Alpha Generation, LLC",
+        "url": "https://www.prnewswire.com/news-releases/arclight-announces-500mm-investment-by-a-wholly-owned-subsidiary-of-adia-in-11-gw-alphagen-power-infrastructure-platform-302348464.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ADIA Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoys707gkivhe04ebogtv",
+        "label": "Alphagen — Alpha Generation (AlphaGen)",
+        "url": "https://www.alphagen.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Alphagen company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoytd07gmivhepdtxiwzy",
+        "label": "Announcement date source — ArcLight Capital Partners — Alpha Generation (AlphaGen)",
+        "url": "https://www.prnewswire.com/news-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states-302031341.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoyub07goivhe26rcyecy",
+        "label": "Arclight — Alpha Generation (AlphaGen)",
+        "url": "https://arclight.com/portfolio-services/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Arclight operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Alpha Generation, LLC",
+    "investmentFirm": "ADIA Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Thermal generation infrastructure and independent power production",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "AlphaGen manages and operates a large portfolio of gas- and oil-fired generation assets in major U.S. power markets. Its customer base is primarily wholesale power, capacity, and ancillary-services markets across PJM, NYISO, ISO-NE, and CAISO rather than retail end users. The platform follows an asset-heavy model built around dispatchable generating facilities and associated development, repowering, and grid-upgrade opportunities. Public disclosures describe approximately 13 to 14 gigawatts of capacity across 23 to 24 facilities in six states and nearly $2 billion of annual revenue at formation. The portfolio is concentrated in strategic markets where reliability, peaking capacity, and time-to-power have gained importance as electricity demand has risen. ArcLight created AlphaGen in January 2024, and ADIA agreed a $500 million minority investment in January 2025; public disclosures indicate ArcLight remains the controlling sponsor while current ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2024,
+    "investmentYear": 2025,
+    "headquarters": "California; Connecticut; Maryland; New Jersey; New York; Ohio",
+    "milestones": [
+      {
+        "date": "Oct 2024",
+        "event": "AlphaGen completed $3.7 billion of inaugural corporate financing.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jan 2024",
+        "event": "ArcLight created AlphaGen to manage its U.S. power infrastructure portfolio.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jan 2025",
+        "event": "ADIA agreed a $500 million minority investment in AlphaGen.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 2025",
+        "event": "CPP Investments announced a $1.0 billion investment in AlphaGen.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Alphagen — Alpha Generation, LLC",
+        "url": "https://www.alphagen.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Alphagen — Alpha Generation, LLC",
+        "url": "https://www.alphagen.com/portfolio/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Alphagen — Alpha Generation, LLC",
+        "url": "https://www.alphagen.com/newsroom/press-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states/",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Announcement date source — ADIA Infrastructure — Alpha Generation, LLC",
+        "url": "https://www.prnewswire.com/news-releases/arclight-announces-500mm-investment-by-a-wholly-owned-subsidiary-of-adia-in-11-gw-alphagen-power-infrastructure-platform-302348464.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ADIA Infrastructure",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi2jw0003ivhe0d2l8t07",
+        "name": "Abu Dhabi Investment Authority (ADIA)",
+        "updatedAt": "2026-07-23T16:09:10.508Z"
+      },
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpj67d00iyivhe208h0356",
+        "companyId": "cmrxpj46m00g5ivhe8bi5r2wb",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:38.187Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0009:alpha-generation-llc:0b0f73d5",
+    "taskIndex": 9,
+    "canonicalKey": "alpha-generation-llc|united-states",
+    "capturedAt": "2026-08-03T23:57:37.283Z",
+    "databaseRevision": "company-state:c1298d94d145f11cf216aac29a3a1b565493bafc023e44a542b6cb767a4759ef",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "a59c5a728782299e7a360dd557e2b4f0bbae65cc88d580cceb95ae8662ed2eb3",
+    "productionSnapshotSha256": "49ba479af829d84aa5e89980b1d94bafdd59df0e97532d360da1fd0788867cdf",
+    "targetCompanySnapshotSha256": "c1298d94d145f11cf216aac29a3a1b565493bafc023e44a542b6cb767a4759ef",
+    "seedEntrySha256": "d22253ebde73d1f89fa0b374017fefae8b1350692c0b741494c267ddfb85a412",
+    "dependencies": {
+      "ownershipPeriodsSha256": "89ce8a532acfc7516cd9618eb495e012c889070d2d497a69470b8b668863482c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "ed3ae9a779187ced7ff708af95feaf1f9e6ce209ec7623e916f7b4fa01c4b254",
+      "citationsSha256": "a94db0c85389247bb7a72738a4ec99865f7cf6ed871d5eb9a5959bdccf4666e0",
+      "redirectsSha256": "56a50f896db84938d93d52cf709452d0221f2576b5c0c6e8ad3f070f4582daf8"
+    },
+    "dependencySha256": "b17bee67a2489791f96b44ba6e5c6110113f727c52c023716faa7e865d357bc6",
+    "stateSha256": "157b202e92cebc3e11757afe64a14b3c0430e9ca7aee0a6ecd7da38cacb55ba2",
+    "taskSnapshotSha256": "516cd2df7bd2ecc50d0c8ba568fde59ae78cdded1c76f2a1e5a94e78c7c373a6"
+  },
+  "contextSha256": "e5fad4b5a86921032ed7de38bf6a43ebdfbf1ed991a0e24b9c0db8a889e8efe8"
+}
