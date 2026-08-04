@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-08-04T01:50:45.000Z",
+  "decision": "EXCLUDE_CENSUS_HOLDING",
+  "taskId": "ledger:0013:i-66-express-mobility-partners-transform-66-outside-the-beltway:b1f54fa4",
+  "companyName": "I-66 Express Mobility Partners (Transform 66 Outside the Beltway)",
+  "requestedManager": "Allianz Global Investors",
+  "sourceHoldingId": "005-allianz-global-investors:holding:002:i-66-express-mobility-partners-transform-66-outside-the-beltway",
+  "rationale": "Exclude the Allianz Global Investors census holding as an unsupported manager-to-company association. I-66 Express Mobility Partners is the concessionaire for Transform 66 Outside the Beltway, but current official company and sponsor disclosures identify Cintra, Meridiam, and APG as the consortium members. Ferrovial's 2024 audited consolidated financial statements identify Cintra's 55.704% interest and the remaining Meridiam and APG interests, with no Allianz interest. The 2017 Allianz-linked insurance filing cited by the census is a quarterly statement for The American Insurance Company; it does not mention I-66 Express Mobility Partners and does not evidence infrastructure equity ownership. No company, seed, ownership, redirect, or publication mutation is authorized by this task. The existing I-66 Express Mobility Partners and Transform 66 records remain queued for their APG and Meridiam identity and ownership decisions.",
+  "identityResolution": {
+    "sameOperatingPlatform": true,
+    "canonicalCandidate": "I-66 Express Mobility Partners, LLC",
+    "projectTradeName": "Transform 66 Outside the Beltway",
+    "mutationDeferredToTaskId": "ledger:0038:i-66-express-mobility-partners-llc:07dacc7a"
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "No official Allianz acquisition, investment, or ownership announcement was found. Official project and sponsor disclosures instead identify Cintra, Meridiam, and APG.",
+    "exitSearch": "No Allianz exit search is applicable because direct Allianz ownership was not established. Ferrovial's December 2024 ownership disclosure still identifies only Cintra, Meridiam, and APG.",
+    "currentOwnership": "As of December 31, 2024, Ferrovial disclosed Cintra at 55.704%, Meridiam at 29.75%, and APG at 14.55%. Current project materials continue to describe the consortium as Cintra, Meridiam, and APG."
+  },
+  "evidence": [
+    {
+      "label": "Ferrovial — 2024 consolidated financial statements",
+      "url": "https://static-iai.ferrovial.com/wp-content/uploads/sites/13/2025/02/28004913/ferrovial-integrated-annual-report-2024-consolidated-financial-statements-2.pdf",
+      "purpose": "Audited year-end ownership disclosure for I-66 Mobility Partners identifying Meridiam and APG as the non-Ferrovial shareholders and excluding Allianz",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Ferrovial — 66 Express Outside the Beltway",
+      "url": "https://www.ferrovial.com/en/business/projects/i66-highway/",
+      "purpose": "Current sponsor project page identifying I-66 Express Mobility Partners as the Cintra, Meridiam, and APG consortium",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "66 Express — public-private partnership overview",
+      "url": "https://static.ride66express.com/wp-content/uploads/2023/11/05001248/66EL-public-and-private-partnership-2022.pdf",
+      "purpose": "Concessionaire material identifying the developer and operator consortium members",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Ohio Department of Insurance — The American Insurance Company Q2 2017 statement",
+      "url": "https://legacy.insurance.ohio.gov/FRAnnuals/2017/Q2/21857Q22017.pdf",
+      "purpose": "Reopened original census citation; the filing does not mention I-66 and does not support an Allianz infrastructure ownership claim",
+      "sourceTier": "REGULATORY"
+    }
+  ],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "unresolvedQuestions": []
+}
