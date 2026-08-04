@@ -137,6 +137,19 @@ export function assertSharedSourceCompatible(input: {
   }
 }
 
+export function assertOwnershipManagerCompatible(input: {
+  approvedManagerName: string;
+  organizationName: string | null;
+  fundManagerName: string | null;
+}): void {
+  const persistedManagerName = input.fundManagerName ?? input.organizationName ?? input.approvedManagerName;
+  if (persistedManagerName !== input.approvedManagerName) {
+    throw new Error(
+      `Approved ownership manager ${input.approvedManagerName} cannot round-trip through the linked fund/organization manager ${persistedManagerName}`,
+    );
+  }
+}
+
 async function assertCitationSourcesCompatible(
   transaction: unknown,
   image: CompanyImage,
@@ -295,24 +308,29 @@ async function ownershipLinks(
   transaction: unknown,
   owner: CompanyImage["ownershipPeriods"][number],
 ): Promise<{ organizationId: string | null; fundId: string | null }> {
-  let fund: { id: string; managerId: string } | null = null;
+  let fund: { id: string; managerId: string; manager: { name: string } } | null = null;
   if (owner.fundName) {
     fund = await delegate(transaction, "fund").findUnique({
       where: { fundName: owner.fundName },
-      select: { id: true, managerId: true },
-    }) as { id: string; managerId: string } | null;
+      select: { id: true, managerId: true, manager: { select: { name: true } } },
+    }) as { id: string; managerId: string; manager: { name: string } } | null;
     if (!fund) throw new Error(`Approved ownership fund does not exist: ${owner.fundName}`);
   }
   const organizationName = owner.organizationName ?? (fund ? null : owner.managerName);
   const organization = organizationName
     ? await delegate(transaction, "organization").findUnique({
         where: { name: organizationName },
-        select: { id: true },
-      }) as { id: string } | null
+        select: { id: true, name: true },
+      }) as { id: string; name: string } | null
     : null;
   if (organizationName && !organization) {
     throw new Error(`Approved ownership organization does not exist: ${organizationName}`);
   }
+  assertOwnershipManagerCompatible({
+    approvedManagerName: owner.managerName,
+    organizationName: organization?.name ?? null,
+    fundManagerName: fund?.manager.name ?? null,
+  });
   return { organizationId: organization?.id ?? null, fundId: fund?.id ?? null };
 }
 
@@ -578,6 +596,9 @@ export function createPrismaApprovedApplyStore(options: {
         : [];
       if (proposal.afterImage) {
         await assertCitationSourcesCompatible(transaction, proposal.afterImage);
+        for (const owner of proposal.afterImage.ownershipPeriods) {
+          await ownershipLinks(transaction, owner);
+        }
       }
       return {
         databaseTargetFingerprint: options.databaseTargetFingerprint,
