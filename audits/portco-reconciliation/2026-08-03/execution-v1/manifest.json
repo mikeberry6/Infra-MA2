@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T03:31:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0016:city-of-san-marcos-public-services-complex:1a0d545e",
+  "updatedAt": "2026-08-04T03:32:02.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -2480,11 +2480,11 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "d43fb240b0bbcaefc1753ec6ad0e5f0fdf78d66c8d381643d8033b08e67d0037",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-04T03:29:01.000Z",
-      "updatedAt": "2026-08-04T03:31:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-04T03:32:02.000Z",
+      "completedAt": "2026-08-04T03:32:02.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
@@ -2501,7 +2501,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0016-city-of-san-marcos-public-services-complex-v2.json",
           "sha256": "201ac151f67d91a6f5294bc7c5db15502058927369315588ea1419b6a86f4454"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0016-city-of-san-marcos-public-services-complex/attempt-2/production-apply/apply-receipt.json",
+          "sha256": "c01b5aa41672f99cf58bb167dc0c98857bfaa88b28b0d48347f7b032dd592f79"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -2615,6 +2618,42 @@
           "evidenceSha256": [
             "201ac151f67d91a6f5294bc7c5db15502058927369315588ea1419b6a86f4454"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-04T03:32:00.000Z",
+          "reason": "Protected workflow passed all pre-write checks and committed the approved transaction.",
+          "taskSnapshotSha256": "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
+          "evidenceSha256": [
+            "201ac151f67d91a6f5294bc7c5db15502058927369315588ea1419b6a86f4454",
+            "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
+            "e9f3debc34b21287a6a5b02f06b8e5923baa67fdc021e1454eea9d07eb8c10b7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-04T03:32:01.000Z",
+          "reason": "Protected workflow returned a verified immutable receipt and canonical API result.",
+          "taskSnapshotSha256": "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
+          "evidenceSha256": [
+            "c01b5aa41672f99cf58bb167dc0c98857bfaa88b28b0d48347f7b032dd592f79"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-04T03:32:02.000Z",
+          "reason": "Database, archived seed after-image, audit receipt, and canonical detail API behavior verified.",
+          "taskSnapshotSha256": "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -20860,5 +20899,5 @@
       ]
     }
   ],
-  "manifestSha256": "2b8a2e59039eaeeeb13f44901d2db3990430c4ad0909db75d326baa28b7899bb"
+  "manifestSha256": "ae5cf61281a7f5df8e6e2008b00db7f70f77634e101fd7c904d85c4f52e4655b"
 }
