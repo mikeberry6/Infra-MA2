@@ -9,6 +9,23 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Data format",
+    description:
+      "Customer and site master data-format presentation, preserved as the supplied PowerPoint and available as a direct download.",
+    href: "/one-off-requests/data-format.pptx",
+    format: "PowerPoint",
+    date: "Aug 2026",
+    download: true,
+  },
+  {
+    title: "Company X customer & site master — slide text",
+    description:
+      "Copy-friendly text from the latest chat response, with company references updated to Company X.",
+    href: "/one-off-requests/company-x-customer-site-master-text.html",
+    format: "Outlook HTML",
+    date: "Aug 2026",
+  },
+  {
     title: "CIM table of contents — box format",
     description: "Box format",
     href: "/one-off-requests/box-format.pptx",

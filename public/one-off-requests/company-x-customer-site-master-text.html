@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Company X | Customer &amp; Site Master</title>
+  </head>
+  <body style="margin:0;padding:24px 12px;background:#FFFFFF;font-family:Arial,Helvetica,sans-serif;color:#000000;">
+    <div style="width:100%;max-width:680px;margin:0 auto 14px auto;">
+      <button id="copy-button" type="button" style="padding:8px 14px;border:1px solid #000000;border-radius:3px;background:#000000;color:#FFFFFF;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;cursor:pointer;">Copy for Outlook</button>
+      <span id="copy-status" role="status" aria-live="polite" style="margin-left:8px;font-size:12px;line-height:16px;color:#444444;">Copies only the slide text below.</span>
+    </div>
+
+    <div id="email-content" style="width:100%;max-width:680px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#000000;">
+      <p style="margin:0;font-size:14px;line-height:19px;font-weight:700;">Company X</p>
+      <p style="margin:0;font-size:12px;line-height:17px;font-weight:700;">COMMERCIAL &amp; CUSTOMER DATA CUBE</p>
+      <p style="margin:0 0 16px 0;font-size:12px;line-height:17px;font-weight:700;">DATASET INDEX / 01</p>
+
+      <h1 style="margin:0 0 6px 0;font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:25px;">Customer &amp; Site Master</h1>
+      <p style="margin:0 0 18px 0;">Customer, site and hierarchy data supporting concentration, end-market, geographic and site-level revenue analysis.</p>
+
+      <h2 style="margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;">HOW THE DATA CONNECTS</h2>
+      <p style="margin:0 0 7px 0;"><strong>Ultimate Parent</strong><br><strong>Roll-up level</strong><br>Top of the customer hierarchy.</p>
+      <p style="margin:0 0 7px 0;"><strong>Customer Account</strong><br><strong>1 row / customer</strong><br>Individual customer account.</p>
+      <p style="margin:0 0 7px 0;"><strong>Physical Site</strong><br><strong>1 row / site</strong><br>Specific operating location.</p>
+      <p style="margin:0 0 18px 0;"><strong>Contract / Asset</strong><br><strong>Downstream joins</strong><br>Assets and contracts at the site.</p>
+
+      <h2 style="margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;">CORE DATA TABLES</h2>
+      <h3 style="margin:0 0 2px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;">01 — Customer List</h3>
+      <p style="margin:0 0 8px 0;"><strong>1 row / customer</strong></p>
+      <p style="margin:0 0 3px 0;"><strong>Identity &amp; Hierarchy</strong></p>
+      <ul style="margin:0 0 8px 20px;padding:0 0 0 14px;">
+        <li>Customer ID</li>
+        <li>Customer name</li>
+        <li>Ultimate parent</li>
+      </ul>
+      <p style="margin:0 0 3px 0;"><strong>Profile &amp; Ownership</strong></p>
+      <ul style="margin:0 0 8px 20px;padding:0 0 0 14px;">
+        <li>Customer type</li>
+        <li>End market</li>
+        <li>National account flag</li>
+        <li>Account manager</li>
+      </ul>
+      <p style="margin:0 0 3px 0;"><strong>Lifecycle &amp; Source</strong></p>
+      <ul style="margin:0 0 8px 20px;padding:0 0 0 14px;">
+        <li>Customer start date</li>
+        <li>Customer status</li>
+        <li>Customer tenure</li>
+        <li>Acquisition source</li>
+      </ul>
+      <p style="margin:0 0 3px 0;"><strong>Scale &amp; Performance</strong></p>
+      <ul style="margin:0 0 14px 20px;padding:0 0 0 14px;">
+        <li>Active site count</li>
+        <li>Active asset count</li>
+        <li>Current recurring revenue</li>
+        <li>TTM revenue</li>
+      </ul>
+
+      <h3 style="margin:0 0 2px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;">02 — Site List</h3>
+      <p style="margin:0 0 8px 0;"><strong>1 row / site</strong></p>
+      <p style="margin:0 0 3px 0;"><strong>Identity &amp; Linkage</strong></p>
+      <ul style="margin:0 0 8px 20px;padding:0 0 0 14px;">
+        <li>Site ID</li>
+        <li>Site name</li>
+        <li>Customer ID</li>
+      </ul>
+      <p style="margin:0 0 3px 0;"><strong>Geography &amp; Service</strong></p>
+      <ul style="margin:0 0 8px 20px;padding:0 0 0 14px;">
+        <li>Address</li>
+        <li>City</li>
+        <li>State / Province</li>
+        <li>Region</li>
+        <li>Service branch</li>
+      </ul>
+      <p style="margin:0 0 3px 0;"><strong>Profile &amp; Lifecycle</strong></p>
+      <ul style="margin:0 0 8px 20px;padding:0 0 0 14px;">
+        <li>Site type</li>
+        <li>End market</li>
+        <li>Site start date</li>
+        <li>Site status</li>
+      </ul>
+      <p style="margin:0 0 3px 0;"><strong>Scale &amp; Performance</strong></p>
+      <ul style="margin:0 0 18px 20px;padding:0 0 0 14px;">
+        <li>Active contract count</li>
+        <li>Active asset count</li>
+        <li>Current recurring revenue</li>
+        <li>TTM revenue</li>
+      </ul>
+
+      <h2 style="margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;">SUPPORTING TABLES</h2>
+      <h3 style="margin:0 0 2px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;">03 — Customer Hierarchy</h3>
+      <p style="margin:0 0 3px 0;"><strong>Account Roll-Up</strong></p>
+      <ul style="margin:0 0 14px 20px;padding:0 0 0 14px;">
+        <li>Ultimate parent</li>
+        <li>Billing parent</li>
+        <li>Parent / child account mapping</li>
+        <li>Site-to-account mapping</li>
+        <li>Effective dates</li>
+        <li>Mapping method</li>
+        <li>Mapping notes</li>
+      </ul>
+
+      <h3 style="margin:0 0 2px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;">04 — Definitions &amp; Checks</h3>
+      <p style="margin:0 0 3px 0;"><strong>Data Governance</strong></p>
+      <ul style="margin:0 0 18px 20px;padding:0 0 0 14px;">
+        <li>Field definitions</li>
+        <li>Standardized categories</li>
+        <li>Record counts</li>
+        <li>Data-quality checks</li>
+      </ul>
+
+      <h2 style="margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;">PRIMARY BUYER ANALYSES</h2>
+      <ul style="margin:0 0 18px 20px;padding:0 0 0 14px;">
+        <li>Customer Concentration</li>
+        <li>End-Market Exposure</li>
+        <li>Geographic Mix</li>
+        <li>Site-Level Revenue Analysis</li>
+      </ul>
+
+      <p style="margin:0;"><strong>Footer:</strong> Customer &amp; Site Master | Company X Data Cube</p>
+      <p style="margin:0;"><strong>Page:</strong> 1</p>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function copyWithCommand(html, text) {
+          var helper = document.createElement("textarea");
+          var handled = false;
+
+          function handleCopy(event) {
+            if (!event.clipboardData) return;
+            event.preventDefault();
+            event.clipboardData.setData("text/html", html);
+            event.clipboardData.setData("text/plain", text);
+            handled = true;
+          }
+
+          helper.value = text;
+          helper.setAttribute("aria-hidden", "true");
+          helper.style.position = "fixed";
+          helper.style.left = "-9999px";
+          helper.style.top = "0";
+          document.body.appendChild(helper);
+          helper.focus();
+          helper.select();
+          document.addEventListener("copy", handleCopy);
+
+          var succeeded = false;
+          try {
+            succeeded = document.execCommand("copy");
+          } catch (error) {
+            succeeded = false;
+          } finally {
+            document.removeEventListener("copy", handleCopy);
+            document.body.removeChild(helper);
+          }
+
+          return succeeded && handled;
+        }
+
+        function showSuccess(button, status) {
+          button.textContent = "Copied";
+          status.textContent = "Paste directly into Outlook.";
+          window.setTimeout(function () {
+            button.textContent = "Copy for Outlook";
+            status.textContent = "Copies only the slide text below.";
+          }, 5000);
+        }
+
+        async function copyForOutlook() {
+          var content = document.getElementById("email-content");
+          var button = document.getElementById("copy-button");
+          var status = document.getElementById("copy-status");
+          var html = '<div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#000000;">' + content.innerHTML + "<" + "/div>";
+          var text = content.innerText.trim();
+          var copied = copyWithCommand(html, text);
+
+          if (!copied && navigator.clipboard && window.ClipboardItem) {
+            try {
+              await navigator.clipboard.write([
+                new ClipboardItem({
+                  "text/html": new Blob([html], { type: "text/html" }),
+                  "text/plain": new Blob([text], { type: "text/plain" })
+                })
+              ]);
+              copied = true;
+            } catch (error) {
+              copied = false;
+            }
+          }
+
+          if (copied) {
+            showSuccess(button, status);
+          } else {
+            status.textContent = "Select the slide text below, copy, and paste into Outlook.";
+          }
+
+          button.focus();
+        }
+
+        var copyButton = document.getElementById("copy-button");
+        copyButton.addEventListener("click", copyForOutlook);
+        copyButton.setAttribute("data-copy-ready", "true");
+      })();
+    </script>
+  </body>
+</html>
