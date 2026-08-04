@@ -130,7 +130,7 @@ jobs:
           fi
           legacy_snapshot="$run_root/snapshots/production-snapshot.json"
           if [ "$PRODUCTION_SNAPSHOT_PATH" != "$legacy_snapshot" ]; then
-            if [[ ! "$PRODUCTION_SNAPSHOT_PATH" =~ ^${run_root}/execution-[A-Za-z0-9._-]+/tasks/[0-9]{4}-[A-Za-z0-9._-]+/(attempt-[1-9][0-9]*/)?production-snapshot\.json$ ]]; then
+            if [[ ! "$PRODUCTION_SNAPSHOT_PATH" =~ ^${run_root}/execution-[A-Za-z0-9._-]+/tasks/[0-9]{4}-[A-Za-z0-9._-]+/(attempt-[1-9][0-9]*/)?(locked-)?production-snapshot\.json$ ]]; then
               echo "::error::production_snapshot_path must be the same run's legacy snapshot or a task-scoped execution snapshot."
               exit 1
             fi

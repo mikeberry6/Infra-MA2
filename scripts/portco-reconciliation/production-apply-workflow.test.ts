@@ -78,7 +78,7 @@ describe("protected PortCo production apply workflow", () => {
       'if [ "$APPROVAL_PATH" != "$run_root/approvals/$proposal_key.json" ]',
     );
     expect(workflow).toContain(
-      '^${run_root}/execution-[A-Za-z0-9._-]+/tasks/[0-9]{4}-[A-Za-z0-9._-]+/(attempt-[1-9][0-9]*/)?production-snapshot\\.json$',
+      '^${run_root}/execution-[A-Za-z0-9._-]+/tasks/[0-9]{4}-[A-Za-z0-9._-]+/(attempt-[1-9][0-9]*/)?(locked-)?production-snapshot\\.json$',
     );
     expect(workflow).toContain('snapshot_relative="${PRODUCTION_SNAPSHOT_PATH#*/tasks/}"');
     expect(workflow).toContain('snapshot_task_key="${snapshot_relative%%/*}"');
