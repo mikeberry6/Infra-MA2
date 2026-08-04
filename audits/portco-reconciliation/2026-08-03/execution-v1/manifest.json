@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T02:10:00.000Z",
+  "updatedAt": "2026-08-04T02:33:00.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0014:7-mile-pit-solar:19f90ec2",
   "source": {
@@ -2052,25 +2052,25 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "02230f11a4a6281615c8e7800644ce044d11582676dabdf3f757ba9fedba48e5",
       "status": "RELEASING",
-      "attempts": 3,
-      "startedAt": "2026-08-04T02:08:01.000Z",
-      "updatedAt": "2026-08-04T02:10:00.000Z",
+      "attempts": 4,
+      "startedAt": "2026-08-04T02:31:01.000Z",
+      "updatedAt": "2026-08-04T02:33:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d",
+      "taskSnapshotSha256": "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0014-7-mile-pit-solar/attempt-3/task-snapshot.json",
-          "sha256": "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0014-7-mile-pit-solar/attempt-4/task-snapshot.json",
+          "sha256": "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/proposals/0014-7-mile-pit-solar-v3/proposal.json",
-          "sha256": "de06c81f5753913470b5d44b58e96c203e06c02b02ab1bbb56385fb2b4ca516a"
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0014-7-mile-pit-solar-v4/proposal.json",
+          "sha256": "7afd25713a3dcd34611e9bca93123eaa19dbc82632cc27fbd8f28ba678477d6a"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/approvals/0014-7-mile-pit-solar-v3.json",
-          "sha256": "8783531dea798346648ccf079c017535c9a6f77d68238080823d2d54768566eb"
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0014-7-mile-pit-solar-v4.json",
+          "sha256": "ac77d58d9a7bd2c651a76f516489368c1bb91702998a38b6e0608df2e6a62152"
         },
         "applyReceipt": null,
         "decision": null,
@@ -2240,6 +2240,61 @@
           "taskSnapshotSha256": "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d",
           "evidenceSha256": [
             "8783531dea798346648ccf079c017535c9a6f77d68238080823d2d54768566eb"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 16,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-04T02:31:00.000Z",
+          "reason": "Protected transaction rolled back on an exact duplicate company citation key; no database write or receipt was created.",
+          "taskSnapshotSha256": "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 17,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-04T02:31:01.000Z",
+          "reason": "Regenerate the merge after-image with the duplicate citation consolidated and add pre-transaction collision validation.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 18,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T02:32:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
+          "evidenceSha256": [
+            "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
+            "7afd25713a3dcd34611e9bca93123eaa19dbc82632cc27fbd8f28ba678477d6a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 19,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T02:32:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 20,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T02:33:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
+          "evidenceSha256": [
+            "ac77d58d9a7bd2c651a76f516489368c1bb91702998a38b6e0608df2e6a62152"
           ],
           "kind": "TRANSITION"
         }
@@ -20562,5 +20617,5 @@
       ]
     }
   ],
-  "manifestSha256": "6d2452e2d17187cafaafd9715bef56b570dcdfcacd976bc05a3e2aaf6acd6292"
+  "manifestSha256": "a025df8f4b24ef085d5fd93c7b9f016b94874555cd418a896d50d64af2725d56"
 }
