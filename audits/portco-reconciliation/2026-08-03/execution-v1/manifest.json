@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T03:08:04.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-04T03:31:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0016:city-of-san-marcos-public-services-complex:1a0d545e",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -2480,18 +2480,27 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "d43fb240b0bbcaefc1753ec6ad0e5f0fdf78d66c8d381643d8033b08e67d0037",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-04T03:29:01.000Z",
+      "updatedAt": "2026-08-04T03:31:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0016-city-of-san-marcos-public-services-complex/attempt-2/task-snapshot.json",
+          "sha256": "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0016-city-of-san-marcos-public-services-complex-v2/proposal.json",
+          "sha256": "e9f3debc34b21287a6a5b02f06b8e5923baa67fdc021e1454eea9d07eb8c10b7"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0016-city-of-san-marcos-public-services-complex-v2.json",
+          "sha256": "201ac151f67d91a6f5294bc7c5db15502058927369315588ea1419b6a86f4454"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -2507,6 +2516,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-04T03:15:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T03:27:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c836a3672c2d620fd74cda838fb97c16a68eeec40141389749bde42e6362f8f2",
+          "evidenceSha256": [
+            "6b70e6ddd394a056052991d5420d74187ea400a1097ad0b46c719dc6ec14da91",
+            "c836a3672c2d620fd74cda838fb97c16a68eeec40141389749bde42e6362f8f2"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T03:27:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c836a3672c2d620fd74cda838fb97c16a68eeec40141389749bde42e6362f8f2",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T03:28:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c836a3672c2d620fd74cda838fb97c16a68eeec40141389749bde42e6362f8f2",
+          "evidenceSha256": [
+            "e89c9fe50fe151dda90fbec73b306f95cb714a40db0b2f7a52b3777d8d7de3f8"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-04T03:29:00.000Z",
+          "reason": "Pre-release dry run found one milestone evidence URL missing from the company citation set; no release or database write occurred.",
+          "taskSnapshotSha256": "c836a3672c2d620fd74cda838fb97c16a68eeec40141389749bde42e6362f8f2",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-04T03:29:01.000Z",
+          "reason": "Regenerate the proposal with complete citation coverage before release.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T03:30:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
+          "evidenceSha256": [
+            "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
+            "e9f3debc34b21287a6a5b02f06b8e5923baa67fdc021e1454eea9d07eb8c10b7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T03:30:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T03:31:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b097176bece04954d3b6133e9be93f5bac8d35284232739eea26ef281a6cfa24",
+          "evidenceSha256": [
+            "201ac151f67d91a6f5294bc7c5db15502058927369315588ea1419b6a86f4454"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -20751,5 +20860,5 @@
       ]
     }
   ],
-  "manifestSha256": "f85ffd76349c5d9944ead585042ffbb1df4a89780fc5af6d443f1e7ab155ab0e"
+  "manifestSha256": "2b8a2e59039eaeeeb13f44901d2db3990430c4ad0909db75d326baa28b7899bb"
 }
