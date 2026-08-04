@@ -7,13 +7,16 @@ const nextConfig = require("../../next.config.js") as {
   headers: () => Promise<Array<{ source: string; headers: Array<{ key: string; value: string }> }>>;
 };
 
+const getHeadersForSource = async (source: string) => {
+  const entries = await nextConfig.headers();
+  const entry = entries.find((candidate) => candidate.source === source);
+  expect(entry).toBeDefined();
+  return Object.fromEntries(entry!.headers.map(({ key, value }) => [key, value]));
+};
+
 describe("application security headers", () => {
   it("applies the required policy to every route", async () => {
-    const entries = await nextConfig.headers();
-    expect(entries).toHaveLength(1);
-    expect(entries[0].source).toBe("/:path*");
-
-    const headers = Object.fromEntries(entries[0].headers.map(({ key, value }) => [key, value]));
+    const headers = await getHeadersForSource("/:path*");
     expect(headers["Content-Security-Policy"]).toContain("default-src 'self'");
     expect(headers["Content-Security-Policy"]).toContain("object-src 'none'");
     expect(headers["Content-Security-Policy"]).toContain("frame-ancestors 'none'");
@@ -23,12 +26,25 @@ describe("application security headers", () => {
     expect(headers["X-Frame-Options"]).toBe("DENY");
   });
 
+  it("forces data format PowerPoints to download", async () => {
+    for (const source of [
+      "/one-off-requests/data-format.pptx",
+      "/one-off-requests/data-format-standard-icons.pptx",
+    ]) {
+      const headers = await getHeadersForSource(source);
+      expect(headers["Content-Disposition"]).toBe('attachment; filename="data-format.pptx"');
+      expect(headers["Content-Type"]).toBe(
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      );
+    }
+  });
+
   it("does not allow eval in production", () => {
     const serializedHeaders = execFileSync(
       process.execPath,
       [
         "-e",
-        'const c=require("./next.config.js");c.headers().then(e=>process.stdout.write(JSON.stringify(e[0].headers)))',
+        'const c=require("./next.config.js");c.headers().then(e=>process.stdout.write(JSON.stringify(e.find(x=>x.source==="/:path*").headers)))',
       ],
       {
         cwd: process.cwd(),
