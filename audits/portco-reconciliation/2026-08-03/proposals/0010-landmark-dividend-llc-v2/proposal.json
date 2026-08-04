@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0010:landmark-dividend-llc:07695f16",
+  "taskIndex": 10,
+  "asOfDate": "2026-08-03",
+  "generatedAt": "2026-08-04T00:35:30.000Z",
+  "canonicalKey": "landmark-dividend-llc|united-states",
+  "companyName": "Landmark Dividend LLC",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "004-adia-infrastructure:holding:005:landmark-dividend-llc",
+    "036-digitalbridge:holding:010:landmark-dividend"
+  ],
+  "retiredCompanyIds": [],
+  "rationale": "Retain Landmark Dividend LLC as the single canonical active company. The InfraBridge repo-only item is an attribution overlap, not a second company or ownership period. Current company evidence from February 2026 continues to identify Landmark as a DigitalBridge portfolio company and ADIA as a 40% owner. Correct ADIA's vehicle and stake, use the official DigitalBridge-sponsored-vehicles wording, add the official website and Los Angeles headquarters, correct the founding year to 2010 while preserving 2002 as a management-team industry milestone, refresh the concise company description, and add direct evidence to the ownership milestones. The February 2026 Vault disposition was a separate managed joint-venture portfolio exit and does not change Landmark's ownership.",
+  "evidence": [
+    {
+      "url": "https://www.businesswire.com/news/home/20260223213383/en/",
+      "purpose": "Current company ownership, operating status, headquarters, and exit-boundary evidence",
+      "supports": [
+        "DigitalBridge portfolio-company status remained current in February 2026",
+        "ADIA held a 40% interest",
+        "Los Angeles headquarters",
+        "Vault was a separate 2%-owned managed joint venture"
+      ]
+    },
+    {
+      "url": "https://www.digitalbridge.com/news/2024-04-02-adia-completes-acquisition-of-40-stake-in-landmark-dividend-alongside-digitalbridge",
+      "purpose": "Official ADIA closing and DigitalBridge infrastructure ownership basis",
+      "supports": [
+        "40% ADIA acquisition closed April 2, 2024",
+        "DigitalBridge-sponsored vehicles remained alongside ADIA",
+        "Landmark is a DigitalBridge digital-infrastructure portfolio company"
+      ]
+    },
+    {
+      "url": "https://ec.europa.eu/competition/mergers/cases1/202349/M_11312_9754193_84_3.pdf",
+      "purpose": "Government ownership vehicle and joint-control evidence",
+      "supports": [
+        "Platinum Compass B 2018 RSC Limited is controlled by ADIA",
+        "Platinum Compass and DigitalBridge acquired joint control of Landmark"
+      ]
+    },
+    {
+      "url": "https://ir.digitalbridge.com/node/10936/html",
+      "purpose": "Official 2021 DigitalBridge acquisition evidence",
+      "supports": [
+        "Digital Colony completed its acquisition of Landmark on June 2, 2021",
+        "Digital Colony II and DCP II entities formed the acquisition chain"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20250903839127/en/Landmark-Dividend-Appoints-Clay-Gregory-as-Chief-Strategy-Officer",
+      "purpose": "Company-issued founding-year evidence",
+      "supports": [
+        "Landmark Dividend LLC was founded in 2010"
+      ]
+    },
+    {
+      "url": "https://www.landmarkdividend.com/Leadership",
+      "purpose": "Official 2002 business-history clarification",
+      "supports": [
+        "the management team pioneered ground-lease acquisition in 2002"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "1a130736d101634badcd078df109cf456cad9a79d44202740a98e9557edfb861",
+  "currentCompanySnapshotSha256": "50634cb5c2e4588ea0ac1a01f4f3a117952363f031011d5ca4d3d51bb2cfb1c4",
+  "beforeImage": {
+    "id": "cmrxpj4be00g9ivhehvr54gv6",
+    "name": "Landmark Dividend LLC",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Ground leases and digital real estate",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Landmark Dividend acquires, develops, and manages real-estate interests and infrastructure tied to wireless communications, data centers, outdoor advertising, and renewable-power sites. Its customer base includes tower operators, data-center users, enterprise customers, municipalities, faith-based organizations, and other landowners and infrastructure counterparties. The company follows an asset-heavy model focused on long-duration ground leases, digital real estate interests, and related infrastructure ownership structures. Public materials describe a portfolio of more than 5,000 assets and a business model centered on acquiring and managing mission-critical site interests. The platform has been part of DigitalBridge's digital infrastructure ecosystem and remains active across wireless, data-center, and adjacent infrastructure verticals. ADIA completed the acquisition of a 40% stake in Landmark in April 2024 alongside DigitalBridge-sponsored vehicles, with DigitalBridge retaining the balance.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2002,
+    "headquarters": "California; United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpfm01ctivhe3850qxms",
+        "managerName": "Abu Dhabi Investment Authority (ADIA)",
+        "organizationName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjpg401cuivheyireef0i",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": null,
+        "vehicleName": "DigitalBridge / ADIA JV",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkd0t02dsivhep5obea3f",
+        "date": "2002",
+        "event": "Landmark Dividend was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2002-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkd1d02dtivhewtiaxj83",
+        "date": "2010",
+        "event": "Public company materials identify Landmark Dividend as having been co-founded in 2010.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkd1z02duivhetxl4q72c",
+        "date": "Jun 2, 2021",
+        "event": "Digital Colony / DigitalBridge affiliates completed the acquisition of Landmark Dividend.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-02T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkd2i02dvivhef66thphz",
+        "date": "Nov 1, 2023",
+        "event": "DigitalBridge announced the sale of a 40% stake in Landmark Dividend to ADIA.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkd3602dwivhewccszzqq",
+        "date": "Apr 2, 2024",
+        "event": "ADIA completed the acquisition of a 40% stake in Landmark Dividend alongside DigitalBridge-sponsored vehicles.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-04-02T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpokr406vwivheo4g1ym7c",
+        "label": "Landmarkdividend — Landmark Dividend LLC",
+        "url": "https://www.landmarkdividend.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Landmarkdividend company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoks606vyivheqlwjzffg",
+        "label": "Landmarkdividend — Landmark Dividend LLC",
+        "url": "https://www.landmarkdividend.com/what-we-do",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Landmarkdividend — Landmark Dividend LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpokt906w0ivhe5ct6yv3w",
+        "label": "Close date source — DigitalBridge — Landmark Dividend LLC",
+        "url": "https://www.nasdaq.com/press-release/digital-colony-completes-acquisition-of-landmark-dividend-llc-2021-06-02",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpokwx06w2ivhegg2ikdfa",
+        "label": "Announcement date source — ADIA Infrastructure — Landmark Dividend LLC",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/adia-acquires-40-stake-landmark-dividend/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ADIA Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpokxu06w4ivhexyxq4pdq",
+        "label": "Close date source — ADIA Infrastructure — Landmark Dividend LLC",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/adia-completes-acquisition-40-stake-landmark-dividend-alongside/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ADIA Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpokyu06w6ivhe2idseq78",
+        "label": "Investment date source — DigitalBridge — Landmark Dividend LLC",
+        "url": "https://www.digitalbridge.com/portfolio/landmark-dividend",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "50634cb5c2e4588ea0ac1a01f4f3a117952363f031011d5ca4d3d51bb2cfb1c4",
+  "afterImage": {
+    "id": "cmrxpj4be00g9ivhehvr54gv6",
+    "name": "Landmark Dividend LLC",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Ground leases and digital real estate",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Landmark Dividend acquires, develops, and manages real estate and infrastructure tied to data centers, wireless communications, outdoor media, and renewable power. It serves landowners, corporations, municipalities, and institutions through ground-lease acquisitions and digital-infrastructure investment and operations. Official February 2026 materials describe more than 70 data centers under management and more than 160 employees. Landmark became a DigitalBridge portfolio company in June 2021; ADIA acquired a 40% interest in April 2024 alongside DigitalBridge-sponsored vehicles, and both ownership relationships remained identified by the company in February 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.landmarkdividend.com/",
+    "yearFounded": 2010,
+    "headquarters": "Los Angeles, California",
+    "lastVerifiedAt": "2026-08-03T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpfm01ctivhe3850qxms",
+        "managerName": "Abu Dhabi Investment Authority (ADIA)",
+        "organizationName": "Abu Dhabi Investment Authority (ADIA)",
+        "fundName": null,
+        "vehicleName": "Platinum Compass B 2018 RSC Limited",
+        "stake": "40%",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjpg401cuivheyireef0i",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": null,
+        "vehicleName": "DigitalBridge-sponsored vehicles",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkd0t02dsivhep5obea3f",
+        "date": "2002",
+        "event": "Landmark's management team pioneered the ground-lease acquisition business in 2002.",
+        "category": "OTHER",
+        "sortDate": "2002-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.landmarkdividend.com/Leadership"
+        ]
+      },
+      {
+        "id": "cmrxpkd1d02dtivhewtiaxj83",
+        "date": "2010",
+        "event": "Landmark Dividend LLC was founded in 2010.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20250903839127/en/Landmark-Dividend-Appoints-Clay-Gregory-as-Chief-Strategy-Officer"
+        ]
+      },
+      {
+        "id": "cmrxpkd1z02duivhetxl4q72c",
+        "date": "Jun 2, 2021",
+        "event": "Digital Colony / DigitalBridge affiliates completed the acquisition of Landmark Dividend.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ir.digitalbridge.com/node/10936/html",
+          "https://www.digitalbridge.com/portfolio/landmark-dividend"
+        ]
+      },
+      {
+        "id": "cmrxpkd2i02dvivhef66thphz",
+        "date": "Nov 1, 2023",
+        "event": "DigitalBridge announced the sale of a 40% stake in Landmark Dividend to ADIA.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.digitalbridge.com/news/2024-04-02-adia-completes-acquisition-of-40-stake-in-landmark-dividend-alongside-digitalbridge",
+          "https://ec.europa.eu/competition/mergers/cases1/202349/M_11312_9754193_84_3.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkd3602dwivhewccszzqq",
+        "date": "Apr 2, 2024",
+        "event": "ADIA completed the acquisition of a 40% stake in Landmark Dividend alongside DigitalBridge-sponsored vehicles.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-04-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.digitalbridge.com/news/2024-04-02-adia-completes-acquisition-of-40-stake-in-landmark-dividend-alongside-digitalbridge",
+          "https://www.businesswire.com/news/home/20260223213383/en/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpokr406vwivheo4g1ym7c",
+        "label": "Landmarkdividend — Landmark Dividend LLC",
+        "url": "https://www.landmarkdividend.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Landmarkdividend company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoks606vyivheqlwjzffg",
+        "label": "Landmarkdividend — Landmark Dividend LLC",
+        "url": "https://www.landmarkdividend.com/what-we-do",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Landmarkdividend — Landmark Dividend LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpokt906w0ivhe5ct6yv3w",
+        "label": "Close date source — DigitalBridge — Landmark Dividend LLC",
+        "url": "https://www.nasdaq.com/press-release/digital-colony-completes-acquisition-of-landmark-dividend-llc-2021-06-02",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpokwx06w2ivhegg2ikdfa",
+        "label": "Announcement date source — ADIA Infrastructure — Landmark Dividend LLC",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/adia-acquires-40-stake-landmark-dividend/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ADIA Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpokxu06w4ivhexyxq4pdq",
+        "label": "Close date source — ADIA Infrastructure — Landmark Dividend LLC",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/adia-completes-acquisition-40-stake-landmark-dividend-alongside/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ADIA Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpokyu06w6ivhe2idseq78",
+        "label": "Investment date source — DigitalBridge — Landmark Dividend LLC",
+        "url": "https://www.digitalbridge.com/portfolio/landmark-dividend",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Landmark Dividend — 2026 ownership and operating update",
+        "url": "https://www.businesswire.com/news/home/20260223213383/en/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current DigitalBridge portfolio-company status, ADIA 40% interest, Los Angeles headquarters, and Vault exit boundary",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "DigitalBridge — ADIA completes 40% Landmark Dividend acquisition",
+        "url": "https://www.digitalbridge.com/news/2024-04-02-adia-completes-acquisition-of-40-stake-in-landmark-dividend-alongside-digitalbridge",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ADIA 40% closing and DigitalBridge-sponsored-vehicle ownership basis",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "European Commission — Landmark Dividend joint control",
+        "url": "https://ec.europa.eu/competition/mergers/cases1/202349/M_11312_9754193_84_3.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Platinum Compass B 2018 RSC Limited ownership by ADIA and joint control with DigitalBridge",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "DigitalBridge SEC filing — 2021 Landmark Dividend acquisition",
+        "url": "https://ir.digitalbridge.com/node/10936/html",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 2, 2021 Digital Colony acquisition closing and DCP II acquisition chain",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Landmark Dividend — 2010 founding year",
+        "url": "https://www.businesswire.com/news/home/20250903839127/en/Landmark-Dividend-Appoints-Clay-Gregory-as-Chief-Strategy-Officer",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Company-issued release identifying Landmark Dividend LLC as founded in 2010",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Landmark Dividend — leadership and ground-lease history",
+        "url": "https://www.landmarkdividend.com/Leadership",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Management team pioneered the ground-lease acquisition business in 2002",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "fbec38401b87d95f8b104d6b025a9649296766a67e449d674cf0bf0a372b722c",
+  "proposalSha256": "52cf0e09c38385b9628bfb56504a14aced12f3674065f6fe5d491182746b00a5"
+}
