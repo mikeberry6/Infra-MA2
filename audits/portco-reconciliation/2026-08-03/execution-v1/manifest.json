@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T01:13:25.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-04T01:26:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0012:great-western-wind-farm:90b8570b",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -1857,18 +1857,27 @@
       "managerIndex": 5,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e666f853b71e5f5acea87aa6891f9e1979fdd71c11903ca5317526530507d139",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-04T01:21:00.000Z",
+      "updatedAt": "2026-08-04T01:26:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ccbc45536d5d350e9d62d941c20439daa63c696658d32c4790aef1d57f0ce697",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0012-great-western-wind-farm/attempt-1/task-snapshot.json",
+          "sha256": "ccbc45536d5d350e9d62d941c20439daa63c696658d32c4790aef1d57f0ce697"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0012-great-western-wind-farm-v1/proposal.json",
+          "sha256": "019002ed52d6ed4d00bd3eb6e5a377af85a4df3aa6fab2332c7fb6d8de085d83"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0012-great-western-wind-farm-v1.json",
+          "sha256": "400f0644ddcd309cc90407b6ad6e15f95a187a472bedb6ef9f6572447b9560fe"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -1884,6 +1893,51 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-04T01:21:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T01:25:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ccbc45536d5d350e9d62d941c20439daa63c696658d32c4790aef1d57f0ce697",
+          "evidenceSha256": [
+            "019002ed52d6ed4d00bd3eb6e5a377af85a4df3aa6fab2332c7fb6d8de085d83",
+            "ccbc45536d5d350e9d62d941c20439daa63c696658d32c4790aef1d57f0ce697"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T01:25:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ccbc45536d5d350e9d62d941c20439daa63c696658d32c4790aef1d57f0ce697",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T01:26:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ccbc45536d5d350e9d62d941c20439daa63c696658d32c4790aef1d57f0ce697",
+          "evidenceSha256": [
+            "400f0644ddcd309cc90407b6ad6e15f95a187a472bedb6ef9f6572447b9560fe"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -20280,5 +20334,5 @@
       ]
     }
   ],
-  "manifestSha256": "3f42102c33820c49df2c12bc4fb9abe1c13f4914415e27ad707deb098434b32f"
+  "manifestSha256": "6f0eac57aa4a95a0dddea145c274a00e420b94e0753a282b91e587352b109c3e"
 }

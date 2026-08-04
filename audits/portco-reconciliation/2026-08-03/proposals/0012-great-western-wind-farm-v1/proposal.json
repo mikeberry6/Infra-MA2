@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0012:great-western-wind-farm:90b8570b",
+  "taskIndex": 12,
+  "asOfDate": "2026-08-03",
+  "generatedAt": "2026-08-04T01:25:00.000Z",
+  "canonicalKey": "great-western-wind-farm|united-states",
+  "companyName": "Great Western Wind Farm",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "rationale": "Preserve Great Western Wind Farm as a single historical PortCo record, but retire the Allianz Global Investors ownership period and mark the company realized because current direct Allianz ownership is not supported. Allianz's February 2017 release confirms that Allianz Capital Partners and MUFG invested tax equity in the EDF-developed project. The official EIA-860 2025 early-release Schedule 4 owner workbook contains no jointly or third-party-owned row for Great Western; EIA states that generators absent from that file are wholly owned by their reported operator. Current EDF and Oklahoma Corporation Commission pages continue to associate the operating project with EDF. The public record reviewed does not disclose the date when Allianz's tax-equity interest ended, so the retired ownership period retains a null exit year rather than inventing one.",
+  "evidence": [
+    {
+      "url": "https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/migration/media/press/document/ACP_Great_Western-EN.pdf",
+      "purpose": "Historical Allianz tax-equity investment evidence",
+      "supports": [
+        "Allianz Capital Partners and MUFG invested tax equity in Great Western in February 2017",
+        "Allianz described the investment as part of its renewable-energy portfolio at closing"
+      ]
+    },
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860/",
+      "purpose": "Official EIA-860 ownership methodology",
+      "supports": [
+        "the 2025 early-release data includes Schedule 4 generator ownership records",
+        "EIA states that generators absent from the owner file are wholly owned by their operator"
+      ]
+    },
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025ER.zip",
+      "purpose": "Official 2025 early-release generator ownership data",
+      "supports": [
+        "the Schedule 4 owner workbook contains no jointly or third-party-owned row for Great Western Wind Energy, LLC or plant 60574"
+      ]
+    },
+    {
+      "url": "https://www.edf-re.com/project/great-western-wind/",
+      "purpose": "Current project and operating evidence",
+      "supports": [
+        "EDF currently maintains Great Western's project page and community contact",
+        "the 225 MW project became operational in December 2016 and supplies Google under a long-term PPA"
+      ]
+    },
+    {
+      "url": "https://www.oklahoma.gov/occ/divisions/public-utility/energy/renewable-energy/ok-wind-farms-energy-facilities/notice-to-corporation-commission.html",
+      "purpose": "Current state-agency project affiliation evidence",
+      "supports": [
+        "the Oklahoma Corporation Commission lists Great Western Wind Energy, LLC care of EDF Renewable Energy"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "d463f679f2ae9923691ace77405348f06c7b692080f2bb4966e3aeede098b46d",
+  "currentCompanySnapshotSha256": "05f7ce7b9914fb9833a03377ca325aca9b32efdd885bc43248e67f2f90dcb2ba",
+  "beforeImage": {
+    "id": "cmrxpj4iy00gnivhe8bfaeczz",
+    "name": "Great Western Wind Farm",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Contracted onshore wind generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Great Western Wind Farm is a utility-scale wind project in Ellis and Woodward counties, Oklahoma. Its output is sold under a long-term power purchase agreement with Google, giving the asset a contracted revenue profile rather than a merchant exposure profile. Public sources describe the project as a 225 MW facility that began commercial operations in December 2016. EDF Renewables developed the project, and Alliant Energy announced an agreement in 2017 to acquire a 50 percent interest in the wind farm. Allianz Capital Partners and MUFG completed a tax-equity investment in February 2017 to support the operating asset. Current ownership percentages among the project sponsors and tax-equity investors are not publicly disclosed in the sources reviewed for this task.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Oklahoma",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpnq01d9ivheskaqez0a",
+        "managerName": "Allianz Global Investors",
+        "organizationName": "Allianz Global Investors",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkea802ffivheo2q54p5k",
+        "date": "Dec 2016",
+        "event": "Great Western began commercial operations.",
+        "category": "EXPANSION",
+        "sortDate": "2016-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkeas02fgivhey8bko4ws",
+        "date": "Jan 2017",
+        "event": "EDF Renewables publicly announced commercial operation of the 225 MW project.",
+        "category": "EXPANSION",
+        "sortDate": "2017-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkebd02fhivheqxf0z110",
+        "date": "Feb 2017",
+        "event": "Allianz Capital Partners and MUFG completed a tax-equity investment in Great Western.",
+        "category": "FINANCING",
+        "sortDate": "2017-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkebs02fiivhehj6bzfpi",
+        "date": "Jun 2017",
+        "event": "Alliant Energy announced an agreement to acquire a 50% interest in the project from EDF Renewable Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpon1c06z9ivhe15mq99qq",
+        "label": "Edf Re — Great Western Wind Farm",
+        "url": "https://www.edf-re.com/project/great-western-wind/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Edf Re operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpon2e06zbivhelxka6p1v",
+        "label": "Edf Re — Great Western Wind Farm",
+        "url": "https://www.edf-re.com/press-release/edf-renewable-energy-announces-commercial-operation-great-western-wind-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Edf Re operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpon3d06zdivheu30uigf6",
+        "label": "Investors — Great Western Wind Farm",
+        "url": "https://investors.alliantenergy.com/News--Presentations/news/news-details/2017/EDF-Renewable-Energy-Signs-Agreement-to-Sell-50-of-Great-Western-Wind-Project-to-Alliant-Energy/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Investors operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpon4b06zfivhentubwykx",
+        "label": "Investment date source — Allianz Global Investors — Great Western Wind Farm",
+        "url": "https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/migration/media/press/document/ACP_Great_Western-EN.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Allianz Global Investors initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "05f7ce7b9914fb9833a03377ca325aca9b32efdd885bc43248e67f2f90dcb2ba",
+  "afterImage": {
+    "id": "cmrxpj4iy00gnivhe8bfaeczz",
+    "name": "Great Western Wind Farm",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Contracted onshore wind generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Great Western Wind Farm is a 225 MW onshore wind project in Ellis and Woodward counties, Oklahoma, that began commercial operations in December 2016 and sells output to Google under a long-term power purchase agreement. Allianz Capital Partners and MUFG completed a tax-equity investment in February 2017. EDF later announced an agreement for Alliant Energy to acquire a 50% cash-equity interest, subject to regulatory approval and customary conditions. The official EIA-860 2025 early-release ownership schedule does not report Great Western as jointly or third-party owned, and current EDF and Oklahoma state sources continue to associate the operating project with EDF. The public record reviewed does not disclose when Allianz's tax-equity interest ended.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Oklahoma",
+    "lastVerifiedAt": "2026-08-03T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpnq01d9ivheskaqez0a",
+        "managerName": "Allianz Global Investors",
+        "organizationName": "Allianz Global Investors",
+        "fundName": null,
+        "vehicleName": "Tax-equity investment (Allianz Capital Partners)",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkea802ffivheo2q54p5k",
+        "date": "Dec 2016",
+        "event": "Great Western began commercial operations.",
+        "category": "EXPANSION",
+        "sortDate": "2016-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkeas02fgivhey8bko4ws",
+        "date": "Jan 2017",
+        "event": "EDF Renewables publicly announced commercial operation of the 225 MW project.",
+        "category": "EXPANSION",
+        "sortDate": "2017-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkebd02fhivheqxf0z110",
+        "date": "Feb 2017",
+        "event": "Allianz Capital Partners and MUFG completed a tax-equity investment in the EDF-developed Great Western project.",
+        "category": "FINANCING",
+        "sortDate": "2017-02-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/migration/media/press/document/ACP_Great_Western-EN.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkebs02fiivhehj6bzfpi",
+        "date": "Jun 2017",
+        "event": "EDF announced an agreement for Alliant Energy to acquire a 50% cash-equity interest, subject to regulatory approval and customary conditions.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://investors.alliantenergy.com/News--Presentations/news/news-details/2017/EDF-Renewable-Energy-Signs-Agreement-to-Sell-50-of-Great-Western-Wind-Project-to-Alliant-Energy/default.aspx"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpon1c06z9ivhe15mq99qq",
+        "label": "Edf Re — Great Western Wind Farm",
+        "url": "https://www.edf-re.com/project/great-western-wind/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Edf Re operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpon2e06zbivhelxka6p1v",
+        "label": "Edf Re — Great Western Wind Farm",
+        "url": "https://www.edf-re.com/press-release/edf-renewable-energy-announces-commercial-operation-great-western-wind-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Edf Re operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpon3d06zdivheu30uigf6",
+        "label": "Investors — Great Western Wind Farm",
+        "url": "https://investors.alliantenergy.com/News--Presentations/news/news-details/2017/EDF-Renewable-Energy-Signs-Agreement-to-Sell-50-of-Great-Western-Wind-Project-to-Alliant-Energy/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Investors operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpon4b06zfivhentubwykx",
+        "label": "Investment date source — Allianz Global Investors — Great Western Wind Farm",
+        "url": "https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/migration/media/press/document/ACP_Great_Western-EN.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Allianz Global Investors initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "U.S. EIA — Form EIA-860 2025 early-release ownership data",
+        "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025ER.zip",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Schedule 4 has no joint or third-party owner row for Great Western",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "U.S. EIA — Form EIA-860 ownership methodology",
+        "url": "https://www.eia.gov/electricity/data/eia860/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Owner-file scope and wholly-owned-by-operator convention",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Oklahoma Corporation Commission — Great Western project listing",
+        "url": "https://www.oklahoma.gov/occ/divisions/public-utility/energy/renewable-energy/ok-wind-farms-energy-facilities/notice-to-corporation-commission.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current state-agency listing care of EDF Renewable Energy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "5b711c0348a55a5ea0903ecacf529529f1056c38bca6609f83db4dc4a4b75074",
+  "proposalSha256": "019002ed52d6ed4d00bd3eb6e5a377af85a4df3aa6fab2332c7fb6d8de085d83"
+}
