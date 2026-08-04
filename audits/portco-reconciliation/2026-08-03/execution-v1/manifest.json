@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T03:03:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0015:biddeford-lincoln-garage-and-riverwalk:28618b9a",
+  "updatedAt": "2026-08-04T03:08:04.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -2349,11 +2349,11 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "7c0ef921558deff1322e5b9c938119211beca6a93f8e34565e58e5f32daec01b",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-04T02:58:00.000Z",
-      "updatedAt": "2026-08-04T03:03:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-04T03:08:04.000Z",
+      "completedAt": "2026-08-04T03:08:04.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "9b2d165056cefd2caca4ca601464146f682cea5f70d577ef40529133649d2b11",
@@ -2370,7 +2370,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0015-biddeford-lincoln-garage-and-riverwalk-v1.json",
           "sha256": "80d24bbfea5318a62ca595dbc831c7edc9d73e3e9e743a6e1b23386c1289a718"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0015-biddeford-lincoln-garage-and-riverwalk/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "8b2151e89135965a39e1dbccdb68c08b5c67c213092034e8bec4747e202ac5d6"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -2429,6 +2432,42 @@
           "evidenceSha256": [
             "80d24bbfea5318a62ca595dbc831c7edc9d73e3e9e743a6e1b23386c1289a718"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-04T03:08:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9b2d165056cefd2caca4ca601464146f682cea5f70d577ef40529133649d2b11",
+          "evidenceSha256": [
+            "80d24bbfea5318a62ca595dbc831c7edc9d73e3e9e743a6e1b23386c1289a718",
+            "94fac0515942fdf3dd20f77aade9e85608559da3de559c161dcc2b31b9d322b7",
+            "9b2d165056cefd2caca4ca601464146f682cea5f70d577ef40529133649d2b11"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-04T03:08:03.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9b2d165056cefd2caca4ca601464146f682cea5f70d577ef40529133649d2b11",
+          "evidenceSha256": [
+            "8b2151e89135965a39e1dbccdb68c08b5c67c213092034e8bec4747e202ac5d6"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-04T03:08:04.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9b2d165056cefd2caca4ca601464146f682cea5f70d577ef40529133649d2b11",
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -20712,5 +20751,5 @@
       ]
     }
   ],
-  "manifestSha256": "5d46ecdae9b6bda7150b024581f2b3184d9ccc7ebee96980859943d2de89943d"
+  "manifestSha256": "f85ffd76349c5d9944ead585042ffbb1df4a89780fc5af6d443f1e7ab155ab0e"
 }
