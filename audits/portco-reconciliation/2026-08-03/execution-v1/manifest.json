@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T03:46:00.000Z",
+  "updatedAt": "2026-08-04T03:51:00.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0017:durham-region-courthouse:e542e83c",
   "source": {
@@ -2667,25 +2667,25 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4eb01ef24f12e8d295bc0682d674969d2d66685c7c69cd982f7452919911add1",
       "status": "RELEASING",
-      "attempts": 2,
-      "startedAt": "2026-08-04T03:44:01.000Z",
-      "updatedAt": "2026-08-04T03:46:00.000Z",
+      "attempts": 3,
+      "startedAt": "2026-08-04T03:49:01.000Z",
+      "updatedAt": "2026-08-04T03:51:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac",
+      "taskSnapshotSha256": "1abe41352e565a874d12cfa60333b1081c2d9f9943d6fb3cdcc899513adbfe6d",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0017-durham-region-courthouse/attempt-2/task-snapshot.json",
-          "sha256": "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0017-durham-region-courthouse/attempt-3/task-snapshot.json",
+          "sha256": "1abe41352e565a874d12cfa60333b1081c2d9f9943d6fb3cdcc899513adbfe6d"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/proposals/0017-durham-region-courthouse-v2/proposal.json",
-          "sha256": "ef07fd1a40b337f2149bfb9cf7acc31ccc48fe570d5a23e144a56bca9c7d1f49"
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0017-durham-region-courthouse-v3/proposal.json",
+          "sha256": "d0b4c3535dfc5e2c72834b8b9d876961d1d0eeb71bb3efbc65b3b31ab14071eb"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/approvals/0017-durham-region-courthouse-v2.json",
-          "sha256": "d3b6dfc9640cdff02150294692edb5bdbdff4a0b67584801abb76430e577e5de"
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0017-durham-region-courthouse-v3.json",
+          "sha256": "50230a8629c2b278afd67311f64a70305043a5a6bd7316c489393a0daab0cddd"
         },
         "applyReceipt": null,
         "decision": null,
@@ -2800,6 +2800,61 @@
           "taskSnapshotSha256": "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac",
           "evidenceSha256": [
             "d3b6dfc9640cdff02150294692edb5bdbdff4a0b67584801abb76430e577e5de"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-04T03:49:00.000Z",
+          "reason": "Protected workflow 30875763350 rolled back after semantic verification detected that the fund-linked manager name must remain Amber Infrastructure Group; production company snapshot remained unchanged.",
+          "taskSnapshotSha256": "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-04T03:49:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T03:50:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1abe41352e565a874d12cfa60333b1081c2d9f9943d6fb3cdcc899513adbfe6d",
+          "evidenceSha256": [
+            "1abe41352e565a874d12cfa60333b1081c2d9f9943d6fb3cdcc899513adbfe6d",
+            "d0b4c3535dfc5e2c72834b8b9d876961d1d0eeb71bb3efbc65b3b31ab14071eb"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T03:50:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1abe41352e565a874d12cfa60333b1081c2d9f9943d6fb3cdcc899513adbfe6d",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T03:51:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1abe41352e565a874d12cfa60333b1081c2d9f9943d6fb3cdcc899513adbfe6d",
+          "evidenceSha256": [
+            "50230a8629c2b278afd67311f64a70305043a5a6bd7316c489393a0daab0cddd"
           ],
           "kind": "TRANSITION"
         }
@@ -21008,5 +21063,5 @@
       ]
     }
   ],
-  "manifestSha256": "591db90199c003c0e96b2f275b7cc67802d2b6dc03c697f1fbfbd47ad1c06a42"
+  "manifestSha256": "47da2cae78492a9c8d0418fc19a2439a6d406cac72972e602f468075eeead794"
 }

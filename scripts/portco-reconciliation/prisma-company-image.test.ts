@@ -5,6 +5,7 @@ import {
   type RawPrismaCompanyImageRow,
 } from "./prisma-company-image";
 import {
+  assertOwnershipManagerCompatible,
   assertRelationEvidencePolicy,
   assertSharedSourceCompatible,
 } from "./prisma-apply-store";
@@ -138,5 +139,18 @@ describe("exact Prisma company image adapter", () => {
       desiredType: "PRESS_RELEASE",
       existing: { label: "Official source", type: "PRESS_RELEASE" },
     })).toThrow("requires separate source review");
+  });
+
+  it("rejects an ownership manager name that cannot round-trip through its linked fund", () => {
+    expect(() => assertOwnershipManagerCompatible({
+      approvedManagerName: "Amber Infrastructure Group",
+      organizationName: "Amber Infrastructure",
+      fundManagerName: "Amber Infrastructure Group",
+    })).not.toThrow();
+    expect(() => assertOwnershipManagerCompatible({
+      approvedManagerName: "Amber Infrastructure",
+      organizationName: "Amber Infrastructure",
+      fundManagerName: "Amber Infrastructure Group",
+    })).toThrow("cannot round-trip");
   });
 });
