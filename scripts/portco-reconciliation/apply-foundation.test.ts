@@ -231,6 +231,18 @@ describe("approved PortCo apply planner", () => {
     expect(semanticCompanyImageSha256(observed)).toBe(semanticCompanyImageSha256(approved));
   });
 
+  it("treats relation evidence URLs as order-independent after database round-trip", () => {
+    const approved = companyImageFixture();
+    approved.milestones[0].evidenceUrls = [
+      "https://example.com/second",
+      "https://example.com/first",
+    ];
+    const observed = structuredClone(approved);
+    observed.milestones[0].evidenceUrls.reverse();
+
+    expect(semanticCompanyImageSha256(observed)).toBe(semanticCompanyImageSha256(approved));
+  });
+
   it("plans a create only when the fresh database still has no name/country match", () => {
     const snapshot = productionSnapshotFixture();
     const after = structuredClone(companyImageFixture());
