@@ -25,6 +25,17 @@ const securityHeaders = [
   { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
 ];
 
+const dataFormatDownloadHeaders = [
+  {
+    key: "Content-Disposition",
+    value: 'attachment; filename="data-format.pptx"',
+  },
+  {
+    key: "Content-Type",
+    value: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  },
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath,
@@ -41,7 +52,17 @@ const nextConfig = {
   // tree and warns when there are multiple lockfiles (e.g. in worktrees).
   outputFileTracingRoot: path.join(__dirname),
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      {
+        source: "/one-off-requests/data-format.pptx",
+        headers: dataFormatDownloadHeaders,
+      },
+      {
+        source: "/one-off-requests/data-format-standard-icons.pptx",
+        headers: dataFormatDownloadHeaders,
+      },
+      { source: "/:path*", headers: securityHeaders },
+    ];
   },
   async redirects() {
     return [
