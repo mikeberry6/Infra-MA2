@@ -158,6 +158,23 @@ function assertEvidenceCoverage(image: CompanyImage): void {
   }
 }
 
+function assertUniqueCitationKeys(image: CompanyImage): void {
+  const seen = new Set<string>();
+  for (const citation of image.citations) {
+    const key = canonical([
+      citation.url,
+      citation.purpose,
+      citation.evidenceLabel,
+    ]);
+    if (seen.has(key)) {
+      throw new Error(
+        `Approved after-image repeats a database citation key: ${citation.url} (${citation.purpose})`,
+      );
+    }
+    seen.add(key);
+  }
+}
+
 function byRequiredId<T extends { id: string | null }>(
   rows: readonly T[],
   label: string,
@@ -476,6 +493,7 @@ export function planApprovedApply(input: {
   assertExactlyOnePrimary(proposal.afterImage);
   assertEvidenceCoverage(proposal.afterImage);
   assertSupportedSourceTypes(proposal.afterImage);
+  assertUniqueCitationKeys(proposal.afterImage);
 
   const originalById = new Map(snapshot.companies.flatMap((company) => company.id
     ? [[company.id, company] as const]
