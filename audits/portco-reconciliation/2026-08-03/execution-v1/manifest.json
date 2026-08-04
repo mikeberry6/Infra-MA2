@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T02:33:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0014:7-mile-pit-solar:19f90ec2",
+  "updatedAt": "2026-08-04T02:40:06.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -2051,11 +2051,11 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "02230f11a4a6281615c8e7800644ce044d11582676dabdf3f757ba9fedba48e5",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 4,
       "startedAt": "2026-08-04T02:31:01.000Z",
-      "updatedAt": "2026-08-04T02:33:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-04T02:40:06.000Z",
+      "completedAt": "2026-08-04T02:40:06.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
@@ -2072,7 +2072,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0014-7-mile-pit-solar-v4.json",
           "sha256": "ac77d58d9a7bd2c651a76f516489368c1bb91702998a38b6e0608df2e6a62152"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0014-7-mile-pit-solar/attempt-4/production-apply/apply-receipt.json",
+          "sha256": "a623b0931cf8b0f3ee9162034673dfc4dda10760ec83a9e4554f24e466c130bc"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -2296,6 +2299,44 @@
           "evidenceSha256": [
             "ac77d58d9a7bd2c651a76f516489368c1bb91702998a38b6e0608df2e6a62152"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 21,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-04T02:40:00.000Z",
+          "reason": "Protected workflow passed all pre-write checks and committed the approved transaction.",
+          "taskSnapshotSha256": "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
+          "evidenceSha256": [
+            "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
+            "7afd25713a3dcd34611e9bca93123eaa19dbc82632cc27fbd8f28ba678477d6a",
+            "ac77d58d9a7bd2c651a76f516489368c1bb91702998a38b6e0608df2e6a62152"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 22,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-04T02:40:05.000Z",
+          "reason": "Recovered the immutable receipt from the durable revision and audit event without reapplying the database write.",
+          "taskSnapshotSha256": "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
+          "evidenceSha256": [
+            "7afd25713a3dcd34611e9bca93123eaa19dbc82632cc27fbd8f28ba678477d6a",
+            "a623b0931cf8b0f3ee9162034673dfc4dda10760ec83a9e4554f24e466c130bc",
+            "ac77d58d9a7bd2c651a76f516489368c1bb91702998a38b6e0608df2e6a62152"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 23,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-04T02:40:06.000Z",
+          "reason": "Database, seed overlay, redirect, detail API, and public scorecard projection verified.",
+          "taskSnapshotSha256": "5786cc11fa423c8bb86f1e03fb82eb7ff9835a1398cc715527d132785b569cd0",
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -20617,5 +20658,5 @@
       ]
     }
   ],
-  "manifestSha256": "a025df8f4b24ef085d5fd93c7b9f016b94874555cd418a896d50d64af2725d56"
+  "manifestSha256": "e7b022edcca36ee10f5d000fd04bbaea9889ef4db5441a0f22de6500e9493fcb"
 }

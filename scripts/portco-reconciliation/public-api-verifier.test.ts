@@ -62,6 +62,34 @@ describe("public PortCo detail API verifier", () => {
     })).toThrow(/render-critical/i);
   });
 
+  it("verifies the same milestone projection that the public scorecard serves", () => {
+    const image = companyImageFixture();
+    image.milestones = [
+      {
+        id: "milestone-short",
+        date: "May 27, 2021",
+        event: "Amber Infrastructure and Circle Power launched Circle Power Renewables.",
+        category: "FINANCING",
+        evidenceUrls: [],
+      },
+      {
+        id: "milestone-long",
+        date: "May 27, 2021",
+        event: "Amber Infrastructure and Circle Power launched Circle Power Renewables as a U.S. renewable development platform covering Michigan projects.",
+        category: "FINANCING",
+        evidenceUrls: [],
+      },
+    ];
+    const expected = expectedPublicProjection({
+      companyId: "company_acme",
+      afterImage: image,
+      retiredCompanyIds: [],
+    });
+
+    expect(expected.milestones).toHaveLength(1);
+    expect(expected.milestones[0]).toContain("launched Circle Power Renewables");
+  });
+
   it("treats a 404 as the required public result for an archived company", async () => {
     const image = companyImageFixture();
     image.recordStatus = "ARCHIVED";
