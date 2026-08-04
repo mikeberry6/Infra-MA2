@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0013:i-66-express-mobility-partners-transform-66-outside-the-beltway:b1f54fa4",
+  "taskIndex": 13,
+  "companyName": "I-66 Express Mobility Partners (Transform 66 Outside the Beltway)",
+  "generatedAt": "2026-08-04T01:49:01.139Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0013-i-66-express-mobility-partners/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 13,
+    "taskId": "ledger:0013:i-66-express-mobility-partners-transform-66-outside-the-beltway:b1f54fa4",
+    "canonicalKey": "i-66-express-mobility-partners-transform-66-outside-the-beltway|united-states",
+    "companyName": "I-66 Express Mobility Partners (Transform 66 Outside the Beltway)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 5,
+    "managers": [
+      "Allianz Global Investors"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "005-allianz-global-investors:holding:002:i-66-express-mobility-partners-transform-66-outside-the-beltway"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://legacy.insurance.ohio.gov/FRAnnuals/2017/Q2/21857Q22017.pdf"
+    ],
+    "candidateCanonicalKeys": [
+      "i-66-express-mobility-partners-llc|united-states"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: i-66-express-mobility-partners-llc|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: i-66-express-mobility-partners-llc|united-states; no automatic merge was made."
+    ]
+  },
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0013:i-66-express-mobility-partners-transform-66-outside-the-beltway:b1f54fa4",
+    "taskIndex": 13,
+    "canonicalKey": "i-66-express-mobility-partners-transform-66-outside-the-beltway|united-states",
+    "capturedAt": "2026-08-04T01:49:01.139Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "741d5da6d0298922d8a27393a900e956aacdbdfd86d798233799a07e6e039d5a",
+    "productionSnapshotSha256": "0156367145c9b0d9f1c310c91acdf6246eb5fa6268be5dc36d12cf4493ed655b",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "2079153d8cb948a7ce0dd242fa47cae6fdfb156da8beffe903ff3e50429ad922",
+    "taskSnapshotSha256": "396f40ee0bbbe290668d4d12a98f2278b4a37f716d7b2af0883b6a9cefcfdb10"
+  },
+  "contextSha256": "23cdf7814a7cc79aaf10dd6d9e3e17752b2c569954217951494217315e54202a"
+}

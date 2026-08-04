@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T01:42:16.000Z",
+  "updatedAt": "2026-08-04T01:51:45.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -1984,20 +1984,26 @@
       "managerIndex": 5,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "741d5da6d0298922d8a27393a900e956aacdbdfd86d798233799a07e6e039d5a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-08-04T01:48:40.000Z",
+      "updatedAt": "2026-08-04T01:51:45.000Z",
+      "completedAt": "2026-08-04T01:51:45.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "396f40ee0bbbe290668d4d12a98f2278b4a37f716d7b2af0883b6a9cefcfdb10",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0013-i-66-express-mobility-partners/attempt-1/task-snapshot.json",
+          "sha256": "396f40ee0bbbe290668d4d12a98f2278b4a37f716d7b2af0883b6a9cefcfdb10"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0013-i-66-express-mobility-partners/research-decision.json",
+          "sha256": "485e68d2b0b51cfc247906bddaf4f80ce9b6f3a5e73eb97ae0bfd752ad47c50d"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -2011,6 +2017,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-04T01:48:40.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "EXCLUDED",
+          "at": "2026-08-04T01:51:45.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "396f40ee0bbbe290668d4d12a98f2278b4a37f716d7b2af0883b6a9cefcfdb10",
+          "evidenceSha256": [
+            "396f40ee0bbbe290668d4d12a98f2278b4a37f716d7b2af0883b6a9cefcfdb10",
+            "485e68d2b0b51cfc247906bddaf4f80ce9b6f3a5e73eb97ae0bfd752ad47c50d"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -20369,5 +20398,5 @@
       ]
     }
   ],
-  "manifestSha256": "e2e4dbd0d49b778de3866207933c91346c41eea70a746c061c69ac54496be488"
+  "manifestSha256": "93bb54ad983f8453d0139a8f082be109ba3bc6484e5f7d21e04f3a7c51576e6b"
 }
