@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-08-03T23:54:00.000Z",
+  "decision": "CORRECT_COMPANY",
+  "rationale": "Keep Alpha Generation, LLC as the canonical legal identity for AlphaGen and as an active U.S. infrastructure portfolio company. The official company site expressly defines Alpha Generation, LLC and AlphaGen as the same business, while the existing canonical redirect already preserves the former 'Alpha Generation (AlphaGen)' seed identity. Correct the corporate headquarters to Houston, add the official website, and replace the undisclosed ADIA stake with the 16.8% indirect interest disclosed by the New York Public Service Commission. Preserve ArcLight Energy Partners Fund VII and ADIA as active owners. CPP Investments' October 2025 transaction remains signed-pending rather than active because the official announcement and January 2026 regulatory ruling establish a proposed minority transfer, but no public closing confirmation was found by August 3, 2026; the separate AlphaGen duplicate task will reconcile that pending transaction and duplicate record.",
+  "evidence": [
+    {
+      "url": "https://www.alphagen.com/terms-of-use/",
+      "purpose": "Official legal identity and corporate headquarters",
+      "supports": [
+        "Alpha Generation, LLC is the legal company name",
+        "AlphaGen is the company's operating name",
+        "corporate address is in Houston, Texas"
+      ]
+    },
+    {
+      "url": "https://www.alphagen.com/about-us/",
+      "purpose": "Official operating profile and current ArcLight infrastructure ownership basis",
+      "supports": [
+        "AlphaGen manages and operates U.S. power generation infrastructure",
+        "the assets are owned by funds managed by ArcLight Capital Partners",
+        "the platform operates approximately 14 GW across four U.S. RTO markets"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BA01BFB9B-0000-C91F-B9E1-724E88CA2CEF%7D&DocTitle=Declaratory+Ruling+on+Transfer",
+      "purpose": "Government ownership evidence for ArcLight Fund VII, ADIA, and the proposed CPP transfer",
+      "supports": [
+        "ArcLight Energy Partners Fund VII controls Alpha Generation through Alpha Generation Super Topco",
+        "ADIA indirectly owns Black Volt B 2024 LLC",
+        "Black Volt owns a 16.8% interest in Alpha Generation Super Holdings",
+        "CPP Investments' minority acquisition was still described as a proposed transfer in January 2026"
+      ]
+    },
+    {
+      "url": "https://www.cppinvestments.com/newsroom/arclight-announces-us1-0-billion-investment-by-cpp-investments-in-alphagen/",
+      "purpose": "Official signed incoming transaction and closing-status check",
+      "supports": [
+        "CPP Investments signed a definitive agreement for a strategic minority position",
+        "the investment was subject to regulatory approvals",
+        "the announced expected close was the first half of 2026"
+      ]
+    },
+    {
+      "url": "https://arclight.com/portfolio-services/",
+      "purpose": "Current ArcLight infrastructure-strategy and exit check",
+      "supports": [
+        "AlphaGen remains presented within ArcLight's power infrastructure portfolio services",
+        "ArcLight Fund VII formed the platform",
+        "no realization date is shown"
+      ]
+    }
+  ],
+  "acquisitionExitCheck": {
+    "searchedAt": "2026-08-03T23:54:00.000Z",
+    "result": "Official company, ArcLight, CPP Investments, and New York regulatory sources were reopened. ArcLight Fund VII and ADIA remain evidenced as current owners. CPP Investments' signed minority investment received New York regulatory clearance, but no official completion announcement or other public closing confirmation was found. No sale or exit by ArcLight or ADIA was found.",
+    "ownershipEffect": "Preserve ArcLight Fund VII and ADIA as CLOSED_ACTIVE, disclose ADIA's 16.8% indirect interest, and do not convert CPP Investments to active ownership before separate pending-transaction reconciliation."
+  },
+  "unresolvedQuestions": []
+}
