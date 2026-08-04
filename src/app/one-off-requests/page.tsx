@@ -205,7 +205,7 @@ export default function OneOffRequestsPage() {
           <a
             key={item.href}
             href={withBasePath(item.href)}
-            download={item.download ? "" : undefined}
+            download={item.download ? item.href.split("/").pop() : undefined}
             className="block surface px-4 py-3 transition-colors hover:bg-[var(--bg-subtle)] group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
           >
             <div className="mb-2 flex flex-wrap items-center gap-2">
