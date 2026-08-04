@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T00:20:35.447Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-04T00:36:10.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0010:landmark-dividend-llc:07695f16",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -1487,18 +1487,27 @@
       "managerIndex": 4,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "7cc4bf0043f2b1ac7d012c6f1e139c5db7f4e8b4b7ef1c3672c3f753efcb135b",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-04T00:34:41.000Z",
+      "updatedAt": "2026-08-04T00:36:10.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0010-landmark-dividend-llc/attempt-2/task-snapshot.json",
+          "sha256": "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0010-landmark-dividend-llc-v2/proposal.json",
+          "sha256": "52cf0e09c38385b9628bfb56504a14aced12f3674065f6fe5d491182746b00a5"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0010-landmark-dividend-llc-v2.json",
+          "sha256": "9c5fecb378493a41ed7290de3c9d74694e9dcbdbad9678e035e64e2a4aa58685"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -1514,6 +1523,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-04T00:28:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T00:33:15.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ba4f8954b676265191c0846b3af0621b42af0e7109078f17f4de9186eb3eb477",
+          "evidenceSha256": [
+            "2c6ae2a95b2d72a798cb2b2b2a8ee0a25221a4be1e2b5b140d790d28934f9de6",
+            "ba4f8954b676265191c0846b3af0621b42af0e7109078f17f4de9186eb3eb477"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T00:33:20.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ba4f8954b676265191c0846b3af0621b42af0e7109078f17f4de9186eb3eb477",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T00:34:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ba4f8954b676265191c0846b3af0621b42af0e7109078f17f4de9186eb3eb477",
+          "evidenceSha256": [
+            "d2979aebe181b1b4fb6293b0156d643e3aba2a7ee2b45fbffc595fda0deb570f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-04T00:34:40.000Z",
+          "reason": "Dry-run review found the 2002 management-team history milestone still categorized as a company founding and the current ownership source used a mutable press index URL; no seed or database write occurred.",
+          "taskSnapshotSha256": "ba4f8954b676265191c0846b3af0621b42af0e7109078f17f4de9186eb3eb477",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-04T00:34:41.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T00:35:45.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666",
+          "evidenceSha256": [
+            "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666",
+            "52cf0e09c38385b9628bfb56504a14aced12f3674065f6fe5d491182746b00a5"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T00:35:50.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T00:36:10.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666",
+          "evidenceSha256": [
+            "9c5fecb378493a41ed7290de3c9d74694e9dcbdbad9678e035e64e2a4aa58685"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -19986,5 +20095,5 @@
       ]
     }
   ],
-  "manifestSha256": "fc61b08fe71e2cf190cbec5ad3befe5a31a41bb775485a6bb35119fc4f009b13"
+  "manifestSha256": "3ef3a4b3d304974e8814d90bd79bb5077e0d5dc9c6c0fb8daba0264e5d3be6ef"
 }
