@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-08-04T00:58:30.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "rationale": "Preserve Colbeck's Corner Wind Farm as a single historical PortCo record, but retire the Allianz Global Investors ownership period and mark the company realized because current direct Allianz ownership is not supported. E.ON's May 2016 release confirms that Allianz Capital Partners and State Street provided tax-equity financing in exchange for partial interests. RWE's official Factbook 2021 reports a 100% RWE legal and consolidation stake as of December 31, 2020; an April 2023 Public Utility Commission of Texas filing lists Colbeck's Corner Holdco, RWE Investco Mgmt II, and RWE Clean Energy as 100% corporate parents; and RWE continues to list Colbeck's Corner in its current U.S. onshore wind portfolio. The public record reviewed does not disclose the date when Allianz's tax-equity interest ended, so the retired ownership period retains a null exit year rather than inventing one.",
+  "evidence": [
+    {
+      "url": "https://www.prnewswire.com/news-releases/eon-climate--renewables-allianz-capital-partners-and-state-street-corporation-close-colbecks-corner-llc-tax-equity-financing-300274548.html",
+      "purpose": "Historical Allianz tax-equity investment evidence",
+      "supports": [
+        "Allianz Capital Partners and State Street closed tax-equity financing on May 25, 2016",
+        "the financing was provided in exchange for partial interests in Colbeck's Corner",
+        "Colbeck's Corner is a 200.48 MW wind farm in Carson and Gray counties, Texas"
+      ]
+    },
+    {
+      "url": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/veroeffentlichungen-und-praesentationen/RWE-factbook-2021.pdf",
+      "purpose": "RWE legal and consolidation stake evidence",
+      "supports": [
+        "RWE reported a 100% legal stake in Colbeck's Corner as of December 31, 2020",
+        "RWE reported a 100% consolidation stake and 200 MW pro rata capacity"
+      ]
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/54875_1_1288526.PDF",
+      "purpose": "Texas regulatory corporate-parent evidence",
+      "supports": [
+        "the April 17, 2023 filing identifies Colbeck's Corner, LLC as the registering power generation company",
+        "Colbeck's Corner Holdco, RWE Investco Mgmt II, and RWE Clean Energy are listed as 100% corporate parents"
+      ]
+    },
+    {
+      "url": "https://americas.rwe.com/our-energy/onshore-wind/onshore-wind-projects-and-locations/",
+      "purpose": "Current RWE portfolio and operating evidence",
+      "supports": [
+        "RWE currently lists Colbeck's Corner in its U.S. onshore wind portfolio",
+        "the 200 MW project became fully operational in April 2016 and uses 112 GE turbines"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "description": "Colbeck's Corner is a 200 MW onshore wind farm east of Amarillo, Texas, with 112 GE turbines and commercial operations dating to April 2016. E.ON secured tax-equity financing from Allianz Capital Partners and State Street in May 2016 in exchange for partial interests in the project. RWE now lists Colbeck's Corner in its U.S. onshore wind portfolio; RWE reported a 100% legal and consolidation stake as of December 31, 2020, and an April 2023 Texas regulatory filing identifies an RWE-controlled corporate parent chain. The public record reviewed does not disclose the disposition date for Allianz's 2016 tax-equity interest.",
+    "companyStatus": "REALIZED",
+    "lastVerifiedAt": "2026-08-03T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjpmq01d7ivhew3mrzf24",
+      "set": {
+        "vehicleName": "Tax-equity investment (Allianz Capital Partners)",
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpke5i02f8ivhevkkays4s",
+      "set": {
+        "event": "E.ON, Allianz Capital Partners, and State Street closed tax-equity financing in exchange for partial interests in Colbeck's Corner.",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/eon-climate--renewables-allianz-capital-partners-and-state-street-corporation-close-colbecks-corner-llc-tax-equity-financing-300274548.html"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpomsj06yxivheqo0hn1la",
+      "set": {
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "RWE — Colbeck's Corner current onshore wind portfolio",
+      "url": "https://americas.rwe.com/our-energy/onshore-wind/onshore-wind-projects-and-locations/",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current RWE portfolio listing, operating date, capacity, and turbine count",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "RWE Factbook 2021 — Colbeck's Corner ownership",
+      "url": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/veroeffentlichungen-und-praesentationen/RWE-factbook-2021.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "100% RWE legal and consolidation stake as of December 31, 2020",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Public Utility Commission of Texas — Colbeck's Corner parent ownership",
+      "url": "https://interchange.puc.texas.gov/Documents/54875_1_1288526.PDF",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "April 2023 RWE-controlled corporate parent chain",
+      "isPrimary": false
+    }
+  ]
+}

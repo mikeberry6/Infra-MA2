@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T00:45:25.302Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-04T01:04:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0011:colbeck-s-corner-wind-farm:3c97926f",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -1671,18 +1671,27 @@
       "managerIndex": 5,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "c858d19bc138115244b6f1a064c7da6c948a8940a43b468437a1168b915eceb4",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-04T01:02:01.000Z",
+      "updatedAt": "2026-08-04T01:04:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2b12354e55fa72b1017fae15f575df75f9987adceed5c5c84086e35f60a448dd",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0011-colbeck-s-corner-wind-farm/attempt-2/task-snapshot.json",
+          "sha256": "2b12354e55fa72b1017fae15f575df75f9987adceed5c5c84086e35f60a448dd"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0011-colbeck-s-corner-wind-farm-v2/proposal.json",
+          "sha256": "9f2c6d895ca685fa314e6a2161de137045b94ce89540e31e62a4c5ed069b632d"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0011-colbeck-s-corner-wind-farm-v2.json",
+          "sha256": "6784a0b84fa639aa4e200a57ede758bde2927240da10dc3db6aaa74b14da4ce5"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -1698,6 +1707,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-04T00:53:27.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T01:00:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "e803e103aa1a32c09fec3965f010f0d221aa14210ac4fc5548d2f8de8f0521bc",
+          "evidenceSha256": [
+            "135c763599179c2702d3f8086e59feadc6c302d2396645e6f5edc535c53d6437",
+            "e803e103aa1a32c09fec3965f010f0d221aa14210ac4fc5548d2f8de8f0521bc"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T01:00:05.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "e803e103aa1a32c09fec3965f010f0d221aa14210ac4fc5548d2f8de8f0521bc",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T01:01:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "e803e103aa1a32c09fec3965f010f0d221aa14210ac4fc5548d2f8de8f0521bc",
+          "evidenceSha256": [
+            "67b5c7fb2b0127a63dc5ca5c2379221980b4dce2387d0916cea8e2a82ad16945"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-04T01:02:00.000Z",
+          "reason": "Dry-run validation found the current RWE portfolio URL already uses the shared Source label 'Americas — Stella Wind Farm'; no seed or database write occurred.",
+          "taskSnapshotSha256": "e803e103aa1a32c09fec3965f010f0d221aa14210ac4fc5548d2f8de8f0521bc",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-04T01:02:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T01:03:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "2b12354e55fa72b1017fae15f575df75f9987adceed5c5c84086e35f60a448dd",
+          "evidenceSha256": [
+            "2b12354e55fa72b1017fae15f575df75f9987adceed5c5c84086e35f60a448dd",
+            "9f2c6d895ca685fa314e6a2161de137045b94ce89540e31e62a4c5ed069b632d"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T01:03:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "2b12354e55fa72b1017fae15f575df75f9987adceed5c5c84086e35f60a448dd",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T01:04:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "2b12354e55fa72b1017fae15f575df75f9987adceed5c5c84086e35f60a448dd",
+          "evidenceSha256": [
+            "6784a0b84fa639aa4e200a57ede758bde2927240da10dc3db6aaa74b14da4ce5"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -20132,5 +20241,5 @@
       ]
     }
   ],
-  "manifestSha256": "3990c108617ed0832bc978682a2fbeb0446ebfa7140bdbc9f51a7a96c27ac302"
+  "manifestSha256": "fdeadf06f37de91aa22e6f14bff95a4f47dab3e20c2926c0fb69db72c2f87a58"
 }

@@ -15,6 +15,7 @@ import {
   citationImageSchema,
   companyImageSchema,
   ownershipPeriodImageSchema,
+  proposalActions,
 } from "./schema";
 import type { TaskSnapshotContext } from "./task-snapshot";
 
@@ -91,17 +92,7 @@ const citationAdditionSchema = citationImageSchema.extend({
 );
 const proposalSpecSchema = z.strictObject({
   generatedAt: z.string().datetime({ offset: true }),
-  actions: z.array(z.enum([
-    "CREATE_COMPANY",
-    "CORRECT_COMPANY",
-    "ADD_OWNERSHIP_PERIOD",
-    "ADD_PENDING_TRANSACTION",
-    "RETIRE_OWNERSHIP_PERIOD",
-    "REALIZE_COMPANY",
-    "MERGE_COMPANY",
-    "PRESERVE_COMPANY",
-    "RESOLVE_PENDING_TRANSACTION",
-  ])).min(1),
+  actions: z.array(z.enum(proposalActions)).min(1),
   retiredCompanyIds: z.array(z.string().trim().min(1)).default([]),
   rationale: z.string().trim().min(1),
   evidence: z.array(evidenceSchema).min(1),

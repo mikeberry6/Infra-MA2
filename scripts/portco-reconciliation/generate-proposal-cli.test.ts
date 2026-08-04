@@ -10,7 +10,7 @@ function contextFixture(): TaskSnapshotContext {
 function baseSpec() {
   return {
     generatedAt: FIXTURE_NOW,
-    actions: ["ADD_OWNERSHIP_PERIOD"],
+    actions: ["ADD_OWNER"],
     retiredCompanyIds: [],
     rationale: "A direct official source establishes a second current owner.",
     evidence: [{
@@ -85,5 +85,22 @@ describe("proposal patch ownership additions", () => {
     spec.citationUpdates = [{ id: "citation_1", set: { sourceType: "REPORT" } }];
 
     expect(() => applySpec(contextFixture(), spec)).toThrow(/ARTICLE/);
+  });
+
+  it("accepts the canonical ownership-retirement action", () => {
+    const spec = baseSpec();
+    spec.actions = ["RETIRE_OWNERSHIP"];
+    spec.ownershipPeriodAdditions = [];
+    spec.ownershipPeriodUpdates = [{
+      id: "owner_1",
+      set: { isActive: false, transactionState: "REALIZED" },
+    }];
+
+    const result = applySpec(contextFixture(), spec);
+    expect(result.afterImage?.ownershipPeriods[0]).toMatchObject({
+      id: "owner_1",
+      isActive: false,
+      transactionState: "REALIZED",
+    });
   });
 });
