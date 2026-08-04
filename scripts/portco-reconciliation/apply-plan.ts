@@ -95,11 +95,23 @@ export function semanticCompanyImageSha256(image: CompanyImage): string {
       id: null,
     }))),
     pendingOwnershipTransactions: sortCanonical(
-      image.pendingOwnershipTransactions.map((row) => ({ ...row, id: null })),
+      image.pendingOwnershipTransactions.map((row) => ({
+        ...row,
+        id: null,
+        evidenceUrls: [...row.evidenceUrls].sort((left, right) => left.localeCompare(right)),
+      })),
     ),
-    milestones: sortCanonical(image.milestones.map((row) => ({ ...row, id: null }))),
+    milestones: sortCanonical(image.milestones.map((row) => ({
+      ...row,
+      id: null,
+      evidenceUrls: [...row.evidenceUrls].sort((left, right) => left.localeCompare(right)),
+    }))),
     managementRoles: sortCanonical(
-      image.managementRoles.map((row) => ({ ...row, id: null })),
+      image.managementRoles.map((row) => ({
+        ...row,
+        id: null,
+        evidenceUrls: [...row.evidenceUrls].sort((left, right) => left.localeCompare(right)),
+      })),
     ),
     citations: sortCanonical(image.citations.map((row) => ({ ...row, id: null }))),
   });
