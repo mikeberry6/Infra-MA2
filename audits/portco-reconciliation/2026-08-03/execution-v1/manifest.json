@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T00:36:10.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0010:landmark-dividend-llc:07695f16",
+  "updatedAt": "2026-08-04T00:45:25.302Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -1487,11 +1487,11 @@
       "managerIndex": 4,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "7cc4bf0043f2b1ac7d012c6f1e139c5db7f4e8b4b7ef1c3672c3f753efcb135b",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-04T00:34:41.000Z",
-      "updatedAt": "2026-08-04T00:36:10.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-04T00:45:25.302Z",
+      "completedAt": "2026-08-04T00:45:25.302Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666",
@@ -1508,7 +1508,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0010-landmark-dividend-llc-v2.json",
           "sha256": "9c5fecb378493a41ed7290de3c9d74694e9dcbdbad9678e035e64e2a4aa58685"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0010-landmark-dividend-llc/attempt-2/production-apply/apply-receipt.json",
+          "sha256": "b4b2767b7a8f8d904aed22d8c459682eff26cb64decf7b11a359a89299d8e464"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -1622,6 +1625,40 @@
           "evidenceSha256": [
             "9c5fecb378493a41ed7290de3c9d74694e9dcbdbad9678e035e64e2a4aa58685"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-04T00:45:20.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666",
+          "evidenceSha256": [
+            "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-04T00:45:24.799Z",
+          "reason": null,
+          "taskSnapshotSha256": "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666",
+          "evidenceSha256": [
+            "b4b2767b7a8f8d904aed22d8c459682eff26cb64decf7b11a359a89299d8e464"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-04T00:45:25.302Z",
+          "reason": null,
+          "taskSnapshotSha256": "36694b1b2d110763eac653cf5ed083874a20268017a7ba887604bb58afa4d666",
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -20095,5 +20132,5 @@
       ]
     }
   ],
-  "manifestSha256": "3ef3a4b3d304974e8814d90bd79bb5077e0d5dc9c6c0fb8daba0264e5d3be6ef"
+  "manifestSha256": "3990c108617ed0832bc978682a2fbeb0446ebfa7140bdbc9f51a7a96c27ac302"
 }
