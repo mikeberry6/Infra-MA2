@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T01:51:45.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-04T02:10:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0014:7-mile-pit-solar:19f90ec2",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -2051,18 +2051,27 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "02230f11a4a6281615c8e7800644ce044d11582676dabdf3f757ba9fedba48e5",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 3,
+      "startedAt": "2026-08-04T02:08:01.000Z",
+      "updatedAt": "2026-08-04T02:10:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0014-7-mile-pit-solar/attempt-3/task-snapshot.json",
+          "sha256": "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0014-7-mile-pit-solar-v3/proposal.json",
+          "sha256": "de06c81f5753913470b5d44b58e96c203e06c02b02ab1bbb56385fb2b4ca516a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0014-7-mile-pit-solar-v3.json",
+          "sha256": "8783531dea798346648ccf079c017535c9a6f77d68238080823d2d54768566eb"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -2078,6 +2087,161 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-04T01:54:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T02:02:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "01451f5458e2c1e8571b351a70c294c822b9d85c7039bf13e85664f2617c60a9",
+          "evidenceSha256": [
+            "01451f5458e2c1e8571b351a70c294c822b9d85c7039bf13e85664f2617c60a9",
+            "1ae59c72b56192e792db598489620a3c111f0a9c88c619fa3296a281c07798bf"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T02:02:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "01451f5458e2c1e8571b351a70c294c822b9d85c7039bf13e85664f2617c60a9",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T02:04:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "01451f5458e2c1e8571b351a70c294c822b9d85c7039bf13e85664f2617c60a9",
+          "evidenceSha256": [
+            "654cdf613b5691c00742c584267164540ecf88702e4fdd6577c5dd4a8f2bde61"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-04T02:05:00.000Z",
+          "reason": "Pre-release dry run rejected deletion of duplicate ownership history; no release or database write occurred.",
+          "taskSnapshotSha256": "01451f5458e2c1e8571b351a70c294c822b9d85c7039bf13e85664f2617c60a9",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-04T02:05:01.000Z",
+          "reason": "Regenerate merge after-image with both ownership records preserved.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T02:06:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3586bf730c9a5ca0b4ad1aa020114f8b249dfa6b76010f2c7946103401009fb9",
+          "evidenceSha256": [
+            "3586bf730c9a5ca0b4ad1aa020114f8b249dfa6b76010f2c7946103401009fb9",
+            "8b9bec90bb0bb411c98b1590b5a3cc2c8abf09810963043a31cf18adbf685416"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T02:06:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3586bf730c9a5ca0b4ad1aa020114f8b249dfa6b76010f2c7946103401009fb9",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T02:07:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3586bf730c9a5ca0b4ad1aa020114f8b249dfa6b76010f2c7946103401009fb9",
+          "evidenceSha256": [
+            "6ea8e35bccf7affe10998e7ea0807a5772f51c36b5ea96747d00143555f79c34"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-04T02:08:00.000Z",
+          "reason": "Pre-release validation found the database uniqueness contract requires exact duplicate ownership consolidation; no release or database write occurred.",
+          "taskSnapshotSha256": "3586bf730c9a5ca0b4ad1aa020114f8b249dfa6b76010f2c7946103401009fb9",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-04T02:08:01.000Z",
+          "reason": "Regenerate after-image using fail-closed exact-duplicate ownership consolidation.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T02:09:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d",
+          "evidenceSha256": [
+            "de06c81f5753913470b5d44b58e96c203e06c02b02ab1bbb56385fb2b4ca516a",
+            "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T02:09:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T02:10:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ec3c33c037332353e052aee6e7f03600a93f3c582cbd280e7c9b809c071aaa3d",
+          "evidenceSha256": [
+            "8783531dea798346648ccf079c017535c9a6f77d68238080823d2d54768566eb"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -20398,5 +20562,5 @@
       ]
     }
   ],
-  "manifestSha256": "93bb54ad983f8453d0139a8f082be109ba3bc6484e5f7d21e04f3a7c51576e6b"
+  "manifestSha256": "6d2452e2d17187cafaafd9715bef56b570dcdfcacd976bc05a3e2aaf6acd6292"
 }

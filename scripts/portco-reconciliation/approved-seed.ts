@@ -109,6 +109,10 @@ export interface ApprovedSeedPublication {
   approvalSha256: string;
 }
 
+function companyIdentityKey(company: { name: string; country: string }): string {
+  return `${company.name.trim().toLowerCase()}\u0000${company.country.trim().toLowerCase()}`;
+}
+
 function seedPortCo(image: CompanyImage): SeedPortCo {
   const owners: SeedOwner[] = image.ownershipPeriods.map((owner) => ({
     investmentFirm: owner.organizationName ?? owner.managerName,
@@ -185,6 +189,25 @@ export function buildApprovedSeedEntry(
     approvedProductionSnapshot?.companies.flatMap((company) =>
       company.id ? [[company.id, company] as const] : []) ?? [],
   );
+  const retiredCompanies = verifiedProposal.retiredCompanyIds.map((id) => {
+    const retired = snapshotById.get(id);
+    if (!retired) {
+      throw new Error(`Approved production snapshot is required to resolve retired seed company ${id}`);
+    }
+    return { name: retired.name, country: retired.country };
+  });
+  if (
+    verifiedProposal.beforeImage
+    && companyIdentityKey(verifiedProposal.beforeImage)
+      !== companyIdentityKey(verifiedProposal.afterImage)
+  ) {
+    retiredCompanies.push({
+      name: verifiedProposal.beforeImage.name,
+      country: verifiedProposal.beforeImage.country,
+    });
+  }
+  const uniqueRetiredCompanies = retiredCompanies.filter((company, index, rows) =>
+    rows.findIndex((candidate) => companyIdentityKey(candidate) === companyIdentityKey(company)) === index);
   return {
     proposalSha256: verifiedProposal.proposalSha256,
     approvalSha256: verifiedApproval.approvalSha256,
@@ -196,13 +219,7 @@ export function buildApprovedSeedEntry(
         ? "MERGE"
         : "UPSERT",
     company: seedPortCo(verifiedProposal.afterImage),
-    retiredCompanies: verifiedProposal.retiredCompanyIds.map((id) => {
-      const retired = snapshotById.get(id);
-      if (!retired) {
-        throw new Error(`Approved production snapshot is required to resolve retired seed company ${id}`);
-      }
-      return { name: retired.name, country: retired.country };
-    }),
+    retiredCompanies: uniqueRetiredCompanies,
     canonicalAfterImage: verifiedProposal.afterImage,
   };
 }
@@ -306,6 +323,61 @@ export async function verifyPublishedApprovedSeedAfterImage(
     throw new Error("Approved seed artifact bytes changed after publication");
   }
   verifyApprovedSeedText(text, publication);
+}
+
+export async function removeStagedApprovedSeedAfterImage(input: {
+  artifactPath: string;
+  proposal: ReconciliationProposal;
+  approval: ReconciliationApproval;
+  approvedProductionSnapshot: ProductionSnapshot;
+}): Promise<{ artifactPath: string; artifactSha256: string; removedProposalSha256: string }> {
+  const artifactPath = resolve(input.artifactPath);
+  if (!artifactPath.endsWith(`/${APPROVED_SEED_BASENAME}`)) {
+    throw new Error(`Seed writes are target-pinned to ${APPROVED_SEED_BASENAME}`);
+  }
+  const entry = buildApprovedSeedEntry(
+    input.proposal,
+    input.approval,
+    input.approvedProductionSnapshot,
+  );
+  const current: unknown = JSON.parse(await readFile(artifactPath, "utf8"));
+  if (!Array.isArray(current) || current.some((item) => !isRecord(item))) {
+    throw new Error("Approved PortCo seed artifact must be a JSON array of objects");
+  }
+  const matches = current.filter((item) => item.proposalSha256 === entry.proposalSha256);
+  if (matches.length !== 1 || sha256Canonical(matches[0]) !== sha256Canonical(entry)) {
+    throw new Error("Staged seed entry is missing or changed");
+  }
+  const rendered = `${JSON.stringify(
+    current.filter((item) => item.proposalSha256 !== entry.proposalSha256),
+    null,
+    2,
+  )}\n`;
+  const temporaryPath = `${artifactPath}.unstage-${process.pid}-${Date.now()}`;
+  const handle = await open(temporaryPath, "wx", 0o600);
+  try {
+    await handle.writeFile(rendered, "utf8");
+    await handle.sync();
+  } finally {
+    await handle.close();
+  }
+  await rename(temporaryPath, artifactPath);
+  const directory = await open(dirname(artifactPath), "r");
+  try {
+    await directory.sync();
+  } finally {
+    await directory.close();
+  }
+  if (JSON.parse(await readFile(artifactPath, "utf8")).some(
+    (item: Record<string, unknown>) => item.proposalSha256 === entry.proposalSha256,
+  )) {
+    throw new Error("Staged seed entry remained after removal");
+  }
+  return {
+    artifactPath,
+    artifactSha256: sha256Text(rendered),
+    removedProposalSha256: entry.proposalSha256,
+  };
 }
 
 export async function supersedeStagedApprovedSeedAfterImage(input: {

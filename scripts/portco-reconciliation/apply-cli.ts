@@ -12,6 +12,7 @@ import {
 import {
   buildApprovedSeedEntry,
   publishApprovedSeedAfterImage,
+  removeStagedApprovedSeedAfterImage,
   supersedeStagedApprovedSeedAfterImage,
   verifyPublishedApprovedSeedAfterImage,
 } from "./approved-seed";
@@ -100,9 +101,10 @@ async function main(): Promise<void> {
   const values = options(process.argv.slice(2));
   const apply = values.get("apply") === "true";
   const stageSeed = values.get("stage-seed") === "true";
+  const unstageSeed = values.get("unstage-seed") === "true";
   const supersedeStagedSeed = values.get("supersede-staged-seed") === "true";
-  if ([apply, stageSeed, supersedeStagedSeed].filter(Boolean).length > 1) {
-    throw new Error("--apply, --stage-seed, and --supersede-staged-seed are mutually exclusive");
+  if ([apply, stageSeed, unstageSeed, supersedeStagedSeed].filter(Boolean).length > 1) {
+    throw new Error("--apply, --stage-seed, --unstage-seed, and --supersede-staged-seed are mutually exclusive");
   }
 
   const proposal = verifyProposal(await jsonFile(required(values, "proposal")));
@@ -116,6 +118,21 @@ async function main(): Promise<void> {
   });
   const target = verifiedDatabaseTarget(snapshot);
   const seedArtifactPath = resolve(values.get("seed-artifact") ?? DEFAULT_SEED_PATH);
+
+  if (unstageSeed) {
+    const result = await removeStagedApprovedSeedAfterImage({
+      artifactPath: seedArtifactPath,
+      proposal,
+      approval,
+      approvedProductionSnapshot: snapshot,
+    });
+    console.log(JSON.stringify({
+      mode: "UNSTAGE_SEED_ONLY",
+      result,
+      databaseWrites: false,
+    }, null, 2));
+    return;
+  }
 
   if (supersedeStagedSeed) {
     const supersededProposal = verifyProposal(

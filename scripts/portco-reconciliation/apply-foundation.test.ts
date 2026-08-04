@@ -22,6 +22,7 @@ import {
 } from "./apply-executor";
 import {
   buildApprovedSeedEntry,
+  removeStagedApprovedSeedAfterImage,
   renderApprovedSeedArtifact,
   supersedeStagedApprovedSeedAfterImage,
   verifyApprovedSeedText,
@@ -371,6 +372,7 @@ describe("approved PortCo apply planner", () => {
     retiredImage.id = "company_retired";
     retiredImage.name = "Acme Duplicate, LLC";
     retiredImage.ownershipPeriods[0].id = "owner_retired";
+    retiredImage.ownershipPeriods[0].stake = "49%";
     retiredImage.milestones[0].id = "milestone_retired";
     retiredImage.milestones[0].event = "Duplicate record milestone retained by merge.";
     retiredImage.citations[0].id = "citation_retired";
@@ -405,7 +407,33 @@ describe("approved PortCo apply planner", () => {
       ...broken,
       approvedProductionSnapshot: snapshot,
       fresh,
-    })).toThrow(/ownership (history|periods)/i);
+    })).toThrow(/ownership.*(history|periods)/i);
+
+    const exactRetiredImage = structuredClone(before);
+    exactRetiredImage.id = "company_retired";
+    exactRetiredImage.name = "Acme Duplicate, LLC";
+    exactRetiredImage.ownershipPeriods[0].id = "owner_retired_exact_duplicate";
+    exactRetiredImage.milestones[0].id = "milestone_retired_exact_duplicate";
+    exactRetiredImage.citations[0].id = "citation_retired_exact_duplicate";
+    const exactAfter = structuredClone(before);
+    exactAfter.milestones.push(...exactRetiredImage.milestones);
+    const exactDuplicate = approvedCorrection({
+      before,
+      after: exactAfter,
+      actions: ["MERGE_COMPANIES"],
+      retiredCompanyIds: ["company_retired"],
+      snapshot,
+    });
+    const exactDuplicateFresh = freshState(before);
+    exactDuplicateFresh.retiredCompanies = [{
+      snapshot: retiredSnapshot,
+      image: exactRetiredImage,
+    }];
+    expect(planApprovedApply({
+      ...exactDuplicate,
+      approvedProductionSnapshot: snapshot,
+      fresh: exactDuplicateFresh,
+    }).mutations.map((mutation) => mutation.kind)).toEqual(["MERGE_COMPANIES"]);
   });
 });
 
@@ -428,6 +456,21 @@ describe("approved local seed after-image", () => {
 
     expect(entry.operation).toBe("ARCHIVE");
     expect(entry.canonicalAfterImage.recordStatus).toBe("ARCHIVED");
+  });
+
+  it("retires the previous seed identity when an approved company is renamed", () => {
+    const before = companyImageFixture();
+    const after = { ...before, name: "Renamed Infrastructure" };
+    const { proposal, approval } = approvedCorrection({ before, after });
+
+    const entry = buildApprovedSeedEntry(proposal, approval, productionSnapshotFixture());
+
+    expect(entry.operation).toBe("UPSERT");
+    expect(entry.company.name).toBe("Renamed Infrastructure");
+    expect(entry.retiredCompanies).toEqual([{
+      name: before.name,
+      country: before.country,
+    }]);
   });
 
   it("removes only the superseded staged proposal for the same exact task", async () => {
@@ -461,6 +504,34 @@ describe("approved local seed after-image", () => {
         newApproved.proposal.proposalSha256,
         unrelatedProposalSha256,
       ]);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+
+  it("unstages only the exact failed proposal without touching unrelated entries", async () => {
+    const directory = await mkdtemp(join(tmpdir(), "portco-approved-seed-"));
+    const artifactPath = join(directory, "approved-portco-after-images.json");
+    try {
+      const approved = approvedCorrection();
+      const snapshot = productionSnapshotFixture();
+      const staged = buildApprovedSeedEntry(approved.proposal, approved.approval, snapshot);
+      const unrelated = { ...staged, proposalSha256: "f".repeat(64) };
+      await writeFile(
+        artifactPath,
+        `${JSON.stringify([unrelated, staged], null, 2)}\n`,
+        "utf8",
+      );
+
+      const result = await removeStagedApprovedSeedAfterImage({
+        artifactPath,
+        proposal: approved.proposal,
+        approval: approved.approval,
+        approvedProductionSnapshot: snapshot,
+      });
+      const remaining = JSON.parse(await readFile(artifactPath, "utf8")) as Array<{ proposalSha256: string }>;
+      expect(result.removedProposalSha256).toBe(approved.proposal.proposalSha256);
+      expect(remaining).toEqual([unrelated]);
     } finally {
       await rm(directory, { recursive: true, force: true });
     }

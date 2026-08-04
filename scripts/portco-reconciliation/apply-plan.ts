@@ -245,12 +245,19 @@ function assertHistoryPreserved(
 function relationChanges<T extends { id: string | null }>(
   before: readonly T[],
   after: readonly T[],
+  equivalentRemovalIds: ReadonlySet<string> = new Set(),
 ): { added: T[]; removed: T[]; changed: T[] } {
   const beforeById = byRequiredId(before, "relation");
   const afterById = new Map(after.flatMap((row) => row.id ? [[row.id, row] as const] : []));
+  const semanticAfter = new Set(after.map((row) => canonical({ ...row, id: null })));
   return {
     added: after.filter((row) => row.id === null || !beforeById.has(row.id)),
-    removed: before.filter((row) => row.id !== null && !afterById.has(row.id)),
+    removed: before.filter((row) => row.id !== null
+      && !afterById.has(row.id)
+      && !(
+        equivalentRemovalIds.has(row.id)
+        && semanticAfter.has(canonical({ ...row, id: null }))
+      )),
     changed: after.filter((row) => {
       if (!row.id) return false;
       const old = beforeById.get(row.id);
@@ -307,7 +314,13 @@ function deriveMutations(
     (field) => canonical(before[field]) !== canonical(after[field]),
   );
 
-  const ownership = relationChanges(relationBefore.ownershipPeriods, after.ownershipPeriods);
+  const retiredOwnershipIds = new Set(mergedSources.flatMap((image) =>
+    image.ownershipPeriods.flatMap((row) => row.id ? [row.id] : [])));
+  const ownership = relationChanges(
+    relationBefore.ownershipPeriods,
+    after.ownershipPeriods,
+    retiredOwnershipIds,
+  );
   const addedOwners = ownership.added;
   const retiredOwners = ownership.changed.filter((row) => row.transactionState === "REALIZED");
   const otherOwnershipChanges = ownership.changed.filter((row) => row.transactionState !== "REALIZED");

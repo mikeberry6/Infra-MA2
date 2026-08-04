@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0014:7-mile-pit-solar:19f90ec2",
+  "taskIndex": 14,
+  "companyName": "7 Mile Pit Solar",
+  "generatedAt": "2026-08-04T02:07:40.276Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0014-7-mile-pit-solar/attempt-2/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 14,
+    "taskId": "ledger:0014:7-mile-pit-solar:19f90ec2",
+    "canonicalKey": "7-mile-pit-solar|united-states",
+    "companyName": "7 Mile Pit Solar",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 6,
+    "managers": [
+      "Amber Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "006-amber-infrastructure:repo-only:001:7-mile-pit-solar"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj4t200gsivhelvkmligg"
+    ],
+    "seedKeys": [
+      "7 mile pit solar|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Amber Infrastructure MATCHED_ELSEWHERE: Grouped under Circle Power Renewables platform holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj4t200gsivhelvkmligg",
+    "name": "7 Mile Pit Solar",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "7 Mile Pit Solar is a utility-scale solar project under development on a former mining site in Crawford County, Michigan. The project is intended to supply wholesale renewable electricity and follows an asset-heavy development model that depends on site control, permitting, interconnection, and a long-term offtake structure. Public materials describe the site as a repurposing of state land formerly used for sand and gravel extraction. Michigan's Department of Natural Resources awarded Circle Power a lease for the site in 2020, and Amber later partnered with Circle Power through the Circle Power Renewables platform. Reviewed public sources do not disclose the current project-level ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Crawford County, Michigan",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpsp01deivhekvesztta",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkeoh02fwivhel7zz2fka",
+        "date": "2020",
+        "event": "7 Mile Pit Solar was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkep002fxivhe8ct88cqb",
+        "date": "Sep 2020",
+        "event": "Michigan DNR awarded Circle Power a lease to develop solar generation at the former 7 Mile Pit site.",
+        "category": "EXPANSION",
+        "sortDate": "2020-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkepj02fyivhek0pdcnjn",
+        "date": "May 27, 2021",
+        "event": "Amber Infrastructure and Circle Power launched Circle Power Renewables as a U.S. renewable development platform covering 7 Mile Pit Solar and other Michigan projects.",
+        "category": "FINANCING",
+        "sortDate": "2021-05-27T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxponmz0709ivhen3sgrqud",
+        "label": "Thinkingafield — 7 Mile Pit Solar",
+        "url": "https://thinkingafield.org/2020/09/michigan-dnr-partners-with-circle-power-to-repurpose-former-mine-sites.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Thinkingafield — 7 Mile Pit Solar",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpono1070bivher8u0mk52",
+        "label": "Circlepower — 7 Mile Pit Solar",
+        "url": "https://www.circlepower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Circlepower company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxponre070divhepspatp62",
+        "label": "Announcement date source — Amber Infrastructure — 7 Mile Pit Solar",
+        "url": "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxponsc070fivheq0p7gzmo",
+        "label": "Michigan — 7 Mile Pit Solar",
+        "url": "https://www.michigan.gov/dnr",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Michigan — 7 Mile Pit Solar",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "7 Mile Pit Solar",
+    "investmentFirm": "Amber Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "7 Mile Pit Solar is a utility-scale solar project under development on a former mining site in Crawford County, Michigan. The project is intended to supply wholesale renewable electricity and follows an asset-heavy development model that depends on site control, permitting, interconnection, and a long-term offtake structure. Public materials describe the site as a repurposing of state land formerly used for sand and gravel extraction. Michigan's Department of Natural Resources awarded Circle Power a lease for the site in 2020, and Amber later partnered with Circle Power through the Circle Power Renewables platform. Reviewed public sources do not disclose the current project-level ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2020,
+    "investmentYear": 2021,
+    "headquarters": "Crawford County, Michigan",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "7 Mile Pit Solar was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Sep 2020",
+        "event": "Michigan DNR awarded Circle Power a lease to develop solar generation at the former 7 Mile Pit site.",
+        "category": "Expansion"
+      },
+      {
+        "date": "May 27, 2021",
+        "event": "Amber Infrastructure and Circle Power launched Circle Power Renewables as a U.S. renewable development platform covering 7 Mile Pit Solar and other Michigan projects.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Thinkingafield — 7 Mile Pit Solar",
+        "url": "https://thinkingafield.org/2020/09/michigan-dnr-partners-with-circle-power-to-repurpose-former-mine-sites.html",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Circlepower — 7 Mile Pit Solar",
+        "url": "https://www.circlepower.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Amber Infrastructure — 7 Mile Pit Solar",
+        "url": "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Michigan — 7 Mile Pit Solar",
+        "url": "https://www.michigan.gov/dnr",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Amber Infrastructure",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpig56004civhenbxnuvlx",
+        "name": "Amber Infrastructure",
+        "updatedAt": "2026-07-23T16:09:28.122Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0014:7-mile-pit-solar:19f90ec2",
+    "taskIndex": 14,
+    "canonicalKey": "7-mile-pit-solar|united-states",
+    "capturedAt": "2026-08-04T02:07:40.276Z",
+    "databaseRevision": "company-state:78dab096b5baab2c9bcd3468d6ef7ce422058f4760edb5c461e7c34abd10ef76",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "02230f11a4a6281615c8e7800644ce044d11582676dabdf3f757ba9fedba48e5",
+    "productionSnapshotSha256": "854aebc10f700f5d330d7112ee0989d4481f52726beb73be9bb8f6a3f30cab38",
+    "targetCompanySnapshotSha256": "78dab096b5baab2c9bcd3468d6ef7ce422058f4760edb5c461e7c34abd10ef76",
+    "seedEntrySha256": "53dcef91566ce9a9400de9c5dec152db812db85fe647f3d6888d7d1315791436",
+    "dependencies": {
+      "ownershipPeriodsSha256": "72a4fe238ea054e5c381f6dc0a6cad0ef372b0e456b6f3de7a01c6fb85a38c7a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "335be0d5a62870ef627d7e9c88278570c30e7c63317b7ca81feb4001353d1cde",
+      "citationsSha256": "a352fcaf7a258014f0fc1f2193de10c84d7dd76d00e9e000531ca52444318f01",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "584feff4bac2abde355c2654d411740273fd06e1fbc0b007d7c848b1a51f722b",
+    "stateSha256": "7f9d7b34abbf78d79513b230e0c6785560d46b2dfe92113e312cb034df8d41eb",
+    "taskSnapshotSha256": "3586bf730c9a5ca0b4ad1aa020114f8b249dfa6b76010f2c7946103401009fb9"
+  },
+  "contextSha256": "c30179088e61b97eadf3ece36d1fff44d4c6f7bf3aa68567d700938f798fd6bd"
+}
