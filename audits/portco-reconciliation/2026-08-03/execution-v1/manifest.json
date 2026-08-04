@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-04T03:32:02.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-04T03:46:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0017:durham-region-courthouse:e542e83c",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -2666,18 +2666,27 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4eb01ef24f12e8d295bc0682d674969d2d66685c7c69cd982f7452919911add1",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-04T03:44:01.000Z",
+      "updatedAt": "2026-08-04T03:46:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0017-durham-region-courthouse/attempt-2/task-snapshot.json",
+          "sha256": "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0017-durham-region-courthouse-v2/proposal.json",
+          "sha256": "ef07fd1a40b337f2149bfb9cf7acc31ccc48fe570d5a23e144a56bca9c7d1f49"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0017-durham-region-courthouse-v2.json",
+          "sha256": "d3b6dfc9640cdff02150294692edb5bdbdff4a0b67584801abb76430e577e5de"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -2693,6 +2702,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-04T03:34:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T03:42:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d1f4e87538ba3c8514dea2357dd14d63d955686ef8c78176925b57afac925e04",
+          "evidenceSha256": [
+            "72cc1606331609815485aaa90c7c9918b339073224835fe980f051f2ee56c80a",
+            "d1f4e87538ba3c8514dea2357dd14d63d955686ef8c78176925b57afac925e04"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T03:42:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d1f4e87538ba3c8514dea2357dd14d63d955686ef8c78176925b57afac925e04",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T03:43:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d1f4e87538ba3c8514dea2357dd14d63d955686ef8c78176925b57afac925e04",
+          "evidenceSha256": [
+            "f0df1ab95ad5521c2c0f2bdf3b44c18d0dbc30dd53314b5374e48c2a3b30f1f0"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-04T03:44:00.000Z",
+          "reason": "Pre-release validation rejected a shared source label/type change; no database or seed mutation occurred.",
+          "taskSnapshotSha256": "d1f4e87538ba3c8514dea2357dd14d63d955686ef8c78176925b57afac925e04",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-04T03:44:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-04T03:45:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac",
+          "evidenceSha256": [
+            "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac",
+            "ef07fd1a40b337f2149bfb9cf7acc31ccc48fe570d5a23e144a56bca9c7d1f49"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-04T03:45:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-04T03:46:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8c437995e8383ce351c23df95313a0df73f8a752268efc794fa0b5bed58c3bac",
+          "evidenceSha256": [
+            "d3b6dfc9640cdff02150294692edb5bdbdff4a0b67584801abb76430e577e5de"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -20899,5 +21008,5 @@
       ]
     }
   ],
-  "manifestSha256": "ae5cf61281a7f5df8e6e2008b00db7f70f77634e101fd7c904d85c4f52e4655b"
+  "manifestSha256": "591db90199c003c0e96b2f275b7cc67802d2b6dc03c697f1fbfbd47ad1c06a42"
 }
