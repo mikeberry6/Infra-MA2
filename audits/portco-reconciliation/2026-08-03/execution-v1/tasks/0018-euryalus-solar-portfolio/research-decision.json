@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-08-05T04:18:11.000Z",
+  "decision": "VERIFY_NO_CHANGE_KEEP_SEPARATE",
+  "taskId": "ledger:0018:euryalus-solar-portfolio:3aa0dbaa",
+  "companyName": "Euryalus Solar Portfolio",
+  "requestedManager": "Amber Infrastructure",
+  "sourceRepoOnlyId": "006-amber-infrastructure:repo-only:005:euryalus-solar-portfolio",
+  "rationale": "Keep Euryalus Solar Portfolio as its own canonical portfolio record and do not merge it into Milford Solar Project or a synthetic US Solar Fund aggregate. US Solar Fund's audited and interim reporting consistently treats Euryalus as a distinct four-asset, 61 MWdc Oregon acquisition portfolio, separately from Milford, Granite, Heelstone and Olympos. Amber remains the investment manager to US Solar Fund, which continues to own the operational portfolio. The May 2026 portfolio-sale announcement was only a non-binding letter of intent subject to due diligence and definitive documentation, so it does not establish a signed pending exit or justify an ownership change. No company, seed, ownership, redirect, pending-transaction or publication mutation is authorized by this task.",
+  "identityResolution": {
+    "sameAsMilfordSolarProject": false,
+    "sameAsUSSolarFundAggregate": false,
+    "canonicalDecision": "KEEP_EURYALUS_SOLAR_PORTFOLIO",
+    "portfolioBoundary": "Four Oregon solar projects acquired together by US Solar Fund in 2020, reported as the Euryalus portfolio.",
+    "sourceJudgmentCorrection": "The prior MATCHED_ELSEWHERE note described Euryalus as grouped under a broad US Solar Fund U.S. Solar Portfolio. Current primary evidence supports keeping the separately named acquisition portfolio, while treating the broad fund-wide label as a manager aggregate rather than a duplicate canonical company."
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "US Solar Fund reports that it acquired the four-project Euryalus portfolio in 2020 before commercial operation; the acquisition portfolio remains separately identified in its 2024 and 2025 reporting.",
+    "exitSearch": "US Solar Fund announced a non-binding letter of intent on 18 May 2026 for a possible sale of the subsidiary holding all 41 operational projects. The announcement expressly stated that the transaction remained subject to due diligence and definitive documentation, and a 16 June 2026 update said the prospective buyer remained in due diligence. No definitive sale or closing was identified.",
+    "currentOwnership": "US Solar Fund continues to report ownership of the 41-project operating portfolio, including the separately identified Euryalus portfolio. Amber Infrastructure Investment Advisor, LLC remains US Solar Fund's investment manager.",
+    "transactionState": "CLOSED_ACTIVE",
+    "potentialSaleState": "NON_BINDING_EXCLUSIVITY_ONLY"
+  },
+  "evidence": [
+    {
+      "label": "US Solar Fund — Annual Report and Financial Statements 2024",
+      "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf",
+      "purpose": "Primary portfolio-boundary evidence identifying Euryalus as four Oregon assets, 61 MWdc, acquired in 2020 and separate from the fund's other named portfolios",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "US Solar Fund — Interim Report and Financial Statements 2025",
+      "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_interim_report_2025.pdf",
+      "purpose": "Primary current-period evidence continuing to identify Euryalus separately in portfolio operations and financing disclosures",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Amber Infrastructure — US Solar Fund",
+      "url": "https://www.amberinfrastructure.com/funds/us-solar-fund-plc/",
+      "purpose": "Current manager evidence that Amber is US Solar Fund's investment manager and is responsible for ongoing asset and fund management",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "London Stock Exchange — Potential Portfolio Sale: Award of Exclusivity",
+      "url": "https://www.londonstockexchange.com/news-article/USF/potential-portfolio-sale-award-of-exclusivity/17596633",
+      "purpose": "Official exit-search evidence showing that the May 2026 proposal was a non-binding letter of intent subject to due diligence and definitive legal documentation",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "US Solar Fund — Acquisition Five",
+      "url": "https://www.ussolarfund.co.uk/portfolio/acquisition-five",
+      "purpose": "Current official portfolio page for the Euryalus acquisition",
+      "sourceTier": "PRIMARY"
+    }
+  ],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "unresolvedQuestions": [],
+  "phaseOneCloseoutNote": "When the canonical ledger is rebuilt, represent the broad US Solar Fund U.S. Solar Portfolio census label as a manager-level aggregate/exclusion rather than equating it to Milford Solar Project. Preserve Euryalus, Granite, Heelstone, Milford and Olympos as distinct acquisition portfolios or standalone assets according to their official reporting boundaries."
+}
