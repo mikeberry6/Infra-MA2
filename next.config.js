@@ -47,6 +47,17 @@ const dataSlidesDownloadHeaders = [
   },
 ];
 
+const ibIconLibraryDownloadHeaders = [
+  {
+    key: "Content-Disposition",
+    value: 'attachment; filename="ib-pe-reusable-icon-library.pptx"',
+  },
+  {
+    key: "Content-Type",
+    value: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  },
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath,
@@ -75,6 +86,10 @@ const nextConfig = {
       {
         source: "/one-off-requests/data-slides.pptx",
         headers: dataSlidesDownloadHeaders,
+      },
+      {
+        source: "/one-off-requests/ib-pe-reusable-icon-library.pptx",
+        headers: ibIconLibraryDownloadHeaders,
       },
       { source: "/:path*", headers: securityHeaders },
     ];

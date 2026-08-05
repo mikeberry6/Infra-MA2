@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "IB & PE reusable icon library",
+    description:
+      "420 reusable icons across 14 investment-banking and private-equity categories, with PowerPoint-compatible transparent PNG fallbacks.",
+    href: "/one-off-requests/ib-pe-reusable-icon-library.pptx",
+    format: "PowerPoint",
+    date: "Aug 2026",
+    download: true,
+  },
+  {
     title: "Rio Tinto infrastructure overview",
     description:
       "Succinct overview of Rio Tinto's core infrastructure assets, potential monetization perimeter, transaction structure, and current status.",
