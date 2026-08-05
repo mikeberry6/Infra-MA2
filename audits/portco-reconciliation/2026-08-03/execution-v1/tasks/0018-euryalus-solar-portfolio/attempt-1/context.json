@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0018:euryalus-solar-portfolio:3aa0dbaa",
+  "taskIndex": 18,
+  "companyName": "Euryalus Solar Portfolio",
+  "generatedAt": "2026-08-05T04:15:41.211Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0018-euryalus-solar-portfolio/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 18,
+    "taskId": "ledger:0018:euryalus-solar-portfolio:3aa0dbaa",
+    "canonicalKey": "euryalus-solar-portfolio|united-states",
+    "companyName": "Euryalus Solar Portfolio",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 6,
+    "managers": [
+      "Amber Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "006-amber-infrastructure:repo-only:005:euryalus-solar-portfolio"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj4x800gzivhem7i7eav9"
+    ],
+    "seedKeys": [
+      "euryalus solar portfolio|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Amber Infrastructure MATCHED_ELSEWHERE: Grouped under US Solar Fund U.S. Solar Portfolio.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj4x800gzivhem7i7eav9",
+    "name": "Euryalus Solar Portfolio",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "The Euryalus portfolio is a group of four utility-scale solar projects in Oregon totaling about 61 MWdc. Its customer base is the wholesale power market under long-term power purchase agreements, and the assets operate as an asset-heavy contracted generation portfolio. US Solar Fund disclosed that all electricity from the projects is sold to Portland General Electric under long-term PPAs. The listed fund acquired the portfolio from Southern Current in 2020, and Amber later became the fund's investment manager. Reviewed public materials do not disclose a separate project-level co-ownership split beyond the fund structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Oregon",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpwh01dlivheiyq4em33",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "US Solar Fund plc (USF)",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkf9702giivhep8hsit27",
+        "date": "Jun 2020",
+        "event": "US Solar Fund, now managed by Amber Infrastructure, closed the acquisition of the Euryalus portfolio from Southern Current.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkf9s02gjivhek30atact",
+        "date": "Jul 2020",
+        "event": "The four Oregon solar projects reached full commercial operations.",
+        "category": "EXPANSION",
+        "sortDate": "2020-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfad02gkivhejwhxmwwa",
+        "date": "Dec 2023",
+        "event": "Amber became investment manager to US Solar Fund.",
+        "category": "FINANCING",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpooo3071qivhehvbpf9ap",
+        "label": "Close date source — Amber Infrastructure — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/portfolio/acquisition-five",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoop7071sivheh5th3crt",
+        "label": "Ussolarfund — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ussolarfund — Euryalus Solar Portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpooqa071uivheep154ygl",
+        "label": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/amber-appointed-us-solar-fund-plc-investment-manager/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoorf071wivhegh8y6nr4",
+        "label": "Ussolarfund — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_interim_report_2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ussolarfund — Euryalus Solar Portfolio",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Euryalus Solar Portfolio",
+    "investmentFirm": "Amber Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar portfolio",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "US Solar Fund plc (USF)",
+    "description": "The Euryalus portfolio is a group of four utility-scale solar projects in Oregon totaling about 61 MWdc. Its customer base is the wholesale power market under long-term power purchase agreements, and the assets operate as an asset-heavy contracted generation portfolio. US Solar Fund disclosed that all electricity from the projects is sold to Portland General Electric under long-term PPAs. The listed fund acquired the portfolio from Southern Current in 2020, and Amber later became the fund's investment manager. Reviewed public materials do not disclose a separate project-level co-ownership split beyond the fund structure.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2020,
+    "investmentYear": 2020,
+    "headquarters": "Oregon",
+    "milestones": [
+      {
+        "date": "Jun 2020",
+        "event": "US Solar Fund, now managed by Amber Infrastructure, closed the acquisition of the Euryalus portfolio from Southern Current.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 2020",
+        "event": "The four Oregon solar projects reached full commercial operations.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Dec 2023",
+        "event": "Amber became investment manager to US Solar Fund.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Amber Infrastructure — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/portfolio/acquisition-five",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ussolarfund — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/amber-appointed-us-solar-fund-plc-investment-manager/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Ussolarfund — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_interim_report_2025.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Amber Infrastructure",
+        "ownershipVehicle": "US Solar Fund plc (USF)",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpig56004civhenbxnuvlx",
+        "name": "Amber Infrastructure",
+        "updatedAt": "2026-07-23T16:09:28.122Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0018:euryalus-solar-portfolio:3aa0dbaa",
+    "taskIndex": 18,
+    "canonicalKey": "euryalus-solar-portfolio|united-states",
+    "capturedAt": "2026-08-05T04:15:41.211Z",
+    "databaseRevision": "company-state:cd7cfbebbf1ea65075c2711cb1b9ca0a6f25020dfaba60b725226a19e96fb7a9",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "05400ccda2453f114a96e11630074a7d32a27cdc52f62871a7b4aeacfa3f090e",
+    "productionSnapshotSha256": "7c6a0c3ca2fddda8ce0d9ec88625ea3e3cabc6459812ae3c1049cf9a6f25e3af",
+    "targetCompanySnapshotSha256": "cd7cfbebbf1ea65075c2711cb1b9ca0a6f25020dfaba60b725226a19e96fb7a9",
+    "seedEntrySha256": "bb87d8718a3c73c174b96b16caf3e416bccd09a5cffe54c307820fe5fc7d2ad8",
+    "dependencies": {
+      "ownershipPeriodsSha256": "cc74578310a4f26d08830b773f0747f2ca2b7de8dca564bf9dcaf9cfbeb9b1eb",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "335be0d5a62870ef627d7e9c88278570c30e7c63317b7ca81feb4001353d1cde",
+      "citationsSha256": "29ca92b92d297fcb19f50741bd5af58bf5eb1f78fdc73c0c78d30a65ddd19b15",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "022bef7b7bea8b45fbfef31fa2ccc266506e4c3f20221513b7bc68046e91ef7a",
+    "stateSha256": "52ccf64f3bc1e040f746ac6d04678d684f2ed0b847cf4df94ed9b3c60c3e6b45",
+    "taskSnapshotSha256": "21df8abecaaf304d46d425ae9426f269724ee236806decfd56507f9b6b336c28"
+  },
+  "contextSha256": "f17ab9ecc18f5fe86b5d57c265a9bc2cdddb09b692a7d24577f4c68f8a15c7e4"
+}
