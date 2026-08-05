@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-05T04:58:01.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-05T05:05:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0021:greengas-colorado:0dd4ec15",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -3274,18 +3274,27 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "9036c9550a447b37ac381b52e097616dbee290025e4fd673ff3a19236a54bbc9",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-05T05:01:10.858Z",
+      "updatedAt": "2026-08-05T05:05:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0021-greengas-colorado/attempt-1/task-snapshot.json",
+          "sha256": "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0021-greengas-colorado/proposal.json",
+          "sha256": "7350d8a8cc49b8e8cccbbe70a05b0bdc3f3febe210c01b99bda4060e20741ec4"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0021-greengas-colorado.json",
+          "sha256": "06673fdddef49e4d64c1404bad723f262f338403e70d1281f24e07b6083bf125"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -3301,6 +3310,51 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-05T05:01:10.858Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-05T05:04:39.786Z",
+          "reason": null,
+          "taskSnapshotSha256": "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a",
+          "evidenceSha256": [
+            "7350d8a8cc49b8e8cccbbe70a05b0bdc3f3febe210c01b99bda4060e20741ec4",
+            "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-05T05:04:41.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-05T05:05:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a",
+          "evidenceSha256": [
+            "06673fdddef49e4d64c1404bad723f262f338403e70d1281f24e07b6083bf125"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -21355,5 +21409,5 @@
       ]
     }
   ],
-  "manifestSha256": "233c83ab9f8582e69193c80cdc8b3f58ddce729f6e77ab18f2a302b28d40d978"
+  "manifestSha256": "e949da9b5d958cdc1bd133a475ea8c260afc8c58c2776c3f5b4423690420ef09"
 }
