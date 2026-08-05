@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-05T04:18:12.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-05T04:32:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0019:future-energy-park:ac879780",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -2970,18 +2970,27 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "8b3d1ec570297d430e761a659d45f02ee8c651455c3c9600117105f1c8f7c9a1",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-05T04:23:07.000Z",
+      "updatedAt": "2026-08-05T04:32:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0019-future-energy-park/attempt-1/task-snapshot.json",
+          "sha256": "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0019-future-energy-park-v1/proposal.json",
+          "sha256": "7e11bcc657485a605a9a8f50b8c90552cf83bd1ac1d928dae7c7ddb53f742c69"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0019-future-energy-park-v1.json",
+          "sha256": "717d88a7993ef96b35033ff9c3ba01086b615283dfd23fc251df65b6bdbab1ad"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -2997,6 +3006,51 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-05T04:23:07.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-05T04:31:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf",
+          "evidenceSha256": [
+            "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf",
+            "7e11bcc657485a605a9a8f50b8c90552cf83bd1ac1d928dae7c7ddb53f742c69"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-05T04:31:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-05T04:32:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf",
+          "evidenceSha256": [
+            "717d88a7993ef96b35033ff9c3ba01086b615283dfd23fc251df65b6bdbab1ad"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -21127,5 +21181,5 @@
       ]
     }
   ],
-  "manifestSha256": "bddaf635513e627c9cc7c23eb80f73282167e165b462c05e4eb0f859a2c56081"
+  "manifestSha256": "0034f5b82f3791250fef9d9db02718de5519e523a2fddfbd81ca768ff4ca17af"
 }

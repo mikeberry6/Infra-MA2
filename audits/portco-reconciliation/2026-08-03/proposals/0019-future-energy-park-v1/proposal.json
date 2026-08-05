@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0019:future-energy-park:ac879780",
+  "taskIndex": 19,
+  "asOfDate": "2026-08-05",
+  "generatedAt": "2026-08-05T04:30:00.000Z",
+  "canonicalKey": "future-energy-park|canada",
+  "companyName": "Future Energy Park",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "rationale": "Retire Amber Infrastructure's unsupported active ownership period and mark Future Energy Park realized in the PortCo database. Green Impact Partners' February 2023 announcement described a conditional strategic agreement under which Amber was expected to invest in 50% of Future Energy Park. GIP's first-quarter 2023 financial statements, however, state that FEP LP's Class A units remained 100% held by GIP and that Amber's expected 50% interest was subject to definitive documents, project debt financing, return thresholds and other conditions. Only the separate GreenGas Colorado transaction closed. In June 2025 GIP announced a non-binding lead-equity term sheet with a different, unnamed global Japanese investment partner, and in January 2026 said Future Energy Park was still working toward financial close. No official evidence was found that Amber's conditional Future Energy Park investment ever closed. The retired period therefore records a proposed 50% interest that did not close and retains a null exit year; this is an administrative correction of erroneous active ownership, not a historical divestiture.",
+  "evidence": [
+    {
+      "url": "https://www.greenipi.com/wp-content/uploads/2023/05/Q1-2023-Financial-Statements.pdf",
+      "purpose": "Official financial-statement evidence that Amber's proposed Future Energy Park interest remained conditional and did not close",
+      "supports": [
+        "FEP LP Class A units remained 100% held by Green Impact Partners",
+        "Amber was only expected to hold 50% subject to definitive documents, project debt financing, return thresholds and other conditions",
+        "the separate GreenGas Colorado investment closed while the Future Energy Park investment remained conditional"
+      ]
+    },
+    {
+      "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/",
+      "purpose": "Official February 2023 announcement of the conditional Amber partnering agreement",
+      "supports": [
+        "the announced Amber investment was conditional",
+        "the proposed Future Energy Park participation was 50%"
+      ]
+    },
+    {
+      "url": "https://www.greenipi.com/newsroom/green-impact-partners-signs-definitive-agreement-to-sell-its-water-and-recycling-facilities-and-announces-lead-equity-partner-agreement-for-the-future-energy-park/",
+      "purpose": "Official June 2025 evidence of a different prospective lead equity partner",
+      "supports": [
+        "GIP announced a non-binding Future Energy Park term sheet with a global Japanese investment partner",
+        "the project was still pursuing an equity partnership in 2025"
+      ]
+    },
+    {
+      "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-corporate-update-2/",
+      "purpose": "Official January 2026 project-status and financial-close check",
+      "supports": [
+        "Future Energy Park remained under development",
+        "the project was still working toward financial close"
+      ]
+    },
+    {
+      "url": "https://www.greenipi.com/project/future-energy-park/",
+      "purpose": "Current official project identity, location and operating profile",
+      "supports": [
+        "Future Energy Park is a Green Impact Partners development in Calgary, Alberta",
+        "the project is a proposed low-carbon fuels facility"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "046dcb0bbaa6b28d9425d39d7fcc18c5e0634b7a636a318ff7424295422e7d5e",
+  "currentCompanySnapshotSha256": "b7549b66088d65369d2960bd41cc2917bd5d7e46ab7d99759acdbcc453135fae",
+  "beforeImage": {
+    "id": "cmrxpj4xs00h0ivheqlam8kdb",
+    "name": "Future Energy Park",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable natural gas and low-carbon fuels",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Future Energy Park is a proposed low-carbon fuels project in Calgary, Alberta centered on renewable natural gas and ethanol production. The project is being developed to serve transportation fuel and industrial decarbonization markets through an asset-heavy processing and logistics model. Public materials describe the development as one of Green Impact Partners' flagship projects and a major capital program in western Canada. Amber agreed in 2023 to acquire a 50% project-level equity interest as part of a broader partnership with Green Impact Partners. The project remained in development in reviewed public materials, with permitting and commercial workstreams continuing after the partnership announcement.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2021,
+    "headquarters": "Alberta",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpwz01dmivhewecquqbm",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkfbb02glivheuuwefqa3",
+        "date": "2021",
+        "event": "Future Energy Park was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfbw02gmivheb4tnw8ge",
+        "date": "Feb 2023",
+        "event": "Amber agreed to acquire a 50% equity interest in Future Energy Park through its partnership with Green Impact Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfcf02gnivheujqs9yx1",
+        "date": "Dec 2023",
+        "event": "Public materials indicated the project had received Alberta environmental approval to proceed with development work.",
+        "category": "EXPANSION",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoosg071yivhetsly3pev",
+        "label": "Greenipi — Future Energy Park",
+        "url": "https://www.greenipi.com/project/future-energy-park/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Greenipi operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpootm0720ivheam4c6ftt",
+        "label": "Announcement date source — Amber Infrastructure — Future Energy Park",
+        "url": "https://americanbiogascouncil.org/green-impact-partners-announces-545-million-partnering-agreement/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpooup0722ivheicwjxitd",
+        "label": "Canadianbiomassmagazine — Future Energy Park",
+        "url": "https://www.canadianbiomassmagazine.ca/green-impact-partners-amber-infrastructure-ink-rng-facility-partnership-deal/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Canadianbiomassmagazine — Future Energy Park",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "b7549b66088d65369d2960bd41cc2917bd5d7e46ab7d99759acdbcc453135fae",
+  "afterImage": {
+    "id": "cmrxpj4xs00h0ivheqlam8kdb",
+    "name": "Future Energy Park",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable natural gas and low-carbon fuels",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Future Energy Park is a proposed low-carbon fuels development in Calgary, Alberta, led by Green Impact Partners. In February 2023 GIP announced a conditional strategic agreement under which Amber Infrastructure was expected to invest in 50% of the project. GIP's first-quarter 2023 financial statements said FEP LP's Class A units remained 100% held by GIP and that Amber's expected interest was subject to definitive documents, project financing and other conditions. In June 2025 GIP announced a non-binding lead-equity term sheet with a different, unnamed global Japanese investment partner, and in January 2026 reported that the project was still working toward financial close. No official evidence was found that Amber's conditional Future Energy Park investment closed, so Amber is not represented as a current owner.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.greenipi.com/project/future-energy-park/",
+    "yearFounded": 2021,
+    "headquarters": "Calgary, Alberta",
+    "lastVerifiedAt": "2026-08-05T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpwz01dmivhewecquqbm",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "Conditional 2023 strategic partnering agreement (not closed)",
+        "stake": "Proposed 50% (not closed)",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkfbb02glivheuuwefqa3",
+        "date": "2021",
+        "event": "Future Energy Park was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfbw02gmivheb4tnw8ge",
+        "date": "Feb 2023",
+        "event": "Green Impact Partners and Amber announced a conditional proposed 50% investment; FEP LP remained 100% held by GIP pending financing and other conditions, and no closing was found.",
+        "category": "FINANCING",
+        "sortDate": "2023-02-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/",
+          "https://www.greenipi.com/wp-content/uploads/2023/05/Q1-2023-Financial-Statements.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkfcf02gnivheujqs9yx1",
+        "date": "Dec 2023",
+        "event": "Public materials indicated the project had received Alberta environmental approval to proceed with development work.",
+        "category": "EXPANSION",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoosg071yivhetsly3pev",
+        "label": "Green Impact Partners — Future Energy Park",
+        "url": "https://www.greenipi.com/project/future-energy-park/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current official project identity, Calgary location and development profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpootm0720ivheam4c6ftt",
+        "label": "Green Impact Partners — conditional Amber partnering agreement",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "February 2023 announcement of Amber's conditional proposed 50% Future Energy Park investment",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpooup0722ivheicwjxitd",
+        "label": "Canadianbiomassmagazine — Future Energy Park",
+        "url": "https://www.canadianbiomassmagazine.ca/green-impact-partners-amber-infrastructure-ink-rng-facility-partnership-deal/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Canadianbiomassmagazine — Future Energy Park",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Green Impact Partners — Q1 2023 financial statements",
+        "url": "https://www.greenipi.com/wp-content/uploads/2023/05/Q1-2023-Financial-Statements.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "FEP LP remained 100% held by GIP and Amber's proposed 50% interest remained conditional",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Green Impact Partners — Future Energy Park lead equity partner update",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-signs-definitive-agreement-to-sell-its-water-and-recycling-facilities-and-announces-lead-equity-partner-agreement-for-the-future-energy-park/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 2025 non-binding term sheet with a different prospective global Japanese equity partner",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Green Impact Partners — January 2026 corporate update",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-corporate-update-2/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Future Energy Park remained in development and was still working toward financial close",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "0b40c633a4eeaee50b70fd3c29033a123cacc212a6675c678e1a9d2c510e254f",
+  "proposalSha256": "7e11bcc657485a605a9a8f50b8c90552cf83bd1ac1d928dae7c7ddb53f742c69"
+}
