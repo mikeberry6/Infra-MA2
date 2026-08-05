@@ -11,7 +11,7 @@ const ONE_OFF_REQUESTS = [
   {
     title: "Company X data cube — Outlook summary",
     description:
-      "Succinct, copy-friendly overview of the two data cubes, the six requested datasets, and their required fields.",
+      "Succinct, copy-friendly overview of the two data cubes and the main fields for all six datasets.",
     href: "/one-off-requests/company-x-data-cube-outlook-summary.html",
     format: "Outlook HTML",
     date: "Aug 2026",
