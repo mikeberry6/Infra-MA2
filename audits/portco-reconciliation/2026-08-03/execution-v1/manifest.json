@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-05T04:32:00.000Z",
+  "updatedAt": "2026-08-05T04:43:00.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0019:future-energy-park:ac879780",
   "source": {
@@ -2971,25 +2971,25 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "8b3d1ec570297d430e761a659d45f02ee8c651455c3c9600117105f1c8f7c9a1",
       "status": "RELEASING",
-      "attempts": 1,
-      "startedAt": "2026-08-05T04:23:07.000Z",
-      "updatedAt": "2026-08-05T04:32:00.000Z",
+      "attempts": 3,
+      "startedAt": "2026-08-05T04:40:01.000Z",
+      "updatedAt": "2026-08-05T04:43:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf",
+      "taskSnapshotSha256": "3d9407daac0cc0fe3061e9de3f88fe020a8759263f25bf98d1dd7d7f9972ced2",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0019-future-energy-park/attempt-1/task-snapshot.json",
-          "sha256": "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0019-future-energy-park/attempt-3/task-snapshot.json",
+          "sha256": "3d9407daac0cc0fe3061e9de3f88fe020a8759263f25bf98d1dd7d7f9972ced2"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/proposals/0019-future-energy-park-v1/proposal.json",
-          "sha256": "7e11bcc657485a605a9a8f50b8c90552cf83bd1ac1d928dae7c7ddb53f742c69"
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0019-future-energy-park-v3/proposal.json",
+          "sha256": "f1e1995e3c1e5dfdf476b94c807e75680e2a250c024212fb68b69fe0e12050c5"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/approvals/0019-future-energy-park-v1.json",
-          "sha256": "717d88a7993ef96b35033ff9c3ba01086b615283dfd23fc251df65b6bdbab1ad"
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0019-future-energy-park-v3.json",
+          "sha256": "a2ce7eea2dd5635c26e0080c221cb7c6c90c6f9cdba778d0b38ede1b27fdfd6b"
         },
         "applyReceipt": null,
         "decision": null,
@@ -3049,6 +3049,116 @@
           "taskSnapshotSha256": "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf",
           "evidenceSha256": [
             "717d88a7993ef96b35033ff9c3ba01086b615283dfd23fc251df65b6bdbab1ad"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-05T04:36:00.000Z",
+          "reason": "Protected dry-run 30975503065 rejected a shared Source label/type mutation before any database write.",
+          "taskSnapshotSha256": "70583781870ca94277d5a51a64e8fdd13ba13dff2c2d3736dc4dc7b2a87eb7bf",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-05T04:36:01.000Z",
+          "reason": "Retry with existing shared Source identity preserved; no production mutation occurred.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-05T04:38:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "53e2493d59c66a28a061bf6e91f4f1f9808424ad3e9bba3acde9a7ffab3fac33",
+          "evidenceSha256": [
+            "53e2493d59c66a28a061bf6e91f4f1f9808424ad3e9bba3acde9a7ffab3fac33",
+            "65f1480ca83437571834adbb361d3463bde197dd471d5d03762f2518d004b24a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-05T04:38:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "53e2493d59c66a28a061bf6e91f4f1f9808424ad3e9bba3acde9a7ffab3fac33",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-05T04:39:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "53e2493d59c66a28a061bf6e91f4f1f9808424ad3e9bba3acde9a7ffab3fac33",
+          "evidenceSha256": [
+            "921631e05c15647377bf1259c3285a32c909da2e13156327618f754db794d17e"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-05T04:40:00.000Z",
+          "reason": "Local production dry-run rejected a citation addition whose URL resolves to an existing shared GreenGas Colorado Source with a different label; no database write occurred.",
+          "taskSnapshotSha256": "53e2493d59c66a28a061bf6e91f4f1f9808424ad3e9bba3acde9a7ffab3fac33",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-05T04:40:01.000Z",
+          "reason": "Retry using the exact existing shared Source label and type while keeping company-specific evidence on the new Citation.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-05T04:42:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3d9407daac0cc0fe3061e9de3f88fe020a8759263f25bf98d1dd7d7f9972ced2",
+          "evidenceSha256": [
+            "3d9407daac0cc0fe3061e9de3f88fe020a8759263f25bf98d1dd7d7f9972ced2",
+            "f1e1995e3c1e5dfdf476b94c807e75680e2a250c024212fb68b69fe0e12050c5"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-05T04:42:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3d9407daac0cc0fe3061e9de3f88fe020a8759263f25bf98d1dd7d7f9972ced2",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-05T04:43:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3d9407daac0cc0fe3061e9de3f88fe020a8759263f25bf98d1dd7d7f9972ced2",
+          "evidenceSha256": [
+            "a2ce7eea2dd5635c26e0080c221cb7c6c90c6f9cdba778d0b38ede1b27fdfd6b"
           ],
           "kind": "TRANSITION"
         }
@@ -21181,5 +21291,5 @@
       ]
     }
   ],
-  "manifestSha256": "0034f5b82f3791250fef9d9db02718de5519e523a2fddfbd81ca768ff4ca17af"
+  "manifestSha256": "49dda2f2e1a21aadc5fce7e33d02ae4aab569a4fd11cd87bfab979cb1fa60735"
 }
