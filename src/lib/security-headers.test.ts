@@ -39,6 +39,14 @@ describe("application security headers", () => {
     }
   });
 
+  it("forces Data slides to download with the public filename", async () => {
+    const headers = await getHeadersForSource("/one-off-requests/data-slides.pptx");
+    expect(headers["Content-Disposition"]).toBe('attachment; filename="data-slides.pptx"');
+    expect(headers["Content-Type"]).toBe(
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    );
+  });
+
   it("does not allow eval in production", () => {
     const serializedHeaders = execFileSync(
       process.execPath,
