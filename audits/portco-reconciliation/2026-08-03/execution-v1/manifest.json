@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-05T04:47:16.000Z",
+  "updatedAt": "2026-08-05T04:58:01.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -3207,20 +3207,26 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "77f94266712997331f67b8111f3b315f32d2e3f28763f099a1fd856a0f539483",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "VERIFIED_NO_CHANGE",
+      "attempts": 1,
+      "startedAt": "2026-08-05T04:55:00.000Z",
+      "updatedAt": "2026-08-05T04:58:01.000Z",
+      "completedAt": "2026-08-05T04:58:01.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "29c71bf86b9fc1650737a00a74d3226d9bdd6d9a99d629fe42233bab2dc4ed75",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0020-granite-solar-portfolio/attempt-1/task-snapshot.json",
+          "sha256": "29c71bf86b9fc1650737a00a74d3226d9bdd6d9a99d629fe42233bab2dc4ed75"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0020-granite-solar-portfolio/research-decision.json",
+          "sha256": "44543a4a85e5f1a382366dfa18569258aa6895d22edf7ac0e0f6364e156b03cc"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -3234,6 +3240,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-05T04:55:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "VERIFIED_NO_CHANGE",
+          "at": "2026-08-05T04:58:01.000Z",
+          "reason": "Official current reporting preserves Granite as a distinct active eight-project portfolio; the fund-wide 2026 sale process remains non-binding.",
+          "taskSnapshotSha256": "29c71bf86b9fc1650737a00a74d3226d9bdd6d9a99d629fe42233bab2dc4ed75",
+          "evidenceSha256": [
+            "29c71bf86b9fc1650737a00a74d3226d9bdd6d9a99d629fe42233bab2dc4ed75",
+            "44543a4a85e5f1a382366dfa18569258aa6895d22edf7ac0e0f6364e156b03cc"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -21326,5 +21355,5 @@
       ]
     }
   ],
-  "manifestSha256": "8e474d032a000579c986d01948297a728ff2de84090685ba53dd50ab41e16b8b"
+  "manifestSha256": "233c83ab9f8582e69193c80cdc8b3f58ddce729f6e77ab18f2a302b28d40d978"
 }
