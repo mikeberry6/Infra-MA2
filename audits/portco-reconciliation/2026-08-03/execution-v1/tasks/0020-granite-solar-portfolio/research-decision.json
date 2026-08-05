@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-08-05T04:58:00.000Z",
+  "decision": "VERIFY_NO_CHANGE_KEEP_SEPARATE",
+  "taskId": "ledger:0020:granite-solar-portfolio:05c76255",
+  "companyName": "Granite Solar Portfolio",
+  "requestedManager": "Amber Infrastructure",
+  "sourceRepoOnlyId": "006-amber-infrastructure:repo-only:007:granite-solar-portfolio",
+  "rationale": "Keep Granite Solar Portfolio as its own canonical portfolio record and do not merge it into a synthetic US Solar Fund aggregate. US Solar Fund's current portfolio page and audited 2025 reporting consistently treat Granite as a distinct eight-asset, 39 MWdc North Carolina acquisition portfolio, separately from Milford, Olympos, Heelstone and Euryalus. USF acquired 100% of the cash equity interests in the eight projects in January 2020, and its 2025 annual report continues to identify Granite as a separate current portfolio with project-level operating disclosures. Amber remains USF's investment manager. The May 2026 potential whole-portfolio sale was only a non-binding letter of intent subject to due diligence and definitive documentation, so it does not establish a signed pending exit or justify an ownership change. No company, seed, ownership, redirect, pending-transaction or publication mutation is authorized by this task.",
+  "identityResolution": {
+    "sameAsUSSolarFundAggregate": false,
+    "canonicalDecision": "KEEP_GRANITE_SOLAR_PORTFOLIO",
+    "portfolioBoundary": "Eight operating North Carolina solar projects totaling 39 MWdc, acquired together by US Solar Fund in January 2020 and reported as the Granite portfolio.",
+    "sourceJudgmentCorrection": "The prior MATCHED_ELSEWHERE note grouped Granite under a broad US Solar Fund U.S. Solar Portfolio. Current primary evidence supports keeping the separately named acquisition portfolio, while treating the broad fund-wide label as a manager aggregate rather than a duplicate canonical company."
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "US Solar Fund's current Granite page states that it acquired 100% of the cash equity interests in five projects on 2 January 2020 and the remaining three on 13 January 2020. The audited 2025 annual report separately identifies Granite as eight assets totaling 39 MWdc and records the January 2020 acquisition from Greenbacker Renewable Energy.",
+    "exitSearch": "US Solar Fund's May 2026 shareholder presentation disclosed a non-binding letter of intent for a possible sale of the entire 41-project portfolio, with a 90-day exclusivity period, due diligence and definitive documentation still required. No definitive sale agreement or closing was identified.",
+    "currentOwnership": "US Solar Fund continues to report the Granite portfolio as eight current operating assets within its 41-project portfolio. Amber Infrastructure Investment Advisor, LLC remains USF's investment manager.",
+    "transactionState": "CLOSED_ACTIVE",
+    "potentialSaleState": "NON_BINDING_EXCLUSIVITY_ONLY"
+  },
+  "evidence": [
+    {
+      "label": "US Solar Fund — Granite portfolio",
+      "url": "https://www.ussolarfund.co.uk/portfolio/granite",
+      "purpose": "Current official portfolio-boundary and acquisition evidence identifying Granite as eight North Carolina projects, 39 MWdc, with 100% of cash equity acquired in January 2020",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "US Solar Fund — Annual Report and Financial Statements 2025",
+      "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_2025_annual_report_190326.pdf",
+      "purpose": "Audited current-period evidence continuing to identify Granite separately as eight assets totaling 39 MWdc and recording the January 2020 acquisition",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Amber Infrastructure — US Solar Fund",
+      "url": "https://www.amberinfrastructure.com/funds/us-solar-fund-plc/",
+      "purpose": "Current manager evidence that Amber is US Solar Fund's investment manager and is responsible for ongoing asset and fund management",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "US Solar Fund — Shareholder Presentation May 2026",
+      "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_shareholder_presentation_may_2026_vf.pdf",
+      "purpose": "Official exit-search evidence showing that the proposed whole-portfolio sale remained a non-binding letter of intent subject to due diligence and definitive legal documentation",
+      "sourceTier": "PRIMARY"
+    }
+  ],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "unresolvedQuestions": [],
+  "phaseOneCloseoutNote": "When the canonical ledger is rebuilt, represent the broad US Solar Fund U.S. Solar Portfolio census label as a manager-level aggregate/exclusion rather than a company identity. Preserve Granite, Euryalus, Heelstone, Milford and Olympos as distinct acquisition portfolios or standalone assets according to official reporting boundaries."
+}

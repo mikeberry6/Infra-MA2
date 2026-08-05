@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0020:granite-solar-portfolio:05c76255",
+  "taskIndex": 20,
+  "companyName": "Granite Solar Portfolio",
+  "generatedAt": "2026-08-05T04:54:59.755Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0020-granite-solar-portfolio/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 20,
+    "taskId": "ledger:0020:granite-solar-portfolio:05c76255",
+    "canonicalKey": "granite-solar-portfolio|united-states",
+    "companyName": "Granite Solar Portfolio",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 6,
+    "managers": [
+      "Amber Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "006-amber-infrastructure:repo-only:007:granite-solar-portfolio"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj4yb00h1ivhe691wn7ps"
+    ],
+    "seedKeys": [
+      "granite solar portfolio|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Amber Infrastructure MATCHED_ELSEWHERE: Grouped under US Solar Fund U.S. Solar Portfolio.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj4yb00h1ivhe691wn7ps",
+    "name": "Granite Solar Portfolio",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Granite is a portfolio of eight operational solar projects in North Carolina totaling about 39 MWdc. The portfolio sells electricity under contracted arrangements and operates as an asset-heavy solar generation portfolio within the listed US Solar Fund vehicle. Public portfolio materials describe the assets as operating projects with long-term contracted revenues rather than merchant exposure. US Solar Fund acquired Granite in January 2020, and Amber later became the investment manager to the fund. Reviewed public sources do not disclose a separate co-ownership split at the project portfolio level.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "North Carolina",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpxd01dnivhe9blhlfxi",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "US Solar Fund plc (USF)",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkfdj02goivhedymgp9ty",
+        "date": "2020",
+        "event": "The Granite assets were incorporated into the fund's contracted operating portfolio.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfe402gpivheetbg2nh9",
+        "date": "Jan 2020",
+        "event": "US Solar Fund, now managed by Amber Infrastructure, closed the acquisition of the Granite portfolio of eight North Carolina solar projects.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfer02gqivhero6gvozx",
+        "date": "Dec 2023",
+        "event": "Amber became investment manager to US Solar Fund.",
+        "category": "FINANCING",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoovw0724ivheapxmpgl2",
+        "label": "Close date source — Amber Infrastructure — Granite Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/portfolio/granite",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpooys0725ivhe6g37ac4s",
+        "label": "Ussolarfund — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ussolarfund — Granite Solar Portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoozc0726ivhe9svz9dlq",
+        "label": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/amber-appointed-us-solar-fund-plc-investment-manager/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoozv0727ivhe7dj96qvi",
+        "label": "Ussolarfund — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_interim_report_2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ussolarfund — Granite Solar Portfolio",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Granite Solar Portfolio",
+    "investmentFirm": "Amber Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar portfolio",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "US Solar Fund plc (USF)",
+    "description": "Granite is a portfolio of eight operational solar projects in North Carolina totaling about 39 MWdc. The portfolio sells electricity under contracted arrangements and operates as an asset-heavy solar generation portfolio within the listed US Solar Fund vehicle. Public portfolio materials describe the assets as operating projects with long-term contracted revenues rather than merchant exposure. US Solar Fund acquired Granite in January 2020, and Amber later became the investment manager to the fund. Reviewed public sources do not disclose a separate co-ownership split at the project portfolio level.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2020,
+    "investmentYear": 2020,
+    "headquarters": "North Carolina",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "The Granite assets were incorporated into the fund's contracted operating portfolio.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jan 2020",
+        "event": "US Solar Fund, now managed by Amber Infrastructure, closed the acquisition of the Granite portfolio of eight North Carolina solar projects.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 2023",
+        "event": "Amber became investment manager to US Solar Fund.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Amber Infrastructure — Granite Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/portfolio/granite",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ussolarfund — Granite Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/amber-appointed-us-solar-fund-plc-investment-manager/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Ussolarfund — Granite Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_interim_report_2025.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Amber Infrastructure",
+        "ownershipVehicle": "US Solar Fund plc (USF)",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpig56004civhenbxnuvlx",
+        "name": "Amber Infrastructure",
+        "updatedAt": "2026-07-23T16:09:28.122Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0020:granite-solar-portfolio:05c76255",
+    "taskIndex": 20,
+    "canonicalKey": "granite-solar-portfolio|united-states",
+    "capturedAt": "2026-08-05T04:54:59.755Z",
+    "databaseRevision": "company-state:f424ad74691b14c4b915a7b3c8ef62ea02372be0dd4c8ca36515b036357b4c3d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "77f94266712997331f67b8111f3b315f32d2e3f28763f099a1fd856a0f539483",
+    "productionSnapshotSha256": "92b2dbbb1d17dbbd26cf0be045583e1929207ac90605819e83994f328ca1b180",
+    "targetCompanySnapshotSha256": "f424ad74691b14c4b915a7b3c8ef62ea02372be0dd4c8ca36515b036357b4c3d",
+    "seedEntrySha256": "2367bd88812b3a23a08ab3ebf2f082a0d986e4bbfdc6994056bb6fb6c727955b",
+    "dependencies": {
+      "ownershipPeriodsSha256": "8edaea1ae3f3f729a9bf8e5a6e7f35f9efd59c2b62d01d822be42aaafd08a2d5",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "335be0d5a62870ef627d7e9c88278570c30e7c63317b7ca81feb4001353d1cde",
+      "citationsSha256": "c02d53c0870e414cc7058032ae2c426a103f4ea0c75f1659a188344145ac80d5",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "524b4965539a95b7fea942d8a70b95d18a2d205f2a0c7c349b17cedd7ed3c479",
+    "stateSha256": "124a96dc1ed68ed2a7dc74895e9d46eeb4440cefd99aa8097276ddb008ccf413",
+    "taskSnapshotSha256": "29c71bf86b9fc1650737a00a74d3226d9bdd6d9a99d629fe42233bab2dc4ed75"
+  },
+  "contextSha256": "c176363c302f8bbbf4cc3bc781fd64146699e41cea5bd705034817e199bb0436"
+}
