@@ -36,6 +36,17 @@ const dataFormatDownloadHeaders = [
   },
 ];
 
+const dataSlidesDownloadHeaders = [
+  {
+    key: "Content-Disposition",
+    value: 'attachment; filename="data-slides.pptx"',
+  },
+  {
+    key: "Content-Type",
+    value: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  },
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath,
@@ -60,6 +71,10 @@ const nextConfig = {
       {
         source: "/one-off-requests/data-format-standard-icons.pptx",
         headers: dataFormatDownloadHeaders,
+      },
+      {
+        source: "/one-off-requests/data-slides.pptx",
+        headers: dataSlidesDownloadHeaders,
       },
       { source: "/:path*", headers: securityHeaders },
     ];

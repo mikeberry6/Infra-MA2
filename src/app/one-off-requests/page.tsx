@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Data slides",
+    description:
+      "CRA Data Cube and Index templates, including the replacement-icons reference page.",
+    href: "/one-off-requests/data-slides.pptx",
+    format: "PowerPoint",
+    date: "Aug 2026",
+    download: true,
+  },
+  {
     title: "Data format",
     description:
       "Customer and site master data-format presentation, preserved as the supplied PowerPoint and available as a direct download.",
