@@ -1,0 +1,1098 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Company X Data Cube | Dataset Index 01–06</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 24px 12px 48px;
+        background: #ffffff;
+        color: #000000;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .toolbar,
+      .content {
+        width: 100%;
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .toolbar { margin-bottom: 18px; }
+      h1 {
+        margin: 0 0 4px;
+        font-size: 20px;
+        line-height: 26px;
+      }
+      .subtitle,
+      .status {
+        margin: 0;
+        color: #555555;
+        font-size: 12px;
+        line-height: 17px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      button,
+      .download-link {
+        display: inline-block;
+        padding: 8px 14px;
+        border: 1px solid #000000;
+        border-radius: 3px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      button {
+        background: #000000;
+        color: #ffffff;
+      }
+      .download-link {
+        background: #ffffff;
+        color: #000000;
+      }
+      button:focus-visible,
+      .download-link:focus-visible {
+        outline: 2px solid #6d4aff;
+        outline-offset: 2px;
+      }
+      .status { width: 100%; }
+      pre {
+        margin: 0;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 17px;
+      }
+      @media print {
+        body { padding: 0; }
+        .toolbar { display: none; }
+        .content { max-width: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="toolbar">
+      <h1>Company X data cube — dataset index 01–06</h1>
+      <p class="subtitle">Six-dataset specification for customer, contract, retention, asset, operating and fleet-utilization data.</p>
+      <div class="actions">
+        <button id="copy-button" type="button">Copy for Outlook</button>
+        <a class="download-link" href="company-x-data-cube-dataset-index-01-06.txt" download="company-x-data-cube-dataset-index-01-06.txt">Download text</a>
+        <span id="copy-status" class="status" role="status" aria-live="polite">Copies all six datasets below.</span>
+      </div>
+    </header>
+
+    <main class="content">
+      <pre id="email-content">01. Customer &amp; Site Master
+
+Data Cube: Commercial &amp; Customer Data Cube
+Dataset Index: 01
+Purpose: Customer, site and hierarchy data supporting concentration, end-market, geographic and site-level revenue analysis.
+
+How the Data Connects
+
+1. Ultimate Parent — Roll-up level
+    Top of the customer hierarchy.
+2. Customer Account — 1 row / customer
+    Individual customer account.
+3. Physical Site — 1 row / site
+    Specific operating location.
+4. Contract / Asset — Downstream joins
+    Assets and contracts at the site.
+
+Core Data Tables
+
+01. Customer List
+
+1 row / customer
+
+Identity &amp; Hierarchy
+
+* Customer ID
+* Customer legal name
+* Billing parent
+* Ultimate parent
+
+Profile &amp; Ownership
+
+* Customer type
+* End market
+* National account flag
+* Account manager
+
+Lifecycle &amp; Source
+
+* Customer start date
+* Customer status
+* Customer tenure
+* Acquisition source
+
+Scale &amp; Performance
+
+* Active site count
+* Active asset count
+* Current recurring revenue
+* TTM revenue
+
+02. Site List
+
+1 row / site
+
+Identity &amp; Linkage
+
+* Site ID
+* Site name
+* Customer ID
+* Billing customer ID
+
+Geography &amp; Service
+
+* Address
+* City / state
+* Region
+* Service branch
+
+Profile &amp; Lifecycle
+
+* Site type
+* End market
+* Site start date
+* Site status
+
+Scale &amp; Performance
+
+* Active contract count
+* Active asset count
+* Current recurring revenue
+* TTM revenue
+
+Supporting Tables
+
+03. Customer Hierarchy
+
+Account Roll-Up
+
+* Ultimate parent
+* Billing parent
+* Parent / child account mapping
+* Site-to-account mapping
+* Effective dates
+* Mapping method
+
+04. Definitions &amp; Checks
+
+Data Governance
+
+* Field definitions
+* Standardized categories
+* Record counts
+* Data-quality checks
+
+Primary Buyer Analyses
+
+* Customer Concentration
+* End-Market Exposure
+* Geographic Mix
+* Site-Level Revenue Analysis
+
+⸻
+
+02. Contract Master
+
+Data Cube: Commercial &amp; Customer Data Cube
+Dataset Index: 02
+Purpose: Contract terms, pricing, escalation, coverage and document data supporting revenue visibility, renewal and termination analysis.
+
+How the Data Connects
+
+1. Customer / Site — Commercial context
+    Account and location covered by contract.
+2. Contract Summary — 1 row / contract
+    Term, renewal and rights.
+3. Pricing Line — 1 row / fee line
+    Rate, fee and escalator detail.
+4. Coverage Map — Contract joins
+    Links contracts to sites and assets.
+
+Core Data Tables
+
+01. Contract Summary
+
+1 row / contract
+
+Identity &amp; Linkage
+
+* Contract ID
+* Customer ID
+* Site ID
+* Asset ID
+
+Term &amp; Renewal
+
+* Effective date
+* Expiration date
+* Remaining term
+* Auto-renewal flag
+
+Rights &amp; Risk
+
+* Termination rights
+* Notice period
+* Early termination fee
+* Consent requirements
+
+Revenue Visibility
+
+* Contract status
+* Covered asset count
+* Contracted MRR
+* Remaining revenue
+
+02. Pricing &amp; Escalators
+
+1 row / fee line
+
+Pricing Identity
+
+* Pricing line ID
+* Contract ID
+* Site ID
+* Asset ID
+
+Rate Structure
+
+* Fee type
+* Contracted rate
+* Rate unit
+* Billing frequency
+
+Escalators
+
+* Escalation method
+* Escalation %
+* Last increase
+* Next increase
+
+Revenue Detail
+
+* Recurring revenue
+* One-time fees
+* Discounts / credits
+* Effective dates
+
+03. Contract Coverage
+
+1 row / contract-site-asset
+
+Coverage Identity
+
+* Coverage record ID
+* Contract ID
+* Pricing line ID
+* Deployment ID
+
+Customer / Site
+
+* Customer ID
+* Site ID
+* Billing account
+* Ultimate parent
+
+Asset Coverage
+
+* Asset ID
+* Equipment type
+* Covered quantity
+* Service level
+
+Coverage Dates
+
+* Coverage start date
+* Coverage end date
+* Current coverage flag
+* Replacement asset ID
+
+Supporting Tables
+
+04. Amendments &amp; Documents
+
+Legal Support
+
+* Amendment history
+* Prior / revised terms
+* Signed documents
+* VDR reference
+* Execution status
+* Completeness check
+
+05. Definitions &amp; Checks
+
+Data Governance
+
+* Field definitions
+* Contract categories
+* Document checks
+* Revenue tie-outs
+* Missing-field checks
+* Duplicate contract checks
+
+Primary Buyer Analyses
+
+* Revenue Visibility
+* Renewal Profile
+* Escalator Analysis
+* Termination Exposure
+
+⸻
+
+03. Customer Churn &amp; Retention
+
+Data Cube: Commercial &amp; Customer Data Cube
+Dataset Index: 03
+Purpose: Customer, site, unit and recurring-revenue movement data supporting retention, churn, renewal and cohort analysis.
+
+How the Data Connects
+
+1. Customer / Site — Retention base
+    Customer and location relationship.
+2. Monthly Retention — 1 row / relationship-month
+    Beginning-to-ending units and revenue.
+3. Churn Event — 1 row / event
+    Timing, cause and value of loss.
+4. Renewal Schedule — Contract outcome
+    Links churn and retention to renewals.
+
+Core Data Tables
+
+01. Monthly Retention
+
+1 row / customer-site-asset-month
+
+Identity &amp; Cohort
+
+* Month end
+* Customer ID
+* Site ID
+* Contract ID
+
+Beginning Position
+
+* Beginning active flag
+* Beginning unit count
+* Beginning recurring revenue
+* Beginning rate
+
+Monthly Movements
+
+* New / expansion revenue
+* Price escalation revenue
+* Contraction revenue
+* Churned revenue
+
+Ending Position
+
+* Ending active flag
+* Ending unit count
+* Ending recurring revenue
+* Customer / site tenure
+
+02. Churn Events
+
+1 row / churn event
+
+Event Identity
+
+* Churn event ID
+* Customer ID
+* Site ID
+* Asset ID
+
+Timing &amp; Scope
+
+* Notice date
+* Termination date
+* Removal date
+* Churn level
+
+Reason &amp; Ownership
+
+* Churn reason
+* Reason detail
+* Customer / Company X initiated
+* Competitor loss flag
+
+Revenue &amp; Outcome
+
+* Lost units
+* Lost MRR
+* Save attempt
+* Final outcome
+
+03. Renewal Schedule
+
+1 row / renewal opportunity
+
+Renewal Identity
+
+* Contract ID
+* Customer ID
+* Site ID
+* Asset ID
+
+Timing
+
+* Expiration date
+* Notice deadline
+* Renewal due date
+* Renewal completed date
+
+Outcome
+
+* Renewal status
+* Renewed term
+* Renewed unit count
+* Nonrenewed unit count
+
+Pricing
+
+* Pre-renewal rate
+* Post-renewal rate
+* Rate change
+* Revenue retained
+
+Supporting Tables
+
+04. Retention Summary
+
+Cohort Analysis
+
+* Customer retention
+* Site retention
+* Unit retention
+* Gross revenue retention
+* Net revenue retention
+* Churn by reason
+
+05. Definitions &amp; Checks
+
+Data Governance
+
+* Churn rules
+* Expansion / contraction rules
+* Replacement treatment
+* Revenue bridge checks
+* Unit-count tie-outs
+* Duplicate event checks
+
+Primary Buyer Analyses
+
+* Revenue Retention
+* Churn Drivers
+* Renewal Performance
+* Cohort Durability
+
+⸻
+
+04. Asset Master
+
+Data Cube: Operational &amp; Asset Data Cube
+Dataset Index: 04
+Purpose: Unit-level equipment, ownership, cost, condition, location and status data supporting fleet quality, capital intensity and asset analysis.
+
+How the Data Connects
+
+1. Asset Origin — Procurement / acquisition
+    How the equipment entered the fleet.
+2. Asset Register — 1 row / asset
+    Core equipment record.
+3. Status History — 1 row / status period
+    Location and lifecycle movement.
+4. Capital / Disposal — Investment and exit
+    Cost, refurbishments and final disposition.
+
+Core Data Tables
+
+01. Asset Register
+
+1 row / physical asset
+
+Identity &amp; Equipment
+
+* Asset ID
+* Serial / tag number
+* Asset type
+* Manufacturer / model
+
+Acquisition &amp; Ownership
+
+* Purchase date
+* Acquisition source
+* Ownership type
+* New / used flag
+
+Cost &amp; Accounting
+
+* Original cost
+* Installed cost
+* Placed-in-service date
+* Net book value
+
+Current Status
+
+* Current status
+* Current location
+* Current customer / site
+* Condition grade
+
+02. Capital History
+
+1 row / capital event
+
+Event Identity
+
+* Capital event ID
+* Asset ID
+* Event date
+* Event type
+
+Cost Components
+
+* Equipment cost
+* Freight cost
+* Installation cost
+* Refurbishment cost
+
+Classification
+
+* Growth capex
+* Maintenance capex
+* Upgrade capex
+* Capital project ID
+
+Source Detail
+
+* Vendor
+* Invoice reference
+* GL account
+* Acquisition source
+
+03. Location &amp; Status History
+
+1 row / asset-status interval
+
+Record &amp; Linkage
+
+* History record ID
+* Asset ID
+* Deployment ID
+* Contract ID
+
+Location
+
+* Customer ID
+* Site ID
+* Branch / yard
+* Location type
+
+Status &amp; Timing
+
+* Asset status
+* Substatus
+* Start date
+* End date
+
+Movement
+
+* Status-change reason
+* Prior status
+* Next status
+* Related event ID
+
+04. Retirements &amp; Disposals
+
+1 row / disposal event
+
+Disposition Identity
+
+* Disposal record ID
+* Asset ID
+* Retirement date
+* Disposal date
+
+Disposition Detail
+
+* Disposal method
+* Disposal reason
+* Customer buyout flag
+* Final disposition
+
+Financial Impact
+
+* Disposal proceeds
+* Net book value
+* Gain / loss
+* Write-off amount
+
+Support
+
+* Approval status
+* Buyer / counterparty
+* Document reference
+* Acquisition source
+
+Supporting Table
+
+05. Definitions &amp; Checks
+
+Data Governance
+
+* Equipment taxonomy
+* Status definitions
+* Fleet-count tie-out
+* Fixed-asset tie-out
+* Duplicate serial checks
+* Missing cost / location exceptions
+
+Primary Buyer Analyses
+
+* Fleet Composition
+* Age &amp; Condition
+* Capital Intensity
+* Ownership / Disposition
+
+⸻
+
+05. Monthly Operating Data Tape
+
+Data Cube: Operational &amp; Asset Data Cube
+Dataset Index: 05
+Purpose: Monthly asset-level operating, billing, revenue, service and cost data supporting unit economics, revenue quality and activity analysis.
+
+How the Data Connects
+
+1. Asset / Site — Operating context
+    Equipment and location being analyzed.
+2. Asset-Month Data — 1 row / asset-month
+    Monthly revenue, status and cost.
+3. Billing Detail — 1 row / invoice line
+    Invoice, fee and adjustment detail.
+4. Events / Service — Activity records
+    Installations, removals and work orders.
+
+Core Data Tables
+
+01. Asset-Month Data
+
+1 row / asset-month
+
+Identity &amp; Position
+
+* Month end
+* Asset ID
+* Customer ID
+* Site ID
+
+Status &amp; Activity
+
+* Beginning status
+* Ending status
+* Deployed days
+* Billed days
+
+Revenue
+
+* Contracted rate
+* Recurring revenue
+* One-time revenue
+* Total revenue
+
+Cost &amp; Capex
+
+* Service cost
+* Installation cost
+* Maintenance capex
+* Growth capex
+
+02. Billing Detail
+
+1 row / invoice line
+
+Invoice Identity
+
+* Invoice ID
+* Invoice line ID
+* Invoice date
+* Service period
+
+Pricing
+
+* Contract ID
+* Pricing line ID
+* Fee type
+* Rate / quantity
+
+Amounts
+
+* Gross amount
+* Discount / credit
+* Tax / pass-through
+* Net billed amount
+
+Accounting
+
+* Revenue month
+* GL account
+* Invoice status
+* Payment status
+
+03. Operating Events
+
+1 row / operating event
+
+Event Identity
+
+* Event ID
+* Asset ID
+* Customer ID
+* Site ID
+
+Event Type
+
+* Installation
+* Removal
+* Transfer
+* Replacement
+
+Timing
+
+* Request date
+* Scheduled date
+* Completion date
+* Final billing date
+
+Movement Detail
+
+* Prior site
+* New site
+* Prior status
+* Event reason
+
+04. Service &amp; Maintenance
+
+1 row / work order
+
+Work-Order Identity
+
+* Work-order ID
+* Asset ID
+* Customer ID
+* Site ID
+
+Service Type
+
+* Preventive service
+* Reactive repair
+* Emergency service
+* Refurbishment
+
+Cost Detail
+
+* Labor hours
+* Labor cost
+* Parts cost
+* Contractor cost
+
+Resolution
+
+* Downtime days
+* Completion status
+* Repeat service flag
+* Resolution notes
+
+Supporting Table
+
+05. Reconciliation &amp; Definitions
+
+Data Governance
+
+* GL revenue tie-out
+* Invoice register tie-out
+* Asset Master tie-out
+* Event-count checks
+* Revenue definitions
+* Cost-category definitions
+
+Primary Buyer Analyses
+
+* Revenue Build
+* Rate Realization
+* Operating Activity
+* Direct Cost / Margin
+
+⸻
+
+06. Fleet Utilization
+
+Data Cube: Operational &amp; Asset Data Cube
+Dataset Index: 06
+Purpose: Asset-status and monthly fleet data supporting deployment, billing, idle-aging, availability and redeployment analysis.
+
+How the Data Connects
+
+1. Asset Register — Fleet base
+    In-service equipment population.
+2. Status History — 1 row / status period
+    Daily or effective-dated fleet status.
+3. Monthly Utilization — 1 row / asset-month
+    Status days and productivity metrics.
+4. Fleet / Idle Views — Summary outputs
+    Portfolio trends and redeployment pipeline.
+
+Core Data Tables
+
+01. Asset Status History
+
+1 row / asset-status interval
+
+Identity &amp; Location
+
+* Asset ID
+* Customer ID
+* Site ID
+* Branch / yard
+
+Status
+
+* Status
+* Substatus
+* Available flag
+* Billed flag
+
+Timing
+
+* Status start date
+* Status end date
+* Status days
+* Expected availability
+
+Movement
+
+* Status-change reason
+* Prior status
+* Next assignment
+* Related event ID
+
+02. Monthly Utilization
+
+1 row / asset-month
+
+Fleet Base
+
+* Month end
+* Asset type
+* Region / branch
+* Acquisition source
+
+Status Days
+
+* Deployed days
+* Billed days
+* Idle days
+* Repair days
+
+Utilization Metrics
+
+* Deployment utilization
+* Billing utilization
+* Billing conversion
+* Idle rate
+
+Productivity
+
+* Revenue per fleet day
+* Revenue per billed day
+* Days to redeploy
+* Idle aging bucket
+
+03. Fleet Summary
+
+1 row / month-summary
+
+Fleet Rollforward
+
+* Beginning fleet
+* Units added
+* Units installed
+* Ending fleet
+
+Fleet Mix
+
+* Asset type
+* Region / branch
+* Acquisition source
+* Age band
+
+Utilization Summary
+
+* Average deployed fleet
+* Average billed fleet
+* Average idle fleet
+* Average unavailable fleet
+
+Trend Metrics
+
+* Deployment utilization
+* Billing utilization
+* Idle rate
+* Unavailable rate
+
+04. Idle Asset List
+
+1 row / idle asset
+
+Idle Identity
+
+* Asset ID
+* Asset type
+* Current yard
+* Region
+
+Idle Aging
+
+* Idle start date
+* Idle days
+* Aging bucket
+* Prior removal date
+
+Readiness
+
+* Condition grade
+* Repair required
+* Ready-to-deploy flag
+* Estimated repair cost
+
+Next Use
+
+* Next customer
+* Expected install date
+* Recommended action
+* Responsible owner
+
+Supporting Table
+
+05. Definitions &amp; Checks
+
+Data Governance
+
+* Status hierarchy
+* Utilization formulas
+* Billed-overlay rules
+* Calendar-day tie-out
+* Asset Master reconciliation
+* Operating tape reconciliation
+
+Primary Buyer Analyses
+
+* Deployment Utilization
+* Billing Conversion
+* Idle Aging
+* Redeployment Speed</pre>
+    </main>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function copyWithCommand(html, plainText) {
+          var helper = document.createElement("textarea");
+          var handled = false;
+
+          function handleCopy(event) {
+            if (!event.clipboardData) return;
+            event.preventDefault();
+            event.clipboardData.setData("text/html", html);
+            event.clipboardData.setData("text/plain", plainText);
+            handled = true;
+          }
+
+          helper.value = plainText;
+          helper.setAttribute("aria-hidden", "true");
+          helper.style.position = "fixed";
+          helper.style.left = "-9999px";
+          helper.style.top = "0";
+          document.body.appendChild(helper);
+          helper.focus();
+          helper.select();
+          document.addEventListener("copy", handleCopy);
+
+          var succeeded = false;
+          try {
+            succeeded = document.execCommand("copy");
+          } catch (error) {
+            succeeded = false;
+          } finally {
+            document.removeEventListener("copy", handleCopy);
+            document.body.removeChild(helper);
+          }
+
+          return succeeded && handled;
+        }
+
+        function showSuccess(button, status) {
+          button.textContent = "Copied";
+          status.textContent = "Paste directly into Outlook.";
+          window.setTimeout(function () {
+            button.textContent = "Copy for Outlook";
+            status.textContent = "Copies all six datasets below.";
+          }, 5000);
+        }
+
+        async function copyForOutlook() {
+          var content = document.getElementById("email-content");
+          var button = document.getElementById("copy-button");
+          var status = document.getElementById("copy-status");
+          var plainText = content.innerText.trim();
+          var html = '<div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#000000;white-space:pre-wrap;">' + content.innerHTML + "<" + "/div>";
+          var copied = copyWithCommand(html, plainText);
+
+          if (!copied && navigator.clipboard && window.ClipboardItem) {
+            try {
+              await navigator.clipboard.write([
+                new ClipboardItem({
+                  "text/html": new Blob([html], { type: "text/html" }),
+                  "text/plain": new Blob([plainText], { type: "text/plain" })
+                })
+              ]);
+              copied = true;
+            } catch (error) {
+              copied = false;
+            }
+          }
+
+          if (copied) {
+            showSuccess(button, status);
+          } else {
+            status.textContent = "Select the text below, copy it, and paste it into Outlook.";
+          }
+
+          button.focus();
+        }
+
+        var copyButton = document.getElementById("copy-button");
+        copyButton.addEventListener("click", copyForOutlook);
+        copyButton.setAttribute("data-copy-ready", "true");
+      })();
+    </script>
+  </body>
+</html>
