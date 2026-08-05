@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Rio Tinto infrastructure overview",
+    description:
+      "Succinct overview of Rio Tinto's core infrastructure assets, potential monetization perimeter, transaction structure, and current status.",
+    href: "/one-off-requests/rio-tinto-infrastructure-overview.html",
+    format: "Outlook HTML",
+    date: "Aug 2026",
+  },
+  {
     title: "Company X data cube — Outlook summary",
     description:
       "Succinct, copy-friendly overview of the two data cubes and the main fields for all six datasets.",
