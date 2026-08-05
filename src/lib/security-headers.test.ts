@@ -47,6 +47,18 @@ describe("application security headers", () => {
     );
   });
 
+  it("forces the IB and PE icon library to download with the public filename", async () => {
+    const headers = await getHeadersForSource(
+      "/one-off-requests/ib-pe-reusable-icon-library.pptx",
+    );
+    expect(headers["Content-Disposition"]).toBe(
+      'attachment; filename="ib-pe-reusable-icon-library.pptx"',
+    );
+    expect(headers["Content-Type"]).toBe(
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    );
+  });
+
   it("does not allow eval in production", () => {
     const serializedHeaders = execFileSync(
       process.execPath,
