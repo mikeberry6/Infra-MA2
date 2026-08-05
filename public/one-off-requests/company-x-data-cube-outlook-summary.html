@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Company X Data Cube | Outlook Summary</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 24px 12px 48px;
+        background: #ffffff;
+        color: #000000;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .toolbar,
+      .content {
+        width: 100%;
+        max-width: 780px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .toolbar { margin-bottom: 18px; }
+      .page-title {
+        margin: 0 0 4px;
+        font-size: 20px;
+        line-height: 26px;
+      }
+      .subtitle,
+      .status {
+        margin: 0;
+        color: #555555;
+        font-size: 12px;
+        line-height: 17px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      button,
+      .download-link {
+        display: inline-block;
+        padding: 8px 14px;
+        border: 1px solid #000000;
+        border-radius: 3px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      button {
+        background: #000000;
+        color: #ffffff;
+      }
+      .download-link {
+        background: #ffffff;
+        color: #000000;
+      }
+      button:focus-visible,
+      .download-link:focus-visible {
+        outline: 2px solid #6d4aff;
+        outline-offset: 2px;
+      }
+      .status { width: 100%; }
+      @media print {
+        body { padding: 0; }
+        .toolbar { display: none; }
+        .content { max-width: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="toolbar">
+      <h1 class="page-title">Company X data cube — Outlook summary</h1>
+      <p class="subtitle">Concise overview and requested fields for all six datasets.</p>
+      <div class="actions">
+        <button id="copy-button" type="button">Copy for Outlook</button>
+        <a class="download-link" href="company-x-data-cube-outlook-summary.txt" download="company-x-data-cube-outlook-summary.txt">Download text</a>
+        <span id="copy-status" class="status" role="status" aria-live="polite">Copies the formatted email content below.</span>
+      </div>
+    </header>
+
+    <main id="email-content" class="content" style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#000000;">
+      <h1 style="margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:23px;font-weight:700;">Company X | Data Cube Scope &amp; Requested Fields</h1>
+      <p style="margin:0 0 16px 0;">Below is the proposed structure for the six priority datasets. The approach uses stable customer, site, contract and asset IDs; preserves effective-dated history; and reconciles operating detail to billing and financial records. Each table should be delivered at the stated grain with field definitions and basic quality checks.</p>
+      <h2 style="margin:20px 0 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;font-weight:700;">COMMERCIAL &amp; CUSTOMER DATA CUBE</h2>
+      <p style="margin:0 0 12px 0;"><strong>Approach:</strong> Establish a single customer and site hierarchy, link contracts and pricing to covered assets, and use monthly relationship data to measure retention, churn and renewals.</p>
+      <h3 style="margin:14px 0 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;">01. Customer &amp; Site Master</h3>
+      <ul style="margin:0 0 12px 20px;padding:0 0 0 14px;">
+        <li style="margin:0 0 3px 0;"><strong>Customer List (1 row / customer):</strong> Customer ID; customer legal name; billing parent; ultimate parent; customer type; end market; national account flag; account manager; customer start date; customer status; customer tenure; acquisition source; active site count; active asset count; current recurring revenue; TTM revenue.</li>
+        <li style="margin:0 0 3px 0;"><strong>Site List (1 row / site):</strong> Site ID; site name; Customer ID; billing customer ID; address; city / state; region; service branch; site type; end market; site start date; site status; active contract count; active asset count; current recurring revenue; TTM revenue.</li>
+        <li style="margin:0 0 3px 0;"><strong>Customer Hierarchy:</strong> Ultimate parent; billing parent; parent / child account mapping; site-to-account mapping; effective dates; mapping method.</li>
+        <li style="margin:0 0 3px 0;"><strong>Definitions &amp; Checks:</strong> Field definitions; standardized categories; record counts; data-quality checks.</li>
+        <li style="margin:0 0 3px 0;"><strong>Primary analyses:</strong> Customer concentration; end-market exposure; geographic mix; site-level revenue analysis.</li>
+      </ul>
+      <h3 style="margin:14px 0 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;">02. Contract Master</h3>
+      <ul style="margin:0 0 12px 20px;padding:0 0 0 14px;">
+        <li style="margin:0 0 3px 0;"><strong>Contract Summary (1 row / contract):</strong> Contract ID; Customer ID; Site ID; Asset ID; effective date; expiration date; remaining term; auto-renewal flag; termination rights; notice period; early termination fee; consent requirements; contract status; covered asset count; contracted MRR; remaining revenue.</li>
+        <li style="margin:0 0 3px 0;"><strong>Pricing &amp; Escalators (1 row / fee line):</strong> Pricing line ID; Contract ID; Site ID; Asset ID; fee type; contracted rate; rate unit; billing frequency; escalation method; escalation %; last increase; next increase; recurring revenue; one-time fees; discounts / credits; effective dates.</li>
+        <li style="margin:0 0 3px 0;"><strong>Contract Coverage (1 row / contract-site-asset):</strong> Coverage record ID; Contract ID; Pricing line ID; Deployment ID; Customer ID; Site ID; billing account; ultimate parent; Asset ID; equipment type; covered quantity; service level; coverage start date; coverage end date; current coverage flag; replacement Asset ID.</li>
+        <li style="margin:0 0 3px 0;"><strong>Amendments &amp; Documents:</strong> Amendment history; prior / revised terms; signed documents; VDR reference; execution status; completeness check.</li>
+        <li style="margin:0 0 3px 0;"><strong>Definitions &amp; Checks:</strong> Field definitions; contract categories; document checks; revenue tie-outs; missing-field checks; duplicate contract checks.</li>
+        <li style="margin:0 0 3px 0;"><strong>Primary analyses:</strong> Revenue visibility; renewal profile; escalator analysis; termination exposure.</li>
+      </ul>
+      <h3 style="margin:14px 0 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;">03. Customer Churn &amp; Retention</h3>
+      <ul style="margin:0 0 12px 20px;padding:0 0 0 14px;">
+        <li style="margin:0 0 3px 0;"><strong>Monthly Retention (1 row / customer-site-asset-month):</strong> Month end; Customer ID; Site ID; Contract ID; beginning active flag; beginning unit count; beginning recurring revenue; beginning rate; new / expansion revenue; price escalation revenue; contraction revenue; churned revenue; ending active flag; ending unit count; ending recurring revenue; customer / site tenure.</li>
+        <li style="margin:0 0 3px 0;"><strong>Churn Events (1 row / churn event):</strong> Churn event ID; Customer ID; Site ID; Asset ID; notice date; termination date; removal date; churn level; churn reason; reason detail; customer / Company X initiated; competitor loss flag; lost units; lost MRR; save attempt; final outcome.</li>
+        <li style="margin:0 0 3px 0;"><strong>Renewal Schedule (1 row / renewal opportunity):</strong> Contract ID; Customer ID; Site ID; Asset ID; expiration date; notice deadline; renewal due date; renewal completed date; renewal status; renewed term; renewed unit count; nonrenewed unit count; pre-renewal rate; post-renewal rate; rate change; revenue retained.</li>
+        <li style="margin:0 0 3px 0;"><strong>Retention Summary:</strong> Customer retention; site retention; unit retention; gross revenue retention; net revenue retention; churn by reason.</li>
+        <li style="margin:0 0 3px 0;"><strong>Definitions &amp; Checks:</strong> Churn rules; expansion / contraction rules; replacement treatment; revenue bridge checks; unit-count tie-outs; duplicate event checks.</li>
+        <li style="margin:0 0 3px 0;"><strong>Primary analyses:</strong> Revenue retention; churn drivers; renewal performance; cohort durability.</li>
+      </ul>
+      <h2 style="margin:20px 0 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;font-weight:700;">OPERATIONAL &amp; ASSET DATA CUBE</h2>
+      <p style="margin:0 0 12px 0;"><strong>Approach:</strong> Build a unit-level asset register and effective-dated status history, then layer monthly revenue, billing, operating events, service cost, utilization and disposition data to reconcile fleet movement with financial performance.</p>
+      <h3 style="margin:14px 0 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;">04. Asset Master</h3>
+      <ul style="margin:0 0 12px 20px;padding:0 0 0 14px;">
+        <li style="margin:0 0 3px 0;"><strong>Asset Register (1 row / physical asset):</strong> Asset ID; serial / tag number; asset type; manufacturer / model; purchase date; acquisition source; ownership type; new / used flag; original cost; installed cost; placed-in-service date; net book value; current status; current location; current customer / site; condition grade.</li>
+        <li style="margin:0 0 3px 0;"><strong>Capital History (1 row / capital event):</strong> Capital event ID; Asset ID; event date; event type; equipment cost; freight cost; installation cost; refurbishment cost; growth capex; maintenance capex; upgrade capex; capital project ID; vendor; invoice reference; GL account; acquisition source.</li>
+        <li style="margin:0 0 3px 0;"><strong>Location &amp; Status History (1 row / asset-status interval):</strong> History record ID; Asset ID; Deployment ID; Contract ID; Customer ID; Site ID; branch / yard; location type; asset status; substatus; start date; end date; status-change reason; prior status; next status; related event ID.</li>
+        <li style="margin:0 0 3px 0;"><strong>Retirements &amp; Disposals (1 row / disposal event):</strong> Disposal record ID; Asset ID; retirement date; disposal date; disposal method; disposal reason; customer buyout flag; final disposition; disposal proceeds; net book value; gain / loss; write-off amount; approval status; buyer / counterparty; document reference; acquisition source.</li>
+        <li style="margin:0 0 3px 0;"><strong>Definitions &amp; Checks:</strong> Equipment taxonomy; status definitions; fleet-count tie-out; fixed-asset tie-out; duplicate serial checks; missing cost / location exceptions.</li>
+        <li style="margin:0 0 3px 0;"><strong>Primary analyses:</strong> Fleet composition; age &amp; condition; capital intensity; ownership / disposition.</li>
+      </ul>
+      <h3 style="margin:14px 0 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;">05. Monthly Operating Data Tape</h3>
+      <ul style="margin:0 0 12px 20px;padding:0 0 0 14px;">
+        <li style="margin:0 0 3px 0;"><strong>Asset-Month Data (1 row / asset-month):</strong> Month end; Asset ID; Customer ID; Site ID; beginning status; ending status; deployed days; billed days; contracted rate; recurring revenue; one-time revenue; total revenue; service cost; installation cost; maintenance capex; growth capex.</li>
+        <li style="margin:0 0 3px 0;"><strong>Billing Detail (1 row / invoice line):</strong> Invoice ID; invoice line ID; invoice date; service period; Contract ID; Pricing line ID; fee type; rate / quantity; gross amount; discount / credit; tax / pass-through; net billed amount; revenue month; GL account; invoice status; payment status.</li>
+        <li style="margin:0 0 3px 0;"><strong>Operating Events (1 row / operating event):</strong> Event ID; Asset ID; Customer ID; Site ID; installation; removal; transfer; replacement; request date; scheduled date; completion date; final billing date; prior site; new site; prior status; event reason.</li>
+        <li style="margin:0 0 3px 0;"><strong>Service &amp; Maintenance (1 row / work order):</strong> Work-order ID; Asset ID; Customer ID; Site ID; preventive service; reactive repair; emergency service; refurbishment; labor hours; labor cost; parts cost; contractor cost; downtime days; completion status; repeat service flag; resolution notes.</li>
+        <li style="margin:0 0 3px 0;"><strong>Reconciliation &amp; Definitions:</strong> GL revenue tie-out; invoice register tie-out; Asset Master tie-out; event-count checks; revenue definitions; cost-category definitions.</li>
+        <li style="margin:0 0 3px 0;"><strong>Primary analyses:</strong> Revenue build; rate realization; operating activity; direct cost / margin.</li>
+      </ul>
+      <h3 style="margin:14px 0 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;">06. Fleet Utilization</h3>
+      <ul style="margin:0 0 12px 20px;padding:0 0 0 14px;">
+        <li style="margin:0 0 3px 0;"><strong>Asset Status History (1 row / asset-status interval):</strong> Asset ID; Customer ID; Site ID; branch / yard; status; substatus; available flag; billed flag; status start date; status end date; status days; expected availability; status-change reason; prior status; next assignment; related event ID.</li>
+        <li style="margin:0 0 3px 0;"><strong>Monthly Utilization (1 row / asset-month):</strong> Month end; asset type; region / branch; acquisition source; deployed days; billed days; idle days; repair days; deployment utilization; billing utilization; billing conversion; idle rate; revenue per fleet day; revenue per billed day; days to redeploy; idle aging bucket.</li>
+        <li style="margin:0 0 3px 0;"><strong>Fleet Summary (1 row / month-summary):</strong> Beginning fleet; units added; units installed; ending fleet; asset type; region / branch; acquisition source; age band; average deployed fleet; average billed fleet; average idle fleet; average unavailable fleet; deployment utilization; billing utilization; idle rate; unavailable rate.</li>
+        <li style="margin:0 0 3px 0;"><strong>Idle Asset List (1 row / idle asset):</strong> Asset ID; asset type; current yard; region; idle start date; idle days; aging bucket; prior removal date; condition grade; repair required; ready-to-deploy flag; estimated repair cost; next customer; expected install date; recommended action; responsible owner.</li>
+        <li style="margin:0 0 3px 0;"><strong>Definitions &amp; Checks:</strong> Status hierarchy; utilization formulas; billed-overlay rules; calendar-day tie-out; Asset Master reconciliation; operating tape reconciliation.</li>
+        <li style="margin:0 0 3px 0;"><strong>Primary analyses:</strong> Deployment utilization; billing conversion; idle aging; redeployment speed.</li>
+      </ul>
+    </main>
+    <textarea id="plain-text-source" hidden>Company X | Data Cube Scope &amp; Requested Fields
+
+Below is the proposed structure for the six priority datasets. The approach uses stable customer, site, contract and asset IDs; preserves effective-dated history; and reconciles operating detail to billing and financial records. Each table should be delivered at the stated grain with field definitions and basic quality checks.
+
+COMMERCIAL &amp; CUSTOMER DATA CUBE
+
+Approach: Establish a single customer and site hierarchy, link contracts and pricing to covered assets, and use monthly relationship data to measure retention, churn and renewals.
+
+01. Customer &amp; Site Master
+
+• Customer List (1 row / customer): Customer ID; customer legal name; billing parent; ultimate parent; customer type; end market; national account flag; account manager; customer start date; customer status; customer tenure; acquisition source; active site count; active asset count; current recurring revenue; TTM revenue.
+• Site List (1 row / site): Site ID; site name; Customer ID; billing customer ID; address; city / state; region; service branch; site type; end market; site start date; site status; active contract count; active asset count; current recurring revenue; TTM revenue.
+• Customer Hierarchy: Ultimate parent; billing parent; parent / child account mapping; site-to-account mapping; effective dates; mapping method.
+• Definitions &amp; Checks: Field definitions; standardized categories; record counts; data-quality checks.
+• Primary analyses: Customer concentration; end-market exposure; geographic mix; site-level revenue analysis.
+
+02. Contract Master
+
+• Contract Summary (1 row / contract): Contract ID; Customer ID; Site ID; Asset ID; effective date; expiration date; remaining term; auto-renewal flag; termination rights; notice period; early termination fee; consent requirements; contract status; covered asset count; contracted MRR; remaining revenue.
+• Pricing &amp; Escalators (1 row / fee line): Pricing line ID; Contract ID; Site ID; Asset ID; fee type; contracted rate; rate unit; billing frequency; escalation method; escalation %; last increase; next increase; recurring revenue; one-time fees; discounts / credits; effective dates.
+• Contract Coverage (1 row / contract-site-asset): Coverage record ID; Contract ID; Pricing line ID; Deployment ID; Customer ID; Site ID; billing account; ultimate parent; Asset ID; equipment type; covered quantity; service level; coverage start date; coverage end date; current coverage flag; replacement Asset ID.
+• Amendments &amp; Documents: Amendment history; prior / revised terms; signed documents; VDR reference; execution status; completeness check.
+• Definitions &amp; Checks: Field definitions; contract categories; document checks; revenue tie-outs; missing-field checks; duplicate contract checks.
+• Primary analyses: Revenue visibility; renewal profile; escalator analysis; termination exposure.
+
+03. Customer Churn &amp; Retention
+
+• Monthly Retention (1 row / customer-site-asset-month): Month end; Customer ID; Site ID; Contract ID; beginning active flag; beginning unit count; beginning recurring revenue; beginning rate; new / expansion revenue; price escalation revenue; contraction revenue; churned revenue; ending active flag; ending unit count; ending recurring revenue; customer / site tenure.
+• Churn Events (1 row / churn event): Churn event ID; Customer ID; Site ID; Asset ID; notice date; termination date; removal date; churn level; churn reason; reason detail; customer / Company X initiated; competitor loss flag; lost units; lost MRR; save attempt; final outcome.
+• Renewal Schedule (1 row / renewal opportunity): Contract ID; Customer ID; Site ID; Asset ID; expiration date; notice deadline; renewal due date; renewal completed date; renewal status; renewed term; renewed unit count; nonrenewed unit count; pre-renewal rate; post-renewal rate; rate change; revenue retained.
+• Retention Summary: Customer retention; site retention; unit retention; gross revenue retention; net revenue retention; churn by reason.
+• Definitions &amp; Checks: Churn rules; expansion / contraction rules; replacement treatment; revenue bridge checks; unit-count tie-outs; duplicate event checks.
+• Primary analyses: Revenue retention; churn drivers; renewal performance; cohort durability.
+
+OPERATIONAL &amp; ASSET DATA CUBE
+
+Approach: Build a unit-level asset register and effective-dated status history, then layer monthly revenue, billing, operating events, service cost, utilization and disposition data to reconcile fleet movement with financial performance.
+
+04. Asset Master
+
+• Asset Register (1 row / physical asset): Asset ID; serial / tag number; asset type; manufacturer / model; purchase date; acquisition source; ownership type; new / used flag; original cost; installed cost; placed-in-service date; net book value; current status; current location; current customer / site; condition grade.
+• Capital History (1 row / capital event): Capital event ID; Asset ID; event date; event type; equipment cost; freight cost; installation cost; refurbishment cost; growth capex; maintenance capex; upgrade capex; capital project ID; vendor; invoice reference; GL account; acquisition source.
+• Location &amp; Status History (1 row / asset-status interval): History record ID; Asset ID; Deployment ID; Contract ID; Customer ID; Site ID; branch / yard; location type; asset status; substatus; start date; end date; status-change reason; prior status; next status; related event ID.
+• Retirements &amp; Disposals (1 row / disposal event): Disposal record ID; Asset ID; retirement date; disposal date; disposal method; disposal reason; customer buyout flag; final disposition; disposal proceeds; net book value; gain / loss; write-off amount; approval status; buyer / counterparty; document reference; acquisition source.
+• Definitions &amp; Checks: Equipment taxonomy; status definitions; fleet-count tie-out; fixed-asset tie-out; duplicate serial checks; missing cost / location exceptions.
+• Primary analyses: Fleet composition; age &amp; condition; capital intensity; ownership / disposition.
+
+05. Monthly Operating Data Tape
+
+• Asset-Month Data (1 row / asset-month): Month end; Asset ID; Customer ID; Site ID; beginning status; ending status; deployed days; billed days; contracted rate; recurring revenue; one-time revenue; total revenue; service cost; installation cost; maintenance capex; growth capex.
+• Billing Detail (1 row / invoice line): Invoice ID; invoice line ID; invoice date; service period; Contract ID; Pricing line ID; fee type; rate / quantity; gross amount; discount / credit; tax / pass-through; net billed amount; revenue month; GL account; invoice status; payment status.
+• Operating Events (1 row / operating event): Event ID; Asset ID; Customer ID; Site ID; installation; removal; transfer; replacement; request date; scheduled date; completion date; final billing date; prior site; new site; prior status; event reason.
+• Service &amp; Maintenance (1 row / work order): Work-order ID; Asset ID; Customer ID; Site ID; preventive service; reactive repair; emergency service; refurbishment; labor hours; labor cost; parts cost; contractor cost; downtime days; completion status; repeat service flag; resolution notes.
+• Reconciliation &amp; Definitions: GL revenue tie-out; invoice register tie-out; Asset Master tie-out; event-count checks; revenue definitions; cost-category definitions.
+• Primary analyses: Revenue build; rate realization; operating activity; direct cost / margin.
+
+06. Fleet Utilization
+
+• Asset Status History (1 row / asset-status interval): Asset ID; Customer ID; Site ID; branch / yard; status; substatus; available flag; billed flag; status start date; status end date; status days; expected availability; status-change reason; prior status; next assignment; related event ID.
+• Monthly Utilization (1 row / asset-month): Month end; asset type; region / branch; acquisition source; deployed days; billed days; idle days; repair days; deployment utilization; billing utilization; billing conversion; idle rate; revenue per fleet day; revenue per billed day; days to redeploy; idle aging bucket.
+• Fleet Summary (1 row / month-summary): Beginning fleet; units added; units installed; ending fleet; asset type; region / branch; acquisition source; age band; average deployed fleet; average billed fleet; average idle fleet; average unavailable fleet; deployment utilization; billing utilization; idle rate; unavailable rate.
+• Idle Asset List (1 row / idle asset): Asset ID; asset type; current yard; region; idle start date; idle days; aging bucket; prior removal date; condition grade; repair required; ready-to-deploy flag; estimated repair cost; next customer; expected install date; recommended action; responsible owner.
+• Definitions &amp; Checks: Status hierarchy; utilization formulas; billed-overlay rules; calendar-day tie-out; Asset Master reconciliation; operating tape reconciliation.
+• Primary analyses: Deployment utilization; billing conversion; idle aging; redeployment speed.</textarea>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function copyWithCommand(html, plainText) {
+          var helper = document.createElement("textarea");
+          var handled = false;
+
+          function handleCopy(event) {
+            if (!event.clipboardData) return;
+            event.preventDefault();
+            event.clipboardData.setData("text/html", html);
+            event.clipboardData.setData("text/plain", plainText);
+            handled = true;
+          }
+
+          helper.value = plainText;
+          helper.setAttribute("aria-hidden", "true");
+          helper.style.position = "fixed";
+          helper.style.left = "-9999px";
+          helper.style.top = "0";
+          document.body.appendChild(helper);
+          helper.focus();
+          helper.select();
+          document.addEventListener("copy", handleCopy);
+
+          var succeeded = false;
+          try {
+            succeeded = document.execCommand("copy");
+          } catch (error) {
+            succeeded = false;
+          } finally {
+            document.removeEventListener("copy", handleCopy);
+            document.body.removeChild(helper);
+          }
+
+          return succeeded && handled;
+        }
+
+        function selectContent(content) {
+          var selection = window.getSelection();
+          var range = document.createRange();
+          range.selectNodeContents(content);
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+
+        function showSuccess(button, status) {
+          button.textContent = "Copied";
+          status.textContent = "Paste directly into Outlook.";
+          window.setTimeout(function () {
+            button.textContent = "Copy for Outlook";
+            status.textContent = "Copies the formatted email content below.";
+          }, 5000);
+        }
+
+        async function copyForOutlook() {
+          var content = document.getElementById("email-content");
+          var plainTextSource = document.getElementById("plain-text-source");
+          var button = document.getElementById("copy-button");
+          var status = document.getElementById("copy-status");
+          var plainText = plainTextSource.value.trim();
+          var html = '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#000000;">' + content.innerHTML + "<" + "/div>";
+          var copied = copyWithCommand(html, plainText);
+
+          if (!copied && navigator.clipboard && window.ClipboardItem) {
+            try {
+              await navigator.clipboard.write([
+                new ClipboardItem({
+                  "text/html": new Blob([html], { type: "text/html" }),
+                  "text/plain": new Blob([plainText], { type: "text/plain" })
+                })
+              ]);
+              copied = true;
+            } catch (error) {
+              copied = false;
+            }
+          }
+
+          if (copied) {
+            showSuccess(button, status);
+            button.focus();
+          } else {
+            selectContent(content);
+            status.textContent = "Text selected — press Command+C or Ctrl+C, then paste into Outlook.";
+          }
+        }
+
+        var copyButton = document.getElementById("copy-button");
+        copyButton.addEventListener("click", copyForOutlook);
+        copyButton.setAttribute("data-copy-ready", "true");
+      })();
+    </script>
+  </body>
+</html>

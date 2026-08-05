@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Company X data cube — Outlook summary",
+    description:
+      "Succinct, copy-friendly overview of the two data cubes, the six requested datasets, and their required fields.",
+    href: "/one-off-requests/company-x-data-cube-outlook-summary.html",
+    format: "Outlook HTML",
+    date: "Aug 2026",
+  },
+  {
     title: "Company X data cube — dataset index 01–06",
     description:
       "Copy-friendly data specification covering customer and site master, contracts, churn and retention, asset master, monthly operating data, and fleet utilization.",
