@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-05T05:05:00.000Z",
+  "updatedAt": "2026-08-05T05:13:00.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0021:greengas-colorado:0dd4ec15",
   "source": {
@@ -3275,25 +3275,25 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "9036c9550a447b37ac381b52e097616dbee290025e4fd673ff3a19236a54bbc9",
       "status": "RELEASING",
-      "attempts": 1,
-      "startedAt": "2026-08-05T05:01:10.858Z",
-      "updatedAt": "2026-08-05T05:05:00.000Z",
+      "attempts": 2,
+      "startedAt": "2026-08-05T05:11:21.486Z",
+      "updatedAt": "2026-08-05T05:13:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a",
+      "taskSnapshotSha256": "924fed1ed7de383e9cd2bd54de83c781d48b612c7702d7e1a80624a146905958",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0021-greengas-colorado/attempt-1/task-snapshot.json",
-          "sha256": "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0021-greengas-colorado/attempt-2/task-snapshot.json",
+          "sha256": "924fed1ed7de383e9cd2bd54de83c781d48b612c7702d7e1a80624a146905958"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/proposals/0021-greengas-colorado/proposal.json",
-          "sha256": "7350d8a8cc49b8e8cccbbe70a05b0bdc3f3febe210c01b99bda4060e20741ec4"
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0021-greengas-colorado-v2/proposal.json",
+          "sha256": "4d31afdd14ab304979a926999b92d30a02a48250847d464560320659b0175eec"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/approvals/0021-greengas-colorado.json",
-          "sha256": "06673fdddef49e4d64c1404bad723f262f338403e70d1281f24e07b6083bf125"
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0021-greengas-colorado-v2.json",
+          "sha256": "f882480d3f28c27d59b0ac609ce04b3a77d65f41d04bfd335f82abe43722fd0a"
         },
         "applyReceipt": null,
         "decision": null,
@@ -3353,6 +3353,61 @@
           "taskSnapshotSha256": "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a",
           "evidenceSha256": [
             "06673fdddef49e4d64c1404bad723f262f338403e70d1281f24e07b6083bf125"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-05T05:11:20.486Z",
+          "reason": "Protected workflow 30977312332 rejected the unversioned proposal directory before checkout and before any database write.",
+          "taskSnapshotSha256": "98e11b142658ce15207c2dc69632d77f6aa7ed73531ec27dbd85159928b67a0a",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-05T05:11:21.486Z",
+          "reason": "Retry with the workflow-required versioned proposal and approval artifact paths; no production mutation occurred.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-05T05:12:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "924fed1ed7de383e9cd2bd54de83c781d48b612c7702d7e1a80624a146905958",
+          "evidenceSha256": [
+            "4d31afdd14ab304979a926999b92d30a02a48250847d464560320659b0175eec",
+            "924fed1ed7de383e9cd2bd54de83c781d48b612c7702d7e1a80624a146905958"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-05T05:12:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "924fed1ed7de383e9cd2bd54de83c781d48b612c7702d7e1a80624a146905958",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-05T05:13:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "924fed1ed7de383e9cd2bd54de83c781d48b612c7702d7e1a80624a146905958",
+          "evidenceSha256": [
+            "f882480d3f28c27d59b0ac609ce04b3a77d65f41d04bfd335f82abe43722fd0a"
           ],
           "kind": "TRANSITION"
         }
@@ -21409,5 +21464,5 @@
       ]
     }
   ],
-  "manifestSha256": "e949da9b5d958cdc1bd133a475ea8c260afc8c58c2776c3f5b4423690420ef09"
+  "manifestSha256": "46bd39ec57b54c3bb921c18fc99d04b0207a75b077a2329636a5e9939ca140ec"
 }
