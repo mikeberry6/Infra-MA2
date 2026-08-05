@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0021:greengas-colorado:0dd4ec15",
+  "taskIndex": 21,
+  "asOfDate": "2026-08-05",
+  "generatedAt": "2026-08-05T05:08:00.000Z",
+  "canonicalKey": "greengas-colorado|united-states",
+  "companyName": "GreenGas Colorado",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "006-amber-infrastructure:holding:006:greengas-colorado"
+  ],
+  "retiredCompanyIds": [],
+  "rationale": "Correct GreenGas Colorado from an announced investment with an undisclosed stake to Amber Infrastructure's closed 50% ownership interest. Green Impact Partners' official February 23, 2023 release confirms that the C$60 million sale closed that day. GIP's May and November 2025 updates continued to identify its 50% partner as US Infrastructure Investments Holdings LLC, while the November update said the parties had amended their partnership agreement and settled their disputes. No acquisition, disposition, or other evidence was found showing that Amber or its investment vehicle exited. The after-image also corrects the operating milestone from a December 2023 financing event to the official disclosure that both Colorado JV facilities began commercial gas production and sales in 2024, replaces an incorrectly labeled primary citation with the direct closing release, and records the exact current vehicle name disclosed by GIP.",
+  "evidence": [
+    {
+      "url": "https://www.greenipi.com/newsroom/green-impact-partners-provides-closing-update-on-545-million-strategic-project-equity-investment-by-amber-infrastructure-group/",
+      "purpose": "Official closing evidence for Amber Infrastructure's GreenGas Colorado investment",
+      "supports": [
+        "Amber Infrastructure's purchase of a 50% interest closed on February 23, 2023",
+        "the disclosed purchase price was C$60 million"
+      ]
+    },
+    {
+      "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-corporate-update/",
+      "purpose": "Latest official ownership and operating-status evidence located in the review",
+      "supports": [
+        "Green Impact Partners U.S. and its 50% partner US Infrastructure Investments Holdings LLC remained parties to the Colorado JV",
+        "the partners amended the partnership agreement and settled their disputes",
+        "the Colorado JV remained an operating asset undergoing remediation rather than a sold asset"
+      ]
+    },
+    {
+      "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-2024-fiscal-results-and-provides-corporate-update/",
+      "purpose": "Official commercial-operations and exit-check evidence",
+      "supports": [
+        "both Colorado JV sites began commercial gas production and sales in 2024",
+        "GIP continued to describe a 50% net interest",
+        "the public update disclosed remediation work and did not announce an ownership exit"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "33469a376f3ab281bee59c4af7ef475759d07eab3a968cd3a922c8cdd648dd34",
+  "currentCompanySnapshotSha256": "57b6e088dcae524d25a5855f773c60e38d2367110dfab884919fceb2fd4e138f",
+  "beforeImage": {
+    "id": "cmrxpj4yu00h2ivheauzedy3n",
+    "name": "GreenGas Colorado",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable natural gas",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "GreenGas Colorado is a renewable natural gas project in Colorado. The asset is designed to convert biogenic feedstocks into pipeline-quality RNG and therefore follows an asset-heavy contracted energy infrastructure model. Public disclosures tie the project to Green Impact Partners' broader RNG platform and to Amber's 2023 strategic partnership with Green Impact. Amber acquired a 50% interest in the project in 2023 for approximately C$60 million, while Green Impact retained the balance. Reviewed public materials indicate the project moved into production during 2023, though further commercial details are limited in free sources.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Colorado",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpxw01doivhek4xnqgsh",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkffs02grivhehoh9vua6",
+        "date": "2022",
+        "event": "GreenGas Colorado was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfgb02gsivhe66c9qrqu",
+        "date": "Feb 2023",
+        "event": "Amber agreed to acquire a 50% interest in GreenGas Colorado as part of the Green Impact partnership.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfgw02gtivheg872wv82",
+        "date": "Dec 2023",
+        "event": "Public investor materials indicated the project had begun producing gas.",
+        "category": "FINANCING",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpop0f0728ivhepkfr2yk6",
+        "label": "Announcement date source — Amber Infrastructure — Future Energy Park",
+        "url": "https://americanbiogascouncil.org/green-impact-partners-announces-545-million-partnering-agreement/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpop1j072aivhez2nbjb5p",
+        "label": "Announcement date source — Amber Infrastructure — GreenGas Colorado",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpop2n072civhe8cb8mkcz",
+        "label": "Greenipi — GreenGas Colorado",
+        "url": "https://www.greenipi.com/investors/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Greenipi — GreenGas Colorado",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "57b6e088dcae524d25a5855f773c60e38d2367110dfab884919fceb2fd4e138f",
+  "afterImage": {
+    "id": "cmrxpj4yu00h2ivheauzedy3n",
+    "name": "GreenGas Colorado",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable natural gas",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "GreenGas Colorado is a renewable natural gas joint venture in Colorado. Green Impact Partners closed the sale of a 50% interest to Amber Infrastructure for C$60 million on February 23, 2023. Current GIP disclosures identify GIP's U.S. subsidiary and US Infrastructure Investments Holdings LLC as the 50% partners in the Colorado JV. Both project sites began commercial gas production and sales in 2024. GIP reported equipment and design issues requiring remediation, but the latest official ownership update located for this review continued to identify the 50% partnership and disclosed no sale or exit by Amber.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Colorado",
+    "lastVerifiedAt": "2026-08-05T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpxw01doivhek4xnqgsh",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "US Infrastructure Investments Holdings LLC",
+        "stake": "50%",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkffs02grivhehoh9vua6",
+        "date": "2022",
+        "event": "GreenGas Colorado was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfgb02gsivhe66c9qrqu",
+        "date": "Feb 23, 2023",
+        "event": "Green Impact Partners closed the C$60 million sale of a 50% interest in GreenGas Colorado to Amber Infrastructure.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-02-23T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.greenipi.com/newsroom/green-impact-partners-provides-closing-update-on-545-million-strategic-project-equity-investment-by-amber-infrastructure-group/"
+        ]
+      },
+      {
+        "id": "cmrxpkfgw02gtivheg872wv82",
+        "date": "2024",
+        "event": "Both Colorado JV facilities began commercial gas production and sales.",
+        "category": "EXPANSION",
+        "sortDate": "2024-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.greenipi.com/newsroom/green-impact-partners-announces-2024-fiscal-results-and-provides-corporate-update/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpop1j072aivhez2nbjb5p",
+        "label": "Announcement date source — Amber Infrastructure — GreenGas Colorado",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpop2n072civhe8cb8mkcz",
+        "label": "Greenipi — GreenGas Colorado",
+        "url": "https://www.greenipi.com/investors/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Greenipi — GreenGas Colorado",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Green Impact Partners — GreenGas Colorado 50% sale closing",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-provides-closing-update-on-545-million-strategic-project-equity-investment-by-amber-infrastructure-group/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber's 50% purchase closed on February 23, 2023 for C$60 million",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Green Impact Partners — GreenGas Colorado partnership update",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-corporate-update/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "November 2025 confirmation of the 50% partner and amended partnership agreement",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Green Impact Partners — 2024 fiscal results and Colorado JV update",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-2024-fiscal-results-and-provides-corporate-update/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Commercial production and sales began in 2024",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "8181cdc79dd7e1dba551273ce9cdb316be86eab1d9346bacbdab439b6a56cdb6",
+  "proposalSha256": "33727f899e46c5b096c6c87353aa34ab9263f7c6ac99e52704e5b0fe539aa701"
+}
