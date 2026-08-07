@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0026:scotia-wind:17d54717",
+  "taskIndex": 26,
+  "companyName": "Scotia Wind",
+  "generatedAt": "2026-08-07T05:13:55.522Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0026-scotia-wind/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 26,
+    "taskId": "ledger:0026:scotia-wind:17d54717",
+    "canonicalKey": "scotia-wind|united-states",
+    "companyName": "Scotia Wind",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 6,
+    "managers": [
+      "Amber Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "006-amber-infrastructure:repo-only:012:scotia-wind"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj55300h9ivhessxp4vev"
+    ],
+    "seedKeys": [
+      "scotia wind|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Amber Infrastructure MATCHED_ELSEWHERE: Grouped under Circle Power Renewables platform holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj55300h9ivhessxp4vev",
+    "name": "Scotia Wind",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Onshore wind development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Scotia Wind is a wind project in Michigan's Upper Peninsula being advanced through the Circle Power Renewables platform. The project is intended to serve utility and wholesale power markets under a contracted generation model and follows an asset-heavy development approach. Public materials describe the project at roughly 60 MW and identify it as an early flagship development for the Amber and Circle Power platform. Reviewed disclosures indicate that Scotia Wind secured a long-term power purchase arrangement with UPPCO. Public sources do not disclose the project-level ownership percentages between Amber and Circle Power.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2021,
+    "headquarters": "Michigan",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjq1f01dvivhe6zbr81yl",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkg3f02hjivhesbg41wu7",
+        "date": "2021",
+        "event": "Scotia Wind secured a long-term power purchase arrangement with UPPCO according to reviewed public materials.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkg4002hkivhe9v0az4cm",
+        "date": "May 27, 2021",
+        "event": "Amber and Circle Power launched Circle Power Renewables and identified Scotia Wind as an early project.",
+        "category": "FINANCING",
+        "sortDate": "2021-05-27T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpopt6073aivhe2gnd2m4v",
+        "label": "Scotiawindfarm — Circle Power Renewables",
+        "url": "https://www.scotiawindfarm.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Scotiawindfarm company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoptp073bivhee6t4ihej",
+        "label": "Announcement date source — Amber Infrastructure — 7 Mile Pit Solar",
+        "url": "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpopu7073civhepg4zmoj8",
+        "label": "Circlepower — Circle Power Renewables",
+        "url": "https://circlepower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Circlepower company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Scotia Wind",
+    "investmentFirm": "Amber Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Onshore wind development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Scotia Wind is a wind project in Michigan's Upper Peninsula being advanced through the Circle Power Renewables platform. The project is intended to serve utility and wholesale power markets under a contracted generation model and follows an asset-heavy development approach. Public materials describe the project at roughly 60 MW and identify it as an early flagship development for the Amber and Circle Power platform. Reviewed disclosures indicate that Scotia Wind secured a long-term power purchase arrangement with UPPCO. Public sources do not disclose the project-level ownership percentages between Amber and Circle Power.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2021,
+    "investmentYear": 2021,
+    "headquarters": "Michigan",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Scotia Wind secured a long-term power purchase arrangement with UPPCO according to reviewed public materials.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "May 27, 2021",
+        "event": "Amber and Circle Power launched Circle Power Renewables and identified Scotia Wind as an early project.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Scotiawindfarm — Scotia Wind",
+        "url": "https://www.scotiawindfarm.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Amber Infrastructure — Scotia Wind",
+        "url": "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Circlepower — Scotia Wind",
+        "url": "https://circlepower.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Amber Infrastructure",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpig56004civhenbxnuvlx",
+        "name": "Amber Infrastructure",
+        "updatedAt": "2026-07-23T16:09:28.122Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0026:scotia-wind:17d54717",
+    "taskIndex": 26,
+    "canonicalKey": "scotia-wind|united-states",
+    "capturedAt": "2026-08-07T05:13:55.522Z",
+    "databaseRevision": "company-state:7105d00c0a6744799736280dcfead18cce665e898c3717a17efc48117d980ad8",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "01753818d8faca0a83c3ae22d97b126a51b37db9bb25eb14dcfa1d7f671a6714",
+    "productionSnapshotSha256": "b8d25b68e37312882be634d81a14b3e38747a2dd926aada92bcc412e290e5f88",
+    "targetCompanySnapshotSha256": "7105d00c0a6744799736280dcfead18cce665e898c3717a17efc48117d980ad8",
+    "seedEntrySha256": "2aa60d2cabd827bef50bc1b913bd8b54e69e7e127b941a8f4c5a3a7ccef8c4c0",
+    "dependencies": {
+      "ownershipPeriodsSha256": "54340ca517f4999689dccd49703e616de5c3489751560c6c9f91189a00006852",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "335be0d5a62870ef627d7e9c88278570c30e7c63317b7ca81feb4001353d1cde",
+      "citationsSha256": "0ece711153faaa1a9cbb36cca41d3b46dc4048e1971a647a0a84d4e5dd61fb9a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "a728e70b30a529aac034f2337fc9cbfc8074d317e136d51807001bec0cb93c17",
+    "stateSha256": "b8176fd126e6438c95c967dca0215970718bb57b591ffec9949b21ccdb03e0b1",
+    "taskSnapshotSha256": "e21459887a1e09d20cc04fcb2be6c7a30419ae6f0e9492816e402783b851e589"
+  },
+  "contextSha256": "9b4ecf3b6f342410086fe021a26bb6ff0d490b0a157d49b1124bd6475eb5ecb1"
+}
