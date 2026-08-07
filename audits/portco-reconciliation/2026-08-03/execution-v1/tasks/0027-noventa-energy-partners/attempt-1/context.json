@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0027:noventa-energy-partners:7d8aff1c",
+  "taskIndex": 27,
+  "companyName": "Noventa Energy Partners",
+  "generatedAt": "2026-08-07T05:43:17.652Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0027-noventa-energy-partners/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 27,
+    "taskId": "ledger:0027:noventa-energy-partners:7d8aff1c",
+    "canonicalKey": "noventa-energy-partners|canada",
+    "companyName": "Noventa Energy Partners",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 7,
+    "managers": [
+      "Ancala Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "007-ancala-partners:repo-only:001:noventa-energy-partners"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj56800hbivhee605hux3"
+    ],
+    "seedKeys": [
+      "noventa energy partners|Canada"
+    ],
+    "evidenceUrls": [
+      "https://ancala.com/portfolio/",
+      "https://mnpdebt.ca/en/corporate/corporate-engagements/noventa-group"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Ancala Partners PROPOSED_RETIRE: Company has entered bankruptcy and is no longer an active infrastructure operating platform; not listed in current Ancala portfolio.",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj56800hbivhee605hux3",
+    "name": "Noventa Energy Partners",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Wastewater energy transfer and thermal networks",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Noventa Energy Partners develops and operates wastewater energy transfer systems that provide low-carbon heating and cooling to buildings. Its customer base includes institutional and commercial real estate owners that contract for decarbonized thermal energy under long-term energy-as-a-service structures. The company follows an asset-heavy infrastructure model built around district-scale thermal systems connected to wastewater networks. Ancala acquired a majority interest in the platform in 2023, and the Canada Infrastructure Bank announced a C$100 million commitment to support deployment in Canada. Reviewed public sources do not disclose Ancala's ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "Ontario",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjq2j01dxivheg2kuo6n1",
+        "managerName": "Ancala Partners",
+        "organizationName": "Ancala Partners",
+        "fundName": "Ancala Infrastructure Fund III",
+        "vehicleName": "Ancala Infrastructure Fund III",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkg8702hpivhe1c9sk488",
+        "date": "2018",
+        "event": "Dennis Fotinos founded Noventa Energy Partners.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkg8v02hqivhevk8rofgt",
+        "date": "2021",
+        "event": "Noventa reached financial close on Toronto Western Hospital as an anchor reference project.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkg9g02hrivheyx0urywu",
+        "date": "Apr 2023",
+        "event": "The Canada Infrastructure Bank committed C$100 million to support Noventa projects.",
+        "category": "FINANCING",
+        "sortDate": "2023-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkg9z02hsivhe8fuap2k1",
+        "date": "Apr 3, 2023",
+        "event": "Ancala acquired a majority interest in Noventa on behalf of Ancala Infrastructure Fund III.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-04-03T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoq0y073oivhe2qqw5mqc",
+        "label": "Noventaenergy — Noventa Energy Partners",
+        "url": "https://www.noventaenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Noventaenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoq2e073qivhenh1i3x0r",
+        "label": "Close date source — Ancala Partners — Noventa Energy Partners",
+        "url": "https://ancala.com/ancala-partners-acquires-decarbonised-heating-and-cooling-provider-noventa/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ancala Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoq3k073sivhepnpa40q4",
+        "label": "Ancala — Noventa Energy Partners",
+        "url": "https://ancala.com/canada-infrastructure-bank-invests-100-million-with-ancala-backed-noventa-to-decarbonise-buildings/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ancala — Noventa Energy Partners",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Noventa Energy Partners",
+    "investmentFirm": "Ancala Partners",
+    "sector": "Power & ET",
+    "subsector": "Wastewater energy transfer and thermal networks",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Ancala Infrastructure Fund III",
+    "description": "Noventa Energy Partners develops and operates wastewater energy transfer systems that provide low-carbon heating and cooling to buildings. Its customer base includes institutional and commercial real estate owners that contract for decarbonized thermal energy under long-term energy-as-a-service structures. The company follows an asset-heavy infrastructure model built around district-scale thermal systems connected to wastewater networks. Ancala acquired a majority interest in the platform in 2023, and the Canada Infrastructure Bank announced a C$100 million commitment to support deployment in Canada. Reviewed public sources do not disclose Ancala's ownership percentage.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 2018,
+    "investmentYear": 2023,
+    "headquarters": "Ontario",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Dennis Fotinos founded Noventa Energy Partners.",
+        "category": "Founding"
+      },
+      {
+        "date": "2021",
+        "event": "Noventa reached financial close on Toronto Western Hospital as an anchor reference project.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 2023",
+        "event": "The Canada Infrastructure Bank committed C$100 million to support Noventa projects.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 3, 2023",
+        "event": "Ancala acquired a majority interest in Noventa on behalf of Ancala Infrastructure Fund III.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Noventaenergy — Noventa Energy Partners",
+        "url": "https://www.noventaenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Ancala Partners — Noventa Energy Partners",
+        "url": "https://ancala.com/ancala-partners-acquires-decarbonised-heating-and-cooling-provider-noventa/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ancala — Noventa Energy Partners",
+        "url": "https://ancala.com/canada-infrastructure-bank-invests-100-million-with-ancala-backed-noventa-to-decarbonise-buildings/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ancala Partners",
+        "ownershipVehicle": "Ancala Infrastructure Fund III",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj0s700b0ivheket8u5ju",
+        "fundName": "Ancala Infrastructure Fund III",
+        "managerId": "cmrxpi2x10007ivheue2f3vrd",
+        "updatedAt": "2026-07-23T16:09:54.871Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2x10007ivheue2f3vrd",
+        "name": "Ancala Partners",
+        "updatedAt": "2026-07-23T16:09:10.981Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0027:noventa-energy-partners:7d8aff1c",
+    "taskIndex": 27,
+    "canonicalKey": "noventa-energy-partners|canada",
+    "capturedAt": "2026-08-07T05:43:17.652Z",
+    "databaseRevision": "company-state:1636ce3e764850a649e42d3816ff4157b3da814e92e54277e2a7e9f01ae0d4ae",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "758de9af2aa62bb8471e47c89c87205ef61ee48dabc5c66a5d988a0d1de711c0",
+    "productionSnapshotSha256": "9333fd6cf1ce60adaa20c66063aa6157d32c938949675d8e5e177e7bbefc1c86",
+    "targetCompanySnapshotSha256": "1636ce3e764850a649e42d3816ff4157b3da814e92e54277e2a7e9f01ae0d4ae",
+    "seedEntrySha256": "7d810006fa854aae847b0539f3ab210c6ac086722189a2d16b99afabd8b411b0",
+    "dependencies": {
+      "ownershipPeriodsSha256": "07568b8d9b7a308b15e99e086aac01fc75cf783da2216cc50cbb3178e9b67ee7",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "0cf128aea9088ee985f17475dd1e33685b6283194b264e7a225741a5286198f4",
+      "organizationsSha256": "47bd8e195b1a0001370a862d434931ca41861f216614bc57a4f6b30e11391f00",
+      "citationsSha256": "d31821ed5ec332f0bcb4c22e019744d28f46f290996bb35fb43a39df8b42c4d2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "223d2defee6ed1a154976c8b22334c0e5b953bcd522a6f5a4587edd55177607e",
+    "stateSha256": "3b813c85ad468e771808fa5310ce2b8629949ef0ca2b30943403eff0da7814fb",
+    "taskSnapshotSha256": "c146f81c2818092ef149c3c52bd48747cb9ae06e95da89f1ceb436e38de9cdcc"
+  },
+  "contextSha256": "398cb8cf8635db78e9bda7dbf1684138737c87a59e905de8d1af23f80bf12766"
+}

@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-07T05:38:30.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-07T06:58:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0027:noventa-energy-partners:7d8aff1c",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -4095,18 +4095,27 @@
       "managerIndex": 7,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "758de9af2aa62bb8471e47c89c87205ef61ee48dabc5c66a5d988a0d1de711c0",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-07T05:43:00.000Z",
+      "updatedAt": "2026-08-07T06:58:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "c146f81c2818092ef149c3c52bd48747cb9ae06e95da89f1ceb436e38de9cdcc",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0027-noventa-energy-partners/attempt-1/task-snapshot.json",
+          "sha256": "c146f81c2818092ef149c3c52bd48747cb9ae06e95da89f1ceb436e38de9cdcc"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0027-noventa-energy-partners-v1/proposal.json",
+          "sha256": "b54c1eb5902605516571377590799eb548098b2c3a0787f72a472fcfe5fdea1b"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0027-noventa-energy-partners-v1.json",
+          "sha256": "1e75393f52d8c5fee3f0367ea97c759911190fdad82d2381cf18396bcc8c5878"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -4122,6 +4131,51 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-07T05:43:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-07T06:57:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c146f81c2818092ef149c3c52bd48747cb9ae06e95da89f1ceb436e38de9cdcc",
+          "evidenceSha256": [
+            "b54c1eb5902605516571377590799eb548098b2c3a0787f72a472fcfe5fdea1b",
+            "c146f81c2818092ef149c3c52bd48747cb9ae06e95da89f1ceb436e38de9cdcc"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-07T06:57:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c146f81c2818092ef149c3c52bd48747cb9ae06e95da89f1ceb436e38de9cdcc",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-07T06:58:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c146f81c2818092ef149c3c52bd48747cb9ae06e95da89f1ceb436e38de9cdcc",
+          "evidenceSha256": [
+            "1e75393f52d8c5fee3f0367ea97c759911190fdad82d2381cf18396bcc8c5878"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -21948,5 +22002,5 @@
       ]
     }
   ],
-  "manifestSha256": "4ac6c02bb241c3fa65b6f9a959ade4d01d18763085767fa0873ddc4db1d6789d"
+  "manifestSha256": "db9146c10444a3a7d40d6bf0c59ec9dfef9666fcf2f3fc9ab6ce9ecb9d4f9343"
 }
