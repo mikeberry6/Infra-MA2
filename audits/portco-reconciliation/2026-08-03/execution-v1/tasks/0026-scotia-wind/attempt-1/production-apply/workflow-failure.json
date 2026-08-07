@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "taskId": "ledger:0026:scotia-wind:17d54717",
+  "workflowRunId": 31150525387,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31150525387",
+  "releaseCommitSha": "8aba605a76342db8e193e231bae0e88f5485b0c7",
+  "vercelDeploymentId": "dpl_3aE6i3GVSvE4ZAviHQovx5CpgjSA",
+  "failedAt": "2026-08-07T05:27:38.906Z",
+  "failedStep": "Apply the exact approved PortCo proposal transactionally",
+  "error": "Detail API verification failed: Detail API render-critical projection does not match the approved after-image",
+  "transactionOutcome": "COMMITTED",
+  "diagnosis": "The database and seed matched the approved after-image, but order-sensitive milestone deduplication selected different equivalent May 27, 2021 launch milestones from the Prisma relation order and the proposal after-image order. The workflow could not issue a receipt after commit.",
+  "correctiveRelease": {
+    "pullRequestNumber": 354,
+    "commitSha": "e6b43e037681b66bd239926b70c2d5d690836557",
+    "vercelDeploymentId": "dpl_2bMrsc2RQpH3oP6AbsZMbburNFkq",
+    "change": "Use content-based deterministic tie-breaking for equivalent milestones."
+  },
+  "recovery": {
+    "databaseWrites": false,
+    "receiptSha256": "665c42c5dc92b0e70da763bf3fabd6665d67c150ee14fab303d7bae7dfc3fe6d",
+    "transactionId": "4a6b0fdd-300a-4c73-acdc-550247327ea5",
+    "auditEventId": "cmsii5jk90001dp4skatm32br"
+  }
+}
