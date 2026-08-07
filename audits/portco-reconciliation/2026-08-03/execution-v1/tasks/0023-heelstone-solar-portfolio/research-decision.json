@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-08-07T04:29:00.000Z",
+  "decision": "VERIFY_NO_CHANGE_KEEP_SEPARATE",
+  "taskId": "ledger:0023:heelstone-solar-portfolio:c92d620e",
+  "companyName": "Heelstone Solar Portfolio",
+  "requestedManager": "Amber Infrastructure",
+  "sourceRepoOnlyId": "006-amber-infrastructure:repo-only:009:heelstone-solar-portfolio",
+  "rationale": "Keep Heelstone Solar Portfolio as its own canonical portfolio record and do not merge it into a synthetic US Solar Fund aggregate. US Solar Fund's current portfolio page and audited 2025 reporting consistently identify Heelstone as a distinct 22-asset acquisition portfolio across Oregon, California and North Carolina, separately from Milford, Olympos, Granite and Euryalus. USF acquired 100% of the cash equity interests in the 22 projects in March 2020, and current 2026 reporting continues to identify and operate the portfolio separately. Amber remains USF's investment manager. The May 2026 potential whole-portfolio sale was only a non-binding letter of intent subject to due diligence and definitive documentation, and the current London Stock Exchange announcement list shows no subsequent definitive sale or closing announcement through the research date. No company, seed, ownership, redirect, pending-transaction or publication mutation is authorized by this task.",
+  "identityResolution": {
+    "sameAsUSSolarFundAggregate": false,
+    "canonicalDecision": "KEEP_HEELSTONE_SOLAR_PORTFOLIO",
+    "portfolioBoundary": "Twenty-two operating solar projects across Oregon, California and North Carolina totaling approximately 177 MWdc, acquired together by US Solar Fund in March 2020 and reported as the Heelstone portfolio.",
+    "sourceJudgmentCorrection": "The prior MATCHED_ELSEWHERE note grouped Heelstone under a broad US Solar Fund U.S. Solar Portfolio. Current primary evidence supports keeping the separately named acquisition portfolio, while treating the broad fund-wide label as a manager aggregate rather than a duplicate canonical company."
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "US Solar Fund's current acquisition page states that it acquired 100% of the cash equity interests in 22 projects totaling approximately 177 MWdc from Heelstone Renewable Energy and announced the acquisition on 13 March 2020. The audited 2025 annual report separately identifies Heelstone as 22 assets and continues to report project-level operations under that portfolio name.",
+    "exitSearch": "US Solar Fund's May 2026 shareholder presentation disclosed a non-binding letter of intent for a possible sale of the entire 41-project portfolio, with a 90-day exclusivity period, due diligence and definitive documentation still required. The London Stock Exchange's current USF announcement list shows no subsequent definitive sale agreement or closing announcement through 7 August 2026.",
+    "currentOwnership": "US Solar Fund continues to report the Heelstone portfolio as 22 current operating assets within its 41-project portfolio. Amber Infrastructure Investment Advisor, LLC remains USF's investment manager.",
+    "transactionState": "CLOSED_ACTIVE",
+    "potentialSaleState": "NON_BINDING_EXCLUSIVITY_ONLY"
+  },
+  "evidence": [
+    {
+      "label": "US Solar Fund — Acquisition Four",
+      "url": "https://www.ussolarfund.co.uk/portfolio/acquisition-four",
+      "purpose": "Current official portfolio-boundary and acquisition evidence identifying Heelstone as 22 projects totaling approximately 177 MWdc, with 100% of cash equity acquired in March 2020",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "US Solar Fund — Annual Report and Financial Statements 2025",
+      "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_2025_annual_report_190326.pdf",
+      "purpose": "Audited current-period evidence continuing to identify Heelstone separately as 22 operating assets across three states",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Amber Infrastructure — US Solar Fund",
+      "url": "https://www.amberinfrastructure.com/funds/us-solar-fund-plc/",
+      "purpose": "Current manager evidence that Amber is US Solar Fund's investment manager and is responsible for ongoing asset and fund management",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "US Solar Fund — Shareholder Presentation May 2026",
+      "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_shareholder_presentation_may_2026_vf.pdf",
+      "purpose": "Official exit-search evidence showing that the proposed whole-portfolio sale remained a non-binding letter of intent subject to due diligence and definitive legal documentation",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "London Stock Exchange — US Solar Fund company announcements",
+      "url": "https://www.londonstockexchange.com/stock/USF/us-solar-fund-plc/company-page",
+      "purpose": "Current regulatory-announcement search confirming no later definitive sale or closing announcement was listed after the May 2026 exclusivity announcement",
+      "sourceTier": "PRIMARY"
+    }
+  ],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "unresolvedQuestions": [],
+  "phaseOneCloseoutNote": "When the canonical ledger is rebuilt, represent the broad US Solar Fund U.S. Solar Portfolio census label as a manager-level aggregate/exclusion rather than a company identity. Preserve Heelstone, Granite, Euryalus, Milford and Olympos as distinct acquisition portfolios or standalone assets according to official reporting boundaries."
+}

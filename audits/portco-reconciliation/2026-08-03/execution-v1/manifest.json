@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-07T04:18:04.600Z",
+  "updatedAt": "2026-08-07T04:29:01.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -3652,20 +3652,26 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a1af0a7cbdda1c8dd5878894efd8023bb04a0bf58d27ae6c954285ac990ce40f",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "VERIFIED_NO_CHANGE",
+      "attempts": 1,
+      "startedAt": "2026-08-07T04:26:00.000Z",
+      "updatedAt": "2026-08-07T04:29:01.000Z",
+      "completedAt": "2026-08-07T04:29:01.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "57e6b9d4e06d17f4b876eef328314809b7dfba023bf5f86b7863b862f626dca4",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0023-heelstone-solar-portfolio/attempt-1/task-snapshot.json",
+          "sha256": "57e6b9d4e06d17f4b876eef328314809b7dfba023bf5f86b7863b862f626dca4"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0023-heelstone-solar-portfolio/research-decision.json",
+          "sha256": "1ec0edf96ba62ecfbf8ac4d68de61e1fea717b73bd9551d4110cfa012c6c6758"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -3679,6 +3685,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-07T04:26:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "VERIFIED_NO_CHANGE",
+          "at": "2026-08-07T04:29:01.000Z",
+          "reason": "Official current reporting preserves Heelstone as a distinct active 22-project portfolio; the fund-wide 2026 sale process remains non-binding.",
+          "taskSnapshotSha256": "57e6b9d4e06d17f4b876eef328314809b7dfba023bf5f86b7863b862f626dca4",
+          "evidenceSha256": [
+            "1ec0edf96ba62ecfbf8ac4d68de61e1fea717b73bd9551d4110cfa012c6c6758",
+            "57e6b9d4e06d17f4b876eef328314809b7dfba023bf5f86b7863b862f626dca4"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -21657,5 +21686,5 @@
       ]
     }
   ],
-  "manifestSha256": "786a3d63c622352645c7e43c9b31b79f2878aaca6c31252be8ee1d1729ba8c51"
+  "manifestSha256": "82d37a3ea0dffa80467741d5cf329c2bba0389d7d6fbea0606feec58ab4a4045"
 }

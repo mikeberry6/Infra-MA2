@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0023:heelstone-solar-portfolio:c92d620e",
+  "taskIndex": 23,
+  "companyName": "Heelstone Solar Portfolio",
+  "generatedAt": "2026-08-07T04:26:25.158Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0023-heelstone-solar-portfolio/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 23,
+    "taskId": "ledger:0023:heelstone-solar-portfolio:c92d620e",
+    "canonicalKey": "heelstone-solar-portfolio|united-states",
+    "companyName": "Heelstone Solar Portfolio",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 6,
+    "managers": [
+      "Amber Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "006-amber-infrastructure:repo-only:009:heelstone-solar-portfolio"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj4zw00h4ivhe4oxgmhoc"
+    ],
+    "seedKeys": [
+      "heelstone solar portfolio|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Amber Infrastructure MATCHED_ELSEWHERE: Grouped under US Solar Fund U.S. Solar Portfolio.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj4zw00h4ivhe4oxgmhoc",
+    "name": "Heelstone Solar Portfolio",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Heelstone is a portfolio of 22 operating solar projects across California, North Carolina, and Oregon totaling about 177 MWdc. The assets serve wholesale electricity markets under long-term power purchase agreements and operate as an asset-heavy contracted generation portfolio. US Solar Fund acquired the portfolio from Heelstone Renewable Energy in 2020, and the listed fund continues to report the assets within its operating portfolio. Amber became the fund's investment manager in late 2023, but reviewed public materials do not disclose a separate project-level co-ownership structure. The portfolio is one of the larger components of the fund's U.S. solar asset base by installed capacity.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "California; North Carolina; Oregon",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpz001dqivhe8ieh2iyb",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "US Solar Fund plc (USF)",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkfnd02gzivhezpe08qyv",
+        "date": "2020",
+        "event": "The 22-project portfolio became part of the fund's contracted operating asset base.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfo202h0ivhelb09j6ga",
+        "date": "2020",
+        "event": "Heelstone Solar Portfolio was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfok02h1ivheon805ygw",
+        "date": "Mar 2020",
+        "event": "US Solar Fund, now managed by Amber Infrastructure, closed the acquisition of the Heelstone portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfp402h2ivhejtdytuqj",
+        "date": "Dec 2023",
+        "event": "Amber became investment manager to US Solar Fund.",
+        "category": "FINANCING",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfpl02h3ivhecojshfpb",
+        "date": "Dec 2023",
+        "event": "The fund completed a tax equity buyout associated with part of the portfolio, as later disclosed in fund reports.",
+        "category": "FINANCING",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpop5v072iivhe1ie4w7gi",
+        "label": "Close date source — Amber Infrastructure — Heelstone Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/portfolio/acquisition-four",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpop6a072jivheron9pdjg",
+        "label": "Ussolarfund — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_interim_report_2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ussolarfund — Heelstone Solar Portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpop6o072kivheyjlqjv43",
+        "label": "Ussolarfund — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ussolarfund — Heelstone Solar Portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpop78072livhee7g36izp",
+        "label": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/amber-appointed-us-solar-fund-plc-investment-manager/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpop8e072nivheadsrt4mr",
+        "label": "Ussolarfund — Heelstone Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ussolarfund company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Heelstone Solar Portfolio",
+    "investmentFirm": "Amber Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar portfolio",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "US Solar Fund plc (USF)",
+    "description": "Heelstone is a portfolio of 22 operating solar projects across California, North Carolina, and Oregon totaling about 177 MWdc. The assets serve wholesale electricity markets under long-term power purchase agreements and operate as an asset-heavy contracted generation portfolio. US Solar Fund acquired the portfolio from Heelstone Renewable Energy in 2020, and the listed fund continues to report the assets within its operating portfolio. Amber became the fund's investment manager in late 2023, but reviewed public materials do not disclose a separate project-level co-ownership structure. The portfolio is one of the larger components of the fund's U.S. solar asset base by installed capacity.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2020,
+    "investmentYear": 2020,
+    "headquarters": "California; North Carolina; Oregon",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "The 22-project portfolio became part of the fund's contracted operating asset base.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2020",
+        "event": "Heelstone Solar Portfolio was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Mar 2020",
+        "event": "US Solar Fund, now managed by Amber Infrastructure, closed the acquisition of the Heelstone portfolio.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 2023",
+        "event": "Amber became investment manager to US Solar Fund.",
+        "category": "Financing"
+      },
+      {
+        "date": "Dec 2023",
+        "event": "The fund completed a tax equity buyout associated with part of the portfolio, as later disclosed in fund reports.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Amber Infrastructure — Heelstone Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/portfolio/acquisition-four",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ussolarfund — Heelstone Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_interim_report_2025.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Ussolarfund — Heelstone Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/amber-appointed-us-solar-fund-plc-investment-manager/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Ussolarfund — Heelstone Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Amber Infrastructure",
+        "ownershipVehicle": "US Solar Fund plc (USF)",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpig56004civhenbxnuvlx",
+        "name": "Amber Infrastructure",
+        "updatedAt": "2026-07-23T16:09:28.122Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0023:heelstone-solar-portfolio:c92d620e",
+    "taskIndex": 23,
+    "canonicalKey": "heelstone-solar-portfolio|united-states",
+    "capturedAt": "2026-08-07T04:26:25.158Z",
+    "databaseRevision": "company-state:337103b22bab25578f40638db2cfe2a226fe7909463351222d2664da32021b00",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "a1af0a7cbdda1c8dd5878894efd8023bb04a0bf58d27ae6c954285ac990ce40f",
+    "productionSnapshotSha256": "f849da5c8d0a58ac24cb66fa472cdd26a7f50fe093d6ab4a561df59225013956",
+    "targetCompanySnapshotSha256": "337103b22bab25578f40638db2cfe2a226fe7909463351222d2664da32021b00",
+    "seedEntrySha256": "2413ffe9fc1dba13bf5b854eff8a5f3e48a52a93ff7eb0ff5b69fc44357b3786",
+    "dependencies": {
+      "ownershipPeriodsSha256": "2a0c1ed4fd884005a77f95fdac0dd0770ca87d8db49118fe436bf064580ac801",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "335be0d5a62870ef627d7e9c88278570c30e7c63317b7ca81feb4001353d1cde",
+      "citationsSha256": "687bfd5639c7efc4260d12305c5d2fc7bd297a3d3bce2d1e0d3540c058ea1cb6",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e20a8a52f420a31acb5622f524c03cdfa87680fc6e7fb1afa560d7e3c9dbf916",
+    "stateSha256": "d32546f413a80bbdc80379699db26d2c90200623ab26323a8a7f31ffc96eaac2",
+    "taskSnapshotSha256": "57e6b9d4e06d17f4b876eef328314809b7dfba023bf5f86b7863b862f626dca4"
+  },
+  "contextSha256": "bb2e2d33030d43348f980c8c68a52829aee2c9ae4e3dce92b5ee27d7f507f48b"
+}
