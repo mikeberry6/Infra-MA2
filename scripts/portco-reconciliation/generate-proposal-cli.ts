@@ -82,10 +82,26 @@ const citationUpdateSchema = z.strictObject({
   id: z.string().trim().min(1),
   set: citationImageSchema.omit({ id: true, sourceType: true }).partial().extend({
     sourceType: supportedSourceTypeSchema.optional(),
+    purpose: z.enum([
+      "COMPANY_PROFILE",
+      "OWNERSHIP_INVESTMENT",
+      "OPERATIONS_ASSETS",
+      "MILESTONE_EVENT",
+      "FINANCING_FILINGS",
+      "SUPPORTING_CONTEXT",
+    ]).optional(),
   }),
 });
 const citationAdditionSchema = citationImageSchema.extend({
   sourceType: supportedSourceTypeSchema,
+  purpose: z.enum([
+    "COMPANY_PROFILE",
+    "OWNERSHIP_INVESTMENT",
+    "OPERATIONS_ASSETS",
+    "MILESTONE_EVENT",
+    "FINANCING_FILINGS",
+    "SUPPORTING_CONTEXT",
+  ]),
 }).refine(
   (citation) => citation.id === null,
   { message: "New citations must use id: null", path: ["id"] },

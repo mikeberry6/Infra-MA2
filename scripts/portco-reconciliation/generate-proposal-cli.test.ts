@@ -87,6 +87,21 @@ describe("proposal patch ownership additions", () => {
     expect(() => applySpec(contextFixture(), spec)).toThrow(/ARTICLE/);
   });
 
+  it("rejects citation purposes that the database cannot store", () => {
+    const spec = baseSpec();
+    spec.citationAdditions = [{
+      id: null,
+      label: "Unsupported ownership-exit category",
+      url: "https://acme.example.com/exit",
+      sourceType: "OTHER",
+      purpose: "OWNERSHIP_EXIT",
+      evidenceLabel: "Exit evidence",
+      isPrimary: false,
+    }];
+
+    expect(() => applySpec(contextFixture(), spec)).toThrow(/OWNERSHIP_INVESTMENT/);
+  });
+
   it("accepts the canonical ownership-retirement action", () => {
     const spec = baseSpec();
     spec.actions = ["RETIRE_OWNERSHIP"];

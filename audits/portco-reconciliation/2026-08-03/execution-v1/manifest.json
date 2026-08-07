@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-07T04:36:03.000Z",
+  "updatedAt": "2026-08-07T04:47:03.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0024:iowa-rng:b2389ddb",
   "source": {
@@ -3720,25 +3720,25 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "1e4eecb01b791a085c03d2ed6c9b6c7435bc174cd2657c7eb72203be1bedadcf",
       "status": "RELEASING",
-      "attempts": 1,
-      "startedAt": "2026-08-07T04:33:00.000Z",
-      "updatedAt": "2026-08-07T04:36:03.000Z",
+      "attempts": 2,
+      "startedAt": "2026-08-07T04:45:31.000Z",
+      "updatedAt": "2026-08-07T04:47:03.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "a72b63c826d878fdcf8359d38137fecae43804cbba62bbd418b947749f25bd53",
+      "taskSnapshotSha256": "99cb7735565a38cdd796e29a898a43a8979cc28f6697672a0d1d9d772ace4d7b",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0024-iowa-rng/attempt-1/task-snapshot.json",
-          "sha256": "a72b63c826d878fdcf8359d38137fecae43804cbba62bbd418b947749f25bd53"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0024-iowa-rng/attempt-2/task-snapshot.json",
+          "sha256": "99cb7735565a38cdd796e29a898a43a8979cc28f6697672a0d1d9d772ace4d7b"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/proposals/0024-iowa-rng-v1/proposal.json",
-          "sha256": "a7529842f1d93cf7fa64a8746a61be982ba48f25f0a7491618aafa8ff8f3fc05"
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0024-iowa-rng-v2/proposal.json",
+          "sha256": "97b76b337989e4f1ff57fb46d40afa145dab11dc47639af6f871416831ef6178"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/approvals/0024-iowa-rng-v1.json",
-          "sha256": "3d7261807a20a502572dcbf4d7a1947782a48fc476551e7b78de88cb54041f3b"
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0024-iowa-rng-v2.json",
+          "sha256": "a6d75e5fbb542742ecbea790f0f2a4f3f93d05b6a815905b63e76b6fff71062c"
         },
         "applyReceipt": null,
         "decision": null,
@@ -3800,6 +3800,65 @@
           "taskSnapshotSha256": "a72b63c826d878fdcf8359d38137fecae43804cbba62bbd418b947749f25bd53",
           "evidenceSha256": [
             "3d7261807a20a502572dcbf4d7a1947782a48fc476551e7b78de88cb54041f3b"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-07T04:45:30.000Z",
+          "reason": "Protected workflow run 31148325784 rolled back because OWNERSHIP_EXIT is not a valid production CitationPurpose enum.",
+          "taskSnapshotSha256": "a72b63c826d878fdcf8359d38137fecae43804cbba62bbd418b947749f25bd53",
+          "evidenceSha256": [
+            "8cd0100d578f41fe219aa90fdc12811f0cdf688a141fbb8a65d44ed87e00147f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-07T04:45:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-07T04:47:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "99cb7735565a38cdd796e29a898a43a8979cc28f6697672a0d1d9d772ace4d7b",
+          "evidenceSha256": [
+            "97b76b337989e4f1ff57fb46d40afa145dab11dc47639af6f871416831ef6178",
+            "99cb7735565a38cdd796e29a898a43a8979cc28f6697672a0d1d9d772ace4d7b"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-07T04:47:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "99cb7735565a38cdd796e29a898a43a8979cc28f6697672a0d1d9d772ace4d7b",
+          "evidenceSha256": [
+            "99cb7735565a38cdd796e29a898a43a8979cc28f6697672a0d1d9d772ace4d7b"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-07T04:47:03.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "99cb7735565a38cdd796e29a898a43a8979cc28f6697672a0d1d9d772ace4d7b",
+          "evidenceSha256": [
+            "a6d75e5fbb542742ecbea790f0f2a4f3f93d05b6a815905b63e76b6fff71062c"
           ],
           "kind": "TRANSITION"
         }
@@ -21742,5 +21801,5 @@
       ]
     }
   ],
-  "manifestSha256": "a7dad76a0ac82e681f32557eabfc61fcef1e02513bf5e9b8096adf1a0d648a2b"
+  "manifestSha256": "4f21fd7972397f63ea0f5657c4f1799dc285ecd8797ac79b572e6637935aa317"
 }

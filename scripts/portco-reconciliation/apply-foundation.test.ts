@@ -137,6 +137,19 @@ describe("approved PortCo apply planner", () => {
     })).toThrow(/source type is not supported/i);
   });
 
+  it("rejects unsupported citation purposes before opening the mutation path", () => {
+    const after = companyImageFixture("Approved, corrected company overview.");
+    after.citations[0].purpose = "OWNERSHIP_EXIT";
+    const { proposal, approval } = approvedCorrection({ after });
+
+    expect(() => planApprovedApply({
+      proposal,
+      approval,
+      approvedProductionSnapshot: productionSnapshotFixture(),
+      fresh: freshState(),
+    })).toThrow(/citation purpose is not supported/i);
+  });
+
   it("rejects duplicate database citation keys before the transaction", () => {
     const after = companyImageFixture("Approved, corrected company overview.");
     after.citations.push({
