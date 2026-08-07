@@ -1,0 +1,64 @@
+{
+  "generatedAt": "2026-08-07T05:10:00.000Z",
+  "decision": "VERIFY_NO_CHANGE_KEEP_SEPARATE",
+  "taskId": "ledger:0025:olympos-solar-portfolio:5f8fd5bd",
+  "companyName": "Olympos Solar Portfolio",
+  "requestedManager": "Amber Infrastructure",
+  "sourceRepoOnlyId": "006-amber-infrastructure:repo-only:011:olympos-solar-portfolio",
+  "rationale": "Keep Olympos Solar Portfolio as its own canonical portfolio record and do not merge it into a synthetic US Solar Fund aggregate. US Solar Fund's current portfolio page identifies Olympos as Acquisition Two, a distinct six-project, 39 MWdc North Carolina portfolio acquired at financial close in December 2019. The audited 2025 annual report and first-quarter 2026 portfolio report continue to identify Olympos separately from Milford, Granite, Euryalus and Heelstone, including separate operating and PPA metrics. Amber remains USF's investment manager. The May 2026 potential whole-fund sale remained an exclusivity process rather than a completed disposition, and the current London Stock Exchange announcement list shows no later definitive sale or closing announcement through the research date. No company, seed, ownership, redirect, pending-transaction or publication mutation is authorized by this task.",
+  "identityResolution": {
+    "sameAsUSSolarFundAggregate": false,
+    "canonicalDecision": "KEEP_OLYMPOS_SOLAR_PORTFOLIO",
+    "portfolioBoundary": "Six operating North Carolina solar projects totaling 39 MWdc, acquired together by US Solar Fund in December 2019 and continuously reported as the Olympos portfolio.",
+    "sourceJudgmentCorrection": "The prior MATCHED_ELSEWHERE note grouped Olympos under a broad US Solar Fund U.S. Solar Portfolio. Current primary evidence supports keeping the separately named acquisition portfolio, while treating the broad fund-wide label as a manager aggregate rather than a duplicate canonical company."
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "US Solar Fund's current Olympos page states that it acquired and financed 100% of the cash equity interests in six North Carolina projects totaling 39 MWdc on 23 December 2019, with construction beginning after financial close and the portfolio now fully operational.",
+    "exitSearch": "US Solar Fund's May 2026 materials and London Stock Exchange announcement describe only a potential sale of the fund-wide portfolio under exclusivity. The current USF announcement list shows no subsequent definitive sale agreement or closing announcement through 7 August 2026.",
+    "currentOwnership": "US Solar Fund's audited 2025 annual report and Q1 2026 portfolio report continue to report Olympos as a distinct current operating portfolio. Amber Infrastructure Investment Advisor, LLC remains USF's investment manager.",
+    "transactionState": "CLOSED_ACTIVE",
+    "potentialSaleState": "EXCLUSIVITY_ONLY_NOT_CLOSED"
+  },
+  "evidence": [
+    {
+      "label": "US Solar Fund — Olympos / Acquisition Two",
+      "url": "https://www.ussolarfund.co.uk/portfolio/olympos",
+      "purpose": "Current official acquisition and portfolio-boundary evidence identifying Olympos as six projects totaling 39 MWdc, with 100% of cash equity acquired at financial close in December 2019",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "US Solar Fund — Annual Report and Financial Statements 2025",
+      "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_2025_annual_report_190326.pdf",
+      "purpose": "Audited current-period evidence continuing to identify Olympos separately and reporting its operating, ownership-structure and PPA metrics",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "US Solar Fund — First Quarter 2026 Portfolio Performance Summary",
+      "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_q1_2026_portfolio_perfomance_summary_v5.pdf",
+      "purpose": "Latest current operating evidence separately reporting the Olympos portfolio and Pilot Mountain asset",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Amber Infrastructure — US Solar Fund",
+      "url": "https://www.amberinfrastructure.com/funds/us-solar-fund-plc/",
+      "purpose": "Current manager evidence that Amber is US Solar Fund's investment manager and is responsible for ongoing asset and fund management",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "US Solar Fund — Shareholder Presentation May 2026",
+      "url": "https://www.ussolarfund.co.uk/sites/default/files/usf_shareholder_presentation_may_2026_vf.pdf",
+      "purpose": "Official exit-search evidence for the fund-wide potential sale process",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "London Stock Exchange — US Solar Fund company announcements",
+      "url": "https://www.londonstockexchange.com/stock/USF/us-solar-fund-plc/company-page",
+      "purpose": "Current regulatory-announcement search confirming no later definitive sale or closing announcement was listed after the May 2026 exclusivity announcement",
+      "sourceTier": "PRIMARY"
+    }
+  ],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "unresolvedQuestions": [],
+  "phaseOneCloseoutNote": "When the canonical ledger is rebuilt, represent the broad US Solar Fund U.S. Solar Portfolio census label as a manager-level aggregate/exclusion rather than a company identity. Preserve Heelstone, Granite, Euryalus, Milford and Olympos as distinct acquisition portfolios or standalone assets according to official reporting boundaries."
+}
