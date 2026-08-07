@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-07T06:58:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0027:noventa-energy-partners:7d8aff1c",
+  "updatedAt": "2026-08-07T05:56:10.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -4095,11 +4095,11 @@
       "managerIndex": 7,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "758de9af2aa62bb8471e47c89c87205ef61ee48dabc5c66a5d988a0d1de711c0",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-07T05:43:00.000Z",
-      "updatedAt": "2026-08-07T06:58:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-07T05:56:10.000Z",
+      "completedAt": "2026-08-07T05:56:10.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "c146f81c2818092ef149c3c52bd48747cb9ae06e95da89f1ceb436e38de9cdcc",
@@ -4116,11 +4116,23 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0027-noventa-energy-partners-v1.json",
           "sha256": "1e75393f52d8c5fee3f0367ea97c759911190fdad82d2381cf18396bcc8c5878"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0027-noventa-energy-partners/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "e8e4f28e44781a00d68bd20237aa2c776dd7a017215e107ddb209fcc121c6609"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0027-noventa-energy-partners/attempt-1/context.json",
+          "sha256": "867b5536882b77e9b7590e0329ce66734dcbce0dc4d2be488542c99e72ac02ec"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-07T05:56:10.000Z",
+        "auditEventId": "cmsij7cwn0007h44sbwyda2wx",
+        "transactionId": "fd211062-9cdb-449d-bf49-f3370d78ad10",
+        "receiptSha256": "e8e4f28e44781a00d68bd20237aa2c776dd7a017215e107ddb209fcc121c6609",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31152158830"
+      },
       "history": [
         {
           "sequence": 1,
@@ -4176,6 +4188,21 @@
             "1e75393f52d8c5fee3f0367ea97c759911190fdad82d2381cf18396bcc8c5878"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-07T05:56:10.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "1e75393f52d8c5fee3f0367ea97c759911190fdad82d2381cf18396bcc8c5878",
+            "867b5536882b77e9b7590e0329ce66734dcbce0dc4d2be488542c99e72ac02ec",
+            "b54c1eb5902605516571377590799eb548098b2c3a0787f72a472fcfe5fdea1b",
+            "e8e4f28e44781a00d68bd20237aa2c776dd7a017215e107ddb209fcc121c6609"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -22002,5 +22029,5 @@
       ]
     }
   ],
-  "manifestSha256": "db9146c10444a3a7d40d6bf0c59ec9dfef9666fcf2f3fc9ab6ce9ecb9d4f9343"
+  "manifestSha256": "78d38fde612c1d9b8b841460f42d9993736074e74b090b4d9653faaf94364076"
 }
