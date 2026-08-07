@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0022:groveland-mine-solar:3ef702d8",
+  "taskIndex": 22,
+  "asOfDate": "2026-08-06",
+  "generatedAt": "2026-08-07T04:00:30.000Z",
+  "canonicalKey": "groveland-mine-solar|united-states",
+  "companyName": "Groveland Mine Solar",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [
+    "cmrxpj4t200gsivhelvkmligg"
+  ],
+  "rationale": "Consolidate the project-level Groveland Mine Solar record into the existing manager-level Circle Power Renewables platform. Official current project materials identify Groveland as owned by Copper Country Power I LLC, a wholly owned Circle Power subsidiary; Hunt's 2024 sustainability report identifies Circle Power as majority Amber-owned, Amber continues to list Circle Power as a U.S. energy investment, and the current acquisition-and-exit search located no announced Amber exit. Preserve all distinct platform and project milestones, retain one semantically identical active Amber ownership period, deduplicate equivalent citations, and retire the duplicate platform record through the canonical redirect workflow.",
+  "evidence": [
+    {
+      "url": "https://www.amberinfrastructure.com/sectors/energy/",
+      "purpose": "Current Amber investment in Circle Power Renewables.",
+      "supports": [
+        "CURRENT_OWNERSHIP",
+        "INFRASTRUCTURE_STRATEGY"
+      ]
+    },
+    {
+      "url": "https://www.huntcompanies.com/assets/files/2024-Sustainability-Report.pdf",
+      "purpose": "Official majority Amber-owned platform confirmation.",
+      "supports": [
+        "CURRENT_OWNERSHIP",
+        "PLATFORM_BOUNDARY"
+      ]
+    },
+    {
+      "url": "https://www.huntcompanies.com/news/amber-infrastructure-and-circle-power-launch-circle-power-renewables-",
+      "purpose": "Circle Power Renewables launch and explicit classification of Groveland Mine Solar as a platform project.",
+      "supports": [
+        "IDENTITY",
+        "PLATFORM_BOUNDARY",
+        "INVESTMENT_DATE"
+      ]
+    },
+    {
+      "url": "https://grovelandminesolar.com/news/blog-post-title-two-lpsta-jns6m",
+      "purpose": "Current project-level owner and approved UPPCO PPA.",
+      "supports": [
+        "PROJECT_STATUS",
+        "PROJECT_OWNER",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "url": "https://circlepower.com/",
+      "purpose": "Current canonical platform identity and project portfolio.",
+      "supports": [
+        "IDENTITY",
+        "CURRENT_STATUS"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "ac9423ab3560e62427bc06443869093e5fc2f07e193dd079ba24b30edfd19392",
+  "currentCompanySnapshotSha256": "88ff5258c0a251ecfc5990c489c72070742e7ec82832ebde7470bc7fbfbe947c",
+  "beforeImage": {
+    "id": "cmrxpj4zc00h3ivheb7vfzrwz",
+    "name": "Groveland Mine Solar",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Groveland Mine Solar is a utility-scale solar development on former mining land in Michigan's Upper Peninsula. The project is intended to supply wholesale renewable electricity under a contracted model and follows an asset-heavy development path involving land control, permitting, transmission, and a utility offtake. Public materials describe the project at roughly 120 MW of planned capacity, with UPPCO contracting for a portion of the output. The project is being developed through the Circle Power Renewables platform backed by Amber Infrastructure. Reviewed public sources do not disclose the current project-level ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Michigan",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpyg01dpivhe2yeg9f2y",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkfhy02guivheshvqzpmt",
+        "date": "2020",
+        "event": "Circle Power advanced Michigan mine-site solar repurposing initiatives that included the Groveland development area.",
+        "category": "OTHER",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfih02gvivhepxp6fzz0",
+        "date": "2020",
+        "event": "Groveland Mine Solar was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfiz02gwivheyo0qcr4m",
+        "date": "May 27, 2021",
+        "event": "Amber and Circle Power launched Circle Power Renewables as the platform developing Groveland Mine Solar.",
+        "category": "FINANCING",
+        "sortDate": "2021-05-27T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfjj02gxivhe0dzqok1v",
+        "date": "Oct 2023",
+        "event": "Felch Township approved a conditional use permit for Groveland Mine Solar.",
+        "category": "EXPANSION",
+        "sortDate": "2023-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfk402gyivhezrsk2b8y",
+        "date": "Aug 2024",
+        "event": "The Michigan Public Service Commission approved UPPCO's power purchase agreement for output from the project.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpop35072divheaikkdttk",
+        "label": "Grovelandminesolar — Circle Power Renewables",
+        "url": "https://grovelandminesolar.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Grovelandminesolar company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpop3o072eivheh179xzx3",
+        "label": "Announcement date source — Amber Infrastructure — 7 Mile Pit Solar",
+        "url": "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpop4v072givhe9dxrft00",
+        "label": "Uppermichiganssource — Groveland Mine Solar",
+        "url": "https://www.uppermichiganssource.com/2024/08/23/uppco-circle-power-renewables-announce-approval-power-purchase-agreement-groveland-solar-mine/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Uppermichiganssource — Groveland Mine Solar",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "88ff5258c0a251ecfc5990c489c72070742e7ec82832ebde7470bc7fbfbe947c",
+  "afterImage": {
+    "id": "cmrxpj4zc00h3ivheb7vfzrwz",
+    "name": "Circle Power Renewables",
+    "aliases": [
+      "7 Mile Pit Solar",
+      "Groveland Mine Solar"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Renewable energy development platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Circle Power Renewables is a U.S. renewable energy development platform focused on solar, wind and battery-storage projects, principally in Michigan and other regional power markets. Amber Infrastructure and the principals of Circle Power launched the platform in May 2021 after an earlier joint venture; Hunt's 2024 sustainability report identifies Circle Power Renewables as majority Amber-owned, and Amber's current energy-investment materials continue to list the platform as a U.S. investment. Utilities and wholesale power counterparties are its primary end markets. The platform develops projects through dedicated project companies rather than counting each underlying project as a separate manager-level portfolio company: Groveland Mine Solar is owned by Copper Country Power I LLC, a wholly owned Circle Power subsidiary, while 7 Mile Pit Solar is held through a Circle Power project company.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://circlepower.com/",
+    "yearFounded": 2021,
+    "headquarters": "Michigan; United States",
+    "lastVerifiedAt": "2026-08-06T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpyg01dpivhe2yeg9f2y",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkexz02g6ivhewmch4h19",
+        "date": "2017",
+        "event": "Circle Power was formed by its founders before the launch of the joint platform.",
+        "category": "FOUNDING",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkeoh02fwivhel7zz2fka",
+        "date": "2020",
+        "event": "7 Mile Pit Solar was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfhy02guivheshvqzpmt",
+        "date": "2020",
+        "event": "Circle Power advanced Michigan mine-site solar repurposing initiatives that included the Groveland development area.",
+        "category": "OTHER",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfih02gvivhepxp6fzz0",
+        "date": "2020",
+        "event": "Groveland Mine Solar was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkep002fxivhe8ct88cqb",
+        "date": "Sep 2020",
+        "event": "Michigan DNR awarded Circle Power a lease to develop solar generation at the former 7 Mile Pit site.",
+        "category": "EXPANSION",
+        "sortDate": "2020-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.michigan.gov/dnr/managing-resources/forestry/pilot-initiatives"
+        ]
+      },
+      {
+        "id": "cmrxpkeyj02g7ivheqryrmiwl",
+        "date": "2021",
+        "event": "Scotia Wind became the first publicly highlighted project for the platform.",
+        "category": "OTHER",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkepj02fyivhek0pdcnjn",
+        "date": "May 27, 2021",
+        "event": "Amber Infrastructure and Circle Power launched Circle Power Renewables as a U.S. renewable development platform covering 7 Mile Pit Solar and other Michigan projects.",
+        "category": "FINANCING",
+        "sortDate": "2021-05-27T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html"
+        ]
+      },
+      {
+        "id": "cmrxpkez502g8ivheu5btc6tt",
+        "date": "May 27, 2021",
+        "event": "Amber Infrastructure and Circle Power launched Circle Power Renewables.",
+        "category": "FINANCING",
+        "sortDate": "2021-05-27T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfiz02gwivheyo0qcr4m",
+        "date": "May 27, 2021",
+        "event": "Amber and Circle Power launched Circle Power Renewables as the platform developing Groveland Mine Solar.",
+        "category": "FINANCING",
+        "sortDate": "2021-05-27T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfjj02gxivhe0dzqok1v",
+        "date": "Oct 2023",
+        "event": "Felch Township approved a conditional use permit for Groveland Mine Solar.",
+        "category": "EXPANSION",
+        "sortDate": "2023-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkezn02g9ivheclbcutn1",
+        "date": "Aug 2024",
+        "event": "Public approvals advanced the Groveland Mine Solar power purchase arrangement with UPPCO.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfk402gyivhezrsk2b8y",
+        "date": "Aug 2024",
+        "event": "The Michigan Public Service Commission approved UPPCO's power purchase agreement for output from the project.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpop35072divheaikkdttk",
+        "label": "Grovelandminesolar — Circle Power Renewables",
+        "url": "https://grovelandminesolar.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Grovelandminesolar company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpop3o072eivheh179xzx3",
+        "label": "Announcement date source — Amber Infrastructure — 7 Mile Pit Solar",
+        "url": "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpop4v072givhe9dxrft00",
+        "label": "Uppermichiganssource — Groveland Mine Solar",
+        "url": "https://www.uppermichiganssource.com/2024/08/23/uppco-circle-power-renewables-announce-approval-power-purchase-agreement-groveland-solar-mine/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Uppermichiganssource — Groveland Mine Solar",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxponmz0709ivhen3sgrqud",
+        "label": "Thinkingafield — 7 Mile Pit Solar",
+        "url": "https://thinkingafield.org/2020/09/michigan-dnr-partners-with-circle-power-to-repurpose-former-mine-sites.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Thinkingafield — 7 Mile Pit Solar",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpono1070bivher8u0mk52",
+        "label": "Circlepower — 7 Mile Pit Solar",
+        "url": "https://www.circlepower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Circlepower company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxponsc070fivheq0p7gzmo",
+        "label": "Michigan — 7 Mile Pit Solar",
+        "url": "https://www.michigan.gov/dnr",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Michigan — 7 Mile Pit Solar",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoo29070xivhe38ubiq5h",
+        "label": "Circlepower — Circle Power Renewables",
+        "url": "https://circlepower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Circlepower company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoo8j0712ivhe2rvzhxxc",
+        "label": "Scotiawindfarm — Circle Power Renewables",
+        "url": "https://www.scotiawindfarm.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Scotiawindfarm company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmse1vs9s0001cy4s5ko82l4o",
+        "label": "Amber Infrastructure — Energy investments",
+        "url": "https://www.amberinfrastructure.com/sectors/energy/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Amber investment in Circle Power Renewables",
+        "isPrimary": true
+      },
+      {
+        "id": "cmse1vsa60003cy4sih343laa",
+        "label": "Michigan DNR — Pilot initiatives",
+        "url": "https://www.michigan.gov/dnr/managing-resources/forestry/pilot-initiatives",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current 7 Mile Pit project and lessee evidence",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Hunt Companies — 2024 Sustainability Report",
+        "url": "https://www.huntcompanies.com/assets/files/2024-Sustainability-Report.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Majority Amber-owned platform confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Hunt Companies — Circle Power Renewables launch",
+        "url": "https://www.huntcompanies.com/news/amber-infrastructure-and-circle-power-launch-circle-power-renewables-",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber investment, launch, and platform-project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Groveland Mine Solar — approved UPPCO PPA",
+        "url": "https://grovelandminesolar.com/news/blog-post-title-two-lpsta-jns6m",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current project ownership through a wholly owned Circle Power subsidiary",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "f7dba200856f23f0a99dc3140eb7a91f92a29d65409b0d1f81277af01b65e939",
+  "proposalSha256": "b208b8b755f6637a1a027fdc9f07b66fcc7acc1fa9a3627455e27e96e3ffbbbb"
+}
