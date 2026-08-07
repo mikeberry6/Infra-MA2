@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-07T04:00:33.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0022:groveland-mine-solar:3ef702d8",
+  "updatedAt": "2026-08-07T04:18:04.600Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -3517,11 +3517,11 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a1800923bc581b48c64a715b8eb196a756973efb53a9b4148e2bdd8e068c9344",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-06T04:13:30.000Z",
-      "updatedAt": "2026-08-07T04:00:33.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-07T04:18:04.600Z",
+      "completedAt": "2026-08-07T04:18:04.600Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "23d653a947259c418ebff0d5f68807e92ccb08d459297bdf18f1c6eb9c61e308",
@@ -3538,7 +3538,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0022-groveland-mine-solar-v1.json",
           "sha256": "622f84c5aeb48229492ac102d94a7ce7f7a580e8df2de75584362326292c3a9e"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0022-groveland-mine-solar/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "fd6147443958bb55422df128a65abb4fe39055588f86c79fe2af2b186409e230"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -3598,6 +3601,44 @@
           "taskSnapshotSha256": "23d653a947259c418ebff0d5f68807e92ccb08d459297bdf18f1c6eb9c61e308",
           "evidenceSha256": [
             "622f84c5aeb48229492ac102d94a7ce7f7a580e8df2de75584362326292c3a9e"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-07T04:18:03.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "23d653a947259c418ebff0d5f68807e92ccb08d459297bdf18f1c6eb9c61e308",
+          "evidenceSha256": [
+            "23d653a947259c418ebff0d5f68807e92ccb08d459297bdf18f1c6eb9c61e308"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-07T04:18:04.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "23d653a947259c418ebff0d5f68807e92ccb08d459297bdf18f1c6eb9c61e308",
+          "evidenceSha256": [
+            "23d653a947259c418ebff0d5f68807e92ccb08d459297bdf18f1c6eb9c61e308",
+            "fd6147443958bb55422df128a65abb4fe39055588f86c79fe2af2b186409e230"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-07T04:18:04.600Z",
+          "reason": null,
+          "taskSnapshotSha256": "23d653a947259c418ebff0d5f68807e92ccb08d459297bdf18f1c6eb9c61e308",
+          "evidenceSha256": [
+            "23d653a947259c418ebff0d5f68807e92ccb08d459297bdf18f1c6eb9c61e308",
+            "fd6147443958bb55422df128a65abb4fe39055588f86c79fe2af2b186409e230"
           ],
           "kind": "TRANSITION"
         }
@@ -21616,5 +21657,5 @@
       ]
     }
   ],
-  "manifestSha256": "8218ded11a20726413ddaf7a3e785b7e31c8b20e0c699b7af13290dd017ba568"
+  "manifestSha256": "786a3d63c622352645c7e43c9b31b79f2878aaca6c31252be8ee1d1729ba8c51"
 }
