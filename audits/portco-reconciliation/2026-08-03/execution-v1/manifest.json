@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-07T05:32:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0026:scotia-wind:17d54717",
+  "updatedAt": "2026-08-07T05:38:30.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -3976,11 +3976,11 @@
       "managerIndex": 6,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "01753818d8faca0a83c3ae22d97b126a51b37db9bb25eb14dcfa1d7f671a6714",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-07T05:14:00.000Z",
-      "updatedAt": "2026-08-07T05:32:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-07T05:38:30.000Z",
+      "completedAt": "2026-08-07T05:38:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "e21459887a1e09d20cc04fcb2be6c7a30419ae6f0e9492816e402783b851e589",
@@ -3997,11 +3997,23 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0026-scotia-wind-v1.json",
           "sha256": "2bf383540f1d377131589c12fb4284225f321a3079792a0d5cc0f9c6c5d4637d"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0026-scotia-wind/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "665c42c5dc92b0e70da763bf3fabd6665d67c150ee14fab303d7bae7dfc3fe6d"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0026-scotia-wind/attempt-1/context.json",
+          "sha256": "c428981ced21bb24f787f43a7eb601156a10648e215af13b5fa2f789b1d5354f"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-07T05:38:30.000Z",
+        "auditEventId": "cmsii5jk90001dp4skatm32br",
+        "transactionId": "4a6b0fdd-300a-4c73-acdc-550247327ea5",
+        "receiptSha256": "665c42c5dc92b0e70da763bf3fabd6665d67c150ee14fab303d7bae7dfc3fe6d",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31150525387"
+      },
       "history": [
         {
           "sequence": 1,
@@ -4057,6 +4069,21 @@
             "2bf383540f1d377131589c12fb4284225f321a3079792a0d5cc0f9c6c5d4637d"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-07T05:38:30.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "2bf383540f1d377131589c12fb4284225f321a3079792a0d5cc0f9c6c5d4637d",
+            "665c42c5dc92b0e70da763bf3fabd6665d67c150ee14fab303d7bae7dfc3fe6d",
+            "c428981ced21bb24f787f43a7eb601156a10648e215af13b5fa2f789b1d5354f",
+            "db165abf535e9acb80f25bcba714201c4d9f8e89f5b1ba334deef013cc36bf35"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -21921,5 +21948,5 @@
       ]
     }
   ],
-  "manifestSha256": "889277c18f2e0de3afc666a914b7b73931527d996eb714ac4e936ee3e64e6b7e"
+  "manifestSha256": "4ac6c02bb241c3fa65b6f9a959ade4d01d18763085767fa0873ddc4db1d6789d"
 }
