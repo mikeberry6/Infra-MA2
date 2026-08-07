@@ -145,7 +145,20 @@ function betterMilestone(first: MilestoneView, second: MilestoneView): Milestone
   const scoreDiff = milestoneDisplayScore(second) - milestoneDisplayScore(first);
   if (scoreDiff > 0) return second;
   if (scoreDiff < 0) return first;
-  return milestoneSortKey(second) > milestoneSortKey(first) ? second : first;
+  const sortKeyDiff = milestoneSortKey(second) - milestoneSortKey(first);
+  if (sortKeyDiff > 0) return second;
+  if (sortKeyDiff < 0) return first;
+
+  // Prisma does not guarantee relation order when multiple milestones share
+  // the same sortDate. Use a total, content-based tie-breaker so the public
+  // projection and the approved after-image select the same representative
+  // regardless of input order. Prefer the more descriptive event, then use a
+  // canonical lexical comparison as the final deterministic tie-break.
+  const detailDiff = normalizeMilestoneEvent(second.event).length
+    - normalizeMilestoneEvent(first.event).length;
+  if (detailDiff > 0) return second;
+  if (detailDiff < 0) return first;
+  return JSON.stringify(second).localeCompare(JSON.stringify(first)) > 0 ? second : first;
 }
 
 /**
