@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "taskId": "ledger:0024:iowa-rng:b2389ddb",
+  "proposalSha256": "a7529842f1d93cf7fa64a8746a61be982ba48f25f0a7491618aafa8ff8f3fc05",
+  "approvalSha256": "3d7261807a20a502572dcbf4d7a1947782a48fc476551e7b78de88cb54041f3b",
+  "releaseSha": "bd4ca4e8603cef07e99d0485705e836b54b11d3b",
+  "pullRequestNumber": 348,
+  "workflowRunId": 31148325784,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31148325784",
+  "failedAt": "2026-08-07T04:44:43.000Z",
+  "failedStep": "Apply the exact approved PortCo proposal transactionally",
+  "errorCode": "INVALID_CITATION_PURPOSE",
+  "error": "The proposal used OWNERSHIP_EXIT, which is not a member of the production CitationPurpose enum.",
+  "transactionOutcome": "ROLLED_BACK",
+  "databaseWriteVerified": false,
+  "correctiveAction": "Regenerate the proposal with the supported OWNERSHIP_INVESTMENT citation purpose, bind a fresh snapshot and approval, and rerun the protected release."
+}

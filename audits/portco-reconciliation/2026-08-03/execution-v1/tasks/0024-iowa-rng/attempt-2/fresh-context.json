@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0024:iowa-rng:b2389ddb",
+  "taskIndex": 24,
+  "companyName": "Iowa RNG",
+  "generatedAt": "2026-08-07T04:49:03.885Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0024-iowa-rng/attempt-2/fresh-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 24,
+    "taskId": "ledger:0024:iowa-rng:b2389ddb",
+    "canonicalKey": "iowa-rng|united-states",
+    "companyName": "Iowa RNG",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 6,
+    "managers": [
+      "Amber Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "006-amber-infrastructure:repo-only:010:iowa-rng"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj50g00h5ivhenum8luob"
+    ],
+    "seedKeys": [
+      "iowa rng|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Amber Infrastructure PROPOSED_RETIRE: No evidence of completed Amber investment or ongoing ownership following expiry of exclusive rights.",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj50g00h5ivhenum8luob",
+    "name": "Iowa RNG",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable natural gas",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Iowa RNG is a renewable natural gas project associated with Green Impact Partners' North American RNG development program. The project is intended to supply low-carbon gas into transportation and energy markets and follows an asset-heavy contracted infrastructure model. Amber's 2023 partnership with Green Impact included the purchase of a 50% equity interest in Iowa RNG. Public materials provide less operating detail for this project than for GreenGas Colorado or Future Energy Park, but they clearly identify Iowa RNG as part of the partnership package. Reviewed public sources do not disclose the project's detailed commercial structure beyond the disclosed 50-50 sponsor ownership.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2023,
+    "headquarters": "Iowa",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpzh01drivhe3er996oe",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkfqy02h4ivhemt5dfnh6",
+        "date": "2023",
+        "event": "Iowa RNG was identified as one of the named projects in the Amber and Green Impact transaction.",
+        "category": "MANAGEMENT",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfrf02h5ivhe2e9g60z9",
+        "date": "2023",
+        "event": "Iowa RNG was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkfry02h6ivhebgtbnhjf",
+        "date": "Feb 2023",
+        "event": "Amber agreed to acquire a 50% equity interest in Iowa RNG through its partnership with Green Impact Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpop8v072oivhequ1lz2bp",
+        "label": "Announcement date source — Amber Infrastructure — GreenGas Colorado",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpop9g072pivheinn7owaz",
+        "label": "Announcement date source — Amber Infrastructure — Future Energy Park",
+        "url": "https://americanbiogascouncil.org/green-impact-partners-announces-545-million-partnering-agreement/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Americanbiogascouncil — Iowa RNG",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpop9w072qivheket57cfg",
+        "label": "Greenipi — GreenGas Colorado",
+        "url": "https://www.greenipi.com/investors/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Greenipi — Iowa RNG",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Iowa RNG",
+    "investmentFirm": "Amber Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Renewable natural gas",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Conditional 2023 strategic partnering agreement (not closed)",
+    "description": "Iowa RNG is a three-dairy renewable natural gas development in northwest Iowa led by Green Impact Partners. In February 2023 GIP announced a conditional strategic agreement under which Amber Infrastructure was expected to invest in 50% of the project. GIP's first-quarter 2023 financial statements continued to describe that interest as conditional and separately recorded only the GreenGas Colorado closing. GIP's second-quarter 2024 MD&A stated that Amber's exclusive Iowa RNG equity-funding rights expired on June 30, 2024 and had not been extended. GIP's Q3 2025 reporting and current project page continue to present Iowa RNG as a GIP development seeking financing. No official evidence was found that Amber's proposed Iowa RNG investment closed, so Amber is not represented as a current owner.",
+    "status": "Realized",
+    "countryTags": [
+      "United States"
+    ],
+    "website": "https://www.greenipi.com/project/iowa-rng/",
+    "yearFounded": 2022,
+    "investmentYear": 2023,
+    "headquarters": "Northwest Iowa",
+    "milestones": [
+      {
+        "date": "Jun 30, 2024",
+        "event": "Amber's exclusive rights to provide Iowa RNG equity financing expired and had not been extended as of Green Impact Partners' August 2024 filing.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 2022",
+        "event": "Green Impact Partners announced definitive agreements for its partnership in the northwest Iowa dairy RNG project.",
+        "category": "Founding"
+      },
+      {
+        "date": "Feb 2023",
+        "event": "Green Impact Partners and Amber announced a conditional proposed 50% Iowa RNG investment; the project financing and other closing conditions were not shown to have been satisfied.",
+        "category": "Financing"
+      }
+    ],
+    "management": [],
+    "sources": [
+      {
+        "label": "Announcement date source — Amber Infrastructure — GreenGas Colorado",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement"
+      },
+      {
+        "label": "Announcement date source — Amber Infrastructure — Future Energy Park",
+        "url": "https://americanbiogascouncil.org/green-impact-partners-announces-545-million-partnering-agreement/",
+        "type": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Americanbiogascouncil — Iowa RNG"
+      },
+      {
+        "label": "Greenipi — GreenGas Colorado",
+        "url": "https://www.greenipi.com/investors/",
+        "type": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Greenipi — Iowa RNG"
+      },
+      {
+        "label": "Green Impact Partners — Q1 2023 financial statements",
+        "url": "https://www.greenipi.com/wp-content/uploads/2023/05/Q1-2023-Financial-Statements.pdf",
+        "type": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "The proposed Iowa RNG interest remained conditional while only GreenGas Colorado was recorded as closed"
+      },
+      {
+        "label": "Green Impact Partners — Q2 2024 MD&A",
+        "url": "https://www.greenipi.com/wp-content/uploads/2024/08/GIP-MDA-Q2-2024-FINAL.pdf",
+        "type": "OTHER",
+        "purpose": "OWNERSHIP_EXIT",
+        "evidenceLabel": "Amber's exclusive Iowa RNG equity-funding rights expired unextended on June 30, 2024"
+      },
+      {
+        "label": "Green Impact Partners — Q3 2025 MD&A",
+        "url": "https://www.greenipi.com/wp-content/uploads/2025/11/GIP-MDA-Q3-2025-Final.pdf",
+        "type": "OTHER",
+        "purpose": "OWNERSHIP_EXIT",
+        "evidenceLabel": "Current ownership and exit check showing Iowa RNG remained a GIP development with no Amber ownership disclosure"
+      },
+      {
+        "label": "Green Impact Partners — Iowa RNG",
+        "url": "https://www.greenipi.com/project/iowa-rng/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Iowa RNG project identity, location and development status"
+      },
+      {
+        "label": "Green Impact Partners — Iowa RNG project update",
+        "url": "https://www.greenipi.com/newsroom/green-impact-partners-provides-an-update-on-its-rng-project-in-iowa/",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "March 2022 definitive project-partnership agreements"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Amber Infrastructure",
+        "ownershipVehicle": "Conditional 2023 strategic partnering agreement (not closed)",
+        "investmentYear": 2023,
+        "stake": "Proposed 50% (not closed)",
+        "status": "Realized",
+        "transactionState": "REALIZED"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpig56004civhenbxnuvlx",
+        "name": "Amber Infrastructure",
+        "updatedAt": "2026-07-23T16:09:28.122Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0024:iowa-rng:b2389ddb",
+    "taskIndex": 24,
+    "canonicalKey": "iowa-rng|united-states",
+    "capturedAt": "2026-08-07T04:49:03.885Z",
+    "databaseRevision": "company-state:88ec2a69cdc3a36a41ba20456f4a4f807072839d3d7abddc5a04ae5a98098acf",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1e4eecb01b791a085c03d2ed6c9b6c7435bc174cd2657c7eb72203be1bedadcf",
+    "productionSnapshotSha256": "9ddad29eb913e8cf6c1f0a19745ff4a877cc28940bb3e3fdd266db7b6bda5106",
+    "targetCompanySnapshotSha256": "88ec2a69cdc3a36a41ba20456f4a4f807072839d3d7abddc5a04ae5a98098acf",
+    "seedEntrySha256": "f0bc36b202d505f4be2047ea282fdb99e58b64f3ff4e14cc0774683a19a62ee1",
+    "dependencies": {
+      "ownershipPeriodsSha256": "aa83fd96d4e0c6c2671ada5f6005e350abdb523f4ea66bcf662ade02381f518f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "335be0d5a62870ef627d7e9c88278570c30e7c63317b7ca81feb4001353d1cde",
+      "citationsSha256": "3ed3ef42d5f0e13b1346e4753ccb763757b6e3460216c699e92c803d1e7474ff",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "852e7a8dda096c744f8c448cba86840b58b3323c304c9841b6fa79136ce056bc",
+    "stateSha256": "0288ec5d59dd123e3adabf2b7c1022140a13ce99723b547bb0d8b0ffae4f99e3",
+    "taskSnapshotSha256": "ce49f7949c8717029ffdfd19956b32236f934a2cd465ab958b7cd23e9bfffdfa"
+  },
+  "contextSha256": "4fe9ce2ac717669c0948930877cb33d40f72599ba2c7a1606dd5714090a3bb1b"
+}

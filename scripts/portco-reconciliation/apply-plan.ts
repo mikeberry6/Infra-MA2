@@ -133,10 +133,27 @@ const supportedSourceTypes = new Set([
   "OTHER",
 ]);
 
+const supportedCitationPurposes = new Set([
+  "COMPANY_PROFILE",
+  "OWNERSHIP_INVESTMENT",
+  "OPERATIONS_ASSETS",
+  "MILESTONE_EVENT",
+  "FINANCING_FILINGS",
+  "SUPPORTING_CONTEXT",
+]);
+
 function assertSupportedSourceTypes(image: CompanyImage): void {
   for (const citation of image.citations) {
     if (!supportedSourceTypes.has(citation.sourceType)) {
       throw new Error(`Approved citation source type is not supported by the database: ${citation.sourceType}`);
+    }
+  }
+}
+
+function assertSupportedCitationPurposes(image: CompanyImage): void {
+  for (const citation of image.citations) {
+    if (!supportedCitationPurposes.has(citation.purpose)) {
+      throw new Error(`Approved citation purpose is not supported by the database: ${citation.purpose}`);
     }
   }
 }
@@ -493,6 +510,7 @@ export function planApprovedApply(input: {
   assertExactlyOnePrimary(proposal.afterImage);
   assertEvidenceCoverage(proposal.afterImage);
   assertSupportedSourceTypes(proposal.afterImage);
+  assertSupportedCitationPurposes(proposal.afterImage);
   assertUniqueCitationKeys(proposal.afterImage);
 
   const originalById = new Map(snapshot.companies.flatMap((company) => company.id
