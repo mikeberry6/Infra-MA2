@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0025:olympos-solar-portfolio:5f8fd5bd",
+  "taskIndex": 25,
+  "companyName": "Olympos Solar Portfolio",
+  "generatedAt": "2026-08-07T05:07:30.201Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0025-olympos-solar-portfolio/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 25,
+    "taskId": "ledger:0025:olympos-solar-portfolio:5f8fd5bd",
+    "canonicalKey": "olympos-solar-portfolio|united-states",
+    "companyName": "Olympos Solar Portfolio",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 6,
+    "managers": [
+      "Amber Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "006-amber-infrastructure:repo-only:011:olympos-solar-portfolio"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj54h00h8ivhebl3rpsty"
+    ],
+    "seedKeys": [
+      "olympos solar portfolio|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Amber Infrastructure MATCHED_ELSEWHERE: Grouped under US Solar Fund U.S. Solar Portfolio.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj54h00h8ivhebl3rpsty",
+    "name": "Olympos Solar Portfolio",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Olympos is a six-asset solar portfolio in North Carolina totaling about 39 MWdc. The assets sell electricity under long-term power purchase agreements and operate as an asset-heavy contracted generation portfolio. US Solar Fund announced the acquisition and financing of 100% of the cash equity interests in the portfolio in December 2019. Construction began after financial close, the portfolio became fully operational in 2020, and Amber later became the fund's investment manager. Reviewed public materials do not disclose a separate co-ownership split below the listed fund.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "North Carolina",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjq1001duivhe5esv3y9p",
+        "managerName": "Amber Infrastructure",
+        "organizationName": "Amber Infrastructure",
+        "fundName": null,
+        "vehicleName": "US Solar Fund plc (USF)",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkfyz02hgivhe0fx9a66p",
+        "date": "Dec 23, 2019",
+        "event": "US Solar Fund, now managed by Amber Infrastructure, announced the acquisition and financing of the Olympos portfolio, with construction beginning immediately after financial close.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-12-23T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkg1u02hhivhetsf5wcvc",
+        "date": "2020",
+        "event": "Construction and commissioning were completed and the six projects became fully operational.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkg2b02hiivhe2pcoxzx6",
+        "date": "Dec 2023",
+        "event": "Amber became investment manager to US Solar Fund.",
+        "category": "FINANCING",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpopo00735ivhe3nlbrnoa",
+        "label": "Announcement date source — Amber Infrastructure — Olympos Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/portfolio/olympos",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Amber Infrastructure transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpopri0737ivhew60onaww",
+        "label": "Ussolarfund — Olympos Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_2024_interim_results_presentation.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ussolarfund — Olympos Solar Portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpops30738ivheild1zmth",
+        "label": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/amber-appointed-us-solar-fund-plc-investment-manager/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpopsl0739ivhen2bspe0t",
+        "label": "Ussolarfund — Euryalus Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ussolarfund — Olympos Solar Portfolio",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Olympos Solar Portfolio",
+    "investmentFirm": "Amber Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar portfolio",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "US Solar Fund plc (USF)",
+    "description": "Olympos is a six-asset solar portfolio in North Carolina totaling about 39 MWdc. The assets sell electricity under long-term power purchase agreements and operate as an asset-heavy contracted generation portfolio. US Solar Fund announced the acquisition and financing of 100% of the cash equity interests in the portfolio in December 2019. Construction began after financial close, the portfolio became fully operational in 2020, and Amber later became the fund's investment manager. Reviewed public materials do not disclose a separate co-ownership split below the listed fund.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2019,
+    "investmentYear": 2019,
+    "headquarters": "North Carolina",
+    "milestones": [
+      {
+        "date": "Dec 23, 2019",
+        "event": "US Solar Fund, now managed by Amber Infrastructure, announced the acquisition and financing of the Olympos portfolio, with construction beginning immediately after financial close.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2020",
+        "event": "Construction and commissioning were completed and the six projects became fully operational.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Dec 2023",
+        "event": "Amber became investment manager to US Solar Fund.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Amber Infrastructure — Olympos Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/portfolio/olympos",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ussolarfund — Olympos Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_2024_interim_results_presentation.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Investment manager source — Amber Infrastructure — US Solar Fund",
+        "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/amber-appointed-us-solar-fund-plc-investment-manager/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Ussolarfund — Olympos Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/sites/default/files/us_solar_fund_ar24_web_ready_pdf.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Amber Infrastructure",
+        "ownershipVehicle": "US Solar Fund plc (USF)",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpig56004civhenbxnuvlx",
+        "name": "Amber Infrastructure",
+        "updatedAt": "2026-07-23T16:09:28.122Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0025:olympos-solar-portfolio:5f8fd5bd",
+    "taskIndex": 25,
+    "canonicalKey": "olympos-solar-portfolio|united-states",
+    "capturedAt": "2026-08-07T05:07:30.201Z",
+    "databaseRevision": "company-state:8e1e3747c9b82cb26b50fa9cd509a162ae16fd0e7a57d018308b62660ef57b43",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "035dfde4ad45c14fc380041947dba42959e1d9abe877b267548808c7d5384f26",
+    "productionSnapshotSha256": "cbcd59eec85da054cddb9905ecb005a6670e1314c951bea7a011690f460ba9ef",
+    "targetCompanySnapshotSha256": "8e1e3747c9b82cb26b50fa9cd509a162ae16fd0e7a57d018308b62660ef57b43",
+    "seedEntrySha256": "5b9a25af5772290228bd12f1be7406ec000778265994e5636bf9af3647892178",
+    "dependencies": {
+      "ownershipPeriodsSha256": "be897cd5ecfddfb528695f47e348514160bcb47ef3a147e120054de4359811f6",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "335be0d5a62870ef627d7e9c88278570c30e7c63317b7ca81feb4001353d1cde",
+      "citationsSha256": "a71d06d0b955a09ec09d92bef7faf4e117e9f2fda87143cb23cef7cd089ca569",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "79204cb0e3819dc47cbbd87ac6f09a0166eddd7626d6466997ea836fb370f000",
+    "stateSha256": "ce31d0d12b222461c4df86bab09a19a1456b4bd9d51427754c9fb4394d282ce0",
+    "taskSnapshotSha256": "617fbc4b2dab65eb71dbb6bc028ff83a3509eb06f0175e130ab105a6c5049acb"
+  },
+  "contextSha256": "b4046d0852f99cba25d864a7e6f84326577de676dfb7420d5d847349992db6a1"
+}
