@@ -39,10 +39,17 @@ export interface ApplyWriteGate {
   release: ProductionReleaseEvidence;
 }
 
+export interface CompanyMergeRevisionBeforeJson {
+  artifactType: "PORTCO_MERGE_REVISION_BEFORE_IMAGES";
+  canonicalCompany: CompanyImage | null;
+  retiredCompanies: CompanyImage[];
+  relationMerges: NonNullable<ReconciliationProposal["relationMerges"]>;
+}
+
 export interface CompanyRevisionWrite {
   companyId: string;
   proposalHash: string;
-  beforeJson: CompanyImage | null;
+  beforeJson: CompanyImage | CompanyMergeRevisionBeforeJson | null;
   afterJson: CompanyImage;
   changedFields: string[];
   approver: string;
@@ -56,6 +63,8 @@ export interface AuditEventWrite {
     actions: ReconciliationProposal["actions"];
     changedFields: string[];
     retiredCompanyIds: string[];
+    relationMerges: NonNullable<ReconciliationProposal["relationMerges"]>;
+    retiredCompanyBeforeImages: CompanyImage[];
     beforeImageSha256: string | null;
     afterImageSha256: string;
   };
@@ -237,10 +246,19 @@ export async function executeApprovedApply<TransactionClient>(input: {
     const applied = await input.dependencies.store.applyMutationPlan(tx, plan);
     const observed = await input.dependencies.store.loadAppliedCompanyImage(tx, applied.companyId);
     assertAfterImage(observed, plan.afterImage, "Database after-image");
+    const retiredCompanyBeforeImages = fresh.retiredCompanies.map((company) => company.image);
+    const revisionBeforeJson: CompanyRevisionWrite["beforeJson"] = retiredCompanyBeforeImages.length > 0
+      ? {
+          artifactType: "PORTCO_MERGE_REVISION_BEFORE_IMAGES",
+          canonicalCompany: plan.beforeImage,
+          retiredCompanies: retiredCompanyBeforeImages,
+          relationMerges: proposal.relationMerges ?? [],
+        }
+      : plan.beforeImage;
     await input.dependencies.store.createCompanyRevision(tx, {
       companyId: applied.companyId,
       proposalHash: proposal.proposalSha256,
-      beforeJson: plan.beforeImage,
+      beforeJson: revisionBeforeJson,
       afterJson: plan.afterImage,
       changedFields: plan.changedFields,
       approver: approval.reviewedBy,
@@ -253,6 +271,8 @@ export async function executeApprovedApply<TransactionClient>(input: {
         actions: proposal.actions,
         changedFields: plan.changedFields,
         retiredCompanyIds: proposal.retiredCompanyIds,
+        relationMerges: proposal.relationMerges ?? [],
+        retiredCompanyBeforeImages,
         beforeImageSha256: proposal.beforeImageSha256,
         afterImageSha256: proposal.afterImageSha256!,
       },

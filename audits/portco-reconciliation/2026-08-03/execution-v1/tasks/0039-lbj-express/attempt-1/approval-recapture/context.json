@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0039:lbj-express:7e5653c8",
+  "taskIndex": 39,
+  "companyName": "LBJ Express",
+  "generatedAt": "2026-08-08T08:55:45.836Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0039-lbj-express/attempt-1/approval-recapture/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 39,
+    "taskId": "ledger:0039:lbj-express:7e5653c8",
+    "canonicalKey": "lbj-express|united-states",
+    "companyName": "LBJ Express",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 9,
+    "managers": [
+      "APG Infrastructure",
+      "Meridiam"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "009-apg-infrastructure:holding:011:lbj-express",
+      "067-meridiam:holding:010:lbj-express"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj5ee00hqivhemrl92uzc"
+    ],
+    "seedKeys": [
+      "lbj express|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx",
+      "https://www.meridiam.com/assets/1-8/",
+      "https://www.texpresslanes.com/projects/lbj/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census POSSIBLE_DUPLICATE for 009-apg-infrastructure:holding:011:lbj-express: Multiple repository entries represent the same concession-level asset. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census POSSIBLE_DUPLICATE for 009-apg-infrastructure:holding:011:lbj-express: Multiple repository entries represent the same concession-level asset."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5ee00hqivhemrl92uzc",
+    "name": "LBJ Express",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Managed lanes toll concession",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "LBJ Express is the trade name of the managed-lanes concession on I-635 and I-35E in Dallas County, Texas. Its users are commuters, freight carriers, and other motorists seeking priced travel-time reliability through the Dallas-Fort Worth metroplex. The project operates under a long-term toll-concession structure with dynamic pricing, operations and maintenance obligations, and handback requirements at the end of the term. Public disclosures describe a roughly 13-mile corridor with six managed lanes and a total project cost of about $2.6 to $2.7 billion. The road fully opened in 2015 and has since become one of the larger managed-lanes projects in North America. The current project consortium is publicly described as including Cintra, Meridiam, and APG, while current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2009,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqdz01efivhev3c7w47b",
+        "managerName": "Meridiam",
+        "organizationName": "Meridiam",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2010,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqei01egivhecrprfbm2",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "APG Infrastructure",
+        "stake": null,
+        "investmentYear": 2010,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkhfa02j4ivhe2x9ysgdh",
+        "date": "2009",
+        "event": "LBJ Express was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhfw02j5ivhei82a401q",
+        "date": "Jun 2010",
+        "event": "The project achieved financial close.",
+        "category": "FINANCING",
+        "sortDate": "2010-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhgf02j6ivhew7v9ge3n",
+        "date": "Jun 22, 2010",
+        "event": "LBJ Infrastructure Group, whose private partners included Meridiam and APG Investments, reached financial close on the LBJ Express concession.",
+        "category": "FINANCING",
+        "sortDate": "2010-06-22T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhh902j7ivhe301uxj8z",
+        "date": "Sep 2015",
+        "event": "The project opened fully to traffic.",
+        "category": "EXPANSION",
+        "sortDate": "2015-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhhs02j8ivhejrlflthg",
+        "date": "Sep 15, 2015",
+        "event": "LBJ Express opened to traffic. (Operations)",
+        "category": "EXPANSION",
+        "sortDate": "2015-09-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhib02j9ivhe9th36gor",
+        "date": "Sep 2020",
+        "event": "The project completed a major refinancing.",
+        "category": "FINANCING",
+        "sortDate": "2020-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpos9g076yivhes77uq29k",
+        "label": "Meridiam — LBJ Express",
+        "url": "https://www.meridiam.com/assets/1-8/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Meridiam operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxposan0770ivhekwmdiwz1",
+        "label": "Transportation — LBJ Express",
+        "url": "https://www.transportation.gov/buildamerica/projects/project-highlights/i-635-lbj-freeway-managed-lanes-dallas-fort-worth-tx",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Transportation operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposbn0772ivhe29hqfwn0",
+        "label": "Texpresslanes — LBJ Express",
+        "url": "https://www.texpresslanes.com/lbj10/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Texpresslanes — LBJ Express",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposcq0774ivherjgvlno9",
+        "label": "Meridiam — LBJ Express",
+        "url": "https://www.meridiam.com/news/successful-refinancing-of-lbj-express-a-usd-26-billion-highway-project-in-usa/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Meridiam financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposdy0776ivherf4qvexg",
+        "label": "Texpresslanes — LBJ Express",
+        "url": "https://www.texpresslanes.com/projects/lbj/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Texpresslanes operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposey0778ivhek56sbpsk",
+        "label": "Close date source — Meridiam — LBJ Express",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Meridiam closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposfh0779ivhev1cp50ux",
+        "label": "Close date source — Meridiam — LBJ Express",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "LBJ Express",
+    "investmentFirm": "APG Infrastructure",
+    "sector": "Transportation",
+    "subsector": "Managed lanes toll concession",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "APG Infrastructure",
+    "description": "LBJ Express is the trade name of the managed-lanes concession on I-635 and I-35E in Dallas County, Texas. Its users are commuters, freight carriers, and other motorists seeking priced travel-time reliability through the Dallas-Fort Worth metroplex. The project operates under a long-term toll-concession structure with dynamic pricing, operations and maintenance obligations, and handback requirements at the end of the term. Public disclosures describe a roughly 13-mile corridor with six managed lanes and a total project cost of about $2.6 to $2.7 billion. The road fully opened in 2015 and has since become one of the larger managed-lanes projects in North America. The current project consortium is publicly described as including Cintra, Meridiam, and APG, while current ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2009,
+    "investmentYear": 2010,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2009",
+        "event": "LBJ Express was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jun 2010",
+        "event": "The project achieved financial close.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 22, 2010",
+        "event": "LBJ Infrastructure Group, whose private partners included Meridiam and APG Investments, reached financial close on the LBJ Express concession.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 2015",
+        "event": "The project opened fully to traffic.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 15, 2015",
+        "event": "LBJ Express opened to traffic. (Operations)",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 2020",
+        "event": "The project completed a major refinancing.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Meridiam — LBJ Express",
+        "url": "https://www.meridiam.com/assets/1-8/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Transportation — LBJ Express",
+        "url": "https://www.transportation.gov/buildamerica/projects/project-highlights/i-635-lbj-freeway-managed-lanes-dallas-fort-worth-tx",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Texpresslanes — LBJ Express",
+        "url": "https://www.texpresslanes.com/lbj10/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Meridiam — LBJ Express",
+        "url": "https://www.meridiam.com/news/successful-refinancing-of-lbj-express-a-usd-26-billion-highway-project-in-usa/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Texpresslanes — LBJ Express",
+        "url": "https://www.texpresslanes.com/projects/lbj/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — Meridiam — LBJ Express",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — APG Infrastructure — LBJ Express",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Meridiam",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2010,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "APG Infrastructure",
+        "ownershipVehicle": "APG Infrastructure",
+        "investmentYear": 2010,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3kl000eivhezm8dydzo",
+        "name": "APG Asset Management",
+        "updatedAt": "2026-07-23T16:09:11.829Z"
+      },
+      {
+        "id": "cmrxpibnj002xivhe7vh7wmuk",
+        "name": "Meridiam",
+        "updatedAt": "2026-07-23T16:09:22.303Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0039:lbj-express:7e5653c8",
+    "taskIndex": 39,
+    "canonicalKey": "lbj-express|united-states",
+    "capturedAt": "2026-08-08T08:55:45.836Z",
+    "databaseRevision": "company-state:d18396831a70cd0bbcfbf4fa8cc9490699c8c5e57979e2b108f527c99d54fa88",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "59d3926faf3ad4d90528dcceff1793daf286d82c26f45984302d6c2b84cc6442",
+    "productionSnapshotSha256": "5d68760a5fe3b9b9e05647832c53aafcaf3770d2810a77fe6ffbbb43a0a10b96",
+    "targetCompanySnapshotSha256": "d18396831a70cd0bbcfbf4fa8cc9490699c8c5e57979e2b108f527c99d54fa88",
+    "seedEntrySha256": "f447578609a6980987a4a6c6361bf2173861b43311a4b54a7bce6776a48d34b8",
+    "dependencies": {
+      "ownershipPeriodsSha256": "280b45f7288b9ca808ce0232433f7348ec3fa30b0c264ccb3022f3ecee4dac54",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "17fa4883575653aa982940256f346c5df2262f4ce61d54f4bc938e6f513def79",
+      "citationsSha256": "73bf54785615bef264f5ee631ddb94243cee6f9b65cb40071a8a826a16a588b3",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "a7c4c446db046557983cfacd94637459303b5ecebe65652798dcf9b1737d8b2d",
+    "stateSha256": "6bc800fd6ce8bd1d9d2098ad9c51fb291a9eae001b0f76da9f1932b460d833d3",
+    "taskSnapshotSha256": "a5bdeeeef6a94f1bd639e54ead462d34b1f3f98d2cfe6fa78298f9807638babf"
+  },
+  "contextSha256": "390e2313eaf8c6e746c94e13b498debda211be6f9ba9c60759f172a4e4e1b70e"
+}

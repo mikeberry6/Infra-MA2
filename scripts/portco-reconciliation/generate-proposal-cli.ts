@@ -16,6 +16,7 @@ import {
   companyImageSchema,
   ownershipPeriodImageSchema,
   proposalActions,
+  relationMergeSchema,
 } from "./schema";
 import type { TaskSnapshotContext } from "./task-snapshot";
 
@@ -110,6 +111,7 @@ const proposalSpecSchema = z.strictObject({
   generatedAt: z.string().datetime({ offset: true }),
   actions: z.array(z.enum(proposalActions)).min(1),
   retiredCompanyIds: z.array(z.string().trim().min(1)).default([]),
+  relationMerges: z.array(relationMergeSchema).default([]),
   rationale: z.string().trim().min(1),
   evidence: z.array(evidenceSchema).min(1),
   unresolvedQuestions: z.array(z.string().trim().min(1)).default([]),
@@ -121,6 +123,13 @@ const proposalSpecSchema = z.strictObject({
   citationAdditions: z.array(citationAdditionSchema).default([]),
   afterImage: companyImageSchema.optional(),
 }).superRefine((spec, context) => {
+  if (spec.relationMerges.length > 0 && !spec.actions.includes("MERGE_COMPANIES")) {
+    context.addIssue({
+      code: "custom",
+      path: ["relationMerges"],
+      message: "Retired relation mappings are valid only for MERGE_COMPANIES proposals",
+    });
+  }
   if (
     spec.afterImage
     && (
@@ -281,6 +290,7 @@ export async function executeGenerateProposalCli(argv: readonly string[]): Promi
     actions: spec.actions,
     sourceHoldingIds: context.sourceQueueEntry.sourceHoldingIds,
     retiredCompanyIds: spec.retiredCompanyIds,
+    relationMerges: spec.relationMerges,
     rationale: spec.rationale,
     evidence: spec.evidence,
     unresolvedQuestions: spec.unresolvedQuestions,

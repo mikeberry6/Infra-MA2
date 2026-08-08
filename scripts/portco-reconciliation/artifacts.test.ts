@@ -99,6 +99,14 @@ describe("strict, hash-bound reconciliation artifacts", () => {
       afterImageSha256: companyImageSha256(afterImage),
     });
     expect(verifyProposal(proposal)).toEqual(proposal);
+    expect(proposal.relationMerges).toBeUndefined();
+    const { proposalSha256: _legacyHash, ...legacyProposalInput } = proposal;
+    const proposalWithNewDefault = finalizeProposal({
+      ...legacyProposalInput,
+      relationMerges: [],
+    });
+    expect(proposalWithNewDefault.proposalSha256).not.toBe(proposal.proposalSha256);
+    expect(verifyProposal(proposalWithNewDefault).relationMerges).toEqual([]);
 
     const approval = finalizeApproval({
       schemaVersion: 1,

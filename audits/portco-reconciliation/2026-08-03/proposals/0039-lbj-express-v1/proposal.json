@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0039:lbj-express:7e5653c8",
+  "taskIndex": 39,
+  "asOfDate": "2026-08-08",
+  "generatedAt": "2026-08-08T08:38:00.000Z",
+  "canonicalKey": "lbj-express|united-states",
+  "companyName": "LBJ Express",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [
+    "009-apg-infrastructure:holding:011:lbj-express",
+    "067-meridiam:holding:010:lbj-express"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpj5ez00hrivhe2s6f2ot4"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjqf201ehivhefsuv4npx",
+      "canonicalRelationId": "cmrxpjqei01egivhecrprfbm2",
+      "rationale": "Both rows represent APG's ownership of the same LBJ concession; retain the task-bound APG period and correct it to APG's evidenced August 2012 entry, current vehicle, and current stake."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkhjd02jaivher8t6uyg1",
+      "canonicalRelationId": "cmrxpkhfa02j4ivhe2x9ysgdh",
+      "rationale": "Collapse the two 2009 formation/commercial-close milestones into the sourced September 2009 CDA milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkhjz02jbivhe1yn6681i",
+      "canonicalRelationId": "cmrxpkhfw02j5ivhei82a401q",
+      "rationale": "Collapse the duplicate June 22, 2010 financial-close milestones into one sourced event."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkhko02jcivhex2stim7j",
+      "canonicalRelationId": "cmrxpkhgf02j6ivhew7v9ge3n",
+      "rationale": "Collapse the duplicate January 2011 construction-start milestones into one sourced event."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkhl302jdivhe0365fn6a",
+      "canonicalRelationId": "cmrxpkhhs02j8ivhejrlflthg",
+      "rationale": "Collapse the duplicate September 2015 opening milestones into the exact USDOT substantial-completion event."
+    }
+  ],
+  "rationale": "Consolidate the duplicate LBJ Express and LBJ Infrastructure Group, LLC repository records under LBJ Infrastructure Group, LLC, the legal concession company, while preserving LBJ Express as the principal project alias. TxDOT and USDOT identify LBJ Infrastructure Group, LLC as the concession company and TIFIA borrower for the same IH 635 managed-lanes project marketed as LBJ Express, so the two published records represent one 52-year Dallas toll-road concession rather than separate portfolio companies. Correct APG's investment year from 2010 to 2012 because a federal P3 report states that APG joined in August 2012 by acquiring an interest from Meridiam. Ferrovial's audited 2025 ownership table and its SEC-filed May 2026 factbook confirm the current ownership split as Cintra 54.60%, LBJ Blocker (APG) 28.33%, and Meridiam Infrastructure S.a.r.l. (MI LBJ) 17.07%. Preserve APG Asset Management and Meridiam as separate active manager ownership periods with their disclosed stakes and vehicles, collapse only the explicitly mapped duplicate ownership and milestone rows, retain the unique 2025 anniversary milestone, deduplicate the sources, add the current project website, and retire the duplicate legal-name record through the canonical redirect workflow. Current Ferrovial, Meridiam, TxDOT, USDOT, and project materials show the concession in operation through 2061, and no later APG or Meridiam exit, pending sale, or change of control was found through August 8, 2026. Cintra's controlling interest is stated in the description and evidence but is not added as a manager ownership period because Cintra/Ferrovial is outside the supplied 100-manager census universe and no matching organization dependency exists in the approved task snapshot.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+      "purpose": "Current SEC-filed sponsor factbook confirming the operating concession, ownership split, geography, scale, and term.",
+      "supports": [
+        "CURRENT_OWNERSHIP",
+        "CURRENT_STATUS",
+        "EXIT_SEARCH",
+        "GEOGRAPHY",
+        "STAKE"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1468522/000146852225000034/R88.htm",
+      "purpose": "Audited year-end 2024 ownership table identifying the APG and Meridiam holding vehicles and exact stakes.",
+      "supports": [
+        "CURRENT_OWNERSHIP",
+        "STAKE",
+        "VEHICLE"
+      ]
+    },
+    {
+      "url": "https://www.meridiam.com/assets/1-8/",
+      "purpose": "Current Meridiam portfolio page confirming the in-operation asset, ownership split, and managed-lanes infrastructure basis.",
+      "supports": [
+        "CURRENT_OWNERSHIP",
+        "CURRENT_STATUS",
+        "INFRASTRUCTURE_STRATEGY",
+        "STAKE"
+      ]
+    },
+    {
+      "url": "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx",
+      "purpose": "Federal project profile establishing concessionaire identity, financial close, delivery model, geography, and project scope.",
+      "supports": [
+        "GEOGRAPHY",
+        "IDENTITY",
+        "INFRASTRUCTURE_STRATEGY",
+        "INVESTMENT_DATE",
+        "MILESTONE_EVENT"
+      ]
+    },
+    {
+      "url": "https://www.transportation.gov/buildamerica/projects/ih-635-managed-lanes",
+      "purpose": "Current USDOT profile tying LBJ Express to LBJ Infrastructure Group, LLC and confirming commercial close, construction, and substantial completion.",
+      "supports": [
+        "IDENTITY",
+        "MILESTONE_EVENT",
+        "WEBSITE"
+      ]
+    },
+    {
+      "url": "https://www.txdot.gov/business/road-bridge-maintenance/alternative-delivery/i635/executed-agreements.html",
+      "purpose": "Official public-counterparty evidence for the predecessor name, legal concessionaire, and September 2009 comprehensive agreement.",
+      "supports": [
+        "IDENTITY",
+        "MILESTONE_EVENT"
+      ]
+    },
+    {
+      "url": "https://rosap.ntl.bts.gov/view/dot/64188/dot_64188_DS1.pdf",
+      "purpose": "Federal P3 history establishing that APG entered the concession in August 2012 through a purchase from Meridiam.",
+      "supports": [
+        "INVESTMENT_DATE",
+        "OWNERSHIP_CHANGE"
+      ]
+    },
+    {
+      "url": "https://reports.ferrovial.com/2017/business-performance/overview.html",
+      "purpose": "Official 2017 ownership-change evidence for the Dallas Police and Fire Pension System exit and acquisition by the remaining partners.",
+      "supports": [
+        "MILESTONE_EVENT",
+        "OWNERSHIP_CHANGE"
+      ]
+    },
+    {
+      "url": "https://www.meridiam.com/news/successful-refinancing-of-lbj-express-a-usd-26-billion-highway-project-in-usa/",
+      "purpose": "Official September 2020 refinancing and operating-status evidence.",
+      "supports": [
+        "CURRENT_STATUS",
+        "MILESTONE_EVENT"
+      ]
+    },
+    {
+      "url": "https://www.texpresslanes.com/projects/lbj/",
+      "purpose": "Current public project website for LBJ Express operations and customer information.",
+      "supports": [
+        "CURRENT_STATUS",
+        "OPERATIONS_ASSETS",
+        "WEBSITE"
+      ]
+    },
+    {
+      "url": "https://www.texpresslanes.com/lbj10/",
+      "purpose": "Official project history supporting the September 2025 tenth-anniversary milestone and continuing consortium identity.",
+      "supports": [
+        "CURRENT_STATUS",
+        "MILESTONE_EVENT"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "f2ac5a2fd25b7e1a4b429097bf57328c371766f2d2ef78e0bb9aa7d3daaa6934",
+  "currentCompanySnapshotSha256": "d18396831a70cd0bbcfbf4fa8cc9490699c8c5e57979e2b108f527c99d54fa88",
+  "beforeImage": {
+    "id": "cmrxpj5ee00hqivhemrl92uzc",
+    "name": "LBJ Express",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Managed lanes toll concession",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "LBJ Express is the trade name of the managed-lanes concession on I-635 and I-35E in Dallas County, Texas. Its users are commuters, freight carriers, and other motorists seeking priced travel-time reliability through the Dallas-Fort Worth metroplex. The project operates under a long-term toll-concession structure with dynamic pricing, operations and maintenance obligations, and handback requirements at the end of the term. Public disclosures describe a roughly 13-mile corridor with six managed lanes and a total project cost of about $2.6 to $2.7 billion. The road fully opened in 2015 and has since become one of the larger managed-lanes projects in North America. The current project consortium is publicly described as including Cintra, Meridiam, and APG, while current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2009,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqdz01efivhev3c7w47b",
+        "managerName": "Meridiam",
+        "organizationName": "Meridiam",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2010,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqei01egivhecrprfbm2",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "APG Infrastructure",
+        "stake": null,
+        "investmentYear": 2010,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkhfa02j4ivhe2x9ysgdh",
+        "date": "2009",
+        "event": "LBJ Express was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhfw02j5ivhei82a401q",
+        "date": "Jun 2010",
+        "event": "The project achieved financial close.",
+        "category": "FINANCING",
+        "sortDate": "2010-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhgf02j6ivhew7v9ge3n",
+        "date": "Jun 22, 2010",
+        "event": "LBJ Infrastructure Group, whose private partners included Meridiam and APG Investments, reached financial close on the LBJ Express concession.",
+        "category": "FINANCING",
+        "sortDate": "2010-06-22T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhh902j7ivhe301uxj8z",
+        "date": "Sep 2015",
+        "event": "The project opened fully to traffic.",
+        "category": "EXPANSION",
+        "sortDate": "2015-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhhs02j8ivhejrlflthg",
+        "date": "Sep 15, 2015",
+        "event": "LBJ Express opened to traffic. (Operations)",
+        "category": "EXPANSION",
+        "sortDate": "2015-09-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhib02j9ivhe9th36gor",
+        "date": "Sep 2020",
+        "event": "The project completed a major refinancing.",
+        "category": "FINANCING",
+        "sortDate": "2020-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpos9g076yivhes77uq29k",
+        "label": "Meridiam — LBJ Express",
+        "url": "https://www.meridiam.com/assets/1-8/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Meridiam operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxposan0770ivhekwmdiwz1",
+        "label": "Transportation — LBJ Express",
+        "url": "https://www.transportation.gov/buildamerica/projects/project-highlights/i-635-lbj-freeway-managed-lanes-dallas-fort-worth-tx",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Transportation operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposbn0772ivhe29hqfwn0",
+        "label": "Texpresslanes — LBJ Express",
+        "url": "https://www.texpresslanes.com/lbj10/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Texpresslanes — LBJ Express",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposcq0774ivherjgvlno9",
+        "label": "Meridiam — LBJ Express",
+        "url": "https://www.meridiam.com/news/successful-refinancing-of-lbj-express-a-usd-26-billion-highway-project-in-usa/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Meridiam financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposdy0776ivherf4qvexg",
+        "label": "Texpresslanes — LBJ Express",
+        "url": "https://www.texpresslanes.com/projects/lbj/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Texpresslanes operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposey0778ivhek56sbpsk",
+        "label": "Close date source — Meridiam — LBJ Express",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Meridiam closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposfh0779ivhev1cp50ux",
+        "label": "Close date source — Meridiam — LBJ Express",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "d18396831a70cd0bbcfbf4fa8cc9490699c8c5e57979e2b108f527c99d54fa88",
+  "afterImage": {
+    "id": "cmrxpj5ee00hqivhemrl92uzc",
+    "name": "LBJ Infrastructure Group, LLC",
+    "aliases": [
+      "IH 635 Managed Lanes Project",
+      "LBJ Development Partners",
+      "LBJ Express",
+      "Lyndon B Johnson Expressway"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Managed lanes toll concession",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "LBJ Infrastructure Group, LLC is the concession company and TIFIA borrower for LBJ Express, a managed-lanes toll concession in Dallas County, Texas. Under a 52-year DBFOM comprehensive development agreement with the Texas Department of Transportation through 2061, the company financed, reconstructed, operates, and maintains approximately 13.25 miles of I-635 and I-35E, including dynamically priced managed lanes alongside rebuilt general-purpose and frontage roads. The project reached financial close in June 2010, began construction in January 2011, and fully opened in September 2015. Ferrovial's SEC-filed May 2026 factbook reports Cintra at 54.60%, APG at 28.33%, and Meridiam at 17.07%; Meridiam's current portfolio page identifies the corresponding non-Cintra vehicles as LBJ Blocker and MI LBJ.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.texpresslanes.com/projects/lbj/",
+    "yearFounded": 2009,
+    "headquarters": "Texas",
+    "lastVerifiedAt": "2026-08-08T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqdz01efivhev3c7w47b",
+        "managerName": "Meridiam",
+        "organizationName": "Meridiam",
+        "fundName": null,
+        "vehicleName": "Meridiam Infr. S.a.r.l. (MI LBJ)",
+        "stake": "17.07%",
+        "investmentYear": 2010,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqei01egivhecrprfbm2",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "LBJ Blocker (APG)",
+        "stake": "28.33%",
+        "investmentYear": 2012,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkhfa02j4ivhe2x9ysgdh",
+        "date": "Sep 4, 2009",
+        "event": "TxDOT executed the 52-year comprehensive development agreement with LBJ Infrastructure Group, formerly LBJ Development Partners, for the IH 635 managed-lanes concession.",
+        "category": "FOUNDING",
+        "sortDate": "2009-09-04T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.txdot.gov/business/road-bridge-maintenance/alternative-delivery/i635/executed-agreements.html",
+          "https://www.transportation.gov/buildamerica/projects/ih-635-managed-lanes"
+        ]
+      },
+      {
+        "id": "cmrxpkhfw02j5ivhei82a401q",
+        "date": "Jun 22, 2010",
+        "event": "LBJ Infrastructure Group reached financial close for the LBJ Express concession one day after executing its $850 million TIFIA credit agreement.",
+        "category": "FINANCING",
+        "sortDate": "2010-06-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx"
+        ]
+      },
+      {
+        "id": "cmrxpkhgf02j6ivhew7v9ge3n",
+        "date": "Jan 18, 2011",
+        "event": "Construction began on the LBJ Express managed-lanes project.",
+        "category": "EXPANSION",
+        "sortDate": "2011-01-18T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx"
+        ]
+      },
+      {
+        "id": "cmrxpkhh902j7ivhe301uxj8z",
+        "date": "Aug 2012",
+        "event": "APG joined the LBJ Express concession by acquiring an ownership interest from Meridiam.",
+        "category": "ACQUISITION",
+        "sortDate": "2012-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://rosap.ntl.bts.gov/view/dot/64188/dot_64188_DS1.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkhhs02j8ivhejrlflthg",
+        "date": "Sep 15, 2015",
+        "event": "LBJ Express reached substantial completion with all lanes open to traffic.",
+        "category": "EXPANSION",
+        "sortDate": "2015-09-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.transportation.gov/buildamerica/projects/ih-635-managed-lanes"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Sep 2017",
+        "event": "Cintra, APG, and Meridiam acquired the Dallas Police and Fire Pension System's remaining LBJ interest; the resulting ownership was Cintra 54.60%, APG 28.33%, and Meridiam 17.07%.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://reports.ferrovial.com/2017/business-performance/overview.html",
+          "https://www.meridiam.com/assets/1-8/"
+        ]
+      },
+      {
+        "id": "cmrxpkhib02j9ivhe9th36gor",
+        "date": "Sep 25, 2020",
+        "event": "The concession completed a refinancing that included approximately $615 million of tax-exempt private activity bonds replacing the original 2010 bonds.",
+        "category": "FINANCING",
+        "sortDate": "2020-09-25T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.meridiam.com/news/successful-refinancing-of-lbj-express-a-usd-26-billion-highway-project-in-usa/"
+        ]
+      },
+      {
+        "id": "cmrxpkhll02jeivhe3zknbdhj",
+        "date": "Sep 10, 2025",
+        "event": "The LBJ Express consortium marked ten years since the managed-lanes project opened to traffic.",
+        "category": "OTHER",
+        "sortDate": "2025-09-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.texpresslanes.com/lbj10/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpos9g076yivhes77uq29k",
+        "label": "Ferrovial — 2026 Factbook",
+        "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Cintra, APG, and Meridiam stakes, concession term, geography, and scale",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxposan0770ivhekwmdiwz1",
+        "label": "Ferrovial — 2024 audited ownership table",
+        "url": "https://www.sec.gov/Archives/edgar/data/1468522/000146852225000034/R88.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Audited APG and Meridiam holding vehicles and exact stakes",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposbn0772ivhe29hqfwn0",
+        "label": "USDOT — IH 635 Managed Lanes / LBJ Express",
+        "url": "https://www.transportation.gov/buildamerica/projects/ih-635-managed-lanes",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Legal concessionaire identity, project aliases, delivery model, and operating milestones",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposcq0774ivherjgvlno9",
+        "label": "TxDOT — LBJ-635 Express executed agreements",
+        "url": "https://www.txdot.gov/business/road-bridge-maintenance/alternative-delivery/i635/executed-agreements.html",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Predecessor name, legal concessionaire identity, and September 2009 CDA",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposdy0776ivherf4qvexg",
+        "label": "Meridiam — LBJ Express",
+        "url": "https://www.meridiam.com/assets/1-8/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Meridiam portfolio status, ownership split, and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposey0778ivhek56sbpsk",
+        "label": "Close date source — Meridiam — LBJ Express",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/tx_lbj_express.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Concessionaire identity, financial close, construction, opening, and project finance",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposfh0779ivhev1cp50ux",
+        "label": "FHWA — Report on Highway Public-Private Partnerships",
+        "url": "https://rosap.ntl.bts.gov/view/dot/64188/dot_64188_DS1.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG's August 2012 entry through an acquisition from Meridiam",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposg2077aivheikj4ici8",
+        "label": "Texpresslanes — LBJ Express",
+        "url": "https://www.texpresslanes.com/projects/lbj/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current public project website and customer operations",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposgk077bivheo3e8yvv3",
+        "label": "Ferrovial — 2017 business performance",
+        "url": "https://reports.ferrovial.com/2017/business-performance/overview.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Dallas Police and Fire Pension System exit and remaining-partner acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposh7077civheikgirqbg",
+        "label": "Meridiam — LBJ Express",
+        "url": "https://www.meridiam.com/news/successful-refinancing-of-lbj-express-a-usd-26-billion-highway-project-in-usa/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "September 2020 refinancing and current operations",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposhs077divhe31rxstj4",
+        "label": "Texpresslanes — LBJ Express",
+        "url": "https://www.texpresslanes.com/lbj10/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "September 2025 tenth anniversary and continuing consortium identity",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "3d90b8fab852905b26e866ba65f2fa74b187bbf6bd85430d6c28cc5c3a6309ab",
+  "proposalSha256": "5ed0fec8c6e92595037fcac5b9bc6455d6f92e86dafa20269aa12cc6acc56304"
+}
