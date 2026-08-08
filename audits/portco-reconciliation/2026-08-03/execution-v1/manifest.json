@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T14:50:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0052:freedom-cng:2de7ee7a",
+  "updatedAt": "2026-08-08T15:02:30.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7602,11 +7602,11 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "fb8ec33cd3f01b2118c49f849578054160f53f5015f01ab2e6dc710177746005",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-08T14:41:00.000Z",
-      "updatedAt": "2026-08-08T14:50:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-08T15:02:30.000Z",
+      "completedAt": "2026-08-08T15:02:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "95151324603fa2419a3884874dd4e7528a03f690bbea7196c5689945a6a34dce",
@@ -7623,14 +7623,26 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0052-freedom-cng-freedom-alternative-fuel-infrastructure-v1.json",
           "sha256": "1fff0c6be0c5b52c3d00b5003b2b67f599ed6236fca2c6abd0537e2afc365ac9"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0052-freedom-cng/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "1882320852b58730f9b6d5a3619123da893fadb60ec7161528052df7c5cff4e6"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0052-freedom-cng/research-decision.json",
           "sha256": "82b7e776c5627f738246d0a99d4d56b4e1a30d98303cad4b914fe493fe78ae9d"
         },
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0052-freedom-cng/attempt-1/context.json",
+          "sha256": "761598c41e0bbbc935c4b980f9e28cd4a5215fbc3fc4efce4dbf59816bb047aa"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-08T15:02:30.000Z",
+        "auditEventId": "cmski53eo000j814s41zxdwgi",
+        "transactionId": "6d1c34d4-e162-4846-b49b-bad62982c79d",
+        "receiptSha256": "1882320852b58730f9b6d5a3619123da893fadb60ec7161528052df7c5cff4e6",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31263381823"
+      },
       "history": [
         {
           "sequence": 1,
@@ -7687,6 +7699,21 @@
             "1fff0c6be0c5b52c3d00b5003b2b67f599ed6236fca2c6abd0537e2afc365ac9"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-08T15:02:30.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "1882320852b58730f9b6d5a3619123da893fadb60ec7161528052df7c5cff4e6",
+            "1fff0c6be0c5b52c3d00b5003b2b67f599ed6236fca2c6abd0537e2afc365ac9",
+            "761598c41e0bbbc935c4b980f9e28cd4a5215fbc3fc4efce4dbf59816bb047aa",
+            "e7db4b38ba99a5c19baec66a236d28a38c56476d6c30a78114ceba2f4feb717f"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -24583,5 +24610,5 @@
       ]
     }
   ],
-  "manifestSha256": "a4b48ddf1d2256cdc3de84aadac01d59e3e98ee3bbc2b23f17f7940af37de850"
+  "manifestSha256": "09c9c2b3ed6945543a80996debfb19dfcd6c55182eee7f8a51e482edbf05d11b"
 }
