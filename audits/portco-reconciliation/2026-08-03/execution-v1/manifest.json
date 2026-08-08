@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T13:25:12.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0048:bullrock-energy-ventures:ac39af1a",
+  "updatedAt": "2026-08-08T13:59:35.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7176,11 +7176,11 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e72101c1fc2641b2953a4f491dec93b169d4a6f81667d95f9979179e03aa3273",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-08T13:21:58.000Z",
-      "updatedAt": "2026-08-08T13:25:12.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-08T13:59:35.000Z",
+      "completedAt": "2026-08-08T13:59:35.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "b1fcbacadc4bfa600674acbd106539abf4607a9a6122584f47e9b33b998d79df",
@@ -7190,21 +7190,33 @@
           "sha256": "b1fcbacadc4bfa600674acbd106539abf4607a9a6122584f47e9b33b998d79df"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/proposals/0048-apollo-bullrock-community-solar-joint-venture-v2/proposal.json",
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0048-bullrock-energy-ventures-apollo-bullrock-community-solar-joint-venture-v2/proposal.json",
           "sha256": "ca455f9840bae4a374a23596ca536e7e749da5c7ab4f79accc5004cd0ad3f8a7"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/approvals/0048-apollo-bullrock-community-solar-joint-venture-v2.json",
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0048-bullrock-energy-ventures-apollo-bullrock-community-solar-joint-venture-v2.json",
           "sha256": "fd6c3971d6d00ba6ac4afff77ab967b6df405de43bd77d62d00f1a2ee7ee68ae"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31260647634",
+          "sha256": "4f6c7cd963cee3f5c0581dae64a3a442189ccd32abf8876ed1faa201a3c876c3"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0048-bullrock-energy-ventures/attempt-2/research-decision.json",
           "sha256": "bb8a3f0860bdc020276fd86f0c14516a75404fe7ab0f5f7c2c16d6566362d096"
         },
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0048-bullrock-energy-ventures/attempt-2/context.json",
+          "sha256": "5bda50b06f979066185f578d372fb4734511e0df7965339ca6875f2826672802"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-08T13:59:35.000Z",
+        "auditEventId": "cmskfrpe0000b904ssf0op7mw",
+        "transactionId": "455463eb-7eb6-4c0a-8335-0867324bb272",
+        "receiptSha256": "4f6c7cd963cee3f5c0581dae64a3a442189ccd32abf8876ed1faa201a3c876c3",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31260647634"
+      },
       "history": [
         {
           "sequence": 1,
@@ -7321,6 +7333,21 @@
             "fd6c3971d6d00ba6ac4afff77ab967b6df405de43bd77d62d00f1a2ee7ee68ae"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-08T13:59:35.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "4f6c7cd963cee3f5c0581dae64a3a442189ccd32abf8876ed1faa201a3c876c3",
+            "5bda50b06f979066185f578d372fb4734511e0df7965339ca6875f2826672802",
+            "ca455f9840bae4a374a23596ca536e7e749da5c7ab4f79accc5004cd0ad3f8a7",
+            "fd6c3971d6d00ba6ac4afff77ab967b6df405de43bd77d62d00f1a2ee7ee68ae"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -24384,5 +24411,5 @@
       ]
     }
   ],
-  "manifestSha256": "b55c93985a5ab9e58371c6dc3678d3dad99be4d6f2e06b05f3a3b011dbc616f6"
+  "manifestSha256": "272d89949af1176b21f149bedc70ca79a9e947d52a992975e433bf9681d36eae"
 }
