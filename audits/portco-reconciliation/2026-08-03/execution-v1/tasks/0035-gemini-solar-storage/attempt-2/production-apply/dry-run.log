@@ -1,0 +1,384 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0035-gemini-solar-storage-v2/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0035-gemini-solar-storage-v2.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0035-gemini-solar-storage/attempt-2/production-snapshot.json --proposal-sha256=1d742ff297424511dde27e37c4e445552242536f9e3db5701303447ef2983062 --approval-sha256=958e6db91a57bd5bdbd4f2f4b22db716b659a20d74f7c6667b766f5f2ac8e732 --snapshot-sha256=dca6272a8e922d414b5116439502737c1b4bd34f4fafc3801b974e2ee75774f3
+
+(node:2868) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "1d742ff297424511dde27e37c4e445552242536f9e3db5701303447ef2983062",
+    "approvalSha256": "958e6db91a57bd5bdbd4f2f4b22db716b659a20d74f7c6667b766f5f2ac8e732",
+    "afterImageSha256": "9a6401cefb4d17f3a707f2bb1de6ae09b92ef4e7f2c2c8e14e1bf8b918b55c0d",
+    "taskId": "ledger:0035:gemini-solar-storage:4b88d999",
+    "operation": "UPSERT",
+    "company": {
+      "name": "Gemini Solar + Storage",
+      "investmentFirm": "APG Asset Management",
+      "sector": "Power & ET",
+      "subsector": "Utility-scale solar and battery storage",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "ABP",
+      "description": "Gemini Solar + Storage is an operating 690 MWac solar photovoltaic and 380 MW / approximately 1,416 MWh battery storage project in Clark County, Nevada, developed by Quinbrook with its portfolio company Primergy. The co-located facility supplies NV Energy under a 25-year power purchase agreement and is designed to meet approximately 10% of Nevada's peak power demand. APG acquired a 49% interest on behalf of ABP in 2022. In April 2024, Quinbrook's Valley of Fire Continuation Fund LP acquired the remaining 51%, and the project reached full commercial operations in 2024. A February 2026 refinancing continued to identify the same 51% Quinbrook / 49% APG ownership structure.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "website": "https://www.primergygemini.com/",
+      "investmentYear": 2022,
+      "headquarters": "Clark County, Nevada",
+      "milestones": [
+        {
+          "date": "2017",
+          "event": "Quinbrook acquired the Gemini project and began its development with portfolio company Primergy.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "May 11, 2020",
+          "event": "The U.S. Department of the Interior approved Solar Partners XI LLC's plan to construct the 690 MW Gemini Solar Project on federal land northeast of Las Vegas.",
+          "category": "Other"
+        },
+        {
+          "date": "Oct 2022",
+          "event": "APG acquired a 49% equity interest in Gemini on behalf of pension fund client ABP during construction.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Apr 4, 2024",
+          "event": "Quinbrook's Valley of Fire Continuation Fund LP acquired a 51% interest in Gemini from Quinbrook's Low Carbon Power Fund and other equity holders; APG retained 49%.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Jul 18, 2024",
+          "event": "Primergy and Quinbrook announced that Gemini had reached full commercial operations in Clark County, Nevada.",
+          "category": "Other"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Announcement date source — APG Infrastructure — Gemini Solar + Storage",
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-and-primergy-solar-partner-with-apg-on-gemini-solar-storage-project/",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG Infrastructure transaction announcement"
+        },
+        {
+          "label": "Close date source — Quinbrook — Gemini Solar + Storage",
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+          "type": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Quinbrook closing confirmation"
+        },
+        {
+          "label": "Business Wire — Gemini Solar + Storage",
+          "url": "https://www.businesswire.com/news/home/20240718110673/en/Historic-Gemini-Solar-Energy-Storage-Project-Reaches-Commercial-Operations-in-Nevada",
+          "type": "PRESS_RELEASE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Business Wire operations / asset details"
+        },
+        {
+          "label": "Primergygemini — Gemini Solar + Storage",
+          "url": "https://www.primergygemini.com",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Primergygemini company profile"
+        },
+        {
+          "label": "Quinbrook — Gemini Solar + Storage",
+          "url": "https://www.quinbrook.com/our-portfolio/gemini-solar-storage/",
+          "type": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Quinbrook operations / asset details"
+        },
+        {
+          "label": "Primergy — APG investment in Gemini",
+          "url": "https://www.primergypower.com/news/quinbrook-and-primergy-solar-partner-with-apg-on-gemini-solar-storage-project",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG's 49% investment on behalf of ABP and Primergy's continuing operating role"
+        },
+        {
+          "label": "KeyBanc Capital Markets — Gemini 2026 refinancing",
+          "url": "https://www.key.com/businesses-institutions/our-transactions/deals/primergy.html",
+          "type": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current 51% Quinbrook / 49% APG ownership and operating-project confirmation"
+        },
+        {
+          "label": "Quinbrook — Gemini current portfolio profile",
+          "url": "https://www.quinbrook.com/portfolio/gemini/",
+          "type": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current Quinbrook status, 2017 acquisition, infrastructure scale, and 2024 operations"
+        },
+        {
+          "label": "APG — Gemini infrastructure investment profile",
+          "url": "https://apg.nl/publicatie/we-halen-een-stevig-rendement-en-zijn-goede-buren/",
+          "type": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG's 49% investment on behalf of ABP and infrastructure-strategy basis"
+        },
+        {
+          "label": "Primergy — Gemini reaches commercial operations",
+          "url": "https://www.primergypower.com/news/historic-gemini-solar-energy-storage-project-reaches-commercial-operations-in-nevada",
+          "type": "PRESS_RELEASE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "Full commercial operations and April 2024 ownership structure"
+        },
+        {
+          "label": "U.S. Bureau of Land Management — Gemini project approval",
+          "url": "https://www.blm.gov/press-release/interior-approves-plan-largest-solar-project-us-history",
+          "type": "PRESS_RELEASE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "May 2020 federal approval, capacity, and Nevada location"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "APG Asset Management",
+          "ownershipVehicle": "ABP",
+          "investmentYear": 2022,
+          "stake": "49%",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "investmentFirm": "Quinbrook",
+          "ownershipVehicle": "Quinbrook Valley of Fire Continuation Fund LP",
+          "investmentYear": 2024,
+          "stake": "51%",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": "cmrxpj5cr00hnivhe2fcqqaup",
+      "name": "Gemini Solar + Storage",
+      "aliases": [],
+      "sector": "POWER_ET",
+      "subsector": "Utility-scale solar and battery storage",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Gemini Solar + Storage is an operating 690 MWac solar photovoltaic and 380 MW / approximately 1,416 MWh battery storage project in Clark County, Nevada, developed by Quinbrook with its portfolio company Primergy. The co-located facility supplies NV Energy under a 25-year power purchase agreement and is designed to meet approximately 10% of Nevada's peak power demand. APG acquired a 49% interest on behalf of ABP in 2022. In April 2024, Quinbrook's Valley of Fire Continuation Fund LP acquired the remaining 51%, and the project reached full commercial operations in 2024. A February 2026 refinancing continued to identify the same 51% Quinbrook / 49% APG ownership structure.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": "https://www.primergygemini.com/",
+      "yearFounded": null,
+      "headquarters": "Clark County, Nevada",
+      "lastVerifiedAt": "2026-08-08T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjqbj01eaivhelehe3xq0",
+          "managerName": "APG Asset Management",
+          "organizationName": "APG Asset Management",
+          "fundName": null,
+          "vehicleName": "ABP",
+          "stake": "49%",
+          "investmentYear": 2022,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "id": "cmrxpjqc301ebivhepae497oj",
+          "managerName": "Quinbrook",
+          "organizationName": "Quinbrook",
+          "fundName": null,
+          "vehicleName": "Quinbrook Valley of Fire Continuation Fund LP",
+          "stake": "51%",
+          "investmentYear": 2024,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpkh3q02iqivhebcyg09sy",
+          "date": "2017",
+          "event": "Quinbrook acquired the Gemini project and began its development with portfolio company Primergy.",
+          "category": "ACQUISITION",
+          "sortDate": "2017-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.quinbrook.com/portfolio/gemini/"
+          ]
+        },
+        {
+          "id": "cmrxpkh4a02irivhejz8p7tlb",
+          "date": "May 11, 2020",
+          "event": "The U.S. Department of the Interior approved Solar Partners XI LLC's plan to construct the 690 MW Gemini Solar Project on federal land northeast of Las Vegas.",
+          "category": "OTHER",
+          "sortDate": "2020-05-11T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.blm.gov/press-release/interior-approves-plan-largest-solar-project-us-history"
+          ]
+        },
+        {
+          "id": "cmrxpkh4w02isivheam341egf",
+          "date": "Oct 2022",
+          "event": "APG acquired a 49% equity interest in Gemini on behalf of pension fund client ABP during construction.",
+          "category": "ACQUISITION",
+          "sortDate": "2022-10-12T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.primergypower.com/news/quinbrook-and-primergy-solar-partner-with-apg-on-gemini-solar-storage-project",
+            "https://apg.nl/publicatie/we-halen-een-stevig-rendement-en-zijn-goede-buren/"
+          ]
+        },
+        {
+          "id": "cmrxpkh5f02itivhe01qxcdaj",
+          "date": "Apr 4, 2024",
+          "event": "Quinbrook's Valley of Fire Continuation Fund LP acquired a 51% interest in Gemini from Quinbrook's Low Carbon Power Fund and other equity holders; APG retained 49%.",
+          "category": "ACQUISITION",
+          "sortDate": "2024-04-04T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/"
+          ]
+        },
+        {
+          "id": "cmrxpkh5z02iuivhen6i0t133",
+          "date": "Jul 18, 2024",
+          "event": "Primergy and Quinbrook announced that Gemini had reached full commercial operations in Clark County, Nevada.",
+          "category": "OTHER",
+          "sortDate": "2024-07-18T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.primergypower.com/news/historic-gemini-solar-energy-storage-project-reaches-commercial-operations-in-nevada",
+            "https://www.quinbrook.com/portfolio/gemini/"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxpornn0765ivhexvq2igsv",
+          "label": "Announcement date source — APG Infrastructure — Gemini Solar + Storage",
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-and-primergy-solar-partner-with-apg-on-gemini-solar-storage-project/",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG Infrastructure transaction announcement",
+          "isPrimary": true
+        },
+        {
+          "id": "cmrxporor0767ivhesrvlpuzb",
+          "label": "Close date source — Quinbrook — Gemini Solar + Storage",
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+          "sourceType": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Quinbrook closing confirmation",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxporpv0769ivhebz53cbln",
+          "label": "Business Wire — Gemini Solar + Storage",
+          "url": "https://www.businesswire.com/news/home/20240718110673/en/Historic-Gemini-Solar-Energy-Storage-Project-Reaches-Commercial-Operations-in-Nevada",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Business Wire operations / asset details",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxportc076bivheb344dbnw",
+          "label": "Primergygemini — Gemini Solar + Storage",
+          "url": "https://www.primergygemini.com",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Primergygemini company profile",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxporui076divheenzrei09",
+          "label": "Quinbrook — Gemini Solar + Storage",
+          "url": "https://www.quinbrook.com/our-portfolio/gemini-solar-storage/",
+          "sourceType": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Quinbrook operations / asset details",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Primergy — APG investment in Gemini",
+          "url": "https://www.primergypower.com/news/quinbrook-and-primergy-solar-partner-with-apg-on-gemini-solar-storage-project",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG's 49% investment on behalf of ABP and Primergy's continuing operating role",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "KeyBanc Capital Markets — Gemini 2026 refinancing",
+          "url": "https://www.key.com/businesses-institutions/our-transactions/deals/primergy.html",
+          "sourceType": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current 51% Quinbrook / 49% APG ownership and operating-project confirmation",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Quinbrook — Gemini current portfolio profile",
+          "url": "https://www.quinbrook.com/portfolio/gemini/",
+          "sourceType": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current Quinbrook status, 2017 acquisition, infrastructure scale, and 2024 operations",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "APG — Gemini infrastructure investment profile",
+          "url": "https://apg.nl/publicatie/we-halen-een-stevig-rendement-en-zijn-goede-buren/",
+          "sourceType": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG's 49% investment on behalf of ABP and infrastructure-strategy basis",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Primergy — Gemini reaches commercial operations",
+          "url": "https://www.primergypower.com/news/historic-gemini-solar-energy-storage-project-reaches-commercial-operations-in-nevada",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "Full commercial operations and April 2024 ownership structure",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "U.S. Bureau of Land Management — Gemini project approval",
+          "url": "https://www.blm.gov/press-release/interior-approves-plan-largest-solar-project-us-history",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "May 2020 federal approval, capacity, and Nevada location",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Gemini Solar + Storage",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to description, website, yearFounded, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+      }
+    ],
+    "changedFields": [
+      "citations",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "ownershipPeriods",
+      "website",
+      "yearFounded"
+    ],
+    "retiredCompanyIds": []
+  }
+}

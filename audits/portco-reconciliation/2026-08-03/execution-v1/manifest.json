@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T06:14:15.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0035:gemini-solar-storage:4b88d999",
+  "updatedAt": "2026-08-08T06:30:19.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -5425,11 +5425,11 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "108c474ee71f7c85eadc197f2e9f80dbb7e0e6d36150edd65bb5cd7f1628847d",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-08T06:12:08.000Z",
-      "updatedAt": "2026-08-08T06:14:15.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-08T06:30:19.000Z",
+      "completedAt": "2026-08-08T06:30:19.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "65d2e8e38e9344746b9e44cd296c965e413a601e7acd12881f284cecdfe0dee3",
@@ -5446,11 +5446,23 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0035-gemini-solar-storage-v2.json",
           "sha256": "958e6db91a57bd5bdbd4f2f4b22db716b659a20d74f7c6667b766f5f2ac8e732"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31243841429",
+          "sha256": "4366f826c82a96600d012ee9e8410c7c09accd5fcecf6de9ed8ced4cead0f5ef"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0035-gemini-solar-storage/attempt-2/context.json",
+          "sha256": "09c5dc1f5da79c1e8223f0e91192a468e7182119d31d656fe64176a940fc96cd"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-08T06:30:19.000Z",
+        "auditEventId": "cmsjzowuk000deb4seznbf0jh",
+        "transactionId": "eda73f59-d543-42f8-a3ec-d9a0c499ebc1",
+        "receiptSha256": "4366f826c82a96600d012ee9e8410c7c09accd5fcecf6de9ed8ced4cead0f5ef",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31243841429"
+      },
       "history": [
         {
           "sequence": 1,
@@ -5561,6 +5573,21 @@
             "958e6db91a57bd5bdbd4f2f4b22db716b659a20d74f7c6667b766f5f2ac8e732"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-08T06:30:19.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "09c5dc1f5da79c1e8223f0e91192a468e7182119d31d656fe64176a940fc96cd",
+            "1d742ff297424511dde27e37c4e445552242536f9e3db5701303447ef2983062",
+            "4366f826c82a96600d012ee9e8410c7c09accd5fcecf6de9ed8ced4cead0f5ef",
+            "958e6db91a57bd5bdbd4f2f4b22db716b659a20d74f7c6667b766f5f2ac8e732"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -23098,5 +23125,5 @@
       ]
     }
   ],
-  "manifestSha256": "232b38b604b9bccefd5fbbd2dd845fc543c5b2e2d688c52d0857e7591177f3a7"
+  "manifestSha256": "e24dfad2303797fdfaacf7a41218ae0a5783d97f6c13ccd10db7de23db10de9c"
 }
