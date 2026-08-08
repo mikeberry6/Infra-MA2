@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T05:02:35.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T05:24:11.387Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0034:duquesne-light-company:06909b9f",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -5044,18 +5044,27 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "11491231895799b86cfb727cefbd021d1d1cf6f3fb4bb2936d22cf1e95dcaece",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-08T05:08:19.000Z",
+      "updatedAt": "2026-08-08T05:24:11.387Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0034-duquesne-light-company/attempt-1/task-snapshot.json",
+          "sha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0034-duquesne-light-company-v1/proposal.json",
+          "sha256": "e1f61d332ebc36234ac3c93062544d305d40a930ccb9906691b24a89ac689b91"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0034-duquesne-light-company-v1.json",
+          "sha256": "adddb51640502808685d15575ffab6e61587a534033f64386c78bdfdda838844"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -5071,6 +5080,54 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T05:08:19.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T05:23:21.862Z",
+          "reason": null,
+          "taskSnapshotSha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
+          "evidenceSha256": [
+            "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
+            "e1f61d332ebc36234ac3c93062544d305d40a930ccb9906691b24a89ac689b91"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T05:23:35.688Z",
+          "reason": null,
+          "taskSnapshotSha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
+          "evidenceSha256": [
+            "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
+            "e1f61d332ebc36234ac3c93062544d305d40a930ccb9906691b24a89ac689b91"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T05:24:11.387Z",
+          "reason": null,
+          "taskSnapshotSha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
+          "evidenceSha256": [
+            "adddb51640502808685d15575ffab6e61587a534033f64386c78bdfdda838844"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -22646,5 +22703,5 @@
       ]
     }
   ],
-  "manifestSha256": "0a94cb7c72e1740fd5d2c7db8e34dea43c02cbcfe16c51491827daae4113955f"
+  "manifestSha256": "665b98ca965f0b7aa2bea2656896ebedbc7fbc6ebe83fcb6e2dc52b962192bc0"
 }

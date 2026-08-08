@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0034:duquesne-light-company:06909b9f",
+  "taskIndex": 34,
+  "companyName": "Duquesne Light Company",
+  "generatedAt": "2026-08-08T05:08:31.574Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0034-duquesne-light-company/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 34,
+    "taskId": "ledger:0034:duquesne-light-company:06909b9f",
+    "canonicalKey": "duquesne-light-company|united-states",
+    "companyName": "Duquesne Light Company",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 9,
+    "managers": [
+      "APG Infrastructure",
+      "Argo Infrastructure Partners",
+      "GIC",
+      "Macquarie Asset Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "009-apg-infrastructure:holding:006:duquesne-light-company",
+      "015-argo-infrastructure-partners:holding:003:duquesne-light-company",
+      "047-gic:holding:003:duquesne-light-company",
+      "065-macquarie-asset-management:holding:009:duquesne-light-company"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjk6l014fivhea9xq8tne"
+    ],
+    "seedKeys": [
+      "duquesne light company|United States"
+    ],
+    "evidenceUrls": [
+      "https://duquesnelight.com/company/about",
+      "https://duquesnelight.com/company/about/investors",
+      "https://www.manulifeim.com/institutional/global/en/insights/private-markets/manulife-investment-management-to-acquire-interest-in-us-utility-company"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 065-macquarie-asset-management:holding:009:duquesne-light-company: Ownership continuity and current stake level remain unclear despite evidence of ongoing involvement. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 065-macquarie-asset-management:holding:009:duquesne-light-company: Ownership continuity and current stake level remain unclear despite evidence of ongoing involvement"
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpjk6l014fivhea9xq8tne",
+    "name": "Duquesne Light Company",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated electric distribution utility",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Duquesne Light is the regulated electric transmission and distribution utility serving the Pittsburgh region. Company materials state that it serves approximately 605,000 customers in Allegheny and Beaver counties across an approximately 817-square-mile service territory. The operating model is fully utility-based, with earnings supported by regulated network investment rather than merchant power generation. Public disclosures emphasize a dense urban and suburban footprint and ongoing grid modernization and clean-energy transition work within southwestern Pennsylvania. Duquesne's current shareholder group is publicly identified on its investor site, with GIC as the largest owner and Three Rivers Utility Holdings, the Manulife and PGGM vehicle, holding a 30.4% interest; Manulife's infrastructure team links the investment to Fund I. The current consortium structure reflects ownership changes following the 2007 take-private and later secondary transfers in 2011, 2016, and 2017.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1912,
+    "headquarters": "Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6500239ivhe90n4hu3s",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": null,
+        "vehicleName": "Epsom Investment Pte. Ltd",
+        "stake": null,
+        "investmentYear": 2011,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk65j023aivhervpvj2lt",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "AIA Montana LLC",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk660023bivhey7nyyc6p",
+        "managerName": "Manulife",
+        "organizationName": "Manulife",
+        "fundName": null,
+        "vehicleName": "Manulife Infrastructure Fund I / PGGM Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk66k023civhetnij8ddx",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": null,
+        "vehicleName": "Macquarie Consortium",
+        "stake": null,
+        "investmentYear": 2007,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk674023divhetlu46yqt",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "AIA Montana LLC",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm8tt04mnivheqymx41er",
+        "date": "1912",
+        "event": "Duquesne Light Company was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1912-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm8uf04moivhegan3quxm",
+        "date": "May 2007",
+        "event": "Duquesne was taken private by a Macquarie-led consortium of infrastructure investors.",
+        "category": "ACQUISITION",
+        "sortDate": "2007-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm8v004mpivhehho83144",
+        "date": "2011",
+        "event": "GIC, through Epsom Investment Pte. Ltd., became the largest shareholder in DQE Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm8ve04mqivhebevahsjj",
+        "date": "Sep 2016",
+        "event": "Three Rivers Utility Holdings, the Manulife/John Hancock and PGGM investment vehicle, closed its purchase of a 30.4% stake in DQE Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm8vz04mrivhe2elw49sg",
+        "date": "2017",
+        "event": "AIA Montana LLC, owned by APG Americas Infrastructure, CalSTRS, and managed by Argo Infrastructure Partners, became an owner in DQE Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps0300bxaivhegh321pyk",
+        "label": "Investment date source — GIC — Duquesne Light Company",
+        "url": "https://duquesnelight.com/company/about/investors",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps03h0bxbivhe68y7p5lr",
+        "label": "Investment date source — GIC — Duquesne Light Company",
+        "url": "https://duquesnelight.com/company/about/investors",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps04g0bxdivheodkfz2wa",
+        "label": "Duquesnelight — Duquesne Light Company",
+        "url": "https://duquesnelight.com/company/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Duquesnelight company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps05d0bxfivhebiwxj3h2",
+        "label": "Close date source — Macquarie Asset Management — Duquesne Light Company",
+        "url": "https://www.puc.pa.gov/press-release/2007/puc-approves-agreement-for-macquarie-consortium-to-purchase-duquesne-light",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Macquarie Asset Management closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps06f0bxhivhenqqn7vpb",
+        "label": "Manulifeim — Duquesne Light Holdings, Inc.",
+        "url": "https://www.manulifeim.com/institutional/global/en/insights/private-markets/manulife-investment-management-to-acquire-interest-in-us-utility-company",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Manulifeim — Duquesne Light Holdings, Inc.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Duquesne Light Company",
+    "investmentFirm": "GIC",
+    "sector": "Utilities",
+    "subsector": "Regulated electric distribution utility",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Epsom Investment Pte. Ltd",
+    "description": "Duquesne Light is the regulated electric transmission and distribution utility serving the Pittsburgh region. Company materials state that it serves approximately 605,000 customers in Allegheny and Beaver counties across an approximately 817-square-mile service territory. The operating model is fully utility-based, with earnings supported by regulated network investment rather than merchant power generation. Public disclosures emphasize a dense urban and suburban footprint and ongoing grid modernization and clean-energy transition work within southwestern Pennsylvania. Duquesne's current shareholder group is publicly identified on its investor site, with GIC as the largest owner and Three Rivers Utility Holdings, the Manulife and PGGM vehicle, holding a 30.4% interest; Manulife's infrastructure team links the investment to Fund I. The current consortium structure reflects ownership changes following the 2007 take-private and later secondary transfers in 2011, 2016, and 2017.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1912,
+    "investmentYear": 2011,
+    "headquarters": "Pennsylvania",
+    "milestones": [
+      {
+        "date": "1912",
+        "event": "Duquesne Light Company was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "May 2007",
+        "event": "Duquesne was taken private by a Macquarie-led consortium of infrastructure investors.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2011",
+        "event": "GIC, through Epsom Investment Pte. Ltd., became the largest shareholder in DQE Holdings.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Sep 2016",
+        "event": "Three Rivers Utility Holdings, the Manulife/John Hancock and PGGM investment vehicle, closed its purchase of a 30.4% stake in DQE Holdings.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2017",
+        "event": "AIA Montana LLC, owned by APG Americas Infrastructure, CalSTRS, and managed by Argo Infrastructure Partners, became an owner in DQE Holdings.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — GIC — Duquesne Light Company",
+        "url": "https://duquesnelight.com/company/about/investors",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — APG Infrastructure — Duquesne Light Company",
+        "url": "https://duquesnelight.com/company/about/investors",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Duquesnelight — Duquesne Light Company",
+        "url": "https://duquesnelight.com/company/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Macquarie Asset Management — Duquesne Light Company",
+        "url": "https://www.puc.pa.gov/press-release/2007/puc-approves-agreement-for-macquarie-consortium-to-purchase-duquesne-light",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Manulifeim — Duquesne Light Holdings, Inc.",
+        "url": "https://www.manulifeim.com/institutional/global/en/insights/private-markets/manulife-investment-management-to-acquire-interest-in-us-utility-company",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "GIC",
+        "ownershipVehicle": "Epsom Investment Pte. Ltd",
+        "investmentYear": 2011,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "AIA Montana LLC",
+        "investmentYear": 2017,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Manulife",
+        "ownershipVehicle": "Manulife Infrastructure Fund I / PGGM Infrastructure Fund",
+        "investmentYear": 2016,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Macquarie Asset Management",
+        "ownershipVehicle": "Macquarie Consortium",
+        "investmentYear": 2007,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "APG Infrastructure",
+        "ownershipVehicle": "AIA Montana LLC",
+        "investmentYear": 2017,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3kl000eivhezm8dydzo",
+        "name": "APG Asset Management",
+        "updatedAt": "2026-07-23T16:09:11.829Z"
+      },
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      },
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      },
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      },
+      {
+        "id": "cmrxpihju004sivhe0wgw7q0e",
+        "name": "Manulife",
+        "updatedAt": "2026-07-23T16:09:29.946Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0034:duquesne-light-company:06909b9f",
+    "taskIndex": 34,
+    "canonicalKey": "duquesne-light-company|united-states",
+    "capturedAt": "2026-08-08T05:08:31.574Z",
+    "databaseRevision": "company-state:c33e2cf3521a23b7ee053f1ebbc18962456b0f1b575ef4a8910e896a75734578",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "11491231895799b86cfb727cefbd021d1d1cf6f3fb4bb2936d22cf1e95dcaece",
+    "productionSnapshotSha256": "5934d829c657ce79f12a195e4843933453fbe2b420e1a1716c4af3286222ccde",
+    "targetCompanySnapshotSha256": "c33e2cf3521a23b7ee053f1ebbc18962456b0f1b575ef4a8910e896a75734578",
+    "seedEntrySha256": "5764fe75a42078f93ffe369b4d48714dc28396d78e1d73ff91264bb33b0e4238",
+    "dependencies": {
+      "ownershipPeriodsSha256": "2ce61edd57c1055d926195814aef684548d8967d54eeb6beb68dd6dea50f3d3a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "48fa563a6be894ed85f5fe8f875aafd3b06594c477566f8261967db77d1d903b",
+      "citationsSha256": "abea4b28bec8e212571bf582d02a0f416545f363f7c8e12828b3ed4c6f209854",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "02bb3c2636488ee57b7dc686dc8f3ca5a7a1092482bf2ae36afcdbd3fea821cc",
+    "stateSha256": "5d23df9199ae589864fb3d86244647e1ff6b81f28868f0e1aac8d88097e2da19",
+    "taskSnapshotSha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6"
+  },
+  "contextSha256": "86cf9b0cead89b690ec670a3a3b639b7749124f2fb3d4dfccaf453452d22c869"
+}
