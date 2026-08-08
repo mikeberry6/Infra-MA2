@@ -1,14 +1,14 @@
 # Weekly Briefing Activity Classification and Stacked-Bar Plan
 
-- **Status:** Implementation plan; July 25–31 issue-level preview implemented
-- **Applies to:** `/weekly-briefing`, weekly email YTD charts, and any later fund-activity analytics
+- **Status:** July 25–31 Outlook chart replacement implemented; historical backfill planned
+- **Applies to:** `/weekly-briefing`, the July 31 Outlook artifact, and any later fund-activity analytics
 - **Snapshot date:** August 7, 2026
 
 ## Outcome
 
-The application now has an app-native Weekly Briefing view sourced from the immutable July 31 email. The first chart implementation uses the 20 reviewed cards in that issue: 14 direct investments and 6 portfolio-level activities. The historical email remains unchanged.
+The Weekly Briefing view is sourced from the July 31 Outlook artifact and begins with the original email masthead. The two former YTD bar tables have been replaced in place with Outlook-safe absolute stacks for the 20 reviewed cards in that issue: 14 direct investments and 6 portfolio-level activities. Every byte outside the chart section remains unchanged.
 
-The published YTD bars should not be split yet. Their control total is 378 deals, while the current local seed produces 388 deals through July 31 and the configured database currently produces 352. The HTML-to-seed parser also loses transaction-side and acting-entity detail on compound labels. Publishing a YTD split from either source would create unsupported counts.
+The charts are labeled July 25–31 rather than YTD. The former YTD control total is 378 deals, while the current local seed produces 388 deals through July 31 and the configured database currently produces 352. The HTML-to-seed parser also loses transaction-side and acting-entity detail on compound labels. Publishing a two-segment YTD split from either source would create unsupported counts.
 
 ## Classification standard
 
@@ -128,18 +128,18 @@ Use an **absolute stacked bar**, not a 100%-normalized bar:
 - Portfolio-level uses the darker, accessible brand gold `#8F7C4D`;
 - Unclassified uses neutral gray in internal review views only;
 - the total stays right-aligned, with visible `N direct · N portfolio` text under each bar;
-- one shared legend serves the sector and region charts;
+- each self-contained chart table includes the same compact legend so it remains understandable when copied independently;
 - every row has an accessible label containing the row name, total, and both segment counts.
 
-Keep rows in descending total-count order and retain the briefing's fixed tie-break rules. Use email-compatible nested presentation tables and inline widths in the Outlook artifact; use the same arithmetic and labels in the app-native React view. Do not use SVG, gradients, or a second visual encoding for transaction category in the same stack.
+Keep rows in descending total-count order and retain the briefing's fixed tie-break rules. The single presentation surface is email-compatible HTML: nested presentation tables, integer percentage widths, explicit `bgcolor` attributes, inline background colors, fixed cell heights, and visible split counts. Do not use SVG, flexbox, grid, gradients, CSS variables, or a second visual encoding for transaction category in the same stack.
 
 ## Rollout
 
-1. **Now:** show the reviewed 20-deal July 25–31 split as an app-native preview; preserve the published 378-deal total-only bars.
+1. **Now:** replace the existing chart tables in the Outlook artifact with the reviewed 20-deal July 25–31 stacks; keep the rest of the briefing unchanged.
 2. **Universe reconciliation:** produce and approve the exact 378-record manifest.
 3. **Classification backfill:** review all records, resolve mixed cases, and reach zero Unclassified.
-4. **Web cutover:** replace the app-native YTD total bars with the two-segment absolute stacks.
-5. **Email cutover:** generate equivalent nested-table stacks and validate in Outlook, Gmail, and mobile clients.
+4. **YTD cutover:** replace the weekly values in the same two Outlook table blocks only after all 378 records reconcile.
+5. **Template integration:** generate these nested-table stacks for future issues at publication time and validate them in Outlook, Gmail, and mobile clients.
 6. **Optional tracker cutover:** use per-manager/per-side attribution to replace transaction-category segments in Top fund activity without double-counting multi-category deals.
 
 ## QA checklist
@@ -147,7 +147,9 @@ Keep rows in descending total-count order and retain the briefing's fixed tie-br
 - Unit-test reconciliation, ordering, tie breaks, segment arithmetic, and zero-total behavior.
 - Test the July 31 frozen snapshot at 20 deals, with a 14 Direct / 6 Portfolio-level split.
 - Add parser fixtures for the GSAM/RWE, MSIP/QIC, CPP/CIP, ArcLight/REC Power, and Exolum/SeaSeaS cases.
-- Verify the recreated issue retains 20 cards, 20 Source links, section counts 7/4/4/3/2, exactly two Key Themes paragraphs, and the original 378-deal YTD controls.
+- Verify the recreated issue retains 20 cards, 20 Source links, section counts 7/4/4/3/2, and exactly two Key Themes paragraphs.
+- Assert the two chart dimensions each reconcile to 14 Direct + 6 Portfolio-level = 20 and that every track totals 100% including its neutral remainder.
+- Hash the complete artifact outside the chart section so unrelated editorial or layout changes fail validation.
 - Render at 320, 375, 600, and desktop widths; ensure no new page-level overflow and keep week navigation horizontally scrollable.
 - Verify keyboard focus, non-color labels, screen-reader row summaries, and at least 3:1 visual contrast for chart segments.
-- Preserve `public/email-format/2026-07-31.html` byte-for-byte unless the user separately requests a historical email revision.
+- Preserve `public/email-format/2026-07-31.html` byte-for-byte outside the explicitly authorized chart section.
