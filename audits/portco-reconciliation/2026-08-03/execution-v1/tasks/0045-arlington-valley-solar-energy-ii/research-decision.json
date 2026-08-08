@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-08-08T11:24:00.000Z",
+  "decision": "EXCLUDE_CENSUS_HOLDING",
+  "taskId": "ledger:0045:arlington-valley-solar-energy-ii:1805fb50",
+  "companyName": "Arlington Valley Solar Energy II",
+  "requestedManager": "Apollo Global Management",
+  "sourceHoldingId": "010-apollo-global-management:holding:018:arlington-valley-solar-energy-ii",
+  "rationale": "Exclude the Apollo Global Management census holding because it is realized, not currently owned. Capital Dynamics' primary transaction release states that on December 29, 2020 its Clean Energy Infrastructure business completed the acquisition of Apollo Funds' remaining 69.98% interest in Arlington Valley Solar Energy II and assumed 100% ownership. A California Public Utilities Commission filing independently identifies Apollo's indirect holding entity and the December 2020 transfer to a Capital Dynamics affiliate. The original 2018 Apollo census URL was reopened but now returns HTTP 404. No subsequent Apollo reacquisition was found. Because no production company or evaluated seed entry exists and this task only concerns Apollo's current portfolio, no company, seed, ownership, redirect, or publication mutation is authorized.",
+  "identityResolution": {
+    "sameOperatingAsset": true,
+    "canonicalCandidate": "Arlington Valley Solar Energy II, LLC",
+    "commonName": "Arlington Valley Solar Energy II",
+    "alias": "AVSE II",
+    "unrelatedRepoIdentityExcluded": "Arlington Industries",
+    "productionCompanyId": null,
+    "seedKey": null
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "The original October 2018 Apollo investment page is no longer available and returns HTTP 404. Regulatory evidence identifies AIE Arlington, LLC, an indirect Apollo infrastructure subsidiary, as holding 69.98% before the exit.",
+    "exitSearch": "Capital Dynamics announced on December 29, 2020 that it had completed the purchase of Apollo Funds' remaining 69.98% interest and assumed 100% ownership. The CPUC filing records the December 22, 2020 transfer of Apollo's acquired entity to a Capital Dynamics affiliate.",
+    "currentOwnership": "Apollo has no current ownership interest supported by the evidence. No subsequent Apollo reacquisition was found in searches completed through August 8, 2026.",
+    "ownershipState": "REALIZED_BY_APOLLO",
+    "apolloExitDate": "2020-12-29",
+    "apolloFormerStake": "69.98%"
+  },
+  "evidence": [
+    {
+      "label": "Capital Dynamics — acquisition of remaining AVSE II interest from Apollo Funds",
+      "url": "https://www.capdyn.com/Customer-Content/www/news/PDFs/Press_Release_Capital_Dynamics_Acquires_Remaining_Interest_in_Arlington_Valley_Solar_Energy_II_from_Apollo_Funds.pdf",
+      "purpose": "Primary completed-sale evidence showing Apollo Funds sold the remaining 69.98% interest and Capital Dynamics assumed 100% ownership",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "California Public Utilities Commission — SDG&E regulatory testimony",
+      "url": "https://docs.cpuc.ca.gov/PublishedDocs/SupDoc/A2106004/4425/440090671.pdf",
+      "purpose": "Regulatory evidence identifying Apollo's 69.98% indirect holding entity and the December 2020 transfer to a Capital Dynamics affiliate",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Apollo — 2018 Arlington Valley investment announcement",
+      "url": "https://www.apollo.com/insights-news/pressreleases/2018/10/apollo-infrastructure-funds-invest-in-arlington-valley-energy-facility",
+      "purpose": "Original census citation reopened during the current acquisition-and-exit check; the page is no longer available",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "DEAD_404"
+    }
+  ],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "unresolvedQuestions": []
+}
