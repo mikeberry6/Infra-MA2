@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0048:bullrock-energy-ventures:ac39af1a",
+  "taskIndex": 48,
+  "companyName": "Bullrock Energy Ventures",
+  "generatedAt": "2026-08-08T13:25:05.460Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0048-bullrock-energy-ventures/attempt-2/approval-recapture/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 48,
+    "taskId": "ledger:0048:bullrock-energy-ventures:ac39af1a",
+    "canonicalKey": "bullrock-energy-ventures|united-states",
+    "companyName": "Bullrock Energy Ventures",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "010-apollo-global-management:repo-only:003:bullrock-energy-ventures"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5lr00hzivhelra99vap"
+    ],
+    "seedKeys": [
+      "bullrock energy ventures|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.apollo.com/insights-news/pressreleases/2025/04/apollo-funds-form-220-million-community-solar-joint-venture-with-bullrock-energy-ventures-3066360"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Apollo Global Management MATCHED_ELSEWHERE: Captured as project-level JV not platform",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5lr00hzivhelra99vap",
+    "linkedQueueTaskId": null
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5lr00hzivhelra99vap",
+    "name": "Bullrock Energy Ventures",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Community solar development platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Bullrock Energy Ventures is a community solar development platform focused on New York and New England. The platform serves community solar subscribers and utility counterparties through an asset-heavy development and ownership model for distributed generation projects. Apollo and Bullrock announced a new joint venture in 2025 with up to $220 million of Apollo capital committed to a portfolio of community solar assets. Public disclosures state that $100 million of the commitment is earmarked to advance Bullrock's nearly 500 MW pipeline of renewable energy assets. Reviewed public sources do not disclose the ownership percentages within the joint venture.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "New York; New England",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqmr01erivhe4w9wsr84",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Apollo-managed funds",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkidl02kdivhe1mtmww81",
+        "date": "2023",
+        "event": "Bullrock expanded its renewables platform and investment management capabilities.",
+        "category": "FINANCING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkidz02keivheb4sy29no",
+        "date": "2024",
+        "event": "Bullrock Energy Ventures launched its first fund.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkiej02kfivhes3xlh7z6",
+        "date": "2025",
+        "event": "The announced partnership targeted Bullrock's nearly 500 MW pipeline in New York and New England.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkih902kgivhe54c2hm01",
+        "date": "2025",
+        "event": "Bullrock Energy Ventures was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkihv02khivhe53zif3ru",
+        "date": "Apr 23, 2025",
+        "event": "Apollo and Bullrock announced a $220 million community solar joint venture.",
+        "category": "FINANCING",
+        "sortDate": "2025-04-23T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpotm5078yivhey6ozh70w",
+        "label": "Announcement date source — Apollo Global Management — Bullrock Energy Ventures",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2025/04/apollo-funds-form-220-million-community-solar-joint-venture-with-bullrock-energy-ventures-3066360",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpotna0790ivhee3mzwamk",
+        "label": "Bullrockcorp — Bullrock Energy Ventures",
+        "url": "https://www.bullrockcorp.com/history",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Bullrockcorp — Bullrock Energy Ventures",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpotob0792ivhe51btbj8b",
+        "label": "Bullrockcorp — Bullrock Energy Ventures",
+        "url": "https://www.bullrockcorp.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Bullrockcorp company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Bullrock Energy Ventures",
+    "investmentFirm": "Apollo Global Management",
+    "sector": "Power & ET",
+    "subsector": "Community solar development platform",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Apollo-managed funds",
+    "description": "Bullrock Energy Ventures is a community solar development platform focused on New York and New England. The platform serves community solar subscribers and utility counterparties through an asset-heavy development and ownership model for distributed generation projects. Apollo and Bullrock announced a new joint venture in 2025 with up to $220 million of Apollo capital committed to a portfolio of community solar assets. Public disclosures state that $100 million of the commitment is earmarked to advance Bullrock's nearly 500 MW pipeline of renewable energy assets. Reviewed public sources do not disclose the ownership percentages within the joint venture.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2025,
+    "investmentYear": 2025,
+    "headquarters": "New York; New England",
+    "milestones": [
+      {
+        "date": "2023",
+        "event": "Bullrock expanded its renewables platform and investment management capabilities.",
+        "category": "Financing"
+      },
+      {
+        "date": "2024",
+        "event": "Bullrock Energy Ventures launched its first fund.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2025",
+        "event": "The announced partnership targeted Bullrock's nearly 500 MW pipeline in New York and New England.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2025",
+        "event": "Bullrock Energy Ventures was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Apr 23, 2025",
+        "event": "Apollo and Bullrock announced a $220 million community solar joint venture.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Apollo Global Management — Bullrock Energy Ventures",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2025/04/apollo-funds-form-220-million-community-solar-joint-venture-with-bullrock-energy-ventures-3066360",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Bullrockcorp — Bullrock Energy Ventures",
+        "url": "https://www.bullrockcorp.com/history",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Bullrockcorp — Bullrock Energy Ventures",
+        "url": "https://www.bullrockcorp.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Apollo Global Management",
+        "ownershipVehicle": "Apollo-managed funds",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0048:bullrock-energy-ventures:ac39af1a",
+    "taskIndex": 48,
+    "canonicalKey": "bullrock-energy-ventures|united-states",
+    "capturedAt": "2026-08-08T13:25:05.460Z",
+    "databaseRevision": "company-state:970c415abc097c06e149b89b6d9d459f1214e4947395b82abd3e40d699ce548f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e72101c1fc2641b2953a4f491dec93b169d4a6f81667d95f9979179e03aa3273",
+    "productionSnapshotSha256": "730c1068c34aa8c52c3c720bb5984c67bd94fa719e6166c6a3fd82c8f7dbb9ef",
+    "targetCompanySnapshotSha256": "970c415abc097c06e149b89b6d9d459f1214e4947395b82abd3e40d699ce548f",
+    "seedEntrySha256": "b5fc512f1b7100557c0dd804e6a7fa1bc06424eaff622682244ca71f1dd87ef4",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "a4bf03a54439bd04887b26fb538ed79a2dff023eaece929bb8ccd4f9ec76219f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5bf007754ab1aec1ee2613e1677630ccdf3e2677b7f244a79a2c7562a77e3e14",
+      "citationsSha256": "54f72d6f623d8e649e5aed7ab521b3fc63f0ba5e86bb9ceb70606eec39b6cd64",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "830ec084fc192735661a1a5885315338299dafd1abbe0ff78df08ff72e3994c5",
+    "stateSha256": "7e1e44a6ac8d12c55450eedae216a4a3deb154e8a2c6a23533ac5832c7df1730",
+    "taskSnapshotSha256": "80b59bf76414c58a2c8c81138f801491929dbd34e26a3516295f5d581bbd2a4a"
+  },
+  "contextSha256": "a804fece82a1b5aaf107da18fe94379b26fb6ba685bfa952245a80f5bea1166f"
+}
