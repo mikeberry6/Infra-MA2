@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T12:59:02.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T13:25:12.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0048:bullrock-energy-ventures:ac39af1a",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7176,20 +7176,32 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e72101c1fc2641b2953a4f491dec93b169d4a6f81667d95f9979179e03aa3273",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-08T13:21:58.000Z",
+      "updatedAt": "2026-08-08T13:25:12.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "b1fcbacadc4bfa600674acbd106539abf4607a9a6122584f47e9b33b998d79df",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0048-bullrock-energy-ventures/attempt-2/task-snapshot.json",
+          "sha256": "b1fcbacadc4bfa600674acbd106539abf4607a9a6122584f47e9b33b998d79df"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0048-apollo-bullrock-community-solar-joint-venture-v2/proposal.json",
+          "sha256": "ca455f9840bae4a374a23596ca536e7e749da5c7ab4f79accc5004cd0ad3f8a7"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0048-apollo-bullrock-community-solar-joint-venture-v2.json",
+          "sha256": "fd6c3971d6d00ba6ac4afff77ab967b6df405de43bd77d62d00f1a2ee7ee68ae"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0048-bullrock-energy-ventures/attempt-2/research-decision.json",
+          "sha256": "bb8a3f0860bdc020276fd86f0c14516a75404fe7ab0f5f7c2c16d6566362d096"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -7203,6 +7215,112 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T13:06:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T13:18:45.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "573574d5018f51639be6a53d084562131933f83a47f63e0b87257340375c6f20",
+          "evidenceSha256": [
+            "2609888dd8e4d08be64e67a563d276478fb7e191922770ffefc53e726eec686e",
+            "285fc8dc7fa6a004af96db0a277eea5f424dc4a7450b47b91d7bbac2fb43952c",
+            "573574d5018f51639be6a53d084562131933f83a47f63e0b87257340375c6f20"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T13:18:59.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "573574d5018f51639be6a53d084562131933f83a47f63e0b87257340375c6f20",
+          "evidenceSha256": [
+            "285fc8dc7fa6a004af96db0a277eea5f424dc4a7450b47b91d7bbac2fb43952c"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T13:20:21.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "573574d5018f51639be6a53d084562131933f83a47f63e0b87257340375c6f20",
+          "evidenceSha256": [
+            "9c6ad2a32c8b63ea1d32a5b3093c6757496e808ae2c66ef63d8016de40c9be71"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T13:21:51.000Z",
+          "reason": "Dry run rejected v1 because existing milestone history was omitted; no database write occurred and the proposal will be superseded with all relation IDs preserved.",
+          "taskSnapshotSha256": "573574d5018f51639be6a53d084562131933f83a47f63e0b87257340375c6f20",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T13:21:58.000Z",
+          "reason": "Retry with a superseding proposal that preserves every persisted milestone relation and corrects each fact to the JV boundary.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T13:24:52.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b1fcbacadc4bfa600674acbd106539abf4607a9a6122584f47e9b33b998d79df",
+          "evidenceSha256": [
+            "b1fcbacadc4bfa600674acbd106539abf4607a9a6122584f47e9b33b998d79df",
+            "bb8a3f0860bdc020276fd86f0c14516a75404fe7ab0f5f7c2c16d6566362d096",
+            "ca455f9840bae4a374a23596ca536e7e749da5c7ab4f79accc5004cd0ad3f8a7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T13:24:53.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b1fcbacadc4bfa600674acbd106539abf4607a9a6122584f47e9b33b998d79df",
+          "evidenceSha256": [
+            "ca455f9840bae4a374a23596ca536e7e749da5c7ab4f79accc5004cd0ad3f8a7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T13:25:12.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b1fcbacadc4bfa600674acbd106539abf4607a9a6122584f47e9b33b998d79df",
+          "evidenceSha256": [
+            "fd6c3971d6d00ba6ac4afff77ab967b6df405de43bd77d62d00f1a2ee7ee68ae"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24266,5 +24384,5 @@
       ]
     }
   ],
-  "manifestSha256": "c540510395e64a5d57de6a64f1a5836f1232a98ffdd88705d6ea7134778b3674"
+  "manifestSha256": "b55c93985a5ab9e58371c6dc3678d3dad99be4d6f2e06b05f3a3b011dbc616f6"
 }
