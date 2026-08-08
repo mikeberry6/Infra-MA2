@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T10:08:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
+  "updatedAt": "2026-08-08T10:15:02.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -6401,11 +6401,11 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "91f1874c4e611fa8987b1bf1f483cf35e784b4506db734bc1d135dc6f547979b",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 3,
       "startedAt": "2026-08-08T09:48:23.000Z",
-      "updatedAt": "2026-08-08T10:08:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-08T10:15:00.000Z",
+      "completedAt": "2026-08-08T10:15:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "9a07b4a9e8933bba743bbdd1d2c91159ca602d8facaf01371a21bc82b32c8a16",
@@ -6422,11 +6422,23 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0041-pattern-energy-group-lp-pattern-energy-v1.json",
           "sha256": "20fbb3beca7a32c429274e8427f605b4d4708b30d1d5ba8a452a24f27a2136dd"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31252218867",
+          "sha256": "34bf3cbdf28c21a02fb4cf23cbd8552d6cf27b0d62e09d25c15ddbc7ca95e0bb"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0041-pattern-energy-group-lp-pattern-energy/attempt-3/context.json",
+          "sha256": "5aa6350efa8138a0f73aa9a2478b040101835d1b187e1fa31840637a8e44dffe"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-08T10:15:00.000Z",
+        "auditEventId": "cmsk7sggb000le74s7ferbk67",
+        "transactionId": "5b3332a3-6319-4405-ba90-dd3b3c7fcdd8",
+        "receiptSha256": "34bf3cbdf28c21a02fb4cf23cbd8552d6cf27b0d62e09d25c15ddbc7ca95e0bb",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31252218867"
+      },
       "history": [
         {
           "sequence": 1,
@@ -6525,6 +6537,21 @@
             "20fbb3beca7a32c429274e8427f605b4d4708b30d1d5ba8a452a24f27a2136dd"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-08T10:15:00.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "20fbb3beca7a32c429274e8427f605b4d4708b30d1d5ba8a452a24f27a2136dd",
+            "34bf3cbdf28c21a02fb4cf23cbd8552d6cf27b0d62e09d25c15ddbc7ca95e0bb",
+            "5aa6350efa8138a0f73aa9a2478b040101835d1b187e1fa31840637a8e44dffe",
+            "6359a499bf9fca50cd2025da2a1e7a83d1f0cda296680e8cd5fdc5cb96cdfa9e"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -23385,13 +23412,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "6fa48bc4875874c7aa5ad6298d57b16fbac1ce62da6b61af02c7e33ecc437730",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-08T10:15:01.000Z",
+      "completedAt": "2026-08-08T10:15:01.000Z",
+      "exceptionReason": "Seed-only Pattern Energy Group identity retired by completed task 41 under exact reviewed seed-retirement lineage.",
+      "supersededByTaskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -23412,6 +23439,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-08T10:15:01.000Z",
+          "reason": "Seed-only Pattern Energy Group identity retired by completed task 41 under exact reviewed seed-retirement lineage.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23423,13 +23460,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "af7191fb3a8252faabd53f80ca5c9e1b7e5d57f706ac96ce991f5ba09b221478",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-08T10:15:02.000Z",
+      "completedAt": "2026-08-08T10:15:02.000Z",
+      "exceptionReason": "Seed-only Pattern Energy Group LP identity retired by completed task 41 under exact reviewed seed-retirement lineage.",
+      "supersededByTaskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -23450,6 +23487,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-08T10:15:02.000Z",
+          "reason": "Seed-only Pattern Energy Group LP identity retired by completed task 41 under exact reviewed seed-retirement lineage.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23834,5 +23881,5 @@
       ]
     }
   ],
-  "manifestSha256": "820b93cb27d8c86c2c518ee9a6cff58dbff258be9b6896ed7201ce9818802250"
+  "manifestSha256": "cca2e78b3b87ebfbc4672e5dd116f00fadc1cb1a3cd490eac496f19fbf484b49"
 }
