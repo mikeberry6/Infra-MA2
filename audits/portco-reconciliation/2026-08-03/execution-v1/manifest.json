@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T12:20:16.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T12:44:05.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0047:broad-reach-power:0cc6820b",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7057,18 +7057,27 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "a7acac5ee1a1ac9c0f96bd5be32a5c8388ea655e28af7be6af4224b6a71efa43",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-08T12:26:46.000Z",
+      "updatedAt": "2026-08-08T12:44:05.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "1c2ce43bad5f27f7daa4b91caf8bf9171a0a2bb721c64eab5424507793c48af3",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0047-broad-reach-power/attempt-1/task-snapshot.json",
+          "sha256": "1c2ce43bad5f27f7daa4b91caf8bf9171a0a2bb721c64eab5424507793c48af3"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0047-broad-reach-power-v4/proposal.json",
+          "sha256": "f963cc7e2522840f4610b8910529a452f2d52fc6513d33591a56e13eaf61041a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0047-broad-reach-power-v4.json",
+          "sha256": "ef54cc43f180d01b56d1473ed0b587b93cdfff7ce8f02635f2d29150fbf93bdc"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -7084,6 +7093,51 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T12:26:46.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T12:43:33.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1c2ce43bad5f27f7daa4b91caf8bf9171a0a2bb721c64eab5424507793c48af3",
+          "evidenceSha256": [
+            "1c2ce43bad5f27f7daa4b91caf8bf9171a0a2bb721c64eab5424507793c48af3",
+            "f963cc7e2522840f4610b8910529a452f2d52fc6513d33591a56e13eaf61041a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T12:43:40.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1c2ce43bad5f27f7daa4b91caf8bf9171a0a2bb721c64eab5424507793c48af3",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T12:44:05.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1c2ce43bad5f27f7daa4b91caf8bf9171a0a2bb721c64eab5424507793c48af3",
+          "evidenceSha256": [
+            "ef54cc43f180d01b56d1473ed0b587b93cdfff7ce8f02635f2d29150fbf93bdc"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24185,5 +24239,5 @@
       ]
     }
   ],
-  "manifestSha256": "0a24bcebdcc61db433512a4eebd30ce4e77c8f7b52a3cbb37d0f99123c25040f"
+  "manifestSha256": "0986c85df9144211dde8dc841bc9bdc3984d5011ba02b2c2ad81973768d8eae5"
 }
