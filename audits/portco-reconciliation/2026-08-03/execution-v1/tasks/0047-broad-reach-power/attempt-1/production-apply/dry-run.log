@@ -1,0 +1,281 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0047-broad-reach-power-v4/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0047-broad-reach-power-v4.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0047-broad-reach-power/attempt-1/production-snapshot.json --proposal-sha256=f963cc7e2522840f4610b8910529a452f2d52fc6513d33591a56e13eaf61041a --approval-sha256=ef54cc43f180d01b56d1473ed0b587b93cdfff7ce8f02635f2d29150fbf93bdc --snapshot-sha256=46aa740546e1b0ce4305d8e5649f4abbaff5295a166f9144b90cf46bac3bea04
+
+(node:2830) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "f963cc7e2522840f4610b8910529a452f2d52fc6513d33591a56e13eaf61041a",
+    "approvalSha256": "ef54cc43f180d01b56d1473ed0b587b93cdfff7ce8f02635f2d29150fbf93bdc",
+    "afterImageSha256": "f345352d3a0ddaf16444e5087e6a7b90dd9707f59400f20006d18ddf2cdda4d2",
+    "taskId": "ledger:0047:broad-reach-power:0cc6820b",
+    "operation": "UPSERT",
+    "company": {
+      "name": "Broad Reach Power",
+      "investmentFirm": "Apollo Global Management",
+      "sector": "Power & ET",
+      "subsector": "Renewable and storage development platform",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "Apollo Infrastructure Opportunities Fund II",
+      "description": "Broad Reach Power was a Houston-based utility-scale battery storage and renewable-energy platform founded by EnCap Energy Transition in 2019. Apollo-managed infrastructure funds collectively acquired a 50% stake in December 2021 alongside the EnCap-led shareholder group. Apollo confirms that Apollo Infrastructure Opportunities Fund II participated, but its individual allocation was not publicly disclosed. EnCap and Apollo announced the sale of Broad Reach Power's battery-storage business to ENGIE in August 2023, excluding 1.8 GW of solar and wind projects and 4 GWh of Mountain West battery projects from the transaction perimeter. ENGIE finalized its acquisition of 100% of Broad Reach Power from EnCap and Apollo in October 2023 and fully consolidated the acquired business. ENGIE's audited 2025 financial statements continue to report 100% ownership of Group Broad Reach Power, while EnCap classifies Broad Reach Power as realized in 2023. No current Apollo ownership or subsequent reacquisition was found through August 8, 2026. Public sources reviewed do not disclose the post-closing ownership or operating identity of the excluded Mountain West portfolio.",
+      "status": "Realized",
+      "countryTags": [
+        "United States"
+      ],
+      "yearFounded": 2019,
+      "investmentYear": 2021,
+      "headquarters": "Houston, Texas",
+      "milestones": [
+        {
+          "date": "2019",
+          "event": "EnCap Energy Transition founded Broad Reach Power to develop, own and operate utility-scale battery storage systems in U.S. power markets.",
+          "category": "Founding"
+        },
+        {
+          "date": "Dec 2021",
+          "event": "Apollo-managed infrastructure funds, including Apollo Infrastructure Opportunities Fund II, completed an aggregate 50% investment in Broad Reach Power and Apollo joined the company's board.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Aug 24, 2023",
+          "event": "EnCap and Apollo announced the sale of Broad Reach Power's battery-storage business to ENGIE, excluding 1.8 GW of solar and wind projects and 4 GWh of Mountain West battery projects.",
+          "category": "Divestiture"
+        },
+        {
+          "date": "Oct 2023",
+          "event": "ENGIE finalized the acquisition of 100% of Broad Reach Power from EnCap and Apollo and began fully consolidating the acquired business.",
+          "category": "Divestiture"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Announcement date source — Apollo Global Management — Broad Reach Power",
+          "url": "https://ir.apollo.com/news-events/press-releases/detail/47/apollo-funds-to-acquire-50-stake-in-broad-reach-power-from",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Apollo's announced 50% investment and historical ownership structure"
+        },
+        {
+          "label": "Encapinvestments — Broad Reach Power",
+          "url": "https://www.encapinvestments.com/news/broad-reach-power-acquired-engie-encap-energy-transition-and-apollo-funds",
+          "type": "ARTICLE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "Apollo and EnCap sale announcement, December 2021 board entry and excluded Mountain West transaction perimeter"
+        },
+        {
+          "label": "Apollo — Broad Reach Power",
+          "url": "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+          "type": "PRESS_RELEASE",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "AIOF II infrastructure-fund identity and Broad Reach Power investment"
+        },
+        {
+          "label": "ENGIE — 2023 audited financial statements",
+          "url": "https://www.engie.com/app/uploads/2026/03/2023-Management-report-and-Annual-consolidated-financial-statements-2.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "October 2023 acquisition closing and ENGIE's 100% ownership"
+        },
+        {
+          "label": "ENGIE — 2025 audited financial statements",
+          "url": "https://www.engie.com/sites/default/files/assets/documents/2026-02/2025%20Management%20report%20and%20annual%20consolidated%20financial%20statements.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current 100% ENGIE ownership at December 2025 and December 2024"
+        },
+        {
+          "label": "EnCap — Broad Reach Power realized portfolio",
+          "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/current/broad-reach-power",
+          "type": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current realized classification and 2019-2023 holding period"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "Apollo Global Management",
+          "ownershipVehicle": "Apollo Infrastructure Opportunities Fund II",
+          "investmentYear": 2021,
+          "exitYear": 2023,
+          "stake": "Apollo-managed funds collectively acquired 50% in Dec 2021; AIOF II allocation not publicly disclosed",
+          "status": "Realized",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": "cmrxpj5l800hyivhezv4n7o06",
+      "name": "Broad Reach Power",
+      "aliases": [],
+      "sector": "POWER_ET",
+      "subsector": "Renewable and storage development platform",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Broad Reach Power was a Houston-based utility-scale battery storage and renewable-energy platform founded by EnCap Energy Transition in 2019. Apollo-managed infrastructure funds collectively acquired a 50% stake in December 2021 alongside the EnCap-led shareholder group. Apollo confirms that Apollo Infrastructure Opportunities Fund II participated, but its individual allocation was not publicly disclosed. EnCap and Apollo announced the sale of Broad Reach Power's battery-storage business to ENGIE in August 2023, excluding 1.8 GW of solar and wind projects and 4 GWh of Mountain West battery projects from the transaction perimeter. ENGIE finalized its acquisition of 100% of Broad Reach Power from EnCap and Apollo in October 2023 and fully consolidated the acquired business. ENGIE's audited 2025 financial statements continue to report 100% ownership of Group Broad Reach Power, while EnCap classifies Broad Reach Power as realized in 2023. No current Apollo ownership or subsequent reacquisition was found through August 8, 2026. Public sources reviewed do not disclose the post-closing ownership or operating identity of the excluded Mountain West portfolio.",
+      "companyStatus": "REALIZED",
+      "recordStatus": "PUBLISHED",
+      "website": null,
+      "yearFounded": 2019,
+      "headquarters": "Houston, Texas",
+      "lastVerifiedAt": "2026-08-08T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjqm901eqivhewkjgtsx2",
+          "managerName": "Apollo Global Management",
+          "organizationName": "Apollo Global Management",
+          "fundName": "Apollo Infrastructure Opportunities Fund II",
+          "vehicleName": "Apollo Infrastructure Funds (including AIOF II; exact legal vehicles not publicly disclosed)",
+          "stake": "Apollo-managed funds collectively acquired 50% in Dec 2021; AIOF II allocation not publicly disclosed",
+          "investmentYear": 2021,
+          "exitYear": 2023,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpkib802kaivhe5utdrest",
+          "date": "2019",
+          "event": "EnCap Energy Transition founded Broad Reach Power to develop, own and operate utility-scale battery storage systems in U.S. power markets.",
+          "category": "FOUNDING",
+          "sortDate": "2019-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.encapinvestments.com/about/energy-transition/portfolio/current/broad-reach-power"
+          ]
+        },
+        {
+          "id": "cmrxpkibu02kbivhe5j7aq7x1",
+          "date": "Dec 2021",
+          "event": "Apollo-managed infrastructure funds, including Apollo Infrastructure Opportunities Fund II, completed an aggregate 50% investment in Broad Reach Power and Apollo joined the company's board.",
+          "category": "ACQUISITION",
+          "sortDate": "2021-12-01T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://ir.apollo.com/news-events/press-releases/detail/47/apollo-funds-to-acquire-50-stake-in-broad-reach-power-from",
+            "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+            "https://www.encapinvestments.com/news/broad-reach-power-acquired-engie-encap-energy-transition-and-apollo-funds"
+          ]
+        },
+        {
+          "id": "cmrxpkice02kcivheygjer82h",
+          "date": "Aug 24, 2023",
+          "event": "EnCap and Apollo announced the sale of Broad Reach Power's battery-storage business to ENGIE, excluding 1.8 GW of solar and wind projects and 4 GWh of Mountain West battery projects.",
+          "category": "DIVESTITURE",
+          "sortDate": "2023-08-24T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.encapinvestments.com/news/broad-reach-power-acquired-engie-encap-energy-transition-and-apollo-funds"
+          ]
+        },
+        {
+          "id": null,
+          "date": "Oct 2023",
+          "event": "ENGIE finalized the acquisition of 100% of Broad Reach Power from EnCap and Apollo and began fully consolidating the acquired business.",
+          "category": "DIVESTITURE",
+          "sortDate": "2023-10-01T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.engie.com/app/uploads/2026/03/2023-Management-report-and-Annual-consolidated-financial-statements-2.pdf"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxpotiy078sivherlk6n4kb",
+          "label": "Announcement date source — Apollo Global Management — Broad Reach Power",
+          "url": "https://ir.apollo.com/news-events/press-releases/detail/47/apollo-funds-to-acquire-50-stake-in-broad-reach-power-from",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Apollo's announced 50% investment and historical ownership structure",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpotjy078uivhekac53zjy",
+          "label": "Encapinvestments — Broad Reach Power",
+          "url": "https://www.encapinvestments.com/news/broad-reach-power-acquired-engie-encap-energy-transition-and-apollo-funds",
+          "sourceType": "ARTICLE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "Apollo and EnCap sale announcement, December 2021 board entry and excluded Mountain West transaction perimeter",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpotl2078wivheob58y4pa",
+          "label": "Apollo — Broad Reach Power",
+          "url": "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "AIOF II infrastructure-fund identity and Broad Reach Power investment",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "ENGIE — 2023 audited financial statements",
+          "url": "https://www.engie.com/app/uploads/2026/03/2023-Management-report-and-Annual-consolidated-financial-statements-2.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "October 2023 acquisition closing and ENGIE's 100% ownership",
+          "isPrimary": true
+        },
+        {
+          "id": null,
+          "label": "ENGIE — 2025 audited financial statements",
+          "url": "https://www.engie.com/sites/default/files/assets/documents/2026-02/2025%20Management%20report%20and%20annual%20consolidated%20financial%20statements.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current 100% ENGIE ownership at December 2025 and December 2024",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "EnCap — Broad Reach Power realized portfolio",
+          "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/current/broad-reach-power",
+          "sourceType": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current realized classification and 2019-2023 holding period",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Broad Reach Power",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to description, headquarters, lastVerifiedAt, milestones, citations."
+      },
+      {
+        "kind": "RETIRE_OWNERSHIP",
+        "relationIds": [
+          "cmrxpjqm901eqivhewkjgtsx2"
+        ],
+        "detail": "Retire 1 ownership period(s) without deleting history."
+      },
+      {
+        "kind": "REALIZE_COMPANY",
+        "relationIds": [],
+        "detail": "Mark the company realized after all active ownership has ended."
+      }
+    ],
+    "changedFields": [
+      "citations",
+      "companyStatus",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "ownershipPeriods"
+    ],
+    "retiredCompanyIds": []
+  }
+}
