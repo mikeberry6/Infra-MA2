@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T04:18:35.000Z",
+  "updatedAt": "2026-08-08T04:32:01.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -4855,20 +4855,26 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4e2936b9827f43853180be95d9b7f5f55b44b7c97c3e83c61c99dc0dc324c6d3",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "VERIFIED_NO_CHANGE",
+      "attempts": 1,
+      "startedAt": "2026-08-08T04:27:00.000Z",
+      "updatedAt": "2026-08-08T04:32:01.000Z",
+      "completedAt": "2026-08-08T04:32:01.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "6f3be3c38c340268dbe824d4ebaa47271d41e83c8b2229a1d44f1e330b47d779",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0032-cross-sound-cable-company-llc/attempt-1/task-snapshot.json",
+          "sha256": "6f3be3c38c340268dbe824d4ebaa47271d41e83c8b2229a1d44f1e330b47d779"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0032-cross-sound-cable-company-llc/research-decision.json",
+          "sha256": "a463483567a42bf087598f74f84d8b273346fa4f4a387b65c0bff479aff58944"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -4882,6 +4888,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T04:27:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "VERIFIED_NO_CHANGE",
+          "at": "2026-08-08T04:32:01.000Z",
+          "reason": "Primary evidence confirms Argo remains the active manager and APG remains an indirect passive co-investor through the AIA platform; no ownership transfer or exit was found.",
+          "taskSnapshotSha256": "6f3be3c38c340268dbe824d4ebaa47271d41e83c8b2229a1d44f1e330b47d779",
+          "evidenceSha256": [
+            "6f3be3c38c340268dbe824d4ebaa47271d41e83c8b2229a1d44f1e330b47d779",
+            "a463483567a42bf087598f74f84d8b273346fa4f4a387b65c0bff479aff58944"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -22518,5 +22547,5 @@
       ]
     }
   ],
-  "manifestSha256": "939973a213b5c4b9fc497990549d401c8c891ed5ecf1705ebc419b45a2beafa4"
+  "manifestSha256": "d47f58331298a24af50d89a7bbe5e439791e392b8867a161b4b59be1e7410985"
 }
