@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T06:30:19.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T06:51:03.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0036:hawai-i-gas:6c8dcfb5",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -5599,18 +5599,27 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "fbc014977205c91ae63ba00571eb50d793f9ab938f5670b30fdde646436a19c8",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 3,
+      "startedAt": "2026-08-08T06:50:01.000Z",
+      "updatedAt": "2026-08-08T06:51:03.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "7487723b62d3ebe9719a22723e50a4ebde406cf2a280f26481d27dd8e97dded9",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0036-hawai-i-gas/attempt-3/task-snapshot.json",
+          "sha256": "7487723b62d3ebe9719a22723e50a4ebde406cf2a280f26481d27dd8e97dded9"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0036-hawai-i-gas-v3/proposal.json",
+          "sha256": "9cfde5a986436672a807dd087abb77d8e047040b24cf0339401a6c834e8b2bc9"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0036-hawai-i-gas-v3.json",
+          "sha256": "f87f71119afdfd4958750628cfffa839688595ec31b504286cdf3bc7ff85bbe7"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -5626,6 +5635,161 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T06:38:05.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T06:47:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0f6c18658fb1772da879e3b96ed5640f7ccd5b2cf000e06fccb01bacec4300d7",
+          "evidenceSha256": [
+            "0f6c18658fb1772da879e3b96ed5640f7ccd5b2cf000e06fccb01bacec4300d7",
+            "d551e29319ea394b2cce65d37db27aacf0ddc9d562939f4840bebec80998f925"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T06:47:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0f6c18658fb1772da879e3b96ed5640f7ccd5b2cf000e06fccb01bacec4300d7",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T06:47:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0f6c18658fb1772da879e3b96ed5640f7ccd5b2cf000e06fccb01bacec4300d7",
+          "evidenceSha256": [
+            "f6ae93448fdac3ab8663d5538139fe1e54b91382ee9dffe669e5d95e198cd92a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T06:48:00.000Z",
+          "reason": "Local v1 dry-run required the shared Hawaiʻi Gas homepage citation to retain its existing canonical source label; no database or seed write occurred.",
+          "taskSnapshotSha256": "0f6c18658fb1772da879e3b96ed5640f7ccd5b2cf000e06fccb01bacec4300d7",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T06:48:01.000Z",
+          "reason": "Retrying with the shared Hawaiʻi Gas homepage source label preserved exactly.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T06:49:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1b08372421896d8d2e75b00d47783979d47953ef84cd225154afe241508cfa70",
+          "evidenceSha256": [
+            "1b08372421896d8d2e75b00d47783979d47953ef84cd225154afe241508cfa70",
+            "4155655dead96f082e64b137869f6deef235e8e62f0f844a649e224ba1a2db1d"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T06:49:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1b08372421896d8d2e75b00d47783979d47953ef84cd225154afe241508cfa70",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T06:49:03.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1b08372421896d8d2e75b00d47783979d47953ef84cd225154afe241508cfa70",
+          "evidenceSha256": [
+            "a8056add8979e9845558c990023896b471e37b9a8cac5cd1c09afe9ade8fd1d5"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T06:50:00.000Z",
+          "reason": "Local v2 dry-run identified additional shared source metadata that must remain immutable; no database or seed write occurred.",
+          "taskSnapshotSha256": "1b08372421896d8d2e75b00d47783979d47953ef84cd225154afe241508cfa70",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T06:50:01.000Z",
+          "reason": "Retrying with every pre-existing shared source label and type preserved exactly.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T06:51:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "7487723b62d3ebe9719a22723e50a4ebde406cf2a280f26481d27dd8e97dded9",
+          "evidenceSha256": [
+            "7487723b62d3ebe9719a22723e50a4ebde406cf2a280f26481d27dd8e97dded9",
+            "9cfde5a986436672a807dd087abb77d8e047040b24cf0339401a6c834e8b2bc9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T06:51:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "7487723b62d3ebe9719a22723e50a4ebde406cf2a280f26481d27dd8e97dded9",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T06:51:03.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "7487723b62d3ebe9719a22723e50a4ebde406cf2a280f26481d27dd8e97dded9",
+          "evidenceSha256": [
+            "f87f71119afdfd4958750628cfffa839688595ec31b504286cdf3bc7ff85bbe7"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23125,5 +23289,5 @@
       ]
     }
   ],
-  "manifestSha256": "e24dfad2303797fdfaacf7a41218ae0a5783d97f6c13ccd10db7de23db10de9c"
+  "manifestSha256": "d2af61d96269d77b49a9beb3ae0451a4ed04059a067dcc0d8f0e881c0b5e5c43"
 }

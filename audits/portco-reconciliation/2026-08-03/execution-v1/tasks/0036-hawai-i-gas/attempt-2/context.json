@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0036:hawai-i-gas:6c8dcfb5",
+  "taskIndex": 36,
+  "companyName": "Hawaiʻi Gas",
+  "generatedAt": "2026-08-08T06:50:20.190Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0036-hawai-i-gas/attempt-2/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 36,
+    "taskId": "ledger:0036:hawai-i-gas:6c8dcfb5",
+    "canonicalKey": "hawai-i-gas|united-states",
+    "companyName": "Hawaiʻi Gas",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 9,
+    "managers": [
+      "APG Infrastructure",
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "009-apg-infrastructure:holding:008:hawai-i-gas",
+      "015-argo-infrastructure-partners:holding:014:hawai-i-gas"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj79f00kiivhewunbegwz"
+    ],
+    "seedKeys": [
+      "hawaiʻi gas|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.hawaiigas.com/",
+      "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation",
+      "https://www.hawaiigas.com/posts/hawaii-gas-to-be-acquired-by-argo-infrastructure-partners"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 009-apg-infrastructure:holding:008:hawai-i-gas: APG ownership is indirect via Argo-managed vehicle and requires confirmation of ongoing beneficial exposure. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 009-apg-infrastructure:holding:008:hawai-i-gas: APG ownership is indirect via Argo-managed vehicle and requires confirmation of ongoing beneficial exposure."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj79f00kiivhewunbegwz",
+    "name": "Hawaiʻi Gas",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated gas utility and propane distribution",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Hawaiʻi Gas is the only government-franchised full-service gas utility in the State of Hawaii and also operates a large propane distribution business. Its customers include residential, commercial, industrial, and hospitality users across the islands that rely on synthetic natural gas, propane, and related energy services. The company is asset-heavy and regulated in its utility operations, with additional logistics and storage infrastructure supporting propane distribution. Public company materials state that Hawaiʻi Gas serves nearly 34,000 non-utility propane customers in addition to its regulated utility customer base. Argo announced the acquisition in 2021, completed the purchase in July 2022 after regulatory approval, and later disclosed that Hawaiʻi Gas is wholly owned by funds managed by Argo.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1904,
+    "headquarters": "Hawaiʻi",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjsap01hfivhe9dthpoe1",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "Argo-managed AIA platform",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjsba01hgivhee7jt92o1",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "AMF Hawaiʻi Investment Holdings",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkp6y02skivhe1wo0sims",
+        "date": "1904",
+        "event": "The predecessor Honolulu Gas Company was established.",
+        "category": "FOUNDING",
+        "sortDate": "1904-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkp7i02slivhey0sapgda",
+        "date": "Jun 2021",
+        "event": "Macquarie announced the sale of Hawaiʻi Gas to Argo Infrastructure Partners.",
+        "category": "DIVESTITURE",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkp8302smivher0fvo7ch",
+        "date": "Jul 2022",
+        "event": "APG-backed Argo completed the acquisition after Hawaiʻi PUC approval.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkp8m02snivheqfidi36z",
+        "date": "Jul 2022",
+        "event": "The acquisition of Hawaiʻi Gas by APG-backed Argo-managed funds closed following regulatory approval.",
+        "category": "OTHER",
+        "sortDate": "2022-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkp9702soivhe5scwguy4",
+        "date": "Jun 2025",
+        "event": "Hawaiʻi Gas announced the acquisition of UGI's propane-air assets on Maui and Hawaiʻi Island.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp5zv07r5ivhe7iok24jx",
+        "label": "Hawaiigas — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Hawaiigas company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp60x07r7ivhe50e3y6h6",
+        "label": "Hawaiigas — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/posts/hawaii-gas-to-be-acquired-by-argo-infrastructure-partners",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Hawaiigas transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp62707r9ivhepzo7v9xz",
+        "label": "Close date source — Argo Infrastructure Partners — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp63b07rbivhemg0xa2sq",
+        "label": "SEC — Hawaiʻi Gas",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289790/000110465921081311/tm2119764d1_defa14a.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp63z07rcivhez8oazgzh",
+        "label": "SEC — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289790/000110465921083888/tm2120341d1_defa14a.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp65807reivhe142h87i6",
+        "label": "Hawaiigas — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Hawaiigas company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp66b07rgivhez1tu7cof",
+        "label": "Hawaiigas — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/posts/argo-acquires-ugis-gas-storage-and-supply-assets-in-hawai-i",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Hawaiigas transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Hawaiʻi Gas",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Utilities",
+    "subsector": "Regulated gas utility and propane distribution",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "AMF Hawaiʻi Investment Holdings",
+    "description": "Hawaiʻi Gas is the only government-franchised full-service gas utility in the State of Hawaii and also operates a large propane distribution business. Its customers include residential, commercial, industrial, and hospitality users across the islands that rely on synthetic natural gas, propane, and related energy services. The company is asset-heavy and regulated in its utility operations, with additional logistics and storage infrastructure supporting propane distribution. Public company materials state that Hawaiʻi Gas serves nearly 34,000 non-utility propane customers in addition to its regulated utility customer base. Argo announced the acquisition in 2021, completed the purchase in July 2022 after regulatory approval, and later disclosed that Hawaiʻi Gas is wholly owned by funds managed by Argo.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1904,
+    "investmentYear": 2022,
+    "headquarters": "Hawaiʻi",
+    "milestones": [
+      {
+        "date": "1904",
+        "event": "The predecessor Honolulu Gas Company was established.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jun 2021",
+        "event": "Macquarie announced the sale of Hawaiʻi Gas to Argo Infrastructure Partners.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "Jul 2022",
+        "event": "APG-backed Argo completed the acquisition after Hawaiʻi PUC approval.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 2022",
+        "event": "The acquisition of Hawaiʻi Gas by APG-backed Argo-managed funds closed following regulatory approval.",
+        "category": "Other"
+      },
+      {
+        "date": "Jun 2025",
+        "event": "Hawaiʻi Gas announced the acquisition of UGI's propane-air assets on Maui and Hawaiʻi Island.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Hawaiigas — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Hawaiigas — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/posts/hawaii-gas-to-be-acquired-by-argo-infrastructure-partners",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Close date source — Argo Infrastructure Partners — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "SEC — Hawaiʻi Gas",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289790/000110465921081311/tm2119764d1_defa14a.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Ownership source — APG Infrastructure — Hawaiʻi Gas",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289790/000110465921083888/tm2120341d1_defa14a.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Hawaiigas — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Hawaiigas — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/posts/argo-acquires-ugis-gas-storage-and-supply-assets-in-hawai-i",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "APG Infrastructure",
+        "ownershipVehicle": "Argo-managed AIA platform",
+        "investmentYear": 2022,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "AMF Hawaiʻi Investment Holdings",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3kl000eivhezm8dydzo",
+        "name": "APG Asset Management",
+        "updatedAt": "2026-07-23T16:09:11.829Z"
+      },
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0036:hawai-i-gas:6c8dcfb5",
+    "taskIndex": 36,
+    "canonicalKey": "hawai-i-gas|united-states",
+    "capturedAt": "2026-08-08T06:50:20.190Z",
+    "databaseRevision": "company-state:5f792923e93f3e94bcfadaff72d0274d4e505fb45218ba0377490376b928f604",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "fbc014977205c91ae63ba00571eb50d793f9ab938f5670b30fdde646436a19c8",
+    "productionSnapshotSha256": "43a31fe34427e8dbe2ce07c175d939eee2fabb0584111761d0a259a2245894c7",
+    "targetCompanySnapshotSha256": "5f792923e93f3e94bcfadaff72d0274d4e505fb45218ba0377490376b928f604",
+    "seedEntrySha256": "62dc28bf035747b65b49e6b01ee22543208ec1291632d3bd94e300dab7ee21ff",
+    "dependencies": {
+      "ownershipPeriodsSha256": "859427cba23d58b9d643e10eddc751b757f31e9c14266cc9d477ef237daab0ee",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "497b04e6dc162466afca72a616debeb71d4a360e945b2262a2930886c31b8d4a",
+      "citationsSha256": "fc1c953ac80174795a60d1b9e26946dd358fe964a009db171a755831b9e6096b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1724c6b38a015cfdd5d60e751397db5a3077da81c199105e22877f45fe85c5c9",
+    "stateSha256": "1a05e144e24cf59ae44bd0b3c12e68f04c3a079f1a1e96c8537ff07fc53e9227",
+    "taskSnapshotSha256": "1b08372421896d8d2e75b00d47783979d47953ef84cd225154afe241508cfa70"
+  },
+  "contextSha256": "17dab31bdaa98bd09e12d06cfe5f5b1166a932e537d9e37c9564e98d6d6ce113"
+}
