@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T10:15:02.000Z",
+  "updatedAt": "2026-08-08T10:30:46.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -6563,20 +6563,26 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "855ee7da044164e646fa3fb775f03e22c8d1560b9657e07418aa5d2b3cd8281f",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-08T10:20:36.000Z",
+      "updatedAt": "2026-08-08T10:30:46.000Z",
+      "completedAt": "2026-08-08T10:30:46.000Z",
+      "exceptionReason": "Canonical operating-platform identity is unresolved after the completed June 5 UK asset sale and the court-approved but not yet verified-closed U.S. ArcLink asset sale; database and seed mutation are deferred to avoid misidentifying the in-administration shell or premature successor.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-1/task-snapshot.json",
+          "sha256": "203d58d6a88467949021afbf834709da9d34e7c3a106affb76f056b1987dccf5"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/research-decision.json",
+          "sha256": "e7730f7fe29a6595babcd990e18baedde2cd89adeb4489b6d929087740294fe2"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -6590,6 +6596,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T10:20:36.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "DEFERRED",
+          "at": "2026-08-08T10:30:46.000Z",
+          "reason": "Canonical operating-platform identity is unresolved after the completed June 5 UK asset sale and the court-approved but not yet verified-closed U.S. ArcLink asset sale; database and seed mutation are deferred to avoid misidentifying the in-administration shell or premature successor.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "203d58d6a88467949021afbf834709da9d34e7c3a106affb76f056b1987dccf5",
+            "e7730f7fe29a6595babcd990e18baedde2cd89adeb4489b6d929087740294fe2"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23881,5 +23910,5 @@
       ]
     }
   ],
-  "manifestSha256": "cca2e78b3b87ebfbc4672e5dd116f00fadc1cb1a3cd490eac496f19fbf484b49"
+  "manifestSha256": "5309024ed1ce8ede421e07509d1fed2a8e8bb655676f275eb9292a0d2b889222"
 }
