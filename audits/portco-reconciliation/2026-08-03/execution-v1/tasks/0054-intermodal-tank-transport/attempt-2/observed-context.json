@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0054:intermodal-tank-transport:fc0af99c",
+  "taskIndex": 54,
+  "companyName": "Intermodal Tank Transport",
+  "generatedAt": "2026-08-08T16:08:59.177Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0054-intermodal-tank-transport/attempt-2/observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 54,
+    "taskId": "ledger:0054:intermodal-tank-transport:fc0af99c",
+    "canonicalKey": "intermodal-tank-transport|united-states",
+    "companyName": "Intermodal Tank Transport",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "010-apollo-global-management:holding:014:intermodal-tank-transport"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.apollo.com/insights-news/pressreleases/2024/04/apollo-funds-acquire-intermodal-tank-transport"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "intermodal-tank-transport|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0054:intermodal-tank-transport:fc0af99c",
+    "taskIndex": 54,
+    "canonicalKey": "intermodal-tank-transport|united-states",
+    "capturedAt": "2026-08-08T16:08:59.177Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "69cd0adb13f7e63b519fd076bd40391f8ca07e78e69401d4ec393cd537dcbff7",
+    "productionSnapshotSha256": "8d1edd9051220ade905be60a8a341d357c63109b3952f1beb0a655e5346417c3",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "dfd279713e7820700e9aedee7174e0b54b79de7d97bc4e36263a56ad6e4b39ad",
+    "taskSnapshotSha256": "d5ccf023ca5ea5ef29929c9e3ff4e273db7ebc5ed45090eb7d7d42130a56f37c"
+  },
+  "contextSha256": "13e1d49633b2232176957308eba791da9eb8018bd591194513277506287c776a"
+}

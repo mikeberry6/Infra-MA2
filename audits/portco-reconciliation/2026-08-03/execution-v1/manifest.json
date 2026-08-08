@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T15:51:51.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T16:10:27.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0054:intermodal-tank-transport:fc0af99c",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7848,20 +7848,32 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "69cd0adb13f7e63b519fd076bd40391f8ca07e78e69401d4ec393cd537dcbff7",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-08T15:58:35.000Z",
+      "updatedAt": "2026-08-08T16:10:27.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "756e7f586b9945bec8f89fba01b558fb21a7fd427d5f99eaafd2deab82c5ac42",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0054-intermodal-tank-transport/attempt-1/task-snapshot.json",
+          "sha256": "756e7f586b9945bec8f89fba01b558fb21a7fd427d5f99eaafd2deab82c5ac42"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0054-intermodal-tank-transport-v1/proposal.json",
+          "sha256": "5a51f6aa384ddf9027a7e7ffa910b383ac565e8d21d6a7725f84b30280967ecf"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0054-intermodal-tank-transport-v1.json",
+          "sha256": "ca3a14b52b7a8c5431c2d926fdb7d0028b5bc2f6d271972584f367c56720b9f4"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0054-intermodal-tank-transport/research-decision.json",
+          "sha256": "07784d5bc0eead3f6bd5c3e1112b0e3b525ea2af4f6c418196341fd68bc374e9"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -7875,6 +7887,52 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T15:58:35.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T16:08:26.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "756e7f586b9945bec8f89fba01b558fb21a7fd427d5f99eaafd2deab82c5ac42",
+          "evidenceSha256": [
+            "07784d5bc0eead3f6bd5c3e1112b0e3b525ea2af4f6c418196341fd68bc374e9",
+            "5a51f6aa384ddf9027a7e7ffa910b383ac565e8d21d6a7725f84b30280967ecf",
+            "756e7f586b9945bec8f89fba01b558fb21a7fd427d5f99eaafd2deab82c5ac42"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T16:08:40.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "756e7f586b9945bec8f89fba01b558fb21a7fd427d5f99eaafd2deab82c5ac42",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T16:10:27.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "756e7f586b9945bec8f89fba01b558fb21a7fd427d5f99eaafd2deab82c5ac42",
+          "evidenceSha256": [
+            "ca3a14b52b7a8c5431c2d926fdb7d0028b5bc2f6d271972584f367c56720b9f4"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24695,5 +24753,5 @@
       ]
     }
   ],
-  "manifestSha256": "f7f21baa428ab34f182416408d6e9713f32554c6c52cee2c814d4734a99c6794"
+  "manifestSha256": "d42d3c29f894193465a84ba1776bd46f9b7fbaf3987291c0c7a5a4fa26c8c936"
 }
