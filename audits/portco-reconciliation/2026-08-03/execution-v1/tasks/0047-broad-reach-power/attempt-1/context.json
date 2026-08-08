@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0047:broad-reach-power:0cc6820b",
+  "taskIndex": 47,
+  "companyName": "Broad Reach Power",
+  "generatedAt": "2026-08-08T12:28:23.571Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0047-broad-reach-power/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 47,
+    "taskId": "ledger:0047:broad-reach-power:0cc6820b",
+    "canonicalKey": "broad-reach-power|united-states",
+    "companyName": "Broad Reach Power",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "010-apollo-global-management:repo-only:002:broad-reach-power"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5l800hyivhezv4n7o06"
+    ],
+    "seedKeys": [
+      "broad reach power|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.encapinvestments.com/news/broad-reach-power-acquired-engie-encap-energy-transition-and-apollo-funds"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Apollo Global Management PROPOSED_RETIRE: Apollo exited via ENGIE transaction",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5l800hyivhezv4n7o06",
+    "linkedQueueTaskId": null
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5l800hyivhezv4n7o06",
+    "name": "Broad Reach Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable and storage development platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Broad Reach Power develops and operates renewable generation and battery storage projects in the United States. Its end markets are utilities and wholesale power counterparties, and the business follows an asset-heavy development and ownership model across solar, wind, and storage. Apollo acquired a 50% stake in the company in 2021 alongside the existing EnCap-led shareholder group. In 2023, the shareholders agreed to sell Broad Reach's battery storage business to ENGIE, while public transaction materials stated that the Mountain West solar, wind, and storage portfolio was excluded from that sale. Reviewed public sources do not disclose the current ownership structure of the retained Mountain West portfolio after the 2023 transaction.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "Mountain West; United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqm901eqivhewkjgtsx2",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkib802kaivhe5utdrest",
+        "date": "2019",
+        "event": "Broad Reach Power was founded with backing from EnCap Energy Transition.",
+        "category": "FOUNDING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkibu02kbivhe5j7aq7x1",
+        "date": "Nov 2021",
+        "event": "Apollo agreed to acquire a 50% stake in Broad Reach Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkice02kcivheygjer82h",
+        "date": "Aug 2023",
+        "event": "The shareholder group agreed to sell the battery storage business to ENGIE while excluding the Mountain West portfolio from the sale.",
+        "category": "DIVESTITURE",
+        "sortDate": "2023-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpotiy078sivherlk6n4kb",
+        "label": "Announcement date source — Apollo Global Management — Broad Reach Power",
+        "url": "https://ir.apollo.com/news-events/press-releases/detail/47/apollo-funds-to-acquire-50-stake-in-broad-reach-power-from",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpotjy078uivhekac53zjy",
+        "label": "Encapinvestments — Broad Reach Power",
+        "url": "https://www.encapinvestments.com/news/broad-reach-power-acquired-engie-encap-energy-transition-and-apollo-funds",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Encapinvestments transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpotl2078wivheob58y4pa",
+        "label": "Apollo — Broad Reach Power",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Apollo — Broad Reach Power",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Broad Reach Power",
+    "investmentFirm": "Apollo Global Management",
+    "sector": "Power & ET",
+    "subsector": "Renewable and storage development platform",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Broad Reach Power develops and operates renewable generation and battery storage projects in the United States. Its end markets are utilities and wholesale power counterparties, and the business follows an asset-heavy development and ownership model across solar, wind, and storage. Apollo acquired a 50% stake in the company in 2021 alongside the existing EnCap-led shareholder group. In 2023, the shareholders agreed to sell Broad Reach's battery storage business to ENGIE, while public transaction materials stated that the Mountain West solar, wind, and storage portfolio was excluded from that sale. Reviewed public sources do not disclose the current ownership structure of the retained Mountain West portfolio after the 2023 transaction.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2019,
+    "investmentYear": 2021,
+    "headquarters": "Mountain West; United States",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Broad Reach Power was founded with backing from EnCap Energy Transition.",
+        "category": "Founding"
+      },
+      {
+        "date": "Nov 2021",
+        "event": "Apollo agreed to acquire a 50% stake in Broad Reach Power.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 2023",
+        "event": "The shareholder group agreed to sell the battery storage business to ENGIE while excluding the Mountain West portfolio from the sale.",
+        "category": "Divestiture"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Apollo Global Management — Broad Reach Power",
+        "url": "https://ir.apollo.com/news-events/press-releases/detail/47/apollo-funds-to-acquire-50-stake-in-broad-reach-power-from",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Encapinvestments — Broad Reach Power",
+        "url": "https://www.encapinvestments.com/news/broad-reach-power-acquired-engie-encap-energy-transition-and-apollo-funds",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Apollo — Broad Reach Power",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Apollo Global Management",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0047:broad-reach-power:0cc6820b",
+    "taskIndex": 47,
+    "canonicalKey": "broad-reach-power|united-states",
+    "capturedAt": "2026-08-08T12:28:23.571Z",
+    "databaseRevision": "company-state:5d480cb57b30cf1ed3e5788b00dc05b85ba8c24f5ce62e2ff0fd0dd99eb14b0a",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "a7acac5ee1a1ac9c0f96bd5be32a5c8388ea655e28af7be6af4224b6a71efa43",
+    "productionSnapshotSha256": "46aa740546e1b0ce4305d8e5649f4abbaff5295a166f9144b90cf46bac3bea04",
+    "targetCompanySnapshotSha256": "5d480cb57b30cf1ed3e5788b00dc05b85ba8c24f5ce62e2ff0fd0dd99eb14b0a",
+    "seedEntrySha256": "7dbb04077e250470a6a6efb6adc026ca02777fc85fa611d06bb45b18694305cd",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b5a6e765edd6f5bb1820762933fe0f457d7cfa3fab73d6c6020b6ef5f2c857ac",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5bf007754ab1aec1ee2613e1677630ccdf3e2677b7f244a79a2c7562a77e3e14",
+      "citationsSha256": "85a30672ba9bb4abf5ba2f0dbfafe0310c58137b4befffbec43d4566ff4e5f12",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e031b06159947fb8ba8ce8b7585a6d9cd8ec639f03d425ed3a76a431f0543b65",
+    "stateSha256": "774d7f8c9e5999f83f27ddf0ba78d77c39c9bb84a59a60cb46f3ccf251bc0cd2",
+    "taskSnapshotSha256": "1c2ce43bad5f27f7daa4b91caf8bf9171a0a2bb721c64eab5424507793c48af3"
+  },
+  "contextSha256": "675e7ba57a081222eef075c6121d93465affaa2f896ed6483ea28fbdc92355a5"
+}
