@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0031:pearlx:f93c45f0",
+  "taskIndex": 31,
+  "companyName": "PearlX",
+  "generatedAt": "2026-08-08T03:51:39.520Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0031-pearlx/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 31,
+    "taskId": "ledger:0031:pearlx:f93c45f0",
+    "canonicalKey": "pearlx|united-states",
+    "companyName": "PearlX",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 8,
+    "managers": [
+      "Antin Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "008-antin-infrastructure-partners:holding:007:pearlx"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.antin-ip.com/investments/",
+      "https://www.antin-ip.com/media/our-news/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0031:pearlx:f93c45f0",
+    "taskIndex": 31,
+    "canonicalKey": "pearlx|united-states",
+    "capturedAt": "2026-08-08T03:51:39.520Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "c7f9eeee8bd57fea896652372218d306bcc25de3a3f046d229d879342ebeda6a",
+    "productionSnapshotSha256": "1ec4709bb5825dc4c7bcfca406a097831ed24a1833f01fcb9dd902ba76f71849",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "b203aa80223cc6b291c7dd84c32f1dc8576e88dea8f63ee638cba8830b492690",
+    "taskSnapshotSha256": "5dcc2b37e11dca3bb820bab8a1b7a70508d2cda9912c37826ea778f67b920bd7"
+  },
+  "contextSha256": "b0a0abe71f4dec192c1809e551d09b57118c8db28d1bd4576a83bedbcef0c5b3"
+}

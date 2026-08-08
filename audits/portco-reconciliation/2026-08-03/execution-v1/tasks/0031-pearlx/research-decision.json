@@ -1,0 +1,68 @@
+{
+  "generatedAt": "2026-08-08T03:56:00.000Z",
+  "decision": "CREATE_COMPANY_WITH_SIGNED_PENDING_EXIT",
+  "canonicalCompany": "PearlX",
+  "legalName": "PearlX Infrastructure LLC",
+  "rationale": "Create PearlX as a canonical North American infrastructure portfolio company and record Antin Infrastructure Partners' majority ownership through Antin NextGen Fund I beginning in 2023. Antin's full-year 2025 results state that it decided to fully exit PearlX in December 2025, but no buyer or completed legal closing was publicly disclosed. Antin's current investment page continues to list PearlX without a realised designation, and PearlX's current website identifies two Antin NextGen professionals as current PearlX board members. Consistent with the approved ownership rules, retain Antin as the active legal owner while recording a signed pending exit to an undisclosed counterparty.",
+  "identityAndBoundary": {
+    "canonicalName": "PearlX",
+    "legalName": "PearlX Infrastructure LLC",
+    "aliases": [
+      "PearlX Infrastructure",
+      "PearlX Infrastructure LLC"
+    ],
+    "platformBoundary": "Count the PearlX operating platform once. Do not separately count individual multifamily solar, battery-storage, smart-grid or electrification systems deployed at customer properties."
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "Antin announced on February 17, 2023 that it invested in a majority stake in PearlX, and Antin's 2023 universal registration document states that the acquisition closed in early 2023 through NextGen Fund I.",
+    "exitSearch": "Antin's March 12, 2026 full-year results state that it decided to fully exit its NextGen I investment in PearlX in December 2025. No buyer, consideration or completed closing was found. Antin's current investment page still lists PearlX without a realised marker, and PearlX's current website continues to describe Antin NextGen representatives as current board members.",
+    "currentOwnershipDecision": "SIGNED_PENDING_EXIT: Antin remains the recorded active legal owner until a completed transfer is directly evidenced."
+  },
+  "evidence": [
+    {
+      "label": "Antin — PearlX current investment page",
+      "url": "https://www.antin-ip.com/investments/pearlx",
+      "purpose": "Current portfolio classification, vehicle, geography and infrastructure-strategy evidence",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Antin — majority investment in PearlX",
+      "url": "https://www.antin-ip.com/media/our-news/antin-invests-pearlx-innovative-us-smart-grid-infrastructure-platform",
+      "purpose": "Majority stake, investment date, North American strategy and operating profile",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Antin — full-year 2025 results",
+      "url": "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf",
+      "purpose": "December 2025 decision to fully exit PearlX",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Antin — 1Q 2026 activity update",
+      "url": "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf",
+      "purpose": "Signed-realisation and announced-but-uncompleted ownership methodology",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "PearlX — About Us",
+      "url": "https://pearlx.com/about-us/",
+      "purpose": "Founding year, operating profile, headquarters and current Antin board representation",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "PearlX — Privacy Policy",
+      "url": "https://pearlx.com/privacy-policy/",
+      "purpose": "Legal entity name and Charlottesville address",
+      "sourceTier": "PRIMARY"
+    }
+  ],
+  "sourceHealth": {
+    "https://www.antin-ip.com/investments/pearlx": "WORKING_HTTP_200",
+    "https://www.antin-ip.com/media/our-news/antin-invests-pearlx-innovative-us-smart-grid-infrastructure-platform": "WORKING_HTTP_200",
+    "https://www.antin-ip.com/wp-content/uploads/2026/03/Antin-FY25-Results-PR.pdf": "WORKING_HTTP_200",
+    "https://www.antin-ip.com/wp-content/uploads/2026/05/Antin-1Q26-Activity-Update-PR-VF.pdf": "WORKING_HTTP_200",
+    "https://pearlx.com/about-us/": "WORKING_HTTP_200",
+    "https://pearlx.com/privacy-policy/": "WORKING_HTTP_200"
+  },
+  "unresolvedQuestions": []
+}
