@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0049:caledonia-generating-llc:4dfcc1e0",
+  "taskIndex": 49,
+  "companyName": "Caledonia Generating LLC",
+  "generatedAt": "2026-08-08T14:07:42.508Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0049-caledonia-generating-llc/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 49,
+    "taskId": "ledger:0049:caledonia-generating-llc:4dfcc1e0",
+    "canonicalKey": "caledonia-generating-llc|united-states",
+    "companyName": "Caledonia Generating LLC",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "010-apollo-global-management:repo-only:004:caledonia-generating-llc"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5mb00i0ivhejn55n4q0"
+    ],
+    "seedKeys": [
+      "caledonia generating llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://tva.com/energy/our-power-system/natural-gas/caledonia-combined-cycle-plant"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Apollo Global Management PROPOSED_RETIRE: Asset no longer owned by Apollo",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5mb00i0ivhejn55n4q0",
+    "linkedQueueTaskId": null
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5mb00i0ivhejn55n4q0",
+    "name": "Caledonia Generating LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-fired power generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Caledonia Generating owns an 801 MW combined-cycle natural gas power plant near Steens in Lowndes County, Mississippi. The asset serves the wholesale power market and follows an asset-heavy merchant generation model rather than a regulated utility model. Public power-sector sources identify the facility as a three-unit combined-cycle plant that entered service in the early 2000s. Reviewed public regulatory and financing materials tie the asset to Apollo-managed funds, including joint regulatory filings and later public utility commission references. Detailed current ownership percentages are not publicly disclosed in the reviewed free sources.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2003,
+    "headquarters": "Mississippi",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqnb01esivhe145e9l0q",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Apollo-managed funds",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkiiy02kiivhepxs0iivg",
+        "date": "2003",
+        "event": "Caledonia entered operation as a combined-cycle natural gas plant in Mississippi.",
+        "category": "EXPANSION",
+        "sortDate": "2003-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkijh02kjivhepwnwblhj",
+        "date": "Oct 11, 2018",
+        "event": "Apollo Global Management and Caledonia Generating filed a FERC joint application tied to the plant's ownership structure.",
+        "category": "FINANCING",
+        "sortDate": "2018-10-11T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkik402kkivhexvyw3sam",
+        "date": "2021",
+        "event": "Fitch rated Caledonia senior secured notes used in the plant's financing structure.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpotpi0794ivheysi3ua50",
+        "label": "Tva — Caledonia Generating LLC",
+        "url": "https://tva.com/energy/our-power-system/natural-gas/caledonia-combined-cycle-plant",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Tva — Caledonia Generating LLC",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpotqj0796ivhego6wxwqu",
+        "label": "Announcement date source — Apollo Global Management — Caledonia Generating LLC",
+        "url": "https://www.federalregister.gov/documents/2018/10/18/2018-22713/combined-notice-of-filings-1",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpottp0798ivhe8gw7pe5n",
+        "label": "Documents — Caledonia Generating LLC",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE0F2F295-0000-C140-9E26-449B357735AE%7D",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Documents — Caledonia Generating LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpotv2079aivhervc13b41",
+        "label": "Fitchratings — Caledonia Generating LLC",
+        "url": "https://www.fitchratings.com/research/us-public-finance/fitch-assigns-aa-final-rating-to-caledonia-generating-llc-senior-secured-notes-outlook-stable-01-07-2021",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Fitchratings financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Caledonia Generating LLC",
+    "investmentFirm": "Apollo Global Management",
+    "sector": "Power & ET",
+    "subsector": "Gas-fired power generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Apollo-managed funds",
+    "description": "Caledonia Generating owns an 801 MW combined-cycle natural gas power plant near Steens in Lowndes County, Mississippi. The asset serves the wholesale power market and follows an asset-heavy merchant generation model rather than a regulated utility model. Public power-sector sources identify the facility as a three-unit combined-cycle plant that entered service in the early 2000s. Reviewed public regulatory and financing materials tie the asset to Apollo-managed funds, including joint regulatory filings and later public utility commission references. Detailed current ownership percentages are not publicly disclosed in the reviewed free sources.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2003,
+    "investmentYear": 2018,
+    "headquarters": "Mississippi",
+    "milestones": [
+      {
+        "date": "2003",
+        "event": "Caledonia entered operation as a combined-cycle natural gas plant in Mississippi.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Oct 11, 2018",
+        "event": "Apollo Global Management and Caledonia Generating filed a FERC joint application tied to the plant's ownership structure.",
+        "category": "Financing"
+      },
+      {
+        "date": "2021",
+        "event": "Fitch rated Caledonia senior secured notes used in the plant's financing structure.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Tva — Caledonia Generating LLC",
+        "url": "https://tva.com/energy/our-power-system/natural-gas/caledonia-combined-cycle-plant",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — Apollo Global Management — Caledonia Generating LLC",
+        "url": "https://www.federalregister.gov/documents/2018/10/18/2018-22713/combined-notice-of-filings-1",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Documents — Caledonia Generating LLC",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE0F2F295-0000-C140-9E26-449B357735AE%7D",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Fitchratings — Caledonia Generating LLC",
+        "url": "https://www.fitchratings.com/research/us-public-finance/fitch-assigns-aa-final-rating-to-caledonia-generating-llc-senior-secured-notes-outlook-stable-01-07-2021",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Apollo Global Management",
+        "ownershipVehicle": "Apollo-managed funds",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0049:caledonia-generating-llc:4dfcc1e0",
+    "taskIndex": 49,
+    "canonicalKey": "caledonia-generating-llc|united-states",
+    "capturedAt": "2026-08-08T14:07:42.508Z",
+    "databaseRevision": "company-state:ffdae6a17202fa20f1786931c5bf51720308075531a92f202b44bba5af0d6e60",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "16229f1e7ca04c7e110c600cf18dcb0ade7f98e3387679a08cbd27fa12d00716",
+    "productionSnapshotSha256": "f6db13abf86fc9d8cd9c24b6a794b7cd100fa999438fca418dfc3e66200ba64c",
+    "targetCompanySnapshotSha256": "ffdae6a17202fa20f1786931c5bf51720308075531a92f202b44bba5af0d6e60",
+    "seedEntrySha256": "e25221d87014741f2af850929d0a8f0e150f93870f5c712c578e67c1a3395d7f",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "444ce16e4b483f0cfaeb8aa923a56adbe1a06d6a92a022d5f58fd9fee4fa54ca",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5bf007754ab1aec1ee2613e1677630ccdf3e2677b7f244a79a2c7562a77e3e14",
+      "citationsSha256": "57277f109eae8316685169b5c7fa1cc7e7b81200c10fd60710dae11bff98c431",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "27a6bf460c66fde0a415f47dc0d6e14278f7be694e4285e54fc7268b45e2868a",
+    "stateSha256": "abac9c13d757cbbbc2a3a4ce5c474f0ec61aeee73d070d59b493aa44c0d3c032",
+    "taskSnapshotSha256": "3336bf220aa4804afc04adf833c4105174651aca7a47042049c4b25213f7ce4c"
+  },
+  "contextSha256": "c126fc0c276fb3278c317071df829e825afbeb7dfb72c0e6e0343bd34db505b0"
+}

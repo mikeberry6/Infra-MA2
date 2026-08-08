@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-08-08T14:10:06.000Z",
+  "decision": "VERIFY_NO_CHANGE_RETAIN_APOLLO_OWNERSHIP",
+  "taskId": "ledger:0049:caledonia-generating-llc:4dfcc1e0",
+  "companyName": "Caledonia Generating LLC",
+  "requestedManagers": [
+    "Apollo Global Management"
+  ],
+  "rationale": "Do not retire Apollo's active ownership period. An April 1, 2025 verified regulatory filing states directly that Apollo-managed investment funds own Caledonia Generating LLC, an 801 MW gas-fired combined-cycle plant in Mississippi. The Mississippi Public Service Commission's current merchant-generation contact page also lists Caledonia Generating LLC in care of Apollo Management Holdings, L.P. TVA's official plant page confirms that TVA leases the facility, so TVA's operating role does not establish a sale of the plant or Caledonia entity. Searches for a subsequent Apollo sale, transfer, disposition or exit through August 8, 2026 found none. Current bond listings are debt securities and were not used as ownership evidence. The live and evaluated seed records already retain the correct manager-level company, active Apollo ownership, 2018 investment year and qualified undisclosed vehicle and stake, so this task authorizes no company, ownership, seed, citation, redirect, pending-transaction or publication mutation.",
+  "identityResolution": {
+    "canonicalDecision": "KEEP_CALEDONIA_GENERATING_LLC",
+    "duplicateFound": false,
+    "platformBoundary": "Count Caledonia Generating LLC once as the Apollo-owned special-purpose generating company that owns the Mississippi combined-cycle facility. TVA is the long-term lessee and operator of the plant, not a replacement manager-level owner established by the reviewed evidence. The nearby New Caledonia project is a separate TVA development and is not part of this PortCo."
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "FERC docket EC19-9-000 records an October 11, 2018 joint Section 203 application naming GE Capital Global Holdings, Caledonia Generating LLC and Apollo Global Management. Later direct regulatory ownership evidence confirms that the Apollo transaction took effect. The exact legal closing date, named Apollo funds and ownership percentage remain not publicly disclosed in the reviewed sources, so the existing year-only 2018 investment date and qualified vehicle and stake remain appropriate.",
+    "currentStatusSearch": "The April 1, 2025 New York Public Service Commission petition says Apollo-managed investment funds own Caledonia Generating LLC and places the company in Apollo's infrastructure platform. The current Mississippi Public Service Commission contact page lists Caledonia Generating LLC in care of Apollo Management Holdings, L.P. TVA continues to describe its interest as a lease that began in December 2007.",
+    "exitSearch": "No subsequent sale, definitive ownership transfer, disposition, Apollo exit or replacement equity owner was identified through August 8, 2026. Search results concerning publicly traded Caledonia Generating notes were excluded as debt-only evidence, and TVA's operating and leasing references were not misclassified as equity ownership.",
+    "transactionState": "CLOSED_ACTIVE"
+  },
+  "ownershipResolution": {
+    "apollo": {
+      "decision": "RETAIN_ACTIVE_DIRECT_MANAGER_ASSOCIATION",
+      "basis": "A verified 2025 regulatory filing expressly says Apollo-managed investment funds own the company and identifies it as part of Apollo's infrastructure-platform portfolio. A current state-commission contact page independently associates the company with Apollo Management Holdings.",
+      "currentRecord": "Apollo Global Management / Apollo-managed funds / active since 2018 / stake not publicly disclosed"
+    },
+    "tva": {
+      "decision": "DO_NOT_ADD_AS_EQUITY_OWNER",
+      "basis": "TVA's official page says TVA has leased the plant since December 2007. The lease and operating role do not supersede the direct regulatory evidence of Apollo fund ownership of Caledonia Generating LLC."
+    },
+    "debtBoundary": "Third-party holdings of Caledonia Generating LLC notes due 2034 are debt securities and do not establish direct infrastructure ownership by those holders."
+  },
+  "evidence": [
+    {
+      "label": "New York DPS — Apollo verified joint petition",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE0F2F295-0000-C140-9E26-449B357735AE%7D",
+      "purpose": "April 1, 2025 direct regulatory statement that Apollo-managed investment funds own Caledonia Generating LLC and that the holding is part of Apollo's infrastructure platform",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Mississippi Public Service Commission — merchant generation contacts",
+      "url": "https://www.mpus.ms.gov/electric/plants",
+      "purpose": "Current state-regulatory page listing Caledonia Generating LLC in care of Apollo Management Holdings, L.P.",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "TVA — Caledonia Combined Cycle Plant",
+      "url": "https://www.tva.com/energy/our-power-system/natural-gas/caledonia-combined-cycle-plant",
+      "purpose": "Official plant identity, Mississippi location, 2003 commercial-operation date, 819 MW current capacity and confirmation that TVA is the long-term lessee rather than an evidenced replacement equity owner",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Federal Register API — FERC docket EC19-9-000",
+      "url": "https://www.federalregister.gov/api/v1/documents/2018-22713.json",
+      "purpose": "Official metadata for the October 11, 2018 Section 203 filing that named Caledonia Generating LLC and Apollo Global Management among the joint applicants",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Federal Register — FERC docket EC19-9-000 notice",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2018-10-18/pdf/2018-22713.pdf",
+      "purpose": "Official published acquisition-filing notice supporting the existing 2018 investment year",
+      "sourceTier": "PRIMARY"
+    }
+  ],
+  "sourceHealth": {
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE0F2F295-0000-C140-9E26-449B357735AE%7D": "WORKING",
+    "https://www.mpus.ms.gov/electric/plants": "WORKING",
+    "https://www.tva.com/energy/our-power-system/natural-gas/caledonia-combined-cycle-plant": "BROWSER_VERIFIED_AUTOMATED_HTTP_BLOCKED",
+    "https://www.federalregister.gov/api/v1/documents/2018-22713.json": "WORKING",
+    "https://www.govinfo.gov/content/pkg/FR-2018-10-18/pdf/2018-22713.pdf": "WORKING"
+  },
+  "databaseMutation": false,
+  "seedMutation": false,
+  "unresolvedQuestions": [],
+  "phaseOneCloseoutNote": "Reject the original proposed-retirement judgment and map the repo-only review back to the existing canonical company and active Apollo ownership period. Preserve the company once in the unique-company ledger."
+}

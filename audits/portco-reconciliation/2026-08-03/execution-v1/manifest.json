@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T13:59:35.000Z",
+  "updatedAt": "2026-08-08T14:12:51.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -7359,20 +7359,26 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "16229f1e7ca04c7e110c600cf18dcb0ade7f98e3387679a08cbd27fa12d00716",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "VERIFIED_NO_CHANGE",
+      "attempts": 1,
+      "startedAt": "2026-08-08T14:06:45.000Z",
+      "updatedAt": "2026-08-08T14:12:51.000Z",
+      "completedAt": "2026-08-08T14:12:51.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "3336bf220aa4804afc04adf833c4105174651aca7a47042049c4b25213f7ce4c",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0049-caledonia-generating-llc/attempt-1/task-snapshot.json",
+          "sha256": "3336bf220aa4804afc04adf833c4105174651aca7a47042049c4b25213f7ce4c"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0049-caledonia-generating-llc/research-decision.json",
+          "sha256": "1174eec2bf54f49e18c13e929193cc8d6cc55d2750a3eeb5fa48644b5d811c82"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -7386,6 +7392,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T14:06:45.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "VERIFIED_NO_CHANGE",
+          "at": "2026-08-08T14:12:51.000Z",
+          "reason": "Primary regulatory evidence confirms Apollo-managed funds still own Caledonia Generating LLC; TVA remains the lessee, and no subsequent sale, transfer or exit was found through August 8, 2026.",
+          "taskSnapshotSha256": "3336bf220aa4804afc04adf833c4105174651aca7a47042049c4b25213f7ce4c",
+          "evidenceSha256": [
+            "1174eec2bf54f49e18c13e929193cc8d6cc55d2750a3eeb5fa48644b5d811c82",
+            "3336bf220aa4804afc04adf833c4105174651aca7a47042049c4b25213f7ce4c"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24411,5 +24440,5 @@
       ]
     }
   ],
-  "manifestSha256": "272d89949af1176b21f149bedc70ca79a9e947d52a992975e433bf9681d36eae"
+  "manifestSha256": "ba5b5d370255287439d14df182018ed4e711cd51703db0727654651982d836e7"
 }
