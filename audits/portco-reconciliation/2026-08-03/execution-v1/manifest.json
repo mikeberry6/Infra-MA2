@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-07T05:56:10.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T02:36:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0028:phoenix-rail:41d5f6af",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -4214,18 +4214,27 @@
       "managerIndex": 7,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "78eaa4add7538ef272144dacedbdc467e9073a5973337ad41b1b5b6a559ae1ad",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-08T02:32:01.000Z",
+      "updatedAt": "2026-08-08T02:36:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "a9023bae00a20e4781d2ba56c03d383a4be26aff8e16a5a539232fdbdca8ddbd",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0028-phoenix-rail/attempt-2/task-snapshot.json",
+          "sha256": "a9023bae00a20e4781d2ba56c03d383a4be26aff8e16a5a539232fdbdca8ddbd"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0028-phoenix-rail-v2/proposal.json",
+          "sha256": "092fdb41f59776c19b426893985bcb0d54c8a136580a47c536bf1582c4f89172"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0028-phoenix-rail-v2.json",
+          "sha256": "97d791b2137f7cc6fd11f1fb8933a2aaeb375704ecc49cf61c80a26f53819ad7"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -4241,6 +4250,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-07T06:03:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-07T06:12:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "519fd3e8d027721e8b692276e441a551bbf85fa4f0bae31c0b7bf7cc64f8bc7f",
+          "evidenceSha256": [
+            "519fd3e8d027721e8b692276e441a551bbf85fa4f0bae31c0b7bf7cc64f8bc7f",
+            "7c21e473d6a340ee663079f97b7a4ae582be46f9ecb2f58c2c67741b984b9609"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-07T06:12:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "519fd3e8d027721e8b692276e441a551bbf85fa4f0bae31c0b7bf7cc64f8bc7f",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-07T06:13:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "519fd3e8d027721e8b692276e441a551bbf85fa4f0bae31c0b7bf7cc64f8bc7f",
+          "evidenceSha256": [
+            "0cf7dfb437b58f37227395bc67d34ca8bb97d7369c85d95169a46a6379032a83"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T02:32:00.000Z",
+          "reason": "Dry-run validation rejected a change to shared Source metadata for the Phoenix Rail launch URL; no seed or database write occurred.",
+          "taskSnapshotSha256": "519fd3e8d027721e8b692276e441a551bbf85fa4f0bae31c0b7bf7cc64f8bc7f",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T02:32:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T02:35:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a9023bae00a20e4781d2ba56c03d383a4be26aff8e16a5a539232fdbdca8ddbd",
+          "evidenceSha256": [
+            "092fdb41f59776c19b426893985bcb0d54c8a136580a47c536bf1582c4f89172",
+            "a9023bae00a20e4781d2ba56c03d383a4be26aff8e16a5a539232fdbdca8ddbd"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T02:35:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a9023bae00a20e4781d2ba56c03d383a4be26aff8e16a5a539232fdbdca8ddbd",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T02:36:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a9023bae00a20e4781d2ba56c03d383a4be26aff8e16a5a539232fdbdca8ddbd",
+          "evidenceSha256": [
+            "97d791b2137f7cc6fd11f1fb8933a2aaeb375704ecc49cf61c80a26f53819ad7"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -22029,5 +22138,5 @@
       ]
     }
   ],
-  "manifestSha256": "78d38fde612c1d9b8b841460f42d9993736074e74b090b4d9653faaf94364076"
+  "manifestSha256": "9ec4d3e73ae64cb7e1422ee6e933650483c3f13d28d402c0e9ef5e400168b724"
 }
