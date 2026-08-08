@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T04:32:01.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T04:50:29.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0033:doral-renewables-llc:4621e934",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -4922,18 +4922,27 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "5921a42d10e4ac2f5dfff05d929f179312cb395191855f0838644ce73a0415e5",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-08T04:41:21.000Z",
+      "updatedAt": "2026-08-08T04:49:52.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "0045e2cc3913eae1a61a4ed020b5990c41414c6e488fc53da7788a1449d6a5ce",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0033-doral-renewables-llc/attempt-1/task-snapshot.json",
+          "sha256": "0045e2cc3913eae1a61a4ed020b5990c41414c6e488fc53da7788a1449d6a5ce"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0033-doral-renewables-llc-v1/proposal.json",
+          "sha256": "1ec1d242f3cbcc662dac384d64f7a8b1cfa2fa7277820227fd1cfbc94620cbd0"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0033-doral-renewables-llc-v1.json",
+          "sha256": "7a9468bad7ceeff5c832337d6add06d8be798a11996af9348ebded8b3c489f98"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -4949,6 +4958,54 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T04:41:21.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T04:49:04.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0045e2cc3913eae1a61a4ed020b5990c41414c6e488fc53da7788a1449d6a5ce",
+          "evidenceSha256": [
+            "0045e2cc3913eae1a61a4ed020b5990c41414c6e488fc53da7788a1449d6a5ce",
+            "1ec1d242f3cbcc662dac384d64f7a8b1cfa2fa7277820227fd1cfbc94620cbd0"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T04:49:38.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0045e2cc3913eae1a61a4ed020b5990c41414c6e488fc53da7788a1449d6a5ce",
+          "evidenceSha256": [
+            "0045e2cc3913eae1a61a4ed020b5990c41414c6e488fc53da7788a1449d6a5ce",
+            "1ec1d242f3cbcc662dac384d64f7a8b1cfa2fa7277820227fd1cfbc94620cbd0"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T04:49:52.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0045e2cc3913eae1a61a4ed020b5990c41414c6e488fc53da7788a1449d6a5ce",
+          "evidenceSha256": [
+            "7a9468bad7ceeff5c832337d6add06d8be798a11996af9348ebded8b3c489f98"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -5606,20 +5663,23 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a0d6bd3adc449709663ecd671b00bc724e28296c7c0077d44f84d794b97195a2",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-08T04:50:29.000Z",
+      "completedAt": "2026-08-08T04:50:29.000Z",
+      "exceptionReason": "Resolved under canonical Doral Renewables LLC task 33: the identity is the same company, and Apollo disclosed convertible-note financing rather than a qualifying current ownership period.",
+      "supersededByTaskId": "ledger:0033:doral-renewables-llc:4621e934",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0033-doral-renewables-llc-v1/spec.json",
+          "sha256": "ad0483fed379d028e84ba3567210cdce83a6b8251870747ea0733100e62713c5"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -5633,6 +5693,18 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-08T04:50:29.000Z",
+          "reason": "Resolved under canonical Doral Renewables LLC task 33: the identity is the same company, and Apollo disclosed convertible-note financing rather than a qualifying current ownership period.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "ad0483fed379d028e84ba3567210cdce83a6b8251870747ea0733100e62713c5"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -22547,5 +22619,5 @@
       ]
     }
   ],
-  "manifestSha256": "d47f58331298a24af50d89a7bbe5e439791e392b8867a161b4b59be1e7410985"
+  "manifestSha256": "6bef24165522e5167840673071a1759d59555d3e27de6cd96a088af9844073ca"
 }
