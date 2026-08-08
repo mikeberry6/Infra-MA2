@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0037:hudson-transmission-project:932c04f7",
+  "taskIndex": 37,
+  "companyName": "Hudson Transmission Project",
+  "generatedAt": "2026-08-08T07:25:03.951Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0037-hudson-transmission-project/attempt-1/approval-recapture/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 37,
+    "taskId": "ledger:0037:hudson-transmission-project:932c04f7",
+    "canonicalKey": "hudson-transmission-project|united-states",
+    "companyName": "Hudson Transmission Project",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 9,
+    "managers": [
+      "APG Infrastructure",
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "009-apg-infrastructure:holding:009:hudson-transmission-project",
+      "015-argo-infrastructure-partners:holding:011:hudson-transmission-project"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj5dd00hoivhel34uz412"
+    ],
+    "seedKeys": [
+      "hudson transmission project|United States"
+    ],
+    "evidenceUrls": [
+      "https://hudsonproject.com/project/",
+      "https://hudsonproject.com/team/owners-investors/",
+      "https://www.lotusinfrastructure.com/news/lotus-to-sell-hudson-transmission-line-to-argo/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 009-apg-infrastructure:holding:009:hudson-transmission-project: APG exposure is indirect through Argo-managed vehicle and requires confirmation of ongoing beneficial ownership. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 009-apg-infrastructure:holding:009:hudson-transmission-project: APG exposure is indirect through Argo-managed vehicle and requires confirmation of ongoing beneficial ownership."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5dd00hoivhel34uz412",
+    "name": "Hudson Transmission Project",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Merchant electric transmission interconnector",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Hudson Transmission owns and operates a transmission interconnector linking New Jersey and Manhattan. Its customer base is the regional power market, with capacity contracted to support transfers between PJM and New York City load zones. The project operates a contracted transmission model rather than a traditional rate-regulated utility model. Public materials describe a 660-megawatt underground and underwater link that entered service in 2013 and includes associated transmission upgrades in New Jersey. The asset is strategically positioned to move power into New York City and has historically supported a long-term arrangement with the New York Power Authority. Argo signed to acquire Hudson Transmission in 2018 and public materials describe principal equity ownership as acquired in early 2019 through a managed investment vehicle. Current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2011,
+    "headquarters": "New Jersey; New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqcn01ecivhelax0w92u",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "Argo managed funds",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqd401edivhe6cqfvre5",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo managed funds",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkh9i02ivivheuhgpj9dx",
+        "date": "May 2011",
+        "event": "Construction began on the Hudson Transmission project.",
+        "category": "EXPANSION",
+        "sortDate": "2011-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkha502iwivhe0el5tgl4",
+        "date": "Jun 2013",
+        "event": "Hudson Transmission entered commercial service.",
+        "category": "EXPANSION",
+        "sortDate": "2013-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhan02ixivhehugqijh3",
+        "date": "Sep 2018",
+        "event": "Ares EIF and Starwood Energy signed an agreement to sell Hudson Transmission to an Argo-managed investment vehicle.",
+        "category": "DIVESTITURE",
+        "sortDate": "2018-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhb202iyivheymiz3hm5",
+        "date": "Q1 2019",
+        "event": "Argo acquired principal equity ownership of Hudson Transmission for institutional investors including APG.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxporvk076fivhe3i10hyz6",
+        "label": "Hudsonproject — Hudson Transmission Project",
+        "url": "https://hudsonproject.com/project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Hudsonproject operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxporwl076hivhe6lok3bd8",
+        "label": "Hudsonproject — Hudson Transmission Project",
+        "url": "https://hudsonproject.com/team/owners-investors/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Hudsonproject — Hudson Transmission Project",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxporyt076jivhevamos0ha",
+        "label": "Announcement date source — Argo Infrastructure Partners — Hudson Transmission Project",
+        "url": "https://www.lotusinfrastructure.com/news/lotus-to-sell-hudson-transmission-line-to-argo/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpos01076livheqp5p5oza",
+        "label": "Nsenergybusiness — Hudson Transmission Project",
+        "url": "https://www.nsenergybusiness.com/deals/hudson-transmission-project-sale/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Nsenergybusiness transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpos10076nivheq77d84iw",
+        "label": "Investment date source — Argo Infrastructure Partners — Hudson Transmission Project",
+        "url": "https://www.oregon.gov/energy/facilities-safety/facilities/Facilities%20library/2026-02-27-CRTAPPDoc01-02-pASC-Organizational-Expertise-Exhibit.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpos1m076oivhe260ir5mv",
+        "label": "Investment date source — Argo Infrastructure Partners — Hudson Transmission Project",
+        "url": "https://www.oregon.gov/energy/facilities-safety/facilities/Facilities%20library/2026-02-27-CRTAPPDoc01-02-pASC-Organizational-Expertise-Exhibit.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Hudson Transmission Project",
+    "investmentFirm": "APG Infrastructure",
+    "sector": "Utilities",
+    "subsector": "Merchant electric transmission interconnector",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Argo managed funds",
+    "description": "Hudson Transmission owns and operates a transmission interconnector linking New Jersey and Manhattan. Its customer base is the regional power market, with capacity contracted to support transfers between PJM and New York City load zones. The project operates a contracted transmission model rather than a traditional rate-regulated utility model. Public materials describe a 660-megawatt underground and underwater link that entered service in 2013 and includes associated transmission upgrades in New Jersey. The asset is strategically positioned to move power into New York City and has historically supported a long-term arrangement with the New York Power Authority. Argo signed to acquire Hudson Transmission in 2018 and public materials describe principal equity ownership as acquired in early 2019 through a managed investment vehicle. Current ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2011,
+    "investmentYear": 2019,
+    "headquarters": "New Jersey; New York",
+    "milestones": [
+      {
+        "date": "May 2011",
+        "event": "Construction began on the Hudson Transmission project.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jun 2013",
+        "event": "Hudson Transmission entered commercial service.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 2018",
+        "event": "Ares EIF and Starwood Energy signed an agreement to sell Hudson Transmission to an Argo-managed investment vehicle.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "Q1 2019",
+        "event": "Argo acquired principal equity ownership of Hudson Transmission for institutional investors including APG.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Hudsonproject — Hudson Transmission Project",
+        "url": "https://hudsonproject.com/project/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Hudsonproject — Hudson Transmission Project",
+        "url": "https://hudsonproject.com/team/owners-investors/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — Argo Infrastructure Partners — Hudson Transmission Project",
+        "url": "https://www.lotusinfrastructure.com/news/lotus-to-sell-hudson-transmission-line-to-argo/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Nsenergybusiness — Hudson Transmission Project",
+        "url": "https://www.nsenergybusiness.com/deals/hudson-transmission-project-sale/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Investment date source — Argo Infrastructure Partners — Hudson Transmission Project",
+        "url": "https://www.oregon.gov/energy/facilities-safety/facilities/Facilities%20library/2026-02-27-CRTAPPDoc01-02-pASC-Organizational-Expertise-Exhibit.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — APG Infrastructure — Hudson Transmission Project",
+        "url": "https://www.oregon.gov/energy/facilities-safety/facilities/Facilities%20library/2026-02-27-CRTAPPDoc01-02-pASC-Organizational-Expertise-Exhibit.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "APG Infrastructure",
+        "ownershipVehicle": "Argo managed funds",
+        "investmentYear": 2019,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "Argo managed funds",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3kl000eivhezm8dydzo",
+        "name": "APG Asset Management",
+        "updatedAt": "2026-07-23T16:09:11.829Z"
+      },
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0037:hudson-transmission-project:932c04f7",
+    "taskIndex": 37,
+    "canonicalKey": "hudson-transmission-project|united-states",
+    "capturedAt": "2026-08-08T07:25:03.951Z",
+    "databaseRevision": "company-state:1e472a68904bf8db2a9b99829c6fc831e350312b3802a0283c931808ff70a105",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2899c27866d5dd40867f9e36a181c21c70cf39bc1d69e22d1ed464a21fe2caf0",
+    "productionSnapshotSha256": "606ad4133111ea49bb38274738f67aed4239b43803b6e6a11d17182399063d97",
+    "targetCompanySnapshotSha256": "1e472a68904bf8db2a9b99829c6fc831e350312b3802a0283c931808ff70a105",
+    "seedEntrySha256": "d6105cf72321fd69af491918cef5ccedff7cb91bc08bfebd958b1bbc0de7079d",
+    "dependencies": {
+      "ownershipPeriodsSha256": "6bf371570f32ec523e173e7ee998d7006c543e0a5e2d686e2577f2482fcb2f1d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "497b04e6dc162466afca72a616debeb71d4a360e945b2262a2930886c31b8d4a",
+      "citationsSha256": "2fdb21cf5f971ae94e9696955f370c648816f24723c04fb4ada59e6a1fe7306e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "0b3738ab2866dec8db5bd6a3c4493b3f9b74edf2994a0db8662af9684b002f61",
+    "stateSha256": "11eab5b821f2d9fffa953dddbeb8c562b3a17538c4dad8117b1a9e1fda0d2db1",
+    "taskSnapshotSha256": "abc95d3310c43023f457ae20c45321dc7061fa0fd4c7f00cd64ffd136097df8a"
+  },
+  "contextSha256": "5adefbd6ae58c88a6772bb7de95847fcba09f6355e0b45da5e0e8d0874a4521c"
+}
