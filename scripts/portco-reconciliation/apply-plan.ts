@@ -207,6 +207,172 @@ function byRequiredId<T extends { id: string | null }>(
   return result;
 }
 
+type OwnershipPeriodImage = CompanyImage["ownershipPeriods"][number];
+type MilestoneImage = CompanyImage["milestones"][number];
+
+function normalizedIdentity(value: string | null): string | null {
+  if (value === null) return null;
+  return value
+    .normalize("NFKC")
+    .toLocaleLowerCase("en-US")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function assertSameOwnerIdentity(
+  retired: OwnershipPeriodImage,
+  canonicalPeriod: OwnershipPeriodImage,
+  retiredRelationId: string,
+): void {
+  const retiredOrganization = normalizedIdentity(retired.organizationName);
+  const canonicalOrganization = normalizedIdentity(canonicalPeriod.organizationName);
+  if (retiredOrganization && canonicalOrganization) {
+    if (retiredOrganization !== canonicalOrganization) {
+      throw new Error(`Retired ownership relation ${retiredRelationId} maps to a different owner identity`);
+    }
+    return;
+  }
+  if (normalizedIdentity(retired.managerName) !== normalizedIdentity(canonicalPeriod.managerName)) {
+    throw new Error(`Retired ownership relation ${retiredRelationId} maps to a different owner identity`);
+  }
+}
+
+const milestoneStopWords = new Set([
+  "and", "are", "been", "being", "company", "for", "from", "had", "has", "have",
+  "into", "its", "llc", "the", "this", "was", "were", "with",
+]);
+
+function milestoneTokenRoot(token: string): string {
+  if (token.length > 5 && token.endsWith("ies")) return `${token.slice(0, -3)}y`;
+  if (token.length > 5 && token.endsWith("ing")) return token.slice(0, -3);
+  if (token.length > 4 && token.endsWith("ed")) return token.slice(0, -2);
+  if (token.length > 4 && token.endsWith("s")) return token.slice(0, -1);
+  return token;
+}
+
+function milestoneTokens(event: string): Set<string> {
+  return new Set(event
+    .normalize("NFKC")
+    .toLocaleLowerCase("en-US")
+    .match(/[a-z0-9]+/g)
+    ?.filter((token) =>
+      token.length >= 3
+      && !/^\d{4}$/.test(token)
+      && !milestoneStopWords.has(token))
+    .map(milestoneTokenRoot) ?? []);
+}
+
+function milestoneYear(milestone: MilestoneImage): string | null {
+  const years = new Set<string>();
+  const displayYear = milestone.date.match(/\b(?:18|19|20|21)\d{2}\b/)?.[0];
+  if (displayYear) years.add(displayYear);
+  const sortYear = milestone.sortDate?.slice(0, 4);
+  if (sortYear && /^(?:18|19|20|21)\d{2}$/.test(sortYear)) years.add(sortYear);
+  return years.size === 1 ? [...years][0] : null;
+}
+
+function assertCompatibleMilestone(
+  retired: MilestoneImage,
+  canonicalMilestone: MilestoneImage,
+  retiredRelationId: string,
+): void {
+  if (normalizedIdentity(retired.category) !== normalizedIdentity(canonicalMilestone.category)) {
+    throw new Error(`Retired milestone ${retiredRelationId} maps to an incompatible category`);
+  }
+  const retiredYear = milestoneYear(retired);
+  const canonicalYear = milestoneYear(canonicalMilestone);
+  if (!retiredYear || !canonicalYear || retiredYear !== canonicalYear) {
+    throw new Error(`Retired milestone ${retiredRelationId} maps to an incompatible date`);
+  }
+  const retiredTokens = milestoneTokens(retired.event);
+  const sharedTokens = [...milestoneTokens(canonicalMilestone.event)]
+    .filter((token) => retiredTokens.has(token));
+  if (sharedTokens.length < 2) {
+    throw new Error(`Retired milestone ${retiredRelationId} maps to an incompatible milestone identity`);
+  }
+}
+
+function relationMergeIds(
+  proposal: ReconciliationProposal,
+  kind: "OWNERSHIP_PERIOD" | "MILESTONE",
+): Set<string> {
+  return new Set((proposal.relationMerges ?? [])
+    .filter((mapping) => mapping.kind === kind)
+    .map((mapping) => mapping.retiredRelationId));
+}
+
+function assertValidRelationMerges(
+  proposal: ReconciliationProposal,
+  fresh: FreshApplyState,
+  after: CompanyImage,
+): void {
+  const mappings = proposal.relationMerges ?? [];
+  if (mappings.length === 0) return;
+  if (!proposal.actions.includes("MERGE_COMPANIES") || !proposal.beforeImage) {
+    throw new Error("Retired relation mappings require a canonical MERGE_COMPANIES target");
+  }
+
+  const canonicalOwnershipBefore = byRequiredId(
+    proposal.beforeImage.ownershipPeriods,
+    "canonical ownership period",
+  );
+  const canonicalOwnershipAfter = new Map(after.ownershipPeriods.flatMap((row) =>
+    row.id ? [[row.id, row] as const] : []));
+  const canonicalMilestonesBefore = byRequiredId(
+    proposal.beforeImage.milestones,
+    "canonical milestone",
+  );
+  const canonicalMilestonesAfter = new Map(after.milestones.flatMap((row) =>
+    row.id ? [[row.id, row] as const] : []));
+  const retiredOwnership = new Map(fresh.retiredCompanies.flatMap((company) =>
+    company.image.ownershipPeriods.flatMap((row) => row.id ? [[row.id, row] as const] : [])));
+  const retiredMilestones = new Map(fresh.retiredCompanies.flatMap((company) =>
+    company.image.milestones.flatMap((row) => row.id ? [[row.id, row] as const] : [])));
+
+  for (const mapping of mappings) {
+    if (mapping.kind === "OWNERSHIP_PERIOD") {
+      const retired = retiredOwnership.get(mapping.retiredRelationId);
+      if (!retired) {
+        const kindDetail = retiredMilestones.has(mapping.retiredRelationId)
+          ? " exists as a milestone, not an ownership period"
+          : " does not exist in a reviewed retired company";
+        throw new Error(`Retired ownership relation ${mapping.retiredRelationId}${kindDetail}`);
+      }
+      if (canonicalOwnershipAfter.has(mapping.retiredRelationId)) {
+        throw new Error(`Mapped retired ownership relation ${mapping.retiredRelationId} is still present in the approved after-image`);
+      }
+      if (!canonicalOwnershipBefore.has(mapping.canonicalRelationId)) {
+        throw new Error(`Canonical ownership relation ${mapping.canonicalRelationId} does not exist on the canonical before-image`);
+      }
+      const canonicalPeriod = canonicalOwnershipAfter.get(mapping.canonicalRelationId);
+      if (!canonicalPeriod) {
+        throw new Error(`Canonical ownership relation ${mapping.canonicalRelationId} is missing from the approved after-image`);
+      }
+      assertSameOwnerIdentity(retired, canonicalPeriod, mapping.retiredRelationId);
+      continue;
+    }
+
+    const retired = retiredMilestones.get(mapping.retiredRelationId);
+    if (!retired) {
+      const kindDetail = retiredOwnership.has(mapping.retiredRelationId)
+        ? " exists as an ownership period, not a milestone"
+        : " does not exist in a reviewed retired company";
+      throw new Error(`Retired milestone ${mapping.retiredRelationId}${kindDetail}`);
+    }
+    if (canonicalMilestonesAfter.has(mapping.retiredRelationId)) {
+      throw new Error(`Mapped retired milestone ${mapping.retiredRelationId} is still present in the approved after-image`);
+    }
+    if (!canonicalMilestonesBefore.has(mapping.canonicalRelationId)) {
+      throw new Error(`Canonical milestone ${mapping.canonicalRelationId} does not exist on the canonical before-image`);
+    }
+    const canonicalMilestone = canonicalMilestonesAfter.get(mapping.canonicalRelationId);
+    if (!canonicalMilestone) {
+      throw new Error(`Canonical milestone ${mapping.canonicalRelationId} is missing from the approved after-image`);
+    }
+    assertCompatibleMilestone(retired, canonicalMilestone, mapping.retiredRelationId);
+  }
+}
+
 function assertHistoryPreserved(
   proposal: ReconciliationProposal,
   fresh: FreshApplyState,
@@ -241,6 +407,8 @@ function assertHistoryPreserved(
     label: string;
     source: readonly T[];
     target: readonly T[];
+    mappedRetiredIds?: ReadonlySet<string>;
+    allowEquivalent?: boolean;
   }) => {
     for (const row of input.source) {
       if (row.id === null) throw new Error(`Retired ${input.label} is missing its database id`);
@@ -251,27 +419,36 @@ function assertHistoryPreserved(
         // retired-company snapshot and proposal hashes guard against drift.
         continue;
       }
-      const fingerprint = canonical(withoutId(row));
-      if (!input.target.some((candidate) => canonical(withoutId(candidate)) === fingerprint)) {
-        throw new Error(`Retired ${input.label} history ${row.id} is missing from the approved merge`);
+      if (input.mappedRetiredIds?.has(row.id)) continue;
+      if (input.allowEquivalent) {
+        const fingerprint = canonical(withoutId(row));
+        if (input.target.some((candidate) => canonical(withoutId(candidate)) === fingerprint)) {
+          continue;
+        }
       }
+      throw new Error(`Retired ${input.label} history ${row.id} is missing from the approved merge`);
     }
   };
+  const mappedOwnership = relationMergeIds(proposal, "OWNERSHIP_PERIOD");
+  const mappedMilestones = relationMergeIds(proposal, "MILESTONE");
   for (const retired of fresh.retiredCompanies) {
     assertRetiredRowsPreserved({
       label: "ownership period",
       source: retired.image.ownershipPeriods,
       target: after.ownershipPeriods,
+      mappedRetiredIds: mappedOwnership,
     });
     assertRetiredRowsPreserved({
       label: "management role",
       source: retired.image.managementRoles,
       target: after.managementRoles,
+      allowEquivalent: true,
     });
     assertRetiredRowsPreserved({
       label: "milestone",
       source: retired.image.milestones,
       target: after.milestones,
+      mappedRetiredIds: mappedMilestones,
     });
   }
 }
@@ -279,19 +456,15 @@ function assertHistoryPreserved(
 function relationChanges<T extends { id: string | null }>(
   before: readonly T[],
   after: readonly T[],
-  equivalentRemovalIds: ReadonlySet<string> = new Set(),
+  mappedRemovalIds: ReadonlySet<string> = new Set(),
 ): { added: T[]; removed: T[]; changed: T[] } {
   const beforeById = byRequiredId(before, "relation");
   const afterById = new Map(after.flatMap((row) => row.id ? [[row.id, row] as const] : []));
-  const semanticAfter = new Set(after.map((row) => canonical({ ...row, id: null })));
   return {
     added: after.filter((row) => row.id === null || !beforeById.has(row.id)),
     removed: before.filter((row) => row.id !== null
       && !afterById.has(row.id)
-      && !(
-        equivalentRemovalIds.has(row.id)
-        && semanticAfter.has(canonical({ ...row, id: null }))
-      )),
+      && !mappedRemovalIds.has(row.id)),
     changed: after.filter((row) => {
       if (!row.id) return false;
       const old = beforeById.get(row.id);
@@ -348,12 +521,11 @@ function deriveMutations(
     (field) => canonical(before[field]) !== canonical(after[field]),
   );
 
-  const retiredOwnershipIds = new Set(mergedSources.flatMap((image) =>
-    image.ownershipPeriods.flatMap((row) => row.id ? [row.id] : [])));
+  const mappedOwnershipIds = relationMergeIds(proposal, "OWNERSHIP_PERIOD");
   const ownership = relationChanges(
     relationBefore.ownershipPeriods,
     after.ownershipPeriods,
-    retiredOwnershipIds,
+    mappedOwnershipIds,
   );
   const addedOwners = ownership.added;
   const retiredOwners = ownership.changed.filter((row) => row.transactionState === "REALIZED");
@@ -406,7 +578,11 @@ function deriveMutations(
   for (const relation of ["milestones", "managementRoles", "citations"] as const) {
     const beforeRows: ReadonlyArray<{ id: string | null }> = relationBefore[relation];
     const afterRows: ReadonlyArray<{ id: string | null }> = after[relation];
-    const changes = relationChanges(beforeRows, afterRows);
+    const changes = relationChanges(
+      beforeRows,
+      afterRows,
+      relation === "milestones" ? relationMergeIds(proposal, "MILESTONE") : undefined,
+    );
     const mergeOnlyCitationRemoval = relation === "citations"
       && proposal.actions.includes("MERGE_COMPANIES")
       && changes.added.length === 0
@@ -555,6 +731,7 @@ export function planApprovedApply(input: {
     throw new Error("Fresh retired-company set is not identical to the approved merge set");
   }
 
+  assertValidRelationMerges(proposal, input.fresh, proposal.afterImage);
   assertHistoryPreserved(proposal, input.fresh, proposal.afterImage);
   const { mutations, changedFields } = deriveMutations(
     proposal,

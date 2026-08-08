@@ -49,6 +49,21 @@ describe("proposal patch ownership additions", () => {
       vehicleName: "Acme TEP LLC",
       transactionState: "CLOSED_ACTIVE",
     });
+    expect(result.spec.relationMerges).toEqual([]);
+  });
+
+  it("rejects retired relation mappings unless the spec declares a company merge", () => {
+    const spec = {
+      ...baseSpec(),
+      relationMerges: [{
+        kind: "OWNERSHIP_PERIOD",
+        retiredRelationId: "owner_retired",
+        canonicalRelationId: "owner_1",
+        rationale: "The duplicate ownership row maps to the canonical period.",
+      }],
+    };
+
+    expect(() => applySpec(contextFixture(), spec)).toThrow(/valid only for MERGE_COMPANIES/i);
   });
 
   it("rejects additions that claim an existing database id", () => {

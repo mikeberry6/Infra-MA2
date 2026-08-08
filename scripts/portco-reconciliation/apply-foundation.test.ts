@@ -18,6 +18,8 @@ import {
   executeApprovedApply,
   PORTCO_APPLY_WRITE_TOKEN,
   type ApprovedApplyDependencies,
+  type AuditEventWrite,
+  type CompanyRevisionWrite,
   type ProductionReleaseEvidence,
 } from "./apply-executor";
 import {
@@ -45,6 +47,7 @@ function approvedCorrection(input?: {
   after?: CompanyImage;
   actions?: ReconciliationProposal["actions"];
   retiredCompanyIds?: string[];
+  relationMerges?: NonNullable<ReconciliationProposal["relationMerges"]>;
   snapshot?: ProductionSnapshot;
 }): {
   proposal: ReconciliationProposal;
@@ -67,6 +70,7 @@ function approvedCorrection(input?: {
     actions: input?.actions ?? ["CORRECT_COMPANY"],
     sourceHoldingIds: ["001:acme-infrastructure"],
     retiredCompanyIds: input?.retiredCompanyIds ?? [],
+    relationMerges: input?.relationMerges ?? [],
     rationale: "Apply the individually reviewed company after-image.",
     evidence: [{
       url: "https://acme.example.com/owners",
@@ -109,6 +113,57 @@ function freshState(image = companyImageFixture()): FreshApplyState {
     retiredCompanies: [],
     createNameCountryMatches: [],
   };
+}
+
+function retiredMergeFixture(): {
+  snapshot: ProductionSnapshot;
+  before: CompanyImage;
+  retiredImage: CompanyImage;
+  fresh: FreshApplyState;
+} {
+  const baseSnapshot = productionSnapshotFixture();
+  const retiredSnapshotInput = {
+    ...baseSnapshot.companies[0],
+    id: "company_retired",
+    seedKey: "acme duplicate|United States",
+    name: "Acme Duplicate, LLC",
+    companySnapshotSha256: "",
+  };
+  const { companySnapshotSha256: _ignored, ...retiredWithoutHash } = retiredSnapshotInput;
+  const retiredSnapshot = {
+    ...retiredWithoutHash,
+    companySnapshotSha256: snapshotCompanySha256(retiredWithoutHash),
+  };
+  const snapshot = finalizeProductionSnapshot({
+    schemaVersion: 1,
+    artifactType: "PORTCO_PRODUCTION_SNAPSHOT",
+    asOfDate: baseSnapshot.asOfDate,
+    capturedAt: baseSnapshot.capturedAt,
+    readOnly: true,
+    databaseTargetLabel: baseSnapshot.databaseTargetLabel,
+    databaseTargetFingerprint: baseSnapshot.databaseTargetFingerprint,
+    companies: [...baseSnapshot.companies, retiredSnapshot],
+  });
+  const before = companyImageFixture();
+  const retiredImage = structuredClone(before);
+  retiredImage.id = "company_retired";
+  retiredImage.name = "Acme Duplicate, LLC";
+  retiredImage.ownershipPeriods[0] = {
+    ...retiredImage.ownershipPeriods[0],
+    id: "owner_retired",
+    stake: "49%",
+  };
+  retiredImage.milestones[0] = {
+    ...retiredImage.milestones[0],
+    id: "milestone_retired",
+    date: "September 2020",
+    sortDate: "2020-09-15T00:00:00.000Z",
+    event: "3i invested in the Acme Infrastructure platform.",
+  };
+  retiredImage.citations[0].id = "citation_retired";
+  const fresh = freshState(before);
+  fresh.retiredCompanies = [{ snapshot: retiredSnapshot, image: retiredImage }];
+  return { snapshot, before, retiredImage, fresh };
 }
 
 describe("approved PortCo apply planner", () => {
@@ -468,6 +523,12 @@ describe("approved PortCo apply planner", () => {
       after: exactAfter,
       actions: ["MERGE_COMPANIES"],
       retiredCompanyIds: ["company_retired"],
+      relationMerges: [{
+        kind: "OWNERSHIP_PERIOD",
+        retiredRelationId: "owner_retired_exact_duplicate",
+        canonicalRelationId: "owner_1",
+        rationale: "The retired row duplicates the canonical 3i ownership period.",
+      }],
       snapshot,
     });
     const exactDuplicateFresh = freshState(before);
@@ -480,6 +541,137 @@ describe("approved PortCo apply planner", () => {
       approvedProductionSnapshot: snapshot,
       fresh: exactDuplicateFresh,
     }).mutations.map((mutation) => mutation.kind)).toEqual(["MERGE_COMPANIES"]);
+  });
+
+  it("allows only proposal-bound compatible ownership and milestone mappings to retire duplicate relations", () => {
+    const { snapshot, before, fresh } = retiredMergeFixture();
+    const relationMerges: NonNullable<ReconciliationProposal["relationMerges"]> = [{
+      kind: "OWNERSHIP_PERIOD",
+      retiredRelationId: "owner_retired",
+      canonicalRelationId: "owner_1",
+      rationale: "Both rows represent the same 3i ownership period.",
+    }, {
+      kind: "MILESTONE",
+      retiredRelationId: "milestone_retired",
+      canonicalRelationId: "milestone_1",
+      rationale: "Both rows describe 3i's 2020 investment milestone.",
+    }];
+    const approved = approvedCorrection({
+      before,
+      after: structuredClone(before),
+      actions: ["MERGE_COMPANIES"],
+      retiredCompanyIds: ["company_retired"],
+      relationMerges,
+      snapshot,
+    });
+
+    const plan = planApprovedApply({
+      ...approved,
+      approvedProductionSnapshot: snapshot,
+      fresh,
+    });
+    expect(plan.mutations.map((mutation) => mutation.kind)).toEqual(["MERGE_COMPANIES"]);
+    expect(plan.proposal.relationMerges).toEqual(relationMerges);
+
+    const unmapped = approvedCorrection({
+      before,
+      after: structuredClone(before),
+      actions: ["MERGE_COMPANIES"],
+      retiredCompanyIds: ["company_retired"],
+      snapshot,
+    });
+    expect(() => planApprovedApply({
+      ...unmapped,
+      approvedProductionSnapshot: snapshot,
+      fresh,
+    })).toThrow(/retired ownership period history owner_retired/i);
+  });
+
+  it("rejects missing, mis-typed, or incompatible retired relation mappings", () => {
+    const { snapshot, before, fresh } = retiredMergeFixture();
+    const proposalFor = (relationMerges: NonNullable<ReconciliationProposal["relationMerges"]>) =>
+      approvedCorrection({
+        before,
+        after: structuredClone(before),
+        actions: ["MERGE_COMPANIES"],
+        retiredCompanyIds: ["company_retired"],
+        relationMerges,
+        snapshot,
+      });
+    const apply = (approved: ReturnType<typeof proposalFor>, state = fresh) => planApprovedApply({
+      ...approved,
+      approvedProductionSnapshot: snapshot,
+      fresh: state,
+    });
+
+    expect(() => apply(proposalFor([{
+      kind: "OWNERSHIP_PERIOD",
+      retiredRelationId: "owner_missing",
+      canonicalRelationId: "owner_1",
+      rationale: "Invalid missing relation fixture.",
+    }]))).toThrow(/does not exist in a reviewed retired company/i);
+
+    expect(() => apply(proposalFor([{
+      kind: "MILESTONE",
+      retiredRelationId: "owner_retired",
+      canonicalRelationId: "milestone_1",
+      rationale: "Invalid relation kind fixture.",
+    }]))).toThrow(/ownership period, not a milestone/i);
+
+    expect(() => apply(proposalFor([{
+      kind: "OWNERSHIP_PERIOD",
+      retiredRelationId: "owner_retired",
+      canonicalRelationId: "owner_missing",
+      rationale: "Invalid canonical relation fixture.",
+    }]))).toThrow(/canonical ownership relation owner_missing/i);
+
+    const wrongOwner = structuredClone(fresh);
+    wrongOwner.retiredCompanies[0].image.ownershipPeriods[0].organizationName = "Different Owner LLC";
+    expect(() => apply(proposalFor([{
+      kind: "OWNERSHIP_PERIOD",
+      retiredRelationId: "owner_retired",
+      canonicalRelationId: "owner_1",
+      rationale: "Invalid owner identity fixture.",
+    }]), wrongOwner)).toThrow(/different owner identity/i);
+
+    const wrongMilestone = structuredClone(fresh);
+    wrongMilestone.retiredCompanies[0].image.milestones[0].event = "A wholly unrelated expansion occurred.";
+    expect(() => apply(proposalFor([{
+      kind: "MILESTONE",
+      retiredRelationId: "milestone_retired",
+      canonicalRelationId: "milestone_1",
+      rationale: "Invalid milestone identity fixture.",
+    }]), wrongMilestone)).toThrow(/incompatible milestone identity/i);
+
+    const wrongMilestoneCategory = structuredClone(fresh);
+    wrongMilestoneCategory.retiredCompanies[0].image.milestones[0].category = "Expansion";
+    expect(() => apply(proposalFor([{
+      kind: "MILESTONE",
+      retiredRelationId: "milestone_retired",
+      canonicalRelationId: "milestone_1",
+      rationale: "Invalid milestone category fixture.",
+    }]), wrongMilestoneCategory)).toThrow(/incompatible category/i);
+
+    const wrongMilestoneDate = structuredClone(fresh);
+    wrongMilestoneDate.retiredCompanies[0].image.milestones[0].date = "September 2019";
+    wrongMilestoneDate.retiredCompanies[0].image.milestones[0].sortDate = "2019-09-15T00:00:00.000Z";
+    expect(() => apply(proposalFor([{
+      kind: "MILESTONE",
+      retiredRelationId: "milestone_retired",
+      canonicalRelationId: "milestone_1",
+      rationale: "Invalid milestone date fixture.",
+    }]), wrongMilestoneDate)).toThrow(/incompatible date/i);
+  });
+
+  it("rejects relation mappings outside a company merge", () => {
+    expect(() => approvedCorrection({
+      relationMerges: [{
+        kind: "OWNERSHIP_PERIOD",
+        retiredRelationId: "owner_retired",
+        canonicalRelationId: "owner_1",
+        rationale: "Mappings require an explicit company merge.",
+      }],
+    })).toThrow(/valid only for MERGE_COMPANIES/i);
   });
 });
 
@@ -658,6 +850,87 @@ describe("approved apply coordinator", () => {
       seedMatchesAfterImage: true,
       detailApiVerified: true,
     });
+  });
+
+  it("preserves complete retired before-images in the merge revision and audit event", async () => {
+    const { snapshot, before, retiredImage, fresh } = retiredMergeFixture();
+    const { proposal, approval } = approvedCorrection({
+      before,
+      after: structuredClone(before),
+      actions: ["MERGE_COMPANIES"],
+      retiredCompanyIds: ["company_retired"],
+      relationMerges: [{
+        kind: "OWNERSHIP_PERIOD",
+        retiredRelationId: "owner_retired",
+        canonicalRelationId: "owner_1",
+        rationale: "Both rows represent the same 3i ownership period.",
+      }, {
+        kind: "MILESTONE",
+        retiredRelationId: "milestone_retired",
+        canonicalRelationId: "milestone_1",
+        rationale: "Both rows describe 3i's 2020 investment milestone.",
+      }],
+      snapshot,
+    });
+    const release: ProductionReleaseEvidence = {
+      targetDatabase: "production",
+      protectedProductionWriteApproved: true,
+      protectedApprovalSha256: approval.approvalSha256,
+      seedArtifactCommitted: true,
+      seedArtifactPushed: true,
+      committedSeedArtifactSha256: "d".repeat(64),
+      releaseSha: "e".repeat(40),
+    };
+    let revision: CompanyRevisionWrite | undefined;
+    let audit: AuditEventWrite | undefined;
+
+    await executeApprovedApply({
+      proposal,
+      approval,
+      approvedProductionSnapshot: snapshot,
+      gate: {
+        explicitWriteToken: PORTCO_APPLY_WRITE_TOKEN,
+        expectedDatabaseTargetFingerprint: snapshot.databaseTargetFingerprint,
+        release,
+      },
+      dependencies: {
+        publishSeed: async () => ({
+          artifactPath: "/repo/prisma/seed-data/approved-portco-after-images.json",
+          artifactSha256: "d".repeat(64),
+          afterImageSha256: proposal.afterImageSha256!,
+          proposalSha256: proposal.proposalSha256,
+          approvalSha256: approval.approvalSha256,
+        }),
+        verifyPublishedSeed: async () => undefined,
+        verifyRelease: async () => release,
+        runSerializable: async (work) => await work({ id: "tx" }),
+        store: {
+          loadFreshState: async () => fresh,
+          applyMutationPlan: async () => ({ companyId: "company_acme" }),
+          loadAppliedCompanyImage: async () => proposal.afterImage!,
+          createCompanyRevision: async (_transaction, write) => {
+            revision = write;
+            return { id: "revision_1" };
+          },
+          createAuditEvent: async (_transaction, write) => {
+            audit = write;
+            return { id: "audit_1" };
+          },
+        },
+        verifyDetailApi: async () => undefined,
+        now: () => new Date(FIXTURE_NOW),
+        transactionId: () => "transaction_1",
+      },
+    });
+
+    expect(revision?.beforeJson).toEqual({
+      artifactType: "PORTCO_MERGE_REVISION_BEFORE_IMAGES",
+      canonicalCompany: before,
+      retiredCompanies: [retiredImage],
+      relationMerges: proposal.relationMerges,
+    });
+    expect(audit?.changes.retiredCompanyBeforeImages).toEqual([retiredImage]);
+    expect(audit?.changes.relationMerges).toEqual(proposal.relationMerges);
   });
 
   it("refuses production before the exact seed artifact is committed and pushed", async () => {

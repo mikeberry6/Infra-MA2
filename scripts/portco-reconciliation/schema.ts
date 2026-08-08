@@ -709,6 +709,21 @@ const proposalEvidenceSchema = z.strictObject({
   supports: uniqueNonEmptyArray.min(1),
 });
 
+export const relationMergeSchema = z.strictObject({
+  kind: z.enum(["OWNERSHIP_PERIOD", "MILESTONE"]),
+  retiredRelationId: nonEmpty,
+  canonicalRelationId: nonEmpty,
+  rationale: nonEmpty,
+}).superRefine((mapping, context) => {
+  if (mapping.retiredRelationId === mapping.canonicalRelationId) {
+    context.addIssue({
+      code: "custom",
+      path: ["canonicalRelationId"],
+      message: "A retired relation cannot map to itself",
+    });
+  }
+});
+
 export const reconciliationProposalSchema = z.strictObject({
   schemaVersion: z.literal(PORTCO_RECONCILIATION_SCHEMA_VERSION),
   artifactType: z.literal("PORTCO_CHANGE_PROPOSAL"),
@@ -725,6 +740,10 @@ export const reconciliationProposalSchema = z.strictObject({
   }),
   sourceHoldingIds: uniqueNonEmptyArray,
   retiredCompanyIds: uniqueNonEmptyArray,
+  // Optional on the durable artifact so proposals hashed before this additive
+  // control continue to verify byte-for-byte. New proposal specs default this
+  // field to [] and therefore bind it into all newly generated hashes.
+  relationMerges: z.array(relationMergeSchema).optional(),
   rationale: nonEmpty,
   evidence: z.array(proposalEvidenceSchema).min(1),
   unresolvedQuestions: uniqueNonEmptyArray,
@@ -738,6 +757,26 @@ export const reconciliationProposalSchema = z.strictObject({
   proposalSha256: sha256Value,
 }).superRefine((proposal, context) => {
   const create = proposal.actions.includes("CREATE_COMPANY");
+  const relationMerges = proposal.relationMerges ?? [];
+  if (relationMerges.length > 0 && !proposal.actions.includes("MERGE_COMPANIES")) {
+    context.addIssue({
+      code: "custom",
+      path: ["relationMerges"],
+      message: "Retired relation mappings are valid only for MERGE_COMPANIES proposals",
+    });
+  }
+  const mappedRetiredRelations = new Set<string>();
+  for (const [index, mapping] of relationMerges.entries()) {
+    const key = `${mapping.kind}:${mapping.retiredRelationId}`;
+    if (mappedRetiredRelations.has(key)) {
+      context.addIssue({
+        code: "custom",
+        path: ["relationMerges", index, "retiredRelationId"],
+        message: "Each retired relation may be mapped only once",
+      });
+    }
+    mappedRetiredRelations.add(key);
+  }
   if (create && (proposal.beforeImage !== null || proposal.currentCompanySnapshotSha256 !== null)) {
     context.addIssue({
       code: "custom",

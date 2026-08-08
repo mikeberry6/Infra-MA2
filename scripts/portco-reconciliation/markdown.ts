@@ -158,6 +158,14 @@ export function renderProposalMarkdown(proposal: ReconciliationProposal): string
     .map((period) =>
       `| ${markdownCell(period.managerName)} | ${markdownCell(period.fundName)} | ${markdownCell(period.vehicleName)} | ${markdownCell(period.stake)} | ${markdownCell(period.investmentYear)} | ${markdownCell(period.exitYear)} | ${period.transactionState} |`)
     .join("\n");
+  const relationMerges = [...(proposal.relationMerges ?? [])]
+    .sort((left, right) =>
+      compareText(left.kind, right.kind)
+      || compareText(left.retiredRelationId, right.retiredRelationId)
+      || compareText(left.canonicalRelationId, right.canonicalRelationId))
+    .map((mapping) =>
+      `| ${markdownCell(mapping.kind)} | ${markdownCell(mapping.retiredRelationId)} | ${markdownCell(mapping.canonicalRelationId)} | ${markdownCell(mapping.rationale)} |`)
+    .join("\n");
 
   return [
     `# PortCo proposal — ${proposal.companyName}`,
@@ -187,6 +195,12 @@ export function renderProposalMarkdown(proposal: ReconciliationProposal): string
     "## Retired company records",
     "",
     bulletList([...proposal.retiredCompanyIds].sort(compareText)),
+    "",
+    "## Retired relation mappings",
+    "",
+    "| Kind | Retired relation | Canonical relation | Rationale |",
+    "| --- | --- | --- | --- |",
+    relationMerges || "| — | — | — | None |",
     "",
     "## Evidence",
     "",

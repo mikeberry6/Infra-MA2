@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T08:24:00.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T08:56:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0039:lbj-express:7e5653c8",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -6231,18 +6231,27 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "59d3926faf3ad4d90528dcceff1793daf286d82c26f45984302d6c2b84cc6442",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-08T08:31:00.000Z",
+      "updatedAt": "2026-08-08T08:56:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "635ac694eec11fdfe7a01603113a97264cfa50fcf5b325b07aa71e0558c35fbf",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0039-lbj-express/attempt-1/task-snapshot.json",
+          "sha256": "635ac694eec11fdfe7a01603113a97264cfa50fcf5b325b07aa71e0558c35fbf"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0039-lbj-express-v1/proposal.json",
+          "sha256": "5ed0fec8c6e92595037fcac5b9bc6455d6f92e86dafa20269aa12cc6acc56304"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0039-lbj-express-v1.json",
+          "sha256": "d168142dc175f18b096dea9595a62532492a2b5fe033407f0530f32d3f348157"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -6258,6 +6267,54 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T08:31:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T08:55:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "635ac694eec11fdfe7a01603113a97264cfa50fcf5b325b07aa71e0558c35fbf",
+          "evidenceSha256": [
+            "5ed0fec8c6e92595037fcac5b9bc6455d6f92e86dafa20269aa12cc6acc56304",
+            "635ac694eec11fdfe7a01603113a97264cfa50fcf5b325b07aa71e0558c35fbf"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T08:55:15.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "635ac694eec11fdfe7a01603113a97264cfa50fcf5b325b07aa71e0558c35fbf",
+          "evidenceSha256": [
+            "5ed0fec8c6e92595037fcac5b9bc6455d6f92e86dafa20269aa12cc6acc56304",
+            "635ac694eec11fdfe7a01603113a97264cfa50fcf5b325b07aa71e0558c35fbf"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T08:56:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "635ac694eec11fdfe7a01603113a97264cfa50fcf5b325b07aa71e0558c35fbf",
+          "evidenceSha256": [
+            "d168142dc175f18b096dea9595a62532492a2b5fe033407f0530f32d3f348157"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23643,5 +23700,5 @@
       ]
     }
   ],
-  "manifestSha256": "416ac8c86b69a34af8112647e32446e93be139343664387f68570a8ef6ae5c78"
+  "manifestSha256": "26a71bf126da5ad868bcbc50eb226ade63cfc2df58bf812deaec08fb4cff8961"
 }
