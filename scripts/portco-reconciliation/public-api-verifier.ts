@@ -87,6 +87,35 @@ function ownerKey(owner: PublicOwner): string {
   return JSON.stringify(owner);
 }
 
+function primaryOwnerCandidates(owners: PublicOwner[]): PublicOwner[] {
+  if (owners.length === 0) return [];
+  const activeOwners = owners.filter((owner) => owner.isActive);
+  const eligibleOwners = activeOwners.length > 0 ? activeOwners : owners;
+  const latestInvestmentYear = Math.max(
+    ...eligibleOwners.map((owner) => owner.investmentYear ?? 0),
+  );
+  return eligibleOwners.filter(
+    (owner) => (owner.investmentYear ?? 0) === latestInvestmentYear,
+  );
+}
+
+function matchesPrimaryOwnerProjection(
+  actual: PublicProjection,
+  expectedOwners: PublicOwner[],
+): boolean {
+  const candidates = primaryOwnerCandidates(expectedOwners);
+  if (candidates.length === 0) {
+    return actual.investmentFirm === ""
+      && actual.ownershipVehicle === ""
+      && actual.investmentYear === null;
+  }
+  return candidates.some((owner) => (
+    actual.investmentFirm === owner.firm
+    && actual.ownershipVehicle === owner.vehicle
+    && actual.investmentYear === owner.investmentYear
+  ));
+}
+
 export function expectedPublicProjection(input: {
   companyId: string;
   afterImage: CompanyImage;
@@ -230,7 +259,21 @@ export function verifyPublicCompanyPayload(input: {
       throw new Error(`Detail API is missing canonical/redirect focus id ${requiredId}`);
     }
   }
-  const comparableActual = { ...actual, requiredFocusIds: expected.requiredFocusIds };
+  // The legacy scalar owner fields project the first highest-priority owner.
+  // When active co-owners share the latest investment year, Prisma's stable
+  // relation order may select any tied owner even though the complete owner
+  // roster is identical. Accept only an exact tied candidate, then normalize
+  // the scalar projection before comparing every other render-critical field.
+  if (!matchesPrimaryOwnerProjection(actual, expected.owners)) {
+    throw new Error("Detail API primary-owner projection is not an approved highest-priority owner");
+  }
+  const comparableActual = {
+    ...actual,
+    requiredFocusIds: expected.requiredFocusIds,
+    investmentFirm: expected.investmentFirm,
+    ownershipVehicle: expected.ownershipVehicle,
+    investmentYear: expected.investmentYear,
+  };
   if (JSON.stringify(comparableActual) !== JSON.stringify(expected)) {
     throw new Error("Detail API render-critical projection does not match the approved after-image");
   }
