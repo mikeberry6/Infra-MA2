@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-08T10:30:46.000Z",
+  "asOfDate": "2026-08-08",
+  "decision": "DEFER_CANONICAL_IDENTITY_AND_OWNERSHIP_MUTATION",
+  "taskId": "ledger:0042:sifi-networks-america-limited:8125d44e",
+  "taskIndex": 42,
+  "companyName": "SiFi Networks America Limited",
+  "requestedManagers": [
+    "APG Infrastructure",
+    "Patrizia"
+  ],
+  "rationale": "Do not mutate the database or seed from the current target. The target is the legacy UK parent, SiFi Networks America Limited (company 08556605), which entered administration after completing a connected-party sale of its business and certain assets to ArcLink on June 5, 2026. The continuing public brand is SiFi Networks and the apparent UK legal successor is ArcLink Fiber (US) Limited. A separate Delaware subsidiary, SiFi Networks America, LLC, remains a Chapter 11 debtor. The court docket records ArcLink Fiber LLC as the successful bidder and an August 6 order approving the sale of substantially all U.S. debtor assets, but no direct closing evidence was identified through the as-of date. Applying an ordinary active-company correction now would either preserve an in-administration legal shell as the operating PortCo or prematurely treat a separate U.S. asset transfer as closed. The manager-level exposure remains within the APG/SCIF and PATRIZIA sponsor complex, but the canonical operating-platform boundary must be resolved first.",
+  "identityResolution": {
+    "currentRepositoryTarget": "SiFi Networks America Limited",
+    "currentRepositoryTargetLegalStatus": "IN_ADMINISTRATION",
+    "currentRepositoryTargetCompanyNumber": "08556605",
+    "continuingDisplayBrand": "SiFi Networks",
+    "probableUkLegalSuccessor": "ArcLink Fiber (US) Limited",
+    "probableUkLegalSuccessorCompanyNumber": "17135290",
+    "separateUsDebtor": "SiFi Networks America, LLC",
+    "separateUsBuyer": "ArcLink Fiber LLC",
+    "recommendedCanonicalTreatmentAfterResolution": "Use SiFi Networks as the continuing platform display name, bind the legal successor only after the operating perimeter is confirmed, preserve SiFi Networks America Limited and its historical legal names as predecessors, and keep the Delaware debtor and buyer as distinct entities rather than aliases.",
+    "subsidiaryAndProjectBoundary": "FiberCity project companies and city networks are project SPVs beneath the manager-level platform and must not become duplicate PortCos."
+  },
+  "ownershipResolution": {
+    "april2026ParentAcquisition": "The court-filed first-day declaration states that PATRIZIA and APG/SCIF acquired the UK parent in April 2026; Companies House records the control change on April 17, 2026.",
+    "legacyParentShareholdingsBeforeAdministration": [
+      {
+        "holder": "ArcLink Fiber (US) Limited",
+        "stake": "73.3%"
+      },
+      {
+        "holder": "Gaziti Investments Holding B.V.",
+        "stake": "16.7%",
+        "managerMapping": "High-confidence reconciliation to APG's announced 16.7% direct stake; no single reviewed primary document names Gaziti as APG's vehicle."
+      },
+      {
+        "holder": "SCIF Investor Vehicle LLP",
+        "stake": "10.0%",
+        "managerMapping": "Smart City Infrastructure Fund vehicle managed by PATRIZIA Infrastructure with current APG infrastructure-pool and ABP members."
+      }
+    ],
+    "founderExit": "OAF America Ltd and Si-Fi Global Limited ceased as persons with significant control on April 17, 2026.",
+    "managerLevelConclusion": "APG and PATRIZIA remain tied to the sponsor complex, but exact current manager economic percentages above the ArcLink and SCIF vehicles are not publicly established and must not be inferred."
+  },
+  "transactionResolution": {
+    "ukTransaction": {
+      "state": "CLOSED_ASSET_TRANSFER",
+      "date": "2026-06-05",
+      "description": "The UK administrators' proposal records a completed connected-party sale of the UK parent's business and certain assets to ArcLink for GBP600,000, with employees transferring."
+    },
+    "usTransaction": {
+      "state": "COURT_APPROVED_CLOSING_NOT_VERIFIED",
+      "successfulBidder": "ArcLink Fiber LLC",
+      "saleOrderDate": "2026-08-06",
+      "description": "The public docket records cancellation of the auction, ArcLink as successful bidder, and an order approving the sale of substantially all debtor assets. No direct closing notice, executed bill of sale, or other consummation evidence was identified through August 8, 2026."
+    },
+    "pendingOwnershipSchemaDecision": "Do not force the intra-sponsor asset sale into a manager ownership-period exit. The buyer is an affiliate within the existing sponsor complex, and the unresolved issue is platform succession rather than evidence that APG or PATRIZIA has exited."
+  },
+  "evidence": [
+    {
+      "label": "Companies House - SiFi Networks America Limited overview",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/08556605",
+      "purpose": "Legacy UK parent identity, incorporation date, prior names, and current in-administration status",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "Companies House - SiFi Networks America Limited filing history",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history",
+      "purpose": "April 17 control change, June administration filings, and the administrators' proposal",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "Companies House - administrators' proposal",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history/MzUyNjQwNDkzMGFkaXF6a2N4/document?download=0&format=pdf",
+      "purpose": "Completed June 5 connected-party UK asset sale, shareholder structure, insolvency context, and employee transfer",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "Companies House - SCIF Investor Vehicle LLP officers",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/OC424572/officers",
+      "purpose": "Current PATRIZIA manager and APG infrastructure-pool or ABP membership evidence for the SCIF vehicle",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "Companies House - ArcLink Fiber (US) Limited overview",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/17135290",
+      "purpose": "Active UK successor or holding entity identity and April 2, 2026 incorporation",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "SiFi Networks privacy notice",
+      "url": "https://sifinetworks.com/corporate/privacy-and-cookie-policy-sifi-networks/",
+      "purpose": "Continuing SiFi brand and ArcLink Fiber (US) Limited controller identity after the UK asset sale",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "SiFi Networks America first-day declaration",
+      "url": "https://elevenflo.com/documents/3becf041-d6ae-4eb9-9293-b80e39898b3b/",
+      "purpose": "Court-filed distinction between UK parent and Delaware subsidiary, April PATRIZIA and APG/SCIF acquisition, June UK asset sale, U.S. operating profile, and Chapter 11 context",
+      "sourceTier": "COURT_FILING"
+    },
+    {
+      "label": "SiFi Networks America sale motion and asset purchase agreement",
+      "url": "https://elevenflo.com/documents/191772e2-b58a-4bea-b4e3-e6b1b1c48582/",
+      "purpose": "Court-filed ArcLink Fiber LLC stalking-horse transaction terms and conditions to closing",
+      "sourceTier": "COURT_FILING"
+    },
+    {
+      "label": "SiFi Networks America public docket",
+      "url": "https://elevenflo.com/cases/16007",
+      "purpose": "August 6 sale order, successful-bidder notice, and absence of a later closing filing through the as-of date",
+      "sourceTier": "COURT_DOCKET_MIRROR"
+    }
+  ],
+  "unresolvedQuestions": [
+    "Has the court-approved sale of substantially all SiFi Networks America, LLC assets to ArcLink Fiber LLC legally closed?",
+    "Which ArcLink entity is the durable legal owner of the continuing SiFi Networks operating platform after both restructuring processes?",
+    "Will the continuing operating business retain the SiFi Networks brand, adopt ArcLink, or use another legal identity?",
+    "What exact economic percentages should be attributed to APG and PATRIZIA above the ArcLink and SCIF vehicles after the restructuring?"
+  ],
+  "retryTriggers": [
+    "A filed closing notice or executed transfer document for the U.S. asset sale",
+    "An updated SiFi or PATRIZIA legal notice identifying the post-restructuring operating entity",
+    "A Companies House or court filing that resolves the post-sale ownership chain",
+    "A public rebrand or successor-company announcement"
+  ],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "DEFERRED"
+}
