@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0044:southern-power-solar-portfolio:e23910f6",
+  "taskIndex": 44,
+  "asOfDate": "2026-08-08",
+  "generatedAt": "2026-08-08T10:53:17.000Z",
+  "canonicalKey": "southern-power-solar-portfolio|united-states",
+  "companyName": "Southern Power solar portfolio",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [
+    "009-apg-infrastructure:holding:015:southern-power-solar-portfolio"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpj5jp00hvivheqg0t2csf"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjqkm01enivhepveg9jir",
+      "canonicalRelationId": "cmrxpjql301eoivhe386yx8e4",
+      "rationale": "Both rows represent APG's November 2023 acquisition of the same 33% limited-partner interest; retain the portfolio-bound period and correct its stake and Scarlet Renewables vehicle."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkhzr02jwivhep50d550s",
+      "canonicalRelationId": "cmrxpki5c02k1ivhe1jvll98v",
+      "rationale": "Both rows record Southern Power's May 2018 agreement to sell the 33% portfolio interest to Global Atlantic."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpki2o02jxivhejy1kt9xj",
+      "canonicalRelationId": "cmrxpki5v02k2ivhe5h69pepy",
+      "rationale": "Both rows record Southern Power's 2021 battery-storage additions at portfolio solar facilities."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpki3o02jzivhel4gpiaqw",
+      "canonicalRelationId": "cmrxpki6w02k4ivhe1ti0wh62",
+      "rationale": "Both rows record APG's November 2023 acquisition of Global Atlantic's minority portfolio interest."
+    }
+  ],
+  "rationale": "Correct the canonical holding to SP Solar Holdings I, LP, the Delaware limited partnership identified in Southern Power's SEC filings, and retain Southern Power solar and storage portfolio as a public-facing alias. APG did not acquire Southern Power Company; it acquired the 33% passive limited-partner interest in SP Solar from Global Atlantic in November 2023 through Scarlet Renewables LLC. Southern Power remains the 67% majority owner, general partner through wholly owned subsidiaries, and operating controller. APG Asset Management US's March 25, 2026 Form ADV continues to list Scarlet Renewables LLC as an APG-managed infrastructure private fund, and Southern Company's June 30, 2026 filing continues to report the same 67%/33% partnership economics. No APG exit, transfer, or pending sale was found through August 8, 2026. Retire the separate Southern Power repository row because it is an erroneous APG-attributed parent-level PortCo record, not because Southern Power Company and SP Solar are the same legal entity. The resulting technical redirect preserves old repository links only; Southern Power is deliberately excluded from the canonical alias list. Preserve the two unique parent-context milestones, explicitly consolidate the duplicate ownership and milestone rows, retain legacy historical facts, add direct current ownership and identity evidence, and remove duplicate or irrelevant citations. The November 14, 2023 date is the completed-sale disclosure date; no separate legal closing date is inferred in this phase-one schema.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1160661/000116066118000004/spcjuno8-k52018.htm",
+      "purpose": "Southern Power's SEC filing establishing the exact SP Solar Holdings I, LP legal identity, Scarlet Renewables LLC buyer vehicle, original 33% sale, and Southern Power's retained 67% control.",
+      "supports": [
+        "IDENTITY",
+        "STAKE",
+        "VEHICLE",
+        "OWNERSHIP_HISTORY",
+        "PLATFORM_BOUNDARY"
+      ]
+    },
+    {
+      "url": "https://assetmanagement.apg.nl/publications/apg-boosts-commitment-to-energy-transition-with-major-us-solar-investment/",
+      "purpose": "APG's primary announcement that it acquired the 33% minority interest from Global Atlantic while Southern Power remained majority owner and operator.",
+      "supports": [
+        "CURRENT_OWNERSHIP",
+        "INFRASTRUCTURE_STRATEGY",
+        "INVESTMENT_DATE",
+        "STAKE"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG",
+      "purpose": "Seller announcement confirming the completed transfer to APG and the November 14, 2023 completion-disclosure date.",
+      "supports": [
+        "CURRENT_OWNERSHIP",
+        "INVESTMENT_DATE",
+        "SELLER",
+        "TRANSACTION_STATE"
+      ]
+    },
+    {
+      "url": "https://reports.adviserinfo.sec.gov/reports/ADV/160795/PDF/160795.pdf",
+      "purpose": "APG Asset Management US's March 25, 2026 Form ADV identifying Scarlet Renewables LLC as an APG-managed infrastructure private fund.",
+      "supports": [
+        "CURRENT_OWNERSHIP",
+        "EXIT_SEARCH",
+        "VEHICLE"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000054/so-20260630.htm",
+      "purpose": "Southern Company's latest available quarterly filing confirming SP Solar's continuing operations, Southern Power's 67% interest, the limited partner's 33% economics, and Southern Power's control through June 30, 2026.",
+      "supports": [
+        "CURRENT_STATUS",
+        "CURRENT_OWNERSHIP",
+        "EXIT_SEARCH",
+        "IDENTITY",
+        "STAKE"
+      ]
+    },
+    {
+      "url": "https://www.southerncompany.com/newsroom/financials/southern-power-to-sell-minority-interest-in-solar.html",
+      "purpose": "Southern Power's primary description of the original 26-facility partnership transaction and its general-partner operating role.",
+      "supports": [
+        "OPERATIONS_ASSETS",
+        "OWNERSHIP_HISTORY",
+        "PLATFORM_BOUNDARY"
+      ]
+    },
+    {
+      "url": "https://www.southernpowercompany.com/our-projects/solar.html",
+      "purpose": "Current Southern Power operating page describing its solar fleet, current operating geography, and third-party co-ownership footprint.",
+      "supports": [
+        "CURRENT_STATUS",
+        "GEOGRAPHY",
+        "OPERATIONS_ASSETS"
+      ]
+    },
+    {
+      "url": "https://www.southernpowercompany.com/content/dam/southernpower/pdfs/fact-sheets/MillersBranch2_Solar_Facility_factsheet_FINAL2.pdf",
+      "purpose": "Southern Power fact sheet supporting the retained September 2023 Millers Branch parent-context milestone.",
+      "supports": [
+        "MILESTONE_EVENT",
+        "OPERATIONS_ASSETS"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "31958468b2e3529655faa7775cb6fa2ea52f47b76bee0a786a527ddf3d3a3f9a",
+  "currentCompanySnapshotSha256": "e3214528feec9acef2d8960c2749b8106dd9b2c0371b4963a3b70dab26232f8b",
+  "beforeImage": {
+    "id": "cmrxpj5k500hwivhetgtctyfl",
+    "name": "Southern Power solar portfolio",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Contracted utility-scale solar and storage portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "This portfolio consists of Southern Power-managed operating solar facilities and battery storage assets across multiple U.S. states. Its customers are utilities and other power purchasers served under long-term power contracts rather than merchant market exposure. The portfolio follows an asset-heavy contracted operating model with Southern Power remaining general partner and operating manager of the underlying projects. Public disclosures describe 26 operating solar facilities and two battery storage projects totaling approximately 2.2 gigawatts across six states. The portfolio traces back to a 2018 minority sale to Global Atlantic and was later recapitalized when APG acquired that minority interest in 2023. APG acquired the 33% minority stake from Global Atlantic in November 2023, while Southern Power retained the remaining interest and operating control.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "California; Georgia; Nevada; New Mexico; North Carolina; Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjql301eoivhe386yx8e4",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpki4q02k0ivheau72j57a",
+        "date": "2018",
+        "event": "Global Atlantic completed the minority investment in the 26-facility solar portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpki5c02k1ivhe1jvll98v",
+        "date": "May 2018",
+        "event": "Southern Power agreed to sell a 33% minority interest in the solar portfolio to Global Atlantic.",
+        "category": "DIVESTITURE",
+        "sortDate": "2018-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpki5v02k2ivhe5h69pepy",
+        "date": "2021",
+        "event": "Southern Power added battery storage to selected projects within the broader portfolio.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpki6g02k3ivhepk2pr9e0",
+        "date": "2023",
+        "event": "The portfolio was described as comprising 26 solar facilities and two battery storage assets totaling about 2.2 GW.",
+        "category": "EXPANSION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpki6w02k4ivhe1ti0wh62",
+        "date": "Nov 2023",
+        "event": "APG acquired Global Atlantic's 33% stake in the portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpot5s078eivheqq39hkn4",
+        "label": "Investment date source — APG Infrastructure — Southern Power solar portfolio",
+        "url": "https://assetmanagement.apg.nl/publications/apg-boosts-commitment-to-energy-transition-with-major-us-solar-investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpot66078fivheprplsver",
+        "label": "Business Wire — Southern Power",
+        "url": "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpot73078hivhegsacvb6r",
+        "label": "Southerncompany — Southern Power solar portfolio",
+        "url": "https://www.southerncompany.com/newsroom/financials/southern-power-to-sell-minority-interest-in-solar.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Southerncompany — Southern Power solar portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpotbi078iivhehk7lddt1",
+        "label": "Southernpowercompany — Southern Power",
+        "url": "https://www.southernpowercompany.com/our-projects/solar.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Southernpowercompany operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "e3214528feec9acef2d8960c2749b8106dd9b2c0371b4963a3b70dab26232f8b",
+  "afterImage": {
+    "id": "cmrxpj5k500hwivhetgtctyfl",
+    "name": "SP Solar Holdings I, LP",
+    "aliases": [
+      "Southern Power solar and storage portfolio",
+      "Southern Power solar portfolio",
+      "SP Solar",
+      "SPSH"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Contracted utility-scale solar and battery storage portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "SP Solar Holdings I, LP is a Delaware limited partnership that indirectly owns substantially all of Southern Power's solar and battery energy storage facilities. Southern Power controls the partnership through wholly owned subsidiaries, holds 67%, and operates and maintains the assets; APG holds the 33% passive limited-partner interest through Scarlet Renewables LLC after acquiring it from Global Atlantic in November 2023. The assets supply utilities and other power purchasers under long-term contracts across multiple U.S. states. Southern Company's June 2026 filing continued to report the 67%/33% economics and Southern Power control, while APG's March 2026 regulatory filing continued to list Scarlet Renewables as an APG-managed infrastructure vehicle.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-08T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjql301eoivhe386yx8e4",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "Scarlet Renewables LLC",
+        "stake": "33%",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkhzd02jvivheejhgjqr6",
+        "date": "2001",
+        "event": "Southern Power, SP Solar's controlling sponsor and operator, was formed as Southern Company's wholesale generating subsidiary.",
+        "category": "OTHER",
+        "sortDate": "2001-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.southernpowercompany.com/who-we-are.html"
+        ]
+      },
+      {
+        "id": "cmrxpki5c02k1ivhe1jvll98v",
+        "date": "May 22, 2018",
+        "event": "Southern Power agreed to sell a 33% minority interest in the solar portfolio to Global Atlantic.",
+        "category": "DIVESTITURE",
+        "sortDate": "2018-05-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1160661/000116066118000004/spcjuno8-k52018.htm",
+          "https://www.southerncompany.com/newsroom/financials/southern-power-to-sell-minority-interest-in-solar.html"
+        ]
+      },
+      {
+        "id": "cmrxpki4q02k0ivheau72j57a",
+        "date": "May 25, 2018",
+        "event": "Southern Power completed the $1.175 billion sale of a 33% interest in SP Solar Holdings I, LP to Scarlet Renewables LLC, whose beneficial interests were owned by Global Atlantic affiliates.",
+        "category": "FINANCING",
+        "sortDate": "2018-05-25T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1160661/000116066118000004/spcjuno8-k52018.htm"
+        ]
+      },
+      {
+        "id": "cmrxpki5v02k2ivhe5h69pepy",
+        "date": "Feb 2021",
+        "event": "Southern Power announced battery storage additions at selected California solar projects within the broader portfolio.",
+        "category": "EXPANSION",
+        "sortDate": "2021-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpki3602jyivhep24c5ika",
+        "date": "Sep 2023",
+        "event": "Southern Power acquired the Millers Branch Solar Facility in Texas, expanding its broader solar fleet.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.southernpowercompany.com/content/dam/southernpower/pdfs/fact-sheets/MillersBranch2_Solar_Facility_factsheet_FINAL2.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpki6g02k3ivhepk2pr9e0",
+        "date": "Nov 2023",
+        "event": "At APG's investment, the disclosed portfolio comprised 26 operating solar facilities and two battery storage projects totaling approximately 2.2 GW across six U.S. states.",
+        "category": "EXPANSION",
+        "sortDate": "2023-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://assetmanagement.apg.nl/publications/apg-boosts-commitment-to-energy-transition-with-major-us-solar-investment/",
+          "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG"
+        ]
+      },
+      {
+        "id": "cmrxpki6w02k4ivhe1ti0wh62",
+        "date": "Nov 14, 2023",
+        "event": "Global Atlantic announced that it had completed the sale of its 33% SP Solar interest to APG; Southern Power remained the majority owner and operator.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-14T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://assetmanagement.apg.nl/publications/apg-boosts-commitment-to-energy-transition-with-major-us-solar-investment/",
+          "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG",
+          "https://reports.adviserinfo.sec.gov/reports/ADV/160795/PDF/160795.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpot5s078eivheqq39hkn4",
+        "label": "Investment date source — APG Infrastructure — Southern Power solar portfolio",
+        "url": "https://assetmanagement.apg.nl/publications/apg-boosts-commitment-to-energy-transition-with-major-us-solar-investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG's 33% portfolio acquisition, infrastructure mandate, operating scope, and Southern Power's retained control",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpot66078fivheprplsver",
+        "label": "Business Wire — Southern Power",
+        "url": "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Atlantic's completed-sale announcement and November 14, 2023 disclosure date",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpot73078hivhegsacvb6r",
+        "label": "Southerncompany — Southern Power solar portfolio",
+        "url": "https://www.southerncompany.com/newsroom/financials/southern-power-to-sell-minority-interest-in-solar.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Original 26-facility partnership transaction and Southern Power operating role",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpotbi078iivhehk7lddt1",
+        "label": "Southernpowercompany — Southern Power",
+        "url": "https://www.southernpowercompany.com/our-projects/solar.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current solar fleet, operating geography, and third-party co-ownership footprint",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpot1m0786ivhey72cka18",
+        "label": "Southernpowercompany — Southern Power",
+        "url": "https://www.southernpowercompany.com/who-we-are.html",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Southern Power sponsor and operator formation context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Southern Power — May 2018 Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1160661/000116066118000004/spcjuno8-k52018.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "SP Solar legal identity, Scarlet Renewables vehicle, original closing, and 67%/33% structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "APG Asset Management US — March 2026 Form ADV",
+        "url": "https://reports.adviserinfo.sec.gov/reports/ADV/160795/PDF/160795.pdf",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current APG management of Scarlet Renewables LLC",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Southern Company — Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000054/so-20260630.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current SP Solar identity, operations, Southern Power control, and 67%/33% economics",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Southern Power — Millers Branch Solar Facility fact sheet",
+        "url": "https://www.southernpowercompany.com/content/dam/southernpower/pdfs/fact-sheets/MillersBranch2_Solar_Facility_factsheet_FINAL2.pdf",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "September 2023 Millers Branch acquisition and broader solar-fleet expansion",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "066d5e2255320a822df9e2d92279357732c40c1f7e7519ced44eb72026ba64e6",
+  "proposalSha256": "bc042d302e608c3296c81f2aca0233599dc7039fc22b20ec6d965cb6a81b88de"
+}
