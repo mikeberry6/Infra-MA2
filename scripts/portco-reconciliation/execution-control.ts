@@ -986,10 +986,13 @@ export interface RecoverCompletedTaskInput {
   >;
 }
 
-function recoveryBeforeImage(input: unknown): CompanyImage {
+function recoveryBeforeImage(input: unknown): CompanyImage | null {
   const direct = companyImageSchema.safeParse(input);
   if (direct.success) return direct.data;
   if (input && typeof input === "object" && "targetCompanyImage" in input) {
+    if ((input as { targetCompanyImage?: unknown }).targetCompanyImage === null) {
+      return null;
+    }
     const contextImage = companyImageSchema.safeParse(
       (input as { targetCompanyImage?: unknown }).targetCompanyImage,
     );
@@ -1030,7 +1033,11 @@ export function recoverCompletedExecutionTask(
     throw new Error("Recovery proposal does not match the execution task or source ledger");
   }
   const beforeImage = recoveryBeforeImage(recovery.companySnapshot);
-  if (!proposal.beforeImageSha256 || !digestsEqual(companyImageSha256(beforeImage), proposal.beforeImageSha256)) {
+  if (proposal.beforeImageSha256 === null) {
+    if (beforeImage !== null) {
+      throw new Error("Recovery company snapshot does not prove the proposal's absent before-image");
+    }
+  } else if (beforeImage === null || !digestsEqual(companyImageSha256(beforeImage), proposal.beforeImageSha256)) {
     throw new Error("Recovery company snapshot does not prove the proposal before-image");
   }
   if (

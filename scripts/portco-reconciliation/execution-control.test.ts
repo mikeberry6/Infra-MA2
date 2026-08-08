@@ -19,7 +19,7 @@ import {
   type ExecutionManifest,
   type ExecutionTaskSnapshot,
 } from "./execution-control";
-import { finalizeApproval, verifyApproval, verifyProposal } from "./artifacts";
+import { finalizeApproval, verifyApplyReceipt, verifyApproval, verifyProposal } from "./artifacts";
 import { sha256Canonical } from "./hash";
 import { verifyReconciliationManifest } from "./manifest";
 import type { ReconciliationApplyReceipt } from "./schema";
@@ -33,6 +33,11 @@ const AMWASTE_APPROVAL = `${RUN_ROOT}/approvals/0001-amwaste-llc-v4.json`;
 const AMWASTE_SNAPSHOT = `${RUN_ROOT}/company-snapshots/0001-amwaste-llc-production.json`;
 const EC_WASTE_PROPOSAL = `${RUN_ROOT}/proposals/0002-ec-waste-v1/proposal.json`;
 const EC_WASTE_TASK_SNAPSHOT = `${RUN_ROOT}/execution-v1/tasks/0002-ec-waste/task-snapshot.json`;
+const EXECUTION_MANIFEST = `${RUN_ROOT}/execution-v1/manifest.json`;
+const PEARLX_PROPOSAL = `${RUN_ROOT}/proposals/0031-pearlx-v2/proposal.json`;
+const PEARLX_APPROVAL = `${RUN_ROOT}/approvals/0031-pearlx-v2.json`;
+const PEARLX_CONTEXT = `${RUN_ROOT}/execution-v1/tasks/0031-pearlx/attempt-2/context.json`;
+const PEARLX_RECEIPT = `${RUN_ROOT}/execution-v1/tasks/0031-pearlx/attempt-2/production-apply/apply-receipt.json`;
 const CREATED_AT = "2026-08-03T16:30:00.000Z";
 
 function parsed(path: string): unknown {
@@ -208,6 +213,40 @@ describe("Phase 1 execution control", () => {
       taskId: "ledger:0002:ec-waste:c202135b",
       subject: "EC Waste",
       status: "PENDING",
+    });
+  });
+
+  it("recovers a first-time company creation from a task context with an absent before-image", () => {
+    const manifest = verifyExecutionManifest(parsed(EXECUTION_MANIFEST));
+    const proposal = verifyProposal(parsed(PEARLX_PROPOSAL));
+    const approval = verifyApproval(parsed(PEARLX_APPROVAL), proposal);
+    const receipt = verifyApplyReceipt(parsed(PEARLX_RECEIPT), proposal, approval);
+    const context = parsed(PEARLX_CONTEXT);
+    const updated = recoverCompletedExecutionTask(manifest, {
+      proposal,
+      approval,
+      applyReceipt: receipt,
+      companySnapshot: context,
+      recoveredAt: "2026-08-08T04:18:35.000Z",
+      workflowRunUrl: "https://github.com/mikeberry6/Infra-MA2/actions/runs/31238929265",
+      artifacts: {
+        proposal: { location: PEARLX_PROPOSAL, sha256: proposal.proposalSha256 },
+        approval: { location: PEARLX_APPROVAL, sha256: approval.approvalSha256 },
+        applyReceipt: {
+          location: "https://github.com/mikeberry6/Infra-MA2/actions/runs/31238929265",
+          sha256: receipt.receiptSha256,
+        },
+        companySnapshot: { location: PEARLX_CONTEXT, sha256: sha256Canonical(context) },
+      },
+    });
+
+    expect(updated.tasks[30]).toMatchObject({
+      subject: "PearlX",
+      status: "COMPLETED",
+      recovery: {
+        auditEventId: "cmsjv0frv000he44sdl0ul2z1",
+        receiptSha256: receipt.receiptSha256,
+      },
     });
   });
 
