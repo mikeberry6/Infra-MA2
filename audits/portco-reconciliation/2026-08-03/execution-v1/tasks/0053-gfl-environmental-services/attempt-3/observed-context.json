@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0053:gfl-environmental-services:a1ad6340",
+  "taskIndex": 53,
+  "companyName": "GFL Environmental Services",
+  "generatedAt": "2026-08-08T15:33:18.804Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0053-gfl-environmental-services/attempt-3/observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 53,
+    "taskId": "ledger:0053:gfl-environmental-services:a1ad6340",
+    "canonicalKey": null,
+    "companyName": "GFL Environmental Services",
+    "country": "United States / Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "REPO_ONLY_JUDGMENT",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "010-apollo-global-management:repo-only:006:gfl-environmental-services"
+    ],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://ir.apollo.com/news-events/press-releases/detail/532/gfl-environmental-inc-announces-agreement-to-sell"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted repo-only NEEDS_REVIEW judgment for Apollo Global Management: Unclear infrastructure vs PE attribution",
+    "unresolvedQuestions": [
+      "Repo-only identity has no matching production or evaluated-seed record in the captured snapshots.",
+      "Resolve the accepted repo-only review issue with direct evidence before any proposal can be applied."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_POST_QUEUE_EXACT_IDENTITY",
+    "targetCompanyId": "cmrxpj5pw00i6ivhend93pj8w",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "gfl-environmental-services|united-states-canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj5pw00i6ivhend93pj8w",
+    "name": "GFL Environmental Services",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Industrial and environmental services",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "GFL Environmental Services provides industrial and environmental services across North America. Its customer base includes industrial facilities, commercial customers, and municipal or infrastructure users that require liquid waste management, remediation, and related environmental services. The business combines route-based service operations with treatment, disposal, and field-service capabilities, making it more asset- and operations-intensive than an advisory model. GFL announced in January 2025 that Apollo-managed funds and BC-managed funds would acquire the business, and the transaction closed in March 2025 with GFL retaining a 44% equity interest. Public transaction materials describe the business as a large-scale platform with more than C$500 million of Adjusted EBITDA.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2007,
+    "headquarters": "North America",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqqu01ezivhe9f0w56mi",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Apollo-managed funds",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkizc02l2ivhekxtqe11e",
+        "date": "2007",
+        "event": "GFL was founded in Ontario.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkizx02l3ivhebp2svi7c",
+        "date": "Jan 2025",
+        "event": "GFL announced the sale of its Environmental Services business to Apollo-managed funds and BC-managed funds.",
+        "category": "DIVESTITURE",
+        "sortDate": "2025-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkj0f02l4ivhe06i70ut9",
+        "date": "Mar 2025",
+        "event": "The post-closing ownership structure was disclosed as 28% Apollo, 28% BC Partners, and 44% retained by GFL.",
+        "category": "FINANCING",
+        "sortDate": "2025-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkj0z02l5ivhejr4pqsqc",
+        "date": "Mar 3, 2025",
+        "event": "GFL completed the sale of its Environmental Services business to Apollo-managed funds and BC Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-03T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpour107ajivhee9710iox",
+        "label": "Gflenv — GFL Environmental Services",
+        "url": "https://gflenv.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Gflenv company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpous907alivhe3spewafw",
+        "label": "Close date source — Apollo Global Management — GFL Environmental Services",
+        "url": "https://investors.gflenv.com/English/news/news-details/2025/GFL-Environmental-Inc.-Completes-the-Sale-of-its-Environmental-Services-Business-Valued-at-8.0-Billion/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoutd07anivhexk7mogdw",
+        "label": "Announcement date source — Apollo Global Management — GFL Environmental Services",
+        "url": "https://ir.apollo.com/news-events/press-releases/detail/532/gfl-environmental-inc-announces-agreement-to-sell",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpouui07apivhe9ayddz48",
+        "label": "Bcpartners — GFL Environmental Services",
+        "url": "https://www.bcpartners.com/news/gfl-environmental-inc-announces-agreement-to-sell-environmental-services-business-to-apollo-and-bc-partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Bcpartners — GFL Environmental Services",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "GFL Environmental Services",
+    "investmentFirm": "Apollo Global Management",
+    "sector": "Utilities",
+    "subsector": "Industrial and environmental services",
+    "region": "North America",
+    "country": "United States / Canada",
+    "ownershipVehicle": "Apollo-managed funds",
+    "description": "GFL Environmental Services provides industrial and environmental services across North America. Its customer base includes industrial facilities, commercial customers, and municipal or infrastructure users that require liquid waste management, remediation, and related environmental services. The business combines route-based service operations with treatment, disposal, and field-service capabilities, making it more asset- and operations-intensive than an advisory model. GFL announced in January 2025 that Apollo-managed funds and BC-managed funds would acquire the business, and the transaction closed in March 2025 with GFL retaining a 44% equity interest. Public transaction materials describe the business as a large-scale platform with more than C$500 million of Adjusted EBITDA.",
+    "status": "Active",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "yearFounded": 2007,
+    "investmentYear": 2025,
+    "headquarters": "North America",
+    "milestones": [
+      {
+        "date": "2007",
+        "event": "GFL was founded in Ontario.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jan 2025",
+        "event": "GFL announced the sale of its Environmental Services business to Apollo-managed funds and BC-managed funds.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "Mar 2025",
+        "event": "The post-closing ownership structure was disclosed as 28% Apollo, 28% BC Partners, and 44% retained by GFL.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 3, 2025",
+        "event": "GFL completed the sale of its Environmental Services business to Apollo-managed funds and BC Partners.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Gflenv — GFL Environmental Services",
+        "url": "https://gflenv.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Apollo Global Management — GFL Environmental Services",
+        "url": "https://investors.gflenv.com/English/news/news-details/2025/GFL-Environmental-Inc.-Completes-the-Sale-of-its-Environmental-Services-Business-Valued-at-8.0-Billion/default.aspx",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Announcement date source — Apollo Global Management — GFL Environmental Services",
+        "url": "https://ir.apollo.com/news-events/press-releases/detail/532/gfl-environmental-inc-announces-agreement-to-sell",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Bcpartners — GFL Environmental Services",
+        "url": "https://www.bcpartners.com/news/gfl-environmental-inc-announces-agreement-to-sell-environmental-services-business-to-apollo-and-bc-partners/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Apollo Global Management",
+        "ownershipVehicle": "Apollo-managed funds",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0053:gfl-environmental-services:a1ad6340",
+    "taskIndex": 53,
+    "canonicalKey": null,
+    "capturedAt": "2026-08-08T15:33:18.804Z",
+    "databaseRevision": "company-state:388baf7e5261591d49b5cda0ad32208c56380560b9bfc742da4995a5a10bdddc",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "81995fbfbda66f7022f65652d7e7329bfe83c01909378967c0e73d3e68b65b92",
+    "productionSnapshotSha256": "611d147ff8737ab72fcc9ed23c583356a6162d6f3e9af4a3a4e15e45025980cf",
+    "targetCompanySnapshotSha256": "388baf7e5261591d49b5cda0ad32208c56380560b9bfc742da4995a5a10bdddc",
+    "seedEntrySha256": "16dad76eb17f08f38124f610ea7c28051512f2abc7b1db0dcce7d4fa0f1b63f4",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "795fc6f653b02fd115d23dad00cde49265aa1d0bbe5b13df081d4ca8c534e439",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5bf007754ab1aec1ee2613e1677630ccdf3e2677b7f244a79a2c7562a77e3e14",
+      "citationsSha256": "16510a8a58189c07890fbc83816098f0a2921aab21c461d4fe0834b2f2c1839a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "bd168734765ab80f0bf5fe19ce800733388a4d7a4aab03861bb1f89f55741cb3",
+    "stateSha256": "01205057ee019ebad2858c7ed8a794463a0f635e905aadcc2ffe783fc236a863",
+    "taskSnapshotSha256": "8cb8f5bf2f8431a355bf2419dc05a39f6a1233cad8c5b538b15010d1ffaf565e"
+  },
+  "contextSha256": "64258b17b48e934b4b69d89ceb3e7ffa03df0b7bd6c27f9a7fcc19db4c26d2d7"
+}

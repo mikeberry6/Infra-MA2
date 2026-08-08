@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DRY_RUN_SAFETY_INCIDENT",
+  "taskId": "ledger:0053:gfl-environmental-services:a1ad6340",
+  "detectedAt": "2026-08-08T15:35:00.000Z",
+  "cause": "A provisional owner-organization provisioning helper was called during fresh-state validation. The ordinary dry-run transaction commits read validation, so the helper created three otherwise unreferenced organizations before the protected apply phase.",
+  "affectedOrganizations": [
+    {
+      "id": "cmskjaqii0000ithey6je76aj",
+      "name": "BC Partners",
+      "createdAt": "2026-08-08T15:34:12.666Z"
+    },
+    {
+      "id": "cmskjaqjh0001ithexpcqxjnn",
+      "name": "GFL Environmental Inc.",
+      "createdAt": "2026-08-08T15:34:12.701Z"
+    },
+    {
+      "id": "cmskjaqkl0002ithearc97p4c",
+      "name": "HPS Investment Partners",
+      "createdAt": "2026-08-08T15:34:12.741Z"
+    }
+  ],
+  "preCleanupVerification": {
+    "allExactIdsNamesAndTimestampsMatched": true,
+    "allDependencyCountsWereZero": true,
+    "gflCompanyImageWasUnchanged": true
+  },
+  "cleanup": {
+    "method": "Serializable exact-ID deletion after identity and zero-dependency recheck",
+    "deletedCount": 3,
+    "completed": true
+  },
+  "postCleanupVerification": {
+    "matchingOrganizationCount": 0,
+    "gflOwnershipPeriodCount": 1,
+    "gflExistingApolloStake": null,
+    "gflCompanyUpdatedAt": "2026-07-23T16:10:01.268Z"
+  },
+  "controlCorrection": {
+    "validationIsReadOnly": true,
+    "organizationCreationRestrictedToProtectedApply": true,
+    "missingOrganizationAllowlist": [
+      "BC Partners",
+      "GFL Environmental Inc.",
+      "HPS Investment Partners"
+    ],
+    "unknownOrTypoOrganizationRejected": true,
+    "existingWrongTypeOrNonPublishedOrganizationRejected": true,
+    "postFixDryRunCreatedOrganizations": 0
+  }
+}

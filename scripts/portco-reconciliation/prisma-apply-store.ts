@@ -150,6 +150,22 @@ export function assertOwnershipManagerCompatible(input: {
   }
 }
 
+const approvedOwnershipOrganizationProvisioning = {
+  "BC Partners": "FUND_MANAGER",
+  "GFL Environmental Inc.": "CORPORATE",
+  "HPS Investment Partners": "FUND_MANAGER",
+} as const;
+
+export function ownershipOrganizationTypes(name: string): ["CORPORATE"] | ["FUND_MANAGER"] {
+  const type = approvedOwnershipOrganizationProvisioning[
+    name as keyof typeof approvedOwnershipOrganizationProvisioning
+  ];
+  if (!type) {
+    throw new Error(`Approved ownership organization is not provisionable: ${name}`);
+  }
+  return [type];
+}
+
 async function assertCitationSourcesCompatible(
   transaction: unknown,
   image: CompanyImage,
@@ -304,9 +320,10 @@ async function syncCitations(
   if (primaryCount !== 1) throw new Error("Database does not contain exactly one primary company citation");
 }
 
-async function ownershipLinks(
+export async function ownershipLinks(
   transaction: unknown,
   owner: CompanyImage["ownershipPeriods"][number],
+  phase: "VALIDATE" | "APPLY" = "VALIDATE",
 ): Promise<{ organizationId: string | null; fundId: string | null }> {
   let fund: { id: string; managerId: string; manager: { name: string } } | null = null;
   if (owner.fundName) {
@@ -317,14 +334,47 @@ async function ownershipLinks(
     if (!fund) throw new Error(`Approved ownership fund does not exist: ${owner.fundName}`);
   }
   const organizationName = owner.organizationName ?? (fund ? null : owner.managerName);
-  const organization = organizationName
+  let organization = organizationName
     ? await delegate(transaction, "organization").findUnique({
         where: { name: organizationName },
-        select: { id: true, name: true },
-      }) as { id: string; name: string } | null
+        select: { id: true, name: true, types: true, status: true },
+      }) as { id: string; name: string; types: string[]; status: string } | null
     : null;
+  const provisionedTypes = organizationName && Object.hasOwn(
+    approvedOwnershipOrganizationProvisioning,
+    organizationName,
+  ) ? ownershipOrganizationTypes(organizationName) : null;
+  if (organization) {
+    if (organization.status !== "PUBLISHED") {
+      throw new Error(`Approved ownership organization is not published: ${organization.name}`);
+    }
+    if (provisionedTypes && !provisionedTypes.every((type) => organization!.types.includes(type))) {
+      throw new Error(`Approved ownership organization has an incompatible type: ${organization.name}`);
+    }
+  }
   if (organizationName && !organization) {
-    throw new Error(`Approved ownership organization does not exist: ${organizationName}`);
+    if (owner.id !== null) {
+      throw new Error(`Approved existing ownership organization does not exist: ${organizationName}`);
+    }
+    if (!provisionedTypes) {
+      throw new Error(`Approved ownership organization does not exist: ${organizationName}`);
+    }
+    if (phase === "VALIDATE") {
+      assertOwnershipManagerCompatible({
+        approvedManagerName: owner.managerName,
+        organizationName,
+        fundManagerName: fund?.manager.name ?? null,
+      });
+      return { organizationId: null, fundId: fund?.id ?? null };
+    }
+    organization = await delegate(transaction, "organization").create({
+      data: {
+        name: organizationName,
+        types: provisionedTypes,
+        status: "PUBLISHED",
+      },
+      select: { id: true, name: true, types: true, status: true },
+    }) as { id: string; name: string; types: string[]; status: string };
   }
   assertOwnershipManagerCompatible({
     approvedManagerName: owner.managerName,
@@ -341,7 +391,7 @@ async function syncOwnerships(
   image: CompanyImage,
 ): Promise<void> {
   for (const owner of image.ownershipPeriods) {
-    const links = await ownershipLinks(transaction, owner);
+    const links = await ownershipLinks(transaction, owner, "APPLY");
     const data = {
       companyId,
       ...links,
@@ -597,7 +647,7 @@ export function createPrismaApprovedApplyStore(options: {
       if (proposal.afterImage) {
         await assertCitationSourcesCompatible(transaction, proposal.afterImage);
         for (const owner of proposal.afterImage.ownershipPeriods) {
-          await ownershipLinks(transaction, owner);
+          await ownershipLinks(transaction, owner, "VALIDATE");
         }
       }
       return {

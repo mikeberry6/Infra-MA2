@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T15:02:30.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T15:34:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0053:gfl-environmental-services:a1ad6340",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7725,20 +7725,32 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "81995fbfbda66f7022f65652d7e7329bfe83c01909378967c0e73d3e68b65b92",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-08T15:12:30.000Z",
+      "updatedAt": "2026-08-08T15:34:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "38ec12533cddc997e23f13230fb514581bc22d3f9fc583025274277f144cc6af",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0053-gfl-environmental-services/attempt-2/task-snapshot.json",
+          "sha256": "38ec12533cddc997e23f13230fb514581bc22d3f9fc583025274277f144cc6af"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0053-gfl-environmental-services-v1/proposal.json",
+          "sha256": "2c194768b3394b741d45618339bd925a8b109c198bb2e2e00ddd7e62ec6492bc"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0053-gfl-environmental-services-v1.json",
+          "sha256": "14e27da7caa2045d26d058e85ddb6763862d5c6efdcf6864c20412e122c62ee4"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0053-gfl-environmental-services/research-decision.json",
+            "sha256": "5fb9f10d98dfc2bb84e6ecdce5f33981c0280b69a5778f4188e95218c15f1b3c"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -7752,6 +7764,52 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T15:12:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T15:31:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "38ec12533cddc997e23f13230fb514581bc22d3f9fc583025274277f144cc6af",
+          "evidenceSha256": [
+            "2c194768b3394b741d45618339bd925a8b109c198bb2e2e00ddd7e62ec6492bc",
+            "38ec12533cddc997e23f13230fb514581bc22d3f9fc583025274277f144cc6af",
+              "5fb9f10d98dfc2bb84e6ecdce5f33981c0280b69a5778f4188e95218c15f1b3c"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T15:32:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "38ec12533cddc997e23f13230fb514581bc22d3f9fc583025274277f144cc6af",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T15:34:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "38ec12533cddc997e23f13230fb514581bc22d3f9fc583025274277f144cc6af",
+          "evidenceSha256": [
+            "14e27da7caa2045d26d058e85ddb6763862d5c6efdcf6864c20412e122c62ee4"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24610,5 +24668,5 @@
       ]
     }
   ],
-  "manifestSha256": "09c9c2b3ed6945543a80996debfb19dfcd6c55182eee7f8a51e482edbf05d11b"
+  "manifestSha256": "7eca4e034d9e125d20d548af441a6d4a22985246006233f55c9b8dfb1882b5a5"
 }

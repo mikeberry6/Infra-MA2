@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applySpec } from "./generate-proposal-cli";
+import { applySpec, proposalCanonicalKey } from "./generate-proposal-cli";
 import { companyImageFixture, FIXTURE_NOW } from "./test-fixtures";
 import type { TaskSnapshotContext } from "./task-snapshot";
 
@@ -53,6 +53,30 @@ function baseSpec() {
 }
 
 describe("proposal patch ownership additions", () => {
+  it("uses a snapshot-bound canonical identity for a canonical-null repo-only mutation", () => {
+    expect(proposalCanonicalKey({
+      resolvedCanonicalKey: "gfl-environmental-services|united-states-canada",
+      sourceQueueEntry: { canonicalKey: null } as TaskSnapshotContext["sourceQueueEntry"],
+      targetResolution: {
+        method: "REVIEWED_POST_QUEUE_EXACT_IDENTITY",
+        targetCompanyId: "company-gfl",
+        linkedQueueTaskId: null,
+      },
+    })).toBe("gfl-environmental-services|united-states-canada");
+  });
+
+  it("rejects a canonical-null mutation without exact reviewed identity resolution", () => {
+    expect(() => proposalCanonicalKey({
+      resolvedCanonicalKey: "gfl-environmental-services|united-states-canada",
+      sourceQueueEntry: { canonicalKey: null } as TaskSnapshotContext["sourceQueueEntry"],
+      targetResolution: {
+        method: "NO_EXISTING_TARGET",
+        targetCompanyId: null,
+        linkedQueueTaskId: null,
+      },
+    })).toThrow("requires reviewed exact-identity resolution");
+  });
+
   it("adds a validated unsaved ownership period to the after-image", () => {
     const result = applySpec(contextFixture(), baseSpec());
 

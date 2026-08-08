@@ -98,6 +98,7 @@ export const NON_INFRA_FUND_ENTITIES = new Set([
   "Kimmeridge Energy",
   "Caturus",
   "DivcoWest",
+  "GFL Environmental Inc.",
 ]);
 
 // Resolve an organization name to its canonical form

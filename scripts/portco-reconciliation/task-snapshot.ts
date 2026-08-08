@@ -19,6 +19,7 @@ import type {
   CompanyImage,
   ProductionSnapshot,
   ReviewedSeedRetirement,
+  SnapshotCompany,
 } from "./schema";
 
 interface ReadDelegate {
@@ -96,6 +97,7 @@ export interface TaskSnapshotContext {
   productionSnapshotLocation: string;
   sourceQueueEntry: ProposalQueueIndexArtifact["entries"][number];
   targetResolution: TaskSnapshotTargetResolution;
+  resolvedCanonicalKey: string | null;
   targetCompanyImage: CompanyImage | null;
   seedEntry: PortCo | null;
   seedRetirementCandidates: ReviewedSeedRetirement[];
@@ -122,6 +124,11 @@ export type TaskSnapshotTargetResolution =
     linkedQueueTaskId: string;
   }
   | {
+    method: "REVIEWED_POST_QUEUE_EXACT_IDENTITY";
+    targetCompanyId: string;
+    linkedQueueTaskId: null;
+  }
+  | {
     method: "NO_EXISTING_TARGET";
     targetCompanyId: null;
     linkedQueueTaskId: null;
@@ -139,11 +146,12 @@ export function assertExpectedSeedEntry(input: {
   expectedSeedKeyCount: number;
   seedEntryPresent: boolean;
   targetRecordStatus: CompanyImage["recordStatus"] | null;
+  requireEvaluatedSeedEntry?: boolean;
 }): void {
   if (
     input.expectedSeedKeyCount > 0
     && !input.seedEntryPresent
-    && input.targetRecordStatus !== "ARCHIVED"
+    && (input.requireEvaluatedSeedEntry || input.targetRecordStatus !== "ARCHIVED")
   ) {
     throw new Error("Expected evaluated seed entry is missing or changed identity");
   }
@@ -179,6 +187,21 @@ export function resolveTaskSnapshotTarget(input: {
   }
   const queueCanonicalKey = input.queueEntry.canonicalKey;
   if (!queueCanonicalKey) {
+    if (
+      input.queueEntry.queueKind === "REPO_ONLY_JUDGMENT"
+      && input.queueEntry.decisionStatus === "NEEDS_REVIEW"
+      && input.queueEntry.sourceRepoOnlyIds.length > 0
+      && input.queueEntry.sourceHoldingIds.length === 0
+      && input.queueEntry.productionCompanyIds.length === 0
+      && input.queueEntry.seedKeys.length === 0
+      && input.queueEntry.candidateCanonicalKeys.length === 0
+    ) {
+      return {
+        method: "REVIEWED_POST_QUEUE_EXACT_IDENTITY",
+        targetCompanyId: reviewedTargetCompanyId,
+        linkedQueueTaskId: null,
+      };
+    }
     throw new Error("Reviewed target company requires a canonical-key queue task");
   }
   const symmetricLinks = input.queueEntries.filter((candidate) =>
@@ -201,6 +224,87 @@ export function resolveTaskSnapshotTarget(input: {
     targetCompanyId: reviewedTargetCompanyId,
     linkedQueueTaskId: symmetricLinks[0].taskId,
   };
+}
+
+function normalizedIdentity(value: string): string {
+  return value.trim().toLocaleLowerCase("en-US");
+}
+
+export function matchesImmutableTaskIdentity(
+  queueEntry: ProposalQueueIndexArtifact["entries"][number],
+  company: Pick<SnapshotCompany, "name" | "country">,
+): boolean {
+  return normalizedIdentity(company.name) === normalizedIdentity(queueEntry.companyName)
+    && normalizedIdentity(company.country) === normalizedIdentity(queueEntry.country);
+}
+
+function canonicalIdentityPart(value: string): string {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("en-US")
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function resolvedTaskCanonicalKey(input: {
+  queueEntry: ProposalQueueIndexArtifact["entries"][number];
+  targetResolution: TaskSnapshotTargetResolution;
+  targetCompanyImage: CompanyImage | null;
+}): string | null {
+  if (input.queueEntry.canonicalKey) return input.queueEntry.canonicalKey;
+  if (input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY") return null;
+  if (!input.targetCompanyImage) {
+    throw new Error("Reviewed post-queue target cannot resolve a canonical identity without a company");
+  }
+  const name = canonicalIdentityPart(input.targetCompanyImage.name);
+  const country = canonicalIdentityPart(input.targetCompanyImage.country);
+  if (!name || !country) {
+    throw new Error("Reviewed post-queue target cannot resolve an empty canonical identity");
+  }
+  return `${name}|${country}`;
+}
+
+export function assertReviewedPostQueueExactIdentity(input: {
+  queueEntry: ProposalQueueIndexArtifact["entries"][number];
+  targetResolution: TaskSnapshotTargetResolution;
+  targetCompanyImage: CompanyImage | null;
+  productionCompanies: readonly Pick<SnapshotCompany, "id" | "name" | "country">[];
+}): void {
+  if (input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY") return;
+  if (!input.targetCompanyImage) {
+    throw new Error("Reviewed post-queue target no longer exists");
+  }
+  if (!matchesImmutableTaskIdentity(input.queueEntry, input.targetCompanyImage)) {
+    throw new Error("Reviewed post-queue target does not exactly match the immutable task identity");
+  }
+  const matches = input.productionCompanies.filter((company) =>
+    matchesImmutableTaskIdentity(input.queueEntry, company));
+  if (matches.length !== 1) {
+    throw new Error(
+      `Reviewed post-queue identity resolved to ${matches.length} production records instead of exactly one`,
+    );
+  }
+  if (
+    matches[0].id !== input.targetResolution.targetCompanyId
+    || input.targetCompanyImage.id !== input.targetResolution.targetCompanyId
+  ) {
+    throw new Error("Reviewed post-queue target id does not match the unique exact production identity");
+  }
+}
+
+export function resolvedTaskSeedKeys(input: {
+  queueEntry: ProposalQueueIndexArtifact["entries"][number];
+  targetResolution: TaskSnapshotTargetResolution;
+  targetCompanyImage: CompanyImage | null;
+}): string[] {
+  if (input.queueEntry.seedKeys.length > 0) return input.queueEntry.seedKeys;
+  if (input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY") return [];
+  if (!input.targetCompanyImage) {
+    throw new Error("Reviewed post-queue target cannot bind an absent evaluated seed identity");
+  }
+  return [seedKey(input.targetCompanyImage.name, input.targetCompanyImage.country)];
 }
 
 function exactSeedEntry(
@@ -341,6 +445,12 @@ export async function buildTaskSnapshotContext(input: {
   }, { isolationLevel: "RepeatableRead", timeout: 30_000 });
 
   const targetCompanyImage = read.row ? prismaCompanyRowToImage(read.row) : null;
+  assertReviewedPostQueueExactIdentity({
+    queueEntry,
+    targetResolution,
+    targetCompanyImage,
+    productionCompanies: input.productionSnapshot.companies,
+  });
   const targetCompanySnapshotSha256 = targetCompanyImage
     ? companyImageSha256(targetCompanyImage)
     : null;
@@ -353,18 +463,29 @@ export async function buildTaskSnapshotContext(input: {
     }
   } else {
     const collision = input.productionSnapshot.companies.find((company) =>
-      company.name === queueEntry.companyName && company.country === queueEntry.country);
+      matchesImmutableTaskIdentity(queueEntry, company));
     if (collision) throw new Error("Create task now collides with an existing production company");
   }
 
+  const expectedSeedKeys = resolvedTaskSeedKeys({
+    queueEntry,
+    targetResolution,
+    targetCompanyImage,
+  });
   const seedCandidates = input.seedCompanies.filter((company) =>
-    queueEntry.seedKeys.includes(seedKey(company.name, company.country)));
+    expectedSeedKeys.includes(seedKey(company.name, company.country)));
   if (seedCandidates.length > 1) throw new Error("Task resolves to more than one evaluated seed entry");
   const seedEntry = seedCandidates[0] ?? null;
   assertExpectedSeedEntry({
-    expectedSeedKeyCount: queueEntry.seedKeys.length,
+    expectedSeedKeyCount: expectedSeedKeys.length,
     seedEntryPresent: seedEntry !== null,
     targetRecordStatus: targetCompanyImage?.recordStatus ?? null,
+    requireEvaluatedSeedEntry: targetResolution.method === "REVIEWED_POST_QUEUE_EXACT_IDENTITY",
+  });
+  const resolvedCanonicalKey = resolvedTaskCanonicalKey({
+    queueEntry,
+    targetResolution,
+    targetCompanyImage,
   });
   const funds = normalizeDependencies(
     read.ownershipDependencies.flatMap((dependency) => dependency.fund ? [dependency.fund] : []),
@@ -423,6 +544,7 @@ export async function buildTaskSnapshotContext(input: {
     productionSnapshotLocation: input.productionSnapshotLocation,
     sourceQueueEntry: queueEntry,
     targetResolution,
+    resolvedCanonicalKey,
     targetCompanyImage,
     seedEntry,
     seedRetirementCandidates,

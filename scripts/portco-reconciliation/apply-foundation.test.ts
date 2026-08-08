@@ -33,6 +33,7 @@ import {
   verifyApprovedSeedText,
 } from "./approved-seed";
 import { sha256Canonical } from "./hash";
+import { ownershipLinks, ownershipOrganizationTypes } from "./prisma-apply-store";
 import {
   companyImageFixture,
   FIXTURE_NOW,
@@ -45,6 +46,107 @@ import type {
   ReconciliationProposal,
   ProductionSnapshot,
 } from "./schema";
+
+describe("approved ownership organization provisioning", () => {
+  it("classifies newly approved fund managers and corporate retained owners deterministically", () => {
+    expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("GFL Environmental Inc.")).toEqual(["CORPORATE"]);
+  });
+
+  it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
+    for (const [name, type] of [
+      ["BC Partners", "FUND_MANAGER"],
+      ["GFL Environmental Inc.", "CORPORATE"],
+      ["HPS Investment Partners", "FUND_MANAGER"],
+    ] as const) {
+      const create = vi.fn().mockResolvedValue({
+        id: `org-${name}`,
+        name,
+        types: [type],
+        status: "PUBLISHED",
+      });
+      const transaction = {
+        organization: { findUnique: vi.fn().mockResolvedValue(null), create },
+      };
+      await expect(ownershipLinks(transaction, {
+        id: null,
+        managerName: name,
+        organizationName: name,
+        fundName: null,
+        vehicleName: `${name} vehicle`,
+        stake: "Approximately 22%",
+        investmentYear: 2025,
+        exitYear: null,
+        isActive: true,
+        transactionState: "CLOSED_ACTIVE",
+      }, "APPLY")).resolves.toEqual({ organizationId: `org-${name}`, fundId: null });
+      expect(create).toHaveBeenCalledWith({
+        data: { name, types: [type], status: "PUBLISHED" },
+        select: { id: true, name: true, types: true, status: true },
+      });
+    }
+  });
+
+  it("keeps validation read-only while accepting an exact provisionable new owner", async () => {
+    const create = vi.fn();
+    const transaction = {
+      organization: { findUnique: vi.fn().mockResolvedValue(null), create },
+    };
+    await expect(ownershipLinks(transaction, {
+      id: null,
+      managerName: "BC Partners",
+      organizationName: "BC Partners",
+      fundName: null,
+      vehicleName: "BC-managed funds",
+      stake: "Approximately 22%",
+      investmentYear: 2025,
+      exitYear: null,
+      isActive: true,
+      transactionState: "CLOSED_ACTIVE",
+    }, "VALIDATE")).resolves.toEqual({ organizationId: null, fundId: null });
+    expect(create).not.toHaveBeenCalled();
+  });
+
+  it("rejects unknown, historical, unpublished and incorrectly typed owner organizations", async () => {
+    const owner = {
+      id: null,
+      managerName: "BC Partners",
+      organizationName: "BC Partners",
+      fundName: null,
+      vehicleName: "BC-managed funds",
+      stake: "Approximately 22%",
+      investmentYear: 2025,
+      exitYear: null,
+      isActive: true,
+      transactionState: "CLOSED_ACTIVE" as const,
+    };
+    await expect(ownershipLinks({
+      organization: { findUnique: vi.fn().mockResolvedValue(null) },
+    }, { ...owner, managerName: "BC Partnerz", organizationName: "BC Partnerz" }, "APPLY"))
+      .rejects.toThrow("does not exist: BC Partnerz");
+    await expect(ownershipLinks({
+      organization: { findUnique: vi.fn().mockResolvedValue(null) },
+    }, { ...owner, id: "owner-existing" }, "APPLY"))
+      .rejects.toThrow("existing ownership organization does not exist");
+    await expect(ownershipLinks({
+      organization: { findUnique: vi.fn().mockResolvedValue({
+        id: "org-bc",
+        name: "BC Partners",
+        types: ["CORPORATE"],
+        status: "PUBLISHED",
+      }) },
+    }, owner, "VALIDATE")).rejects.toThrow("incompatible type");
+    await expect(ownershipLinks({
+      organization: { findUnique: vi.fn().mockResolvedValue({
+        id: "org-bc",
+        name: "BC Partners",
+        types: ["FUND_MANAGER"],
+        status: "IN_REVIEW",
+      }) },
+    }, owner, "VALIDATE")).rejects.toThrow("not published");
+  });
+});
 
 function approvedCorrection(input?: {
   before?: CompanyImage;

@@ -235,7 +235,42 @@ function verifyContext(input: unknown): TaskSnapshotContext {
   ) {
     throw new Error("Task context seed-retirement candidates do not match the task snapshot");
   }
+  if (
+    context.sourceQueueEntry.canonicalKey !== null
+    && context.resolvedCanonicalKey !== context.sourceQueueEntry.canonicalKey
+  ) {
+    throw new Error("Task context resolved canonical key does not match its immutable queue identity");
+  }
+  if (
+    context.targetResolution.method === "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
+    && !context.resolvedCanonicalKey
+  ) {
+    throw new Error("Reviewed post-queue task context is missing its resolved canonical identity");
+  }
   return context;
+}
+
+export function proposalCanonicalKey(context: Pick<
+  TaskSnapshotContext,
+  "resolvedCanonicalKey" | "sourceQueueEntry" | "targetResolution"
+>): string {
+  const canonicalKey = context.resolvedCanonicalKey?.trim() || null;
+  if (!canonicalKey) {
+    throw new Error("Proposal generation requires a resolved canonical identity");
+  }
+  if (
+    context.sourceQueueEntry.canonicalKey !== null
+    && canonicalKey !== context.sourceQueueEntry.canonicalKey
+  ) {
+    throw new Error("Proposal canonical identity differs from the immutable queue identity");
+  }
+  if (
+    context.sourceQueueEntry.canonicalKey === null
+    && context.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
+  ) {
+    throw new Error("A canonical-null queue task requires reviewed exact-identity resolution before mutation");
+  }
+  return canonicalKey;
 }
 
 export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
@@ -309,6 +344,7 @@ export async function executeGenerateProposalCli(argv: readonly string[]): Promi
     afterImage,
     reviewedSeedRetirements,
   } = applySpec(context, await jsonFile(args.spec));
+  const canonicalKey = proposalCanonicalKey(context);
   const beforeImageSha256 = beforeImage ? companyImageSha256(beforeImage) : null;
   if (beforeImageSha256 !== context.taskSnapshot.targetCompanySnapshotSha256) {
     throw new Error("Task context before-image does not match the locked target snapshot");
@@ -322,7 +358,7 @@ export async function executeGenerateProposalCli(argv: readonly string[]): Promi
     taskIndex: context.taskIndex,
     asOfDate: production.asOfDate,
     generatedAt: args.generatedAt ?? spec.generatedAt,
-    canonicalKey: context.sourceQueueEntry.canonicalKey,
+    canonicalKey,
     companyName: context.companyName,
     actions: spec.actions,
     sourceHoldingIds: context.sourceQueueEntry.sourceHoldingIds,
