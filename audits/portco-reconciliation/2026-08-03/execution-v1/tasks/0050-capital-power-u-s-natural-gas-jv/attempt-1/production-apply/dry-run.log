@@ -1,0 +1,214 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0050-capital-power-u-s-natural-gas-jv-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0050-capital-power-u-s-natural-gas-jv-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0050-capital-power-u-s-natural-gas-jv/attempt-1/production-snapshot.json --proposal-sha256=7d128652a060fa09da3d6f09e65b1f03d5391496f2788c2cf32914a824f1890a --approval-sha256=bc8377585ccf331ad2e671231730bd2abe18836ff0de0fd2c4435bd6b7e2bbf5 --snapshot-sha256=b17ad7fd63ab8b11ac4c7e9a183093d62515efaf57ee60936ecd01f95671c44f
+
+(node:2836) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "7d128652a060fa09da3d6f09e65b1f03d5391496f2788c2cf32914a824f1890a",
+    "approvalSha256": "bc8377585ccf331ad2e671231730bd2abe18836ff0de0fd2c4435bd6b7e2bbf5",
+    "afterImageSha256": "926931a7264e52c66efb3b24164e61e1cf6288355919e09d79667c7660467512",
+    "taskId": "ledger:0050:capital-power-u-s-natural-gas-jv:fb9d0544",
+    "operation": "ARCHIVE",
+    "company": {
+      "name": "Capital Power U.S. Natural Gas JV",
+      "investmentFirm": "Apollo Global Management",
+      "sector": "Power & ET",
+      "subsector": "Merchant natural gas generation investment platform",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "Prospective Apollo-managed funds commitment under non-binding MOU; never closed",
+      "description": "Archived census record for a prospective U.S. natural-gas acquisition partnership between Capital Power and Apollo-managed funds. In December 2025 the parties announced a non-binding memorandum of understanding contemplating up to US$3 billion of potential equity for future merchant-generation acquisitions. Capital Power's March 2026 disclosures said definitive documentation and acquisitions remained incomplete, and its July 2026 quarterly report identified no partnership closing, funded legal vehicle, jointly acquired asset, or Apollo-backed equity-accounted investment. No current or pending definitive Apollo ownership was established, so this record is excluded from the portfolio-company census.",
+      "status": "Realized",
+      "countryTags": [
+        "United States"
+      ],
+      "milestones": [
+        {
+          "date": "Dec 2025",
+          "event": "Capital Power and Apollo-managed funds announced a non-binding MOU contemplating a future U.S. natural-gas acquisition partnership; no definitive partnership closing was announced.",
+          "category": "Financing"
+        },
+        {
+          "date": "Dec 2025",
+          "event": "The non-binding MOU contemplated up to US$3 billion of potential equity for future acquisitions, including up to US$2.25 billion from Apollo-managed funds and US$750 million from Capital Power.",
+          "category": "Financing"
+        },
+        {
+          "date": "Jul 2026",
+          "event": "Capital Power's Q2 2026 report identified no Apollo partnership closing, funded legal vehicle, jointly acquired asset, or Apollo-backed equity-accounted investment.",
+          "category": "Other"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Capital Power — 2025 Investor Day MOU announcement",
+          "url": "https://www.capitalpower.com/media/media_releases/capital-power-2025-investor-day/",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Prospective MOU terms and absence of a closed investment"
+        },
+        {
+          "label": "Capital Power — 2025 Investor Day presentation",
+          "url": "https://www.capitalpower.com/wp-content/uploads/2025/11/Capital-Power-2025-Investor-Day-Presentation.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Express disclosure that the Apollo MOU was non-binding"
+        },
+        {
+          "label": "Capital Power — Q2 2026 report",
+          "url": "https://www.capitalpower.com/wp-content/uploads/2026/07/Capital-Power-2026-Q2-Report.pdf",
+          "type": "PRESENTATION",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "Latest quarterly check showing no Apollo partnership closing or jointly owned asset"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "Apollo Global Management",
+          "ownershipVehicle": "Prospective Apollo-managed funds commitment under non-binding MOU; never closed",
+          "stake": "Up to US$2.25 billion contemplated; no ownership stake established",
+          "status": "Realized",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": "cmrxpj5mx00i1ivhebnqjedjy",
+      "name": "Capital Power U.S. Natural Gas JV",
+      "aliases": [],
+      "sector": "POWER_ET",
+      "subsector": "Merchant natural gas generation investment platform",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Archived census record for a prospective U.S. natural-gas acquisition partnership between Capital Power and Apollo-managed funds. In December 2025 the parties announced a non-binding memorandum of understanding contemplating up to US$3 billion of potential equity for future merchant-generation acquisitions. Capital Power's March 2026 disclosures said definitive documentation and acquisitions remained incomplete, and its July 2026 quarterly report identified no partnership closing, funded legal vehicle, jointly acquired asset, or Apollo-backed equity-accounted investment. No current or pending definitive Apollo ownership was established, so this record is excluded from the portfolio-company census.",
+      "companyStatus": "REALIZED",
+      "recordStatus": "ARCHIVED",
+      "website": null,
+      "yearFounded": null,
+      "headquarters": null,
+      "lastVerifiedAt": "2026-08-08T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjqns01etivhe7f4o1nk6",
+          "managerName": "Apollo Global Management",
+          "organizationName": "Apollo Global Management",
+          "fundName": null,
+          "vehicleName": "Prospective Apollo-managed funds commitment under non-binding MOU; never closed",
+          "stake": "Up to US$2.25 billion contemplated; no ownership stake established",
+          "investmentYear": null,
+          "exitYear": null,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpkil302klivhe30f4hsqp",
+          "date": "Dec 2025",
+          "event": "Capital Power and Apollo-managed funds announced a non-binding MOU contemplating a future U.S. natural-gas acquisition partnership; no definitive partnership closing was announced.",
+          "category": "FINANCING",
+          "sortDate": "2025-12-01T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.capitalpower.com/media/media_releases/capital-power-2025-investor-day/",
+            "https://www.capitalpower.com/wp-content/uploads/2025/11/Capital-Power-2025-Investor-Day-Presentation.pdf"
+          ]
+        },
+        {
+          "id": "cmrxpkilp02kmivhe4elpv360",
+          "date": "Dec 2025",
+          "event": "The non-binding MOU contemplated up to US$3 billion of potential equity for future acquisitions, including up to US$2.25 billion from Apollo-managed funds and US$750 million from Capital Power.",
+          "category": "FINANCING",
+          "sortDate": "2025-12-01T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.capitalpower.com/media/media_releases/capital-power-2025-investor-day/"
+          ]
+        },
+        {
+          "id": "cmrxpkim702knivhe3ofqg2zu",
+          "date": "Jul 2026",
+          "event": "Capital Power's Q2 2026 report identified no Apollo partnership closing, funded legal vehicle, jointly acquired asset, or Apollo-backed equity-accounted investment.",
+          "category": "OTHER",
+          "sortDate": "2026-07-29T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.capitalpower.com/wp-content/uploads/2026/07/Capital-Power-2026-Q2-Report.pdf"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxpotvz079civheku0ah79q",
+          "label": "Capital Power — 2025 Investor Day MOU announcement",
+          "url": "https://www.capitalpower.com/media/media_releases/capital-power-2025-investor-day/",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Prospective MOU terms and absence of a closed investment",
+          "isPrimary": true
+        },
+        {
+          "id": "cmrxpotx6079eivhevyqdhskg",
+          "label": "Capital Power — 2025 Investor Day presentation",
+          "url": "https://www.capitalpower.com/wp-content/uploads/2025/11/Capital-Power-2025-Investor-Day-Presentation.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Express disclosure that the Apollo MOU was non-binding",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpoty6079givhe29r82mkm",
+          "label": "Capital Power — Q2 2026 report",
+          "url": "https://www.capitalpower.com/wp-content/uploads/2026/07/Capital-Power-2026-Q2-Report.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "Latest quarterly check showing no Apollo partnership closing or jointly owned asset",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Capital Power U.S. Natural Gas JV",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to description, recordStatus, yearFounded, headquarters, lastVerifiedAt, milestones, citations."
+      },
+      {
+        "kind": "RETIRE_OWNERSHIP",
+        "relationIds": [
+          "cmrxpjqns01etivhe7f4o1nk6"
+        ],
+        "detail": "Retire 1 ownership period(s) without deleting history."
+      },
+      {
+        "kind": "REALIZE_COMPANY",
+        "relationIds": [],
+        "detail": "Mark the company realized after all active ownership has ended."
+      }
+    ],
+    "changedFields": [
+      "citations",
+      "companyStatus",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "ownershipPeriods",
+      "recordStatus",
+      "yearFounded"
+    ],
+    "retiredCompanyIds": []
+  }
+}

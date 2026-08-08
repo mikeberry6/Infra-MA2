@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T14:26:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0050:capital-power-u-s-natural-gas-jv:fb9d0544",
+  "updatedAt": "2026-08-08T14:34:00.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7426,11 +7426,11 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "42e7cc260d45203848e06111427df56017770df16f82a38f86709c8a5d71c99b",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-08T14:18:57.000Z",
-      "updatedAt": "2026-08-08T14:26:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-08T14:34:00.000Z",
+      "completedAt": "2026-08-08T14:34:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "057951864dc0b99710814877856b48e6a422ca97ec5d612bfa73ab6e8e008ea6",
@@ -7447,14 +7447,26 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0050-capital-power-u-s-natural-gas-jv-v1.json",
           "sha256": "bc8377585ccf331ad2e671231730bd2abe18836ff0de0fd2c4435bd6b7e2bbf5"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31262189080",
+          "sha256": "d25f22a459bdbe7d1425cababb1f66e9f7f03c3f9b0a1c2cd08a2083ebc7e5c2"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0050-capital-power-u-s-natural-gas-jv/research-decision.json",
           "sha256": "a4051558871592796382e2a71f2a3c82f47fd93662d842343a83682fe1947209"
         },
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0050-capital-power-u-s-natural-gas-jv/attempt-1/context.json",
+          "sha256": "a8e560e6bf52e60a268e442a40cac2a0d4a1de64c689e9512f3cb6303514f07e"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-08T14:34:00.000Z",
+        "auditEventId": "cmskh4gwz0004de4sx82cg4il",
+        "transactionId": "f62fe8fa-90e5-441d-adbc-c1c30595fed7",
+        "receiptSha256": "d25f22a459bdbe7d1425cababb1f66e9f7f03c3f9b0a1c2cd08a2083ebc7e5c2",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31262189080"
+      },
       "history": [
         {
           "sequence": 1,
@@ -7511,6 +7523,21 @@
             "bc8377585ccf331ad2e671231730bd2abe18836ff0de0fd2c4435bd6b7e2bbf5"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-08T14:34:00.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "7d128652a060fa09da3d6f09e65b1f03d5391496f2788c2cf32914a824f1890a",
+            "a8e560e6bf52e60a268e442a40cac2a0d4a1de64c689e9512f3cb6303514f07e",
+            "bc8377585ccf331ad2e671231730bd2abe18836ff0de0fd2c4435bd6b7e2bbf5",
+            "d25f22a459bdbe7d1425cababb1f66e9f7f03c3f9b0a1c2cd08a2083ebc7e5c2"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -24498,5 +24525,5 @@
       ]
     }
   ],
-  "manifestSha256": "9dbdf089139458a6039e5be547fa75e7bdcd57c52cf89cb96fa727ebfb2b5521"
+  "manifestSha256": "8eb84f1e31d87801e8523db690df19d2a4a90738c8b1d3ded774253c12a85dd3"
 }
