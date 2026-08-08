@@ -90,6 +90,62 @@ describe("public PortCo detail API verifier", () => {
     expect(expected.milestones[0]).toContain("launched Circle Power Renewables");
   });
 
+  it("accepts either equally ranked active co-owner as the legacy scalar primary", () => {
+    const image = companyImageFixture();
+    image.ownershipPeriods.push({
+      ...image.ownershipPeriods[0],
+      id: "owner_2",
+      managerName: "Argo Infrastructure Partners",
+      organizationName: "Argo Infrastructure Partners",
+      fundName: null,
+      vehicleName: "AMF Hawaiʻi Investment Holdings, LLC",
+      stake: null,
+    });
+    const expected = expectedPublicProjection({
+      companyId: "company_acme",
+      afterImage: image,
+      retiredCompanyIds: [],
+    });
+    const argo = expected.owners.find(
+      (owner) => owner.firm === "Argo Infrastructure Partners",
+    );
+    expect(argo).toBeDefined();
+    const payload = {
+      company: {
+        ...expected,
+        focusIds: expected.requiredFocusIds,
+        investmentFirm: argo!.firm,
+        ownershipVehicle: argo!.vehicle,
+        investmentYear: argo!.investmentYear ?? undefined,
+        owners: expected.owners.map((owner) => ({
+          ...owner,
+          fundName: owner.fundName ?? undefined,
+          investmentYear: owner.investmentYear ?? undefined,
+          exitYear: owner.exitYear ?? undefined,
+          stake: owner.stake ?? undefined,
+        })),
+        milestones: expected.milestones.map((value) => JSON.parse(value)),
+        management: expected.management.map((value) => JSON.parse(value)),
+        sources: expected.sources.map((value) => JSON.parse(value)),
+      },
+    };
+
+    expect(() => verifyPublicCompanyPayload({
+      payload,
+      companyId: "company_acme",
+      afterImage: image,
+      retiredCompanyIds: [],
+    })).not.toThrow();
+
+    payload.company.investmentFirm = "Unapproved Manager";
+    expect(() => verifyPublicCompanyPayload({
+      payload,
+      companyId: "company_acme",
+      afterImage: image,
+      retiredCompanyIds: [],
+    })).toThrow(/primary-owner/i);
+  });
+
   it("treats a 404 as the required public result for an archived company", async () => {
     const image = companyImageFixture();
     image.recordStatus = "ARCHIVED";
