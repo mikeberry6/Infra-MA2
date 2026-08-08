@@ -1,0 +1,328 @@
+{
+  "generatedAt": "2026-08-08T11:42:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "ADD_PENDING_TRANSACTION"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Keep Brightspeed active and correct the ownership-scope treatment. Apollo's original acquisition was led by private-equity funds, but the FCC's 2022 approval order for the subsequently consummated acquisition also identifies AIOF II Connect Holdings, L.P. as a direct owner with less than 5%; Apollo identifies AIOF II as a dedicated infrastructure fund. The FCC's December 2023 ruling shows AIOF II at 2% equity and 3% voting only in the proposed post-Mubadala structure. Retain the manager's active ownership period, identify the AIOF II vehicle within the Apollo-managed ownership group and qualify the historical disclosures because Brightspeed's August 2024 recapitalization issued warrants and preferred stock. Mubadala's May 2, 2023 $500 million minority investment was signed subject to regulatory approvals. The FCC approved the proposed foreign-ownership structure on December 20, 2023, but no public legal-closing announcement or date was found. Retire the unsupported closed-active Mubadala period and record the investment as SIGNED_PENDING_INCOMING through CEPSA Holding LLC. No Apollo or Mubadala exit was found through August 8, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.apollo.com/insights-news/insights/2022/02/brightspeed-broadband-across-the-land",
+      "purpose": "Apollo strategy classification and original acquisition context",
+      "supports": [
+        "ORIGINAL_ACQUISITION",
+        "PRIVATE_EQUITY_STRATEGY",
+        "IDENTITY"
+      ]
+    },
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-22-871A1.pdf",
+      "purpose": "Regulatory evidence for the consummated acquisition structure and AIOF II's direct interest of less than 5%",
+      "supports": [
+        "CLOSED_ACTIVE",
+        "INFRASTRUCTURE_VEHICLE",
+        "OWNERSHIP_CHAIN"
+      ]
+    },
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-23-1195A1.pdf",
+      "purpose": "Regulatory evidence for the proposed post-Mubadala ownership structure and its pro forma percentages",
+      "supports": [
+        "PROPOSED_OWNERSHIP_STRUCTURE",
+        "MUBADALA_PENDING_TRANSACTION",
+        "PRO_FORMA_STAKE",
+        "VEHICLE"
+      ]
+    },
+    {
+      "url": "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+      "purpose": "Apollo primary evidence that AIOF II is its dedicated infrastructure fund",
+      "supports": [
+        "INFRASTRUCTURE_STRATEGY",
+        "FUND_IDENTITY"
+      ]
+    },
+    {
+      "url": "https://www.brightspeed.com/content/dam/brightspeed/pdfs/brightspeed-mubadala-press-release.pdf",
+      "purpose": "Signed Mubadala transaction, conditions precedent, digital-infrastructure strategy and U.S. operating profile",
+      "supports": [
+        "SIGNED_TRANSACTION",
+        "TRANSACTION_STATE",
+        "INFRASTRUCTURE_STRATEGY",
+        "GEOGRAPHY",
+        "HEADQUARTERS"
+      ]
+    },
+    {
+      "url": "https://www.brightspeed.com/brightspeed-news/Brightspeed_Enters_Next_Era_of_Growth_as_Fiber_Broadband_Leader/",
+      "purpose": "Completed August 2024 recapitalization, continuing Apollo involvement and current operating status",
+      "supports": [
+        "CURRENT_STATUS",
+        "CURRENT_OWNERSHIP",
+        "EXIT_SEARCH",
+        "RECAPITALIZATION"
+      ]
+    },
+    {
+      "url": "https://www.brightspeed.com/content/dam/brightspeed/pdfs/Form%208937%20Attachments.pdf",
+      "purpose": "Primary evidence of recapitalization warrants and preferred stock affecting interpretation of older ownership percentages",
+      "supports": [
+        "STAKE_QUALIFICATION",
+        "RECAPITALIZATION",
+        "TRANSACTION_DATE"
+      ]
+    },
+    {
+      "url": "https://www.nj.gov/bpu/pdf/boardorders/2025/20250618/IVA%20ORDER%20Brightspeed%20Credit%20Agreement%20Refinancing.pdf",
+      "purpose": "Post-recapitalization parent structure showing AP IX Connect Holdings as the holder of approximately 62% of Connect Parent common stock",
+      "supports": [
+        "CURRENT_PARENT_STRUCTURE",
+        "EXIT_SEARCH",
+        "CURRENT_STATUS"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "afterImage": {
+    "id": "cmrxpjllx016qivhehncgspou",
+    "name": "Brightspeed",
+    "aliases": [
+      "Connect Holding II LLC"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Fiber broadband and telecommunications networks",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Brightspeed owns and operates wireline telecommunications and fiber broadband infrastructure across 20 U.S. states from Charlotte, North Carolina. Apollo-managed funds completed the acquisition of Lumen's incumbent local exchange carrier operations in October 2022. The FCC's 2022 approval order for the subsequently consummated acquisition shows that the Apollo ownership group included AIOF II Connect Holdings, L.P., a vehicle of Apollo Infrastructure Opportunities Fund II, with a direct interest of less than 5% alongside larger Apollo private-equity and co-invest vehicles; the 2% equity and 3% voting values appeared only in the December 2023 proposed post-Mubadala structure. Mubadala signed a $500 million minority investment through CEPSA Holding LLC in May 2023, and the FCC approved the proposed foreign-ownership structure in December 2023; no public legal-closing announcement or date was found, so Mubadala remains a signed pending incoming investor in this census. Brightspeed completed a debt recapitalization in August 2024 that issued warrants and preferred stock, and the current exact ownership percentages are not publicly disclosed. No Apollo or Mubadala exit was found through August 8, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.brightspeed.com/",
+    "yearFounded": 2021,
+    "headquarters": "Charlotte, North Carolina",
+    "lastVerifiedAt": "2026-08-08T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7z50262ivhejmk65apq",
+        "managerName": "Mubadala",
+        "organizationName": "Mubadala",
+        "fundName": null,
+        "vehicleName": "CEPSA Holding LLC (signed transaction; legal closing not publicly confirmed)",
+        "stake": "Proposed ~28% equity / ~3% voting in the FCC-approved Dec 2023 structure; current exact stake not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": "cmrxpk7zp0263ivhemuxoumb8",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+      "vehicleName": "Apollo-managed funds (including AIOF II Connect Holdings, L.P.)",
+      "stake": "Current combined stake not publicly disclosed; AIOF II was less than 5% after the Oct 2022 close (2% equity / 3% voting in the Dec 2023 pro forma structure)",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [
+      {
+        "id": null,
+        "direction": "INCOMING",
+        "transactionState": "SIGNED_PENDING_INCOMING",
+        "counterpartyName": "Mubadala",
+        "transactionDescription": "Mubadala signed a $500 million minority investment in Brightspeed through CEPSA Holding LLC on May 2, 2023. The FCC approved an approximately 28% equity and 3% voting structure on December 20, 2023, but no public legal-closing announcement or date was found. The December 2023 percentages predate Brightspeed's August 2024 recapitalization and are not presented as a verified current undiluted stake.",
+        "announcedAt": "2023-05-02",
+        "expectedClosing": "Not publicly disclosed",
+        "relatedOwnershipPeriodIds": [],
+        "evidenceUrls": [
+          "https://www.brightspeed.com/content/dam/brightspeed/pdfs/brightspeed-mubadala-press-release.pdf",
+          "https://docs.fcc.gov/public/attachments/DA-23-1195A1.pdf"
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "id": "cmrxpmg9s04vuivhemc2qonp3",
+        "date": "Aug 3, 2021",
+        "event": "Apollo-managed private-equity funds announced an agreement to acquire Lumen's incumbent local exchange carrier business in 20 U.S. states.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-08-03T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.apollo.com/insights-news/insights/2022/02/brightspeed-broadband-across-the-land",
+          "https://news.lumen.com/2021-08-03-Lumen-Technologies-to-sell-its-incumbent-local-exchange-carrier-ILEC-operations"
+        ]
+      },
+      {
+        "id": "cmrxpmgad04vvivhe0ubnme5l",
+        "date": "Nov 17, 2021",
+        "event": "Brightspeed unveiled its brand for the pending Apollo acquisition of Lumen's ILEC operations.",
+        "category": "OTHER",
+        "sortDate": "2021-11-17T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.apollo.com/insights-news/insights/2022/02/brightspeed-broadband-across-the-land"
+        ]
+      },
+      {
+        "id": "cmrxpmgay04vwivhejkoo0h68",
+        "date": "Oct 3, 2022",
+        "event": "Apollo-managed funds completed the acquisition from Lumen and Brightspeed began operating the business.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-10-03T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ir.lumen.com/news/news-details/2022/Lumen-Closes-Sale-of-Local-Incumbent-Carrier-Operations-in-20-States-to-Brightspeed/default.aspx"
+        ]
+      },
+      {
+        "id": "cmrxpmgbj04vxivhebrggma0s",
+        "date": "May 2, 2023",
+        "event": "Mubadala and Brightspeed announced a signed $500 million minority investment subject to regulatory approvals and other closing conditions; no public legal-closing date was found.",
+        "category": "FINANCING",
+        "sortDate": "2023-05-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.brightspeed.com/content/dam/brightspeed/pdfs/brightspeed-mubadala-press-release.pdf"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Dec 20, 2023",
+      "event": "The FCC approved Brightspeed's proposed post-Mubadala foreign-ownership structure, which showed pro forma interests of 2% equity for AIOF II and approximately 28% proposed equity for Mubadala through CEPSA Holding LLC.",
+        "category": "FINANCING",
+        "sortDate": "2023-12-20T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://docs.fcc.gov/public/attachments/DA-23-1195A1.pdf"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 13, 2024",
+        "event": "Brightspeed completed a debt recapitalization that secured approximately $3.7 billion of new financing, eliminated approximately $1.1 billion of debt and issued warrants and preferred stock to participating lenders.",
+        "category": "FINANCING",
+        "sortDate": "2024-08-13T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.brightspeed.com/brightspeed-news/Brightspeed_Enters_Next_Era_of_Growth_as_Fiber_Broadband_Leader/",
+          "https://www.brightspeed.com/content/dam/brightspeed/pdfs/Form%208937%20Attachments.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsco90cg7ivhejqnya0o2",
+        "label": "Brightspeed — Company website",
+        "url": "https://www.brightspeed.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current company identity and operating platform",
+        "isPrimary": true
+      },
+    {
+      "id": "cmrxpscpg0cg9ivhe8n8cnc89",
+        "label": "Apollo — Brightspeed: Broadband Across the Land",
+        "url": "https://www.apollo.com/insights-news/insights/2022/02/brightspeed-broadband-across-the-land",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo private-equity classification and original acquisition context",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FCC — August 2022 Brightspeed transaction order",
+      "url": "https://docs.fcc.gov/public/attachments/DA-22-871A1.pdf",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Completed transaction structure and AIOF II direct interest of less than 5%",
+      "isPrimary": false
+    },
+      {
+        "id": "cmrxpscqn0cgbivhefyg4qc7i",
+        "label": "Lumen — Brightspeed transaction closing",
+        "url": "https://ir.lumen.com/news/news-details/2022/Lumen-Closes-Sale-of-Local-Incumbent-Carrier-Operations-in-20-States-to-Brightspeed/default.aspx",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "October 3, 2022 acquisition closing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpscu60cgdivhe5sh988dh",
+        "label": "Brightspeed / Mubadala — signed $500 million investment",
+        "url": "https://www.brightspeed.com/content/dam/brightspeed/pdfs/brightspeed-mubadala-press-release.pdf",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 2, 2023 signed transaction, digital-infrastructure strategy and closing conditions",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpscvm0cgfivhev1ooytl4",
+        "label": "Telecompetitor — Brightspeed fiber plan",
+        "url": "https://www.telecompetitor.com/brightspeed-unveils-fiber-build-plans-for-its-20-state-territory/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Brightspeed's original 20-state fiber build plan",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpscwp0cghivhe8uo9ucs7",
+        "label": "Lumen — announced ILEC sale",
+        "url": "https://news.lumen.com/2021-08-03-Lumen-Technologies-to-sell-its-incumbent-local-exchange-carrier-ILEC-operations",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Original 20-state operating-asset perimeter",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+      "label": "FCC — December 2023 Brightspeed foreign-ownership ruling",
+        "url": "https://docs.fcc.gov/public/attachments/DA-23-1195A1.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Proposed post-Mubadala structure and pro forma equity and voting percentages",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Apollo — close of Infrastructure Opportunities Fund II",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "AIOF II dedicated infrastructure-fund identity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Brightspeed — August 2024 recapitalization",
+        "url": "https://www.brightspeed.com/brightspeed-news/Brightspeed_Enters_Next_Era_of_Growth_as_Fiber_Broadband_Leader/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Completed recapitalization, continuing Apollo involvement and current operating status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Connect Parent — Form 8937 recapitalization attachment",
+        "url": "https://www.brightspeed.com/content/dam/brightspeed/pdfs/Form%208937%20Attachments.pdf",
+        "sourceType": "OTHER",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "August 13, 2024 closing, new warrants and preferred stock",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+      "label": "New Jersey BPU — June 2025 Brightspeed financing order",
+        "url": "https://www.nj.gov/bpu/pdf/boardorders/2025/20250618/IVA%20ORDER%20Brightspeed%20Credit%20Agreement%20Refinancing.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Post-recapitalization parent structure and AP IX Connect Holdings common-stock position",
+        "isPrimary": false
+      }
+    ]
+  }
+}
