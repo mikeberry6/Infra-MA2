@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-08-08T11:42:00.000Z",
+  "decision": "CORRECT_APOLLO_INFRASTRUCTURE_VEHICLE_AND_MUBADALA_PENDING_STATE",
+  "taskId": "ledger:0046:brightspeed:f81f08b3",
+  "companyName": "Brightspeed",
+  "requestedManagers": [
+    "Apollo Global Management",
+    "Mubadala"
+  ],
+  "rationale": "Keep Brightspeed active and correct the ownership-scope treatment. Apollo's own case study attributes the 2021 acquisition to Apollo Private Equity Funds, while the FCC's 2022 approval order for the subsequently consummated acquisition identifies AIOF II Connect Holdings, L.P. as a direct Brightspeed parent-company owner with less than 5%. The FCC's December 2023 ruling shows AIOF II at 2% equity and 3% voting only in the proposed post-Mubadala structure. AIOF II is Apollo Infrastructure Opportunities Fund II, Apollo's dedicated infrastructure fund, so the prior blanket Apollo NON_INFRASTRUCTURE_STRATEGY exclusion is too broad. Preserve Apollo as the active legal manager owner, identify the AIOF II vehicle and qualify the historical disclosures because the August 2024 recapitalization issued warrants and preferred stock and no current exact cap table is public. Mubadala's May 2, 2023 announcement was a signed $500 million minority investment subject to regulatory approvals. The FCC approved a proposed roughly 28% equity and 3% voting structure through CEPSA Holding LLC on December 20, 2023, but no public legal-closing announcement or date was found. Under the signed-but-unclosed rule, retire the unsupported closed-active Mubadala row and record the transaction as SIGNED_PENDING_INCOMING. No Apollo or Mubadala sale or exit was found through August 8, 2026.",
+  "identityResolution": {
+    "canonicalDecision": "KEEP_BRIGHTSPEED",
+    "legalParent": "Connect Parent Corporation",
+    "operatingParent": "Connect Holding II LLC",
+    "platformBoundary": "Brightspeed is the manager-level U.S. fiber broadband and telecommunications platform. Its state operating companies and licensed subsidiaries remain beneath the counted platform and are not separate PortCos."
+  },
+  "acquisitionExitCheck": {
+    "apolloAcquisition": "Apollo-managed funds completed the acquisition of Lumen's incumbent local exchange carrier operations in 20 states on October 3, 2022. Apollo's current case study identifies the acquiring strategy as private equity.",
+    "apolloInfrastructureBasis": "The FCC's 2022 approval order for the subsequently consummated acquisition identifies AIOF II Connect Holdings, L.P. as a direct Connect Parent owner with less than 5%. The FCC's December 2023 ruling shows AIOF II at 2% equity and 3% voting only in the proposed post-Mubadala structure. Apollo identifies AIOF II as its second dedicated infrastructure fund.",
+    "mubadalaTransaction": "Mubadala signed a $500 million minority investment on May 2, 2023, subject to regulatory approvals. The FCC granted the requested foreign-ownership approval on December 20, 2023, but no public legal-closing announcement or date was found.",
+    "recapitalization": "Connect Parent completed an August 13, 2024 debt recapitalization that issued approximately 23.8 million penny warrants and Series C preferred stock to participating lenders, so the December 2023 percentages are historical disclosure points rather than verified current undiluted stakes.",
+    "exitSearch": "No announced or completed Apollo or Mubadala sale, ownership transfer, or exit was found through August 8, 2026. Brightspeed's August 2024 release says Apollo remained part of the company's growth story, and a June 2025 New Jersey regulatory order continued to identify AP IX Connect Holdings as the controlling parent investor.",
+    "companyState": "ACTIVE",
+    "apolloTransactionState": "CLOSED_ACTIVE",
+    "mubadalaTransactionState": "SIGNED_PENDING_INCOMING"
+  },
+  "ownershipResolution": {
+    "apollo": {
+      "decision": "RETAIN_ACTIVE_AND_CORRECT_INFRASTRUCTURE_BASIS",
+      "manager": "Apollo Global Management",
+      "vehicle": "Apollo-managed funds, including AIOF II Connect Holdings, L.P.",
+      "infrastructureFund": "Apollo Infrastructure Opportunities Fund II",
+      "historicalDisclosedInfrastructureStake": "AIOF II: less than 5% after the October 2022 close; 2% equity / 3% voting only in the December 2023 pro forma proposed structure",
+      "currentStake": "NOT_PUBLICLY_DISCLOSED after the August 2024 recapitalization",
+      "scopeNote": "Apollo Fund IX and co-invest vehicles held the larger private-equity interests. AIOF II's closed direct interest is sufficient to retain Brightspeed in Apollo's infrastructure census without reclassifying those larger private-equity positions as infrastructure."
+    },
+    "mubadala": {
+      "decision": "RECLASSIFY_FROM_CLOSED_ACTIVE_TO_SIGNED_PENDING_INCOMING",
+      "manager": "Mubadala",
+      "vehicle": "CEPSA Holding LLC",
+      "signedDate": "2023-05-02",
+      "regulatoryApprovalDate": "2023-12-20",
+      "proposedStake": "Approximately 28% equity / 3% voting in the FCC-approved December 2023 structure",
+      "legalClosingDate": "NOT_PUBLICLY_DISCLOSED",
+      "currentStake": "NOT_PUBLICLY_DISCLOSED"
+    }
+  },
+  "evidence": [
+    {
+      "label": "Apollo — Brightspeed: Broadband Across the Land",
+      "url": "https://www.apollo.com/insights-news/insights/2022/02/brightspeed-broadband-across-the-land",
+      "purpose": "Apollo primary evidence that its private-equity funds led the original acquisition",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "FCC — August 2022 Brightspeed transaction order",
+      "url": "https://docs.fcc.gov/public/attachments/DA-22-871A1.pdf",
+      "purpose": "Regulatory evidence for the consummated acquisition structure, including AIOF II's direct interest of less than 5%",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "FCC — December 2023 Brightspeed foreign-ownership ruling",
+      "url": "https://docs.fcc.gov/public/attachments/DA-23-1195A1.pdf",
+      "purpose": "Regulatory evidence for the proposed post-Mubadala ownership structure and its pro forma equity and voting percentages",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Apollo — close of Apollo Infrastructure Opportunities Fund II",
+      "url": "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+      "purpose": "Apollo primary evidence that AIOF II is a dedicated infrastructure fund",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Brightspeed / Mubadala — signed $500 million minority investment",
+      "url": "https://www.brightspeed.com/content/dam/brightspeed/pdfs/brightspeed-mubadala-press-release.pdf",
+      "purpose": "Primary signed-transaction, digital-infrastructure strategy, geography and conditions-precedent evidence",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Brightspeed — August 2024 recapitalization",
+      "url": "https://www.brightspeed.com/brightspeed-news/Brightspeed_Enters_Next_Era_of_Growth_as_Fiber_Broadband_Leader/",
+      "purpose": "Primary current Apollo-association and completed recapitalization evidence",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Connect Parent — Form 8937 recapitalization attachment",
+      "url": "https://www.brightspeed.com/content/dam/brightspeed/pdfs/Form%208937%20Attachments.pdf",
+      "purpose": "Primary evidence that the August 2024 recapitalization issued warrants and preferred stock that may have diluted the December 2023 ownership percentages",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "New Jersey BPU — June 2025 Brightspeed financing order",
+      "url": "https://www.nj.gov/bpu/pdf/boardorders/2025/20250618/IVA%20ORDER%20Brightspeed%20Credit%20Agreement%20Refinancing.pdf",
+      "purpose": "Current parent-structure evidence showing AP IX Connect Holdings with approximately 62% of Connect Parent common stock after the recapitalization",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "databaseMutation": true,
+  "seedMutation": true,
+  "unresolvedQuestions": [],
+  "phaseOneCloseoutNote": "Retain one canonical Brightspeed company. Map Apollo to the active AIOF II-supported closed manager holding, keep the larger Apollo private-equity interests as ownership context rather than infrastructure-strategy holdings, and carry Mubadala as a signed pending incoming transaction until direct legal-closing evidence is available."
+}
