@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T08:56:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0039:lbj-express:7e5653c8",
+  "updatedAt": "2026-08-08T09:09:15.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -6231,11 +6231,11 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "59d3926faf3ad4d90528dcceff1793daf286d82c26f45984302d6c2b84cc6442",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-08T08:31:00.000Z",
-      "updatedAt": "2026-08-08T08:56:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-08T09:09:00.000Z",
+      "completedAt": "2026-08-08T09:09:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "635ac694eec11fdfe7a01603113a97264cfa50fcf5b325b07aa71e0558c35fbf",
@@ -6252,11 +6252,23 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0039-lbj-express-v1.json",
           "sha256": "d168142dc175f18b096dea9595a62532492a2b5fe033407f0530f32d3f348157"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31249708701",
+          "sha256": "80be2e039124d3e47c4921aec235227c0b649cf3b1186beb0e805a5c8ad81dd2"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0039-lbj-express/attempt-1/context.json",
+          "sha256": "d55dd2504eb7d60c8d7627cb7f6980aa0d19d53ab8c3dabaabb2a2dc544a499a"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-08T09:09:00.000Z",
+        "auditEventId": "cmsk5dzzv0008he4sdg1ma1us",
+        "transactionId": "114ecc96-189a-49eb-862e-d5f83f69aaab",
+        "receiptSha256": "80be2e039124d3e47c4921aec235227c0b649cf3b1186beb0e805a5c8ad81dd2",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31249708701"
+      },
       "history": [
         {
           "sequence": 1,
@@ -6315,6 +6327,21 @@
             "d168142dc175f18b096dea9595a62532492a2b5fe033407f0530f32d3f348157"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-08T09:09:00.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "5ed0fec8c6e92595037fcac5b9bc6455d6f92e86dafa20269aa12cc6acc56304",
+            "80be2e039124d3e47c4921aec235227c0b649cf3b1186beb0e805a5c8ad81dd2",
+            "d168142dc175f18b096dea9595a62532492a2b5fe033407f0530f32d3f348157",
+            "d55dd2504eb7d60c8d7627cb7f6980aa0d19d53ab8c3dabaabb2a2dc544a499a"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -6326,13 +6353,13 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "313631a4595c1343a234037d7869d44d5e7382a55380c47595bbc3cb1a4b84bd",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-08T09:09:15.000Z",
+      "completedAt": "2026-08-08T09:09:15.000Z",
+      "exceptionReason": "Task 39 proved LBJ Express and LBJ Infrastructure Group, LLC are the same concession, merged the duplicate production record, and verified the canonical legal-name after-image.",
+      "supersededByTaskId": "ledger:0039:lbj-express:7e5653c8",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -6353,6 +6380,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-08T09:09:15.000Z",
+          "reason": "Task 39 proved LBJ Express and LBJ Infrastructure Group, LLC are the same concession, merged the duplicate production record, and verified the canonical legal-name after-image.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23700,5 +23737,5 @@
       ]
     }
   ],
-  "manifestSha256": "26a71bf126da5ad868bcbc50eb226ade63cfc2df58bf812deaec08fb4cff8961"
+  "manifestSha256": "8f8f2b61084f9522d3cac8ce9eb65e108a32b5595af829843421805de14e6c4a"
 }
