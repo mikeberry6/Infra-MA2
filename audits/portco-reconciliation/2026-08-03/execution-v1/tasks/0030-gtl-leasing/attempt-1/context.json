@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0030:gtl-leasing:5dd2a17e",
+  "taskIndex": 30,
+  "companyName": "GTL Leasing",
+  "generatedAt": "2026-08-08T03:26:28.521Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0030-gtl-leasing/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 30,
+    "taskId": "ledger:0030:gtl-leasing:5dd2a17e",
+    "canonicalKey": "gtl-leasing|united-states",
+    "companyName": "GTL Leasing",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 8,
+    "managers": [
+      "Antin Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "008-antin-infrastructure-partners:holding:003:gtl-leasing"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj59100hgivheo2ifq5i7"
+    ],
+    "seedKeys": [
+      "gtl leasing|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.antin-ip.com/investments/gtl-leasing/",
+      "https://www.antin-ip.com/media/our-news/antin-agrees-to-invest-in-gtl-leasing-the-leading-lessor-of-hydrogen-midstream-equipment-in-north-america"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj59100hgivheo2ifq5i7",
+    "name": "GTL Leasing",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Gas and hydrogen transport equipment leasing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "GTL Leasing leases transportation and storage equipment used in industrial gas and hydrogen supply chains. Its customer base includes gas distributors, industrial users, and emerging hydrogen market participants that require high-pressure gaseous trailers, cryogenic equipment, and related storage assets. The business follows an asset-heavy leasing model with contracted equipment deployments rather than commodity exposure. Antin announced its investment through NextGen Fund I in 2024 and described GTL as a North American lessor of hydrogen midstream equipment. Reviewed public sources do not disclose Antin's ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2013,
+    "headquarters": "North America",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjq7f01e2ivhehkle60os",
+        "managerName": "Antin Infrastructure Partners",
+        "organizationName": "Antin Infrastructure Partners",
+        "fundName": "Antin NextGen Fund I",
+        "vehicleName": "Antin NextGen Fund I",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkglz02i5ivhe7qo41ozd",
+        "date": "2013",
+        "event": "GTL Leasing was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2013-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkgmj02i6ivheluah5xft",
+        "date": "Jun 20, 2024",
+        "event": "Antin agreed to acquire a majority stake in GTL Leasing through NextGen Fund I.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-06-20T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoqov074mivhe6qx0biy9",
+        "label": "Announcement date source — Antin Infrastructure Partners — GTL Leasing",
+        "url": "https://www.antin-ip.com/media/our-news/antin-agrees-to-invest-in-gtl-leasing-the-leading-lessor-of-hydrogen-midstream-equipment-in-north-america",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Antin Infrastructure Partners transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoqqm074oivhe4om5nna4",
+        "label": "Antin Ip — GTL Leasing",
+        "url": "https://www.antin-ip.com/investments/gtl-leasing/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Antin Ip company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoqrm074qivhe2u7lgt3x",
+        "label": "Gtlleasing — GTL Leasing",
+        "url": "https://www.gtlleasing.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Gtlleasing company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "GTL Leasing",
+    "investmentFirm": "Antin Infrastructure Partners",
+    "sector": "Midstream",
+    "subsector": "Gas and hydrogen transport equipment leasing",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Antin NextGen Fund I",
+    "description": "GTL Leasing leases transportation and storage equipment used in industrial gas and hydrogen supply chains. Its customer base includes gas distributors, industrial users, and emerging hydrogen market participants that require high-pressure gaseous trailers, cryogenic equipment, and related storage assets. The business follows an asset-heavy leasing model with contracted equipment deployments rather than commodity exposure. Antin announced its investment through NextGen Fund I in 2024 and described GTL as a North American lessor of hydrogen midstream equipment. Reviewed public sources do not disclose Antin's ownership percentage.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2013,
+    "investmentYear": 2024,
+    "headquarters": "North America",
+    "milestones": [
+      {
+        "date": "2013",
+        "event": "GTL Leasing was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jun 20, 2024",
+        "event": "Antin agreed to acquire a majority stake in GTL Leasing through NextGen Fund I.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Antin Infrastructure Partners — GTL Leasing",
+        "url": "https://www.antin-ip.com/media/our-news/antin-agrees-to-invest-in-gtl-leasing-the-leading-lessor-of-hydrogen-midstream-equipment-in-north-america",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Antin Ip — GTL Leasing",
+        "url": "https://www.antin-ip.com/investments/gtl-leasing/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Gtlleasing — GTL Leasing",
+        "url": "https://www.gtlleasing.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Antin Infrastructure Partners",
+        "ownershipVehicle": "Antin NextGen Fund I",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj0v900b6ivhecxbi9hly",
+        "fundName": "Antin NextGen Fund I",
+        "managerId": "cmrxpi37e000aivhe52vczew3",
+        "updatedAt": "2026-07-23T16:09:54.981Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi37e000aivhe52vczew3",
+        "name": "Antin Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:11.354Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0030:gtl-leasing:5dd2a17e",
+    "taskIndex": 30,
+    "canonicalKey": "gtl-leasing|united-states",
+    "capturedAt": "2026-08-08T03:26:28.521Z",
+    "databaseRevision": "company-state:c961c311f71fa0c805b3dc05176ca579c6204805240a8942efd149fe84800e3b",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "48fd2d7521795720b5fb3b6f15e04953109d56946ce47bdce58156dafd9f4722",
+    "productionSnapshotSha256": "f164820c355838fc9248d17eeca42daa2921e33b06e36f6500b19fa45ee7fe29",
+    "targetCompanySnapshotSha256": "c961c311f71fa0c805b3dc05176ca579c6204805240a8942efd149fe84800e3b",
+    "seedEntrySha256": "7d9cfc7981ec83d9410f4187c7830bc12f674db6ddc76a3abaff15214dfa9687",
+    "dependencies": {
+      "ownershipPeriodsSha256": "1f49b8f350af4907ee6fffcba82b8aa6868c42cc598769f07130607c88993aca",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "3838499186890d456042086d8098c8a00faf939b2de1c76a273c5f4d4e5ea1ae",
+      "organizationsSha256": "0e80ffc288d44b4e642bc00b24cf9a1c03509c20674171ebc6dee7bc34b4d578",
+      "citationsSha256": "602f746ac3d0296a5c5fd191a9ba563a05d113c2329c80addcf13c22044e7ae9",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "02584e66681bd30e4faab881820c03b3afd7655d0a919617aaad570c3ac30809",
+    "stateSha256": "66c9e88c8667ab970b215aead9e22191b2a6cee3262b0e65e27b148feb6b6bed",
+    "taskSnapshotSha256": "d1b755bd54fdea9cfb2b3ba4b198f15e7f7f4eb1182a690b69a3f751f23d5ba6"
+  },
+  "contextSha256": "4c37571a57b0e479ba00cc318c4f0d91e10c144023834abb9d7dfbbd2818a204"
+}

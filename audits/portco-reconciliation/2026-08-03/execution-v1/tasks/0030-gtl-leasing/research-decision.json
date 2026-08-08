@@ -1,0 +1,57 @@
+{
+  "generatedAt": "2026-08-08T03:34:00.000Z",
+  "decision": "CORRECT_COMPANY",
+  "canonicalCompany": "GTL Leasing",
+  "rationale": "Do not create the pending incoming transaction proposed by the original census. Antin's June 20, 2024 announcement contemplated closing within one month, and Antin's January 2026 portfolio newsletter states that its investment occurred in July 2024 and that GTL paid its first dividend under Antin ownership in December 2025. Antin continues to list GTL as an active NextGen Fund I investment. Retain the existing active 2024 ownership period, record Antin's publicly disclosed majority stake, correct the description from an announced to a completed investment, add the official company website, remove the unsupported 'North America' headquarters value, and attach direct evidence to the existing milestones.",
+  "identityResolution": {
+    "canonicalDecision": "KEEP_GTL_LEASING",
+    "legalName": "GTL Leasing LLC",
+    "platformBoundary": "One equipment-leasing company with facilities in Catoosa, Oklahoma and Livermore, California; its individual trailers, tanks, cylinders and service facilities are not separately countable portfolio companies.",
+    "duplicateFound": false
+  },
+  "acquisitionExitCheck": {
+    "announcementSearch": "Antin announced on June 20, 2024 that NextGen Fund I had agreed to acquire a majority stake in GTL Leasing, with no material conditions precedent outstanding and closing anticipated within one month.",
+    "closingSearch": "Antin's January 2026 newsletter states that Antin invested in GTL in July 2024 and that GTL paid its first post-investment dividend in December 2025. Antin's 2024 universal registration document also identifies GTL as NextGen Fund I's 2024 acquisition.",
+    "exitSearch": "No sale or exit was found. Antin's current investment directory and GTL investment page continue to list GTL without a realised designation, and the January 2026 newsletter reports ongoing portfolio performance under Antin ownership.",
+    "currentOwnership": "Antin Infrastructure Partners, through NextGen Fund I, holds a majority stake in GTL Leasing.",
+    "transactionState": "CLOSED_ACTIVE",
+    "closingPrecision": "MONTH",
+    "closingDate": "2024-07"
+  },
+  "evidence": [
+    {
+      "label": "Antin — GTL Leasing investment announcement",
+      "url": "https://www.antin-ip.com/media/our-news/antin-agrees-to-invest-in-gtl-leasing-the-leading-lessor-of-hydrogen-midstream-equipment-in-north-america",
+      "purpose": "Majority stake, NextGen Fund I, announcement date, expected closing and infrastructure-strategy basis",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Antin Pulse — January 2026",
+      "url": "https://www.antin-ip.com/wp-content/uploads/2026/01/Antin-Infrastructure-newsletter-2026-External-Digital.pdf",
+      "purpose": "Primary subsequent evidence that Antin invested in July 2024 and continued to own GTL when it paid its first dividend in December 2025",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Antin — GTL Leasing portfolio",
+      "url": "https://www.antin-ip.com/investments/gtl-leasing",
+      "purpose": "Current portfolio, fund-strategy, operating-footprint and platform-boundary evidence",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "GTL Leasing — About",
+      "url": "https://www.gtlleasing.com/about-us",
+      "purpose": "Current company identity, founding, operating model and equipment profile",
+      "sourceTier": "PRIMARY"
+    }
+  ],
+  "sourceHealth": {
+    "https://www.antin-ip.com/media/our-news/antin-agrees-to-invest-in-gtl-leasing-the-leading-lessor-of-hydrogen-midstream-equipment-in-north-america": "WORKING",
+    "https://www.antin-ip.com/investments/gtl-leasing": "WORKING",
+    "https://www.antin-ip.com/investments": "WORKING",
+    "https://www.antin-ip.com/wp-content/uploads/2026/01/Antin-Infrastructure-newsletter-2026-External-Digital.pdf": "WORKING",
+    "https://www.gtlleasing.com/": "WORKING",
+    "https://www.gtlleasing.com/about-us": "WORKING"
+  },
+  "pendingTransactionDecision": "DO_NOT_CREATE_CLOSED",
+  "unresolvedQuestions": []
+}
