@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T05:58:32.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T06:14:15.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0035:gemini-solar-storage:4b88d999",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -5425,18 +5425,27 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "108c474ee71f7c85eadc197f2e9f80dbb7e0e6d36150edd65bb5cd7f1628847d",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-08T06:12:08.000Z",
+      "updatedAt": "2026-08-08T06:14:15.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "65d2e8e38e9344746b9e44cd296c965e413a601e7acd12881f284cecdfe0dee3",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0035-gemini-solar-storage/attempt-2/task-snapshot.json",
+          "sha256": "65d2e8e38e9344746b9e44cd296c965e413a601e7acd12881f284cecdfe0dee3"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0035-gemini-solar-storage-v2/proposal.json",
+          "sha256": "1d742ff297424511dde27e37c4e445552242536f9e3db5701303447ef2983062"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0035-gemini-solar-storage-v2.json",
+          "sha256": "958e6db91a57bd5bdbd4f2f4b22db716b659a20d74f7c6667b766f5f2ac8e732"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -5452,6 +5461,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T06:05:41.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T06:10:39.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "38f53f7bc112f1349b0cc98869a2706c2bdaaa80839254d3fe3e774f42996331",
+          "evidenceSha256": [
+            "38f53f7bc112f1349b0cc98869a2706c2bdaaa80839254d3fe3e774f42996331",
+            "6eef8cb09931d23d7dec083e3eec74910d10aeb13089173a887698534f65aaa9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T06:10:40.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "38f53f7bc112f1349b0cc98869a2706c2bdaaa80839254d3fe3e774f42996331",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T06:11:25.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "38f53f7bc112f1349b0cc98869a2706c2bdaaa80839254d3fe3e774f42996331",
+          "evidenceSha256": [
+            "975afe9cfa0b1b55864fe4920dea0f0396685f2a48b7c393e3b2ed8b79827dab"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T06:12:07.000Z",
+          "reason": "Local v1 dry-run required the Primergy APG transaction URL to be attached as a company citation; no database write occurred.",
+          "taskSnapshotSha256": "38f53f7bc112f1349b0cc98869a2706c2bdaaa80839254d3fe3e774f42996331",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T06:12:08.000Z",
+          "reason": "Retrying with the exact Primergy APG milestone source attached as a company citation.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T06:13:57.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "65d2e8e38e9344746b9e44cd296c965e413a601e7acd12881f284cecdfe0dee3",
+          "evidenceSha256": [
+            "1d742ff297424511dde27e37c4e445552242536f9e3db5701303447ef2983062",
+            "65d2e8e38e9344746b9e44cd296c965e413a601e7acd12881f284cecdfe0dee3"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T06:13:58.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "65d2e8e38e9344746b9e44cd296c965e413a601e7acd12881f284cecdfe0dee3",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T06:14:15.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "65d2e8e38e9344746b9e44cd296c965e413a601e7acd12881f284cecdfe0dee3",
+          "evidenceSha256": [
+            "958e6db91a57bd5bdbd4f2f4b22db716b659a20d74f7c6667b766f5f2ac8e732"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -22989,5 +23098,5 @@
       ]
     }
   ],
-  "manifestSha256": "7b8e980787a40faf407b9f5a868a692457925f21a73eea7a82c4619114eb89e3"
+  "manifestSha256": "232b38b604b9bccefd5fbbd2dd845fc543c5b2e2d688c52d0857e7591177f3a7"
 }
