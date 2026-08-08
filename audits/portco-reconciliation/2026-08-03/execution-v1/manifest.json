@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T11:15:00.000Z",
+  "updatedAt": "2026-08-08T11:24:30.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -6816,20 +6816,26 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "7b1b78de44517536166a7b7e9913f84546cda1b0865f7dea2d90ab0261e475f7",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-08-08T11:20:03.000Z",
+      "updatedAt": "2026-08-08T11:24:30.000Z",
+      "completedAt": "2026-08-08T11:24:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "a1ce92bc45baf9eb7b4e29900e0edfc8d925fbd3d7be9ba6375d08c15e4c7ab8",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0045-arlington-valley-solar-energy-ii/attempt-1/task-snapshot.json",
+          "sha256": "a1ce92bc45baf9eb7b4e29900e0edfc8d925fbd3d7be9ba6375d08c15e4c7ab8"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0045-arlington-valley-solar-energy-ii/research-decision.json",
+          "sha256": "ac2161315a435616a9e81d653b56b13ae08d273c5817d8aca495f9b1984d260b"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -6843,6 +6849,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T11:20:03.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "EXCLUDED",
+          "at": "2026-08-08T11:24:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a1ce92bc45baf9eb7b4e29900e0edfc8d925fbd3d7be9ba6375d08c15e4c7ab8",
+          "evidenceSha256": [
+            "a1ce92bc45baf9eb7b4e29900e0edfc8d925fbd3d7be9ba6375d08c15e4c7ab8",
+            "ac2161315a435616a9e81d653b56b13ae08d273c5817d8aca495f9b1984d260b"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24020,5 +24049,5 @@
       ]
     }
   ],
-  "manifestSha256": "89cf81b6b8d6610bb49d3afc016eb051fb8b49de79f3edf3ef1b55c33cb62809"
+  "manifestSha256": "323eeb44924cb26a496dc666cca7fcc4b4ba2b0b51b54fd55e1d596856535678"
 }
