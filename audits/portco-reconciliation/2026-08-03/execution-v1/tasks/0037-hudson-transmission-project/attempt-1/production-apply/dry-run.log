@@ -1,0 +1,358 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0037-hudson-transmission-project-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0037-hudson-transmission-project-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0037-hudson-transmission-project/attempt-1/production-snapshot.json --proposal-sha256=4e2c52627b148a1c23e5e9e4fb37983dfa4edff07d836d3e848823ad4770636d --approval-sha256=44cef5c4187bc941cfd51c39b0f56bd3c490a14d3f0dfe3d9e1ec9f683b52006 --snapshot-sha256=5eade33e221ee1248419b13bca296983b774bb8f475e9cbff42cb12d98bb12b8
+
+(node:2866) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "4e2c52627b148a1c23e5e9e4fb37983dfa4edff07d836d3e848823ad4770636d",
+    "approvalSha256": "44cef5c4187bc941cfd51c39b0f56bd3c490a14d3f0dfe3d9e1ec9f683b52006",
+    "afterImageSha256": "a156a65f4c650f037d8e57684151f1070b251512f10ea2ececb85b2c265ba18a",
+    "taskId": "ledger:0037:hudson-transmission-project:932c04f7",
+    "operation": "UPSERT",
+    "company": {
+      "name": "Hudson Transmission Project",
+      "investmentFirm": "APG Asset Management",
+      "sector": "Utilities",
+      "subsector": "Merchant electric transmission interconnector",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "APG Infrastructure Pool 2014",
+      "description": "Hudson Transmission Project is a 660 MW, 7.1-mile high-voltage direct-current merchant transmission link between Ridgefield, New Jersey and Manhattan. Hudson Transmission Partners, LLC owns the project and PowerBridge operates it; 575 MW, or 87.12% of capacity, is contracted to the New York Power Authority through June 2033. The line entered commercial service in June 2013. AMF Oratam Investments LLC, managed by Argo Infrastructure Partners, acquired the project's 94% Class C economic interest in March 2019. APG Infrastructure Pool 2014 participates indirectly through Sogra Investment Holding B.V. and disclosed Hudson Transmission Partners as 6% of pool assets for 2022; current beneficial ownership percentages are not publicly disclosed.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "website": "https://hudsonproject.com/",
+      "yearFounded": 2011,
+      "investmentYear": 2019,
+      "headquarters": "Fairfield, Connecticut",
+      "milestones": [
+        {
+          "date": "May 2011",
+          "event": "Construction began on the Hudson Transmission Project's underground and underwater HVDC link between New Jersey and Manhattan.",
+          "category": "Expansion"
+        },
+        {
+          "date": "Jun 2013",
+          "event": "The 660 MW Hudson Transmission Project entered commercial service ahead of schedule.",
+          "category": "Expansion"
+        },
+        {
+          "date": "Sep 14, 2018",
+          "event": "Ares EIF and Starwood Energy agreed to sell their Hudson interests to AMF Oratam Investments LLC, an Argo-managed investment vehicle.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Mar 2019",
+          "event": "Argo's AMF Oratam investment vehicle completed the acquisition of the 94% Class C economic interest in Hudson Transmission Partners for institutional investors including APG.",
+          "category": "Acquisition"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Hudsonproject — Hudson Transmission Project",
+          "url": "https://hudsonproject.com/project/",
+          "type": "ARTICLE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Official project identity, route, capacity, construction, and service dates"
+        },
+        {
+          "label": "Hudsonproject — Hudson Transmission Project",
+          "url": "https://hudsonproject.com/team/owners-investors/",
+          "type": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current project page identifying Argo as principal investor"
+        },
+        {
+          "label": "Announcement date source — Argo Infrastructure Partners — Hudson Transmission Project",
+          "url": "https://www.lotusinfrastructure.com/news/lotus-to-sell-hudson-transmission-line-to-argo/",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "September 2018 Argo acquisition announcement and infrastructure-strategy basis"
+        },
+        {
+          "label": "Nsenergybusiness — Hudson Transmission Project",
+          "url": "https://www.nsenergybusiness.com/deals/hudson-transmission-project-sale/",
+          "type": "ARTICLE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "Contemporaneous transaction and project-scale detail"
+        },
+        {
+          "label": "Investment date source — Argo Infrastructure Partners — Hudson Transmission Project",
+          "url": "https://www.oregon.gov/energy/facilities-safety/facilities/Facilities%20library/2026-02-27-CRTAPPDoc01-02-pASC-Organizational-Expertise-Exhibit.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Argo Infrastructure Partners initial investment / ownership"
+        },
+        {
+          "label": "Investment date source — Argo Infrastructure Partners — Hudson Transmission Project",
+          "url": "https://www.oregon.gov/energy/facilities-safety/facilities/Facilities%20library/2026-02-27-CRTAPPDoc01-02-pASC-Organizational-Expertise-Exhibit.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG Infrastructure initial investment / ownership"
+        },
+        {
+          "label": "New York PSC — Hudson ownership petition",
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B5288AF6D-AFB8-4165-86A4-81723FB9725E%7D",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "AMF Oratam ownership chain, Argo manager role, APG Pool 2014 vehicle, and 94% economic interest"
+        },
+        {
+          "label": "APG — Infrastructure Pool 2014 disclosure",
+          "url": "https://assetmanagement.apg.nl/media/xuvbwxt3/apg-infrastructure-pool-2014-sfdr-periodic-report-2022.pdf",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG Pool 2014 disclosure of Hudson Transmission Partners as 6% of assets"
+        },
+        {
+          "label": "Lotus Infrastructure — Hudson Transmission Project",
+          "url": "https://www.lotusinfrastructure.com/our-investments/",
+          "type": "WEBSITE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "March 2019 completion of Lotus's sale to Argo"
+        },
+        {
+          "label": "NYPA — 2024 Operations and Accomplishments Report",
+          "url": "https://prod-www.nypa.gov/-/media/nypa/documents/document-library/annual-web-posting/2024/operations-and-accomplishment-report-2024---nypa.pdf",
+          "type": "OTHER",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "2024 availability, current operator identity, capacity, and NYPA contract"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "APG Asset Management",
+          "ownershipVehicle": "APG Infrastructure Pool 2014",
+          "investmentYear": 2019,
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "investmentFirm": "Argo Infrastructure Partners",
+          "ownershipVehicle": "AMF Oratam Investments LLC",
+          "investmentYear": 2019,
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": "cmrxpj5dd00hoivhel34uz412",
+      "name": "Hudson Transmission Project",
+      "aliases": [
+        "HTP",
+        "Hudson Project",
+        "Hudson Transmission Partners, LLC"
+      ],
+      "sector": "UTILITIES",
+      "subsector": "Merchant electric transmission interconnector",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Hudson Transmission Project is a 660 MW, 7.1-mile high-voltage direct-current merchant transmission link between Ridgefield, New Jersey and Manhattan. Hudson Transmission Partners, LLC owns the project and PowerBridge operates it; 575 MW, or 87.12% of capacity, is contracted to the New York Power Authority through June 2033. The line entered commercial service in June 2013. AMF Oratam Investments LLC, managed by Argo Infrastructure Partners, acquired the project's 94% Class C economic interest in March 2019. APG Infrastructure Pool 2014 participates indirectly through Sogra Investment Holding B.V. and disclosed Hudson Transmission Partners as 6% of pool assets for 2022; current beneficial ownership percentages are not publicly disclosed.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": "https://hudsonproject.com/",
+      "yearFounded": 2011,
+      "headquarters": "Fairfield, Connecticut",
+      "lastVerifiedAt": "2026-08-08T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjqcn01ecivhelax0w92u",
+          "managerName": "APG Asset Management",
+          "organizationName": "APG Asset Management",
+          "fundName": null,
+          "vehicleName": "APG Infrastructure Pool 2014",
+          "stake": null,
+          "investmentYear": 2019,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "id": "cmrxpjqd401edivhe6cqfvre5",
+          "managerName": "Argo Infrastructure Partners",
+          "organizationName": "Argo Infrastructure Partners",
+          "fundName": null,
+          "vehicleName": "AMF Oratam Investments LLC",
+          "stake": null,
+          "investmentYear": 2019,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpkh9i02ivivheuhgpj9dx",
+          "date": "May 2011",
+          "event": "Construction began on the Hudson Transmission Project's underground and underwater HVDC link between New Jersey and Manhattan.",
+          "category": "EXPANSION",
+          "sortDate": "2011-05-01T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://hudsonproject.com/project/"
+          ]
+        },
+        {
+          "id": "cmrxpkha502iwivhe0el5tgl4",
+          "date": "Jun 2013",
+          "event": "The 660 MW Hudson Transmission Project entered commercial service ahead of schedule.",
+          "category": "EXPANSION",
+          "sortDate": "2013-06-01T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://hudsonproject.com/project/",
+            "https://prod-www.nypa.gov/-/media/nypa/documents/document-library/annual-web-posting/2024/operations-and-accomplishment-report-2024---nypa.pdf"
+          ]
+        },
+        {
+          "id": "cmrxpkhan02ixivhehugqijh3",
+          "date": "Sep 14, 2018",
+          "event": "Ares EIF and Starwood Energy agreed to sell their Hudson interests to AMF Oratam Investments LLC, an Argo-managed investment vehicle.",
+          "category": "ACQUISITION",
+          "sortDate": "2018-09-14T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B5288AF6D-AFB8-4165-86A4-81723FB9725E%7D",
+            "https://www.lotusinfrastructure.com/news/lotus-to-sell-hudson-transmission-line-to-argo/"
+          ]
+        },
+        {
+          "id": "cmrxpkhb202iyivheymiz3hm5",
+          "date": "Mar 2019",
+          "event": "Argo's AMF Oratam investment vehicle completed the acquisition of the 94% Class C economic interest in Hudson Transmission Partners for institutional investors including APG.",
+          "category": "ACQUISITION",
+          "sortDate": "2019-03-01T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://assetmanagement.apg.nl/media/xuvbwxt3/apg-infrastructure-pool-2014-sfdr-periodic-report-2022.pdf",
+            "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B5288AF6D-AFB8-4165-86A4-81723FB9725E%7D",
+            "https://www.lotusinfrastructure.com/our-investments/"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxporvk076fivhe3i10hyz6",
+          "label": "Hudsonproject — Hudson Transmission Project",
+          "url": "https://hudsonproject.com/project/",
+          "sourceType": "ARTICLE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Official project identity, route, capacity, construction, and service dates",
+          "isPrimary": true
+        },
+        {
+          "id": "cmrxporwl076hivhe6lok3bd8",
+          "label": "Hudsonproject — Hudson Transmission Project",
+          "url": "https://hudsonproject.com/team/owners-investors/",
+          "sourceType": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current project page identifying Argo as principal investor",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxporyt076jivhevamos0ha",
+          "label": "Announcement date source — Argo Infrastructure Partners — Hudson Transmission Project",
+          "url": "https://www.lotusinfrastructure.com/news/lotus-to-sell-hudson-transmission-line-to-argo/",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "September 2018 Argo acquisition announcement and infrastructure-strategy basis",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpos01076livheqp5p5oza",
+          "label": "Nsenergybusiness — Hudson Transmission Project",
+          "url": "https://www.nsenergybusiness.com/deals/hudson-transmission-project-sale/",
+          "sourceType": "ARTICLE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "Contemporaneous transaction and project-scale detail",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpos10076nivheq77d84iw",
+          "label": "Investment date source — Argo Infrastructure Partners — Hudson Transmission Project",
+          "url": "https://www.oregon.gov/energy/facilities-safety/facilities/Facilities%20library/2026-02-27-CRTAPPDoc01-02-pASC-Organizational-Expertise-Exhibit.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Argo Infrastructure Partners initial investment / ownership",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpos1m076oivhe260ir5mv",
+          "label": "Investment date source — Argo Infrastructure Partners — Hudson Transmission Project",
+          "url": "https://www.oregon.gov/energy/facilities-safety/facilities/Facilities%20library/2026-02-27-CRTAPPDoc01-02-pASC-Organizational-Expertise-Exhibit.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG Infrastructure initial investment / ownership",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "New York PSC — Hudson ownership petition",
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B5288AF6D-AFB8-4165-86A4-81723FB9725E%7D",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "AMF Oratam ownership chain, Argo manager role, APG Pool 2014 vehicle, and 94% economic interest",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "APG — Infrastructure Pool 2014 disclosure",
+          "url": "https://assetmanagement.apg.nl/media/xuvbwxt3/apg-infrastructure-pool-2014-sfdr-periodic-report-2022.pdf",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "APG Pool 2014 disclosure of Hudson Transmission Partners as 6% of assets",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Lotus Infrastructure — Hudson Transmission Project",
+          "url": "https://www.lotusinfrastructure.com/our-investments/",
+          "sourceType": "WEBSITE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "March 2019 completion of Lotus's sale to Argo",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "NYPA — 2024 Operations and Accomplishments Report",
+          "url": "https://prod-www.nypa.gov/-/media/nypa/documents/document-library/annual-web-posting/2024/operations-and-accomplishment-report-2024---nypa.pdf",
+          "sourceType": "OTHER",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "2024 availability, current operator identity, capacity, and NYPA contract",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Hudson Transmission Project",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+      }
+    ],
+    "changedFields": [
+      "aliases",
+      "citations",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "ownershipPeriods",
+      "website"
+    ],
+    "retiredCompanyIds": []
+  }
+}
