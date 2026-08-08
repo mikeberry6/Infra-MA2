@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T14:34:00.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T14:50:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0052:freedom-cng:2de7ee7a",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7602,20 +7602,32 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "fb8ec33cd3f01b2118c49f849578054160f53f5015f01ab2e6dc710177746005",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-08T14:41:00.000Z",
+      "updatedAt": "2026-08-08T14:50:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "95151324603fa2419a3884874dd4e7528a03f690bbea7196c5689945a6a34dce",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0052-freedom-cng/attempt-1/task-snapshot.json",
+          "sha256": "95151324603fa2419a3884874dd4e7528a03f690bbea7196c5689945a6a34dce"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0052-freedom-alternative-fuel-infrastructure-v1/proposal.json",
+          "sha256": "e7db4b38ba99a5c19baec66a236d28a38c56476d6c30a78114ceba2f4feb717f"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0052-freedom-alternative-fuel-infrastructure-v1.json",
+          "sha256": "1fff0c6be0c5b52c3d00b5003b2b67f599ed6236fca2c6abd0537e2afc365ac9"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0052-freedom-cng/research-decision.json",
+          "sha256": "82b7e776c5627f738246d0a99d4d56b4e1a30d98303cad4b914fe493fe78ae9d"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -7629,6 +7641,52 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T14:41:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T14:48:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "95151324603fa2419a3884874dd4e7528a03f690bbea7196c5689945a6a34dce",
+          "evidenceSha256": [
+            "82b7e776c5627f738246d0a99d4d56b4e1a30d98303cad4b914fe493fe78ae9d",
+            "95151324603fa2419a3884874dd4e7528a03f690bbea7196c5689945a6a34dce",
+            "e7db4b38ba99a5c19baec66a236d28a38c56476d6c30a78114ceba2f4feb717f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T14:49:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "95151324603fa2419a3884874dd4e7528a03f690bbea7196c5689945a6a34dce",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T14:50:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "95151324603fa2419a3884874dd4e7528a03f690bbea7196c5689945a6a34dce",
+          "evidenceSha256": [
+            "1fff0c6be0c5b52c3d00b5003b2b67f599ed6236fca2c6abd0537e2afc365ac9"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24525,5 +24583,5 @@
       ]
     }
   ],
-  "manifestSha256": "8eb84f1e31d87801e8523db690df19d2a4a90738c8b1d3ded774253c12a85dd3"
+  "manifestSha256": "679c8fb90f25d72b3d25618b98ff2d044ae7932b2334bddcc0439429fbfc51f5"
 }
