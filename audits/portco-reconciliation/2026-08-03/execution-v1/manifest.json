@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T07:42:00.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T08:18:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0038:i-66-express-mobility-partners-llc:07dacc7a",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -5947,18 +5947,27 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "ed82ca8f57d6b9a8727f52d2762bd5dd9088e57a5031f4d0bd9ca2a5dc1dfebe",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 4,
+      "startedAt": "2026-08-08T08:16:01.000Z",
+      "updatedAt": "2026-08-08T08:18:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "b0e9adcb2eb81b02ba0ec1f9c7a155e4ec26e354c5d5164fd3bec7bf8975cc2e",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0038-i-66-express-mobility-partners-llc/attempt-4/task-snapshot.json",
+          "sha256": "b0e9adcb2eb81b02ba0ec1f9c7a155e4ec26e354c5d5164fd3bec7bf8975cc2e"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0038-i-66-express-mobility-partners-v4/proposal.json",
+          "sha256": "bad182235d69b2c500ac2c44a8ccc2898bdff212e7f5324e36ca52733fc75e26"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0038-i-66-express-mobility-partners-v4.json",
+          "sha256": "9b734a930d5937cef0fc52ac9f91132f695c067399a86211dca2f0c200089167"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -5974,6 +5983,216 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T07:48:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T08:06:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "58ee5db73cd39b26b0dd5015765d73034df331133441d87ea525bef31e02d2fa",
+          "evidenceSha256": [
+            "58ee5db73cd39b26b0dd5015765d73034df331133441d87ea525bef31e02d2fa",
+            "99de30e22d14668ac0b72836690a212e27443ac30ab899ac71ec6688fd1649da"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T08:06:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "58ee5db73cd39b26b0dd5015765d73034df331133441d87ea525bef31e02d2fa",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T08:07:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "58ee5db73cd39b26b0dd5015765d73034df331133441d87ea525bef31e02d2fa",
+          "evidenceSha256": [
+            "3d3c6083ca1093db20b44aab230e26e7a094cc38600f3c09bb8b1eabfe030350"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T08:09:00.000Z",
+          "reason": "Dry-run correctly blocked because a shared canonical source URL used a different label than the approved after-image; proposal must reuse the existing shared Source metadata.",
+          "taskSnapshotSha256": "58ee5db73cd39b26b0dd5015765d73034df331133441d87ea525bef31e02d2fa",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T08:09:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T08:11:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9fdc8a8ee119048a940bb228f94103f453725ae2f17bc030af0ee11ac589e853",
+          "evidenceSha256": [
+            "4492c50b688be19414d609accfdda1adac1f3258dd9412829b22697fc8f42b88",
+            "9fdc8a8ee119048a940bb228f94103f453725ae2f17bc030af0ee11ac589e853"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T08:11:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9fdc8a8ee119048a940bb228f94103f453725ae2f17bc030af0ee11ac589e853",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T08:12:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9fdc8a8ee119048a940bb228f94103f453725ae2f17bc030af0ee11ac589e853",
+          "evidenceSha256": [
+            "6b5166e63704f1313b2ff45bf4c055dbd85cf4d5574fc9a7e8806b3e1e1e3579"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T08:13:00.000Z",
+          "reason": "Dry-run found three additional shared Source URLs whose production label/type metadata must be preserved; regenerate against the complete production Source comparison.",
+          "taskSnapshotSha256": "9fdc8a8ee119048a940bb228f94103f453725ae2f17bc030af0ee11ac589e853",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T08:13:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T08:14:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "46778c402c9aa036140dc19457d73c47f5e6b9b3e0d4279f3db55a02b01fa99d",
+          "evidenceSha256": [
+            "0a15ec2a90aa03805ae1f98c23dd2c603cb238566f7d21f0603ed5d45043f83b",
+            "46778c402c9aa036140dc19457d73c47f5e6b9b3e0d4279f3db55a02b01fa99d"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T08:14:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "46778c402c9aa036140dc19457d73c47f5e6b9b3e0d4279f3db55a02b01fa99d",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T08:15:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "46778c402c9aa036140dc19457d73c47f5e6b9b3e0d4279f3db55a02b01fa99d",
+          "evidenceSha256": [
+            "f2428981fa101e836b85335a554af84cd3c590ea695ef30922c9f09aaffc1e9e"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 16,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T08:16:00.000Z",
+          "reason": "Dry-run preserved the second safeguard boundary: target milestone IDs were omitted, and the merge guard also needs to allow an explicitly approved correction while retaining a retired relation ID.",
+          "taskSnapshotSha256": "46778c402c9aa036140dc19457d73c47f5e6b9b3e0d4279f3db55a02b01fa99d",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 17,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T08:16:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 18,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T08:17:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b0e9adcb2eb81b02ba0ec1f9c7a155e4ec26e354c5d5164fd3bec7bf8975cc2e",
+          "evidenceSha256": [
+            "b0e9adcb2eb81b02ba0ec1f9c7a155e4ec26e354c5d5164fd3bec7bf8975cc2e",
+            "bad182235d69b2c500ac2c44a8ccc2898bdff212e7f5324e36ca52733fc75e26"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 19,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T08:17:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b0e9adcb2eb81b02ba0ec1f9c7a155e4ec26e354c5d5164fd3bec7bf8975cc2e",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 20,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T08:18:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b0e9adcb2eb81b02ba0ec1f9c7a155e4ec26e354c5d5164fd3bec7bf8975cc2e",
+          "evidenceSha256": [
+            "9b734a930d5937cef0fc52ac9f91132f695c067399a86211dca2f0c200089167"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23397,5 +23616,5 @@
       ]
     }
   ],
-  "manifestSha256": "97606da87d841b47a4dc02d0d95f258dc6a2c6277e6d79d619b586b10f8e0df0"
+  "manifestSha256": "d8722ea3a6e1c4748aa916ef22ecd33f2814ba5674f887ef66479b48c3334276"
 }

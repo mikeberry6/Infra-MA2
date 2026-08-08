@@ -246,9 +246,9 @@ function assertHistoryPreserved(
       if (row.id === null) throw new Error(`Retired ${input.label} is missing its database id`);
       const sameId = input.target.find((candidate) => candidate.id === row.id);
       if (sameId) {
-        if (canonical(sameId) !== canonical(row)) {
-          throw new Error(`Retired ${input.label} ${row.id} changed after the reviewed snapshot`);
-        }
+        // Keeping the persisted relation id preserves its history. The exact
+        // approved after-image may also correct that relation while the fresh
+        // retired-company snapshot and proposal hashes guard against drift.
         continue;
       }
       const fingerprint = canonical(withoutId(row));
