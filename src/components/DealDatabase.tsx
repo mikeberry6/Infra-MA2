@@ -138,6 +138,7 @@ import {
   Download,
   Mail,
   FileText,
+  Newspaper,
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -190,13 +191,17 @@ const REGIONS: string[] = [
 
 const DEAL_PAGE_SIZE = 25;
 
-function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
+export function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
   const className = compact
     ? "inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     : "inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-secondary)] shadow-[0_1px_2px_rgba(17,17,20,0.04)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]";
 
   return (
     <div className="flex flex-wrap items-center justify-end gap-1">
+      <a href={withBasePath("/weekly-briefing")} className={className}>
+        <Newspaper className="h-3 w-3" />
+        <span className="truncate">Weekly briefing</span>
+      </a>
       <a href={withBasePath("/email-format/latest")} className={className}>
         <Mail className="h-3 w-3" />
         <span className="truncate">Weekly email</span>
