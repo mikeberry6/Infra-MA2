@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0032:cross-sound-cable-company-llc:97024b62",
+  "taskIndex": 32,
+  "companyName": "Cross-Sound Cable Company, LLC",
+  "generatedAt": "2026-08-08T04:27:48.513Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0032-cross-sound-cable-company-llc/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 32,
+    "taskId": "ledger:0032:cross-sound-cable-company-llc:97024b62",
+    "canonicalKey": "cross-sound-cable-company-llc|united-states",
+    "companyName": "Cross-Sound Cable Company, LLC",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 9,
+    "managers": [
+      "APG Infrastructure",
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "009-apg-infrastructure:holding:004:cross-sound-cable-company-llc",
+      "015-argo-infrastructure-partners:holding:001:cross-sound-cable"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj5bn00hlivhe6pot41mt"
+    ],
+    "seedKeys": [
+      "cross-sound cable company, llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.crosssoundcable.com/",
+      "https://www.infrastructureinvestor.com/flagship-argo-fund-acquires-cross-sound-cable/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 009-apg-infrastructure:holding:004:cross-sound-cable-company-llc: Ownership attributed through Argo-managed vehicle requires confirmation of APG beneficial exposure. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 009-apg-infrastructure:holding:004:cross-sound-cable-company-llc: Ownership attributed through Argo-managed vehicle requires confirmation of APG beneficial exposure."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5bn00hlivhe6pot41mt",
+    "name": "Cross-Sound Cable Company, LLC",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Merchant electric transmission interconnector",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Cross-Sound Cable owns and operates a high-voltage direct-current submarine transmission link between Connecticut and Long Island. Its customer base is the regional power system, with transmission capacity sold under contractual arrangements that support interregional power transfers and grid reliability. The asset uses a contracted infrastructure model rather than retail utility service, with revenues linked to the availability and use of transmission capacity. Public materials describe a 24-mile, 330-megawatt HVDC cable connecting the New England and Long Island electric grids. The project has operated since the early 2000s and remains a strategic interconnector between ISO New England and New York load centers. AIA Energy, an Argo-managed vehicle backed by institutional investors including APG and CalSTRS, acquired Cross-Sound Cable in 2015, although current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2002,
+    "headquarters": "Connecticut; New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjq9y01e7ivheyko66stf",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "AIA Energy North America LLC",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqaf01e8ivhe7x6sapni",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "Argo-managed AIA platform",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkgyu02ijivhehjvspo5l",
+        "date": "2002",
+        "event": "Construction began on the Cross-Sound Cable system.",
+        "category": "EXPANSION",
+        "sortDate": "2002-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkgzh02ikivhe5z8g627g",
+        "date": "2002",
+        "event": "Cross-Sound Cable entered commercial operation.",
+        "category": "EXPANSION",
+        "sortDate": "2002-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkh0202ilivhemc0zg4am",
+        "date": "Aug 25, 2015",
+        "event": "AIA Energy, managed by Argo Infrastructure Partners and backed by APG and CalSTRS, completed the acquisition of Cross-Sound Cable.",
+        "category": "ACQUISITION",
+        "sortDate": "2015-08-25T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkh0j02imivhe3uwiil3v",
+        "date": "Mar 2026",
+        "event": "Cross-Sound Cable announced a redevelopment program to expand Northeast grid connectivity.",
+        "category": "EXPANSION",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxporak075livhev3fyquae",
+        "label": "Crosssoundcable — Cross-Sound Cable Company, LLC",
+        "url": "https://www.crosssoundcable.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Crosssoundcable company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpords075nivhego2d3jy4",
+        "label": "Hitachienergy — Cross-Sound Cable Company, LLC",
+        "url": "https://www.hitachienergy.com/news-and-events/customer-stories/cross-sound-cable",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Hitachienergy — Cross-Sound Cable Company, LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxporev075pivheyse5fopt",
+        "label": "Business Wire — Cross-Sound Cable Company, LLC",
+        "url": "https://www.businesswire.com/news/home/20260304732241/en/Cross-Sound-Cable-Plans-a-System-Redevelopment-to-Upgrade-Interregional-Connectivity-in-the-Northeast",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Business Wire — Cross-Sound Cable Company, LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxporfy075rivhekilg5yir",
+        "label": "Infrastructure Investor — Cross-Sound Cable Company, LLC",
+        "url": "https://www.infrastructureinvestor.com/flagship-argo-fund-acquires-cross-sound-cable/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Infrastructure Investor transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxporh1075tivheztzfu6wu",
+        "label": "Close date source — Argo Infrastructure Partners — Cross-Sound Cable Company, LLC",
+        "url": "https://www.marketscreener.com/quote/stock/BROOKFIELD-INFRASTRUCTURE-807081/news/Argo-Infrastructure-Alliance-Energy-North-America-a-fund-managed-by-Argo-Infrastructure-Partners-co-38266585/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpori7075vivheryhuydnl",
+        "label": "Close date source — APG Infrastructure — Cross-Sound Cable Company, LLC",
+        "url": "https://ippjournal.com/news/argo-infrastructure-partners-completes-acquisition-of-transmission-asset-in-new-york",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Cross-Sound Cable Company, LLC",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Utilities",
+    "subsector": "Merchant electric transmission interconnector",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "AIA Energy North America LLC",
+    "description": "Cross-Sound Cable owns and operates a high-voltage direct-current submarine transmission link between Connecticut and Long Island. Its customer base is the regional power system, with transmission capacity sold under contractual arrangements that support interregional power transfers and grid reliability. The asset uses a contracted infrastructure model rather than retail utility service, with revenues linked to the availability and use of transmission capacity. Public materials describe a 24-mile, 330-megawatt HVDC cable connecting the New England and Long Island electric grids. The project has operated since the early 2000s and remains a strategic interconnector between ISO New England and New York load centers. AIA Energy, an Argo-managed vehicle backed by institutional investors including APG and CalSTRS, acquired Cross-Sound Cable in 2015, although current ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2002,
+    "investmentYear": 2015,
+    "headquarters": "Connecticut; New York",
+    "milestones": [
+      {
+        "date": "2002",
+        "event": "Construction began on the Cross-Sound Cable system.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2002",
+        "event": "Cross-Sound Cable entered commercial operation.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Aug 25, 2015",
+        "event": "AIA Energy, managed by Argo Infrastructure Partners and backed by APG and CalSTRS, completed the acquisition of Cross-Sound Cable.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 2026",
+        "event": "Cross-Sound Cable announced a redevelopment program to expand Northeast grid connectivity.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Crosssoundcable — Cross-Sound Cable Company, LLC",
+        "url": "https://www.crosssoundcable.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Hitachienergy — Cross-Sound Cable Company, LLC",
+        "url": "https://www.hitachienergy.com/news-and-events/customer-stories/cross-sound-cable",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Business Wire — Cross-Sound Cable Company, LLC",
+        "url": "https://www.businesswire.com/news/home/20260304732241/en/Cross-Sound-Cable-Plans-a-System-Redevelopment-to-Upgrade-Interregional-Connectivity-in-the-Northeast",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Infrastructure Investor — Cross-Sound Cable Company, LLC",
+        "url": "https://www.infrastructureinvestor.com/flagship-argo-fund-acquires-cross-sound-cable/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Close date source — Argo Infrastructure Partners — Cross-Sound Cable Company, LLC",
+        "url": "https://www.marketscreener.com/quote/stock/BROOKFIELD-INFRASTRUCTURE-807081/news/Argo-Infrastructure-Alliance-Energy-North-America-a-fund-managed-by-Argo-Infrastructure-Partners-co-38266585/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — APG Infrastructure — Cross-Sound Cable Company, LLC",
+        "url": "https://ippjournal.com/news/argo-infrastructure-partners-completes-acquisition-of-transmission-asset-in-new-york",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "AIA Energy North America LLC",
+        "investmentYear": 2015,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "APG Infrastructure",
+        "ownershipVehicle": "Argo-managed AIA platform",
+        "investmentYear": 2015,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3kl000eivhezm8dydzo",
+        "name": "APG Asset Management",
+        "updatedAt": "2026-07-23T16:09:11.829Z"
+      },
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0032:cross-sound-cable-company-llc:97024b62",
+    "taskIndex": 32,
+    "canonicalKey": "cross-sound-cable-company-llc|united-states",
+    "capturedAt": "2026-08-08T04:27:48.513Z",
+    "databaseRevision": "company-state:6eb56ad2dd39a7666ff354bed5afc2906325bb2b479e93c8bb4c99d765b9aa42",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4e2936b9827f43853180be95d9b7f5f55b44b7c97c3e83c61c99dc0dc324c6d3",
+    "productionSnapshotSha256": "05a958b9374f94698277f1a02e42698b6f76dc0ed326051e43dedb03aecbb4f0",
+    "targetCompanySnapshotSha256": "6eb56ad2dd39a7666ff354bed5afc2906325bb2b479e93c8bb4c99d765b9aa42",
+    "seedEntrySha256": "5942d0ce6a5c378d8a36cd4499f0bc63216b1471f7f02f96a05b8aca5ddc839d",
+    "dependencies": {
+      "ownershipPeriodsSha256": "3727555d8f054f50f25b7aeb71b304d089ed420f5355f8b8e716d43e6de4237e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "497b04e6dc162466afca72a616debeb71d4a360e945b2262a2930886c31b8d4a",
+      "citationsSha256": "7e44c6d562db33cbe16a84367e240f45f009014e214a29a9c2f4a539ddd83ffb",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "84671b98d4ae7b7d70ab3d82a268a32eeda6252fa90165493e49638ce4a0f1ca",
+    "stateSha256": "99e44bb7adde17f9a852137bfea6b6b5106f2af320008a4d3387eaf43a6bb1db",
+    "taskSnapshotSha256": "6f3be3c38c340268dbe824d4ebaa47271d41e83c8b2229a1d44f1e330b47d779"
+  },
+  "contextSha256": "1ed9c90c1e177b48053d91b02332f7dec8743ed7b30f89c5c64ba942a1e2d4cb"
+}

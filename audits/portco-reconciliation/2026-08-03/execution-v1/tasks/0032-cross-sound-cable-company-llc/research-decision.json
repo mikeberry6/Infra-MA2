@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-08-08T04:32:00.000Z",
+  "decision": "VERIFY_NO_CHANGE_RETAIN_MULTI_MANAGER_OWNERSHIP",
+  "taskId": "ledger:0032:cross-sound-cable-company-llc:97024b62",
+  "companyName": "Cross-Sound Cable Company, LLC",
+  "requestedManagers": [
+    "APG Infrastructure",
+    "Argo Infrastructure Partners"
+  ],
+  "rationale": "Keep the existing canonical Cross-Sound Cable Company, LLC record and retain both manager associations. Current March 2026 reporting calls Cross-Sound Cable an Argo portfolio company and states that Argo has managed the asset since 2015. Regulatory records establish that Cross-Sound Cable is indirectly wholly owned through AIA Energy North America LLC; Argo is AIA Energy's managing member, while APG holds an indirect, passive, non-controlling economic interest through APG Infrastructure Pool 2014 and Sogra. APG's own periodic disclosure identifies Cross-Sound Cable as an investment of APG Infrastructure Pool 2014. No subsequent ownership transfer, sale, exit, or closing was found. The current live and seed records already map the two in-scope manager holdings to one canonical company, so this task authorizes no company, ownership, seed, redirect, pending-transaction, or publication mutation.",
+  "identityResolution": {
+    "canonicalDecision": "KEEP_CROSS_SOUND_CABLE_COMPANY_LLC",
+    "duplicateFound": false,
+    "platformBoundary": "One merchant electric-transmission company and its 24-mile, 330 MW HVDC interconnector between New Haven, Connecticut and Shoreham, New York. Cross Sound Cable Company (New York) LLC and CSC Operations, LLC are subsidiaries or operating entities beneath the counted company and are not separate PortCos."
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "New York regulatory records approved AIA Energy North America LLC's indirect acquisition of all Cross-Sound Cable membership interests in 2015. Contemporary transaction reporting states that the acquisition closed after regulatory approvals in August 2015.",
+    "currentStatusSearch": "Argo's current news page and its March 2026 redevelopment announcement identify Cross-Sound Cable as an Argo portfolio company and state that Argo has managed it since 2015. The company continues to operate and is pursuing a system redevelopment with a prospective development and infrastructure-capital partner.",
+    "exitSearch": "No sale, definitive ownership transfer, or completed exit involving Cross-Sound Cable, AIA Energy, Argo, or APG was found through August 7, 2026. The March 2026 partner-selection process concerns redevelopment capital and expertise, not an announced sale of the company.",
+    "transactionState": "CLOSED_ACTIVE"
+  },
+  "ownershipResolution": {
+    "argo": {
+      "decision": "RETAIN_ACTIVE_MANAGER_ASSOCIATION",
+      "basis": "Argo is the managing member of AIA Energy and controls day-to-day operations. Current 2026 reporting confirms Argo still manages Cross-Sound Cable.",
+      "currentRecord": "Argo Infrastructure Partners / AIA Energy North America LLC / active since 2015"
+    },
+    "apg": {
+      "decision": "RETAIN_ACTIVE_INDIRECT_CO_INVESTOR_ASSOCIATION",
+      "basis": "APG Infrastructure Pool 2014 wholly owns Sogra, which regulatory records identify as an upstream passive investor in AIA Energy and Cross-Sound Cable. APG's own periodic disclosure lists Cross-Sound Cable as an infrastructure-pool investment. This is a dedicated indirect co-investment, not debt, public securities, fund-of-funds, or an LP-only exposure.",
+      "currentRecord": "APG Asset Management / Argo-managed AIA platform / active since 2015"
+    },
+    "scopeNote": "Regulatory records also identify CalSTRS as an upstream AIA Energy investor. The current Phase 1 task reconciles the supplied 100-manager census rather than recreating a complete corporate cap table; it therefore does not create a separate non-universe CalSTRS manager holding."
+  },
+  "evidence": [
+    {
+      "label": "Argo — News and Insights",
+      "url": "https://www.argoip.com/news-and-insights",
+      "purpose": "Current official manager page identifying Cross-Sound Cable as an Argo portfolio company",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Argo — Cross-Sound Cable redevelopment announcement",
+      "url": "https://www.businesswire.com/news/home/20260304732241/en/Cross-Sound-Cable-Plans-a-System-Redevelopment-to-Upgrade-Interregional-Connectivity-in-the-Northeast",
+      "purpose": "March 2026 current-management, operating-status, infrastructure-strategy and explicit exit-search evidence",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "New York PSC — Cross-Sound Cable financing order",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B42168A7A-94D1-4E09-B1DB-25BC724E7FA1%7D",
+      "purpose": "Regulatory ownership chain through AIA Energy, Argo's managing-member role, and APG/Sogra passive interest",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "New York PSC — APG and CalSTRS passive transmission interests",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B0CE39ABE-660D-410B-BD96-0E7066922219%7D",
+      "purpose": "Regulatory confirmation that APG holds an indirect, passive, non-controlling interest in Cross-Sound Cable",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "APG Infrastructure Pool 2014 — 2022 periodic disclosure",
+      "url": "https://assetmanagement.apg.nl/media/xuvbwxt3/apg-infrastructure-pool-2014-sfdr-periodic-report-2022.pdf",
+      "purpose": "APG's own disclosure identifying Cross-Sound Cable as an investment of APG Infrastructure Pool 2014",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "FERC — Cross Sound Cable securities order",
+      "url": "https://www.ferc.gov/sites/default/files/2020-06/20200331123816-ES20-15-000.pdf",
+      "purpose": "Federal regulatory evidence that Cross-Sound Cable was indirectly wholly owned by AIA Energy and its disclosed upstream investors",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Cross-Sound Cable — Company website",
+      "url": "https://www.crosssoundcable.com/",
+      "purpose": "Current company identity and operating infrastructure evidence",
+      "sourceTier": "PRIMARY"
+    }
+  ],
+  "sourceHealth": {
+    "https://www.crosssoundcable.com/": "WORKING",
+    "https://www.crosssoundcable.com/contact/": "WORKING",
+    "https://www.argoip.com/news-and-insights": "WORKING",
+    "https://www.businesswire.com/news/home/20260304732241/en/Cross-Sound-Cable-Plans-a-System-Redevelopment-to-Upgrade-Interregional-Connectivity-in-the-Northeast": "BROWSER_BLOCKED_BUT_VERIFIED",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B42168A7A-94D1-4E09-B1DB-25BC724E7FA1%7D": "WORKING",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B0CE39ABE-660D-410B-BD96-0E7066922219%7D": "WORKING",
+    "https://assetmanagement.apg.nl/media/xuvbwxt3/apg-infrastructure-pool-2014-sfdr-periodic-report-2022.pdf": "WORKING",
+    "https://www.ferc.gov/sites/default/files/2020-06/20200331123816-ES20-15-000.pdf": "WORKING"
+  },
+  "databaseMutation": false,
+  "seedMutation": false,
+  "unresolvedQuestions": [],
+  "phaseOneCloseoutNote": "Map both accepted census holdings to the same canonical company: APG as an indirect passive co-investor and Argo as the active infrastructure manager. Preserve the company once in the unique-company ledger."
+}
