@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0050:capital-power-u-s-natural-gas-jv:fb9d0544",
+  "taskIndex": 50,
+  "companyName": "Capital Power U.S. Natural Gas JV",
+  "generatedAt": "2026-08-08T14:19:21.747Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0050-capital-power-u-s-natural-gas-jv/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 50,
+    "taskId": "ledger:0050:capital-power-u-s-natural-gas-jv:fb9d0544",
+    "canonicalKey": "capital-power-u-s-natural-gas-jv|united-states",
+    "companyName": "Capital Power U.S. Natural Gas JV",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "010-apollo-global-management:repo-only:005:capital-power-u-s-natural-gas-jv"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5mx00i1ivhebnqjedjy"
+    ],
+    "seedKeys": [
+      "capital power u.s. natural gas jv|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.capitalpower.com/media/media_releases/capital-power-and-apollo-funds-sign-mou-to-form-investment-partnership-for-us-natural-gas-generation/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Apollo Global Management NEEDS_REVIEW: Only MOU evidence; unclear if closed",
+    "unresolvedQuestions": [
+      "Resolve the accepted repo-only review issue with direct evidence before any proposal can be applied."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5mx00i1ivhebnqjedjy",
+    "linkedQueueTaskId": null
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5mx00i1ivhebnqjedjy",
+    "name": "Capital Power U.S. Natural Gas JV",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Merchant natural gas generation investment platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "The Capital Power U.S. Natural Gas JV is an investment partnership formed to acquire and operate U.S. natural gas-fired generation assets. Its target customer base is the wholesale power market, and the platform is intended to follow an asset-heavy merchant generation ownership model. Capital Power disclosed in late 2025 that Apollo-managed funds and Capital Power had signed an MOU to pursue acquisitions together with up to $3 billion of committed equity. Public disclosures indicate Apollo may provide up to $2.25 billion of that commitment and Capital Power up to $750 million, with Capital Power acting as operator for acquired assets. Reviewed public sources do not disclose a finalized ownership split because the platform was announced as a new investment partnership rather than as a completed portfolio acquisition.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqns01etivhe7f4o1nk6",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Apollo-managed funds",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkil302klivhe30f4hsqp",
+        "date": "Dec 2025",
+        "event": "Capital Power and Apollo-managed funds signed an MOU to form a U.S. natural gas generation investment partnership.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkilp02kmivhe4elpv360",
+        "date": "Dec 2025",
+        "event": "The parties disclosed up to $3 billion of equity commitments for future acquisitions.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkim702knivhe3ofqg2zu",
+        "date": "Dec 2025",
+        "event": "Capital Power was identified as operator for assets to be acquired by the partnership.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpotvz079civheku0ah79q",
+        "label": "Announcement date source — Apollo Global Management — Capital Power U.S. Natural Gas JV",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-and-apollo-funds-sign-mou-to-form-investment-partnership-for-us-natural-gas-generation/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpotx6079eivhevyqdhskg",
+        "label": "Capitalpower — Capital Power U.S. Natural Gas JV",
+        "url": "https://www.capitalpower.com/investors/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Capitalpower — Capital Power U.S. Natural Gas JV",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoty6079givhe29r82mkm",
+        "label": "Apollo — Capital Power U.S. Natural Gas JV",
+        "url": "https://www.apollo.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Apollo company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Capital Power U.S. Natural Gas JV",
+    "investmentFirm": "Apollo Global Management",
+    "sector": "Power & ET",
+    "subsector": "Merchant natural gas generation investment platform",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Apollo-managed funds",
+    "description": "The Capital Power U.S. Natural Gas JV is an investment partnership formed to acquire and operate U.S. natural gas-fired generation assets. Its target customer base is the wholesale power market, and the platform is intended to follow an asset-heavy merchant generation ownership model. Capital Power disclosed in late 2025 that Apollo-managed funds and Capital Power had signed an MOU to pursue acquisitions together with up to $3 billion of committed equity. Public disclosures indicate Apollo may provide up to $2.25 billion of that commitment and Capital Power up to $750 million, with Capital Power acting as operator for acquired assets. Reviewed public sources do not disclose a finalized ownership split because the platform was announced as a new investment partnership rather than as a completed portfolio acquisition.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2025,
+    "investmentYear": 2025,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "Dec 2025",
+        "event": "Capital Power and Apollo-managed funds signed an MOU to form a U.S. natural gas generation investment partnership.",
+        "category": "Financing"
+      },
+      {
+        "date": "Dec 2025",
+        "event": "The parties disclosed up to $3 billion of equity commitments for future acquisitions.",
+        "category": "Financing"
+      },
+      {
+        "date": "Dec 2025",
+        "event": "Capital Power was identified as operator for assets to be acquired by the partnership.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Apollo Global Management — Capital Power U.S. Natural Gas JV",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-and-apollo-funds-sign-mou-to-form-investment-partnership-for-us-natural-gas-generation/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Capitalpower — Capital Power U.S. Natural Gas JV",
+        "url": "https://www.capitalpower.com/investors/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Apollo — Capital Power U.S. Natural Gas JV",
+        "url": "https://www.apollo.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Apollo Global Management",
+        "ownershipVehicle": "Apollo-managed funds",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0050:capital-power-u-s-natural-gas-jv:fb9d0544",
+    "taskIndex": 50,
+    "canonicalKey": "capital-power-u-s-natural-gas-jv|united-states",
+    "capturedAt": "2026-08-08T14:19:21.747Z",
+    "databaseRevision": "company-state:d4de41e309779d5fb2cc938c700ecf44993f0567ae7725754f9a3a24385e8a31",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "42e7cc260d45203848e06111427df56017770df16f82a38f86709c8a5d71c99b",
+    "productionSnapshotSha256": "b17ad7fd63ab8b11ac4c7e9a183093d62515efaf57ee60936ecd01f95671c44f",
+    "targetCompanySnapshotSha256": "d4de41e309779d5fb2cc938c700ecf44993f0567ae7725754f9a3a24385e8a31",
+    "seedEntrySha256": "c31f9c7c71ff756436323dd2eea6d2f363fa4da13963b7963514ba14723e5bb9",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "71dc280c6779930ca0249c4e8e7c621f4d030159b70c45b5d09af8d4dc79768e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5bf007754ab1aec1ee2613e1677630ccdf3e2677b7f244a79a2c7562a77e3e14",
+      "citationsSha256": "78b8ac9225a6ade5db17232a86d3043ff210dcbe3b2af107c54a3f1dbff68ad6",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f1b4fd212f011e8a208b6985df1816a73705b235c0c14aa3e4da42767d3b2db5",
+    "stateSha256": "fcb3a5cbc0ad05e7da13a0d3fd5ddd004d1b9460074688c7f3c9c36457d06c40",
+    "taskSnapshotSha256": "057951864dc0b99710814877856b48e6a422ca97ec5d612bfa73ab6e8e008ea6"
+  },
+  "contextSha256": "9e44d1f16ed0b2da8f58e061df11ee9f25166f63d5457d5b4a98017fb58338f5"
+}

@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T14:12:51.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T14:26:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0050:capital-power-u-s-natural-gas-jv:fb9d0544",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7426,20 +7426,32 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "42e7cc260d45203848e06111427df56017770df16f82a38f86709c8a5d71c99b",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-08T14:18:57.000Z",
+      "updatedAt": "2026-08-08T14:26:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "057951864dc0b99710814877856b48e6a422ca97ec5d612bfa73ab6e8e008ea6",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0050-capital-power-u-s-natural-gas-jv/attempt-1/task-snapshot.json",
+          "sha256": "057951864dc0b99710814877856b48e6a422ca97ec5d612bfa73ab6e8e008ea6"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0050-capital-power-u-s-natural-gas-jv-v1/proposal.json",
+          "sha256": "7d128652a060fa09da3d6f09e65b1f03d5391496f2788c2cf32914a824f1890a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0050-capital-power-u-s-natural-gas-jv-v1.json",
+          "sha256": "bc8377585ccf331ad2e671231730bd2abe18836ff0de0fd2c4435bd6b7e2bbf5"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0050-capital-power-u-s-natural-gas-jv/research-decision.json",
+          "sha256": "a4051558871592796382e2a71f2a3c82f47fd93662d842343a83682fe1947209"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -7453,6 +7465,52 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T14:18:57.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T14:25:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "057951864dc0b99710814877856b48e6a422ca97ec5d612bfa73ab6e8e008ea6",
+          "evidenceSha256": [
+            "057951864dc0b99710814877856b48e6a422ca97ec5d612bfa73ab6e8e008ea6",
+            "7d128652a060fa09da3d6f09e65b1f03d5391496f2788c2cf32914a824f1890a",
+            "a4051558871592796382e2a71f2a3c82f47fd93662d842343a83682fe1947209"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T14:25:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "057951864dc0b99710814877856b48e6a422ca97ec5d612bfa73ab6e8e008ea6",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T14:26:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "057951864dc0b99710814877856b48e6a422ca97ec5d612bfa73ab6e8e008ea6",
+          "evidenceSha256": [
+            "bc8377585ccf331ad2e671231730bd2abe18836ff0de0fd2c4435bd6b7e2bbf5"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24440,5 +24498,5 @@
       ]
     }
   ],
-  "manifestSha256": "ba5b5d370255287439d14df182018ed4e711cd51703db0727654651982d836e7"
+  "manifestSha256": "9dbdf089139458a6039e5be547fa75e7bdcd57c52cf89cb96fa727ebfb2b5521"
 }

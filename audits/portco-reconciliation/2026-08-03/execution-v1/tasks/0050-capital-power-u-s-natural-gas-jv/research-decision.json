@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-08-08T14:23:18.000Z",
+  "decision": "EXCLUDE_AND_ARCHIVE",
+  "taskId": "ledger:0050:capital-power-u-s-natural-gas-jv:fb9d0544",
+  "companyName": "Capital Power U.S. Natural Gas JV",
+  "requestedManager": "Apollo Global Management",
+  "sourceRepoOnlyId": "010-apollo-global-management:repo-only:005:capital-power-u-s-natural-gas-jv",
+  "rationale": "Exclude and unpublish this record because no owned portfolio company or platform was established. Capital Power's December 2025 announcement described only a prospective partnership under a memorandum of understanding, and the accompanying Investor Day presentation expressly identified the Apollo MOU as non-binding. Capital Power's March 2026 results continued to say that definitive documentation remained to be completed. Its July 2026 quarterly report contains no Apollo partnership closing, funded commitment, jointly owned acquisition, legal vehicle, or Apollo-backed equity-accounted asset, and no definitive closing announcement was found from Apollo. A non-binding MOU does not satisfy the census rule for either current ownership or a signed definitive pending transaction.",
+  "identityResolution": {
+    "productionCompanyId": "cmrxpj5mx00i1ivhebnqjedjy",
+    "seedKey": "capital power u.s. natural gas jv|United States",
+    "operatingCompanyEstablished": false,
+    "legalVehiclePubliclyDisclosed": false,
+    "assetsAcquired": false,
+    "correctDisposition": "EXCLUDED",
+    "publicationDisposition": "ARCHIVED"
+  },
+  "acquisitionExitCheck": {
+    "announcement": "On December 10, 2025, Capital Power announced a non-binding MOU with Apollo-managed funds to pursue potential future U.S. merchant natural-gas acquisitions.",
+    "definitiveAgreementSearch": "No definitive partnership agreement, legal closing, funding, jointly acquired asset, regulatory approval, or Apollo ownership interest was publicly disclosed through August 8, 2026.",
+    "currentStatusCheck": "Capital Power's March 2026 results still described only an MOU and stated that documentation remained to be completed. Its July 29, 2026 Q2 report and subsequent-events section omit any Apollo partnership closing or investment.",
+    "exitSearch": "An exit search is not applicable because no closed investment was established; no termination notice was found either.",
+    "ownershipState": "NEVER_CLOSED_OR_DEFINITIVELY_SIGNED"
+  },
+  "evidence": [
+    {
+      "label": "Capital Power — 2025 Investor Day announcement",
+      "url": "https://www.capitalpower.com/media/media_releases/capital-power-2025-investor-day/",
+      "purpose": "Original MOU terms and prospective transaction language",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Capital Power — 2025 Investor Day presentation",
+      "url": "https://www.capitalpower.com/wp-content/uploads/2025/11/Capital-Power-2025-Investor-Day-Presentation.pdf",
+      "purpose": "Direct evidence that the Apollo MOU was non-binding",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Capital Power — 2025 year-end results",
+      "url": "https://www.capitalpower.com/media/media_releases/capital-power-reports-fourth-quarter-and-year-end-2025-results/",
+      "purpose": "March 2026 status showing partnership documentation and acquisitions remained incomplete",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Capital Power — Q2 2026 report",
+      "url": "https://www.capitalpower.com/wp-content/uploads/2026/07/Capital-Power-2026-Q2-Report.pdf",
+      "purpose": "Latest quarterly and subsequent-events check showing no Apollo partnership closing or owned asset",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "databaseMutation": true,
+  "seedMutation": true,
+  "proposedMutation": {
+    "recordStatus": "ARCHIVED",
+    "companyStatus": "REALIZED",
+    "activeApolloOwnership": "RETIRE_AS_INVALID_UNCLOSED_CLAIM",
+    "seedEntry": "REMOVE_THROUGH_APPROVED_ARCHIVE_OVERLAY"
+  },
+  "unresolvedQuestions": [
+    "The MOU's expiry or termination date was not publicly disclosed, but this does not affect the exclusion because the arrangement was non-binding and never established current ownership."
+  ],
+  "blockingUnresolvedQuestions": []
+}
