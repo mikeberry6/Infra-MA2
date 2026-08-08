@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T05:24:11.387Z",
+  "updatedAt": "2026-08-08T05:44:11.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0034:duquesne-light-company:06909b9f",
   "source": {
@@ -5045,25 +5045,25 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "11491231895799b86cfb727cefbd021d1d1cf6f3fb4bb2936d22cf1e95dcaece",
       "status": "RELEASING",
-      "attempts": 1,
-      "startedAt": "2026-08-08T05:08:19.000Z",
-      "updatedAt": "2026-08-08T05:24:11.387Z",
+      "attempts": 5,
+      "startedAt": "2026-08-08T05:41:18.820Z",
+      "updatedAt": "2026-08-08T05:44:11.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
+      "taskSnapshotSha256": "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0034-duquesne-light-company/attempt-1/task-snapshot.json",
-          "sha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0034-duquesne-light-company/attempt-5/task-snapshot.json",
+          "sha256": "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/proposals/0034-duquesne-light-company-v1/proposal.json",
-          "sha256": "e1f61d332ebc36234ac3c93062544d305d40a930ccb9906691b24a89ac689b91"
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0034-duquesne-light-company-v5/proposal.json",
+          "sha256": "b64a827607b7dd396ae2d906c33e1d10c6d1bd4dad70a1d068e8b58fac547e18"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/approvals/0034-duquesne-light-company-v1.json",
-          "sha256": "adddb51640502808685d15575ffab6e61587a534033f64386c78bdfdda838844"
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0034-duquesne-light-company-v5.json",
+          "sha256": "cb2f7f9ab873edafa85654a088a4bee51d550b96b80d46858d02f14045b8e6b8"
         },
         "applyReceipt": null,
         "decision": null,
@@ -5126,6 +5126,251 @@
           "taskSnapshotSha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
           "evidenceSha256": [
             "adddb51640502808685d15575ffab6e61587a534033f64386c78bdfdda838844"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-08T05:29:37.711Z",
+          "reason": null,
+          "taskSnapshotSha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
+          "evidenceSha256": [
+            "adddb51640502808685d15575ffab6e61587a534033f64386c78bdfdda838844",
+            "e1f61d332ebc36234ac3c93062544d305d40a930ccb9906691b24a89ac689b91"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "FAILED",
+          "at": "2026-08-08T05:34:44.626Z",
+          "reason": "Protected dry-run rejected duplicate shared source labels in proposal v1; no database write occurred.",
+          "taskSnapshotSha256": "a9446d328a120a0c219ab71e86ee4aafcae80cad75f573b1a15627481f9696e6",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T05:34:51.107Z",
+          "reason": "Retrying with a canonical single citation record for the shared Duquesne investor URL.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T05:35:59.636Z",
+          "reason": null,
+          "taskSnapshotSha256": "651d16cf78ad5c189ad4f1c445926abaf987a0f61a3dced49601c2f61577aeac",
+          "evidenceSha256": [
+            "651d16cf78ad5c189ad4f1c445926abaf987a0f61a3dced49601c2f61577aeac",
+            "9bc225aba3b9d89e49c78749fe64433976322063bebf732e1a9f2567fd2c544b"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T05:36:07.798Z",
+          "reason": null,
+          "taskSnapshotSha256": "651d16cf78ad5c189ad4f1c445926abaf987a0f61a3dced49601c2f61577aeac",
+          "evidenceSha256": [
+            "651d16cf78ad5c189ad4f1c445926abaf987a0f61a3dced49601c2f61577aeac",
+            "9bc225aba3b9d89e49c78749fe64433976322063bebf732e1a9f2567fd2c544b"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T05:36:26.022Z",
+          "reason": null,
+          "taskSnapshotSha256": "651d16cf78ad5c189ad4f1c445926abaf987a0f61a3dced49601c2f61577aeac",
+          "evidenceSha256": [
+            "e0fd2b79b6641cfacff69714ba778af9ec1af4dbefec8542538966ba13b432f1"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T05:37:23.270Z",
+          "reason": "Local v2 dry-run rejected relabeling a globally shared Duquesne investor Source; no database write occurred.",
+          "taskSnapshotSha256": "651d16cf78ad5c189ad4f1c445926abaf987a0f61a3dced49601c2f61577aeac",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T05:37:24.125Z",
+          "reason": "Retrying without any shared Source metadata change.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T05:38:01.722Z",
+          "reason": null,
+          "taskSnapshotSha256": "bde78560d83a0d6819614ad8cd852fce2a38faa5575b5da9ba132e0f64126a8f",
+          "evidenceSha256": [
+            "371fce25c01093d29ee8a7799f85fa4e367c7b9cc5fb13fed805d7ad0684b5fc",
+            "bde78560d83a0d6819614ad8cd852fce2a38faa5575b5da9ba132e0f64126a8f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T05:38:02.356Z",
+          "reason": null,
+          "taskSnapshotSha256": "bde78560d83a0d6819614ad8cd852fce2a38faa5575b5da9ba132e0f64126a8f",
+          "evidenceSha256": [
+            "371fce25c01093d29ee8a7799f85fa4e367c7b9cc5fb13fed805d7ad0684b5fc",
+            "bde78560d83a0d6819614ad8cd852fce2a38faa5575b5da9ba132e0f64126a8f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 16,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T05:38:20.589Z",
+          "reason": null,
+          "taskSnapshotSha256": "bde78560d83a0d6819614ad8cd852fce2a38faa5575b5da9ba132e0f64126a8f",
+          "evidenceSha256": [
+            "e81e7be0f8b36c5282532b4e48bb7f8c5b723afe3778eda24541d242866a8f84"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 17,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T05:39:54.271Z",
+          "reason": "Local v3 dry-run confirmed reused global Sources must retain their existing labels; no database write occurred.",
+          "taskSnapshotSha256": "bde78560d83a0d6819614ad8cd852fce2a38faa5575b5da9ba132e0f64126a8f",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 18,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T05:39:54.922Z",
+          "reason": "Retrying with all reused Source metadata preserved exactly.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 19,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T05:40:27.890Z",
+          "reason": null,
+          "taskSnapshotSha256": "1a86b548bbf75f4cb449591fd8a0248dd7a245c7d51ef01a8e1ad30f3e0fa8bb",
+          "evidenceSha256": [
+            "0e683881081e3725c196e970345ba33e2caa41463b594eec19c39172546dfdab",
+            "1a86b548bbf75f4cb449591fd8a0248dd7a245c7d51ef01a8e1ad30f3e0fa8bb"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 20,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T05:40:28.602Z",
+          "reason": null,
+          "taskSnapshotSha256": "1a86b548bbf75f4cb449591fd8a0248dd7a245c7d51ef01a8e1ad30f3e0fa8bb",
+          "evidenceSha256": [
+            "0e683881081e3725c196e970345ba33e2caa41463b594eec19c39172546dfdab",
+            "1a86b548bbf75f4cb449591fd8a0248dd7a245c7d51ef01a8e1ad30f3e0fa8bb"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 21,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T05:40:46.765Z",
+          "reason": null,
+          "taskSnapshotSha256": "1a86b548bbf75f4cb449591fd8a0248dd7a245c7d51ef01a8e1ad30f3e0fa8bb",
+          "evidenceSha256": [
+            "55b1c87c399ef3aa1305095d9bcec70a9e3f2f0fe25990a6d6f02b45e2b0d64b"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 22,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T05:41:17.861Z",
+          "reason": "Local v4 dry-run required explicit RETIRE_OWNERSHIP action for Macquarie's 2016 exit; no database write occurred.",
+          "taskSnapshotSha256": "1a86b548bbf75f4cb449591fd8a0248dd7a245c7d51ef01a8e1ad30f3e0fa8bb",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 23,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T05:41:18.820Z",
+          "reason": "Retrying with fail-closed action declarations normalized to the exact mutation plan.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 24,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T05:41:53.153Z",
+          "reason": null,
+          "taskSnapshotSha256": "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393",
+          "evidenceSha256": [
+            "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393",
+            "b64a827607b7dd396ae2d906c33e1d10c6d1bd4dad70a1d068e8b58fac547e18"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 25,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T05:41:53.842Z",
+          "reason": null,
+          "taskSnapshotSha256": "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393",
+          "evidenceSha256": [
+            "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393",
+            "b64a827607b7dd396ae2d906c33e1d10c6d1bd4dad70a1d068e8b58fac547e18"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 26,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T05:44:11.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393",
+          "evidenceSha256": [
+            "cb2f7f9ab873edafa85654a088a4bee51d550b96b80d46858d02f14045b8e6b8"
           ],
           "kind": "TRANSITION"
         }
@@ -22703,5 +22948,5 @@
       ]
     }
   ],
-  "manifestSha256": "665b98ca965f0b7aa2bea2656896ebedbc7fbc6ebe83fcb6e2dc52b962192bc0"
+  "manifestSha256": "a9fbd731df5e62e2ea6014a0bae18759aaf5972a7207bef39586e080f1663499"
 }
