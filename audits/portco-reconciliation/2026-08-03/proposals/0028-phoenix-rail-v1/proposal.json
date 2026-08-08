@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0028:phoenix-rail:41d5f6af",
+  "taskIndex": 28,
+  "asOfDate": "2026-08-07",
+  "generatedAt": "2026-08-07T06:10:00.000Z",
+  "canonicalKey": "phoenix-rail|united-states",
+  "companyName": "Phoenix Rail",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "007-ancala-partners:holding:001:phoenix-rail"
+  ],
+  "retiredCompanyIds": [],
+  "rationale": "Correct Phoenix Rail's headquarters from Pennsylvania to Denver, Colorado and record Ancala's publicly disclosed significant controlling stake. Add the official company website and current verification date, retain the active 2025 ownership period, and strengthen the existing primary citations with direct current company and Ancala sources.",
+  "evidence": [
+    {
+      "url": "https://phoenixrail.com/about/",
+      "purpose": "Current company identity, headquarters, operations, and platform boundary",
+      "supports": [
+        "Phoenix Rail is headquartered in Denver, Colorado",
+        "Phoenix Rail owns and operates short-line railroads and rail-related businesses",
+        "Lehigh Valley Rail Management is a wholly owned Phoenix Rail subsidiary"
+      ]
+    },
+    {
+      "url": "https://phoenixrail.com/arkadia-forms-phoenix-rail-to-acquire-lehigh-valley-rail-management/",
+      "purpose": "Investment, stake, closing, and infrastructure-strategy evidence",
+      "supports": [
+        "Ancala and Arkadia formed Phoenix Rail on January 28, 2025",
+        "Phoenix Rail completed the acquisition of LVRM on January 28, 2025",
+        "Ancala has a significant controlling stake in Phoenix Rail"
+      ]
+    },
+    {
+      "url": "https://ancala.com/portfolio/phoenix-rail/",
+      "purpose": "Current ownership and exit-search evidence",
+      "supports": [
+        "Ancala continues to list Phoenix Rail as a current U.S. transport-infrastructure portfolio company",
+        "Ancala states that it is actively working with Phoenix Rail on its value-creation plans"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "02252e6db28b8401a13369b17a59ca0df49e7ca958aa5c520e3af7670ce7cb24",
+  "currentCompanySnapshotSha256": "93198492e901148c079e686db3d4bc2437e1a47760c6eddf638caa1c82767142",
+  "beforeImage": {
+    "id": "cmrxpj56s00hcivhet7rn1ewq",
+    "name": "Phoenix Rail",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Short line freight rail platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Phoenix Rail is a short line freight rail platform formed to acquire and grow regional rail infrastructure in North America. The business serves industrial shippers, transload users, and logistics customers through an asset-heavy rail operating model tied to track, terminals, and rolling stock access. Ancala and Arkadia formed the platform in 2025 and announced the acquisition of Lehigh Valley Rail Management as the first transaction. Public materials for the initial asset describe a 61-mile railroad and terminal operation in Pennsylvania serving more than 100 customers. Reviewed public sources do not disclose the ownership percentages between Ancala and Arkadia.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjq2z01dyivhe6ogeipoz",
+        "managerName": "Ancala Partners",
+        "organizationName": "Ancala Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkgb202htivher0b3pkp2",
+        "date": "2025",
+        "event": "Phoenix Rail was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkgbn02huivhe3bo0qbeh",
+        "date": "Jan 28, 2025",
+        "event": "Ancala formed Phoenix Rail with the completed acquisition of Lehigh Valley Rail Management.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-28T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoq7g073uivherv315wup",
+        "label": "Phoenixrail — Phoenix Rail",
+        "url": "https://phoenixrail.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Phoenixrail company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoq8i073wivheqsi8ho9b",
+        "label": "Close date source — Ancala Partners — Phoenix Rail",
+        "url": "https://ancala.com/ancala-forms-short-line-rail-platform/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ancala Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoq9j073yivhe6p5uf3ur",
+        "label": "Phoenixrail — Phoenix Rail",
+        "url": "https://phoenixrail.com/arkadia-forms-phoenix-rail-to-acquire-lehigh-valley-rail-management/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Phoenixrail — Phoenix Rail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "93198492e901148c079e686db3d4bc2437e1a47760c6eddf638caa1c82767142",
+  "afterImage": {
+    "id": "cmrxpj56s00hcivhet7rn1ewq",
+    "name": "Phoenix Rail",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Short line freight rail platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Phoenix Rail is a Denver-headquartered short-line freight rail and intermodal platform formed by Ancala Partners and Arkadia Rail Partners to acquire and grow regional rail infrastructure across the United States. The company owns and operates railroads and rail-related businesses serving more than 100 customers across consumer products, plastics, metals, agriculture, building products, food and chemicals. Its wholly owned subsidiary, Lehigh Valley Rail Management, operates a 61-mile freight rail network and intermodal terminal in Pennsylvania with access to Norfolk Southern, CSX and CPKC. Phoenix Rail completed the LVRM acquisition on January 28, 2025, and Ancala publicly describes its interest in the platform as a significant controlling stake; no exact percentage or fund vehicle is publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://phoenixrail.com/",
+    "yearFounded": 2025,
+    "headquarters": "Denver, Colorado",
+    "lastVerifiedAt": "2026-08-07T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjq2z01dyivhe6ogeipoz",
+        "managerName": "Ancala Partners",
+        "organizationName": "Ancala Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": "Significant controlling stake",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkgb202htivher0b3pkp2",
+        "date": "2025",
+        "event": "Phoenix Rail was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkgbn02huivhe3bo0qbeh",
+        "date": "Jan 28, 2025",
+        "event": "Ancala formed Phoenix Rail with the completed acquisition of Lehigh Valley Rail Management.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-28T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://phoenixrail.com/arkadia-forms-phoenix-rail-to-acquire-lehigh-valley-rail-management/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoq7g073uivherv315wup",
+        "label": "Phoenix Rail — About",
+        "url": "https://phoenixrail.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Denver headquarters, operating profile, customer base, and wholly owned LVRM subsidiary",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoq8i073wivheqsi8ho9b",
+        "label": "Ancala — Phoenix Rail portfolio",
+        "url": "https://ancala.com/portfolio/phoenix-rail/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Ancala portfolio ownership and active value-creation work",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoq9j073yivhe6p5uf3ur",
+        "label": "Phoenix Rail — Platform formation and LVRM acquisition",
+        "url": "https://phoenixrail.com/arkadia-forms-phoenix-rail-to-acquire-lehigh-valley-rail-management/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "January 28, 2025 formation and closing; Ancala significant controlling stake",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "59a7b6138405429f63c57b9bc5aeea60f484f823fd038f45de3a3ca0a2b1613a",
+  "proposalSha256": "7c21e473d6a340ee663079f97b7a4ae582be46f9ecb2f58c2c67741b984b9609"
+}
