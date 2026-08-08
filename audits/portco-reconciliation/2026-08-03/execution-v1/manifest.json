@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T07:14:00.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T07:25:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0037:hudson-transmission-project:932c04f7",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -5828,18 +5828,27 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "2899c27866d5dd40867f9e36a181c21c70cf39bc1d69e22d1ed464a21fe2caf0",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-08T07:19:00.000Z",
+      "updatedAt": "2026-08-08T07:25:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "fdf146c4c6581266934046bb82295dcbdef2d83bdf7e784b68fba53be9517745",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0037-hudson-transmission-project/attempt-1/task-snapshot.json",
+          "sha256": "fdf146c4c6581266934046bb82295dcbdef2d83bdf7e784b68fba53be9517745"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0037-hudson-transmission-project/proposal.json",
+          "sha256": "4e2c52627b148a1c23e5e9e4fb37983dfa4edff07d836d3e848823ad4770636d"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0037-hudson-transmission-project.json",
+          "sha256": "44cef5c4187bc941cfd51c39b0f56bd3c490a14d3f0dfe3d9e1ec9f683b52006"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -5855,6 +5864,51 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T07:19:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T07:24:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "fdf146c4c6581266934046bb82295dcbdef2d83bdf7e784b68fba53be9517745",
+          "evidenceSha256": [
+            "4e2c52627b148a1c23e5e9e4fb37983dfa4edff07d836d3e848823ad4770636d",
+            "fdf146c4c6581266934046bb82295dcbdef2d83bdf7e784b68fba53be9517745"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T07:24:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "fdf146c4c6581266934046bb82295dcbdef2d83bdf7e784b68fba53be9517745",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T07:25:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "fdf146c4c6581266934046bb82295dcbdef2d83bdf7e784b68fba53be9517745",
+          "evidenceSha256": [
+            "44cef5c4187bc941cfd51c39b0f56bd3c490a14d3f0dfe3d9e1ec9f683b52006"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23316,5 +23370,5 @@
       ]
     }
   ],
-  "manifestSha256": "b744a4dc1134541d3f0da16724249137dca7183e0fbf1929c04e20e847b0910e"
+  "manifestSha256": "d4945613f0a15eac068fb016a6d8afb0c781690b59c40807c661dfc931c52570"
 }
