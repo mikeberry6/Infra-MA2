@@ -3,9 +3,15 @@ import type { PortCo } from "../../prisma/seed-data/portco-types";
 import type { ProposalQueueIndexArtifact } from "./execution-control";
 import { sha256Canonical } from "./hash";
 import {
+  assertReviewedPostQueueExactIdentity,
+  assertExpectedSeedEntry,
+  matchesImmutableTaskIdentity,
   resolveSeedRetirementCandidates,
   resolveTaskSnapshotTarget,
+  resolvedTaskSeedKeys,
+  resolvedTaskCanonicalKey,
 } from "./task-snapshot";
+import type { CompanyImage } from "./schema";
 
 type QueueEntry = ProposalQueueIndexArtifact["entries"][number];
 
@@ -138,6 +144,173 @@ describe("task snapshot target resolution", () => {
       targetCompanyId: null,
       linkedQueueTaskId: null,
     });
+  });
+
+  it("pins a repo-only judgment to an exact company created after the immutable queue", () => {
+    const active = entry({
+      taskId: "task-repo-only",
+      canonicalKey: null,
+      queueKind: "REPO_ONLY_JUDGMENT",
+      companyName: "GFL Environmental Services",
+      country: "United States / Canada",
+      sourceRepoOnlyIds: ["repo-only-gfl"],
+    });
+
+    expect(resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-gfl",
+    })).toEqual({
+      method: "REVIEWED_POST_QUEUE_EXACT_IDENTITY",
+      targetCompanyId: "company-gfl",
+      linkedQueueTaskId: null,
+    });
+  });
+
+  it("does not relax reviewed-target rules for non-repo-only tasks", () => {
+    const active = entry({
+      taskId: "task-no-canonical-key",
+      canonicalKey: null,
+      companyName: "GFL Environmental Services",
+      country: "United States / Canada",
+    });
+
+    expect(() => resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-gfl",
+    })).toThrow(/requires a canonical-key queue task|cannot replace the immutable queue target/);
+  });
+
+  it.each([
+    { decisionStatus: "READY_FOR_PROPOSAL" as const },
+    { sourceHoldingIds: ["holding-1"] },
+    { candidateCanonicalKeys: ["gfl-environmental-services|united-states-canada"] },
+    { seedKeys: ["gfl environmental services|United States / Canada"] },
+    { productionCompanyIds: ["company-old"] },
+    { sourceRepoOnlyIds: [] },
+  ])("rejects a partially linked canonical-null repo-only shape: %o", (override) => {
+    const active = entry({
+      taskId: "task-partially-linked",
+      canonicalKey: null,
+      queueKind: "REPO_ONLY_JUDGMENT",
+      decisionStatus: "NEEDS_REVIEW",
+      companyName: "GFL Environmental Services",
+      country: "United States / Canada",
+      sourceRepoOnlyIds: ["repo-only-gfl"],
+      ...override,
+    });
+    expect(() => resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-gfl",
+    })).toThrow(/requires a canonical-key queue task|cannot replace the immutable queue target/);
+  });
+
+  it("detects a case-only production collision with the immutable task identity", () => {
+    const active = entry({
+      taskId: "task-create",
+      canonicalKey: "gfl-environmental-services|united-states-canada",
+      companyName: "GFL Environmental Services",
+      country: "United States / Canada",
+    });
+    expect(matchesImmutableTaskIdentity(active, {
+      name: "gfl environmental services",
+      country: "UNITED STATES / CANADA",
+    })).toBe(true);
+  });
+});
+
+describe("post-queue exact identity binding", () => {
+  const queueEntry = entry({
+    taskId: "task-repo-only",
+    canonicalKey: null,
+    queueKind: "REPO_ONLY_JUDGMENT",
+    companyName: "GFL Environmental Services",
+    country: "United States / Canada",
+    sourceRepoOnlyIds: ["repo-only-gfl"],
+  });
+  const targetResolution = {
+    method: "REVIEWED_POST_QUEUE_EXACT_IDENTITY" as const,
+    targetCompanyId: "company-gfl",
+    linkedQueueTaskId: null,
+  };
+  const company = {
+    id: "company-gfl",
+    name: "GFL Environmental Services",
+    country: "United States / Canada",
+  } as CompanyImage;
+  const productionCompanies = [{
+    id: "company-gfl",
+    name: "GFL Environmental Services",
+    country: "United States / Canada",
+  }];
+
+  it("requires the reviewed database identity to match the immutable name and country", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies,
+    })).not.toThrow();
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, country: "Canada" },
+      productionCompanies,
+    })).toThrow("does not exactly match the immutable task identity");
+  });
+
+  it("requires one unique exact production match pinned to the reviewed id", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [],
+    })).toThrow("resolved to 0 production records instead of exactly one");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [...productionCompanies, { ...productionCompanies[0], id: "company-duplicate" }],
+    })).toThrow("resolved to 2 production records instead of exactly one");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [{ ...productionCompanies[0], id: "company-other" }],
+    })).toThrow("target id does not match the unique exact production identity");
+  });
+
+  it("binds the matching evaluated seed identity even though the older queue had no seed key", () => {
+    expect(resolvedTaskSeedKeys({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+    })).toEqual(["gfl environmental services|United States / Canada"]);
+  });
+
+  it("derives and binds a proposal-safe canonical key without changing the immutable queue", () => {
+    expect(resolvedTaskCanonicalKey({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+    })).toBe("gfl-environmental-services|united-states-canada");
+    expect(queueEntry.canonicalKey).toBeNull();
+  });
+
+  it("requires the evaluated seed binding even when the reviewed target is archived", () => {
+    expect(() => assertExpectedSeedEntry({
+      expectedSeedKeyCount: 1,
+      seedEntryPresent: false,
+      targetRecordStatus: "ARCHIVED",
+      requireEvaluatedSeedEntry: true,
+    })).toThrow("Expected evaluated seed entry is missing");
+    expect(() => assertExpectedSeedEntry({
+      expectedSeedKeyCount: 1,
+      seedEntryPresent: false,
+      targetRecordStatus: "ARCHIVED",
+    })).not.toThrow();
   });
 });
 
