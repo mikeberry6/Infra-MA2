@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T11:52:10.000Z",
+  "updatedAt": "2026-08-08T12:04:42.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0046:brightspeed:f81f08b3",
   "source": {
@@ -6884,25 +6884,25 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "22d3bbc4f0b46264fd0051db49eaa62bb09f9930ad62f102ab7fd06bef9e99c3",
       "status": "RELEASING",
-      "attempts": 1,
-      "startedAt": "2026-08-08T11:29:00.000Z",
-      "updatedAt": "2026-08-08T11:52:10.000Z",
+      "attempts": 2,
+      "startedAt": "2026-08-08T12:02:08.000Z",
+      "updatedAt": "2026-08-08T12:04:42.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "e78b03f9e59c15fa861354ca40318ddbf49d14887157638eb2607e487bc96bfb",
+      "taskSnapshotSha256": "cba70fcdd0b09e061ceb8f864cffc36503709c882414849ba93a7f22f17d0638",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0046-brightspeed/attempt-1/task-snapshot.json",
-          "sha256": "e78b03f9e59c15fa861354ca40318ddbf49d14887157638eb2607e487bc96bfb"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0046-brightspeed/attempt-2/task-snapshot.json",
+          "sha256": "cba70fcdd0b09e061ceb8f864cffc36503709c882414849ba93a7f22f17d0638"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/proposals/0046-brightspeed-v3/proposal.json",
-          "sha256": "0bc0e0b8136aee8a47f159f2cd2af2072e30af174d062722112deee8a635a38f"
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0046-brightspeed-v5/proposal.json",
+          "sha256": "bc6630e883a2af241225a11ebf999846cb6aa04b2cf2a769e4b0cec39ea377ca"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/approvals/0046-brightspeed-v3.json",
-          "sha256": "6fa474549bcaa450a01a07b11ca683d74a8968c37376efdcc4520be76bcb15d8"
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0046-brightspeed-v5.json",
+          "sha256": "ce78ed16eb6aeb0f198f7cb85b8ca40ab7f4c0abfc5826f6bc1e7ee7e2366341"
         },
         "applyReceipt": null,
         "decision": null,
@@ -6962,6 +6962,61 @@
           "taskSnapshotSha256": "e78b03f9e59c15fa861354ca40318ddbf49d14887157638eb2607e487bc96bfb",
           "evidenceSha256": [
             "6fa474549bcaa450a01a07b11ca683d74a8968c37376efdcc4520be76bcb15d8"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-08T12:02:07.000Z",
+          "reason": "Protected dry run 31256197124 stopped before writes because the Brightspeed company-site Source is shared and its proposed label differed from existing global source metadata.",
+          "taskSnapshotSha256": "e78b03f9e59c15fa861354ca40318ddbf49d14887157638eb2607e487bc96bfb",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T12:02:08.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T12:04:17.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "cba70fcdd0b09e061ceb8f864cffc36503709c882414849ba93a7f22f17d0638",
+          "evidenceSha256": [
+            "bc6630e883a2af241225a11ebf999846cb6aa04b2cf2a769e4b0cec39ea377ca",
+            "cba70fcdd0b09e061ceb8f864cffc36503709c882414849ba93a7f22f17d0638"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T12:04:18.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "cba70fcdd0b09e061ceb8f864cffc36503709c882414849ba93a7f22f17d0638",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T12:04:42.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "cba70fcdd0b09e061ceb8f864cffc36503709c882414849ba93a7f22f17d0638",
+          "evidenceSha256": [
+            "ce78ed16eb6aeb0f198f7cb85b8ca40ab7f4c0abfc5826f6bc1e7ee7e2366341"
           ],
           "kind": "TRANSITION"
         }
@@ -24103,5 +24158,5 @@
       ]
     }
   ],
-  "manifestSha256": "5270d16381dacbacb4f8b25765a5caa7cb559f0e4549e34ba82672b041e26998"
+  "manifestSha256": "c8dbeb40d1f08a3498a8ae150d08de799f2e03029e310036d198b6f6da94504e"
 }

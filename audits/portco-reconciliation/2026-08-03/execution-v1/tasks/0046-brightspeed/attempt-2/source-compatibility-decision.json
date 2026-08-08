@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_SOURCE_COMPATIBILITY_DECISION",
+  "generatedAt": "2026-08-08T12:04:00.000Z",
+  "taskId": "ledger:0046:brightspeed:f81f08b3",
+  "failedWorkflowRunId": 31256197124,
+  "databaseWritesOccurred": false,
+  "failure": "The protected dry run rejected a proposed label change to a globally shared Source row.",
+  "resolution": [
+    {
+      "url": "https://www.brightspeed.com/",
+      "decision": "PRESERVE_EXISTING_GLOBAL_SOURCE_METADATA",
+      "label": "Brightspeed — Brightspeed",
+      "sourceType": "WEBSITE"
+    },
+    {
+      "url": "https://ir.lumen.com/news/news-details/2022/Lumen-Closes-Sale-of-Local-Incumbent-Carrier-Operations-in-20-States-to-Brightspeed/default.aspx",
+      "decision": "PRESERVE_EXISTING_GLOBAL_SOURCE_METADATA",
+      "label": "Close date source — Apollo Global Management — Brightspeed",
+      "sourceType": "WEBSITE"
+    },
+    {
+      "url": "https://news.lumen.com/2021-08-03-Lumen-Technologies-to-sell-its-incumbent-local-exchange-carrier-ILEC-operations",
+      "decision": "PRESERVE_EXISTING_GLOBAL_SOURCE_METADATA",
+      "label": "News — Brightspeed",
+      "sourceType": "WEBSITE"
+    },
+    {
+      "url": "https://www.telecompetitor.com/brightspeed-unveils-fiber-build-plans-for-its-20-state-territory/",
+      "decision": "PRESERVE_EXISTING_GLOBAL_SOURCE_METADATA",
+      "label": "Telecompetitor — Brightspeed",
+      "sourceType": "ARTICLE"
+    },
+    {
+      "replacedUrl": "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+      "url": "https://ir.apollo.com/_assets/_6af0e860d6a2e33effc1927c5d4ca6b9/apollo/news/2022-01-06_Apollo_Closes_Second_Dedicated_Infrastructure_38.pdf",
+      "decision": "USE_WORKING_OFFICIAL_APOLLO_IR_PDF_WITH_UNIQUE_SOURCE_URL",
+      "label": "Apollo investor relations — Infrastructure Opportunities Fund II close",
+      "sourceType": "PRESS_RELEASE",
+      "healthStatus": "WORKING_200"
+    }
+  ]
+}
