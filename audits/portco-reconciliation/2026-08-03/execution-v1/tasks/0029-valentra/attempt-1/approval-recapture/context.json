@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0029:valentra:d6837a55",
+  "taskIndex": 29,
+  "companyName": "Valentra",
+  "generatedAt": "2026-08-08T03:09:55.974Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0029-valentra/attempt-1/approval-recapture/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 29,
+    "taskId": "ledger:0029:valentra:d6837a55",
+    "canonicalKey": "valentra|united-states",
+    "companyName": "Valentra",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 7,
+    "managers": [
+      "Ancala Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "007-ancala-partners:holding:002:valentra"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj57c00hdivhexidkoirn"
+    ],
+    "seedKeys": [
+      "valentra|United States"
+    ],
+    "evidenceUrls": [
+      "https://ancala.com/portfolio/valentra/",
+      "https://valentra.com/",
+      "https://www.sidley.com/en/newslanding/newsannouncements/2025/12/sidley-advises-hexion-on-the-sale-of-its-gulf-coast-based-formalin-production-and-infrastructure-assets-to-ancala"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj57c00hdivhexidkoirn",
+    "name": "Valentra",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Chemical pipeline infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Valentra is a carved-out platform of chemical pipeline infrastructure on the U.S. Gulf Coast. The business serves industrial chemical producers and storage users through pipeline-connected sites and related infrastructure used for the handling of methanol-based intermediates and related products. Its operating model is asset-heavy and infrastructure-like, with revenues tied to essential transport and storage capabilities rather than commodity production. Ancala acquired the portfolio from Hexion in December 2025 and established Valentra as the operating platform. Reviewed public sources do not disclose Ancala's ownership percentage or the detailed financing structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjq5p01dzivhen2aegznt",
+        "managerName": "Ancala Partners",
+        "organizationName": "Ancala Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkgcn02hvivheag1yzh4f",
+        "date": "2025",
+        "event": "Ancala appointed industry leadership to support the carve-out and future governance of the platform.",
+        "category": "MANAGEMENT",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkgda02hwivhes2lrwi4u",
+        "date": "Dec 2025",
+        "event": "Financing for the acquisition was arranged and disclosed by transaction advisers.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkgdr02hxivhedbby5e5x",
+        "date": "Dec 4, 2025",
+        "event": "Ancala acquired Hexion's U.S. Gulf Coast formalin infrastructure business and formed Valentra.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-04T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoqam0740ivhe3d04s5lp",
+        "label": "Close date source — Ancala Partners — Valentra",
+        "url": "https://ancala.com/ancala-acquires-portfolio-of-critical-chemical-pipeline-infrastructure-on-the-us-gulf-coast/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ancala Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoqbm0742ivhewvb9jf68",
+        "label": "Ancala — Valentra",
+        "url": "https://ancala.com/portfolio/valentra/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ancala operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoqct0744ivhef9bwkguc",
+        "label": "Dcadvisory — Valentra",
+        "url": "https://www.dcadvisory.com/news-deals-insights/deal-announcements/dc-advisory-advises-ancala-on-the-financing-of-its-acquisition-of-valentra/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Dcadvisory financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Valentra",
+    "investmentFirm": "Ancala Partners",
+    "sector": "Midstream",
+    "subsector": "Chemical pipeline infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Valentra is a carved-out platform of chemical pipeline infrastructure on the U.S. Gulf Coast. The business serves industrial chemical producers and storage users through pipeline-connected sites and related infrastructure used for the handling of methanol-based intermediates and related products. Its operating model is asset-heavy and infrastructure-like, with revenues tied to essential transport and storage capabilities rather than commodity production. Ancala acquired the portfolio from Hexion in December 2025 and established Valentra as the operating platform. Reviewed public sources do not disclose Ancala's ownership percentage or the detailed financing structure.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2025,
+    "investmentYear": 2025,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "Ancala appointed industry leadership to support the carve-out and future governance of the platform.",
+        "category": "Management"
+      },
+      {
+        "date": "Dec 2025",
+        "event": "Financing for the acquisition was arranged and disclosed by transaction advisers.",
+        "category": "Financing"
+      },
+      {
+        "date": "Dec 4, 2025",
+        "event": "Ancala acquired Hexion's U.S. Gulf Coast formalin infrastructure business and formed Valentra.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Ancala Partners — Valentra",
+        "url": "https://ancala.com/ancala-acquires-portfolio-of-critical-chemical-pipeline-infrastructure-on-the-us-gulf-coast/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ancala — Valentra",
+        "url": "https://ancala.com/portfolio/valentra/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Dcadvisory — Valentra",
+        "url": "https://www.dcadvisory.com/news-deals-insights/deal-announcements/dc-advisory-advises-ancala-on-the-financing-of-its-acquisition-of-valentra/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ancala Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi2x10007ivheue2f3vrd",
+        "name": "Ancala Partners",
+        "updatedAt": "2026-07-23T16:09:10.981Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0029:valentra:d6837a55",
+    "taskIndex": 29,
+    "canonicalKey": "valentra|united-states",
+    "capturedAt": "2026-08-08T03:09:55.974Z",
+    "databaseRevision": "company-state:a08f8846ca3b6663ef1ad4208e240def10593acb91845c97b7f1e8b3cd491862",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d9712811fda40b68478109dccf0073398481e9488fbf629bc46591905bc3f3a5",
+    "productionSnapshotSha256": "de244579413fff036ba487723c0323505f97cb16f4999ec415b1e23f67bec2d0",
+    "targetCompanySnapshotSha256": "a08f8846ca3b6663ef1ad4208e240def10593acb91845c97b7f1e8b3cd491862",
+    "seedEntrySha256": "9bf51d2bcd7b969e351d583147bf466de1f031acd31d70bcea3b9939c3747488",
+    "dependencies": {
+      "ownershipPeriodsSha256": "a4cc8585b339c1adddfa97d5675264376119207965abc815f056f939dd6f0b88",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "47bd8e195b1a0001370a862d434931ca41861f216614bc57a4f6b30e11391f00",
+      "citationsSha256": "13535cb4a1404a9ba4ee26181ee42f0076b02a54a49095bb3868c6222e7e3190",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8755e042346cd3b9403301ebcea1dc7abd4a0214fbb134a99fca971dd255ba70",
+    "stateSha256": "9e2c4bb85d1181c636ea8441584fa6b2625bd51ff5669e05ef172d540b42ee82",
+    "taskSnapshotSha256": "53457a52b211e89db6fcc27efa3809ef0c51f23236a876729f3651cc06a425a7"
+  },
+  "contextSha256": "bda58ce4b02f9f66ef4c1bcd2b5a8492991e1412f73cb378a40cd50688c9e984"
+}
