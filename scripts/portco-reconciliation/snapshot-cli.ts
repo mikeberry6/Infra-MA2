@@ -219,6 +219,7 @@ function parseApprovedAfterImages(value: unknown): ApprovedSeedAfterImageMetadat
     const record = entry as Record<string, unknown>;
     const company = record.company;
     const retired = record.retiredCompanies;
+    const reviewedSeedRetirements = record.reviewedSeedRetirements;
     if (!company || typeof company !== "object" || !Array.isArray(retired)) {
       throw new Error(`Approved after-image ${index} is missing company or retiredCompanies`);
     }
@@ -236,9 +237,27 @@ function parseApprovedAfterImages(value: unknown): ApprovedSeedAfterImageMetadat
       }
       return { name: retiredCompany.name, country: retiredCompany.country };
     });
+    const seedOnlyRetirements = reviewedSeedRetirements === undefined
+      ? undefined
+      : (() => {
+          if (!Array.isArray(reviewedSeedRetirements)) {
+            throw new Error(`Approved after-image ${index} reviewedSeedRetirements is invalid`);
+          }
+          return reviewedSeedRetirements.map((item, retirementIndex) => {
+            if (!item || typeof item !== "object") {
+              throw new Error(`Approved after-image ${index} seed retirement ${retirementIndex} is invalid`);
+            }
+            const retirement = item as Record<string, unknown>;
+            if (typeof retirement.name !== "string" || typeof retirement.country !== "string") {
+              throw new Error(`Approved after-image ${index} seed retirement ${retirementIndex} is invalid`);
+            }
+            return { name: retirement.name, country: retirement.country };
+          });
+        })();
     return {
       company: { name: canonical.name, country: canonical.country },
       retiredCompanies,
+      ...(seedOnlyRetirements === undefined ? {} : { reviewedSeedRetirements: seedOnlyRetirements }),
     };
   });
 }

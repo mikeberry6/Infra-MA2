@@ -11,6 +11,7 @@ import { digestsEqual, sha256Canonical } from "./hash";
 import { verifyReconciliationManifest } from "./manifest";
 import {
   companyImageSchema,
+  reviewedSeedRetirementSchema,
   type CompanyImage,
   type ReconciliationApplyReceipt,
   type ReconciliationApproval,
@@ -153,6 +154,9 @@ export const executionTaskSnapshotSchema = z.strictObject({
   productionSnapshotSha256: sha256Value,
   targetCompanySnapshotSha256: sha256Value.nullable(),
   seedEntrySha256: sha256Value.nullable(),
+  // Optional so task snapshots captured before seed-only identity retirement
+  // support continue to verify against their original hashes.
+  seedRetirementCandidates: z.array(reviewedSeedRetirementSchema).optional(),
   dependencies: taskDependenciesSchema,
   dependencySha256: sha256Value,
   stateSha256: sha256Value,
@@ -187,9 +191,31 @@ function taskSnapshotState(input: TaskSnapshotWithoutHashes & { dependencySha256
     sourceQueueEntrySha256: input.sourceQueueEntrySha256,
     targetCompanySnapshotSha256: input.targetCompanySnapshotSha256,
     seedEntrySha256: input.seedEntrySha256,
+    ...(input.seedRetirementCandidates === undefined
+      ? {}
+      : { seedRetirementCandidates: input.seedRetirementCandidates }),
     dependencies: input.dependencies,
     dependencySha256: input.dependencySha256,
   };
+}
+
+export function assertProposalSeedRetirementsBound(
+  proposalInput: ReconciliationProposal,
+  taskSnapshotInput: ExecutionTaskSnapshot,
+): void {
+  const proposal = verifyProposal(proposalInput);
+  const snapshot = verifyExecutionTaskSnapshot(taskSnapshotInput);
+  const candidates = new Map(
+    (snapshot.seedRetirementCandidates ?? []).map((candidate) => [candidate.sourceQueueTaskId, candidate]),
+  );
+  for (const retirement of proposal.reviewedSeedRetirements ?? []) {
+    const candidate = candidates.get(retirement.sourceQueueTaskId);
+    if (!candidate || sha256Canonical(candidate) !== sha256Canonical(retirement)) {
+      throw new Error(
+        `Proposal seed retirement ${retirement.sourceQueueTaskId} is not bound to the task snapshot`,
+      );
+    }
+  }
 }
 
 export function finalizeExecutionTaskSnapshot(
@@ -840,6 +866,9 @@ export function recordExecutionDecision(
     || task.artifacts.proposal?.sha256 !== proposal.proposalSha256
   ) {
     throw new Error("Decision proposal does not match the approval-gated execution task");
+  }
+  if (decision.lockedTaskSnapshot) {
+    assertProposalSeedRetirementsBound(proposal, decision.lockedTaskSnapshot);
   }
   if (!digestsEqual(decision.approvalArtifact.sha256, approval.approvalSha256)) {
     throw new Error("Approval artifact reference hash does not match the verified decision");

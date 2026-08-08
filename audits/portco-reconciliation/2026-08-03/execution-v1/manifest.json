@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T09:09:15.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-08T10:08:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -6401,18 +6401,27 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "91f1874c4e611fa8987b1bf1f483cf35e784b4506db734bc1d135dc6f547979b",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 3,
+      "startedAt": "2026-08-08T09:48:23.000Z",
+      "updatedAt": "2026-08-08T10:08:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "9a07b4a9e8933bba743bbdd1d2c91159ca602d8facaf01371a21bc82b32c8a16",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0041-pattern-energy-group-lp-pattern-energy/attempt-3/task-snapshot.json",
+          "sha256": "9a07b4a9e8933bba743bbdd1d2c91159ca602d8facaf01371a21bc82b32c8a16"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0041-pattern-energy-group-lp-v1/proposal.json",
+          "sha256": "6359a499bf9fca50cd2025da2a1e7a83d1f0cda296680e8cd5fdc5cb96cdfa9e"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0041-pattern-energy-group-lp-v1.json",
+          "sha256": "20fbb3beca7a32c429274e8427f605b4d4708b30d1d5ba8a452a24f27a2136dd"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -6428,6 +6437,94 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T09:14:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "FAILED",
+          "at": "2026-08-08T09:26:23.000Z",
+          "reason": "Attempt 1 lacked a canonical production target binding; fail closed before introducing the reviewed symmetric-candidate override.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T09:26:24.000Z",
+          "reason": "Retry with the tested immutable symmetric-candidate target binding.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "ACTIVE",
+          "to": "FAILED",
+          "at": "2026-08-08T09:48:22.000Z",
+          "reason": "Attempt 2 predated proposal-bound reciprocal seed-retirement lineage; fail closed before consolidating the two seed-only Pattern identities.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-08T09:48:23.000Z",
+          "reason": "Retry with tested target and seed-retirement bindings.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-08T09:50:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9a07b4a9e8933bba743bbdd1d2c91159ca602d8facaf01371a21bc82b32c8a16",
+          "evidenceSha256": [
+            "6359a499bf9fca50cd2025da2a1e7a83d1f0cda296680e8cd5fdc5cb96cdfa9e",
+            "9a07b4a9e8933bba743bbdd1d2c91159ca602d8facaf01371a21bc82b32c8a16"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-08T10:05:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9a07b4a9e8933bba743bbdd1d2c91159ca602d8facaf01371a21bc82b32c8a16",
+          "evidenceSha256": [
+            "6359a499bf9fca50cd2025da2a1e7a83d1f0cda296680e8cd5fdc5cb96cdfa9e",
+            "9a07b4a9e8933bba743bbdd1d2c91159ca602d8facaf01371a21bc82b32c8a16"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-08T10:08:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9a07b4a9e8933bba743bbdd1d2c91159ca602d8facaf01371a21bc82b32c8a16",
+          "evidenceSha256": [
+            "20fbb3beca7a32c429274e8427f605b4d4708b30d1d5ba8a452a24f27a2136dd"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23737,5 +23834,5 @@
       ]
     }
   ],
-  "manifestSha256": "8f8f2b61084f9522d3cac8ce9eb65e108a32b5595af829843421805de14e6c4a"
+  "manifestSha256": "f20e77f908465e04909c8819e686de574d60116d5b8942e0b4bd43ef4b536984"
 }

@@ -128,6 +128,7 @@ export interface ProductionSnapshotRead {
 export interface ApprovedSeedAfterImageMetadata {
   company: { name: string; country: string };
   retiredCompanies: Array<{ name: string; country: string }>;
+  reviewedSeedRetirements?: Array<{ name: string; country: string }>;
 }
 
 function normalizeHost(value: string): string {
@@ -466,13 +467,18 @@ function redirectCountsByCanonical(
   const retiredKeys = new Set<string>();
   for (const afterImage of afterImages) {
     const canonicalKey = seedKey(afterImage.company.name, afterImage.company.country);
+    const seedOnlyRetirementKeys = new Set(
+      (afterImage.reviewedSeedRetirements ?? []).map((retired) => seedKey(retired.name, retired.country)),
+    );
     for (const retired of afterImage.retiredCompanies) {
       const retiredKey = seedKey(retired.name, retired.country);
       if (retiredKeys.has(retiredKey)) {
         throw new Error(`Approved seed overlays retire ${retiredKey} more than once`);
       }
       retiredKeys.add(retiredKey);
-      result.set(canonicalKey, (result.get(canonicalKey) ?? 0) + 1);
+      if (!seedOnlyRetirementKeys.has(retiredKey)) {
+        result.set(canonicalKey, (result.get(canonicalKey) ?? 0) + 1);
+      }
     }
   }
   return result;

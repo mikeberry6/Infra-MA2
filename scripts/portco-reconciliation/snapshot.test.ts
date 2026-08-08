@@ -296,6 +296,29 @@ describe("evaluated seed snapshot", () => {
     expect(verifyDatasetSnapshot(artifact)).toEqual(artifact);
   });
 
+  it("does not count reviewed seed-only identity retirements as production redirects", () => {
+    const artifact = buildSeedSnapshot({
+      asOfDate: "2026-08-03",
+      capturedAt: NOW,
+      baseCommit: "b".repeat(40),
+      companies: [seedCompany()],
+      approvedAfterImages: [{
+        company: { name: "Acme Infrastructure, LLC", country: "United States" },
+        retiredCompanies: [
+          { name: "Acme Infrastructure", country: "United States" },
+          { name: "Acme Infrastructure LP", country: "United States" },
+        ],
+        reviewedSeedRetirements: [
+          { name: "Acme Infrastructure", country: "United States" },
+          { name: "Acme Infrastructure LP", country: "United States" },
+        ],
+      }],
+    });
+
+    expect(artifact.companies[0].relationCounts.redirects).toBe(0);
+    expect(verifyDatasetSnapshot(artifact)).toEqual(artifact);
+  });
+
   it("fails when an overlay canonical target is absent", () => {
     expect(() => buildSeedSnapshot({
       asOfDate: "2026-08-03",

@@ -15,7 +15,11 @@ import {
   prismaCompanyRowToSnapshot,
 } from "./prisma-company-image";
 import { seedKey, type DatabaseTargetIdentity } from "./snapshot";
-import type { CompanyImage, ProductionSnapshot } from "./schema";
+import type {
+  CompanyImage,
+  ProductionSnapshot,
+  ReviewedSeedRetirement,
+} from "./schema";
 
 interface ReadDelegate {
   findFirst(args: unknown): Promise<unknown>;
@@ -91,8 +95,10 @@ export interface TaskSnapshotContext {
   generatedAt: string;
   productionSnapshotLocation: string;
   sourceQueueEntry: ProposalQueueIndexArtifact["entries"][number];
+  targetResolution: TaskSnapshotTargetResolution;
   targetCompanyImage: CompanyImage | null;
   seedEntry: PortCo | null;
+  seedRetirementCandidates: ReviewedSeedRetirement[];
   dependencies: {
     funds: FundDependencyRecord[];
     organizations: DependencyRecord[];
@@ -103,6 +109,23 @@ export interface TaskSnapshotContext {
 }
 
 type TaskContextWithoutHash = Omit<TaskSnapshotContext, "contextSha256">;
+
+export type TaskSnapshotTargetResolution =
+  | {
+    method: "IMMUTABLE_QUEUE_TARGET";
+    targetCompanyId: string;
+    linkedQueueTaskId: null;
+  }
+  | {
+    method: "REVIEWED_SYMMETRIC_CANDIDATE";
+    targetCompanyId: string;
+    linkedQueueTaskId: string;
+  }
+  | {
+    method: "NO_EXISTING_TARGET";
+    targetCompanyId: null;
+    linkedQueueTaskId: null;
+  };
 
 export function canCaptureTaskSnapshot(status: ExecutionTaskStatus): boolean {
   return executionInFlightStatuses.includes(status);
@@ -126,6 +149,122 @@ export function assertExpectedSeedEntry(input: {
   }
 }
 
+export function resolveTaskSnapshotTarget(input: {
+  queueEntry: ProposalQueueIndexArtifact["entries"][number];
+  queueEntries: ProposalQueueIndexArtifact["entries"];
+  reviewedTargetCompanyId?: string;
+}): TaskSnapshotTargetResolution {
+  const productionIds = input.queueEntry.productionCompanyIds;
+  if (productionIds.length > 1) {
+    throw new Error("Task snapshot requires one canonical production target; resolve merge targets first");
+  }
+  const reviewedTargetCompanyId = input.reviewedTargetCompanyId?.trim() || null;
+  const immutableTargetCompanyId = productionIds[0] ?? null;
+  if (immutableTargetCompanyId) {
+    if (reviewedTargetCompanyId && reviewedTargetCompanyId !== immutableTargetCompanyId) {
+      throw new Error("Reviewed target company cannot replace the immutable queue target");
+    }
+    return {
+      method: "IMMUTABLE_QUEUE_TARGET",
+      targetCompanyId: immutableTargetCompanyId,
+      linkedQueueTaskId: null,
+    };
+  }
+  if (!reviewedTargetCompanyId) {
+    return {
+      method: "NO_EXISTING_TARGET",
+      targetCompanyId: null,
+      linkedQueueTaskId: null,
+    };
+  }
+  const queueCanonicalKey = input.queueEntry.canonicalKey;
+  if (!queueCanonicalKey) {
+    throw new Error("Reviewed target company requires a canonical-key queue task");
+  }
+  const symmetricLinks = input.queueEntries.filter((candidate) =>
+    candidate.taskId !== input.queueEntry.taskId
+    && candidate.canonicalKey !== null
+    && candidate.productionCompanyIds.length === 1
+    && candidate.productionCompanyIds[0] === reviewedTargetCompanyId
+    && input.queueEntry.candidateCanonicalKeys.includes(candidate.canonicalKey)
+    && candidate.candidateCanonicalKeys.includes(queueCanonicalKey),
+  );
+  if (symmetricLinks.length !== 1) {
+    throw new Error(
+      symmetricLinks.length === 0
+        ? "Reviewed target company is not supported by one symmetric immutable queue candidate"
+        : "Reviewed target company is ambiguous across symmetric immutable queue candidates",
+    );
+  }
+  return {
+    method: "REVIEWED_SYMMETRIC_CANDIDATE",
+    targetCompanyId: reviewedTargetCompanyId,
+    linkedQueueTaskId: symmetricLinks[0].taskId,
+  };
+}
+
+function exactSeedEntry(
+  companies: readonly PortCo[],
+  expectedSeedKey: string,
+  label: string,
+): PortCo {
+  const matches = companies.filter((company) => seedKey(company.name, company.country) === expectedSeedKey);
+  if (matches.length !== 1) {
+    throw new Error(
+      `${label} seed identity ${expectedSeedKey} resolved to ${matches.length} entries instead of exactly one`,
+    );
+  }
+  return matches[0];
+}
+
+export function resolveSeedRetirementCandidates(input: {
+  queueEntry: ProposalQueueIndexArtifact["entries"][number];
+  queueEntries: ProposalQueueIndexArtifact["entries"];
+  rawSeedCompanies: readonly PortCo[];
+  evaluatedSeedCompanies: readonly PortCo[];
+}): ReviewedSeedRetirement[] {
+  if (!input.queueEntry.canonicalKey) return [];
+  const reciprocal = input.queueEntries
+    .filter((candidate) =>
+      candidate.taskId !== input.queueEntry.taskId
+      && candidate.canonicalKey !== null
+      && input.queueEntry.candidateCanonicalKeys.includes(candidate.canonicalKey)
+      && candidate.candidateCanonicalKeys.includes(input.queueEntry.canonicalKey!),
+    )
+    .sort((left, right) => left.taskIndex - right.taskIndex);
+  const seedOnly = reciprocal.filter((candidate) =>
+    candidate.productionCompanyIds.length === 0 && candidate.seedKeys.length > 0);
+  const seenSeedKeys = new Set<string>();
+  return seedOnly.map((candidate) => {
+    if (candidate.seedKeys.length !== 1) {
+      throw new Error(
+        `Seed-only queue task ${candidate.taskId} must identify exactly one evaluated seed entry`,
+      );
+    }
+    const candidateSeedKey = candidate.seedKeys[0];
+    if (seenSeedKeys.has(candidateSeedKey)) {
+      throw new Error(`Reciprocal seed-only queue tasks repeat seed identity ${candidateSeedKey}`);
+    }
+    seenSeedKeys.add(candidateSeedKey);
+    const raw = exactSeedEntry(input.rawSeedCompanies, candidateSeedKey, "Raw");
+    const evaluated = exactSeedEntry(input.evaluatedSeedCompanies, candidateSeedKey, "Evaluated");
+    if (
+      raw.name.trim().toLowerCase() !== evaluated.name.trim().toLowerCase()
+      || raw.country.trim().toLowerCase() !== evaluated.country.trim().toLowerCase()
+    ) {
+      throw new Error(`Raw and evaluated seed identities disagree for ${candidateSeedKey}`);
+    }
+    return {
+      sourceQueueTaskId: candidate.taskId,
+      sourceQueueEntrySha256: sha256Canonical(candidate),
+      name: evaluated.name,
+      country: evaluated.country,
+      rawSeedEntrySha256: sha256Canonical(raw),
+      evaluatedSeedEntrySha256: sha256Canonical(evaluated),
+    };
+  });
+}
+
 export async function buildTaskSnapshotContext(input: {
   client: TaskSnapshotClient;
   manifest: ExecutionManifest;
@@ -133,8 +272,10 @@ export async function buildTaskSnapshotContext(input: {
   productionSnapshot: ProductionSnapshot;
   productionSnapshotLocation: string;
   target: DatabaseTargetIdentity;
+  baseSeedCompanies: readonly PortCo[];
   seedCompanies: readonly PortCo[];
   capturedAt: string;
+  reviewedTargetCompanyId?: string;
 }): Promise<TaskSnapshotContext> {
   const task = input.manifest.activeTaskId
     ? input.manifest.tasks.find((candidate) => candidate.taskId === input.manifest.activeTaskId)
@@ -152,11 +293,18 @@ export async function buildTaskSnapshotContext(input: {
   if (!digestsEqual(input.proposalQueue.proposalQueueSha256, input.manifest.source.proposalIndex.sha256)) {
     throw new Error("Proposal queue does not match the execution manifest source lineage");
   }
-  const productionIds = queueEntry.productionCompanyIds;
-  if (productionIds.length > 1) {
-    throw new Error("Task snapshot requires one canonical production target; resolve merge targets first");
-  }
-  const targetId = productionIds[0] ?? null;
+  const targetResolution = resolveTaskSnapshotTarget({
+    queueEntry,
+    queueEntries: input.proposalQueue.entries,
+    reviewedTargetCompanyId: input.reviewedTargetCompanyId,
+  });
+  const targetId = targetResolution.targetCompanyId;
+  const seedRetirementCandidates = resolveSeedRetirementCandidates({
+    queueEntry,
+    queueEntries: input.proposalQueue.entries,
+    rawSeedCompanies: input.baseSeedCompanies,
+    evaluatedSeedCompanies: input.seedCompanies,
+  });
 
   const read = await input.client.$transaction(async (transaction) => {
     await transaction.$executeRawUnsafe("SET TRANSACTION READ ONLY");
@@ -253,6 +401,7 @@ export async function buildTaskSnapshotContext(input: {
     productionSnapshotSha256: input.productionSnapshot.snapshotSha256,
     targetCompanySnapshotSha256,
     seedEntrySha256: seedEntry ? sha256Canonical(seedEntry) : null,
+    seedRetirementCandidates,
     dependencies: {
       ownershipPeriodsSha256: sha256Canonical(ownershipPeriods),
       pendingTransactionsSha256: sha256Canonical(pendingTransactions),
@@ -273,8 +422,10 @@ export async function buildTaskSnapshotContext(input: {
     generatedAt: input.capturedAt,
     productionSnapshotLocation: input.productionSnapshotLocation,
     sourceQueueEntry: queueEntry,
+    targetResolution,
     targetCompanyImage,
     seedEntry,
+    seedRetirementCandidates,
     dependencies: { funds, organizations, redirects },
     taskSnapshot,
   });

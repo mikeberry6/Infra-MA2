@@ -307,6 +307,12 @@ export function finalizeApplyReceipt(
   if (!digestsEqual(normalized.seedAfterImageSha256, normalized.appliedAfterImageSha256)) {
     throw new Error("Seed and database after-images must be identical");
   }
+  if (
+    (verifiedProposal.reviewedSeedRetirements?.length ?? 0) > 0
+    && normalized.approvedSeedEntrySha256 === undefined
+  ) {
+    throw new Error("Seed-retirement apply receipts must bind the exact approved seed entry");
+  }
   const { receiptSha256: _receiptSha256, ...withoutHash } = normalized;
   return reconciliationApplyReceiptSchema.parse({
     ...withoutHash,

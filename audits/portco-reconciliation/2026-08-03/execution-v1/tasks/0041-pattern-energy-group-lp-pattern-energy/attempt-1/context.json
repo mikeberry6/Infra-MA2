@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
+  "taskIndex": 41,
+  "companyName": "Pattern Energy Group LP (Pattern Energy)",
+  "generatedAt": "2026-08-08T09:14:24.717Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0041-pattern-energy-group-lp-pattern-energy/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 41,
+    "taskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
+    "canonicalKey": "pattern-energy-group-lp-pattern-energy|canada",
+    "companyName": "Pattern Energy Group LP (Pattern Energy)",
+    "country": "Canada / United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 9,
+    "managers": [
+      "APG Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "009-apg-infrastructure:holding:013:pattern-energy-group-lp"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://patternenergy.com/",
+      "https://patternenergy.com/pattern-energy-announces-closing-of-equity-investment-from-consortium-headed-by-apg-and-art/"
+    ],
+    "candidateCanonicalKeys": [
+      "pattern-energy-group-lp-pattern-energy|united-states-canada",
+      "pattern-energy-group-lp|united-states",
+      "pattern-energy-group|united-states-canada"
+    ],
+    "rationale": "Census identity matches multiple exact repository candidates: pattern-energy-group-lp-pattern-energy|united-states-canada, pattern-energy-group-lp|united-states. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Census identity matches multiple exact repository candidates: pattern-energy-group-lp-pattern-energy|united-states-canada, pattern-energy-group-lp|united-states."
+    ]
+  },
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
+    "taskIndex": 41,
+    "canonicalKey": "pattern-energy-group-lp-pattern-energy|canada",
+    "capturedAt": "2026-08-08T09:14:24.717Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "91f1874c4e611fa8987b1bf1f483cf35e784b4506db734bc1d135dc6f547979b",
+    "productionSnapshotSha256": "59ca5f66567766932b775c6d1e0a8ecf69eca65b953912ce4912ff89e0d32017",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "eaa2d420d98388d39b5f5258506db0f683655ef566236b3f5e437ea224ce696c",
+    "taskSnapshotSha256": "5993a1fc981b1921be755389320b07a6fdf815802d1d69c657ccc49817631eaf"
+  },
+  "contextSha256": "093aac29fd653d55faeda3eb1c812b45b66810c43a9a9d8f34356539d8b8c966"
+}

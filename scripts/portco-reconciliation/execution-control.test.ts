@@ -145,6 +145,7 @@ function taskSnapshot(
   manifest: ExecutionManifest,
   capturedAt = "2026-08-03T16:33:00.000Z",
   targetCompanySnapshotSha256 = "2".repeat(64),
+  seedRetirementCandidates?: ExecutionTaskSnapshot["seedRetirementCandidates"],
 ): ExecutionTaskSnapshot {
   const task = nextExecutionTask(manifest);
   if (!task) throw new Error("fixture requires a next task");
@@ -164,6 +165,7 @@ function taskSnapshot(
     productionSnapshotSha256: "3".repeat(64),
     targetCompanySnapshotSha256,
     seedEntrySha256: "4".repeat(64),
+    ...(seedRetirementCandidates === undefined ? {} : { seedRetirementCandidates }),
     dependencies: {
       ownershipPeriodsSha256: "5".repeat(64),
       pendingTransactionsSha256: "6".repeat(64),
@@ -271,6 +273,43 @@ describe("Phase 1 execution control", () => {
     });
     expect(() => assertTaskSnapshotFresh(locked, recaptured)).not.toThrow();
     const stale = taskSnapshot(manifest, "2026-08-03T16:35:00.000Z", "c".repeat(64));
+    expect(() => assertTaskSnapshotFresh(locked, stale)).toThrow(/stale/i);
+  });
+
+  it("treats reviewed seed-retirement lineage as freshness-bound state", () => {
+    const manifest = recovered();
+    const historical = taskSnapshot(manifest);
+    expect(verifyExecutionTaskSnapshot(historical).seedRetirementCandidates).toBeUndefined();
+
+    const candidate = {
+      sourceQueueTaskId: "repo:0485:pattern-energy-group-lp:seed-only",
+      sourceQueueEntrySha256: "b".repeat(64),
+      name: "Pattern Energy Group LP",
+      country: "United States",
+      rawSeedEntrySha256: "c".repeat(64),
+      evaluatedSeedEntrySha256: "d".repeat(64),
+    };
+    const locked = taskSnapshot(
+      manifest,
+      "2026-08-03T16:36:00.000Z",
+      "2".repeat(64),
+      [candidate],
+    );
+    const recaptured = finalizeExecutionTaskSnapshot({
+      ...locked,
+      capturedAt: "2026-08-03T16:37:00.000Z",
+      productionSnapshotSha256: "e".repeat(64),
+    });
+    expect(() => assertTaskSnapshotFresh(locked, recaptured)).not.toThrow();
+
+    const stale = finalizeExecutionTaskSnapshot({
+      ...recaptured,
+      capturedAt: "2026-08-03T16:38:00.000Z",
+      seedRetirementCandidates: [{
+        ...candidate,
+        evaluatedSeedEntrySha256: "f".repeat(64),
+      }],
+    });
     expect(() => assertTaskSnapshotFresh(locked, stale)).toThrow(/stale/i);
   });
 

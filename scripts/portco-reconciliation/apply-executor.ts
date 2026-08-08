@@ -63,6 +63,7 @@ export interface AuditEventWrite {
     actions: ReconciliationProposal["actions"];
     changedFields: string[];
     retiredCompanyIds: string[];
+    reviewedSeedRetirements: NonNullable<ReconciliationProposal["reviewedSeedRetirements"]>;
     relationMerges: NonNullable<ReconciliationProposal["relationMerges"]>;
     retiredCompanyBeforeImages: CompanyImage[];
     beforeImageSha256: string | null;
@@ -77,6 +78,7 @@ export interface AuditEventWrite {
     databaseTargetFingerprint: string;
     seedArtifactPath: string;
     seedArtifactSha256: string;
+    approvedSeedEntrySha256?: string;
     transactionId: string;
     reviewedBy: string;
     reviewedAt: string;
@@ -221,6 +223,12 @@ export async function executeApprovedApply<TransactionClient>(input: {
     throw new Error("Seed publisher returned evidence for a different approval or after-image");
   }
   await input.dependencies.verifyPublishedSeed(publication);
+  if (
+    (proposal.reviewedSeedRetirements?.length ?? 0) > 0
+    && !publication.approvedSeedEntrySha256
+  ) {
+    throw new Error("Seed-retirement apply requires the exact approved seed entry hash");
+  }
   const verifiedRelease = await input.dependencies.verifyRelease(publication);
   assertWriteGate({
     gate: input.gate,
@@ -271,6 +279,7 @@ export async function executeApprovedApply<TransactionClient>(input: {
         actions: proposal.actions,
         changedFields: plan.changedFields,
         retiredCompanyIds: proposal.retiredCompanyIds,
+        reviewedSeedRetirements: proposal.reviewedSeedRetirements ?? [],
         relationMerges: proposal.relationMerges ?? [],
         retiredCompanyBeforeImages,
         beforeImageSha256: proposal.beforeImageSha256,
@@ -285,6 +294,9 @@ export async function executeApprovedApply<TransactionClient>(input: {
         databaseTargetFingerprint: fresh.databaseTargetFingerprint,
         seedArtifactPath: publication.artifactPath,
         seedArtifactSha256: publication.artifactSha256,
+        ...(publication.approvedSeedEntrySha256
+          ? { approvedSeedEntrySha256: publication.approvedSeedEntrySha256 }
+          : {}),
         transactionId,
         reviewedBy: approval.reviewedBy,
         reviewedAt: approval.reviewedAt,
@@ -315,6 +327,9 @@ export async function executeApprovedApply<TransactionClient>(input: {
     beforeCompanySnapshotSha256: proposal.currentCompanySnapshotSha256,
     appliedAfterImageSha256: proposal.afterImageSha256!,
     seedAfterImageSha256: publication.afterImageSha256,
+    ...(publication.approvedSeedEntrySha256
+      ? { approvedSeedEntrySha256: publication.approvedSeedEntrySha256 }
+      : {}),
     databaseTargetFingerprint: snapshot.databaseTargetFingerprint,
     transactionId,
     auditEventId: transactionResult.auditEventId,

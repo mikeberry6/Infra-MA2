@@ -7,6 +7,20 @@ function contextFixture(): TaskSnapshotContext {
   return { targetCompanyImage: companyImageFixture() } as TaskSnapshotContext;
 }
 
+function seedRetirementContext(): TaskSnapshotContext {
+  return {
+    targetCompanyImage: companyImageFixture(),
+    seedRetirementCandidates: [{
+      sourceQueueTaskId: "task-seed-duplicate",
+      sourceQueueEntrySha256: "a".repeat(64),
+      name: "Acme Infrastructure",
+      country: "United States",
+      rawSeedEntrySha256: "b".repeat(64),
+      evaluatedSeedEntrySha256: "c".repeat(64),
+    }],
+  } as TaskSnapshotContext;
+}
+
 function baseSpec() {
   return {
     generatedAt: FIXTURE_NOW,
@@ -132,5 +146,30 @@ describe("proposal patch ownership additions", () => {
       isActive: false,
       transactionState: "REALIZED",
     });
+  });
+
+  it("copies only task-scoped reviewed seed retirements into the proposal result", () => {
+    const spec = baseSpec();
+    spec.actions = ["ADD_OWNER", "MERGE_COMPANIES"];
+    const result = applySpec(seedRetirementContext(), {
+      ...spec,
+      reviewedSeedRetirementTaskIds: ["task-seed-duplicate"],
+    });
+
+    expect(result.reviewedSeedRetirements).toEqual(
+      seedRetirementContext().seedRetirementCandidates,
+    );
+  });
+
+  it("rejects unbound seed retirement task ids and missing merge authority", () => {
+    expect(() => applySpec(seedRetirementContext(), {
+      ...baseSpec(),
+      actions: ["ADD_OWNER", "MERGE_COMPANIES"],
+      reviewedSeedRetirementTaskIds: ["task-unrelated"],
+    })).toThrow(/unknown task-scoped seed retirement/i);
+    expect(() => applySpec(seedRetirementContext(), {
+      ...baseSpec(),
+      reviewedSeedRetirementTaskIds: ["task-seed-duplicate"],
+    })).toThrow(/require a MERGE_COMPANIES/i);
   });
 });

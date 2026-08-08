@@ -724,6 +724,17 @@ export const relationMergeSchema = z.strictObject({
   }
 });
 
+export const reviewedSeedRetirementSchema = z.strictObject({
+  sourceQueueTaskId: nonEmpty,
+  sourceQueueEntrySha256: sha256Value,
+  name: nonEmpty,
+  country: nonEmpty,
+  rawSeedEntrySha256: sha256Value,
+  evaluatedSeedEntrySha256: sha256Value,
+});
+
+export type ReviewedSeedRetirement = z.infer<typeof reviewedSeedRetirementSchema>;
+
 export const reconciliationProposalSchema = z.strictObject({
   schemaVersion: z.literal(PORTCO_RECONCILIATION_SCHEMA_VERSION),
   artifactType: z.literal("PORTCO_CHANGE_PROPOSAL"),
@@ -744,6 +755,9 @@ export const reconciliationProposalSchema = z.strictObject({
   // control continue to verify byte-for-byte. New proposal specs default this
   // field to [] and therefore bind it into all newly generated hashes.
   relationMerges: z.array(relationMergeSchema).optional(),
+  // Optional so proposals created before seed-only identity retirement was
+  // supported retain their exact historical proposal hashes.
+  reviewedSeedRetirements: z.array(reviewedSeedRetirementSchema).optional(),
   rationale: nonEmpty,
   evidence: z.array(proposalEvidenceSchema).min(1),
   unresolvedQuestions: uniqueNonEmptyArray,
@@ -758,11 +772,36 @@ export const reconciliationProposalSchema = z.strictObject({
 }).superRefine((proposal, context) => {
   const create = proposal.actions.includes("CREATE_COMPANY");
   const relationMerges = proposal.relationMerges ?? [];
+  const reviewedSeedRetirements = proposal.reviewedSeedRetirements ?? [];
   if (relationMerges.length > 0 && !proposal.actions.includes("MERGE_COMPANIES")) {
     context.addIssue({
       code: "custom",
       path: ["relationMerges"],
       message: "Retired relation mappings are valid only for MERGE_COMPANIES proposals",
+    });
+  }
+  if (reviewedSeedRetirements.length > 0 && !proposal.actions.includes("MERGE_COMPANIES")) {
+    context.addIssue({
+      code: "custom",
+      path: ["reviewedSeedRetirements"],
+      message: "Seed-only identity retirements require a MERGE_COMPANIES proposal",
+    });
+  }
+  const seedRetirementTaskIds = reviewedSeedRetirements.map((retirement) => retirement.sourceQueueTaskId);
+  if (!uniqueValues(seedRetirementTaskIds)) {
+    context.addIssue({
+      code: "custom",
+      path: ["reviewedSeedRetirements"],
+      message: "Each reviewed seed retirement must come from a unique queue task",
+    });
+  }
+  const seedRetirementIdentities = reviewedSeedRetirements.map((retirement) =>
+    `${retirement.name.trim().toLowerCase()}\u0000${retirement.country.trim().toLowerCase()}`);
+  if (!uniqueValues(seedRetirementIdentities)) {
+    context.addIssue({
+      code: "custom",
+      path: ["reviewedSeedRetirements"],
+      message: "Each reviewed seed retirement must identify a unique seed company",
     });
   }
   const mappedRetiredRelations = new Set<string>();
@@ -878,6 +917,9 @@ export const reconciliationApplyReceiptSchema = z.strictObject({
   beforeCompanySnapshotSha256: sha256Value.nullable(),
   appliedAfterImageSha256: sha256Value,
   seedAfterImageSha256: sha256Value,
+  // Optional so apply receipts created before exact approved-seed-entry
+  // verification retain their original hashes.
+  approvedSeedEntrySha256: sha256Value.optional(),
   databaseTargetFingerprint: sha256Value,
   transactionId: nonEmpty,
   auditEventId: nonEmpty,

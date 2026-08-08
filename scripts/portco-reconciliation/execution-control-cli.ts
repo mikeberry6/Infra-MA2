@@ -12,6 +12,7 @@ import {
 } from "./artifacts";
 import {
   activateNextExecutionTask,
+  assertProposalSeedRetirementsBound,
   createExecutionManifest,
   executionStatus,
   installExecutionApprovalPolicy,
@@ -64,6 +65,7 @@ const COMMAND_OPTIONS: Record<Command, { values: readonly string[]; flags: reado
       "database-target-label",
       "expected-host",
       "expected-database",
+      "target-company-id",
     ],
     flags: ["legacy-schema"],
   },
@@ -297,7 +299,10 @@ async function snapshot(values: Map<string, string>, flags: Set<string>): Promis
     let context;
     try {
       const seedCompaniesModule = "../../prisma/seed-data/companies";
-      const { companies } = await import(seedCompaniesModule) as { companies: PortCo[] };
+      const { baseCompanies, companies } = await import(seedCompaniesModule) as {
+        baseCompanies: PortCo[];
+        companies: PortCo[];
+      };
       context = await buildTaskSnapshotContext({
         client,
         manifest,
@@ -305,8 +310,10 @@ async function snapshot(values: Map<string, string>, flags: Set<string>): Promis
         productionSnapshot: produced.production,
         productionSnapshotLocation: repositoryLocation(productionOutput),
         target,
+        baseSeedCompanies: baseCompanies,
         seedCompanies: companies,
         capturedAt: new Date().toISOString(),
+        reviewedTargetCompanyId: values.get("target-company-id"),
       });
     } finally {
       await client.$disconnect();
@@ -328,6 +335,7 @@ async function snapshot(values: Map<string, string>, flags: Set<string>): Promis
       stateSha256: context.taskSnapshot.stateSha256,
       productionSnapshotSha256: context.taskSnapshot.productionSnapshotSha256,
       targetCompanySnapshotSha256: context.taskSnapshot.targetCompanySnapshotSha256,
+      targetResolution: context.targetResolution,
       seedEntrySha256: context.taskSnapshot.seedEntrySha256,
       contextSha256: context.contextSha256,
       output: repositoryLocation(output),
@@ -360,6 +368,7 @@ async function decide(values: Map<string, string>): Promise<void> {
     const lockedTaskSnapshot = verifyExecutionTaskSnapshot(
       await loadStoredJson(task.artifacts.taskSnapshot, "task snapshot"),
     );
+    assertProposalSeedRetirementsBound(proposal, lockedTaskSnapshot);
     const decision = required(values, "decision");
     if (decision !== "APPROVE" && decision !== "REJECT" && decision !== "DEFER") {
       throw new Error("--decision must be APPROVE, REJECT, or DEFER");
@@ -511,6 +520,7 @@ async function transition(values: Map<string, string>): Promise<void> {
       )) {
         throw new Error("Proposal is not bound to the supplied task-scoped snapshot");
       }
+      if (taskSnapshot) assertProposalSeedRetirementsBound(proposal, taskSnapshot);
       artifacts.proposal = { location: repositoryLocation(path), sha256: proposal.proposalSha256 };
     } else if (task.artifacts.proposal) {
       proposal = verifyProposal(await loadStoredJson(task.artifacts.proposal, "proposal"));

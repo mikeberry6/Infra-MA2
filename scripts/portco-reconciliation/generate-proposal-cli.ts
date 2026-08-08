@@ -112,6 +112,7 @@ const proposalSpecSchema = z.strictObject({
   actions: z.array(z.enum(proposalActions)).min(1),
   retiredCompanyIds: z.array(z.string().trim().min(1)).default([]),
   relationMerges: z.array(relationMergeSchema).default([]),
+  reviewedSeedRetirementTaskIds: z.array(z.string().trim().min(1)).default([]),
   rationale: z.string().trim().min(1),
   evidence: z.array(evidenceSchema).min(1),
   unresolvedQuestions: z.array(z.string().trim().min(1)).default([]),
@@ -128,6 +129,23 @@ const proposalSpecSchema = z.strictObject({
       code: "custom",
       path: ["relationMerges"],
       message: "Retired relation mappings are valid only for MERGE_COMPANIES proposals",
+    });
+  }
+  if (
+    spec.reviewedSeedRetirementTaskIds.length > 0
+    && !spec.actions.includes("MERGE_COMPANIES")
+  ) {
+    context.addIssue({
+      code: "custom",
+      path: ["reviewedSeedRetirementTaskIds"],
+      message: "Reviewed seed retirements require a MERGE_COMPANIES proposal",
+    });
+  }
+  if (new Set(spec.reviewedSeedRetirementTaskIds).size !== spec.reviewedSeedRetirementTaskIds.length) {
+    context.addIssue({
+      code: "custom",
+      path: ["reviewedSeedRetirementTaskIds"],
+      message: "Reviewed seed retirement task ids must be unique",
     });
   }
   if (
@@ -211,11 +229,25 @@ function verifyContext(input: unknown): TaskSnapshotContext {
   if (context.sourceQueueEntry.taskId !== context.taskId) {
     throw new Error("Task context queue entry does not match the task");
   }
+  if (
+    sha256Canonical(context.seedRetirementCandidates ?? [])
+    !== sha256Canonical(context.taskSnapshot.seedRetirementCandidates ?? [])
+  ) {
+    throw new Error("Task context seed-retirement candidates do not match the task snapshot");
+  }
   return context;
 }
 
 export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
   const spec = proposalSpecSchema.parse(specInput);
+  const candidates = new Map(
+    (context.seedRetirementCandidates ?? []).map((candidate) => [candidate.sourceQueueTaskId, candidate]),
+  );
+  const reviewedSeedRetirements = spec.reviewedSeedRetirementTaskIds.map((taskId) => {
+    const candidate = candidates.get(taskId);
+    if (!candidate) throw new Error(`Unknown task-scoped seed retirement ${taskId}`);
+    return candidate;
+  });
   const beforeImage = context.targetCompanyImage;
   let afterImage = spec.afterImage ?? null;
   if (!afterImage) {
@@ -258,7 +290,7 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
   if (spec.unresolvedQuestions.length > 0 && afterImage) {
     throw new Error("A mutating proposal cannot carry unresolved questions");
   }
-  return { spec, beforeImage, afterImage };
+  return { spec, beforeImage, afterImage, reviewedSeedRetirements };
 }
 
 export async function executeGenerateProposalCli(argv: readonly string[]): Promise<void> {
@@ -271,7 +303,12 @@ export async function executeGenerateProposalCli(argv: readonly string[]): Promi
   if (!digestsEqual(production.snapshotSha256, context.taskSnapshot.productionSnapshotSha256)) {
     throw new Error("Task context production snapshot binding is stale");
   }
-  const { spec, beforeImage, afterImage } = applySpec(context, await jsonFile(args.spec));
+  const {
+    spec,
+    beforeImage,
+    afterImage,
+    reviewedSeedRetirements,
+  } = applySpec(context, await jsonFile(args.spec));
   const beforeImageSha256 = beforeImage ? companyImageSha256(beforeImage) : null;
   if (beforeImageSha256 !== context.taskSnapshot.targetCompanySnapshotSha256) {
     throw new Error("Task context before-image does not match the locked target snapshot");
@@ -291,6 +328,7 @@ export async function executeGenerateProposalCli(argv: readonly string[]): Promi
     sourceHoldingIds: context.sourceQueueEntry.sourceHoldingIds,
     retiredCompanyIds: spec.retiredCompanyIds,
     relationMerges: spec.relationMerges,
+    ...(reviewedSeedRetirements.length === 0 ? {} : { reviewedSeedRetirements }),
     rationale: spec.rationale,
     evidence: spec.evidence,
     unresolvedQuestions: spec.unresolvedQuestions,

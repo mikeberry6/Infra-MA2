@@ -76,6 +76,7 @@ async function main(): Promise<void> {
     productionSnapshotSha256: receipt.productionSnapshotSha256,
     appliedAfterImageSha256: receipt.appliedAfterImageSha256,
     seedAfterImageSha256: receipt.seedAfterImageSha256,
+    approvedSeedEntrySha256: receipt.approvedSeedEntrySha256 ?? null,
     databaseTargetFingerprint: receipt.databaseTargetFingerprint,
     transactionId: receipt.transactionId,
     auditEventId: receipt.auditEventId,
