@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T10:30:46.000Z",
+  "updatedAt": "2026-08-08T10:41:28.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -6630,20 +6630,26 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "bf30c86d74ed1d9eda0eb43635139e5eae2ed7dd0e7e7d966209251f2ff7cc41",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-08T10:37:34.000Z",
+      "updatedAt": "2026-08-08T10:41:28.000Z",
+      "completedAt": "2026-08-08T10:41:28.000Z",
+      "exceptionReason": "Southern Power is the wholly owned operating parent, while APG owns 33% of the distinct SP Solar Holdings I, LP portfolio already represented by task 44; supersede this parent-level duplicate so task 44 can retain and correct the canonical portfolio record.",
+      "supersededByTaskId": "ledger:0044:southern-power-solar-portfolio:e23910f6",
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0043-southern-power/attempt-1/task-snapshot.json",
+          "sha256": "e193db002ca0f17c7d45112d527b60796215a08fa608598cb9fd55fee59dd50f"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0043-southern-power/research-decision.json",
+        "sha256": "036c97645fa24e944b325dfe5a579f8dfa8f4bddc284eb3e0a900b827aac9feb"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -6657,6 +6663,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-08T10:37:34.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "SUPERSEDED",
+          "at": "2026-08-08T10:41:28.000Z",
+          "reason": "Southern Power is the wholly owned operating parent, while APG owns 33% of the distinct SP Solar Holdings I, LP portfolio already represented by task 44; supersede this parent-level duplicate so task 44 can retain and correct the canonical portfolio record.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "27bafd4ff05fc935fb8a5fb863b5170f6477dc7d3ff012adcba3ce0757aaea5c",
+            "e193db002ca0f17c7d45112d527b60796215a08fa608598cb9fd55fee59dd50f"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -23910,5 +23939,5 @@
       ]
     }
   ],
-  "manifestSha256": "5309024ed1ce8ede421e07509d1fed2a8e8bb655676f275eb9292a0d2b889222"
+  "manifestSha256": "14253238f1d361114eaf0523f1da7bd93f510567db8cbb84c5ff102a71ea6393"
 }

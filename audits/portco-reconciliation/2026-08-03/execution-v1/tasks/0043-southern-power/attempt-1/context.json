@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0043:southern-power:e71a2a33",
+  "taskIndex": 43,
+  "companyName": "Southern Power",
+  "generatedAt": "2026-08-08T10:38:35.056Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0043-southern-power/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 43,
+    "taskId": "ledger:0043:southern-power:e71a2a33",
+    "canonicalKey": "southern-power|united-states",
+    "companyName": "Southern Power",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 9,
+    "managers": [
+      "APG Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "009-apg-infrastructure:repo-only:002:southern-power"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5jp00hvivheqg0t2csf"
+    ],
+    "seedKeys": [
+      "southern power|United States"
+    ],
+    "evidenceUrls": [
+      "https://assetmanagement.apg.nl/publications/apg-boosts-commitment-to-energy-transition-with-major-us-solar-investment/",
+      "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: APG Infrastructure MATCHED_ELSEWHERE: The broader Southern Power operating company is not the level at which APG invested. APG's documented exposure is to the included 26-facility Southern Power solar portfolio, so the parent-company record is reconciled to that holding rather than counted separately.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5jp00hvivheqg0t2csf",
+    "linkedQueueTaskId": null
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5jp00hvivheqg0t2csf",
+    "name": "Southern Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Wholesale power generation and renewable infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Southern Power is the wholesale generation subsidiary of Southern Company and develops, owns, and operates conventional and renewable power assets across the United States. Its customers are municipalities, electric cooperatives, investor-owned utilities, and commercial and industrial counterparties that contract for wholesale electricity and capacity. The company follows an asset-heavy ownership model with contracted generation assets spanning solar, wind, gas, and storage technologies. Public materials describe more than 3,050 megawatts of solar capacity at 30 facilities and a broader renewable fleet exceeding 5,000 megawatts, alongside gas-fired generation assets. Although Southern Power itself remains wholly owned by Southern Company, APG's disclosed exposure relates to the separate 2023 purchase of a 33% minority stake in a Southern Power-managed solar portfolio. Accordingly, public sources do not indicate that APG holds a direct corporate ownership stake in Southern Power itself.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2001,
+    "headquarters": "California; Georgia; Nevada; New Mexico; North Carolina; Texas; Wyoming",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqkm01enivhepveg9jir",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkhzd02jvivheejhgjqr6",
+        "date": "2001",
+        "event": "Southern Power was formed as Southern Company's wholesale generating subsidiary.",
+        "category": "FOUNDING",
+        "sortDate": "2001-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhzr02jwivhep50d550s",
+        "date": "May 2018",
+        "event": "Southern Power agreed to sell a 33% minority interest in a 26-facility solar portfolio to Global Atlantic.",
+        "category": "DIVESTITURE",
+        "sortDate": "2018-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpki2o02jxivhejy1kt9xj",
+        "date": "Feb 2021",
+        "event": "Southern Power announced battery storage additions at selected California solar projects.",
+        "category": "EXPANSION",
+        "sortDate": "2021-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpki3602jyivhep24c5ika",
+        "date": "Sep 2023",
+        "event": "Southern Power acquired the Millers Branch Solar Facility in Texas.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpki3o02jzivhel4gpiaqw",
+        "date": "Nov 2023",
+        "event": "APG acquired Global Atlantic's minority interest in the Southern Power-managed solar portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpot1m0786ivhey72cka18",
+        "label": "Southernpowercompany — Southern Power",
+        "url": "https://www.southernpowercompany.com/who-we-are.html",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Southernpowercompany transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpot2n0788ivhe126nfbjb",
+        "label": "Southernpowercompany — Southern Power",
+        "url": "https://www.southernpowercompany.com/what-we-do/faqs.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Southernpowercompany — Southern Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpot3j078aivhe25qk0vrf",
+        "label": "Southernpowercompany — Southern Power",
+        "url": "https://www.southernpowercompany.com/our-projects/solar.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Southernpowercompany operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpot4q078civhe2lcxsheo",
+        "label": "Business Wire — Southern Power",
+        "url": "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Business Wire operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Southern Power",
+    "investmentFirm": "APG Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Wholesale power generation and renewable infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Southern Power is the wholesale generation subsidiary of Southern Company and develops, owns, and operates conventional and renewable power assets across the United States. Its customers are municipalities, electric cooperatives, investor-owned utilities, and commercial and industrial counterparties that contract for wholesale electricity and capacity. The company follows an asset-heavy ownership model with contracted generation assets spanning solar, wind, gas, and storage technologies. Public materials describe more than 3,050 megawatts of solar capacity at 30 facilities and a broader renewable fleet exceeding 5,000 megawatts, alongside gas-fired generation assets. Although Southern Power itself remains wholly owned by Southern Company, APG's disclosed exposure relates to the separate 2023 purchase of a 33% minority stake in a Southern Power-managed solar portfolio. Accordingly, public sources do not indicate that APG holds a direct corporate ownership stake in Southern Power itself.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2001,
+    "investmentYear": 2023,
+    "headquarters": "California; Georgia; Nevada; New Mexico; North Carolina; Texas; Wyoming",
+    "milestones": [
+      {
+        "date": "2001",
+        "event": "Southern Power was formed as Southern Company's wholesale generating subsidiary.",
+        "category": "Founding"
+      },
+      {
+        "date": "May 2018",
+        "event": "Southern Power agreed to sell a 33% minority interest in a 26-facility solar portfolio to Global Atlantic.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "Feb 2021",
+        "event": "Southern Power announced battery storage additions at selected California solar projects.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 2023",
+        "event": "Southern Power acquired the Millers Branch Solar Facility in Texas.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 2023",
+        "event": "APG acquired Global Atlantic's minority interest in the Southern Power-managed solar portfolio.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Southernpowercompany — Southern Power",
+        "url": "https://www.southernpowercompany.com/who-we-are.html",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Southernpowercompany — Southern Power",
+        "url": "https://www.southernpowercompany.com/what-we-do/faqs.html",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Southernpowercompany — Southern Power",
+        "url": "https://www.southernpowercompany.com/our-projects/solar.html",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Business Wire — Southern Power",
+        "url": "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG",
+        "type": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "APG Infrastructure",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3kl000eivhezm8dydzo",
+        "name": "APG Asset Management",
+        "updatedAt": "2026-07-23T16:09:11.829Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0043:southern-power:e71a2a33",
+    "taskIndex": 43,
+    "canonicalKey": "southern-power|united-states",
+    "capturedAt": "2026-08-08T10:38:35.056Z",
+    "databaseRevision": "company-state:a7c1c6d2f0144c36c24fa3ebd50b49593b3fefaa6ec146d62934bab716b3e383",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "bf30c86d74ed1d9eda0eb43635139e5eae2ed7dd0e7e7d966209251f2ff7cc41",
+    "productionSnapshotSha256": "581d9c9b47df2378bbc3475dc86bf307729aeaa5f8d79921c3699d03df2a2456",
+    "targetCompanySnapshotSha256": "a7c1c6d2f0144c36c24fa3ebd50b49593b3fefaa6ec146d62934bab716b3e383",
+    "seedEntrySha256": "b7bfce21dfc403e4a1fb194e58d5ad37d4b6ba5e6dafd63964dcddde4471d2e3",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "9d10bdbde554c8d60aca9090134cc6c0335d0dfbd877f3b66df0b5078bc250c6",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7a654e205f4f30ac32c11dea3b242ec158c785ca364cb23a69fc51dcf7cc9e90",
+      "citationsSha256": "39ada8dcab04c750b49b694107e4d0e4b6994b24ad23c6d692ba1a1100eb2ef0",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "43191e13495c2406ad75a01ca81644ce54c81cf65c32718359b40ee12f236176",
+    "stateSha256": "6b75db90ca9d7e7c2b6b8a11ddd83ff0e81bc9de3dd472f5ad87457f5dafa024",
+    "taskSnapshotSha256": "e193db002ca0f17c7d45112d527b60796215a08fa608598cb9fd55fee59dd50f"
+  },
+  "contextSha256": "de50a484abb53385e817b9fe430a0ad1c114d5085ace7ef1e397adb570b54558"
+}

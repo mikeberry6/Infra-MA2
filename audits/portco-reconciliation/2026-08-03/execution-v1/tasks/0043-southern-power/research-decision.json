@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-08T10:41:28.000Z",
+  "asOfDate": "2026-08-08",
+  "decision": "SUPERSEDE_PARENT_LEVEL_DUPLICATE_TO_CANONICAL_SOLAR_PORTFOLIO_TASK",
+  "taskId": "ledger:0043:southern-power:e71a2a33",
+  "taskIndex": 43,
+  "companyName": "Southern Power",
+  "requestedManagers": [
+    "APG Infrastructure"
+  ],
+  "rationale": "Do not preserve Southern Power as a separate APG portfolio company. Southern Power is a wholly owned Southern Company subsidiary, while APG acquired a 33% limited-partner interest in the distinct renewable-asset partnership operated and controlled by Southern Power. Southern Power's SEC filings identify that partnership as SP Solar Holdings I, LP. The repository already contains a separate published record for that portfolio under the display name Southern Power solar portfolio. That record, its immutable queue task, and its production company ID are therefore the canonical keep path. This parent-level task is superseded without a database or seed mutation; the immediately following canonical task will correct the keep record to the legal partnership identity, preserve the Southern Power operating relationship, verify APG's 33% ownership through Scarlet Renewables LLC, and separately retire the erroneous APG-attributed parent record without treating the two legally distinct companies as aliases. Treating the parent as an APG-owned PortCo would overstate APG's investment perimeter and contradict both APG's announcement and Southern Power's filings.",
+  "identityResolution": {
+    "incorrectParentLevelRecord": "Southern Power",
+    "incorrectParentProductionCompanyId": "cmrxpj5jp00hvivheqg0t2csf",
+    "canonicalLegalEntity": "SP Solar Holdings I, LP",
+    "canonicalDisplayAlias": "Southern Power solar portfolio",
+    "canonicalKeepProductionCompanyId": "cmrxpj5k500hwivhetgtctyfl",
+    "canonicalKeepTaskId": "ledger:0044:southern-power-solar-portfolio:e23910f6",
+    "platformBoundary": "The in-scope PortCo is the limited partnership that indirectly owns substantially all of Southern Power's solar and battery storage facilities, not Southern Power Company or its broader conventional and renewable generation business.",
+    "recommendedCanonicalTreatment": "Keep the existing solar-portfolio company record and correct it to SP Solar Holdings I, LP with Southern Power solar and storage portfolio as an alias. Remove the erroneous APG attribution from the separate Southern Power record and retire it from the PortCo list without a canonical identity redirect because Southern Power Company and SP Solar Holdings I, LP are legally distinct."
+  },
+  "ownershipResolution": {
+    "apgStake": "33%",
+    "apgCompletionDisclosureDate": "2023-11-14",
+    "apgVehicle": "Scarlet Renewables LLC",
+    "seller": "Global Atlantic Financial Group",
+    "southernPowerStake": "67%",
+    "southernPowerRole": "Majority owner, general partner through wholly owned subsidiaries, and operating controller",
+    "currentStatus": "Southern Company's June 30, 2026 filing continued to report SP Solar as 67% owned by Southern Power with cash distributions allocated 67% to Southern Power and 33% to the limited partner. APG Asset Management US's March 25, 2026 Form ADV continued to list Scarlet Renewables LLC as an APG-managed private fund.",
+    "exitSearch": "No APG sale, transfer, or pending exit was identified through August 8, 2026. The current Southern Company filing preserves the same 67%/33% partnership economics, and APG's current regulatory filing continues to identify the original 33% buyer vehicle as APG-managed."
+  },
+  "evidence": [
+    {
+      "label": "APG - major US solar investment",
+      "url": "https://assetmanagement.apg.nl/publications/apg-boosts-commitment-to-energy-transition-with-major-us-solar-investment/",
+      "purpose": "APG's November 15, 2023 announcement that it acquired a 33% minority interest in the 26-solar-facility and two-storage-project portfolio, while Southern Power remained majority owner and operator",
+      "sourceTier": "MANAGER_PRIMARY"
+    },
+    {
+      "label": "Global Atlantic - completed sale to APG",
+      "url": "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG",
+      "purpose": "Seller announcement published November 14, 2023 confirming the completed transfer of the 33% portfolio interest to APG; this is the completion-disclosure date, not an inferred legal closing date",
+      "sourceTier": "SELLER_PRIMARY"
+    },
+    {
+      "label": "Southern Power 2018 Form 8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1160661/000116066118000004/spcjuno8-k52018.htm",
+      "purpose": "Legal partnership identity, portfolio-company boundary, original 33% limited-partner sale, and Southern Power's retained 67% control",
+      "sourceTier": "SEC_FILING"
+    },
+    {
+      "label": "APG Asset Management US March 2026 Form ADV",
+      "url": "https://reports.adviserinfo.sec.gov/reports/ADV/160795/PDF/160795.pdf",
+      "purpose": "Current regulatory evidence identifying Scarlet Renewables LLC as an APG-managed infrastructure private fund",
+      "sourceTier": "REGULATORY_FILING"
+    },
+    {
+      "label": "Southern Company second-quarter 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000054/so-20260630.htm",
+      "purpose": "Current SP Solar Holdings I, LP identity, 67% Southern Power interest, 33% limited-partner economics, asset scale, and continuing operations through June 30, 2026",
+      "sourceTier": "SEC_FILING"
+    },
+    {
+      "label": "Southern Power - original minority-interest announcement",
+      "url": "https://www.southerncompany.com/newsroom/financials/southern-power-to-sell-minority-interest-in-solar.html",
+      "purpose": "Southern Power's primary description of the 26-facility portfolio as a partnership distinct from the Southern Power operating company",
+      "sourceTier": "COMPANY_PRIMARY"
+    }
+  ],
+  "unresolvedQuestions": [],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "SUPERSEDED",
+  "supersededByTaskId": "ledger:0044:southern-power-solar-portfolio:e23910f6"
+}
