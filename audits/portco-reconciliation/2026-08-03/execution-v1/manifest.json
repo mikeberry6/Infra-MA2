@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T05:44:11.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0034:duquesne-light-company:06909b9f",
+  "updatedAt": "2026-08-08T05:58:32.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -5044,11 +5044,11 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "11491231895799b86cfb727cefbd021d1d1cf6f3fb4bb2936d22cf1e95dcaece",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 5,
       "startedAt": "2026-08-08T05:41:18.820Z",
-      "updatedAt": "2026-08-08T05:44:11.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-08T05:58:32.000Z",
+      "completedAt": "2026-08-08T05:58:32.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393",
@@ -5065,11 +5065,23 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0034-duquesne-light-company-v5.json",
           "sha256": "cb2f7f9ab873edafa85654a088a4bee51d550b96b80d46858d02f14045b8e6b8"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31242696677",
+          "sha256": "f70fea82736dc23c43c6209c2a6de4c4773676e576e739c556136d3c40a81f51"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0034-duquesne-light-company/attempt-5/context.json",
+          "sha256": "6ae10feb1243c25918a4c22f0e02cc42c1b2528e9aee743ccc360da3b1b9b106"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-08T05:58:32.000Z",
+        "auditEventId": "cmsjylqlv000dhd4sirjo55zh",
+        "transactionId": "57d5d91f-a221-453c-a2c7-aeb5c2ebbd2a",
+        "receiptSha256": "f70fea82736dc23c43c6209c2a6de4c4773676e576e739c556136d3c40a81f51",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31242696677"
+      },
       "history": [
         {
           "sequence": 1,
@@ -5373,6 +5385,35 @@
             "cb2f7f9ab873edafa85654a088a4bee51d550b96b80d46858d02f14045b8e6b8"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 27,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-08T05:53:12.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393",
+          "evidenceSha256": [
+            "67bee1881899409aab575044ed9e97318e0a1ad01eb04a5fb3301f51a116a393",
+            "b64a827607b7dd396ae2d906c33e1d10c6d1bd4dad70a1d068e8b58fac547e18",
+            "cb2f7f9ab873edafa85654a088a4bee51d550b96b80d46858d02f14045b8e6b8"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 28,
+          "from": "APPLYING",
+          "to": "COMPLETED",
+          "at": "2026-08-08T05:58:32.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "6ae10feb1243c25918a4c22f0e02cc42c1b2528e9aee743ccc360da3b1b9b106",
+            "b64a827607b7dd396ae2d906c33e1d10c6d1bd4dad70a1d068e8b58fac547e18",
+            "cb2f7f9ab873edafa85654a088a4bee51d550b96b80d46858d02f14045b8e6b8",
+            "f70fea82736dc23c43c6209c2a6de4c4773676e576e739c556136d3c40a81f51"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -22948,5 +22989,5 @@
       ]
     }
   ],
-  "manifestSha256": "a9fbd731df5e62e2ea6014a0bae18759aaf5972a7207bef39586e080f1663499"
+  "manifestSha256": "7b8e980787a40faf407b9f5a868a692457925f21a73eea7a82c4619114eb89e3"
 }
