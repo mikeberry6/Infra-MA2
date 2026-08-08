@@ -100,6 +100,7 @@ describe("strict, hash-bound reconciliation artifacts", () => {
     });
     expect(verifyProposal(proposal)).toEqual(proposal);
     expect(proposal.relationMerges).toBeUndefined();
+    expect(proposal.reviewedSeedRetirements).toBeUndefined();
     const { proposalSha256: _legacyHash, ...legacyProposalInput } = proposal;
     const proposalWithNewDefault = finalizeProposal({
       ...legacyProposalInput,
@@ -160,5 +161,53 @@ describe("strict, hash-bound reconciliation artifacts", () => {
       seedAfterImageSha256: "e".repeat(64),
       receiptSha256: undefined,
     } as never, proposal, approval)).toThrow(/identical/i);
+
+    const { proposalSha256: _proposalHash, ...proposalInput } = proposal;
+    const seedRetirementProposal = finalizeProposal({
+      ...proposalInput,
+      actions: ["CORRECT_COMPANY", "MERGE_COMPANIES"],
+      reviewedSeedRetirements: [{
+        sourceQueueTaskId: "ledger:0485:seed-duplicate",
+        sourceQueueEntrySha256: "a".repeat(64),
+        name: "Acme Infrastructure Legacy",
+        country: "United States",
+        rawSeedEntrySha256: "b".repeat(64),
+        evaluatedSeedEntrySha256: "c".repeat(64),
+      }],
+    });
+    const seedRetirementApproval = finalizeApproval({
+      schemaVersion: 1,
+      artifactType: "PORTCO_CHANGE_APPROVAL",
+      runId: seedRetirementProposal.runId,
+      taskId: seedRetirementProposal.taskId,
+      taskIndex: seedRetirementProposal.taskIndex,
+      companyName: seedRetirementProposal.companyName,
+      proposalSha256: seedRetirementProposal.proposalSha256,
+      productionSnapshotSha256: seedRetirementProposal.productionSnapshotSha256,
+      currentCompanySnapshotSha256: seedRetirementProposal.currentCompanySnapshotSha256,
+      approvedAfterImageSha256: seedRetirementProposal.afterImageSha256,
+      decision: "APPROVE",
+      reviewedBy: "reviewer",
+      reviewedAt: "2026-08-03T12:05:00.000Z",
+      reviewerNotes: "Approved seed identity alignment.",
+    }, seedRetirementProposal);
+    const {
+      receiptSha256: _receiptHash,
+      proposalSha256: _oldProposalHash,
+      approvalSha256: _oldApprovalHash,
+      ...legacyReceiptFields
+    } = receipt;
+    expect(() => finalizeApplyReceipt({
+      ...legacyReceiptFields,
+      proposalSha256: seedRetirementProposal.proposalSha256,
+      approvalSha256: seedRetirementApproval.approvalSha256,
+    }, seedRetirementProposal, seedRetirementApproval)).toThrow(/exact approved seed entry/i);
+    expect(finalizeApplyReceipt({
+      ...legacyReceiptFields,
+      proposalSha256: seedRetirementProposal.proposalSha256,
+      approvalSha256: seedRetirementApproval.approvalSha256,
+      approvedSeedEntrySha256: "d".repeat(64),
+    }, seedRetirementProposal, seedRetirementApproval).approvedSeedEntrySha256)
+      .toBe("d".repeat(64));
   });
 });

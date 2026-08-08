@@ -1,5 +1,7 @@
 import { companyImageSha256, finalizeApplyReceipt, verifyApproval, verifyDatasetSnapshot, verifyProposal } from "./artifacts";
+import { buildApprovedSeedEntry } from "./approved-seed";
 import { semanticCompanyImageSha256 } from "./apply-plan";
+import { sha256Canonical } from "./hash";
 import {
   companyImageSchema,
   type CompanyImage,
@@ -79,6 +81,14 @@ export async function recoverAppliedReceipt(input: {
     "audit database target",
   );
   exact(input.evidence.auditChanges.afterImageSha256, proposal.afterImageSha256, "audit after-image hash");
+  const approvedSeedEntrySha256 = sha256Canonical(buildApprovedSeedEntry(proposal, approval, snapshot));
+  if ((proposal.reviewedSeedRetirements?.length ?? 0) > 0) {
+    exact(
+      input.evidence.auditMetadata.approvedSeedEntrySha256,
+      approvedSeedEntrySha256,
+      "audit approved seed entry hash",
+    );
+  }
   assertSemanticAfterImage(input.evidence.revisionAfterImage, proposal.afterImage, "Company revision after-image");
   assertSemanticAfterImage(input.evidence.currentImage, proposal.afterImage, "Current database image");
 
@@ -102,6 +112,7 @@ export async function recoverAppliedReceipt(input: {
     beforeCompanySnapshotSha256: proposal.currentCompanySnapshotSha256,
     appliedAfterImageSha256: proposal.afterImageSha256,
     seedAfterImageSha256: companyImageSha256(proposal.afterImage),
+    approvedSeedEntrySha256,
     databaseTargetFingerprint: snapshot.databaseTargetFingerprint,
     transactionId,
     auditEventId: input.evidence.auditEventId,

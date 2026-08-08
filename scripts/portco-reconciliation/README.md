@@ -79,6 +79,20 @@ npm run portco:reconciliation:control -- snapshot \
   --expected-database='<independently verified database>'
 ```
 
+If a review task has no direct `productionCompanyIds` binding but research
+resolves it to an existing company, pass `--target-company-id=<company ID>`.
+The override is accepted only when exactly one other immutable queue entry
+binds that ID and the two queue entries identify each other in their
+`candidateCanonicalKeys`. It cannot replace a direct queue target, use a
+one-way candidate link, or choose among ambiguous symmetric links. The selected
+ID and supporting queue task are recorded in the hash-bound task context.
+
+Review tasks also capture every reciprocally linked seed-only queue candidate
+that has no production company and exactly one seed key. Each candidate binds
+its source queue task/hash plus both the raw `baseCompanies` entry hash and the
+fully evaluated pre-proposal seed entry hash. One-way links, ambiguous seed
+keys, missing raw entries, and missing evaluated entries fail snapshotting.
+
 The proposal binds the production baseline and full company before-image. When
 the proposal is recorded, the execution manifest additionally locks the task
 snapshot artifact and its target/dependency state digest. Release and apply
@@ -100,6 +114,22 @@ npm run portco:reconciliation:proposal -- \
   --json=<new-proposal.json> \
   --markdown=<new-proposal.md>
 ```
+
+To retire reviewed seed-only duplicates through the canonical company's
+proposal, add `MERGE_COMPANIES` and list their captured queue task IDs in the
+decision spec's `reviewedSeedRetirementTaskIds`. The generator copies the exact
+task-scoped identities and hashes into the optional
+`reviewedSeedRetirements` proposal field; callers cannot supply arbitrary seed
+names or hashes. The field is optional on durable proposals so older proposal
+hashes remain unchanged.
+
+Seed staging and protected apply export the raw `baseCompanies`, remove the
+current proposal's overlay entry, and rebuild the evaluated pre-proposal seed.
+Both approved hashes must still match. The complete overlay must then contain
+exactly one canonical after-image and none of the retired identities. Seed-only
+retirements never create fake production IDs or database redirects, and the
+approved seed entry is verified as a complete canonical object rather than by
+its proposal/approval hashes alone.
 
 If an attempt fails or becomes blocked, retrying the same task clears its
 volatile snapshot, proposal, approval, receipt, decision, and company-snapshot

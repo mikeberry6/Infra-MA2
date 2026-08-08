@@ -6,7 +6,11 @@ import {
   verifyDatasetSnapshot,
   verifyProposal,
 } from "./artifacts";
-import { verifyApprovedSeedText } from "./approved-seed";
+import {
+  buildApprovedSeedEntry,
+  verifyApprovedSeedProjection,
+  verifyApprovedSeedText,
+} from "./approved-seed";
 import { sha256Text } from "./hash";
 
 function options(argv: string[]): Map<string, string> {
@@ -85,10 +89,11 @@ async function main(): Promise<void> {
 
   const seedArtifactPath = resolve(required(values, "seed-artifact"));
   const seedText = await readFile(seedArtifactPath, "utf8");
-  verifyApprovedSeedText(seedText, {
-    proposalSha256: proposal.proposalSha256,
-    approvalSha256: approval.approvalSha256,
-    afterImageSha256: proposal.afterImageSha256!,
+  const approvedSeedEntry = buildApprovedSeedEntry(proposal, approval, snapshot);
+  verifyApprovedSeedText(seedText, approvedSeedEntry);
+  verifyApprovedSeedProjection({
+    artifact: JSON.parse(seedText) as unknown,
+    expectedEntry: approvedSeedEntry,
   });
 
   const report = {
@@ -104,6 +109,7 @@ async function main(): Promise<void> {
     databaseTargetFingerprint: snapshot.databaseTargetFingerprint,
     seedArtifactSha256: sha256Text(seedText),
     approvedSeedEntryVerified: true,
+    reviewedSeedRetirementCount: proposal.reviewedSeedRetirements?.length ?? 0,
   };
   await writeFile(
     resolve(required(values, "output")),

@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
+  "taskIndex": 41,
+  "companyName": "Pattern Energy Group LP (Pattern Energy)",
+  "generatedAt": "2026-08-08T09:52:04.830Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0041-pattern-energy-group-lp-pattern-energy/attempt-3/approval-recapture/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 41,
+    "taskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
+    "canonicalKey": "pattern-energy-group-lp-pattern-energy|canada",
+    "companyName": "Pattern Energy Group LP (Pattern Energy)",
+    "country": "Canada / United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 9,
+    "managers": [
+      "APG Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "009-apg-infrastructure:holding:013:pattern-energy-group-lp"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://patternenergy.com/",
+      "https://patternenergy.com/pattern-energy-announces-closing-of-equity-investment-from-consortium-headed-by-apg-and-art/"
+    ],
+    "candidateCanonicalKeys": [
+      "pattern-energy-group-lp-pattern-energy|united-states-canada",
+      "pattern-energy-group-lp|united-states",
+      "pattern-energy-group|united-states-canada"
+    ],
+    "rationale": "Census identity matches multiple exact repository candidates: pattern-energy-group-lp-pattern-energy|united-states-canada, pattern-energy-group-lp|united-states. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Census identity matches multiple exact repository candidates: pattern-energy-group-lp-pattern-energy|united-states-canada, pattern-energy-group-lp|united-states."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpj5g400htivhen2tours6",
+    "linkedQueueTaskId": "ledger:0196:pattern-energy-group-lp-pattern-energy:13287f81"
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5g400htivhen2tours6",
+    "name": "Pattern Energy Group LP (Pattern Energy)",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Wind, solar, storage, and transmission development",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Pattern develops, owns, and operates wind, solar, storage, and transmission infrastructure across North America and selected international markets. Its customers are utilities, corporate offtakers, and power markets that contract for renewable energy, capacity, and transmission services under long-duration arrangements. The company follows an asset-heavy independent power producer and developer model with a mix of operating projects and a large development pipeline. Public disclosures describe more than 6 gigawatts of operating capacity and a development portfolio that includes major transmission-led growth projects such as SunZia. Pattern was taken private in 2020 and has continued to add long-duration institutional capital to support development and operating growth. A consortium led by APG and Australian Retirement Trust acquired Riverstone's equity stake in 2025 and joined CPP Investments and management as owners, while exact ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2009,
+    "headquarters": "Texas; New Mexico; California; Canada; Japan",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqg601ejivhen0mxgpjk",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "ABP",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjy0j01qoivhetpk1txdj",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "Sustainable Energies",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkhs702jkivhee71rc8ij",
+        "date": "2009",
+        "event": "Pattern Energy Group was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhso02jlivhe07quj81k",
+        "date": "Sep 2013",
+        "event": "Pattern completed its initial public offering on NASDAQ.",
+        "category": "IPO",
+        "sortDate": "2013-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkht702jmivheh4lwnczd",
+        "date": "Mar 2020",
+        "event": "CPP Investments completed the take-private acquisition of Pattern.",
+        "category": "FINANCING",
+        "sortDate": "2020-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhtq02jnivhejei8n08n",
+        "date": "Dec 2024",
+        "event": "Pattern announced the sale of Riverstone's equity stake to a consortium led by APG and ART.",
+        "category": "DIVESTITURE",
+        "sortDate": "2024-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhub02joivhel9boqkcl",
+        "date": "Jun 9, 2025",
+        "event": "Pattern closed the equity investment from the APG- and ART-headed consortium, which became an owner alongside CPP Investments and Pattern management.",
+        "category": "FINANCING",
+        "sortDate": "2025-06-09T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplczy03l7ivheq3fve90n",
+        "date": "2009",
+        "event": "Public company materials identify 2009 as the founding year for Pattern Energy.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpld0f03l8ivhe4hqhzb2c",
+        "date": "Mar 16, 2020",
+        "event": "CPP Investments completed the take-private acquisition of Pattern Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-03-16T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpld0z03l9ivhe0gwljo17",
+        "date": "Jun 9, 2025",
+        "event": "Pattern announced the closing of an equity investment from a consortium headed by APG and Australian Retirement Trust, which acquired Riverstone's stake.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-06-09T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpld1k03laivheeih7gky9",
+        "date": "Apr 2, 2026",
+        "event": "Pattern completed the acquisition of Cordelio Power, expanding the platform across the United States and Canada.",
+        "category": "EXPANSION",
+        "sortDate": "2026-04-02T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpospb077nivheedvux7lq",
+        "label": "Patternenergy — Pattern Energy Group LP",
+        "url": "https://patternenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Patternenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxposqf077pivhecwy7jpap",
+        "label": "Cppinvestments — Pattern Energy Group LP",
+        "url": "https://www.cppinvestments.com/public-media/headlines/2020/cpp-investments-completes-acquisition-of-pattern-energy-group/",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Cppinvestments transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposri077rivhe63c93q8c",
+        "label": "Announcement date source — APG Infrastructure — Pattern Energy Group LP",
+        "url": "https://patternenergy.com/pattern-energy-announces-equity-investment-from-consortium-headed-by-apg-and-art/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpossi077tivhemvgngy11",
+        "label": "Close date source — APG Infrastructure — Pattern Energy Group LP",
+        "url": "https://patternenergy.com/pattern-energy-announces-closing-of-equity-investment-from-consortium-headed-by-apg-and-art/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdv009iaivhecuj38sv5",
+        "label": "Close date source — CPP Investments — Pattern Energy Group",
+        "url": "https://patternenergy.com/pattern-energy-and-canada-pension-plan-investment-board-complete-transaction/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdvp09ibivhewyj7tbbe",
+        "label": "Close date source — APG Infrastructure — Pattern Energy Group LP",
+        "url": "https://patternenergy.com/pattern-energy-announces-closing-of-equity-investment-from-consortium-headed-by-apg-and-art/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Patternenergy — Pattern Energy Group",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdwe09icivheix6orm8q",
+        "label": "Patternenergy — Cordelio Power",
+        "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Patternenergy transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": null,
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0485:pattern-energy-group:87e3d72d",
+      "sourceQueueEntrySha256": "6fa48bc4875874c7aa5ad6298d57b16fbac1ce62da6b61af02c7e33ecc437730",
+      "name": "Pattern Energy Group",
+      "country": "United States / Canada",
+      "rawSeedEntrySha256": "00412e3c1ff150a7d8386382bbc96989c634bda5f3670983ec8f11447f114e9e",
+      "evaluatedSeedEntrySha256": "00412e3c1ff150a7d8386382bbc96989c634bda5f3670983ec8f11447f114e9e"
+    },
+    {
+      "sourceQueueTaskId": "ledger:0486:pattern-energy-group-lp:d08ef8c1",
+      "sourceQueueEntrySha256": "af7191fb3a8252faabd53f80ca5c9e1b7e5d57f706ac96ce991f5ba09b221478",
+      "name": "Pattern Energy Group LP",
+      "country": "United States",
+      "rawSeedEntrySha256": "9bd8d8e00cb7c278c9e3bfb5c994a076e2367791c1576240b63fab1c98e38e6d",
+      "evaluatedSeedEntrySha256": "9bd8d8e00cb7c278c9e3bfb5c994a076e2367791c1576240b63fab1c98e38e6d"
+    }
+  ],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3kl000eivhezm8dydzo",
+        "name": "APG Asset Management",
+        "updatedAt": "2026-07-23T16:09:11.829Z"
+      },
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjckv00stivhese6a2evl",
+        "companyId": "cmrxpj5g400htivhen2tours6",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:44.451Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
+    "taskIndex": 41,
+    "canonicalKey": "pattern-energy-group-lp-pattern-energy|canada",
+    "capturedAt": "2026-08-08T09:52:04.830Z",
+    "databaseRevision": "company-state:84ed15f09841641ea728a0b1e44648b5e0f117ca42f26c5d28e5a77595eb6f80",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "91f1874c4e611fa8987b1bf1f483cf35e784b4506db734bc1d135dc6f547979b",
+    "productionSnapshotSha256": "dadf4cc582178360a871f9889d2ee925e8670d26870a0007d8f9c8ef9b6d9a59",
+    "targetCompanySnapshotSha256": "84ed15f09841641ea728a0b1e44648b5e0f117ca42f26c5d28e5a77595eb6f80",
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0485:pattern-energy-group:87e3d72d",
+        "sourceQueueEntrySha256": "6fa48bc4875874c7aa5ad6298d57b16fbac1ce62da6b61af02c7e33ecc437730",
+        "name": "Pattern Energy Group",
+        "country": "United States / Canada",
+        "rawSeedEntrySha256": "00412e3c1ff150a7d8386382bbc96989c634bda5f3670983ec8f11447f114e9e",
+        "evaluatedSeedEntrySha256": "00412e3c1ff150a7d8386382bbc96989c634bda5f3670983ec8f11447f114e9e"
+      },
+      {
+        "sourceQueueTaskId": "ledger:0486:pattern-energy-group-lp:d08ef8c1",
+        "sourceQueueEntrySha256": "af7191fb3a8252faabd53f80ca5c9e1b7e5d57f706ac96ce991f5ba09b221478",
+        "name": "Pattern Energy Group LP",
+        "country": "United States",
+        "rawSeedEntrySha256": "9bd8d8e00cb7c278c9e3bfb5c994a076e2367791c1576240b63fab1c98e38e6d",
+        "evaluatedSeedEntrySha256": "9bd8d8e00cb7c278c9e3bfb5c994a076e2367791c1576240b63fab1c98e38e6d"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "19ffeee2a037d9165d8baecac757b885826f65a086e4e23d7211f0db360bad4c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "de874e6daa94b88ee7a753f15060d9db140da61f5cc53f58c746e68f260d8b54",
+      "citationsSha256": "283b49753ff3030af666d25e0bf53287185be60d230da8afa2768ac7bfd3666b",
+      "redirectsSha256": "cadc29ed4c88600924b5677ecc893c99a8fcccf2b1bbc910ec986c075db1d703"
+    },
+    "dependencySha256": "9512516425310c3d764977718d5d109b5dbe14afb7726401b4ff13a107195ddf",
+    "stateSha256": "6884ad0eb6fd5e3b9280463ae53e0d8b37b5203635ff2c727c8476280c233185",
+    "taskSnapshotSha256": "35b9038833185b70f49cd2c08c9146c47485bc1fd50eb92407305bac5d68e54e"
+  },
+  "contextSha256": "89185b92572c9d373b130c9bb7197e3463230b80e50b33e44d7b28e7bff164dc"
+}

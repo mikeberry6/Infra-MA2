@@ -605,12 +605,24 @@ function deriveMutations(
       detail: `Apply approved changes to ${[...new Set(scalarChanges)].join(", ")}.`,
     });
   }
-  if (proposal.retiredCompanyIds.length > 0) {
-    changedFields.push("redirects");
+  const reviewedSeedRetirements = proposal.reviewedSeedRetirements ?? [];
+  if (proposal.retiredCompanyIds.length > 0 || reviewedSeedRetirements.length > 0) {
+    if (proposal.retiredCompanyIds.length > 0) changedFields.push("redirects");
+    if (reviewedSeedRetirements.length > 0) changedFields.push("seedIdentities");
     mutations.push({
       kind: "MERGE_COMPANIES",
-      relationIds: proposal.retiredCompanyIds,
-      detail: `Merge ${proposal.retiredCompanyIds.length} reviewed duplicate(s), rehome relations, and preserve redirects.`,
+      relationIds: [
+        ...proposal.retiredCompanyIds,
+        ...reviewedSeedRetirements.map((retirement) => `seed:${retirement.sourceQueueTaskId}`),
+      ],
+      detail: [
+        proposal.retiredCompanyIds.length > 0
+          ? `merge ${proposal.retiredCompanyIds.length} production duplicate(s)`
+          : null,
+        reviewedSeedRetirements.length > 0
+          ? `retire ${reviewedSeedRetirements.length} reviewed seed-only identity record(s)`
+          : null,
+      ].filter((value): value is string => value !== null).join("; "),
     });
   }
   if (before.companyStatus !== after.companyStatus && after.companyStatus === "REALIZED") {

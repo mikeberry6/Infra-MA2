@@ -166,6 +166,11 @@ export function renderProposalMarkdown(proposal: ReconciliationProposal): string
     .map((mapping) =>
       `| ${markdownCell(mapping.kind)} | ${markdownCell(mapping.retiredRelationId)} | ${markdownCell(mapping.canonicalRelationId)} | ${markdownCell(mapping.rationale)} |`)
     .join("\n");
+  const seedRetirements = [...(proposal.reviewedSeedRetirements ?? [])]
+    .sort((left, right) => compareText(left.sourceQueueTaskId, right.sourceQueueTaskId))
+    .map((retirement) =>
+      `| ${markdownCell(retirement.sourceQueueTaskId)} | ${markdownCell(retirement.name)} | ${markdownCell(retirement.country)} | ${retirement.rawSeedEntrySha256} | ${retirement.evaluatedSeedEntrySha256} |`)
+    .join("\n");
 
   return [
     `# PortCo proposal — ${proposal.companyName}`,
@@ -201,6 +206,12 @@ export function renderProposalMarkdown(proposal: ReconciliationProposal): string
     "| Kind | Retired relation | Canonical relation | Rationale |",
     "| --- | --- | --- | --- |",
     relationMerges || "| — | — | — | None |",
+    "",
+    "## Reviewed seed-only identity retirements",
+    "",
+    "| Queue task | Seed company | Country | Raw entry SHA-256 | Evaluated entry SHA-256 |",
+    "| --- | --- | --- | --- | --- |",
+    seedRetirements || "| — | — | — | — | None |",
     "",
     "## Evidence",
     "",

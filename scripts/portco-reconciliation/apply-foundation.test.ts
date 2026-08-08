@@ -2,6 +2,8 @@ import { describe, expect, it, vi } from "vitest";
 import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import type { PortCo } from "../../prisma/seed-data/portco-types";
+import { baseCompanies } from "../../prisma/seed-data/companies";
 import {
   companyImageSha256,
   finalizeApproval,
@@ -27,8 +29,10 @@ import {
   removeStagedApprovedSeedAfterImage,
   renderApprovedSeedArtifact,
   supersedeStagedApprovedSeedAfterImage,
+  verifyApprovedSeedProjection,
   verifyApprovedSeedText,
 } from "./approved-seed";
+import { sha256Canonical } from "./hash";
 import {
   companyImageFixture,
   FIXTURE_NOW,
@@ -48,6 +52,7 @@ function approvedCorrection(input?: {
   actions?: ReconciliationProposal["actions"];
   retiredCompanyIds?: string[];
   relationMerges?: NonNullable<ReconciliationProposal["relationMerges"]>;
+  reviewedSeedRetirements?: NonNullable<ReconciliationProposal["reviewedSeedRetirements"]>;
   snapshot?: ProductionSnapshot;
 }): {
   proposal: ReconciliationProposal;
@@ -71,6 +76,9 @@ function approvedCorrection(input?: {
     sourceHoldingIds: ["001:acme-infrastructure"],
     retiredCompanyIds: input?.retiredCompanyIds ?? [],
     relationMerges: input?.relationMerges ?? [],
+    ...(input?.reviewedSeedRetirements === undefined
+      ? {}
+      : { reviewedSeedRetirements: input.reviewedSeedRetirements }),
     rationale: "Apply the individually reviewed company after-image.",
     evidence: [{
       url: "https://acme.example.com/owners",
@@ -112,6 +120,21 @@ function freshState(image = companyImageFixture()): FreshApplyState {
     target: { snapshot: snapshot.companies[0], image },
     retiredCompanies: [],
     createNameCountryMatches: [],
+  };
+}
+
+function legacySeedCompany(name: string, country: string): PortCo {
+  return {
+    name,
+    investmentFirm: "CPP Investments",
+    sector: "Power & ET",
+    subsector: "Renewable energy",
+    region: "North America",
+    country,
+    ownershipVehicle: "Sustainable Energies",
+    description: `${name} legacy seed description.`,
+    status: "Active",
+    countryTags: ["United States"],
   };
 }
 
@@ -673,6 +696,38 @@ describe("approved PortCo apply planner", () => {
       }],
     })).toThrow(/valid only for MERGE_COMPANIES/i);
   });
+
+  it("derives a merge mutation for a reviewed seed-only retirement without fake database ids", () => {
+    const before = companyImageFixture();
+    const seedDuplicate = legacySeedCompany("Acme Infrastructure Legacy", "United States");
+    const retirement = {
+      sourceQueueTaskId: "ledger:0485:acme-legacy",
+      sourceQueueEntrySha256: "a".repeat(64),
+      name: seedDuplicate.name,
+      country: seedDuplicate.country,
+      rawSeedEntrySha256: sha256Canonical(seedDuplicate),
+      evaluatedSeedEntrySha256: sha256Canonical(seedDuplicate),
+    };
+    const { proposal, approval } = approvedCorrection({
+      before,
+      after: structuredClone(before),
+      actions: ["MERGE_COMPANIES"],
+      reviewedSeedRetirements: [retirement],
+    });
+
+    const plan = planApprovedApply({
+      proposal,
+      approval,
+      approvedProductionSnapshot: productionSnapshotFixture(),
+      fresh: freshState(before),
+    });
+    expect(plan.retiredCompanyIds).toEqual([]);
+    expect(plan.mutations).toEqual([expect.objectContaining({
+      kind: "MERGE_COMPANIES",
+      relationIds: [`seed:${retirement.sourceQueueTaskId}`],
+    })]);
+    expect(plan.changedFields).toContain("seedIdentities");
+  });
 });
 
 describe("approved local seed after-image", () => {
@@ -711,6 +766,65 @@ describe("approved local seed after-image", () => {
     }]);
   });
 
+  it("verifies raw and evaluated seed-only retirements and leaves one canonical after-image", () => {
+    const duplicateLp = legacySeedCompany("Pattern Energy Group LP", "United States");
+    const duplicateGroup = legacySeedCompany("Pattern Energy Group", "United States / Canada");
+    const reviewedSeedRetirements = [duplicateGroup, duplicateLp].map((company, index) => ({
+      sourceQueueTaskId: `ledger:${485 + index}:pattern-seed-duplicate`,
+      sourceQueueEntrySha256: `${index + 1}`.repeat(64),
+      name: company.name,
+      country: company.country,
+      rawSeedEntrySha256: sha256Canonical(company),
+      evaluatedSeedEntrySha256: sha256Canonical(company),
+    }));
+    const before = companyImageFixture();
+    const { proposal, approval } = approvedCorrection({
+      before,
+      after: structuredClone(before),
+      actions: ["MERGE_COMPANIES"],
+      reviewedSeedRetirements,
+    });
+    const entry = buildApprovedSeedEntry(proposal, approval, productionSnapshotFixture());
+
+    expect(entry.operation).toBe("MERGE");
+    expect(entry.retiredCompanies).toEqual(reviewedSeedRetirements.map(({ name, country }) => ({ name, country })));
+    expect(() => verifyApprovedSeedProjection({
+      artifact: [],
+      expectedEntry: entry,
+      rawSeedCompanies: [duplicateLp, duplicateGroup],
+    })).not.toThrow();
+  });
+
+  it("rejects seed-entry hash drift and any hand-edited retired identity list", () => {
+    const duplicate = legacySeedCompany("Pattern Energy Group", "United States / Canada");
+    const before = companyImageFixture();
+    const { proposal, approval } = approvedCorrection({
+      before,
+      after: structuredClone(before),
+      actions: ["MERGE_COMPANIES"],
+      reviewedSeedRetirements: [{
+        sourceQueueTaskId: "ledger:0485:pattern-seed-duplicate",
+        sourceQueueEntrySha256: "a".repeat(64),
+        name: duplicate.name,
+        country: duplicate.country,
+        rawSeedEntrySha256: sha256Canonical(duplicate),
+        evaluatedSeedEntrySha256: sha256Canonical(duplicate),
+      }],
+    });
+    const entry = buildApprovedSeedEntry(proposal, approval, productionSnapshotFixture());
+    const drifted = { ...duplicate, description: "Changed after approval." };
+    expect(() => verifyApprovedSeedProjection({
+      artifact: [],
+      expectedEntry: entry,
+      rawSeedCompanies: [drifted],
+    })).toThrow(/raw seed entry changed/i);
+
+    const rendered = JSON.parse(renderApprovedSeedArtifact([], entry)) as Array<Record<string, unknown>>;
+    rendered[0] = { ...rendered[0], retiredCompanies: [] };
+    expect(() => verifyApprovedSeedText(`${JSON.stringify(rendered)}\n`, entry))
+      .toThrow(/exactly match the proposal-derived entry/i);
+  });
+
   it("removes only the superseded staged proposal for the same exact task", async () => {
     const directory = await mkdtemp(join(tmpdir(), "portco-approved-seed-"));
     const artifactPath = join(directory, "approved-portco-after-images.json");
@@ -742,6 +856,58 @@ describe("approved local seed after-image", () => {
         newApproved.proposal.proposalSha256,
         unrelatedProposalSha256,
       ]);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+
+  it("atomically replaces a staged seed-retirement proposal before its aliases disappear", async () => {
+    const directory = await mkdtemp(join(tmpdir(), "portco-approved-seed-replace-"));
+    const artifactPath = join(directory, "approved-portco-after-images.json");
+    const patternGroup = baseCompanies.find((company) =>
+      company.name === "Pattern Energy Group" && company.country === "United States / Canada")!;
+    const patternLp = baseCompanies.find((company) =>
+      company.name === "Pattern Energy Group LP" && company.country === "United States")!;
+    const retirement = (company: PortCo, taskId: string) => ({
+      sourceQueueTaskId: taskId,
+      sourceQueueEntrySha256: taskId.endsWith("485") ? "a".repeat(64) : "b".repeat(64),
+      name: company.name,
+      country: company.country,
+      rawSeedEntrySha256: sha256Canonical(company),
+      evaluatedSeedEntrySha256: sha256Canonical(company),
+    });
+    try {
+      const oldApproved = approvedCorrection({
+        before: companyImageFixture(),
+        after: companyImageFixture("Old reviewed canonical after-image."),
+        actions: ["CORRECT_COMPANY", "MERGE_COMPANIES"],
+        reviewedSeedRetirements: [retirement(patternGroup, "task-485")],
+      });
+      const newApproved = approvedCorrection({
+        before: companyImageFixture(),
+        after: companyImageFixture("Superseding reviewed canonical after-image."),
+        actions: ["CORRECT_COMPANY", "MERGE_COMPANIES"],
+        reviewedSeedRetirements: [
+          retirement(patternGroup, "task-485"),
+          retirement(patternLp, "task-486"),
+        ],
+      });
+      const oldEntry = buildApprovedSeedEntry(oldApproved.proposal, oldApproved.approval);
+      const newEntry = buildApprovedSeedEntry(newApproved.proposal, newApproved.approval);
+      await writeFile(artifactPath, `${JSON.stringify([oldEntry], null, 2)}\n`, "utf8");
+
+      await supersedeStagedApprovedSeedAfterImage({
+        artifactPath,
+        supersededProposal: oldApproved.proposal,
+        supersededApproval: oldApproved.approval,
+        supersedingProposal: newApproved.proposal,
+        supersedingApproval: newApproved.approval,
+      });
+
+      const stored = JSON.parse(await readFile(artifactPath, "utf8")) as Array<Record<string, unknown>>;
+      expect(stored).toHaveLength(1);
+      expect(stored[0].proposalSha256).toBe(newApproved.proposal.proposalSha256);
+      expect(sha256Canonical(stored[0])).toBe(sha256Canonical(newEntry));
     } finally {
       await rm(directory, { recursive: true, force: true });
     }
