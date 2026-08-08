@@ -424,6 +424,22 @@ describe("approved PortCo apply planner", () => {
       approvedProductionSnapshot: snapshot,
       fresh,
     }).mutations.map((mutation) => mutation.kind)).toEqual(["MERGE_COMPANIES"]);
+
+    const correctedRetiredAfter = structuredClone(after);
+    correctedRetiredAfter.ownershipPeriods[1].stake = "51%";
+    const correctedRetired = approvedCorrection({
+      before,
+      after: correctedRetiredAfter,
+      actions: ["CORRECT_COMPANY", "MERGE_COMPANIES"],
+      retiredCompanyIds: ["company_retired"],
+      snapshot,
+    });
+    expect(planApprovedApply({
+      ...correctedRetired,
+      approvedProductionSnapshot: snapshot,
+      fresh,
+    }).mutations.map((mutation) => mutation.kind)).toEqual(["CORRECT_COMPANY", "MERGE_COMPANIES"]);
+
     // Re-finalization would change the proposal hash; directly testing the
     // preservation guard through a newly approved proposal keeps lineage real.
     const broken = approvedCorrection({
