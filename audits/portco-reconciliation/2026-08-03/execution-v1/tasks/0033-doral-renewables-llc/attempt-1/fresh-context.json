@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0033:doral-renewables-llc:4621e934",
+  "taskIndex": 33,
+  "companyName": "Doral Renewables LLC",
+  "generatedAt": "2026-08-08T04:49:19.920Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0033-doral-renewables-llc/attempt-1/fresh-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 33,
+    "taskId": "ledger:0033:doral-renewables-llc:4621e934",
+    "canonicalKey": "doral-renewables-llc|united-states",
+    "companyName": "Doral Renewables LLC",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 9,
+    "managers": [
+      "APG Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "009-apg-infrastructure:holding:005:doral-renewables-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj5c700hmivhe7dgfbkt0"
+    ],
+    "seedKeys": [
+      "doral renewables llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://doral-llc.com/",
+      "https://www.globenewswire.com/news-release/2024/06/24/2902871/0/en/Doral-Renewables-LLC-Announces-400-Million-Equity-Investment-from-APG.html"
+    ],
+    "candidateCanonicalKeys": [
+      "doral-renewables|united-states"
+    ],
+    "rationale": "Census candidate doral-renewables|united-states overlaps this record without an exact approved identity decision. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Census candidate doral-renewables|united-states overlaps this record without an exact approved identity decision."
+    ]
+  },
+  "targetCompanyImage": {
+    "id": "cmrxpj5c700hmivhe7dgfbkt0",
+    "name": "Doral Renewables LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Doral Renewables develops, owns, and operates utility-scale solar and storage projects in the United States. Its customer base consists of utilities, corporate offtakers, and wholesale power markets that contract for power, renewable attributes, and grid services. The business follows an asset-heavy independent power producer model with a large development pipeline and direct ownership of utility-scale projects. Public disclosures describe a development portfolio of more than 13 gigawatts across 18 states, anchored by the multi-phase Mammoth Solar development in Indiana. The company combines project development, financing, construction, and long-term ownership, with a focus on utility-scale and agrivoltaic projects. APG invested $400 million on behalf of ABP in 2024 and was described as the largest individual shareholder following the closing.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "Indiana; Pennsylvania; multi-state U.S. operations",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqaz01e9ivhezoq8gkio",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": null,
+        "vehicleName": "ABP",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkh1j02inivhee6pv0ffv",
+        "date": "2019",
+        "event": "Doral Renewables was established as Doral Group's U.S. renewables platform.",
+        "category": "FOUNDING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkh2502ioivhemte42tfg",
+        "date": "Jun 2024",
+        "event": "Doral announced a $400 million minority equity investment from APG.",
+        "category": "FINANCING",
+        "sortDate": "2024-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkh2n02ipivheqp6fsc2l",
+        "date": "Sep 13, 2024",
+        "event": "Doral closed the APG investment and described APG as its largest individual shareholder.",
+        "category": "FINANCING",
+        "sortDate": "2024-09-13T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxporj7075xivhezo615uo5",
+        "label": "Doral Llc — Doral Renewables LLC",
+        "url": "https://doral-llc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Doral Llc company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxporkb075zivhenh2ll5rt",
+        "label": "Announcement date source — APG Infrastructure — Doral Renewables LLC",
+        "url": "https://www.globenewswire.com/news-release/2024/06/24/2902871/0/en/Doral-Renewables-LLC-Announces-400-Million-Equity-Investment-from-APG.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxporle0761ivhelst3lr2b",
+        "label": "Close date source — APG Infrastructure — Doral Renewables LLC",
+        "url": "https://www.globenewswire.com/news-release/2024/09/13/2945843/0/en/Doral-Renewables-LLC-Announces-Closing-of-400-Million-Equity-Investment-from-APG.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpormh0763ivheis4vhdr8",
+        "label": "Assetmanagement — Doral Renewables LLC",
+        "url": "https://assetmanagement.apg.nl/publications/apg-invests-400-million-in-doral-renewables/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Assetmanagement — Doral Renewables LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Doral Renewables LLC",
+    "investmentFirm": "APG Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar and storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ABP",
+    "description": "Doral Renewables develops, owns, and operates utility-scale solar and storage projects in the United States. Its customer base consists of utilities, corporate offtakers, and wholesale power markets that contract for power, renewable attributes, and grid services. The business follows an asset-heavy independent power producer model with a large development pipeline and direct ownership of utility-scale projects. Public disclosures describe a development portfolio of more than 13 gigawatts across 18 states, anchored by the multi-phase Mammoth Solar development in Indiana. The company combines project development, financing, construction, and long-term ownership, with a focus on utility-scale and agrivoltaic projects. APG invested $400 million on behalf of ABP in 2024 and was described as the largest individual shareholder following the closing.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2019,
+    "investmentYear": 2024,
+    "headquarters": "Indiana; Pennsylvania; multi-state U.S. operations",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Doral Renewables was established as Doral Group's U.S. renewables platform.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jun 2024",
+        "event": "Doral announced a $400 million minority equity investment from APG.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 13, 2024",
+        "event": "Doral closed the APG investment and described APG as its largest individual shareholder.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Doral Llc — Doral Renewables LLC",
+        "url": "https://doral-llc.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — APG Infrastructure — Doral Renewables LLC",
+        "url": "https://www.globenewswire.com/news-release/2024/06/24/2902871/0/en/Doral-Renewables-LLC-Announces-400-Million-Equity-Investment-from-APG.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — APG Infrastructure — Doral Renewables LLC",
+        "url": "https://www.globenewswire.com/news-release/2024/09/13/2945843/0/en/Doral-Renewables-LLC-Announces-Closing-of-400-Million-Equity-Investment-from-APG.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Assetmanagement — Doral Renewables LLC",
+        "url": "https://assetmanagement.apg.nl/publications/apg-invests-400-million-in-doral-renewables/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "APG Infrastructure",
+        "ownershipVehicle": "ABP",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3kl000eivhezm8dydzo",
+        "name": "APG Asset Management",
+        "updatedAt": "2026-07-23T16:09:11.829Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0033:doral-renewables-llc:4621e934",
+    "taskIndex": 33,
+    "canonicalKey": "doral-renewables-llc|united-states",
+    "capturedAt": "2026-08-08T04:49:19.920Z",
+    "databaseRevision": "company-state:ff3d7707afb3c9679ec7359bb8e0ac181dfa32f9b16529e27575c433024877e3",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5921a42d10e4ac2f5dfff05d929f179312cb395191855f0838644ce73a0415e5",
+    "productionSnapshotSha256": "24adb47ab69d8040ac73239c2cd77f463dc61133f884259a6f07492b1409fde3",
+    "targetCompanySnapshotSha256": "ff3d7707afb3c9679ec7359bb8e0ac181dfa32f9b16529e27575c433024877e3",
+    "seedEntrySha256": "609941d04d185bfbc82954fd9c0d13b284b346115271fa0acd22fe431e5e22fc",
+    "dependencies": {
+      "ownershipPeriodsSha256": "3c416d60130ddf68f8ff2b511875cfe77bc05208eb3012d661e3919757ba5007",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7a654e205f4f30ac32c11dea3b242ec158c785ca364cb23a69fc51dcf7cc9e90",
+      "citationsSha256": "b2571cece5b6d1b1d6041a519e5de1bd1e72b2937d8808e9e06727509407d8ca",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "5e5eb1c3180612b81f458b81af7736cdb466ed6739287f59fafa88529ab27f1d",
+    "stateSha256": "c14f9a58be25967e4ca323fffabc0ab4a257365c0c80d0f2bbcc7f5c0a738312",
+    "taskSnapshotSha256": "869954cf90f013550f21f115ac81f7247d3836cd5d700e0a8d53f778379d0c6a"
+  },
+  "contextSha256": "6bd3f4785e9954c63069f7655e21c3bb684c9a857afa808526a3ead2498bfdb3"
+}
