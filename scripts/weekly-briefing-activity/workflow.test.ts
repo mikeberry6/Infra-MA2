@@ -18,7 +18,7 @@ import {
   currentApprovalSummary,
 } from "./workflow-packets";
 
-async function buildWorkflowFixture() {
+async function buildWorkflowFixture(generatedAt = "2026-08-08T12:00:00Z") {
   const repoRoot = process.cwd();
   const cutoff = "2026-08-07";
   const snapshot = await captureWeeklyActivityInputs({
@@ -37,8 +37,54 @@ async function buildWorkflowFixture() {
   return buildWorkflowArtifacts({
     repoRoot,
     snapshot,
-    generatedAt: "2026-08-08T12:00:00Z",
+    generatedAt,
   });
+}
+
+function verifiedDirectCandidate(value: Awaited<ReturnType<typeof buildWorkflowFixture>>["manifest"]["records"][number]) {
+  const record = structuredClone(value);
+  const sourceId = record.sourceEvidence[0].sourceId;
+  const fundName = `Verified Fund ${record.legacyId}`;
+  record.scope = "DIRECT_FUND";
+  record.scopeRationale = "The cited fund vehicle is the verified legal acting entity.";
+  record.actors = {
+    buyers: [{
+      name: fundName,
+      entityKind: "FUND",
+      isPrincipal: true,
+      sponsorName: "Verified Sponsor",
+      sourceIds: [sourceId],
+    }],
+    sellers: [],
+    jointVentureParticipants: [],
+  };
+  record.actingEntity = {
+    name: fundName,
+    entityKind: "FUND",
+    side: "BUYER",
+    isOperatingCompany: false,
+    sourceIds: [sourceId],
+  };
+  record.sponsorLineage = [{
+    sponsorName: "Verified Sponsor",
+    entityName: fundName,
+    relationship: "ADVISER",
+    sourceIds: [sourceId],
+    rationale: "The transaction evidence identifies the advised fund vehicle.",
+  }];
+  record.transactionStructure.isBundledAnnouncement = false;
+  record.transactionStructure.isMixedDirectPortfolio = false;
+  record.transactionStructure.newPlatformWithInseparableSeedAcquisition = false;
+  record.transactionStructure.primaryOnlyPortfolioCompanyIssuance = false;
+  record.classificationFacts = {
+    principalActorKind: "FUND",
+    fundVehicleActsAsPrincipal: true,
+    portfolioCompanyActsAsPrincipal: false,
+    fundSellsOrInvests: true,
+    alreadyOwnedOperatingCompany: false,
+  };
+  record.secondReviewRisks = [];
+  return record;
 }
 
 describe("weekly activity review workflow", () => {
@@ -69,10 +115,11 @@ describe("weekly activity review workflow", () => {
     });
     expect(dispositionCounts).toEqual({ KEEP: 395, RECLASSIFY: 8 });
     expect(records.filter((record) => record.priorAuditEvidence.length > 0)).toHaveLength(204);
-    expect(records.filter((record) => record.ambiguityFlags.length > 0)).toHaveLength(169);
+    expect(records.filter((record) => record.secondReviewRisks.length > 0)).toHaveLength(0);
     expect(currentApprovalSummary(artifacts.manifest)).toEqual({
       firstCurrent: 0,
-      secondRequired: 169,
+      secondReviewAssessmentPending: 403,
+      secondRequired: 0,
       secondCurrent: 0,
       unresolved: 403,
     });
@@ -100,6 +147,7 @@ describe("weekly activity review workflow", () => {
     expect(new Set(packetSet.packets.flatMap((packet) => packet.records.map((record) => record.recordId))).size).toBe(403);
     expect(packetSet.files.filter((file) => file.relativePath.endsWith(".packet.json"))).toHaveLength(17);
     expect(packetSet.files.filter((file) => file.relativePath.endsWith(".review.json"))).toHaveLength(17);
+    expect(packetSet.files.every((file) => file.sha256 === sha256Text(file.contents))).toBe(true);
     const firstTemplate = JSON.parse(packetSet.files.find((file) =>
       file.relativePath.endsWith("first-001.review.json"))!.contents);
     expect(firstTemplate.decisions[0]).toMatchObject({
@@ -110,6 +158,280 @@ describe("weekly activity review workflow", () => {
       .toBe(packetSet.packets[0].records[0].recordId);
   });
 
+  it("approves an obvious evidence-backed batch while preserving record-level hashes", () => {
+    const records = artifacts.manifest.records.slice(0, 2).map(verifiedDirectCandidate);
+    const manifest = finalizeActivityManifest({
+      ...artifacts.manifest,
+      expectedCandidateCount: 2,
+      records,
+      totals: computeActivityTotals(records),
+    });
+    const packet = buildReviewPackets({
+      manifest,
+      stage: "FIRST",
+      runDirectory: artifacts.runDirectory,
+    }).packets[0];
+    const updated = applyReviewDecisionFile({
+      manifest,
+      packet,
+      decisionFile: {
+        schemaVersion: 1,
+        artifactType: "WEEKLY_BRIEFING_ACTIVITY_REVIEW_DECISIONS",
+        cutoffDate: manifest.cutoffDate,
+        stage: "FIRST",
+        packetId: packet.packetId,
+        packetSha256: packet.packetSha256,
+        reviewer: "Morgan Smith",
+        reviewedAt: "2026-08-09T16:00:00.000Z",
+        humanAttestation: {
+          performedByHuman: true,
+          evidenceOpened: true,
+          dispositionVerified: true,
+          classificationVerified: true,
+        },
+        decisions: packet.records.map((item) => ({
+          baseRecordId: item.recordId,
+          baseReviewedInputHash: item.baseReviewedInputHash,
+          outputs: [{
+            reviewedRecord: item.record,
+            notes: `Opened the evidence and verified ${item.recordId}.`,
+          }],
+        })),
+      },
+    });
+
+    expect(currentApprovalSummary(updated)).toEqual({
+      firstCurrent: 2,
+      secondReviewAssessmentPending: 0,
+      secondRequired: 0,
+      secondCurrent: 0,
+      unresolved: 0,
+    });
+    const hashes = updated.records.map((record) => record.review.firstReview?.reviewedInputHash);
+    expect(new Set(hashes).size).toBe(2);
+  });
+
+  it("queues only verified risk exceptions after first review and enforces independent second review", () => {
+    const records = artifacts.manifest.records.slice(0, 2).map(verifiedDirectCandidate);
+    const riskRecord = records[1];
+    const firstSource = riskRecord.sourceEvidence[0];
+    const conflictSourceId = `${firstSource.sourceId}-conflict`;
+    riskRecord.sourceEvidence.push({
+      ...structuredClone(firstSource),
+      sourceId: conflictSourceId,
+      title: "Conflicting primary transaction notice",
+      url: "https://independent-primary.example/conflicting-notice",
+    });
+    riskRecord.secondReviewRisks = [{
+      kind: "CONFLICTING_TRANSACTION_FACTS",
+      detail: "Two primary notices report different announcement dates.",
+      sourceIds: [firstSource.sourceId, conflictSourceId],
+    }];
+    const manifest = finalizeActivityManifest({
+      ...artifacts.manifest,
+      expectedCandidateCount: 2,
+      records,
+      totals: computeActivityTotals(records),
+    });
+
+    const prematureSecond = buildReviewPackets({
+      manifest,
+      stage: "SECOND",
+      runDirectory: artifacts.runDirectory,
+    });
+    expect(prematureSecond.packets).toHaveLength(0);
+    expect(currentApprovalSummary(manifest)).toMatchObject({
+      secondReviewAssessmentPending: 2,
+      secondRequired: 0,
+    });
+
+    const firstPacket = buildReviewPackets({
+      manifest,
+      stage: "FIRST",
+      runDirectory: artifacts.runDirectory,
+    }).packets[0];
+    const firstReviewed = applyReviewDecisionFile({
+      manifest,
+      packet: firstPacket,
+      decisionFile: {
+        schemaVersion: 1,
+        artifactType: "WEEKLY_BRIEFING_ACTIVITY_REVIEW_DECISIONS",
+        cutoffDate: manifest.cutoffDate,
+        stage: "FIRST",
+        packetId: firstPacket.packetId,
+        packetSha256: firstPacket.packetSha256,
+        reviewer: "Morgan Smith",
+        reviewedAt: "2026-08-09T16:00:00.000Z",
+        humanAttestation: {
+          performedByHuman: true,
+          evidenceOpened: true,
+          dispositionVerified: true,
+          classificationVerified: true,
+        },
+        decisions: firstPacket.records.map((item) => ({
+          baseRecordId: item.recordId,
+          baseReviewedInputHash: item.baseReviewedInputHash,
+          outputs: [{
+            reviewedRecord: item.record,
+            notes: `Opened and verified the evidence for ${item.recordId}.`,
+          }],
+        })),
+      },
+    });
+    expect(currentApprovalSummary(firstReviewed)).toMatchObject({
+      firstCurrent: 2,
+      secondReviewAssessmentPending: 0,
+      secondRequired: 1,
+      secondCurrent: 0,
+    });
+
+    const secondPacket = buildReviewPackets({
+      manifest: firstReviewed,
+      stage: "SECOND",
+      runDirectory: artifacts.runDirectory,
+    }).packets[0];
+    expect(secondPacket.records.map((item) => item.recordId)).toEqual([riskRecord.recordId]);
+    const secondDecision = {
+      schemaVersion: 1,
+      artifactType: "WEEKLY_BRIEFING_ACTIVITY_REVIEW_DECISIONS",
+      cutoffDate: firstReviewed.cutoffDate,
+      stage: "SECOND",
+      packetId: secondPacket.packetId,
+      packetSha256: secondPacket.packetSha256,
+      reviewer: "Taylor Jones",
+      reviewedAt: "2026-08-09T18:00:00.000Z",
+      humanAttestation: {
+        performedByHuman: true,
+        evidenceOpened: true,
+        dispositionVerified: true,
+        classificationVerified: true,
+      },
+      decisions: secondPacket.records.map((item) => ({
+        baseRecordId: item.recordId,
+        baseReviewedInputHash: item.baseReviewedInputHash,
+        outputs: [{
+          reviewedRecord: item.record,
+          notes: "Independently reopened both conflicting sources and verified the final classification.",
+        }],
+      })),
+    };
+    expect(() => applyReviewDecisionFile({
+      manifest: firstReviewed,
+      packet: secondPacket,
+      decisionFile: { ...secondDecision, reviewer: "Morgan Smith" },
+    })).toThrow(/different human reviewer/i);
+    const twiceReviewed = applyReviewDecisionFile({
+      manifest: firstReviewed,
+      packet: secondPacket,
+      decisionFile: secondDecision,
+    });
+    expect(currentApprovalSummary(twiceReviewed)).toMatchObject({
+      secondRequired: 1,
+      secondCurrent: 1,
+    });
+  });
+
+  it("rejects incomplete, duplicated, stale, or note-free batch decisions", () => {
+    const records = artifacts.manifest.records.slice(0, 2).map(verifiedDirectCandidate);
+    const manifest = finalizeActivityManifest({
+      ...artifacts.manifest,
+      expectedCandidateCount: 2,
+      records,
+      totals: computeActivityTotals(records),
+    });
+    const packet = buildReviewPackets({
+      manifest,
+      stage: "FIRST",
+      runDirectory: artifacts.runDirectory,
+    }).packets[0];
+    const decision = (item: typeof packet.records[number]) => ({
+      baseRecordId: item.recordId,
+      baseReviewedInputHash: item.baseReviewedInputHash,
+      outputs: [{
+        reviewedRecord: item.record,
+        notes: `Opened the sources and verified the legal parties for ${item.recordId}.`,
+      }],
+    });
+    const envelope = {
+      schemaVersion: 1,
+      artifactType: "WEEKLY_BRIEFING_ACTIVITY_REVIEW_DECISIONS",
+      cutoffDate: manifest.cutoffDate,
+      stage: "FIRST",
+      packetId: packet.packetId,
+      packetSha256: packet.packetSha256,
+      reviewer: "Morgan Smith",
+      reviewedAt: "2026-08-09T16:00:00.000Z",
+      humanAttestation: {
+        performedByHuman: true,
+        evidenceOpened: true,
+        dispositionVerified: true,
+        classificationVerified: true,
+      },
+      decisions: packet.records.map(decision),
+    };
+
+    expect(() => applyReviewDecisionFile({
+      manifest,
+      packet,
+      decisionFile: { ...envelope, decisions: [decision(packet.records[0])] },
+    })).toThrow(/cover every packet record/i);
+    expect(() => applyReviewDecisionFile({
+      manifest,
+      packet,
+      decisionFile: { ...envelope, decisions: [decision(packet.records[0]), decision(packet.records[0])] },
+    })).toThrow(/duplicate review decision/i);
+    expect(() => applyReviewDecisionFile({
+      manifest,
+      packet,
+      decisionFile: {
+        ...envelope,
+        decisions: envelope.decisions.map((item, index) => index === 0
+          ? { ...item, baseRecordId: "OUT-OF-PACKET-001" }
+          : item),
+      },
+    })).toThrow(/out-of-packet/i);
+    expect(() => applyReviewDecisionFile({
+      manifest,
+      packet,
+      decisionFile: {
+        ...envelope,
+        decisions: envelope.decisions.map((item, index) => index === 0
+          ? { ...item, baseReviewedInputHash: "a".repeat(64) }
+          : item),
+      },
+    })).toThrow(/review base is stale/i);
+    expect(() => applyReviewDecisionFile({
+      manifest,
+      packet,
+      decisionFile: {
+        ...envelope,
+        decisions: envelope.decisions.map((item, index) => index === 0
+          ? { ...item, outputs: [{ ...item.outputs[0], notes: "" }] }
+          : item),
+      },
+    })).toThrow();
+    expect(() => applyReviewDecisionFile({
+      manifest,
+      packet,
+      decisionFile: {
+        ...envelope,
+        decisions: envelope.decisions.map((item, index) => index === 0
+          ? { ...item, outputs: [{ ...item.outputs[0], notes: "Verified." }] }
+          : item),
+      },
+    })).toThrow(/substantive record-level rationale/i);
+    expect(() => applyReviewDecisionFile({
+      manifest,
+      packet,
+      decisionFile: {
+        ...envelope,
+        decisions: envelope.decisions.map((item, index) => index === 1
+          ? { ...item, outputs: [{ ...item.outputs[0], notes: envelope.decisions[0].outputs[0].notes }] }
+          : item),
+      },
+    })).toThrow(/distinct record-specific review notes/i);
+  });
+
   it("allows only first review to expand a bundled candidate into unique suffixed legal transactions", () => {
     const baseRecord = structuredClone(artifacts.manifest.records[0]);
     const split = (suffix: string) => {
@@ -118,10 +440,11 @@ describe("weekly activity review workflow", () => {
       record.recordId = `${record.legacyId}#${suffix}`;
       record.transactionIdentityKey = `${record.transactionIdentityKey}|${suffix}`;
       record.transactionStructure.isBundledAnnouncement = true;
-      record.ambiguityFlags = [...new Set([
-        ...record.ambiguityFlags,
-        "BUNDLED_ANNOUNCEMENT" as const,
-      ])];
+      record.secondReviewRisks = [{
+        kind: "BUNDLED_LEGAL_TRANSACTIONS",
+        detail: "The primary source contains two legally distinct transactions.",
+        sourceIds: [record.sourceEvidence[0].sourceId],
+      }];
       return record;
     };
     const outputs = [split("asset-a"), split("asset-b")];
@@ -205,7 +528,11 @@ describe("weekly activity review workflow", () => {
       record.target = `${record.target} ${suffix}`;
       record.transactionIdentityKey = `${record.transactionIdentityKey}|${suffix}`;
       record.transactionStructure.isBundledAnnouncement = true;
-      record.ambiguityFlags = ["BUNDLED_ANNOUNCEMENT"];
+      record.secondReviewRisks = [{
+        kind: "BUNDLED_LEGAL_TRANSACTIONS",
+        detail: "The primary source contains two legally distinct transactions.",
+        sourceIds: [sourceId],
+      }];
       return record;
     };
 
@@ -244,6 +571,7 @@ describe("weekly activity review workflow", () => {
     ]);
     expect(currentApprovalSummary(updated)).toMatchObject({
       firstCurrent: 2,
+      secondReviewAssessmentPending: 0,
       secondRequired: 2,
       secondCurrent: 0,
       unresolved: 0,
@@ -265,6 +593,18 @@ describe("weekly activity review workflow", () => {
     expect(frozen?.sha256).toBe(sha256Text(file!.contents));
     expect(frozen?.sha256).toBe(computeNonChartSha256(html));
   });
+
+  it("writes a stable frozen policy under inputs regardless of command timestamp", async () => {
+    const laterArtifacts = await buildWorkflowFixture("2026-08-10T12:00:00Z");
+    const currentPolicy = artifacts.files.find((file) =>
+      file.relativePath.endsWith("/inputs/review-policy.json"));
+    const laterPolicy = laterArtifacts.files.find((file) =>
+      file.relativePath.endsWith("/inputs/review-policy.json"));
+    expect(currentPolicy).toBeDefined();
+    expect(laterPolicy).toBeDefined();
+    expect(laterPolicy?.contents).toBe(currentPolicy?.contents);
+    expect(laterPolicy?.sha256).toBe(currentPolicy?.sha256);
+  }, 15_000);
 
   it("emits a fail-closed Outlook QA approval template", () => {
     const template = artifacts.files.find((file) =>

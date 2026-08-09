@@ -9,14 +9,15 @@ import {
   finalizeActivityManifest,
   hashCanonical,
   isCurrentRecordApproval,
+  sha256Text,
   type ActivityAuditManifest,
   type ActivityRecord,
   type ReviewApproval,
 } from "./index";
 import { artifactFile, type ArtifactFile } from "./workflow-artifacts";
 
-const PACKET_HASH_DOMAIN = "weekly-briefing-activity-review-packet-v1";
-const PACKET_INDEX_HASH_DOMAIN = "weekly-briefing-activity-review-packet-index-v1";
+const PACKET_HASH_DOMAIN = "weekly-briefing-activity-review-packet-v2";
+const PACKET_INDEX_HASH_DOMAIN = "weekly-briefing-activity-review-packet-index-v2";
 
 export type ReviewStage = "FIRST" | "SECOND";
 
@@ -87,7 +88,8 @@ function preferredGroupKey(record: ActivityRecord): string {
 
 function recordNeedsStage(record: ActivityRecord, stage: ReviewStage): boolean {
   if (stage === "FIRST") return !isCurrentRecordApproval(record, record.review.firstReview);
-  return deriveSecondReviewReasons(record).length > 0
+  return isCurrentRecordApproval(record, record.review.firstReview)
+    && deriveSecondReviewReasons(record).length > 0
     && !isCurrentRecordApproval(record, record.review.secondReview);
 }
 
@@ -128,13 +130,13 @@ function markdownForPacket(packet: ReviewPacket): string {
     `Records: ${packet.recordCount}`,
     `Packet hash: \`${packet.packetSha256}\``,
     "",
-    "Open every transaction and ownership source. Verify the universe disposition, parties, date, sector, region, transaction structure, acting principal, sponsor lineage, and authoritative scope. Candidate signals are suggestions only. Edit the matching `.review.json` decision outputs with the verified facts, add record-specific notes, replace the reviewer/timestamp placeholders, set every human-attestation value to `true`, then ingest it with the review command. If one bundled announcement contains multiple legally distinct transactions, add one suffixed output per transaction during first review; otherwise keep exactly one identity-preserving output.",
+    "Open every transaction and ownership source for every decision in this packet. Verify the universe disposition, parties, date, sector, region, transaction structure, acting principal, sponsor lineage, and authoritative scope. Candidate signals and transaction categories are suggestions only. Add a structured second-review risk only when evidence genuinely conflicts, ownership timing remains uncertain, both a fund vehicle and operating company actually transact, or one announcement bundles legally distinct transactions. Edit the matching `.review.json` outputs with the verified facts, add record-specific notes, replace the reviewer/timestamp placeholders, set every human-attestation value to `true`, then ingest it with the review command. If one bundled announcement contains multiple legally distinct transactions, add one suffixed output per transaction during first review; otherwise keep exactly one identity-preserving output.",
     "",
     packet.stage === "SECOND"
       ? "The second reviewer must be independent from the first reviewer and must re-open the evidence."
-      : "Every included record requires this first human review. Ambiguous structures will be queued separately for second review.",
+      : "One named human may approve this evidence-backed batch only after opening every record's evidence. Only verified risk exceptions will be queued separately for second review.",
     "",
-    "| ID | Group | Target | Candidate | Disposition | Structure / second-review flags | Evidence |",
+    "| ID | Group | Target | Candidate | Disposition | Structure / verified second-review risks | Evidence |",
     "| --- | --- | --- | --- | --- | --- | --- |",
   ];
 
@@ -221,8 +223,8 @@ export function assertValidReviewedRecordExpansion(input: {
       throw new Error("Every split output requires a legal-transaction suffix");
     }
     if (!reviewed.transactionStructure.isBundledAnnouncement
-      || !reviewed.ambiguityFlags.includes("BUNDLED_ANNOUNCEMENT")) {
-      throw new Error("Every split output must retain the bundled-announcement second-review flag");
+      || !reviewed.secondReviewRisks.some((risk) => risk.kind === "BUNDLED_LEGAL_TRANSACTIONS")) {
+      throw new Error("Every split output must retain the bundled-legal-transactions second-review risk");
     }
     if (outputIds.has(reviewed.recordId) || suffixes.has(reviewed.splitSuffix)) {
       throw new Error("Split output record IDs and suffixes must be unique");
@@ -290,7 +292,7 @@ export function buildReviewPackets(input: {
     artifactFile(`${directory}/${packet.packetId}.review.json`, reviewTemplate(packet)),
   ]).map((file) => ({
     ...file,
-    sha256: file.sha256 || hashCanonical("weekly-briefing-activity-review-markdown-v1", file.contents),
+    sha256: file.sha256 || sha256Text(file.contents),
   }));
   const indexWithoutHash = {
     schemaVersion: 1 as const,
@@ -329,6 +331,7 @@ export function applyReviewDecisionFile(input: {
     throw new Error("Review decision file must cover every packet record exactly once");
   }
   const seen = new Set<string>();
+  const seenNotes = new Set<string>();
   const replacementById = new Map<string, ActivityRecord[]>();
   const currentById = new Map(manifest.records.map((record) => [record.recordId, record]));
   for (const decision of decisions.decisions) {
@@ -345,6 +348,13 @@ export function applyReviewDecisionFile(input: {
       throw new Error(`Review base is stale for ${baseRecordId}`);
     }
     const outputRecords = decision.outputs.map((output) => output.reviewedRecord);
+    for (const output of decision.outputs) {
+      const normalizedNotes = output.notes.normalize("NFKC").trim().toLocaleLowerCase("en-US").replace(/\s+/g, " ");
+      if (seenNotes.has(normalizedNotes)) {
+        throw new Error("Every batch output requires distinct record-specific review notes");
+      }
+      seenNotes.add(normalizedNotes);
+    }
     assertValidReviewedRecordExpansion({
       baseRecord: current,
       stage: decisions.stage,
@@ -391,18 +401,28 @@ export function applyReviewDecisionFile(input: {
 
 export function currentApprovalSummary(manifest: ActivityAuditManifest): {
   firstCurrent: number;
+  secondReviewAssessmentPending: number;
   secondRequired: number;
   secondCurrent: number;
   unresolved: number;
 } {
   return manifest.records.reduce((summary, record) => {
-    if (isCurrentRecordApproval(record, record.review.firstReview)) summary.firstCurrent += 1;
+    const firstIsCurrent = isCurrentRecordApproval(record, record.review.firstReview);
+    if (firstIsCurrent) summary.firstCurrent += 1;
+    else summary.secondReviewAssessmentPending += 1;
     const needsSecond = deriveSecondReviewReasons(record).length > 0;
-    if (needsSecond) summary.secondRequired += 1;
-    if (needsSecond && isCurrentRecordApproval(record, record.review.secondReview)) summary.secondCurrent += 1;
+    if (firstIsCurrent && needsSecond) summary.secondRequired += 1;
+    if (firstIsCurrent && needsSecond
+      && isCurrentRecordApproval(record, record.review.secondReview)) summary.secondCurrent += 1;
     if (record.scope === "UNRESOLVED") summary.unresolved += 1;
     return summary;
-  }, { firstCurrent: 0, secondRequired: 0, secondCurrent: 0, unresolved: 0 });
+  }, {
+    firstCurrent: 0,
+    secondReviewAssessmentPending: 0,
+    secondRequired: 0,
+    secondCurrent: 0,
+    unresolved: 0,
+  });
 }
 
 export type { ReviewApproval };

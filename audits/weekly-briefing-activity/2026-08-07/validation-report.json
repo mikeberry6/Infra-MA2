@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "artifactType": "WEEKLY_BRIEFING_ACTIVITY_VALIDATION_REPORT",
   "edition": "2026-08-07",
-  "validatedAt": "2026-08-08T12:00:00.000Z",
-  "manifestSha256": "65a7e8fd6bc47b8ac9b76faffcb4f89b5ab6366dd1e7a33ebe38c235833a99c5",
+  "validatedAt": "2026-08-09T21:15:00.000Z",
+  "manifestSha256": "3c1445040ea5b22de71af643b460ec257842448bd9ef47af130bde03496ede48",
   "ok": false,
-  "issueCount": 2831,
+  "issueCount": 2678,
   "codeCounts": {
     "PORTFOLIO_PRINCIPAL_FACT_MISMATCH": 54,
     "PRINCIPAL_ACTOR_KIND_MISMATCH": 403,
@@ -15,15 +15,17 @@
     "MISSING_FIRST_REVIEW": 403,
     "MISSING_ACTING_ENTITY": 349,
     "FUND_PRINCIPAL_FACT_MISMATCH": 261,
-    "MISSING_SECOND_REVIEW": 169,
     "INVALID_RELIABLE_SECONDARY_FALLBACK": 8,
     "UNEXPLAINED_SECONDARY_EVIDENCE": 8,
+    "MISSING_PRINCIPAL_ACTOR_EVIDENCE": 15,
+    "MISSING_ACTING_ENTITY_EVIDENCE": 1,
     "MANIFEST_NOT_APPROVED": 1,
     "FINAL_CONTROL_MISMATCH": 1
   },
   "approvalSummary": {
     "firstCurrent": 0,
-    "secondRequired": 169,
+    "secondReviewAssessmentPending": 403,
+    "secondRequired": 0,
     "secondCurrent": 0,
     "unresolved": 403
   },
@@ -408,12 +410,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "INF-2026-008",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "INF-2026-009",
@@ -447,12 +443,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-009",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-009",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -494,12 +484,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-010",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "INF-2026-010",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -648,12 +632,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-014",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "INF-2026-015",
@@ -728,12 +706,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-016",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-016",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -816,12 +788,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-018",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-018",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -945,12 +911,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-021",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE, RECAPITALIZATION",
-      "recordId": "INF-2026-021",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -1181,12 +1141,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-027",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-028",
@@ -1255,12 +1209,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-029",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-029",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -1340,6 +1288,18 @@
       "path": "actingEntity"
     },
     {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Undisclosed Buyer must cite qualified transaction-and-party evidence",
+      "recordId": "INF-2026-031",
+      "path": "actors"
+    },
+    {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Macquarie Asset Management must cite qualified transaction-and-party evidence",
+      "recordId": "INF-2026-031",
+      "path": "actors"
+    },
+    {
       "code": "MISSING_SPONSOR_LINEAGE",
       "message": "Every included transaction requires documented sponsor lineage",
       "recordId": "INF-2026-031",
@@ -1355,12 +1315,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-031",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-031",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -1439,12 +1393,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-033",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-034",
@@ -1519,12 +1467,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-035",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-035",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -1644,12 +1586,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-038",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "INF-2026-039",
@@ -1683,12 +1619,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-039",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-039",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -1730,12 +1660,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-040",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-040",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -1820,12 +1744,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-042",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-043",
@@ -1908,12 +1826,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-044",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-045",
@@ -1953,12 +1865,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-045",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-045",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -2052,12 +1958,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-048",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-048",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -2175,12 +2075,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-051",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-051",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -2304,12 +2198,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-054",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-054",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -2493,12 +2381,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-059",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-060",
@@ -2579,12 +2461,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-061",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-061",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -2692,12 +2568,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-064",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "INF-2026-065",
@@ -2733,12 +2603,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-065",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-066",
@@ -2766,12 +2630,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-066",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: EXIT",
-      "recordId": "INF-2026-066",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -2807,12 +2665,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-067",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-067",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -2897,12 +2749,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: IPO",
-      "recordId": "INF-2026-069",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-070",
@@ -2942,12 +2788,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-070",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-070",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -3020,12 +2860,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-072",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-073",
@@ -3094,12 +2928,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-075",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE, MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-075",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -3184,12 +3012,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE, MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-077",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-078",
@@ -3231,12 +3053,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-078",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-079",
@@ -3276,12 +3092,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-079",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-079",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -3465,12 +3275,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE, MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-084",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-085",
@@ -3576,12 +3380,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-087",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-088",
@@ -3623,12 +3421,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "INF-2026-088",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-089",
@@ -3665,6 +3457,18 @@
       "path": "actingEntity"
     },
     {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor GI Partners must cite qualified transaction-and-party evidence",
+      "recordId": "INF-2026-089",
+      "path": "actors"
+    },
+    {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Harrison Street must cite qualified transaction-and-party evidence",
+      "recordId": "INF-2026-089",
+      "path": "actors"
+    },
+    {
       "code": "MISSING_SPONSOR_LINEAGE",
       "message": "Every included transaction requires documented sponsor lineage",
       "recordId": "INF-2026-089",
@@ -3680,12 +3484,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-089",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-089",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -3793,12 +3591,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-092",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-093",
@@ -3834,12 +3626,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-093",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-094",
@@ -3867,12 +3653,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-094",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE, MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-094",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -3905,6 +3685,24 @@
       "path": "actingEntity"
     },
     {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Dan Guimont must cite qualified transaction-and-party evidence",
+      "recordId": "INF-2026-095",
+      "path": "actors"
+    },
+    {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Waste Connections must cite qualified transaction-and-party evidence",
+      "recordId": "INF-2026-095",
+      "path": "actors"
+    },
+    {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Macquarie Infrastructure Partners must cite qualified transaction-and-party evidence",
+      "recordId": "INF-2026-095",
+      "path": "actors"
+    },
+    {
       "code": "MISSING_SPONSOR_LINEAGE",
       "message": "Every included transaction requires documented sponsor lineage",
       "recordId": "INF-2026-095",
@@ -3920,12 +3718,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-095",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-095",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -3955,12 +3747,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-096",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-096",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -4080,12 +3866,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-099",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-100",
@@ -4125,12 +3905,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-100",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-100",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -4174,12 +3948,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-101",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-102",
@@ -4219,12 +3987,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-102",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-102",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -4344,12 +4106,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE, PLATFORM_FORMATION",
-      "recordId": "INF-2026-105",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-106",
@@ -4389,12 +4145,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-106",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-106",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -4508,12 +4258,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-109",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-110",
@@ -4588,12 +4332,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-111",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-111",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -4689,12 +4427,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-114",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-115",
@@ -4734,12 +4466,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-115",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-115",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -4810,12 +4536,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-117",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-117",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -4892,12 +4612,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-119",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-119",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -5011,12 +4725,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-122",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-123",
@@ -5099,12 +4807,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-124",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-125",
@@ -5144,12 +4846,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-125",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-125",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -5220,12 +4916,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-127",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-127",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -5351,12 +5041,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-130",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "INF-2026-131",
@@ -5390,12 +5074,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-131",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-131",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -5679,12 +5357,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-138",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-139",
@@ -5724,12 +5396,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-139",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-139",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -5966,12 +5632,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-145",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-146",
@@ -6013,12 +5673,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-146",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-147",
@@ -6058,12 +5712,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-147",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-147",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -6311,12 +5959,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION, MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-154",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-155",
@@ -6391,12 +6033,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-156",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "INF-2026-156",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -6551,12 +6187,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-160",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-161",
@@ -6596,12 +6226,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-161",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: RECAPITALIZATION, MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-161",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -6645,12 +6269,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-162",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-163",
@@ -6684,12 +6302,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-163",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-163",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -6844,12 +6456,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION, MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-167",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-168",
@@ -6891,12 +6497,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-168",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "INF-2026-169",
@@ -6930,12 +6530,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-169",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-169",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -7119,12 +6713,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-174",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "INF-2026-175",
@@ -7187,12 +6775,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-176",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE, MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-176",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -7329,12 +6911,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "INF-2026-180",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-181",
@@ -7458,12 +7034,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE, MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-183",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-184",
@@ -7503,12 +7073,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-184",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-184",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -7552,12 +7116,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: RECAPITALIZATION",
-      "recordId": "INF-2026-185",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-186",
@@ -7585,12 +7143,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-186",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: RECAPITALIZATION",
-      "recordId": "INF-2026-186",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -7698,12 +7250,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-189",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-190",
@@ -7784,12 +7330,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-191",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-191",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -7874,12 +7414,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "INF-2026-193",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-194",
@@ -7962,12 +7496,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-195",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-196",
@@ -8009,12 +7537,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-196",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-197",
@@ -8054,12 +7576,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-197",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-197",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -8220,12 +7736,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-201",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-202",
@@ -8265,12 +7775,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-202",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-202",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -8314,12 +7818,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-203",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "INF-2026-204",
@@ -8353,12 +7851,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-204",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-204",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -8484,12 +7976,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "INF-2026-207",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-209",
@@ -8588,6 +8074,24 @@
       "message": "When primary transaction evidence is unavailable, a reliable secondary source must record the fallback rationale",
       "recordId": "INF-2026-211",
       "path": "sourceEvidence"
+    },
+    {
+      "code": "MISSING_ACTING_ENTITY_EVIDENCE",
+      "message": "The acting legal entity must cite authoritative transaction-and-party evidence or a documented fallback",
+      "recordId": "INF-2026-211",
+      "path": "actingEntity.sourceIds"
+    },
+    {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Kao Data must cite qualified transaction-and-party evidence",
+      "recordId": "INF-2026-211",
+      "path": "actors"
+    },
+    {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor ReAssure Limited must cite qualified transaction-and-party evidence",
+      "recordId": "INF-2026-211",
+      "path": "actors"
     },
     {
       "code": "MISSING_SPONSOR_LINEAGE",
@@ -8765,12 +8269,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-215",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
       "message": "portfolioCompanyActsAsPrincipal must agree with the principal operating-company actor attributions",
       "recordId": "INF-2026-217",
@@ -8882,12 +8380,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "INF-2026-221",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-222",
@@ -8929,12 +8421,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "INF-2026-222",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "INF-2026-223",
@@ -8974,12 +8460,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "INF-2026-223",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "INF-2026-223",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -9050,12 +8530,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-05-02-002",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-05-02-002",
-      "path": "review.secondReview"
     },
     {
       "code": "PORTFOLIO_PRINCIPAL_FACT_MISMATCH",
@@ -9155,12 +8629,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-05-02-005",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-05-02-005",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -9280,12 +8748,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-05-02-008",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-05-02-009",
@@ -9386,6 +8848,18 @@
       "path": "actingEntity"
     },
     {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Patria must cite qualified transaction-and-party evidence",
+      "recordId": "WB-2026-05-16-001",
+      "path": "actors"
+    },
+    {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Patria must cite qualified transaction-and-party evidence",
+      "recordId": "WB-2026-05-16-001",
+      "path": "actors"
+    },
+    {
       "code": "MISSING_SPONSOR_LINEAGE",
       "message": "Every included transaction requires documented sponsor lineage",
       "recordId": "WB-2026-05-16-001",
@@ -9401,12 +8875,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-05-16-001",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-05-16-001",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -9445,6 +8913,12 @@
       "path": "actingEntity"
     },
     {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Copenhagen Infrastructure Partners must cite qualified transaction-and-party evidence",
+      "recordId": "WB-2026-05-16-002",
+      "path": "actors"
+    },
+    {
       "code": "MISSING_SPONSOR_LINEAGE",
       "message": "Every included transaction requires documented sponsor lineage",
       "recordId": "WB-2026-05-16-002",
@@ -9460,12 +8934,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-05-16-002",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "WB-2026-05-16-002",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -9501,12 +8969,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-05-16-003",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-05-16-003",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -9618,12 +9080,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-05-16-006",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-05-16-006",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -9784,12 +9240,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "WB-2026-05-16-010",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-05-16-011",
@@ -9866,12 +9316,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: EXIT",
-      "recordId": "WB-2026-05-16-012",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-05-16-013",
@@ -9913,12 +9357,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-05-16-013",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-05-16-014",
@@ -9958,12 +9396,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-05-16-014",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "WB-2026-05-16-014",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -10229,12 +9661,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-05-23-007",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-05-23-008",
@@ -10300,6 +9726,18 @@
       "path": "actingEntity"
     },
     {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Undisclosed Buyer must cite qualified transaction-and-party evidence",
+      "recordId": "WB-2026-05-23-009",
+      "path": "actors"
+    },
+    {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor CVC must cite qualified transaction-and-party evidence",
+      "recordId": "WB-2026-05-23-009",
+      "path": "actors"
+    },
+    {
       "code": "MISSING_SPONSOR_LINEAGE",
       "message": "Every included transaction requires documented sponsor lineage",
       "recordId": "WB-2026-05-23-009",
@@ -10315,12 +9753,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-05-23-009",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-05-23-009",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -10397,12 +9829,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-06-001",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-06-001",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -10522,12 +9948,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-06-004",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-06-06-005",
@@ -10645,12 +10065,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-06-007",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-06-06-008",
@@ -10721,12 +10135,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-06-009",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-06-06-010",
@@ -10768,12 +10176,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-06-010",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-06-06-011",
@@ -10807,12 +10209,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-06-011",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-06-06-011",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -10856,12 +10252,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-06-13-001",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-06-13-002",
@@ -10901,12 +10291,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-13-002",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-06-13-002",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -10991,12 +10375,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-13-004",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-06-13-005",
@@ -11030,12 +10408,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-13-005",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-13-005",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -11079,12 +10451,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-06-13-006",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-06-13-007",
@@ -11124,12 +10490,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-13-007",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-06-13-007",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -11247,12 +10607,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-13-010",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "WB-2026-06-13-010",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -11417,12 +10771,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-13-014",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-13-014",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -11624,12 +10972,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-20-005",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-06-20-006",
@@ -11753,12 +11095,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-06-20-008",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-06-20-009",
@@ -11839,12 +11175,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-20-010",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-20-010",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -12128,12 +11458,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-27-004",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-06-27-005",
@@ -12243,12 +11567,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-27-007",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-06-27-007",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -12415,12 +11733,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-27-011",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-06-27-012",
@@ -12460,12 +11772,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-06-27-012",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-06-27-012",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -12632,12 +11938,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-07-03-004",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-03-005",
@@ -12679,12 +11979,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-005",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-03-006",
@@ -12724,12 +12018,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-03-006",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-006",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -12806,12 +12094,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-03-008",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-008",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -12937,12 +12219,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-011",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-07-03-012",
@@ -12976,12 +12252,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-03-012",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: IPO",
-      "recordId": "WB-2026-07-03-012",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -13095,12 +12365,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-015",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-03-016",
@@ -13140,12 +12404,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-03-016",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-07-03-016",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -13189,12 +12447,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-017",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-03-018",
@@ -13234,12 +12486,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-03-018",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-018",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -13322,12 +12568,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-03-020",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-020",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -13447,12 +12687,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-023",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-03-024",
@@ -13492,12 +12726,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-03-024",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-024",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -13576,12 +12804,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-03-026",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-10-001",
@@ -13623,12 +12845,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-10-001",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-07-10-002",
@@ -13662,12 +12878,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-10-002",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-10-002",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -14109,12 +13319,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-10-013",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-10-014",
@@ -14195,12 +13399,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-10-015",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-10-015",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -14425,12 +13623,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-17-005",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-17-006",
@@ -14511,12 +13703,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-17-007",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-17-007",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -14724,12 +13910,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-17-012",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-07-17-013",
@@ -14806,12 +13986,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-24-001",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-24-002",
@@ -14851,12 +14025,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-24-002",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-07-24-002",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -15052,12 +14220,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-24-007",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-24-008",
@@ -15097,12 +14259,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-24-008",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-24-008",
-      "path": "review.secondReview"
     },
     {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
@@ -15222,12 +14378,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "WB-2026-07-24-011",
-      "path": "review.secondReview"
-    },
-    {
       "code": "PRINCIPAL_ACTOR_KIND_MISMATCH",
       "message": "principalActorKind must identify a principal actor attribution (UNKNOWN is allowed only when no principal is attributed)",
       "recordId": "WB-2026-07-31-001",
@@ -15296,12 +14446,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-31-002",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-31-002",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -15384,12 +14528,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-31-004",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: PLATFORM_FORMATION",
-      "recordId": "WB-2026-07-31-004",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -15515,12 +14653,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-31-007",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-31-008",
@@ -15560,12 +14692,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-31-008",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-07-31-008",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -15650,12 +14776,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-07-31-010",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-31-011",
@@ -15738,12 +14858,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: IPO",
-      "recordId": "WB-2026-07-31-012",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-31-013",
@@ -15778,6 +14892,12 @@
       "message": "Every included transaction requires an identified acting entity",
       "recordId": "WB-2026-07-31-013",
       "path": "actingEntity"
+    },
+    {
+      "code": "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+      "message": "Principal actor Tallvine must cite qualified transaction-and-party evidence",
+      "recordId": "WB-2026-07-31-013",
+      "path": "actors"
     },
     {
       "code": "MISSING_SPONSOR_LINEAGE",
@@ -15838,12 +14958,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-31-014",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-31-015",
@@ -15885,12 +14999,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-31-015",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-07-31-016",
@@ -15930,12 +15038,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-31-016",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-07-31-016",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -16018,12 +15120,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-07-31-018",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-07-31-018",
-      "path": "review.secondReview"
     },
     {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
@@ -16611,12 +15707,6 @@
       "path": "review.firstReview"
     },
     {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: JOINT_VENTURE",
-      "recordId": "WB-2026-08-07-013",
-      "path": "review.secondReview"
-    },
-    {
       "code": "FUND_PRINCIPAL_FACT_MISMATCH",
       "message": "fundVehicleActsAsPrincipal must agree with the principal direct-fund actor attributions",
       "recordId": "WB-2026-08-07-014",
@@ -16691,12 +15781,6 @@
       "message": "Every candidate disposition requires one human review",
       "recordId": "WB-2026-08-07-015",
       "path": "review.firstReview"
-    },
-    {
-      "code": "MISSING_SECOND_REVIEW",
-      "message": "Independent second review required for: MIXED_SIDE_TRANSACTION, EXIT",
-      "recordId": "WB-2026-08-07-015",
-      "path": "review.secondReview"
     },
     {
       "code": "MANIFEST_NOT_APPROVED",

@@ -176,13 +176,15 @@ approved record-level evidence sets the final control.
 | Gate | Current |
 | --- | ---: |
 | Current first approvals | ${approvals.firstCurrent} |
-| Independent second approvals required | ${approvals.secondRequired} |
+| First reviews still assessing second-review risk | ${approvals.secondReviewAssessmentPending} |
+| Verified exceptions requiring independent second approval | ${approvals.secondRequired} |
 | Current second approvals | ${approvals.secondCurrent} |
 | Unresolved scopes | ${approvals.unresolved} |
 
 No human approvals are manufactured by this workflow. Generate the first-review
-packets, verify each record and its evidence, ingest signed decisions, then
-repeat for the independent second-review queue.
+packets, verify each record and its evidence, and ingest signed decisions. The
+current second-review count is provisional until every first review is current;
+only verified risk exceptions enter the independent second-review queue.
 
 ## Variance against published sector controls
 

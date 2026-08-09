@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import {
   deriveActivityScope,
   deriveSecondReviewReasons,
-  structurallyRequiredAmbiguityFlags,
+  structurallyRequiredSecondReviewRiskKinds,
 } from "./classification";
 import {
   assertDigest,
@@ -19,16 +19,19 @@ import {
   dealRegions,
   dealSectors,
   reviewApprovalSchema,
+  secondReviewRiskKinds,
+  WEEKLY_ACTIVITY_METHODOLOGY_VERSION,
   type ActivityAuditManifest,
   type ActivityRecord,
   type ActivityTotals,
   type ManifestPublicationApproval,
   type ReviewApproval,
 } from "./schema";
+import { normalizeSourceUrl } from "./sources-normalize";
 
-const RECORD_REVIEW_HASH_DOMAIN = "weekly-briefing-activity-record-review-v1";
-const MANIFEST_REVIEW_HASH_DOMAIN = "weekly-briefing-activity-manifest-review-v1";
-const MANIFEST_ARTIFACT_HASH_DOMAIN = "weekly-briefing-activity-manifest-artifact-v1";
+const RECORD_REVIEW_HASH_DOMAIN = "weekly-briefing-activity-record-review-v2";
+const MANIFEST_REVIEW_HASH_DOMAIN = "weekly-briefing-activity-manifest-review-v2";
+const MANIFEST_ARTIFACT_HASH_DOMAIN = "weekly-briefing-activity-manifest-artifact-v2";
 const ZERO_SHA256 = "0".repeat(64);
 
 const INCLUDED_DISPOSITIONS = new Set<ActivityRecord["disposition"]>(["KEEP", "RECLASSIFY"]);
@@ -47,12 +50,23 @@ const PORTFOLIO_PRINCIPAL_ENTITY_KINDS = new Set<ActivityRecord["actors"]["buyer
   "OPERATING_PORTFOLIO_COMPANY",
   "OPERATING_PLATFORM",
 ]);
+const NON_ACTOR_CONFLICT_PURPOSES = new Set<ActivityRecord["sourceEvidence"][number]["purposes"][number]>([
+  "ANNOUNCEMENT_DATE",
+  "SECTOR",
+  "REGION",
+  "TRANSACTION_STRUCTURE",
+  "DUPLICATE_IDENTITY",
+]);
 const REQUIRED_FROZEN_INPUT_KINDS = [
   "ARCHIVED_ISSUES",
   "SEED",
   "PRODUCTION_SNAPSHOT",
   "GIT_HISTORY_SNAPSHOT",
   "PRIOR_FLOW_THROUGH_AUDIT",
+] as const;
+const REQUIRED_FROZEN_INPUT_IDS = [
+  "protected-non-chart-email",
+  "risk-based-review-policy",
 ] as const;
 
 export interface ValidationIssue {
@@ -132,6 +146,19 @@ export function reviewerIdentityIssue(reviewer: string): string | null {
   return null;
 }
 
+export function reviewNoteIssue(notes: string): string | null {
+  const normalized = normalizedName(notes);
+  const words = normalized.split(/[^a-z0-9]+/).filter(Boolean);
+  if (normalized.length < 24 || words.length < 4) {
+    return "Review notes must contain a substantive record-level rationale";
+  }
+  if (/^(?:approved|checked|done|reviewed|verified)(?:\s+(?:deal|evidence|record|transaction))?[.!]?$/i.test(normalized)
+    || /\b(?:todo|tbd|placeholder|pending|replace with)\b/i.test(normalized)) {
+    return "Review notes cannot be generic or placeholder text";
+  }
+  return null;
+}
+
 /** All reviewable facts; review decisions themselves are deliberately absent. */
 export function reviewedRecordInput(
   record: ActivityRecord,
@@ -165,9 +192,32 @@ function issue(
 function evidenceHasAuthoritativeOrExplainedFallback(
   evidence: ActivityRecord["sourceEvidence"],
 ): boolean {
-  return evidence.some((source) => AUTHORITATIVE_SOURCE_TIERS.has(source.tier))
-    || evidence.some((source) => source.tier === "RELIABLE_SECONDARY"
+  return evidence.some(evidenceSourceIsAuthoritativeOrExplainedFallback);
+}
+
+function evidenceSourceIsAuthoritativeOrExplainedFallback(
+  source: ActivityRecord["sourceEvidence"][number],
+): boolean {
+  return AUTHORITATIVE_SOURCE_TIERS.has(source.tier)
+    || (source.tier === "RELIABLE_SECONDARY"
       && hasSubstantiveFallbackRationale(source.fallbackRationale));
+}
+
+function evidenceLocator(source: ActivityRecord["sourceEvidence"][number]): string {
+  if (source.url !== null) return `url:${normalizeSourceUrl(source.url) ?? source.url}`;
+  return `artifact:${source.artifactPath ?? `missing:${source.sourceId}`}`;
+}
+
+function distinctQualifiedEvidence(
+  evidence: ActivityRecord["sourceEvidence"],
+  purposeMatches: (source: ActivityRecord["sourceEvidence"][number]) => boolean,
+): ActivityRecord["sourceEvidence"] {
+  const byLocator = new Map<string, ActivityRecord["sourceEvidence"][number]>();
+  for (const source of evidence) {
+    if (!evidenceSourceIsAuthoritativeOrExplainedFallback(source) || !purposeMatches(source)) continue;
+    byLocator.set(evidenceLocator(source), source);
+  }
+  return [...byLocator.values()];
 }
 
 /**
@@ -221,6 +271,7 @@ function validateClassificationConsistency(record: ActivityRecord): ValidationIs
   const principals = actorAttributions(record).filter((actor) => actor.isPrincipal);
   const directPrincipals = principals.filter((actor) => DIRECT_PRINCIPAL_ENTITY_KINDS.has(actor.entityKind));
   const portfolioPrincipals = principals.filter((actor) => PORTFOLIO_PRINCIPAL_ENTITY_KINDS.has(actor.entityKind));
+  const hasBothPrincipalTypes = directPrincipals.length > 0 && portfolioPrincipals.length > 0;
 
   if (facts.fundVehicleActsAsPrincipal !== (directPrincipals.length > 0)) {
     issues.push(issue(
@@ -319,12 +370,34 @@ function validateClassificationConsistency(record: ActivityRecord): ValidationIs
       "classificationFacts",
     ));
   }
+  if (record.transactionStructure.newPlatformWithInseparableSeedAcquisition
+    && (!facts.fundVehicleActsAsPrincipal
+      || !facts.fundSellsOrInvests
+      || directPrincipals.length === 0)) {
+    issues.push(issue(
+      "INCOMPLETE_PLATFORM_SEED_FUND_FACTS",
+      "A new platform with an inseparable seed acquisition requires a verified transacting fund or fund vehicle",
+      record.recordId,
+      "classificationFacts",
+    ));
+  }
+  if (hasBothPrincipalTypes && !record.transactionStructure.isMixedDirectPortfolio) {
+    issues.push(issue(
+      "UNDECLARED_MIXED_PARTICIPATION",
+      "Simultaneous direct-fund and operating-company principals must be recorded as an actual mixed transaction",
+      record.recordId,
+      "transactionStructure.isMixedDirectPortfolio",
+    ));
+  }
 
   return issues;
 }
 
-function dateValidOwnershipEvidence(record: ActivityRecord): ActivityRecord["ownershipEvidence"] {
-  const actingName = record.actingEntity === null ? null : normalizedName(record.actingEntity.name);
+function dateValidOwnershipEvidence(
+  record: ActivityRecord,
+  entityName: string | null = record.actingEntity?.name ?? null,
+): ActivityRecord["ownershipEvidence"] {
+  const actingName = entityName === null ? null : normalizedName(entityName);
   return record.ownershipEvidence.filter((evidence) => {
     if (!evidence.confirmsOwnershipOnAnnouncementDate) return false;
     if (actingName === null || normalizedName(evidence.entityName) !== actingName) return false;
@@ -366,14 +439,33 @@ export function validateRecordData(record: ActivityRecord): ValidationIssue[] {
     ));
   }
 
-  const requiredFlags = structurallyRequiredAmbiguityFlags(record);
-  const missingFlags = requiredFlags.filter((flag) => !record.ambiguityFlags.includes(flag));
-  if (missingFlags.length > 0) {
+  const riskKinds = new Set(record.secondReviewRisks.map((risk) => risk.kind));
+  const requiredRiskKinds = structurallyRequiredSecondReviewRiskKinds(record);
+  const missingRiskKinds = requiredRiskKinds.filter((kind) => !riskKinds.has(kind));
+  if (missingRiskKinds.length > 0) {
     issues.push(issue(
-      "MISSING_AMBIGUITY_FLAG",
-      `Transaction structure requires ambiguity flags: ${missingFlags.join(", ")}`,
+      "MISSING_SECOND_REVIEW_RISK",
+      `Verified transaction structure requires second-review risks: ${missingRiskKinds.join(", ")}`,
       record.recordId,
-      "ambiguityFlags",
+      "secondReviewRisks",
+    ));
+  }
+  if (riskKinds.has("ACTUAL_MIXED_DIRECT_PORTFOLIO")
+    && !record.transactionStructure.isMixedDirectPortfolio) {
+    issues.push(issue(
+      "MIXED_RISK_WITHOUT_MIXED_STRUCTURE",
+      "Actual mixed-participation risk requires isMixedDirectPortfolio to be true",
+      record.recordId,
+      "secondReviewRisks",
+    ));
+  }
+  if (riskKinds.has("BUNDLED_LEGAL_TRANSACTIONS")
+    && !record.transactionStructure.isBundledAnnouncement) {
+    issues.push(issue(
+      "BUNDLED_RISK_WITHOUT_BUNDLED_STRUCTURE",
+      "Bundled legal-transaction risk requires isBundledAnnouncement to be true",
+      record.recordId,
+      "secondReviewRisks",
     ));
   }
 
@@ -424,6 +516,84 @@ export function validateRecordData(record: ActivityRecord): ValidationIssue[] {
     }
   }
 
+  const sourceById = new Map(record.sourceEvidence.map((source) => [source.sourceId, source]));
+  for (const risk of record.secondReviewRisks) {
+    const riskSources = risk.sourceIds
+      .map((sourceId) => sourceById.get(sourceId))
+      .filter((source): source is ActivityRecord["sourceEvidence"][number] => source !== undefined);
+    if (riskSources.length !== risk.sourceIds.length
+      || !riskSources.every(evidenceSourceIsAuthoritativeOrExplainedFallback)) {
+      issues.push(issue(
+        "UNSUPPORTED_SECOND_REVIEW_RISK",
+        `${risk.kind} must cite only authoritative evidence or documented reliable-secondary fallbacks`,
+        record.recordId,
+        "secondReviewRisks",
+      ));
+    }
+    const hasSharedTransactionConflictPurpose = [...NON_ACTOR_CONFLICT_PURPOSES].some((purpose) =>
+      distinctQualifiedEvidence(
+        riskSources,
+        (source) => source.purposes.includes(purpose),
+      ).length >= 2);
+    if (risk.kind === "CONFLICTING_TRANSACTION_FACTS"
+      && !hasSharedTransactionConflictPurpose) {
+      issues.push(issue(
+        "INSUFFICIENT_TRANSACTION_CONFLICT_EVIDENCE",
+        "Conflicting non-actor transaction facts require two distinct, individually qualified sources marked for the same affected fact",
+        record.recordId,
+        "secondReviewRisks",
+      ));
+    }
+    const distinctActorConflictSources = distinctQualifiedEvidence(
+      riskSources,
+      (source) => source.purposes.includes("TRANSACTION") && source.purposes.includes("PARTIES"),
+    );
+    if (risk.kind === "CONFLICTING_ACTOR_ATTRIBUTION" && distinctActorConflictSources.length < 2) {
+      issues.push(issue(
+        "INSUFFICIENT_ACTOR_CONFLICT_EVIDENCE",
+        "Conflicting actor attribution requires two distinct, individually qualified transaction-and-party sources",
+        record.recordId,
+        "secondReviewRisks",
+      ));
+    }
+    const distinctOwnershipSources = distinctQualifiedEvidence(
+      riskSources,
+      (source) => source.purposes.includes("OWNERSHIP"),
+    );
+    if (risk.kind === "OWNERSHIP_TIMING_UNCERTAIN" && distinctOwnershipSources.length < 2) {
+      issues.push(issue(
+        "INSUFFICIENT_OWNERSHIP_TIMING_EVIDENCE",
+        "Uncertain ownership timing requires two distinct, individually qualified ownership sources",
+        record.recordId,
+        "secondReviewRisks",
+      ));
+    }
+    if (risk.kind === "ACTUAL_MIXED_DIRECT_PORTFOLIO"
+      && distinctQualifiedEvidence(
+        riskSources,
+        (source) => source.purposes.includes("TRANSACTION") && source.purposes.includes("PARTIES"),
+      ).length === 0) {
+      issues.push(issue(
+        "MISSING_MIXED_PARTY_EVIDENCE",
+        "Actual mixed participation must cite qualified transaction-and-party evidence",
+        record.recordId,
+        "secondReviewRisks",
+      ));
+    }
+    if (risk.kind === "BUNDLED_LEGAL_TRANSACTIONS"
+      && distinctQualifiedEvidence(
+        riskSources,
+        (source) => source.purposes.includes("TRANSACTION_STRUCTURE"),
+      ).length === 0) {
+      issues.push(issue(
+        "MISSING_BUNDLED_STRUCTURE_EVIDENCE",
+        "Bundled legal transactions must cite qualified transaction-structure evidence",
+        record.recordId,
+        "secondReviewRisks",
+      ));
+    }
+  }
+
   if (included && record.actingEntity === null) {
     issues.push(issue(
       "MISSING_ACTING_ENTITY",
@@ -431,6 +601,68 @@ export function validateRecordData(record: ActivityRecord): ValidationIssue[] {
       record.recordId,
       "actingEntity",
     ));
+  } else if (included && record.actingEntity !== null) {
+    const actingSources = record.actingEntity.sourceIds
+      .map((sourceId) => sourceById.get(sourceId))
+      .filter((source): source is ActivityRecord["sourceEvidence"][number] => source !== undefined)
+      .filter((source) => source.purposes.includes("TRANSACTION") && source.purposes.includes("PARTIES"));
+    if (actingSources.length === 0 || !evidenceHasAuthoritativeOrExplainedFallback(actingSources)) {
+      issues.push(issue(
+        "MISSING_ACTING_ENTITY_EVIDENCE",
+        "The acting legal entity must cite authoritative transaction-and-party evidence or a documented fallback",
+        record.recordId,
+        "actingEntity.sourceIds",
+      ));
+    }
+  }
+  if (included) {
+    for (const actor of actorAttributions(record).filter((candidate) => candidate.isPrincipal)) {
+      const principalSources = actor.sourceIds
+        .map((sourceId) => sourceById.get(sourceId))
+        .filter((source): source is ActivityRecord["sourceEvidence"][number] => source !== undefined);
+      const qualifiedSources = distinctQualifiedEvidence(
+        principalSources,
+        (source) => source.purposes.includes("TRANSACTION") && source.purposes.includes("PARTIES"),
+      );
+      if (qualifiedSources.length === 0) {
+        issues.push(issue(
+          "MISSING_PRINCIPAL_ACTOR_EVIDENCE",
+          `Principal actor ${actor.name} must cite qualified transaction-and-party evidence`,
+          record.recordId,
+          "actors",
+        ));
+      }
+    }
+  }
+  if (record.transactionStructure.isMixedDirectPortfolio) {
+    const portfolioPrincipals = actorAttributions(record).filter((actor) =>
+      actor.isPrincipal && PORTFOLIO_PRINCIPAL_ENTITY_KINDS.has(actor.entityKind));
+    if (!record.classificationFacts.alreadyOwnedOperatingCompany) {
+      issues.push(issue(
+        "MISSING_MIXED_PRIOR_OWNERSHIP_FACT",
+        "Actual mixed activity requires the operating-company constituent to have been portfolio-owned on the announcement date",
+        record.recordId,
+        "classificationFacts.alreadyOwnedOperatingCompany",
+      ));
+    }
+    for (const entityName of new Set(portfolioPrincipals.map((actor) => actor.name))) {
+      const validOwnership = dateValidOwnershipEvidence(record, entityName);
+      const ownershipSources = validOwnership.flatMap((evidence) =>
+        evidence.sourceIds
+          .map((sourceId) => sourceById.get(sourceId))
+          .filter((source): source is ActivityRecord["sourceEvidence"][number] => source !== undefined));
+      if (validOwnership.length === 0 || distinctQualifiedEvidence(
+        ownershipSources,
+        (source) => source.purposes.includes("OWNERSHIP"),
+      ).length === 0) {
+        issues.push(issue(
+          "MISSING_MIXED_DATE_VALID_OWNERSHIP",
+          `Mixed operating-company principal ${entityName} requires qualified ownership evidence valid on the announcement date`,
+          record.recordId,
+          "ownershipEvidence",
+        ));
+      }
+    }
   }
   if (included && record.sponsorLineage.length === 0) {
     issues.push(issue(
@@ -447,13 +679,13 @@ export function validateRecordData(record: ActivityRecord): ValidationIssue[] {
       ...record.actors.sellers,
       ...record.actors.jointVentureParticipants,
     ];
-    const hasDirectActor = attributedActors.some((actor) => [
+    const hasDirectActor = attributedActors.some((actor) => actor.isPrincipal && [
       "FUND",
       "ADVISED_VEHICLE",
       "CO_INVESTMENT_VEHICLE",
       "NON_OPERATING_ACQUISITION_SPV",
     ].includes(actor.entityKind));
-    const hasPortfolioActor = attributedActors.some((actor) => [
+    const hasPortfolioActor = attributedActors.some((actor) => actor.isPrincipal && [
       "OPERATING_PORTFOLIO_COMPANY",
       "OPERATING_PLATFORM",
     ].includes(actor.entityKind));
@@ -546,6 +778,10 @@ export function validateRecordApproval(record: ActivityRecord): ValidationIssue[
     if (identityProblem) {
       issues.push(issue("INVALID_FIRST_REVIEWER", identityProblem, record.recordId, "review.firstReview.reviewer"));
     }
+    const notesProblem = reviewNoteIssue(first.notes);
+    if (notesProblem) {
+      issues.push(issue("INVALID_FIRST_REVIEW_NOTES", notesProblem, record.recordId, "review.firstReview.notes"));
+    }
     if (!digestsEqual(first.reviewedInputHash, currentHash)) {
       issues.push(issue(
         "STALE_FIRST_REVIEW",
@@ -569,6 +805,10 @@ export function validateRecordApproval(record: ActivityRecord): ValidationIssue[
     const identityProblem = reviewerIdentityIssue(second.reviewer);
     if (identityProblem) {
       issues.push(issue("INVALID_SECOND_REVIEWER", identityProblem, record.recordId, "review.secondReview.reviewer"));
+    }
+    const notesProblem = reviewNoteIssue(second.notes);
+    if (notesProblem) {
+      issues.push(issue("INVALID_SECOND_REVIEW_NOTES", notesProblem, record.recordId, "review.secondReview.notes"));
     }
     if (!digestsEqual(second.reviewedInputHash, currentHash)) {
       issues.push(issue(
@@ -596,6 +836,8 @@ export function createRecordReviewApproval(
 ): ReviewApproval {
   const identityProblem = reviewerIdentityIssue(input.reviewer);
   if (identityProblem) throw new Error(identityProblem);
+  const notesProblem = reviewNoteIssue(input.notes);
+  if (notesProblem) throw new Error(notesProblem);
   return reviewApprovalSchema.parse({
     decision: "APPROVED",
     reviewer: input.reviewer.trim(),
@@ -629,6 +871,9 @@ export function applyRecordReview(
     });
   }
 
+  if (deriveSecondReviewReasons(record).length === 0) {
+    throw new Error("Second review is allowed only for a verified second-review risk");
+  }
   const first = record.review.firstReview;
   if (!isCurrentRecordApproval(record, first)) {
     throw new Error("A current first review is required before second review");
@@ -731,8 +976,41 @@ export function validateManifestDataGates(manifest: ActivityAuditManifest): {
       issues.push(issue("MISSING_FROZEN_INPUT", `Required frozen input is missing: ${kind}`, undefined, "frozenInputs"));
     }
   }
+  const frozenInputIds = new Set(manifest.frozenInputs.map((input) => input.inputArtifactId));
+  for (const inputId of REQUIRED_FROZEN_INPUT_IDS) {
+    if (!frozenInputIds.has(inputId)) {
+      issues.push(issue(
+        "MISSING_FROZEN_INPUT",
+        `Required frozen input is missing: ${inputId}`,
+        undefined,
+        "frozenInputs",
+      ));
+    }
+  }
 
-  for (const record of manifest.records) issues.push(...validateRecordApproval(record));
+  const firstReviewNotes = new Map<string, string>();
+  const secondReviewNotes = new Map<string, string>();
+  for (const record of manifest.records) {
+    issues.push(...validateRecordApproval(record));
+    for (const [stage, approval, seenNotes] of [
+      ["FIRST", record.review.firstReview, firstReviewNotes],
+      ["SECOND", record.review.secondReview, secondReviewNotes],
+    ] as const) {
+      if (approval === null) continue;
+      const normalizedNotes = normalizedName(approval.notes);
+      const existingRecordId = seenNotes.get(normalizedNotes);
+      if (existingRecordId !== undefined) {
+        issues.push(issue(
+          `DUPLICATE_${stage}_REVIEW_NOTES`,
+          `${stage === "FIRST" ? "First" : "Second"}-review notes duplicate ${existingRecordId}; every reviewed record requires a distinct record-specific rationale`,
+          record.recordId,
+          `review.${stage === "FIRST" ? "firstReview" : "secondReview"}.notes`,
+        ));
+      } else {
+        seenNotes.set(normalizedNotes, record.recordId);
+      }
+    }
+  }
 
   const included = manifest.records.filter((record) => INCLUDED_DISPOSITIONS.has(record.disposition));
   const identityToRecord = new Map<string, string>();
@@ -1118,6 +1396,183 @@ function validateFrozenPublicationContracts(
           "MALFORMED_PRODUCTION_SNAPSHOT",
         );
         issues.push(...parsedProduction.issues);
+      }
+    }
+  }
+
+  const policyInputs = manifest.frozenInputs.filter(
+    (input) => input.inputArtifactId === "risk-based-review-policy",
+  );
+  if (policyInputs.length !== 1) {
+    issues.push(issue(
+      "FROZEN_REVIEW_POLICY_CARDINALITY",
+      `Publication requires exactly one risk-based review policy; found ${policyInputs.length}`,
+      undefined,
+      "frozenInputs",
+    ));
+  } else {
+    const input = policyInputs[0];
+    const parsedPolicy = readFrozenJson(input, repositoryRoot, "MALFORMED_REVIEW_POLICY");
+    issues.push(...parsedPolicy.issues);
+    if (parsedPolicy.value !== undefined) {
+      if (!isObject(parsedPolicy.value)) {
+        issues.push(issue(
+          "MALFORMED_REVIEW_POLICY",
+          "Frozen review policy must be a JSON object",
+          undefined,
+          `frozenInputs.${input.inputArtifactId}`,
+        ));
+      } else {
+        const policy = parsedPolicy.value;
+        const policyHash = policy.policySha256;
+        const expectedPolicyHash = hashCanonical(
+          "weekly-briefing-activity-review-policy-v2",
+          withoutKeys(policy, ["policySha256"]),
+        );
+        if (typeof policyHash !== "string" || !digestsEqual(policyHash, expectedPolicyHash)) {
+          issues.push(issue(
+            "REVIEW_POLICY_HASH_MISMATCH",
+            "Frozen review policy self-hash does not match its contents",
+            undefined,
+            `frozenInputs.${input.inputArtifactId}.policySha256`,
+          ));
+        }
+        const scopeRules = isObject(policy.scopeRules) ? policy.scopeRules : {};
+        const riskEvidence = isObject(policy.riskEvidence) ? policy.riskEvidence : {};
+        const policyIsCurrent = policy.methodologyVersion === WEEKLY_ACTIVITY_METHODOLOGY_VERSION
+          && policy.schemaVersion === 1
+          && policy.artifactType === "WEEKLY_BRIEFING_ACTIVITY_REVIEW_POLICY"
+          && policy.cutoff === manifest.cutoffDate
+          && typeof policy.adoptedAt === "string"
+          && !Number.isNaN(Date.parse(policy.adoptedAt))
+          && policy.authorizationScope === "METHODOLOGY_DIRECTION_NOT_RECORD_APPROVAL"
+          && policy.classificationBasis === "VERIFIED_LEGAL_ACTING_ENTITY"
+          && Array.isArray(scopeRules.directPrincipalKinds)
+          && JSON.stringify(scopeRules.directPrincipalKinds) === JSON.stringify([
+            "FUND",
+            "ADVISED_VEHICLE",
+            "CO_INVESTMENT_VEHICLE",
+            "NON_OPERATING_ACQUISITION_SPV",
+          ])
+          && Array.isArray(scopeRules.portfolioPrincipalKinds)
+          && JSON.stringify(scopeRules.portfolioPrincipalKinds) === JSON.stringify([
+            "OPERATING_PORTFOLIO_COMPANY",
+            "OPERATING_PLATFORM",
+          ])
+          && scopeRules.portfolioRequiresDateValidPriorOwnership === true
+          && scopeRules.fundExitIsDirect === true
+          && scopeRules.operatingCompanyAssetSaleIsPortfolio === true
+          && scopeRules.newPlatformWithInseparableSeedIsDirect === true
+          && scopeRules.primaryOnlyPortfolioIssuanceIsPortfolioUnlessFundActs === true
+          && scopeRules.categoryLabelsNeverDetermineScope === true
+          && policy.firstReviewRequiredForEveryCandidate === true
+          && Array.isArray(policy.secondReviewRiskKinds)
+          && JSON.stringify(policy.secondReviewRiskKinds) === JSON.stringify(secondReviewRiskKinds)
+          && Array.isArray(policy.categoryOnlySecondReviewTriggers)
+          && policy.categoryOnlySecondReviewTriggers.length === 0
+          && isObject(policy.batchApproval)
+          && policy.batchApproval.allowed === true
+          && policy.batchApproval.recordLevelEvidenceRequired === true
+          && policy.batchApproval.recordLevelNotesRequired === true
+          && policy.batchApproval.recordLevelReviewedInputHashRequired === true
+          && policy.mixedTransactionPrecedence === "COUNT_ONCE_AS_DIRECT_RETAIN_BOTH_ATTRIBUTIONS"
+          && policy.evidenceThreshold === "TRANSACTION_AND_PARTY_EVIDENCE_PLUS_DATE_VALID_OWNERSHIP_FOR_PORTFOLIO"
+          && riskEvidence.conflictsRequireTwoDistinctQualifiedLocators === true
+          && riskEvidence.duplicateSourceLocatorsCountOnce === true
+          && riskEvidence.everyPrincipalActorRequiresTransactionAndPartyEvidence === true
+          && policy.finalControl === "EVIDENCE_DERIVED_NOT_FORCED_TO_393_OR_398";
+        if (!policyIsCurrent) {
+          issues.push(issue(
+            "REVIEW_POLICY_CONTRACT_MISMATCH",
+            "Frozen review policy does not match the current risk-based methodology contract",
+            undefined,
+            `frozenInputs.${input.inputArtifactId}`,
+          ));
+        }
+      }
+    }
+  }
+
+  const baselineAmendmentInputs = manifest.frozenInputs.filter(
+    (input) => input.inputArtifactId === "non-chart-baseline-amendment",
+  );
+  const originalBaselineInputs = manifest.frozenInputs.filter(
+    (input) => input.inputArtifactId === "protected-non-chart-email-original",
+  );
+  if (baselineAmendmentInputs.length > 0 || originalBaselineInputs.length > 0) {
+    if (baselineAmendmentInputs.length !== 1 || originalBaselineInputs.length !== 1) {
+      issues.push(issue(
+        "FROZEN_BASELINE_AMENDMENT_CARDINALITY",
+        "A non-chart baseline amendment requires exactly one amendment, one preserved original baseline, and one active baseline",
+        undefined,
+        "frozenInputs",
+      ));
+    } else {
+      const amendmentInput = baselineAmendmentInputs[0];
+      const originalInput = originalBaselineInputs[0];
+      const activeInput = manifest.frozenInputs.find((input) =>
+        input.inputArtifactId === "protected-non-chart-email");
+      const parsedAmendment = readFrozenJson(
+        amendmentInput,
+        repositoryRoot,
+        "MALFORMED_BASELINE_AMENDMENT",
+      );
+      issues.push(...parsedAmendment.issues);
+      if (parsedAmendment.value !== undefined) {
+        if (!isObject(parsedAmendment.value)
+          || !isObject(parsedAmendment.value.previousBaseline)
+          || !isObject(parsedAmendment.value.activeBaseline)
+          || !isObject(parsedAmendment.value.july31HistoricalEmail)
+          || !isObject(parsedAmendment.value.approvedEditionIndex)) {
+          issues.push(issue(
+            "MALFORMED_BASELINE_AMENDMENT",
+            "Frozen non-chart baseline amendment is missing its required structured provenance",
+            undefined,
+            `frozenInputs.${amendmentInput.inputArtifactId}`,
+          ));
+        } else {
+          const amendment = parsedAmendment.value;
+          const previous = amendment.previousBaseline as Record<string, unknown>;
+          const active = amendment.activeBaseline as Record<string, unknown>;
+          const july31 = amendment.july31HistoricalEmail as Record<string, unknown>;
+          const approvedIndex = amendment.approvedEditionIndex as Record<string, unknown>;
+          const amendmentHash = amendment.amendmentSha256;
+          const expectedHash = hashCanonical(
+            "weekly-briefing-activity-non-chart-amendment-v1",
+            withoutKeys(amendment, ["amendmentSha256"]),
+          );
+          if (typeof amendmentHash !== "string" || !digestsEqual(amendmentHash, expectedHash)) {
+            issues.push(issue(
+              "BASELINE_AMENDMENT_HASH_MISMATCH",
+              "Frozen non-chart baseline amendment self-hash does not match its contents",
+              undefined,
+              `frozenInputs.${amendmentInput.inputArtifactId}.amendmentSha256`,
+            ));
+          }
+          const contractMatches = activeInput !== undefined
+            && amendment.schemaVersion === 1
+            && amendment.artifactType === "WEEKLY_BRIEFING_NON_CHART_BASELINE_AMENDMENT"
+            && amendment.edition === manifest.cutoffDate
+            && amendment.authorizationScope === "PRESENTATION_BASELINE_ONLY_NOT_RECORD_APPROVAL"
+            && amendment.chartBlockByteIdentical === true
+            && amendment.underlyingTransactionMetadataChanged === false
+            && previous.protectedNonChartPath === originalInput.path
+            && previous.protectedNonChartSha256 === originalInput.sha256
+            && active.protectedNonChartPath === activeInput.path
+            && active.protectedNonChartSha256 === activeInput.sha256
+            && typeof previous.chartBlockSha256 === "string"
+            && previous.chartBlockSha256 === active.chartBlockSha256
+            && july31.unchanged === true
+            && approvedIndex.august7Approved === false;
+          if (!contractMatches) {
+            issues.push(issue(
+              "BASELINE_AMENDMENT_CONTRACT_MISMATCH",
+              "Frozen non-chart baseline amendment does not prove a presentation-only change with a byte-identical chart block",
+              undefined,
+              `frozenInputs.${amendmentInput.inputArtifactId}`,
+            ));
+          }
+        }
       }
     }
   }

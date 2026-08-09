@@ -10,10 +10,10 @@ The version-controlled run for an edition lives at
 The seed, archived email cards, production snapshot, and relevant Git history
 are frozen and hashed before review. Every candidate receives a universe
 disposition. Every included record must have a current first approval, and
-ambiguous structures must also have an independent second approval. Changing a
-reviewed party, announcement date, source, ownership fact, sector, region, or
-transaction structure changes the reviewed-input hash and makes the approval
-stale.
+only a verified risk exception receives an independent second approval.
+Changing a reviewed party, acting entity, announcement date, source, ownership
+fact, sector, region, transaction structure, or second-review risk changes the
+reviewed-input hash and makes the approval stale.
 
 No command writes by default. Add `--write` only after reviewing its dry-run
 summary. Email rendering has the stricter `--write` gate: the manifest must be
@@ -30,6 +30,13 @@ npm run weekly:activity:snapshot -- --edition 2026-08-07 --write
 
 npm run weekly:activity:reconcile -- --edition 2026-08-07
 npm run weekly:activity:reconcile -- --edition 2026-08-07 --write
+
+# Historical/reproducibility command. The committed August 7 audit has already
+# been migrated; the source-state lock intentionally refuses a second run.
+npm run weekly:activity:migrate-v2 -- --edition 2026-08-07 \
+  --generated-at 2026-08-09T21:15:00Z
+npm run weekly:activity:migrate-v2 -- --edition 2026-08-07 \
+  --generated-at 2026-08-09T21:15:00Z --write
 
 npm run weekly:activity:packets -- --edition 2026-08-07
 npm run weekly:activity:packets -- --edition 2026-08-07 --write
@@ -79,12 +86,35 @@ not require database access.
 
 Words such as `bolt-on`, `platform`, and `via` create review candidates. They do
 not approve a classification, and the absence of those words never defaults a
-record to direct.
+record to direct. Likewise, labels such as JV, platform formation, IPO,
+recapitalization, sale, or exit never create a second-review requirement by
+themselves. Applied to common edge cases:
 
-Second review is mandatory for JVs, platform formations, IPOs,
-recapitalizations, mixed-side transactions, exits, bundled announcements, and
-ownership changes close to the announcement date. The second reviewer must be
-different from the first reviewer.
+- A fund exit is Direct; an operating portfolio company's asset sale is
+  Portfolio-company activity. The word `sale` alone proves neither.
+- Fund-level JVs, recaps, and secondary IPO sales are Direct. Operating-company
+  JVs, recaps, and primary-only raises are Portfolio-company activity when the
+  fund itself neither sells nor invests.
+
+Second review is required only for a structured, evidence-backed exception:
+
+- conflicting non-actor transaction facts;
+- conflicting legal-actor attribution;
+- uncertain ownership timing;
+- actual simultaneous fund-vehicle and operating-company participation; or
+- one announcement containing legally distinct bundled transactions.
+
+Conflict and ownership-timing exceptions require two distinct, individually
+qualified sources; duplicate entries for one URL do not count twice. Every
+principal actor must cite qualified transaction-and-party evidence. The second
+reviewer must be different from the first reviewer and must reopen the evidence.
+
+One named human may approve a 20–25-record first-review packet as an
+evidence-backed batch only after opening every record's evidence. Each decision
+still carries its own reviewed record, immutable input hash, and substantive
+record-specific note; omissions, duplicate decisions, stale hashes, and empty
+notes fail closed. The second-review count remains provisional until first
+review is complete and contains only verified exceptions.
 
 Each packet decision identifies its immutable `baseRecordId` and contains an
 `outputs` array. Keep one identity-preserving output for ordinary records. If a
@@ -94,6 +124,19 @@ transaction using unique `splitSuffix` values. Every split remains bound to the
 original legacy ID, retains the bundled-announcement flag, and requires an
 independent second review. Second review can never add, remove, or rename split
 records.
+
+The V2 policy is itself a hashed frozen input. The guarded August 7 migration
+accepts only the known untouched V1 manifest, empty approval state, pristine 17
+review templates, exact frozen universe hashes, unchanged July 31 email, and
+the approved-edition index that still ends at July 31. It preserves the
+original non-chart baseline and records PR #419 in a self-hashed amendment that
+proves the chart block stayed byte-identical. It never changes either public
+email or advances the approved-edition index.
+
+The migrated candidate records retain their original August 8 candidate and
+source-retrieval timestamps. `candidate-v2` identifies the normalized V2
+record shape and risk model; the manifest's August 9 timestamp records when the
+policy migration itself was applied.
 
 ## Weekly cutover
 

@@ -97,6 +97,7 @@
     "weekly:activity:approve": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts approve",
     "weekly:activity:render": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts render",
     "weekly:activity:advance": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts advance",
+    "weekly:activity:migrate-v2": "npx tsx scripts/weekly-briefing-activity/workflow-migrate-v2.ts",
     "typecheck:weekly-activity": "tsc -p scripts/weekly-briefing-activity/tsconfig.json",
     "test:weekly-activity": "vitest run scripts/weekly-briefing-activity/*.test.ts src/app/weekly-briefing/*.test.ts"
   },

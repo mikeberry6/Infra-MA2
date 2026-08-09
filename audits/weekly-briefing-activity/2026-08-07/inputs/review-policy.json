@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_POLICY",
+  "methodologyVersion": "WEEKLY_BRIEFING_ACTIVITY_V2",
+  "cutoff": "2026-08-07",
+  "adoptedAt": "2026-08-09T21:00:00.000Z",
+  "authorizationScope": "METHODOLOGY_DIRECTION_NOT_RECORD_APPROVAL",
+  "classificationBasis": "VERIFIED_LEGAL_ACTING_ENTITY",
+  "scopeRules": {
+    "directPrincipalKinds": [
+      "FUND",
+      "ADVISED_VEHICLE",
+      "CO_INVESTMENT_VEHICLE",
+      "NON_OPERATING_ACQUISITION_SPV"
+    ],
+    "portfolioPrincipalKinds": [
+      "OPERATING_PORTFOLIO_COMPANY",
+      "OPERATING_PLATFORM"
+    ],
+    "portfolioRequiresDateValidPriorOwnership": true,
+    "fundExitIsDirect": true,
+    "operatingCompanyAssetSaleIsPortfolio": true,
+    "newPlatformWithInseparableSeedIsDirect": true,
+    "primaryOnlyPortfolioIssuanceIsPortfolioUnlessFundActs": true,
+    "categoryLabelsNeverDetermineScope": true
+  },
+  "firstReviewRequiredForEveryCandidate": true,
+  "secondReviewRiskKinds": [
+    "CONFLICTING_TRANSACTION_FACTS",
+    "CONFLICTING_ACTOR_ATTRIBUTION",
+    "OWNERSHIP_TIMING_UNCERTAIN",
+    "ACTUAL_MIXED_DIRECT_PORTFOLIO",
+    "BUNDLED_LEGAL_TRANSACTIONS"
+  ],
+  "categoryOnlySecondReviewTriggers": [],
+  "mixedTransactionPrecedence": "COUNT_ONCE_AS_DIRECT_RETAIN_BOTH_ATTRIBUTIONS",
+  "evidenceThreshold": "TRANSACTION_AND_PARTY_EVIDENCE_PLUS_DATE_VALID_OWNERSHIP_FOR_PORTFOLIO",
+  "riskEvidence": {
+    "conflictsRequireTwoDistinctQualifiedLocators": true,
+    "duplicateSourceLocatorsCountOnce": true,
+    "everyPrincipalActorRequiresTransactionAndPartyEvidence": true
+  },
+  "batchApproval": {
+    "allowed": true,
+    "recordLevelEvidenceRequired": true,
+    "recordLevelNotesRequired": true,
+    "recordLevelReviewedInputHashRequired": true
+  },
+  "finalControl": "EVIDENCE_DERIVED_NOT_FORCED_TO_393_OR_398",
+  "policySha256": "ea5c2d90d8c2b0dec4795528858ba80e413a431cb275864a36bba27938c960d0"
+}

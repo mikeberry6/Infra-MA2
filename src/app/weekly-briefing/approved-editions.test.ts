@@ -9,7 +9,13 @@ import {
   computeActivityTotals,
   finalizeActivityManifest,
 } from "../../../scripts/weekly-briefing-activity/review";
-import { type ActivityRecord } from "../../../scripts/weekly-briefing-activity/schema";
+import {
+  type ActivityRecord,
+  secondReviewRiskKinds,
+  WEEKLY_ACTIVITY_METHODOLOGY_VERSION,
+  WEEKLY_ACTIVITY_SCHEMA_VERSION,
+} from "../../../scripts/weekly-briefing-activity/schema";
+import { hashCanonical } from "../../../scripts/weekly-briefing-activity/hash";
 import {
   computeNonChartSha256,
   extractProtectedNonChartContent,
@@ -105,7 +111,6 @@ function approvedRecordFixture(): ActivityRecord {
       isExit: false,
       isBundledAnnouncement: false,
       isMixedDirectPortfolio: false,
-      ownershipChangedNearAnnouncement: false,
       newPlatformWithInseparableSeedAcquisition: false,
       primaryOnlyPortfolioCompanyIssuance: false,
     },
@@ -116,7 +121,7 @@ function approvedRecordFixture(): ActivityRecord {
       fundSellsOrInvests: true,
       alreadyOwnedOperatingCompany: false,
     },
-    ambiguityFlags: [],
+    secondReviewRisks: [],
     sourceEvidence: [{
       sourceId: "transaction",
       tier: "PRIMARY",
@@ -203,12 +208,69 @@ async function createApprovedManifestFixture(repositoryRoot: string) {
     gitCommit: null,
     notes: "Exact protected fixture email content outside the chart block.",
   });
+  const policyRelativePath = `${runRelative}/review-policy.json`;
+  const policyWithoutHash = {
+    schemaVersion: 1,
+    artifactType: "WEEKLY_BRIEFING_ACTIVITY_REVIEW_POLICY",
+    methodologyVersion: WEEKLY_ACTIVITY_METHODOLOGY_VERSION,
+    cutoff: "2026-08-07",
+    adoptedAt: "2026-08-08T04:00:00.000Z",
+    authorizationScope: "METHODOLOGY_DIRECTION_NOT_RECORD_APPROVAL",
+    classificationBasis: "VERIFIED_LEGAL_ACTING_ENTITY",
+    scopeRules: {
+      directPrincipalKinds: [
+        "FUND",
+        "ADVISED_VEHICLE",
+        "CO_INVESTMENT_VEHICLE",
+        "NON_OPERATING_ACQUISITION_SPV",
+      ],
+      portfolioPrincipalKinds: ["OPERATING_PORTFOLIO_COMPANY", "OPERATING_PLATFORM"],
+      portfolioRequiresDateValidPriorOwnership: true,
+      fundExitIsDirect: true,
+      operatingCompanyAssetSaleIsPortfolio: true,
+      newPlatformWithInseparableSeedIsDirect: true,
+      primaryOnlyPortfolioIssuanceIsPortfolioUnlessFundActs: true,
+      categoryLabelsNeverDetermineScope: true,
+    },
+    firstReviewRequiredForEveryCandidate: true,
+    secondReviewRiskKinds: [...secondReviewRiskKinds],
+    categoryOnlySecondReviewTriggers: [],
+    mixedTransactionPrecedence: "COUNT_ONCE_AS_DIRECT_RETAIN_BOTH_ATTRIBUTIONS",
+    evidenceThreshold: "TRANSACTION_AND_PARTY_EVIDENCE_PLUS_DATE_VALID_OWNERSHIP_FOR_PORTFOLIO",
+    riskEvidence: {
+      conflictsRequireTwoDistinctQualifiedLocators: true,
+      duplicateSourceLocatorsCountOnce: true,
+      everyPrincipalActorRequiresTransactionAndPartyEvidence: true,
+    },
+    batchApproval: {
+      allowed: true,
+      recordLevelEvidenceRequired: true,
+      recordLevelNotesRequired: true,
+      recordLevelReviewedInputHashRequired: true,
+    },
+    finalControl: "EVIDENCE_DERIVED_NOT_FORCED_TO_393_OR_398",
+  };
+  const policyRaw = JSON.stringify({
+    ...policyWithoutHash,
+    policySha256: hashCanonical("weekly-briefing-activity-review-policy-v2", policyWithoutHash),
+  });
+  await writeFile(path.join(repositoryRoot, policyRelativePath), policyRaw);
+  frozenInputs.push({
+    inputArtifactId: "risk-based-review-policy",
+    kind: "OTHER",
+    path: policyRelativePath,
+    sha256: sha256(policyRaw),
+    recordCount: 1,
+    capturedAt: "2026-08-08T04:00:00.000Z",
+    gitCommit: null,
+    notes: "Risk-based review policy fixture.",
+  });
   const records = [approvedRecordFixture()];
   const totals = computeActivityTotals(records);
   const draft = finalizeActivityManifest({
-    schemaVersion: 1,
+    schemaVersion: WEEKLY_ACTIVITY_SCHEMA_VERSION,
     artifactType: "WEEKLY_BRIEFING_ACTIVITY_MANIFEST",
-    methodologyVersion: "WEEKLY_BRIEFING_ACTIVITY_V1",
+    methodologyVersion: WEEKLY_ACTIVITY_METHODOLOGY_VERSION,
     cutoffDate: "2026-08-07",
     generatedAt: "2026-08-08T04:00:00.000Z",
     updatedAt: "2026-08-08T04:00:00.000Z",
