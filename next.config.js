@@ -73,6 +73,12 @@ const nextConfig = {
   // Anchor file-tracing at this directory; without this, Next walks up the
   // tree and warns when there are multiple lockfiles (e.g. in worktrees).
   outputFileTracingRoot: path.join(__dirname),
+  outputFileTracingIncludes: {
+    "/weekly-briefing": [
+      "./audits/weekly-briefing-activity/**/*",
+      "./audits/deal-portco-flowthrough-2026-05-05.md",
+    ],
+  },
   async headers() {
     return [
       {

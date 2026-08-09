@@ -1,0 +1,2931 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-010",
+  "baseManifestSha256": "65a7e8fd6bc47b8ac9b76faffcb4f89b5ab6366dd1e7a33ebe38c235833a99c5",
+  "recordCount": 24,
+  "records": [
+    {
+      "recordId": "INF-2026-134",
+      "groupKey": "Sponsor — CBRE Investment Management",
+      "baseReviewedInputHash": "ab5ca8c06646882de040c75680652d5d51767781e72609c45eb11cfa99fa3acb",
+      "record": {
+        "recordId": "INF-2026-134",
+        "legacyId": "INF-2026-134",
+        "splitSuffix": null,
+        "transactionIdentityKey": "886941657d3036a4e4f9f9b4596857d8e247c3cfe1108e3952cd2e9733816a6d",
+        "target": "Porterbrook",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CBRE Investment Management.",
+              "sourceIds": [
+                "transaction-INF-2026-134"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (CBRE Investment Management).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-134"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CBRE Investment Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CBRE Investment Management",
+              "sourceIds": [
+                "transaction-INF-2026-134"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-03-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-134",
+            "tier": "PRIMARY",
+            "title": "CBRE Investment Management acquires 10% stake in Porterbrook",
+            "publisher": "CBRE IM",
+            "url": "https://cbreim.com/press-releases/cbre-investment-management-acquires-10-percent-stake-porterbrook",
+            "artifactPath": null,
+            "publishedAt": "2026-03-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CBRE Investment Management's Private Infrastructure division agreed to acquire a 10% stake in Porterbrook, one of the UK's three major rolling stock companies.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-134",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (CBRE Investment Management)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-17-006",
+      "groupKey": "Sponsor — CBRE Investment Management",
+      "baseReviewedInputHash": "1752f901e40e1765960d8dadaceede0d996afe8c64527d84e4cb1071fbea0145",
+      "record": {
+        "recordId": "WB-2026-07-17-006",
+        "legacyId": "WB-2026-07-17-006",
+        "splitSuffix": null,
+        "transactionIdentityKey": "42e5bd271409200c872c36f8cd587efe8071d7933a4531ffa230a8634f4049be",
+        "target": "ClearGen C&I Solar Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-006"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CBRE Investment Management.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-006"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CBRE Investment Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CBRE Investment Management",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-006"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-07-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-17-006",
+            "tier": "PRIMARY",
+            "title": "ClearGen C&I Solar Portfolio | CBRE Investment Management",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260714806483/en/ClearGen-Acquires-19-MW-Portfolio-of-Operating-Distributed-Generation-Solar-Assets",
+            "artifactPath": null,
+            "publishedAt": "2026-07-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CBRE Investment Management-backed ClearGen acquired 100% of the equity interests in ten operating behind-the-meter solar projects from Tortoise Capital affiliates. The 19 MW portfolio spans California, Colorado, Florida, Massachusetts and New Jersey.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-026",
+      "groupKey": "Sponsor — Copenhagen Infrastructure Partners",
+      "baseReviewedInputHash": "ad0627dd8c05bafed99ee8d3dd26bfed005ad2aca46ab459c4a2dc9996fd67a9",
+      "record": {
+        "recordId": "INF-2026-026",
+        "legacyId": "INF-2026-026",
+        "splitSuffix": null,
+        "transactionIdentityKey": "1fe399204f602c0ea8f4562189b36be321ac3e432676994da112f7f24ae0d0bc",
+        "target": "Ørsted European Onshore Business",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Copenhagen Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-026"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Copenhagen Infrastructure Partners).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-026"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Copenhagen Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Copenhagen Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-026"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Ørsted",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-026"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Denmark",
+        "announcementDate": "2026-02-02",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-026",
+            "tier": "PRIMARY",
+            "title": "Copenhagen Infrastructure Partners acquires Ørsted's European onshore business (100% buyout)",
+            "publisher": "Ørsted",
+            "url": "https://orsted.com/en/media/news/2026/02/orsted-signs-agreement-with-cip-to-divest-its-euro-1477764911",
+            "artifactPath": null,
+            "publishedAt": "2026-02-02",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Copenhagen Infrastructure Partners announced the 100% platform buyout of Ørsted's European onshore renewable energy business.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-026",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Copenhagen Infrastructure Partners)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-168",
+      "groupKey": "Sponsor — Copenhagen Infrastructure Partners",
+      "baseReviewedInputHash": "15f5cebd26ca293e44128d7e12ed42545b9363eb2e7d862d18913869bd5e62a0",
+      "record": {
+        "recordId": "INF-2026-168",
+        "legacyId": "INF-2026-168",
+        "splitSuffix": null,
+        "transactionIdentityKey": "d92ed705980729ade3255b33ebf5ba23b35a9c89e5e928e5febf5fc126dc64d4",
+        "target": "Summerfield Battery Energy Storage Project (240 MW / 960 MWh)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Copenhagen Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-168"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-168"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Palisade Investment Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-168"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Copenhagen Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Copenhagen Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-168"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "Australia",
+        "announcementDate": "2026-04-13",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-168",
+            "tier": "PRIMARY",
+            "title": "CIP divests Summerfield Battery Energy Storage Project to Palisade",
+            "publisher": "GlobeNewswire",
+            "url": "https://globenewswire.com/news-release/2026/04/13/3272347/0/en/Copenhagen-Infrastructure-Partners-divests-ownership-of-Summerfield-Battery-to-Palisade-Investment-Partners.html",
+            "artifactPath": null,
+            "publishedAt": "2026-04-13",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CIP divested its 100% equity stake in the Summerfield Battery Energy Storage Project to Palisade Investment Partners. The asset is a utility-scale 240 MW / 960 MWh lithium-ion battery system located in South Australia.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-168",
+            "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-193",
+      "groupKey": "Sponsor — Copenhagen Infrastructure Partners",
+      "baseReviewedInputHash": "2248e57d344500b3f207a18a232891621de310bf615fc217554e2994fc17abfe",
+      "record": {
+        "recordId": "INF-2026-193",
+        "legacyId": "INF-2026-193",
+        "splitSuffix": null,
+        "transactionIdentityKey": "d0f0a3c452bcea6c779088ce292e6ecfd9dad15b0c6e33b3ebd802ca91c95b5a",
+        "target": "Perigus Energy",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Copenhagen Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-193"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Copenhagen Infrastructure Partners).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-193"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Copenhagen Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Copenhagen Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-193"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Ørsted",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-193"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Europe",
+        "announcementDate": "2026-04-30",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": true,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-193",
+            "tier": "PRIMARY",
+            "title": "CIP acquires Ørsted European onshore business and launches Perigus Energy",
+            "publisher": "GlobeNewswire",
+            "url": "https://globenewswire.com/news-release/2026/04/30/3285338/0/en/Copenhagen-Infrastructure-Partners-completes-acquisition-of-%C3%98rsted-s-European-onshore-platform-and-launches-Perigus-Energy.html",
+            "artifactPath": null,
+            "publishedAt": "2026-04-30",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Copenhagen Infrastructure Partners completed its acquisition of Ørsted’s European onshore business through CI V and launched the platform as Perigus Energy. The company operates across Ireland, Germany, the UK, and Spain with 826 MW of installed and under-construction capacity and a multi-GW pipeline spanning wind, solar, and battery storage.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-193",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Copenhagen Infrastructure Partners)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-16-002",
+      "groupKey": "Sponsor — Copenhagen Infrastructure Partners",
+      "baseReviewedInputHash": "9ccb64b292bb46987c10dbaf354be509878a50a79bc901320d9b00b85e0c591a",
+      "record": {
+        "recordId": "WB-2026-05-16-002",
+        "legacyId": "WB-2026-05-16-002",
+        "splitSuffix": null,
+        "transactionIdentityKey": "75c11db93676a73b91b38f885577b7b2923c5416f7b078d0d551a4059dab30f1",
+        "target": "North Star Renewable Energy Platform",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Copenhagen Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-002"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Copenhagen Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Copenhagen Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-002"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "India",
+        "announcementDate": "2026-05-22",
+        "transactionStructure": {
+          "forms": [
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Platform Launch",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-16-002",
+            "tier": "RELIABLE_SECONDARY",
+            "title": "North Star Renewable Energy Platform | CIP",
+            "publisher": "PV Magazine",
+            "url": "https://pv-magazine-india.com/2026/05/19/bii-cip-launch-300-million-platform-to-support-renewables-project-development-in-india",
+            "artifactPath": null,
+            "publishedAt": "2026-05-22",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CIP and British International Investment launched North Star, a $300mm India renewables platform with each party committing up to $150mm. The platform will invest in solar, wind, hybrid renewable and storage projects, addressing development-capital bottlenecks in India's clean-power buildout.",
+            "fallbackRationale": "Candidate-stage fallback: reviewer must document primary-source unavailability before approval.",
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-13-004",
+      "groupKey": "Sponsor — Copenhagen Infrastructure Partners",
+      "baseReviewedInputHash": "af7ac98843373221673cb169d9f2eee0f0a83e34748b89bf9ca3885252afdb99",
+      "record": {
+        "recordId": "WB-2026-06-13-004",
+        "legacyId": "WB-2026-06-13-004",
+        "splitSuffix": null,
+        "transactionIdentityKey": "9246a0162195a1ddb4864cede94ce9c7c733bc0a31cd75c89230e64b35081630",
+        "target": "Devilla BESS Project",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Copenhagen Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-004"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-13-004"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Copenhagen Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Copenhagen Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-004"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-06-12",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-13-004",
+            "tier": "PRIMARY",
+            "title": "Devilla BESS Project | Copenhagen Infrastructure Partners",
+            "publisher": "GlobeNewswire",
+            "url": "https://globenewswire.com/news-release/2026/06/08/3307793/0/en/copenhagen-infrastructure-partners-partially-divests-500mw-devilla-bess-project-to-scottish-national-investment-bank-and-nuclear-liabilities-fund.html",
+            "artifactPath": null,
+            "publishedAt": "2026-06-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CIP agreed to sell minority stakes in the 500 MW Devilla battery energy storage project to Scottish National Investment Bank and Nuclear Liabilities Fund. CIP remains the majority owner through Copenhagen Infrastructure IV while recycling capital into a large-scale UK storage project.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-009",
+      "groupKey": "Sponsor — Copenhagen Infrastructure Partners",
+      "baseReviewedInputHash": "1682fffc72e17355ae9bb23512b1eba37825a389321fc09c0a3bf861c8452c97",
+      "record": {
+        "recordId": "WB-2026-07-03-009",
+        "legacyId": "WB-2026-07-03-009",
+        "splitSuffix": null,
+        "transactionIdentityKey": "4d34df660d68238048836d3b3d33ca646b2a66cca2a1dfa7e76eb62e8f53b70e",
+        "target": "Cobirgy biogas plant",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Copenhagen Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-009"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Copenhagen Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Copenhagen Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-009"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Spain",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-009",
+            "tier": "PRIMARY",
+            "title": "Cobirgy biogas plant | CIP",
+            "publisher": "GlobeNewswire",
+            "url": "https://globenewswire.com/news-release/2026/06/30/3319426/0/en/Copenhagen-Infrastructure-Partners-takes-FID-on-large-scale-biogas-plant-in-Spain.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Copenhagen Infrastructure Partners took FID on Cobirgy through Advanced Bioenergy Fund I. The project adds large-scale Spanish biomethane and biogas infrastructure to CIP's energy-transition portfolio.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-087",
+      "groupKey": "Sponsor — CPP Investments",
+      "baseReviewedInputHash": "eb5c14ba99ee686f8be14a4417a698267e23834113d2c5da62d455c54b07b094",
+      "record": {
+        "recordId": "INF-2026-087",
+        "legacyId": "INF-2026-087",
+        "splitSuffix": null,
+        "transactionIdentityKey": "d8d16ab10367c74067e2558126b8def0c9daba99687347825c8e7b000f965bae",
+        "target": "atNorth",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CPP Investments / Partners Group.",
+              "sourceIds": [
+                "transaction-INF-2026-087"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-087"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-INF-2026-087"
+              ]
+            },
+            {
+              "name": "Equinix",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-087"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Partners Group",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Partners Group",
+              "sourceIds": [
+                "transaction-INF-2026-087"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "Iceland",
+        "announcementDate": "2026-02-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Majority Stake) / Sale (Majority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-087",
+            "tier": "PRIMARY",
+            "title": "CPP Investments and Equinix acquire controlling stake in atNorth from Partners Group",
+            "publisher": "investor.equinix.com",
+            "url": "https://investor.equinix.com/news-events/press-releases/detail/1099/cpp-investments-and-equinix-to-acquire-atnorth-for-us4",
+            "artifactPath": null,
+            "publishedAt": "2026-02-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Buyer's investor-relations transaction announcement; archive link was a placeholder.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-087",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-02-007",
+      "groupKey": "Sponsor — CPP Investments",
+      "baseReviewedInputHash": "76197f18dd15f31bc26e34cc74153cb05b90240a093119f5e30931502b8f557b",
+      "record": {
+        "recordId": "WB-2026-05-02-007",
+        "legacyId": "WB-2026-05-02-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "676159757141a64bde2cea34c6ff8346c7d6be742ed6e2a4ba75ad8453057e73",
+        "target": "NEXTDC",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CPP Investments.",
+              "sourceIds": [
+                "transaction-WB-2026-05-02-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-WB-2026-05-02-007"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "Australia",
+        "announcementDate": "2026-05-08",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-02-007",
+            "tier": "PRIMARY",
+            "title": "NEXTDC | CPP Investments",
+            "publisher": "Marketindex",
+            "url": "https://marketindex.com.au/asx/nxt/announcements/becoming-a-substantial-holder-2A1670726",
+            "artifactPath": null,
+            "publishedAt": "2026-05-08",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CPP Investments disclosed a substantial holding in NEXTDC Limited, Australia’s listed data-center operator, representing 36,750,320 ordinary shares and 5.09% voting power. The position follows NEXTDC’s recent equity issuance and capital plan to support accelerated data-center development.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-20-008",
+      "groupKey": "Sponsor — CPP Investments",
+      "baseReviewedInputHash": "4355eb3765e9e2dbf1d3f41f008bce021194479c27688834a292c6486840ac50",
+      "record": {
+        "recordId": "WB-2026-06-20-008",
+        "legacyId": "WB-2026-06-20-008",
+        "splitSuffix": null,
+        "transactionIdentityKey": "a1ed0d2340d79e71b1798be2329799406b1a710944c8f3e0472edc657869c22f",
+        "target": "CtrlS Datacenters",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CPP Investments.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-008"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-008"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-008"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "India",
+        "announcementDate": "2026-06-19",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-20-008",
+            "tier": "PRIMARY",
+            "title": "CtrlS Datacenters | CPP Investments",
+            "publisher": "Cppinvestments",
+            "url": "https://cppinvestments.com/newsroom/cpp-investments-commits-c1-billion-to-ctrls-data-centre-partnership-in-india",
+            "artifactPath": null,
+            "publishedAt": "2026-06-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CPP Investments committed up to C$1bn to CtrlS Datacenters, including INR 40bn, or approximately C$588mm, to acquire an 8.2% stake in the company. The partnership also includes a 48% CPP Investments interest in a new platform to develop hyperscale data center campuses across India.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-010",
+      "groupKey": "Sponsor — CPP Investments",
+      "baseReviewedInputHash": "bd04eb89c4ab13ad44a502f36ee532360d1b5fdcd94b2cc01e90351e5b2c6f64",
+      "record": {
+        "recordId": "WB-2026-07-03-010",
+        "legacyId": "WB-2026-07-03-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "ddb19eba88b4e4a95cef16d02eccdd3eeb67ff8c9c1f2614a63dd52e9f8df0fe",
+        "target": "EQT AI Infrastructure / EdgeConneX",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CPP Investments.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "Global",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-010",
+            "tier": "PRIMARY",
+            "title": "EQT AI Infrastructure / EdgeConneX | CPP Investments",
+            "publisher": "Newswire",
+            "url": "https://newswire.ca/news-releases/cpp-investments-partners-with-eqt-to-support-global-digital-infrastructure-growth-826226428.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CPP Investments closed a US$1.75bn investment alongside EQT to support global digital infrastructure growth led by EdgeConneX. The transaction provides scaled equity backing for AI-driven data-center expansion.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-020",
+      "groupKey": "Sponsor — CPP Investments",
+      "baseReviewedInputHash": "bddbdd45e4db8c75eb57e99dd9a187763803fdebde7d3dbae41b34da1a400c33",
+      "record": {
+        "recordId": "WB-2026-07-31-020",
+        "legacyId": "WB-2026-07-31-020",
+        "splitSuffix": null,
+        "transactionIdentityKey": "925cb8eaec1e07979f4e978d46202ce92c9dc91f325d1cd63ca1799b4d9074e1",
+        "target": "Tarchon Interconnector",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CPP Investments / Copenhagen Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-020"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-020"
+              ]
+            },
+            {
+              "name": "Copenhagen Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Copenhagen Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-020"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "United Kingdom / Germany",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Majority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-020",
+            "tier": "PRIMARY",
+            "title": "Tarchon Interconnector | CPP Investments / CIP",
+            "publisher": "Investor",
+            "url": "https://investor.eliagroup.eu/en/newsroom/2026/07/20260729_elia-cpp-investments-tarchon",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CPP Investments agreed to commit approximately C$1bn for a majority interest in Tarchon, a proposed 1.4 GW electricity interconnector between the United Kingdom and Germany. WindGrid will hold a 25% look-through minority interest, and Copenhagen Infrastructure V, managed by CIP, is the seller.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-050",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "77c42e57954ebdfa4691b67cb199a6664b6dc637076e3b8e9574e0980bd9f7a5",
+      "record": {
+        "recordId": "INF-2026-050",
+        "legacyId": "INF-2026-050",
+        "splitSuffix": null,
+        "transactionIdentityKey": "d61de191904b500016e64eaf508eb99432b7e8bffea25b64808a637c9ba7a581",
+        "target": "iPark",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF.",
+              "sourceIds": [
+                "transaction-INF-2026-050"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (CVC DIF).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-050"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-INF-2026-050"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-01-08",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-050",
+            "tier": "PRIMARY",
+            "title": "CVC DIF acquires iPark platform",
+            "publisher": "CVC",
+            "url": "https://cvc.com/media/news/2026/cvc-dif-to-acquire-leading-iberian-parking-infrastructure-platform-ipark-from-elliott-investment-management",
+            "artifactPath": null,
+            "publishedAt": "2026-01-08",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CVC DIF announced the platform acquisition of iPark, a parking infrastructure company in the United Kingdom.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-050",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (CVC DIF)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-064",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "c424d863282adb1185ccfd18cdec0fe65160cd1394a1a3b130c23e06f604407a",
+      "record": {
+        "recordId": "INF-2026-064",
+        "legacyId": "INF-2026-064",
+        "splitSuffix": null,
+        "transactionIdentityKey": "5509aa3f48ff5b1788c114b668d1922ea6a3e6c6e063b8037cef0fd2409c9dbd",
+        "target": "Celeste",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF.",
+              "sourceIds": [
+                "transaction-INF-2026-064"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-064"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-INF-2026-064"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "InfraVia",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-064"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "France",
+        "announcementDate": "2026-01-14",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Majority Stake) / Acquisition (Majority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-064",
+            "tier": "PRIMARY",
+            "title": "CVC DIF acquires 88% stake in Celeste from InfraVia",
+            "publisher": "CVC",
+            "url": "https://cvc.com/media/news/2026/cvc-dif-has-entered-exclusive-negotiations-to-acquire-a-significant-majority-stake-in-celeste",
+            "artifactPath": null,
+            "publishedAt": "2026-01-14",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CVC DIF announced the acquisition of an 88% stake in Celeste, a French fiber and telecom company, from InfraVia.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-064",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-044",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "3dc43b26780539dd9639f4284545bf257698115c88d0062c68c4135de4423db0",
+      "record": {
+        "recordId": "INF-2026-044",
+        "legacyId": "INF-2026-044",
+        "splitSuffix": null,
+        "transactionIdentityKey": "f0de12f52466466781a494c41ad23f16aa126c17c45b5202bc00101ab3be55c6",
+        "target": "American Roads",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF.",
+              "sourceIds": [
+                "transaction-INF-2026-044"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Sale/IPO of existing PortCo: realization review (Medium confidence): Target is already a PortCo, but seller ownership alignment is not obvious from seed owners; review before marking realized.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-044"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-044"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-INF-2026-044"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-02-13",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-044",
+            "tier": "PRIMARY",
+            "title": "CVC DIF divests American Roads platform",
+            "publisher": "ENR",
+            "url": "https://enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+            "artifactPath": null,
+            "publishedAt": "2026-02-13",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CVC DIF announced the divestiture of American Roads, a toll road operating platform in the United States.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-044",
+            "summary": "Sale/IPO of existing PortCo: realization review (Medium confidence): Target is already a PortCo, but seller ownership alignment is not obvious from seed owners; review before marking realized."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-122",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "24ef342c9c541a8dcacc1a8bce813f52ac0229208f0d533719b6846f4ccacf7a",
+      "record": {
+        "recordId": "INF-2026-122",
+        "legacyId": "INF-2026-122",
+        "splitSuffix": null,
+        "transactionIdentityKey": "77975e873ed86f882597c4bcc18f75adab57aeac3eda78eff1a058a7ab967828",
+        "target": "Dandelion Partnership",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF.",
+              "sourceIds": [
+                "transaction-INF-2026-122"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (Medium confidence): A buyer or seller name matches an existing PortCo, but not through an explicit via-platform phrase; review as possible platform activity.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-122"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Diverso Energy",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-122"
+              ]
+            },
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-INF-2026-122"
+              ]
+            },
+            {
+              "name": "Dandelion Energy",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-122"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "Diverso Energy",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-122"
+              ]
+            },
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-INF-2026-122"
+              ]
+            },
+            {
+              "name": "Dandelion Energy",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-122"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-03-12",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-122",
+            "tier": "PRIMARY",
+            "title": "Diverso Energy / CVC DIF partner with Dandelion Energy on geothermal heat pump platform",
+            "publisher": "Newswire",
+            "url": "https://newswire.ca/news-releases/diverso-energy-and-dandelion-energy-partner-to-accelerate-geothermal-deployment-across-u-s-housing-markets-841957958.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Diverso Energy, backed by CVC DIF, announced a strategic partnership with Dandelion Energy to accelerate geothermal heat pump deployment across U.S. housing markets.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-122",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (Medium confidence): A buyer or seller name matches an existing PortCo, but not through an explicit via-platform phrase; review as possible platform activity."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-146",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "6e56d43bb3a61b8cf7cd5333fa6cee3f9fa576e6c5df20e549e4a957152124d0",
+      "record": {
+        "recordId": "INF-2026-146",
+        "legacyId": "INF-2026-146",
+        "splitSuffix": null,
+        "transactionIdentityKey": "75cac6a6061d52a20a47f1681b73869f9146142395d90ac4558f615fcc3c84fd",
+        "target": "A63 Motorway",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF.",
+              "sourceIds": [
+                "transaction-INF-2026-146"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-146"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Abertis",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-146"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "HICL Infrastructure",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-146"
+              ]
+            },
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-INF-2026-146"
+              ]
+            },
+            {
+              "name": "NGE Autoroutes",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-146"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "France",
+        "announcementDate": "2026-03-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-146",
+            "tier": "PRIMARY",
+            "title": "Abertis acquires remaining stake in A63 Motorway from HICL / CVC DIF / NGE Autoroutes",
+            "publisher": "Mundys",
+            "url": "https://mundys.com/en/press-release/mundys-abertis-completes-acquisition-of-100-stake-in-france-s-a63-motorway",
+            "artifactPath": null,
+            "publishedAt": "2026-03-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Abertis acquired the remaining 49% of the A63 motorway in France from HICL Infrastructure, CVC DIF, and NGE Autoroutes, taking full ownership of the 104 km concession.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-146",
+            "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-06-006",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "88246df97f473d8a1868897eea0323e593ddd6682e611c16309419379039f0a0",
+      "record": {
+        "recordId": "WB-2026-06-06-006",
+        "legacyId": "WB-2026-06-06-006",
+        "splitSuffix": null,
+        "transactionIdentityKey": "8badf4441899514661bef13939e2b262db27d4db7ba1bceb16ccdcc1f43b793e",
+        "target": "GS Power Community Solar Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF.",
+              "sourceIds": [
+                "transaction-WB-2026-06-06-006"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-WB-2026-06-06-006"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-06-05",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-06-006",
+            "tier": "PRIMARY",
+            "title": "GS Power Community Solar Portfolio | CVC DIF",
+            "publisher": "Gspowerpartners",
+            "url": "https://gspowerpartners.com/gs-power-partners-secures-51m-tax-equity-financing-for-41-mw-community-solar-portfolio",
+            "artifactPath": null,
+            "publishedAt": "2026-06-05",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CVC DIF-backed GS Power Partners secured $51mm of tax equity financing for a 41 MWdc community solar portfolio across New York, Maryland, and Illinois. The portfolio-company financing close adds equity capital to distributed solar infrastructure within DIF Infrastructure VII lineage.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-006",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "253c9500c6e782054d25e017c3e24b5d4a97c36cd7c695578c159a336b710e06",
+      "record": {
+        "recordId": "WB-2026-07-03-006",
+        "legacyId": "WB-2026-07-03-006",
+        "splitSuffix": null,
+        "transactionIdentityKey": "4c4dfa7dcd8f287e692fe4e567f8a039bd790dfaedc5a94a9df06236ddf96cf9",
+        "target": "Klara Renewables",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-006"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-03-006"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Actis",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-03-006"
+              ]
+            },
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-006"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Poland",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-006",
+            "tier": "PRIMARY",
+            "title": "Klara Renewables | Actis / CVC DIF",
+            "publisher": "Act",
+            "url": "https://act.is/2026/07/02/actis-acquires-klara-renewables-from-cvc-dif-and-launches-a-new-renewable-energy-platform-in-poland",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Actis agreed to acquire Klara Renewables from CVC DIF, launching a Polish renewables platform anchored by 171 MW of operating onshore wind assets. The portfolio also carries solar PV and battery-storage hybridization potential.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-10-014",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "5e03f2dd94103f247d025dc2bd081cc853b40eb7c35297d87ec5c4c1ae7f2f99",
+      "record": {
+        "recordId": "WB-2026-07-10-014",
+        "legacyId": "WB-2026-07-10-014",
+        "splitSuffix": null,
+        "transactionIdentityKey": "00bf27593936aaa1fcb581aaa7ab4fac77ecac4d76b1ceb6d030a5ba589c98fc",
+        "target": "Helen EV Charging Business",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-014"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-014"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-014"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "Finland",
+        "announcementDate": "2026-07-10",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-10-014",
+            "tier": "PRIMARY",
+            "title": "Helen EV Charging Business | CVC DIF",
+            "publisher": "Plugit",
+            "url": "https://plugit.com/insights/plugit-is-acquiring-helens-charging-business",
+            "artifactPath": null,
+            "publishedAt": "2026-07-10",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CVC DIF-backed Plugit acquired Helen’s electric-vehicle charging business. The network includes 199 public charging stations and 798 charge points, with more than 55,000 registered users transferring to Plugit’s platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-17-007",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "4f40b4776c15f198d7df678071d6227e26e7a2aeb04e245b5191cc345095e6d0",
+      "record": {
+        "recordId": "WB-2026-07-17-007",
+        "legacyId": "WB-2026-07-17-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "dd945dd6e24f96475d934375c53c3697b55ed031d5988f6878b5c6d6bda7a348",
+        "target": "EcoEridania",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF / iCON Infrastructure.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-17-007"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-007"
+              ]
+            },
+            {
+              "name": "iCON Infrastructure",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "iCON Infrastructure",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-007"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "Europe",
+        "country": "Italy",
+        "announcementDate": "2026-07-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Majority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-17-007",
+            "tier": "PRIMARY",
+            "title": "EcoEridania | CVC DIF / iCON Infrastructure",
+            "publisher": "Cvc",
+            "url": "https://cvc.com/media/news/2026/cvc-dif-to-acquire-a-majority-stake-in-ecoeridania",
+            "artifactPath": null,
+            "publishedAt": "2026-07-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CVC DIF agreed to acquire a majority stake in EcoEridania through DIF Infrastructure VIII, including the indirect purchase of iCON’s 75% interest. The integrated Italian waste platform served approximately 27,000 clients through 22 facilities and managed 1.3 million tons of waste in 2025.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-08-07-004",
+      "groupKey": "Sponsor — CVC DIF",
+      "baseReviewedInputHash": "1d4891ea8c2436d8eefe1c152baf4f3bc3b8989a0ae87e00211ced6286ee2034",
+      "record": {
+        "recordId": "WB-2026-08-07-004",
+        "legacyId": "WB-2026-08-07-004",
+        "splitSuffix": null,
+        "transactionIdentityKey": "dd51557cf6667389beb951afeae7cc5d03a39c14621c018055d0ce038d87574d",
+        "target": "Verdant Energy / Aura Power",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CVC DIF.",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-004"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-004"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-08-07",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-08-07-004",
+            "tier": "PRIMARY",
+            "title": "Verdant Energy / Aura Power | CVC DIF",
+            "publisher": "Cvcdif",
+            "url": "https://cvcdif.com/news-insights/verdant-energy-and-aura-power-merge-to-create-leading-uk-solar-and-battery-storage-platform",
+            "artifactPath": null,
+            "publishedAt": "2026-08-07",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CVC DIF-backed Verdant Energy and Aura Power merged to form a UK independent power producer with c.1 GW of operating and under-construction solar and battery assets and a c.10 GW development pipeline. CVC DIF invested through DIF Infrastructure VII, while Aura Power’s founder retains a minority stake.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-075",
+      "groupKey": "Sponsor — DigitalBridge",
+      "baseReviewedInputHash": "8650721b3c0adcdbcf8913b7f322f1e6f7d49dc93613a1299a5e4e1fcef3dd7d",
+      "record": {
+        "recordId": "INF-2026-075",
+        "legacyId": "INF-2026-075",
+        "splitSuffix": null,
+        "transactionIdentityKey": "36745b6b7437c2413b26acb74018a38ab32adf5d6abad609c3a4cfe2c84a676b",
+        "target": "Skyline JV (Vantage Data Centers)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: DigitalBridge.",
+              "sourceIds": [
+                "transaction-INF-2026-075"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-075"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Aware Super",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-075"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "DigitalBridge",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "DigitalBridge",
+              "sourceIds": [
+                "transaction-INF-2026-075"
+              ]
+            }
+          ],
+          "jointVentureParticipants": [
+            {
+              "name": "Aware Super",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-075"
+              ]
+            },
+            {
+              "name": "DigitalBridge",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "DigitalBridge",
+              "sourceIds": [
+                "transaction-INF-2026-075"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "United States",
+        "announcementDate": "2026-01-20",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE",
+            "JOINT_VENTURE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE",
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-075",
+            "tier": "PRIMARY",
+            "title": "DigitalBridge sells minority stake in Skyline JV (Vantage Data Centers)",
+            "publisher": "DigitalBridge",
+            "url": "https://digitalbridge.com/news/2026-01-20-aware-super-extends-digital-infrastructure-footprint-with-us-300-million-apac-data-centre-business-investment",
+            "artifactPath": null,
+            "publishedAt": "2026-01-20",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "DigitalBridge announced the sale of a minority stake in the Skyline JV associated with Vantage Data Centers.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-075",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    }
+  ],
+  "packetSha256": "cffb5c8a0a3cf9e6ab62b9869c721a968c87964e33ef78bf9e85db2d23c324e8"
+}

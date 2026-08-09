@@ -1,0 +1,2713 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-014",
+  "baseManifestSha256": "65a7e8fd6bc47b8ac9b76faffcb4f89b5ab6366dd1e7a33ebe38c235833a99c5",
+  "recordCount": 23,
+  "records": [
+    {
+      "recordId": "INF-2026-076",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "b9fdfab33d58da74f3883aff8a2dff58cf9ea466292ed25356070542334e90e8",
+      "record": {
+        "recordId": "INF-2026-076",
+        "legacyId": "INF-2026-076",
+        "splitSuffix": null,
+        "transactionIdentityKey": "ead2bf4aa942d7c23aacfeb0834f12db89f034e505ceeafbfab7504ae629108a",
+        "target": "ST Telemedia Global Data Centres",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-INF-2026-076"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-076"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-076"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "ST Telemedia",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-076"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "Singapore",
+        "announcementDate": "2026-02-04",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Majority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-076",
+            "tier": "PRIMARY",
+            "title": "KKR-led consortium acquires 82% stake in ST Telemedia Global Data Centres",
+            "publisher": "STT GDC",
+            "url": "https://sttelemediagdc.com/newsroom/kkr-led-consortium-to-fully-acquire-stt-gdc-13.8-billion-enterprise-value",
+            "artifactPath": null,
+            "publishedAt": "2026-02-04",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "A KKR-led consortium announced the acquisition of an 82% stake in ST Telemedia Global Data Centres, a major data center operator in Asia.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-076",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-020",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "cad7ff3a2538c5020485871a29dc65260dc9843e8002ff708b9f5cdad84d13cb",
+      "record": {
+        "recordId": "INF-2026-020",
+        "legacyId": "INF-2026-020",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e0eb706fdfc3464ac031a53b9fd41d2f96be91cda73c6e1141eccf90fbe2765a",
+        "target": "HMC Capital Energy Transition",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-INF-2026-020"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-020"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-020"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "Australia",
+        "announcementDate": "2026-02-05",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-020",
+            "tier": "PRIMARY",
+            "title": "KKR provides preferred growth equity to HMC Capital Energy Transition",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260205961730/en/KKR-Forms-A%24600m-Energy-Transition-Strategic-Partnership-with-HMC",
+            "artifactPath": null,
+            "publishedAt": "2026-02-05",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR provided preferred growth equity to HMC Capital's energy transition platform in Australia.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-020",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-110",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "e8081d43c0241a5445f8bfb7f9fbe96b59e7bb3bac5f0d367c048acfbc98845f",
+      "record": {
+        "recordId": "INF-2026-110",
+        "legacyId": "INF-2026-110",
+        "splitSuffix": null,
+        "transactionIdentityKey": "b21a46be6393652f0216277d63618c4a8a47548bbba02dd4f6aaa5cf4bf90e6c",
+        "target": "SK Eternix",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-INF-2026-110"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-110"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-110"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "SK Discovery",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-110"
+              ]
+            },
+            {
+              "name": "Hahn & Company",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-110"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "South Korea",
+        "announcementDate": "2026-03-06",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-110",
+            "tier": "PRIMARY",
+            "title": "KKR acquires 43.5% minority stake in SK Eternix from SK Discovery / Hahn & Company",
+            "publisher": "MarketScreener",
+            "url": "https://marketscreener.com/news/kkr-to-acquire-43-5-stake-in-sk-eternix-in-krw348-billion-deal-ce7e5fd8db8ef02d",
+            "artifactPath": null,
+            "publishedAt": "2026-03-06",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR agreed to acquire a combined 43.5% minority stake in SK Eternix from SK Discovery and Hahn & Company, a South Korean renewable energy platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-110",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-129",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "4a2c8545b7bb39e002c7d2f2f56e2622ee148b23122f67d003c24acbe05a85bb",
+      "record": {
+        "recordId": "INF-2026-129",
+        "legacyId": "INF-2026-129",
+        "splitSuffix": null,
+        "transactionIdentityKey": "0f0db4020f794cff835e24fabfb743bbce62759be4f27f183aa696d007571cb5",
+        "target": "PMI Electro / Allfleet",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-INF-2026-129"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-129"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-129"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Asia-Pacific",
+        "country": "India",
+        "announcementDate": "2026-03-16",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Majority Stake) / Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-129",
+            "tier": "PRIMARY",
+            "title": "KKR invests in PMI Electro / Allfleet",
+            "publisher": "BusinessWire",
+            "url": "https://businesswire.com/news/home/20260316328702/en/KKR-Forms-%24310-Million-Strategic-Partnership-with-PMI-Electro-to-Scale-E-Bus-Platform-Allfleet",
+            "artifactPath": null,
+            "publishedAt": "2026-03-16",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR agreed to invest up to $310mm for a majority stake in Allfleet and a minority stake in PMI Electro Mobility, scaling the e-bus platform across India.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-129",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-135",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "fc1f9c846eb04aeb2acb07d3744b81dc8d9d36b25f9a773185a2995708d4e949",
+      "record": {
+        "recordId": "INF-2026-135",
+        "legacyId": "INF-2026-135",
+        "splitSuffix": null,
+        "transactionIdentityKey": "55144f5e8d105b100d2871cfad0a8418ff3e1841df78a5d7e488aeb541d29350",
+        "target": "Revolv",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-135"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-INF-2026-135"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-135"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Zenobe",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-135"
+              ]
+            },
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-135"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-03-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-135",
+            "tier": "PRIMARY",
+            "title": "Zenobe / KKR acquire Revolv",
+            "publisher": "Zenobe",
+            "url": "https://zenobe.com/news-and-events/zenobe-expands-its-north-american-fleet-with-acquisition-of-revolv",
+            "artifactPath": null,
+            "publishedAt": "2026-03-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Zenobe, backed by KKR, Infracapital, and Mubadala, acquired California-based Revolv to expand its North American electric vehicle fleet operations.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-135",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-179",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "42bbd721a183ad0a81f90cd91fa3cbc0251cec145e73047f966ae724889b035a",
+      "record": {
+        "recordId": "INF-2026-179",
+        "legacyId": "INF-2026-179",
+        "splitSuffix": null,
+        "transactionIdentityKey": "5c22fd91a73ad4befb9295485e2d15987b2c586d5232d396244e3e24bb26c8a6",
+        "target": "Vertical Bridge",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR / DigitalBridge / La Caisse.",
+              "sourceIds": [
+                "transaction-INF-2026-179"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-179"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-179"
+              ]
+            },
+            {
+              "name": "DigitalBridge",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "DigitalBridge",
+              "sourceIds": [
+                "transaction-INF-2026-179"
+              ]
+            },
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-INF-2026-179"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-23",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-179",
+            "tier": "PRIMARY",
+            "title": "KKR invests $1.5bn in Vertical Bridge alongside DigitalBridge and La Caisse",
+            "publisher": "Vertical Bridge",
+            "url": "https://verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+            "artifactPath": null,
+            "publishedAt": "2026-04-23",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR is making a $1.5bn strategic equity investment in Vertical Bridge, joining existing sponsors DigitalBridge and La Caisse (formerly CDPQ), who both rolled into the new structure to establish a fully funded, long-term capital base. Vertical Bridge is the largest private owner and operator of communications infrastructure in the United States, with a portfolio of more than 17,000 towers; KKR has now deployed over $40bn of equity into digital infrastructure globally.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-179",
+            "summary": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-197",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "e876d55806bf3eb0089dcf6a6ad790deebfed4deac91f7b0015733194bbc95ab",
+      "record": {
+        "recordId": "INF-2026-197",
+        "legacyId": "INF-2026-197",
+        "splitSuffix": null,
+        "transactionIdentityKey": "3379127ad6f792fa44695d242db010fc549aa8ba0f50813bc1ed11ca350d5acb",
+        "target": "Axius Water",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-INF-2026-197"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-197"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CRH",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-197"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-197"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-30",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-197",
+            "tier": "PRIMARY",
+            "title": "KKR sells Axius Water to CRH",
+            "publisher": "CRH",
+            "url": "https://crh.com/media/press-releases/2026/crh-reports-first-quarter-2026-results",
+            "artifactPath": null,
+            "publishedAt": "2026-04-30",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CRH agreed to acquire U.S.-based water treatment platform Axius Water from KKR for $700mm. KKR’s Global Impact Fund originally co-established the platform, which provides water quality and nutrient removal infrastructure, and the sale advances CRH’s expansion as a North American water infrastructure provider.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-197",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-13-006",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "1db1e6b360de10b7c4165274effa06841740e58de728ade0f55cec599fa6271a",
+      "record": {
+        "recordId": "WB-2026-06-13-006",
+        "legacyId": "WB-2026-06-13-006",
+        "splitSuffix": null,
+        "transactionIdentityKey": "6b6998ce8b87d04e7c65c173c05b501eaab725344a59e05e6b68d2ac9885cf3c",
+        "target": "SK Group Renewable Energy JV",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-006"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-006"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-006"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "South Korea",
+        "announcementDate": "2026-06-12",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-13-006",
+            "tier": "PRIMARY",
+            "title": "SK Group Renewable Energy JV | KKR",
+            "publisher": "En",
+            "url": "https://en.sedaily.com/news/2026/06/10/sk-kkr-move-to-form-renewable-energy-joint-venture",
+            "artifactPath": null,
+            "publishedAt": "2026-06-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "SK and KKR signed a renewable-energy business transfer agreement covering solar and wind assets, with KKR expected to participate through asset acquisitions and capital contributions into an integrated renewable-energy entity. The deal adds sponsor capital to a Korean renewable platform with operating and development exposure.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-13-010",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "9c59d88bc07d366791dae9513eb17f678410e2fbf06ff89c4c36d7b55036ed23",
+      "record": {
+        "recordId": "WB-2026-06-13-010",
+        "legacyId": "WB-2026-06-13-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "bfd28247419d76868459b292d9a34eb78a660a77d9b3134704d591f5dab2e5f4",
+        "target": "Helix Digital Infrastructure",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "North America",
+        "announcementDate": "2026-06-12",
+        "transactionStructure": {
+          "forms": [
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Platform Launch",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-13-010",
+            "tier": "PRIMARY",
+            "title": "Helix Digital Infrastructure | KKR",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260610500794/en/KKR-Launches-Helix-Digital-Infrastructure-a-New-Company-to-Finance-and-Deliver-the-Next-Generation-of-AI-Infrastructure",
+            "artifactPath": null,
+            "publishedAt": "2026-06-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR launched Helix Digital Infrastructure with partners as a new company to finance and deliver AI infrastructure. The platform announced more than $10bn of commitments targeting data centers, power, transmission and distribution, fiber, and connectivity assets.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-20-001",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "bd10b70033a541e95344fa5a2e60c8467f73550a309dedc65016c735134d03b8",
+      "record": {
+        "recordId": "WB-2026-06-20-001",
+        "legacyId": "WB-2026-06-20-001",
+        "splitSuffix": null,
+        "transactionIdentityKey": "1ba74ba99b1c3d7b4676d6182d6d829258e3a97e747fb52c50c36d0d0c3de291",
+        "target": "Altavair Aircraft Leasing Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-001"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-001"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "Global / United States",
+        "announcementDate": "2026-06-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-20-001",
+            "tier": "PRIMARY",
+            "title": "Altavair Aircraft Leasing Portfolio | KKR",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260617498140/en/KKR-Commits-%241.4-Billion-to-Aircraft-Leasing-with-Altavair",
+            "artifactPath": null,
+            "publishedAt": "2026-06-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR committed US$1.4bn of equity to continue expanding its global leased commercial aircraft portfolio with Altavair. The new commitment builds on two prior aircraft leasing portfolios and is expected to be funded primarily through KKR's Infrastructure and Asset-Based Finance strategies.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-27-001",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "d07e978f1bce4686f1555c369bc120c34db104448cdf9d5f88de6dfe763d8cd6",
+      "record": {
+        "recordId": "WB-2026-06-27-001",
+        "legacyId": "WB-2026-06-27-001",
+        "splitSuffix": null,
+        "transactionIdentityKey": "9d61e1b6255fd2799917e4e439f3aa4125a6b8eb517dff46d197de2942b997c7",
+        "target": "EDF Power Solutions U.S. and Canada operations",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-001"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-001"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States / Canada",
+        "announcementDate": "2026-06-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-27-001",
+            "tier": "PRIMARY",
+            "title": "EDF Power Solutions U.S. and Canada operations | KKR",
+            "publisher": "GlobeNewswire",
+            "url": "https://ml-eu.globenewswire.com/Resource/Download/7d53ada8-1bff-4ad0-a652-6c8e9e254784",
+            "artifactPath": null,
+            "publishedAt": "2026-06-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "EDF signed an agreement for KKR to acquire EDF Power Solutions assets and operations in the U.S. and Canada, including renewable power, storage, EV charging, and microgrid activities. The transaction gives KKR a scaled North American clean power operating platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-004",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "0137b03ba20886399e8130a36027483e74fb8d5faf00597a237ce0601eefb0d2",
+      "record": {
+        "recordId": "WB-2026-07-03-004",
+        "legacyId": "WB-2026-07-03-004",
+        "splitSuffix": null,
+        "transactionIdentityKey": "396d35aa009d8d8b45ba1dbd1a8803febec054b7a5a0bdd863e5ef9634d30dbf",
+        "target": "SK / KKR Korea renewables platform",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-004"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-004"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-004"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "South Korea",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-004",
+            "tier": "PRIMARY",
+            "title": "SK / KKR Korea renewables platform | KKR",
+            "publisher": "Media",
+            "url": "https://media.kkr.com/news-details?news_id=d294a153-9bcd-4cd0-95b6-45239bdb3dac",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR and SK signed definitive agreements to establish a renewable-energy platform in South Korea. The investment is tied to KKR's Asia Pacific infrastructure strategy and targets power-transition assets in a high-demand market.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-020",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "6f4c4c22e0303eaf6d4cd4f8c38c4eeeacaca75367cf767f2100594870699e9f",
+      "record": {
+        "recordId": "WB-2026-07-03-020",
+        "legacyId": "WB-2026-07-03-020",
+        "splitSuffix": null,
+        "transactionIdentityKey": "4948a59ac54f8a88e3ff94a16521ba6b6d4443449d150d6a501151b24ef8d0f4",
+        "target": "Ocean Yield",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-020"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-03-020"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-020"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "Norway / Global",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-020",
+            "tier": "PRIMARY",
+            "title": "Ocean Yield | KKR",
+            "publisher": "Media",
+            "url": "https://media.kkr.com/news-details?news_id=40a1663c-326b-4b4e-81c2-1c1a92903010",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "A.P. Moller Holding agreed to acquire 100% of Ocean Yield from KKR-managed funds. Ocean Yield owns maritime infrastructure assets under long-term charters, making the sale a full exit from KKR's shipping-infrastructure platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-24-008",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "78324bccd0ba5a4983ca85b23612221699012ec3aa9875f85d48fdb9b998805c",
+      "record": {
+        "recordId": "WB-2026-07-24-008",
+        "legacyId": "WB-2026-07-24-008",
+        "splitSuffix": null,
+        "transactionIdentityKey": "7f87c32ea4e828415fff9b9833dab7901cb35046cd6708f83ccd89025482c25f",
+        "target": "Caruna",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR / Ontario Teachers.",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-008"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-24-008"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-008"
+              ]
+            },
+            {
+              "name": "Ontario Teachers",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Ontario Teachers",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-008"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "Finland",
+        "announcementDate": "2026-07-24",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-24-008",
+            "tier": "PRIMARY",
+            "title": "Caruna | KKR / Ontario Teachers",
+            "publisher": "Caruna",
+            "url": "https://caruna.fi/en/news/changes-carunas-ownership",
+            "artifactPath": null,
+            "publishedAt": "2026-07-24",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Iberdrola agreed to acquire KKR’s and Ontario Teachers’ respective 40% holdings in Caruna for approximately €2 billion, valuing the Finnish electricity distributor at about €5 billion including debt. Caruna operates roughly 89,000 km of network and serves 1.5 million people.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-24-010",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "e5f23b3800c7a00257601f519ef96d2f581b1fee315ae15b2bb1a5e64f69273c",
+      "record": {
+        "recordId": "WB-2026-07-24-010",
+        "legacyId": "WB-2026-07-24-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "985a826da44c0bb19534490ffd7486adba7c8c6e87f10c5c9607123011d801a5",
+        "target": "OIL! Tankstellen",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-010"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "Germany / Denmark / Austria / Switzerland",
+        "announcementDate": "2026-07-24",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-24-010",
+            "tier": "PRIMARY",
+            "title": "OIL! Tankstellen | KKR",
+            "publisher": "Eni",
+            "url": "https://eni.com/en-IT/media/press-release/2026/07/pr-enilive-oil.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-24",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR-backed Enilive signed a binding agreement to acquire 100% of OIL! Tankstellen from Prax. The network comprises approximately 320 service stations across four European markets and expands Enilive’s retail platform for conventional and lower-emission fuels, electric charging and related mobility services.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-08-07-001",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "bcd6ecb142ee00f81e22c2ca107ba505f5a3b0dfe8479103f89eef80f0008955",
+      "record": {
+        "recordId": "WB-2026-08-07-001",
+        "legacyId": "WB-2026-08-07-001",
+        "splitSuffix": null,
+        "transactionIdentityKey": "0a4970034005d3edccb0000b1a21ba09665f42caa7a51a4aae311db7da1d6282",
+        "target": "TotalEnergies European Renewables Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-001"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-001"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Germany / Spain / France / Poland",
+        "announcementDate": "2026-08-07",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-08-07-001",
+            "tier": "PRIMARY",
+            "title": "TotalEnergies European Renewables Portfolio | KKR",
+            "publisher": "Totalenergies",
+            "url": "https://totalenergies.com/newsroom/renewables-in-europe-totalenergies-acquires-shells-renewables-business-and-sells-a-50-stake-in-a-portfolio-of-developed-assets-to-kkr",
+            "artifactPath": null,
+            "publishedAt": "2026-08-07",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR agreed to acquire a 50% interest in TotalEnergies’ largely developed 1.2 GW European onshore solar and wind portfolio at a €1.8bn enterprise value. TotalEnergies will retain 50%, continue operating the assets and market their power.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-221",
+      "groupKey": "Sponsor — La Caisse",
+      "baseReviewedInputHash": "c051b6550769daaeee9aaeba532cea19ebee3125ec30bcf6a2b40eb2d58314f7",
+      "record": {
+        "recordId": "INF-2026-221",
+        "legacyId": "INF-2026-221",
+        "splitSuffix": null,
+        "transactionIdentityKey": "c4a2bddb6730387ff8b11b52a503ef9d6906091cb473afd75206765587f8f50d",
+        "target": "Verene Energia S.A.",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: La Caisse.",
+              "sourceIds": [
+                "transaction-INF-2026-221"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-INF-2026-221"
+              ]
+            },
+            {
+              "name": "Grupo Energía Bogotá",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-221"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-INF-2026-221"
+              ]
+            },
+            {
+              "name": "Grupo Energía Bogotá",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-221"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Latin America",
+        "country": "Brazil",
+        "announcementDate": "2026-05-15",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-221",
+            "tier": "PRIMARY",
+            "title": "La Caisse and GEB establish Verene power transmission platform in Brazil",
+            "publisher": "La Caisse",
+            "url": "https://lacaisse.com/en/news/pressreleases/caisse-grupo-energia-bogota-establish-brazils-5th-largest-power-transmission",
+            "artifactPath": null,
+            "publishedAt": "2026-05-15",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "La Caisse and Grupo Energía Bogotá entered into a final agreement to create a jointly controlled 50/50 power transmission platform in Brazil under the Verene Energia S.A. name. The combined platform will include 26 electric transmission concessions and more than 9,000 km of transmission lines across 17 Brazilian states.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-16-014",
+      "groupKey": "Sponsor — La Caisse",
+      "baseReviewedInputHash": "55ea526903507b3b6564d02f46b720b8345a3f67d2b63c2c588517ba3c2d9204",
+      "record": {
+        "recordId": "WB-2026-05-16-014",
+        "legacyId": "WB-2026-05-16-014",
+        "splitSuffix": null,
+        "transactionIdentityKey": "fa4a6c1df603dac60a2c3937c46dad8f976cf438360228743db4fa16373d755d",
+        "target": "Information Services Corporation",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: La Caisse.",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-014"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-014"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "Canada",
+        "announcementDate": "2026-05-22",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": true,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-16-014",
+            "tier": "PRIMARY",
+            "title": "Information Services Corporation | La Caisse",
+            "publisher": "Investors",
+            "url": "https://investors.isc.ca/news-releases/news-release-details/isc-be-acquired-plenary-americas-all-cash-transaction",
+            "artifactPath": null,
+            "publishedAt": "2026-05-22",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Plenary Americas signed an all-cash arrangement agreement to acquire Information Services Corporation for C$51.00 per share, valuing ISC at about C$1.2bn enterprise value. ISC provides registry and information management services for public data and records, including land and business registry functions.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-13-012",
+      "groupKey": "Sponsor — La Caisse",
+      "baseReviewedInputHash": "b55882fc209f30142aeecb08b616f71bf96093fb2b830692acc6e510f94c00c7",
+      "record": {
+        "recordId": "WB-2026-06-13-012",
+        "legacyId": "WB-2026-06-13-012",
+        "splitSuffix": null,
+        "transactionIdentityKey": "5d51f9464eacd6984007130a67494cd57023d94817e68338c7755acd897af71c",
+        "target": "A25 Concession",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: La Caisse.",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-012"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-012"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "Canada",
+        "announcementDate": "2026-06-12",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-13-012",
+            "tier": "PRIMARY",
+            "title": "A25 Concession | La Caisse",
+            "publisher": "Lacaisse",
+            "url": "https://lacaisse.com/en/news/pressreleases/caisse-become-sole-owner-a25-concession-acquiring-transurbans-remaining-stake",
+            "artifactPath": null,
+            "publishedAt": "2026-06-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "La Caisse agreed to acquire Transurban’s remaining 50% interest in the A25 Concession, increasing its ownership from 50% to 100%. The Montreal-area asset includes toll road and bridge infrastructure under a long-term concession framework.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-13-013",
+      "groupKey": "Sponsor — La Caisse",
+      "baseReviewedInputHash": "b9cfe582085ac9dbccb4a953116b0070f48f4e61f758fcef8c7f7afecac7aa6c",
+      "record": {
+        "recordId": "WB-2026-06-13-013",
+        "legacyId": "WB-2026-06-13-013",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e05667dc2bde35aec789fc9c545de24386bd64c09200038cc05b890b8c992678",
+        "target": "University of Kentucky Central Utility Plant",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: La Caisse.",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-013"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-013"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-06-12",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-13-013",
+            "tier": "PRIMARY",
+            "title": "University of Kentucky Central Utility Plant | La Caisse",
+            "publisher": "Plenary",
+            "url": "https://plenary.com/news/fc-uk-central-utility-plant-project",
+            "artifactPath": null,
+            "publishedAt": "2026-06-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Kentucky Infrastructure Partners reached financial close on the University of Kentucky Central Utility Plant P3 project. The deal includes sponsor equity alongside bond financing and is linked to La Caisse through Plenary Americas infrastructure-platform lineage.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-008",
+      "groupKey": "Sponsor — La Caisse",
+      "baseReviewedInputHash": "1b4d7e60360532b111a2a35048eea680f115e89a4a445b1e5d36914841c5e41c",
+      "record": {
+        "recordId": "WB-2026-07-03-008",
+        "legacyId": "WB-2026-07-03-008",
+        "splitSuffix": null,
+        "transactionIdentityKey": "0913af8aa29556ef090a64bf178d7669222e7c15ecc9584e6766f50b4babcee3",
+        "target": "Enersol solar portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: La Caisse.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-008"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-03-008"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-008"
+              ]
+            },
+            {
+              "name": "Equitix",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-03-008"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Spain",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-008",
+            "tier": "PRIMARY",
+            "title": "Enersol solar portfolio | La Caisse / Equitix",
+            "publisher": "Veltorenewables",
+            "url": "https://veltorenewables.com/en/velto-renewables-is-now-the-sole-owner-of-the-enersol-solar-portfolio-in-andalusia-after-completing-its-acquisition",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "La Caisse-backed Velto Renewables agreed to acquire Equitix's minority stake in the Enersol solar portfolio in Andalusia. The deal gives Velto full ownership of nine operating PV assets totaling 45 MWp.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-24-011",
+      "groupKey": "Sponsor — La Caisse",
+      "baseReviewedInputHash": "7b46c36b7b6d544c2e0cd6178e01404a9309e903d87c94181796e638d1703968",
+      "record": {
+        "recordId": "WB-2026-07-24-011",
+        "legacyId": "WB-2026-07-24-011",
+        "splitSuffix": null,
+        "transactionIdentityKey": "0fc161886b30fefa00cbed3f98697b2256e950bb936332bf30e10cc5bcf7cd58",
+        "target": "GO.FARM Permanent Crops Platform",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: La Caisse.",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-011"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-011"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "Asia-Pacific",
+        "country": "Australia",
+        "announcementDate": "2026-07-24",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Platform Launch",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": true,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-24-011",
+            "tier": "PRIMARY",
+            "title": "GO.FARM Permanent Crops Platform | La Caisse",
+            "publisher": "Lacaisse",
+            "url": "https://lacaisse.com/en/news/pressreleases/caisse-gofarm-launch-aud-330-million-platform-invest-australian-permanent-crops",
+            "artifactPath": null,
+            "publishedAt": "2026-07-24",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "La Caisse committed A$300 million and GO.FARM A$30 million to launch an Australian irrigated permanent-crops platform, while La Caisse will also acquire a minority stake in GO.FARM. The manager oversees approximately A$1.6 billion of assets focused on institutional-scale land and water operations.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-010",
+      "groupKey": "Sponsor — La Caisse",
+      "baseReviewedInputHash": "245c510ba2c6209e9c14966109d56061ef0be3f96628742fcbe0788086646244",
+      "record": {
+        "recordId": "WB-2026-07-31-010",
+        "legacyId": "WB-2026-07-31-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "2b8521ed840c8cbe286048295e6b49afbd67bd770c25cfb2cafb8cc2d4c65c18",
+        "target": "Yondr Slough Campus",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: La Caisse / DigitalBridge.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-010"
+              ]
+            },
+            {
+              "name": "DigitalBridge",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "DigitalBridge",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-010"
+              ]
+            },
+            {
+              "name": "DigitalBridge",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "DigitalBridge",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-010"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-010",
+            "tier": "PRIMARY",
+            "title": "Yondr Slough Campus | La Caisse / DigitalBridge",
+            "publisher": "Yondrgroup",
+            "url": "https://yondrgroup.com/newsroom/press-release/yondr-partners-with-glil-infrastructure-on-uk-hyperscale-data-center-campus",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "La Caisse- and DigitalBridge-owned Yondr brought GLIL Infrastructure into its Slough data-center campus through an investment in two operational buildings. The buildings represent more than 60 MW within the campus’ greater-than-100 MW footprint.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    }
+  ],
+  "packetSha256": "26806da988b9c26f832aaf57dd147e4c54c4a695f67ee7c59ad0074a331ccb38"
+}

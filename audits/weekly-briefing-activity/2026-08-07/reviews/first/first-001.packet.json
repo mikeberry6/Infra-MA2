@@ -1,0 +1,3811 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-001",
+  "baseManifestSha256": "65a7e8fd6bc47b8ac9b76faffcb4f89b5ab6366dd1e7a33ebe38c235833a99c5",
+  "recordCount": 24,
+  "records": [
+    {
+      "recordId": "INF-2026-073",
+      "groupKey": "Acting entity — 11:11 Systems",
+      "baseReviewedInputHash": "91dedca3bcda936d9cfb0898723f181d9fc5d4c07d9d398253611b650b33eefa",
+      "record": {
+        "recordId": "INF-2026-073",
+        "legacyId": "INF-2026-073",
+        "splitSuffix": null,
+        "transactionIdentityKey": "11529daf5213de6c4e359b65937356bce9eb5c2e4807c67940a6af0cb330d2f1",
+        "target": "Ntirety",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via 11:11 Systems.",
+              "sourceIds": [
+                "transaction-INF-2026-073"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-073"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Tiger Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-073"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer acquired the target through an existing platform; under platform-first scope this should usually be a platform milestone.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-073"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Tiger Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Tiger Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-073"
+              ]
+            },
+            {
+              "name": "11:11 Systems",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Tiger Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-073"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "11:11 Systems",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-073"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Tiger Infrastructure Partners",
+            "entityName": "11:11 Systems",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-073"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-01-08",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-073",
+            "tier": "PRIMARY",
+            "title": "Tiger Infrastructure Partners acquires Ntirety via 11:11 Systems (bolt-on)",
+            "publisher": "GlobeNewswire",
+            "url": "https://globenewswire.com/news-release/2026/01/08/3215407/0/en/11-11-Systems-Successfully-Completes-Acquisition-of-Ntirety.html",
+            "artifactPath": null,
+            "publishedAt": "2026-01-08",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Tiger Infrastructure Partners, through 11:11 Systems, completed a bolt-on acquisition of Ntirety, a managed IT services provider.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-073",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer acquired the target through an existing platform; under platform-first scope this should usually be a platform milestone."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-091",
+      "groupKey": "Acting entity — 11:11 Systems",
+      "baseReviewedInputHash": "08254b82897d22e3160591e6c4d59456b17acb7c8173eea68395b70e4853326c",
+      "record": {
+        "recordId": "INF-2026-091",
+        "legacyId": "INF-2026-091",
+        "splitSuffix": null,
+        "transactionIdentityKey": "6a54f1ca2d2f9c314825df9861c3c777fd4b19471eb2cc21a7e336afaadde250",
+        "target": "Digital Sense",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via 11:11 Systems.",
+              "sourceIds": [
+                "transaction-INF-2026-091"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-091"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Tiger Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-091"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer acquired the target through an existing platform; under platform-first scope this should usually be a platform milestone.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-091"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Tiger Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Tiger Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-091"
+              ]
+            },
+            {
+              "name": "11:11 Systems",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Tiger Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-091"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Aussie Broadband",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-091"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "11:11 Systems",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-091"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Tiger Infrastructure Partners",
+            "entityName": "11:11 Systems",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-091"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "Australia",
+        "announcementDate": "2026-02-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-091",
+            "tier": "PRIMARY",
+            "title": "Tiger Infrastructure Partners acquires Digital Sense via 11:11 Systems (bolt-on)",
+            "publisher": "businesswire.com",
+            "url": "https://www.businesswire.com/news/home/20260222924165/en/1111-Systems-Successfully-Completes-Acquisition-of-Digital-Sense",
+            "artifactPath": null,
+            "publishedAt": "2026-02-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Acquirer's transaction announcement syndicated by Business Wire; archive link was a placeholder.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-091",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer acquired the target through an existing platform; under platform-first scope this should usually be a platform milestone."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-096",
+      "groupKey": "Acting entity — Aggreko IPP Solutions",
+      "baseReviewedInputHash": "9d0f81a7af4f5902884b50a1e66c0bab4b2494b8b5c2b8816772f05a38378ad4",
+      "record": {
+        "recordId": "INF-2026-096",
+        "legacyId": "INF-2026-096",
+        "splitSuffix": null,
+        "transactionIdentityKey": "4cd909319cf30ae09725150ba4db1e777c076edd2772cbde51baf2e70f22e76a",
+        "target": "79.2 MW DG BESS Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Aggreko IPP Solutions.",
+              "sourceIds": [
+                "transaction-INF-2026-096"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-096"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The seller uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before changing target status.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-096"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Bimergen Energy",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-096"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-096"
+              ]
+            },
+            {
+              "name": "Aggreko IPP Solutions",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-096"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Aggreko IPP Solutions",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "SELLER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-096"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "I Squared Capital",
+            "entityName": "Aggreko IPP Solutions",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-096"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-03-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Majority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-096",
+            "tier": "PRIMARY",
+            "title": "Bimergen Energy acquires 79.2 MW ERCOT South BESS portfolio from Aggreko IPP Solutions",
+            "publisher": "GlobeNewsWire",
+            "url": "https://globenewswire.com/news-release/2026/03/03/3248139/0/en/Bimergen-Energy-Completes-Acquisition-of-79-2-MW-of-Late-Stage-DG-Battery-Energy-Storage-Projects-in-ERCOT-South-from-Aggreko-and-Executes-Simultaneous-Financing.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Bimergen Energy completed the acquisition of a 79.2 MW distributed generation battery energy storage portfolio in ERCOT South from Aggreko's IPP Solutions business, which is owned by I Squared Capital.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-096",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The seller uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before changing target status."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-001",
+      "groupKey": "Acting entity — Altus Power",
+      "baseReviewedInputHash": "fce485e0a1d4eeea0478e214c170f2d777a4a06b59be4d231bbbe5b5a7dfeffd",
+      "record": {
+        "recordId": "INF-2026-001",
+        "legacyId": "INF-2026-001",
+        "splitSuffix": null,
+        "transactionIdentityKey": "556a776ff72ecce9e6847c510c5c17b1caea1c6208011d215934607e8706fdf9",
+        "target": "12 MW Solar Operating Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Altus Power.",
+              "sourceIds": [
+                "transaction-INF-2026-001"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-001"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "TPG Rise Climate",
+              "entityKind": "OTHER",
+              "isPrincipal": false,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-001"
+              ]
+            },
+            {
+              "name": "Altus Power",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-001"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Altus Power",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-001"
+          ]
+        },
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-01-08",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-001",
+            "tier": "PRIMARY",
+            "title": "TPG Rise Climate acquires 12 MW solar operating portfolio via Altus Power",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260108020262/en/Altus-Power-Acquires-12-MW-of-Commercial-Scale-Solar-Assets-Across-Four-States",
+            "artifactPath": null,
+            "publishedAt": "2026-01-08",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "TPG Rise Climate, through its portfolio company Altus Power, acquired a 12 MW solar operating portfolio.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-001",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-004",
+      "groupKey": "Acting entity — Altus Power",
+      "baseReviewedInputHash": "ac7d6c20f222c6b687e1f232ef7c5b9b12dcc2ba543db192ef83905bef3c9bbc",
+      "record": {
+        "recordId": "INF-2026-004",
+        "legacyId": "INF-2026-004",
+        "splitSuffix": null,
+        "transactionIdentityKey": "99d9ea8060cecde5bbdf6359d4fd1ab3bb114ff8dfe6eaa1f2f8f57720480bd8",
+        "target": "105 MW In-Construction Solar Project",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Altus Power.",
+              "sourceIds": [
+                "transaction-INF-2026-004"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-004"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "TPG Rise Climate",
+              "entityKind": "OTHER",
+              "isPrincipal": false,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-004"
+              ]
+            },
+            {
+              "name": "Altus Power",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-004"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Altus Power",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-004"
+          ]
+        },
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-01-15",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-004",
+            "tier": "PRIMARY",
+            "title": "TPG Rise Climate acquires 105 MW in-construction solar project via Altus Power",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260115191753/en/Altus-Power-Acquires-105MW-DC-of-In-Construction-Solar-Projects-from-Cordelio-Power",
+            "artifactPath": null,
+            "publishedAt": "2026-01-15",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "TPG Rise Climate, through Altus Power, acquired a 105 MW in-construction solar project.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-004",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-025",
+      "groupKey": "Acting entity — Altus Power",
+      "baseReviewedInputHash": "b7162e25efab205df8c1d5790e7a8ab91716f3cd049253d2bc1aff82e6efcb6a",
+      "record": {
+        "recordId": "INF-2026-025",
+        "legacyId": "INF-2026-025",
+        "splitSuffix": null,
+        "transactionIdentityKey": "7675c4f9d7b0e2e81d713fc64a44d38457e7b4f2e99870d11ec6a876359b11dd",
+        "target": "Minnesota Community Solar Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Altus Power.",
+              "sourceIds": [
+                "transaction-INF-2026-025"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-025"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "TPG Rise Climate",
+              "entityKind": "OTHER",
+              "isPrincipal": false,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-025"
+              ]
+            },
+            {
+              "name": "Altus Power",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-025"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Altus Power",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-025"
+          ]
+        },
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-01-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-025",
+            "tier": "PRIMARY",
+            "title": "TPG Rise Climate acquires operational community solar in Minnesota via Altus Power",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260128359646/en/Altus-Power-Announces-Acquisition-of-Community-Solar-Projects-in-Minnesota",
+            "artifactPath": null,
+            "publishedAt": "2026-01-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "TPG Rise Climate, through Altus Power, acquired an operational community solar portfolio in Minnesota.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-025",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-083",
+      "groupKey": "Acting entity — Andion CH4 Renewables",
+      "baseReviewedInputHash": "e66c8a8a5e5cc7b8dc469a579df1bc596152b3626e4b4e541113eaa2c50da4b1",
+      "record": {
+        "recordId": "INF-2026-083",
+        "legacyId": "INF-2026-083",
+        "splitSuffix": null,
+        "transactionIdentityKey": "43b684adedef8cdf2589f71b667560595579fc623d960f0e24f94bf0d1164800",
+        "target": "Cella Dati Biomethane Plant",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Andion CH4 Renewables.",
+              "sourceIds": [
+                "transaction-INF-2026-083"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-083"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-083"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Equitix",
+              "entityKind": "OTHER",
+              "isPrincipal": false,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-083"
+              ]
+            },
+            {
+              "name": "Andion CH4 Renewables",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-083"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "IREN",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-083"
+              ]
+            },
+            {
+              "name": "Santini Agricoltura Rinnovabile",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-083"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Andion CH4 Renewables",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-083"
+          ]
+        },
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Italy",
+        "announcementDate": "2026-02-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-083",
+            "tier": "PRIMARY",
+            "title": "Equitix acquires Cella Dati biomethane plant via Andion CH4 Renewables (bolt-on)",
+            "publisher": "andionch4.com",
+            "url": "https://andionch4.com/acquisition-of-the-cella-dati-plant/",
+            "artifactPath": null,
+            "publishedAt": "2026-02-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Acquirer's transaction announcement; archive link was a placeholder.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-083",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-113",
+      "groupKey": "Acting entity — Ara Energy",
+      "baseReviewedInputHash": "c3e50dce03cd0c1d26a4d7615f8553ef84a33597dae0210eb0a6ee956ecd8265",
+      "record": {
+        "recordId": "INF-2026-113",
+        "legacyId": "INF-2026-113",
+        "splitSuffix": null,
+        "transactionIdentityKey": "975eacf2139a9d65c7286757ce6575f4f9aa9e5363354e626ea157cdb0a4735f",
+        "target": "Gate City Power / Gate City Renewable Fuels / JET",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Ara Energy.",
+              "sourceIds": [
+                "transaction-INF-2026-113"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ara Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-113"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-113"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Ara Partners",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Ara Partners",
+              "sourceIds": [
+                "transaction-INF-2026-113"
+              ]
+            },
+            {
+              "name": "Ara Energy",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Ara Partners",
+              "sourceIds": [
+                "transaction-INF-2026-113"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "HF Capital",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-113"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Ara Energy",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-113"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Ara Partners",
+            "entityName": "Ara Energy",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-113"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-03-09",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-113",
+            "tier": "PRIMARY",
+            "title": "Ara Partners acquires Gate City Power, Gate City Renewable Fuels, and JET from HF Capital",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million-302709985.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-09",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Ara Energy, a portfolio platform of Ara Partners, agreed to acquire Gate City Power, Gate City Renewable Fuels, and an interest in the JET retail network from HF Capital for approximately $875mm. Gate City Power owns thermal generation assets totaling approximately 2.2 GW across NYISO and ISO-NE, while Gate City Renewable Fuels comprises U.S. ethanol production assets; the JET retail network will be acquired in partnership with Ara Infrastructure.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-113",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-094",
+      "groupKey": "Acting entity — ATSG",
+      "baseReviewedInputHash": "8f097155bea69a2f8f3e8a65226bf22a8ba95d172c504133da3da3db804f2883",
+      "record": {
+        "recordId": "INF-2026-094",
+        "legacyId": "INF-2026-094",
+        "splitSuffix": null,
+        "transactionIdentityKey": "c90848b7b5f179d8e70a01da63ab3ea27c837ae4cc213e7d7315bbf9185c7239",
+        "target": "321 Precision Conversions",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via ATSG.",
+              "sourceIds": [
+                "transaction-INF-2026-094"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-INF-2026-094"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/seller platform: add divestiture milestone/source (High confidence): Seller disclosed the deal through an existing platform; under platform-first scope this is usually platform divestiture history.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-094"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Erickson Group",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-094"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-094"
+              ]
+            },
+            {
+              "name": "ATSG",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-094"
+              ]
+            }
+          ],
+          "jointVentureParticipants": [
+            {
+              "name": "Erickson Group",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-094"
+              ]
+            },
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-094"
+              ]
+            },
+            {
+              "name": "ATSG",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-094"
+              ]
+            }
+          ]
+        },
+        "actingEntity": {
+          "name": "ATSG",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "SELLER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-094"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Stonepeak",
+            "entityName": "ATSG",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-094"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-02-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE",
+            "JOINT_VENTURE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE",
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-094",
+            "tier": "PRIMARY",
+            "title": "Stonepeak divests 49% stake in 321 Precision Conversions via ATSG",
+            "publisher": "atsginc.com",
+            "url": "https://www.atsginc.com/news-and-media/newsroom/year/2026/2026-02-24-erickson-acquires-321-precision",
+            "artifactPath": null,
+            "publishedAt": "2026-02-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Seller/target transaction announcement, also present in reviewed company source data; archive link was a placeholder.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-094",
+            "summary": "Existing via/seller platform: add divestiture milestone/source (High confidence): Seller disclosed the deal through an existing platform; under platform-first scope this is usually platform divestiture history."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-212",
+      "groupKey": "Acting entity — Aurora Infrastructure",
+      "baseReviewedInputHash": "57c6d80f935046b70aa96875d9055952017da7f92cc711d76b09a0b9af65937e",
+      "record": {
+        "recordId": "INF-2026-212",
+        "legacyId": "INF-2026-212",
+        "splitSuffix": null,
+        "transactionIdentityKey": "201a14be0c92c83f33b4a9f78823a2228be98f3820bbd7864aba1c42b8044cc4",
+        "target": "Terrafame Sotkamo Electrical Grid Assets",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Aurora Infrastructure.",
+              "sourceIds": [
+                "transaction-INF-2026-212"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-212"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Equitix",
+              "entityKind": "OTHER",
+              "isPrincipal": false,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-212"
+              ]
+            },
+            {
+              "name": "Aurora Infrastructure",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-212"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Terrafame",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-212"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Aurora Infrastructure",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-212"
+          ]
+        },
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "Finland",
+        "announcementDate": "2026-05-12",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-212",
+            "tier": "PRIMARY",
+            "title": "Equitix-backed Aurora Infrastructure to acquire Terrafame grid assets",
+            "publisher": "Aurora Infrastructure",
+            "url": "https://aurorainfrastructure.com/news-insights/2026/05/aurora-infrastructure-to-acquire-terrafames-high-and-medium-voltage-electrical-grid-assets",
+            "artifactPath": null,
+            "publishedAt": "2026-05-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Aurora Infrastructure entered into a strategic partnership with Terrafame by acquiring the high- and medium-voltage electrical grid assets at Terrafame's Sotkamo industrial site in Finland. The transaction is structured as a buy-and-lease-back arrangement supporting industrial-site power infrastructure.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-006",
+      "groupKey": "Acting entity — BEE",
+      "baseReviewedInputHash": "1da549d2ce4ce2f4a705b1d213385b2f85fd96b3d4e8d874b60564db9cc34353",
+      "record": {
+        "recordId": "INF-2026-006",
+        "legacyId": "INF-2026-006",
+        "splitSuffix": null,
+        "transactionIdentityKey": "a0c956aece555d537b83434d48ab78d2ef70234866321dbd73feae047660fdb3",
+        "target": "381 MW Onshore Wind Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via BEE.",
+              "sourceIds": [
+                "transaction-INF-2026-006"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Antin Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-006"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-006"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Antin Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Antin Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-006"
+              ]
+            },
+            {
+              "name": "BEE",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Antin Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-006"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "BEE",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-006"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Antin Infrastructure Partners",
+            "entityName": "BEE",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-006"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Europe",
+        "announcementDate": "2026-01-13",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-006",
+            "tier": "PRIMARY",
+            "title": "Antin acquires 381 MW onshore wind portfolio via BEE",
+            "publisher": "White & Case",
+            "url": "https://whitecase.com/news/press-release/white-case-advises-blue-elephant-energy-acquisition-381-mw-wind-portfolio",
+            "artifactPath": null,
+            "publishedAt": "2026-01-13",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Antin Infrastructure Partners, through BEE, acquired a 381 MW onshore wind portfolio.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-006",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-172",
+      "groupKey": "Acting entity — Canadian Resource Roadways",
+      "baseReviewedInputHash": "805ef58c1fce5cb5185affce6b08a498f2470d253ee0675a738767620f98dade",
+      "record": {
+        "recordId": "INF-2026-172",
+        "legacyId": "INF-2026-172",
+        "splitSuffix": null,
+        "transactionIdentityKey": "12dfe5aa2c54adde82e9880ffb59f4b334ad15cb14c57046cf26368298d8e1aa",
+        "target": "Berland Resource Road & Home Creek Road",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Canadian Resource Roadways.",
+              "sourceIds": [
+                "transaction-INF-2026-172"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-172"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CBRE Investment Management.",
+              "sourceIds": [
+                "transaction-INF-2026-172"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-172"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "CBRE Investment Management",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "CBRE Investment Management",
+              "sourceIds": [
+                "transaction-INF-2026-172"
+              ]
+            },
+            {
+              "name": "Canadian Resource Roadways",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "CBRE Investment Management",
+              "sourceIds": [
+                "transaction-INF-2026-172"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Canadian Resource Roadways",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-172"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "CBRE Investment Management",
+            "entityName": "Canadian Resource Roadways",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-172"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "Canada",
+        "announcementDate": "2026-04-16",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-172",
+            "tier": "PRIMARY",
+            "title": "CBRE-backed Canadian Resource Roadways acquires Berland and Home Creek roads",
+            "publisher": "BOE Report",
+            "url": "https://boereport.com/2026/04/16/crr-expands-into-forestry-with-berland-anc-road-acquisition",
+            "artifactPath": null,
+            "publishedAt": "2026-04-16",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Canadian Resource Roadways, a portfolio company of CBRE Investment Management, signed a definitive agreement to acquire a 90% equity stake in a 134-kilometer industrial access road network that supports regional forestry and energy operations.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-172",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-003",
+      "groupKey": "Acting entity — Catalyze",
+      "baseReviewedInputHash": "8aba4f4044d2a7d94fea820be874723e9b3e30ed4e8c75f92d8d3e951f0d5232",
+      "record": {
+        "recordId": "INF-2026-003",
+        "legacyId": "INF-2026-003",
+        "splitSuffix": null,
+        "transactionIdentityKey": "44c7b925111b8c73d6e53cdd5ffe8b3be9ebbbddff55fad7a549d4f64b4adcf4",
+        "target": "Catalyze",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Catalyze.",
+              "sourceIds": [
+                "transaction-INF-2026-003"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-003"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "EnCap Investments",
+              "entityKind": "OTHER",
+              "isPrincipal": false,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-003"
+              ]
+            },
+            {
+              "name": "Catalyze",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-003"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Catalyze",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-003"
+          ]
+        },
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-01-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-003",
+            "tier": "PRIMARY",
+            "title": "EnCap Investments provides preferred growth equity to Catalyze (100 MW distributed solar)",
+            "publisher": "Catalyze",
+            "url": "https://catalyze.com/2026/01/26/catalyze-closes-100-mw-distributed-solar-tax-equity-financing-with-rbc",
+            "artifactPath": null,
+            "publishedAt": "2026-01-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "EnCap Investments provided preferred growth equity to Catalyze to support the development of 100 MW of distributed solar capacity.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-003",
+            "summary": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-149",
+      "groupKey": "Acting entity — ChillCo Logistics",
+      "baseReviewedInputHash": "e4b017e5348501818377a09d20acb95ecc8e58b7b8bbcd32cfdeda57fa59e96c",
+      "record": {
+        "recordId": "INF-2026-149",
+        "legacyId": "INF-2026-149",
+        "splitSuffix": null,
+        "transactionIdentityKey": "15fa4a459ebfdf04eda58d0e6f94bb459664e072c5553439af44cf4d12ca3dee",
+        "target": "Mattingly Cold Storage",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via ChillCo Logistics.",
+              "sourceIds": [
+                "transaction-INF-2026-149"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-149"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-149"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-149"
+              ]
+            },
+            {
+              "name": "ChillCo Logistics",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-149"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "ChillCo Logistics",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-149"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Igneo Infrastructure Partners",
+            "entityName": "ChillCo Logistics",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-149"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-03-31",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-149",
+            "tier": "PRIMARY",
+            "title": "Igneo acquires Mattingly Cold Storage to form ChillCo Logistics",
+            "publisher": "Igneo Infrastructure Partners",
+            "url": "https://igneoip.com/usa/en/institutional/news-and-insights/press/igneo-announces-establishment-of-cold-storage-platform-with-acquisition-of-mattingly.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Igneo agreed to acquire Mattingly Cold Storage, a 275k sq. ft. multi-temperature, post-production focused cold storage business in Zanesville, Ohio, as the foundation of ChillCo Logistics. The deal marks Igneo’s inaugural U.S. cold-storage investment and extends its transportation and logistics exposure.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-149",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-170",
+      "groupKey": "Acting entity — Consilium Safety Group",
+      "baseReviewedInputHash": "e92ad6b13b84b09b8b5fdda39878ac79f04dfd8957daf27089f61988d8d35f4c",
+      "record": {
+        "recordId": "INF-2026-170",
+        "legacyId": "INF-2026-170",
+        "splitSuffix": null,
+        "transactionIdentityKey": "25f3f718f145dab229bacf614fd231848bed052d7cf1bc4c3d9052322b1ed24e",
+        "target": "Insplorion Hydrogen Sensor Business",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Consilium Safety Group.",
+              "sourceIds": [
+                "transaction-INF-2026-170"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-170"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Antin Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-170"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-170"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Antin Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Antin Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-170"
+              ]
+            },
+            {
+              "name": "Consilium Safety Group",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Antin Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-170"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Insplorion AB",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-170"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Consilium Safety Group",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-170"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Antin Infrastructure Partners",
+            "entityName": "Consilium Safety Group",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-170"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Europe",
+        "announcementDate": "2026-04-15",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-170",
+            "tier": "PRIMARY",
+            "title": "Antin-backed Consilium acquires Insplorion hydrogen sensor business",
+            "publisher": "Consilium Safety Group",
+            "url": "https://consiliumsafety.com/en/consilium-safety-group-reinforces-its-industry-leadership-through-acquisition-of-insplorions-hydrogen-sensor-technology-business",
+            "artifactPath": null,
+            "publishedAt": "2026-04-15",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Consilium Safety Group, a portfolio company of Antin Infrastructure Partners, acquired Insplorion’s hydrogen sensor technology business, including related intellectual property and physical assets for advanced hydrogen detection sensors.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-170",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-176",
+      "groupKey": "Acting entity — Cordelio Power",
+      "baseReviewedInputHash": "8713451c005eac9820acced7ca49dc0677fde8171a69d4328d0f8f5addbd23dc",
+      "record": {
+        "recordId": "INF-2026-176",
+        "legacyId": "INF-2026-176",
+        "splitSuffix": null,
+        "transactionIdentityKey": "3c679badd7f21d77e5ad8ad2916ee7620db0fbf6e7a7b94ef30e146f85f28008",
+        "target": "Cordelio Power’s 6GW Joint Venture Interest",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Cordelio Power.",
+              "sourceIds": [
+                "transaction-INF-2026-176"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: CPP Investments.",
+              "sourceIds": [
+                "transaction-INF-2026-176"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/seller platform: add divestiture milestone/source (High confidence): Seller disclosed the deal through an existing platform; under platform-first scope this is usually platform divestiture history.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-176"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "BrightNight",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-176"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-INF-2026-176"
+              ]
+            },
+            {
+              "name": "Cordelio Power",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-INF-2026-176"
+              ]
+            }
+          ],
+          "jointVentureParticipants": [
+            {
+              "name": "BrightNight",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-176"
+              ]
+            },
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-INF-2026-176"
+              ]
+            },
+            {
+              "name": "Cordelio Power",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-INF-2026-176"
+              ]
+            }
+          ]
+        },
+        "actingEntity": {
+          "name": "Cordelio Power",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "SELLER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-176"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "CPP Investments",
+            "entityName": "Cordelio Power",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-176"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-22",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE",
+            "JOINT_VENTURE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE",
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-176",
+            "tier": "PRIMARY",
+            "title": "CPP Investments-backed Cordelio sells 6 GW JV interest to BrightNight",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio-302747628.html",
+            "artifactPath": null,
+            "publishedAt": "2026-04-22",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "BrightNight bought out JV partner Cordelio Power’s interest in 6 GW of US solar and storage development projects, taking full ownership and control of the assets and leaving four operating/construction-stage projects within the legacy JV. The transaction follows BrightNight’s recent $850mm corporate credit facility close and reinforces the AI-focused IPP’s western US footprint; Cordelio is the renewables platform owned by CPP Investments.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-176",
+            "summary": "Existing via/seller platform: add divestiture milestone/source (High confidence): Seller disclosed the deal through an existing platform; under platform-first scope this is usually platform divestiture history."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-157",
+      "groupKey": "Acting entity — Croatian Biomass Platform",
+      "baseReviewedInputHash": "4e09f7553baa91ee405395c337dd0800e850fb2ede2b7c9dfa0f94fdbf4c0c4a",
+      "record": {
+        "recordId": "INF-2026-157",
+        "legacyId": "INF-2026-157",
+        "splitSuffix": null,
+        "transactionIdentityKey": "3812ecb8712c58abe52bc25fe75790e23da0818177d55ce097b523611c3cc2ab",
+        "target": "Three 5MW biomass plants in Croatia",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Croatian Biomass Platform.",
+              "sourceIds": [
+                "transaction-INF-2026-157"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-157"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ancala Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-157"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-157"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Ancala Partners",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Ancala Partners",
+              "sourceIds": [
+                "transaction-INF-2026-157"
+              ]
+            },
+            {
+              "name": "Croatian Biomass Platform",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Ancala Partners",
+              "sourceIds": [
+                "transaction-INF-2026-157"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "The Sherif Group",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-157"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Croatian Biomass Platform",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-157"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Ancala Partners",
+            "entityName": "Croatian Biomass Platform",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-157"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Croatia",
+        "announcementDate": "2026-04-02",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-157",
+            "tier": "PRIMARY",
+            "title": "Ancala-backed Croatian Biomass Platform acquires three biomass plants",
+            "publisher": "Ancala Partners",
+            "url": "https://ancala.com/ancalas-croatian-biomass-platform-acquires-three-plants",
+            "artifactPath": null,
+            "publishedAt": "2026-04-02",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Ancala’s Croatian Biomass Platform acquired three 5MW biomass plants from The Sherif Group, more than doubling renewable generation capacity to 25MW. The five-site platform now generates approximately 200,000 MWh annually, equivalent to powering more than 45,000 homes, with the newly acquired plants backed by long-term feed-in tariffs and biomass supply agreements.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-157",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-152",
+      "groupKey": "Acting entity — CubeCold",
+      "baseReviewedInputHash": "bda11186543a407ee0a50a75f7e95b9150f92ee5867f68e210c1a953d4a8eb2f",
+      "record": {
+        "recordId": "INF-2026-152",
+        "legacyId": "INF-2026-152",
+        "splitSuffix": null,
+        "transactionIdentityKey": "1b87de22e1a312c6e6f84be0007ca877e65beab6639bb063c542485cd12037ea",
+        "target": "24H Frost",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via CubeCold.",
+              "sourceIds": [
+                "transaction-INF-2026-152"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-152"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-152"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-152"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-152"
+              ]
+            },
+            {
+              "name": "CubeCold",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-152"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "CubeCold",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-152"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "I Squared Capital",
+            "entityName": "CubeCold",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-152"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "France",
+        "announcementDate": "2026-04-01",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-152",
+            "tier": "PRIMARY",
+            "title": "I Squared-backed CubeCold acquires 24H Frost",
+            "publisher": "CubeCold",
+            "url": "https://cubecold.com/cubecold-enters-the-french-cold-storage-market-with-the-acquisition-of-24h-frost",
+            "artifactPath": null,
+            "publishedAt": "2026-04-01",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "CubeCold entered the French market through the acquisition of 24H Frost, adding a fully automated cold-storage facility in the port of Loon-Plage, Dunkirk. The site offers more than 12,000 frozen pallet positions, and the acquisition expands CubeCold’s network to over 700,000 pallet spaces across six European markets.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-152",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-117",
+      "groupKey": "Acting entity — Cypress Creek Renewables",
+      "baseReviewedInputHash": "a4e53b489359cd5a9165c04317bd1e716a1c489d0532ea2070b11f47bdc3d5b1",
+      "record": {
+        "recordId": "INF-2026-117",
+        "legacyId": "INF-2026-117",
+        "splitSuffix": null,
+        "transactionIdentityKey": "2e33ee6c00791177a390784369f3cc086a5e5e3a89d1e0c36457cf31b5721a12",
+        "target": "Steel River Solar and Storage Project",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Cypress Creek Renewables.",
+              "sourceIds": [
+                "transaction-INF-2026-117"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: IFM Investors.",
+              "sourceIds": [
+                "transaction-INF-2026-117"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-117"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "EQT Infrastructure",
+              "entityKind": "OTHER",
+              "isPrincipal": false,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-117"
+              ]
+            },
+            {
+              "name": "Cypress Creek Renewables",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-117"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "IFM Investors",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "IFM Investors",
+              "sourceIds": [
+                "transaction-INF-2026-117"
+              ]
+            },
+            {
+              "name": "Swift Current Energy",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "IFM Investors",
+              "sourceIds": [
+                "transaction-INF-2026-117"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Cypress Creek Renewables",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-117"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "IFM Investors",
+            "entityName": "Cypress Creek Renewables",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-117"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-03-10",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Acquisition (Buyout) / Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-117",
+            "tier": "PRIMARY",
+            "title": "EQT Infrastructure acquires Steel River solar and storage project via Cypress Creek Renewables",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/cypress-creek-acquires-2-5-gw-solar-project-with-2-9-gwh-energy-storage-in-development-in-arkansas-from-swift-current-energy-302711078.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-10",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Cypress Creek Renewables, a portfolio company of EQT Infrastructure, acquired the Steel River solar and storage project in Northeast Arkansas from Swift Current Energy (backed by IFM Investors). The facility combines 2,450 MWdc (1,500 MWac) of solar generation with 2,900 MWh (720 MW) of battery storage across three equal phases, making it one of the largest solar and energy storage projects in the United States. The project is expected to be placed in service in 2029.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-117",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-188",
+      "groupKey": "Acting entity — Delta Utilities",
+      "baseReviewedInputHash": "6cf707f4fe9a68344dddd3db486aba4547534ad6d1d85e76f543d89aff94e98d",
+      "record": {
+        "recordId": "INF-2026-188",
+        "legacyId": "INF-2026-188",
+        "splitSuffix": null,
+        "transactionIdentityKey": "9b077e8ae0cda5d7c832698c10d441cbe6b16f0d2438ad30295724443ef8fd29",
+        "target": "Spire Mississippi",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Delta Utilities.",
+              "sourceIds": [
+                "transaction-INF-2026-188"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Bernhard Capital Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-188"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-188"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Bernhard Capital Partners",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Bernhard Capital Partners",
+              "sourceIds": [
+                "transaction-INF-2026-188"
+              ]
+            },
+            {
+              "name": "Delta Utilities",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Bernhard Capital Partners",
+              "sourceIds": [
+                "transaction-INF-2026-188"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Spire Inc.",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-188"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Delta Utilities",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-188"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Bernhard Capital Partners",
+            "entityName": "Delta Utilities",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-188"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Utilities",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-21",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-188",
+            "tier": "PRIMARY",
+            "title": "Bernhard-backed Delta Utilities acquires Spire Mississippi",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/spire-announces-sale-of-its-mississippi-natural-gas-business-to-delta-utilities-for-75-million-302749447.html",
+            "artifactPath": null,
+            "publishedAt": "2026-04-21",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Bernhard-backed Delta Utilities agreed to acquire Spire’s Mississippi local distribution company for $75mm in cash — representing a 1.4x multiple of 2025 rate base — with closing targeted for fiscal Q1 2027 subject to Mississippi PSC approval. Spire Mississippi operates approximately 745 miles of distribution pipelines serving roughly 18,000 customers in south-central Mississippi including Hattiesburg; Spire will redeploy proceeds into infrastructure investments across its Alabama, Missouri and Tennessee gas utilities.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-188",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer via-platform already exists as a PortCo; target should be reviewed as platform activity before considering any new row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-085",
+      "groupKey": "Acting entity — Digital Edge",
+      "baseReviewedInputHash": "e13c88a8898808d8530e3ea3d615a8666de5e8851e346540564da7a7dccb7521",
+      "record": {
+        "recordId": "INF-2026-085",
+        "legacyId": "INF-2026-085",
+        "splitSuffix": null,
+        "transactionIdentityKey": "62e8ed6dd05f703b88ef2b9ecc9dbdb5aff1168681348c5ee8e3f677e31ef586",
+        "target": "83MW Indian Solar Energy Projects",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Digital Edge.",
+              "sourceIds": [
+                "transaction-INF-2026-085"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-INF-2026-085"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-085"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-085"
+              ]
+            },
+            {
+              "name": "Digital Edge",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-085"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Hexa Climate Solutions",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-085"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Digital Edge",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-085"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Stonepeak",
+            "entityName": "Digital Edge",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-085"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "India",
+        "announcementDate": "2026-02-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-085",
+            "tier": "PRIMARY",
+            "title": "Stonepeak acquires 83 MW Indian solar portfolio via Digital Edge",
+            "publisher": "digitaledgedc.com",
+            "url": "https://www.digitaledgedc.com/cn/resources/newsroom/digital-edge-india-83mw-solar-ppa-recycled-water-data-center/",
+            "artifactPath": null,
+            "publishedAt": "2026-02-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Acquirer's announcement confirming the PPA and minority equity stake; archive link was a placeholder.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-085",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-114",
+      "groupKey": "Acting entity — ECP Blade Holdings",
+      "baseReviewedInputHash": "79b961a6baba5b61e51505001005d145db60c2f082362d196f74fd3c01749ad5",
+      "record": {
+        "recordId": "INF-2026-114",
+        "legacyId": "INF-2026-114",
+        "splitSuffix": null,
+        "transactionIdentityKey": "0d1dc42616f58178863e2f54cd8d293541df8837ed278a25dd7e404eee1e37de",
+        "target": "TPI Composites (Wind Blade Manufacturing)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via ECP Blade Holdings.",
+              "sourceIds": [
+                "transaction-INF-2026-114"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Energy Capital Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-114"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-114"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Energy Capital Partners",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Energy Capital Partners",
+              "sourceIds": [
+                "transaction-INF-2026-114"
+              ]
+            },
+            {
+              "name": "ECP Blade Holdings",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Energy Capital Partners",
+              "sourceIds": [
+                "transaction-INF-2026-114"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "TPI Composites (Section 363 bankruptcy sale)",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-114"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "ECP Blade Holdings",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-114"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Energy Capital Partners",
+            "entityName": "ECP Blade Holdings",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-114"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-03-09",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Buyout) / Sale (Carve-Out)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-114",
+            "tier": "PRIMARY",
+            "title": "Energy Capital Partners acquires TPI Composites wind blade operations via Section 363 sale",
+            "publisher": "Sahm Capital",
+            "url": "https://sahmcapital.com/news/content/tpi-composites-signs-section-363-sale-deal-with-ecp-blade-holdings-for-usd-20-million-2026-03-09",
+            "artifactPath": null,
+            "publishedAt": "2026-03-09",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Energy Capital Partners, through ECP Blade Holdings, agreed to acquire TPI Composites' global wind blade manufacturing and services operations via a Section 363 bankruptcy sale for $20mm in cash plus assumed liabilities. TPI, the only independent wind blade manufacturer with a global footprint, filed for Chapter 11 and secured $82.5mm in DIP financing as it navigates the restructuring process. The transaction is subject to bankruptcy court approval, Oaktree lender consent, and regulatory approvals, with a drop-dead date of June 30, 2026.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-114",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): The buyer uses a named via-platform that is not currently matched in the PortCo seed data; review that platform before adding the acquired target."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-090",
+      "groupKey": "Acting entity — EdgeConneX",
+      "baseReviewedInputHash": "a577e544c0c3c1035c031bdb101157f492c23dd701cd23f33b1a4cbe67c718d4",
+      "record": {
+        "recordId": "INF-2026-090",
+        "legacyId": "INF-2026-090",
+        "splitSuffix": null,
+        "transactionIdentityKey": "77ba95cee4490ea78846a4062a29e04ef067ecaf1e219daee8b620136e9f53c9",
+        "target": "Skellefteå Data Center Site",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via EdgeConneX.",
+              "sourceIds": [
+                "transaction-INF-2026-090"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-090"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer acquired the target through an existing platform; under platform-first scope this should usually be a platform milestone.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-090"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "EQT Infrastructure",
+              "entityKind": "OTHER",
+              "isPrincipal": false,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-090"
+              ]
+            },
+            {
+              "name": "EdgeConneX",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-090"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Lyten",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-090"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "EdgeConneX",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-090"
+          ]
+        },
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "Sweden",
+        "announcementDate": "2026-02-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-090",
+            "tier": "PRIMARY",
+            "title": "EQT Infrastructure acquires Skellefteå data center site via EdgeConneX (bolt-on)",
+            "publisher": "edgeconnex.com",
+            "url": "https://www.edgeconnex.com/news/press-releases/edgeconnex-looks-to-enter-swedish-market-as-part-of-european-data-center-expansion-strategy/",
+            "artifactPath": null,
+            "publishedAt": "2026-02-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Acquirer's announcement, also present in the reviewed company source data; archive link was a placeholder.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-090",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer acquired the target through an existing platform; under platform-first scope this should usually be a platform milestone."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-178",
+      "groupKey": "Acting entity — Elemental Clean Fuels",
+      "baseReviewedInputHash": "f7292448be48a9c20d9f02302ddf8b96e75b0648ed31fbb4be65b1bbc248fddc",
+      "record": {
+        "recordId": "INF-2026-178",
+        "legacyId": "INF-2026-178",
+        "splitSuffix": null,
+        "transactionIdentityKey": "fff888fd336cb39bd89d0e92cacd0ea4e049d956d5f88a008c9a4afa15ab12ba",
+        "target": "FPH2’s Los Angeles County Renewable Hydrogen Project",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "VIA_LANGUAGE",
+              "detail": "Seed party data identifies an acting entity via Elemental Clean Fuels.",
+              "sourceIds": [
+                "transaction-INF-2026-178"
+              ]
+            },
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-178"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Quinbrook Infrastructure.",
+              "sourceIds": [
+                "transaction-INF-2026-178"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer acquired the target through an existing platform; under platform-first scope this should usually be a platform milestone.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-178"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Quinbrook Infrastructure",
+              "entityKind": "FUND",
+              "isPrincipal": false,
+              "sponsorName": "Quinbrook Infrastructure",
+              "sourceIds": [
+                "transaction-INF-2026-178"
+              ]
+            },
+            {
+              "name": "Elemental Clean Fuels",
+              "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+              "isPrincipal": true,
+              "sponsorName": "Quinbrook Infrastructure",
+              "sourceIds": [
+                "transaction-INF-2026-178"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "FPH2",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-178"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": {
+          "name": "Elemental Clean Fuels",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "side": "BUYER",
+          "isOperatingCompany": true,
+          "sourceIds": [
+            "transaction-INF-2026-178"
+          ]
+        },
+        "sponsorLineage": [
+          {
+            "sponsorName": "Quinbrook Infrastructure",
+            "entityName": "Elemental Clean Fuels",
+            "relationship": "INDIRECT_OWNER",
+            "sourceIds": [
+              "transaction-INF-2026-178"
+            ],
+            "rationale": "Candidate lineage inferred from explicit via-language and must be date-validated during human review."
+          }
+        ],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-22",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-178",
+            "tier": "PRIMARY",
+            "title": "Quinbrook-backed Elemental acquires Los Angeles renewable hydrogen project from FPH2",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/fph2-expands-california-renewable-hydrogen-supply-partnerships-to-support-public-fleets-data-infrastructure-and-energy-resilience-302746086.html",
+            "artifactPath": null,
+            "publishedAt": "2026-04-22",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Elemental Clean Fuels will acquire one of FPH2’s priority renewable hydrogen projects in Los Angeles County and lead its development, financing and construction as part of its growing North American clean fuels platform. The solar-powered electrolytic facility is designed to supply zero-emission hydrogen to data centers, microgrids, hydrogen-capable turbines, transit fleets and port operations; Elemental is backed by Quinbrook following a strategic transaction closed in late 2025.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-178",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (High confidence): Buyer acquired the target through an existing platform; under platform-first scope this should usually be a platform milestone."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    }
+  ],
+  "packetSha256": "850a18fd7d5f3d5bd3872c9ccad02c6d24785902051967bd3f91b8d38e9fb659"
+}

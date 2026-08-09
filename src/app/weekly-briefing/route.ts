@@ -1,12 +1,28 @@
 import { listWeeklyBriefingEditions } from "@/modules/briefings/archive";
-
-const JULY_31_EDITION = "2026-07-31";
+import {
+  readApprovedWeeklyBriefingIndex,
+  resolveLatestApprovedWeeklyBriefingEdition,
+} from "./approved-editions";
 
 export async function GET(request: Request) {
   const requestUrl = new URL(request.url);
   const requestedEdition = requestUrl.searchParams.get("edition");
   const editions = await listWeeklyBriefingEditions();
-  const edition = requestedEdition ?? JULY_31_EDITION;
+
+  let edition = requestedEdition;
+  if (edition === null) {
+    try {
+      edition = resolveLatestApprovedWeeklyBriefingEdition({
+        index: await readApprovedWeeklyBriefingIndex(),
+        archivedEditions: editions,
+      });
+    } catch (error) {
+      console.error("Failed to resolve approved weekly briefing:", error);
+      return new Response("Weekly briefing approval index is invalid", {
+        status: 500,
+      });
+    }
+  }
 
   if (!editions.includes(edition)) {
     return new Response("Weekly briefing not found", { status: 404 });

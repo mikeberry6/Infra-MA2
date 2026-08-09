@@ -1,0 +1,2737 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-013",
+  "baseManifestSha256": "65a7e8fd6bc47b8ac9b76faffcb4f89b5ab6366dd1e7a33ebe38c235833a99c5",
+  "recordCount": 23,
+  "records": [
+    {
+      "recordId": "INF-2026-115",
+      "groupKey": "Sponsor — IFM Investors",
+      "baseReviewedInputHash": "59fe943d845d36c1a713431a5f2f50300212a73f4530a83f621fa97d8d871e2d",
+      "record": {
+        "recordId": "INF-2026-115",
+        "legacyId": "INF-2026-115",
+        "splitSuffix": null,
+        "transactionIdentityKey": "f8481806eb018deb9eeb84894245c0d6ec18debd0161e0b69c02d05cff79fa9f",
+        "target": "Arqiva",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: IFM Investors.",
+              "sourceIds": [
+                "transaction-INF-2026-115"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-115"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Polus Capital Management",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-115"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "IFM Investors",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "IFM Investors",
+              "sourceIds": [
+                "transaction-INF-2026-115"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-03-09",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-115",
+            "tier": "PRIMARY",
+            "title": "IFM Investors divests 14.84% minority stake in Arqiva to Polus Capital Management",
+            "publisher": "Investegate",
+            "url": "https://investegate.co.uk/announcement/rns/arqiva-financing-plc--20ca/shareholder-transaction-update-/9472750",
+            "artifactPath": null,
+            "publishedAt": "2026-03-09",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Funds managed by IFM Investors agreed to divest their 14.84% minority stake in Arqiva, the UK's leading broadcast and telecommunications infrastructure operator, to Polus Capital Management for GBP 8.9mm. The sale follows Polus's earlier acquisition of Macquarie Asset Management's 26.54% stake, bringing Polus's combined equity interest in Arqiva to 41.38%. Arqiva's revenue base is underpinned by long-term, RPI-linked contracts with investment-grade counterparties including the BBC and major mobile network operators.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-115",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-192",
+      "groupKey": "Sponsor — IFM Investors",
+      "baseReviewedInputHash": "f21a97dc18276e238c6e1d27db207bd9ec0001ac4f5f03e1ecdda10170338326",
+      "record": {
+        "recordId": "INF-2026-192",
+        "legacyId": "INF-2026-192",
+        "splitSuffix": null,
+        "transactionIdentityKey": "fbf8dec9f2700ad2a5bb5e30a2ac2949deed8d5d0c9561acf791902dca3608d2",
+        "target": "Nala Renewables",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: IFM Investors.",
+              "sourceIds": [
+                "transaction-INF-2026-192"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (IFM Investors).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-192"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "IFM Investors",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "IFM Investors",
+              "sourceIds": [
+                "transaction-INF-2026-192"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Trafigura",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-192"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Europe",
+        "announcementDate": "2026-04-29",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-192",
+            "tier": "PRIMARY",
+            "title": "IFM Investors acquires remaining stake in Nala Renewables from Trafigura",
+            "publisher": "IFM Investors",
+            "url": "https://ifminvestors.com/news-and-insights/media-centre/funds-managed-by-ifm-investors-agree-to-acquire-full-ownership-of-nala-renewables",
+            "artifactPath": null,
+            "publishedAt": "2026-04-29",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Funds managed by IFM Investors agreed to acquire the remaining 50% equity stake in London-based Nala Renewables from Trafigura, bringing IFM to full ownership. Nala manages a multi-technology portfolio of more than 2 GW across solar PV, onshore wind, and battery energy storage systems in strategic European markets.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-192",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (IFM Investors)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-205",
+      "groupKey": "Sponsor — IFM Investors",
+      "baseReviewedInputHash": "5d0649d598c393f4cd58f5c5ab414247128925227e1e9a0cc52789db18a5f354",
+      "record": {
+        "recordId": "INF-2026-205",
+        "legacyId": "INF-2026-205",
+        "splitSuffix": null,
+        "transactionIdentityKey": "abf6f2d6486e88de41e7bfba4d1ece49f069e053f4598165d768376a31b870f7",
+        "target": "Briggs Equipment UK",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: IFM Investors.",
+              "sourceIds": [
+                "transaction-INF-2026-205"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (IFM Investors).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-205"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "IFM Investors",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "IFM Investors",
+              "sourceIds": [
+                "transaction-INF-2026-205"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Sammons Enterprises",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-205"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "United Kingdom / Ireland",
+        "announcementDate": "2026-05-01",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-205",
+            "tier": "PRIMARY",
+            "title": "IFM Investors agrees to acquire Briggs Equipment UK",
+            "publisher": "IFM Investors",
+            "url": "https://ifminvestors.com/news-and-insights/media-centre/ifm-investors-announces-investment-in-leading-materials-handling-and-specialty-rental-leasing-platform-in-the-uk-and-ireland",
+            "artifactPath": null,
+            "publishedAt": "2026-05-01",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "IFM Investors agreed to acquire 100% of Briggs Equipment UK from Sammons Enterprises. Briggs is one of the largest independent materials handling platforms in the UK and Ireland, with more than 40 depots, over 850 engineers, and a managed fleet of approximately 53,000 assets serving infrastructure and industrial customers.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-205",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (IFM Investors)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-007",
+      "groupKey": "Sponsor — IFM Investors",
+      "baseReviewedInputHash": "feed28854eca9f3075f72efb9fdcb2e0fd4909ca05f8c8992bac89655d25e552",
+      "record": {
+        "recordId": "WB-2026-07-31-007",
+        "legacyId": "WB-2026-07-31-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "93f48be9e48cbf126df64ed69146fa50c9628bad69f2d97621d9cff48cfe18cd",
+        "target": "Wayu Energy",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: IFM Investors.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-31-007"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "IFM Investors",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "IFM Investors",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-007"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "Southeast Asia",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-007",
+            "tier": "PRIMARY",
+            "title": "Wayu Energy | IFM",
+            "publisher": "Nalarenewables",
+            "url": "https://nalarenewables.com/news/nala-renewables-completes-sale-of-wayu-energy-stake-to-support-strategic-focus-on-europe-and-chile",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "IFM Net Zero Infrastructure Fund-backed Nala Renewables sold its 80% interest in Wayu Energy to Kaffee Energy Limited. The divestiture advances Nala’s geographic refocus while transferring the Vietnam- and Philippines-focused renewable-power platform to a new owner.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-079",
+      "groupKey": "Sponsor — Igneo Infrastructure Partners",
+      "baseReviewedInputHash": "40ab0cc9580760a1d8215ea1f866ffdced410c6cb77429bd88f998166a786a37",
+      "record": {
+        "recordId": "INF-2026-079",
+        "legacyId": "INF-2026-079",
+        "splitSuffix": null,
+        "transactionIdentityKey": "b4238fead3434ec75c02234835f8de816b6ce810471f75dafff11ad7e51b60e1",
+        "target": "Vault Digital Infrastructure",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners / CVC DIF / Northleaf / ADIA.",
+              "sourceIds": [
+                "transaction-INF-2026-079"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-079"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-079"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "CVC DIF",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CVC DIF",
+              "sourceIds": [
+                "transaction-INF-2026-079"
+              ]
+            },
+            {
+              "name": "Northleaf",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Northleaf",
+              "sourceIds": [
+                "transaction-INF-2026-079"
+              ]
+            },
+            {
+              "name": "ADIA",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "ADIA",
+              "sourceIds": [
+                "transaction-INF-2026-079"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-02-04",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout) / Acquisition (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-079",
+            "tier": "PRIMARY",
+            "title": "Igneo Infrastructure Partners acquires Vault Digital Infrastructure from CVC DIF, Northleaf & ADIA",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260203195907/en/CVC-DIF-and-Northleaf-Divest-US-Data-Center-Portfolio-Vault-Digital-Infrastructure-to-Igneo-Infrastructure-Partners",
+            "artifactPath": null,
+            "publishedAt": "2026-02-04",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Igneo Infrastructure Partners announced the acquisition of Vault Digital Infrastructure from CVC DIF, Northleaf, and ADIA.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-079",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-140",
+      "groupKey": "Sponsor — Igneo Infrastructure Partners",
+      "baseReviewedInputHash": "70dac6963b3920c25e253eddf6b54b75f004d128c9189ff8e90f427979a66aab",
+      "record": {
+        "recordId": "INF-2026-140",
+        "legacyId": "INF-2026-140",
+        "splitSuffix": null,
+        "transactionIdentityKey": "b2b439f154f03211ae87580bfec73c64792094595abe9ff4ec144895e5bce065",
+        "target": "OnStream",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-140"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Igneo Infrastructure Partners).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-140"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-140"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-03-24",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-140",
+            "tier": "PRIMARY",
+            "title": "Igneo Infrastructure Partners acquires OnStream",
+            "publisher": "Igneo Infrastructure",
+            "url": "https://igneoip.com/europe/en/institutional/news-and-insights/press/igneo-acquires-onStream-smart-meter-asset-provider.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-24",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Igneo Infrastructure Partners entered a binding agreement to acquire OnStream, a UK smart meter asset provider.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-140",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Igneo Infrastructure Partners)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-16-011",
+      "groupKey": "Sponsor — Igneo Infrastructure Partners",
+      "baseReviewedInputHash": "02be408851deefc4b16b09c851245cb21da1191303d1eb46aebb07db94778d53",
+      "record": {
+        "recordId": "WB-2026-05-16-011",
+        "legacyId": "WB-2026-05-16-011",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e90195198141f973656ff98d17baf4facfeeb043de20a302a8da61edc695ad5c",
+        "target": "Kalmar Energi 50% Stake",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-011"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-011"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "Sweden",
+        "announcementDate": "2026-05-22",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-16-011",
+            "tier": "PRIMARY",
+            "title": "Kalmar Energi 50% Stake | Igneo",
+            "publisher": "Mynewsdesk",
+            "url": "https://mynewsdesk.com/se/nordion-energi/pressreleases/nordion-energi-foervaervar-eon-sveriges-aktier-i-kalmar-energi-och-ingaar-daermed-partnerskap-med-kalmar-kommun-3448627",
+            "artifactPath": null,
+            "publishedAt": "2026-05-22",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Nordion Energi, owned by EDIF II and managed by Igneo, signed an agreement to acquire E.ON Sverige's 50% stake in Kalmar Energi. The integrated utility operates across electricity grids, district heating and fiber, with Kalmar Municipality continuing as joint owner.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-06-002",
+      "groupKey": "Sponsor — Igneo Infrastructure Partners",
+      "baseReviewedInputHash": "b78897abdfb70c7918c9c2cf42aa8b2d432be20785c8c0c69c9f03c4c78075c4",
+      "record": {
+        "recordId": "WB-2026-06-06-002",
+        "legacyId": "WB-2026-06-06-002",
+        "splitSuffix": null,
+        "transactionIdentityKey": "9b0e5e47abeac695be46242dfbe2e588cec48ca50846cf8f8f6fd97ffeef227e",
+        "target": "Pathway Power",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-06-06-002"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-06-06-002"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-06-05",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-06-002",
+            "tier": "PRIMARY",
+            "title": "Pathway Power | Igneo Infrastructure Partners",
+            "publisher": "Igneoip",
+            "url": "https://igneoip.com/australia/en/institutional/news-and-insights/press/igneo-completes-investment-in-power-pathway.html",
+            "artifactPath": null,
+            "publishedAt": "2026-06-05",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Igneo completed a preferred equity investment in Pathway Power, a U.S. utility-scale renewable and storage development platform. Pathway has assembled more than 1 GW of projects expected to begin construction in 2026-2027, plus approximately 1,000 MW of early-stage hybrid interconnection positions across SPP and MISO.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-27-003",
+      "groupKey": "Sponsor — Igneo Infrastructure Partners",
+      "baseReviewedInputHash": "59c64c46a86c9ad5486047da7d0543086c30bd2246d0fefc4f6df9eb723989db",
+      "record": {
+        "recordId": "WB-2026-06-27-003",
+        "legacyId": "WB-2026-06-27-003",
+        "splitSuffix": null,
+        "transactionIdentityKey": "5ea85d2fe70a80f25326311a800da5a0ef73f5f707fb2bd0c59e1e62c38c7390",
+        "target": "Terra-Gen",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-003"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-003"
+              ]
+            },
+            {
+              "name": "Pantheon",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-27-003"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-06-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-27-003",
+            "tier": "PRIMARY",
+            "title": "Terra-Gen | Igneo Infrastructure Partners / Pantheon",
+            "publisher": "Investegate",
+            "url": "https://investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/investment-in-us-renewable-energy-company/9628756",
+            "artifactPath": null,
+            "publishedAt": "2026-06-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Pantheon Infrastructure committed approximately $55mm to Terra-Gen through an Igneo-managed co-investment vehicle. Terra-Gen owns and develops utility-scale wind, solar, and battery storage assets across the U.S. power market.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-17-009",
+      "groupKey": "Sponsor — Igneo Infrastructure Partners",
+      "baseReviewedInputHash": "9d18c4299ba8e8f2fdc5dfc3c925fae0552de16ff717feba0d44afddfdfd37ef",
+      "record": {
+        "recordId": "WB-2026-07-17-009",
+        "legacyId": "WB-2026-07-17-009",
+        "splitSuffix": null,
+        "transactionIdentityKey": "7d1b01aaa19bd4895d7feeae052ad47b4dc7c9b0370f4eb7daa2b47d18a6c015",
+        "target": "Cyntox Biohazard Solutions",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-009"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-009"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-07-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-17-009",
+            "tier": "PRIMARY",
+            "title": "Cyntox Biohazard Solutions | Igneo Infrastructure Partners",
+            "publisher": "Igneoip",
+            "url": "https://igneoip.com/usa/en/institutional/news-and-insights/press/igneo-acquires-two-us-medical-waste-management-businesses.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Igneo acquired Cyntox Biohazard Solutions as one of two initial investments forming a regulated U.S. medical-waste platform. The combined platform will integrate collection, treatment and disposal services across the Central, Midwest and Northeast regions.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-17-010",
+      "groupKey": "Sponsor — Igneo Infrastructure Partners",
+      "baseReviewedInputHash": "6ca6203f49ce080d58de58bbeca9876d2cd53ae22ee12d5cf313dd6b488f4ff5",
+      "record": {
+        "recordId": "WB-2026-07-17-010",
+        "legacyId": "WB-2026-07-17-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e65f8f6a1effaabdac0a08f410d49788171a1813605991c30f78ff0e0bcba069",
+        "target": "AdvoWaste Medical Services",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-07-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-17-010",
+            "tier": "PRIMARY",
+            "title": "AdvoWaste Medical Services | Igneo Infrastructure Partners",
+            "publisher": "Igneoip",
+            "url": "https://igneoip.com/usa/en/institutional/news-and-insights/press/igneo-acquires-two-us-medical-waste-management-businesses.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Igneo separately acquired AdvoWaste Medical Services as the second founding business in its new North American medical-waste platform. AdvoWaste and Cyntox have complementary footprints and serve small and medium waste generators including clinics, veterinary practices and nursing homes.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-004",
+      "groupKey": "Sponsor — Igneo Infrastructure Partners",
+      "baseReviewedInputHash": "d5936c01dd4b7e3a5b7869d0521e23ca37b51fdb2be7b30af91f9f39d0c62f90",
+      "record": {
+        "recordId": "WB-2026-07-31-004",
+        "legacyId": "WB-2026-07-31-004",
+        "splitSuffix": null,
+        "transactionIdentityKey": "ddf981d82b7eb9137b636f18f1bf40b1ec2dc5a6557602b83725f788f24955a3",
+        "target": "Green Squares / Vertis Rooftop Solar",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-004"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-004"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "Australia",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "FOLLOW_ON_EQUITY",
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Platform Launch",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": true,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-004",
+            "tier": "PRIMARY",
+            "title": "Green Squares / Vertis Rooftop Solar | Igneo",
+            "publisher": "Igneoip",
+            "url": "https://igneoip.com/asia/en/institutional/news-and-insights/press/igneo-launches-vertis-energy-with-46mw-rooftop-solar-acquisition.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Igneo launched Vertis Energy with the acquisition of Green Squares Energy and two follow-on portfolios totaling 46 MW of rooftop solar. The assets establish an operating distributed-energy platform serving Australian commercial and industrial customers.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-009",
+      "groupKey": "Sponsor — Igneo Infrastructure Partners",
+      "baseReviewedInputHash": "3f92d50c30ba20575fd82f34193dad421a78309dd5397c81e8f23763fde88e9c",
+      "record": {
+        "recordId": "WB-2026-07-31-009",
+        "legacyId": "WB-2026-07-31-009",
+        "splitSuffix": null,
+        "transactionIdentityKey": "af3d6d13392225776c01e1461928a4720c0746e93b22692d9fc22fa57428285a",
+        "target": "Westconnect",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Igneo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-009"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Igneo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Igneo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-009"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "Germany",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-009",
+            "tier": "PRIMARY",
+            "title": "Westconnect | Igneo",
+            "publisher": "Presseportal",
+            "url": "https://presseportal.de/download/document/6a6751bf270000fd2c7385c4-260727-pr-westconnec-fiber-roll-out.pdf",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Igneo contributed new shareholder equity to Westconnect alongside a €1.2bn financing package supporting the company’s fiber rollout. Westconnect has passed more than 1mm households; the equity component was not separately disclosed.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-017",
+      "groupKey": "Sponsor — IMCO",
+      "baseReviewedInputHash": "5c986613d600baeebe2e5baab5638c9bacd74755c803eaf29262b62d1f754014",
+      "record": {
+        "recordId": "WB-2026-07-31-017",
+        "legacyId": "WB-2026-07-31-017",
+        "splitSuffix": null,
+        "transactionIdentityKey": "a749df775c81e117c54a12fb1c2004472cbb852f269628298b2fa5f0b52d46e9",
+        "target": "SeaSeaS Amsterdam CO₂ Terminal",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: IMCO.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-017"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "IMCO",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "IMCO",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-017"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Midstream",
+        "region": "Europe",
+        "country": "Netherlands",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-017",
+            "tier": "PRIMARY",
+            "title": "SeaSeaS Amsterdam CO₂ Terminal | IMCO",
+            "publisher": "Exolum",
+            "url": "https://exolum.com/en/noticia/exolum-completes-transaction-to-acquire-a-minority-stake-in-seaseas-amsterdam-co2-terminal-project",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "IMCO-backed Exolum acquired a minority interest in the SeaSeaS Amsterdam CO₂ terminal project. The planned terminal is designed to handle 3.5mm tonnes of CO₂ annually and is expected to begin operations in 2030.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-078",
+      "groupKey": "Sponsor — InfraBridge",
+      "baseReviewedInputHash": "39ed82e9f891e8d921d08337b545283c4c84760fcd20970cc1519d253d13fc61",
+      "record": {
+        "recordId": "INF-2026-078",
+        "legacyId": "INF-2026-078",
+        "splitSuffix": null,
+        "transactionIdentityKey": "6e61e4def44911ec254497d42a328cdd8d7156a3f5e6e0528a82a61301126743",
+        "target": "Truespeed & Freedom Fibre",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: InfraBridge.",
+              "sourceIds": [
+                "transaction-INF-2026-078"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (InfraBridge, Equitix).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-078"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "InfraBridge",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "InfraBridge",
+              "sourceIds": [
+                "transaction-INF-2026-078"
+              ]
+            },
+            {
+              "name": "Equitix",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-078"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "InfraBridge",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "InfraBridge",
+              "sourceIds": [
+                "transaction-INF-2026-078"
+              ]
+            },
+            {
+              "name": "Equitix",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-078"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-02-11",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-078",
+            "tier": "PRIMARY",
+            "title": "InfraBridge and Equitix merge Truespeed & Freedom Fibre platforms",
+            "publisher": "Freedom Fibre",
+            "url": "https://freedomfibre.com/post/freedom-fibre-and-truespeed-announce-intention-to-merge",
+            "artifactPath": null,
+            "publishedAt": "2026-02-11",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "InfraBridge and Equitix announced the merger of their portfolio companies Truespeed and Freedom Fibre to create a combined UK fiber broadband platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-078",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (InfraBridge, Equitix)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-151",
+      "groupKey": "Sponsor — InfraRed Capital Partners",
+      "baseReviewedInputHash": "dabdb3112fcd209cae595be0e19b0ef8d0e0ed0a63afcacb790465994c550e08",
+      "record": {
+        "recordId": "INF-2026-151",
+        "legacyId": "INF-2026-151",
+        "splitSuffix": null,
+        "transactionIdentityKey": "d676de3c2ac392fb8c57b0fa077040e37fe371545cba486384fa2ff7edcd23f6",
+        "target": "Cross London Trains",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: InfraRed Capital Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-151"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-151"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "HICL Infrastructure",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-151"
+              ]
+            },
+            {
+              "name": "InfraRed Capital Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "InfraRed Capital Partners",
+              "sourceIds": [
+                "transaction-INF-2026-151"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-04-01",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-151",
+            "tier": "PRIMARY",
+            "title": "HICL acquires incremental stake in Cross London Trains",
+            "publisher": "London Stock Exchange",
+            "url": "https://londonstockexchange.com/news-article/HICL/ps52m-incremental-stake-in-cross-london-trains/17524722",
+            "artifactPath": null,
+            "publishedAt": "2026-04-01",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "HICL agreed to acquire a further 6.65% interest in Cross London Trains for approximately £52mm, taking its total economic interest to 13.13%. XLT owns the fleet of 115 Siemens Class 700 electric trains operating on Thameslink, one of the UK’s most important transport corridors linking St Pancras, Gatwick Airport and Luton Airport.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-151",
+            "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-20-005",
+      "groupKey": "Sponsor — InfraRed Capital Partners",
+      "baseReviewedInputHash": "ddc708abb4c67e246ae59779571696887978f2892a5b078b8b8a327eab5fef3a",
+      "record": {
+        "recordId": "WB-2026-06-20-005",
+        "legacyId": "WB-2026-06-20-005",
+        "splitSuffix": null,
+        "transactionIdentityKey": "30a45d6cbf278430b657260f42ce6b2231efbbd2a1c68a6941d758c84efe28c8",
+        "target": "Beatrice Offshore Wind Farm",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: InfraRed Capital Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-005"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-20-005"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Equitix",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-20-005"
+              ]
+            },
+            {
+              "name": "InfraRed Capital Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "InfraRed Capital Partners",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-005"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-06-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-20-005",
+            "tier": "PRIMARY",
+            "title": "Beatrice Offshore Wind Farm | Equitix / InfraRed Capital Partners",
+            "publisher": "Londonstockexchange",
+            "url": "https://londonstockexchange.com/news-article/TRIG/offshore-wind-disposal/17638437",
+            "artifactPath": null,
+            "publishedAt": "2026-06-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "The Renewables Infrastructure Group received a binding offer to sell its full 17.5% stake in the 588 MW Beatrice offshore wind farm to funds managed by Equitix for approximately GBP155mm. The transaction recycles capital from a mature Scottish offshore wind asset and is expected to reduce TRIG's revolving credit facility drawings.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-08-07-007",
+      "groupKey": "Sponsor — InfraRed Capital Partners",
+      "baseReviewedInputHash": "f08a819a3db49780295cdf2f3adf8edecb7add6cfeeb7bfaefec873783561f88",
+      "record": {
+        "recordId": "WB-2026-08-07-007",
+        "legacyId": "WB-2026-08-07-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "524d4ffa863ae1d20b9678a884268b6a412c8921409fdfa507371f33561ffecf",
+        "target": "Rail Modal Group",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: InfraRed Capital Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "InfraRed Capital Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "InfraRed Capital Partners",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-007"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-08-07",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Majority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-08-07-007",
+            "tier": "PRIMARY",
+            "title": "Rail Modal Group | InfraRed Capital Partners",
+            "publisher": "Ircp",
+            "url": "https://ircp.com/news/infrared-capital-partners-and-rail-modal-group-announce-investment-to-drive-next-stage-of-growth",
+            "artifactPath": null,
+            "publishedAt": "2026-08-07",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "InfraRed acquired a majority stake in Rail Modal Group through its value-add infrastructure strategy, with founder Greg Oberting remaining invested and serving as CEO. The platform operates four U.S. inland intermodal terminals and has shipped more than 1,200 full-length unit trains, equivalent to approximately 200mm truck miles.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-144",
+      "groupKey": "Sponsor — J.P. Morgan Asset Management",
+      "baseReviewedInputHash": "e87d559255bca5061fd653a6b42c3b7871e0f993de221a420797764857c31e65",
+      "record": {
+        "recordId": "INF-2026-144",
+        "legacyId": "INF-2026-144",
+        "splitSuffix": null,
+        "transactionIdentityKey": "7b7b268771596c6b365ef8e6350cd7103204545d49f3dc28b25f6337f47c7b97",
+        "target": "Akira Portfolio (6 Italian Solar PV Plants)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-INF-2026-144"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: J.P. Morgan Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-144"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-144"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Sonnedix",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-144"
+              ]
+            },
+            {
+              "name": "J.P. Morgan Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "J.P. Morgan Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-144"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "EOS Investment Management",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-144"
+              ]
+            },
+            {
+              "name": "Capital Dynamics",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-144"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Italy",
+        "announcementDate": "2026-03-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-144",
+            "tier": "PRIMARY",
+            "title": "Sonnedix / J.P. Morgan Asset Management acquire Akira solar portfolio",
+            "publisher": "Sonnedix",
+            "url": "https://sonnedix.com/news/sonnedix-surpasses-1gw-of-operating-capacity-in-italy-with-acquisition-of-194mw-akira-portfolio",
+            "artifactPath": null,
+            "publishedAt": "2026-03-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Sonnedix acquired the 194 MW Akira portfolio of six Italian solar PV plants from EOS Investment Management and Capital Dynamics, surpassing 1 GW of operating capacity in Italy.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-144",
+            "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-17-004",
+      "groupKey": "Sponsor — J.P. Morgan Asset Management",
+      "baseReviewedInputHash": "9d62cac367a4037fb50cf8b0835dd96ba76741c38266b10a34d3c839bd63aa36",
+      "record": {
+        "recordId": "WB-2026-07-17-004",
+        "legacyId": "WB-2026-07-17-004",
+        "splitSuffix": null,
+        "transactionIdentityKey": "43d9b136c278b8f25ac9ee7c7c610cd26a0c8c05a47cec38cb414918e833de4a",
+        "target": "Tuscania BESS Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-004"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: J.P. Morgan Asset Management.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-004"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "J.P. Morgan Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "J.P. Morgan Asset Management",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-004"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Italy",
+        "announcementDate": "2026-07-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-17-004",
+            "tier": "PRIMARY",
+            "title": "Tuscania BESS Portfolio | J.P. Morgan Asset Management",
+            "publisher": "Sonnedix",
+            "url": "https://sonnedix.com/news/sonnedix-bolsters-hybrid-capabilities-in-italy-with-acquisition-of-260mw-battery-storage-portfolio",
+            "artifactPath": null,
+            "publishedAt": "2026-07-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "J.P. Morgan Asset Management-backed Sonnedix acquired two adjacent standalone BESS projects in Tuscania from Sphera Energy. The 160 MW and 100 MW four-hour projects add 260 MW / 1,040 MWh to Sonnedix’s Italian portfolio.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-068",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "46d853e8a4d65507c3103a7b4aa7d53e6b8a4e04975e85260f206bdc93da0692",
+      "record": {
+        "recordId": "INF-2026-068",
+        "legacyId": "INF-2026-068",
+        "splitSuffix": null,
+        "transactionIdentityKey": "3b2d77fa9c8ed1548d468b1e6be53b7bb560d30d84f56dad2f7f49a4afe7c068",
+        "target": "Global Technical Realty (GTR)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-INF-2026-068"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-068"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-068"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "Singapore",
+        "announcementDate": "2026-01-07",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "FOLLOW_ON_EQUITY",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-068",
+            "tier": "PRIMARY",
+            "title": "KKR provides follow-on growth equity to Global Technical Realty (GTR)",
+            "publisher": "Global Technical Realty",
+            "url": "https://globaltechnicalrealty.com/kkr-and-oak-hill-capital-commit-2-billion-to-gtr",
+            "artifactPath": null,
+            "publishedAt": "2026-01-07",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR provided follow-on growth equity to Global Technical Realty (GTR), an Asia-focused data center platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-068",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-023",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "4a5ea661774f22185269e346ea3ceb0a906f64515d5238b98b3b3c59742b6d2b",
+      "record": {
+        "recordId": "INF-2026-023",
+        "legacyId": "INF-2026-023",
+        "splitSuffix": null,
+        "transactionIdentityKey": "90dbde81601632136c76c352ca77027f9f7cccd97aeda35a259238ea38d4079b",
+        "target": "Norfolk Vanguard East & West",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-INF-2026-023"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-023"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-023"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "RWE",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-023"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-01-14",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-023",
+            "tier": "PRIMARY",
+            "title": "KKR acquires 50% stake in Norfolk Vanguard East & West offshore wind projects",
+            "publisher": "RWE",
+            "url": "https://rwe.com/en/press/rwe-ag/2026-01-14-rwe-secures-contracts-for-difference-for-6-9-gigawatts-of-offshore-wind-capacity",
+            "artifactPath": null,
+            "publishedAt": "2026-01-14",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR announced the acquisition of a 50% stake in the Norfolk Vanguard East & West offshore wind projects in the United Kingdom.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-023",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-043",
+      "groupKey": "Sponsor — KKR",
+      "baseReviewedInputHash": "64a64213caec9fcdbfa244714f6497e3500cb9dfc56c3082d042759d355fe63d",
+      "record": {
+        "recordId": "INF-2026-043",
+        "legacyId": "INF-2026-043",
+        "splitSuffix": null,
+        "transactionIdentityKey": "74499a1d51032b55cd3423e9d4128c46dd428f97f1ad0adcf33ef20004386637",
+        "target": "Altavair",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: KKR.",
+              "sourceIds": [
+                "transaction-INF-2026-043"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-043"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KKR",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "KKR",
+              "sourceIds": [
+                "transaction-INF-2026-043"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-01-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-043",
+            "tier": "PRIMARY",
+            "title": "KKR increases stake in Altavair L.P.",
+            "publisher": "Altavair",
+            "url": "https://altavair.com/2026/01/19/kkr-increases-ownership-stake-in-altavair",
+            "artifactPath": null,
+            "publishedAt": "2026-01-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KKR announced an increase in its stake in Altavair L.P., an aviation leasing platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-043",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KKR)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    }
+  ],
+  "packetSha256": "3d2e8e5c30feb72a011c9bffcfcca06f7b0a244590b7126643e52a74517c53b1"
+}
