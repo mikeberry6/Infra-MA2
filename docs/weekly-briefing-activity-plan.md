@@ -1,14 +1,16 @@
 # Weekly Briefing Activity Classification and Stacked-Bar Plan
 
-- **Status:** July 25–31 Outlook chart replacement implemented; historical backfill planned
+- **Status:** Exact July 31 email replica restored; historical YTD classification backfill planned
 - **Applies to:** `/weekly-briefing`, the July 31 Outlook artifact, and any later fund-activity analytics
-- **Snapshot date:** August 7, 2026
+- **Snapshot date:** August 8, 2026
 
 ## Outcome
 
-The Weekly Briefing view is sourced from the July 31 Outlook artifact and begins with the original email masthead. The two former YTD bar tables have been replaced in place with Outlook-safe absolute stacks for the 20 reviewed cards in that issue: 14 direct investments and 6 portfolio-level activities. Every byte outside the chart section remains unchanged.
+The Weekly Briefing button is locked to the finalized July 31 artifact and redirects to the raw Outlook HTML. It no longer selects the newest archive entry or injects the email body into the application shell, so the browser receives the original doctype, head, Outlook CSS, body styling, email footer, and historical navigation unchanged.
 
-The charts are labeled July 25–31 rather than YTD. The former YTD control total is 378 deals, while the current local seed produces 388 deals through July 31 and the configured database currently produces 352. The HTML-to-seed parser also loses transaction-side and acting-entity detail on compound labels. Publishing a two-segment YTD split from either source would create unsupported counts.
+The two charts retain their original YTD titles, rows, ordering, totals, and magnitude bars. The only exact decomposition currently available is 358 prior-period YTD deals with activity scope pending plus the reviewed July 25–31 additions of 14 direct investments and 6 portfolio-level activities. The interim Outlook bars show those three states without enlarging the reviewed weekly segments. Every byte outside the chart section remains unchanged.
+
+A complete two-color YTD split is data-gated. The current local seed produces 388 deals through July 31, the configured database produces 352, and the historical email archive does not contain a canonical 378-record manifest. Publishing a two-segment YTD split from any of those sources would create unsupported counts.
 
 ## Classification standard
 
@@ -126,19 +128,19 @@ Use an **absolute stacked bar**, not a 100%-normalized bar:
 - segment width is `segment count / leading row total`, not `segment count / row total`;
 - Direct uses Guggenheim purple `#442142`;
 - Portfolio-level uses the darker, accessible brand gold `#8F7C4D`;
-- Unclassified uses neutral gray in internal review views only;
-- the total stays right-aligned, with visible `N direct · N portfolio` text under each bar;
-- each self-contained chart table includes the same compact legend so it remains understandable when copied independently;
+- Unclassified uses neutral gray and remains explicitly labeled while historical review is incomplete;
+- the original total stays right-aligned and the original row height is preserved;
+- one compact legend identifies the pending historical portion and the reviewed weekly Direct and Portfolio-level additions;
 - every row has an accessible label containing the row name, total, and both segment counts.
 
-Keep rows in descending total-count order and retain the briefing's fixed tie-break rules. The single presentation surface is email-compatible HTML: nested presentation tables, integer percentage widths, explicit `bgcolor` attributes, inline background colors, fixed cell heights, and visible split counts. Do not use SVG, flexbox, grid, gradients, CSS variables, or a second visual encoding for transaction category in the same stack.
+Keep rows in the exact published July 31 order. The single presentation surface is email-compatible HTML: nested presentation tables, integer percentage widths, explicit `bgcolor` attributes, inline background colors, and fixed cell heights. Do not use SVG, flexbox, grid, gradients, CSS variables, or a second visual encoding for transaction category in the same stack.
 
 ## Rollout
 
-1. **Now:** replace the existing chart tables in the Outlook artifact with the reviewed 20-deal July 25–31 stacks; keep the rest of the briefing unchanged.
+1. **Now:** preserve the original 378-deal YTD chart controls and bar lengths; show the 358 pending historical records plus the reviewed 14 Direct / 6 Portfolio-level weekly additions in place.
 2. **Universe reconciliation:** produce and approve the exact 378-record manifest.
 3. **Classification backfill:** review all records, resolve mixed cases, and reach zero Unclassified.
-4. **YTD cutover:** replace the weekly values in the same two Outlook table blocks only after all 378 records reconcile.
+4. **YTD cutover:** replace the pending gray portion with complete purple/gold YTD segments only after all 378 records reconcile.
 5. **Template integration:** generate these nested-table stacks for future issues at publication time and validate them in Outlook, Gmail, and mobile clients.
 6. **Optional tracker cutover:** use per-manager/per-side attribution to replace transaction-category segments in Top fund activity without double-counting multi-category deals.
 
@@ -148,7 +150,7 @@ Keep rows in descending total-count order and retain the briefing's fixed tie-br
 - Test the July 31 frozen snapshot at 20 deals, with a 14 Direct / 6 Portfolio-level split.
 - Add parser fixtures for the GSAM/RWE, MSIP/QIC, CPP/CIP, ArcLight/REC Power, and Exolum/SeaSeaS cases.
 - Verify the recreated issue retains 20 cards, 20 Source links, section counts 7/4/4/3/2, and exactly two Key Themes paragraphs.
-- Assert the two chart dimensions each reconcile to 14 Direct + 6 Portfolio-level = 20 and that every track totals 100% including its neutral remainder.
+- Assert the two chart dimensions each reconcile to 358 Pending + 14 Direct + 6 Portfolio-level = 378 and preserve every published row total and filled-bar width.
 - Hash the complete artifact outside the chart section so unrelated editorial or layout changes fail validation.
 - Render at 320, 375, 600, and desktop widths; ensure no new page-level overflow and keep week navigation horizontally scrollable.
 - Verify keyboard focus, non-color labels, screen-reader row summaries, and at least 3:1 visual contrast for chart segments.
