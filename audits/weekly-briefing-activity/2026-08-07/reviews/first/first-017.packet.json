@@ -1,0 +1,2729 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-017",
+  "baseManifestSha256": "65a7e8fd6bc47b8ac9b76faffcb4f89b5ab6366dd1e7a33ebe38c235833a99c5",
+  "recordCount": 23,
+  "records": [
+    {
+      "recordId": "INF-2026-142",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "e5c0234aadfb20e56586c4a75186c8086ac655623b555eb97a67991438c944a5",
+      "record": {
+        "recordId": "INF-2026-142",
+        "legacyId": "INF-2026-142",
+        "splitSuffix": null,
+        "transactionIdentityKey": "b2d3ab3bf1ccd6bc6c491029c32e7e705249fca4f5c62860636e2ce38018b9d8",
+        "target": "Lestari Cooling Energy Sdn. Bhd.",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-INF-2026-142"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KWAP, Stonepeak).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-142"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "KWAP",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-142"
+              ]
+            },
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-142"
+              ]
+            },
+            {
+              "name": "KJTS",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-142"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Asia-Pacific",
+        "country": "Malaysia",
+        "announcementDate": "2026-03-25",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-142",
+            "tier": "PRIMARY",
+            "title": "KWAP joins Stonepeak / KJTS in Lestari Cooling Energy",
+            "publisher": "Stonepeak",
+            "url": "https://stonepeak.com/news/lestari-cooling-energy-strengthens-platform-adding-kwap-as-an-investor",
+            "artifactPath": null,
+            "publishedAt": "2026-03-25",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "KJTS and Stonepeak added KWAP as an investor in Lestari Cooling Energy Sdn. Bhd., strengthening the Malaysian district cooling platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-142",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (KWAP, Stonepeak)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-185",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "46e4f3ef5bcc4dd1ee686009d4e1dd23445adc011cc7941d0ced62ef0d661a80",
+      "record": {
+        "recordId": "INF-2026-185",
+        "legacyId": "INF-2026-185",
+        "splitSuffix": null,
+        "transactionIdentityKey": "bde2d049b588f295b6613733e3c8c68441c1433f1533d855c4d6ad502ef594f3",
+        "target": "Southern Marinas",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-INF-2026-185"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Stonepeak).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-185"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-185"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "KSL Capital Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-185"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-22",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "RECAPITALIZATION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "RECAPITALIZATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-185",
+            "tier": "PRIMARY",
+            "title": "Stonepeak recapitalizes Southern Marinas",
+            "publisher": "Stonepeak",
+            "url": "https://stonepeak.com/news/southern-marinas-announces-recapitalization-by-stonepeak",
+            "artifactPath": null,
+            "publishedAt": "2026-04-22",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Stonepeak recapitalized Southern Marinas via a buyout of affiliates of KSL Capital Partners, with the transaction closing simultaneously with announcement; PJT Partners and Lazard advised the buy-side and sell-side respectively. Founded in 2018, Southern Marinas owns and operates 16 marinas across eight US states with more than 6,700 slips, complemented by fuel, boat rentals and service operations.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-185",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Stonepeak)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-196",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "1eb536999295a3ed59dc0b4f51733ef123386555b773c75ec40c94d380c0c5c2",
+      "record": {
+        "recordId": "INF-2026-196",
+        "legacyId": "INF-2026-196",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e0e0b6364abe63c7bf8ecf64ce2a1bd2e3a18c1b238d9b00eb623a21670c9e61",
+        "target": "Cleco Group",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak / Bernhard Capital Partners / Macquarie Asset Management / BCI / Manulife Investment Management.",
+              "sourceIds": [
+                "transaction-INF-2026-196"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Sale/IPO of existing PortCo: realization review (High confidence): Target is already a PortCo and seller appears aligned with an existing owner, so realization/divestiture fields should be reviewed.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-196"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-196"
+              ]
+            },
+            {
+              "name": "Bernhard Capital Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Bernhard Capital Partners",
+              "sourceIds": [
+                "transaction-INF-2026-196"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-196"
+              ]
+            },
+            {
+              "name": "BCI",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "BCI",
+              "sourceIds": [
+                "transaction-INF-2026-196"
+              ]
+            },
+            {
+              "name": "Manulife Investment Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Manulife Investment Management",
+              "sourceIds": [
+                "transaction-INF-2026-196"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-30",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Acquisition (Buyout) / Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-196",
+            "tier": "PRIMARY",
+            "title": "Stonepeak and Bernhard agree to acquire Cleco Group",
+            "publisher": "Stonepeak",
+            "url": "https://stonepeak.com/news/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+            "artifactPath": null,
+            "publishedAt": "2026-04-30",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Stonepeak and Bernhard Capital Partners agreed to acquire Cleco Group from a consortium comprising Macquarie Asset Management, BCI, and Manulife Investment Management. Cleco is a regulated electric utility serving approximately 298,000 customers in Louisiana, with eight generating units totaling 2,676 MW of capacity.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-196",
+            "summary": "Sale/IPO of existing PortCo: realization review (High confidence): Target is already a PortCo and seller appears aligned with an existing owner, so realization/divestiture fields should be reviewed."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-206",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "aa518e39eeb3f21c8c90c64d0e7e1d668e0dcdcf62f8dd67c375498756b2d9b7",
+      "record": {
+        "recordId": "INF-2026-206",
+        "legacyId": "INF-2026-206",
+        "splitSuffix": null,
+        "transactionIdentityKey": "fdf8a72a36d2f914585d49a2e0757a5067dff361438d69311dd288e5175c47b6",
+        "target": "BMO Transportation and Vendor Finance",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-INF-2026-206"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-INF-2026-206"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "BMO Financial Group",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-206"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States / Canada",
+        "announcementDate": "2026-05-11",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-206",
+            "tier": "PRIMARY",
+            "title": "Stonepeak to acquire BMO Transportation and Vendor Finance",
+            "publisher": "Stonepeak",
+            "url": "https://stonepeak.com/news/stonepeak-to-acquire-bmo-transportation-and-vendor-finance",
+            "artifactPath": null,
+            "publishedAt": "2026-05-11",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Stonepeak reached an agreement to acquire BMO's Transportation Finance and Vendor Finance businesses, including related loan portfolios in the United States and Canada. BMO will reinvest for a 19.9% minority interest, while the platform continues to provide financing for trucks, trailers and other transportation and vendor equipment.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-23-010",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "9ebc0ab2849cebf91f441ec90ee0092f8fab01dc8e123610ea8e3baa5cb15af9",
+      "record": {
+        "recordId": "WB-2026-05-23-010",
+        "legacyId": "WB-2026-05-23-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "21362a2d3bb04f7e5b711947769fd08f574faa6be39321ce738b8575b62a9f23",
+        "target": "Estia Health",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-WB-2026-05-23-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-WB-2026-05-23-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "Asia-Pacific",
+        "country": "Australia",
+        "announcementDate": "2026-05-29",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Majority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-23-010",
+            "tier": "PRIMARY",
+            "title": "Estia Health | Stonepeak",
+            "publisher": "Stonepeak",
+            "url": "https://stonepeak.com/news/stonepeak-led-consortium-to-acquire-estia-health",
+            "artifactPath": null,
+            "publishedAt": "2026-05-29",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "A Stonepeak-led consortium agreed to acquire a majority stake in Estia Health from Bain Capital, extending Stonepeak’s Volarae Living social-infrastructure platform in Australia and New Zealand. Estia is one of Australia’s largest residential aged-care operators, with more than 90 homes across four states and approximately 9,000 residents.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-13-011",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "c7dadef281a92883c697aa4258022239d573176a73c82401d6689a3ce3c9a2e6",
+      "record": {
+        "recordId": "WB-2026-06-13-011",
+        "legacyId": "WB-2026-06-13-011",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e15685866051cc8d39da3625e22308468e7e6a1454ad99a5e4ded3535aeb82c2",
+        "target": "Ansan Data Center Site / SEL5",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-011"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-011"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-011"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "South Korea",
+        "announcementDate": "2026-06-12",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-13-011",
+            "tier": "PRIMARY",
+            "title": "Ansan Data Center Site / SEL5 | Stonepeak",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/apac/news-releases/digital-edge-secures-fully-powered-ansan-data-center-site-in-power-constrained-south-korea-advancing-expansion-302793521.html",
+            "artifactPath": null,
+            "publishedAt": "2026-06-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Stonepeak-backed Digital Edge secured a fully powered land parcel in Ansan, South Korea for its planned SEL5 data center. The site supports a 60 MW development in a power-constrained market and expands Digital Edge’s Seoul-area data-center pipeline.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-13-014",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "0a820d2ebad123e3eb39e73f16455e33da517330bdcc2ebdad830706bd35d826",
+      "record": {
+        "recordId": "WB-2026-06-13-014",
+        "legacyId": "WB-2026-06-13-014",
+        "splitSuffix": null,
+        "transactionIdentityKey": "93eb0963edac44dc30702b7e971e10a10199a3d00aa1eda8037fb63db9ea70a2",
+        "target": "Anwim / MOYA Fuel Station Network",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-014"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-014"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Midstream",
+        "region": "Europe",
+        "country": "Poland",
+        "announcementDate": "2026-06-12",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-13-014",
+            "tier": "PRIMARY",
+            "title": "Anwim / MOYA Fuel Station Network | Stonepeak",
+            "publisher": "Stonepeak",
+            "url": "https://stonepeak.com/news/stonepeak-and-energy-equation-partners-to-acquire-anwim",
+            "artifactPath": null,
+            "publishedAt": "2026-06-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Stonepeak and Energy Equation Partners agreed to acquire Anwim, operator of the MOYA fuel station network in Poland. The transaction gives Stonepeak direct exposure to fuel distribution and logistics infrastructure with a national retail and wholesale platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-20-002",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "9c837825d076749c2c3304e560e7325e3a05e20dca7bce6b07fb51f1bf6d946d",
+      "record": {
+        "recordId": "WB-2026-06-20-002",
+        "legacyId": "WB-2026-06-20-002",
+        "splitSuffix": null,
+        "transactionIdentityKey": "5827bcccd37eb84bb5c08406529782b72fe8c5407893e7bd62b3d9e1d0c86f7c",
+        "target": "LOGISTEC Marine Terminal Division",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-002"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-002"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-002"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "North America",
+        "announcementDate": "2026-06-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-20-002",
+            "tier": "PRIMARY",
+            "title": "LOGISTEC Marine Terminal Division | Stonepeak",
+            "publisher": "Enstructure",
+            "url": "https://enstructure.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america",
+            "artifactPath": null,
+            "publishedAt": "2026-06-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Stonepeak-backed Enstructure agreed to acquire LOGISTEC's marine terminal operations from Blue Wolf Capital Partners. The combination will create a North American terminal network spanning LOGISTEC, Gulf Stream Marine, and LOGISTEC Direct assets serving major trade corridors and industrial markets.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-20-010",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "f0a92fb65550a8676a8553c2e2aeb01afb1b4f979191e2d1b793bd399c34cf7c",
+      "record": {
+        "recordId": "WB-2026-06-20-010",
+        "legacyId": "WB-2026-06-20-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "6e353910c9a24feb67043a58bae00f34a3c596113465af25a9b814b8eeeaf20f",
+        "target": "KAPS Pipeline System",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-20-010"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-010"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Midstream",
+        "region": "North America",
+        "country": "Canada",
+        "announcementDate": "2026-06-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-20-010",
+            "tier": "PRIMARY",
+            "title": "KAPS Pipeline System | Stonepeak",
+            "publisher": "Keyera",
+            "url": "https://keyera.com/news-and-stories/news-releases/keyera-announces-acquisition-of-remaining-50-interest-in-kaps",
+            "artifactPath": null,
+            "publishedAt": "2026-06-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Keyera acquired Stonepeak's remaining 50% non-operating interest in the KAPS Pipeline System for C$1.215bn. KAPS is a natural gas liquids pipeline system connecting Montney and Duvernay production to downstream markets, and Keyera now owns 100% of the asset.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-27-007",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "8a199e85e539b3f6c8435f02b211cb47ef50af4c19d5939d92cfe3bf0651cba1",
+      "record": {
+        "recordId": "WB-2026-06-27-007",
+        "legacyId": "WB-2026-06-27-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "acae9e166716dce17e9627362a74cd3a887622e5bfea41abd194da858ebcf6eb",
+        "target": "TerraWind / Sym Energy Miyazaki wind JV",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-007"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-007"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "Japan",
+        "announcementDate": "2026-06-26",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-27-007",
+            "tier": "PRIMARY",
+            "title": "TerraWind / Sym Energy Miyazaki wind JV | Stonepeak",
+            "publisher": "Terrawindrenewables",
+            "url": "https://terrawindrenewables.com",
+            "artifactPath": null,
+            "publishedAt": "2026-06-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Stonepeak-backed TerraWind Renewables formed a jointly owned special purpose company with Sym Energy for wind development in Miyazaki, Japan. TerraWind is an onshore wind platform in which Stonepeak holds an 80% interest.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-005",
+      "groupKey": "Sponsor — Stonepeak",
+      "baseReviewedInputHash": "47807b5f5fa5fde8179675249c0b3a0edc3b22cfb9657e90b0555455819d5035",
+      "record": {
+        "recordId": "WB-2026-07-31-005",
+        "legacyId": "WB-2026-07-31-005",
+        "splitSuffix": null,
+        "transactionIdentityKey": "fa149f1759a4829a2e7af4cff2b46b354f21da6b7572c80f8ec8214605ea562b",
+        "target": "Fukushima Wind Project",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-005"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Stonepeak.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-005"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Stonepeak",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Stonepeak",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-005"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "Japan",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-005",
+            "tier": "PRIMARY",
+            "title": "Fukushima Wind Project | Stonepeak",
+            "publisher": "Terrawindrenewables",
+            "url": "https://terrawindrenewables.com",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Stonepeak-backed TerraWind acquired an approximately 25 MW onshore-wind project in Fukushima Prefecture. The purchase expands TerraWind’s Japanese development pipeline to 376 MW.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-162",
+      "groupKey": "Sponsor — Swiss Life Asset Managers",
+      "baseReviewedInputHash": "595c646e88dc5edcd160c3cb62f4df224c2130ebeede7afb3ccaeab90f5dded9",
+      "record": {
+        "recordId": "INF-2026-162",
+        "legacyId": "INF-2026-162",
+        "splitSuffix": null,
+        "transactionIdentityKey": "67540833731b992dcbcfd5f5ac62b5e855aeb9beabb0430a453b2ebd032f8358",
+        "target": "DataBank / Goodman Los Angeles JV (32 MW)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Swiss Life Asset Managers / IMCO / AustralianSuper.",
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing via/buyer platform: add acquisition milestone/source (Medium confidence): A buyer or seller name matches an existing PortCo, but not through an explicit via-platform phrase; review as possible platform activity.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-162"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Swiss Life Asset Managers",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Swiss Life Asset Managers",
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            },
+            {
+              "name": "IMCO",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "IMCO",
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            },
+            {
+              "name": "AustralianSuper",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "AustralianSuper",
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            },
+            {
+              "name": "DataBank",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            },
+            {
+              "name": "Goodman",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "Swiss Life Asset Managers",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Swiss Life Asset Managers",
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            },
+            {
+              "name": "IMCO",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "IMCO",
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            },
+            {
+              "name": "AustralianSuper",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "AustralianSuper",
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            },
+            {
+              "name": "DataBank",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            },
+            {
+              "name": "Goodman",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-162"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-08",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-162",
+            "tier": "PRIMARY",
+            "title": "DataBank and Goodman form 32 MW Los Angeles data center joint venture",
+            "publisher": "Goodman",
+            "url": "https://goodman.com/investor-centre/announcements-media/2026/databank-and-goodman-group-partner-to-open-new-landmark-data-center-in-los-angeles",
+            "artifactPath": null,
+            "publishedAt": "2026-04-08",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "DataBank and Goodman formed a 50/50 joint venture to develop a 32 MW AI-ready data center in Vernon, California. The arrangement advances sponsor-backed digital infrastructure development in a supply-constrained Los Angeles market and adds to DataBank’s broader U.S. expansion pipeline.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-162",
+            "summary": "Existing via/buyer platform: add acquisition milestone/source (Medium confidence): A buyer or seller name matches an existing PortCo, but not through an explicit via-platform phrase; review as possible platform activity."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-27-011",
+      "groupKey": "Sponsor — Swiss Life Asset Managers",
+      "baseReviewedInputHash": "a3b85c65f5011bea5c6e037fd4859c6f05adf2adb660c5fd0310c248ef06d2f2",
+      "record": {
+        "recordId": "WB-2026-06-27-011",
+        "legacyId": "WB-2026-06-27-011",
+        "splitSuffix": null,
+        "transactionIdentityKey": "4c80b2699d585f6260d41e34e0d541274d2e46543dc15433f96b4ff67ab93180",
+        "target": "Amprion indirect stake",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Swiss Life Asset Managers.",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-011"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-27-011"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Swiss Life Asset Managers",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Swiss Life Asset Managers",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-011"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "Germany",
+        "announcementDate": "2026-06-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-27-011",
+            "tier": "PRIMARY",
+            "title": "Amprion indirect stake | Swiss Life Asset Managers",
+            "publisher": "Swisslife Am",
+            "url": "https://swisslife-am.com/en/home/media/news/corporate/company-news/2026/0622-amprion.html",
+            "artifactPath": null,
+            "publishedAt": "2026-06-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Swiss Life Asset Managers signed an agreement to sell an indirect stake in Amprion, one of Germany’s major electricity transmission system operators. The sale recycles capital from a regulated power transmission asset held through the manager’s infrastructure platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-10-008",
+      "groupKey": "Sponsor — Swiss Life Asset Managers",
+      "baseReviewedInputHash": "ec6cc7b5fc3a3b167cf3ae904b7e98086022660d9b98ffdbce807b7d7fffff07",
+      "record": {
+        "recordId": "WB-2026-07-10-008",
+        "legacyId": "WB-2026-07-10-008",
+        "splitSuffix": null,
+        "transactionIdentityKey": "ab69dc5dfaf03a183efe2740654a33873921a2f782f6259810c32d3b73472242",
+        "target": "Paprec Metabader",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Swiss Life Asset Managers.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-008"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Swiss Life Asset Managers",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Swiss Life Asset Managers",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-008"
+              ]
+            },
+            {
+              "name": "UBS Asset Management",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-10-008"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "Switzerland",
+        "announcementDate": "2026-07-10",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-10-008",
+            "tier": "PRIMARY",
+            "title": "Paprec Metabader | Swiss Life Asset Managers / UBS Asset Management",
+            "publisher": "Paprec",
+            "url": "https://paprec.com/fr/suisse-paprec-et-metabader-sassocient-pour-devenir-le-leader-national-du-recyclage",
+            "artifactPath": null,
+            "publishedAt": "2026-07-10",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Paprec Swiss Group combined with Metabader to create Paprec Metabader, which has 31 plants and agencies across Switzerland. Jessy Bader became CEO and a shareholder; the combined company’s capital includes an infrastructure fund managed by Swiss Life Asset Managers and UBS Asset Management.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-10-009",
+      "groupKey": "Sponsor — Swiss Life Asset Managers",
+      "baseReviewedInputHash": "e18db01a035bbe4e57856824f79bb04d7da602a663ad34c4711d5542a871dd88",
+      "record": {
+        "recordId": "WB-2026-07-10-009",
+        "legacyId": "WB-2026-07-10-009",
+        "splitSuffix": null,
+        "transactionIdentityKey": "8c0fc587390088f85923549f104df0345afa14fabedac1940ec3f1fb1f66220d",
+        "target": "Kundl Campus Infrastructure & Site Services",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Swiss Life Asset Managers.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-009"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Swiss Life Asset Managers",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Swiss Life Asset Managers",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-009"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "Austria",
+        "announcementDate": "2026-07-10",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-10-009",
+            "tier": "PRIMARY",
+            "title": "Kundl Campus Infrastructure & Site Services | Swiss Life Asset Managers",
+            "publisher": "Innexis",
+            "url": "https://innexis.com/innexis/press/latest-news/innexis-announces-further-site-acquisition-in-austria",
+            "artifactPath": null,
+            "publishedAt": "2026-07-10",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Swiss Life- and Gelsenwasser-backed INNEXIS agreed to acquire selected infrastructure facilities, assets and real estate-related services at the Kundl Life Science Campus from Novartis, with 30 employees transferring. The acquired perimeter spans approximately 264,000 square metres and more than 100 buildings; Novartis will retain the research and production facilities.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-013",
+      "groupKey": "Sponsor — Tallvine",
+      "baseReviewedInputHash": "ed6b5590cda97f8c258a346dddfc4b25c4f5e56a03367b463aa17681c5267cd4",
+      "record": {
+        "recordId": "WB-2026-07-31-013",
+        "legacyId": "WB-2026-07-31-013",
+        "splitSuffix": null,
+        "transactionIdentityKey": "b5df4076daedcebcf43e21f772bd046472f23666fd922f5861f055817b42ee70",
+        "target": "Crosby Marine Transportation",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Tallvine.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-013"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Tallvine",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Tallvine",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-013"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-013",
+            "tier": "RELIABLE_SECONDARY",
+            "title": "Crosby Marine Transportation | Tallvine",
+            "publisher": "News",
+            "url": "https://news.bloomberglaw.com/bankruptcy-law/crosby-marine-taps-tallvines-75-million-bid-to-lead-ship-sale",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Tallvine affiliate Breakwater Buyer LLC signed a US$75mm stalking-horse agreement for Crosby Marine Transportation’s marine-transportation and dredging business. The proposed purchase remains subject to the bankruptcy auction process and court approval.",
+            "fallbackRationale": "Candidate-stage fallback: reviewer must document primary-source unavailability before approval.",
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-16-008",
+      "groupKey": "Sponsor — Tallvine Partners",
+      "baseReviewedInputHash": "a7934aacb57b1f42614fa851a3a0fe5e4bfecdfe51f32c0aa4f5ca79f4245a68",
+      "record": {
+        "recordId": "WB-2026-05-16-008",
+        "legacyId": "WB-2026-05-16-008",
+        "splitSuffix": null,
+        "transactionIdentityKey": "9420c8eec5879a037916bab9e8a94b757e7e22ba2d27e0a75bd75533cb9f05bd",
+        "target": "Lind Marine",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Tallvine Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-008"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Tallvine Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Tallvine Partners",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-008"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-05-22",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-16-008",
+            "tier": "PRIMARY",
+            "title": "Lind Marine | Tallvine Partners",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260520867232/en/Tallvine-Partners-Expands-North-America-Marine-Infrastructure-Platform-with-Acquisition-of-Lind-Marine-LLC",
+            "artifactPath": null,
+            "publishedAt": "2026-05-22",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Tallvine acquired Lind Marine, expanding its North American marine infrastructure platform to the West Coast following its Donjon Marine acquisition. Lind provides dredging, towing, salvage, shipyard, environmental remediation and harbor and waterway services from its Mare Island base in the San Francisco Bay.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-24-005",
+      "groupKey": "Sponsor — Tiger Infrastructure",
+      "baseReviewedInputHash": "f1647e3d0dcbb752027a5ea1b4cfcf7baa1a2fbed5b4971faca1ae08993dd05a",
+      "record": {
+        "recordId": "WB-2026-07-24-005",
+        "legacyId": "WB-2026-07-24-005",
+        "splitSuffix": null,
+        "transactionIdentityKey": "c6eb1dffe716e54e1904f1a9656a10a141997188158f69bcad10f081530297f4",
+        "target": "Burton Wold & Winscales Moor Wind Farms",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-005"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Tiger Infrastructure.",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-005"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Tiger Infrastructure",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Tiger Infrastructure",
+              "sourceIds": [
+                "transaction-WB-2026-07-24-005"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-07-24",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-24-005",
+            "tier": "PRIMARY",
+            "title": "Burton Wold & Winscales Moor Wind Farms | Tiger Infrastructure",
+            "publisher": "Forsaenergy",
+            "url": "https://forsaenergy.com/news-database/forsa-energy-expands-portfolio-with-acquisition-of-operational-wind-assets",
+            "artifactPath": null,
+            "publishedAt": "2026-07-24",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Tiger Infrastructure-backed Forsa Energy acquired the operational Burton Wold and Winscales Moor wind farms from GCP Infra for approximately £11 million. The 17-turbine portfolio totals approximately 26.5 MW and expands Forsa’s UK independent-power-producer platform to 324.5 MW.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-154",
+      "groupKey": "Sponsor — Tiger Infrastructure Partners",
+      "baseReviewedInputHash": "fab84c265166084d639dbde702ac05b0dade0e8418c45d7811d10cc481c15d02",
+      "record": {
+        "recordId": "INF-2026-154",
+        "legacyId": "INF-2026-154",
+        "splitSuffix": null,
+        "transactionIdentityKey": "59c4ff33002940312c0b10aad32b2a64b866413453b19cfd5d8eecdd04061435",
+        "target": "Orbis Protect",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Tiger Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-154"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Tiger Infrastructure Partners).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-154"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Tiger Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Tiger Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-154"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Synova",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-154"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-03-31",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE",
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": true,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION",
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-154",
+            "tier": "PRIMARY",
+            "title": "Tiger Infrastructure Partners invests in Orbis Protect",
+            "publisher": "Orbis Protect",
+            "url": "https://orbisprotect.com/2026/03/31/orbis-protect-secures-transformational-growth-capital-from-tiger-infrastructure-partners",
+            "artifactPath": null,
+            "publishedAt": "2026-03-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Tiger agreed a transformational growth capital investment in Orbis Protect, a UK-based owner and operator of dynamic security solutions. The capital is intended to fund further technology investment, expansion across the UK and Europe, and continued international growth, while facilitating Synova’s exit.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-154",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Tiger Infrastructure Partners)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-171",
+      "groupKey": "Sponsor — TPG",
+      "baseReviewedInputHash": "f37a33019191fea4bca1467617558c75ca91e5eff5f204917bad40122535a3ff",
+      "record": {
+        "recordId": "INF-2026-171",
+        "legacyId": "INF-2026-171",
+        "splitSuffix": null,
+        "transactionIdentityKey": "fecbd7aa7e024882d9a5ab54843663a62c7fc005c7686d8143e453be1a24c482",
+        "target": "Züm",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: TPG.",
+              "sourceIds": [
+                "transaction-INF-2026-171"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (TPG).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-171"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "TPG",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "TPG",
+              "sourceIds": [
+                "transaction-INF-2026-171"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-15",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-171",
+            "tier": "PRIMARY",
+            "title": "TPG invests $100mm in Züm",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/zum-raises-100-million-from-tpg-to-accelerate-zums-connected-mobility-experience-cmx-and-for-continued-growth-and-expansion-302744410.html",
+            "artifactPath": null,
+            "publishedAt": "2026-04-15",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "TPG made a $100mm strategic growth equity investment into Züm, an operator of electric school bus fleets and mass student mobility networks, valuing the specialized transportation infrastructure company at $1.7bn.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-171",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (TPG)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-20-013",
+      "groupKey": "Sponsor — TPG",
+      "baseReviewedInputHash": "5b306d464d368f8ee7faaba0bc73aa48f664f2217707c3652f359be4c887c330",
+      "record": {
+        "recordId": "WB-2026-06-20-013",
+        "legacyId": "WB-2026-06-20-013",
+        "splitSuffix": null,
+        "transactionIdentityKey": "1079d3613353d8e58aacc6dd8df052f9632b36be7d3f4a3d039135f5ed39c9cd",
+        "target": "Waste Eliminator / Liberty Waste Solutions",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: TPG.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-013"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "TPG",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "TPG",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-013"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-06-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-20-013",
+            "tier": "PRIMARY",
+            "title": "Waste Eliminator / Liberty Waste Solutions | TPG",
+            "publisher": "Tpg",
+            "url": "https://tpg.com/news-and-insights/tpg-to-acquire-waste-eliminator-and-liberty-waste-solutions-from-allied-industrial-partners-to-create-a-sustainable-waste-infrastructure-player",
+            "artifactPath": null,
+            "publishedAt": "2026-06-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "TPG signed definitive agreements to acquire Waste Eliminator and Liberty Waste Solutions from Allied Industrial Partners through TPG Transition Infrastructure. The combination is expected to serve commercial, industrial, municipal, and residential customers across the Southeastern U.S. with 14 permitted facilities and more than 500 fleet vehicles.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-27-002",
+      "groupKey": "Sponsor — TPG",
+      "baseReviewedInputHash": "569115371b93ebde931f50f615ff5dabddbf62cd6e956966898c01378e600751",
+      "record": {
+        "recordId": "WB-2026-06-27-002",
+        "legacyId": "WB-2026-06-27-002",
+        "splitSuffix": null,
+        "transactionIdentityKey": "bc855351ff755bb634b783f1bd0d55084dc926f5485d20b90148cfdc6c6493a4",
+        "target": "Tormes Solar and Alamo BESS projects",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: TPG.",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-002"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "TPG",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "TPG",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-002"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-06-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-27-002",
+            "tier": "PRIMARY",
+            "title": "Tormes Solar and Alamo BESS projects | TPG",
+            "publisher": "Matrixrenewables",
+            "url": "https://matrixrenewables.com/category/corporate",
+            "artifactPath": null,
+            "publishedAt": "2026-06-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "TPG-backed Matrix Renewables secured a $210mm preferred equity commitment from DESRI for the Tormes Solar and Alamo BESS construction portfolio. The financing supports U.S. solar and battery storage development through an existing renewable infrastructure platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-025",
+      "groupKey": "Sponsor — Vauban Infrastructure Partners",
+      "baseReviewedInputHash": "f8c0439ee7f77856cd72bc1d7b6b60fbd5bc28a8287aa9859d2a1bdc566c453b",
+      "record": {
+        "recordId": "WB-2026-07-03-025",
+        "legacyId": "WB-2026-07-03-025",
+        "splitSuffix": null,
+        "transactionIdentityKey": "ec761dad2208292c2998dd87100f95baadf63a47cb16ec5f7970789bb78c7637",
+        "target": "Drammen Fjernvarme",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Vauban Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-025"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Vauban Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Vauban Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-025"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "Norway",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-025",
+            "tier": "PRIMARY",
+            "title": "Drammen Fjernvarme | Vauban Infrastructure Partners",
+            "publisher": "Oslofjordvarme",
+            "url": "https://oslofjordvarme.no/drammen-fjernvarme-blir-na-heleid-av-oslofjord-varme",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Vauban-backed Oslofjord Varme agreed to acquire Å Energi's remaining 50% stake in Drammen Fjernvarme. The transaction moves the Norwegian district-heating business to full Oslofjord Varme ownership.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    }
+  ],
+  "packetSha256": "aa6386fb7c960023b66e11710079b00ad1a7d8c4d43dc29cd803b6693309a6d7"
+}

@@ -1,0 +1,2883 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-008",
+  "baseManifestSha256": "65a7e8fd6bc47b8ac9b76faffcb4f89b5ab6366dd1e7a33ebe38c235833a99c5",
+  "recordCount": 24,
+  "records": [
+    {
+      "recordId": "INF-2026-019",
+      "groupKey": "Sponsor — Ardian",
+      "baseReviewedInputHash": "c85961a96fcda7f30451933545d69f9372751c6e8aba67d52f699257ac848f8b",
+      "record": {
+        "recordId": "INF-2026-019",
+        "legacyId": "INF-2026-019",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e806e3e928c8432d2e49196b9ec5419df17fc339eb3c5387f349473d1b140c18",
+        "target": "Furukraft Wind Farm",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ardian.",
+              "sourceIds": [
+                "transaction-INF-2026-019"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-019"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Ardian",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Ardian",
+              "sourceIds": [
+                "transaction-INF-2026-019"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "ERG",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-019"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Sweden",
+        "announcementDate": "2026-01-20",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-019",
+            "tier": "PRIMARY",
+            "title": "Ardian acquires Furukraft Wind Farm in Sweden",
+            "publisher": "Energy Global",
+            "url": "https://energyglobal.com/wind/21012026/ardian-acquires-62-mw-furukraft-wind-farm-from-erg",
+            "artifactPath": null,
+            "publishedAt": "2026-01-20",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Ardian announced the acquisition of the 62 MW Furukraft Wind Farm in Sweden from ERG.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-019",
+            "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-16-005",
+      "groupKey": "Sponsor — Ardian",
+      "baseReviewedInputHash": "deeef36094adeb54f9669a804bcc1aa60a26895890b7c96cd7b3b55f895f9e6d",
+      "record": {
+        "recordId": "WB-2026-05-16-005",
+        "legacyId": "WB-2026-05-16-005",
+        "splitSuffix": null,
+        "transactionIdentityKey": "849dfe9b11035ff86c594726571a0e22b87dde6d5232b910338b010f625a63b1",
+        "target": "132 MW Saxony Onshore Wind Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ardian.",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-005"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Ardian",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Ardian",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-005"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Germany",
+        "announcementDate": "2026-05-22",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-16-005",
+            "tier": "PRIMARY",
+            "title": "132 MW Saxony Onshore Wind Portfolio | Ardian",
+            "publisher": "Ardian",
+            "url": "https://ardian.com/news-insights/press-releases/ardian-clean-energy-evergreen-fund-aceef-enters-german-renewables",
+            "artifactPath": null,
+            "publishedAt": "2026-05-22",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Ardian Clean Energy Evergreen Fund acquired a greenfield onshore wind project portfolio in Saxony totaling 132 MW once constructed. The deal is ACEEF's first German investment and anchors a broader renewables platform in Europe's largest renewable-energy market.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-23-005",
+      "groupKey": "Sponsor — Ardian",
+      "baseReviewedInputHash": "506feb0f2e00c5b8cf78b3c9e2b9e878ae75ce7a842794adca5c453ebee245c0",
+      "record": {
+        "recordId": "WB-2026-05-23-005",
+        "legacyId": "WB-2026-05-23-005",
+        "splitSuffix": null,
+        "transactionIdentityKey": "9ddcbb3cbc91a293cb34ecdd622c1e6067c587b235d15cc97a5aad1c98e73d7f",
+        "target": "76 MWp Uruguay Solar Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ardian.",
+              "sourceIds": [
+                "transaction-WB-2026-05-23-005"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Ardian",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Ardian",
+              "sourceIds": [
+                "transaction-WB-2026-05-23-005"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Latin America",
+        "country": "Uruguay",
+        "announcementDate": "2026-05-29",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-23-005",
+            "tier": "PRIMARY",
+            "title": "76 MWp Uruguay Solar Portfolio | Ardian",
+            "publisher": "Ardian",
+            "url": "https://ardian.com/news-insights/press-releases/ardian-clean-energy-evergreen-fund-aceef-enters-uruguayan-renewables",
+            "artifactPath": null,
+            "publishedAt": "2026-05-29",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Ardian Clean Energy Evergreen Fund acquired two operating solar PV plants in Uruguay with a combined capacity of 76 MWp. The assets mark ACEEF’s entry into Uruguay and expand Ardian’s Latin American renewable-power footprint, with AGR-AM managing the portfolio.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-017",
+      "groupKey": "Sponsor — Ardian",
+      "baseReviewedInputHash": "fb88b8e65ae5cfed3fd12d876a1fa15c0912ec0080fa398a96c2dade7369dc77",
+      "record": {
+        "recordId": "WB-2026-07-03-017",
+        "legacyId": "WB-2026-07-03-017",
+        "splitSuffix": null,
+        "transactionIdentityKey": "a008e227bb76c37e7627eef344d2f4e07111eb339cba078752ffacfc38880ca8",
+        "target": "Volta Data Centres",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ardian.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-017"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-03-017"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Ardian",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Ardian",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-017"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-017",
+            "tier": "PRIMARY",
+            "title": "Volta Data Centres | Ardian",
+            "publisher": "Verne",
+            "url": "https://verne.co/news/news-arcus-and-verne-announce-agreement-for-arcus-to-acquire-volta-data-centres",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Ardian-backed Verne agreed to sell 100% of Volta Data Centres to Arcus European Infrastructure Fund 4. Volta operates a central London data center and gives Arcus an established urban colocation asset.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-007",
+      "groupKey": "Sponsor — Ares Management",
+      "baseReviewedInputHash": "861cc03722649db8beec6d06a0d32a1a19dc9b2acfc9db89d3e2d2d2e0d64b32",
+      "record": {
+        "recordId": "INF-2026-007",
+        "legacyId": "INF-2026-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "343189765f09a628dd95aa563d371b81bf4ba475eaeffe845eb9aea65ba51d43",
+        "target": "730 MW US Solar & Wind Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ares Management.",
+              "sourceIds": [
+                "transaction-INF-2026-007"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-007"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Ares Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Ares Management",
+              "sourceIds": [
+                "transaction-INF-2026-007"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-01-13",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-007",
+            "tier": "PRIMARY",
+            "title": "Ares acquires minority stake in 730 MW US solar and wind portfolio",
+            "publisher": "ENGIE North America",
+            "url": "https://engie-na.com/engie-expands-ares-partnership-730mw-renewables",
+            "artifactPath": null,
+            "publishedAt": "2026-01-13",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Ares Management acquired a minority stake in a 730 MW portfolio of solar and wind assets in the United States.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-007",
+            "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-133",
+      "groupKey": "Sponsor — Ares Management",
+      "baseReviewedInputHash": "cd322e6f76e755ab4db5de5ce49f199c54e6d55a36ae6e89125af9619fca8fca",
+      "record": {
+        "recordId": "INF-2026-133",
+        "legacyId": "INF-2026-133",
+        "splitSuffix": null,
+        "transactionIdentityKey": "9f1aa41898f15a02fbc56b6827d8424531865fee43005acbf35b5891130b1538",
+        "target": "Plenitude (Eni)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ares Management.",
+              "sourceIds": [
+                "transaction-INF-2026-133"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Ares Management).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-133"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Ares Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Ares Management",
+              "sourceIds": [
+                "transaction-INF-2026-133"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Italy",
+        "announcementDate": "2026-03-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-133",
+            "tier": "PRIMARY",
+            "title": "Ares Management invests in Plenitude via capital increase",
+            "publisher": "Eni",
+            "url": "https://eni.com/en-IT/media/press-release/2026/03/eni-deconsolidates-plenitude-through-shareholding-reorganization.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Eni announced a ~€1.5bn capital increase for Plenitude, with at least €1bn from Ares Management, as part of a shareholding reorganization to deconsolidate the renewables and retail energy platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-133",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Ares Management)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-202",
+      "groupKey": "Sponsor — Ares Management",
+      "baseReviewedInputHash": "d3a45351486b3231ac055cf6c5b83ead0926dbf785b5159dc699b2ffd1747fa0",
+      "record": {
+        "recordId": "INF-2026-202",
+        "legacyId": "INF-2026-202",
+        "splitSuffix": null,
+        "transactionIdentityKey": "42599fdd640b736d5e0eab0226159985b68b1780f6a1c32fac3e2d49f236c3c7",
+        "target": "Rover Pipeline",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ares Management / Blackstone.",
+              "sourceIds": [
+                "transaction-INF-2026-202"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Sale/IPO of existing PortCo: realization review (High confidence): Target is already a PortCo and seller appears aligned with an existing owner, so realization/divestiture fields should be reviewed.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-202"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Ares Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Ares Management",
+              "sourceIds": [
+                "transaction-INF-2026-202"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Blackstone",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Blackstone",
+              "sourceIds": [
+                "transaction-INF-2026-202"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Midstream",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-29",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Acquisition (Minority Stake) / Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-202",
+            "tier": "PRIMARY",
+            "title": "Ares acquires Rover Pipeline stake from Blackstone",
+            "publisher": "Blackstone",
+            "url": "https://blackstone.com/news/press/ares-acquires-stake-in-rover-pipeline-from-blackstone-energy-transition-partners-to-serve-growing-energy-demand-centers-across-north-america",
+            "artifactPath": null,
+            "publishedAt": "2026-04-29",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Ares Infrastructure Opportunities acquired a 32.4% minority equity stake in the Rover Pipeline from funds managed by Blackstone Energy Transition Partners. The 700-mile transmission pipeline provides 3.425 Bcf/d of Appalachian Basin takeaway capacity to Midwest demand centers and remains substantially contracted under long-term agreements.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-202",
+            "summary": "Sale/IPO of existing PortCo: realization review (High confidence): Target is already a PortCo and seller appears aligned with an existing owner, so realization/divestiture fields should be reviewed."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-10-011",
+      "groupKey": "Sponsor — Ares Management",
+      "baseReviewedInputHash": "0b18d80fc06202dc3ed2c1ff46d5e6709d14d589d2a66d868b5b5262cc80e947",
+      "record": {
+        "recordId": "WB-2026-07-10-011",
+        "legacyId": "WB-2026-07-10-011",
+        "splitSuffix": null,
+        "transactionIdentityKey": "98102b10294df9072f9bcf03b5dadc9211999a4d1f1330e1d0a75ecff62ab065",
+        "target": "Sabey Data Center Properties",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Ares Management.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-011"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Ares Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Ares Management",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-011"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-07-10",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-10-011",
+            "tier": "PRIMARY",
+            "title": "Sabey Data Center Properties | Ares Management",
+            "publisher": "GlobeNewswire",
+            "url": "https://globenewswire.com/news-release/2026/07/08/3324085/0/en/sabey-data-center-properties-welcomes-strategic-investment-from-ares-strengthening-platform-for-continued-growth.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-10",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Ares Secondaries funds made a minority equity investment in Sabey Data Center Properties. The U.S. platform spans six energized campuses with approximately 251 MW of operating capacity and more than four million square feet of mission-critical space.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-198",
+      "groupKey": "Sponsor — Argo Infrastructure Partners",
+      "baseReviewedInputHash": "71dc80d029e9bab95ac7a8fa40b00198aa6673d1f988bdfb5d59ea4c2b99df9f",
+      "record": {
+        "recordId": "INF-2026-198",
+        "legacyId": "INF-2026-198",
+        "splitSuffix": null,
+        "transactionIdentityKey": "bcead36685e2ce4854819947cacc37b33b31d2f8ab432686535f302e6f5357a0",
+        "target": "UGI PA Electric Utility",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Argo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-198"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Argo Infrastructure Partners).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-198"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Argo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Argo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-198"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "UGI Utilities",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-198"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-29",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-198",
+            "tier": "PRIMARY",
+            "title": "Argo Infrastructure Partners acquires UGI Pennsylvania electric utility",
+            "publisher": "UGI Utilities",
+            "url": "https://ugi.reportablenews.com/pr/ugi-utilities-and-argo-infrastructure-partners-reach-agreement-on-purchase-and-sale-of-ugi-s-pa-electric-utility",
+            "artifactPath": null,
+            "publishedAt": "2026-04-29",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Argo Infrastructure Partners reached a definitive agreement to acquire UGI Utilities’ Electric Division for approximately $470mm. The regulated electric utility operates roughly 2,700 miles of transmission and distribution lines and 14 substations in Pennsylvania’s Luzerne and Wyoming counties, representing Argo’s fourth utility investment in the state.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-198",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Argo Infrastructure Partners)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-10-005",
+      "groupKey": "Sponsor — Argo Infrastructure Partners",
+      "baseReviewedInputHash": "1f2fcd3d76ef1de4a8f6de43dd0c85145e4605ded0d52d2a89ff27c78ce212cb",
+      "record": {
+        "recordId": "WB-2026-07-10-005",
+        "legacyId": "WB-2026-07-10-005",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e9373123e327edc356ed969b62fd89b4c9510695613688b524e8d104fe1f0bdd",
+        "target": "NuGen C&I Solar Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Argo Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-005"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Argo Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Argo Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-005"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-07-10",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-10-005",
+            "tier": "PRIMARY",
+            "title": "NuGen C&I Solar Portfolio | Argo Infrastructure Partners",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/argo-infrastructure-partners-acquires-solar-portfolio-from-and-establishes-new-partnership-with-owner-developer-nugen-302822094.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-10",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Argo acquired eight operating commercial and industrial solar sites from NuGen, including six in Massachusetts and two in New Jersey. The add-on expands Argo's distributed-solar platform to 196 sites and approximately 270 MW of operating capacity.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-27-008",
+      "groupKey": "Sponsor — Astatine Investment Partners",
+      "baseReviewedInputHash": "c053f81df511b354559cb5b7b50c679af9b0d5f1b226c1ddd5d7daba8f3c180b",
+      "record": {
+        "recordId": "WB-2026-06-27-008",
+        "legacyId": "WB-2026-06-27-008",
+        "splitSuffix": null,
+        "transactionIdentityKey": "4516404de19a15c8b7529ca00f733d473f043ad14d7aea6f41a75dae171ed18d",
+        "target": "Specialist Fleet Services",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-008"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Astatine Investment Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-008"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Astatine Investment Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Astatine Investment Partners",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-008"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-06-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-27-008",
+            "tier": "PRIMARY",
+            "title": "Specialist Fleet Services | Astatine Investment Partners",
+            "publisher": "Investegate",
+            "url": "https://investegate.co.uk/announcement/rns/paragon-banking-group--pag/sale-of-vehicle-and-fleet-subsidiary-/9629300",
+            "artifactPath": null,
+            "publishedAt": "2026-06-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Astatine-backed NRG Riverside / NRG Fleet Services agreed to acquire the entire issued share capital of Specialist Fleet Services from Paragon Banking Group. SFS adds specialist contract hire, fleet management, and municipal fleet capabilities to NRG Riverside’s UK platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-13-007",
+      "groupKey": "Sponsor — Axium Infrastructure",
+      "baseReviewedInputHash": "db1b9ceeafe41841d9878b6f4097ce82e87f0db34fd45e4966b493e9bb98a2fa",
+      "record": {
+        "recordId": "WB-2026-06-13-007",
+        "legacyId": "WB-2026-06-13-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "47ef3fa0436c03443369c76da4ebf976097982a099609651689172c9ea3d235e",
+        "target": "Groupe Santé Sedna",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Axium Infrastructure.",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Axium Infrastructure",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Axium Infrastructure",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-007"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "Axium Infrastructure",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Axium Infrastructure",
+              "sourceIds": [
+                "transaction-WB-2026-06-13-007"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "Canada",
+        "announcementDate": "2026-06-12",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-13-007",
+            "tier": "PRIMARY",
+            "title": "Groupe Santé Sedna | Axium Infrastructure",
+            "publisher": "LinkedIn",
+            "url": "https://linkedin.com/posts/ken-brooks_eycanada-eyparthenon-shapethefuturewithconfidence-activity-7470473843157929984-Sbp",
+            "artifactPath": null,
+            "publishedAt": "2026-06-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "An Axium-managed fund made a new equity investment in Groupe Santé Sedna, a Canadian healthcare and social-services platform. Advisor materials identified a June 11 closing, and the transaction was treated as in-period despite a prior Competition Bureau reference.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-137",
+      "groupKey": "Sponsor — Axium Infrastructure Europe",
+      "baseReviewedInputHash": "f076fad0662aec73bd728040d9e5740ddc82e09212f4ffdadb3d76e2a3d9600c",
+      "record": {
+        "recordId": "INF-2026-137",
+        "legacyId": "INF-2026-137",
+        "splitSuffix": null,
+        "transactionIdentityKey": "52b141e80cb49a682f2153a1f684e6fb4355c6f70cd4d272881a7690388ce9e4",
+        "target": "174 MW Wind Portfolio (France)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Axium Infrastructure Europe.",
+              "sourceIds": [
+                "transaction-INF-2026-137"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-137"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Axium Infrastructure Europe",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Axium Infrastructure Europe",
+              "sourceIds": [
+                "transaction-INF-2026-137"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "la Banque des Territoires",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-137"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "France",
+        "announcementDate": "2026-03-20",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-137",
+            "tier": "PRIMARY",
+            "title": "Axium Infrastructure Europe acquires 49.9% stake in 174 MW French wind portfolio",
+            "publisher": "Axium Infrastructure",
+            "url": "https://axiuminfra.com/2026/03/20/le-20-mars-2026-axium-infrastructure-europe-acquiert-une-participation-dans-un-portefeuille-eolien-en-exploitation-de-174-mw-en-france",
+            "artifactPath": null,
+            "publishedAt": "2026-03-20",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Axium Infrastructure Europe acquired a 49.9% interest in a 174 MW operating wind portfolio in France from la Banque des Territoires.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-137",
+            "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-209",
+      "groupKey": "Sponsor — Basalt Infrastructure Partners",
+      "baseReviewedInputHash": "375a582a7b333912c6556b1e191628ab7716768ddd79d42c4f39ef5f018ebe69",
+      "record": {
+        "recordId": "INF-2026-209",
+        "legacyId": "INF-2026-209",
+        "splitSuffix": null,
+        "transactionIdentityKey": "7d98a0c244ecaead07924f00cbff00a4785d71ad6d151dd7781032e23d4b52aa",
+        "target": "R.E.L.A.M.",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Basalt Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-209"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Basalt Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Basalt Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-209"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Paceline Equity Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-209"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States / Canada",
+        "announcementDate": "2026-05-11",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-209",
+            "tier": "PRIMARY",
+            "title": "Basalt Infrastructure Partners agrees to acquire R.E.L.A.M.",
+            "publisher": "Institutional Real Estate",
+            "url": "https://irei.com/news/basalt-agrees-to-acquire-r-e-l-a-m-a-north-american-lessor-of-rail-infrastructure-equipment",
+            "artifactPath": null,
+            "publishedAt": "2026-05-11",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Funds advised by Basalt Infrastructure Partners agreed to acquire R.E.L.A.M., a North American lessor of maintenance-of-way and hi-rail equipment, from Paceline Equity Partners. The company operates a scaled fleet of specialized rail maintenance assets serving railroads, contractors and other rail infrastructure operators.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-08-07-014",
+      "groupKey": "Sponsor — Basalt Infrastructure Partners",
+      "baseReviewedInputHash": "a313cd067c005c87c2dc39645bfbc93fabbfa0d92287d912f05ed954929cca95",
+      "record": {
+        "recordId": "WB-2026-08-07-014",
+        "legacyId": "WB-2026-08-07-014",
+        "splitSuffix": null,
+        "transactionIdentityKey": "069e06a7e7cf6ac482fc10cac2e233c606a504e0a84205de8cddce4bb46b8bd1",
+        "target": "MBI",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Basalt Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-014"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Basalt Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Basalt Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-014"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-08-07",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-08-07-014",
+            "tier": "PRIMARY",
+            "title": "MBI | Basalt Infrastructure Partners",
+            "publisher": "Basaltinfra",
+            "url": "https://basaltinfra.com/2026/08/03/basalt-acquires-mbi-the-leading-outsourced-waste-transportation-provider-in-north-america",
+            "artifactPath": null,
+            "publishedAt": "2026-08-07",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Basalt-advised funds acquired MBI from Fortress-managed funds; Basalt announced the transaction on August 3 after its July 31 closing. MBI operates more than 5,000 long-lived specialized assets and serves waste operators and municipalities across more than 40 terminals nationwide.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-105",
+      "groupKey": "Sponsor — BCI",
+      "baseReviewedInputHash": "fdb4dd386fb581d3169daef15431fe2a9f275df412ed5e807c99afd5e9fea547",
+      "record": {
+        "recordId": "INF-2026-105",
+        "legacyId": "INF-2026-105",
+        "splitSuffix": null,
+        "transactionIdentityKey": "3a409c55c6186f3490c3191003ffe6982638ea11cc6e0174c1611fc21f027724",
+        "target": "Northview Energy",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: BCI / Brookfield.",
+              "sourceIds": [
+                "transaction-INF-2026-105"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-105"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "BCI",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "BCI",
+              "sourceIds": [
+                "transaction-INF-2026-105"
+              ]
+            },
+            {
+              "name": "NBIM",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-105"
+              ]
+            },
+            {
+              "name": "Brookfield",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Brookfield",
+              "sourceIds": [
+                "transaction-INF-2026-105"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "BCI",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "BCI",
+              "sourceIds": [
+                "transaction-INF-2026-105"
+              ]
+            },
+            {
+              "name": "NBIM",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-105"
+              ]
+            },
+            {
+              "name": "Brookfield",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Brookfield",
+              "sourceIds": [
+                "transaction-INF-2026-105"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "North America",
+        "announcementDate": "2026-03-03",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE",
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Platform Launch / Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE",
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-105",
+            "tier": "PRIMARY",
+            "title": "BCI / NBIM / Brookfield launch Northview Energy platform",
+            "publisher": "GlobeNewsWire",
+            "url": "https://globenewswire.com/news-release/2026/03/03/3248185/0/en/BCI-Norges-Bank-Investment-Management-and-Brookfield-Partner-to-Launch-Northview-Energy.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "BCI, Norges Bank Investment Management (NBIM), and Brookfield launched Northview Energy, a renewable energy platform focused on North America.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-105",
+            "summary": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-20-009",
+      "groupKey": "Sponsor — BCI",
+      "baseReviewedInputHash": "f213bf2e8ce74d2f678dd293fd96a64d39b6d2bf5bbadfb3a753b33f749ef2df",
+      "record": {
+        "recordId": "WB-2026-06-20-009",
+        "legacyId": "WB-2026-06-20-009",
+        "splitSuffix": null,
+        "transactionIdentityKey": "2420c59eb0584882f1e5285b5235dd80d1b334a8f0f8647085d665f58e49e646",
+        "target": "Transcend Towers Infrastructure",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-009"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: BCI.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-009"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "BCI",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "BCI",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-009"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "Philippines",
+        "announcementDate": "2026-06-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-20-009",
+            "tier": "PRIMARY",
+            "title": "Transcend Towers Infrastructure | BCI",
+            "publisher": "Frontiertowersphilippines",
+            "url": "https://frontiertowersphilippines.com/news/frontier-completes-acquisition-of-american-towers-philippine-tower-portfolio",
+            "artifactPath": null,
+            "publishedAt": "2026-06-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "BCI-backed Frontier Towers completed its acquisition of American Tower's Philippine tower portfolio through Transcend Towers Infrastructure. The transaction adds approximately 400 towers and expands Frontier's nationwide footprint to more than 6,500 sites.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-012",
+      "groupKey": "Sponsor — BCI",
+      "baseReviewedInputHash": "9c8e2e298fad4e4d60d7a460ee60d970222b6e5b83a2769161c0aec2c2321a0b",
+      "record": {
+        "recordId": "WB-2026-07-31-012",
+        "legacyId": "WB-2026-07-31-012",
+        "splitSuffix": null,
+        "transactionIdentityKey": "72bc7e3cf7f80ebd6986e9249ef82a82e6072515d8a87d9b9141eda298401851",
+        "target": "Cube Highways Trust",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: BCI / I Squared.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-012"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "ADIA Infrastructure",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-31-012"
+              ]
+            },
+            {
+              "name": "BCI",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "BCI",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-012"
+              ]
+            },
+            {
+              "name": "I Squared",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-012"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Asia-Pacific",
+        "country": "India",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "IPO"
+          ],
+          "details": "IPO",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "IPO"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-012",
+            "tier": "PRIMARY",
+            "title": "Cube Highways Trust | ADIA / BCI / I Squared",
+            "publisher": "Economictimes",
+            "url": "https://economictimes.indiatimes.com/markets/stocks/news/cube-highways-trust-invit-debuts-with-2-premium-over-issue-price-of-rs-152/articleshow/132762831.cms",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "ADIA-, BCI- and I Squared-backed Cube Highways Trust began public trading following a ₹5,000 crore issue. The infrastructure investment trust owns 27 operational road assets and debuted with a reported market capitalization of ₹21,045 crore.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-101",
+      "groupKey": "Sponsor — BlackRock",
+      "baseReviewedInputHash": "96b4e9f25da1ec60748cb68eb5811b462b77643c26b887ef4db948276503cf01",
+      "record": {
+        "recordId": "INF-2026-101",
+        "legacyId": "INF-2026-101",
+        "splitSuffix": null,
+        "transactionIdentityKey": "f68d7a8ecec947f688d6fa2889240633641fcdaabdc123603b6ce30bfbeffd96",
+        "target": "Naturgy Energy Group",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: BlackRock / GIP (11.4% stake).",
+              "sourceIds": [
+                "transaction-INF-2026-101"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-101"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Public Market",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-101"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "BlackRock",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "BlackRock",
+              "sourceIds": [
+                "transaction-INF-2026-101"
+              ]
+            },
+            {
+              "name": "GIP (11.4% stake)",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "GIP (11.4% stake)",
+              "sourceIds": [
+                "transaction-INF-2026-101"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "Spain",
+        "announcementDate": "2026-03-02",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-101",
+            "tier": "PRIMARY",
+            "title": "GIP divests 11.4% minority stake in Naturgy Energy Group SA",
+            "publisher": "US News",
+            "url": "https://money.usnews.com/investing/news/articles/2026-03-02/blackrock-to-sell-its-11-4-stake-in-spanish-energy-firm-naturgy",
+            "artifactPath": null,
+            "publishedAt": "2026-03-02",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Global Infrastructure Partners (GIP), a BlackRock company, divested its 11.4% minority stake in Naturgy Energy Group SA, the Spanish integrated utility. The sale was executed via the public market, reducing GIP's long-standing position in the Madrid-listed energy group.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-101",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-27-004",
+      "groupKey": "Sponsor — BlackRock",
+      "baseReviewedInputHash": "6c77ef0d2f28d6c50e88ab9922f51c375fc1ad7e6e2ac34e83d4ceaa68626813",
+      "record": {
+        "recordId": "WB-2026-06-27-004",
+        "legacyId": "WB-2026-06-27-004",
+        "splitSuffix": null,
+        "transactionIdentityKey": "5847de4c4a8aab0c31572111cc15bb76a74ffed616f3ce76661c03ba6c8c7e62",
+        "target": "Gennaker offshore wind project",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: BlackRock.",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-004"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-27-004"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "BlackRock",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "BlackRock",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-004"
+              ]
+            },
+            {
+              "name": "Global Infrastructure Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-27-004"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Germany",
+        "announcementDate": "2026-06-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-27-004",
+            "tier": "PRIMARY",
+            "title": "Gennaker offshore wind project | BlackRock / GIP",
+            "publisher": "Skybornrenewables",
+            "url": "https://skybornrenewables.com/articles/newsroom/Gennaker-SWM",
+            "artifactPath": null,
+            "publishedAt": "2026-06-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Skyborn Renewables agreed to sell Stadtwerke München a 25% equity interest in the Gennaker offshore wind project. Skyborn is a GIP infrastructure portfolio company within BlackRock’s infrastructure platform, and Gennaker is positioned as a major German Baltic Sea offshore wind development.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-31-008",
+      "groupKey": "Sponsor — BlackRock",
+      "baseReviewedInputHash": "0d87e87776f6cbe286c7e26cc3ff94fa5867dda174ca0bd25f7b3f38852ec3bc",
+      "record": {
+        "recordId": "WB-2026-07-31-008",
+        "legacyId": "WB-2026-07-31-008",
+        "splitSuffix": null,
+        "transactionIdentityKey": "02b883bd7bd16643c2c9ba98a9d66d29396938533371ecdb4a60d829ddbfcf47",
+        "target": "Meta El Paso Data Center Campus",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: BlackRock.",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-008"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "BlackRock",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "BlackRock",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-008"
+              ]
+            },
+            {
+              "name": "Global Infrastructure Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-31-008"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "BlackRock",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "BlackRock",
+              "sourceIds": [
+                "transaction-WB-2026-07-31-008"
+              ]
+            },
+            {
+              "name": "Global Infrastructure Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-31-008"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-07-31",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-31-008",
+            "tier": "PRIMARY",
+            "title": "Meta El Paso Data Center Campus | BlackRock / GIP",
+            "publisher": "Investor",
+            "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Announces-New-Strategic-Venture-with-BlackRock-to-Develop-Data-Center-in-El-Paso/default.aspx",
+            "artifactPath": null,
+            "publishedAt": "2026-07-31",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Meta formed a strategic venture with a BlackRock-led investor group to develop a 1 GW data-center campus in El Paso, Texas. The investor group will own 80% of the approximately US$14bn project, providing direct capital for hyperscale digital infrastructure.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-041",
+      "groupKey": "Sponsor — Blackstone",
+      "baseReviewedInputHash": "6079ead4a53664ed34b4129ff8d751d4ea126bab9e8cf1affbd3e9034f76d2e9",
+      "record": {
+        "recordId": "INF-2026-041",
+        "legacyId": "INF-2026-041",
+        "splitSuffix": null,
+        "transactionIdentityKey": "6c84054c9777e9160a64339128cf32e7f1e8c77230aeb52833e1e4dd6d67a664",
+        "target": "Alliance Technical Group",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Blackstone.",
+              "sourceIds": [
+                "transaction-INF-2026-041"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-041"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Blackstone",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Blackstone",
+              "sourceIds": [
+                "transaction-INF-2026-041"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-01-06",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-041",
+            "tier": "PRIMARY",
+            "title": "Blackstone acquires Alliance Technical Group platform",
+            "publisher": "Blackstone",
+            "url": "https://blackstone.com/news/press/blackstone-energy-transition-partners-announces-acquisition-of-alliance-technical-group",
+            "artifactPath": null,
+            "publishedAt": "2026-01-06",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Blackstone announced the platform acquisition of Alliance Technical Group, an environmental services company.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-041",
+            "summary": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-011",
+      "groupKey": "Sponsor — Blackstone",
+      "baseReviewedInputHash": "fc4d7007c83cd39afe36353139b02424481ab21724ead7432888eaa591ae0851",
+      "record": {
+        "recordId": "INF-2026-011",
+        "legacyId": "INF-2026-011",
+        "splitSuffix": null,
+        "transactionIdentityKey": "4ff08bc3c7f6c462db06e6ac615632af0eece7ee75c5cb3343ad3068bf3ea631",
+        "target": "Arlington Industries",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Blackstone.",
+              "sourceIds": [
+                "transaction-INF-2026-011"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-011"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Blackstone",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Blackstone",
+              "sourceIds": [
+                "transaction-INF-2026-011"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-01-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-011",
+            "tier": "PRIMARY",
+            "title": "Blackstone acquires Arlington Industries platform",
+            "publisher": "Blackstone",
+            "url": "https://blackstone.com/news/press/blackstone-announces-agreement-to-acquire-arlington-industries",
+            "artifactPath": null,
+            "publishedAt": "2026-01-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Blackstone announced the acquisition of Arlington Industries, an energy and infrastructure services platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-011",
+            "summary": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-038",
+      "groupKey": "Sponsor — Blackstone",
+      "baseReviewedInputHash": "553f0095e72049c0970a4c93014a5477ab552a3e5cad29dbab6d046f1a260052",
+      "record": {
+        "recordId": "INF-2026-038",
+        "legacyId": "INF-2026-038",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e5d961057deae66c9e7e4052f2fbc8d5580cf25f6ba13fd7a064fc8575a6624b",
+        "target": "Sabre Industries",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Blackstone.",
+              "sourceIds": [
+                "transaction-INF-2026-038"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Sale/IPO of existing PortCo: realization review (High confidence): Target is already a PortCo and seller appears aligned with an existing owner, so realization/divestiture fields should be reviewed.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-038"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "TPG Rise Climate",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-038"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Blackstone",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Blackstone",
+              "sourceIds": [
+                "transaction-INF-2026-038"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-02-06",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Majority Stake) / Acquisition (Majority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-038",
+            "tier": "PRIMARY",
+            "title": "TPG Rise Climate acquires majority stake in Sabre Industries from Blackstone",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260205906188/en/TPG-to-Acquire-Majority-Stake-in-Sabre-Industries-from-Blackstone-Energy-Transition-Partners",
+            "artifactPath": null,
+            "publishedAt": "2026-02-06",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "TPG Rise Climate announced the acquisition of a majority stake in Sabre Industries from Blackstone.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-038",
+            "summary": "Sale/IPO of existing PortCo: realization review (High confidence): Target is already a PortCo and seller appears aligned with an existing owner, so realization/divestiture fields should be reviewed."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    }
+  ],
+  "packetSha256": "2cdbf58f721ef61cf1221487791296ef20aac443fe9c10249ef7b460d8a9dc10"
+}

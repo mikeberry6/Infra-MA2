@@ -88,7 +88,17 @@
     "imports:cleanup": "npx tsx scripts/cleanup-import-previews.ts",
     "imports:verify-atomicity": "npx tsx scripts/verify-import-atomicity.ts",
     "companies:cleanup:report": "npx tsx scripts/report-company-cleanup-approval.ts",
-    "companies:cleanup": "npx tsx scripts/merge-duplicate-companies.ts"
+    "companies:cleanup": "npx tsx scripts/merge-duplicate-companies.ts",
+    "weekly:activity:snapshot": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts snapshot",
+    "weekly:activity:reconcile": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts reconcile",
+    "weekly:activity:packets": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts packets",
+    "weekly:activity:review": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts review",
+    "weekly:activity:validate": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts validate",
+    "weekly:activity:approve": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts approve",
+    "weekly:activity:render": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts render",
+    "weekly:activity:advance": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts advance",
+    "typecheck:weekly-activity": "tsc -p scripts/weekly-briefing-activity/tsconfig.json",
+    "test:weekly-activity": "vitest run scripts/weekly-briefing-activity/*.test.ts src/app/weekly-briefing/*.test.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

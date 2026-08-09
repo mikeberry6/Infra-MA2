@@ -1,0 +1,2879 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-012",
+  "baseManifestSha256": "65a7e8fd6bc47b8ac9b76faffcb4f89b5ab6366dd1e7a33ebe38c235833a99c5",
+  "recordCount": 24,
+  "records": [
+    {
+      "recordId": "INF-2026-181",
+      "groupKey": "Sponsor — Grain Management",
+      "baseReviewedInputHash": "b0ff7ddc94416c9073cc928a22b9e1cd0e801d79581b441dd2adf34d1aa20297",
+      "record": {
+        "recordId": "INF-2026-181",
+        "legacyId": "INF-2026-181",
+        "splitSuffix": null,
+        "transactionIdentityKey": "149acf6b5fb1265f4d966cf4ae7b154f3410c8cc4c7c6235a9dd632107f7d923",
+        "target": "Spectrotel & AireSpring",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Grain Management.",
+              "sourceIds": [
+                "transaction-INF-2026-181"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Charlesbank Capital Partners, Grain Management).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-181"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Charlesbank Capital Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-181"
+              ]
+            },
+            {
+              "name": "Grain Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Grain Management",
+              "sourceIds": [
+                "transaction-INF-2026-181"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-24",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-181",
+            "tier": "PRIMARY",
+            "title": "Charlesbank invests in Spectrotel and combines platform with AireSpring",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/grain-management-announces-strategic-transaction-to-scale-spectrotel-through-partnership-with-charlesbank-and-combination-with-airespring-302752196.html",
+            "artifactPath": null,
+            "publishedAt": "2026-04-24",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Charlesbank will make a new strategic investment in Grain Management portfolio company Spectrotel, with Grain reinvesting alongside, and concurrently combine the company with AireSpring to form a leading managed network services platform. The Lonstein family, AireSpring’s founders, will remain significant minority investors; together the two businesses combine Spectrotel’s distributed enterprise reach with AireSpring’s global connectivity and managed services capabilities.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-181",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Charlesbank Capital Partners, Grain Management)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-147",
+      "groupKey": "Sponsor — H.I.G. Capital",
+      "baseReviewedInputHash": "62c07132dac8a1fd721a08024c981cded23306b655c8f38fbfe624cfddf42e8b",
+      "record": {
+        "recordId": "INF-2026-147",
+        "legacyId": "INF-2026-147",
+        "splitSuffix": null,
+        "transactionIdentityKey": "1e840bd6100432cc53431cd2f952cad1c7a15674980a537abe0f5457fac27882",
+        "target": "Desktop S.A.",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: H.I.G. Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-147"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-147"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Claro",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-147"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "H.I.G. Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "H.I.G. Capital",
+              "sourceIds": [
+                "transaction-INF-2026-147"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Latin America",
+        "country": "Brazil",
+        "announcementDate": "2026-03-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-147",
+            "tier": "PRIMARY",
+            "title": "H.I.G. Capital divests Desktop S.A. to Claro",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/hig-capital-announces-sale-of-brazilian-portfolio-company-desktop-to-claro-302726355.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "H.I.G. Capital signed a definitive agreement to sell Desktop S.A., a Brazilian fiber broadband provider, to Claro.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-147",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-223",
+      "groupKey": "Sponsor — H.I.G. Capital",
+      "baseReviewedInputHash": "c01dafda987f4e7b9be820d6a38a8de1ce1fdff9112c13bbd46994f47054e44d",
+      "record": {
+        "recordId": "INF-2026-223",
+        "legacyId": "INF-2026-223",
+        "splitSuffix": null,
+        "transactionIdentityKey": "f2b2566b8f30688576583b508d68fa088ccb7694b59f458b74d9c8ba0f7f9a78",
+        "target": "International Aerospace Coatings",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: H.I.G. Capital / Tiger Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-223"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "H.I.G. Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "H.I.G. Capital",
+              "sourceIds": [
+                "transaction-INF-2026-223"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Tiger Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Tiger Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-223"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States / Ireland",
+        "announcementDate": "2026-05-15",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Acquisition (Buyout) / Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-223",
+            "tier": "PRIMARY",
+            "title": "H.I.G. Capital completes acquisition of International Aerospace Coatings from Tiger Infrastructure",
+            "publisher": "H.I.G. Capital",
+            "url": "https://prnewswire.com/news-releases/hig-capital-completes-acquisition-of-iac-302772908.html",
+            "artifactPath": null,
+            "publishedAt": "2026-05-15",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "H.I.G. Capital completed the acquisition of International Aerospace Coatings from Tiger Infrastructure Partners. IAC provides aircraft painting and aviation technical services from a global footprint of 25 hangars across 11 sites in the United States and Europe.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-089",
+      "groupKey": "Sponsor — Harrison Street",
+      "baseReviewedInputHash": "9edde2d69938dfd613e2c3409a973dcf7ba5ca27c73c9a8fbe9ffa38eab1ae09",
+      "record": {
+        "recordId": "INF-2026-089",
+        "legacyId": "INF-2026-089",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e61fc904f3f47d466bc79bc374f96204f4fc5c8076dee5f8def06cf783aeee32",
+        "target": "Sandy Farms & Eternal Rings Data Centers",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Harrison Street.",
+              "sourceIds": [
+                "transaction-INF-2026-089"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-089"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "GI Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-089"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Harrison Street",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Harrison Street",
+              "sourceIds": [
+                "transaction-INF-2026-089"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-02-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-089",
+            "tier": "RELIABLE_SECONDARY",
+            "title": "Harrison Street divests Sandy Farms and Eternal Rings data centers",
+            "publisher": "datacenterdynamics.com",
+            "url": "https://www.datacenterdynamics.com/en/news/harrison-street-sells-two-powered-shell-data-center-sites-in-maryland/",
+            "artifactPath": null,
+            "publishedAt": "2026-02-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Contemporaneous specialist report quoting Harrison Street; no public primary transaction page was located.",
+            "fallbackRationale": "Candidate-stage fallback: reviewer must document primary-source unavailability before approval.",
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-089",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-155",
+      "groupKey": "Sponsor — Harrison Street",
+      "baseReviewedInputHash": "e0613548824bc7b2c77a69224b28fc1a797b6c6db9da68aaa0fbcd6ad3bef6a3",
+      "record": {
+        "recordId": "INF-2026-155",
+        "legacyId": "INF-2026-155",
+        "splitSuffix": null,
+        "transactionIdentityKey": "954928dda5ac29f031533a42d80d4b681ce4f4b4fd69efd6918719ad875afa23",
+        "target": "Northside East Cobb Medical Center",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Harrison Street.",
+              "sourceIds": [
+                "transaction-INF-2026-155"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-155"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Harrison Street",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Harrison Street",
+              "sourceIds": [
+                "transaction-INF-2026-155"
+              ]
+            },
+            {
+              "name": "Stonemont",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-155"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-02",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-155",
+            "tier": "PRIMARY",
+            "title": "Harrison Street / Stonemont acquire Northside East Cobb Medical Center",
+            "publisher": "Stonemont Financial",
+            "url": "https://stonemontfinancial.com/stonemont-expands-healthcare-portfolio-with-northside-east-cobb-medical-center-acquisition",
+            "artifactPath": null,
+            "publishedAt": "2026-04-02",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Harrison Street partnered with Stonemont on the acquisition of Northside East Cobb Medical Center, a 103,184 sq. ft., 100%-leased medical office building in Marietta, Georgia. Anchored by Northside Hospital, the four-story facility houses imaging, orthopedics, primary care, urgent care, and physician specialty services.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-155",
+            "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-06-007",
+      "groupKey": "Sponsor — Harrison Street",
+      "baseReviewedInputHash": "8b59981d5f5291bd4dead5738364f15ef70ff51beb2085dd261c69aa48496643",
+      "record": {
+        "recordId": "WB-2026-06-06-007",
+        "legacyId": "WB-2026-06-06-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "ac08b02ce6f8ae571b1f150fb2c485e427eca47a118860b3f2d22663799913da",
+        "target": "Broadway Proper",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Harrison Street.",
+              "sourceIds": [
+                "transaction-WB-2026-06-06-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-06-007"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Harrison Street",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Harrison Street",
+              "sourceIds": [
+                "transaction-WB-2026-06-06-007"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-06-05",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE",
+            "CAPITAL_RAISE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-06-007",
+            "tier": "PRIMARY",
+            "title": "Broadway Proper | Harrison Street",
+            "publisher": "Berkadia",
+            "url": "https://berkadia.com/news/broadway-proper-tucson-az-sold-by-berkadia-2026",
+            "artifactPath": null,
+            "publishedAt": "2026-06-05",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Harrison Street sold Broadway Proper, a 232-unit independent and assisted living community in Tucson, Arizona. Berkadia announced the completed sale during the target period, marking a realized social-infrastructure exit rather than a financing transaction.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-053",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "adea62cc83866102efba0f4d7d4fbebfe534cd7a192246988184cc0f8053c9ea",
+      "record": {
+        "recordId": "INF-2026-053",
+        "legacyId": "INF-2026-053",
+        "splitSuffix": null,
+        "transactionIdentityKey": "f6e851ba46ec725bc5c2dfed21fc3d2117f878ac97c0b76a3ddca500b07017ee",
+        "target": "Ramudden Global",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-053"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-053"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-053"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "Sweden",
+        "announcementDate": "2026-01-07",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-053",
+            "tier": "PRIMARY",
+            "title": "I Squared Capital acquires Ramudden Global platform",
+            "publisher": "Skadden",
+            "url": "https://skadden.com/about/news-and-rankings/news/2026/01/i-squared-capital-acquires-ramudden-global",
+            "artifactPath": null,
+            "publishedAt": "2026-01-07",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared Capital announced the platform acquisition of Ramudden Global, a road safety and traffic management company.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-053",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-010",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "fac2e19fd4183fa95a7b07958c23595c3421b711d6298a969a76b26b594c72fa",
+      "record": {
+        "recordId": "INF-2026-010",
+        "legacyId": "INF-2026-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "ceafcd41e7636d1d6d63ff921da527ebe369ace2c43701ed82e2f090a561f3e5",
+        "target": "ANZA Power",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-010"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (High confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-010"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-01-15",
+        "transactionStructure": {
+          "forms": [
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Platform Launch",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-010",
+            "tier": "PRIMARY",
+            "title": "I Squared Capital launches ANZA Power platform",
+            "publisher": "Saur Energy",
+            "url": "https://saurenergy.com/solar/i-squared-capital-launches-anza-power-an-ipp-for-australia-and-new-zealand-11017272",
+            "artifactPath": null,
+            "publishedAt": "2026-01-15",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared Capital launched ANZA Power, a new power generation platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-010",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (High confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-017",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "63bd5de0836d050bd75e6c4b7c7bcf409234b005754eb0f7ded182858af3aff5",
+      "record": {
+        "recordId": "INF-2026-017",
+        "legacyId": "INF-2026-017",
+        "splitSuffix": null,
+        "transactionIdentityKey": "c457c795925d11eea6be1562039cc2be804119341ab10a1787420b09bf0b2bba",
+        "target": "FAS Renewables / Zahra Energy",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-017"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-017"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-017"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Middle East & Africa",
+        "country": "Middle East",
+        "announcementDate": "2026-01-21",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-017",
+            "tier": "PRIMARY",
+            "title": "I Squared Capital acquires FAS Renewables and Zahra Energy platforms",
+            "publisher": "Latham & Watkins",
+            "url": "https://lw.com/en/news/2026/01/latham-advises-i-squared-capital-on-acquisition-of-fas-renewables",
+            "artifactPath": null,
+            "publishedAt": "2026-01-21",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared Capital announced the acquisition of FAS Renewables and Zahra Energy as platform acquisitions in the Middle East and Africa region.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-017",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-021",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "598706b74ba05e6a4487a1c48c64b0f5139a2c40c21a378c28008b66fe64df8b",
+      "record": {
+        "recordId": "INF-2026-021",
+        "legacyId": "INF-2026-021",
+        "splitSuffix": null,
+        "transactionIdentityKey": "99b869542116255d45b2715d69868aaaf58e511f60f07ece11e987d62e630a2f",
+        "target": "Inkia Energy",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital / CPP Investments.",
+              "sourceIds": [
+                "transaction-INF-2026-021"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital, CPP Investments).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-021"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-021"
+              ]
+            },
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-INF-2026-021"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-021"
+              ]
+            },
+            {
+              "name": "CPP Investments",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "CPP Investments",
+              "sourceIds": [
+                "transaction-INF-2026-021"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Latin America",
+        "country": "Peru",
+        "announcementDate": "2026-02-12",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "JOINT_VENTURE",
+            "RECAPITALIZATION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE",
+          "RECAPITALIZATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-021",
+            "tier": "PRIMARY",
+            "title": "I Squared Capital and CPP Investments JV recap/buyout of Inkia Energy",
+            "publisher": "CPP Investments",
+            "url": "https://cppinvestments.com/newsroom/cpp-investments-to-invest-in-inkia-alongside-i-squared-capital",
+            "artifactPath": null,
+            "publishedAt": "2026-02-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared Capital (rollover) and CPP Investments announced a JV recapitalization and buyout of Inkia Energy, a Latin American power generation company.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-021",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital, CPP Investments)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-132",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "a071616866fe96906604119abdcab91edc3c6225376cd6ea3f6262fba207ae79",
+      "record": {
+        "recordId": "INF-2026-132",
+        "legacyId": "INF-2026-132",
+        "splitSuffix": null,
+        "transactionIdentityKey": "3768a85ca2f7d58af32ec3e3066b7d50b3708436c9313de2b9a4ed1b707aa502",
+        "target": "Cube Highways Trust (4 Highway Assets)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-132"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-132"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Cube Highways Trust",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-132"
+              ]
+            },
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-132"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-132"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Asia-Pacific",
+        "country": "India",
+        "announcementDate": "2026-03-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-132",
+            "tier": "PRIMARY",
+            "title": "Cube Highways Trust / I Squared Capital acquire four highway assets from sponsor",
+            "publisher": "ScanX Trade",
+            "url": "https://scanx.trade/stock-market-news/companies/cube-highways-trust-executes-commitment-letter-for-multi-company-acquisition-and-rofo-agreement/35299651",
+            "artifactPath": null,
+            "publishedAt": "2026-03-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Cube Highways Trust executed a binding commitment to acquire four highway entities from its sponsor via an equity swap arrangement.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-132",
+            "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The target reads as a project, asset bundle, portfolio, stake, or physical asset, not a standalone operating platform."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-173",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "0bb02e828b256acbc42faa2df5a1c4f92d706daa8554e6867a8d521e3b99ba4a",
+      "record": {
+        "recordId": "INF-2026-173",
+        "legacyId": "INF-2026-173",
+        "splitSuffix": null,
+        "transactionIdentityKey": "f015f439c108a72f8c07e88c6ae7603b22c92d59380d067ce670ed78f1b8fcf4",
+        "target": "Spire Storage",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-173"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-173"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-173"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Spire Inc.",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-173"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Midstream",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-14",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-173",
+            "tier": "PRIMARY",
+            "title": "I Squared Capital acquires Spire natural gas storage assets",
+            "publisher": "PR Newswire",
+            "url": "https://prnewswire.com/news-releases/spire-and-i-squared-announce-agreement-for-sale-of-natural-gas-storage-assets-for-650-million-302742746.html",
+            "artifactPath": null,
+            "publishedAt": "2026-04-14",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared Capital agreed to acquire the midstream natural gas storage assets of Spire Inc. for $650mm in cash and deferred payments. The assets provide up to 72 Bcf of combined working gas capacity.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-173",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-194",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "0364da86d6d61ba3ac341c05a891b889e54db6e643026fd3860c510a2292939b",
+      "record": {
+        "recordId": "INF-2026-194",
+        "legacyId": "INF-2026-194",
+        "splitSuffix": null,
+        "transactionIdentityKey": "85aa5d331abd2106eb09b470f720637046f0b1490604dbc0fb576152232506a9",
+        "target": "Oriden",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-194"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-194"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-194"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Mitsubishi Power Americas",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-194"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-04-29",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-194",
+            "tier": "PRIMARY",
+            "title": "I Squared acquires Oriden from Mitsubishi Power Americas",
+            "publisher": "I Squared Capital",
+            "url": "https://isquaredcapital.com/news/oriden-acquisition-renewable-energy",
+            "artifactPath": null,
+            "publishedAt": "2026-04-29",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared’s Energy Transition Fund acquired Oriden, a Pittsburgh-based renewable energy developer, from Mitsubishi Power Americas. Oriden has a 5+ GW solar PV and battery storage pipeline concentrated in MISO and PJM, and I Squared plans to invest approximately $300mm to scale the platform into a next-generation IPP.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-194",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-200",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "3f132b4e344fd7e078647f0340ee89c6f6fedc648113ab7a476ef32668180e6e",
+      "record": {
+        "recordId": "INF-2026-200",
+        "legacyId": "INF-2026-200",
+        "splitSuffix": null,
+        "transactionIdentityKey": "0f23e465dd71b95592d2bcab7d2936248bf85aa42d7cb65ce57560581f60ae26",
+        "target": "Elea Data Centers",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-INF-2026-200"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-200"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-INF-2026-200"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Latin America",
+        "country": "Brazil",
+        "announcementDate": "2026-04-29",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-200",
+            "tier": "PRIMARY",
+            "title": "I Squared agrees to acquire Elea Data Centers",
+            "publisher": "I Squared Capital",
+            "url": "https://isquaredcapital.com/news/latam-expansion-elea-data-centers-acquisition",
+            "artifactPath": null,
+            "publishedAt": "2026-04-29",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared agreed to acquire Elea Data Centers, one of Brazil’s largest carrier-neutral data center platforms. Elea operates nine interconnected campuses across key Brazilian markets with more than 300 MW of powered land and over 1 GW in development, requiring more than US$10bn of capital to fully deliver.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-200",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (I Squared Capital)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-16-010",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "063a766c2d6940c29d0f539fdf052b22684d15011dec762b4709d98b54c6754c",
+      "record": {
+        "recordId": "WB-2026-05-16-010",
+        "legacyId": "WB-2026-05-16-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "fd5f7b7973c93d31afdcad61f87abac655047ce2b733c40249a631d249480ec6",
+        "target": "Cube Grid",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-WB-2026-05-16-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Asia-Pacific",
+        "country": "India",
+        "announcementDate": "2026-05-22",
+        "transactionStructure": {
+          "forms": [
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Platform Launch",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-16-010",
+            "tier": "PRIMARY",
+            "title": "Cube Grid | I Squared Capital",
+            "publisher": "Natlawreview",
+            "url": "https://natlawreview.com/press-releases/i-squared-capital-launches-cube-grid-new-power-transmission-platform-india",
+            "artifactPath": null,
+            "publishedAt": "2026-05-22",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared launched Cube Grid, a power transmission platform in India, with plans to deploy up to $1bn of equity capital. The platform has signed definitive agreements for seed assets totaling more than 1,450 circuit kilometers of transmission lines alongside Dineshchandra Group.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-23-007",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "5c6521d3f5e7789761a35b8ef1c8630fb2522b3f427a092854f31d38467e786a",
+      "record": {
+        "recordId": "WB-2026-05-23-007",
+        "legacyId": "WB-2026-05-23-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "f2ff441b7365718380b4a24018217ce9935598c737fc8a37b452d73da19a2b6e",
+        "target": "Cogent Fiber Data Center Portfolio",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-WB-2026-05-23-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-WB-2026-05-23-007"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-05-29",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE",
+            "FOLLOW_ON_EQUITY"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-23-007",
+            "tier": "PRIMARY",
+            "title": "Cogent Fiber Data Center Portfolio | I Squared Capital",
+            "publisher": "Isquaredcapital",
+            "url": "https://isquaredcapital.com/news/us-ai-inference-edge-colocation-data-center-platform",
+            "artifactPath": null,
+            "publishedAt": "2026-05-29",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared Capital entered into a definitive purchase and sale agreement to acquire ten data center facilities from Cogent Fiber for $225mm in cash. The 53 MW, 259,000-square-foot seed portfolio spans nine U.S. markets and anchors a new AI inference and edge colocation platform, with I Squared committing up to $1bn for expansion and follow-on acquisitions.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-20-007",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "bdc22c711e939e190c8d1b6143ab0041632d11db3decc4b53c138d07f3c179cf",
+      "record": {
+        "recordId": "WB-2026-06-20-007",
+        "legacyId": "WB-2026-06-20-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "a1f22af0f9c4ef36f450a137da218302fa3af6fc9c8829a8b0a4482c9e38ca56",
+        "target": "Inkia Energy",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-007"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Latin America",
+        "country": "Peru",
+        "announcementDate": "2026-06-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-20-007",
+            "tier": "PRIMARY",
+            "title": "Inkia Energy | I Squared Capital",
+            "publisher": "Alterra",
+            "url": "https://alterra.ae/news/alterra-partners-with-i-squared-capital-to-invest-in-peru-s-inkia-energy",
+            "artifactPath": null,
+            "publishedAt": "2026-06-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "ALTERRA entered a co-investment in Inkia Energy alongside I Squared Capital through an I Squared-managed continuation vehicle. Inkia is Peru's largest independent power producer, operating 2.6 GW of generation capacity and supporting a 4 GW renewables pipeline, including approximately 1 GW of near-term solar and wind projects.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-016",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "91f684e83d24f91bc9f6e0f119cedd5cd102c3c8fc0caa27de3fa9287871659c",
+      "record": {
+        "recordId": "WB-2026-07-03-016",
+        "legacyId": "WB-2026-07-03-016",
+        "splitSuffix": null,
+        "transactionIdentityKey": "bea573ddce93c79e8822749c42475c04d65cc519d5a8eb5dace10c38a06d0b1d",
+        "target": "I-2SEA submarine cable system",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-016"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-016"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-016"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "India / Southeast Asia",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-016",
+            "tier": "PRIMARY",
+            "title": "I-2SEA submarine cable system | I Squared Capital",
+            "publisher": "Vccircle",
+            "url": "https://vccircle.com/microsofti-squared-backed-lightstorm-to-build-india-southeast-asia-undersea-cable",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared-backed Lightstorm signed a joint build agreement with Microsoft for the I-2SEA submarine cable system. The project adds new India-to-Southeast Asia subsea capacity for cloud, AI, and enterprise connectivity demand.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-10-010",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "0a3a2075e5ad9a6a4175f82bcb7a70495362050c5a7ea801b4486ab8d2b82505",
+      "record": {
+        "recordId": "WB-2026-07-10-010",
+        "legacyId": "WB-2026-07-10-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "e9d436d806761296bbea7293a3d031f6be473abf7e2c9f385e02c3abbaaf52d7",
+        "target": "Milestone Environmental",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-07-10",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-10-010",
+            "tier": "PRIMARY",
+            "title": "Milestone Environmental | I Squared Capital",
+            "publisher": "Isquaredcapital",
+            "url": "https://isquaredcapital.com/news/acquisition-agreement-milestone-environmental",
+            "artifactPath": null,
+            "publishedAt": "2026-07-10",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared Capital's flagship fund agreed to acquire Milestone Environmental from SK Capital. The platform owns and operates 15 fully permitted disposal facilities across major U.S. energy basins and manages approximately one billion gallons of waste annually across the energy and industrial sectors.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-17-008",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "9005ddc8cc48f41aa023e681555f6451adf89ad97c8e932657133956c91af890",
+      "record": {
+        "recordId": "WB-2026-07-17-008",
+        "legacyId": "WB-2026-07-17-008",
+        "splitSuffix": null,
+        "transactionIdentityKey": "54a595b7b62cb40dcccaac3b55e1dc3adfa066a5a0dc94fc26cd7094cfb33162",
+        "target": "All American Tire / Colt Tire Recycling / Genan",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-008"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-008"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-008"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-07-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-17-008",
+            "tier": "PRIMARY",
+            "title": "All American Tire / Colt Tire Recycling / Genan | I Squared Capital",
+            "publisher": "Libertytire",
+            "url": "https://libertytire.com/About/News/Liberty-Tire-Recycling-Strengthens-Gulf-Coast-Operations-and-Recycling-Efforts-with-Strategic-Acquisitions",
+            "artifactPath": null,
+            "publishedAt": "2026-07-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared-backed Liberty Tire Recycling completed three acquisitions: All American Tire, Colt Tire Recycling and Genan Inc. The bolt-ons expand Liberty’s collection and recycling coverage across Gulf Coast markets and reinforce its environmental-infrastructure platform.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-17-012",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "0d3205a17c77001450378ca9ecab97e1a232ebca1c64590e432b2e6666faa90c",
+      "record": {
+        "recordId": "WB-2026-07-17-012",
+        "legacyId": "WB-2026-07-17-012",
+        "splitSuffix": null,
+        "transactionIdentityKey": "886c5310b4bf7cfa271fa116aa16541b5562446941a25330a7a32ee39a4ed735",
+        "target": "TIP Group",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital / IMCO / GCM Grosvenor.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-012"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-17-012"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-012"
+              ]
+            },
+            {
+              "name": "IMCO",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "IMCO",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-012"
+              ]
+            },
+            {
+              "name": "GCM Grosvenor",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "GCM Grosvenor",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-012"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "Europe",
+        "announcementDate": "2026-07-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-17-012",
+            "tier": "PRIMARY",
+            "title": "TIP Group | I Squared Capital / IMCO / GCM Grosvenor",
+            "publisher": "Isquaredcapital",
+            "url": "https://isquaredcapital.com/news/minority-sale-agreement-tip-group",
+            "artifactPath": null,
+            "publishedAt": "2026-07-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared agreed to sell a combined 25% stake in TIP Group to IMCO and GCM Grosvenor. TIP operates approximately 90,000 trailers, trucks and specialized assets from more than 130 service locations in 17 countries, serving over 15,000 European transportation and logistics customers.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-08-07-006",
+      "groupKey": "Sponsor — I Squared Capital",
+      "baseReviewedInputHash": "1abdff668d25316d9fcfb965402e4d51bdec4fffbe292312a4f58ca8c34c55d8",
+      "record": {
+        "recordId": "WB-2026-08-07-006",
+        "legacyId": "WB-2026-08-07-006",
+        "splitSuffix": null,
+        "transactionIdentityKey": "c6a0457fe5a0ad2d42cbfbf1013d44c8c263913f2ca7e7a70fd5e819d057d6ed",
+        "target": "Cella",
+        "disposition": "RECLASSIFY",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate requires deterministic region correction from North America to Asia-Pacific; human universe review remains required.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: I Squared Capital.",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-006"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "I Squared Capital",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "I Squared Capital",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-006"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Asia-Pacific",
+        "country": "Indonesia",
+        "announcementDate": "2026-08-07",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-08-07-006",
+            "tier": "PRIMARY",
+            "title": "Cella | I Squared Capital",
+            "publisher": "Isquaredcapital",
+            "url": "https://isquaredcapital.com/news/cella-acquisition-indonesia-logistics-cold-storage",
+            "artifactPath": null,
+            "publishedAt": "2026-08-07",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "I Squared entered into a definitive agreement to acquire Cella, an Indonesian industrial-logistics and cold-storage platform. Cella owns and operates five facilities totaling approximately 231,000 square meters across major Indonesian distribution markets.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-10-012",
+      "groupKey": "Sponsor — iCON Infrastructure",
+      "baseReviewedInputHash": "0735f1fc3fc6958e3e47c2d6f3dab79460c557923660f6233d1fdcbba2d4f9e1",
+      "record": {
+        "recordId": "WB-2026-07-10-012",
+        "legacyId": "WB-2026-07-10-012",
+        "splitSuffix": null,
+        "transactionIdentityKey": "810978b582252087cc8e837ffd68243cb674ee89ca1f86774d19a850aa2c4f78",
+        "target": "Northern Fiber Holding",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-012"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: iCON Infrastructure.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-012"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "iCON Infrastructure",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "iCON Infrastructure",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-012"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "Germany",
+        "announcementDate": "2026-07-10",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-10-012",
+            "tier": "PRIMARY",
+            "title": "Northern Fiber Holding | iCON Infrastructure",
+            "publisher": "Gleisslutz",
+            "url": "https://gleisslutz.com/en/mandates-firm-news/gleiss-lutz-advises-icon-infrastructure-acquisition-northern-fiber-holding",
+            "artifactPath": null,
+            "publishedAt": "2026-07-10",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "iCON-backed Strategic Fiber Networks agreed to acquire Northern Fiber Holding in a share deal. Operating through the Lünecom and sewikom brands, Northern Fiber manages owned and leased networks serving rural and semi-urban communities across three German states.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-17-005",
+      "groupKey": "Sponsor — iCON Infrastructure",
+      "baseReviewedInputHash": "4d6d03832c824422269eef594a9d4915f5052e4f032bbd5459c733ebfdc5d179",
+      "record": {
+        "recordId": "WB-2026-07-17-005",
+        "legacyId": "WB-2026-07-17-005",
+        "splitSuffix": null,
+        "transactionIdentityKey": "a0a7995673f220399e773f08c3aa93bc2f9a63942723ec530b48e1798c3f1c0d",
+        "target": "SELCHP",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: iCON Infrastructure.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-005"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-17-005"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "MEAG",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-07-17-005"
+              ]
+            },
+            {
+              "name": "iCON Infrastructure",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "iCON Infrastructure",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-005"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-07-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-17-005",
+            "tier": "PRIMARY",
+            "title": "SELCHP | MEAG / iCON Infrastructure",
+            "publisher": "Meag",
+            "url": "https://meag.com/en/inform/37195.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "MEAG acquired iCON Infrastructure Partners IV’s 49.78% stake in the South East London Combined Heat and Power plant. Veolia remains co-owner and operator of the facility, which receives contracted waste volumes and generates power-offtake revenue.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    }
+  ],
+  "packetSha256": "a0676c9c4eaacbc057db52e04872c6ce95e54704a3c856edd07c41c9ac7afeb0"
+}

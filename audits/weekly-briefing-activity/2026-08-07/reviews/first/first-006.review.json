@@ -1,0 +1,2578 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_DECISIONS",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-006",
+  "packetSha256": "848f4c83961075199f8651862c0d382696ed7142111560906fad7697edbb8378",
+  "reviewer": "REPLACE_WITH_HUMAN_NAME",
+  "reviewedAt": "REPLACE_WITH_ISO_8601_TIMESTAMP",
+  "humanAttestation": {
+    "performedByHuman": false,
+    "evidenceOpened": false,
+    "dispositionVerified": false,
+    "classificationVerified": false
+  },
+  "decisions": [
+    {
+      "baseRecordId": "WB-2026-07-03-015",
+      "baseReviewedInputHash": "0afed647620d0e7af2db8d9801fdc94af64da35d46fbf4e15a29a328d7d0cdf4",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-03-015",
+            "legacyId": "WB-2026-07-03-015",
+            "splitSuffix": null,
+            "transactionIdentityKey": "128851dc5a730d770699fcaa9827cde4a3109fb7b5db7d29b6219a83a7686429",
+            "target": "Kao Data",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-015"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Infratil",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-015"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "Europe",
+            "country": "United Kingdom",
+            "announcementDate": "2026-07-03",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Minority Stake)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-03-015",
+                "tier": "PRIMARY",
+                "title": "Kao Data | Infratil",
+                "publisher": "Bebeez",
+                "url": "https://bebeez.eu/2026/07/02/siemens-financial-invests-in-uk-data-center-operator-kao-data",
+                "artifactPath": null,
+                "publishedAt": "2026-07-03",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Siemens Financial Services made a minority equity investment in Kao Data, the UK data-center platform backed by Infratil and Legal & General. The capital supports expansion of Kao's high-performance computing and AI-ready campus footprint.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-03-022",
+      "baseReviewedInputHash": "024d038c95c46e954d433aa0bbf0ad7629fd6b710ecf66bf8fe3b46a689918f9",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-03-022",
+            "legacyId": "WB-2026-07-03-022",
+            "splitSuffix": null,
+            "transactionIdentityKey": "4b9ee93157be8f58fe001d28357de6557df87e348013c7deacef2f2d1fe9629c",
+            "target": "GeniePoint EV charging locations",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "PORTFOLIO_COMPANY",
+              "signals": [
+                {
+                  "kind": "BOLT_ON_LANGUAGE",
+                  "detail": "Transaction metadata contains a bolt-on signal.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-022"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "EQT Infrastructure",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-022"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Transportation",
+            "region": "Europe",
+            "country": "United Kingdom",
+            "announcementDate": "2026-07-03",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "BOLT_ON"
+              ],
+              "details": "Acquisition (Bolt-On)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-03-022",
+                "tier": "PRIMARY",
+                "title": "GeniePoint EV charging locations | EQT Infrastructure",
+                "publisher": "Instavolt",
+                "url": "https://instavolt.co.uk/news/with-the-acquisition-of-geniepoint-instavolt-becomes-the-first-ev-network-to-have-1000-sites-across-the-uk",
+                "artifactPath": null,
+                "publishedAt": "2026-07-03",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "EQT-backed InstaVolt agreed to acquire 228 GeniePoint EV charging locations from Equans. The transaction adds more than 260 chargers and moves InstaVolt past 1,000 UK sites.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-03-026",
+      "baseReviewedInputHash": "f49be2edd0f44dc71e81a17cdc7bf020edf37f6c29de71ab03b2a7c1e5ea9a04",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-03-026",
+            "legacyId": "WB-2026-07-03-026",
+            "splitSuffix": null,
+            "transactionIdentityKey": "83c11e1ba619b8253da2368b0428253fff5b9c3040c8411c6d99d90a79c6ea1c",
+            "target": "Cardinal Midstream Delaware Basin assets",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-026"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "EnCap Flatrock Midstream",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-026"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Midstream",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-07-03",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-03-026",
+                "tier": "PRIMARY",
+                "title": "Cardinal Midstream Delaware Basin assets | EnCap Flatrock Midstream",
+                "publisher": "Encapinvestments",
+                "url": "https://encapinvestments.com/news/cardinal-midstream-partners-and-encap-flatrock-announce-sale-delaware-basin-assets-san-mateo",
+                "artifactPath": null,
+                "publishedAt": "2026-07-03",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "EnCap Flatrock-backed Cardinal Midstream agreed to sell Cardinal Delaware Basin and Cardinal New Mexico to San Mateo Midstream for US$752mm. The assets include natural gas gathering and processing infrastructure in the Delaware Basin.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-10-002",
+      "baseReviewedInputHash": "570737e6df31d218ccbca37d88f870469c9bc46d89dd371cd7491fe611dc1ca5",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-10-002",
+            "legacyId": "WB-2026-07-10-002",
+            "splitSuffix": null,
+            "transactionIdentityKey": "6a65170675de37a17d39a082c54b5631bd296d583748368a9b437a326994cbc9",
+            "target": "Copia Power",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-002"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "EQT Infrastructure",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-002"
+                  ]
+                },
+                {
+                  "name": "Carlyle Infrastructure",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-002"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-07-10",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-10-002",
+                "tier": "PRIMARY",
+                "title": "Copia Power | EQT Infrastructure / Carlyle Infrastructure",
+                "publisher": "Eqtgroup",
+                "url": "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+                "artifactPath": null,
+                "publishedAt": "2026-07-10",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "EQT Infrastructure VII agreed to acquire Copia Power from Carlyle Infrastructure. The platform has 2.6 GW of generation and storage operating or under construction, with more than 9 GW of data-center development supported by over 25 GW of solar and storage and 7 GW of gas generation.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-10-004",
+      "baseReviewedInputHash": "b8002644ff2567cd19b311d64c4af248dcd83a57b18b61ff58dbc1657aaa4362",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-10-004",
+            "legacyId": "WB-2026-07-10-004",
+            "splitSuffix": null,
+            "transactionIdentityKey": "7c59363f6200568d55e4b3e80a47004eac519a6055c93c10ea94357a7873e22f",
+            "target": "Schwarzholz Agri-PV Park",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "PORTFOLIO_COMPANY",
+              "signals": [
+                {
+                  "kind": "BOLT_ON_LANGUAGE",
+                  "detail": "Transaction metadata contains a bolt-on signal.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-004"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "EQT Infrastructure",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-004"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Europe",
+            "country": "Germany",
+            "announcementDate": "2026-07-10",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "BOLT_ON"
+              ],
+              "details": "Acquisition (Bolt-On)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-10-004",
+                "tier": "PRIMARY",
+                "title": "Schwarzholz Agri-PV Park | EQT Infrastructure",
+                "publisher": "Renewablepress",
+                "url": "https://renewablepress.com/energy/press-release-8869-tion-renewables-acquires-operational-69-mwp-agri-pv-park-from-fefa",
+                "artifactPath": null,
+                "publishedAt": "2026-07-10",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "EQT Active Core Infrastructure-backed Tion Renewables acquired the operational Schwarzholz Agri-PV park from FEFA. The 69 MWp asset is expected to generate approximately 87 GWh annually, equivalent to the electricity needs of about 25,000 homes.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-10-013",
+      "baseReviewedInputHash": "dd2c7e27960601103bfe854ab40d3cc9d96119e954c41abc574ce5fc6250f157",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-10-013",
+            "legacyId": "WB-2026-07-10-013",
+            "splitSuffix": null,
+            "transactionIdentityKey": "4ab56c4d712260db841b2b61247ba9e2b71c72e8aadb912da78831fad354fc59",
+            "target": "D-Marin",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-013"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "InfraVia Capital Partners",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-013"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Transportation",
+            "region": "North America",
+            "country": "Mediterranean / EMEA",
+            "announcementDate": "2026-07-10",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-10-013",
+                "tier": "PRIMARY",
+                "title": "D-Marin | InfraVia Capital Partners",
+                "publisher": "Infraviacapital",
+                "url": "https://infraviacapital.com/infravia-to-acquire-d-marin-a-leading-premium-marina-platform-in-the-mediterranean",
+                "artifactPath": null,
+                "publishedAt": "2026-07-10",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "InfraVia European Fund VI agreed to acquire D-Marin from CVC alongside management. The premium-marina platform operates and develops 28 marinas with more than 14,300 berths across nine countries.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-10-016",
+      "baseReviewedInputHash": "11b1283faa768eefa0ac33bc703c43d68819333d181550f0aeb9fcf86b17b264",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-10-016",
+            "legacyId": "WB-2026-07-10-016",
+            "splitSuffix": null,
+            "transactionIdentityKey": "3365427d065163409faf395bd674caab50c70eafdd756cce8b94f17056aac209",
+            "target": "MidOcean Energy",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "EIG Global Energy Partners",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-016"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Midstream",
+            "region": "North America",
+            "country": "North America / Global",
+            "announcementDate": "2026-07-10",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-10-016",
+                "tier": "PRIMARY",
+                "title": "MidOcean Energy | EIG",
+                "publisher": "Business Wire",
+                "url": "https://businesswire.com/news/home/20260707259928/en",
+                "artifactPath": null,
+                "publishedAt": "2026-07-10",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "The Private Department of Sheikh Mohammed bin Khalid Al Nahyan committed US$1.13 billion to MidOcean Energy, the global LNG company formed and managed by EIG. The investment expands MidOcean’s institutional shareholder base and supports the platform’s LNG growth strategy.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-17-001",
+      "baseReviewedInputHash": "fbb4005bcf5e1b98c074f0f3ca251ab72e53e065fe06a745d63276decfd4b997",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-17-001",
+            "legacyId": "WB-2026-07-17-001",
+            "splitSuffix": null,
+            "transactionIdentityKey": "c42b8449b68ef47cd1020f730eed97a0603481c3fcd95fd23c8a8117ddc379ba",
+            "target": "Sprng Energy",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "PORTFOLIO_COMPANY",
+              "signals": [
+                {
+                  "kind": "BOLT_ON_LANGUAGE",
+                  "detail": "Transaction metadata contains a bolt-on signal.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-17-001"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Global Infrastructure Partners",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-17-001"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Asia-Pacific",
+            "country": "India",
+            "announcementDate": "2026-07-17",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "BOLT_ON"
+              ],
+              "details": "Acquisition (Bolt-On)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-17-001",
+                "tier": "PRIMARY",
+                "title": "Sprng Energy | GIP",
+                "publisher": "Shell",
+                "url": "https://shell.com/news-and-insights/newsroom/news-and-media-releases/2026/shell-to-sell-sprng-energy-group.html",
+                "artifactPath": null,
+                "publishedAt": "2026-07-17",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "GIP-backed Aditya Birla Renewables signed an agreement to acquire 100% of Solenergi, including the Sprng Energy group, from Shell for US$1.8 billion. The platform comprises 5.0 GWp of Indian solar and wind assets, including 3.3 GWp operating and 1.7 GWp contracted.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-17-002",
+      "baseReviewedInputHash": "907bc0119cb14c5f83ae6105249eacd3564606259a2b8b7c38263235724f1932",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-17-002",
+            "legacyId": "WB-2026-07-17-002",
+            "splitSuffix": null,
+            "transactionIdentityKey": "2d07f515a1cb82b24a7fc80f411debc7ae22d557bede14ea07e9d1d0c74ac03f",
+            "target": "Summit Ridge Energy",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Global Infrastructure Partners",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-17-002"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-07-17",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Majority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-17-002",
+                "tier": "PRIMARY",
+                "title": "Summit Ridge Energy | GIP",
+                "publisher": "GlobeNewswire",
+                "url": "https://globenewswire.com/news-release/2026/07/14/3326975/0/en/global-infrastructure-partners-agrees-to-acquire-summit-ridge-energy.html",
+                "artifactPath": null,
+                "publishedAt": "2026-07-17",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "GIP Mid-Market Funds agreed to acquire a majority and controlling interest in Summit Ridge Energy. The U.S. commercial solar and storage platform owns and operates more than 275 facilities serving over 60,000 businesses, homes and municipalities.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-17-003",
+      "baseReviewedInputHash": "c1c3fb2f8b25a96740fc3ee60c1dd29eb6e5eadbdaca8f8eb264638d735886e0",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-17-003",
+            "legacyId": "WB-2026-07-17-003",
+            "splitSuffix": null,
+            "transactionIdentityKey": "038ccf58f43d6e47de55e3e882641d114120fd317f610a345da32a3c1f3829c7",
+            "target": "Formosa 2 Offshore Wind Farm",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "PSP Investments",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-17-003"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Asia-Pacific",
+            "country": "Taiwan",
+            "announcementDate": "2026-07-17",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Buyout)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-17-003",
+                "tier": "PRIMARY",
+                "title": "Formosa 2 Offshore Wind Farm | PSP Investments",
+                "publisher": "Eur Lex",
+                "url": "https://eur-lex.europa.eu/legal-content/EN/TXT?uri=OJ%3AC_202603887",
+                "artifactPath": null,
+                "publishedAt": "2026-07-17",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "PSP Investments and JERA Nex bp will acquire joint control of Formosa 2 through a purchase of shares, according to an EU merger notice published July 16. The operating Taiwanese offshore wind farm has 376 MW of capacity.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-17-013",
+      "baseReviewedInputHash": "95114903405a65d3bd4ec6a29b235068e92415082e51c881ac37d2acdbeff221",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-17-013",
+            "legacyId": "WB-2026-07-17-013",
+            "splitSuffix": null,
+            "transactionIdentityKey": "8a9c3732940b11782971ebe3a62c42a3925a5f769faa55b49a0cf6d8ad339a17",
+            "target": "Delfin FLNG2",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "EIG Global Energy Partners",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-17-013"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Midstream",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-07-17",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-17-013",
+                "tier": "PRIMARY",
+                "title": "Delfin FLNG2 | EIG",
+                "publisher": "Eigpartners",
+                "url": "https://eigpartners.com/delfin-midstream-partners-with-eigs-midocean-energy-to-advance-second-flng-vessel-issues-limited-notice-to-proceed-to-siemens-energy-midocean-energy-enters-into-agreements-to-acquire-up-to-a",
+                "artifactPath": null,
+                "publishedAt": "2026-07-17",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "EIG-managed MidOcean Energy entered into agreements to acquire up to a 50% interest in Delfin’s second floating LNG vessel. The transaction remains subject to a positive final investment decision and customary conditions while advancing U.S. Gulf Coast LNG export capacity.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-24-004",
+      "baseReviewedInputHash": "4919cd11826b12eb0c7b19bedf30ed3b52699acf7492e056393bfbf2c1244c44",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-24-004",
+            "legacyId": "WB-2026-07-24-004",
+            "splitSuffix": null,
+            "transactionIdentityKey": "9436a8e1f30dbc5b210179cda1dcfd4a36b37577afa0cb7bc54e54bed6c70ec9",
+            "target": "Yanara",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Mirova",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-24-004"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Asia-Pacific",
+            "country": "Australia",
+            "announcementDate": "2026-07-24",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-24-004",
+                "tier": "PRIMARY",
+                "title": "Yanara | Mirova",
+                "publisher": "Yanarapower",
+                "url": "https://yanarapower.com/yanara-secures-eur150-million-investment-from-mirova-to-accelerate-utility-scale-renewable-energy-development-in-australia",
+                "artifactPath": null,
+                "publishedAt": "2026-07-24",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Mirova committed €150 million to Yanara to accelerate more than 2 GW of utility-scale renewable infrastructure across Victoria, New South Wales and Western Australia. The portfolio includes the 450 MW solar and 600 MW / 2,400 MWh Mortlake Energy Hub.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-24-006",
+      "baseReviewedInputHash": "5112acb3c414270a9249f7b403ec8d547b8f9ec88fa8588e7de2e6b5755a670c",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-24-006",
+            "legacyId": "WB-2026-07-24-006",
+            "splitSuffix": null,
+            "transactionIdentityKey": "3f923a9a75272810f15ab11919dd6df47f118c41996806a1fed78d98f4ea2007",
+            "target": "Vena Energy KN Wind Power",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Global Infrastructure Partners",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-24-006"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Asia-Pacific",
+            "country": "India",
+            "announcementDate": "2026-07-24",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-24-006",
+                "tier": "PRIMARY",
+                "title": "Vena Energy KN Wind Power | GIP",
+                "publisher": "Nsearchives",
+                "url": "https://nsearchives.nseindia.com/corporate/ORIENTCEM_23072026202757_OCL_Outcome_23072026.pdf",
+                "artifactPath": null,
+                "publishedAt": "2026-07-24",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Orient Cement approved the acquisition of a 9.04% interest in both the ordinary and cumulative convertible preference share capital of GIP-backed Vena Energy KN Wind Power for ₹1.234 million. The target owns a 46 MW wind project in Karnataka that will supply contracted renewable power for captive use.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-24-009",
+      "baseReviewedInputHash": "ba6ef7296497810105c46281810239232a7d6b5ed4e107b95911d37b1d70955a",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-24-009",
+            "legacyId": "WB-2026-07-24-009",
+            "splitSuffix": null,
+            "transactionIdentityKey": "511264114294c94a35f33557204d0d883e97870b73589b0030da302930db97b7",
+            "target": "Uluğ Enerji",
+            "disposition": "RECLASSIFY",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate requires deterministic region correction from North America to Europe; human universe review remains required.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Actis",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-24-009"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Utilities",
+            "region": "Europe",
+            "country": "Türkiye",
+            "announcementDate": "2026-07-24",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-24-009",
+                "tier": "PRIMARY",
+                "title": "Uluğ Enerji | Actis",
+                "publisher": "Act",
+                "url": "https://act.is/2026/07/23/actis-welcomes-new-investors-ifc-and-proparco-to-support-ulug-enerjis-long-term-growth-in-turkiye",
+                "artifactPath": null,
+                "publishedAt": "2026-07-24",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "IFC and Proparco agreed to become minority equity investors in Actis-controlled Uluğ Enerji, with Actis retaining a majority stake. The electricity distribution and retail group serves more than three million customers across four provinces under an exclusive concession through 2036.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-31-001",
+      "baseReviewedInputHash": "a124ee65a3e1fbfb253904f129267221b1c5388a4dcbef20523058143187a9db",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-31-001",
+            "legacyId": "WB-2026-07-31-001",
+            "splitSuffix": null,
+            "transactionIdentityKey": "45142765369adbd3421b66dfd2856434fcde5c7013fdc2c56db1f2b91e72e80d",
+            "target": "California Solar & BESS Portfolio",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Ares",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-001"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-07-31",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Buyout)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-31-001",
+                "tier": "PRIMARY",
+                "title": "California Solar & BESS Portfolio | Ares",
+                "publisher": "Edpr Investors",
+                "url": "https://edpr-investors.com/en/investor-information/market-notifications/edpr-signs-asset-rotation-deal-384-mw-solar-and-storage",
+                "artifactPath": null,
+                "publishedAt": "2026-07-31",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Ares agreed to acquire an 80% common-equity interest in a California portfolio totaling 384 MW, comprising 200 MW of solar and 184 MW of battery storage. EDPR reported an approximately US$800mm enterprise value and US$450mm of expected proceeds.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-31-002",
+      "baseReviewedInputHash": "fd212ab4d0e2ca3f08f6f8dd5038dad297062dd06fda7e18b4e0374e137e94cf",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-31-002",
+            "legacyId": "WB-2026-07-31-002",
+            "splitSuffix": null,
+            "transactionIdentityKey": "18b1e4adc7f0a3c8b364fd4511572de5855a206bb9875c6a499da14fbf5619ea",
+            "target": "RWE U.S. Distributed Clean Energy",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-002"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Goldman Sachs Asset Management",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-002"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-07-31",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-31-002",
+                "tier": "PRIMARY",
+                "title": "RWE U.S. Distributed Clean Energy | GSAM",
+                "publisher": "Am",
+                "url": "https://am.gs.com/en-lu/advisors/news/press-release/2026/Acquisition-US-Distribution-Generation-Business-RWE",
+                "artifactPath": null,
+                "publishedAt": "2026-07-31",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "GSAM agreed to acquire RWE’s U.S. distributed clean-energy business, including 348 MWdc of operating assets and a 1.2 GW development pipeline. The transaction transfers an established commercial-and-industrial generation platform to GSAM’s infrastructure strategy.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-08-07-003",
+      "baseReviewedInputHash": "f79eb13e29a051eec0f49f93847e1d0a0300437e0048649b74d4a3964c385222",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-08-07-003",
+            "legacyId": "WB-2026-08-07-003",
+            "splitSuffix": null,
+            "transactionIdentityKey": "49d867b6bffa1518b7a6dd061151f260d0ce09184d7339f298ab81835b1ee5da",
+            "target": "Enpal Residential Energy Systems Portfolio",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Equitix",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-003"
+                  ]
+                },
+                {
+                  "name": "Keppel Infrastructure Trust",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-003"
+                  ]
+                },
+                {
+                  "name": "MM Capital Partners",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-003"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Europe",
+            "country": "Germany",
+            "announcementDate": "2026-08-07",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Majority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-08-07-003",
+                "tier": "PRIMARY",
+                "title": "Enpal Residential Energy Systems Portfolio | Equitix / Keppel Infrastructure Trust / MM Capital Partners",
+                "publisher": "Corporate",
+                "url": "https://corporate.enpal.com/pressemitteilungen/investment-by-equitix-keppel-mizuho-and-mm-capital-partners-unlocks-up-to-eur-65-million-for-enpals-platform-transition",
+                "artifactPath": null,
+                "publishedAt": "2026-08-07",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "The infrastructure-fund consortium, also including Mizuho Leasing, acquired 90% of Enpal subsidiaries holding more than 20,000 operating residential energy systems; Enpal retains 10% and remains the operator. Up to €65mm of new capital will support a portfolio with projected capacity of c.240 MW.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-08-07-008",
+      "baseReviewedInputHash": "9df13d2579b2ffd7bb0ecab80a7e13978cbab35cc1d70dd51ecff26b6f74ed9b",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-08-07-008",
+            "legacyId": "WB-2026-08-07-008",
+            "splitSuffix": null,
+            "transactionIdentityKey": "778f7fb74b51ebd36fb2e66e8e0921c5e565bccbe8b0dab6a761e7a42c1218fc",
+            "target": "Massachusetts Central Railroad / Wildwood Reload",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "PORTFOLIO_COMPANY",
+              "signals": [
+                {
+                  "kind": "BOLT_ON_LANGUAGE",
+                  "detail": "Transaction metadata contains a bolt-on signal.",
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-008"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "3i",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-008"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Transportation",
+            "region": "North America",
+            "country": "Massachusetts, United States",
+            "announcementDate": "2026-08-07",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "BOLT_ON"
+              ],
+              "details": "Acquisition (Bolt-On)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-08-07-008",
+                "tier": "PRIMARY",
+                "title": "Massachusetts Central Railroad / Wildwood Reload | 3i",
+                "publisher": "3i",
+                "url": "https://3i.com/media/news/2026/regional-rail-expands-northeast-network-with-the-acquisition-of-the-massachusetts-central-railroad",
+                "artifactPath": null,
+                "publishedAt": "2026-08-07",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "3i-backed Regional Rail acquired the 28-mile Massachusetts Central Railroad and Wildwood Reload’s warehousing and transloading operations. The bolt-on extends a network that now reaches 18 railroads across 10 U.S. states and two Canadian provinces.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-08-07-009",
+      "baseReviewedInputHash": "ad73507d0d59949bd80604297ae4648c99a8dfce763c2791177837630676a9e1",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-08-07-009",
+            "legacyId": "WB-2026-08-07-009",
+            "splitSuffix": null,
+            "transactionIdentityKey": "b02c54d76e58b1e9fe9531acdceb79d74b5e87fd0f80e73289c7d6af5f0938d8",
+            "target": "Hainesport Transportation Group",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Terramont Infrastructure Partners",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-009"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Transportation",
+            "region": "North America",
+            "country": "New Jersey, United States",
+            "announcementDate": "2026-08-07",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Majority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-08-07-009",
+                "tier": "PRIMARY",
+                "title": "Hainesport Transportation Group | Terramont Infrastructure Partners",
+                "publisher": "Terramontinfra",
+                "url": "https://terramontinfra.com/terramont-infrastructure-partners-acquires-hainesport-transportation-group",
+                "artifactPath": null,
+                "publishedAt": "2026-08-07",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Terramont acquired a majority stake in Hainesport Transportation Group, which combines a short-line railroad with rail-served waste transfer and recycling facilities in New Jersey. The investment provides growth capital for an integrated regional rail-and-environmental-logistics platform.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-08-07-012",
+      "baseReviewedInputHash": "f28b2e1772c9825730c18a2bd2279daeaa3f62f9ffa384df908e1fb667083786",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-08-07-012",
+            "legacyId": "WB-2026-08-07-012",
+            "splitSuffix": null,
+            "transactionIdentityKey": "6811b693e74f1f9f3e719862d39df5e5679141367e049c2341170d03420ae92e",
+            "target": "MP Power",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "PORTFOLIO_COMPANY",
+              "signals": [
+                {
+                  "kind": "BOLT_ON_LANGUAGE",
+                  "detail": "Transaction metadata contains a bolt-on signal.",
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-012"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "EQT Infrastructure",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-012"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Utilities",
+            "region": "Europe",
+            "country": "United Kingdom",
+            "announcementDate": "2026-08-07",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "BOLT_ON"
+              ],
+              "details": "Acquisition (Bolt-On)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-08-07-012",
+                "tier": "PRIMARY",
+                "title": "MP Power | EQT Infrastructure",
+                "publisher": "Osmose",
+                "url": "https://osmose.com/news/osmose-europe-ltd.-strengthens-and-expands-electric-utility-infrastructure-solutions-with-the-acquisition-of-mp-power-ltd",
+                "artifactPath": null,
+                "publishedAt": "2026-08-07",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "EQT Infrastructure-backed Osmose acquired MP Power, an Ely-based provider of overhead-line inspection, pole assessment, cable-condition and clearance services to UK electricity network operators. The bolt-on expands Osmose’s utility-infrastructure assessment capabilities in Europe.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-08-07-013",
+      "baseReviewedInputHash": "cbe18e1a93b2ca1ca1108ebe72ae2aa7bda98f9011210faf6f66a9c1eb48ada4",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-08-07-013",
+            "legacyId": "WB-2026-08-07-013",
+            "splitSuffix": null,
+            "transactionIdentityKey": "0e787787a0e09fd9934cd45e5befb39b6117d05d92d5cad1f8e92ed8534ee837",
+            "target": "Fallowfield Campus Student Accommodation",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Equitix",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-013"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": [
+                {
+                  "name": "Equitix",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-013"
+                  ]
+                }
+              ]
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Social Infra",
+            "region": "Europe",
+            "country": "Manchester, United Kingdom",
+            "announcementDate": "2026-08-07",
+            "transactionStructure": {
+              "forms": [
+                "JOINT_VENTURE"
+              ],
+              "details": "Joint Venture",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "JOINT_VENTURE"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-08-07-013",
+                "tier": "PRIMARY",
+                "title": "Fallowfield Campus Student Accommodation | Equitix",
+                "publisher": "Graham",
+                "url": "https://graham.co.uk/news/graham-and-partners-with-the-university-of-manchester-to-deliver-530m-investment-in-student-living",
+                "artifactPath": null,
+                "publishedAt": "2026-08-07",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Equitix and GRAHAM reached financial close on a £530mm, 50-year partnership with the University of Manchester to redevelop the Fallowfield campus. The project will deliver 3,300 student rooms in what the partners describe as the world’s largest single-phase Passivhaus student-accommodation scheme.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-08-07-015",
+      "baseReviewedInputHash": "947adc71831a5b285065b32a0d79a3142589b810dbfc1b9ec8d8791b08035a25",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-08-07-015",
+            "legacyId": "WB-2026-08-07-015",
+            "splitSuffix": null,
+            "transactionIdentityKey": "fc0c6faf584ea8f7ce24a922b6ced05826acc5794c15322ab1e09c6be0470aa9",
+            "target": "Momentum Midstream (M6)",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "UNRESOLVED",
+              "signals": [],
+              "rationale": "No decisive automated signal is present; automation does not default the transaction to direct.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-015"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "EnCap Flatrock Midstream",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-015"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Midstream",
+            "region": "North America",
+            "country": "Louisiana, United States",
+            "announcementDate": "2026-08-07",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-08-07-015",
+                "tier": "PRIMARY",
+                "title": "Momentum Midstream (M6) | EnCap Flatrock Midstream",
+                "publisher": "Momentummidstream",
+                "url": "https://momentummidstream.com/news/encap-flatrock-announces-sale-m6-midstream-williams-55-billion",
+                "artifactPath": null,
+                "publishedAt": "2026-08-07",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Williams agreed to acquire 100% of EnCap Flatrock-backed Momentum Midstream for US$3.5bn in cash and assumed debt plus approximately US$2bn in Williams equity, for total consideration of up to US$5.5bn. The system spans more than 4,000 miles and connects Haynesville production to Gulf Coast LNG and power demand.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-31-011",
+      "baseReviewedInputHash": "40b496db118ea9af62eb49de8ad1e8d3c3b042ce1a61c63fff083215bb129181",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-31-011",
+            "legacyId": "WB-2026-07-31-011",
+            "splitSuffix": null,
+            "transactionIdentityKey": "dcd4a025188e86348b57d05e06180851a955d60471fb8ba1e8c2169aab472ae4",
+            "target": "Greenergy Data Centers",
+            "disposition": "RECLASSIFY",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate requires deterministic region correction from North America to Europe; human universe review remains required.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Amber.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-011"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Amber",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Amber",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-011"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "Europe",
+            "country": "Estonia",
+            "announcementDate": "2026-07-31",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-31-011",
+                "tier": "PRIMARY",
+                "title": "Greenergy Data Centers | Amber",
+                "publisher": "Amberinfrastructure",
+                "url": "https://amberinfrastructure.com/news-and-insights/press-releases/3siif-s-greenergy-data-centers-welcomes-new-minority-shareholder",
+                "artifactPath": null,
+                "publishedAt": "2026-07-31",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Amber-managed 3SIIF admitted Tensor Ventures as a minority investor in MCF Group, the owner of Greenergy Data Centers, while retaining majority control. The investment adds growth capital to the operator of the Baltics’ largest data center.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-08-07-005",
+      "baseReviewedInputHash": "bdbf25473c46f951d78c1f2fce6d70c2acc3dff6e2d8ae4c46726cf2f8472a18",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-08-07-005",
+            "legacyId": "WB-2026-08-07-005",
+            "splitSuffix": null,
+            "transactionIdentityKey": "202987d458d567fa715ac23723e9d235fbba81eb06ca153e8bbcb6ded734c910",
+            "target": "Bioforce",
+            "disposition": "RECLASSIFY",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate requires deterministic region correction from North America to Europe; human universe review remains required.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Amber Infrastructure.",
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-005"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Amber Infrastructure",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Amber Infrastructure",
+                  "sourceIds": [
+                    "transaction-WB-2026-08-07-005"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Europe",
+            "country": "Estonia",
+            "announcementDate": "2026-08-07",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-08-07-005",
+                "tier": "PRIMARY",
+                "title": "Bioforce | Amber Infrastructure",
+                "publisher": "Amberinfrastructure",
+                "url": "https://amberinfrastructure.com/news-and-insights/press-releases/3siif-invests-in-estonias-leading-biomethane-group-to-support-expansion-into-poland-and-latvia",
+                "artifactPath": null,
+                "publishedAt": "2026-08-07",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Amber-advised Three Seas Initiative Investment Fund invested expansion capital in Bioforce, Estonia’s leading biomethane producer. Bioforce has three operating plants and a fourth commissioning toward combined output above 250 GWh, with a plan to reach 1 TWh by 2032 through Baltic and Polish expansion.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

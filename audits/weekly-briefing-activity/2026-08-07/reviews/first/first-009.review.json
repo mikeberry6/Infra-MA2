@@ -1,0 +1,3171 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_DECISIONS",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-009",
+  "packetSha256": "7645c225c9e9c806b3aeb70adfeb60e9420b9e41991bbf11e0059307d3c68c26",
+  "reviewer": "REPLACE_WITH_HUMAN_NAME",
+  "reviewedAt": "REPLACE_WITH_ISO_8601_TIMESTAMP",
+  "humanAttestation": {
+    "performedByHuman": false,
+    "evidenceOpened": false,
+    "dispositionVerified": false,
+    "classificationVerified": false
+  },
+  "decisions": [
+    {
+      "baseRecordId": "INF-2026-042",
+      "baseReviewedInputHash": "ebf3c9507700c18faa1c493606421d2d85d54bed8016e894fd77af3945420768",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-042",
+            "legacyId": "INF-2026-042",
+            "splitSuffix": null,
+            "transactionIdentityKey": "11c265cc7ba618d505a27fa1caa81f560d0cfbb79230cab62b184765484a7258",
+            "target": "Urbaser",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Blackstone.",
+                  "sourceIds": [
+                    "transaction-INF-2026-042"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Blackstone, EQT Infrastructure).",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-042"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-INF-2026-042"
+                  ]
+                },
+                {
+                  "name": "EQT Infrastructure",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-042"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": [
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-INF-2026-042"
+                  ]
+                },
+                {
+                  "name": "EQT Infrastructure",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-042"
+                  ]
+                }
+              ]
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Social Infra",
+            "region": "Europe",
+            "country": "Spain",
+            "announcementDate": "2026-02-12",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "JOINT_VENTURE"
+              ],
+              "details": "Acquisition (Buyout) / Joint Venture",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "JOINT_VENTURE"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-042",
+                "tier": "PRIMARY",
+                "title": "Blackstone and EQT Infrastructure co-acquire Urbaser (50/50 platform buyout)",
+                "publisher": "Blackstone",
+                "url": "https://blackstone.com/news/press/blackstone-infrastructure-and-eqt-to-acquire-urbaser",
+                "artifactPath": null,
+                "publishedAt": "2026-02-12",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Blackstone and EQT Infrastructure announced a 50/50 platform buyout of Urbaser, a global waste management and environmental services company.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-042",
+                "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Blackstone, EQT Infrastructure)."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-161",
+      "baseReviewedInputHash": "d2199d709bfb5b3b040ee59e5358fb026a14d3500656c8fa4ac295b8ca29bfad",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-161",
+            "legacyId": "INF-2026-161",
+            "splitSuffix": null,
+            "transactionIdentityKey": "18916ebecd91af7acf521c7169ed8140eed7254d9932aa9b9379a8d77a3c2cd4",
+            "target": "Rowan Digital Infrastructure",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Blackstone / Quinbrook Infrastructure.",
+                  "sourceIds": [
+                    "transaction-INF-2026-161"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Sale/IPO of existing PortCo: realization review (High confidence): Target is already a PortCo and seller appears aligned with an existing owner, so realization/divestiture fields should be reviewed.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-161"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-INF-2026-161"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Quinbrook Infrastructure",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Quinbrook Infrastructure",
+                  "sourceIds": [
+                    "transaction-INF-2026-161"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-04-07",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE",
+                "RECAPITALIZATION"
+              ],
+              "details": "Acquisition (Minority Stake) / Sale (Minority Stake)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "RECAPITALIZATION",
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-161",
+                "tier": "PRIMARY",
+                "title": "Blackstone acquires 49% stake in Rowan Digital Infrastructure from Quinbrook",
+                "publisher": "PR Newswire",
+                "url": "https://prnewswire.com/news-releases/rowan-digital-infrastructure-announces-strategic-recapitalization-302738729.html",
+                "artifactPath": null,
+                "publishedAt": "2026-04-07",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Quinbrook announced a strategic recapitalization of Rowan Digital Infrastructure through the sale of a 49% significant minority stake to funds affiliated with Blackstone. The transaction monetizes part of Quinbrook’s ownership while retaining control, partnering with Blackstone to support Rowan’s next phase of growth and continued hyperscale data center expansion serving cloud and AI-driven demand.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-161",
+                "summary": "Sale/IPO of existing PortCo: realization review (High confidence): Target is already a PortCo and seller appears aligned with an existing owner, so realization/divestiture fields should be reviewed."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-190",
+      "baseReviewedInputHash": "fe2b673681e3e0faefa37e0a9ec4022209388d2e10577e1ea91dbad90277dfaa",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-190",
+            "legacyId": "INF-2026-190",
+            "splitSuffix": null,
+            "transactionIdentityKey": "6f83abfd14843bc82da93b482d993aec982196b65ab6c8e6228771e06e93216e",
+            "target": "Eurowind Energy",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Blackstone.",
+                  "sourceIds": [
+                    "transaction-INF-2026-190"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Blackstone).",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-190"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-INF-2026-190"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Europe",
+            "country": "Europe",
+            "announcementDate": "2026-04-29",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-190",
+                "tier": "PRIMARY",
+                "title": "Blackstone invests up to €2bn in Eurowind Energy",
+                "publisher": "Blackstone",
+                "url": "https://blackstone.com/news/press/blackstone-infrastructure-to-invest-up-to-e2-billion-in-leading-pan%E2%80%91european-renewables-developer-eurowind-energy",
+                "artifactPath": null,
+                "publishedAt": "2026-04-29",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Funds managed by Blackstone Infrastructure entered into a definitive agreement to invest up to €2bn in Eurowind Energy, a pan-European renewables developer and independent power producer. The perpetual capital will support Eurowind’s onshore wind, solar, battery storage, and biogas development activity across 16 European markets.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-190",
+                "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Blackstone)."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-06-06-004",
+      "baseReviewedInputHash": "ae00c856e86482dc939ef9da58a69e481b9ba60c2253fbc894268271d1d0dd14",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-06-06-004",
+            "legacyId": "WB-2026-06-06-004",
+            "splitSuffix": null,
+            "transactionIdentityKey": "09953cb00cddd1c6c02f4391cd019d7e443aa0501b5a29f947273a73a912d8f0",
+            "target": "Mountain Peak / Canyon Peak Power",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Blackstone.",
+                  "sourceIds": [
+                    "transaction-WB-2026-06-06-004"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-06-06-004"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-WB-2026-06-06-004"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-06-05",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-06-06-004",
+                "tier": "PRIMARY",
+                "title": "Mountain Peak / Canyon Peak Power | Blackstone",
+                "publisher": "GlobeNewswire",
+                "url": "https://globenewswire.com/news-release/2026/06/03/3306398/0/en/transalta-announces-the-acquisition-of-two-fully-contracted-gas-assets-in-colorado-and-concurrent-350-million-bought-deal-offering-of-common-shares.html",
+                "artifactPath": null,
+                "publishedAt": "2026-06-05",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "TransAlta signed a purchase and sale agreement to acquire Mountain Peak Power and Canyon Peak Power from indirect subsidiaries of Blackstone. The transaction covers two fully contracted gas-fired peaking facilities in Colorado, adding dispatchable power capacity under existing contracts.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-03-011",
+      "baseReviewedInputHash": "5a44c08e47a594f77b6bb6d99dccc7f853cfc4c4b6bbaf4077825c91c64a23bb",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-03-011",
+            "legacyId": "WB-2026-07-03-011",
+            "splitSuffix": null,
+            "transactionIdentityKey": "8e8bdf826d723187feff2bfcafbe77502bb3795515b727cea51db0115938b909",
+            "target": "Northern Virginia data centers",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Blackstone.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-011"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-011"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-011"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-07-03",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-03-011",
+                "tier": "PRIMARY",
+                "title": "Northern Virginia data centers | Blackstone",
+                "publisher": "Blackstone",
+                "url": "https://blackstone.com/news/press/digital-realty-announces-purchase-of-blackstone-interest-in-three-northern-virginia-data-centers",
+                "artifactPath": null,
+                "publishedAt": "2026-07-03",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Digital Realty agreed to purchase Blackstone-affiliated funds' blended 64% equity interest in three fully leased Northern Virginia data centers. The facilities represent 288 MW of IT capacity in the leading U.S. data-center market.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-10-015",
+      "baseReviewedInputHash": "a6e0ed42664ba7425f465e992d1665a27c804b5d6c353261c26044aa77a57885",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-10-015",
+            "legacyId": "WB-2026-07-10-015",
+            "splitSuffix": null,
+            "transactionIdentityKey": "673afc9a00d3a839668fe3e2737debd0aefccf92ba6e24afd5f0b6f3a3ada71c",
+            "target": "Dresser Utility Solutions",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Blackstone.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-015"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-015"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-015"
+                  ]
+                },
+                {
+                  "name": "First Reserve",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-10-015"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Utilities",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-07-10",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-10-015",
+                "tier": "PRIMARY",
+                "title": "Dresser Utility Solutions | Blackstone / First Reserve",
+                "publisher": "Blackstone",
+                "url": "https://blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-dresser-utility-solutions-from-first-reserve",
+                "artifactPath": null,
+                "publishedAt": "2026-07-10",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Funds managed by Blackstone Energy Transition Partners agreed to acquire Dresser Utility Solutions from First Reserve. The approximately 850-employee business supplies measurement, instrumentation and control products for natural-gas and water infrastructure globally; terms were not disclosed.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-31-016",
+      "baseReviewedInputHash": "ac9c8537cfcd5cea72d31a1aac4e53963f01d1e9454317646052725d4d56aaf9",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-31-016",
+            "legacyId": "WB-2026-07-31-016",
+            "splitSuffix": null,
+            "transactionIdentityKey": "d1aa5ad363eee5c1ad01a271c9ee2acfc920c544aae7f02789c62ba3097c26c8",
+            "target": "Kuwait Oil Pipeline Network",
+            "disposition": "RECLASSIFY",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate requires deterministic region correction from North America to Middle East & Africa; human universe review remains required.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Blackstone / Brookfield / KKR.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-016"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-016"
+                  ]
+                },
+                {
+                  "name": "Brookfield",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-016"
+                  ]
+                },
+                {
+                  "name": "KKR",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "KKR",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-016"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": [
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-016"
+                  ]
+                },
+                {
+                  "name": "Brookfield",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-016"
+                  ]
+                },
+                {
+                  "name": "KKR",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "KKR",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-016"
+                  ]
+                }
+              ]
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Midstream",
+            "region": "Middle East & Africa",
+            "country": "Kuwait",
+            "announcementDate": "2026-07-31",
+            "transactionStructure": {
+              "forms": [
+                "JOINT_VENTURE"
+              ],
+              "details": "Joint Venture",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "JOINT_VENTURE"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-31-016",
+                "tier": "PRIMARY",
+                "title": "Kuwait Oil Pipeline Network | Blackstone / Brookfield / KKR",
+                "publisher": "Blackstone",
+                "url": "https://blackstone.com/news/press/kuwait-oil-company-signs-us-16-0-billion-infrastructure-partnership-involving-its-crude-oil-pipeline-network-with-a-consortium-comprising-blackstone-brookfield-and-kkr",
+                "artifactPath": null,
+                "publishedAt": "2026-07-31",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "A Blackstone-, Brookfield- and KKR-led consortium agreed a US$16bn partnership over Kuwait Oil Company’s 13-pipeline, 320-kilometer crude-oil network. The investors will own 49% of a newly formed infrastructure company, generating US$7.85bn of proceeds for KOC while operations remain with the state producer.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-126",
+      "baseReviewedInputHash": "5435d9132f1ec43ed40071cfb8b58fca198cccbd274431c83d5131f536257fe6",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-126",
+            "legacyId": "INF-2026-126",
+            "splitSuffix": null,
+            "transactionIdentityKey": "86d788a8158887f698ce5ba3f5c70d2a0fa4ae1379954dec63a120796fba936c",
+            "target": "Advanced Cooling Technologies (ACT)",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Blackstone Energy Transition Partners.",
+                  "sourceIds": [
+                    "transaction-INF-2026-126"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-126"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Blackstone Energy Transition Partners",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone Energy Transition Partners",
+                  "sourceIds": [
+                    "transaction-INF-2026-126"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-03-13",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Majority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-126",
+                "tier": "PRIMARY",
+                "title": "Blackstone Energy Transition Partners acquires majority stake in Advanced Cooling Technologies",
+                "publisher": "Blackstone",
+                "url": "https://blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies",
+                "artifactPath": null,
+                "publishedAt": "2026-03-13",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Blackstone Energy Transition Partners agreed to acquire a majority stake in Advanced Cooling Technologies, a Pennsylvania-based manufacturer of highly-engineered thermal management and energy efficiency solutions serving data center, defense, space, and energy applications. ACT's product suite, including two-phase liquid cooling, heat pipes, and cold plates, is well-positioned to benefit from rising power density and cooling requirements driven by AI infrastructure buildout. ACT's executive team will remain in place and continue as significant shareholders.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-126",
+                "summary": "Existing target PortCo: update owner/milestone/source (High confidence): Target matches an existing PortCo, so the deal likely changes scorecard history rather than requiring a new company row."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-049",
+      "baseReviewedInputHash": "d7269f911d8af17647dea036380a2ad4d96450cf71d9264eb1a8425eecb5644b",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-049",
+            "legacyId": "INF-2026-049",
+            "splitSuffix": null,
+            "transactionIdentityKey": "28a74e9ab36d716677a6a7d301914aba95f2dae17b48b340402360f03f09d08b",
+            "target": "Fraport Greece",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Blackstone Infrastructure.",
+                  "sourceIds": [
+                    "transaction-INF-2026-049"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Blackstone Infrastructure).",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-049"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Blackstone Infrastructure",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone Infrastructure",
+                  "sourceIds": [
+                    "transaction-INF-2026-049"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Marguerite Fund",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-049"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Transportation",
+            "region": "Europe",
+            "country": "Greece",
+            "announcementDate": "2026-02-18",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-049",
+                "tier": "PRIMARY",
+                "title": "Blackstone Infrastructure acquires 10% stake in Fraport Greece",
+                "publisher": "airportIR",
+                "url": "https://airportir.com/ir-pulse/marguerite-offload-stake-in-fraport-greece-to-u-s-entity",
+                "artifactPath": null,
+                "publishedAt": "2026-02-18",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Blackstone Infrastructure announced the acquisition of a 10% stake in Fraport Greece, the operator of 14 regional airports in Greece.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-049",
+                "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Blackstone Infrastructure)."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-128",
+      "baseReviewedInputHash": "35059441ddae07a6f96cd2bf513cad294d5b034937940ff8ec475efbd93aa76f",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-128",
+            "legacyId": "INF-2026-128",
+            "splitSuffix": null,
+            "transactionIdentityKey": "3a37c2b92962ff3c4944f55a7abffa84f6e6a5a99e2be07f7a2b4c41d9105a8e",
+            "target": "48.4 MW Community Solar Portfolio (NM)",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "PORTFOLIO_COMPANY",
+              "signals": [
+                {
+                  "kind": "BOLT_ON_LANGUAGE",
+                  "detail": "Transaction metadata contains a bolt-on signal.",
+                  "sourceIds": [
+                    "transaction-INF-2026-128"
+                  ]
+                },
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield.",
+                  "sourceIds": [
+                    "transaction-INF-2026-128"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Existing via/buyer platform: add acquisition milestone/source (Medium confidence): A buyer or seller name matches an existing PortCo, but not through an explicit via-platform phrase; review as possible platform activity.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-128"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Standard Solar",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-128"
+                  ]
+                },
+                {
+                  "name": "Brookfield",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield",
+                  "sourceIds": [
+                    "transaction-INF-2026-128"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Pluma Construction",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-128"
+                  ]
+                },
+                {
+                  "name": "ForeFront Power",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-128"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-03-16",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "BOLT_ON"
+              ],
+              "details": "Acquisition (Bolt-On)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-128",
+                "tier": "PRIMARY",
+                "title": "Standard Solar / Brookfield acquire 48.4 MW New Mexico community solar portfolio",
+                "publisher": "BusinessWire",
+                "url": "https://businesswire.com/news/home/20260316627025/en/Pluma-Construction-ForeFront-Power-and-Standard-Solar-Bring-48.4-MW-Community-Solar-Portfolio-to-New-Mexico",
+                "artifactPath": null,
+                "publishedAt": "2026-03-16",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Standard Solar, a Brookfield portfolio company, acquired a 48.4 MW community solar portfolio in New Mexico from Pluma Construction and ForeFront Power.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-128",
+                "summary": "Existing via/buyer platform: add acquisition milestone/source (Medium confidence): A buyer or seller name matches an existing PortCo, but not through an explicit via-platform phrase; review as possible platform activity."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-141",
+      "baseReviewedInputHash": "68b14d654611914b091decb58fdcc4d389311694dcea2424a00ef84b1c028d7f",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-141",
+            "legacyId": "INF-2026-141",
+            "splitSuffix": null,
+            "transactionIdentityKey": "5781b691c8b64e2f917953ecfef823fd693f2f20ee9003bb3a4417899933a93c",
+            "target": "Boralex Inc.",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield / La Caisse.",
+                  "sourceIds": [
+                    "transaction-INF-2026-141"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Brookfield).",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-141"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Brookfield",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield",
+                  "sourceIds": [
+                    "transaction-INF-2026-141"
+                  ]
+                },
+                {
+                  "name": "La Caisse",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "La Caisse",
+                  "sourceIds": [
+                    "transaction-INF-2026-141"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "Canada",
+            "announcementDate": "2026-03-25",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Buyout)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-141",
+                "tier": "PRIMARY",
+                "title": "Brookfield / La Caisse acquire Boralex",
+                "publisher": "Boralex",
+                "url": "https://boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse",
+                "artifactPath": null,
+                "publishedAt": "2026-03-25",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield and La Caisse de depot et placement du Quebec agreed to acquire Boralex Inc. for C$37.25 per share in an all-cash take-private transaction.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-141",
+                "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Brookfield)."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-03-018",
+      "baseReviewedInputHash": "e26ce619130b9081c36f7e4085c3203543691b927171a4628e75238d437a7e45",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-03-018",
+            "legacyId": "WB-2026-07-03-018",
+            "splitSuffix": null,
+            "transactionIdentityKey": "2161afd72fd4dbe3d710c7471e49ef9ba937706bc8e072c2fca389562da5d934",
+            "target": "Ubiquity Southern California fiber network",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield / Generate Capital.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-018"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-018"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Brookfield",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-018"
+                  ]
+                },
+                {
+                  "name": "Generate Capital",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Generate Capital",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-03-018"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-07-03",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-03-018",
+                "tier": "PRIMARY",
+                "title": "Ubiquity Southern California fiber network | Brookfield / Generate Capital",
+                "publisher": "Intrepidfiber",
+                "url": "https://intrepidfiber.com/news/intrepid-fiber-networks-to-acquire-ubiquitys-southern-california-fiber-network",
+                "artifactPath": null,
+                "publishedAt": "2026-07-03",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield Infrastructure-backed Intrepid Fiber Networks agreed to acquire Ubiquity's Southern California fiber network. The deal transfers FTTP network assets from Generate-backed Ubiquity to an active U.S. fiber expansion platform.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-24-001",
+      "baseReviewedInputHash": "b59d0dda0fad79a192c937d4776cc7b9bb8eafc6deb370ef2ee6eb35f280627d",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-24-001",
+            "legacyId": "WB-2026-07-24-001",
+            "splitSuffix": null,
+            "transactionIdentityKey": "acfa8b3283ee55326f9887b02566e2bb96a5b9119b6bf8173f2c4cee4faeeb21",
+            "target": "Aypa Power",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield / Blackstone.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-24-001"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-24-001"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Brookfield",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-24-001"
+                  ]
+                },
+                {
+                  "name": "Blackstone",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Blackstone",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-24-001"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "North America",
+            "announcementDate": "2026-07-24",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-24-001",
+                "tier": "PRIMARY",
+                "title": "Aypa Power | Brookfield / Blackstone",
+                "publisher": "Blackstone",
+                "url": "https://blackstone.com/news/press/brookfield-to-acquire-aypa-power-the-leading-north-american-battery-storage-platform-from-blackstone-energy-transition-partners",
+                "artifactPath": null,
+                "publishedAt": "2026-07-24",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield agreed to acquire Aypa Power from Blackstone for approximately US$7 billion of enterprise value, including US$3 billion of equity value. Aypa has approximately 6.5 GW of operating, under-construction and contracted battery-storage capacity and a development pipeline exceeding 20 GW.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-07-31-014",
+      "baseReviewedInputHash": "88eefddbf87983ddb530adeb744ead8e5fba65976730c14e57c7a3d1eb169c33",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-07-31-014",
+            "legacyId": "WB-2026-07-31-014",
+            "splitSuffix": null,
+            "transactionIdentityKey": "67dba7cbf9220902d0bfc159ceaa454f55a2dbcfd962e09960fb12ef89dcd884",
+            "target": "Contracted Container Portfolio",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield.",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-014"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-014"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Brookfield",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield",
+                  "sourceIds": [
+                    "transaction-WB-2026-07-31-014"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Transportation",
+            "region": "North America",
+            "country": "North America / Global",
+            "announcementDate": "2026-07-31",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-07-31-014",
+                "tier": "PRIMARY",
+                "title": "Contracted Container Portfolio | Brookfield",
+                "publisher": "GlobeNewswire",
+                "url": "https://globenewswire.com/news-release/2026/07/30/3335885/0/en/brookfield-infrastructure-reports-strong-second-quarter-2026-results.html",
+                "artifactPath": null,
+                "publishedAt": "2026-07-31",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield Infrastructure disclosed the completed sale of a 67% interest across contracted intermodal-container programs representing more than one-quarter of the related fleet. The transaction generated US$60mm of proceeds at Brookfield Infrastructure’s share.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-088",
+      "baseReviewedInputHash": "dab2e17e3fc14881dd411202015e25057c3818e4e80dea75cd4bbce63aa39dc0",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-088",
+            "legacyId": "INF-2026-088",
+            "splitSuffix": null,
+            "transactionIdentityKey": "7073f089cd1f373927552eac8235c3d66ff65672f74d4e86f3afe860d2e61ac3",
+            "target": "Ori Industries",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield Asset Management.",
+                  "sourceIds": [
+                    "transaction-INF-2026-088"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing standalone platform: candidate new PortCo, approval required (High confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Brookfield Asset Management).",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-088"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Brookfield Asset Management",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Asset Management",
+                  "sourceIds": [
+                    "transaction-INF-2026-088"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "Europe",
+            "country": "United Kingdom",
+            "announcementDate": "2026-02-28",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "PLATFORM_FORMATION"
+              ],
+              "details": "Acquisition (Buyout) / Platform Launch",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": true,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "PLATFORM_FORMATION"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-088",
+                "tier": "PRIMARY",
+                "title": "Brookfield Asset Management launches Radiant AI infrastructure platform via Ori Industries acquisition",
+                "publisher": "globenewswire.com",
+                "url": "https://www.globenewswire.com/news-release/2026/02/24/3243665/0/en/brookfield-launches-radiant-as-first-vertically-integrated-ai-infrastructure-company-through-merger-with-ori-industries.html",
+                "artifactPath": null,
+                "publishedAt": "2026-02-28",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Portfolio-company launch and merger announcement; archive link was a placeholder.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-088",
+                "summary": "Missing standalone platform: candidate new PortCo, approval required (High confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Brookfield Asset Management)."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-191",
+      "baseReviewedInputHash": "4f699d1777817a660f0ca0c4b81ab934e4e9c8fb26efcb9283f97ff463bcb3b5",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-191",
+            "legacyId": "INF-2026-191",
+            "splitSuffix": null,
+            "transactionIdentityKey": "80bf4db2243e8b6bf9a3faca337a449b52bf1ca3ca30f449ac01fba765b6ed04",
+            "target": "Non-core U.S. Hydro Assets",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield Asset Management.",
+                  "sourceIds": [
+                    "transaction-INF-2026-191"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-191"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-191"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Brookfield Asset Management",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Asset Management",
+                  "sourceIds": [
+                    "transaction-INF-2026-191"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-05-01",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Minority Stake)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-191",
+                "tier": "PRIMARY",
+                "title": "Brookfield Renewable sells remaining interest in non-core U.S. hydro assets",
+                "publisher": "Brookfield Renewable",
+                "url": "https://bep.brookfield.com/press-releases/bep/brookfield-renewable-reports-record-first-quarter-results-0",
+                "artifactPath": null,
+                "publishedAt": "2026-05-01",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield Renewable agreed to sell its remaining 50% interest in a portfolio of non-core U.S. hydroelectric assets, fully monetizing the investment after last year’s initial 50% stake sale at the same valuation. Total proceeds upon closing are expected to be approximately $1bn, including roughly $500mm net to Brookfield Renewable.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-191",
+                "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-203",
+      "baseReviewedInputHash": "4d2e0c168633b9936bb1977405dc5e487b19819a7eb9a28d5f88b97c0a8b8fd6",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-203",
+            "legacyId": "INF-2026-203",
+            "splitSuffix": null,
+            "transactionIdentityKey": "35ebd45de9148bd367ebba0ddcf7d9ca9ba630d03568d1a6af5355fa54b6d281",
+            "target": "Inter Terminals",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield Asset Management.",
+                  "sourceIds": [
+                    "transaction-INF-2026-203"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-203"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-203"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Brookfield Asset Management",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Asset Management",
+                  "sourceIds": [
+                    "transaction-INF-2026-203"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Midstream",
+            "region": "Europe",
+            "country": "Denmark / Sweden",
+            "announcementDate": "2026-05-01",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-203",
+                "tier": "PRIMARY",
+                "title": "Brookfield Infrastructure agrees to sell Inter Terminals",
+                "publisher": "Brookfield Infrastructure",
+                "url": "https://bip.brookfield.com/press-releases/bip/brookfield-infrastructure-reports-strong-first-quarter-2026-results",
+                "artifactPath": null,
+                "publishedAt": "2026-05-01",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield Infrastructure disclosed a signed definitive agreement to sell its Scandinavian bulk liquid storage business, Inter Terminals. The Nordic platform operates terminal locations across Denmark and Sweden with access to transport links and transhipment services, continuing Brookfield’s capital recycling program.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-203",
+                "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-06-13-001",
+      "baseReviewedInputHash": "e60e48546e25e0965b99198faba353ba5d3a078f44f3f7e0454c8bf59f58862f",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-06-13-001",
+            "legacyId": "WB-2026-06-13-001",
+            "splitSuffix": null,
+            "transactionIdentityKey": "2b197f11ea378f63534f83cbed3e9d8a8904a5524d6807377ed98e34904a4bd2",
+            "target": "Mitsubishi HC Capital / Brookfield Renewables Platform",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield Asset Management.",
+                  "sourceIds": [
+                    "transaction-WB-2026-06-13-001"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Brookfield Asset Management",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Asset Management",
+                  "sourceIds": [
+                    "transaction-WB-2026-06-13-001"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": [
+                {
+                  "name": "Brookfield Asset Management",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Asset Management",
+                  "sourceIds": [
+                    "transaction-WB-2026-06-13-001"
+                  ]
+                }
+              ]
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Europe",
+            "country": "Europe",
+            "announcementDate": "2026-06-12",
+            "transactionStructure": {
+              "forms": [
+                "JOINT_VENTURE"
+              ],
+              "details": "Joint Venture",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "JOINT_VENTURE"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-06-13-001",
+                "tier": "PRIMARY",
+                "title": "Mitsubishi HC Capital / Brookfield Renewables Platform | Brookfield Asset Management",
+                "publisher": "Bep",
+                "url": "https://bep.brookfield.com/press-releases/bep/mitsubishi-hc-capital-and-brookfield-partner-launch-renewable-energy-company",
+                "artifactPath": null,
+                "publishedAt": "2026-06-12",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield and Mitsubishi HC Capital launched a renewable-energy company seeded with 570 MW of contracted European wind and solar assets. Brookfield will operate the platform alongside Mitsubishi HC Capital, with the transaction carrying an initial equity value of approximately EUR400mm.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "WB-2026-06-13-002",
+      "baseReviewedInputHash": "f8c89b888401a7e9f126faeb63934e1b5aed7ebf8dc99fde8a7b416f0f8aaabf",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "WB-2026-06-13-002",
+            "legacyId": "WB-2026-06-13-002",
+            "splitSuffix": null,
+            "transactionIdentityKey": "fa07fe60fea3d1ffd25ec43a4bd82e619eeca5755305b64232257f857967b5b2",
+            "target": "Vietnam Renewable Energy Partnership",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield Asset Management.",
+                  "sourceIds": [
+                    "transaction-WB-2026-06-13-002"
+                  ]
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": []
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Brookfield Asset Management",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Asset Management",
+                  "sourceIds": [
+                    "transaction-WB-2026-06-13-002"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": [
+                {
+                  "name": "Brookfield Asset Management",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Asset Management",
+                  "sourceIds": [
+                    "transaction-WB-2026-06-13-002"
+                  ]
+                }
+              ]
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "Asia-Pacific",
+            "country": "Vietnam",
+            "announcementDate": "2026-06-12",
+            "transactionStructure": {
+              "forms": [
+                "JOINT_VENTURE"
+              ],
+              "details": "Joint Venture",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "JOINT_VENTURE"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-WB-2026-06-13-002",
+                "tier": "PRIMARY",
+                "title": "Vietnam Renewable Energy Partnership | Brookfield Asset Management",
+                "publisher": "Vir",
+                "url": "https://vir.com.vn/brookfield-and-foxconn-form-renewable-energy-partnership-in-vietnam-154406.html",
+                "artifactPath": null,
+                "publishedAt": "2026-06-12",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield and Foxconn formed a renewable-energy partnership in Vietnam targeting up to 1 GW of wind, solar, and battery storage. The platform is intended to support power supply for Foxconn and broader industrial customers as Vietnam adds contracted clean-power capacity.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-033",
+      "baseReviewedInputHash": "1e86a828f9c53006d12f12928d8757be74583c87cee45d96b184df10235c0958",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-033",
+            "legacyId": "INF-2026-033",
+            "splitSuffix": null,
+            "transactionIdentityKey": "5d14da904c9ce2d372fcb425041b1be70052038c43997407f05fb6db20334bb4",
+            "target": "Brazilian Electricity Transmission Concession",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield Infrastructure.",
+                  "sourceIds": [
+                    "transaction-INF-2026-033"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-033"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-033"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Brookfield Infrastructure",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Infrastructure",
+                  "sourceIds": [
+                    "transaction-INF-2026-033"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Utilities",
+            "region": "Latin America",
+            "country": "Brazil",
+            "announcementDate": "2026-01-29",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Buyout)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-033",
+                "tier": "PRIMARY",
+                "title": "Brookfield Infrastructure divests Brazilian electricity transmission concession",
+                "publisher": "Brookfield Infrastructure",
+                "url": "https://bip.brookfield.com/press-releases/bip/brookfield-infrastructure-reports-solid-2025-year-end-results-declares-17th",
+                "artifactPath": null,
+                "publishedAt": "2026-01-29",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield Infrastructure announced the divestiture of a Brazilian electricity transmission concession.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-033",
+                "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-072",
+      "baseReviewedInputHash": "059358081ed82e28245dc2a2a5207b491fd5284dba9a8438f6bcf9c11f011cc2",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-072",
+            "legacyId": "INF-2026-072",
+            "splitSuffix": null,
+            "transactionIdentityKey": "40bfa8f12c7e8bac5a6f537e9d326df5898d2d3e0e5ee99e94d06c8617025953",
+            "target": "North American Data Center Portfolio",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield Infrastructure.",
+                  "sourceIds": [
+                    "transaction-INF-2026-072"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-072"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-072"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Brookfield Infrastructure",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Infrastructure",
+                  "sourceIds": [
+                    "transaction-INF-2026-072"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-01-29",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Minority Stake)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-072",
+                "tier": "PRIMARY",
+                "title": "Brookfield Infrastructure divests stake in North American data center portfolio",
+                "publisher": "Brookfield Infrastructure",
+                "url": "https://bip.brookfield.com/press-releases/bip/brookfield-infrastructure-reports-solid-2025-year-end-results-declares-17th",
+                "artifactPath": null,
+                "publishedAt": "2026-01-29",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield Infrastructure announced the divestiture of a stake in its North American data center portfolio.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-072",
+                "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-102",
+      "baseReviewedInputHash": "ed95c13767448e25fd688c405342f8e225ea7d7d58ba1fd584448a559db6299f",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-102",
+            "legacyId": "INF-2026-102",
+            "splitSuffix": null,
+            "transactionIdentityKey": "6265630f051622b7494a61a8182dc624573307f1ee53f6a77dd4eaabd0d883f4",
+            "target": "Valokuitunen Oy",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield Infrastructure Structured Solutions.",
+                  "sourceIds": [
+                    "transaction-INF-2026-102"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-102"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Brookfield Infrastructure Structured Solutions",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Infrastructure Structured Solutions",
+                  "sourceIds": [
+                    "transaction-INF-2026-102"
+                  ]
+                },
+                {
+                  "name": "Telia",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-102"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "CapMan Infra",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-102"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "Europe",
+            "country": "Finland",
+            "announcementDate": "2026-03-02",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Majority Stake) / Acquisition (Majority Stake)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-102",
+                "tier": "PRIMARY",
+                "title": "Brookfield Infrastructure Structured Solutions / Telia acquire stake in Valokuitunen Oy from CapMan Infra",
+                "publisher": "CapMan",
+                "url": "https://capman.com/2026/03/capman-infra-sells-its-stake-in-finlands-leading-fiber-to-the-home-company-valokuitunen-to-brookfield-infrastructure-structured-solutions-and-telia",
+                "artifactPath": null,
+                "publishedAt": "2026-03-02",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "CapMan Infra agreed to sell its 60% stake in Valokuitunen Oy to Brookfield Infrastructure Structured Solutions (51%) and Telia (9%), Finland's leading fiber-to-the-home company.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-102",
+                "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-029",
+      "baseReviewedInputHash": "ab11dc244a2c159b4f990671ff4e1f6905d0c430b8201e47f586500e592e7cf4",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-029",
+            "legacyId": "INF-2026-029",
+            "splitSuffix": null,
+            "transactionIdentityKey": "14dad70f0e24e394044ede660423114a93cba7ef70457dc67db44859b9e05fc5",
+            "target": "US Wind & Solar Portfolio",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Brookfield Renewable.",
+                  "sourceIds": [
+                    "transaction-INF-2026-029"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-029"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Undisclosed Buyer",
+                  "entityKind": "UNDISCLOSED",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-029"
+                  ]
+                }
+              ],
+              "sellers": [
+                {
+                  "name": "Brookfield Renewable",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Brookfield Renewable",
+                  "sourceIds": [
+                    "transaction-INF-2026-029"
+                  ]
+                }
+              ],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Power & ET",
+            "region": "North America",
+            "country": "United States",
+            "announcementDate": "2026-01-30",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION",
+                "SALE"
+              ],
+              "details": "Sale (Majority Stake)",
+              "isExit": true,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [
+              "MIXED_SIDE_TRANSACTION",
+              "EXIT"
+            ],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-029",
+                "tier": "PRIMARY",
+                "title": "Brookfield Renewable divests majority stake in US operating wind & solar portfolio",
+                "publisher": "Brookfield Renewable",
+                "url": "https://bep.brookfield.com/press-releases/bep/brookfield-renewable-reports-strong-2025-results-and-announces-5-distribution",
+                "artifactPath": null,
+                "publishedAt": "2026-01-30",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Brookfield Renewable announced the divestiture of a majority stake in a US operating wind and solar portfolio.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-029",
+                "summary": "Missing project/asset/portfolio: no new PortCo by default (High confidence): The disposed target reads as an asset, project, portfolio, concession, or stake rather than a standalone platform."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "baseRecordId": "INF-2026-158",
+      "baseReviewedInputHash": "08e6edd92b7ab28fbfb79c82c1f7bd20924a8b3c6351e006fd0a8e34821f271a",
+      "outputs": [
+        {
+          "reviewedRecord": {
+            "recordId": "INF-2026-158",
+            "legacyId": "INF-2026-158",
+            "splitSuffix": null,
+            "transactionIdentityKey": "ab99dedba8140419b9855aec75f0636aed679365731d410121c7f0baa2a23ac8",
+            "target": "Nxtra Data Limited",
+            "disposition": "KEEP",
+            "duplicateOfRecordId": null,
+            "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+            "scope": "UNRESOLVED",
+            "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+            "candidateClassification": {
+              "candidateScope": "DIRECT_FUND",
+              "signals": [
+                {
+                  "kind": "PARTICIPANT_NAME_MATCH",
+                  "detail": "Fund-manager candidate match: Carlyle.",
+                  "sourceIds": [
+                    "transaction-INF-2026-158"
+                  ]
+                },
+                {
+                  "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+                  "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like based on name/category, but no existing PortCo match was found.",
+                  "sourceIds": []
+                }
+              ],
+              "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedAt": "2026-08-08T12:00:00.000Z",
+              "priorAuditEvidenceRefs": [
+                "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-158"
+              ]
+            },
+            "actors": {
+              "buyers": [
+                {
+                  "name": "Carlyle",
+                  "entityKind": "FUND",
+                  "isPrincipal": true,
+                  "sponsorName": "Carlyle",
+                  "sourceIds": [
+                    "transaction-INF-2026-158"
+                  ]
+                },
+                {
+                  "name": "Airtel",
+                  "entityKind": "OTHER",
+                  "isPrincipal": true,
+                  "sponsorName": null,
+                  "sourceIds": [
+                    "transaction-INF-2026-158"
+                  ]
+                }
+              ],
+              "sellers": [],
+              "jointVentureParticipants": []
+            },
+            "actingEntity": null,
+            "sponsorLineage": [],
+            "sector": "Digital",
+            "region": "Asia-Pacific",
+            "country": "India",
+            "announcementDate": "2026-03-31",
+            "transactionStructure": {
+              "forms": [
+                "ACQUISITION"
+              ],
+              "details": "Acquisition (Minority Stake)",
+              "isExit": false,
+              "isBundledAnnouncement": false,
+              "isMixedDirectPortfolio": false,
+              "ownershipChangedNearAnnouncement": false,
+              "newPlatformWithInseparableSeedAcquisition": false,
+              "primaryOnlyPortfolioCompanyIssuance": false
+            },
+            "classificationFacts": {
+              "principalActorKind": "UNKNOWN",
+              "fundVehicleActsAsPrincipal": false,
+              "portfolioCompanyActsAsPrincipal": false,
+              "fundSellsOrInvests": false,
+              "alreadyOwnedOperatingCompany": false
+            },
+            "ambiguityFlags": [],
+            "sourceEvidence": [
+              {
+                "sourceId": "transaction-INF-2026-158",
+                "tier": "PRIMARY",
+                "title": "Carlyle participates in Nxtra Data funding round",
+                "publisher": "Airtel",
+                "url": "https://airtel.in/press-release/03-2026/airtel-announces-us1-billion-investment-in-nxtra-led-by-alpha-wave-global-and-existing-investor-carlyle-bharti-airtel-will-also-participate",
+                "artifactPath": null,
+                "publishedAt": "2026-03-31",
+                "retrievedAt": "2026-08-08",
+                "purposes": [
+                  "TRANSACTION",
+                  "PARTIES",
+                  "ANNOUNCEMENT_DATE",
+                  "SECTOR",
+                  "REGION",
+                  "TRANSACTION_STRUCTURE"
+                ],
+                "evidenceSummary": "Carlyle participated in Airtel’s US$1.0bn funding round for Nxtra, which values the data-center platform at around US$3.1bn post-closing. Carlyle is committing US$240mm, and Nxtra plans to deploy the capital to expand its network across India, scaling from roughly 300MW today toward 1GW over time.",
+                "fallbackRationale": null,
+                "contentSha256": null
+              }
+            ],
+            "ownershipEvidence": [],
+            "priorAuditEvidence": [
+              {
+                "inputArtifactId": "prior-flow-through-audit",
+                "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-158",
+                "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like based on name/category, but no existing PortCo match was found."
+              }
+            ],
+            "review": {
+              "firstReview": null,
+              "secondReview": null
+            }
+          },
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

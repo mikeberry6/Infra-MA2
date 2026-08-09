@@ -1,0 +1,2817 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET",
+  "cutoffDate": "2026-08-07",
+  "stage": "FIRST",
+  "packetId": "first-015",
+  "baseManifestSha256": "65a7e8fd6bc47b8ac9b76faffcb4f89b5ab6366dd1e7a33ebe38c235833a99c5",
+  "recordCount": 23,
+  "records": [
+    {
+      "recordId": "INF-2026-031",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "0de184c83bf00c9aa3b1d3e10340bd6c31d492d4e5540d5ea725cdd68c01db0e",
+      "record": {
+        "recordId": "INF-2026-031",
+        "legacyId": "INF-2026-031",
+        "splitSuffix": null,
+        "transactionIdentityKey": "39b7dcf4f233e1870a920a69b8c53cbb4158c4ba1a752a0a0d4448a6eba725f3",
+        "target": "Vibrant Energy",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-031"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-031"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-031"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-031"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Asia-Pacific",
+        "country": "India",
+        "announcementDate": "2026-01-12",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-031",
+            "tier": "RELIABLE_SECONDARY",
+            "title": "Macquarie Asset Management divests Vibrant Energy platform",
+            "publisher": "Mercom India",
+            "url": "https://mercomindia.com/inox-clean-to-acquire-macquarie-owned-vibrant-energy",
+            "artifactPath": null,
+            "publishedAt": "2026-01-12",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie Asset Management announced the divestiture of Vibrant Energy, a renewable energy platform in India.",
+            "fallbackRationale": "Candidate-stage fallback: reviewer must document primary-source unavailability before approval.",
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-031",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-035",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "b581bc1af0be8fa3a4692bbd633ad74047ead3370b498911b178384fef8ff3a6",
+      "record": {
+        "recordId": "INF-2026-035",
+        "legacyId": "INF-2026-035",
+        "splitSuffix": null,
+        "transactionIdentityKey": "586ed4e707b33336deb9789c4480b1583bc6fa7e47a19c52ba5e0bade94395b9",
+        "target": "Energy Assets Group",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management / Swiss Life Asset Managers.",
+              "sourceIds": [
+                "transaction-INF-2026-035"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-035"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-035"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Asterion Industrial Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-035"
+              ]
+            },
+            {
+              "name": "Swiss Life Asset Managers",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Swiss Life Asset Managers",
+              "sourceIds": [
+                "transaction-INF-2026-035"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-02-05",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout) / Acquisition (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-035",
+            "tier": "PRIMARY",
+            "title": "Macquarie Asset Management acquires Energy Assets Group from Asterion & Swiss Life (100% buyout)",
+            "publisher": "Macquarie",
+            "url": "https://macquarie.com/au/en/about/news/2026/macquarie-asset-management-to-acquire-energy-assets-group.html",
+            "artifactPath": null,
+            "publishedAt": "2026-02-05",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie Asset Management announced the 100% platform buyout of Energy Assets Group (EAG) from Asterion Industrial Partners and Swiss Life Asset Managers.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-035",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-036",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "085cf6c6eeb9612ef7f1310f01cd6aede42223be955128964b39bf9d8ac6690b",
+      "record": {
+        "recordId": "INF-2026-036",
+        "legacyId": "INF-2026-036",
+        "splitSuffix": null,
+        "transactionIdentityKey": "0e65d4228a185d34ab75b1719240488085a6fc0fc89748d18bf749fe5e6beb25",
+        "target": "Last Mile Infrastructure",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-036"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Macquarie Asset Management).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-036"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-036"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Infracapital (M&G)",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-036"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-02-05",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-036",
+            "tier": "PRIMARY",
+            "title": "Macquarie Asset Management acquires 50% stake in Last Mile Infrastructure",
+            "publisher": "Macquarie Asset Management",
+            "url": "https://macquarie.com/us/en/about/news/2026/macquarie-asset-management-to-acquire-additional-stake-in-last-mile-infrastructure.html",
+            "artifactPath": null,
+            "publishedAt": "2026-02-05",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie Asset Management announced the acquisition of a 50% stake in Last Mile Infrastructure.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-036",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Macquarie Asset Management)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-070",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "2aaa5d47c3799447436a3e8ab2d6c72e18e8816142d0e0c077e9a2418aa834cd",
+      "record": {
+        "recordId": "INF-2026-070",
+        "legacyId": "INF-2026-070",
+        "splitSuffix": null,
+        "transactionIdentityKey": "28832f0c09dd17a3964cae53de8d8dd1c838b561fe1fa2eb4c6f597acb0d391a",
+        "target": "IHS Towers (South America)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-070"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-070"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-070"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "IHS Towers",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-070"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Latin America",
+        "country": "Brazil",
+        "announcementDate": "2026-02-13",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Acquisition (Buyout) / Sale (Carve-Out)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-070",
+            "tier": "PRIMARY",
+            "title": "Macquarie Asset Management acquires IHS Towers South American operations (carve-out)",
+            "publisher": "Macquarie",
+            "url": "https://macquarie.com/us/en/about/news/2026/macquarie-asset-management-to-acquire-south-american-tower-operations-of-ihs-towers.html",
+            "artifactPath": null,
+            "publishedAt": "2026-02-13",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie Asset Management announced the carve-out acquisition of IHS Towers' South American operations.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-070",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-052",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "a863908de3674f1ec78d1a2512c9f978c2604ebd94db3e7715900a9d6dd4d173",
+      "record": {
+        "recordId": "INF-2026-052",
+        "legacyId": "INF-2026-052",
+        "splitSuffix": null,
+        "transactionIdentityKey": "bb3aa5994c234ea84834da0c0584c0755b2405db55a23adac7526c27f4d50c87",
+        "target": "Qube Holdings",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-052"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Macquarie Asset Management, UniSuper, Pontegadea).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-052"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-052"
+              ]
+            },
+            {
+              "name": "UniSuper",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-052"
+              ]
+            },
+            {
+              "name": "Pontegadea",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-052"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Asia-Pacific",
+        "country": "Australia",
+        "announcementDate": "2026-02-16",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-052",
+            "tier": "PRIMARY",
+            "title": "Macquarie Asset Management / UniSuper / Pontegadea to take Qube Holdings private",
+            "publisher": "Macquarie",
+            "url": "https://macquarie.com/au/en/about/news/2026/macquarie-asset-management-led-consortium-enters-binding-agreement-to-acquire-qube.html",
+            "artifactPath": null,
+            "publishedAt": "2026-02-16",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "A Macquarie Asset Management-led consortium including UniSuper and Pontegadea entered a binding scheme implementation deed to acquire Qube Holdings, a leading Australian ports and logistics company.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-052",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Macquarie Asset Management, UniSuper, Pontegadea)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-084",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "e264e57c77c2da82c65aa8231ecf53c571542cd4332a09153e4cb2590fb3ea6a",
+      "record": {
+        "recordId": "INF-2026-084",
+        "legacyId": "INF-2026-084",
+        "splitSuffix": null,
+        "transactionIdentityKey": "20d0ffac571fd67afdc2f667a4e0b0a76688213e6c3d2dfd1bbf641e8e557db2",
+        "target": "HyCC",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-084"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-084"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Power2X",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-084"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-084"
+              ]
+            },
+            {
+              "name": "Nobian",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-084"
+              ]
+            }
+          ],
+          "jointVentureParticipants": [
+            {
+              "name": "Power2X",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-084"
+              ]
+            },
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-084"
+              ]
+            },
+            {
+              "name": "Nobian",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-084"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Europe",
+        "announcementDate": "2026-02-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE",
+            "JOINT_VENTURE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE",
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-084",
+            "tier": "PRIMARY",
+            "title": "Macquarie Asset Management / Nobian divest HyCC to Power2X",
+            "publisher": "nobian.com",
+            "url": "https://www.nobian.com/news/nobian-and-macquarie-asset-management-agree-to-sell-their-interest-in-the-green-hydrogen-joint-venture-hycc-to-power2x",
+            "artifactPath": null,
+            "publishedAt": "2026-02-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Seller announcement confirming the sale to Power2X; archive link was a placeholder.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-084",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-092",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "672b2777cd1b90b36278015fd351d0f652c834e6760166bd8d54e32b7ef8eb2d",
+      "record": {
+        "recordId": "INF-2026-092",
+        "legacyId": "INF-2026-092",
+        "splitSuffix": null,
+        "transactionIdentityKey": "3f512cd0703f3e6eab4811a108895e46fe611151d879b9cd49f4e26c8ba50735",
+        "target": "Macquarie AirFinance",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-092"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-092"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Dubai Aerospace Enterprise",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-092"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-092"
+              ]
+            },
+            {
+              "name": "PGGM Infrastructure Fund",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-092"
+              ]
+            },
+            {
+              "name": "Australian Retirement Trust",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-092"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Europe",
+        "country": "Global",
+        "announcementDate": "2026-02-28",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-092",
+            "tier": "PRIMARY",
+            "title": "Macquarie Asset Management / PGGM Infrastructure Fund / Australian Retirement Trust divest Macquarie AirFinance to Dubai Aerospace Enterprise",
+            "publisher": "macquarie.com",
+            "url": "https://www.macquarie.com/au/en/about/news/2026/macquarie-asset-management-announces-sale-of-macquarie-airfinance.html",
+            "artifactPath": null,
+            "publishedAt": "2026-02-28",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Seller's transaction announcement; archive link was a placeholder.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-092",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-100",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "e4ad039a7531693e471ff25f9cbeed193a9d50006eb9448aca1e504d187a51bb",
+      "record": {
+        "recordId": "INF-2026-100",
+        "legacyId": "INF-2026-100",
+        "splitSuffix": null,
+        "transactionIdentityKey": "57b9e166c1c83f084d45388d99293a4157104b6e5939c12a91738bb930010004",
+        "target": "Arqiva",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-100"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-100"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Polus Capital Management",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-100"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-100"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-03-02",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Minority Stake)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-100",
+            "tier": "PRIMARY",
+            "title": "Macquarie Asset Management divests minority stake in Arqiva",
+            "publisher": "Broadband TV News",
+            "url": "https://broadbandtvnews.com/2026/03/02/polus-to-buy-26-54-stake-in-arqiva-from-macquarie",
+            "artifactPath": null,
+            "publishedAt": "2026-03-02",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie Asset Management divested a minority stake in Arqiva, the UK's sole national provider of terrestrial television and radio broadcast infrastructure. Arqiva operates the transmission network delivering Freeview, DAB digital radio, and mobile connectivity services across the United Kingdom.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-100",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-106",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "30da5fdd663c1af19cc44fc3c640cef4e14d9f9780a557522f9e1e70feff28ee",
+      "record": {
+        "recordId": "INF-2026-106",
+        "legacyId": "INF-2026-106",
+        "splitSuffix": null,
+        "transactionIdentityKey": "34ca3570ae34cbdd6a073207ba1d85f8f90ef498f47c387c34f30b7acff40825",
+        "target": "Gabia Data Centre",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-106"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Macquarie Asset Management).",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-106"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-106"
+              ]
+            },
+            {
+              "name": "Gabia Inc.",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-106"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-106"
+              ]
+            },
+            {
+              "name": "Gabia Inc.",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-106"
+              ]
+            }
+          ]
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "South Korea",
+        "announcementDate": "2026-03-03",
+        "transactionStructure": {
+          "forms": [
+            "JOINT_VENTURE"
+          ],
+          "details": "Joint Venture",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "JOINT_VENTURE"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-106",
+            "tier": "PRIMARY",
+            "title": "Macquarie Asset Management / Gabia launch Gabia Data Centre JV platform",
+            "publisher": "Macquarie",
+            "url": "https://macquarie.com/au/en/about/news/2026/macquarie-asset-management-and-gabia-form-strategic-partnership-to-develop-next-generation-hyperscale-data-centre-platform-in-south-korea.html",
+            "artifactPath": null,
+            "publishedAt": "2026-03-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie Asset Management, through MAIF4, and Gabia Inc. announced a strategic partnership to develop a hyperscale data center platform in South Korea.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-106",
+            "summary": "Missing standalone platform: candidate new PortCo, approval required (Medium confidence): Target looks platform-like and the buyer/fund context is infrastructure-relevant (Macquarie Asset Management)."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-174",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "8cfa95af72211754bbc392a6ef5cd3674f039ea53cf2b74db0e9c5a4f99dbfcb",
+      "record": {
+        "recordId": "INF-2026-174",
+        "legacyId": "INF-2026-174",
+        "splitSuffix": null,
+        "transactionIdentityKey": "4e7f0908b6ff1de9df8840a0a3b934c7e0fd3fe93e36995665651593ad014916",
+        "target": "Evryo Group (Distribuție Energie Oltenia)",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-INF-2026-174"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-174"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Premier Energy Group",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-174"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-INF-2026-174"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "Romania",
+        "announcementDate": "2026-04-15",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-174",
+            "tier": "PRIMARY",
+            "title": "Macquarie agrees to divest Evryo Group to Premier Energy",
+            "publisher": "Macquarie",
+            "url": "https://macquarie.com/au/en/about/news/2026/macquarie-asset-management-agrees-to-divest-evryo-groups-power-distribution-network.html",
+            "artifactPath": null,
+            "publishedAt": "2026-04-15",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie Asset Management agreed to divest its 100% equity interest in Evryo Group to Premier Energy Group. Evryo operates a regulated electricity distribution network in Romania spanning 80,000 kilometers and connecting 1.5mm customers.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-174",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-23-002",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "e6e9529b261de54c3df9e8ec6090fe5f62c6ea483b7a521056158fdcc7b194c9",
+      "record": {
+        "recordId": "WB-2026-05-23-002",
+        "legacyId": "WB-2026-05-23-002",
+        "splitSuffix": null,
+        "transactionIdentityKey": "d26d46c7771987b55ecdcb065bc488b11b9a0827d1bc3f3e94a4cf3bf19fc0d1",
+        "target": "Maple Infrastructure Trust Units",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management / La Caisse.",
+              "sourceIds": [
+                "transaction-WB-2026-05-23-002"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-WB-2026-05-23-002"
+              ]
+            },
+            {
+              "name": "La Caisse",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "La Caisse",
+              "sourceIds": [
+                "transaction-WB-2026-05-23-002"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Asia-Pacific",
+        "country": "India",
+        "announcementDate": "2026-05-29",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-23-002",
+            "tier": "PRIMARY",
+            "title": "Maple Infrastructure Trust Units | Macquarie Asset Management / La Caisse",
+            "publisher": "Pib",
+            "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2256396&lang=1&reg=3",
+            "artifactPath": null,
+            "publishedAt": "2026-05-29",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie Asset Management’s MAIF 4 vehicle agreed to acquire up to 177,289,950 Maple Infrastructure Trust units, alongside related Maple IM and Maple PM equity interests, from La Caisse’s CDPQ Infrastructures Asia III. Maple owns and operates Indian road assets through government concessions, giving the transaction a direct roads-infrastructure exposure.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-06-010",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "8b572d940a58dc2d2fcf9ced29e310b26ce0b5234a958c6d9504c3fd98e8c58c",
+      "record": {
+        "recordId": "WB-2026-06-06-010",
+        "legacyId": "WB-2026-06-06-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "f0421059f5422f4bb3a3ef8f5e17251c9a4f53e2e7af9f02a49a5d6dd819fc21",
+        "target": "CLI",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-WB-2026-06-06-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Undisclosed Buyer",
+              "entityKind": "UNDISCLOSED",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-06-010"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-WB-2026-06-06-010"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "Latin America",
+        "country": "Brazil",
+        "announcementDate": "2026-06-05",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-06-010",
+            "tier": "PRIMARY",
+            "title": "CLI | Macquarie Asset Management",
+            "publisher": "Macquarie",
+            "url": "https://macquarie.com/au/en/about/news/2026/macquarie-asset-management-and-ig4-sign-definitive-agreement-to-sell-cli-to-ad-ports-group.html",
+            "artifactPath": null,
+            "publishedAt": "2026-06-05",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie Asset Management and IG4 signed a definitive agreement to sell a controlling stake in CLI - Corredor Logistica e Infraestrutura S.A. to AD Ports Group. The transaction values the Brazilian infrastructure and logistics operator at approximately US$835mm.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-20-003",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "5c0b9ad06100b1ff1d0d2a3de633df7d72f6a2107f43d09d39e781990d03aa65",
+      "record": {
+        "recordId": "WB-2026-06-20-003",
+        "legacyId": "WB-2026-06-20-003",
+        "splitSuffix": null,
+        "transactionIdentityKey": "0d1cadb4d4df77cc2ec2dcd86562b0941df5c86a97e985ab9aee9ce56d945ea8",
+        "target": "Electrada Assets",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "PORTFOLIO_COMPANY",
+          "signals": [
+            {
+              "kind": "BOLT_ON_LANGUAGE",
+              "detail": "Transaction metadata contains a bolt-on signal.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-003"
+              ]
+            },
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-003"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-WB-2026-06-20-003"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Transportation",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-06-19",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "BOLT_ON"
+          ],
+          "details": "Acquisition (Bolt-On)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-20-003",
+            "tier": "PRIMARY",
+            "title": "Electrada Assets | Macquarie Asset Management",
+            "publisher": "Inspirationmobility",
+            "url": "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets",
+            "artifactPath": null,
+            "publishedAt": "2026-06-19",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Macquarie-backed Inspiration Mobility Group acquired select assets of Electrada, adding fleet electrification technology, charging infrastructure development capabilities, and an experienced team to its Inspiration Energy platform. The acquisition expands Inspiration's end-to-end electric fuel solution for commercial fleets.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-06-27-010",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "a0963c4774d475b0a83bb170dc67a0641092f5d10dd4edf9a7d271aad909027f",
+      "record": {
+        "recordId": "WB-2026-06-27-010",
+        "legacyId": "WB-2026-06-27-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "21f6dde9a05ba69a4cf7407d0cb02d12be5cdb9a591dd08c91121c4b9d24ef5c",
+        "target": "Southern Water",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Asterion Industrial Partners",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-WB-2026-06-27-010"
+              ]
+            },
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-WB-2026-06-27-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "United Kingdom",
+        "announcementDate": "2026-06-26",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-06-27-010",
+            "tier": "PRIMARY",
+            "title": "Southern Water | Asterion Industrial Partners / Macquarie Asset Management",
+            "publisher": "Asterionindustrial",
+            "url": "https://asterionindustrial.com/asterion-industrial-partners-joins-macquarie-led-consortium-to-deliver-1-2-billion-equity-support-for-southern-water-a-uk-water-and-wastewater-utility",
+            "artifactPath": null,
+            "publishedAt": "2026-06-26",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Asterion joined a Macquarie-led consortium committing GBP1.2bn of equity support to Southern Water, including Asterion’s approximately GBP300mm commitment for an approximately 20% minority shareholding. The transaction supports a regulated UK water and wastewater utility’s investment programme.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-003",
+      "groupKey": "Sponsor — Macquarie Asset Management",
+      "baseReviewedInputHash": "4dd873ec9c0b0b11ba7ba6283c2d030bc84f58496f0d19bee8c123753b31e1d8",
+      "record": {
+        "recordId": "WB-2026-07-03-003",
+        "legacyId": "WB-2026-07-03-003",
+        "splitSuffix": null,
+        "transactionIdentityKey": "6fb2442c3b91046fb75cfd0241e0c6ef8cc18fcf62fb01605b2dd671c9576131",
+        "target": "Dion BESS",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Macquarie Asset Management.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-003"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Macquarie Asset Management",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Macquarie Asset Management",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-003"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Europe",
+        "country": "Germany",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Buyout)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-003",
+            "tier": "PRIMARY",
+            "title": "Dion BESS | Macquarie Asset Management",
+            "publisher": "Ekuenergy",
+            "url": "https://ekuenergy.com/en/news-and-blogs/news-germany-market-entry",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Eku Energy announced its German market entry through acquisition and development rights for the 400 MW / 1,600 MWh Dion battery storage project in Lamspringe. Eku is owned by BCI and a Macquarie Asset Management-managed fund.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-207",
+      "groupKey": "Sponsor — Meridiam",
+      "baseReviewedInputHash": "0b86101a3b6bb96134598f5e462686f46908862c7ab41ffb43d124f2dfe65699",
+      "record": {
+        "recordId": "INF-2026-207",
+        "legacyId": "INF-2026-207",
+        "splitSuffix": null,
+        "transactionIdentityKey": "ba44307eeb1b350a9ea826ad3ff260589dba905f9afbee1936534594d5e50903",
+        "target": "Siruai Wind and Storage Project",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Meridiam.",
+              "sourceIds": [
+                "transaction-INF-2026-207"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Meridiam",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Meridiam",
+              "sourceIds": [
+                "transaction-INF-2026-207"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "Middle East & Africa",
+        "country": "Kenya",
+        "announcementDate": "2026-05-11",
+        "transactionStructure": {
+          "forms": [
+            "PLATFORM_FORMATION"
+          ],
+          "details": "Platform Launch",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "PLATFORM_FORMATION"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-207",
+            "tier": "PRIMARY",
+            "title": "Meridiam launches Siruai Wind and Storage project in Kenya",
+            "publisher": "Ecofin Agency",
+            "url": "https://ecofinagency.com/news-industry/1105-55459-kenya-adds-first-large-scale-wind-and-storage-project-with-meridiam",
+            "artifactPath": null,
+            "publishedAt": "2026-05-11",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Meridiam and Craftskills Energy launched the Siruai Wind and Storage project in Kenya, combining 100 MW of wind generation with a 50 MWh battery energy storage system. The project is located near the Kipeto wind farm in Kajiado County and is backed by more than EUR200mm of investment.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-17-011",
+      "groupKey": "Sponsor — Meridiam",
+      "baseReviewedInputHash": "db7601a787c178197f81d6c59575078d1ff21ce4e049d555f17850de75602983",
+      "record": {
+        "recordId": "WB-2026-07-17-011",
+        "legacyId": "WB-2026-07-17-011",
+        "splitSuffix": null,
+        "transactionIdentityKey": "1e7dd5ef4962a4e2c6a729f2a2652107f000bec0ec49484b37ae8b4aa99b68f9",
+        "target": "Raxio Group",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Meridiam.",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-011"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Meridiam",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Meridiam",
+              "sourceIds": [
+                "transaction-WB-2026-07-17-011"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Middle East & Africa",
+        "country": "Africa",
+        "announcementDate": "2026-07-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-17-011",
+            "tier": "PRIMARY",
+            "title": "Raxio Group | Meridiam",
+            "publisher": "Raxiogroup",
+            "url": "https://raxiogroup.com/raxio-tops-us380-million-in-committed-capital-as-roha-and-meridiam-boost-stakes-amid-sixfold-growth-surge-for-its-african-data-centres",
+            "artifactPath": null,
+            "publishedAt": "2026-07-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Meridiam and Roha provided additional equity to Raxio and increased their stakes, lifting the African data-center platform’s committed capital from US$350 million to more than US$380 million. Raxio operates Tier III carrier-neutral facilities in six countries with Tanzania under development.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-08-07-010",
+      "groupKey": "Sponsor — Meridiam",
+      "baseReviewedInputHash": "de5c153143df94035871a043155f508b82d9bf07777cc34d85ba509cee6ca43b",
+      "record": {
+        "recordId": "WB-2026-08-07-010",
+        "legacyId": "WB-2026-08-07-010",
+        "splitSuffix": null,
+        "transactionIdentityKey": "65503b79c7b17e36f848e04ceb674d639b261e27781295b1c31ce6b289ff8917",
+        "target": "Great Sea Interconnector",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Meridiam.",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-010"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Meridiam",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Meridiam",
+              "sourceIds": [
+                "transaction-WB-2026-08-07-010"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Utilities",
+        "region": "Europe",
+        "country": "Greece / Cyprus",
+        "announcementDate": "2026-08-07",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Majority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-08-07-010",
+            "tier": "PRIMARY",
+            "title": "Great Sea Interconnector | Meridiam",
+            "publisher": "Primeminister",
+            "url": "https://primeminister.gr/2026/08/05/39063",
+            "artifactPath": null,
+            "publishedAt": "2026-08-07",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Meridiam signed an agreement to become the majority shareholder of the Great Sea Interconnector SPV. The approximately €1.9bn, c.900 km subsea link is designed to transfer 1,000 MW between Greece and Cyprus and end Cyprus’ electrical isolation.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-069",
+      "groupKey": "Sponsor — Morgan Stanley Infrastructure",
+      "baseReviewedInputHash": "2adffc38e5da11e257336453e8ec6d5b5dd68cc47ccdabb2daf38912a96d1357",
+      "record": {
+        "recordId": "INF-2026-069",
+        "legacyId": "INF-2026-069",
+        "splitSuffix": null,
+        "transactionIdentityKey": "fc9b777cd6118365370bf915e7e94ebf602c8e4b9b50c0eb821992864efed4e0",
+        "target": "Han's CNC Technology",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Morgan Stanley Infrastructure.",
+              "sourceIds": [
+                "transaction-INF-2026-069"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-069"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Morgan Stanley Infrastructure",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Morgan Stanley Infrastructure",
+              "sourceIds": [
+                "transaction-INF-2026-069"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Digital",
+        "region": "Asia-Pacific",
+        "country": "China",
+        "announcementDate": "2026-02-06",
+        "transactionStructure": {
+          "forms": [
+            "IPO"
+          ],
+          "details": "IPO",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "IPO"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-069",
+            "tier": "PRIMARY",
+            "title": "Morgan Stanley Infrastructure cornerstone invests in Han's CNC Technology IPO",
+            "publisher": "Law.Asia",
+            "url": "https://law.asia/hans-cnc-technology-hkex-debut",
+            "artifactPath": null,
+            "publishedAt": "2026-02-06",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Morgan Stanley Infrastructure participated as a cornerstone investor in the IPO of Han's CNC Technology.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-069",
+            "summary": "Missing sale/IPO target: historical/realized PortCo review (Medium confidence): The target looks like a standalone platform or operating company, but it is not currently in the PortCo seed data."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "INF-2026-130",
+      "groupKey": "Sponsor — Morgan Stanley Infrastructure Partners",
+      "baseReviewedInputHash": "ba15b4b909b01fc31a7edf7e94ea73ad65994492eb1059a3b37b7de4bbed00cb",
+      "record": {
+        "recordId": "INF-2026-130",
+        "legacyId": "INF-2026-130",
+        "splitSuffix": null,
+        "transactionIdentityKey": "9f9a5c2afe1335c9e4b6f4f1c957686832c336811edc4680bd61a64fc04c7148",
+        "target": "Bayonne Energy Center",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Morgan Stanley Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-INF-2026-130"
+              ]
+            },
+            {
+              "kind": "PRIOR_FLOW_THROUGH_AUDIT",
+              "detail": "Sale/IPO of existing PortCo: realization review (Medium confidence): Target is already a PortCo, but seller ownership alignment is not obvious from seed owners; review before marking realized.",
+              "sourceIds": []
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": [
+            "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-130"
+          ]
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Jupiter Energy Investor",
+              "entityKind": "OTHER",
+              "isPrincipal": true,
+              "sponsorName": null,
+              "sourceIds": [
+                "transaction-INF-2026-130"
+              ]
+            }
+          ],
+          "sellers": [
+            {
+              "name": "Morgan Stanley Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Morgan Stanley Infrastructure Partners",
+              "sourceIds": [
+                "transaction-INF-2026-130"
+              ]
+            }
+          ],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "United States",
+        "announcementDate": "2026-03-17",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION",
+            "SALE"
+          ],
+          "details": "Sale (Buyout)",
+          "isExit": true,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [
+          "MIXED_SIDE_TRANSACTION",
+          "EXIT"
+        ],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-INF-2026-130",
+            "tier": "PRIMARY",
+            "title": "Morgan Stanley Infrastructure Partners divests Bayonne Energy Center to Jupiter Energy Investor",
+            "publisher": "Morgan Stanley",
+            "url": "https://morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+            "artifactPath": null,
+            "publishedAt": "2026-03-17",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Morgan Stanley Infrastructure Partners agreed to sell its stake in Thermal Bayonne Holdings, operator of the 660 MW Bayonne Energy Center, to Jupiter Energy Investor.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [
+          {
+            "inputArtifactId": "prior-flow-through-audit",
+            "reference": "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-130",
+            "summary": "Sale/IPO of existing PortCo: realization review (Medium confidence): Target is already a PortCo, but seller ownership alignment is not obvious from seed owners; review before marking realized."
+          }
+        ],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-03-002",
+      "groupKey": "Sponsor — Morgan Stanley Infrastructure Partners",
+      "baseReviewedInputHash": "03dc506d12fc78699bc44e084e138f6ec552875abac28135fe7477e5fe8b9cb7",
+      "record": {
+        "recordId": "WB-2026-07-03-002",
+        "legacyId": "WB-2026-07-03-002",
+        "splitSuffix": null,
+        "transactionIdentityKey": "6d7717259170ae267b828ff3ecdcfae7e81b74732ce3067070209cde32b6b335",
+        "target": "Greenlight Electricity Centre",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Morgan Stanley Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-002"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Morgan Stanley Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Morgan Stanley Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-03-002"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "Canada",
+        "announcementDate": "2026-07-03",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-03-002",
+            "tier": "PRIMARY",
+            "title": "Greenlight Electricity Centre | Morgan Stanley Infrastructure Partners",
+            "publisher": "Business Wire",
+            "url": "https://businesswire.com/news/home/20260701575540/en/Pembina-Pipeline-Announces-Positive-Final-Investment-Decision-on-the-Greenlight-Electricity-Centre",
+            "artifactPath": null,
+            "publishedAt": "2026-07-03",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Pembina, MSIP, and Kineticor reached FID on the 932 MW Greenlight Electricity Centre in Alberta. MSIP acquired OPTrust's 50% interest, taking a 47.5% project stake, with remaining costs funded partly through owner equity contributions.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-07-10-007",
+      "groupKey": "Sponsor — Morgan Stanley Infrastructure Partners",
+      "baseReviewedInputHash": "48b9af6a327ada269cc153f95a5dba270fc39ccec4a6ffb9ea13ca20dc1593ee",
+      "record": {
+        "recordId": "WB-2026-07-10-007",
+        "legacyId": "WB-2026-07-10-007",
+        "splitSuffix": null,
+        "transactionIdentityKey": "2a6156d3f4fbd10746ef183a9657dcb1830ee9b07fedc8c4035d363d274bcee0",
+        "target": "Nicollin Environnement",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Morgan Stanley Infrastructure Partners.",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-007"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Morgan Stanley Infrastructure Partners",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Morgan Stanley Infrastructure Partners",
+              "sourceIds": [
+                "transaction-WB-2026-07-10-007"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Social Infra",
+        "region": "Europe",
+        "country": "France",
+        "announcementDate": "2026-07-10",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Majority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-07-10-007",
+            "tier": "PRIMARY",
+            "title": "Nicollin Environnement | Morgan Stanley Infrastructure Partners",
+            "publisher": "Morganstanley",
+            "url": "https://morganstanley.com/im/en-us/individual-investor/insights/press-release/msip-enters-into-agreement-to-aquire-majority-stake-in-nicollin-environment.html",
+            "artifactPath": null,
+            "publishedAt": "2026-07-10",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "MSIP committed to acquire a majority stake in Nicollin Environnement, with the Nicollin family remaining invested. The French platform serves approximately 360 public contracts and 8,000 private clients with 4,800 employees, 2,900 vehicles and a national network of environmental-infrastructure sites.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    },
+    {
+      "recordId": "WB-2026-05-02-001",
+      "groupKey": "Sponsor — Mubadala",
+      "baseReviewedInputHash": "a7be053456279855763304a0c186bdee895ffadbafe9edfa46020a0b899b90fe",
+      "record": {
+        "recordId": "WB-2026-05-02-001",
+        "legacyId": "WB-2026-05-02-001",
+        "splitSuffix": null,
+        "transactionIdentityKey": "85d05ed3a6e7b6d772d72c4784f4792de28688cb3159723617732541c16ac98e",
+        "target": "Power Factors",
+        "disposition": "KEEP",
+        "duplicateOfRecordId": null,
+        "dispositionRationale": "Candidate is provisionally kept pending required human universe verification.",
+        "scope": "UNRESOLVED",
+        "scopeRationale": "Scope is intentionally unresolved until a human opens the evidence and verifies the acting principal.",
+        "candidateClassification": {
+          "candidateScope": "DIRECT_FUND",
+          "signals": [
+            {
+              "kind": "PARTICIPANT_NAME_MATCH",
+              "detail": "Fund-manager candidate match: Mubadala.",
+              "sourceIds": [
+                "transaction-WB-2026-05-02-001"
+              ]
+            }
+          ],
+          "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
+          "generatedBy": "weekly-briefing-activity-candidate-v1",
+          "generatedAt": "2026-08-08T12:00:00.000Z",
+          "priorAuditEvidenceRefs": []
+        },
+        "actors": {
+          "buyers": [
+            {
+              "name": "Mubadala",
+              "entityKind": "FUND",
+              "isPrincipal": true,
+              "sponsorName": "Mubadala",
+              "sourceIds": [
+                "transaction-WB-2026-05-02-001"
+              ]
+            }
+          ],
+          "sellers": [],
+          "jointVentureParticipants": []
+        },
+        "actingEntity": null,
+        "sponsorLineage": [],
+        "sector": "Power & ET",
+        "region": "North America",
+        "country": "Global",
+        "announcementDate": "2026-05-08",
+        "transactionStructure": {
+          "forms": [
+            "ACQUISITION"
+          ],
+          "details": "Acquisition (Minority Stake)",
+          "isExit": false,
+          "isBundledAnnouncement": false,
+          "isMixedDirectPortfolio": false,
+          "ownershipChangedNearAnnouncement": false,
+          "newPlatformWithInseparableSeedAcquisition": false,
+          "primaryOnlyPortfolioCompanyIssuance": false
+        },
+        "classificationFacts": {
+          "principalActorKind": "UNKNOWN",
+          "fundVehicleActsAsPrincipal": false,
+          "portfolioCompanyActsAsPrincipal": false,
+          "fundSellsOrInvests": false,
+          "alreadyOwnedOperatingCompany": false
+        },
+        "ambiguityFlags": [],
+        "sourceEvidence": [
+          {
+            "sourceId": "transaction-WB-2026-05-02-001",
+            "tier": "PRIMARY",
+            "title": "Power Factors | Mubadala",
+            "publisher": "Mubadala",
+            "url": "https://mubadala.com/en/news/mubadala-announces-acquisition-of-minority-stake-in-power-factors",
+            "artifactPath": null,
+            "publishedAt": "2026-05-08",
+            "retrievedAt": "2026-08-08",
+            "purposes": [
+              "TRANSACTION",
+              "PARTIES",
+              "ANNOUNCEMENT_DATE",
+              "SECTOR",
+              "REGION",
+              "TRANSACTION_STRUCTURE"
+            ],
+            "evidenceSummary": "Mubadala announced a significant minority investment in Power Factors alongside existing investor Vista Equity Partners. Power Factors provides a renewable energy management suite for wind, solar, and storage operators, supporting more than 600 customers across 18,000 sites in over 70 countries and managing approximately 310 GW of capacity.",
+            "fallbackRationale": null,
+            "contentSha256": null
+          }
+        ],
+        "ownershipEvidence": [],
+        "priorAuditEvidence": [],
+        "review": {
+          "firstReview": null,
+          "secondReview": null
+        }
+      }
+    }
+  ],
+  "packetSha256": "9bec980aa1f842d7ce28c636448112037e38dbf40db834d4d2b4248e92a265c6"
+}
