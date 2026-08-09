@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { funds } from "../../prisma/seed-data/funds";
-import type { ActivityRecord, ActorEntityKind, AmbiguityFlag, TransactionForm } from "./schema";
+import type { ActivityRecord, ActorEntityKind, TransactionForm } from "./schema";
 import { RECOVERED_CITATIONS } from "./sources-citation-recovery";
 import { expectedRegionForKnownParserGap } from "./reconcile-geography";
 import { normalizeSourceUrl, normalizeTarget, sha256Canonical } from "./sources-normalize";
@@ -133,21 +133,6 @@ function transactionForms(seed: SeedDealRecord): TransactionForm[] {
   return [...new Set(forms.length > 0 ? forms : ["OTHER"] as TransactionForm[])];
 }
 
-function ambiguityFor(seed: SeedDealRecord, forms: readonly TransactionForm[]): AmbiguityFlag[] {
-  const text = `${seed.target} ${seed.title} ${seed.description}`.toLowerCase();
-  const flags: AmbiguityFlag[] = [];
-  if (forms.includes("JOINT_VENTURE")) flags.push("JOINT_VENTURE");
-  if (forms.includes("PLATFORM_FORMATION")) flags.push("PLATFORM_FORMATION");
-  if (forms.includes("IPO")) flags.push("IPO");
-  if (forms.includes("RECAPITALIZATION")) flags.push("RECAPITALIZATION");
-  if (forms.includes("ACQUISITION") && forms.includes("SALE")) flags.push("MIXED_SIDE_TRANSACTION");
-  if (forms.includes("SALE") || forms.includes("SECONDARY_SALE") || /\bexit\b/.test(text)) flags.push("EXIT");
-  if (/bundled announcement|separate transactions|two transactions|multiple transactions/.test(text)) {
-    flags.push("BUNDLED_ANNOUNCEMENT");
-  }
-  return [...new Set(flags)];
-}
-
 function candidateScopeFor(seed: SeedDealRecord, buyerVia: string | null, sellerVia: string | null) {
   const categoryText = seed.categories.join(" ").toLowerCase();
   const fundParticipant = splitNames(`${stripVia(seed.buyer)} / ${stripVia(seed.seller)}`).some(isFundName);
@@ -175,6 +160,15 @@ function candidateSignals(
   }
   if (/bolt-on|bolt on/.test(text)) {
     signals.push({ kind: "BOLT_ON_LANGUAGE", detail: "Transaction metadata contains a bolt-on signal.", sourceIds: [sourceId] });
+  }
+  if (/bundled announcement|separate transactions|two transactions|multiple transactions/.test(
+    `${seed.target} ${seed.title} ${seed.description}`.toLowerCase(),
+  )) {
+    signals.push({
+      kind: "OTHER",
+      detail: "Announcement language may describe multiple transactions; first review must verify whether they are legally distinct.",
+      sourceIds: [sourceId],
+    });
   }
   const matchingParties = splitNames(`${stripVia(seed.buyer)} / ${stripVia(seed.seller)}`).filter(isFundName);
   if (matchingParties.length > 0) {
@@ -225,7 +219,6 @@ export function buildDraftActivityRecords(
     const buyerVia = viaEntity(seed.buyer);
     const sellerVia = viaEntity(seed.seller);
     const forms = transactionForms(seed);
-    const ambiguityFlags = ambiguityFor(seed, forms);
     const geography = expectedRegionForKnownParserGap(seed.country);
     const requiresGeographyReclassification = Boolean(geography && geography.region !== seed.region);
     const region = requiresGeographyReclassification ? geography!.region : seed.region;
@@ -259,7 +252,7 @@ export function buildDraftActivityRecords(
         rationale: suggestedScope === "UNRESOLVED"
           ? "No decisive automated signal is present; automation does not default the transaction to direct."
           : `Automation suggests ${suggestedScope}; this is a review candidate, not an approval.`,
-        generatedBy: "weekly-briefing-activity-candidate-v1",
+        generatedBy: "weekly-briefing-activity-candidate-v2",
         generatedAt: options.generatedAt,
         priorAuditEvidenceRefs: priorAudit ? [priorAudit.reference] : [],
       },
@@ -289,11 +282,12 @@ export function buildDraftActivityRecords(
       transactionStructure: {
         forms,
         details: seed.categories.join(" / ") || seed.title,
-        isExit: ambiguityFlags.includes("EXIT"),
-        isBundledAnnouncement: ambiguityFlags.includes("BUNDLED_ANNOUNCEMENT"),
+        // Sale language is only a research signal. A reviewer must establish
+        // whether a fund or operating company is actually exiting an asset.
+        isExit: false,
+        isBundledAnnouncement: false,
         isMixedDirectPortfolio: false,
-        ownershipChangedNearAnnouncement: false,
-        newPlatformWithInseparableSeedAcquisition: forms.includes("PLATFORM_FORMATION") && forms.includes("ACQUISITION"),
+        newPlatformWithInseparableSeedAcquisition: false,
         primaryOnlyPortfolioCompanyIssuance: false,
       },
       // These facts determine the authoritative scope. They deliberately stay
@@ -305,7 +299,7 @@ export function buildDraftActivityRecords(
         fundSellsOrInvests: false,
         alreadyOwnedOperatingCompany: false,
       },
-      ambiguityFlags,
+      secondReviewRisks: [],
       sourceEvidence: [{
         sourceId,
         tier: sourceTierValue,

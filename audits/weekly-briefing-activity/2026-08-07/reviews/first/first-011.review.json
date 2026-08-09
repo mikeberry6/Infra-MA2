@@ -4,7 +4,7 @@
   "cutoffDate": "2026-08-07",
   "stage": "FIRST",
   "packetId": "first-011",
-  "packetSha256": "8d73053d12b589f41a141f7010b0fd09423db9b2ad40f3d7891ef3fd746aa22c",
+  "packetSha256": "79db136c4369305f711584fc24a1385cfb4c545f485bb7c01812dda1310fb2b9",
   "reviewer": "REPLACE_WITH_HUMAN_NAME",
   "reviewedAt": "REPLACE_WITH_ISO_8601_TIMESTAMP",
   "humanAttestation": {
@@ -16,7 +16,7 @@
   "decisions": [
     {
       "baseRecordId": "INF-2026-016",
-      "baseReviewedInputHash": "55ff30241519f9aca7652caad2588f19c65ec7291ad6de9c76a6fb76a32cddf2",
+      "baseReviewedInputHash": "859c7a6026f32157763920039d4f876b2ef6c083d42d05f0d10e47f77cc06631",
       "outputs": [
         {
           "reviewedRecord": {
@@ -47,7 +47,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-016"
@@ -111,7 +111,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -122,9 +121,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "JOINT_VENTURE"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-016",
@@ -167,7 +164,7 @@
     },
     {
       "baseRecordId": "INF-2026-077",
-      "baseReviewedInputHash": "e552ff40d657ae481a990139f7ff15e5523c474191d5156ccf5eb1bfd879ae58",
+      "baseReviewedInputHash": "f22f5e402cc64b8f040ce651cf82b6ca49460a7e5dadb59d3369738158f05aa5",
       "outputs": [
         {
           "reviewedRecord": {
@@ -198,7 +195,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-077"
@@ -351,10 +348,9 @@
                 "JOINT_VENTURE"
               ],
               "details": "Sale (Buyout) / Acquisition (Buyout)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -365,11 +361,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "JOINT_VENTURE",
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-077",
@@ -412,7 +404,7 @@
     },
     {
       "baseRecordId": "INF-2026-159",
-      "baseReviewedInputHash": "367bda35403fadd7401d3caa70a7d0955617fe6ccd889a3ceec766bc755e6b70",
+      "baseReviewedInputHash": "44dceb37bb69fe5dadb0eb2789b17de55722c639c86a94feefbb368b328f78ce",
       "outputs": [
         {
           "reviewedRecord": {
@@ -443,7 +435,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-159"
@@ -497,7 +489,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -508,7 +499,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-159",
@@ -551,7 +542,7 @@
     },
     {
       "baseRecordId": "WB-2026-05-16-009",
-      "baseReviewedInputHash": "bcf3ebb9e636626486edee01a95de1f3691e849d343e6463b24077e15b1227ef",
+      "baseReviewedInputHash": "db061a923abc62bf08713db6ac6f964ae415fa8ef30fb58a030ad43cc57f7139",
       "outputs": [
         {
           "reviewedRecord": {
@@ -577,7 +568,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": []
             },
@@ -619,7 +610,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -630,7 +620,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-WB-2026-05-16-009",
@@ -667,7 +657,7 @@
     },
     {
       "baseRecordId": "WB-2026-07-03-014",
-      "baseReviewedInputHash": "d5ff0b22f2596e4b62f572aa61057fe38d3971919c5598a535c18e3debb70709",
+      "baseReviewedInputHash": "36d657ae45868edc9ce8b021b375ff06fb5dc4f002e7ddc4d7fdab0427e57d8c",
       "outputs": [
         {
           "reviewedRecord": {
@@ -693,7 +683,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": []
             },
@@ -726,7 +716,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -737,7 +726,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-WB-2026-07-03-014",
@@ -774,7 +763,7 @@
     },
     {
       "baseRecordId": "INF-2026-014",
-      "baseReviewedInputHash": "01dcb69ee7ffd2d06be6d50dacd31786f89cf00dcf6deeee992ac580074b12c8",
+      "baseReviewedInputHash": "34cfec4d45db6ca1dea94c028ceef80b756aa367b8957b1246659195bb7c5b99",
       "outputs": [
         {
           "reviewedRecord": {
@@ -805,7 +794,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-014"
@@ -848,10 +837,9 @@
                 "SALE"
               ],
               "details": "Sale (Buyout)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -862,10 +850,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-014",
@@ -908,7 +893,7 @@
     },
     {
       "baseRecordId": "INF-2026-164",
-      "baseReviewedInputHash": "6d5f734eeb4aa11e7982fe9b66530f1917a7a9a008e920047d3d5c20876c1aef",
+      "baseReviewedInputHash": "a0a9446cc39963499d14ef3ac896e17f2e502c5ac1abb3908ee637c2b5d2d98f",
       "outputs": [
         {
           "reviewedRecord": {
@@ -939,7 +924,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-164"
@@ -974,7 +959,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -985,7 +969,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-164",
@@ -1028,7 +1012,7 @@
     },
     {
       "baseRecordId": "WB-2026-07-24-007",
-      "baseReviewedInputHash": "6ab8483f5162e0e7de19ef4911b243bc9b019abb6d2681cf9ac9f5a855a4915c",
+      "baseReviewedInputHash": "0e3b00214f0bde8eec619444fb6a6de850bf2865274092cd1acd06553f56cc8d",
       "outputs": [
         {
           "reviewedRecord": {
@@ -1054,7 +1038,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": []
             },
@@ -1104,10 +1088,9 @@
                 "SALE"
               ],
               "details": "Sale (Buyout)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -1118,10 +1101,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-WB-2026-07-24-007",
@@ -1158,7 +1138,7 @@
     },
     {
       "baseRecordId": "WB-2026-07-31-019",
-      "baseReviewedInputHash": "bd1cce822760e0a139f35c5fe0c78bddd058627ca538817e20fcffe6b4249d9f",
+      "baseReviewedInputHash": "c7fee77d677bc9d66c3dbd79f9a74f01d14c464cd67938b6af69029a1133532e",
       "outputs": [
         {
           "reviewedRecord": {
@@ -1184,7 +1164,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": []
             },
@@ -1226,7 +1206,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -1237,7 +1216,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-WB-2026-07-31-019",
@@ -1274,7 +1253,7 @@
     },
     {
       "baseRecordId": "WB-2026-07-10-003",
-      "baseReviewedInputHash": "0926406dd490a97c8329ba60091112f28649ef90d5d5496e718e37290baac47d",
+      "baseReviewedInputHash": "945e54204645eb5b6d081c6ead05ce5331a7370ff7d3c35d3ac81f349bce4b63",
       "outputs": [
         {
           "reviewedRecord": {
@@ -1307,7 +1286,7 @@
                 }
               ],
               "rationale": "Automation suggests PORTFOLIO_COMPANY; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": []
             },
@@ -1341,7 +1320,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -1352,7 +1330,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-WB-2026-07-10-003",
@@ -1389,7 +1367,7 @@
     },
     {
       "baseRecordId": "INF-2026-061",
-      "baseReviewedInputHash": "a75972884914822b02148f7362cb0b72d42502b0fc614732e57ba8969c6b19e6",
+      "baseReviewedInputHash": "997051e147f3b550e923fc0e604e90aa8319809e366d9eeb67d6ff81038becde",
       "outputs": [
         {
           "reviewedRecord": {
@@ -1420,7 +1398,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-061"
@@ -1463,10 +1441,9 @@
                 "SALE"
               ],
               "details": "Sale (Buyout)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -1477,10 +1454,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-061",
@@ -1523,7 +1497,7 @@
     },
     {
       "baseRecordId": "INF-2026-139",
-      "baseReviewedInputHash": "196d58e3de20c613da9ad2a50b27328f639f2cdd73c1d9d44b1bfb274476755a",
+      "baseReviewedInputHash": "15f3887d75f085cf152a1762db29bf90cd54ac0032934cf4058129f10739f754",
       "outputs": [
         {
           "reviewedRecord": {
@@ -1554,7 +1528,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-139"
@@ -1597,10 +1571,9 @@
                 "SALE"
               ],
               "details": "Sale (Buyout)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -1611,10 +1584,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-139",
@@ -1657,7 +1627,7 @@
     },
     {
       "baseRecordId": "INF-2026-195",
-      "baseReviewedInputHash": "7545617c471bc8129df7c4cf28fe88fc5f1b2bdafcd29d1735d7631a78d44022",
+      "baseReviewedInputHash": "97c9f802f42068f6165df7fa94acbc8c97598a5c6b0e2cb2ed618aeadde57b8f",
       "outputs": [
         {
           "reviewedRecord": {
@@ -1688,7 +1658,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-195"
@@ -1751,7 +1721,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -1762,9 +1731,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "JOINT_VENTURE"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-195",
@@ -1807,7 +1774,7 @@
     },
     {
       "baseRecordId": "INF-2026-124",
-      "baseReviewedInputHash": "60d6d9c8d71c204a302c31eaef9653aeef23546fb014154a997d25faebdce7a5",
+      "baseReviewedInputHash": "45a528ccd9404c9a4ccac0265774154a4661f8b557d007260259042dc63b92f7",
       "outputs": [
         {
           "reviewedRecord": {
@@ -1838,7 +1805,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-124"
@@ -1899,10 +1866,9 @@
                 "SALE"
               ],
               "details": "Acquisition (Minority Stake) / Sale (Minority Stake)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -1913,10 +1879,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-124",
@@ -1959,7 +1922,7 @@
     },
     {
       "baseRecordId": "INF-2026-184",
-      "baseReviewedInputHash": "a809c1a71863f804fe46416242d922b3e4a0a402a8319e228b4ac8d5d8870721",
+      "baseReviewedInputHash": "f00c085e6981d1fe11a2a9df35ea8a234e111cb16d0ae40fb1dfe96013643912",
       "outputs": [
         {
           "reviewedRecord": {
@@ -1990,7 +1953,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-184"
@@ -2033,10 +1996,9 @@
                 "SALE"
               ],
               "details": "Sale (Minority Stake)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -2047,10 +2009,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-184",
@@ -2093,7 +2052,7 @@
     },
     {
       "baseRecordId": "INF-2026-199",
-      "baseReviewedInputHash": "f8325a9574aad596540691f2cb58986db746f614974db4a2e567a771ab18db31",
+      "baseReviewedInputHash": "295bdc97de83a07132b0a7115fd644805bd936133e078a28cf32cc10bc44cce5",
       "outputs": [
         {
           "reviewedRecord": {
@@ -2124,7 +2083,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-199"
@@ -2178,7 +2137,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -2189,7 +2147,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-199",
@@ -2232,7 +2190,7 @@
     },
     {
       "baseRecordId": "WB-2026-07-03-024",
-      "baseReviewedInputHash": "eefb92e81db0409dd5a7859010f5a6866ad69fd7c63f16163cccb6eaf12809c4",
+      "baseReviewedInputHash": "92047a3563d106ea87edff3863514953197c7abf9b4a0cbebd7ac091983d3cf0",
       "outputs": [
         {
           "reviewedRecord": {
@@ -2258,7 +2216,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": []
             },
@@ -2300,10 +2258,9 @@
                 "SECONDARY_SALE"
               ],
               "details": "Sale (Buyout)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -2314,10 +2271,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-WB-2026-07-03-024",
@@ -2354,7 +2308,7 @@
     },
     {
       "baseRecordId": "INF-2026-098",
-      "baseReviewedInputHash": "16d49a60b1a0f70fd78d8962cb5961c6e6945cb1821af16cd258f871cee7a338",
+      "baseReviewedInputHash": "20170dbfc4a91b136d8788fc7f2e34eb9509c41f8ac1d3d5d982498643ea5331",
       "outputs": [
         {
           "reviewedRecord": {
@@ -2385,7 +2339,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-098"
@@ -2429,7 +2383,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -2440,7 +2393,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-098",
@@ -2483,7 +2436,7 @@
     },
     {
       "baseRecordId": "INF-2026-109",
-      "baseReviewedInputHash": "ddfde9cfbb9edf4cf6d300e52b6d601566a1e78889804a8fc89ba46c9d38ddac",
+      "baseReviewedInputHash": "151f4669b775443b7eca967e031674eadf8ca0d8c11df6883f0a67cc981ab04f",
       "outputs": [
         {
           "reviewedRecord": {
@@ -2514,7 +2467,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-109"
@@ -2558,10 +2511,9 @@
                 "SECONDARY_SALE"
               ],
               "details": "Acquisition (Buyout) / Sale (Buyout)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -2572,10 +2524,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-109",
@@ -2618,7 +2567,7 @@
     },
     {
       "baseRecordId": "INF-2026-189",
-      "baseReviewedInputHash": "889114522519b925672f81f03d8e583657d8c16e984fdec656b25a5826176c7d",
+      "baseReviewedInputHash": "a8d1cc45c11c8f860f4dc42bcc2aec44599f0ed61ce54d00fa17e51799f617ea",
       "outputs": [
         {
           "reviewedRecord": {
@@ -2649,7 +2598,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-189"
@@ -2713,7 +2662,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -2724,9 +2672,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "JOINT_VENTURE"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-189",
@@ -2769,7 +2715,7 @@
     },
     {
       "baseRecordId": "INF-2026-040",
-      "baseReviewedInputHash": "3cdcbb574775985deb841359a66c6b082976c8035d0ca8359c75c9d05cad8b41",
+      "baseReviewedInputHash": "d85023d8d631277abb601682cec8776e34f199b8986db324c511f5d381819875",
       "outputs": [
         {
           "reviewedRecord": {
@@ -2800,7 +2746,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-040"
@@ -2843,10 +2789,9 @@
                 "SALE"
               ],
               "details": "Sale (Minority Stake)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -2857,10 +2802,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-040",
@@ -2903,7 +2845,7 @@
     },
     {
       "baseRecordId": "INF-2026-215",
-      "baseReviewedInputHash": "736e0eb97456f47035556d813fa6540f083fd40bae82d830f9b1977e45f6c275",
+      "baseReviewedInputHash": "30378a82259c5a6ce07d20cf84bd9005d789789631964938435032c8c362571e",
       "outputs": [
         {
           "reviewedRecord": {
@@ -2929,7 +2871,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": []
             },
@@ -2970,10 +2912,9 @@
                 "SALE"
               ],
               "details": "Sale (Buyout)",
-              "isExit": true,
+              "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -2984,10 +2925,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [
-              "MIXED_SIDE_TRANSACTION",
-              "EXIT"
-            ],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-215",
@@ -3024,7 +2962,7 @@
     },
     {
       "baseRecordId": "INF-2026-116",
-      "baseReviewedInputHash": "e767f25ace431a9ec1d726114f5c3abb0e20bf685152d973a550763ccb40c69b",
+      "baseReviewedInputHash": "2b31529a414b4896e0564e622f585d4e001db955620d9f3e342f5af2e8682fa9",
       "outputs": [
         {
           "reviewedRecord": {
@@ -3055,7 +2993,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": [
                 "audits/deal-portco-flowthrough-2026-05-05.md#inf-2026-116"
@@ -3091,7 +3029,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -3102,7 +3039,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-116",
@@ -3145,7 +3082,7 @@
     },
     {
       "baseRecordId": "INF-2026-218",
-      "baseReviewedInputHash": "7e6ca0d3a32a89e9cda15c5596efed42ebc4c3d87bc254c657080875fad3d7b8",
+      "baseReviewedInputHash": "d9635068f94ed66daa1289791fa449986b5c7fbe38a85b1ce9df677e17b0c26c",
       "outputs": [
         {
           "reviewedRecord": {
@@ -3171,7 +3108,7 @@
                 }
               ],
               "rationale": "Automation suggests DIRECT_FUND; this is a review candidate, not an approval.",
-              "generatedBy": "weekly-briefing-activity-candidate-v1",
+              "generatedBy": "weekly-briefing-activity-candidate-v2",
               "generatedAt": "2026-08-08T12:00:00.000Z",
               "priorAuditEvidenceRefs": []
             },
@@ -3204,7 +3141,6 @@
               "isExit": false,
               "isBundledAnnouncement": false,
               "isMixedDirectPortfolio": false,
-              "ownershipChangedNearAnnouncement": false,
               "newPlatformWithInseparableSeedAcquisition": false,
               "primaryOnlyPortfolioCompanyIssuance": false
             },
@@ -3215,7 +3151,7 @@
               "fundSellsOrInvests": false,
               "alreadyOwnedOperatingCompany": false
             },
-            "ambiguityFlags": [],
+            "secondReviewRisks": [],
             "sourceEvidence": [
               {
                 "sourceId": "transaction-INF-2026-218",

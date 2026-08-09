@@ -1,7 +1,7 @@
 import { z } from "zod";
 
-export const WEEKLY_ACTIVITY_SCHEMA_VERSION = 1 as const;
-export const WEEKLY_ACTIVITY_METHODOLOGY_VERSION = "WEEKLY_BRIEFING_ACTIVITY_V1" as const;
+export const WEEKLY_ACTIVITY_SCHEMA_VERSION = 2 as const;
+export const WEEKLY_ACTIVITY_METHODOLOGY_VERSION = "WEEKLY_BRIEFING_ACTIVITY_V2" as const;
 
 const nonEmpty = z.string().trim().min(1);
 const calendarDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD");
@@ -86,15 +86,12 @@ export const transactionForms = [
   "OTHER",
 ] as const;
 
-export const ambiguityFlags = [
-  "JOINT_VENTURE",
-  "PLATFORM_FORMATION",
-  "IPO",
-  "RECAPITALIZATION",
-  "MIXED_SIDE_TRANSACTION",
-  "EXIT",
-  "BUNDLED_ANNOUNCEMENT",
-  "OWNERSHIP_CHANGE_NEAR_ANNOUNCEMENT",
+export const secondReviewRiskKinds = [
+  "CONFLICTING_TRANSACTION_FACTS",
+  "CONFLICTING_ACTOR_ATTRIBUTION",
+  "OWNERSHIP_TIMING_UNCERTAIN",
+  "ACTUAL_MIXED_DIRECT_PORTFOLIO",
+  "BUNDLED_LEGAL_TRANSACTIONS",
 ] as const;
 
 export const candidateSignalKinds = [
@@ -226,9 +223,23 @@ export const transactionStructureSchema = z.strictObject({
   isExit: z.boolean(),
   isBundledAnnouncement: z.boolean(),
   isMixedDirectPortfolio: z.boolean(),
-  ownershipChangedNearAnnouncement: z.boolean(),
   newPlatformWithInseparableSeedAcquisition: z.boolean(),
   primaryOnlyPortfolioCompanyIssuance: z.boolean(),
+});
+
+export const secondReviewRiskSchema = z.strictObject({
+  kind: z.enum(secondReviewRiskKinds),
+  detail: nonEmpty,
+  sourceIds: uniqueArray(nonEmpty).min(1),
+});
+
+const secondReviewRisksSchema = z.array(secondReviewRiskSchema).superRefine((risks, context) => {
+  if (!unique(risks.map((risk) => risk.kind))) {
+    context.addIssue({
+      code: "custom",
+      message: "Second-review risk kinds must be unique per record",
+    });
+  }
 });
 
 export const classificationFactsSchema = z.strictObject({
@@ -302,7 +313,7 @@ export const activityRecordSchema = z.strictObject({
   announcementDate: calendarDate,
   transactionStructure: transactionStructureSchema,
   classificationFacts: classificationFactsSchema,
-  ambiguityFlags: uniqueArray(z.enum(ambiguityFlags)),
+  secondReviewRisks: secondReviewRisksSchema,
   sourceEvidence: z.array(sourceEvidenceSchema),
   ownershipEvidence: z.array(ownershipEvidenceSchema),
   priorAuditEvidence: z.array(priorAuditEvidenceSchema),
@@ -363,6 +374,10 @@ export const activityRecordSchema = z.strictObject({
   record.ownershipEvidence.forEach((evidence, index) => references.push({
     path: ["ownershipEvidence", index, "sourceIds"],
     sourceIds: evidence.sourceIds,
+  }));
+  record.secondReviewRisks.forEach((risk, index) => references.push({
+    path: ["secondReviewRisks", index, "sourceIds"],
+    sourceIds: risk.sourceIds,
   }));
   record.candidateClassification?.signals.forEach((signal, index) => references.push({
     path: ["candidateClassification", "signals", index, "sourceIds"],
@@ -535,7 +550,8 @@ export type DealSector = typeof dealSectors[number];
 export type DealRegion = typeof dealRegions[number];
 export type ActorEntityKind = typeof actorEntityKinds[number];
 export type TransactionForm = typeof transactionForms[number];
-export type AmbiguityFlag = typeof ambiguityFlags[number];
+export type SecondReviewRiskKind = typeof secondReviewRiskKinds[number];
+export type SecondReviewRisk = z.infer<typeof secondReviewRiskSchema>;
 export type ClassificationFacts = z.infer<typeof classificationFactsSchema>;
 export type ActivityRecord = z.infer<typeof activityRecordSchema>;
 export type ReviewApproval = z.infer<typeof reviewApprovalSchema>;

@@ -3,7 +3,11 @@ import { dirname, join, relative } from "node:path";
 import {
   computeActivityTotals,
   finalizeActivityManifest,
+  hashCanonical,
   sha256Text,
+  secondReviewRiskKinds,
+  WEEKLY_ACTIVITY_METHODOLOGY_VERSION,
+  WEEKLY_ACTIVITY_SCHEMA_VERSION,
   type ActivityAuditManifest,
   type ActivityRecord,
 } from "./index";
@@ -16,6 +20,7 @@ import { verifyWeeklyActivityInputHash } from "./sources-snapshot";
 import { buildDraftActivityRecords, PRIOR_FLOW_THROUGH_AUDIT_INPUT_ID } from "./workflow-records";
 
 export const WEEKLY_ACTIVITY_AUDIT_ROOT = "audits/weekly-briefing-activity";
+export const WEEKLY_ACTIVITY_REVIEW_POLICY_ADOPTED_AT = "2026-08-09T21:00:00.000Z";
 
 export interface ArtifactFile {
   relativePath: string;
@@ -143,12 +148,57 @@ export function buildWorkflowArtifacts(input: {
   };
   protectedNonChartFile.sha256 = sha256Text(protectedNonChartFile.contents);
   const priorAuditFile = rawRepositoryFile(repoRoot, "audits/deal-portco-flowthrough-2026-05-05.md");
+  const reviewPolicyWithoutHash = {
+    schemaVersion: 1 as const,
+    artifactType: "WEEKLY_BRIEFING_ACTIVITY_REVIEW_POLICY" as const,
+    methodologyVersion: WEEKLY_ACTIVITY_METHODOLOGY_VERSION,
+    cutoff: snapshot.cutoff,
+    adoptedAt: WEEKLY_ACTIVITY_REVIEW_POLICY_ADOPTED_AT,
+    authorizationScope: "METHODOLOGY_DIRECTION_NOT_RECORD_APPROVAL" as const,
+    classificationBasis: "VERIFIED_LEGAL_ACTING_ENTITY" as const,
+    scopeRules: {
+      directPrincipalKinds: [
+        "FUND",
+        "ADVISED_VEHICLE",
+        "CO_INVESTMENT_VEHICLE",
+        "NON_OPERATING_ACQUISITION_SPV",
+      ],
+      portfolioPrincipalKinds: ["OPERATING_PORTFOLIO_COMPANY", "OPERATING_PLATFORM"],
+      portfolioRequiresDateValidPriorOwnership: true,
+      fundExitIsDirect: true,
+      operatingCompanyAssetSaleIsPortfolio: true,
+      newPlatformWithInseparableSeedIsDirect: true,
+      primaryOnlyPortfolioIssuanceIsPortfolioUnlessFundActs: true,
+      categoryLabelsNeverDetermineScope: true,
+    },
+    firstReviewRequiredForEveryCandidate: true,
+    secondReviewRiskKinds: [...secondReviewRiskKinds],
+    categoryOnlySecondReviewTriggers: [] as string[],
+    mixedTransactionPrecedence: "COUNT_ONCE_AS_DIRECT_RETAIN_BOTH_ATTRIBUTIONS" as const,
+    evidenceThreshold: "TRANSACTION_AND_PARTY_EVIDENCE_PLUS_DATE_VALID_OWNERSHIP_FOR_PORTFOLIO" as const,
+    riskEvidence: {
+      conflictsRequireTwoDistinctQualifiedLocators: true,
+      duplicateSourceLocatorsCountOnce: true,
+      everyPrincipalActorRequiresTransactionAndPartyEvidence: true,
+    },
+    batchApproval: {
+      allowed: true,
+      recordLevelEvidenceRequired: true,
+      recordLevelNotesRequired: true,
+      recordLevelReviewedInputHashRequired: true,
+    },
+    finalControl: "EVIDENCE_DERIVED_NOT_FORCED_TO_393_OR_398" as const,
+  };
+  const reviewPolicyFile = artifactFile(`${runDirectory}/inputs/review-policy.json`, {
+    ...reviewPolicyWithoutHash,
+    policySha256: hashCanonical("weekly-briefing-activity-review-policy-v2", reviewPolicyWithoutHash),
+  });
   const inputIndexFile = artifactFile(`${runDirectory}/inputs/index.json`, {
     schemaVersion: 1,
     artifactType: "WEEKLY_BRIEFING_ACTIVITY_INPUT_INDEX",
     cutoff: snapshot.cutoff,
     canonicalSnapshotHash: snapshot.snapshotHash,
-    artifacts: [archiveFile, seedFile, productionFile, gitFile, protectedNonChartFile].map((file) => ({
+    artifacts: [archiveFile, seedFile, productionFile, gitFile, protectedNonChartFile, reviewPolicyFile].map((file) => ({
       path: file.relativePath,
       sha256: file.sha256,
     })),
@@ -224,12 +274,22 @@ export function buildWorkflowArtifacts(input: {
       gitCommit: snapshot.gitHistory.head,
       notes: `Exact ${snapshot.cutoff} email content outside the delimited YTD chart block; rendering must preserve this byte-for-byte.`,
     },
+    {
+      inputArtifactId: "risk-based-review-policy",
+      kind: "OTHER",
+      path: reviewPolicyFile.relativePath,
+      sha256: reviewPolicyFile.sha256,
+      recordCount: 1,
+      capturedAt: WEEKLY_ACTIVITY_REVIEW_POLICY_ADOPTED_AT,
+      gitCommit: null,
+      notes: "User-directed risk-based review policy; this authorizes methodology only and never approves an individual record.",
+    },
   ];
 
   const manifest = finalizeActivityManifest({
-    schemaVersion: 1,
+    schemaVersion: WEEKLY_ACTIVITY_SCHEMA_VERSION,
     artifactType: "WEEKLY_BRIEFING_ACTIVITY_MANIFEST",
-    methodologyVersion: "WEEKLY_BRIEFING_ACTIVITY_V1",
+    methodologyVersion: WEEKLY_ACTIVITY_METHODOLOGY_VERSION,
     cutoffDate: snapshot.cutoff,
     generatedAt,
     updatedAt: generatedAt,
@@ -294,6 +354,7 @@ export function buildWorkflowArtifacts(input: {
       productionFile,
       gitFile,
       protectedNonChartFile,
+      reviewPolicyFile,
       inputIndexFile,
       reconciliationFile,
       manifestFile,

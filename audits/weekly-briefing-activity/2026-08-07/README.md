@@ -23,13 +23,25 @@ approved record-level evidence sets the final control.
 | Gate | Current |
 | --- | ---: |
 | Current first approvals | 0 |
-| Independent second approvals required | 169 |
+| First reviews still assessing second-review risk | 403 |
+| Verified exceptions requiring independent second approval | 0 |
 | Current second approvals | 0 |
 | Unresolved scopes | 403 |
 
-No human approvals are manufactured by this workflow. Generate the first-review
-packets, verify each record and its evidence, ingest signed decisions, then
-repeat for the independent second-review queue.
+No human approvals are manufactured by this workflow. One evidence-backed
+first review is required for every candidate. Transaction categories are
+research prompts only; a second reviewer is required solely for verified
+conflicting transaction facts, conflicting acting-entity evidence, uncertain
+ownership timing, actual mixed fund/operating-company participation, or bundled
+legally distinct transactions.
+
+The 2,678 validation findings are the expected fail-closed starting state:
+they describe unresolved facts, missing evidence, and missing human approvals;
+they contain no stale frozen-input, policy, amendment, or blanket
+second-review errors. Candidate and source-retrieval timestamps remain at their
+original August 8 capture time. The manifest's August 9 timestamp records the
+V2 policy migration, while `candidate-v2` identifies the normalized record
+shape rather than a new evidence review.
 
 ## Variance against published sector controls
 

@@ -1,25 +1,26 @@
 import {
-  ambiguityFlags,
+  secondReviewRiskKinds,
   type ActivityRecord,
   type ActivityScope,
-  type AmbiguityFlag,
   type ClassificationFacts,
+  type SecondReviewRiskKind,
 } from "./schema";
 
-const DIRECT_PRINCIPAL_KINDS = new Set<ClassificationFacts["principalActorKind"]>([
+const DIRECT_PRINCIPAL_KINDS = new Set<NonNullable<ActivityRecord["actingEntity"]>["entityKind"]>([
   "FUND",
   "ADVISED_VEHICLE",
   "CO_INVESTMENT_VEHICLE",
   "NON_OPERATING_ACQUISITION_SPV",
 ]);
 
-const OPERATING_PRINCIPAL_KINDS = new Set<ClassificationFacts["principalActorKind"]>([
+const OPERATING_PRINCIPAL_KINDS = new Set<NonNullable<ActivityRecord["actingEntity"]>["entityKind"]>([
   "OPERATING_PORTFOLIO_COMPANY",
   "OPERATING_PLATFORM",
 ]);
 
 export interface ScopeRuleInput {
   classificationFacts: ClassificationFacts;
+  actingEntity?: Pick<NonNullable<ActivityRecord["actingEntity"]>, "entityKind"> | null;
   transactionStructure: Pick<
     ActivityRecord["transactionStructure"],
     | "isMixedDirectPortfolio"
@@ -44,29 +45,30 @@ export function deriveActivityScope(input: ScopeRuleInput): ActivityScope {
   // A new platform and inseparable seed acquisition is treated as the fund's
   // initial platform investment, even when the operating entity is formed at
   // the same time.
-  if (structure.newPlatformWithInseparableSeedAcquisition) return "DIRECT_FUND";
-
-  // Fund acquisitions, exits, secondaries, follow-on investments, fund-level
-  // JVs, and sponsor secondary IPO sales all resolve here based on an actual
-  // fund-side principal or fund sale/investment—not on descriptive metadata.
-  if (DIRECT_PRINCIPAL_KINDS.has(facts.principalActorKind)
-    || facts.fundVehicleActsAsPrincipal
-    || facts.fundSellsOrInvests) {
-    return "DIRECT_FUND";
-  }
+  if (structure.newPlatformWithInseparableSeedAcquisition
+    && facts.fundVehicleActsAsPrincipal
+    && facts.fundSellsOrInvests) return "DIRECT_FUND";
 
   // A primary-only portfolio-company issuance belongs to the portfolio bucket
-  // when the fund itself neither sells nor invests (handled above).
+  // when the fund itself neither sells nor invests.
   if (structure.primaryOnlyPortfolioCompanyIssuance
     && facts.portfolioCompanyActsAsPrincipal
-    && facts.alreadyOwnedOperatingCompany) {
+    && facts.alreadyOwnedOperatingCompany
+    && !facts.fundSellsOrInvests) {
     return "PORTFOLIO_COMPANY";
+  }
+
+  // Ordinary transactions follow the verified legal acting entity. Sponsor
+  // branding, transaction category, and the presence of a fund elsewhere in
+  // the capital structure cannot override the principal that actually acts.
+  const actingKind = input.actingEntity?.entityKind ?? facts.principalActorKind;
+  if (DIRECT_PRINCIPAL_KINDS.has(actingKind)) {
+    return "DIRECT_FUND";
   }
 
   // Later bolt-ons, asset sales, and JVs resolve here only after ownership and
   // the acting operating company are established.
-  if (OPERATING_PRINCIPAL_KINDS.has(facts.principalActorKind)
-    && facts.portfolioCompanyActsAsPrincipal
+  if (OPERATING_PRINCIPAL_KINDS.has(actingKind)
     && facts.alreadyOwnedOperatingCompany
     && !facts.fundVehicleActsAsPrincipal) {
     return "PORTFOLIO_COMPANY";
@@ -75,37 +77,29 @@ export function deriveActivityScope(input: ScopeRuleInput): ActivityScope {
   return "UNRESOLVED";
 }
 
-export function structurallyRequiredAmbiguityFlags(
+export function structurallyRequiredSecondReviewRiskKinds(
   record: Pick<ActivityRecord, "transactionStructure">,
-): AmbiguityFlag[] {
+): SecondReviewRiskKind[] {
   const { transactionStructure: structure } = record;
-  const required = new Set<AmbiguityFlag>();
-  if (structure.forms.includes("JOINT_VENTURE")) required.add("JOINT_VENTURE");
-  if (structure.forms.includes("PLATFORM_FORMATION")) required.add("PLATFORM_FORMATION");
-  if (structure.forms.includes("IPO")) required.add("IPO");
-  if (structure.forms.includes("RECAPITALIZATION")) required.add("RECAPITALIZATION");
-  if (structure.isMixedDirectPortfolio) required.add("MIXED_SIDE_TRANSACTION");
-  if (structure.isExit) required.add("EXIT");
-  if (structure.isBundledAnnouncement) required.add("BUNDLED_ANNOUNCEMENT");
-  if (structure.ownershipChangedNearAnnouncement) {
-    required.add("OWNERSHIP_CHANGE_NEAR_ANNOUNCEMENT");
-  }
-  return ambiguityFlags.filter((flag) => required.has(flag));
+  const required = new Set<SecondReviewRiskKind>();
+  if (structure.isMixedDirectPortfolio) required.add("ACTUAL_MIXED_DIRECT_PORTFOLIO");
+  if (structure.isBundledAnnouncement) required.add("BUNDLED_LEGAL_TRANSACTIONS");
+  return secondReviewRiskKinds.filter((kind) => required.has(kind));
 }
 
-/** Includes explicit reviewer flags as well as non-optional structural flags. */
+/** Includes explicit evidence risks as well as non-optional verified structure risks. */
 export function deriveSecondReviewReasons(
-  record: Pick<ActivityRecord, "transactionStructure" | "ambiguityFlags">,
-): AmbiguityFlag[] {
-  const required = new Set<AmbiguityFlag>([
-    ...record.ambiguityFlags,
-    ...structurallyRequiredAmbiguityFlags(record),
+  record: Pick<ActivityRecord, "transactionStructure" | "secondReviewRisks">,
+): SecondReviewRiskKind[] {
+  const required = new Set<SecondReviewRiskKind>([
+    ...record.secondReviewRisks.map((risk) => risk.kind),
+    ...structurallyRequiredSecondReviewRiskKinds(record),
   ]);
-  return ambiguityFlags.filter((flag) => required.has(flag));
+  return secondReviewRiskKinds.filter((kind) => required.has(kind));
 }
 
 export function requiresSecondReview(
-  record: Pick<ActivityRecord, "transactionStructure" | "ambiguityFlags">,
+  record: Pick<ActivityRecord, "transactionStructure" | "secondReviewRisks">,
 ): boolean {
   return deriveSecondReviewReasons(record).length > 0;
 }

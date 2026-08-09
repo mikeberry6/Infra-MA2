@@ -75,6 +75,11 @@ export function extractProtectedNonChartContent(sourceHtml: string): string {
   return splitDelimitedChartBlock(sourceHtml).outsideCharts;
 }
 
+export function extractActivityChartBlockContent(sourceHtml: string): string {
+  const block = splitDelimitedChartBlock(sourceHtml);
+  return sourceHtml.slice(block.contentStart, block.contentEnd);
+}
+
 function escapeHtml(value: string): string {
   return value
     .replaceAll("&", "&amp;")
@@ -377,6 +382,12 @@ function splitDelimitedChartBlock(sourceHtml: string): DelimitedChartBlock {
 export function computeNonChartSha256(sourceHtml: string): string {
   return createHash("sha256")
     .update(extractProtectedNonChartContent(sourceHtml))
+    .digest("hex");
+}
+
+export function computeActivityChartBlockSha256(sourceHtml: string): string {
+  return createHash("sha256")
+    .update(extractActivityChartBlockContent(sourceHtml))
     .digest("hex");
 }
 
