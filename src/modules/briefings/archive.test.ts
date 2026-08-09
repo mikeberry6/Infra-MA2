@@ -57,7 +57,7 @@ describe("weekly briefing archive", () => {
     );
   });
 
-  it("uses reconciled Outlook-safe absolute stacks for the reviewed week", async () => {
+  it("preserves the published YTD controls in data-gated Outlook-safe stacks", async () => {
     const { bodyMarkup } = await loadWeeklyBriefingDocument({
       edition: "2026-07-31",
     });
@@ -74,25 +74,29 @@ describe("weekly briefing archive", () => {
 
     const expectedRows = [
       [
-        ["Power & ET", 3, 4, 7],
-        ["Digital", 4, 0, 4],
-        ["Transportation", 3, 1, 4],
-        ["Midstream", 2, 1, 3],
-        ["Utilities", 2, 0, 2],
+        ["Power & ET", 142, 3, 4, 149, 100],
+        ["Digital", 67, 4, 0, 71, 48],
+        ["Transportation", 64, 3, 1, 68, 46],
+        ["Social Infra", 36, 0, 0, 36, 24],
+        ["Utilities", 31, 2, 0, 33, 22],
+        ["Midstream", 18, 2, 1, 21, 14],
       ],
       [
-        ["Europe", 6, 2, 8],
-        ["North America", 4, 2, 6],
-        ["Asia-Pacific", 3, 2, 5],
-        ["Middle East & Africa", 1, 0, 1],
+        ["North America", 146, 4, 2, 152, 100],
+        ["Europe", 143, 6, 2, 151, 99],
+        ["Asia-Pacific", 50, 3, 2, 55, 36],
+        ["Latin America", 15, 0, 0, 15, 10],
+        ["Middle East & Africa", 4, 1, 0, 5, 3],
       ],
     ] as const;
 
+    expect(bodyMarkup.match(/Prior YTD \(scope pending\)/g)).toHaveLength(1);
+    expect(bodyMarkup).toContain("Jul 25&#8211;31 direct");
+    expect(bodyMarkup).toContain("Jul 25&#8211;31 portfolio");
+
     charts.forEach((chart, chartIndex) => {
-      expect(chart.dataset.activityPeriod).toBe("2026-07-25/2026-07-31");
-      expect(chart.textContent).toContain("Direct investment");
-      expect(chart.textContent).toContain("Portfolio-level activity");
-      expect(chart.textContent).not.toContain("YTD");
+      expect(chart.dataset.activityPeriod).toBe("2026-YTD");
+      expect(chart.textContent).toContain("YTD");
       expect(chart.querySelector("div, svg, script, [class]")).toBeNull();
       expect(chart.outerHTML).not.toMatch(
         /display:\s*(?:flex|grid)|var\(--|gradient|position:\s*absolute/i,
@@ -103,24 +107,24 @@ describe("weekly briefing archive", () => {
       );
       const actualRows = rows.map((row) => [
         row.dataset.activityRow,
+        Number(row.dataset.pending),
         Number(row.dataset.direct),
         Number(row.dataset.portfolio),
         Number(row.dataset.total),
+        Number(row.dataset.originalFill),
       ]);
       expect(actualRows).toEqual(expectedRows[chartIndex]);
 
       const totals = rows.map((row) => Number(row.dataset.total));
       expect(totals).toEqual([...totals].sort((left, right) => right - left));
-      const leaderTotal = Math.max(...totals);
 
       for (const row of rows) {
+        const pending = Number(row.dataset.pending);
         const direct = Number(row.dataset.direct);
         const portfolio = Number(row.dataset.portfolio);
         const total = Number(row.dataset.total);
-        expect(direct + portfolio).toBe(total);
-        expect(row.textContent).toContain(
-          `${direct} direct · ${portfolio} portfolio`,
-        );
+        const originalFill = Number(row.dataset.originalFill);
+        expect(pending + direct + portfolio).toBe(total);
 
         const widths = new Map(
           Array.from(
@@ -132,24 +136,32 @@ describe("weekly briefing archive", () => {
             Number(segment.getAttribute("width")?.replace("%", "")),
           ]),
         );
-        const filledWidth = Math.round((total / leaderTotal) * 100);
-        const directWidth = Math.round((direct / leaderTotal) * 100);
-        expect(widths.get("direct") ?? 0).toBe(directWidth);
-        expect(widths.get("portfolio") ?? 0).toBe(
-          filledWidth - directWidth,
-        );
-        expect(widths.get("remainder") ?? 0).toBe(100 - filledWidth);
+        const filledWidth =
+          (widths.get("pending") ?? 0) +
+          (widths.get("direct") ?? 0) +
+          (widths.get("portfolio") ?? 0);
+        expect(filledWidth).toBe(originalFill);
+        expect(widths.get("remainder") ?? 0).toBe(100 - originalFill);
+        expect(widths.has("pending")).toBe(pending > 0);
+        expect(widths.has("direct")).toBe(direct > 0);
+        expect(widths.has("portfolio")).toBe(portfolio > 0);
         expect(
           Array.from(widths.values()).reduce((sum, width) => sum + width, 0),
         ).toBe(100);
       }
 
       expect(
+        rows.reduce((sum, row) => sum + Number(row.dataset.pending), 0),
+      ).toBe(358);
+      expect(
         rows.reduce((sum, row) => sum + Number(row.dataset.direct), 0),
       ).toBe(14);
       expect(
         rows.reduce((sum, row) => sum + Number(row.dataset.portfolio), 0),
       ).toBe(6);
+      expect(
+        rows.reduce((sum, row) => sum + Number(row.dataset.total), 0),
+      ).toBe(378);
 
       for (const table of [chart, ...chart.querySelectorAll("table")]) {
         expect(table.getAttribute("role")).toBe("presentation");
