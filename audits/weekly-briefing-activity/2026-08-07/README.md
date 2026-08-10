@@ -56,12 +56,26 @@ Only the delimited YTD chart block changed; the approved-edition index advances
 the default Weekly Briefing route through a `USER_AUTHORIZED_WAIVER` entry.
 July 31 remains unchanged as the historical baseline.
 
+The August 10 chart-presentation amendment keeps every classification, count,
+and bar width unchanged. It moves the single legend beneath the region chart
+and adds a compact `N Direct · N Portfolio` constituent label beneath every
+bar, including explicit zero values. The amendment is hash-chained to the
+previous publication waiver and records that Outlook desktop copy/paste and
+send-to-self QA remain waived and were not performed.
+
+Automated markup and in-app browser QA were rerun at 320px, 375px, 600px, and
+desktop width. All 11 constituent-label rows remained within their bar cells,
+the zero-value Portfolio label stayed visible, and the bottom legend stayed
+within the chart container. The existing 320px full-email canvas behavior was
+unchanged from the prior deterministic render; the amendment introduced no
+additional horizontal overflow.
+
 ## Publication integrity
 
 | Artifact | SHA-256 |
 | --- | --- |
 | Manifest canonical hash | `124a216beaa42516397269ef9e4cec81e1bcf75e63dc8adbe8986d8e23d3d268` |
-| Rendered August 7 email | `d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064` |
+| Rendered August 7 email | `59ca9ba91ad31ee093f29a0368ce7ad20f3040bd2408f045d42d5c6f3dffe68b` |
 | Protected non-chart content | `9970916e829cda394f57126c723bd7ba76a8e5709f0b80a0a2488a9fa0d9767c` |
 | Unchanged July 31 email | `17ae39249677e8f57db1038641cbb582357576ac6465b92bea2dc3f71c58388e` |
 

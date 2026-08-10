@@ -261,7 +261,7 @@ describe("committed August 7 V2 audit artifacts", () => {
     );
     expect(publicEmail).toBe(previewEmail);
     expect(sha256Text(publicEmail))
-      .toBe("d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064");
+      .toBe("59ca9ba91ad31ee093f29a0368ce7ad20f3040bd2408f045d42d5c6f3dffe68b");
     expect(computeNonChartSha256(publicEmail))
       .toBe("9970916e829cda394f57126c723bd7ba76a8e5709f0b80a0a2488a9fa0d9767c");
     expect(renderManifestActivityEmail({
@@ -273,6 +273,10 @@ describe("committed August 7 V2 audit artifacts", () => {
 
     const parsedEmail = new DOMParser().parseFromString(publicEmail, "text/html");
     expect(parsedEmail.querySelectorAll("table[data-activity-legend]")).toHaveLength(1);
+    const chartPresentationOrder = Array.from(parsedEmail.querySelectorAll<HTMLTableElement>(
+      "table[data-activity-chart], table[data-activity-legend]",
+    )).map((table) => table.dataset.activityChart ?? "legend");
+    expect(chartPresentationOrder).toEqual(["sector", "region", "legend"]);
     const charts = Array.from(
       parsedEmail.querySelectorAll<HTMLTableElement>("table[data-activity-chart]"),
     );
@@ -320,9 +324,49 @@ describe("committed August 7 V2 audit artifacts", () => {
         const total = Number(row.dataset.total);
         const originalFill = Number(row.dataset.originalFill);
         expect(direct + portfolio).toBe(total);
+        const labelTables = Array.from(
+          row.querySelectorAll<HTMLTableElement>("table[data-activity-stack-labels]"),
+        );
+        expect(labelTables).toHaveLength(1);
+        const labelTable = labelTables[0];
+        const directLabels = Array.from(
+          labelTable.querySelectorAll<HTMLElement>(
+            '[data-activity-stack-label="direct"]',
+          ),
+        );
+        const portfolioLabels = Array.from(
+          labelTable.querySelectorAll<HTMLElement>(
+            '[data-activity-stack-label="portfolio"]',
+          ),
+        );
+        expect(directLabels).toHaveLength(1);
+        expect(portfolioLabels).toHaveLength(1);
+        const directLabel = directLabels[0];
+        const portfolioLabel = portfolioLabels[0];
+        expect(directLabel.dataset.activityCount).toBe(String(direct));
+        expect(portfolioLabel.dataset.activityCount).toBe(String(portfolio));
+        const normalizeLabelText = (value: string | null): string => (value ?? "")
+          .replace(/\u00a0/g, " ")
+          .replace(/\s*·\s*/g, " · ")
+          .replace(/\s+/g, " ")
+          .trim();
+        expect(normalizeLabelText(labelTable.textContent))
+          .toBe(`${direct} Direct · ${portfolio} Portfolio`);
+        expect(normalizeLabelText(directLabel.textContent)).toBe(`${direct} Direct`);
+        expect(normalizeLabelText(portfolioLabel.textContent)).toBe(`${portfolio} Portfolio`);
+        const directCount = directLabel.querySelector<HTMLElement>("span");
+        const portfolioCount = portfolioLabel.querySelector<HTMLElement>("span");
+        expect(normalizeLabelText(directCount?.textContent ?? null)).toBe(String(direct));
+        expect(normalizeLabelText(portfolioCount?.textContent ?? null)).toBe(String(portfolio));
+        expect(directCount?.getAttribute("style")).toContain("color: #442142");
+        expect(portfolioCount?.getAttribute("style")).toContain("color: #766B43");
+        expect(labelTable.querySelectorAll("[data-activity-segment]")).toHaveLength(0);
+
         const segments = Array.from(
           row.querySelectorAll<HTMLTableCellElement>("td[data-activity-segment]"),
         );
+        expect(new Set(segments.map((segment) => segment.closest("table"))).size).toBe(1);
+        expect(segments[0]?.closest("table")).not.toBe(labelTable);
         const widths = new Map(segments.map((segment) => [
           segment.dataset.activitySegment,
           Number(segment.getAttribute("width")?.replace("%", "")),
@@ -336,6 +380,18 @@ describe("committed August 7 V2 audit artifacts", () => {
           expect(segment.getAttribute("height")).toBe("14");
           expect(segment.hasAttribute("bgcolor")).toBe(true);
           expect(segment.getAttribute("style")).toContain("background-color:");
+        }
+        const directSegment = row.querySelector<HTMLTableCellElement>(
+          'td[data-activity-segment="direct"]',
+        );
+        const portfolioSegment = row.querySelector<HTMLTableCellElement>(
+          'td[data-activity-segment="portfolio"]',
+        );
+        expect(directSegment?.getAttribute("bgcolor")).toBe("#442142");
+        if ((widths.get("portfolio") ?? 0) > 0) {
+          expect(portfolioSegment?.getAttribute("bgcolor")).toBe("#8F7C4D");
+        } else {
+          expect(portfolioSegment).toBeNull();
         }
       }
       expect(rows.reduce(
@@ -371,7 +427,7 @@ describe("committed August 7 V2 audit artifacts", () => {
       protectedNonChartSha256:
         "9970916e829cda394f57126c723bd7ba76a8e5709f0b80a0a2488a9fa0d9767c",
       renderedEmailSha256:
-        "d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064",
+        "59ca9ba91ad31ee093f29a0368ce7ad20f3040bd2408f045d42d5c6f3dffe68b",
       validationIssueCount: 421,
       validationIssueCodeCounts: {
         MISSING_FIRST_REVIEW: 404,

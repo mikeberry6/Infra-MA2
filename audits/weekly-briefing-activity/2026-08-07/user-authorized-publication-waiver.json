@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "artifactType": "WEEKLY_BRIEFING_USER_AUTHORIZED_PUBLICATION_WAIVER",
   "edition": "2026-08-07",
   "recordedAt": "2026-08-10T03:36:47.000Z",
@@ -31,7 +31,7 @@
   "publicationApprovalPresent": false,
   "finalApprovedTotal": null,
   "protectedNonChartSha256": "9970916e829cda394f57126c723bd7ba76a8e5709f0b80a0a2488a9fa0d9767c",
-  "renderedEmailSha256": "d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064",
+  "renderedEmailSha256": "59ca9ba91ad31ee093f29a0368ce7ad20f3040bd2408f045d42d5c6f3dffe68b",
   "validationReportPath": "audits/weekly-briefing-activity/2026-08-07/validation-report.json",
   "validationReportSha256": "5abff0757d8318e01d34426cf6bdf03645828f9092522d2aff15c71f1f065abc",
   "validationIssueCount": 421,
@@ -47,5 +47,28 @@
     "portfolioCompany": 117,
     "total": 402
   },
-  "artifactWaiverSha256": "bb2d63a87a453239aabb24f812056fe72aa5237e4c9d0bdca92784f1c043b9b6"
+  "chartPresentationAmendments": [
+    {
+      "sequence": 1,
+      "recordedAt": "2026-08-10T04:24:54.000Z",
+      "authorizationSource": "CODEX_THREAD_USER_MESSAGE",
+      "authorizationStatement": "put legend below the bottom chart. find an attractive way to label each stack in the bar chart",
+      "authorizationScope": "CHART_PRESENTATION_ONLY",
+      "priorPublicationCommit": "a6ad52c87a4d2a1d895e90fd0de4bea5cd4ef6d2",
+      "priorWaiverArtifactSha256": "bb2d63a87a453239aabb24f812056fe72aa5237e4c9d0bdca92784f1c043b9b6",
+      "priorWaiverFileSha256": "8a28db43f8940bcfe5773d6c708769c08a6ddc95a6f70904fb7f4c5937daa519",
+      "priorRenderedEmailSha256": "d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064",
+      "amendedRenderedEmailSha256": "59ca9ba91ad31ee093f29a0368ce7ad20f3040bd2408f045d42d5c6f3dffe68b",
+      "waivedGatesCarriedForwardFromPriorArtifact": [
+        "FIRST_RECORD_REVIEWS",
+        "INDEPENDENT_SECOND_REVIEWS",
+        "MANIFEST_PUBLICATION_APPROVAL",
+        "HUMAN_OUTLOOK_QA_APPROVAL",
+        "OUTLOOK_DESKTOP_COPY_PASTE",
+        "OUTLOOK_DESKTOP_SEND_TO_SELF"
+      ],
+      "outlookDesktopQaStatus": "NOT_PERFORMED_PRIOR_WAIVER_CARRIED_FORWARD"
+    }
+  ],
+  "artifactWaiverSha256": "79a2bb6c4f79198ffb3fc629f04e3c61e38663f83d7a8f0467bce9f0a9021120"
 }

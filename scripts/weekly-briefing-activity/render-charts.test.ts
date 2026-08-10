@@ -5,6 +5,7 @@ import {
   CHART_BLOCK_START_MARKER,
   DIRECT_ACTIVITY_COLOR,
   PORTFOLIO_ACTIVITY_COLOR,
+  PORTFOLIO_ACTIVITY_LABEL_COLOR,
   REGION_ACTIVITY_TIE_BREAK_ORDER,
   SECTOR_ACTIVITY_TIE_BREAK_ORDER,
   allocateStackedBarWidths,
@@ -63,6 +64,16 @@ describe("weekly briefing stacked-chart rendering", () => {
     expect(markup).toContain(`bgcolor="${ACTIVITY_BAR_BACKGROUND_COLOR}"`);
     expect(markup).not.toMatch(/<div|<svg|<script|class=|display:\s*(flex|grid)/i);
     expect(markup).not.toContain("white-space: nowrap");
+    expect(
+      Array.from(
+        parsed.querySelectorAll(
+          "table[data-activity-chart], table[data-activity-legend]",
+        ),
+      ).map((table) =>
+        table.hasAttribute("data-activity-legend")
+          ? "legend"
+          : table.getAttribute("data-activity-chart")),
+    ).toEqual(["sector", "region", "legend"]);
 
     for (const table of parsed.querySelectorAll("table")) {
       expect(table.getAttribute("role")).toBe("presentation");
@@ -107,6 +118,34 @@ describe("weekly briefing stacked-chart rendering", () => {
       expect(row.getAttribute("aria-label")).toContain(
         "portfolio-company activity",
       );
+      const stackLabelTables = row.querySelectorAll(
+        "table[data-activity-stack-labels]",
+      );
+      expect(stackLabelTables).toHaveLength(1);
+      const directLabel = row.querySelector<HTMLElement>(
+        '[data-activity-stack-label="direct"]',
+      );
+      const portfolioLabel = row.querySelector<HTMLElement>(
+        '[data-activity-stack-label="portfolio"]',
+      );
+      expect(directLabel?.dataset.activityCount).toBe(row.dataset.direct);
+      expect(portfolioLabel?.dataset.activityCount).toBe(
+        row.dataset.portfolio,
+      );
+      expect(directLabel?.textContent?.replace(/\s+/g, " ")).toBe(
+        `${row.dataset.direct} Direct`,
+      );
+      expect(portfolioLabel?.textContent?.replace(/\s+/g, " ")).toBe(
+        `${row.dataset.portfolio} Portfolio`,
+      );
+      expect(directLabel?.querySelector("span")?.getAttribute("style"))
+        .toContain(`color: ${DIRECT_ACTIVITY_COLOR}`);
+      expect(portfolioLabel?.querySelector("span")?.getAttribute("style"))
+        .toContain(`color: ${PORTFOLIO_ACTIVITY_LABEL_COLOR}`);
+      expect(
+        segments.some((segment) =>
+          segment.querySelector("[data-activity-stack-label]")),
+      ).toBe(false);
       for (const segment of segments) {
         expect(segment.getAttribute("height")).toBe("14");
         expect(segment.hasAttribute("bgcolor")).toBe(true);
