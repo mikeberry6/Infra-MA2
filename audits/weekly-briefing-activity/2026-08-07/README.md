@@ -14,19 +14,24 @@ Status: **IN REVIEW — PUBLICATION BLOCKED**
 | Read-only production rows | 352 |
 | Published August 7 control | 393 |
 | Corrected carry-forward hypothesis | 398 |
+| Evidence-derived legal transactions | 402 |
+| Direct fund activity | 285 |
+| Portfolio-company activity | 117 |
 
-The 403 candidate rows are a universe to adjudicate, not a target total. The
-approved record-level evidence sets the final control.
+The 403 candidate rows were a universe to adjudicate, not a target total. Two
+repeated announcements merge into earlier transactions, while
+`INF-2026-077` contains two legally distinct transactions and therefore emits
+two suffixed review records. The resulting evidence-derived control is 402.
 
 ## Current review gates
 
 | Gate | Current |
 | --- | ---: |
 | Current first approvals | 0 |
-| First reviews still assessing second-review risk | 403 |
-| Verified exceptions requiring independent second approval | 0 |
+| First reviews still required | 404 |
+| Evidence-backed exception records requiring independent second approval | 15 |
 | Current second approvals | 0 |
-| Unresolved scopes | 403 |
+| Unresolved scopes | 0 |
 
 No human approvals are manufactured by this workflow. One evidence-backed
 first review is required for every candidate. Transaction categories are
@@ -35,24 +40,34 @@ conflicting transaction facts, conflicting acting-entity evidence, uncertain
 ownership timing, actual mixed fund/operating-company participation, or bundled
 legally distinct transactions.
 
-The 2,678 validation findings are the expected fail-closed starting state:
-they describe unresolved facts, missing evidence, and missing human approvals;
-they contain no stale frozen-input, policy, amendment, or blanket
-second-review errors. Candidate and source-retrieval timestamps remain at their
-original August 8 capture time. The manifest's August 9 timestamp records the
-V2 policy migration, while `candidate-v2` identifies the normalized record
-shape rather than a new evidence review.
+All record-level data gates now pass. The remaining 421 fail-closed findings
+are exactly 404 missing first approvals, 15 missing independent second
+approvals, the unapproved manifest state, and the unset final control. No
+record is unresolved and no source, ownership, actor, geography, duplicate, or
+totals inconsistency remains.
 
-## Variance against published sector controls
+The deterministic preview at `preview/2026-08-07.html` changes only the YTD
+chart block. The public August 7 email and approved-edition index remain
+unchanged until the named human reviews and Outlook desktop QA are complete.
 
-| Sector | Candidate | Published | Delta |
+## Evidence-derived stacked-chart controls
+
+| Sector | Direct | Portfolio-company | Total |
 | --- | ---: | ---: | ---: |
-| Power & ET | 158 | 154 | 4 |
-| Utilities | 38 | 36 | 2 |
-| Digital | 72 | 71 | 1 |
-| Midstream | 22 | 22 | 0 |
-| Transportation | 75 | 72 | 3 |
-| Social Infra | 38 | 38 | 0 |
+| Power & ET | 100 | 56 | 156 |
+| Transportation | 53 | 22 | 75 |
+| Digital | 53 | 20 | 73 |
+| Utilities | 28 | 10 | 38 |
+| Social Infra | 32 | 6 | 38 |
+| Midstream | 19 | 3 | 22 |
+
+| Region | Direct | Portfolio-company | Total |
+| --- | ---: | ---: | ---: |
+| North America | 115 | 52 | 167 |
+| Europe | 110 | 47 | 157 |
+| Asia-Pacific | 44 | 16 | 60 |
+| Latin America | 11 | 2 | 13 |
+| Middle East & Africa | 5 | 0 | 5 |
 
 ## Known geography corrections
 

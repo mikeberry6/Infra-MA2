@@ -31,6 +31,11 @@ npm run weekly:activity:snapshot -- --edition 2026-08-07 --write
 npm run weekly:activity:reconcile -- --edition 2026-08-07
 npm run weekly:activity:reconcile -- --edition 2026-08-07 --write
 
+# Reproduce the frozen evidence-backed August 7 classification, final totals,
+# review packets, validation report, and non-public chart preview:
+npm run weekly:activity:curate-august-7
+npm run weekly:activity:curate-august-7 -- --write
+
 # Historical/reproducibility command. The committed August 7 audit has already
 # been migrated; the source-state lock intentionally refuses a second run.
 npm run weekly:activity:migrate-v2 -- --edition 2026-08-07 \
@@ -137,6 +142,15 @@ The migrated candidate records retain their original August 8 candidate and
 source-retrieval timestamps. `candidate-v2` identifies the normalized V2
 record shape and risk model; the manifest's August 9 timestamp records when the
 policy migration itself was applied.
+
+The guarded August 7 curation command then starts from a separately frozen copy
+of that preclassification manifest and verifies the exact hashes of the
+universe, Direct-candidate, Portfolio-candidate, formerly unresolved, and
+independent risk-adjudication research artifacts. It resolves all 403 source
+candidates, emits two suffixed records for the legally distinct transactions
+inside `INF-2026-077`, derives the 402-transaction control, and regenerates all
+review packets. Its preview is intentionally outside `public/`; research
+recommendations never create or impersonate human approvals.
 
 ## Weekly cutover
 

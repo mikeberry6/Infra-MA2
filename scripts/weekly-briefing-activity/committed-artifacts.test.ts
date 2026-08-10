@@ -22,7 +22,7 @@ function readJson(relativePath: string): unknown {
 }
 
 describe("committed August 7 V2 audit artifacts", () => {
-  it("binds the frozen policy, 403-record review queue, and all packet files", () => {
+  it("binds the evidence-backed 403-candidate classification and all packet files", () => {
     const manifest = activityAuditManifestSchema.parse(readJson(`${RUN_DIRECTORY}/manifest.json`));
     assertManifestArtifactIntegrity(manifest);
     expect(manifest).toMatchObject({
@@ -33,19 +33,44 @@ describe("committed August 7 V2 audit artifacts", () => {
       expectedCandidateCount: 403,
       publicationApproval: null,
     });
-    expect(manifest.records).toHaveLength(403);
-    expect(new Set(manifest.records.map((record) => record.recordId)).size).toBe(403);
+    // One 403-row source candidate contains two legally distinct transactions,
+    // so the record-level queue contains two suffixed outputs for that legacy ID.
+    expect(manifest.records).toHaveLength(404);
+    expect(new Set(manifest.records.map((record) => record.recordId)).size).toBe(404);
+    expect(new Set(manifest.records.map((record) => record.legacyId)).size).toBe(403);
     expect(manifest.records.every((record) =>
-      record.scope === "UNRESOLVED"
-      && record.secondReviewRisks.length === 0
+      record.scope !== "UNRESOLVED"
       && record.review.firstReview === null
       && record.review.secondReview === null)).toBe(true);
+    expect(manifest.records.filter((record) => record.splitSuffix !== null).map((record) => record.recordId))
+      .toEqual([
+        "INF-2026-077#substantial-group-acquisition",
+        "INF-2026-077#youfibre-brsk-sale",
+      ]);
+    expect(manifest.totals).toEqual({
+      grandTotal: { directFund: 285, portfolioCompany: 117, total: 402 },
+      bySector: [
+        { sector: "Power & ET", counts: { directFund: 100, portfolioCompany: 56, total: 156 } },
+        { sector: "Utilities", counts: { directFund: 28, portfolioCompany: 10, total: 38 } },
+        { sector: "Digital", counts: { directFund: 53, portfolioCompany: 20, total: 73 } },
+        { sector: "Midstream", counts: { directFund: 19, portfolioCompany: 3, total: 22 } },
+        { sector: "Transportation", counts: { directFund: 53, portfolioCompany: 22, total: 75 } },
+        { sector: "Social Infra", counts: { directFund: 32, portfolioCompany: 6, total: 38 } },
+      ],
+      byRegion: [
+        { region: "North America", counts: { directFund: 115, portfolioCompany: 52, total: 167 } },
+        { region: "Europe", counts: { directFund: 110, portfolioCompany: 47, total: 157 } },
+        { region: "Asia-Pacific", counts: { directFund: 44, portfolioCompany: 16, total: 60 } },
+        { region: "Latin America", counts: { directFund: 11, portfolioCompany: 2, total: 13 } },
+        { region: "Middle East & Africa", counts: { directFund: 5, portfolioCompany: 0, total: 5 } },
+      ],
+    });
     expect(currentApprovalSummary(manifest)).toEqual({
       firstCurrent: 0,
-      secondReviewAssessmentPending: 403,
+      secondReviewAssessmentPending: 404,
       secondRequired: 0,
       secondCurrent: 0,
-      unresolved: 403,
+      unresolved: 0,
     });
 
     const validation = validateManifestForPublication(manifest, {
@@ -56,20 +81,10 @@ describe("committed August 7 V2 audit artifacts", () => {
       return counts;
     }, {});
     expect(validation.ok).toBe(false);
-    expect(validation.issues).toHaveLength(2678);
+    expect(validation.issues).toHaveLength(421);
     expect(codeCounts).toEqual({
-      PORTFOLIO_PRINCIPAL_FACT_MISMATCH: 54,
-      PRINCIPAL_ACTOR_KIND_MISMATCH: 403,
-      UNRESOLVED_SCOPE: 403,
-      MISSING_SPONSOR_LINEAGE: 368,
-      INCLUDED_UNRESOLVED: 403,
-      MISSING_FIRST_REVIEW: 403,
-      MISSING_ACTING_ENTITY: 349,
-      FUND_PRINCIPAL_FACT_MISMATCH: 261,
-      INVALID_RELIABLE_SECONDARY_FALLBACK: 8,
-      UNEXPLAINED_SECONDARY_EVIDENCE: 8,
-      MISSING_PRINCIPAL_ACTOR_EVIDENCE: 15,
-      MISSING_ACTING_ENTITY_EVIDENCE: 1,
+      MISSING_FIRST_REVIEW: 404,
+      MISSING_SECOND_REVIEW: 15,
       MANIFEST_NOT_APPROVED: 1,
       FINAL_CONTROL_MISMATCH: 1,
     });
@@ -88,7 +103,7 @@ describe("committed August 7 V2 audit artifacts", () => {
     ));
     expect(index).toMatchObject({
       packetCount: 17,
-      recordCount: 403,
+      recordCount: 404,
       baseManifestSha256: manifest.manifestSha256,
     });
 
@@ -158,5 +173,9 @@ describe("committed August 7 V2 audit artifacts", () => {
       .toBe("a7910df95097388350d167fb4ab36acc5e7cd29c1e1a3c0106bc7c8db884dfee");
     const approvedIndex = JSON.parse(approvedIndexRaw) as { entries: Array<{ edition: string }> };
     expect(approvedIndex.entries.some((entry) => entry.edition === "2026-08-07")).toBe(false);
+    expect(sha256Text(readFileSync(
+      join(process.cwd(), `${RUN_DIRECTORY}/preview/2026-08-07.html`),
+      "utf8",
+    ))).toBe("d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064");
   });
 });
