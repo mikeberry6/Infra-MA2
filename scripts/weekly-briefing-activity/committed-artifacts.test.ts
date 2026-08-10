@@ -15,6 +15,19 @@ import {
   verifyReviewPacket,
   type ReviewPacket,
 } from "./workflow-packets";
+import {
+  computeNonChartSha256,
+  renderManifestActivityEmail,
+} from "./render-charts";
+import {
+  assertUserAuthorizedPublicationWaiverMatches,
+  parseUserAuthorizedPublicationWaiver,
+} from "./user-authorized-waiver";
+import {
+  computeApprovedWeeklyBriefingIndexSha256,
+  readApprovedWeeklyBriefingIndex,
+  resolveLatestApprovedWeeklyBriefingEdition,
+} from "../../src/app/weekly-briefing/approved-editions";
 
 const RUN_DIRECTORY = "audits/weekly-briefing-activity/2026-08-07";
 
@@ -230,22 +243,188 @@ describe("committed August 7 V2 audit artifacts", () => {
     }
   });
 
-  it("preserves both public emails and keeps August 7 out of the approved index", () => {
-    expect(sha256Text(readFileSync(join(process.cwd(), "public/email-format/2026-08-07.html"), "utf8")))
-      .toBe("b06039ee477a9c53ea28b5cb86807634f4d73adb131bbf1d4c19b7185b09b936");
+  it("publishes only the deterministic August 7 charts through the exact user-authorized waiver", async () => {
+    const manifestRaw = readFileSync(
+      join(process.cwd(), `${RUN_DIRECTORY}/manifest.json`),
+      "utf8",
+    );
+    const manifest = activityAuditManifestSchema.parse(JSON.parse(manifestRaw));
+    assertManifestArtifactIntegrity(manifest);
+
+    const publicEmail = readFileSync(
+      join(process.cwd(), "public/email-format/2026-08-07.html"),
+      "utf8",
+    );
+    const previewEmail = readFileSync(
+      join(process.cwd(), `${RUN_DIRECTORY}/preview/2026-08-07.html`),
+      "utf8",
+    );
+    expect(publicEmail).toBe(previewEmail);
+    expect(sha256Text(publicEmail))
+      .toBe("d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064");
+    expect(computeNonChartSha256(publicEmail))
+      .toBe("9970916e829cda394f57126c723bd7ba76a8e5709f0b80a0a2488a9fa0d9767c");
+    expect(renderManifestActivityEmail({
+      sourceHtml: publicEmail,
+      manifest,
+      expectedNonChartSha256:
+        "9970916e829cda394f57126c723bd7ba76a8e5709f0b80a0a2488a9fa0d9767c",
+    }).html).toBe(publicEmail);
+
+    const parsedEmail = new DOMParser().parseFromString(publicEmail, "text/html");
+    expect(parsedEmail.querySelectorAll("table[data-activity-legend]")).toHaveLength(1);
+    const charts = Array.from(
+      parsedEmail.querySelectorAll<HTMLTableElement>("table[data-activity-chart]"),
+    );
+    expect(charts.map((chart) => chart.dataset.activityChart)).toEqual([
+      "sector",
+      "region",
+    ]);
+    const expectedRows = [
+      [
+        ["Power & ET", 100, 56, 156, 100],
+        ["Transportation", 53, 22, 75, 48],
+        ["Digital", 53, 20, 73, 47],
+        ["Utilities", 28, 10, 38, 24],
+        ["Social Infra", 32, 6, 38, 24],
+        ["Midstream", 19, 3, 22, 14],
+      ],
+      [
+        ["North America", 115, 52, 167, 100],
+        ["Europe", 110, 47, 157, 94],
+        ["Asia-Pacific", 44, 16, 60, 36],
+        ["Latin America", 11, 2, 13, 8],
+        ["Middle East & Africa", 5, 0, 5, 3],
+      ],
+    ];
+    charts.forEach((chart, chartIndex) => {
+      expect(chart.dataset.activityPeriod).toBe("2026 YTD through 2026-08-07");
+      expect(chart.querySelector("div, svg, script, style, [class]")).toBeNull();
+      expect(chart.outerHTML).not.toMatch(
+        /display:\s*(?:flex|grid)|var\(--|gradient|position:\s*absolute/i,
+      );
+      const rows = Array.from(
+        chart.querySelectorAll<HTMLTableRowElement>("tr[data-activity-row]"),
+      );
+      expect(rows.map((row) => [
+        row.dataset.activityRow,
+        Number(row.dataset.direct),
+        Number(row.dataset.portfolio),
+        Number(row.dataset.total),
+        Number(row.dataset.originalFill),
+      ])).toEqual(expectedRows[chartIndex]);
+
+      for (const row of rows) {
+        const direct = Number(row.dataset.direct);
+        const portfolio = Number(row.dataset.portfolio);
+        const total = Number(row.dataset.total);
+        const originalFill = Number(row.dataset.originalFill);
+        expect(direct + portfolio).toBe(total);
+        const segments = Array.from(
+          row.querySelectorAll<HTMLTableCellElement>("td[data-activity-segment]"),
+        );
+        const widths = new Map(segments.map((segment) => [
+          segment.dataset.activitySegment,
+          Number(segment.getAttribute("width")?.replace("%", "")),
+        ]));
+        expect((widths.get("direct") ?? 0) + (widths.get("portfolio") ?? 0))
+          .toBe(originalFill);
+        expect(widths.get("remainder") ?? 0).toBe(100 - originalFill);
+        expect(Array.from(widths.values()).reduce((sum, width) => sum + width, 0))
+          .toBe(100);
+        for (const segment of segments) {
+          expect(segment.getAttribute("height")).toBe("14");
+          expect(segment.hasAttribute("bgcolor")).toBe(true);
+          expect(segment.getAttribute("style")).toContain("background-color:");
+        }
+      }
+      expect(rows.reduce(
+        (sum, row) => sum + Number(row.dataset.direct),
+        0,
+      )).toBe(285);
+      expect(rows.reduce(
+        (sum, row) => sum + Number(row.dataset.portfolio),
+        0,
+      )).toBe(117);
+      expect(rows.reduce(
+        (sum, row) => sum + Number(row.dataset.total),
+        0,
+      )).toBe(402);
+    });
+
     expect(sha256Text(readFileSync(join(process.cwd(), "public/email-format/2026-07-31.html"), "utf8")))
       .toBe("17ae39249677e8f57db1038641cbb582357576ac6465b92bea2dc3f71c58388e");
+
+    const waiverRaw = readFileSync(
+      join(process.cwd(), `${RUN_DIRECTORY}/user-authorized-publication-waiver.json`),
+      "utf8",
+    );
+    const waiver = parseUserAuthorizedPublicationWaiver(waiverRaw);
+    expect(waiver).toMatchObject({
+      edition: "2026-08-07",
+      manifestPath: `${RUN_DIRECTORY}/manifest.json`,
+      manifestSha256:
+        "124a216beaa42516397269ef9e4cec81e1bcf75e63dc8adbe8986d8e23d3d268",
+      manifestStatus: "IN_REVIEW",
+      publicationApprovalPresent: false,
+      finalApprovedTotal: null,
+      protectedNonChartSha256:
+        "9970916e829cda394f57126c723bd7ba76a8e5709f0b80a0a2488a9fa0d9767c",
+      renderedEmailSha256:
+        "d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064",
+      validationIssueCount: 421,
+      validationIssueCodeCounts: {
+        MISSING_FIRST_REVIEW: 404,
+        MISSING_SECOND_REVIEW: 15,
+        MANIFEST_NOT_APPROVED: 1,
+        FINAL_CONTROL_MISMATCH: 1,
+      },
+      totals: {
+        directFund: 285,
+        portfolioCompany: 117,
+        total: 402,
+      },
+    });
+    assertUserAuthorizedPublicationWaiverMatches(waiver, {
+      repositoryRoot: process.cwd(),
+      manifest,
+      manifestFileSha256: sha256Text(manifestRaw),
+      renderedEmailSha256: sha256Text(publicEmail),
+      protectedNonChartSha256: computeNonChartSha256(publicEmail),
+    });
+
     const approvedIndexRaw = readFileSync(
       join(process.cwd(), "public/email-format/approved-editions.json"),
       "utf8",
     );
-    expect(sha256Text(approvedIndexRaw))
-      .toBe("a7910df95097388350d167fb4ab36acc5e7cd29c1e1a3c0106bc7c8db884dfee");
-    const approvedIndex = JSON.parse(approvedIndexRaw) as { entries: Array<{ edition: string }> };
-    expect(approvedIndex.entries.some((entry) => entry.edition === "2026-08-07")).toBe(false);
-    expect(sha256Text(readFileSync(
-      join(process.cwd(), `${RUN_DIRECTORY}/preview/2026-08-07.html`),
-      "utf8",
-    ))).toBe("d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064");
+    const approvedIndex = await readApprovedWeeklyBriefingIndex();
+    expect(approvedIndex.indexSha256).toBe(
+      computeApprovedWeeklyBriefingIndexSha256(approvedIndex),
+    );
+    expect(approvedIndex.entries.map((entry) => entry.edition)).toEqual([
+      "2026-07-31",
+      "2026-08-07",
+    ]);
+    const augustEntry = approvedIndex.entries.find(
+      (entry) => entry.edition === "2026-08-07",
+    );
+    expect(augustEntry).toEqual({
+      edition: "2026-08-07",
+      approval: {
+        kind: "USER_AUTHORIZED_WAIVER",
+        manifestPath: `${RUN_DIRECTORY}/manifest.json`,
+        manifestSha256: manifest.manifestSha256,
+        emailPath: "public/email-format/2026-08-07.html",
+        renderedEmailSha256: sha256Text(publicEmail),
+        protectedNonChartSha256: computeNonChartSha256(publicEmail),
+        waiverPath: `${RUN_DIRECTORY}/user-authorized-publication-waiver.json`,
+        waiverSha256: sha256Text(waiverRaw),
+      },
+    });
+    expect(resolveLatestApprovedWeeklyBriefingEdition({
+      index: approvedIndex,
+      archivedEditions: ["2026-08-07", "2026-07-31"],
+    })).toBe("2026-08-07");
+    expect(JSON.parse(approvedIndexRaw)).toEqual(approvedIndex);
   });
 });

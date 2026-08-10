@@ -8,6 +8,12 @@ import {
   parseOutlookQaApproval,
 } from "../../../scripts/weekly-briefing-activity/outlook-qa";
 import { renderManifestActivityEmail } from "../../../scripts/weekly-briefing-activity/render-charts";
+import {
+  USER_AUTHORIZED_WAIVER_EDITION,
+  assertUserAuthorizedManifestEligible,
+  assertUserAuthorizedPublicationWaiverMatches,
+  parseUserAuthorizedPublicationWaiver,
+} from "../../../scripts/weekly-briefing-activity/user-authorized-waiver";
 
 const DEFAULT_APPROVED_EDITIONS_PATH = path.join(
   process.cwd(),
@@ -47,9 +53,24 @@ export interface AuditedApprovedEdition {
   };
 }
 
+export interface UserAuthorizedWaiverApprovedEdition {
+  edition: string;
+  approval: {
+    kind: "USER_AUTHORIZED_WAIVER";
+    manifestPath: string;
+    manifestSha256: string;
+    emailPath: string;
+    renderedEmailSha256: string;
+    protectedNonChartSha256: string;
+    waiverPath: string;
+    waiverSha256: string;
+  };
+}
+
 export type ApprovedWeeklyBriefingEdition =
   | LegacyApprovedEdition
-  | AuditedApprovedEdition;
+  | AuditedApprovedEdition
+  | UserAuthorizedWaiverApprovedEdition;
 
 export interface ApprovedWeeklyBriefingIndex {
   schemaVersion: 1;
@@ -255,6 +276,59 @@ function parseEditionEntry(
     };
   }
 
+  if (approval.kind === "USER_AUTHORIZED_WAIVER") {
+    if (edition !== USER_AUTHORIZED_WAIVER_EDITION) {
+      throw new Error(
+        `Only ${USER_AUTHORIZED_WAIVER_EDITION} may use USER_AUTHORIZED_WAIVER approval`,
+      );
+    }
+    exactKeys(
+      approval,
+      [
+        "kind",
+        "manifestPath",
+        "manifestSha256",
+        "emailPath",
+        "renderedEmailSha256",
+        "protectedNonChartSha256",
+        "waiverPath",
+        "waiverSha256",
+      ],
+      `Approved edition ${edition} user-authorized waiver`,
+    );
+    return {
+      edition,
+      approval: {
+        kind: "USER_AUTHORIZED_WAIVER",
+        manifestPath: nonEmptyString(
+          approval.manifestPath,
+          "Waived manifest path",
+        ),
+        manifestSha256: digestValue(
+          approval.manifestSha256,
+          "Waived manifest hash",
+        ),
+        emailPath: nonEmptyString(approval.emailPath, "Waived email path"),
+        renderedEmailSha256: digestValue(
+          approval.renderedEmailSha256,
+          "Waived email hash",
+        ),
+        protectedNonChartSha256: digestValue(
+          approval.protectedNonChartSha256,
+          "Waived protected non-chart hash",
+        ),
+        waiverPath: nonEmptyString(
+          approval.waiverPath,
+          "User-authorized waiver path",
+        ),
+        waiverSha256: digestValue(
+          approval.waiverSha256,
+          "User-authorized waiver hash",
+        ),
+      },
+    };
+  }
+
   throw new Error(`Approved edition ${edition} has an invalid approval kind`);
 }
 
@@ -359,6 +433,26 @@ export async function validateApprovedWeeklyBriefingIndexDependencies(
     }
     if (entry.approval.kind === "LEGACY_BASELINE") continue;
 
+    let waiverBytes: Buffer | null = null;
+    if (entry.approval.kind === "USER_AUTHORIZED_WAIVER") {
+      const expectedWaiverPath =
+        `audits/weekly-briefing-activity/${entry.edition}/user-authorized-publication-waiver.json`;
+      if (entry.approval.waiverPath !== expectedWaiverPath) {
+        throw new Error("User-authorized waiver artifact path does not match its edition");
+      }
+      waiverBytes = await readRepositoryFile({
+        repositoryRoot,
+        relativePath: entry.approval.waiverPath,
+        label: "User-authorized publication waiver",
+      });
+      const actualWaiverSha256 = sha256(waiverBytes);
+      if (!digestsEqual(entry.approval.waiverSha256, actualWaiverSha256)) {
+        throw new Error(
+          `User-authorized waiver artifact hash mismatch: expected ${entry.approval.waiverSha256}, received ${actualWaiverSha256}`,
+        );
+      }
+    }
+
     const expectedManifestPath =
       `audits/weekly-briefing-activity/${entry.edition}/manifest.json`;
     if (entry.approval.manifestPath !== expectedManifestPath) {
@@ -375,9 +469,9 @@ export async function validateApprovedWeeklyBriefingIndexDependencies(
     } catch {
       throw new Error("Approved activity manifest is not valid JSON");
     }
-    const manifest = assertManifestPublishable(manifestValue, {
-      repositoryRoot,
-    });
+    const manifest = entry.approval.kind === "AUDIT_MANIFEST"
+      ? assertManifestPublishable(manifestValue, { repositoryRoot })
+      : assertUserAuthorizedManifestEligible(manifestValue, { repositoryRoot });
     if (manifest.cutoffDate !== entry.edition) {
       throw new Error("Approved manifest cutoff does not match its edition");
     }
@@ -426,6 +520,20 @@ export async function validateApprovedWeeklyBriefingIndexDependencies(
       throw new Error(
         "Approved email does not byte-for-byte match the deterministic manifest render",
       );
+    }
+
+    if (entry.approval.kind === "USER_AUTHORIZED_WAIVER") {
+      const waiver = parseUserAuthorizedPublicationWaiver(
+        waiverBytes!.toString("utf8"),
+      );
+      assertUserAuthorizedPublicationWaiverMatches(waiver, {
+        repositoryRoot,
+        manifest,
+        manifestFileSha256: sha256(manifestBytes),
+        renderedEmailSha256: actualEmailSha256,
+        protectedNonChartSha256: actualNonChartSha256,
+      });
+      continue;
     }
 
     const expectedQaPath =

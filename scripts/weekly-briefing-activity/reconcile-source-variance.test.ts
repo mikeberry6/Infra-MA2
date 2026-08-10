@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { loadArchiveIssues } from "./sources-archive";
 import { loadSeedSnapshot } from "./sources-seed";
@@ -9,12 +11,25 @@ describe("truth-first YTD variance report", () => {
     const issues = loadArchiveIssues({ repoRoot: process.cwd(), cutoff: "2026-08-07" });
     const seed = loadSeedSnapshot({ repoRoot: process.cwd(), cutoff: "2026-08-07" });
     const reconciliation = buildArchiveSeedCrosswalk({ issues, seed: seed.records });
-    const published = issues.at(-1)!;
+    const frozenArchive = JSON.parse(readFileSync(join(
+      process.cwd(),
+      "audits/weekly-briefing-activity/2026-08-07/inputs/archive.json",
+    ), "utf8")) as {
+      issues: Array<{
+        issueDate: string;
+        ytdSectorControls: Parameters<typeof buildUniverseVarianceReport>[0]["publishedSectorControls"];
+        ytdRegionControls: Parameters<typeof buildUniverseVarianceReport>[0]["publishedRegionControls"];
+      }>;
+    };
+    const published = frozenArchive.issues.find(
+      (issue) => issue.issueDate === "2026-08-07",
+    );
+    expect(published).toBeDefined();
     const report = buildUniverseVarianceReport({
       seed: seed.records,
       reconciliation,
-      publishedSectorControls: published.ytdSectorControls,
-      publishedRegionControls: published.ytdRegionControls,
+      publishedSectorControls: published!.ytdSectorControls,
+      publishedRegionControls: published!.ytdRegionControls,
     });
 
     expect(report.candidateTotal).toBe(403);

@@ -26,18 +26,18 @@ describe("weekly briefing archive input extraction", () => {
     const issue = loadArchiveIssues({ repoRoot: process.cwd(), cutoff: "2026-08-07" }).at(-1);
 
     expect(issue?.ytdSectorControls).toEqual([
-      { label: "Power & ET", count: 154 },
-      { label: "Transportation", count: 72 },
-      { label: "Digital", count: 71 },
+      { label: "Power & ET", count: 156 },
+      { label: "Transportation", count: 75 },
+      { label: "Digital", count: 73 },
+      { label: "Utilities", count: 38 },
       { label: "Social Infra", count: 38 },
-      { label: "Utilities", count: 36 },
       { label: "Midstream", count: 22 },
     ]);
     expect(issue?.ytdRegionControls).toEqual([
-      { label: "Europe", count: 159 },
-      { label: "North America", count: 158 },
-      { label: "Asia-Pacific", count: 56 },
-      { label: "Latin America", count: 15 },
+      { label: "North America", count: 167 },
+      { label: "Europe", count: 157 },
+      { label: "Asia-Pacific", count: 60 },
+      { label: "Latin America", count: 13 },
       { label: "Middle East & Africa", count: 5 },
     ]);
   });
