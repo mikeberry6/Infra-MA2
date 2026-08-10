@@ -37,14 +37,14 @@ export const USER_AUTHORIZED_WAIVER_MANIFEST_FILE_SHA256 =
 export const USER_AUTHORIZED_WAIVER_PROTECTED_NON_CHART_SHA256 =
   "9970916e829cda394f57126c723bd7ba76a8e5709f0b80a0a2488a9fa0d9767c" as const;
 export const USER_AUTHORIZED_WAIVER_RENDERED_EMAIL_SHA256 =
-  "d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064" as const;
+  "59ca9ba91ad31ee093f29a0368ce7ad20f3040bd2408f045d42d5c6f3dffe68b" as const;
 export const USER_AUTHORIZED_WAIVER_VALIDATION_REPORT_SHA256 =
   "5abff0757d8318e01d34426cf6bdf03645828f9092522d2aff15c71f1f065abc" as const;
 export const USER_AUTHORIZED_WAIVER_ISSUE_FINGERPRINT =
   "0423a0ba7fbf68697b42fcf186f47b91fe982e9faab9969c07b8aea008460d09" as const;
 
 export const USER_AUTHORIZED_WAIVER_HASH_DOMAIN =
-  "weekly-briefing-user-authorized-publication-waiver/v1" as const;
+  "weekly-briefing-user-authorized-publication-waiver/v2" as const;
 export const USER_AUTHORIZED_WAIVER_ISSUES_HASH_DOMAIN =
   "weekly-briefing-user-authorized-waiver-issues/v1" as const;
 
@@ -81,6 +81,27 @@ export const USER_AUTHORIZED_WAIVER_TOTALS = {
   total: 402,
 } as const;
 
+export const USER_AUTHORIZED_CHART_AMENDMENT = {
+  sequence: 1,
+  recordedAt: "2026-08-10T04:24:54.000Z",
+  authorizationSource: "CODEX_THREAD_USER_MESSAGE",
+  authorizationStatement:
+    "put legend below the bottom chart. find an attractive way to label each stack in the bar chart",
+  authorizationScope: "CHART_PRESENTATION_ONLY",
+  priorPublicationCommit:
+    "a6ad52c87a4d2a1d895e90fd0de4bea5cd4ef6d2",
+  priorWaiverArtifactSha256:
+    "bb2d63a87a453239aabb24f812056fe72aa5237e4c9d0bdca92784f1c043b9b6",
+  priorWaiverFileSha256:
+    "8a28db43f8940bcfe5773d6c708769c08a6ddc95a6f70904fb7f4c5937daa519",
+  priorRenderedEmailSha256:
+    "d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064",
+  amendedRenderedEmailSha256:
+    USER_AUTHORIZED_WAIVER_RENDERED_EMAIL_SHA256,
+  outlookDesktopQaStatus:
+    "NOT_PERFORMED_PRIOR_WAIVER_CARRIED_FORWARD",
+} as const;
+
 const sha256 = z.string().regex(
   /^[a-f0-9]{64}$/,
   "Expected a lowercase SHA-256 digest",
@@ -106,8 +127,43 @@ const retainedGatesSchema = z.tuple([
   z.literal(USER_AUTHORIZED_RETAINED_GATES[7]),
 ]);
 
+const chartPresentationAmendmentsSchema = z.tuple([
+  z.strictObject({
+    sequence: z.literal(USER_AUTHORIZED_CHART_AMENDMENT.sequence),
+    recordedAt: z.literal(USER_AUTHORIZED_CHART_AMENDMENT.recordedAt),
+    authorizationSource: z.literal(
+      USER_AUTHORIZED_CHART_AMENDMENT.authorizationSource,
+    ),
+    authorizationStatement: z.literal(
+      USER_AUTHORIZED_CHART_AMENDMENT.authorizationStatement,
+    ),
+    authorizationScope: z.literal(
+      USER_AUTHORIZED_CHART_AMENDMENT.authorizationScope,
+    ),
+    priorPublicationCommit: z.literal(
+      USER_AUTHORIZED_CHART_AMENDMENT.priorPublicationCommit,
+    ),
+    priorWaiverArtifactSha256: z.literal(
+      USER_AUTHORIZED_CHART_AMENDMENT.priorWaiverArtifactSha256,
+    ),
+    priorWaiverFileSha256: z.literal(
+      USER_AUTHORIZED_CHART_AMENDMENT.priorWaiverFileSha256,
+    ),
+    priorRenderedEmailSha256: z.literal(
+      USER_AUTHORIZED_CHART_AMENDMENT.priorRenderedEmailSha256,
+    ),
+    amendedRenderedEmailSha256: z.literal(
+      USER_AUTHORIZED_CHART_AMENDMENT.amendedRenderedEmailSha256,
+    ),
+    waivedGatesCarriedForwardFromPriorArtifact: waivedGatesSchema,
+    outlookDesktopQaStatus: z.literal(
+      USER_AUTHORIZED_CHART_AMENDMENT.outlookDesktopQaStatus,
+    ),
+  }),
+]);
+
 const waiverBodySchema = z.strictObject({
-  schemaVersion: z.literal(1),
+  schemaVersion: z.literal(2),
   artifactType: z.literal(
     "WEEKLY_BRIEFING_USER_AUTHORIZED_PUBLICATION_WAIVER",
   ),
@@ -153,6 +209,7 @@ const waiverBodySchema = z.strictObject({
     portfolioCompany: z.literal(117),
     total: z.literal(402),
   }),
+  chartPresentationAmendments: chartPresentationAmendmentsSchema,
 });
 
 export const userAuthorizedPublicationWaiverSchema = waiverBodySchema.extend({

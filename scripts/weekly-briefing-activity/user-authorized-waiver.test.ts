@@ -11,6 +11,7 @@ import {
   parseUserAuthorizedPublicationWaiver,
   USER_AUTHORIZED_RETAINED_GATES,
   USER_AUTHORIZED_WAIVED_GATES,
+  USER_AUTHORIZED_CHART_AMENDMENT,
   USER_AUTHORIZED_WAIVER_ISSUE_CODE_COUNTS,
   USER_AUTHORIZED_WAIVER_ISSUE_FINGERPRINT,
   USER_AUTHORIZED_WAIVER_MANIFEST_FILE_SHA256,
@@ -35,7 +36,7 @@ function manifestFixture(): ActivityAuditManifest {
 
 function waiverFixture(): UserAuthorizedPublicationWaiver {
   return finalizeUserAuthorizedPublicationWaiver({
-    schemaVersion: 1,
+    schemaVersion: 2,
     artifactType: "WEEKLY_BRIEFING_USER_AUTHORIZED_PUBLICATION_WAIVER",
     edition: "2026-08-07",
     recordedAt: "2026-08-10T03:00:00.000Z",
@@ -64,6 +65,12 @@ function waiverFixture(): UserAuthorizedPublicationWaiver {
     validationIssueFingerprint:
       USER_AUTHORIZED_WAIVER_ISSUE_FINGERPRINT,
     totals: { ...USER_AUTHORIZED_WAIVER_TOTALS },
+    chartPresentationAmendments: [{
+      ...USER_AUTHORIZED_CHART_AMENDMENT,
+      waivedGatesCarriedForwardFromPriorArtifact: [
+        ...USER_AUTHORIZED_WAIVED_GATES,
+      ],
+    }],
   });
 }
 
@@ -129,6 +136,28 @@ describe("edition-specific user-authorized publication waiver", () => {
     expect(waiver.artifactWaiverSha256).toBe(
       computeUserAuthorizedPublicationWaiverSha256(waiver),
     );
+  });
+
+  it("fails closed when chart-amendment history is changed or removed", () => {
+    const waiver = waiverFixture();
+    expect(() => parseUserAuthorizedPublicationWaiver({
+      ...waiver,
+      chartPresentationAmendments: [],
+    })).toThrow();
+    expect(() => parseUserAuthorizedPublicationWaiver({
+      ...waiver,
+      chartPresentationAmendments: [{
+        ...waiver.chartPresentationAmendments[0],
+        priorRenderedEmailSha256: "0".repeat(64),
+      }],
+    })).toThrow();
+    expect(() => parseUserAuthorizedPublicationWaiver({
+      ...waiver,
+      chartPresentationAmendments: [{
+        ...waiver.chartPresentationAmendments[0],
+        outlookDesktopQaStatus: "PERFORMED",
+      }],
+    })).toThrow();
   });
 
   it("rejects a changed manifest rather than treating the waiver as a general bypass", () => {

@@ -3,6 +3,7 @@ import type { ActivityAuditManifest } from "./schema";
 
 export const DIRECT_ACTIVITY_COLOR = "#442142";
 export const PORTFOLIO_ACTIVITY_COLOR = "#8F7C4D";
+export const PORTFOLIO_ACTIVITY_LABEL_COLOR = "#766B43";
 export const ACTIVITY_BAR_BACKGROUND_COLOR = "#F0F1F3";
 
 export const SECTOR_ACTIVITY_TIE_BREAK_ORDER = [
@@ -223,16 +224,30 @@ function renderSegment({
   return `<td data-activity-segment="${name}" width="${width}%" height="14" bgcolor="${color}" style="width: ${width}%; height: 14px; background-color: ${color}; font-size: 1px; line-height: 14px; mso-line-height-rule: exactly;">&nbsp;</td>`;
 }
 
+function renderStackLabels({
+  direct,
+  portfolio,
+  rowSummary,
+}: {
+  direct: number;
+  portfolio: number;
+  rowSummary: string;
+}): string {
+  return `<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-activity-stack-labels="true" aria-label="${rowSummary} constituent labels" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td style="padding: 4px 0 0 0; font-family: Arial, Helvetica, sans-serif; font-size: 9px; line-height: 12px; color: #71717A; mso-line-height-rule: exactly;"><span data-activity-stack-label="direct" data-activity-count="${direct}"><span style="font-weight: 700; color: ${DIRECT_ACTIVITY_COLOR};">${direct}</span>&nbsp;Direct</span><span aria-hidden="true" style="color: #D1D5DB;">&nbsp;&nbsp;&#183;&nbsp;&nbsp;</span><span data-activity-stack-label="portfolio" data-activity-count="${portfolio}"><span style="font-weight: 700; color: ${PORTFOLIO_ACTIVITY_LABEL_COLOR};">${portfolio}</span>&nbsp;Portfolio</span></td></tr></table>`;
+}
+
 function renderActivityChart({
   kind,
   title,
   rows,
   period,
+  lastRowBottomPadding = 28,
 }: {
   kind: ActivityChartKind;
   title: string;
   rows: readonly ActivityChartRow[];
   period: string;
+  lastRowBottomPadding?: number;
 }): string {
   const sortedRows = validateRows(rows, kind);
   const leadingTotal = sortedRows[0].direct + sortedRows[0].portfolio;
@@ -249,9 +264,15 @@ function renderActivityChart({
         `${row.label}: ${row.direct} direct fund activity, ${row.portfolio} portfolio-company activity, ${total} total`,
       );
       const isLast = index === sortedRows.length - 1;
-      const labelPadding = isLast ? "10px 0 28px 0" : "10px 0";
-      const barPadding = isLast ? "10px 8px 28px 8px" : "10px 8px";
-      const countPadding = isLast ? "10px 0 28px 0" : "10px 0";
+      const labelPadding = isLast
+        ? `10px 0 ${lastRowBottomPadding}px 0`
+        : "10px 0";
+      const barPadding = isLast
+        ? `10px 8px ${lastRowBottomPadding}px 8px`
+        : "10px 8px";
+      const countPadding = isLast
+        ? `10px 0 ${lastRowBottomPadding}px 0`
+        : "10px 0";
       const border = isLast ? "" : " border-bottom: 1px solid #F4F5F7;";
       const segments = [
         renderSegment({
@@ -270,8 +291,13 @@ function renderActivityChart({
           color: ACTIVITY_BAR_BACKGROUND_COLOR,
         }),
       ].join("");
+      const stackLabels = renderStackLabels({
+        direct: row.direct,
+        portfolio: row.portfolio,
+        rowSummary,
+      });
 
-      return `              <tr data-activity-row="${escapedLabel}" data-direct="${row.direct}" data-portfolio="${row.portfolio}" data-total="${total}" data-original-fill="${widths.filled}" aria-label="${rowSummary}"><td width="30%" style="padding: ${labelPadding};${border} font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #3F3F46;">${escapedLabel}</td><td width="55%" style="padding: ${barPadding};${border}"><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="${ACTIVITY_BAR_BACKGROUND_COLOR}" aria-label="${rowSummary}" title="${rowSummary}" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr>${segments}</tr></table></td><td width="15%" align="right" style="padding: ${countPadding};${border} font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #442142;">${total}</td></tr>`;
+      return `              <tr data-activity-row="${escapedLabel}" data-direct="${row.direct}" data-portfolio="${row.portfolio}" data-total="${total}" data-original-fill="${widths.filled}" aria-label="${rowSummary}"><td width="30%" valign="middle" style="padding: ${labelPadding};${border} font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #3F3F46;">${escapedLabel}</td><td width="55%" valign="middle" style="padding: ${barPadding};${border}"><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="${ACTIVITY_BAR_BACKGROUND_COLOR}" aria-label="${rowSummary}" title="${rowSummary}" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr>${segments}</tr></table>${stackLabels}</td><td width="15%" valign="middle" align="right" style="padding: ${countPadding};${border} font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #442142;">${total}</td></tr>`;
     })
     .join("\n");
 
@@ -282,8 +308,8 @@ ${rowMarkup}
 }
 
 function renderLegend(): string {
-  return `            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-activity-legend="true" aria-label="Activity chart legend">
-              <tr><td style="padding: 0 0 14px 0;"><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td width="10" height="10" bgcolor="${DIRECT_ACTIVITY_COLOR}" style="width: 10px; height: 10px; background-color: ${DIRECT_ACTIVITY_COLOR}; font-size: 1px; line-height: 10px; mso-line-height-rule: exactly;">&nbsp;</td><td style="padding: 0 16px 0 6px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px; color: #52525B;">Direct fund activity</td><td width="10" height="10" bgcolor="${PORTFOLIO_ACTIVITY_COLOR}" style="width: 10px; height: 10px; background-color: ${PORTFOLIO_ACTIVITY_COLOR}; font-size: 1px; line-height: 10px; mso-line-height-rule: exactly;">&nbsp;</td><td style="padding: 0 0 0 6px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px; color: #52525B;">Portfolio-company activity</td></tr></table></td></tr>
+  return `            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-activity-legend="true" aria-label="Activity chart legend" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+              <tr><td style="padding: 12px 0 0 0; border-top: 1px solid #E5E7EB;"><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td width="44%" valign="top" style="padding: 0 8px 0 0;"><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td width="8" valign="top" style="padding: 1px 0 0 0;"><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td width="8" height="8" bgcolor="${DIRECT_ACTIVITY_COLOR}" style="width: 8px; height: 8px; background-color: ${DIRECT_ACTIVITY_COLOR}; font-size: 1px; line-height: 8px; mso-line-height-rule: exactly;">&nbsp;</td></tr></table></td><td valign="top" style="padding: 0 0 0 6px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px; color: #52525B; mso-line-height-rule: exactly;">Direct fund activity</td></tr></table></td><td width="56%" valign="top" style="padding: 0 0 0 12px; border-left: 1px solid #E5E7EB;"><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td width="8" valign="top" style="padding: 1px 0 0 0;"><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td width="8" height="8" bgcolor="${PORTFOLIO_ACTIVITY_COLOR}" style="width: 8px; height: 8px; background-color: ${PORTFOLIO_ACTIVITY_COLOR}; font-size: 1px; line-height: 8px; mso-line-height-rule: exactly;">&nbsp;</td></tr></table></td><td valign="top" style="padding: 0 0 0 6px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px; color: #52525B; mso-line-height-rule: exactly;">Portfolio-company activity</td></tr></table></td></tr></table></td></tr>
             </table>`;
 }
 
@@ -311,7 +337,6 @@ export function renderActivityChartBlock(
   }
 
   const markup = `          <tr><td style="padding: 40px 40px 30px 40px;">
-${renderLegend()}
 ${renderActivityChart({
   kind: "sector",
   title: "Deal Count By Sector (YTD)",
@@ -324,7 +349,9 @@ ${renderActivityChart({
   title: "Deal Count By Region (YTD)",
   rows: region,
   period,
+  lastRowBottomPadding: 10,
 })}
+${renderLegend()}
           </td></tr>`;
 
   assertOutlookSafeActivityChartMarkup(markup);
@@ -350,6 +377,19 @@ export function assertOutlookSafeActivityChartMarkup(markup: string): void {
   }
   if ((markup.match(/data-activity-legend=/g) ?? []).length !== 1) {
     throw new Error("chart block must contain exactly one activity legend");
+  }
+  const rowCount = (markup.match(/data-activity-row=/g) ?? []).length;
+  if (
+    rowCount === 0
+    || (markup.match(/data-activity-stack-labels=/g) ?? []).length !== rowCount
+    || (markup.match(/data-activity-stack-label="direct"/g) ?? []).length
+      !== rowCount
+    || (markup.match(/data-activity-stack-label="portfolio"/g) ?? []).length
+      !== rowCount
+  ) {
+    throw new Error(
+      "every activity row must label both stacked-bar constituents",
+    );
   }
 }
 
