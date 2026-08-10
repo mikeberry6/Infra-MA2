@@ -1,0 +1,1660 @@
+{
+  "artifactType": "weekly-briefing-v2-second-review-risk-audit",
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-10T02:08:35Z",
+  "cutoffDate": "2026-08-07",
+  "inputs": [
+    "tmp/classification-work/portfolio.json",
+    "tmp/classification-work/direct.json",
+    "audits/weekly-briefing-activity/2026-08-07/manifest.json",
+    "scripts/weekly-briefing-activity/README.md"
+  ],
+  "methodology": {
+    "policy": "V2 actor-first classification and second-review rules only",
+    "principalStandard": "A named sponsor, manager, owner, backer, adviser, or target is not a transaction principal without evidence that it or its identified vehicle buys, sells, invests, issues, merges, or participates in the legal transaction.",
+    "secondReviewStandard": "Second review is retained only for evidence-backed conflicting transaction facts, conflicting legal-actor attribution, uncertain ownership timing, actual simultaneous fund-vehicle and operating-company participation, or legally distinct bundled transactions.",
+    "excludedRiskShortcuts": "Labels such as exit, sale, JV, platform, recapitalization, bankruptcy, carve-out, bolt-on, capital raise, or SPV do not independently require second review.",
+    "mixedPrecedence": "A supported mixed Direct/Portfolio-company transaction counts once as Direct.",
+    "sourceStandard": "Primary transaction and ownership sources were preferred. The audit distinguishes legal or disclosed principals from sponsor lineage and other non-principal attributions."
+  },
+  "summary": {
+    "recordsAudited": 31,
+    "portfolioCandidateFlagsAudited": 18,
+    "directCandidateFlagsAudited": 13,
+    "secondReviewRequired": 12,
+    "secondReviewNotRequired": 19,
+    "flaggedRecordFinalScopeCountsBeforeRequiredSplits": {
+      "DIRECT_FUND": 17,
+      "PORTFOLIO_COMPANY": 14
+    },
+    "minimumScopeCountsAfterINF2026077RequiredSplit": {
+      "DIRECT_FUND": 17,
+      "PORTFOLIO_COMPANY": 15
+    },
+    "riskRecordCounts": {
+      "ACTUAL_MIXED_DIRECT_PORTFOLIO": 10,
+      "BUNDLED_LEGAL_TRANSACTIONS": 4,
+      "CONFLICTING_TRANSACTION_FACTS": 0,
+      "CONFLICTING_ACTOR_ATTRIBUTION": 0,
+      "OWNERSHIP_TIMING_UNCERTAIN": 0
+    },
+    "supportedSecondReviewRecordIds": [
+      "INF-2026-013",
+      "INF-2026-077",
+      "INF-2026-113",
+      "INF-2026-121",
+      "INF-2026-123",
+      "INF-2026-127",
+      "INF-2026-181",
+      "WB-2026-06-06-006",
+      "WB-2026-07-03-008",
+      "WB-2026-07-03-017",
+      "WB-2026-07-31-010",
+      "WB-2026-08-07-004"
+    ],
+    "candidateScopeOverrides": [
+      {
+        "recordId": "INF-2026-078",
+        "from": "DIRECT_FUND",
+        "to": "PORTFOLIO_COMPANY",
+        "reason": "Only Freedom Fibre and Truespeed are evidenced transaction principals; the named funds are supporting owners."
+      },
+      {
+        "recordId": "WB-2026-07-31-011",
+        "from": "DIRECT_FUND",
+        "to": "PORTFOLIO_COMPANY",
+        "reason": "Tensor Estate is a corporate developer/investor and the investment is primary expansion capital for MCF; 3SIIF neither sells nor invests."
+      }
+    ]
+  },
+  "supportedRiskEvidenceIndex": [
+    {
+      "recordId": "INF-2026-013",
+      "directActors": ["CPP Investments"],
+      "operatingActors": ["Pattern Energy Group LP"],
+      "ownershipSources": [
+        {
+          "sourceId": "ownership-INF-2026-013",
+          "url": "https://patternenergy.com/pattern-energy-announces-agreement-to-acquire-cordelio-power/"
+        }
+      ]
+    },
+    {
+      "recordId": "INF-2026-077",
+      "directActors": ["InfraVia Capital Partners", "DigitalBridge", "Advencap", "Soho Square Capital"],
+      "operatingActors": ["nexfibre", "Virgin Media O2"],
+      "ownershipSources": [
+        {
+          "sourceId": "transaction-INF-2026-077",
+          "url": "https://www.libertyglobal.com/liberty-global-substantial-group-nexfibre/"
+        }
+      ]
+    },
+    {
+      "recordId": "INF-2026-113",
+      "directActors": ["Ara-managed funds and co-investment vehicles", "Ara Infrastructure"],
+      "operatingActors": ["Ara Energy"],
+      "ownershipSources": [
+        {
+          "sourceId": "ownership-INF-2026-113",
+          "url": "https://www.prnewswire.com/news-releases/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million-302709954.html"
+        }
+      ]
+    },
+    {
+      "recordId": "INF-2026-121",
+      "directActors": ["Ridgewood Infrastructure (separate Sierra acquisition only)"],
+      "operatingActors": ["Sierra Railroad Company"],
+      "ownershipSources": [
+        {
+          "sourceId": "transaction-INF-2026-121",
+          "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-acquires-sierra-railroad-company-302708445.html"
+        }
+      ]
+    },
+    {
+      "recordId": "INF-2026-123",
+      "directActors": ["Stonepeak"],
+      "operatingActors": ["GFiber", "Astound Broadband"],
+      "ownershipSources": [
+        {
+          "sourceId": "transaction-INF-2026-123",
+          "url": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider"
+        }
+      ]
+    },
+    {
+      "recordId": "INF-2026-127",
+      "directActors": [],
+      "operatingActors": ["MidOcean Australia Holdings 2 Pty Ltd / MidOcean Energy", "existing Ichthys JV participant"],
+      "ownershipSources": [
+        {
+          "sourceId": "ownership-INF-2026-127",
+          "url": "https://eigpartners.com/eigs-midocean-energy-announces-initial-equity-raise-of-1-2-billion-versus-1-0-billion-cover/"
+        }
+      ]
+    },
+    {
+      "recordId": "INF-2026-181",
+      "directActors": ["Funds managed by Charlesbank Capital Partners", "Grain Management-managed vehicle"],
+      "operatingActors": ["Spectrotel Holding LLC", "AireSpring"],
+      "ownershipSources": [
+        {
+          "sourceId": "transaction-INF-2026-181",
+          "url": "https://www.prnewswire.com/news-releases/grain-management-announces-strategic-transaction-to-scale-spectrotel-through-partnership-with-charlesbank-and-combination-with-airespring-302752196.html"
+        }
+      ]
+    },
+    {
+      "recordId": "WB-2026-06-06-006",
+      "directActors": ["Funds managed by AB CarVal"],
+      "operatingActors": ["GS Power Partners"],
+      "ownershipSources": [
+        {
+          "sourceId": "transaction-WB-2026-06-06-006",
+          "url": "https://gspowerpartners.com/gs-power-partners-secures-51m-tax-equity-financing-for-41-mw-community-solar-portfolio/"
+        }
+      ]
+    },
+    {
+      "recordId": "WB-2026-07-03-008",
+      "directActors": ["Equitix / its managed long-term funds"],
+      "operatingActors": ["Velto Renewables"],
+      "ownershipSources": [
+        {
+          "sourceId": "transaction-WB-2026-07-03-008",
+          "url": "https://veltorenewables.com/en/velto-renewables-is-now-the-sole-owner-of-the-enersol-solar-portfolio-in-andalusia-after-completing-its-acquisition/"
+        }
+      ]
+    },
+    {
+      "recordId": "WB-2026-07-03-017",
+      "directActors": ["Arcus European Infrastructure Fund 4"],
+      "operatingActors": ["Verne"],
+      "ownershipSources": [
+        {
+          "sourceId": "transaction-WB-2026-07-03-017",
+          "url": "https://verne.co/news/news-arcus-and-verne-announce-agreement-for-arcus-to-acquire-volta-data-centres"
+        }
+      ]
+    },
+    {
+      "recordId": "WB-2026-07-31-010",
+      "directActors": ["GLIL Infrastructure LLP"],
+      "operatingActors": ["Yondr Group"],
+      "ownershipSources": [
+        {
+          "sourceId": "ownership-WB-2026-07-31-010",
+          "url": "https://www.yondrgroup.com/newsroom/press-release/digitalbridge-and-la-caisse-complete-acquisition-of-yondr-group/"
+        },
+        {
+          "sourceId": "transaction-WB-2026-07-31-010",
+          "url": "https://www.yondrgroup.com/newsroom/press-release/yondr-partners-with-glil-infrastructure-on-uk-hyperscale-data-center-campus/"
+        }
+      ]
+    },
+    {
+      "recordId": "WB-2026-08-07-004",
+      "directActors": ["DIF Infrastructure VII"],
+      "operatingActors": ["Verdant Energy", "Aura Power Developments Limited"],
+      "ownershipSources": [
+        {
+          "sourceId": "transaction-WB-2026-08-07-004",
+          "url": "https://cvcdif.com/news-insights/verdant-energy-and-aura-power-merge-to-create-leading-uk-solar-and-battery-storage-platform"
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-003",
+      "target": "Catalyze",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Catalyze",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "tax-equity recipient and project sponsor"
+        },
+        {
+          "name": "RBC Community Investments",
+          "entityKind": "CORPORATE_FINANCIAL_INSTITUTION",
+          "role": "tax-equity investor"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Actis and EnCap are date-valid co-control sponsors; neither made the 2026 investment."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The corrected primary source unambiguously describes one Catalyze portfolio financing. A corrected archive summary and capital-raise label are not V2 risks."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://catalyze.com/2026/01/26/catalyze-closes-100-mw-distributed-solar-tax-equity-financing-with-rbc",
+          "finding": "Catalyze closed tax-equity financing from RBC Community Investments for a 100 MW distributed-solar portfolio."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.act.is/2023/02/28/actis-and-encap-invest-in-us-solar-platform-catalyze/",
+          "finding": "Actis and EnCap established co-control of Catalyze before the 2026 financing.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace the stale EnCap preferred-growth-equity description with the RBC tax-equity transaction."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-013",
+      "target": "Cordelio Power",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Pattern Energy Group LP",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "acquirer"
+        },
+        {
+          "name": "CPP Investments",
+          "entityKind": "FUND",
+          "role": "Cordelio seller and Pattern-equity rollover recipient"
+        }
+      ],
+      "nonPrincipalAttributions": [],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO"
+        ],
+        "reason": "Pattern is the operating acquirer while CPP Investments is the fund seller and receives Pattern equity, increasing its Pattern ownership."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://patternenergy.com/pattern-energy-announces-agreement-to-acquire-cordelio-power/",
+          "finding": "Pattern agreed to acquire CPP-owned Cordelio using consideration that included Pattern equity and increased CPP's Pattern stake."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://patternenergy.com/pattern-energy-announces-agreement-to-acquire-cordelio-power/",
+          "finding": "The release identifies Cordelio as wholly owned by CPP and CPP as Pattern's majority shareholder.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Retain both operating-buyer and fund seller/rollover attributions; count the event once as Direct."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-066",
+      "target": "Extenet Systems (Enterprise Fiber)",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Pilot Fiber",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "buyer"
+        },
+        {
+          "name": "Extenet Systems LLC",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "seller"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "DigitalBridge is Extenet's sponsor/backer, not the disclosed seller of the carved-out assets."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "An ordinary operating-company carve-out sale does not become a V2 exception merely because it is an exit."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.businesswire.com/news/home/20260205764140/en/Pilot-Fiber-to-Acquire-Enterprise-Fiber-Business-of-Extenet-Systems",
+          "finding": "Pilot Fiber agreed to acquire Extenet's enterprise-fiber business from Extenet."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.businesswire.com/news/home/20260205764140/en/Pilot-Fiber-to-Acquire-Enterprise-Fiber-Business-of-Extenet-Systems",
+          "finding": "The contemporaneous release describes Extenet as DigitalBridge-backed.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace the Wireless Estimator record labeled PRIMARY with the buyer's Business Wire release or downgrade the syndicated article."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-085",
+      "target": "83MW Indian Solar Energy Projects",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Digital Edge India",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "minority-equity investor and PPA offtaker"
+        },
+        {
+          "name": "Hexa Climate Solutions and associated project SPVs",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "project counterparty and equity issuer"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Stonepeak is Digital Edge's disclosed backer; it is not identified as the transacting investor."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The PPA and minority stake are integrated components of one captive-user energy arrangement. The record counts the equity activity; the PPA is ancillary rather than a separately included M&A transaction."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.digitaledgedc.com/resources/newsroom/digital-edge-india-83mw-solar-ppa-recycled-water-data-center/",
+          "finding": "Digital Edge India signed an 83 MW PPA and agreed to take a minority interest in the associated projects to meet captive-user requirements."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.digitaledgedc.com/resources/newsroom/digital-edge-india-83mw-solar-ppa-recycled-water-data-center/",
+          "finding": "The transaction release identifies Digital Edge as Stonepeak-backed.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Normalize the announcement date to 2026-02-26 and use the canonical non-language-prefixed primary URL."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-093",
+      "target": "Lower Lakes Towing & 6 Canadian-flagged Lakers",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Algoma Central Corporation",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "buyer"
+        },
+        {
+          "name": "Mainstay Maritime Inc.",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "seller"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Duration Capital Partners is Mainstay's date-valid sponsor; Oaktree is historical lineage."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The ownership history resolves the sponsor lineage without conflicting qualified sources or uncertain timing. Exit status alone is not a V2 risk."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.businesswire.com/news/home/20260224672359/en/Algoma-Central-Corporation-Announces-Agreement-to-Acquire-Lower-Lakes-Fleet",
+          "finding": "Algoma agreed to acquire Mainstay's Lower Lakes fleet."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.mainstaymaritime.com/who-we-are",
+          "finding": "Mainstay's history says the business transferred with Duration Capital's 2024 spinout from Oaktree.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Use Duration Capital Partners, not Oaktree, as sponsor and normalize the announcement date to 2026-02-27."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-094",
+      "target": "321 Precision Conversions",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Precision Aircraft Solutions LLC / Erickson Group",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "buyer"
+        },
+        {
+          "name": "Cargo Aircraft Management Inc. / ATSG",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "seller"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Stonepeak owns ATSG but is not the disclosed seller of ATSG's minority interest."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The primary source resolves the earlier JV/minority-interest description; an ordinary portfolio-company disposal does not require second review."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.atsginc.com/news-and-media/newsroom/year/2026/2026-02-24-erickson-acquires-321-precision",
+          "finding": "Erickson obtained full ownership by acquiring the minority stake held by ATSG through Cargo Aircraft Management."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.atsginc.com/our-company/our-history/april-2025",
+          "finding": "ATSG's corporate history records completion of Stonepeak's acquisition in April 2025.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": []
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-096",
+      "target": "79.2 MW DG BESS Portfolio",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Bimergen Energy Corp.",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "buyer"
+        },
+        {
+          "name": "Aggreko IPP Solutions",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "seller"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "I Squared Capital is Aggreko's sponsor; RelyEZ is a financing/JV partner, not an acquisition principal."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The simultaneous financing is ancillary to one portfolio acquisition, and the sale/exit label is not a V2 risk."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/03/03/3248139/0/en/bimergen-energy-completes-acquisition-of-79-2-mw-of-late-stage-dg-battery-energy-storage-projects-in-ercot-south-from-aggreko-and-executes-simultaneous-financing.html",
+          "finding": "Bimergen acquired eight BESS projects from Aggreko IPP Solutions and financed the acquisition through its RelyEZ venture."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://isquaredcapital.com/txnm_country/country-2/",
+          "finding": "I Squared's portfolio materials identify Aggreko as an I Squared portfolio company.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": []
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-104",
+      "target": "Gosport Ferry",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "TC Gosport Bidco Limited",
+          "entityKind": "NON_OPERATING_ACQUISITION_SPV",
+          "role": "buyer"
+        },
+        {
+          "name": "FIH Group plc",
+          "entityKind": "CORPORATE",
+          "role": "seller"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Thames Clippers is the acquisition-SPV affiliate and Northleaf is the sponsor lineage; neither replaces the named legal buyer."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The primary release and Companies House evidence unambiguously establish a non-operating acquisition SPV. V2 classifies that principal as Direct without treating the SPV determination itself as a risk."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.lse.co.uk/rns/disposal-of-the-portsmouth-harbour-ferry-company-zl5w6za0uko0hbi.html",
+          "finding": "FIH identifies TC Gosport Bidco Limited as buyer of Portsmouth Harbour Ferry Company."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16879235",
+          "finding": "Companies House shows the buyer was incorporated in November 2025 and classified as a holding company.",
+          "validOnAnnouncementDate": true
+        },
+        {
+          "url": "https://www.thamesclippers.com/news/northleaf-capital-partners-acquires-majority-interest-in-uber-boat-by-thames-clippers",
+          "finding": "Thames Clippers' primary release establishes Northleaf's sponsor lineage.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Normalize the announcement date to 2026-03-02."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-113",
+      "target": "Gate City Power / Gate City Renewable Fuels / JET",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Ara Energy",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "operating buyer"
+        },
+        {
+          "name": "Ara-managed funds and co-investment vehicles",
+          "entityKind": "FUND_OR_COINVESTMENT_VEHICLE",
+          "role": "acquisition-equity principals"
+        },
+        {
+          "name": "Ara Infrastructure",
+          "entityKind": "ADVISED_VEHICLE",
+          "role": "co-acquirer of the JET interest"
+        },
+        {
+          "name": "HF Capital",
+          "entityKind": "CORPORATE",
+          "role": "seller of Gate City assets"
+        }
+      ],
+      "nonPrincipalAttributions": [],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO",
+          "BUNDLED_LEGAL_TRANSACTIONS"
+        ],
+        "reason": "Ara Energy is the operating buyer, identified Ara-managed funds/co-investment vehicles provide acquisition equity, and Ara Infrastructure participates in the JET acquisition. The release expressly describes multiple transactions covering Gate City Power, Gate City Renewable Fuels, and a JET interest."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million-302709954.html",
+          "finding": "Ara's release identifies the operating buyer, fund/co-invest equity, JET co-acquirer, and multiple acquired interests."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million-302709954.html",
+          "finding": "The contemporaneous primary source establishes the Ara entities' roles and fund lineage.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Normalize the announcement date to 2026-03-11.",
+        "Require first review to determine split suffixes for the legally distinct Gate City Power, Gate City Renewable Fuels, and JET-interest transactions."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-114",
+      "target": "TPI Composites (Wind Blade Manufacturing)",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "ECP Blade Holdings LLC",
+          "entityKind": "NON_OPERATING_ACQUISITION_SPV",
+          "role": "buyer"
+        },
+        {
+          "name": "TPI Composites, Inc. and seller subsidiaries",
+          "entityKind": "CORPORATE",
+          "role": "sellers"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Energy Capital Partners controls the acquisition SPV."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The SEC purchase agreement directly establishes the acquisition SPV. Bankruptcy, carve-out, and exit labels are not V2 risks."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1455684/000119312526097651/d86867dex101.htm",
+          "finding": "The asset purchase agreement names ECP Blade Holdings LLC as buyer and the TPI entities as sellers."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/07/06/3322665/0/en/tpi-composites-successfully-emerges-from-chapter-11-under-new-ownership-reaffirms-long-term-commitment-to-wind-energy-field-services-and-blade-manufacturing.html",
+          "finding": "TPI's emergence announcement confirms Energy Capital Partners' new ownership following the transaction.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace the Sahm Capital item mislabeled PRIMARY with the SEC agreement as transaction evidence."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-117",
+      "target": "Steel River Solar and Storage Project",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Cypress Creek Renewables",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "buyer"
+        },
+        {
+          "name": "Swift Current Energy",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "seller"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "EQT Infrastructure and IFM Investors are sponsor lineage on opposite sides, not directly transacting fund vehicles."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "Both disclosed transaction principals are operating platforms. Multiple sponsor sides and the word exit do not create a V2 risk."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/cypress-creek-acquires-2-5-gw-solar-project-with-2-9-gwh-energy-storage-in-development-in-arkansas-from-swift-current-energy-302711078.html",
+          "finding": "Cypress Creek acquired Steel River from Swift Current."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://ccrenew.com/news/welcome-eqt-to-the-cypress-creek-team/",
+          "finding": "Cypress Creek identifies EQT as its owner.",
+          "validOnAnnouncementDate": true
+        },
+        {
+          "url": "https://swiftcurrentenergy.com/swift-current-energy-welcomes-three-new-board-members/",
+          "finding": "Swift Current identifies IFM-managed funds as its majority owner.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Normalize the announcement date to 2026-03-11."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-121",
+      "target": "Central Valley Ag Transport (CVAT)",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Sierra Railroad Company",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "buyer of CVAT"
+        },
+        {
+          "name": "CVAT owners",
+          "entityKind": "CORPORATE_OR_INDIVIDUAL",
+          "role": "sellers"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Ridgewood Infrastructure is the simultaneous buyer of Sierra in the separate INF-2026-120 transaction, not the buyer of CVAT."
+      ],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "BUNDLED_LEGAL_TRANSACTIONS"
+        ],
+        "reason": "One primary announcement covers Ridgewood's acquisition of control of Sierra and Sierra's simultaneous acquisition of CVAT. The two acquisitions are legally distinct and already map to separate legacy records."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-acquires-sierra-railroad-company-302708445.html",
+          "finding": "The release states that Ridgewood acquired Sierra and, simultaneously, Sierra acquired CVAT."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-acquires-sierra-railroad-company-302708445.html",
+          "finding": "The same source establishes Sierra as the CVAT buyer and Ridgewood's simultaneous new control of Sierra.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Preserve INF-2026-120 for the Sierra acquisition and INF-2026-121 for the CVAT acquisition; do not create duplicate split outputs for transactions already represented."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-127",
+      "target": "Gorgon LNG / Ichthys LNG",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "MidOcean Australia Holdings 2 Pty Ltd / MidOcean Energy",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "buyer from JERA"
+        },
+        {
+          "name": "JERA Australia Pty Ltd",
+          "entityKind": "CORPORATE",
+          "role": "seller"
+        },
+        {
+          "name": "Existing Ichthys joint-venture participant",
+          "entityKind": "OPERATING_OR_CORPORATE_PRINCIPAL",
+          "role": "onward transferee of the Ichthys interest"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "EIG formed and manages MidOcean but is not the disclosed buyer of JERA's interests."
+      ],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "BUNDLED_LEGAL_TRANSACTIONS"
+        ],
+        "reason": "The announcement covers MidOcean's acquisition of JERA's Gorgon and Ichthys interests plus a distinct onward transfer of the Ichthys interest to an existing JV participant."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.jera.co.jp/en/news/information/20260312_2373",
+          "finding": "JERA identifies definitive agreements for MidOcean to acquire both interests and for the Ichthys interest to pass onward to an existing participant."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://eigpartners.com/eigs-midocean-energy-announces-initial-equity-raise-of-1-2-billion-versus-1-0-billion-cover/",
+          "finding": "EIG describes MidOcean as an existing asset-owning LNG company formed and managed by EIG.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Normalize the announcement date to 2026-03-12 and require split adjudication for the retained Gorgon acquisition and Ichthys onward transfer."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-149",
+      "target": "Mattingly Cold Storage",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Igneo Infrastructure Partners or its acquisition affiliate",
+          "entityKind": "FUND_OR_NON_OPERATING_ACQUISITION_SPV",
+          "role": "buyer and platform sponsor"
+        },
+        {
+          "name": "Mattingly Cold Storage owners",
+          "entityKind": "CORPORATE_OR_INDIVIDUAL",
+          "role": "sellers"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "ChillCo Logistics is the newly formed platform seeded by Mattingly, not a pre-existing operating portfolio-company acquirer."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "V2 expressly classifies a new platform with an inseparable seed acquisition as Direct; that rule application is not itself an exception."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-announces-establishment-of-cold-storage-platform-with-acquisition-of-mattingly.html",
+          "finding": "Igneo announced Mattingly as its inaugural U.S. cold-storage investment and the foundation of newly formed ChillCo."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.chillco-logistics.com/chillco-logistics-partners-with-mattingly-cold-storage-to-launch-midwest-platform/",
+          "finding": "ChillCo's launch release confirms Mattingly as the seed asset for the newly formed platform.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Normalize the announcement date to 2026-04-01."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-176",
+      "target": "Cordelio Power's 6GW Joint Venture Interest",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "BrightNight",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "buyer"
+        },
+        {
+          "name": "Cordelio Power",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "seller"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Pattern Energy owned Cordelio by the transaction date; CPP-only attribution is stale."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "This is an operating-company sale of a JV interest. The JV and exit labels do not create a V2 exception, and ownership timing is resolved by the completed Pattern acquisition source."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://brightnightpower.com/about-us/news-insights/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio/",
+          "finding": "BrightNight acquired Cordelio's interest in a 6 GW development portfolio."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://cordeliopower.com/pattern_energy_announces_completion_of_acquisition_of_cordelio_power/",
+          "finding": "Pattern completed its acquisition of Cordelio on April 2, before the April 21 JV-interest sale.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Use Pattern Energy as date-valid owner and normalize the announcement date to 2026-04-21."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "INF-2026-186",
+      "target": "F3 Marina",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Southern Marinas",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "buyer"
+        },
+        {
+          "name": "F3 Marina owner",
+          "entityKind": "CORPORATE_OR_INDIVIDUAL",
+          "role": "seller"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Stonepeak's recapitalization of Southern Marinas is separately represented by INF-2026-185; KSL is historical sponsor lineage."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The F3 acquisition and Southern recapitalization were separately announced and separately keyed. The F3 record's scope is Portfolio-company under either same-day owner, so there is no unresolved ownership-timing exception."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.colliers.com/en/news/tampa-bay/colliers-facilitates-f3-marina-sale-to-southern-marinas-fort-lauderdale",
+          "finding": "Colliers identifies Southern Marinas as buyer of F3 Marina."
+        },
+        {
+          "url": "https://www.marinaworld.com/news/f3-marina-fort-lauderdale-sold-southern-marinas-florida",
+          "finding": "Marina World reports the F3 sale and describes the Stonepeak recapitalization as a separate announcement."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://stonepeak.com/news/southern-marinas-announces-recapitalization-by-stonepeak",
+          "finding": "Stonepeak's primary release establishes the separate same-day Southern Marinas recapitalization.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": []
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "WB-2026-05-02-005",
+      "target": "BayWa r.e. Power Solutions",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Fervo Group",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "buyer"
+        },
+        {
+          "name": "BayWa r.e. AG / BayWa r.e. Power Solutions",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "seller"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Energy Infrastructure Partners is BayWa r.e.'s 49% shareholder; it is not the disclosed seller. This Fervo is the Italian technical-services group, not Fervo Energy."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The primary source unambiguously identifies an operating buyer and operating seller. Correcting party names and treating the event as an exit do not create a V2 risk."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.baywa-re.com/en/news/fervo-acquires-baywa-r-e-power-solutions",
+          "finding": "Fervo Group acquired BayWa r.e. Power Solutions from BayWa r.e. AG."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.baywa-re.com/en/news/baywa-r-e-implements-comprehensive-financing-package",
+          "finding": "BayWa r.e.'s primary financing release identifies BayWa AG at 51% and EIP at 49%.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace any Fervo Energy attribution with Fervo Group and normalize the announcement date to 2026-05-05."
+      ]
+    },
+    {
+      "candidateSet": "PORTFOLIO",
+      "recordId": "WB-2026-05-23-004",
+      "target": "Five Indian Road SPVs",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Nxt-Infra Trust, acting through Walter Infra Manager Private Limited",
+          "entityKind": "ADVISED_INVESTMENT_VEHICLE",
+          "role": "buyer"
+        },
+        {
+          "name": "Owners of the five road SPVs",
+          "entityKind": "CORPORATE",
+          "role": "sellers"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Actis is sponsor lineage; the SEBI-registered InvIT is the disclosed acquisition vehicle."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The regulatory filing and entity materials unambiguously establish an advised investment vehicle. Vehicle-versus-platform classification is not itself a V2 exception."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://nxt-infra.com/wp-content/uploads/2026/05/Outcome-of-BM_28.05.2026-signed.pdf",
+          "finding": "The investment manager approved purchase agreements for interests in five named road SPVs."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://nxt-infra.com/home/about-us/",
+          "finding": "Nxt-Infra identifies itself as a registered InvIT with an investment manager.",
+          "validOnAnnouncementDate": true
+        },
+        {
+          "url": "https://www.act.is/about-us/portfolio/nxt-infra/",
+          "finding": "Actis identifies Nxt-Infra as a portfolio investment.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Normalize the announcement date to 2026-05-28."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "INF-2026-077",
+      "target": "Substantial Group (Netomnia)",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "InfraVia Capital Partners",
+          "entityKind": "ADVISED_VEHICLE_OR_FUND_MANAGER",
+          "role": "direct equity principal committing GBP850mm"
+        },
+        {
+          "name": "nexfibre",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "buyer of Substantial Group and seller of its retail business"
+        },
+        {
+          "name": "Liberty Global and Telefonica",
+          "entityKind": "CORPORATE",
+          "role": "co-investors through nexfibre"
+        },
+        {
+          "name": "Virgin Media O2",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "buyer of the retail business and traffic/equity counterparty"
+        },
+        {
+          "name": "DigitalBridge, Advencap, and Soho Square Capital",
+          "entityKind": "FUND_OR_INVESTMENT_OWNER",
+          "role": "Substantial Group sellers"
+        }
+      ],
+      "nonPrincipalAttributions": [],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO",
+          "BUNDLED_LEGAL_TRANSACTIONS"
+        ],
+        "reason": "InfraVia directly commits transaction equity while existing operating JV nexfibre acquires Substantial. The same announcement also requires a legally distinct onward sale of the retail business to Virgin Media O2."
+      },
+      "splitDisposition": {
+        "required": true,
+        "reason": "The primary release expressly documents two M&A transactions with different assets, directions, and counterparties. These are not merely financing legs of one acquisition.",
+        "outputs": [
+          {
+            "recordId": "INF-2026-077#substantial-group-acquisition",
+            "splitSuffix": "substantial-group-acquisition",
+            "target": "Substantial Group / Netomnia fibre assets",
+            "scope": "DIRECT_FUND",
+            "principalActors": [
+              "nexfibre (operating buyer)",
+              "InfraVia Capital Partners (direct equity principal)",
+              "Liberty Global and Telefonica (corporate co-investors)",
+              "DigitalBridge, Advencap, and Soho Square Capital (investment-owner sellers)"
+            ],
+            "secondReviewRiskKinds": [
+              "ACTUAL_MIXED_DIRECT_PORTFOLIO",
+              "BUNDLED_LEGAL_TRANSACTIONS"
+            ]
+          },
+          {
+            "recordId": "INF-2026-077#youfibre-brsk-sale",
+            "splitSuffix": "youfibre-brsk-sale",
+            "target": "YouFibre and Brsk retail business",
+            "scope": "PORTFOLIO_COMPANY",
+            "principalActors": [
+              "nexfibre (operating seller)",
+              "Virgin Media O2 (corporate operating buyer)"
+            ],
+            "secondReviewRiskKinds": [
+              "BUNDLED_LEGAL_TRANSACTIONS"
+            ]
+          }
+        ],
+        "excludedAsAncillary": [
+          "GBP1bn shareholder funding commitment",
+          "Virgin Media O2 traffic commitment and indirect nexfibre stake consideration",
+          "managed-services arrangements"
+        ]
+      },
+      "transactionEvidence": [
+        {
+          "sourceId": "transaction-INF-2026-077",
+          "url": "https://www.libertyglobal.com/liberty-global-substantial-group-nexfibre/",
+          "finding": "The release identifies nexfibre as buyer, InfraVia/Liberty Global/Telefonica as funding principals, and nexfibre's separate onward retail-business sale to Virgin Media O2."
+        },
+        {
+          "sourceId": "transaction-INF-2026-077-pdf-supplement",
+          "url": "https://www.libertyglobal.com/wp-content/uploads/2026/02/02-18-InfraVia-Liberty-Global-and-Telefonica-Acquire-Substantial-Group.pdf",
+          "finding": "The release PDF repeats the acquisition, funding, and onward-sale mechanics."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "sourceId": "transaction-INF-2026-077",
+          "url": "https://www.libertyglobal.com/liberty-global-substantial-group-nexfibre/",
+          "finding": "The primary release identifies nexfibre as the parties' existing joint venture and states the exact new-equity commitments.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Do not treat DigitalBridge's seller branding as the only Direct leg; retain InfraVia's direct funding and nexfibre's operating acquisition.",
+        "First review must emit the two specified suffixed outputs. The retail-business sale is Portfolio-company activity and must not automatically inherit the acquisition output's mixed risk."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "INF-2026-078",
+      "target": "Truespeed & Freedom Fibre",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Freedom Fibre",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "merger participant"
+        },
+        {
+          "name": "Truespeed",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "merger participant"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Aviva Investors, InfraBridge, and Equitix are described only as the businesses' supporting infrastructure investors; the announcement does not identify a fund vehicle buying, selling, or investing."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The primary source supports an operating-company merger and sponsor support, not legal fund participation. Sponsor branding cannot create a mixed risk."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.freedomfibre.com/post/freedom-fibre-and-truespeed-announce-intention-to-merge",
+          "finding": "Freedom Fibre and Truespeed announce their intention to merge; investors are named only as supporters."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.infrabridge.com/news/2023-12-20-infrabridge-and-equitix-combine-uk-altnets-vx-fiber-and-freedom-fibre",
+          "finding": "InfraBridge's earlier primary release establishes its and Equitix's ownership relationship to Freedom Fibre.",
+          "validOnAnnouncementDate": true
+        },
+        {
+          "url": "https://www.freedomfibre.com/post/freedom-fibre-and-truespeed-announce-intention-to-merge",
+          "finding": "The merger release identifies Aviva Investors, InfraBridge, and Equitix as supporting investors.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Change the proposed scope from Direct to Portfolio-company and remove InfraBridge/Equitix from legal buyer and JV-principal arrays."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "INF-2026-123",
+      "target": "GFiber / Astound Broadband",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Stonepeak",
+          "entityKind": "FUND",
+          "role": "agreement party and majority investor in combined company"
+        },
+        {
+          "name": "GFiber",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "agreement party and operating merger participant"
+        },
+        {
+          "name": "Astound Broadband",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "operating merger participant"
+        },
+        {
+          "name": "Alphabet",
+          "entityKind": "CORPORATE",
+          "role": "retained minority co-investor"
+        }
+      ],
+      "nonPrincipalAttributions": [],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO"
+        ],
+        "reason": "The primary source states that GFiber and Stonepeak entered the combination agreement, Stonepeak will own the majority, and Stonepeak-backed Astound is the operating company being combined. This is more than sponsor branding."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider",
+          "finding": "GFiber and Stonepeak entered the agreement to combine GFiber and Astound; Stonepeak will be majority owner and Alphabet a minority shareholder."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider",
+          "finding": "The release identifies Astound as Stonepeak's business and the combined company's post-close ownership.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Normalize the announcement date to 2026-03-11."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "INF-2026-180",
+      "target": "EdgeConneX",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "EQT Infrastructure / EQT AI Infrastructure strategy",
+          "entityKind": "FUND_OR_ADVISED_STRATEGY",
+          "role": "fund-level strategy launch and seed-asset owner"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "EdgeConneX is the existing operating seed asset and continuing operator; the release does not show EdgeConneX separately buying, selling, or investing."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "A portfolio company serving as a seed asset is not, without more, an operating-company transaction principal. The release supports a fund-level strategy action only."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+          "finding": "EQT launched an AI Infrastructure strategy fully seeded by its existing EdgeConneX portfolio asset."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+          "finding": "EQT identifies EdgeConneX as an EQT Infrastructure portfolio company acquired in 2020.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Remove EdgeConneX as a simultaneous operating-company principal unless legal transfer evidence shows the company itself transacted."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "INF-2026-181",
+      "target": "Spectrotel & AireSpring",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Funds managed by Charlesbank Capital Partners",
+          "entityKind": "FUND",
+          "role": "new investor in Spectrotel"
+        },
+        {
+          "name": "Grain Management-managed vehicle",
+          "entityKind": "FUND",
+          "role": "realizing seller and reinvesting shareholder"
+        },
+        {
+          "name": "Spectrotel Holding LLC",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "operating combination participant"
+        },
+        {
+          "name": "AireSpring",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "operating combination participant"
+        },
+        {
+          "name": "Lonstein family",
+          "entityKind": "INDIVIDUAL_SHAREHOLDERS",
+          "role": "retained minority investors"
+        }
+      ],
+      "nonPrincipalAttributions": [],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO"
+        ],
+        "reason": "Charlesbank-managed funds make a new investment, Grain reinvests, and Spectrotel concurrently combines with AireSpring. The fund and operating-company participation is explicit and simultaneous."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/grain-management-announces-strategic-transaction-to-scale-spectrotel-through-partnership-with-charlesbank-and-combination-with-airespring-302752196.html",
+          "finding": "Grain's release describes the managed-fund investment/reinvestment and concurrent Spectrotel-AireSpring combination."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/grain-management-announces-strategic-transaction-to-scale-spectrotel-through-partnership-with-charlesbank-and-combination-with-airespring-302752196.html",
+          "finding": "The release identifies Spectrotel as Grain's existing portfolio company and the investors' post-transaction roles.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Use Charlesbank-managed funds as the new investor and Grain as reinvesting fund principal; normalize the announcement date to 2026-04-23."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "INF-2026-189",
+      "target": "Saavi Energia & Grupo Mexico Power Assets",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Global Infrastructure Partners or affiliates",
+          "entityKind": "FUND_OR_AFFILIATE",
+          "role": "contributor of Saavi and retained 30% investor"
+        },
+        {
+          "name": "Grupo Mexico, S.A.B. de C.V.",
+          "entityKind": "CORPORATE",
+          "role": "contributor of power assets and 70% investor"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Saavi Energia is the GIP-owned contributed operating platform and publisher of the release; the source does not identify Saavi as a separate buyer, seller, or investor."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The agreement is expressly between GIP or its affiliates and Grupo Mexico. Saavi is a contributed asset/platform, so sponsor branding does not create an additional operating-company principal."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/saavi-energia-announces-the-agreement-signed-by-global-infrastructure-partners-gip-to-combine-power-generation-assets-with-those-of-grupo-mexico-sab-de-cv-302754442.html",
+          "finding": "GIP or affiliates agreed with Grupo Mexico to combine their power assets; Grupo Mexico will own 70% and GIP 30%."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/actis-sells-saavi-energia-a-leading-independent-power-generator-in-mexico-to-global-infrastrucutre-partners-301359559.html",
+          "finding": "GIP's primary release records its acquisition of Saavi before the 2026 combination.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Remove Saavi as a simultaneous operating principal absent legal-party evidence and normalize the announcement date to 2026-04-27."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "WB-2026-05-16-014",
+      "target": "Information Services Corporation",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "102236027 Saskatchewan Ltd.",
+          "entityKind": "NON_OPERATING_ACQUISITION_SPV",
+          "role": "legal purchaser"
+        },
+        {
+          "name": "Information Services Corporation",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "target entering the arrangement agreement"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Plenary Americas wholly owns the purchaser and is principally owned by La Caisse. La Caisse's ownership and capital support do not replace the named acquisition SPV as buyer."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "The legal buyer is a clearly identified non-operating acquisition SPV, which V2 classifies as Direct. The parent and sponsor lineage do not create a simultaneous portfolio-company acquisition leg."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://isc.gcs-web.com/news-releases/news-release-details/isc-be-acquired-plenary-americas-all-cash-transaction",
+          "finding": "ISC's release names 102236027 Saskatchewan Ltd., a wholly owned Plenary Americas subsidiary, as purchaser under the arrangement agreement."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://isc.gcs-web.com/news-releases/news-release-details/isc-be-acquired-plenary-americas-all-cash-transaction",
+          "finding": "The release states that Plenary Americas wholly owns the purchaser and is principally owned by La Caisse.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace La Caisse as legal buyer with 102236027 Saskatchewan Ltd.; retain Plenary/La Caisse only in ownership lineage and normalize the announcement date to 2026-05-19."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "WB-2026-06-06-006",
+      "target": "GS Power Community Solar Portfolio",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Funds managed by AB CarVal",
+          "entityKind": "FUND",
+          "role": "tax-equity investor"
+        },
+        {
+          "name": "GS Power Partners",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "tax-equity recipient and project sponsor"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Greenprint Capital structured the financing; CVC DIF is GS Power's existing sponsor and did not make the disclosed new investment."
+      ],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO"
+        ],
+        "reason": "AB CarVal-managed funds are the direct tax-equity investor and GS Power is the operating recipient/project sponsor."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://gspowerpartners.com/gs-power-partners-secures-51m-tax-equity-financing-for-41-mw-community-solar-portfolio/",
+          "finding": "GS Power closed more than $51mm of tax-equity financing from AB CarVal-managed funds."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://gspowerpartners.com/gs-power-partners-secures-51m-tax-equity-financing-for-41-mw-community-solar-portfolio/",
+          "finding": "The release identifies GS Power as CVC DIF-backed and AB CarVal-managed funds as the new investor.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace CVC DIF as transaction buyer with AB CarVal-managed funds and normalize the announcement date to 2026-06-03."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "WB-2026-07-03-008",
+      "target": "Enersol solar portfolio",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Velto Renewables",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "buyer of the minority interest"
+        },
+        {
+          "name": "Equitix",
+          "entityKind": "FUND_MANAGER_OR_ADVISED_SELLER",
+          "role": "seller of the minority interest for its long-term funds"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "La Caisse backs Velto but is not identified as the buyer."
+      ],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO"
+        ],
+        "reason": "Velto is the operating buyer and Equitix expressly agrees to sell its stake for its long-term funds, creating simultaneous operating and fund-side participation."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://veltorenewables.com/en/velto-renewables-is-now-the-sole-owner-of-the-enersol-solar-portfolio-in-andalusia-after-completing-its-acquisition/",
+          "finding": "Equitix agreed to sell its Enersol minority stake to Velto, making Velto sole owner."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://veltorenewables.com/en/velto-renewables-is-now-the-sole-owner-of-the-enersol-solar-portfolio-in-andalusia-after-completing-its-acquisition/",
+          "finding": "The release identifies Velto as La Caisse-backed and Equitix as the exiting investment manager acting for long-term funds.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace the undisclosed buyer with Velto Renewables, remove La Caisse as seller, retain Equitix as fund-side seller, and normalize the announcement date to 2026-06-30."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "WB-2026-07-03-017",
+      "target": "Volta Data Centres",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "Arcus European Infrastructure Fund 4",
+          "entityKind": "FUND",
+          "role": "buyer"
+        },
+        {
+          "name": "Verne",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "seller/operator divesting Volta"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Arcus Infrastructure Partners manages the buyer fund; Ardian backs Verne but is not the disclosed seller."
+      ],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO"
+        ],
+        "reason": "The named buyer is Arcus European Infrastructure Fund 4 and the disclosed seller is operating platform Verne."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://verne.co/news/news-arcus-and-verne-announce-agreement-for-arcus-to-acquire-volta-data-centres",
+          "finding": "Arcus European Infrastructure Fund 4 entered a definitive agreement to acquire Volta from Verne."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://verne.co/about-us/sustainability",
+          "finding": "Verne's corporate history records Ardian's 2024 acquisition and its 2026 Volta divestment.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace the undisclosed buyer with Arcus European Infrastructure Fund 4, replace Ardian as seller with Verne, and normalize the announcement date to 2026-07-02."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "WB-2026-07-31-010",
+      "target": "Yondr Slough Campus",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "GLIL Infrastructure LLP",
+          "entityKind": "FUND",
+          "role": "buyer of a majority campus interest"
+        },
+        {
+          "name": "Yondr Group",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "seller retaining a minority interest and operating role"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "La Caisse and DigitalBridge own Yondr but are not the disclosed buyers or sellers of the campus interest."
+      ],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO"
+        ],
+        "reason": "GLIL is expressly identified as the investment-fund buyer and Yondr as the operating seller that retains a minority stake and operating responsibility."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.yondrgroup.com/newsroom/press-release/yondr-partners-with-glil-infrastructure-on-uk-hyperscale-data-center-campus/",
+          "finding": "Yondr agreed to sell GLIL a majority interest in two operational Slough buildings while retaining a minority stake and management role."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.yondrgroup.com/newsroom/press-release/yondr-partners-with-glil-infrastructure-on-uk-hyperscale-data-center-campus/",
+          "finding": "The primary release establishes GLIL's fund status and Yondr's retained ownership/operating role.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace La Caisse and DigitalBridge as buyers/JV participants with GLIL as buyer and Yondr as seller; normalize the announcement date to 2026-07-30."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "WB-2026-07-31-011",
+      "target": "Greenergy Data Centers",
+      "finalScope": "PORTFOLIO_COMPANY",
+      "principalActors": [
+        {
+          "name": "Tensor Estate",
+          "entityKind": "OPERATING_DEVELOPER_OR_CORPORATE_INVESTOR",
+          "role": "new minority investor"
+        },
+        {
+          "name": "MCF Group Estonia",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "primary-equity issuer and Greenergy owner/operator"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "3SIIF remains the majority shareholder; Amber is its investment adviser. Neither is identified as selling or making a new investment."
+      ],
+      "secondReview": {
+        "required": false,
+        "riskKinds": [],
+        "reason": "This is a primary growth-capital investment in an existing operating portfolio company by Tensor Estate, which the source describes as a project developer rather than a fund. V2 assigns primary-only portfolio-company issuance to Portfolio-company activity."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/3siif-s-greenergy-data-centers-welcomes-new-minority-shareholder/",
+          "finding": "MCF welcomed Tensor Estate as a minority shareholder and states that the investment provides expansion capital; 3SIIF retains majority control."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://www.amberinfrastructure.com/news-and-insights/press-releases/3siif-s-greenergy-data-centers-welcomes-new-minority-shareholder/",
+          "finding": "The release identifies MCF as Greenergy's owner/operator, 3SIIF as majority shareholder, and Amber as adviser.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Replace Tensor Ventures with Tensor Estate, remove Amber as buyer, change scope to Portfolio-company, set primary-only portfolio-company issuance, and normalize the announcement date to 2026-07-28."
+      ]
+    },
+    {
+      "candidateSet": "DIRECT",
+      "recordId": "WB-2026-08-07-004",
+      "target": "Verdant Energy / Aura Power",
+      "finalScope": "DIRECT_FUND",
+      "principalActors": [
+        {
+          "name": "DIF Infrastructure VII",
+          "entityKind": "FUND",
+          "role": "CVC DIF investment vehicle supporting the merger"
+        },
+        {
+          "name": "Verdant Energy",
+          "entityKind": "OPERATING_PORTFOLIO_COMPANY",
+          "role": "merger participant"
+        },
+        {
+          "name": "Aura Power Developments Limited",
+          "entityKind": "OPERATING_COMPANY",
+          "role": "merger participant and surviving operating brand"
+        },
+        {
+          "name": "Simon Coulson",
+          "entityKind": "INDIVIDUAL_SHAREHOLDER",
+          "role": "retained minority investor"
+        },
+        {
+          "name": "ib vogt",
+          "entityKind": "CORPORATE_SHAREHOLDER",
+          "role": "exiting Aura Power shareholder"
+        }
+      ],
+      "nonPrincipalAttributions": [
+        "Eiffel Investment Group supplies transaction financing but is not a merger-equity principal."
+      ],
+      "secondReview": {
+        "required": true,
+        "riskKinds": [
+          "ACTUAL_MIXED_DIRECT_PORTFOLIO"
+        ],
+        "reason": "Verdant and Aura Power merge as operating companies while CVC DIF expressly makes its transaction investment through DIF Infrastructure VII."
+      },
+      "transactionEvidence": [
+        {
+          "url": "https://cvcdif.com/news-insights/verdant-energy-and-aura-power-merge-to-create-leading-uk-solar-and-battery-storage-platform",
+          "finding": "The CVC DIF release states that Verdant and Aura merged and that CVC DIF's investment was made through DIF Infrastructure VII."
+        }
+      ],
+      "ownershipEvidence": [
+        {
+          "url": "https://cvcdif.com/news-insights/verdant-energy-and-aura-power-merge-to-create-leading-uk-solar-and-battery-storage-platform",
+          "finding": "The release identifies Verdant as CVC DIF-backed, the DIF VII investment, and Aura's retained and exiting shareholders.",
+          "validOnAnnouncementDate": true
+        }
+      ],
+      "recommendedCorrections": [
+        "Name DIF Infrastructure VII as the direct fund vehicle, retain both operating merger principals, and normalize the announcement date to 2026-08-06."
+      ]
+    }
+  ]
+}
