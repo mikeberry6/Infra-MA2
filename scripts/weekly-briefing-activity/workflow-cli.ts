@@ -32,8 +32,12 @@ import {
 import {
   applyReviewDecisionFile,
   buildReviewPackets,
+  buildReviewOverviewFiles,
+  compileCompactReviewWorksheet,
   currentApprovalSummary,
+  isCompactReviewWorksheet,
   verifyReviewPacket,
+  verifyReviewPacketIndex,
   type ReviewPacket,
   type ReviewStage,
 } from "./workflow-packets";
@@ -41,6 +45,7 @@ import {
   computeApprovedWeeklyBriefingIndexSha256,
   parseApprovedWeeklyBriefingIndex,
   readApprovedWeeklyBriefingIndex,
+  validateApprovedWeeklyBriefingIndexDependencies,
   type ApprovedWeeklyBriefingIndex,
 } from "../../src/app/weekly-briefing/approved-editions";
 
@@ -144,6 +149,34 @@ function print(value: unknown): void {
 
 function writeSelected(repoRoot: string, files: ReturnType<typeof artifactFile>[]): void {
   for (const file of files) atomicWriteArtifact(repoRoot, file);
+}
+
+function readOriginalFirstReviewPackets(repoRoot: string, edition: string): ReviewPacket[] {
+  const directory = `${auditRunDirectory(edition)}/reviews/first`;
+  const index = verifyReviewPacketIndex(readJson(join(repoRoot, directory, "index.json")));
+  if (index.stage !== "FIRST" || index.cutoffDate !== edition) {
+    throw new Error("First-review packet index does not match the requested edition");
+  }
+  const packets = index.packets.map((entry) => {
+    if (!/^first-\d{3}$/.test(entry.packetId)) {
+      throw new Error("First-review packet index contains an invalid packet ID");
+    }
+    const packet = verifyReviewPacket(readJson(join(
+      repoRoot,
+      directory,
+      `${entry.packetId}.packet.json`,
+    )));
+    if (packet.stage !== "FIRST" || packet.packetSha256 !== entry.packetSha256
+      || packet.recordCount !== entry.recordCount) {
+      throw new Error(`First-review packet index binding failed for ${entry.packetId}`);
+    }
+    return packet;
+  });
+  const recordCount = packets.reduce((total, packet) => total + packet.recordCount, 0);
+  if (recordCount !== index.recordCount) {
+    throw new Error("First-review packet index record count is inconsistent");
+  }
+  return packets;
 }
 
 function summaryMarkdown(artifacts: ReturnType<typeof buildWorkflowArtifacts>): string {
@@ -303,36 +336,49 @@ function packetsCommand(options: CliOptions, repoRoot: string): void {
     packetSizes: packetSet.packets.map((packet) => packet.recordCount),
   });
   if (!options.write) return;
-  for (const file of [...packetSet.files, packetSet.indexFile]) {
+  for (const file of [...packetSet.files, ...packetSet.supportFiles, packetSet.indexFile]) {
     if (existsSync(join(repoRoot, file.relativePath))) {
       throw new Error(`Refusing to overwrite review artifact: ${file.relativePath}`);
     }
   }
-  writeSelected(repoRoot, [...packetSet.files, packetSet.indexFile]);
+  writeSelected(repoRoot, [...packetSet.files, ...packetSet.supportFiles, packetSet.indexFile]);
 }
 
 function reviewCommand(options: CliOptions, repoRoot: string): void {
   if (!options.decisionPath) throw new Error("review requires --decision FILE");
   const decisionPath = resolve(options.decisionPath);
-  const inferredPacketPath = decisionPath.replace(/\.review\.json$/, ".packet.json");
+  const inferredPacketPath = decisionPath.replace(/\.(?:review|worksheet)\.json$/, ".packet.json");
   const packetPath = resolve(options.packetPath ?? inferredPacketPath);
   const packet = verifyReviewPacket(readJson(packetPath));
+  const suppliedDecision = readJson(decisionPath);
+  const decisionFile = isCompactReviewWorksheet(suppliedDecision)
+    ? compileCompactReviewWorksheet({ packet, worksheet: suppliedDecision })
+    : suppliedDecision;
   const manifest = readManifest(repoRoot, options.edition);
   const updated = applyReviewDecisionFile({
     manifest,
-    decisionFile: readJson(decisionPath),
+    decisionFile,
     packet,
   });
+  const overviewFiles = options.write
+    ? buildReviewOverviewFiles({
+      manifest: updated,
+      firstReviewPackets: readOriginalFirstReviewPackets(repoRoot, options.edition),
+      runDirectory: auditRunDirectory(options.edition),
+    })
+    : [];
   print({
     command: "review",
     mode: options.write ? "WRITE" : "DRY_RUN",
     packet: packet.packetId,
     stage: packet.stage,
+    inputFormat: isCompactReviewWorksheet(suppliedDecision) ? "COMPACT_WORKSHEET" : "FULL_REVIEW_DECISIONS",
     approvalSummary: currentApprovalSummary(updated),
     manifestSha256: updated.manifestSha256,
   });
   if (options.write) {
     atomicWriteArtifact(repoRoot, artifactFile(manifestPath(options.edition), updated));
+    for (const file of overviewFiles) atomicWriteArtifact(repoRoot, file);
   }
 }
 
@@ -468,6 +514,10 @@ async function advanceCommand(options: CliOptions, repoRoot: string): Promise<vo
     indexSha256: computeApprovedWeeklyBriefingIndexSha256(withoutHash),
   };
   parseApprovedWeeklyBriefingIndex(JSON.stringify(updated));
+  // Validate the complete prospective index before any public routing state is
+  // changed. This prevents a dependency failure from leaving an invalid index
+  // on disk after an otherwise atomic write.
+  await validateApprovedWeeklyBriefingIndexDependencies(updated, repoRoot);
   print({
     command: "advance",
     mode: options.write ? "WRITE" : "DRY_RUN",

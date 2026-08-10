@@ -5,6 +5,7 @@ import {
   activityAuditManifestSchema,
   assertManifestArtifactIntegrity,
   canonicalJson,
+  deriveSecondReviewReasons,
   hashCanonical,
   sha256Text,
   validateManifestForPublication,
@@ -156,8 +157,77 @@ describe("committed August 7 V2 audit artifacts", () => {
         expect(decision.outputs[0].notes).toBe("");
         expect(canonicalJson(decision.outputs[0].reviewedRecord)).toBe(canonicalJson(packetRecord?.record));
       }
+
+      const markdown = readFileSync(join(
+        process.cwd(),
+        `${RUN_DIRECTORY}/reviews/first/${packetEntry.packetId}.md`,
+      ), "utf8");
+      expect(markdown).toContain("**Recommended scope**");
+      expect(markdown).toContain("Original automation candidate *(research prompt; not approval)*");
+      expect(markdown).toContain("Acting entity");
+      expect(markdown).toContain("Sponsor lineage");
+      expect(markdown).toContain("Scope rationale");
+      expect(markdown).toContain("Disposition rationale");
+      expect(markdown).toContain("Evidence to open:");
+
+      const worksheet = readJson(
+        `${RUN_DIRECTORY}/reviews/first/${packetEntry.packetId}.worksheet.json`,
+      ) as {
+        artifactType: string;
+        packetId: string;
+        packetSha256: string;
+        reviewer: string;
+        reviewedAt: string;
+        humanAttestation: Record<string, boolean>;
+        decisions: Array<{
+          baseRecordId: string;
+          baseReviewedInputHash: string;
+          evidenceOpened: boolean;
+          decision: string;
+          outputs: Array<{ notes: string }>;
+        }>;
+      };
+      expect(worksheet).toMatchObject({
+        artifactType: "WEEKLY_BRIEFING_ACTIVITY_COMPACT_REVIEW_WORKSHEET",
+        packetId: packet.packetId,
+        packetSha256: packet.packetSha256,
+        reviewer: "REPLACE_WITH_HUMAN_NAME",
+        reviewedAt: "REPLACE_WITH_ISO_8601_TIMESTAMP",
+      });
+      expect(Object.values(worksheet.humanAttestation).every((value) => value === false)).toBe(true);
+      expect(worksheet.decisions).toHaveLength(packet.recordCount);
+      for (const decision of worksheet.decisions) {
+        const packetRecord = packetById.get(decision.baseRecordId);
+        expect(packetRecord).toBeDefined();
+        expect(decision).toMatchObject({
+          baseReviewedInputHash: packetRecord?.baseReviewedInputHash,
+          evidenceOpened: false,
+          decision: "REPLACE_WITH_ACCEPT_RECOMMENDATION_OR_EDITED_RECORD",
+          outputs: [{ notes: "" }],
+        });
+      }
     }
     expect(queuedIds).toEqual(new Set(manifest.records.map((record) => record.recordId)));
+
+    const canonicalExceptions = manifest.records
+      .filter((record) => deriveSecondReviewReasons(record).length > 0);
+    expect(canonicalExceptions).toHaveLength(15);
+    const reviewIndex = readFileSync(
+      join(process.cwd(), `${RUN_DIRECTORY}/reviews/index.md`),
+      "utf8",
+    );
+    expect(reviewIndex).toContain("First approvals current | 0 / 404");
+    expect(reviewIndex).toContain("NON-APPROVABLE PREVIEW — 15 canonical exception records");
+    expect(reviewIndex).toContain("second-review-exception-preview.md");
+    const exceptionPreview = readFileSync(
+      join(process.cwd(), `${RUN_DIRECTORY}/reviews/second-review-exception-preview.md`),
+      "utf8",
+    );
+    expect(exceptionPreview).toContain("PLANNING ONLY — NOT A REVIEW PACKET, SIGNATURE, OR APPROVAL");
+    expect(exceptionPreview.match(/^## \d+\./gm)).toHaveLength(15);
+    for (const record of canonicalExceptions) {
+      expect(exceptionPreview).toContain(`\`${record.recordId}\``);
+    }
   });
 
   it("preserves both public emails and keeps August 7 out of the approved index", () => {

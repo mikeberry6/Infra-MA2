@@ -9,6 +9,8 @@ import {
   finalizeActivityManifest,
   hashCanonical,
   isCurrentRecordApproval,
+  reviewerIdentityIssue,
+  reviewNoteIssue,
   sha256Text,
   type ActivityAuditManifest,
   type ActivityRecord,
@@ -43,8 +45,70 @@ export interface ReviewPacket {
 export interface ReviewPacketSet {
   packets: ReviewPacket[];
   files: ArtifactFile[];
+  supportFiles: ArtifactFile[];
   indexFile: ArtifactFile;
 }
+
+const reviewPacketIndexSchema = z.strictObject({
+  schemaVersion: z.literal(1),
+  artifactType: z.literal("WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET_INDEX"),
+  cutoffDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  stage: z.enum(["FIRST", "SECOND"]),
+  baseManifestSha256: z.string().regex(/^[a-f0-9]{64}$/),
+  packetCount: z.number().int().nonnegative(),
+  recordCount: z.number().int().nonnegative(),
+  packets: z.array(z.strictObject({
+    packetId: z.string().trim().min(1),
+    recordCount: z.number().int().nonnegative(),
+    packetSha256: z.string().regex(/^[a-f0-9]{64}$/),
+  })),
+  indexSha256: z.string().regex(/^[a-f0-9]{64}$/),
+});
+
+export type ReviewPacketIndex = z.infer<typeof reviewPacketIndexSchema>;
+
+const compactAcceptedDecisionSchema = z.strictObject({
+  baseRecordId: z.string().trim().min(1),
+  baseReviewedInputHash: z.string().regex(/^[a-f0-9]{64}$/),
+  evidenceOpened: z.literal(true),
+  decision: z.literal("ACCEPT_RECOMMENDATION"),
+  outputs: z.tuple([z.strictObject({
+    notes: z.string().trim().min(1),
+  })]),
+});
+
+const compactEditedDecisionSchema = z.strictObject({
+  baseRecordId: z.string().trim().min(1),
+  baseReviewedInputHash: z.string().regex(/^[a-f0-9]{64}$/),
+  evidenceOpened: z.literal(true),
+  decision: z.literal("EDITED_RECORD"),
+  outputs: z.array(z.strictObject({
+    reviewedRecord: activityRecordSchema,
+    notes: z.string().trim().min(1),
+  })).min(1),
+});
+
+const compactReviewWorksheetSchema = z.strictObject({
+  schemaVersion: z.literal(1),
+  artifactType: z.literal("WEEKLY_BRIEFING_ACTIVITY_COMPACT_REVIEW_WORKSHEET"),
+  cutoffDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  stage: z.enum(["FIRST", "SECOND"]),
+  packetId: z.string().trim().min(1),
+  packetSha256: z.string().regex(/^[a-f0-9]{64}$/),
+  reviewer: z.string().trim().min(1),
+  reviewedAt: z.string().datetime({ offset: true }),
+  humanAttestation: z.strictObject({
+    performedByHuman: z.literal(true),
+    dispositionVerified: z.literal(true),
+    classificationVerified: z.literal(true),
+  }),
+  decisions: z.array(z.discriminatedUnion("decision", [
+    compactAcceptedDecisionSchema,
+    compactEditedDecisionSchema,
+  ])).min(1),
+});
+
+export type CompactReviewWorksheet = z.infer<typeof compactReviewWorksheetSchema>;
 
 const reviewDecisionSchema = z.strictObject({
   baseRecordId: z.string().trim().min(1),
@@ -122,6 +186,85 @@ export function verifyReviewPacket(value: unknown): ReviewPacket {
   return packet;
 }
 
+export function verifyReviewPacketIndex(value: unknown): ReviewPacketIndex {
+  const index = reviewPacketIndexSchema.parse(value);
+  const { indexSha256, ...withoutHash } = index;
+  if (hashCanonical(PACKET_INDEX_HASH_DOMAIN, withoutHash) !== indexSha256) {
+    throw new Error("Review packet index hash does not match its contents");
+  }
+  if (index.packetCount !== index.packets.length) {
+    throw new Error("Review packet index count does not match its entries");
+  }
+  if (index.recordCount !== index.packets.reduce((total, packet) => total + packet.recordCount, 0)) {
+    throw new Error("Review packet index record count is inconsistent");
+  }
+  if (new Set(index.packets.map((packet) => packet.packetId)).size !== index.packets.length) {
+    throw new Error("Review packet index contains duplicate packet IDs");
+  }
+  return index;
+}
+
+function markdownInline(value: string): string {
+  return value.replace(/\s+/g, " ").trim().replaceAll("|", "\\|");
+}
+
+function markdownLinkLabel(value: string): string {
+  return markdownInline(value).replaceAll("[", "\\[").replaceAll("]", "\\]");
+}
+
+function evidenceMarkdown(record: ActivityRecord): string[] {
+  return record.sourceEvidence.map((source) => {
+    const purposes = source.purposes.join(", ");
+    const locator = source.url
+      ? `[${markdownLinkLabel(source.publisher)}](${source.url})`
+      : `\`${source.artifactPath}\``;
+    const fallback = source.fallbackRationale
+      ? ` **Fallback rationale:** ${markdownInline(source.fallbackRationale)}`
+      : "";
+    return `- **${source.tier} · ${purposes}** — ${locator}. ${markdownInline(source.evidenceSummary)}${fallback}`;
+  });
+}
+
+function reviewerRecordMarkdown(item: ReviewPacketRecord, index: number): string[] {
+  const record = item.record;
+  const risks = deriveSecondReviewReasons(record);
+  const sponsor = record.sponsorLineage.length > 0
+    ? record.sponsorLineage.map((lineage) =>
+      `${lineage.sponsorName} → ${lineage.entityName} (${lineage.relationship})`).join("; ")
+    : "—";
+  const actingEntity = record.actingEntity
+    ? `${record.actingEntity.name} (${record.actingEntity.entityKind}; ${record.actingEntity.side})`
+    : "—";
+  return [
+    `### ${index + 1}. \`${record.recordId}\` — ${markdownInline(record.target)}`,
+    "",
+    "| Review field | Evidence-derived value |",
+    "| --- | --- |",
+    `| **Recommended scope** | **${record.scope}** |`,
+    `| Original automation candidate *(research prompt; not approval)* | ${record.candidateClassification?.candidateScope ?? "—"} |`,
+    `| Recommended disposition | **${record.disposition}** |`,
+    `| Acting entity | ${markdownInline(actingEntity)} |`,
+    `| Sponsor lineage | ${markdownInline(sponsor)} |`,
+    `| Date / sector / region | ${record.announcementDate} · ${record.sector} · ${record.region}${record.country ? ` · ${markdownInline(record.country)}` : ""} |`,
+    `| Transaction structure | ${record.transactionStructure.forms.join(" / ") || "—"} |`,
+    `| Independent second-review risks | ${risks.length > 0 ? risks.join(", ") : "None"} |`,
+    `| Scope rationale | ${markdownInline(record.scopeRationale)} |`,
+    `| Disposition rationale | ${markdownInline(record.dispositionRationale)} |`,
+    "",
+    "Evidence to open:",
+    "",
+    ...evidenceMarkdown(record),
+    "",
+    "Reviewer checklist:",
+    "",
+    "- [ ] Opened every evidence locator above.",
+    "- [ ] Verified disposition, parties, date, sector, region, structure, acting entity, sponsor lineage, and scope.",
+    "- [ ] Recorded `ACCEPT_RECOMMENDATION` or an explicit `EDITED_RECORD` in the matching compact worksheet.",
+    "- [ ] Added a substantive, record-specific note.",
+    "",
+  ];
+}
+
 function markdownForPacket(packet: ReviewPacket): string {
   const lines = [
     `# ${packet.packetId} — ${packet.stage === "FIRST" ? "first" : "independent second"} review`,
@@ -130,26 +273,56 @@ function markdownForPacket(packet: ReviewPacket): string {
     `Records: ${packet.recordCount}`,
     `Packet hash: \`${packet.packetSha256}\``,
     "",
-    "Open every transaction and ownership source for every decision in this packet. Verify the universe disposition, parties, date, sector, region, transaction structure, acting principal, sponsor lineage, and authoritative scope. Candidate signals and transaction categories are suggestions only. Add a structured second-review risk only when evidence genuinely conflicts, ownership timing remains uncertain, both a fund vehicle and operating company actually transact, or one announcement bundles legally distinct transactions. Edit the matching `.review.json` outputs with the verified facts, add record-specific notes, replace the reviewer/timestamp placeholders, set every human-attestation value to `true`, then ingest it with the review command. If one bundled announcement contains multiple legally distinct transactions, add one suffixed output per transaction during first review; otherwise keep exactly one identity-preserving output.",
+    "Open every transaction and ownership source for every decision in this packet. Verify the universe disposition, parties, date, sector, region, transaction structure, acting principal, sponsor lineage, and authoritative scope. The bold recommended scope is the evidence-derived proposal under review; the original automation candidate is shown only for lineage and is not an approval.",
+    "",
+    "Use the matching `.worksheet.json` file for the normal compact workflow. For each record, set `evidenceOpened` to `true`, choose `ACCEPT_RECOMMENDATION` or `EDITED_RECORD`, and add a substantive record-specific note. Replace the reviewer and timestamp placeholders and set every human-attestation value to `true`. The review command compiles the compact worksheet against this immutable packet and then routes it through the existing full review validator. The matching `.review.json` remains available for advanced edits and legal-transaction splits.",
     "",
     packet.stage === "SECOND"
       ? "The second reviewer must be independent from the first reviewer and must re-open the evidence."
       : "One named human may approve this evidence-backed batch only after opening every record's evidence. Only verified risk exceptions will be queued separately for second review.",
     "",
-    "| ID | Group | Target | Candidate | Disposition | Structure / verified second-review risks | Evidence |",
-    "| --- | --- | --- | --- | --- | --- | --- |",
+    "## Packet summary",
+    "",
+    "| ID | Target | **Recommended scope** | Original automation candidate *(not approval)* | Disposition | Second-review risks |",
+    "| --- | --- | --- | --- | --- | --- |",
   ];
 
   for (const item of packet.records) {
     const record = item.record;
-    const links = record.sourceEvidence.map((source) =>
-      source.url ? `[${source.publisher}](${source.url})` : `\`${source.artifactPath}\``).join("; ");
     const flags = deriveSecondReviewReasons(record);
     lines.push(
-      `| ${record.recordId} | ${item.groupKey.replaceAll("|", "\\|")} | ${record.target.replaceAll("|", "\\|")} | ${record.candidateClassification?.candidateScope ?? "—"} | ${record.disposition} | ${record.transactionStructure.forms.join(" / ")}${flags.length ? `; second: ${flags.join(", ")}` : ""} | ${links} |`,
+      `| ${record.recordId} | ${markdownInline(record.target)} | **${record.scope}** | ${record.candidateClassification?.candidateScope ?? "—"} | ${record.disposition} | ${flags.length > 0 ? flags.join(", ") : "None"} |`,
     );
   }
+  lines.push("", "## Record worksheets", "");
+  packet.records.forEach((item, index) => lines.push(...reviewerRecordMarkdown(item, index)));
+  while (lines.at(-1) === "") lines.pop();
   return `${lines.join("\n")}\n`;
+}
+
+function compactReviewWorksheetTemplate(packet: ReviewPacket): unknown {
+  return {
+    schemaVersion: 1,
+    artifactType: "WEEKLY_BRIEFING_ACTIVITY_COMPACT_REVIEW_WORKSHEET",
+    cutoffDate: packet.cutoffDate,
+    stage: packet.stage,
+    packetId: packet.packetId,
+    packetSha256: packet.packetSha256,
+    reviewer: "REPLACE_WITH_HUMAN_NAME",
+    reviewedAt: "REPLACE_WITH_ISO_8601_TIMESTAMP",
+    humanAttestation: {
+      performedByHuman: false,
+      dispositionVerified: false,
+      classificationVerified: false,
+    },
+    decisions: packet.records.map((item) => ({
+      baseRecordId: item.recordId,
+      baseReviewedInputHash: item.baseReviewedInputHash,
+      evidenceOpened: false,
+      decision: "REPLACE_WITH_ACCEPT_RECOMMENDATION_OR_EDITED_RECORD",
+      outputs: [{ notes: "" }],
+    })),
+  };
 }
 
 function reviewTemplate(packet: ReviewPacket): unknown {
@@ -177,6 +350,86 @@ function reviewTemplate(packet: ReviewPacket): unknown {
       }],
     })),
   };
+}
+
+export function isCompactReviewWorksheet(value: unknown): boolean {
+  return Boolean(value && typeof value === "object" && !Array.isArray(value)
+    && (value as { artifactType?: unknown }).artifactType
+      === "WEEKLY_BRIEFING_ACTIVITY_COMPACT_REVIEW_WORKSHEET");
+}
+
+/**
+ * Hydrate compact human decisions from the immutable packet. The returned
+ * envelope intentionally uses the existing full decision schema so the
+ * established review application remains the only approval path.
+ */
+export function compileCompactReviewWorksheet(input: {
+  packet: ReviewPacket;
+  worksheet: unknown;
+}): ReviewDecisionFile {
+  const packet = verifyReviewPacket(input.packet);
+  const worksheet = compactReviewWorksheetSchema.parse(input.worksheet);
+  if (worksheet.cutoffDate !== packet.cutoffDate
+    || worksheet.stage !== packet.stage
+    || worksheet.packetId !== packet.packetId
+    || worksheet.packetSha256 !== packet.packetSha256) {
+    throw new Error("Compact review worksheet does not match the immutable packet");
+  }
+  const identityProblem = reviewerIdentityIssue(worksheet.reviewer);
+  if (identityProblem) throw new Error(`Invalid compact-review reviewer: ${identityProblem}`);
+  if (worksheet.decisions.length !== packet.records.length) {
+    throw new Error("Compact review worksheet must cover every packet record exactly once");
+  }
+
+  const packetById = new Map(packet.records.map((item) => [item.recordId, item]));
+  const seen = new Set<string>();
+  const decisions = worksheet.decisions.map((decision) => {
+    if (seen.has(decision.baseRecordId)) {
+      throw new Error(`Duplicate compact review decision for ${decision.baseRecordId}`);
+    }
+    seen.add(decision.baseRecordId);
+    const packetRecord = packetById.get(decision.baseRecordId);
+    if (!packetRecord) {
+      throw new Error(`Compact review decision is out of packet: ${decision.baseRecordId}`);
+    }
+    if (decision.baseReviewedInputHash !== packetRecord.baseReviewedInputHash) {
+      throw new Error(`Compact review base is stale for ${decision.baseRecordId}`);
+    }
+    for (const output of decision.outputs) {
+      const notesProblem = reviewNoteIssue(output.notes);
+      if (notesProblem) {
+        throw new Error(`Invalid compact-review notes for ${decision.baseRecordId}: ${notesProblem}`);
+      }
+    }
+    return {
+      baseRecordId: decision.baseRecordId,
+      baseReviewedInputHash: decision.baseReviewedInputHash,
+      outputs: decision.decision === "ACCEPT_RECOMMENDATION"
+        ? [{ reviewedRecord: packetRecord.record, notes: decision.outputs[0].notes }]
+        : decision.outputs,
+    };
+  });
+
+  const missing = packet.records.filter((item) => !seen.has(item.recordId));
+  if (missing.length > 0) {
+    throw new Error(`Compact review worksheet omits packet records: ${missing.map((item) => item.recordId).join(", ")}`);
+  }
+
+  return reviewDecisionFileSchema.parse({
+    schemaVersion: 1,
+    artifactType: "WEEKLY_BRIEFING_ACTIVITY_REVIEW_DECISIONS",
+    cutoffDate: worksheet.cutoffDate,
+    stage: worksheet.stage,
+    packetId: worksheet.packetId,
+    packetSha256: worksheet.packetSha256,
+    reviewer: worksheet.reviewer,
+    reviewedAt: worksheet.reviewedAt,
+    humanAttestation: {
+      ...worksheet.humanAttestation,
+      evidenceOpened: true,
+    },
+    decisions,
+  });
 }
 
 /**
@@ -232,6 +485,123 @@ export function assertValidReviewedRecordExpansion(input: {
     outputIds.add(reviewed.recordId);
     suffixes.add(reviewed.splitSuffix);
   }
+}
+
+function canonicalSecondReviewExceptions(manifest: ActivityAuditManifest): ActivityRecord[] {
+  return manifest.records
+    .filter((record) => deriveSecondReviewReasons(record).length > 0)
+    .sort((left, right) => left.recordId.localeCompare(right.recordId));
+}
+
+function reviewsIndexMarkdown(input: {
+  manifest: ActivityAuditManifest;
+  packets: readonly ReviewPacket[];
+}): string {
+  const approvals = currentApprovalSummary(input.manifest);
+  const exceptions = canonicalSecondReviewExceptions(input.manifest);
+  const currentById = new Map(input.manifest.records.map((record) => [record.recordId, record]));
+  const lines = [
+    `# Weekly briefing activity review center — ${input.manifest.cutoffDate}`,
+    "",
+    `Manifest hash: \`${input.manifest.manifestSha256}\``,
+    "",
+    "This status view is regenerated from the current manifest after every successful review write. Packet and worksheet files remain immutable.",
+    "",
+    "## Review status",
+    "",
+    "| Gate | Current |",
+    "| --- | ---: |",
+    `| First approvals current | ${approvals.firstCurrent} / ${input.manifest.records.length} |`,
+    `| First reviews pending | ${input.manifest.records.length - approvals.firstCurrent} |`,
+    `| Canonical records expected to require independent second review | ${exceptions.length} |`,
+    `| Second approvals currently required *(after current first review)* | ${approvals.secondRequired} |`,
+    `| Second approvals current | ${approvals.secondCurrent} |`,
+    "",
+    "## First-review packets",
+    "",
+    "Each `.packet.json` is immutable and hash-bound; its Markdown worksheet is the readable derived view. Read that view, then complete the compact JSON worksheet. The compact file cannot approve a record by itself; `weekly:activity:review` compiles it and routes it through the existing fail-closed review validator.",
+    "",
+    "| Packet | Records | Current | Pending | Review worksheet | Compact decisions |",
+    "| --- | ---: | ---: | ---: | --- | --- |",
+  ];
+  for (const packet of input.packets) {
+    const current = packet.records.filter((item) => {
+      const exact = currentById.get(item.recordId);
+      if (exact) return isCurrentRecordApproval(exact, exact.review.firstReview);
+      if (item.record.splitSuffix !== null) return false;
+      const splitOutputs = input.manifest.records.filter((record) =>
+        record.legacyId === item.record.legacyId && record.splitSuffix !== null);
+      return splitOutputs.length > 0 && splitOutputs.every((record) =>
+        isCurrentRecordApproval(record, record.review.firstReview));
+    }).length;
+    lines.push(
+      `| ${packet.packetId} | ${packet.recordCount} | ${current} | ${packet.recordCount - current} | [Open](first/${packet.packetId}.md) | [Fill in](first/${packet.packetId}.worksheet.json) |`,
+    );
+  }
+  lines.push(
+    "",
+    "## Independent second-review preview",
+    "",
+    `**NON-APPROVABLE PREVIEW — ${exceptions.length} canonical exception records.** This is planning material only, not a second-review packet or approval. The actual immutable second-review queue remains blocked until every first review is current, at which point it is regenerated from the first-reviewed record hashes and must be completed by a different human reviewer.`,
+    "",
+    "[Open the canonical exception preview](second-review-exception-preview.md)",
+    "",
+  );
+  return `${lines.join("\n")}\n`;
+}
+
+function secondReviewExceptionPreviewMarkdown(manifest: ActivityAuditManifest): string {
+  const exceptions = canonicalSecondReviewExceptions(manifest);
+  const lines = [
+    `# NON-APPROVABLE second-review exception preview — ${manifest.cutoffDate}`,
+    "",
+    `**PLANNING ONLY — NOT A REVIEW PACKET, SIGNATURE, OR APPROVAL. Canonical record count: ${exceptions.length}.**`,
+    "",
+    `Manifest hash: \`${manifest.manifestSha256}\``,
+    "",
+    "The actual independent second-review packet cannot be generated until every first review is current. It will be bound to the first-reviewed input hashes and must be completed by a different named human who reopens the evidence. This preview cannot be ingested by the review command.",
+    "",
+  ];
+  exceptions.forEach((record, index) => {
+    const risks = deriveSecondReviewReasons(record);
+    const firstStatus = isCurrentRecordApproval(record, record.review.firstReview) ? "CURRENT" : "PENDING";
+    lines.push(
+      `## ${index + 1}. \`${record.recordId}\` — ${markdownInline(record.target)}`,
+      "",
+      `- **Recommended scope:** ${record.scope}`,
+      `- **Acting entity:** ${record.actingEntity ? markdownInline(`${record.actingEntity.name} (${record.actingEntity.entityKind}; ${record.actingEntity.side})`) : "—"}`,
+      `- **Risk tags:** ${risks.join(", ")}`,
+      `- **First-review status:** ${firstStatus}`,
+      `- **Exception rationale:** ${markdownInline(record.secondReviewRisks.map((risk) => `${risk.kind}: ${risk.detail}`).join(" | "))}`,
+      "",
+      "Evidence to reopen independently:",
+      "",
+      ...evidenceMarkdown(record),
+      "",
+    );
+  });
+  return `${lines.join("\n")}\n`;
+}
+
+export function buildReviewOverviewFiles(input: {
+  manifest: ActivityAuditManifest;
+  firstReviewPackets: readonly ReviewPacket[];
+  runDirectory: string;
+}): ArtifactFile[] {
+  const manifest = activityAuditManifestSchema.parse(input.manifest);
+  const packets = input.firstReviewPackets.map((packet) => verifyReviewPacket(packet));
+  return [
+    {
+      relativePath: `${input.runDirectory}/reviews/index.md`,
+      contents: reviewsIndexMarkdown({ manifest, packets }),
+      sha256: "",
+    },
+    {
+      relativePath: `${input.runDirectory}/reviews/second-review-exception-preview.md`,
+      contents: secondReviewExceptionPreviewMarkdown(manifest),
+      sha256: "",
+    },
+  ].map((file) => ({ ...file, sha256: sha256Text(file.contents) }));
 }
 
 export function buildReviewPackets(input: {
@@ -294,6 +664,18 @@ export function buildReviewPackets(input: {
     ...file,
     sha256: file.sha256 || sha256Text(file.contents),
   }));
+  const supportFiles = [
+    ...packets.map((packet) =>
+      artifactFile(`${directory}/${packet.packetId}.worksheet.json`, compactReviewWorksheetTemplate(packet))),
+    ...(input.stage === "FIRST" ? buildReviewOverviewFiles({
+      manifest,
+      firstReviewPackets: packets,
+      runDirectory: input.runDirectory,
+    }) : []),
+  ].map((file) => ({
+    ...file,
+    sha256: file.sha256 || sha256Text(file.contents),
+  }));
   const indexWithoutHash = {
     schemaVersion: 1 as const,
     artifactType: "WEEKLY_BRIEFING_ACTIVITY_REVIEW_PACKET_INDEX" as const,
@@ -312,7 +694,7 @@ export function buildReviewPackets(input: {
     ...indexWithoutHash,
     indexSha256: hashCanonical(PACKET_INDEX_HASH_DOMAIN, indexWithoutHash),
   });
-  return { packets, files, indexFile };
+  return { packets, files, supportFiles, indexFile };
 }
 
 export function applyReviewDecisionFile(input: {

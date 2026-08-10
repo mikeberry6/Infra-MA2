@@ -15,7 +15,10 @@ import {
   assertValidReviewedRecordExpansion,
   applyReviewDecisionFile,
   buildReviewPackets,
+  buildReviewOverviewFiles,
+  compileCompactReviewWorksheet,
   currentApprovalSummary,
+  verifyReviewPacketIndex,
 } from "./workflow-packets";
 
 async function buildWorkflowFixture(generatedAt = "2026-08-08T12:00:00Z") {
@@ -147,7 +150,15 @@ describe("weekly activity review workflow", () => {
     expect(new Set(packetSet.packets.flatMap((packet) => packet.records.map((record) => record.recordId))).size).toBe(403);
     expect(packetSet.files.filter((file) => file.relativePath.endsWith(".packet.json"))).toHaveLength(17);
     expect(packetSet.files.filter((file) => file.relativePath.endsWith(".review.json"))).toHaveLength(17);
+    expect(packetSet.supportFiles.filter((file) => file.relativePath.endsWith(".worksheet.json"))).toHaveLength(17);
+    expect(packetSet.supportFiles.map((file) => file.relativePath)).toContain(
+      `${artifacts.runDirectory}/reviews/index.md`,
+    );
+    expect(packetSet.supportFiles.map((file) => file.relativePath)).toContain(
+      `${artifacts.runDirectory}/reviews/second-review-exception-preview.md`,
+    );
     expect(packetSet.files.every((file) => file.sha256 === sha256Text(file.contents))).toBe(true);
+    expect(packetSet.supportFiles.every((file) => file.sha256 === sha256Text(file.contents))).toBe(true);
     const firstTemplate = JSON.parse(packetSet.files.find((file) =>
       file.relativePath.endsWith("first-001.review.json"))!.contents);
     expect(firstTemplate.decisions[0]).toMatchObject({
@@ -156,6 +167,33 @@ describe("weekly activity review workflow", () => {
     });
     expect(firstTemplate.decisions[0].outputs[0].reviewedRecord.recordId)
       .toBe(packetSet.packets[0].records[0].recordId);
+    const compactTemplate = JSON.parse(packetSet.supportFiles.find((file) =>
+      file.relativePath.endsWith("first-001.worksheet.json"))!.contents);
+    expect(compactTemplate).toMatchObject({
+      artifactType: "WEEKLY_BRIEFING_ACTIVITY_COMPACT_REVIEW_WORKSHEET",
+      reviewer: "REPLACE_WITH_HUMAN_NAME",
+      humanAttestation: {
+        performedByHuman: false,
+        dispositionVerified: false,
+        classificationVerified: false,
+      },
+    });
+    expect(compactTemplate.decisions[0]).toMatchObject({
+      baseRecordId: packetSet.packets[0].records[0].recordId,
+      evidenceOpened: false,
+      decision: "REPLACE_WITH_ACCEPT_RECOMMENDATION_OR_EDITED_RECORD",
+      outputs: [{ notes: "" }],
+    });
+    const firstMarkdown = packetSet.files.find((file) =>
+      file.relativePath.endsWith("first-001.md"))!.contents;
+    expect(firstMarkdown).toContain("**Recommended scope**");
+    expect(firstMarkdown).toContain("Original automation candidate *(research prompt; not approval)*");
+    expect(firstMarkdown).toContain("Scope rationale");
+    expect(firstMarkdown).toContain("Evidence to open:");
+    const packetIndex = JSON.parse(packetSet.indexFile.contents);
+    expect(verifyReviewPacketIndex(packetIndex).recordCount).toBe(403);
+    expect(() => verifyReviewPacketIndex({ ...packetIndex, recordCount: 402 }))
+      .toThrow(/hash|count/i);
   });
 
   it("approves an obvious evidence-backed batch while preserving record-level hashes", () => {
@@ -209,6 +247,106 @@ describe("weekly activity review workflow", () => {
     });
     const hashes = updated.records.map((record) => record.review.firstReview?.reviewedInputHash);
     expect(new Set(hashes).size).toBe(2);
+  });
+
+  it("compiles explicit compact worksheet decisions through the unchanged full review gate", () => {
+    const records = artifacts.manifest.records.slice(0, 2).map(verifiedDirectCandidate);
+    const manifest = finalizeActivityManifest({
+      ...artifacts.manifest,
+      expectedCandidateCount: 2,
+      records,
+      totals: computeActivityTotals(records),
+    });
+    const packet = buildReviewPackets({
+      manifest,
+      stage: "FIRST",
+      runDirectory: artifacts.runDirectory,
+    }).packets[0];
+    const edited = structuredClone(packet.records[1].record);
+    edited.scopeRationale = `${edited.scopeRationale} The human reviewer also confirmed the disclosed vehicle name.`;
+    const worksheet = {
+      schemaVersion: 1,
+      artifactType: "WEEKLY_BRIEFING_ACTIVITY_COMPACT_REVIEW_WORKSHEET",
+      cutoffDate: manifest.cutoffDate,
+      stage: "FIRST",
+      packetId: packet.packetId,
+      packetSha256: packet.packetSha256,
+      reviewer: "Morgan Smith",
+      reviewedAt: "2026-08-09T16:00:00.000Z",
+      humanAttestation: {
+        performedByHuman: true,
+        dispositionVerified: true,
+        classificationVerified: true,
+      },
+      decisions: [
+        {
+          baseRecordId: packet.records[0].recordId,
+          baseReviewedInputHash: packet.records[0].baseReviewedInputHash,
+          evidenceOpened: true,
+          decision: "ACCEPT_RECOMMENDATION",
+          outputs: [{
+            notes: `Opened the cited evidence and confirmed the acting fund vehicle for ${packet.records[0].recordId}.`,
+          }],
+        },
+        {
+          baseRecordId: packet.records[1].recordId,
+          baseReviewedInputHash: packet.records[1].baseReviewedInputHash,
+          evidenceOpened: true,
+          decision: "EDITED_RECORD",
+          outputs: [{
+            reviewedRecord: edited,
+            notes: `Opened the cited evidence and refined the vehicle rationale for ${packet.records[1].recordId}.`,
+          }],
+        },
+      ],
+    };
+    const compiled = compileCompactReviewWorksheet({ packet, worksheet });
+    expect(compiled.artifactType).toBe("WEEKLY_BRIEFING_ACTIVITY_REVIEW_DECISIONS");
+    expect(compiled.humanAttestation.evidenceOpened).toBe(true);
+    expect(compiled.decisions[0].outputs[0].reviewedRecord)
+      .toEqual(packet.records[0].record);
+    expect(compiled.decisions[1].outputs[0].reviewedRecord.scopeRationale)
+      .toBe(edited.scopeRationale);
+
+    const updated = applyReviewDecisionFile({ manifest, packet, decisionFile: compiled });
+    expect(currentApprovalSummary(updated)).toMatchObject({
+      firstCurrent: 2,
+      secondReviewAssessmentPending: 0,
+    });
+    expect(updated.records[1].scopeRationale).toBe(edited.scopeRationale);
+    const refreshedOverview = buildReviewOverviewFiles({
+      manifest: updated,
+      firstReviewPackets: [packet],
+      runDirectory: artifacts.runDirectory,
+    });
+    const refreshedIndex = refreshedOverview.find((file) =>
+      file.relativePath.endsWith("/reviews/index.md"))!.contents;
+    expect(refreshedIndex).toContain("First approvals current | 2 / 2");
+    expect(refreshedIndex).toContain("| first-001 | 2 | 2 | 0 |");
+    expect(refreshedIndex).toContain(`Manifest hash: \`${updated.manifestSha256}\``);
+
+    expect(() => compileCompactReviewWorksheet({
+      packet,
+      worksheet: {
+        ...worksheet,
+        decisions: worksheet.decisions.map((decision, index) => index === 0
+          ? { ...decision, evidenceOpened: false }
+          : decision),
+      },
+    })).toThrow();
+    expect(() => compileCompactReviewWorksheet({
+      packet,
+      worksheet: { ...worksheet, reviewer: "REPLACE_WITH_HUMAN_NAME" },
+    })).toThrow(/human|placeholder/i);
+    expect(() => compileCompactReviewWorksheet({
+      packet,
+      worksheet: {
+        ...worksheet,
+        decisions: worksheet.decisions.map((decision, index) => index === 0
+          ? { ...decision, outputs: [{ notes: "Verified." }] }
+          : decision),
+      },
+    })).toThrow(/substantive record-level rationale/i);
   });
 
   it("queues only verified risk exceptions after first review and enforces independent second review", () => {
@@ -577,6 +715,13 @@ describe("weekly activity review workflow", () => {
       unresolved: 0,
     });
     expect(updated.expectedCandidateCount).toBe(1);
+    const splitOverview = buildReviewOverviewFiles({
+      manifest: updated,
+      firstReviewPackets: [packet],
+      runDirectory: artifacts.runDirectory,
+    }).find((file) => file.relativePath.endsWith("/reviews/index.md"))!.contents;
+    expect(splitOverview).toContain("First approvals current | 2 / 2");
+    expect(splitOverview).toContain("| first-001 | 1 | 1 | 0 |");
   });
 
   it("freezes the exact non-chart email content independently of chart rendering", () => {
