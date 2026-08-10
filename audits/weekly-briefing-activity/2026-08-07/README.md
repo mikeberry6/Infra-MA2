@@ -1,6 +1,6 @@
 # Weekly briefing activity audit — 2026-08-07
 
-Status: **IN REVIEW — PUBLICATION BLOCKED**
+Status: **PUBLISHED UNDER A USER-AUTHORIZED WAIVER**
 
 ## Frozen controls
 
@@ -23,7 +23,7 @@ repeated announcements merge into earlier transactions, while
 `INF-2026-077` contains two legally distinct transactions and therefore emits
 two suffixed review records. The resulting evidence-derived control is 402.
 
-## Current review gates
+## Transparently outstanding human gates
 
 | Gate | Current |
 | --- | ---: |
@@ -33,22 +33,37 @@ two suffixed review records. The resulting evidence-derived control is 402.
 | Current second approvals | 0 |
 | Unresolved scopes | 0 |
 
-No human approvals are manufactured by this workflow. One evidence-backed
-first review is required for every candidate. Transaction categories are
-research prompts only; a second reviewer is required solely for verified
-conflicting transaction facts, conflicting acting-entity evidence, uncertain
-ownership timing, actual mixed fund/operating-company participation, or bundled
-legally distinct transactions.
+No human approvals were manufactured for this release. The manifest remains
+`IN_REVIEW`, every first- and second-review field remains empty, the publication
+approval remains `null`, and the final approved control remains unset. The user
+explicitly authorized publication with those human-review and Outlook desktop
+gates waived for this edition.
 
-All record-level data gates now pass. The remaining 421 fail-closed findings
-are exactly 404 missing first approvals, 15 missing independent second
-approvals, the unapproved manifest state, and the unset final control. No
-record is unresolved and no source, ownership, actor, geography, duplicate, or
-totals inconsistency remains.
+All record-level data gates pass. The remaining 421 findings are exactly 404
+missing first approvals, 15 missing independent second approvals, the
+unapproved manifest state, and the unset final control. No record is unresolved
+and no source, ownership, actor, geography, duplicate, or totals inconsistency
+remains.
 
-The deterministic preview at `preview/2026-08-07.html` changes only the YTD
-chart block. The public August 7 email and approved-edition index remain
-unchanged until the named human reviews and Outlook desktop QA are complete.
+The waiver at `user-authorized-publication-waiver.json` is a narrow,
+hash-bound release authorization rather than a review attestation. It binds the
+unchanged manifest, exact 421-finding allowlist, protected non-chart content,
+and deterministic rendered email. Any record, total, issue-set, chart, or
+non-chart change invalidates the waiver and fails closed.
+
+The public August 7 email now byte-for-byte matches the deterministic preview.
+Only the delimited YTD chart block changed; the approved-edition index advances
+the default Weekly Briefing route through a `USER_AUTHORIZED_WAIVER` entry.
+July 31 remains unchanged as the historical baseline.
+
+## Publication integrity
+
+| Artifact | SHA-256 |
+| --- | --- |
+| Manifest canonical hash | `124a216beaa42516397269ef9e4cec81e1bcf75e63dc8adbe8986d8e23d3d268` |
+| Rendered August 7 email | `d907dd7e64963d8d69ab1fb5e751c4ef5f54c80471b2d623389552ab48641064` |
+| Protected non-chart content | `9970916e829cda394f57126c723bd7ba76a8e5709f0b80a0a2488a9fa0d9767c` |
+| Unchanged July 31 email | `17ae39249677e8f57db1038641cbb582357576ac6465b92bea2dc3f71c58388e` |
 
 ## Evidence-derived stacked-chart controls
 

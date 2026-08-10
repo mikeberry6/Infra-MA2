@@ -22,4 +22,33 @@ describe("weekly briefing approved-edition cutover", () => {
     expect(preflight).toBeGreaterThanOrEqual(0);
     expect(publicWrite).toBeGreaterThan(preflight);
   });
+
+  it("validates the exact user waiver before either rendering or advancing", () => {
+    const source = readFileSync(
+      "scripts/weekly-briefing-activity/workflow-cli.ts",
+      "utf8",
+    );
+    const renderStart = source.indexOf("function renderCommand");
+    const advanceStart = source.indexOf("async function advanceCommand");
+    const mainStart = source.indexOf("async function main", advanceStart);
+    const render = source.slice(renderStart, advanceStart);
+    const advance = source.slice(advanceStart, mainStart);
+
+    const renderWaiverValidation = render.indexOf(
+      "validateUserAuthorizedWaiverForEmail",
+    );
+    const emailWrite = render.indexOf("atomicWriteArtifact(repoRoot");
+    const advanceWaiverValidation = advance.indexOf(
+      "validateUserAuthorizedWaiverForEmail",
+    );
+    const indexWrite = advance.indexOf("atomicWriteArtifact(repoRoot");
+
+    expect(renderWaiverValidation).toBeGreaterThanOrEqual(0);
+    expect(emailWrite).toBeGreaterThan(renderWaiverValidation);
+    expect(advanceWaiverValidation).toBeGreaterThanOrEqual(0);
+    expect(indexWrite).toBeGreaterThan(advanceWaiverValidation);
+    expect(advance).toContain(
+      "advance requires exactly one of --qa FILE or --waiver FILE",
+    );
+  });
 });

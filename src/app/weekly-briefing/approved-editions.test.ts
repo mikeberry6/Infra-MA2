@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
@@ -10,6 +10,7 @@ import {
   finalizeActivityManifest,
 } from "../../../scripts/weekly-briefing-activity/review";
 import {
+  type ActivityAuditManifest,
   type ActivityRecord,
   secondReviewRiskKinds,
   WEEKLY_ACTIVITY_METHODOLOGY_VERSION,
@@ -42,6 +43,22 @@ const legacyEntry: ApprovedWeeklyBriefingEdition = {
   },
 };
 
+const waiverEntry: ApprovedWeeklyBriefingEdition = {
+  edition: "2026-08-07",
+  approval: {
+    kind: "USER_AUTHORIZED_WAIVER",
+    manifestPath:
+      "audits/weekly-briefing-activity/2026-08-07/manifest.json",
+    manifestSha256: "a".repeat(64),
+    emailPath: "public/email-format/2026-08-07.html",
+    renderedEmailSha256: "b".repeat(64),
+    protectedNonChartSha256: "c".repeat(64),
+    waiverPath:
+      "audits/weekly-briefing-activity/2026-08-07/user-authorized-publication-waiver.json",
+    waiverSha256: "d".repeat(64),
+  },
+};
+
 const fixtureSourceEmail =
   "<html><body>Approved copy<!-- YTD STATS -->Unrendered charts<!-- FOOTER -->Approved footer</body></html>";
 
@@ -55,6 +72,15 @@ function buildIndex(entries: ApprovedWeeklyBriefingEdition[]) {
     ...base,
     indexSha256: computeApprovedWeeklyBriefingIndexSha256(base),
   };
+}
+
+async function copyRepositoryArtifact(
+  repositoryRoot: string,
+  relativePath: string,
+): Promise<void> {
+  const destination = path.join(repositoryRoot, relativePath);
+  await mkdir(path.dirname(destination), { recursive: true });
+  await copyFile(path.join(process.cwd(), relativePath), destination);
 }
 
 function approvedRecordFixture(): ActivityRecord {
@@ -303,16 +329,11 @@ async function createApprovedManifestFixture(repositoryRoot: string) {
 describe("approved weekly briefing index", () => {
   it("keeps July 31 as a hash-bound legacy baseline", async () => {
     const index = await readApprovedWeeklyBriefingIndex();
-    expect(index.entries).toEqual([legacyEntry]);
+    expect(index.entries.find((entry) => entry.edition === "2026-07-31"))
+      .toEqual(legacyEntry);
     expect(index.indexSha256).toBe(
       computeApprovedWeeklyBriefingIndexSha256(index),
     );
-    expect(
-      resolveLatestApprovedWeeklyBriefingEdition({
-        index,
-        archivedEditions: ["2026-08-07", "2026-07-31"],
-      }),
-    ).toBe("2026-07-31");
   });
 
   it("chooses the newest provenance-bound entry independent of index order", () => {
@@ -339,6 +360,46 @@ describe("approved weekly briefing index", () => {
         archivedEditions: ["2026-08-07", "2026-07-31"],
       }),
     ).toBe("2026-08-07");
+  });
+
+  it("parses a strict, provenance-bound user-authorized waiver entry", () => {
+    const index = buildIndex([waiverEntry, legacyEntry]);
+
+    expect(parseApprovedWeeklyBriefingIndex(JSON.stringify(index))).toEqual(index);
+    expect(
+      resolveLatestApprovedWeeklyBriefingEdition({
+        index,
+        archivedEditions: ["2026-07-31", "2026-08-07", "2026-08-14"],
+      }),
+    ).toBe("2026-08-07");
+
+    const withHumanQaClaim = structuredClone(index) as unknown as {
+      entries: Array<{ approval: Record<string, unknown> }>;
+      indexSha256: string;
+    };
+    withHumanQaClaim.entries[0].approval.outlookQaPath =
+      "audits/weekly-briefing-activity/2026-08-07/outlook-qa-approval.json";
+    const rehashedWithHumanQaClaim = buildIndex(
+      withHumanQaClaim.entries as unknown as ApprovedWeeklyBriefingEdition[],
+    );
+    expect(() =>
+      parseApprovedWeeklyBriefingIndex(
+        JSON.stringify(rehashedWithHumanQaClaim),
+      ),
+    ).toThrow("user-authorized waiver contains unexpected or missing fields");
+
+    const missingWaiverBinding = structuredClone(index) as unknown as {
+      entries: Array<{ approval: Record<string, unknown> }>;
+    };
+    delete missingWaiverBinding.entries[0].approval.waiverSha256;
+    const rehashedWithoutWaiverBinding = buildIndex(
+      missingWaiverBinding.entries as unknown as ApprovedWeeklyBriefingEdition[],
+    );
+    expect(() =>
+      parseApprovedWeeklyBriefingIndex(
+        JSON.stringify(rehashedWithoutWaiverBinding),
+      ),
+    ).toThrow("user-authorized waiver contains unexpected or missing fields");
   });
 
   it("rejects semantic index tampering unless the canonical hash matches", () => {
@@ -549,5 +610,225 @@ describe("approved weekly briefing index", () => {
     await expect(
       readApprovedWeeklyBriefingIndex(indexPath, repositoryRoot),
     ).rejects.toThrow("Outlook QA artifact hash mismatch");
+  });
+
+  it("rejects a cross-edition waiver path and changed waiver bytes", async () => {
+    const repositoryRoot = await mkdtemp(
+      path.join(os.tmpdir(), "briefing-waiver-index-"),
+    );
+    const emailDirectory = path.join(repositoryRoot, "public", "email-format");
+    await mkdir(emailDirectory, { recursive: true });
+    const { draft, runDirectory } =
+      await createApprovedManifestFixture(repositoryRoot);
+    const unreviewedRecord = structuredClone(draft.records[0]);
+    unreviewedRecord.review = { firstReview: null, secondReview: null };
+    const waiverEligibleManifest = finalizeActivityManifest({
+      ...draft,
+      status: "IN_REVIEW",
+      records: [unreviewedRecord],
+      totals: computeActivityTotals([unreviewedRecord]),
+    });
+    const manifestPath = path.join(runDirectory, "manifest.json");
+    const emailPath = path.join(emailDirectory, "2026-08-07.html");
+    const indexPath = path.join(emailDirectory, "approved-editions.json");
+    const protectedNonChartSha256 = computeProtectedNonChartSha256(
+      fixtureSourceEmail,
+    );
+    const emailRaw = renderManifestActivityEmail({
+      sourceHtml: fixtureSourceEmail,
+      manifest: waiverEligibleManifest,
+      expectedNonChartSha256: protectedNonChartSha256,
+    }).html;
+    await writeFile(
+      manifestPath,
+      JSON.stringify(waiverEligibleManifest, null, 2),
+    );
+    await writeFile(emailPath, emailRaw);
+
+    const expectedWaiverRelativePath =
+      "audits/weekly-briefing-activity/2026-08-07/user-authorized-publication-waiver.json";
+    const waiverRaw = JSON.stringify({ deliberately: "invalid fixture" });
+    await writeFile(
+      path.join(repositoryRoot, expectedWaiverRelativePath),
+      waiverRaw,
+    );
+    const commonApproval = {
+      kind: "USER_AUTHORIZED_WAIVER" as const,
+      manifestPath:
+        "audits/weekly-briefing-activity/2026-08-07/manifest.json",
+      manifestSha256: waiverEligibleManifest.manifestSha256,
+      emailPath: "public/email-format/2026-08-07.html",
+      renderedEmailSha256: sha256(emailRaw),
+      protectedNonChartSha256,
+      waiverSha256: sha256(waiverRaw),
+    };
+
+    const crossEditionPathIndex = buildIndex([{
+      edition: "2026-08-07",
+      approval: {
+        ...commonApproval,
+        waiverPath:
+          "audits/weekly-briefing-activity/2026-08-14/user-authorized-publication-waiver.json",
+      },
+    }]);
+    await writeFile(indexPath, JSON.stringify(crossEditionPathIndex));
+    await expect(
+      readApprovedWeeklyBriefingIndex(indexPath, repositoryRoot),
+    ).rejects.toThrow(
+      "User-authorized waiver artifact path does not match its edition",
+    );
+
+    const wrongRawHashIndex = buildIndex([{
+      edition: "2026-08-07",
+      approval: {
+        ...commonApproval,
+        waiverPath: expectedWaiverRelativePath,
+        waiverSha256: "e".repeat(64),
+      },
+    }]);
+    await writeFile(indexPath, JSON.stringify(wrongRawHashIndex));
+    await expect(
+      readApprovedWeeklyBriefingIndex(indexPath, repositoryRoot),
+    ).rejects.toThrow("User-authorized waiver artifact hash mismatch");
+  });
+
+  it("validates the exact committed waiver without manufacturing human approvals", async () => {
+    const repositoryRoot = await mkdtemp(
+      path.join(os.tmpdir(), "briefing-exact-waiver-index-"),
+    );
+    const manifestRelativePath =
+      "audits/weekly-briefing-activity/2026-08-07/manifest.json";
+    const waiverRelativePath =
+      "audits/weekly-briefing-activity/2026-08-07/user-authorized-publication-waiver.json";
+    const validationReportRelativePath =
+      "audits/weekly-briefing-activity/2026-08-07/validation-report.json";
+    const manifestRaw = await readFile(manifestRelativePath, "utf8");
+    const manifest = JSON.parse(manifestRaw) as ActivityAuditManifest;
+    expect(manifest.status).toBe("IN_REVIEW");
+    expect(manifest.publicationApproval).toBeNull();
+    expect(manifest.records.every((record) =>
+      record.review.firstReview === null
+      && record.review.secondReview === null)).toBe(true);
+
+    for (const relativePath of new Set([
+      manifestRelativePath,
+      waiverRelativePath,
+      validationReportRelativePath,
+      ...manifest.frozenInputs.map((input) => input.path),
+    ])) {
+      await copyRepositoryArtifact(repositoryRoot, relativePath);
+    }
+
+    const emailRelativePath = "public/email-format/2026-08-07.html";
+    const previewRaw = await readFile(
+      "audits/weekly-briefing-activity/2026-08-07/preview/2026-08-07.html",
+      "utf8",
+    );
+    const emailPath = path.join(repositoryRoot, emailRelativePath);
+    await mkdir(path.dirname(emailPath), { recursive: true });
+    await writeFile(emailPath, previewRaw);
+    const waiverRaw = await readFile(waiverRelativePath, "utf8");
+    const entry: ApprovedWeeklyBriefingEdition = {
+      edition: "2026-08-07",
+      approval: {
+        kind: "USER_AUTHORIZED_WAIVER",
+        manifestPath: manifestRelativePath,
+        manifestSha256: manifest.manifestSha256,
+        emailPath: emailRelativePath,
+        renderedEmailSha256: sha256(previewRaw),
+        protectedNonChartSha256:
+          computeProtectedNonChartSha256(previewRaw),
+        waiverPath: waiverRelativePath,
+        waiverSha256: sha256(waiverRaw),
+      },
+    };
+    const index = buildIndex([entry]);
+    const indexPath = path.join(
+      repositoryRoot,
+      "public/email-format/approved-editions.json",
+    );
+    await writeFile(indexPath, JSON.stringify(index));
+
+    await expect(
+      readApprovedWeeklyBriefingIndex(indexPath, repositoryRoot),
+    ).resolves.toEqual(index);
+
+    const wrongEditionIndex = buildIndex([{
+      ...entry,
+      edition: "2026-08-14",
+    }]);
+    await writeFile(indexPath, JSON.stringify(wrongEditionIndex));
+    await expect(
+      readApprovedWeeklyBriefingIndex(indexPath, repositoryRoot),
+    ).rejects.toThrow(
+      "Only 2026-08-07 may use USER_AUTHORIZED_WAIVER approval",
+    );
+
+    const wrongManifestHashIndex = buildIndex([{
+      ...entry,
+      approval: {
+        ...entry.approval,
+        manifestSha256: "e".repeat(64),
+      },
+    }]);
+    await writeFile(indexPath, JSON.stringify(wrongManifestHashIndex));
+    await expect(
+      readApprovedWeeklyBriefingIndex(indexPath, repositoryRoot),
+    ).rejects.toThrow("Approved manifest hash mismatch");
+
+    const chartTamperedEmail = previewRaw.replace(
+      'data-direct="100"',
+      'data-direct="99"',
+    );
+    expect(chartTamperedEmail).not.toBe(previewRaw);
+    await writeFile(emailPath, chartTamperedEmail);
+    const chartTamperedIndex = buildIndex([{
+      ...entry,
+      approval: {
+        ...entry.approval,
+        renderedEmailSha256: sha256(chartTamperedEmail),
+      },
+    }]);
+    await writeFile(indexPath, JSON.stringify(chartTamperedIndex));
+    await expect(
+      readApprovedWeeklyBriefingIndex(indexPath, repositoryRoot),
+    ).rejects.toThrow(
+      "does not byte-for-byte match the deterministic manifest render",
+    );
+
+    const nonChartTamperedEmail = `Changed outside charts\n${previewRaw}`;
+    await writeFile(emailPath, nonChartTamperedEmail);
+    const nonChartTamperedIndex = buildIndex([{
+      ...entry,
+      approval: {
+        ...entry.approval,
+        renderedEmailSha256: sha256(nonChartTamperedEmail),
+      },
+    }]);
+    await writeFile(indexPath, JSON.stringify(nonChartTamperedIndex));
+    await expect(
+      readApprovedWeeklyBriefingIndex(indexPath, repositoryRoot),
+    ).rejects.toThrow("Protected non-chart hash mismatch");
+
+    await writeFile(emailPath, previewRaw);
+    const semanticallyTamperedWaiver = JSON.stringify({
+      ...(JSON.parse(waiverRaw) as Record<string, unknown>),
+      recordedAt: "2026-08-10T04:00:01.000Z",
+    }, null, 2);
+    await writeFile(
+      path.join(repositoryRoot, waiverRelativePath),
+      semanticallyTamperedWaiver,
+    );
+    const semanticallyTamperedWaiverIndex = buildIndex([{
+      ...entry,
+      approval: {
+        ...entry.approval,
+        waiverSha256: sha256(semanticallyTamperedWaiver),
+      },
+    }]);
+    await writeFile(indexPath, JSON.stringify(semanticallyTamperedWaiverIndex));
+    await expect(
+      readApprovedWeeklyBriefingIndex(indexPath, repositoryRoot),
+    ).rejects.toThrow("User-authorized publication waiver hash mismatch");
   });
 });

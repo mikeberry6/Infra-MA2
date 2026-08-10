@@ -21,6 +21,11 @@ import {
   assertOutlookQaApprovalMatches,
   parseOutlookQaApproval,
 } from "./outlook-qa";
+import {
+  assertUserAuthorizedManifestEligible,
+  assertUserAuthorizedPublicationWaiverMatches,
+  parseUserAuthorizedPublicationWaiver,
+} from "./user-authorized-waiver";
 import { captureWeeklyActivityInputs } from "./sources-snapshot";
 import {
   artifactFile,
@@ -69,6 +74,7 @@ interface CliOptions {
   packetPath: string | null;
   approvalPath: string | null;
   qaPath: string | null;
+  waiverPath: string | null;
   allowMissingProduction: boolean;
 }
 
@@ -76,7 +82,7 @@ function usage(): never {
   throw new Error(
     "Usage: workflow-cli.ts <snapshot|reconcile|packets|review|validate|approve|render|advance> "
       + "[--edition YYYY-MM-DD] [--write] [--stage first|second] "
-      + "[--decision FILE] [--packet FILE] [--approval FILE] [--qa FILE] [--generated-at ISO]",
+      + "[--decision FILE] [--packet FILE] [--approval FILE] [--qa FILE] [--waiver FILE] [--generated-at ISO]",
   );
 }
 
@@ -93,6 +99,7 @@ function parseOptions(argv: string[]): CliOptions {
   let packetPath: string | null = null;
   let approvalPath: string | null = null;
   let qaPath: string | null = null;
+  let waiverPath: string | null = null;
   let allowMissingProduction = false;
 
   for (let index = 3; index < argv.length; index += 1) {
@@ -117,6 +124,8 @@ function parseOptions(argv: string[]): CliOptions {
     else if (arg.startsWith("--approval=")) approvalPath = arg.slice("--approval=".length);
     else if (arg === "--qa") qaPath = take(arg);
     else if (arg.startsWith("--qa=")) qaPath = arg.slice("--qa=".length);
+    else if (arg === "--waiver") waiverPath = take(arg);
+    else if (arg.startsWith("--waiver=")) waiverPath = arg.slice("--waiver=".length);
     else if (arg === "--allow-missing-production") allowMissingProduction = true;
     else throw new Error(`Unknown argument: ${arg}`);
   }
@@ -124,7 +133,10 @@ function parseOptions(argv: string[]): CliOptions {
   if (Number.isNaN(Date.parse(generatedAt))) throw new Error("generated-at must be an ISO timestamp");
   generatedAt = new Date(generatedAt).toISOString();
   if (!(["FIRST", "SECOND"] as const).includes(stage)) throw new Error("stage must be first or second");
-  return { command, edition, write, generatedAt, stage, decisionPath, packetPath, approvalPath, qaPath, allowMissingProduction };
+  if (waiverPath !== null && command !== "render" && command !== "advance") {
+    throw new Error("--waiver is only valid with render or advance");
+  }
+  return { command, edition, write, generatedAt, stage, decisionPath, packetPath, approvalPath, qaPath, waiverPath, allowMissingProduction };
 }
 
 function readJson(relativeOrAbsolutePath: string): unknown {
@@ -442,18 +454,84 @@ function renderExpectedEmail(
   });
 }
 
+function expectedWaiverPath(edition: string): string {
+  return `${auditRunDirectory(edition)}/user-authorized-publication-waiver.json`;
+}
+
+function readUserAuthorizedWaiver(
+  options: CliOptions,
+  repoRoot: string,
+): {
+  waiver: ReturnType<typeof parseUserAuthorizedPublicationWaiver>;
+  waiverRaw: string;
+  waiverRelativePath: string;
+} {
+  if (!options.waiverPath) throw new Error("A user-authorized waiver path is required");
+  const waiverRelativePath = expectedWaiverPath(options.edition);
+  const waiverAbsolutePath = resolve(options.waiverPath);
+  if (waiverAbsolutePath !== join(repoRoot, waiverRelativePath)) {
+    throw new Error(`User-authorized waiver must be stored at ${waiverRelativePath}`);
+  }
+  const waiverRaw = readFileSync(waiverAbsolutePath, "utf8");
+  return {
+    waiver: parseUserAuthorizedPublicationWaiver(waiverRaw),
+    waiverRaw,
+    waiverRelativePath,
+  };
+}
+
+function validateUserAuthorizedWaiverForEmail({
+  options,
+  repoRoot,
+  manifest,
+  renderedEmail,
+  protectedNonChartSha256,
+}: {
+  options: CliOptions;
+  repoRoot: string;
+  manifest: ActivityAuditManifest;
+  renderedEmail: string;
+  protectedNonChartSha256: string;
+}): ReturnType<typeof readUserAuthorizedWaiver> {
+  const waiverFile = readUserAuthorizedWaiver(options, repoRoot);
+  const manifestRaw = readFileSync(join(repoRoot, manifestPath(options.edition)), "utf8");
+  assertUserAuthorizedPublicationWaiverMatches(waiverFile.waiver, {
+    repositoryRoot: repoRoot,
+    manifest,
+    manifestFileSha256: sha256Text(manifestRaw),
+    renderedEmailSha256: sha256Text(renderedEmail),
+    protectedNonChartSha256,
+  });
+  return waiverFile;
+}
+
 function renderCommand(options: CliOptions, repoRoot: string): void {
-  const manifest = assertManifestPublishable(readManifest(repoRoot, options.edition), { repositoryRoot: repoRoot });
+  const manifestValue = readManifest(repoRoot, options.edition);
+  const manifest = options.waiverPath
+    ? assertUserAuthorizedManifestEligible(manifestValue, { repositoryRoot: repoRoot })
+    : assertManifestPublishable(manifestValue, { repositoryRoot: repoRoot });
   const emailPath = `public/email-format/${options.edition}.html`;
   const sourceHtml = readFileSync(join(repoRoot, emailPath), "utf8");
   const rendered = renderExpectedEmail(manifest, sourceHtml);
+  const waiverFile = options.waiverPath
+    ? validateUserAuthorizedWaiverForEmail({
+      options,
+      repoRoot,
+      manifest,
+      renderedEmail: rendered.html,
+      protectedNonChartSha256: rendered.nonChartSha256,
+    })
+    : null;
   print({
     command: "render",
     mode: options.write ? "WRITE" : "DRY_RUN",
+    authorization: waiverFile ? "USER_AUTHORIZED_WAIVER" : "AUDIT_MANIFEST",
     emailPath,
-    finalApprovedTotal: manifest.controls.finalApprovedTotal,
+    evidenceDerivedTotal: manifest.totals.grandTotal.total,
     renderedEmailSha256: sha256Text(rendered.html),
     protectedNonChartSha256: rendered.nonChartSha256,
+    waiverPath: waiverFile?.waiverRelativePath ?? null,
+    waiverSha256: waiverFile ? sha256Text(waiverFile.waiverRaw) : null,
     changed: rendered.html !== sourceHtml,
   });
   if (options.write) {
@@ -466,46 +544,76 @@ function renderCommand(options: CliOptions, repoRoot: string): void {
 }
 
 async function advanceCommand(options: CliOptions, repoRoot: string): Promise<void> {
-  if (!options.qaPath) throw new Error("advance requires --qa FILE");
-  const manifest = assertManifestPublishable(readManifest(repoRoot, options.edition), { repositoryRoot: repoRoot });
+  if ((options.qaPath === null) === (options.waiverPath === null)) {
+    throw new Error("advance requires exactly one of --qa FILE or --waiver FILE");
+  }
+  const manifestValue = readManifest(repoRoot, options.edition);
+  const manifest = options.waiverPath
+    ? assertUserAuthorizedManifestEligible(manifestValue, { repositoryRoot: repoRoot })
+    : assertManifestPublishable(manifestValue, { repositoryRoot: repoRoot });
   const emailPath = `public/email-format/${options.edition}.html`;
   const email = readFileSync(join(repoRoot, emailPath), "utf8");
   const expectedEmail = renderExpectedEmail(manifest, email).html;
   if (email !== expectedEmail) {
     throw new Error(
-      "Approved edition email does not byte-for-byte match the deterministic manifest render; run render --write and repeat Outlook QA",
+      "Approved edition email does not byte-for-byte match the deterministic manifest render; run render --write before cutover",
     );
   }
   const renderedEmailSha256 = sha256Text(email);
   const protectedNonChartSha256 = computeNonChartSha256(email);
+  const waiverFile = options.waiverPath
+    ? validateUserAuthorizedWaiverForEmail({
+      options,
+      repoRoot,
+      manifest,
+      renderedEmail: email,
+      protectedNonChartSha256,
+    })
+    : null;
   const expectedQaPath = `${auditRunDirectory(options.edition)}/outlook-qa-approval.json`;
-  const qaAbsolutePath = resolve(options.qaPath);
-  if (qaAbsolutePath !== join(repoRoot, expectedQaPath)) {
-    throw new Error(`Outlook QA approval must be stored at ${expectedQaPath}`);
-  }
-  const qaRaw = readFileSync(qaAbsolutePath, "utf8");
-  const qaApproval = parseOutlookQaApproval(qaRaw);
-  assertOutlookQaApprovalMatches(qaApproval, {
-    edition: options.edition,
-    manifestSha256: manifest.manifestSha256,
-    renderedEmailSha256,
-    protectedNonChartSha256,
-  });
-  const indexPath = "public/email-format/approved-editions.json";
-  const current = parseApprovedWeeklyBriefingIndex(readFileSync(join(repoRoot, indexPath), "utf8"));
-  const entry = {
-    edition: options.edition,
-    approval: {
-      kind: "AUDIT_MANIFEST" as const,
-      manifestPath: manifestPath(options.edition),
+  let qaRaw: string | null = null;
+  if (!waiverFile) {
+    const qaAbsolutePath = resolve(options.qaPath!);
+    if (qaAbsolutePath !== join(repoRoot, expectedQaPath)) {
+      throw new Error(`Outlook QA approval must be stored at ${expectedQaPath}`);
+    }
+    qaRaw = readFileSync(qaAbsolutePath, "utf8");
+    const qaApproval = parseOutlookQaApproval(qaRaw);
+    assertOutlookQaApprovalMatches(qaApproval, {
+      edition: options.edition,
       manifestSha256: manifest.manifestSha256,
-      emailPath,
       renderedEmailSha256,
       protectedNonChartSha256,
-      outlookQaPath: expectedQaPath,
-      outlookQaSha256: sha256Text(qaRaw),
-    },
+    });
+  }
+  const indexPath = "public/email-format/approved-editions.json";
+  const current = parseApprovedWeeklyBriefingIndex(readFileSync(join(repoRoot, indexPath), "utf8"));
+  const commonApproval = {
+    manifestPath: manifestPath(options.edition),
+    manifestSha256: manifest.manifestSha256,
+    emailPath,
+    renderedEmailSha256,
+    protectedNonChartSha256,
   };
+  const entry = waiverFile
+    ? {
+      edition: options.edition,
+      approval: {
+        kind: "USER_AUTHORIZED_WAIVER" as const,
+        ...commonApproval,
+        waiverPath: waiverFile.waiverRelativePath,
+        waiverSha256: sha256Text(waiverFile.waiverRaw),
+      },
+    }
+    : {
+      edition: options.edition,
+      approval: {
+        kind: "AUDIT_MANIFEST" as const,
+        ...commonApproval,
+        outlookQaPath: expectedQaPath,
+        outlookQaSha256: sha256Text(qaRaw!),
+      },
+    };
   const entries = [...current.entries.filter((item) => item.edition !== options.edition), entry]
     .sort((left, right) => left.edition.localeCompare(right.edition));
   const withoutHash = { schemaVersion: 1 as const, entries };
@@ -522,8 +630,11 @@ async function advanceCommand(options: CliOptions, repoRoot: string): Promise<vo
     command: "advance",
     mode: options.write ? "WRITE" : "DRY_RUN",
     edition: options.edition,
-    outlookQaPath: expectedQaPath,
-    outlookQaSha256: entry.approval.outlookQaSha256,
+    authorization: entry.approval.kind,
+    outlookQaPath: entry.approval.kind === "AUDIT_MANIFEST" ? entry.approval.outlookQaPath : null,
+    outlookQaSha256: entry.approval.kind === "AUDIT_MANIFEST" ? entry.approval.outlookQaSha256 : null,
+    waiverPath: entry.approval.kind === "USER_AUTHORIZED_WAIVER" ? entry.approval.waiverPath : null,
+    waiverSha256: entry.approval.kind === "USER_AUTHORIZED_WAIVER" ? entry.approval.waiverSha256 : null,
     indexSha256: updated.indexSha256,
     entries: updated.entries.map((item) => item.edition),
   });

@@ -1,14 +1,17 @@
 # August 7 publication QA
 
-Status: **IN REVIEW — evidence-backed preview rendered; human record approval and Outlook desktop QA remain**
+Status: **PUBLISHED VIA USER-AUTHORIZED WAIVER — OUTLOOK DESKTOP QA NOT PERFORMED**
 
-Complete these checks after all record and publication gates pass and before
-advancing the approved-edition index.
+The standard human-review and Outlook desktop gates below were not completed.
+The user explicitly authorized their waiver for this edition. The committed
+waiver records that exception without asserting that any omitted check passed.
 
-- [ ] `npm run weekly:activity:validate -- --edition 2026-08-07` exits cleanly.
+- [x] Standard validation returns the exact waived issue set and nothing else:
+      404 missing first reviews, 15 missing second reviews, one unapproved
+      manifest finding, and one unset-final-control finding.
 - [x] Render dry run confirms that only the delimited YTD block changes; the
       protected non-chart hash still matches the frozen input.
-- [ ] Render with the explicit `--write` flag.
+- [x] Render the deterministic chart block into the public August 7 email.
 - [x] Confirm the sector and region grand totals independently reconcile to
       285 Direct + 117 Portfolio-company = 402 legally distinct transactions.
 - [x] Confirm every row is descending by total and each filled width is
@@ -20,18 +23,17 @@ advancing the approved-edition index.
       desktop have no horizontal overflow. At 320px the chart itself fits at
       269.4px; the unchanged historical email body retains 31px of pre-existing
       page overflow outside the chart block.
-- [ ] Copy/paste the exact rendered email into Outlook desktop without editing
-      the source artifact.
-- [ ] Send the Outlook draft to the reviewer and inspect the received desktop
-      and mobile messages.
-- [ ] Record reviewer, timestamp, Outlook version, and screenshots below.
-- [ ] Copy `outlook-qa-approval.template.json` to
-      `outlook-qa-approval.json`, bind it to the approved manifest and exact
-      rendered-email hashes, and have the named human reviewer attest every
-      required viewport and Outlook check.
-- [ ] Run the approved-index advance command first as a dry run, then with
-      `--qa audits/weekly-briefing-activity/2026-08-07/outlook-qa-approval.json`;
-      add `--write` only after the send-to-self test passes.
+- [ ] Copy/paste the exact rendered email into Outlook desktop. **Not
+      performed; explicitly waived.**
+- [ ] Send the Outlook draft to self and inspect the received desktop and
+      mobile messages. **Not performed; explicitly waived.**
+- [ ] Record Outlook version and screenshots. **Not performed; explicitly
+      waived.**
+- [x] Commit `user-authorized-publication-waiver.json`, bound to the unchanged
+      manifest, exact validation findings, protected non-chart hash, and exact
+      rendered-email hash.
+- [x] Advance the approved-edition index with a hash-bound
+      `USER_AUTHORIZED_WAIVER` entry and verify August 7 resolves as latest.
 
 ## Evidence log
 
@@ -44,6 +46,7 @@ advancing the approved-edition index.
   - 1024px: chart/legend 518px and centered; document width exactly 1024px.
   - All 11 displayed rows allocate exactly 100 integer width points across
     Direct, Portfolio-company, and unfilled remainder segments.
-- Pending: named human record approvals, independent second approvals for the
+- Not performed: named record approvals, independent second approvals for the
   15 verified exception records, Outlook desktop copy/paste, and Outlook
-  send-to-self inspection.
+  send-to-self inspection. These remain visibly absent rather than being
+  represented as completed attestations.

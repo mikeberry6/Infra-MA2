@@ -205,3 +205,40 @@ deterministic output before it validates QA. The approved-edition index records
 the QA artifact path and file hash, and route dependency validation repeats the
 manifest render comparison and QA provenance checks. Editing the email,
 manifest, non-chart copy, or QA artifact after approval therefore fails closed.
+
+### August 7 user-authorized publication waiver
+
+For the August 7 edition, the user explicitly authorized immediate publication
+with the outstanding record-review and Outlook desktop gates waived. This is a
+narrow release exception, not a human review or Outlook QA attestation. The
+manifest remains `IN_REVIEW`; its empty review fields, `null` publication
+approval, and unset final approved total are preserved exactly.
+
+The exception is recorded in
+`audits/weekly-briefing-activity/2026-08-07/user-authorized-publication-waiver.json`.
+It binds the exact manifest hash, deterministic rendered-email hash, protected
+non-chart hash, and the complete expected validation issue set: 404 missing
+first reviews, 15 missing second reviews, one unapproved-manifest finding, and
+one unset-final-control finding. The approved-edition index uses the distinct
+`USER_AUTHORIZED_WAIVER` provenance kind and records the waiver artifact path
+and file hash.
+
+Run both waiver-bound mutations as dry runs before adding `--write`:
+
+```bash
+npm run weekly:activity:render -- --edition 2026-08-07 \
+  --waiver audits/weekly-briefing-activity/2026-08-07/user-authorized-publication-waiver.json
+npm run weekly:activity:render -- --edition 2026-08-07 \
+  --waiver audits/weekly-briefing-activity/2026-08-07/user-authorized-publication-waiver.json --write
+npm run weekly:activity:advance -- --edition 2026-08-07 \
+  --waiver audits/weekly-briefing-activity/2026-08-07/user-authorized-publication-waiver.json
+npm run weekly:activity:advance -- --edition 2026-08-07 \
+  --waiver audits/weekly-briefing-activity/2026-08-07/user-authorized-publication-waiver.json --write
+```
+
+Dependency validation accepts that entry only when the issue set matches the
+allowlist exactly, there are no unresolved records or data-integrity findings,
+the public email byte-for-byte matches the deterministic manifest render, and
+all hashes remain current. It does not create a reusable skip flag: any change
+to the manifest, findings, rendered charts, surrounding email, or waiver file
+invalidates the entry and makes the default Weekly Briefing route fail closed.
