@@ -998,7 +998,9 @@ function main(): void {
     sha256: sha256Text(preview.html),
   });
   const packetSet = buildReviewPackets({ manifest, stage: "FIRST", runDirectory: RUN_DIRECTORY });
-  for (const file of [...packetSet.files, packetSet.indexFile]) atomicWriteArtifact(repoRoot, file);
+  for (const file of [...packetSet.files, ...packetSet.supportFiles, packetSet.indexFile]) {
+    atomicWriteArtifact(repoRoot, file);
+  }
   const report = {
     schemaVersion: 1,
     artifactType: "WEEKLY_BRIEFING_ACTIVITY_VALIDATION_REPORT",

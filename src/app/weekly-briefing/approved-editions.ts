@@ -335,9 +335,9 @@ async function readRepositoryFile({
   );
 }
 
-async function validateApprovalDependencies(
+export async function validateApprovedWeeklyBriefingIndexDependencies(
   index: ApprovedWeeklyBriefingIndex,
-  repositoryRoot: string,
+  repositoryRoot = process.cwd(),
 ): Promise<void> {
   for (const entry of index.entries) {
     const expectedEmailPath = `public/email-format/${entry.edition}.html`;
@@ -461,7 +461,7 @@ export async function readApprovedWeeklyBriefingIndex(
   const index = parseApprovedWeeklyBriefingIndex(
     await readFile(indexPath, "utf8"),
   );
-  await validateApprovalDependencies(index, repositoryRoot);
+  await validateApprovedWeeklyBriefingIndexDependencies(index, repositoryRoot);
   return index;
 }
 

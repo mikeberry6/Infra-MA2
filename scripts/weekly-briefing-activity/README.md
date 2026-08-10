@@ -46,11 +46,16 @@ npm run weekly:activity:migrate-v2 -- --edition 2026-08-07 \
 npm run weekly:activity:packets -- --edition 2026-08-07
 npm run weekly:activity:packets -- --edition 2026-08-07 --write
 
-# After a human completes one packet's .review.json file:
+# Open reviews/index.md, read one packet's Markdown worksheet, and complete its
+# compact .worksheet.json file. Accepted recommendations are hydrated from the
+# immutable packet and still pass through the full review validator:
 npm run weekly:activity:review -- --edition 2026-08-07 \
-  --decision audits/weekly-briefing-activity/2026-08-07/reviews/first/first-001.review.json
+  --decision audits/weekly-briefing-activity/2026-08-07/reviews/first/first-001.worksheet.json
 npm run weekly:activity:review -- --edition 2026-08-07 \
-  --decision audits/weekly-briefing-activity/2026-08-07/reviews/first/first-001.review.json --write
+  --decision audits/weekly-briefing-activity/2026-08-07/reviews/first/first-001.worksheet.json --write
+
+# The full cloned-record .review.json remains available for advanced record
+# edits and first-review legal-transaction splits.
 
 # Generate the independent queue only after all first reviews are current:
 npm run weekly:activity:packets -- --edition 2026-08-07 --stage second
@@ -129,6 +134,24 @@ transaction using unique `splitSuffix` values. Every split remains bound to the
 original legacy ID, retains the bundled-announcement flag, and requires an
 independent second review. Second review can never add, remove, or rename split
 records.
+
+The human-facing Markdown worksheet distinguishes the evidence-derived
+recommended scope from the original automation candidate and displays the
+acting entity, sponsor lineage, key classification facts, rationales, risk
+tags, and purpose/tier-labeled evidence. `reviews/index.md` tracks packet
+coverage and links a clearly non-approvable preview of canonical second-review
+exceptions for staffing and planning. That preview can never be ingested as a
+review and does not bypass the first-review prerequisite.
+
+The compact `.worksheet.json` is fail-closed. Every record requires an explicit
+`evidenceOpened: true`, a choice of `ACCEPT_RECOMMENDATION` or `EDITED_RECORD`,
+and substantive record-specific notes. The named reviewer, timestamp, and
+human attestations are also mandatory. Accepted recommendations are hydrated
+from the hash-bound packet; edited records must be supplied explicitly. The
+compiler then produces the existing full decision envelope in memory and calls
+the unchanged review application, which rechecks packet coverage, input hashes,
+record identities, note quality and uniqueness, split rules, and independent
+second-review identity.
 
 The V2 policy is itself a hashed frozen input. The guarded August 7 migration
 accepts only the known untouched V1 manifest, empty approval state, pristine 17
