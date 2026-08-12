@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0061:valor-compute-infrastructure-vci:e12f218b",
+  "taskIndex": 61,
+  "asOfDate": "2026-08-12",
+  "generatedAt": "2026-08-12T22:28:33.000Z",
+  "canonicalKey": "valor-compute-infrastructure-vci|united-states",
+  "companyName": "Valor Compute Infrastructure (VCI)",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Archive the Valor Compute Infrastructure record and retire its purported Apollo ownership because Valor Compute Infrastructure L.P. is a pooled private-equity fund managed by Valor, not an Apollo-owned operating company or infrastructure platform. Apollo led an asset-backed capital solution. An Apollo private-credit vehicle also held small non-controlling equity interests in downstream numbered financing SPVs, so the original debt-only rationale is incomplete; however, those financing exposures do not establish Apollo ownership or control of VCI L.P. The approved archive overlay removes the evaluated seed entry, while the database preserves an archived audit record and its corrected relations rather than deleting history.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2074951/000101297526000462/xslFormDX01/primary_doc.xml",
+      "purpose": "Legal identity and fund classification",
+      "supports": [
+        "Valor Compute Infrastructure L.P. is a Delaware limited partnership formed in 2025",
+        "the issuer is classified as a pooled investment fund and private-equity fund",
+        "Valor Management LLC is investment adviser and Valor CI Associates L.P. is general partner"
+      ]
+    },
+    {
+      "url": "https://www.apollo.com/wealth/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463",
+      "purpose": "Apollo transaction characterization",
+      "supports": [
+        "Apollo describes VCI as a fund managed by Valor Equity Partners",
+        "Apollo led a US$3.5 billion capital solution supporting the transaction",
+        "the compute assets are leased to an xAI subsidiary under a triple-net structure"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1837532/000119312526341358/ck0001837532-20260630.htm",
+      "purpose": "Latest Apollo exposure and exit check",
+      "supports": [
+        "Apollo Debt Solutions BDC held first-lien loans to VCI Asset Holdings entities at June 30, 2026",
+        "the credit vehicle also held non-controlling common-equity interests in corresponding numbered Intermediate TopCo entities",
+        "the filing does not establish Apollo ownership or control of VCI L.P."
+      ]
+    },
+    {
+      "url": "https://www.apollo.com/strategies/financing-companies",
+      "purpose": "Current Apollo strategy classification",
+      "supports": [
+        "Apollo lists the VCI transaction as a representative financing solution",
+        "the current manager page does not present VCI as an Apollo infrastructure-equity portfolio company"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "a3adf8399df9e2ddefd3676da8ba23bb9a917b93676fe73fa1aea50dc27d9019",
+  "currentCompanySnapshotSha256": "ed9c5b6141ef841a0098f36e00b39db962215d72e7b250c44e9abd585c086381",
+  "beforeImage": {
+    "id": "cmrxpj63n00irivhejoael21j",
+    "name": "Valor Compute Infrastructure (VCI)",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "AI Compute Infrastructure Leasing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Valor Compute Infrastructure is an investment vehicle created to acquire and lease data center compute infrastructure used in AI workloads. The platform serves large-scale digital infrastructure demand through an asset-heavy leasing model rather than through conventional retail colocation or managed hosting services. Apollo stated in January 2026 that VCI was part of a $5.4 billion transaction to acquire and lease NVIDIA GB200 GPU infrastructure to an xAI subsidiary under a triple-net structure. The disclosed scale makes the platform a specialized owner-lessor of high-value compute equipment tied to next-generation data center demand. Apollo announced that it led a $3.5 billion capital solution for VCI in January 2026, while public sources do not disclose the current ownership percentages within the vehicle.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr5301fmivheuku95c94",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Apollo Funds",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkkne02n6ivhes3vi30p8",
+        "date": "2026",
+        "event": "The transaction was structured as a triple-net lease arrangement tied to AI compute infrastructure.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkkny02n7ivhee43ukukb",
+        "date": "Jan 2026",
+        "event": "Apollo announced a $3.5 billion capital solution for Valor Compute Infrastructure.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoxxb07fcivhe4b3vrdrm",
+        "label": "Investment date source — Apollo Global Management — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoxy607feivhe5zrzldp7",
+        "label": "Data Center Dynamics — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.datacenterdynamics.com/en/news/valor-equity-partners-raises-54bn-to-buy-nvidia-gpus-for-xai/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Data Center Dynamics — Valor Compute Infrastructure (VCI)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxz307fgivheddxanrmo",
+        "label": "PR Newswire — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.prnewswire.com/news-releases/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-302343615.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Valor Compute Infrastructure (VCI)",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "ed9c5b6141ef841a0098f36e00b39db962215d72e7b250c44e9abd585c086381",
+  "afterImage": {
+    "id": "cmrxpj63n00irivhejoael21j",
+    "name": "Valor Compute Infrastructure (VCI)",
+    "aliases": [
+      "Valor Compute Infrastructure L.P.",
+      "VCI"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "AI Compute Infrastructure Leasing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Archived census record for Valor Compute Infrastructure L.P., a Delaware pooled private-equity fund formed in 2025 and managed by Valor Management LLC, with Valor CI Associates L.P. as general partner. The fund acquires compute infrastructure for leasing to an xAI subsidiary. Apollo led an asset-backed capital solution, and an Apollo private-credit vehicle also held small non-controlling equity interests in downstream numbered financing SPVs; no public evidence establishes Apollo ownership or control of VCI L.P. or an Apollo infrastructure-equity portfolio company. The record is therefore excluded from the PortCo census.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "ARCHIVED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "Chicago, Illinois",
+    "lastVerifiedAt": "2026-08-12T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr5301fmivheuku95c94",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Apollo-led asset-backed capital solution; no ownership of VCI L.P. established",
+        "stake": "No Apollo ownership or control of VCI L.P. established",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkkne02n6ivhes3vi30p8",
+        "date": "2025",
+        "event": "Valor Compute Infrastructure L.P. was formed in Delaware as a pooled private-equity fund managed by Valor.",
+        "category": "FOUNDING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/2074951/000101297526000462/xslFormDX01/primary_doc.xml"
+        ]
+      },
+      {
+        "id": "cmrxpkkny02n7ivhee43ukukb",
+        "date": "Jan 2026",
+        "event": "Apollo announced a US$3.5 billion asset-backed capital solution supporting VCI's acquisition and lease of NVIDIA compute infrastructure; the announcement identified VCI as a Valor-managed fund, not an Apollo-owned company.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-07T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.apollo.com/wealth/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoxxb07fcivhe4b3vrdrm",
+        "label": "Investment date source — Apollo Global Management — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Apollo describes VCI as a Valor-managed fund and its own role as leading a capital solution",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxy607feivhe5zrzldp7",
+        "label": "Data Center Dynamics — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.datacenterdynamics.com/en/news/valor-equity-partners-raises-54bn-to-buy-nvidia-gpus-for-xai/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Secondary description of Valor's VCI fund and the Apollo financing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxz307fgivheddxanrmo",
+        "label": "PR Newswire — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.prnewswire.com/news-releases/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-302343615.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Syndicated copy of the Apollo capital-solution announcement",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Valor Compute Infrastructure L.P. Form D/A",
+        "url": "https://www.sec.gov/Archives/edgar/data/2074951/000101297526000462/xslFormDX01/primary_doc.xml",
+        "sourceType": "SEC_FILING",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Legal identity, pooled-fund classification, Valor adviser and general partner",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "SEC — Apollo Debt Solutions BDC June 2026 holdings",
+        "url": "https://www.sec.gov/Archives/edgar/data/1837532/000119312526341358/ck0001837532-20260630.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Current Apollo credit exposure and non-controlling downstream TopCo equity interests",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "4f67e13caefc4f5efc31c5a21b47e2a1f49ff5f2f8ffb750d099e7a404d5dd8e",
+  "proposalSha256": "48cde794c30156d810a3964ae3110b903b18036dbfdff30a6d7acc82bde6405c"
+}

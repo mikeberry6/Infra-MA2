@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0061:valor-compute-infrastructure-vci:e12f218b",
+  "taskIndex": 61,
+  "companyName": "Valor Compute Infrastructure (VCI)",
+  "generatedAt": "2026-08-12T22:30:25.571Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0061-valor-compute-infrastructure-vci/attempt-1/pre-approval-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 61,
+    "taskId": "ledger:0061:valor-compute-infrastructure-vci:e12f218b",
+    "canonicalKey": "valor-compute-infrastructure-vci|united-states",
+    "companyName": "Valor Compute Infrastructure (VCI)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "010-apollo-global-management:repo-only:008:valor-compute-infrastructure-vci"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj63n00irivhejoael21j"
+    ],
+    "seedKeys": [
+      "valor compute infrastructure (vci)|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.apollo.com/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Apollo Global Management OUT_OF_SCOPE: Debt/capital solution not equity",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj63n00irivhejoael21j",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "valor-compute-infrastructure-vci|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj63n00irivhejoael21j",
+    "name": "Valor Compute Infrastructure (VCI)",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "AI Compute Infrastructure Leasing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Valor Compute Infrastructure is an investment vehicle created to acquire and lease data center compute infrastructure used in AI workloads. The platform serves large-scale digital infrastructure demand through an asset-heavy leasing model rather than through conventional retail colocation or managed hosting services. Apollo stated in January 2026 that VCI was part of a $5.4 billion transaction to acquire and lease NVIDIA GB200 GPU infrastructure to an xAI subsidiary under a triple-net structure. The disclosed scale makes the platform a specialized owner-lessor of high-value compute equipment tied to next-generation data center demand. Apollo announced that it led a $3.5 billion capital solution for VCI in January 2026, while public sources do not disclose the current ownership percentages within the vehicle.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr5301fmivheuku95c94",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Apollo Funds",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkkne02n6ivhes3vi30p8",
+        "date": "2026",
+        "event": "The transaction was structured as a triple-net lease arrangement tied to AI compute infrastructure.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkkny02n7ivhee43ukukb",
+        "date": "Jan 2026",
+        "event": "Apollo announced a $3.5 billion capital solution for Valor Compute Infrastructure.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoxxb07fcivhe4b3vrdrm",
+        "label": "Investment date source — Apollo Global Management — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoxy607feivhe5zrzldp7",
+        "label": "Data Center Dynamics — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.datacenterdynamics.com/en/news/valor-equity-partners-raises-54bn-to-buy-nvidia-gpus-for-xai/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Data Center Dynamics — Valor Compute Infrastructure (VCI)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxz307fgivheddxanrmo",
+        "label": "PR Newswire — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.prnewswire.com/news-releases/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-302343615.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Valor Compute Infrastructure (VCI)",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Valor Compute Infrastructure (VCI)",
+    "investmentFirm": "Apollo Global Management",
+    "sector": "Digital",
+    "subsector": "AI Compute Infrastructure Leasing",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Apollo Funds",
+    "description": "Valor Compute Infrastructure is an investment vehicle created to acquire and lease data center compute infrastructure used in AI workloads. The platform serves large-scale digital infrastructure demand through an asset-heavy leasing model rather than through conventional retail colocation or managed hosting services. Apollo stated in January 2026 that VCI was part of a $5.4 billion transaction to acquire and lease NVIDIA GB200 GPU infrastructure to an xAI subsidiary under a triple-net structure. The disclosed scale makes the platform a specialized owner-lessor of high-value compute equipment tied to next-generation data center demand. Apollo announced that it led a $3.5 billion capital solution for VCI in January 2026, while public sources do not disclose the current ownership percentages within the vehicle.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2026,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2026",
+        "event": "The transaction was structured as a triple-net lease arrangement tied to AI compute infrastructure.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jan 2026",
+        "event": "Apollo announced a $3.5 billion capital solution for Valor Compute Infrastructure.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — Apollo Global Management — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Data Center Dynamics — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.datacenterdynamics.com/en/news/valor-equity-partners-raises-54bn-to-buy-nvidia-gpus-for-xai/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "PR Newswire — Valor Compute Infrastructure (VCI)",
+        "url": "https://www.prnewswire.com/news-releases/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-302343615.html",
+        "type": "PRESS_RELEASE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Apollo Global Management",
+        "ownershipVehicle": "Apollo Funds",
+        "investmentYear": 2026,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0061:valor-compute-infrastructure-vci:e12f218b",
+    "taskIndex": 61,
+    "canonicalKey": "valor-compute-infrastructure-vci|united-states",
+    "capturedAt": "2026-08-12T22:30:25.571Z",
+    "databaseRevision": "company-state:ed9c5b6141ef841a0098f36e00b39db962215d72e7b250c44e9abd585c086381",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "09afdad89331e753bde814f780111b54ef0918a9c31cb5f2f0877ceb190ec78f",
+    "productionSnapshotSha256": "6dd07b9406b7eeed2d80370ad165abd806b62d8ffb138a74ed8a9799e34bb563",
+    "targetCompanySnapshotSha256": "ed9c5b6141ef841a0098f36e00b39db962215d72e7b250c44e9abd585c086381",
+    "seedEntrySha256": "19d1a9c6ca3b3962574fda038ee6bca90048d06081c989d273316d457b34648c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "ac7eca591e5e70c2f7f97ed8ff871fdd602278c8599de6323a4e861616b4c4c3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5bf007754ab1aec1ee2613e1677630ccdf3e2677b7f244a79a2c7562a77e3e14",
+      "citationsSha256": "eab56f503bd750206f346daa6ab3352ddb75f6f87c0280e2edb725af5f470940",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4168939e192ea1f5547265b35cc6d954a11e10b08ece8a18ddb2fa2949e6c1a4",
+    "stateSha256": "aae0f401d94c30f4c2c545f28a126c17ace08583b181f390dddfcbfe32c605e9",
+    "taskSnapshotSha256": "e98d140a1f6ec3bac207f75979d1fc148050ca3447622ee059261e11d4415c63"
+  },
+  "contextSha256": "97d3b60f947620c0d55b1ffeb350a455546d5a24f6f823a1893a6c66a25b694f"
+}
