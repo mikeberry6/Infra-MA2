@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T22:41:02.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-12T23:03:08.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0062:usd-clean-fuels:f96607bd",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8957,18 +8957,27 @@
       "managerIndex": 11,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "30b0b4f1248afa2e931ff4db812ffa7d8f19bee7adaff86cf8b61a27d035f655",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-12T22:54:33.000Z",
+      "updatedAt": "2026-08-12T23:03:08.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "43b76ac8b25ec32ee730cde8c44d8873d6f81d0d80a633d69c3fb0d6751a9196",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0062-usd-clean-fuels/attempt-1/task-snapshot.json",
+          "sha256": "43b76ac8b25ec32ee730cde8c44d8873d6f81d0d80a633d69c3fb0d6751a9196"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0062-usd-clean-fuels-v1/proposal.json",
+          "sha256": "b69de5c8215cf47a99c446942ce2c8d8ec917d10cb3492adf6fcaa11ded882c9"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0062-usd-clean-fuels-v1.json",
+          "sha256": "cca6fd57162641002e75425b834153968d88fcfd052039d8406e416cd4df699d"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -8984,6 +8993,53 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-12T22:54:33.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-12T23:02:32.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "43b76ac8b25ec32ee730cde8c44d8873d6f81d0d80a633d69c3fb0d6751a9196",
+          "evidenceSha256": [
+            "43b76ac8b25ec32ee730cde8c44d8873d6f81d0d80a633d69c3fb0d6751a9196",
+            "b69de5c8215cf47a99c446942ce2c8d8ec917d10cb3492adf6fcaa11ded882c9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-12T23:02:45.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "43b76ac8b25ec32ee730cde8c44d8873d6f81d0d80a633d69c3fb0d6751a9196",
+          "evidenceSha256": [
+            "b69de5c8215cf47a99c446942ce2c8d8ec917d10cb3492adf6fcaa11ded882c9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-12T23:03:08.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "43b76ac8b25ec32ee730cde8c44d8873d6f81d0d80a633d69c3fb0d6751a9196",
+          "evidenceSha256": [
+            "cca6fd57162641002e75425b834153968d88fcfd052039d8406e416cd4df699d"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -25500,5 +25556,5 @@
       ]
     }
   ],
-  "manifestSha256": "7fdb98c5accec5aa4b47fccf9a72249d8693a72a68a6f668585ca02277742d05"
+  "manifestSha256": "674564b904c32b570449284f8e890f53648e5a130da4898923d40be4f734d08f"
 }

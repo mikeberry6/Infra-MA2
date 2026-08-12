@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-08-12T23:02:00.000Z",
+  "decision": "CORRECT_AND_RETAIN_ACTIVE",
+  "taskId": "ledger:0062:usd-clean-fuels:f96607bd",
+  "companyName": "USD Clean Fuels",
+  "requestedManager": "Ara Partners",
+  "sourceHoldingId": "011-ara-partners:holding:003:usd-clean-fuels",
+  "rationale": "Retain the company as an active Ara Partners infrastructure investment, but correct the canonical legal name, founding year, headquarters, website, majority-stake disclosure and investment year. Current Ara materials identify an active Infrastructure Fund I investment dated December 2023. Ara's January 2, 2024 release was the public announcement of a completed majority acquisition, not the legal entry year. No subsequent exit or pending ownership transfer was found.",
+  "identityResolution": {
+    "productionCompanyId": "cmrxpj66d00iwivhehmeoxiek",
+    "seedKey": "usd clean fuels|United States",
+    "legalName": "USD Clean Fuels, LLC",
+    "aliases": [
+      "USD Clean Fuels",
+      "USDCF"
+    ],
+    "formed": 2021,
+    "headquarters": "Houston, Texas, United States",
+    "operatingCompany": true,
+    "infrastructureStrategy": "Ara Partners Infrastructure",
+    "platformBoundary": "Count USD Clean Fuels, LLC as the operating platform. West Colton and San Bernardino are underlying terminal assets, not separate PortCos. U.S. Development Group and USD Partners are former parent or affiliate entities, not aliases."
+  },
+  "ownershipResolution": {
+    "owner": "Ara Partners",
+    "vehicle": "Ara Infrastructure Fund I",
+    "stake": "Majority interest; exact percentage not publicly disclosed",
+    "investmentDate": "2023-12",
+    "datePrecision": "MONTH",
+    "transactionState": "CLOSED_ACTIVE",
+    "namedMinorityOwners": [],
+    "exitSearch": "No sale, divestiture, restructuring, pending transfer or Ara exit was found through August 12, 2026; Ara's current portfolio identifies the investment as Active.",
+    "pendingOwnershipTransaction": null
+  },
+  "evidence": [
+    {
+      "label": "Ara Partners — Portfolio",
+      "url": "https://www.arapartners.com/portfolio/",
+      "purpose": "Current active status, infrastructure strategy, fund and December 2023 investment date",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Ara Partners — USD Clean Fuels majority acquisition",
+      "url": "https://www.prnewswire.com/news-releases/ara-partners-acquires-majority-interest-in-usd-clean-fuels-302024246.html",
+      "purpose": "Completed majority acquisition and platform scope",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "USD Partners — 2021 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1610682/000161068222000024/usdp-20211231.htm",
+      "purpose": "Legal identity, formation year and original business purpose",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "BROWSER_VERIFIED"
+    },
+    {
+      "label": "USD Clean Fuels — Mission and Strategy",
+      "url": "https://usdcleanfuels.com/mission-and-strategy/",
+      "purpose": "Current operating scope and headquarters",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "databaseMutation": true,
+  "seedMutation": true,
+  "proposedMutation": {
+    "recordStatus": "PUBLISHED",
+    "companyStatus": "ACTIVE",
+    "canonicalName": "USD Clean Fuels, LLC",
+    "activeAraOwnership": "CORRECT_TO_DECEMBER_2023_MAJORITY_INTEREST",
+    "pendingOwnershipTransaction": null
+  },
+  "unresolvedQuestions": [],
+  "blockingUnresolvedQuestions": []
+}
