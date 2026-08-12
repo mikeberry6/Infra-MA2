@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T22:32:58.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0061:valor-compute-infrastructure-vci:e12f218b",
+  "updatedAt": "2026-08-12T22:41:02.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8761,11 +8761,11 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "09afdad89331e753bde814f780111b54ef0918a9c31cb5f2f0877ceb190ec78f",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-12T22:31:47.000Z",
-      "updatedAt": "2026-08-12T22:32:58.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-12T22:41:02.000Z",
+      "completedAt": "2026-08-12T22:41:02.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "c1f9f7529238e1b99e2709774408e4df046ed0ed94ff8dc1ea4c41cb39824ee9",
@@ -8782,11 +8782,26 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0061-valor-compute-infrastructure-vci-v2.json",
           "sha256": "7d619ca34cf690753deb5f62199def77dac65d049ef95988bed1195f3e19b6e1"
         },
-        "applyReceipt": null,
-        "decision": null,
-        "companySnapshot": null
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31647830039",
+          "sha256": "2a149b65a67df3ab410557b4d255a28121d214baec2968fe78385a0f5cd4fc24"
+        },
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0061-valor-compute-infrastructure-vci/research-decision.json",
+          "sha256": "7536e2acfb651e84463805c73ec839ae4099d0b697da5e262f2e30e505bc8147"
+        },
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0061-valor-compute-infrastructure-vci/attempt-2/context.json",
+          "sha256": "f5f535af7225fc8b202f27aef595d53e79ab8502b15c2814539b7037fd8ee365"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-12T22:41:02.000Z",
+        "auditEventId": "cmsqoazap0005hw4s749emjeu",
+        "transactionId": "40dbee9a-dba3-48bc-83de-7cc5e664e3b3",
+        "receiptSha256": "2a149b65a67df3ab410557b4d255a28121d214baec2968fe78385a0f5cd4fc24",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31647830039"
+      },
       "history": [
         {
           "sequence": 1,
@@ -8901,6 +8916,36 @@
             "7d619ca34cf690753deb5f62199def77dac65d049ef95988bed1195f3e19b6e1"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-12T22:39:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c1f9f7529238e1b99e2709774408e4df046ed0ed94ff8dc1ea4c41cb39824ee9",
+          "evidenceSha256": [
+            "7536e2acfb651e84463805c73ec839ae4099d0b697da5e262f2e30e505bc8147",
+            "7d619ca34cf690753deb5f62199def77dac65d049ef95988bed1195f3e19b6e1",
+            "b2bec65272c59de3384320e5a029c4093cfed749a61d7d9e53369b11b7e54ce4",
+            "c1f9f7529238e1b99e2709774408e4df046ed0ed94ff8dc1ea4c41cb39824ee9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "APPLYING",
+          "to": "COMPLETED",
+          "at": "2026-08-12T22:41:02.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "2a149b65a67df3ab410557b4d255a28121d214baec2968fe78385a0f5cd4fc24",
+            "7d619ca34cf690753deb5f62199def77dac65d049ef95988bed1195f3e19b6e1",
+            "b2bec65272c59de3384320e5a029c4093cfed749a61d7d9e53369b11b7e54ce4",
+            "f5f535af7225fc8b202f27aef595d53e79ab8502b15c2814539b7037fd8ee365"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -25455,5 +25500,5 @@
       ]
     }
   ],
-  "manifestSha256": "6e2ef3480b90b848aaf14bb8f03e964991782e575e4e70b6c591a5dd55a8c4ad"
+  "manifestSha256": "7fdb98c5accec5aa4b47fccf9a72249d8693a72a68a6f668585ca02277742d05"
 }
