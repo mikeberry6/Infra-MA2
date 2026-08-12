@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0058:pembina-gas-infrastructure-jv:50280eda",
+  "taskIndex": 58,
+  "companyName": "Pembina Gas Infrastructure JV",
+  "generatedAt": "2026-08-12T20:59:29.642Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0058-pembina-gas-infrastructure-jv/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 58,
+    "taskId": "ledger:0058:pembina-gas-infrastructure-jv:50280eda",
+    "canonicalKey": "pembina-gas-infrastructure-jv|canada",
+    "companyName": "Pembina Gas Infrastructure JV",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "010-apollo-global-management:holding:019:pembina-gas-infrastructure-jv"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-interest-in-pembina-gas-infrastructure"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pembina-gas-infrastructure-jv|canada",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0058:pembina-gas-infrastructure-jv:50280eda",
+    "taskIndex": 58,
+    "canonicalKey": "pembina-gas-infrastructure-jv|canada",
+    "capturedAt": "2026-08-12T20:59:29.642Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1bd2e793e79f25878a595f434c7e821969b6e4a55ec9663dcb9069bb43c6131b",
+    "productionSnapshotSha256": "a515ba867c96b4ddcfc356d06bdbd897f12a724e316a660e3ab9239b10bb4a08",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "2442d8ff97b45a93400cf3484c36fc6c2e5e2ac782a413344a00d1704202d831",
+    "taskSnapshotSha256": "3c40bccfa44afc60d08a520c449c620472fd663fb93ee71eae7fedc429bdb212"
+  },
+  "contextSha256": "1939530e71dc358e9ced63851a9c1df41519f4cd991dda5fbfb501d9f3a423a4"
+}

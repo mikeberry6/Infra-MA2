@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-12T21:07:04.000Z",
+  "asOfDate": "2026-08-12",
+  "decision": "SUPERSEDE_STALE_JV_ALIAS_TO_EXISTING_CANONICAL_COMPANY_TASK",
+  "taskId": "ledger:0058:pembina-gas-infrastructure-jv:50280eda",
+  "taskIndex": 58,
+  "companyName": "Pembina Gas Infrastructure JV",
+  "requestedManagers": [
+    "Apollo Global Management"
+  ],
+  "rationale": "Do not create Pembina Gas Infrastructure JV as a separate company. Apollo's primary announcement identifies the target's legal name as Pembina Gas Infrastructure Inc. (PGI), and the repository already contains that same legal company in production and evaluated seed data. Current official PGI pages state that Pembina Pipeline Corporation owns 60% and Apollo-managed funds own the remaining 40%, establishing that the announced Apollo acquisition has closed even though no exact closing date was publicly located. The immutable queue did not link the stale JV alias task to the existing canonical record, so the execution controller cannot safely retarget task 58. This task is therefore superseded to immutable task 324, which is already bound to the existing canonical company and must incorporate this task's Apollo holding evidence, add Apollo as the current 40% owner, retain Pembina's 60% interest, and retire KKR's former 40% ownership without creating a duplicate.",
+  "identityResolution": {
+    "staleCensusIdentity": "Pembina Gas Infrastructure JV",
+    "canonicalLegalEntity": "Pembina Gas Infrastructure Inc.",
+    "canonicalAliases": [
+      "PGI",
+      "Pembina Gas Infrastructure JV",
+      "PGI Midstream"
+    ],
+    "canonicalProductionCompanyId": "cmrxpjjwg0141ivhecv1bf8dw",
+    "canonicalSeedKey": "pembina gas infrastructure inc.|Canada",
+    "canonicalTaskId": "ledger:0324:pembina-gas-infrastructure-inc:de0cbf95",
+    "platformBoundary": "Count Pembina Gas Infrastructure Inc. once as the operating midstream platform. Pembina Pipeline Corporation is a distinct public parent and operator. Veresen Midstream, Energy Transfer Canada, individual processing plants, batteries, pipelines, and projects are platform components or predecessor contributions rather than separate PGI PortCos.",
+    "recommendedCanonicalTreatment": "Keep and correct the existing Pembina Gas Infrastructure Inc. record; add the stale JV name as an alias and do not create or redirect a second production company because none exists."
+  },
+  "ownershipResolution": {
+    "currentOwners": [
+      {
+        "owner": "Pembina Pipeline Corporation",
+        "stake": "60%",
+        "role": "Owner, operator, and facility manager",
+        "transactionState": "CLOSED_ACTIVE",
+        "entryDate": "2022-08-15"
+      },
+      {
+        "owner": "Apollo-managed funds",
+        "manager": "Apollo Global Management",
+        "stake": "40%",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "transactionState": "CLOSED_ACTIVE",
+        "announcementDate": "2026-04-23",
+        "closingDate": "NOT_PUBLICLY_DISCLOSED",
+        "closingDatePrecision": "YEAR"
+      }
+    ],
+    "formerOwner": {
+      "owner": "KKR global infrastructure funds",
+      "stake": "40%",
+      "entryDate": "2022-08-15",
+      "exitDate": "NOT_PUBLICLY_DISCLOSED",
+      "exitDatePrecision": "YEAR",
+      "exitYear": 2026,
+      "transactionState": "FORMER"
+    },
+    "currentStatusBasis": "PGI's current official About Us and Our Owners pages expressly identify Apollo-managed funds as the present 40% owner. This supersedes the April 23 announcement's then-pending state without inventing an exact closing date.",
+    "exitSearch": "Apollo's acquisition announcement described the KKR sale as expected to close by the end of Q2 2026. Current PGI ownership pages now identify Apollo rather than KKR. No subsequent Apollo sale, pending exit, or platform disposition was identified through August 12, 2026."
+  },
+  "sourceLineage": {
+    "sourceHoldingIds": [
+      "010-apollo-global-management:holding:019:pembina-gas-infrastructure-jv"
+    ],
+    "relatedCanonicalHoldingIds": [
+      "064-kkr:holding:014:pembina-gas-infrastructure-inc"
+    ],
+    "mustCarryForwardToTaskId": "ledger:0324:pembina-gas-infrastructure-inc:de0cbf95"
+  },
+  "evidence": [
+    {
+      "label": "Pembina Gas Infrastructure - About Us",
+      "url": "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure/about-us",
+      "purpose": "Current legal identity, Western Canadian infrastructure scope, Pembina's 60% ownership and operating role, and Apollo-managed funds' current 40% ownership",
+      "sourceTier": "COMPANY_PRIMARY"
+    },
+    {
+      "label": "Pembina Gas Infrastructure - Our Owners",
+      "url": "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure/our-owners",
+      "purpose": "Current owner roster naming Pembina Pipeline Corporation and Apollo-managed funds",
+      "sourceTier": "COMPANY_PRIMARY"
+    },
+    {
+      "label": "Apollo Funds to Acquire 40% Interest in Pembina Gas Infrastructure",
+      "url": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+      "purpose": "April 23, 2026 transaction announcement, 40% stake, KKR as seller, Pembina's retained 60% stake, infrastructure-strategy basis, and transaction conditions",
+      "sourceTier": "MANAGER_PRIMARY"
+    },
+    {
+      "label": "Pembina Announces Closing and Creation of Pembina Gas Infrastructure",
+      "url": "https://www.pembina.com/media-centre/news/details/26e3477b-f34f-4c9f-877d-8cbe4ad170af",
+      "purpose": "August 15, 2022 legal formation and original Pembina-KKR ownership structure",
+      "sourceTier": "COMPANY_PRIMARY"
+    }
+  ],
+  "unresolvedQuestions": [
+    "Apollo's exact managed fund or acquisition vehicle was not publicly disclosed.",
+    "The exact legal closing date for Apollo's acquisition was not publicly located; record only 2026 date precision unless a direct closing source is found."
+  ],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "SUPERSEDED",
+  "supersededByTaskId": "ledger:0324:pembina-gas-infrastructure-inc:de0cbf95"
+}
