@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_LIST_RESEARCH_DECISION",
+  "taskId": "ledger:0060:summit-ridge-energy:21e98ff7",
+  "generatedAt": "2026-08-12T21:49:00.000Z",
+  "decision": "PROPOSED_CORRECTION",
+  "canonicalName": "Summit Ridge Energy",
+  "identityDecision": "Retain the existing Summit Ridge Energy canonical record and add Summit Ridge Energy, LLC as its legal-name alias. No second production company, seed identity, redirect or merge candidate exists. Count the corporate solar platform once; do not separately count its project-finance facilities, tax-equity structures, dedicated project funds, Illinois asset joint venture or individual solar and battery projects.",
+  "infrastructureScopeDecision": "Include. Summit Ridge develops, constructs, owns and operates distributed solar and battery-storage infrastructure across the United States. Apollo's 2022 investment announcement ties the platform investment to sustainable investing, clean energy and infrastructure, while the announced GIP transaction is explicitly attributed to GIP's mid-market infrastructure strategy.",
+  "censusCorrection": "Preserve Apollo as the active legal owner but change its ownership state to SIGNED_PENDING_EXIT while the GIP majority-control transaction remains unclosed. Replace the unsupported Apollo Sustainable Investing vehicle label with a not-publicly-disclosed Apollo-managed-funds label and make the undisclosed stake explicit. Add the GIP agreement as a pending exit transaction rather than an active GIP ownership period.",
+  "ownershipDecision": {
+    "state": "SIGNED_PENDING_EXIT",
+    "manager": "Apollo Global Management",
+    "organizationName": "Apollo Global Management",
+    "vehicle": "Apollo-managed funds (specific fund and legal vehicle not publicly disclosed)",
+    "stake": "Not publicly disclosed",
+    "investmentYear": 2022,
+    "announcementDate": "2022-07-13",
+    "closingDate": null,
+    "closingDecision": "Apollo's official announcement establishes the 2022 strategic investment and resulting board appointments but does not disclose an exact legal-closing date. Retain year precision in the ownership period.",
+    "currentEvidence": "Apollo's current Wilson Handler profile identifies Summit Ridge Energy as an Apollo funds portfolio company and states that Handler currently serves on its board. The July 2026 GIP announcement remains expressly conditional, so Apollo stays active until legal closing.",
+    "exitSearch": "GIP and Summit Ridge announced on July 14, 2026 that GIP had agreed to acquire a majority and controlling interest, subject to customary closing conditions and regulatory approvals. Current official company news and broader web searches found no later legal-closing announcement through August 12, 2026. Reliable secondary reporting identifies Apollo as the seller, but the primary release does not disclose the seller allocation, exact percentage or whether Apollo will retain a residual interest. Treat this as a pending exit or stake transition, not a completed Apollo retirement."
+  },
+  "pendingTransactionDecision": {
+    "direction": "EXIT",
+    "state": "SIGNED_PENDING_EXIT",
+    "counterparty": "Global Infrastructure Partners",
+    "announcedAt": "2026-07-14",
+    "expectedClosing": "Not publicly disclosed",
+    "stake": "Majority and controlling interest; exact percentage not publicly disclosed",
+    "strategy": "GIP Mid-Market infrastructure strategy; specific fund not publicly disclosed",
+    "relatedOwnershipPeriodId": "cmrxpjr2301fgivhe8zxpk6uo"
+  },
+  "companyDecision": {
+    "website": "https://srenergy.com/",
+    "yearFounded": 2017,
+    "headquarters": "United States",
+    "country": "United States",
+    "region": "NORTH_AMERICA",
+    "sector": "POWER_ET",
+    "subsector": "Distributed & Community Solar",
+    "operatingBoundary": "Count Summit Ridge Energy once as the manager-level corporate platform. Apollo's April 2025 up-to-$400 million Illinois commercial-solar joint venture is an asset-level partnership and not a second corporate ownership period."
+  },
+  "repoDecision": {
+    "productionTarget": "cmrxpj60a00ilivhey8bs3gpd",
+    "evaluatedSeedKey": "summit ridge energy|United States",
+    "canonicalCollision": false,
+    "apolloOwnershipPeriodId": "cmrxpjr2301fgivhe8zxpk6uo",
+    "sixthStreetDecision": "Preserve the Sixth Street census exclusion because its association is debt-only.",
+    "alignedClimateCapitalDecision": "Aligned Climate Capital's current portfolio page and historical materials show an early platform investment, and secondary reporting says it will retain its stake. It is outside the supplied 100-manager census and the official GIP announcement does not disclose the current legal ownership allocation, so this Apollo census task does not infer or create an additional owner row. The later full-company scorecard research must revalidate all co-owners.",
+    "relatedDealDecision": "Production already contains announced majority-acquisition deal cmrv5wbto00hph8hectw4muie / WB-2026-07-17-002 for GIP and Summit Ridge. Its stored date is July 17, 2026 while the primary release is dated July 14, 2026. Record that as a separate Deal Database review item; make no deal mutation in this PortCo task."
+  },
+  "evidenceUrls": [
+    "https://www.apollo.com/institutional/insights-news/pressreleases/2022/07/apollo-funds-announce-175-million-strategic-investment-in-summit-ridge-energy-a-leading-owner-operator-of-community-solar-121512414",
+    "https://www.apollo.com/aboutus/leadership-and-people/wilson-handler",
+    "https://srenergy.com/news/gip-acquires-sre/",
+    "https://www.globenewswire.com/news-release/2026/07/14/3326975/0/en/global-infrastructure-partners-agrees-to-acquire-summit-ridge-energy.html",
+    "https://www.cbinsights.com/company/summit-ridge-energy",
+    "https://www.apollo.com/institutional/insights-news/pressreleases/2025/04/apollo-funds-commit-up-to-400-million-for-new-commercial-solar-partnership-with-summit-ridge-energy-3060061"
+  ],
+  "sourceHealth": {
+    "https://www.apollo.com/institutional/insights-news/pressreleases/2022/07/apollo-funds-announce-175-million-strategic-investment-in-summit-ridge-energy-a-leading-owner-operator-of-community-solar-121512414": "WORKING_HTTP_200",
+    "https://www.apollo.com/aboutus/leadership-and-people/wilson-handler": "WORKING_HTTP_200",
+    "https://srenergy.com/news/gip-acquires-sre/": "WORKING_HTTP_200",
+    "https://www.globenewswire.com/news-release/2026/07/14/3326975/0/en/global-infrastructure-partners-agrees-to-acquire-summit-ridge-energy.html": "DIRECT_HTTP_TIMEOUT_BUT_BROWSER_VERIFIED",
+    "https://www.cbinsights.com/company/summit-ridge-energy": "DIRECT_HTTP_403_BUT_SEARCH_VERIFIED",
+    "https://www.apollo.com/institutional/insights-news/pressreleases/2025/04/apollo-funds-commit-up-to-400-million-for-new-commercial-solar-partnership-with-summit-ridge-energy-3060061": "WORKING_HTTP_200"
+  },
+  "unresolvedQuestions": [],
+  "notPubliclyDisclosed": [
+    "Exact Apollo ownership percentage",
+    "Specific Apollo fund and legal investment vehicle",
+    "Exact Apollo platform-investment closing date",
+    "Exact GIP purchase percentage and consideration",
+    "Specific GIP fund and legal acquisition vehicle",
+    "Expected GIP transaction closing date",
+    "Post-closing Apollo residual interest, if any"
+  ],
+  "confidence": "HIGH"
+}
