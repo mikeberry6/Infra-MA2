@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-08-12T20:44:03.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Archive Nokomis Energy from the manager-level North American PortCo list and retire the unsupported Apollo ownership period. Great Bay Renewables' June 2024 transaction was royalty financing through a separate Nokomis Bay LLC structure: Great Bay received Class R units in that royalty holding company, project-level gross-revenue royalties, and unexercised warrants that could permit a future acquisition of up to 10% of Nokomis Energy. No reviewed source establishes exercise of those warrants or current direct Apollo ownership of Nokomis Energy. Apollo's upstream funds then sold their direct 50% interest in Great Bay to Northampton Capital Partners on July 30, 2026. Nokomis and Great Bay remain distinct companies, so no canonical merge or redirect is appropriate. The database retains Nokomis as an archived historical record and preserves its relations, while the approved archive overlay removes it from the evaluated seed list.",
+  "evidence": [
+    {
+      "url": "https://www.arr.energy/_resources/reports/2024-06-Nokomis-MCR.pdf?v=072009",
+      "purpose": "Filed transaction structure and direct-ownership boundary",
+      "supports": [
+        "Great Bay's investment was made through the separate Nokomis Bay LLC royalty holding company",
+        "Great Bay received Class R units in Nokomis Bay LLC and project-level gross-revenue royalties",
+        "Great Bay received warrants permitting a future acquisition of up to 10% of Nokomis Energy rather than a disclosed current stake"
+      ]
+    },
+    {
+      "url": "https://www.arr.energy/news/altius-renewable-royalties-announces-new-us30mm-financing-of-us-distributed-solar-generation-developer",
+      "purpose": "Official royalty-financing terms and infrastructure-strategy boundary",
+      "supports": [
+        "the US$30 million commitment was royalty financing funded in tranches",
+        "Great Bay was entitled to future project royalties and optional project-sale proceeds",
+        "ARR characterized Nokomis as a development partner rather than a Great Bay subsidiary"
+      ]
+    },
+    {
+      "url": "https://altiusminerals.com/_resources/press-releases/nr-20260730.pdf",
+      "purpose": "Current Apollo exit check at the upstream Great Bay platform",
+      "supports": [
+        "Apollo-managed funds sold their membership interests in Great Bay to Northampton Capital Partners",
+        "the transaction closed on July 30, 2026",
+        "Apollo funds no longer hold an interest in Great Bay"
+      ]
+    },
+    {
+      "url": "https://www.nokomisenergy.com/about",
+      "purpose": "Current company identity, founding year, headquarters, and operating profile",
+      "supports": [
+        "Nokomis Energy was founded in 2017",
+        "Nokomis is a Minnesota-based clean-energy developer",
+        "the company lists its location in Minneapolis, Minnesota"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "Nokomis Energy, LLC"
+    ],
+    "description": "Nokomis Energy, LLC is a Minneapolis-based distributed-solar developer founded in 2017. Great Bay Renewables closed a royalty-financing transaction in June 2024 through Nokomis Bay LLC, a separate holding company jointly held by Great Bay and Nokomis. Great Bay received Class R units in that royalty structure, project-level gross-revenue royalties, and unexercised warrants permitting a future acquisition of up to 10% of Nokomis Energy. Reviewed public sources do not establish exercise of the warrants or current direct Apollo ownership of Nokomis Energy. Apollo-managed funds sold their upstream 50% Great Bay interest to Northampton Capital Partners on July 30, 2026. Because the manager exposure was indirect royalty financing rather than direct company ownership, Nokomis is excluded from the manager-level PortCo census.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "ARCHIVED",
+    "website": "https://www.nokomisenergy.com/",
+    "yearFounded": 2017,
+    "headquarters": "Minneapolis, Minnesota",
+    "lastVerifiedAt": "2026-08-12T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjqw301f9ivhe9ka0tbcf",
+      "set": {
+        "vehicleName": "Great Bay Renewables royalty financing; no direct Nokomis ownership established",
+        "stake": "No direct equity stake established; unexercised warrants for up to 10% disclosed",
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpkjp902lyivheho01peg7",
+      "set": {
+        "evidenceUrls": [
+          "https://www.arr.energy/news/altius-renewable-royalties-forms-joint-venture-with-apollo-infrastructure-funds"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkjpu02lzivhervza7ic8",
+      "set": {
+        "evidenceUrls": [
+          "https://www.arr.energy/_resources/reports/2024-06-Nokomis-MCR.pdf?v=072009",
+          "https://www.arr.energy/news/altius-renewable-royalties-announces-new-us30mm-financing-of-us-distributed-solar-generation-developer"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpow3307clivhen74xg5jy",
+      "set": {
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "ARR — Nokomis material change report",
+      "url": "https://www.arr.energy/_resources/reports/2024-06-Nokomis-MCR.pdf?v=072009",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Royalty structure, Holdco boundary, and unexercised warrant",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "ARR — Nokomis royalty financing",
+      "url": "https://www.arr.energy/news/altius-renewable-royalties-announces-new-us30mm-financing-of-us-distributed-solar-generation-developer",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Royalty-financing terms and development-partner status",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Altius — Apollo Great Bay exit closing",
+      "url": "https://altiusminerals.com/_resources/press-releases/nr-20260730.pdf",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Apollo exited Great Bay on July 30, 2026",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Nokomis Energy — About",
+      "url": "https://www.nokomisenergy.com/about",
+      "sourceType": "WEBSITE",
+      "purpose": "COMPANY_PROFILE",
+      "evidenceLabel": "Identity, founding year, location, and operating profile",
+      "isPrimary": false
+    }
+  ]
+}
