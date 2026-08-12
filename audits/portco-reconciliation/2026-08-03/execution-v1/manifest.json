@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T21:25:04.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0059:stagecoach-renewables:326832cf",
+  "updatedAt": "2026-08-12T21:38:30.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8403,11 +8403,11 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "443f33be20614ebdfefbcf489f6d5b7332305879dbaa830b4fbc3b930dc62a37",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-12T21:13:30.000Z",
-      "updatedAt": "2026-08-12T21:25:04.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-12T21:38:30.000Z",
+      "completedAt": "2026-08-12T21:38:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "4d2936fdc7a36ecbb258493c809ada3fd63e8cee30a418c9a0f3dc3f27e43f8b",
@@ -8424,14 +8424,26 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0059-stagecoach-renewables-v1.json",
           "sha256": "071a3f007488308756bc36e5a2baf5199445f703cfbe5488e572483a0be3d110"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31642919902",
+          "sha256": "0a30190fafd5cbeb1b76ed7bf60c8c3a5ebf378f6929b62db2facc98c8617a5e"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0059-stagecoach-renewables/research-decision.json",
           "sha256": "4e7ff7be37136b38d70c65d026088b9f7331ff2732f1f276c9effe16dfef78a2"
         },
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0059-stagecoach-renewables/attempt-1/context.json",
+          "sha256": "e05d32fdf728249cd31e0f204aaa12c9876e67e6fd8ca22e58068c02dc43375c"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-12T21:38:30.000Z",
+        "auditEventId": "cmsqlwsqt000ceb4sbw5cbkpo",
+        "transactionId": "1743d985-0e06-4bdb-a222-33fd62874292",
+        "receiptSha256": "0a30190fafd5cbeb1b76ed7bf60c8c3a5ebf378f6929b62db2facc98c8617a5e",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31642919902"
+      },
       "history": [
         {
           "sequence": 1,
@@ -8488,6 +8500,21 @@
             "071a3f007488308756bc36e5a2baf5199445f703cfbe5488e572483a0be3d110"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-12T21:38:30.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "071a3f007488308756bc36e5a2baf5199445f703cfbe5488e572483a0be3d110",
+            "0a30190fafd5cbeb1b76ed7bf60c8c3a5ebf378f6929b62db2facc98c8617a5e",
+            "d385b126568b789e3efa397ac2d716c6914f84a5754445bf26f3c6f822ce9e5f",
+            "e05d32fdf728249cd31e0f204aaa12c9876e67e6fd8ca22e58068c02dc43375c"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -25118,5 +25145,5 @@
       ]
     }
   ],
-  "manifestSha256": "02db43ffb527f0f1d416f985c423bfa5f910520d5fdd31a37b52b111f3a985dd"
+  "manifestSha256": "cb98c2c8d17fcf2daba4c513766f685b870511c69a2ff1266ebbc0590369fac9"
 }
