@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0062:usd-clean-fuels:f96607bd",
+  "taskIndex": 62,
+  "companyName": "USD Clean Fuels",
+  "generatedAt": "2026-08-12T22:54:46.566Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0062-usd-clean-fuels/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 62,
+    "taskId": "ledger:0062:usd-clean-fuels:f96607bd",
+    "canonicalKey": "usd-clean-fuels|united-states",
+    "companyName": "USD Clean Fuels",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 11,
+    "managers": [
+      "Ara Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "011-ara-partners:holding:003:usd-clean-fuels"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj66d00iwivhehmeoxiek"
+    ],
+    "seedKeys": [
+      "usd clean fuels|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.arapartners.com/news/ara-partners-acquires-majority-interest-in-usd-clean-fuels/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj66d00iwivhehmeoxiek",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "usd-clean-fuels|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj66d00iwivhehmeoxiek",
+    "name": "USD Clean Fuels",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Renewable Fuels Logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "USD Clean Fuels develops and operates logistics infrastructure for renewable fuel feedstocks, biofuels, and related products. The business serves participants across the clean-fuels value chain through an asset-heavy model based on terminals, storage, handling infrastructure, and commercial logistics capabilities. Company materials describe a strategy spanning feedstocks, production, blending, and distribution, with assets such as the West Colton terminal supporting physical product flows. The platform is therefore positioned as infrastructure supporting renewable fuels supply chains rather than as a pure merchant producer. Ara announced in January 2024 that it had acquired a majority interest in USD Clean Fuels, while public sources do not disclose the resulting ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr7m01frivheqgpnrk72",
+        "managerName": "Ara Partners",
+        "organizationName": "Ara Partners",
+        "fundName": "Ara Infrastructure Fund I",
+        "vehicleName": "Ara Infrastructure Fund I",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkkz602niivhexhnqe2c8",
+        "date": "2024",
+        "event": "Ara described USD Clean Fuels as a logistics infrastructure platform spanning renewable fuel feedstocks, biofuels, and distribution.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkkzp02njivheu1n3tg52",
+        "date": "Jan 2, 2024",
+        "event": "Ara Partners acquired a majority interest in USD Clean Fuels.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-02T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoygf07g4ivhe4nk5wdc8",
+        "label": "Close date source — Ara Partners — USD Clean Fuels",
+        "url": "https://www.arapartners.com/news/ara-partners-acquires-majority-interest-in-usd-clean-fuels/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ara Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoyhk07g6ivheuzyn8jby",
+        "label": "Usdcleanfuels — USD Clean Fuels",
+        "url": "https://usdcleanfuels.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Usdcleanfuels company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoyio07g8ivhemy878wr5",
+        "label": "Usdcleanfuels — USD Clean Fuels",
+        "url": "https://usdcleanfuels.com/mission-and-strategy/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Usdcleanfuels — USD Clean Fuels",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoyjn07gaivhe54xkj9pv",
+        "label": "Usdcleanfuels — USD Clean Fuels",
+        "url": "https://usdcleanfuels.com/west-colton/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Usdcleanfuels — USD Clean Fuels",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "USD Clean Fuels",
+    "investmentFirm": "Ara Partners",
+    "sector": "Midstream",
+    "subsector": "Renewable Fuels Logistics",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Ara Infrastructure Fund I",
+    "description": "USD Clean Fuels develops and operates logistics infrastructure for renewable fuel feedstocks, biofuels, and related products. The business serves participants across the clean-fuels value chain through an asset-heavy model based on terminals, storage, handling infrastructure, and commercial logistics capabilities. Company materials describe a strategy spanning feedstocks, production, blending, and distribution, with assets such as the West Colton terminal supporting physical product flows. The platform is therefore positioned as infrastructure supporting renewable fuels supply chains rather than as a pure merchant producer. Ara announced in January 2024 that it had acquired a majority interest in USD Clean Fuels, while public sources do not disclose the resulting ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "Ara described USD Clean Fuels as a logistics infrastructure platform spanning renewable fuel feedstocks, biofuels, and distribution.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jan 2, 2024",
+        "event": "Ara Partners acquired a majority interest in USD Clean Fuels.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Ara Partners — USD Clean Fuels",
+        "url": "https://www.arapartners.com/news/ara-partners-acquires-majority-interest-in-usd-clean-fuels/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Usdcleanfuels — USD Clean Fuels",
+        "url": "https://usdcleanfuels.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Usdcleanfuels — USD Clean Fuels",
+        "url": "https://usdcleanfuels.com/mission-and-strategy/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Usdcleanfuels — USD Clean Fuels",
+        "url": "https://usdcleanfuels.com/west-colton/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ara Partners",
+        "ownershipVehicle": "Ara Infrastructure Fund I",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj12v00bfivheaxln1619",
+        "fundName": "Ara Infrastructure Fund I",
+        "managerId": "cmrxpi3xo000iivheedrsjt98",
+        "updatedAt": "2026-07-23T16:09:55.255Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi3xo000iivheedrsjt98",
+        "name": "Ara Partners",
+        "updatedAt": "2026-07-23T16:09:12.300Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0062:usd-clean-fuels:f96607bd",
+    "taskIndex": 62,
+    "canonicalKey": "usd-clean-fuels|united-states",
+    "capturedAt": "2026-08-12T22:54:46.566Z",
+    "databaseRevision": "company-state:717ce181af83eb0efa6c0d4cfff42bd103ebd1fcf0b0bb076ea113fcc7e3152a",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "30b0b4f1248afa2e931ff4db812ffa7d8f19bee7adaff86cf8b61a27d035f655",
+    "productionSnapshotSha256": "77d3ed4645f781088d771d8126be045a5926193b9640bd48095d7d89e23409c4",
+    "targetCompanySnapshotSha256": "717ce181af83eb0efa6c0d4cfff42bd103ebd1fcf0b0bb076ea113fcc7e3152a",
+    "seedEntrySha256": "3089d15fe6dea7dcd92d5af14e49f433fe0f98d9c3fbe4832c2b9324ab5ce32a",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2b76c4732a7ef8a28632ab36a6f9da1211acea5c0fb5af19b22055961da7c4c2",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "ebfa86af65b4a10dd1c29d7d2852208aa8a06e3731fce0ee8acb116840e47978",
+      "organizationsSha256": "3044a3d70a02e649f6470731c5c94bb991b7b377f96a853309d351797cb5fdc5",
+      "citationsSha256": "8bd31e96971063b100eec3af4d1e67f991da80555c4571d6ec8396241726f784",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ebd56b7eb1df861b905ebd987a4ee64d771a77fa65c23647aa6497f542af7a54",
+    "stateSha256": "e92cb561a76b6b709acf85db849ee1fb13a1e586853ca215e0e323052059ee8f",
+    "taskSnapshotSha256": "43b76ac8b25ec32ee730cde8c44d8873d6f81d0d80a633d69c3fb0d6751a9196"
+  },
+  "contextSha256": "c690140cb0d8fb609081daa95b54d82e879c5a43eaaefabe45c54ca00c34620f"
+}
