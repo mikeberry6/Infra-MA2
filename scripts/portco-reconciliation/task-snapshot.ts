@@ -32,6 +32,8 @@ interface TaskSnapshotTransaction {
   companyRevision: ReadDelegate;
   ownershipPeriod: ReadDelegate;
   companyRedirect: ReadDelegate;
+  fund: ReadDelegate;
+  organization: ReadDelegate;
 }
 
 export interface TaskSnapshotClient {
@@ -52,6 +54,37 @@ interface FundDependencyRecord {
   fundName: string;
   managerId: string;
   updatedAt: string | Date;
+}
+
+export interface TaskSnapshotDependencySpec {
+  fundNames: string[];
+  organizationNames: string[];
+}
+
+export function verifyTaskSnapshotDependencySpec(input: unknown): TaskSnapshotDependencySpec {
+  if (!input || typeof input !== "object" || Array.isArray(input)) {
+    throw new Error("Task dependency spec must be an object");
+  }
+  const record = input as Record<string, unknown>;
+  const keys = Object.keys(record).sort();
+  if (JSON.stringify(keys) !== JSON.stringify(["fundNames", "organizationNames"])) {
+    throw new Error("Task dependency spec must contain only fundNames and organizationNames");
+  }
+  const names = (field: "fundNames" | "organizationNames"): string[] => {
+    const value = record[field];
+    if (!Array.isArray(value) || value.some((entry) => typeof entry !== "string" || !entry.trim())) {
+      throw new Error(`Task dependency spec ${field} must be an array of non-empty strings`);
+    }
+    const normalized = value.map((entry) => (entry as string).trim());
+    if (new Set(normalized).size !== normalized.length) {
+      throw new Error(`Task dependency spec ${field} must not contain duplicates`);
+    }
+    return normalized.sort((left, right) => left.localeCompare(right, "en"));
+  };
+  return {
+    fundNames: names("fundNames"),
+    organizationNames: names("organizationNames"),
+  };
 }
 
 interface RedirectDependencyRecord {
@@ -380,6 +413,7 @@ export async function buildTaskSnapshotContext(input: {
   seedCompanies: readonly PortCo[];
   capturedAt: string;
   reviewedTargetCompanyId?: string;
+  dependencySpec?: TaskSnapshotDependencySpec;
 }): Promise<TaskSnapshotContext> {
   const task = input.manifest.activeTaskId
     ? input.manifest.tasks.find((candidate) => candidate.taskId === input.manifest.activeTaskId)
@@ -441,7 +475,54 @@ export async function buildTaskSnapshotContext(input: {
         orderBy: { retiredId: "asc" },
       }) as RedirectDependencyRecord[]
       : [];
-    return { row, revision, ownershipDependencies, redirects };
+    const requestedFundNames = input.dependencySpec?.fundNames ?? [];
+    const requestedOrganizationNames = input.dependencySpec?.organizationNames ?? [];
+    const requestedFunds = requestedFundNames.length > 0
+      ? await transaction.fund.findMany({
+          where: { fundName: { in: requestedFundNames } },
+          select: { id: true, fundName: true, managerId: true, updatedAt: true },
+          orderBy: { id: "asc" },
+        }) as FundDependencyRecord[]
+      : [];
+    const requestedFundManagerIds = [...new Set(requestedFunds.map((fund) => fund.managerId))];
+    const requestedFundManagers = requestedFundManagerIds.length > 0
+      ? await transaction.organization.findMany({
+          where: { id: { in: requestedFundManagerIds } },
+          select: { id: true, name: true, updatedAt: true },
+          orderBy: { id: "asc" },
+        }) as DependencyRecord[]
+      : [];
+    const requestedOrganizations = requestedOrganizationNames.length > 0
+      ? await transaction.organization.findMany({
+          where: { name: { in: requestedOrganizationNames } },
+          select: { id: true, name: true, updatedAt: true },
+          orderBy: { id: "asc" },
+        }) as DependencyRecord[]
+      : [];
+    const foundFundNames = new Set(requestedFunds.map((fund) => fund.fundName));
+    const foundOrganizationNames = new Set(requestedOrganizations.map((organization) => organization.name));
+    const missingFunds = requestedFundNames.filter((name) => !foundFundNames.has(name));
+    const missingOrganizations = requestedOrganizationNames.filter((name) => !foundOrganizationNames.has(name));
+    if (missingFunds.length > 0) {
+      throw new Error(`Requested task dependency funds do not exist: ${missingFunds.join(", ")}`);
+    }
+    if (missingOrganizations.length > 0) {
+      throw new Error(`Requested task dependency organizations do not exist: ${missingOrganizations.join(", ")}`);
+    }
+    const foundFundManagerIds = new Set(requestedFundManagers.map((organization) => organization.id));
+    const missingFundManagers = requestedFundManagerIds.filter((id) => !foundFundManagerIds.has(id));
+    if (missingFundManagers.length > 0) {
+      throw new Error(`Requested task dependency fund managers do not exist: ${missingFundManagers.join(", ")}`);
+    }
+    return {
+      row,
+      revision,
+      ownershipDependencies,
+      redirects,
+      requestedFunds,
+      requestedOrganizations,
+      requestedFundManagers,
+    };
   }, { isolationLevel: "RepeatableRead", timeout: 30_000 });
 
   const targetCompanyImage = read.row ? prismaCompanyRowToImage(read.row) : null;
@@ -488,10 +569,12 @@ export async function buildTaskSnapshotContext(input: {
     targetCompanyImage,
   });
   const funds = normalizeDependencies(
-    read.ownershipDependencies.flatMap((dependency) => dependency.fund ? [dependency.fund] : []),
+    read.ownershipDependencies.flatMap((dependency) => dependency.fund ? [dependency.fund] : [])
+      .concat(read.requestedFunds),
   ).filter((dependency, index, rows) => rows.findIndex((candidate) => candidate.id === dependency.id) === index);
   const organizations = normalizeDependencies(
-    read.ownershipDependencies.flatMap((dependency) => dependency.organization ? [dependency.organization] : []),
+    read.ownershipDependencies.flatMap((dependency) => dependency.organization ? [dependency.organization] : [])
+      .concat(read.requestedOrganizations, read.requestedFundManagers),
   ).filter((dependency, index, rows) => rows.findIndex((candidate) => candidate.id === dependency.id) === index);
   const redirects = normalizeRedirects(read.redirects);
   const ownershipPeriods = targetCompanyImage?.ownershipPeriods ?? [];

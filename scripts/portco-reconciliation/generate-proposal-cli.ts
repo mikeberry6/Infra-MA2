@@ -247,7 +247,58 @@ function verifyContext(input: unknown): TaskSnapshotContext {
   ) {
     throw new Error("Reviewed post-queue task context is missing its resolved canonical identity");
   }
+  for (const [values, expected, label] of [
+    [context.dependencies.funds, context.taskSnapshot.dependencies.fundsSha256, "funds"],
+    [context.dependencies.organizations, context.taskSnapshot.dependencies.organizationsSha256, "organizations"],
+    [context.dependencies.redirects, context.taskSnapshot.dependencies.redirectsSha256, "redirects"],
+  ] as const) {
+    if (!digestsEqual(sha256Canonical(values), expected)) {
+      throw new Error(`Task context ${label} do not match the locked dependency hash`);
+    }
+  }
   return context;
+}
+
+export function assertAfterImageDependenciesCaptured(
+  context: Pick<TaskSnapshotContext, "dependencies">,
+  afterImage: NonNullable<TaskSnapshotContext["targetCompanyImage"]>,
+): void {
+  const fundByName = new Map<string, TaskSnapshotContext["dependencies"]["funds"]>();
+  for (const fund of context.dependencies.funds) {
+    const matches = fundByName.get(fund.fundName) ?? [];
+    matches.push(fund);
+    fundByName.set(fund.fundName, matches);
+  }
+  const organizationByName = new Map<
+    string,
+    TaskSnapshotContext["dependencies"]["organizations"]
+  >();
+  for (const organization of context.dependencies.organizations) {
+    const matches = organizationByName.get(organization.name) ?? [];
+    matches.push(organization);
+    organizationByName.set(organization.name, matches);
+  }
+  const organizationIds = new Set(context.dependencies.organizations.map((row) => row.id));
+  for (const owner of afterImage.ownershipPeriods) {
+    if (owner.organizationName) {
+      const organizations = organizationByName.get(owner.organizationName) ?? [];
+      if (organizations.length !== 1) {
+        throw new Error(
+          `Approved ownership organization is not captured exactly once: ${owner.organizationName}`,
+        );
+      }
+    }
+    if (!owner.fundName) continue;
+    const funds = fundByName.get(owner.fundName) ?? [];
+    if (funds.length !== 1) {
+      throw new Error(`Approved ownership fund is not captured exactly once: ${owner.fundName}`);
+    }
+    if (!organizationIds.has(funds[0].managerId)) {
+      throw new Error(
+        `Approved ownership fund manager organization is not captured: ${owner.fundName}`,
+      );
+    }
+  }
 }
 
 export function proposalCanonicalKey(context: Pick<
@@ -349,6 +400,7 @@ export async function executeGenerateProposalCli(argv: readonly string[]): Promi
   if (beforeImageSha256 !== context.taskSnapshot.targetCompanySnapshotSha256) {
     throw new Error("Task context before-image does not match the locked target snapshot");
   }
+  if (afterImage) assertAfterImageDependenciesCaptured(context, afterImage);
   const proposal = finalizeProposal({
     schemaVersion: 1,
     artifactType: "PORTCO_CHANGE_PROPOSAL",
@@ -371,6 +423,16 @@ export async function executeGenerateProposalCli(argv: readonly string[]): Promi
     ledgerSha256: context.taskSnapshot.sourceLedgerSha256,
     productionSnapshotSha256: production.snapshotSha256,
     currentCompanySnapshotSha256: context.taskSnapshot.targetCompanySnapshotSha256,
+    executionLock: {
+      taskSnapshotSha256: context.taskSnapshot.taskSnapshotSha256,
+      taskStateSha256: context.taskSnapshot.stateSha256,
+      taskDependencySha256: context.taskSnapshot.dependencySha256,
+      seedEntrySha256: context.taskSnapshot.seedEntrySha256,
+      dependencies: context.taskSnapshot.dependencies,
+      funds: context.dependencies.funds,
+      organizations: context.dependencies.organizations,
+      redirects: context.dependencies.redirects,
+    },
     beforeImage,
     beforeImageSha256,
     afterImage,

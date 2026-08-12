@@ -14,9 +14,11 @@ import {
 } from "./prisma-company-image";
 import type {
   CompanyImage,
+  ProposalExecutionLock,
   ProductionSnapshot,
   ReconciliationProposal,
 } from "./schema";
+import { digestsEqual, sha256Canonical } from "./hash";
 
 interface CrudDelegate {
   findUnique(args: unknown): Promise<unknown>;
@@ -95,6 +97,87 @@ function date(value: string | null): Date | null {
 
 function timestamp(value: string | null): Date | null {
   return value === null ? null : new Date(value);
+}
+
+interface ObservedExecutionDependencies {
+  funds: Array<{ id: string; fundName: string; managerId: string; updatedAt: string | Date }>;
+  organizations: Array<{ id: string; name: string; updatedAt: string | Date }>;
+  redirects: Array<{
+    retiredId: string;
+    companyId: string;
+    reason: string;
+    createdAt: string | Date;
+  }>;
+}
+
+function dependencyTimestamp(value: string | Date): string {
+  const parsed = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(parsed.valueOf())) throw new Error("Execution dependency contains an invalid timestamp");
+  return parsed.toISOString();
+}
+
+function normalizeObservedExecutionDependencies(
+  observed: ObservedExecutionDependencies,
+): ObservedExecutionDependencies {
+  return {
+    funds: observed.funds
+      .map((row) => ({ ...row, updatedAt: dependencyTimestamp(row.updatedAt) }))
+      .sort((left, right) => left.id.localeCompare(right.id, "en")),
+    organizations: observed.organizations
+      .map((row) => ({ ...row, updatedAt: dependencyTimestamp(row.updatedAt) }))
+      .sort((left, right) => left.id.localeCompare(right.id, "en")),
+    redirects: observed.redirects
+      .map((row) => ({ ...row, createdAt: dependencyTimestamp(row.createdAt) }))
+      .sort((left, right) => left.retiredId.localeCompare(right.retiredId, "en")),
+  };
+}
+
+export function assertProposalExecutionDependenciesFresh(
+  lock: ProposalExecutionLock,
+  observedInput: ObservedExecutionDependencies,
+): void {
+  const observed = normalizeObservedExecutionDependencies(observedInput);
+  for (const [label, current, approved, expectedHash] of [
+    ["funds", observed.funds, lock.funds, lock.dependencies.fundsSha256],
+    ["organizations", observed.organizations, lock.organizations, lock.dependencies.organizationsSha256],
+    ["redirects", observed.redirects, lock.redirects, lock.dependencies.redirectsSha256],
+  ] as const) {
+    const currentHash = sha256Canonical(current);
+    if (!digestsEqual(currentHash, expectedHash) || !digestsEqual(currentHash, sha256Canonical(approved))) {
+      throw new Error(`Proposal execution dependency is stale: ${label}`);
+    }
+  }
+}
+
+async function assertLockedExecutionDependenciesFresh(
+  transaction: unknown,
+  proposal: ReconciliationProposal,
+): Promise<void> {
+  const lock = proposal.executionLock;
+  if (!lock) return;
+  const funds = lock.funds.length > 0
+    ? await delegate(transaction, "fund").findMany({
+        where: { id: { in: lock.funds.map((row) => row.id) } },
+        select: { id: true, fundName: true, managerId: true, updatedAt: true },
+        orderBy: { id: "asc" },
+      }) as ObservedExecutionDependencies["funds"]
+    : [];
+  const organizations = lock.organizations.length > 0
+    ? await delegate(transaction, "organization").findMany({
+        where: { id: { in: lock.organizations.map((row) => row.id) } },
+        select: { id: true, name: true, updatedAt: true },
+        orderBy: { id: "asc" },
+      }) as ObservedExecutionDependencies["organizations"]
+    : [];
+  const targetId = proposal.beforeImage?.id ?? null;
+  const redirects = targetId
+    ? await delegate(transaction, "companyRedirect").findMany({
+        where: { OR: [{ companyId: targetId }, { retiredId: targetId }] },
+        select: { retiredId: true, companyId: true, reason: true, createdAt: true },
+        orderBy: { retiredId: "asc" },
+      }) as ObservedExecutionDependencies["redirects"]
+    : [];
+  assertProposalExecutionDependenciesFresh(lock, { funds, organizations, redirects });
 }
 
 function scalarData(image: CompanyImage) {
@@ -637,6 +720,7 @@ export function createPrismaApprovedApplyStore(options: {
       };
       const target = proposal.beforeImage?.id ? await load(proposal.beforeImage.id) : null;
       const retiredCompanies = await Promise.all(proposal.retiredCompanyIds.map(load));
+      await assertLockedExecutionDependenciesFresh(transaction, proposal);
       const createMatches = proposal.actions.includes("CREATE_COMPANY") && proposal.afterImage
         ? await findPrismaCompanyImageRows(
             transaction,

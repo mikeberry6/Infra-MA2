@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-08-12T23:31:00.000Z",
+  "decision": "CORRECT_AND_RETAIN_ACTIVE",
+  "taskId": "ledger:0063:advanced-power:f32ea35e",
+  "companyName": "Advanced Power",
+  "requestedManager": "ArcLight Capital",
+  "sourceHoldingId": "012-arclight-capital:holding:002:advanced-power",
+  "rationale": "Retain Advanced Power as an active ArcLight infrastructure portfolio company, but do not add a duplicate owner. The census name ArcLight Capital and the existing ArcLight Capital Partners owner identify the same manager. Correct the investment from the July 2025 announcement to the February 12, 2026 legal closing, link the disclosed Fund VIII vehicle, replace the stale InfraBridge seed attribution through the approved after-image, and add current company and regulatory evidence. No Advanced Power-specific ArcLight exit or pending sale was found through August 12, 2026.",
+  "identityResolution": {
+    "productionCompanyId": "cmrxpj66t00ixivhe37f0a9ad",
+    "seedKey": "advanced power|United States",
+    "canonicalName": "Advanced Power",
+    "relatedLegalEntities": [
+      "Advanced Power US Holdings, Inc.",
+      "Advanced Power Services (NA) LLC",
+      "Advanced Power AG"
+    ],
+    "formed": 2000,
+    "headquarters": "Boston, Massachusetts, United States",
+    "operatingCompany": true,
+    "infrastructureStrategy": "ArcLight power infrastructure",
+    "platformBoundary": "Count Advanced Power once as the U.S. power-development and asset-management platform. Do not separately count its development projects, managed assets or divested projects without independent manager-level ownership evidence."
+  },
+  "ownershipResolution": {
+    "owner": "ArcLight Capital Partners",
+    "managerAliasResolved": "ArcLight Capital",
+    "vehicle": "ArcLight Infrastructure Partners Fund VIII",
+    "stake": "100% of Advanced Power US Holdings, Inc. (the controlling U.S. entity); exact platform-level percentage not publicly disclosed",
+    "announcementDate": "2025-07-24",
+    "closingDate": "2026-02-12",
+    "datePrecision": "DAY",
+    "transactionState": "CLOSED_ACTIVE",
+    "seller": "Advanced Power AG",
+    "exitSearch": "No Advanced Power-specific sale, divestiture, restructuring or ArcLight exit was found through August 12, 2026. ArcLight's April 2026 Fund VIII release continued to list Advanced Power as a backed thermal-power development team. DigitalBridge's pending acquisition of the ArcLight manager is not an Advanced Power ownership transfer.",
+    "pendingOwnershipTransaction": null
+  },
+  "evidence": [
+    {
+      "label": "ArcLight — Advanced Power acquisition announcement",
+      "url": "https://www.prnewswire.com/news-releases/arclight-acquires-advanced-power-a-leading-power-infrastructure-developer-302512542.html",
+      "purpose": "Announcement date, infrastructure strategy, company scale, founding year and ArcLight manager identity",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "ArcLight — 2025 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Fund VIII attribution and confirmation that the acquisition remained subject to closing conditions in September 2025",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "PJM Independent Market Monitor — Q1 2026 State of the Market",
+      "url": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2026/2026q1-som-pjm-sec3.pdf",
+      "purpose": "February 12, 2026 consummation and 100% transfer of the controlling U.S. entity in FERC docket EC25-123",
+      "sourceTier": "INSTITUTIONAL",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "FERC — January 30, 2026 notational order",
+      "url": "https://www.ferc.gov/news-events/events/notational-order-2026-01-30-01302026",
+      "purpose": "Regulatory approval lineage for docket EC25-123",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "BROWSER_BLOCKED_VERIFIED"
+    },
+    {
+      "label": "ArcLight — Fund VIII final close",
+      "url": "https://www.prnewswire.com/news-releases/arclight-announces-final-fund-viii-close-of-3-9-billion-302734967.html",
+      "purpose": "Current Fund VIII relationship and infrastructure-strategy basis",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Advanced Power — Official website and contact page",
+      "url": "https://www.advanced-power.com/home/contact",
+      "purpose": "Current company identity and Boston and Houston operating offices",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "databaseMutation": true,
+  "seedMutation": true,
+  "proposedMutation": {
+    "recordStatus": "PUBLISHED",
+    "companyStatus": "ACTIVE",
+    "ownerRowsAdded": 0,
+    "activeArcLightOwnership": "CORRECT_EXISTING_OWNER_TO_FUND_VIII_AND_FEBRUARY_2026_CLOSE",
+    "seedInvestmentFirm": "ArcLight Capital Partners",
+    "pendingOwnershipTransaction": null
+  },
+  "unresolvedQuestions": [],
+  "blockingUnresolvedQuestions": []
+}
