@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0057:nokomis-energy:ea285026",
+  "taskIndex": 57,
+  "companyName": "Nokomis Energy",
+  "generatedAt": "2026-08-12T20:37:09.451Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0057-nokomis-energy/attempt-1/pre-approval-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 57,
+    "taskId": "ledger:0057:nokomis-energy:ea285026",
+    "canonicalKey": "nokomis-energy|united-states",
+    "companyName": "Nokomis Energy",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "010-apollo-global-management:repo-only:007:nokomis-energy"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5ua00ieivheic1wi3re"
+    ],
+    "seedKeys": [
+      "nokomis energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://nokomisenergy.com/great-bay-investment/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Apollo Global Management MATCHED_ELSEWHERE: Subsidiary under Great Bay Renewables platform",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5ua00ieivheic1wi3re",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "nokomis-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj5ua00ieivheic1wi3re",
+    "name": "Nokomis Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed Solar",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Nokomis Energy develops and owns distributed solar projects connected to local distribution grids in the United States. Its end markets include community solar programs, local power purchasers, and other distributed-energy counterparties, and the business follows an asset-heavy development-to-own model. Public materials tied to Great Bay Renewables' 2024 investment describe a 77-project solar portfolio across seven U.S. states, with activity focused on distributed generation markets. The disclosed transaction was structured as growth capital to support construction and expansion rather than as a publicly detailed sale of control. Great Bay Renewables announced a $30 million investment in August 2024, and Great Bay is jointly controlled by Altius Renewable Royalties and Apollo-affiliated funds, while public sources do not disclose Nokomis's broader ownership split.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqw301f9ivhe9ka0tbcf",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Great Bay Renewables (Apollo)",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjp902lyivheho01peg7",
+        "date": "2024",
+        "event": "Public materials linked Great Bay's sponsorship to the Altius Renewable Royalties and Apollo-affiliated joint-venture structure.",
+        "category": "OTHER",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjpu02lzivhervza7ic8",
+        "date": "Jun 27, 2024",
+        "event": "Great Bay Renewables, jointly controlled by Altius Renewable Royalties and Apollo-affiliated funds, announced a $30 million investment in Nokomis Energy.",
+        "category": "FINANCING",
+        "sortDate": "2024-06-27T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpow3307clivhen74xg5jy",
+        "label": "Nokomisenergy — Nokomis Energy",
+        "url": "https://nokomisenergy.com/great-bay-investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Nokomisenergy — Nokomis Energy",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpow4607cnivhez7wvm60f",
+        "label": "PR Newswire — Nokomis Energy",
+        "url": "https://www.prnewswire.com/news-releases/nokomis-energy-announces-30-million-investment-from-great-bay-renewables-302210293.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Nokomis Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpow5e07cpivheof42acxh",
+        "label": "Investment date source — Apollo Global Management — Nokomis Energy",
+        "url": "https://www.greatbayroyalties.com/news/nokomis-investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpow8k07cqivhe9kxv715f",
+        "label": "Arr — Great Bay Renewables",
+        "url": "https://www.arr.energy/news/altius-renewable-royalties-forms-joint-venture-with-apollo-infrastructure-funds",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Arr — Nokomis Energy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Nokomis Energy",
+    "investmentFirm": "Apollo Global Management",
+    "sector": "Power & ET",
+    "subsector": "Distributed Solar",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Great Bay Renewables (Apollo)",
+    "description": "Nokomis Energy develops and owns distributed solar projects connected to local distribution grids in the United States. Its end markets include community solar programs, local power purchasers, and other distributed-energy counterparties, and the business follows an asset-heavy development-to-own model. Public materials tied to Great Bay Renewables' 2024 investment describe a 77-project solar portfolio across seven U.S. states, with activity focused on distributed generation markets. The disclosed transaction was structured as growth capital to support construction and expansion rather than as a publicly detailed sale of control. Great Bay Renewables announced a $30 million investment in August 2024, and Great Bay is jointly controlled by Altius Renewable Royalties and Apollo-affiliated funds, while public sources do not disclose Nokomis's broader ownership split.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "Public materials linked Great Bay's sponsorship to the Altius Renewable Royalties and Apollo-affiliated joint-venture structure.",
+        "category": "Other"
+      },
+      {
+        "date": "Jun 27, 2024",
+        "event": "Great Bay Renewables, jointly controlled by Altius Renewable Royalties and Apollo-affiliated funds, announced a $30 million investment in Nokomis Energy.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Nokomisenergy — Nokomis Energy",
+        "url": "https://nokomisenergy.com/great-bay-investment/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "PR Newswire — Nokomis Energy",
+        "url": "https://www.prnewswire.com/news-releases/nokomis-energy-announces-30-million-investment-from-great-bay-renewables-302210293.html",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Investment date source — Apollo Global Management — Nokomis Energy",
+        "url": "https://www.greatbayroyalties.com/news/nokomis-investment/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Arr — Nokomis Energy",
+        "url": "https://www.arr.energy/news/altius-renewable-royalties-forms-joint-venture-with-apollo-infrastructure-funds",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Apollo Global Management",
+        "ownershipVehicle": "Great Bay Renewables (Apollo)",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0057:nokomis-energy:ea285026",
+    "taskIndex": 57,
+    "canonicalKey": "nokomis-energy|united-states",
+    "capturedAt": "2026-08-12T20:37:09.451Z",
+    "databaseRevision": "company-state:f1e0fee32fb8a1ac870e15e3ef4b32e30aad8cc65d19ed0ca14d546ddd1f5f49",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "410d0e9456f50fe2192337de73eeccd775b7ff6877d290de310d94bba521fd58",
+    "productionSnapshotSha256": "775fb9c3ad7cc3532b6fc47c5146e5ce41b48a70b1a1b08334129117c8a6b9eb",
+    "targetCompanySnapshotSha256": "f1e0fee32fb8a1ac870e15e3ef4b32e30aad8cc65d19ed0ca14d546ddd1f5f49",
+    "seedEntrySha256": "c291f866d7ba45ab0e47ec881e8fc86460cb8619105e6ae9dd0869e7920eeed1",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "035924bd06bc5ddd9abe6b06914adc4f5890b74242c70cab956a32ae0016be17",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5bf007754ab1aec1ee2613e1677630ccdf3e2677b7f244a79a2c7562a77e3e14",
+      "citationsSha256": "8913b26ca20704b6fb9ba1f60d8bba7c8a7f2aa81e603a58d7d9690407ad2527",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "157f74f5ccffc8f90523509193ee2d25db79f7448795705b9414f46afd0d71aa",
+    "stateSha256": "c662bb4bcb612d9ad2d8816d489f4aaf76abe0b5f86f31c55356426260a54315",
+    "taskSnapshotSha256": "e111c0a94c2992fa0a92d9e1d6391758143881d73ce8ae90f2c23fb8abcf9f95"
+  },
+  "contextSha256": "e611fe93c49fcef840231f20be2f6ce048574d55dee73b827546d99f830b809f"
+}
