@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0055:modern-aviation:22969eb9",
+  "taskIndex": 55,
+  "companyName": "Modern Aviation",
+  "generatedAt": "2026-08-12T19:23:46.035Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 55,
+    "taskId": "ledger:0055:modern-aviation:22969eb9",
+    "canonicalKey": "modern-aviation|united-states",
+    "companyName": "Modern Aviation",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 10,
+    "managers": [
+      "Apollo Global Management",
+      "Tiger Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "010-apollo-global-management:holding:005:modern-aviation",
+      "093-tiger-infrastructure-partners:holding:001:modern-aviation"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj5t700icivhefd9cqzhu"
+    ],
+    "seedKeys": [
+      "modern aviation|United States"
+    ],
+    "evidenceUrls": [
+      "https://modern-aviation.com",
+      "https://www.apollo.com/insights-news/pressreleases/2023/11/apollo-infrastructure-funds-acquire-majority-stake-in-modern-aviation-4423868",
+      "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-announces-fund-ii-sale-of-fbo-leader-modern-aviation-301976481.html",
+      "https://www.tigerinfrastructure.com/portfolio/modern-aviation"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5t700icivhefd9cqzhu",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "modern-aviation|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj5t700icivhefd9cqzhu",
+    "name": "Modern Aviation",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "FBO & Airport Services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Modern Aviation operates fixed-base operations that provide fueling, hangarage, ground handling, and related services to business, general aviation, cargo, commercial, and military aircraft. The business serves airport operators, aircraft owners, charter operators, and corporate flight departments through an asset-heavy model combining long-term airport leases with recurring service revenue. Company materials describe a multi-airport footprint across the United States and Puerto Rico, and Apollo's 2023 transaction announcement referred to 16 locations. The platform was established in 2018 and has expanded through acquisitions and site additions since launch. Apollo Infrastructure Opportunities Fund III announced in November 2023 that it had entered a definitive agreement to acquire a majority stake in Modern Aviation, while Tiger Infrastructure Partners and management reinvested and public sources do not disclose the resulting ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "United States; Puerto Rico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqug01f6ivheqb9ndpic",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": "Apollo Infrastructure Opportunities Fund III",
+        "vehicleName": "Apollo Infrastructure Opportunities Fund III",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqv001f7ivhevlm2lilh",
+        "managerName": "Tiger",
+        "organizationName": "Tiger",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjhx02lqivhe7kjg46v6",
+        "date": "2018",
+        "event": "Modern Aviation was founded as an FBO platform focused on business and general aviation infrastructure.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjii02lrivhekg5z7rka",
+        "date": "2018",
+        "event": "The company completed its first acquisition with the purchase of Landmark Aviation's facilities at Pittsburgh International Airport.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjj402lsivheqkqwj38u",
+        "date": "2018",
+        "event": "Tiger Infrastructure Partners made its initial investment in Modern Aviation.",
+        "category": "FINANCING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjjn02ltivhea25jas1q",
+        "date": "Nov 2023",
+        "event": "Tiger announced the sale of Modern Aviation from Fund II and said Tiger funds would reinvest alongside Apollo.",
+        "category": "DIVESTITURE",
+        "sortDate": "2023-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjk802luivhegkwa5fo7",
+        "date": "Nov 2, 2023",
+        "event": "Apollo Infrastructure Opportunities Fund III announced a definitive agreement to acquire a majority stake in Modern Aviation.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-02T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpovuo07c5ivhemidzetse",
+        "label": "Modern Aviation — Modern Aviation",
+        "url": "https://modern-aviation.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Modern Aviation company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpovvi07c7ivheyp0pda2o",
+        "label": "Investment date source — Tiger — Modern Aviation",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Modern-Aviation",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpovwh07c9ivhe8uvw1gmg",
+        "label": "PR Newswire — Modern Aviation",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-announces-fund-ii-sale-of-fbo-leader-modern-aviation-301976481.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpovxn07cbivheh3h09yq7",
+        "label": "Modern Aviation — Modern Aviation",
+        "url": "https://modern-aviation.com/apollo-infrastructure-funds-acquire-majority-stake-in-modern-aviation/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Modern Aviation — Modern Aviation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpovyo07cdivhe9rnihb3h",
+        "label": "Announcement date source — Apollo Global Management — Modern Aviation",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2023/11/apollo-infrastructure-funds-acquire-majority-stake-in-modern-aviation-2772854",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Modern Aviation",
+    "investmentFirm": "Apollo Global Management",
+    "sector": "Transportation",
+    "subsector": "FBO & Airport Services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Apollo Infrastructure Opportunities Fund III",
+    "description": "Modern Aviation operates fixed-base operations that provide fueling, hangarage, ground handling, and related services to business, general aviation, cargo, commercial, and military aircraft. The business serves airport operators, aircraft owners, charter operators, and corporate flight departments through an asset-heavy model combining long-term airport leases with recurring service revenue. Company materials describe a multi-airport footprint across the United States and Puerto Rico, and Apollo's 2023 transaction announcement referred to 16 locations. The platform was established in 2018 and has expanded through acquisitions and site additions since launch. Apollo Infrastructure Opportunities Fund III announced in November 2023 that it had entered a definitive agreement to acquire a majority stake in Modern Aviation, while Tiger Infrastructure Partners and management reinvested and public sources do not disclose the resulting ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2018,
+    "investmentYear": 2023,
+    "headquarters": "United States; Puerto Rico",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Modern Aviation was founded as an FBO platform focused on business and general aviation infrastructure.",
+        "category": "Founding"
+      },
+      {
+        "date": "2018",
+        "event": "The company completed its first acquisition with the purchase of Landmark Aviation's facilities at Pittsburgh International Airport.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2018",
+        "event": "Tiger Infrastructure Partners made its initial investment in Modern Aviation.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 2023",
+        "event": "Tiger announced the sale of Modern Aviation from Fund II and said Tiger funds would reinvest alongside Apollo.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "Nov 2, 2023",
+        "event": "Apollo Infrastructure Opportunities Fund III announced a definitive agreement to acquire a majority stake in Modern Aviation.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Modern Aviation — Modern Aviation",
+        "url": "https://modern-aviation.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — Tiger — Modern Aviation",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Modern-Aviation",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — Modern Aviation",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-announces-fund-ii-sale-of-fbo-leader-modern-aviation-301976481.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Modern Aviation — Modern Aviation",
+        "url": "https://modern-aviation.com/apollo-infrastructure-funds-acquire-majority-stake-in-modern-aviation/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — Apollo Global Management — Modern Aviation",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2023/11/apollo-infrastructure-funds-acquire-majority-stake-in-modern-aviation-2772854",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Apollo Global Management",
+        "ownershipVehicle": "Apollo Infrastructure Opportunities Fund III",
+        "investmentYear": 2023,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Tiger",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj0yu00bcivhehzz77m1c",
+        "fundName": "Apollo Infrastructure Opportunities Fund III",
+        "managerId": "cmrxpi3q1000givhe0rxho1m0",
+        "updatedAt": "2026-07-23T16:09:55.110Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      },
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0055:modern-aviation:22969eb9",
+    "taskIndex": 55,
+    "canonicalKey": "modern-aviation|united-states",
+    "capturedAt": "2026-08-12T19:23:46.035Z",
+    "databaseRevision": "company-state:d1402620c54fe7528593d2b3c172d76474a75bebe660edbe47125ffdcdfe505e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "ac7c57caf36cd8885809155da9f1211dc2904eab74d384ae42c9fe65b91491c5",
+    "productionSnapshotSha256": "d7a6b8a20c6de133d200946bce331573192054267d95d4d90ccf460629423bb7",
+    "targetCompanySnapshotSha256": "d1402620c54fe7528593d2b3c172d76474a75bebe660edbe47125ffdcdfe505e",
+    "seedEntrySha256": "fc5da66b2a9f89440afb5f9cc29e3cd4cea84752169be053358bb8221d3bdc0b",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "ab9c778db2009294829361b7136108590f40d80330db54a78dc45db3c02c9263",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "205a6004af8224a091e459f57b007feb0612e2a4a014b1e5e69a2621236006d0",
+      "organizationsSha256": "bd06e40a138c4e33586ea55f84d354cf07259af554943b9cce65d8ed5fdad5a8",
+      "citationsSha256": "483f95aeee13136801687ee50a55fcf7feaf85956f666c9e7b3840f036cacba9",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "42e498a77d963cdad99bb73424da75d93a9569172b6008fa163de35cc576300f",
+    "stateSha256": "005448b3aff0cc017cd0c447d26d26e410a9d7bc6d8e3737a38ed8de84f5f1ab",
+    "taskSnapshotSha256": "0e59ed28319be420273f2076b423d3aa80789eeb261bd76dac48a5d9f7ec4415"
+  },
+  "contextSha256": "d9e6157ad296419f59aeb2f716a1df879e4d50d684c887ad6e46a7bf1e0575ef"
+}
