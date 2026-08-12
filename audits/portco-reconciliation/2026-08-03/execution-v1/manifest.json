@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T22:02:15.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0060:summit-ridge-energy:21e98ff7",
+  "updatedAt": "2026-08-12T22:14:49.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8526,11 +8526,11 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "13321c59dc9340667ac763a6909a0922c73acbfc7b7cafc6e02d3ea2a54d49f4",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 3,
       "startedAt": "2026-08-12T21:59:06.000Z",
-      "updatedAt": "2026-08-12T22:02:15.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-12T22:14:49.000Z",
+      "completedAt": "2026-08-12T22:14:49.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "db04ca5097c55538bb55d6c2063f91659078f58112857cc08a016c3560cbbcc1",
@@ -8547,14 +8547,26 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0060-summit-ridge-energy-v3.json",
           "sha256": "8d0d18e80afc44d5349d8edf63cfe80253c30a04046066fdfa0bb3316e23ddf8"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31645755019",
+          "sha256": "32346ab37be345ffb1283f1443416f23d36a3a31e20c909c7eb5ffcebfa6bec1"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0060-summit-ridge-energy/research-decision.json",
           "sha256": "908dce1687207ebf962b659a42ed78e19a7e10c3bf9cc7ee23de8f9e76fe349d"
         },
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0060-summit-ridge-energy/attempt-3/context.json",
+          "sha256": "9ea67ff99563ef2fc13a89d07e3ddfccecab3dde8a5a19ccab9b4053d181cb34"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-12T22:14:49.000Z",
+        "auditEventId": "cmsqn8f8w000ag24sc1ia7ws3",
+        "transactionId": "c33f4e1d-ec26-495f-a197-a1a7fda18ccd",
+        "receiptSha256": "32346ab37be345ffb1283f1443416f23d36a3a31e20c909c7eb5ffcebfa6bec1",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31645755019"
+      },
       "history": [
         {
           "sequence": 1,
@@ -8723,6 +8735,21 @@
             "8d0d18e80afc44d5349d8edf63cfe80253c30a04046066fdfa0bb3316e23ddf8"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 16,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-12T22:14:49.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "32346ab37be345ffb1283f1443416f23d36a3a31e20c909c7eb5ffcebfa6bec1",
+            "8d0d18e80afc44d5349d8edf63cfe80253c30a04046066fdfa0bb3316e23ddf8",
+            "9ea67ff99563ef2fc13a89d07e3ddfccecab3dde8a5a19ccab9b4053d181cb34",
+            "a8d01a42a5e659085795b6175978620f1c460457a99e45d70043ae24e50d8749"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -25315,5 +25342,5 @@
       ]
     }
   ],
-  "manifestSha256": "5450cd1de1ff7063b2ffb889845e613c21f414ce190da0ef3e694782996d1ef2"
+  "manifestSha256": "2236742a4dff25953ce56b53ee7efb19028d0307ee3f9e88ffdda3c806ce1044"
 }
