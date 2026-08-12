@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0063:advanced-power:f32ea35e",
+  "taskIndex": 63,
+  "companyName": "Advanced Power",
+  "generatedAt": "2026-08-12T23:49:23.100Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0063-advanced-power/attempt-3/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 63,
+    "taskId": "ledger:0063:advanced-power:f32ea35e",
+    "canonicalKey": "advanced-power|united-states",
+    "companyName": "Advanced Power",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:002:advanced-power"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj66t00ixivhe37f0a9ad"
+    ],
+    "seedKeys": [
+      "advanced power|United States"
+    ],
+    "evidenceUrls": [
+      "https://arclight.com/news/arclight-completes-acquisition-of-advanced-power/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj66t00ixivhe37f0a9ad",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "advanced-power|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj66t00ixivhe37f0a9ad",
+    "name": "Advanced Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Power Development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Advanced Power develops, constructs, and manages large-scale power generation and storage projects. Its end markets are wholesale electricity systems, utilities, and capacity markets, and the business follows an asset-heavy development model centered on permitting, engineering, interconnection, procurement, and project financing. ArcLight stated in 2025 that Advanced Power had developed more than 6 GW historically and had a pipeline of more than 12 GW of new thermal and renewable projects plus more than 10 GWh of storage. The company operates from U.S. offices including Boston and Houston and functions as a development platform rather than a single-asset owner. ArcLight announced in July 2025 that it had acquired Advanced Power and committed $1 billion of equity to support further development, while public sources do not disclose the resulting ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2000,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr8201fsivhedp2wxihz",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkl0t02nkivhebs1drzny",
+        "date": "2000",
+        "event": "Advanced Power was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2000-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkl1e02nlivhew1egaoui",
+        "date": "2025",
+        "event": "ArcLight disclosed that the platform had developed more than 6 GW of power projects historically.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkl1v02nmivhev6vr0ljk",
+        "date": "Jul 24, 2025",
+        "event": "ArcLight announced the acquisition of Advanced Power and a $1 billion equity commitment for new power infrastructure development.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-07-24T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoykq07gcivhe1ggogr5h",
+        "label": "Investment date source — ArcLight Capital Partners — Advanced Power",
+        "url": "https://www.prnewswire.com/news-releases/arclight-acquires-advanced-power-a-leading-power-infrastructure-developer-302512542.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoyol07geivhej7ps23or",
+        "label": "Advanced Power — Advanced Power",
+        "url": "https://www.advanced-power.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Advanced Power company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoypw07ggivhehddv1343",
+        "label": "Advanced Power — Advanced Power",
+        "url": "https://www.advanced-power.com/assets/2025.07.08-FINAL-MCE-RFP-Press-Release_Bechtel-AP.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Advanced Power operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoyr607giivherzrh8fm7",
+        "label": "Advanced Power — Advanced Power",
+        "url": "https://www.advanced-power.com/assets/10.27.25-FINAL-Advanced-Powers-640-MW-Maple-Creek-Development-Secures-GE-Vernova-H-Class-Equipment-Accelerating-Development-Timeline.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Advanced Power operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Advanced Power",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Power Development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ArcLight Infrastructure Partners Fund VIII",
+    "description": "Advanced Power is a Boston-based developer, financial structurer, owner and asset manager of utility-scale natural-gas, solar, wind and battery-storage projects. Founded in 2000, the platform develops and manages projects through permitting, interconnection, financing, construction and operations, with U.S. offices in Boston and Houston. At ArcLight's July 2025 announcement, Advanced Power reported 6 GW of completed thermal and renewable projects, a late-stage U.S. pipeline exceeding 12 GW and more than 10 GWh of storage projects. ArcLight Infrastructure Partners Fund VIII completed its acquisition of 100% of Advanced Power US Holdings, Inc., the controlling U.S. entity, on February 12, 2026; the exact percentage acquired in the broader branded platform is not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "website": "https://www.advanced-power.com/",
+    "yearFounded": 2000,
+    "investmentYear": 2026,
+    "headquarters": "Boston, Massachusetts, United States",
+    "milestones": [
+      {
+        "date": "2000",
+        "event": "Advanced Power was founded as a developer, owner and manager of modern power infrastructure.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jul 24, 2025",
+        "event": "ArcLight announced its acquisition of Advanced Power and an initial US$1 billion equity commitment for new power infrastructure; the acquisition remained subject to closing conditions.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 12, 2026",
+        "event": "ArcLight completed Fund VIII's acquisition of 100% of Advanced Power US Holdings, Inc., the controlling U.S. entity, from Advanced Power AG.",
+        "category": "Acquisition"
+      }
+    ],
+    "management": [],
+    "sources": [
+      {
+        "label": "ArcLight — Advanced Power acquisition announcement",
+        "url": "https://www.prnewswire.com/news-releases/arclight-acquires-advanced-power-a-leading-power-infrastructure-developer-302512542.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 2025 announcement, initial equity commitment, manager identity and company profile"
+      },
+      {
+        "label": "Advanced Power — Official website",
+        "url": "https://www.advanced-power.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current operating scope, technologies and publicly disclosed scale"
+      },
+      {
+        "label": "Advanced Power — Advanced Power",
+        "url": "https://www.advanced-power.com/assets/2025.07.08-FINAL-MCE-RFP-Press-Release_Bechtel-AP.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Advanced Power operations / asset details"
+      },
+      {
+        "label": "Advanced Power — Advanced Power",
+        "url": "https://www.advanced-power.com/assets/10.27.25-FINAL-Advanced-Powers-640-MW-Maple-Creek-Development-Secures-GE-Vernova-H-Class-Equipment-Accelerating-Development-Timeline.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Advanced Power operations / asset details"
+      },
+      {
+        "label": "PJM Independent Market Monitor — Q1 2026 State of the Market",
+        "url": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2026/2026q1-som-pjm-sec3.pdf",
+        "type": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "February 12, 2026 transaction completion and 100% transfer of the controlling U.S. entity"
+      },
+      {
+        "label": "ArcLight — 2025 ESG Report",
+        "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fund VIII attribution and September 2025 pending-closing status"
+      },
+      {
+        "label": "FERC — January 30, 2026 notational order",
+        "url": "https://www.ferc.gov/news-events/events/notational-order-2026-01-30-01302026",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Regulatory approval lineage for docket EC25-123"
+      },
+      {
+        "label": "ArcLight — Fund VIII final close",
+        "url": "https://www.prnewswire.com/news-releases/arclight-announces-final-fund-viii-close-of-3-9-billion-302734967.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Fund VIII relationship and infrastructure-strategy basis"
+      },
+      {
+        "label": "Advanced Power — U.S. offices",
+        "url": "https://www.advanced-power.com/home/contact",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Boston and Houston operating-office addresses"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "ArcLight Infrastructure Partners Fund VIII",
+        "investmentYear": 2026,
+        "stake": "100% of Advanced Power US Holdings, Inc. (controlling U.S. entity); exact platform-level percentage not publicly disclosed",
+        "status": "Active",
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj13m00bgivhetxigjot9",
+        "fundName": "ArcLight Infrastructure Partners Fund VIII",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-07-23T16:09:55.282Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0063:advanced-power:f32ea35e",
+    "taskIndex": 63,
+    "canonicalKey": "advanced-power|united-states",
+    "capturedAt": "2026-08-12T23:49:23.100Z",
+    "databaseRevision": "company-state:1f592c419de9ffe77b10eef18e6510bc032a5232e4a2ef72ae6e45a76166543e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "101e8abac98cde63b8acd3f1752911b49defa060185ef915bd83920e68811907",
+    "productionSnapshotSha256": "80c00aac0dae0647057658bbf51057f4a189cc485bf5e1edf0f157a8905dd1f5",
+    "targetCompanySnapshotSha256": "1f592c419de9ffe77b10eef18e6510bc032a5232e4a2ef72ae6e45a76166543e",
+    "seedEntrySha256": "6c0b451c9502e60a4d6aae775882291f922d775186d0b8d2434f41c54b922e17",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "9b33cb4950dfb2c9af6cb4f69057d7b464437c97fec489c349e6f6ff44801643",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f885b79d95ab5792d558ab1c3e9fe4ab4f3bc6fee8dbd50b4074c66c3d6162dd",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "2e558815b880d528ffeb28b519f92990c83b620e97edc65cb1e64034a614c847",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "a62a5235095c215964ad72119ba0fc7dd046cfac9d4faf4aa22c97f16d2528df",
+    "stateSha256": "2c3e2c970526cc082ad527d3c0616db9b17c4f82ce58b35e2ef8637d60844729",
+    "taskSnapshotSha256": "9f0d9bef5d6661c26713d3d660ed631df3620ff996d21f288fd5a58f5eed1165"
+  },
+  "contextSha256": "086582e759e8dba2a517056efbd6fa79c0742f650c47a401e930de3c2a2afa86"
+}

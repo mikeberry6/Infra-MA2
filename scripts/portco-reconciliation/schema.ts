@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { digestsEqual, sha256Canonical } from "./hash";
 
 export const PORTCO_RECONCILIATION_SCHEMA_VERSION = 1 as const;
 
@@ -735,6 +736,82 @@ export const reviewedSeedRetirementSchema = z.strictObject({
 
 export type ReviewedSeedRetirement = z.infer<typeof reviewedSeedRetirementSchema>;
 
+const proposalFundDependencySchema = z.strictObject({
+  id: nonEmpty,
+  fundName: nonEmpty,
+  managerId: nonEmpty,
+  updatedAt: isoTimestamp,
+});
+
+const proposalOrganizationDependencySchema = z.strictObject({
+  id: nonEmpty,
+  name: nonEmpty,
+  updatedAt: isoTimestamp,
+});
+
+const proposalRedirectDependencySchema = z.strictObject({
+  retiredId: nonEmpty,
+  companyId: nonEmpty,
+  reason: nonEmpty,
+  createdAt: isoTimestamp,
+});
+
+const proposalTaskDependenciesSchema = z.strictObject({
+  ownershipPeriodsSha256: sha256Value,
+  pendingTransactionsSha256: sha256Value,
+  fundsSha256: sha256Value,
+  organizationsSha256: sha256Value,
+  citationsSha256: sha256Value,
+  redirectsSha256: sha256Value,
+});
+
+export const proposalExecutionLockSchema = z.strictObject({
+  taskSnapshotSha256: sha256Value,
+  taskStateSha256: sha256Value,
+  taskDependencySha256: sha256Value,
+  seedEntrySha256: sha256Value.nullable(),
+  dependencies: proposalTaskDependenciesSchema,
+  funds: z.array(proposalFundDependencySchema),
+  organizations: z.array(proposalOrganizationDependencySchema),
+  redirects: z.array(proposalRedirectDependencySchema),
+}).superRefine((lock, context) => {
+  if (!digestsEqual(lock.taskDependencySha256, sha256Canonical(lock.dependencies))) {
+    context.addIssue({
+      code: "custom",
+      path: ["taskDependencySha256"],
+      message: "Proposal execution lock dependency hash is not reproducible",
+    });
+  }
+  for (const [field, values, expected] of [
+    ["funds", lock.funds, lock.dependencies.fundsSha256],
+    ["organizations", lock.organizations, lock.dependencies.organizationsSha256],
+    ["redirects", lock.redirects, lock.dependencies.redirectsSha256],
+  ] as const) {
+    if (!digestsEqual(sha256Canonical(values), expected)) {
+      context.addIssue({
+        code: "custom",
+        path: [field],
+        message: `Proposal execution lock ${field} do not match the task dependency hash`,
+      });
+    }
+  }
+  for (const [field, values] of [
+    ["funds", lock.funds.map((row) => row.id)],
+    ["organizations", lock.organizations.map((row) => row.id)],
+    ["redirects", lock.redirects.map((row) => row.retiredId)],
+  ] as const) {
+    if (!uniqueValues(values)) {
+      context.addIssue({
+        code: "custom",
+        path: [field],
+        message: `Proposal execution lock ${field} must contain unique identities`,
+      });
+    }
+  }
+});
+
+export type ProposalExecutionLock = z.infer<typeof proposalExecutionLockSchema>;
+
 export const reconciliationProposalSchema = z.strictObject({
   schemaVersion: z.literal(PORTCO_RECONCILIATION_SCHEMA_VERSION),
   artifactType: z.literal("PORTCO_CHANGE_PROPOSAL"),
@@ -764,6 +841,9 @@ export const reconciliationProposalSchema = z.strictObject({
   ledgerSha256: sha256Value,
   productionSnapshotSha256: sha256Value,
   currentCompanySnapshotSha256: sha256Value.nullable(),
+  // Optional so durable proposals created before independent dependency
+  // locking retain their original hashes. New generated proposals include it.
+  executionLock: proposalExecutionLockSchema.optional(),
   beforeImage: companyImageSchema.nullable(),
   beforeImageSha256: sha256Value.nullable(),
   afterImage: companyImageSchema.nullable(),
@@ -771,6 +851,7 @@ export const reconciliationProposalSchema = z.strictObject({
   proposalSha256: sha256Value,
 }).superRefine((proposal, context) => {
   const create = proposal.actions.includes("CREATE_COMPANY");
+  const executionLock = proposal.executionLock;
   const relationMerges = proposal.relationMerges ?? [];
   const reviewedSeedRetirements = proposal.reviewedSeedRetirements ?? [];
   if (relationMerges.length > 0 && !proposal.actions.includes("MERGE_COMPANIES")) {
@@ -815,6 +896,22 @@ export const reconciliationProposalSchema = z.strictObject({
       });
     }
     mappedRetiredRelations.add(key);
+  }
+  if (executionLock && proposal.beforeImage) {
+    const relationHashes = [
+      [proposal.beforeImage.ownershipPeriods, executionLock.dependencies.ownershipPeriodsSha256, "ownershipPeriodsSha256"],
+      [proposal.beforeImage.pendingOwnershipTransactions, executionLock.dependencies.pendingTransactionsSha256, "pendingTransactionsSha256"],
+      [proposal.beforeImage.citations, executionLock.dependencies.citationsSha256, "citationsSha256"],
+    ] as const;
+    for (const [rows, expected, field] of relationHashes) {
+      if (!digestsEqual(sha256Canonical(rows), expected)) {
+        context.addIssue({
+          code: "custom",
+          path: ["executionLock", "dependencies", field],
+          message: `Proposal before-image does not match execution lock ${field}`,
+        });
+      }
+    }
   }
   if (create && (proposal.beforeImage !== null || proposal.currentCompanySnapshotSha256 !== null)) {
     context.addIssue({

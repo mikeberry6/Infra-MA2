@@ -37,7 +37,11 @@ import {
   databaseTargetIdentity,
   redactDatabaseError,
 } from "./snapshot";
-import { buildTaskSnapshotContext, type TaskSnapshotClient } from "./task-snapshot";
+import {
+  buildTaskSnapshotContext,
+  verifyTaskSnapshotDependencySpec,
+  type TaskSnapshotClient,
+} from "./task-snapshot";
 
 type Command = "init" | "status" | "next" | "snapshot" | "install-policy" | "auto-approve" | "decide" | "transition" | "recover";
 
@@ -66,6 +70,7 @@ const COMMAND_OPTIONS: Record<Command, { values: readonly string[]; flags: reado
       "expected-host",
       "expected-database",
       "target-company-id",
+      "dependency-spec",
     ],
     flags: ["legacy-schema"],
   },
@@ -314,6 +319,9 @@ async function snapshot(values: Map<string, string>, flags: Set<string>): Promis
         seedCompanies: companies,
         capturedAt: new Date().toISOString(),
         reviewedTargetCompanyId: values.get("target-company-id"),
+        dependencySpec: values.has("dependency-spec")
+          ? verifyTaskSnapshotDependencySpec(await readJson(required(values, "dependency-spec")))
+          : undefined,
       });
     } finally {
       await client.$disconnect();
