@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T23:03:08.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0062:usd-clean-fuels:f96607bd",
+  "updatedAt": "2026-08-12T23:12:03.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8957,11 +8957,11 @@
       "managerIndex": 11,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "30b0b4f1248afa2e931ff4db812ffa7d8f19bee7adaff86cf8b61a27d035f655",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-12T22:54:33.000Z",
-      "updatedAt": "2026-08-12T23:03:08.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-12T23:12:03.000Z",
+      "completedAt": "2026-08-12T23:12:03.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "43b76ac8b25ec32ee730cde8c44d8873d6f81d0d80a633d69c3fb0d6751a9196",
@@ -8978,11 +8978,26 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0062-usd-clean-fuels-v1.json",
           "sha256": "cca6fd57162641002e75425b834153968d88fcfd052039d8406e416cd4df699d"
         },
-        "applyReceipt": null,
-        "decision": null,
-        "companySnapshot": null
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31649881552",
+          "sha256": "56b8bc3de4faa5286de6c3880fdb412d139f18d15d744036c94efcaad4d66b88"
+        },
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0062-usd-clean-fuels/research-decision.json",
+          "sha256": "46124bfbc5418c101192a48470881b8d2cc6d3a8cbb61ede88d58040be7a4107"
+        },
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0062-usd-clean-fuels/attempt-1/context.json",
+          "sha256": "fe15703011f528700a1658170133fc06d767ff818d3f304a9d0cd3cbc0184c59"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-12T23:12:03.000Z",
+        "auditEventId": "cmsqpdz6h0007874svr91kjau",
+        "transactionId": "6e237741-6a09-4569-9ebd-4ba6570c30a1",
+        "receiptSha256": "56b8bc3de4faa5286de6c3880fdb412d139f18d15d744036c94efcaad4d66b88",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31649881552"
+      },
       "history": [
         {
           "sequence": 1,
@@ -9040,6 +9055,35 @@
             "cca6fd57162641002e75425b834153968d88fcfd052039d8406e416cd4df699d"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-12T23:10:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "43b76ac8b25ec32ee730cde8c44d8873d6f81d0d80a633d69c3fb0d6751a9196",
+          "evidenceSha256": [
+            "46124bfbc5418c101192a48470881b8d2cc6d3a8cbb61ede88d58040be7a4107",
+            "b69de5c8215cf47a99c446942ce2c8d8ec917d10cb3492adf6fcaa11ded882c9",
+            "cca6fd57162641002e75425b834153968d88fcfd052039d8406e416cd4df699d"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "COMPLETED",
+          "at": "2026-08-12T23:12:03.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "56b8bc3de4faa5286de6c3880fdb412d139f18d15d744036c94efcaad4d66b88",
+            "b69de5c8215cf47a99c446942ce2c8d8ec917d10cb3492adf6fcaa11ded882c9",
+            "cca6fd57162641002e75425b834153968d88fcfd052039d8406e416cd4df699d",
+            "fe15703011f528700a1658170133fc06d767ff818d3f304a9d0cd3cbc0184c59"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -25556,5 +25600,5 @@
       ]
     }
   ],
-  "manifestSha256": "674564b904c32b570449284f8e890f53648e5a130da4898923d40be4f734d08f"
+  "manifestSha256": "52555c2085ee78c0793177f3c0717f87da52febc81e81b79c30d8a3b84fcccaa"
 }
