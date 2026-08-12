@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-12T19:43:12.000Z",
+  "asOfDate": "2026-08-12",
+  "decision": "DEFER_OWNERSHIP_MUTATION",
+  "taskId": "ledger:0055:modern-aviation:22969eb9",
+  "taskIndex": 55,
+  "companyName": "Modern Aviation",
+  "requestedManagers": [
+    "Apollo Global Management",
+    "Tiger Infrastructure Partners"
+  ],
+  "rationale": "Modern Aviation is an in-scope North American FBO infrastructure platform, and the evidence supports a March 2024 closing in which Apollo-managed infrastructure funds became the majority owner, Tiger Infrastructure Partners Fund II fully exited, and separate Tiger-managed capital reinvested. The current repository rows are materially wrong because Apollo is dated to the November 2023 signing, the Apollo Infrastructure Opportunities Fund III attribution is unsupported, and Tiger's pre- and post-recapitalization periods are collapsed. A safe full correction is nevertheless blocked by Swiss Life Asset Managers' 2019 minority investment. The March 2024 transaction materials do not state whether Swiss Life sold, rolled, or retained a diluted interest. Current Modern Aviation and court materials identify Apollo and Tiger but do not expressly terminate Swiss Life's private minority interest. Tiger's April 30, 2026 Form ADV still reports the dedicated Swiss Life Modern Aviation Investment LP master fund with non-zero gross assets, although the small residual value does not establish that it still holds Modern Aviation equity. Recording Swiss Life as either active or realized would therefore invent a current ownership conclusion. The task is deferred with no database or seed mutation until direct disposition or retention evidence is available.",
+  "identityResolution": {
+    "canonicalCompany": "Modern Aviation",
+    "legalAliases": [
+      "Modern Aviation FBO Holdings, LLC",
+      "Modern Aviation LP"
+    ],
+    "platformBoundary": "The manager-level operating platform is the canonical company. Individual airport concessions, acquired FBOs and project entities remain beneath the platform and are not separate portfolio companies.",
+    "infrastructureScope": "IN_SCOPE"
+  },
+  "resolvedOwnershipFindings": {
+    "apollo": {
+      "state": "CLOSED_ACTIVE",
+      "periodStart": "2024-03",
+      "datePrecision": "MONTH",
+      "stake": "Majority interest; exact percentage not publicly disclosed",
+      "vehicle": "Apollo-managed infrastructure funds through AP Novus Holding, L.P. and Novus Holdings Parent, L.P.",
+      "fundAttribution": "Apollo Infrastructure Company LLC Series I and II SEC filings support participation through Novus Holdings Parent. No direct source ties Apollo Infrastructure Opportunities Fund III to Modern Aviation."
+    },
+    "tigerFundII": {
+      "state": "REALIZED",
+      "periodStart": "2018-02-22",
+      "periodEnd": "2024-03",
+      "datePrecision": "MONTH",
+      "vehicle": "Tiger Infrastructure Partners Fund II",
+      "disposition": "Fund II fully exited in the Apollo-led recapitalization."
+    },
+    "tigerReinvestment": {
+      "state": "CLOSED_ACTIVE",
+      "periodStart": "2024-03",
+      "datePrecision": "MONTH",
+      "stake": "Minority interest with joint control; exact percentage not publicly disclosed",
+      "vehicle": "TIP MA Investments LP through Novus Holdings Parent, L.P.; the specific Tiger-managed commingled fund is not publicly disclosed"
+    },
+    "management": "Modern Aviation management also reinvested. The institutional infrastructure-owner census does not create a separate management-team ownership row."
+  },
+  "unresolvedOwnership": {
+    "manager": "Swiss Life Asset Managers",
+    "historicalEntry": {
+      "periodStart": "2019",
+      "datePrecision": "YEAR",
+      "stakeAtEntry": "33%",
+      "vehicle": "Swiss Life Funds (LUX) Global Infrastructure Opportunities Growth / Swiss Life Modern Aviation Investment LP"
+    },
+    "knownAtRecapitalization": "Tiger's retrospective says Modern's capital structure included a Swiss Life minority investment at the time Fund II exited in March 2024.",
+    "currentEvidence": "Modern Aviation's current About page and a January 2026 Rule 7.1 disclosure identify Apollo and Tiger in the current control or parent chain but do not expressly address a private, non-controlling Swiss Life interest. Tiger's April 30, 2026 Form ADV reports Swiss Life Modern Aviation Investment LP as a feeder-linked private equity fund with $350,996 of gross assets, materially below the disclosed $8,360,011 minimum commitment. This is consistent with a residual or winding-down vehicle but is not proof that Modern Aviation equity was sold.",
+    "blockedDecision": "Do not assign Swiss Life an exit date and do not retain it as a current owner without direct evidence."
+  },
+  "executionControlFinding": "The current task-snapshot CLI hashes only funds and organizations already reachable through the target company's ownership rows. It has no option to bind proposed canonical Tiger Infrastructure Partners, Tiger Fund II or Swiss Life dependencies. Even if the Swiss Life question were resolved, a mutation proposal must first use a snapshot path that binds every added ownership dependency to satisfy the installed fresh-target-and-dependency policy.",
+  "evidence": [
+    {
+      "label": "Modern Aviation - About Us",
+      "url": "https://modern-aviation.com/about-us/",
+      "purpose": "Current operating-platform description and current Apollo and Tiger backing disclosure",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Apollo - majority-stake announcement",
+      "url": "https://www.apollo.com/insights-news/pressreleases/2023/11/apollo-infrastructure-funds-acquire-majority-stake-in-modern-aviation-2772854",
+      "purpose": "November 2023 signing, Apollo infrastructure-strategy basis, majority stake and Tiger/management reinvestment",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Competition and Consumer Protection Commission determination",
+      "url": "https://assets.ccpc.ie/data/docs/default-source/merger-attachments/m-2023/tiger-apollo-modern-aviation/m-23-061-determination.pdf?sfvrsn=354614b7_1",
+      "purpose": "Legal acquisition structure, Apollo/Tiger vehicles and joint-control analysis",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "Apollo Infrastructure Company - Q1 2024 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1971381/000119312524139353/d798713d10q.htm",
+      "purpose": "March 2024 closing evidence and Series I/II participation through Novus Holdings Parent",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "Apollo Infrastructure Company - Q1 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1971381/000119312526224382/ck0001971381-20260331.htm",
+      "purpose": "Continued Apollo investment through Novus Holdings Parent at March 31, 2026",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "Tiger Infrastructure Partners - Fund II sale announcement",
+      "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-announces-fund-ii-sale-of-fbo-leader-modern-aviation-301976481.html",
+      "purpose": "Fund II sale and separate Tiger reinvestment",
+      "sourceTier": "PRIMARY_RELEASE"
+    },
+    {
+      "label": "Tiger Infrastructure Partners - March 2024 exit retrospective",
+      "url": "https://www.linkedin.com/posts/tigerinfrastructurepartners_building-blocks-of-a-successful-growth-story-activity-7318306649113325571-xAAZ",
+      "purpose": "March 2024 Fund II exit and Swiss Life minority position at the time of exit",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "label": "Swiss Life aviation investment article",
+      "url": "https://investrends.ch/services/advertorials/weshalb-swiss-life-asset-managers-in-aviation-investiert/22208/",
+      "purpose": "Swiss Life's 2019 33% entry stake and GIO Growth vehicle",
+      "sourceTier": "MANAGER_AUTHORED_SECONDARY"
+    },
+    {
+      "label": "Tiger Infrastructure Partners - Form ADV filed April 30, 2026",
+      "url": "https://reports.adviserinfo.sec.gov/reports/ADV/161551/PDF/161551.pdf",
+      "purpose": "Current filing of the dedicated Swiss Life Modern Aviation Investment LP master fund and its non-zero residual gross assets",
+      "sourceTier": "REGULATORY"
+    },
+    {
+      "label": "Modern Aviation Investments II LLC - Rule 7.1 disclosure",
+      "url": "https://dockets.justia.com/docket/delaware/dedce/1%3A2025cv01460/91321",
+      "purpose": "January 2026 current corporate-parent chain naming Apollo and Tiger but not resolving private minority beneficial ownership",
+      "sourceTier": "COURT_DOCKET_MIRROR"
+    },
+    {
+      "label": "William Blair - Aviation Services Industry Update Q4 2025",
+      "url": "https://www.williamblair.com/-/media/downloads/ib/2026/williamblair-aviation-services-industry-update-q42025.pdf",
+      "purpose": "Current secondary ownership description as Apollo majority and Tiger",
+      "sourceTier": "RELIABLE_SECONDARY"
+    }
+  ],
+  "unresolvedQuestions": [
+    "Did Swiss Life Asset Managers sell, roll, or retain a diluted minority interest when the Apollo-led transaction closed in March 2024?",
+    "If Swiss Life remains invested, what is its current stake after the recapitalization?",
+    "If Swiss Life exited, what direct source establishes the legal closing date of its disposition?"
+  ],
+  "retryTriggers": [
+    "A Swiss Life, Tiger, Apollo or Modern Aviation statement expressly confirming Swiss Life's current or former ownership",
+    "Fund financial statements or a disposition notice for Swiss Life Modern Aviation Investment LP",
+    "A court, regulatory or transaction document listing all post-closing equity holders",
+    "Execution-control support for explicitly binding proposed organization and fund dependencies"
+  ],
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "DEFERRED"
+}

@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T19:15:40.000Z",
+  "updatedAt": "2026-08-12T19:44:22.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -7971,20 +7971,26 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ac7c57caf36cd8885809155da9f1211dc2904eab74d384ae42c9fe65b91491c5",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-12T19:23:33.000Z",
+      "updatedAt": "2026-08-12T19:44:22.000Z",
+      "completedAt": "2026-08-12T19:44:22.000Z",
+      "exceptionReason": "Swiss Life Asset Managers' post-March-2024 ownership is unresolved: available sources do not establish whether its 2019 minority stake was sold, rolled, or retained, and the snapshot CLI cannot bind newly proposed ownership dependencies; mutation is deferred to avoid inventing an active or realized owner state.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-1/task-snapshot.json",
+          "sha256": "0e59ed28319be420273f2076b423d3aa80789eeb261bd76dac48a5d9f7ec4415"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/research-decision.json",
+          "sha256": "6251faff0a443882a5ef4e4f31601cbd34c0ef87db869c0e1292001f8c4ed7bd"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -7998,6 +8004,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-12T19:23:33.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "DEFERRED",
+          "at": "2026-08-12T19:44:22.000Z",
+          "reason": "Swiss Life Asset Managers' post-March-2024 ownership is unresolved: available sources do not establish whether its 2019 minority stake was sold, rolled, or retained, and the snapshot CLI cannot bind newly proposed ownership dependencies; mutation is deferred to avoid inventing an active or realized owner state.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0e59ed28319be420273f2076b423d3aa80789eeb261bd76dac48a5d9f7ec4415",
+            "6251faff0a443882a5ef4e4f31601cbd34c0ef87db869c0e1292001f8c4ed7bd"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24780,5 +24809,5 @@
       ]
     }
   ],
-  "manifestSha256": "4559f958a073de314f1a926b90dc5907bf99f7d74c3a09ad3547213d8d2e93ec"
+  "manifestSha256": "10be9138681e51e79ded9ca974949f000f7c5666b520461a53042b521c1bb194"
 }
