@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T21:38:30.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-12T22:02:15.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0060:summit-ridge-energy:21e98ff7",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8526,20 +8526,32 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "13321c59dc9340667ac763a6909a0922c73acbfc7b7cafc6e02d3ea2a54d49f4",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 3,
+      "startedAt": "2026-08-12T21:59:06.000Z",
+      "updatedAt": "2026-08-12T22:02:15.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "db04ca5097c55538bb55d6c2063f91659078f58112857cc08a016c3560cbbcc1",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0060-summit-ridge-energy/attempt-3/task-snapshot.json",
+          "sha256": "db04ca5097c55538bb55d6c2063f91659078f58112857cc08a016c3560cbbcc1"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0060-summit-ridge-energy-v3/proposal.json",
+          "sha256": "a8d01a42a5e659085795b6175978620f1c460457a99e45d70043ae24e50d8749"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0060-summit-ridge-energy-v3.json",
+          "sha256": "8d0d18e80afc44d5349d8edf63cfe80253c30a04046066fdfa0bb3316e23ddf8"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0060-summit-ridge-energy/research-decision.json",
+          "sha256": "908dce1687207ebf962b659a42ed78e19a7e10c3bf9cc7ee23de8f9e76fe349d"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -8553,6 +8565,164 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-12T21:43:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-12T21:53:13.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1654c6a85b13126e9c3301422e5b5ddba5676ee28b9b3dfe1ffd80a62e245a34",
+          "evidenceSha256": [
+            "1654c6a85b13126e9c3301422e5b5ddba5676ee28b9b3dfe1ffd80a62e245a34",
+            "908dce1687207ebf962b659a42ed78e19a7e10c3bf9cc7ee23de8f9e76fe349d",
+            "da83f712c66bce00d5aa643919a7cc2b144238f4f2e091d5493ec2f5b0c7969a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-12T21:53:20.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1654c6a85b13126e9c3301422e5b5ddba5676ee28b9b3dfe1ffd80a62e245a34",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-12T21:53:52.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1654c6a85b13126e9c3301422e5b5ddba5676ee28b9b3dfe1ffd80a62e245a34",
+          "evidenceSha256": [
+            "36feebec2312d02196e71512b0217e18ff63b8bf4ec76388f254a3dbd8c3dcd1"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-12T21:56:46.000Z",
+          "reason": "Fail-closed production dry run rejected changed label/type metadata for shared Source URLs; no release or database write occurred.",
+          "taskSnapshotSha256": "1654c6a85b13126e9c3301422e5b5ddba5676ee28b9b3dfe1ffd80a62e245a34",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-12T21:56:46.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-12T21:57:56.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a1668ba7551325fcf786c922e5096bdc8dd6ebdf63849b229e946c10e734b805",
+          "evidenceSha256": [
+            "37d0b0f4c48197ef79ea93cc20f8f65b566c738429c8788da407f2780775875b",
+            "908dce1687207ebf962b659a42ed78e19a7e10c3bf9cc7ee23de8f9e76fe349d",
+            "a1668ba7551325fcf786c922e5096bdc8dd6ebdf63849b229e946c10e734b805"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-12T21:57:56.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a1668ba7551325fcf786c922e5096bdc8dd6ebdf63849b229e946c10e734b805",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-12T21:58:18.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a1668ba7551325fcf786c922e5096bdc8dd6ebdf63849b229e946c10e734b805",
+          "evidenceSha256": [
+            "57d41f54fd02fa283b00dbe5b0461bec788a51f6124fc7e89bc4e557018a19bf"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-12T21:59:06.000Z",
+          "reason": "Fail-closed production dry run rejected unsupported citation-purpose values; no release or database write occurred.",
+          "taskSnapshotSha256": "a1668ba7551325fcf786c922e5096bdc8dd6ebdf63849b229e946c10e734b805",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-12T21:59:06.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-12T21:59:51.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "db04ca5097c55538bb55d6c2063f91659078f58112857cc08a016c3560cbbcc1",
+          "evidenceSha256": [
+            "908dce1687207ebf962b659a42ed78e19a7e10c3bf9cc7ee23de8f9e76fe349d",
+            "a8d01a42a5e659085795b6175978620f1c460457a99e45d70043ae24e50d8749",
+            "db04ca5097c55538bb55d6c2063f91659078f58112857cc08a016c3560cbbcc1"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-12T21:59:52.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "db04ca5097c55538bb55d6c2063f91659078f58112857cc08a016c3560cbbcc1",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-12T22:02:15.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "db04ca5097c55538bb55d6c2063f91659078f58112857cc08a016c3560cbbcc1",
+          "evidenceSha256": [
+            "8d0d18e80afc44d5349d8edf63cfe80253c30a04046066fdfa0bb3316e23ddf8"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -25145,5 +25315,5 @@
       ]
     }
   ],
-  "manifestSha256": "cb98c2c8d17fcf2daba4c513766f685b870511c69a2ff1266ebbc0590369fac9"
+  "manifestSha256": "5450cd1de1ff7063b2ffb889845e613c21f414ce190da0ef3e694782996d1ef2"
 }

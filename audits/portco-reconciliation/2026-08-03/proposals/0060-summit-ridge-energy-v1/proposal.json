@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0060:summit-ridge-energy:21e98ff7",
+  "taskIndex": 60,
+  "asOfDate": "2026-08-12",
+  "generatedAt": "2026-08-12T21:49:22.000Z",
+  "canonicalKey": "summit-ridge-energy|united-states",
+  "companyName": "Summit Ridge Energy",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_PENDING_TRANSACTION"
+  ],
+  "sourceHoldingIds": [
+    "010-apollo-global-management:holding:007:summit-ridge-energy"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Preserve Summit Ridge Energy as an active U.S. distributed-solar platform and preserve Apollo-managed funds as the current legal owner while the announced GIP transaction remains unclosed. Apollo's official 2022 announcement establishes its $175 million platform investment, and Apollo's current Wilson Handler profile continued to call Summit Ridge an Apollo funds portfolio company as of August 12, 2026. Correct the unsupported Apollo vehicle and stake fields to not-publicly-disclosed values. Record the July 14, 2026 agreement by Global Infrastructure Partners, a part of BlackRock, to acquire a majority and controlling interest through GIP's mid-market strategy as a signed pending exit linked to Apollo's active ownership period. The transaction remains subject to customary closing conditions and regulatory approvals; no legal-closing announcement was found through August 12, 2026, so GIP is not an active owner and Apollo is not retired. The official transaction announcement does not disclose the exact stake, consideration, specific GIP fund, seller allocation or Apollo's possible residual interest. Apollo's separate April 2025 commitment relates to an Illinois solar-asset joint venture and is not a second corporate ownership period. Sixth Street's association is debt-only and remains excluded. A related Deal Database record already exists but stores July 17 rather than the primary July 14 announcement date; that discrepancy is documented for separate deal review and is not mutated here.",
+  "evidence": [
+    {
+      "url": "https://www.apollo.com/institutional/insights-news/pressreleases/2022/07/apollo-funds-announce-175-million-strategic-investment-in-summit-ridge-energy-a-leading-owner-operator-of-community-solar-121512414",
+      "purpose": "Apollo platform investment, infrastructure-strategy basis and investment date",
+      "supports": [
+        "Apollo-managed funds made a $175 million strategic investment in Summit Ridge Energy in 2022",
+        "Apollo partners joined the Summit Ridge board as a result of the investment",
+        "Apollo classified the investment within its sustainable investing and clean-energy infrastructure activity"
+      ]
+    },
+    {
+      "url": "https://www.apollo.com/aboutus/leadership-and-people/wilson-handler",
+      "purpose": "Current Apollo ownership and infrastructure-team relationship",
+      "supports": [
+        "Apollo continued to identify Summit Ridge Energy as an Apollo funds portfolio company as of August 12, 2026",
+        "Wilson Handler is a partner in the Apollo Infrastructure Group and currently serves on Summit Ridge Energy's board"
+      ]
+    },
+    {
+      "url": "https://srenergy.com/news/gip-acquires-sre/",
+      "purpose": "Official company transaction announcement, business identity, geography and pending status",
+      "supports": [
+        "GIP agreed to acquire a majority and controlling interest on July 14, 2026",
+        "The transaction is subject to customary closing conditions and regulatory approvals",
+        "GIP attributed the proposed investment to its mid-market infrastructure strategy",
+        "Summit Ridge develops, owns and operates U.S. solar and battery-storage systems"
+      ]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/07/14/3326975/0/en/global-infrastructure-partners-agrees-to-acquire-summit-ridge-energy.html",
+      "purpose": "Timestamped GIP transaction release and pending acquisition terms",
+      "supports": [
+        "The GIP agreement was announced July 14, 2026",
+        "The announced interest is majority and controlling",
+        "No exact stake, consideration, specific fund or closing date was disclosed"
+      ]
+    },
+    {
+      "url": "https://www.cbinsights.com/company/summit-ridge-energy",
+      "purpose": "Reliable secondary corroboration of the Apollo-to-GIP ownership transition",
+      "supports": [
+        "Secondary transaction reporting identifies Apollo as the seller of the controlling interest",
+        "The acquisition remained classified as pending after announcement"
+      ]
+    },
+    {
+      "url": "https://www.apollo.com/institutional/insights-news/pressreleases/2025/04/apollo-funds-commit-up-to-400-million-for-new-commercial-solar-partnership-with-summit-ridge-energy-3060061",
+      "purpose": "Corporate-versus-project boundary and continuing Apollo relationship",
+      "supports": [
+        "Apollo's 2025 commitment is a joint venture to own and operate an Illinois commercial-solar asset portfolio",
+        "The 2025 asset partnership is distinct from Apollo's 2022 strategic investment in Summit Ridge Energy"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "cfc13b5878d804b386e139590d27e15409e41062e49a8d4bdd41cbe951e5c998",
+  "currentCompanySnapshotSha256": "35838d3db38a723d5d4c9e28f5a04124e8087e03b1a9ca380dfc9fdffcbd793e",
+  "beforeImage": {
+    "id": "cmrxpj60a00ilivhey8bs3gpd",
+    "name": "Summit Ridge Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed & Community Solar",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Summit Ridge Energy develops, owns, and operates distributed generation and community solar assets in the United States. Its customers include commercial offtakers, community solar subscribers, utilities, and other power purchasers, and the business follows an asset-heavy, contracted model with development, financing, and long-term operating capabilities. Company materials state that Summit Ridge has more than 2 GW of solar projects operating or in development, has financed more than 200 facilities, and has raised over $5 billion of project capital since launch. The platform operates nationally, with public disclosures around Apollo's 2025 investment highlighting Illinois commercial solar assets. Apollo announced in April 2025 that its funds had committed up to $400 million to a new commercial solar partnership with Summit Ridge, while public sources do not disclose the broader platform-level ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2017,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr2301fgivhe8zxpk6uo",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Apollo Sustainable Investing",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkk5602mhivhezz4ialo6",
+        "date": "2017",
+        "event": "Summit Ridge Energy was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkk5j02miivhe2pd9j52f",
+        "date": "Jul 2022",
+        "event": "Apollo funds announced a $175 million strategic investment in Summit Ridge Energy.",
+        "category": "FINANCING",
+        "sortDate": "2022-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkk6202mjivheizdmui7h",
+        "date": "Sep 2025",
+        "event": "Summit Ridge and Bank of America closed a $305 million credit facility for a solar portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2025-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkk6j02mkivhebcktr9cc",
+        "date": "Apr 2025",
+        "event": "Apollo funds committed up to $400 million for a new commercial solar partnership with Summit Ridge.",
+        "category": "FINANCING",
+        "sortDate": "2025-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkk7202mlivhe4j9tcmug",
+        "date": "Jan 2026",
+        "event": "Summit Ridge announced a $290 million facility with MUFG and stated that it had raised more than $5 billion for over 200 solar facilities since launch.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpox4y07e4ivheedmnq2le",
+        "label": "Srenergy — Summit Ridge Energy",
+        "url": "https://srenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Srenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpox5v07e6ivhe7ptc4g3s",
+        "label": "Investment date source — Apollo Global Management — Summit Ridge Energy",
+        "url": "https://www.apollo.com/wealth/insights-news/pressreleases/2022/07/apollo-funds-announce-175-million-strategic-investment-in-summit-ridge-energy-a-leading-owner-operator-of-community-solar-121512414",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo Global Management initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpox7007e8ivhefb42zzw3",
+        "label": "Apollo — Summit Ridge Energy",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2025/04/apollo-funds-commit-up-to-400-million-for-new-commercial-solar-partnership-with-summit-ridge-energy-3060061",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Apollo — Summit Ridge Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpox7x07eaivheuuwd49ld",
+        "label": "Srenergy — Summit Ridge Energy",
+        "url": "https://srenergy.com/news/summit-ridge-mufg-290/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Srenergy — Summit Ridge Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpox8y07ecivhelbests2x",
+        "label": "PR Newswire — Summit Ridge Energy",
+        "url": "https://www.prnewswire.com/news-releases/summit-ridge-energy-and-bank-of-america-close-305-million-credit-facility-for-solar-portfolio-302550150.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PR Newswire operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "35838d3db38a723d5d4c9e28f5a04124e8087e03b1a9ca380dfc9fdffcbd793e",
+  "afterImage": {
+    "id": "cmrxpj60a00ilivhey8bs3gpd",
+    "name": "Summit Ridge Energy",
+    "aliases": [
+      "Summit Ridge Energy, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Distributed & Community Solar",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Summit Ridge Energy develops, constructs, owns, and operates distributed solar and battery-storage systems across the U.S. Midwest, Mid-Atlantic, and New England. Founded in 2017, the company reported more than 275 facilities and over 3 GW of operating and development-stage solar and storage projects in July 2026. Apollo-managed funds made a $175 million strategic platform investment in 2022; the exact Apollo stake, fund and legal vehicle are not publicly disclosed. On July 14, 2026, Global Infrastructure Partners, a part of BlackRock, agreed through its mid-market infrastructure strategy to acquire a majority and controlling interest, subject to customary closing conditions and regulatory approvals. No closing announcement was identified through August 12, 2026, so Apollo remains the current legal owner and GIP is recorded only as a signed pending counterparty. Apollo's separate 2025 commitment of up to $400 million relates to an Illinois solar-asset joint venture rather than a second corporate ownership period.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://srenergy.com/",
+    "yearFounded": 2017,
+    "headquarters": "United States",
+    "lastVerifiedAt": "2026-08-12T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr2301fgivhe8zxpk6uo",
+        "managerName": "Apollo Global Management",
+        "organizationName": "Apollo Global Management",
+        "fundName": null,
+        "vehicleName": "Apollo-managed funds (specific fund and legal vehicle not publicly disclosed)",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "SIGNED_PENDING_EXIT"
+      }
+    ],
+    "pendingOwnershipTransactions": [
+      {
+        "id": null,
+        "direction": "EXIT",
+        "transactionState": "SIGNED_PENDING_EXIT",
+        "counterpartyName": "Global Infrastructure Partners",
+        "transactionDescription": "Global Infrastructure Partners, a part of BlackRock, agreed through its mid-market infrastructure strategy on July 14, 2026 to acquire a majority and controlling interest in Summit Ridge Energy. The exact stake, consideration, specific GIP fund, seller allocation and Apollo residual interest were not publicly disclosed. The transaction remains subject to customary closing conditions and regulatory approvals, and no legal-closing announcement was identified through August 12, 2026.",
+        "announcedAt": "2026-07-14",
+        "expectedClosing": "Not publicly disclosed",
+        "relatedOwnershipPeriodIds": [
+          "cmrxpjr2301fgivhe8zxpk6uo"
+        ],
+        "evidenceUrls": [
+          "https://srenergy.com/news/gip-acquires-sre/",
+          "https://www.globenewswire.com/news-release/2026/07/14/3326975/0/en/global-infrastructure-partners-agrees-to-acquire-summit-ridge-energy.html"
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "id": "cmrxpkk5602mhivhezz4ialo6",
+        "date": "2017",
+        "event": "Summit Ridge Energy was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkk5j02miivhe2pd9j52f",
+        "date": "Jul 2022",
+        "event": "Apollo funds announced a $175 million strategic investment in Summit Ridge Energy.",
+        "category": "FINANCING",
+        "sortDate": "2022-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkk6202mjivheizdmui7h",
+        "date": "Sep 2025",
+        "event": "Summit Ridge and Bank of America closed a $305 million credit facility for a solar portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2025-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkk6j02mkivhebcktr9cc",
+        "date": "Apr 2025",
+        "event": "Apollo funds committed up to $400 million for a new commercial solar partnership with Summit Ridge.",
+        "category": "FINANCING",
+        "sortDate": "2025-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkk7202mlivhe4j9tcmug",
+        "date": "Jan 2026",
+        "event": "Summit Ridge announced a $290 million facility with MUFG and stated that it had raised more than $5 billion for over 200 solar facilities since launch.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpox4y07e4ivheedmnq2le",
+        "label": "Summit Ridge Energy — company website",
+        "url": "https://srenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpox5v07e6ivhe7ptc4g3s",
+        "label": "Apollo — $175 million Summit Ridge Energy investment",
+        "url": "https://www.apollo.com/institutional/insights-news/pressreleases/2022/07/apollo-funds-announce-175-million-strategic-investment-in-summit-ridge-energy-a-leading-owner-operator-of-community-solar-121512414",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Apollo-managed funds' 2022 platform investment",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpox7007e8ivhefb42zzw3",
+        "label": "Apollo — Summit Ridge Energy Illinois solar partnership",
+        "url": "https://www.apollo.com/institutional/insights-news/pressreleases/2025/04/apollo-funds-commit-up-to-400-million-for-new-commercial-solar-partnership-with-summit-ridge-energy-3060061",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Separate 2025 project-level solar joint venture",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpox7x07eaivheuuwd49ld",
+        "label": "Summit Ridge Energy — MUFG financing",
+        "url": "https://srenergy.com/news/summit-ridge-mufg-290/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "MUFG financing and disclosed platform scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpox8y07ecivhelbests2x",
+        "label": "Summit Ridge Energy — Bank of America financing",
+        "url": "https://www.prnewswire.com/news-releases/summit-ridge-energy-and-bank-of-america-close-305-million-credit-facility-for-solar-portfolio-302550150.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Bank of America solar-portfolio financing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Apollo — Wilson Handler profile",
+        "url": "https://www.apollo.com/aboutus/leadership-and-people/wilson-handler",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_CURRENT",
+        "evidenceLabel": "Current Apollo Infrastructure board and portfolio-company relationship",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Summit Ridge Energy — GIP acquisition agreement",
+        "url": "https://srenergy.com/news/gip-acquires-sre/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_TRANSACTION",
+        "evidenceLabel": "Official company announcement of signed GIP majority-control transaction",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "GIP and Summit Ridge Energy — transaction release",
+        "url": "https://www.globenewswire.com/news-release/2026/07/14/3326975/0/en/global-infrastructure-partners-agrees-to-acquire-summit-ridge-energy.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_TRANSACTION",
+        "evidenceLabel": "Timestamped pending majority-control acquisition terms",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CB Insights — Summit Ridge Energy transaction profile",
+        "url": "https://www.cbinsights.com/company/summit-ridge-energy",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_TRANSACTION",
+        "evidenceLabel": "Secondary corroboration of Apollo-to-GIP pending transition",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "9531eba6aa6551fe27caf7790c77926e93bc3f0bd199191b4598f148ec9cfffd",
+  "proposalSha256": "da83f712c66bce00d5aa643919a7cc2b144238f4f2e091d5493ec2f5b0c7969a"
+}
