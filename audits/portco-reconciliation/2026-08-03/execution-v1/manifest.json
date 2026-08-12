@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T20:44:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0056:noble-environmental-inc:7ab39284",
+  "updatedAt": "2026-08-12T20:44:01.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8038,11 +8038,11 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ad0c8d1a957d0ebcb106bde26e8a571fca7b3f0c462328677897d58d4f4805ba",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-12T20:37:00.000Z",
-      "updatedAt": "2026-08-12T20:44:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-12T20:44:01.000Z",
+      "completedAt": "2026-08-12T20:44:01.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "81bb41f940867861b725523b01a57e7f4bfad38bcf87b36c62541d2b46f61c71",
@@ -8059,14 +8059,26 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0056-noble-environmental-inc-v2.json",
           "sha256": "6660c3a7109a23145b314f8b203b2a5465090214c1b144732a1a7077b037529b"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31636800256",
+          "sha256": "6bad08ed125fc4626c19f83cc21107edd0c0b62d324b9cafe2c8b6400fae28dd"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0056-noble-environmental-inc/research-decision.json",
           "sha256": "0a6656358d56bf7fa561c6f6bea132b8304414200c2cbfe9d432a0b2f904de5a"
         },
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0056-noble-environmental-inc/attempt-2/context.json",
+          "sha256": "7263eb7d78f5e4c1c41ddb740bea436e13417466b90243d6ff8aa387ee0865f7"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-12T20:44:01.000Z",
+        "auditEventId": "cmsqj72qz000a7z4s4k4ia7cu",
+        "transactionId": "3106d9d7-7cf7-41b8-a24a-c82e85f3eff3",
+        "receiptSha256": "6bad08ed125fc4626c19f83cc21107edd0c0b62d324b9cafe2c8b6400fae28dd",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31636800256"
+      },
       "history": [
         {
           "sequence": 1,
@@ -8179,6 +8191,21 @@
             "6660c3a7109a23145b314f8b203b2a5465090214c1b144732a1a7077b037529b"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-12T20:44:01.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "458e6de99a5a198f83a328040d6f4ba6d45ededb130df2712a33ea5cb4f4ffd3",
+            "6660c3a7109a23145b314f8b203b2a5465090214c1b144732a1a7077b037529b",
+            "6bad08ed125fc4626c19f83cc21107edd0c0b62d324b9cafe2c8b6400fae28dd",
+            "7263eb7d78f5e4c1c41ddb740bea436e13417466b90243d6ff8aa387ee0865f7"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -24923,5 +24950,5 @@
       ]
     }
   ],
-  "manifestSha256": "000766ef3897bd47ade51af5c740937cfd1d22319456adcda4736f95deafca9b"
+  "manifestSha256": "19a92dce39b3b89f867fd8f5215e1a215afd6cf98d121555dc4a8a10d6f613e9"
 }
