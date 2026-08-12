@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-08T16:10:27.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0054:intermodal-tank-transport:fc0af99c",
+  "updatedAt": "2026-08-12T19:15:40.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -7848,11 +7848,11 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "69cd0adb13f7e63b519fd076bd40391f8ca07e78e69401d4ec393cd537dcbff7",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-08T15:58:35.000Z",
-      "updatedAt": "2026-08-08T16:10:27.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-12T19:15:40.000Z",
+      "completedAt": "2026-08-12T19:15:40.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "756e7f586b9945bec8f89fba01b558fb21a7fd427d5f99eaafd2deab82c5ac42",
@@ -7869,14 +7869,26 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0054-intermodal-tank-transport-v1.json",
           "sha256": "ca3a14b52b7a8c5431c2d926fdb7d0028b5bc2f6d271972584f367c56720b9f4"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31631341532",
+          "sha256": "4ceedbfb7732357106ce313a6b8995fb8f4a24837f61e142578b7df3816c59b6"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0054-intermodal-tank-transport/research-decision.json",
           "sha256": "07784d5bc0eead3f6bd5c3e1112b0e3b525ea2af4f6c418196341fd68bc374e9"
         },
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0054-intermodal-tank-transport/attempt-1/context.json",
+          "sha256": "e385db4bb5a90688f516c779f4cd230bf8a3bceffd95a0ad0724c3b8e3e26a87"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-12T19:15:40.000Z",
+        "auditEventId": "cmsqgu4t5000jbk4sb2431edj",
+        "transactionId": "ceabfea5-1ecd-45db-9ea6-7d392939c990",
+        "receiptSha256": "4ceedbfb7732357106ce313a6b8995fb8f4a24837f61e142578b7df3816c59b6",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31631341532"
+      },
       "history": [
         {
           "sequence": 1,
@@ -7933,6 +7945,21 @@
             "ca3a14b52b7a8c5431c2d926fdb7d0028b5bc2f6d271972584f367c56720b9f4"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-12T19:15:40.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "4ceedbfb7732357106ce313a6b8995fb8f4a24837f61e142578b7df3816c59b6",
+            "5a51f6aa384ddf9027a7e7ffa910b383ac565e8d21d6a7725f84b30280967ecf",
+            "ca3a14b52b7a8c5431c2d926fdb7d0028b5bc2f6d271972584f367c56720b9f4",
+            "e385db4bb5a90688f516c779f4cd230bf8a3bceffd95a0ad0724c3b8e3e26a87"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -24753,5 +24780,5 @@
       ]
     }
   ],
-  "manifestSha256": "d42d3c29f894193465a84ba1776bd46f9b7fbaf3987291c0c7a5a4fa26c8c936"
+  "manifestSha256": "4559f958a073de314f1a926b90dc5907bf99f7d74c3a09ad3547213d8d2e93ec"
 }
