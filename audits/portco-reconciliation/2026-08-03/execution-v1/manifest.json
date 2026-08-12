@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T19:44:22.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-12T20:44:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0056:noble-environmental-inc:7ab39284",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8038,20 +8038,32 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ad0c8d1a957d0ebcb106bde26e8a571fca7b3f0c462328677897d58d4f4805ba",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-12T20:37:00.000Z",
+      "updatedAt": "2026-08-12T20:44:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "81bb41f940867861b725523b01a57e7f4bfad38bcf87b36c62541d2b46f61c71",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0056-noble-environmental-inc/attempt-2/task-snapshot.json",
+          "sha256": "81bb41f940867861b725523b01a57e7f4bfad38bcf87b36c62541d2b46f61c71"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0056-noble-environmental-v2/proposal.json",
+          "sha256": "458e6de99a5a198f83a328040d6f4ba6d45ededb130df2712a33ea5cb4f4ffd3"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0056-noble-environmental-v2.json",
+          "sha256": "6660c3a7109a23145b314f8b203b2a5465090214c1b144732a1a7077b037529b"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0056-noble-environmental-inc/research-decision.json",
+          "sha256": "0a6656358d56bf7fa561c6f6bea132b8304414200c2cbfe9d432a0b2f904de5a"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -8065,6 +8077,108 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-12T19:49:28.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-12T20:30:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "fe8531fb11416e47caa5878c0f171c82970777f9047c934e72b466ca49e96ea1",
+          "evidenceSha256": [
+            "0a6656358d56bf7fa561c6f6bea132b8304414200c2cbfe9d432a0b2f904de5a",
+            "3695d278f096d1fcaf9f28e5366188b9d6a7f1e90572c7651b298f741255e979",
+            "fe8531fb11416e47caa5878c0f171c82970777f9047c934e72b466ca49e96ea1"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-12T20:31:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "fe8531fb11416e47caa5878c0f171c82970777f9047c934e72b466ca49e96ea1",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-12T20:34:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "fe8531fb11416e47caa5878c0f171c82970777f9047c934e72b466ca49e96ea1",
+          "evidenceSha256": [
+            "fd2bd2959ffed17298074ca12a2d1a857f6b3dc59fafc24db8f627d3aa8abf21"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-12T20:36:00.000Z",
+          "reason": "Protected dry run stopped before writes because the Apollo HTML URL is a globally shared Deal Database source with different label/type metadata; regenerate with Apollo official PDF citation without mutating the deal source.",
+          "taskSnapshotSha256": "fe8531fb11416e47caa5878c0f171c82970777f9047c934e72b466ca49e96ea1",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-12T20:37:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-12T20:41:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "81bb41f940867861b725523b01a57e7f4bfad38bcf87b36c62541d2b46f61c71",
+          "evidenceSha256": [
+            "0a6656358d56bf7fa561c6f6bea132b8304414200c2cbfe9d432a0b2f904de5a",
+            "458e6de99a5a198f83a328040d6f4ba6d45ededb130df2712a33ea5cb4f4ffd3",
+            "81bb41f940867861b725523b01a57e7f4bfad38bcf87b36c62541d2b46f61c71"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-12T20:42:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "81bb41f940867861b725523b01a57e7f4bfad38bcf87b36c62541d2b46f61c71",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-12T20:44:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "81bb41f940867861b725523b01a57e7f4bfad38bcf87b36c62541d2b46f61c71",
+          "evidenceSha256": [
+            "6660c3a7109a23145b314f8b203b2a5465090214c1b144732a1a7077b037529b"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -24809,5 +24923,5 @@
       ]
     }
   ],
-  "manifestSha256": "10be9138681e51e79ded9ca974949f000f7c5666b520461a53042b521c1bb194"
+  "manifestSha256": "24a30f6e13058424356b48f0be645c12439ca3ae5196b06c9cb8651f42dd6ea0"
 }
