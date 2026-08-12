@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T22:14:49.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-12T22:32:58.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0061:valor-compute-infrastructure-vci:e12f218b",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8761,18 +8761,27 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "09afdad89331e753bde814f780111b54ef0918a9c31cb5f2f0877ceb190ec78f",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-12T22:31:47.000Z",
+      "updatedAt": "2026-08-12T22:32:58.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "c1f9f7529238e1b99e2709774408e4df046ed0ed94ff8dc1ea4c41cb39824ee9",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0061-valor-compute-infrastructure-vci/attempt-2/task-snapshot.json",
+          "sha256": "c1f9f7529238e1b99e2709774408e4df046ed0ed94ff8dc1ea4c41cb39824ee9"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0061-valor-compute-infrastructure-vci-v2/proposal.json",
+          "sha256": "b2bec65272c59de3384320e5a029c4093cfed749a61d7d9e53369b11b7e54ce4"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0061-valor-compute-infrastructure-vci-v2.json",
+          "sha256": "7d619ca34cf690753deb5f62199def77dac65d049ef95988bed1195f3e19b6e1"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -8788,6 +8797,110 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-12T22:19:54.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-12T22:30:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "7c03ddbf1b2f59a0d36a1eea789b7ae33537bb1e9d0a86e08484e0de0f484ffc",
+          "evidenceSha256": [
+            "48cde794c30156d810a3964ae3110b903b18036dbfdff30a6d7acc82bde6405c",
+            "7c03ddbf1b2f59a0d36a1eea789b7ae33537bb1e9d0a86e08484e0de0f484ffc"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-12T22:30:09.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "7c03ddbf1b2f59a0d36a1eea789b7ae33537bb1e9d0a86e08484e0de0f484ffc",
+          "evidenceSha256": [
+            "48cde794c30156d810a3964ae3110b903b18036dbfdff30a6d7acc82bde6405c"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-12T22:30:51.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "7c03ddbf1b2f59a0d36a1eea789b7ae33537bb1e9d0a86e08484e0de0f484ffc",
+          "evidenceSha256": [
+            "faa060db234c218bc0d00643dfe5e4916754d4b8e2b7b4a68a025db84072b75c"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-12T22:31:47.000Z",
+          "reason": "Fail-closed production dry run rejected a milestone evidence URL that was not present in the company citation set; no release or database write occurred.",
+          "taskSnapshotSha256": "7c03ddbf1b2f59a0d36a1eea789b7ae33537bb1e9d0a86e08484e0de0f484ffc",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-12T22:31:47.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-12T22:32:38.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c1f9f7529238e1b99e2709774408e4df046ed0ed94ff8dc1ea4c41cb39824ee9",
+          "evidenceSha256": [
+            "b2bec65272c59de3384320e5a029c4093cfed749a61d7d9e53369b11b7e54ce4",
+            "c1f9f7529238e1b99e2709774408e4df046ed0ed94ff8dc1ea4c41cb39824ee9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-12T22:32:38.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c1f9f7529238e1b99e2709774408e4df046ed0ed94ff8dc1ea4c41cb39824ee9",
+          "evidenceSha256": [
+            "b2bec65272c59de3384320e5a029c4093cfed749a61d7d9e53369b11b7e54ce4"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-12T22:32:58.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c1f9f7529238e1b99e2709774408e4df046ed0ed94ff8dc1ea4c41cb39824ee9",
+          "evidenceSha256": [
+            "7d619ca34cf690753deb5f62199def77dac65d049ef95988bed1195f3e19b6e1"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -25342,5 +25455,5 @@
       ]
     }
   ],
-  "manifestSha256": "2236742a4dff25953ce56b53ee7efb19028d0307ee3f9e88ffdda3c806ce1044"
+  "manifestSha256": "6e2ef3480b90b848aaf14bb8f03e964991782e575e4e70b6c591a5dd55a8c4ad"
 }

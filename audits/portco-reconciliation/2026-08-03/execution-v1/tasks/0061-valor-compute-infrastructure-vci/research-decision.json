@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-08-12T22:28:33.000Z",
+  "decision": "EXCLUDE_AND_ARCHIVE",
+  "taskId": "ledger:0061:valor-compute-infrastructure-vci:e12f218b",
+  "companyName": "Valor Compute Infrastructure (VCI)",
+  "requestedManager": "Apollo Global Management",
+  "sourceRepoOnlyId": "010-apollo-global-management:repo-only:008:valor-compute-infrastructure-vci",
+  "rationale": "Exclude and unpublish the record because it is neither an Apollo-owned operating company nor an Apollo infrastructure-equity platform. Valor Compute Infrastructure L.P. is a Valor-managed pooled private-equity fund. Apollo led an asset-backed capital solution, and an Apollo private-credit vehicle also held small non-controlling equity interests in downstream numbered financing SPVs, but no public evidence establishes Apollo ownership or control of VCI L.P. The original repo-only conclusion was directionally right to exclude the exposure, but its debt-only rationale was incomplete and is corrected here.",
+  "identityResolution": {
+    "productionCompanyId": "cmrxpj63n00irivhejoael21j",
+    "seedKey": "valor compute infrastructure (vci)|United States",
+    "legalName": "Valor Compute Infrastructure L.P.",
+    "legalForm": "Delaware limited partnership",
+    "formed": 2025,
+    "investmentAdviser": "Valor Management LLC",
+    "generalPartner": "Valor CI Associates L.P.",
+    "operatingCompany": false,
+    "apolloOwnsOrControlsVciLp": false,
+    "correctDisposition": "EXCLUDED",
+    "publicationDisposition": "ARCHIVED",
+    "canonicalRemap": null
+  },
+  "acquisitionExitCheck": {
+    "announcement": "On January 7, 2026, Apollo announced that its managed funds and affiliates led a US$3.5 billion capital solution supporting VCI's US$5.4 billion acquisition and triple-net lease of NVIDIA compute infrastructure to an xAI subsidiary.",
+    "currentExposure": "Apollo Debt Solutions BDC's filing for June 30, 2026 reports first-lien loans to VCI Asset Holdings entities and non-controlling common-equity interests in corresponding VCI Intermediate TopCo entities as private-credit investments.",
+    "currentFundStatus": "VCI L.P.'s May 15, 2026 Form D/A reports continuing pooled-fund interests and identifies Valor—not Apollo—as adviser and general partner.",
+    "exitSearch": "No sale, refinancing exit, ownership transfer, repayment, or Apollo exit was found through August 12, 2026. The current Apollo credit exposure does not create an in-scope Apollo PortCo ownership period.",
+    "ownershipState": "NO_APOLLO_PORTCO_OWNERSHIP"
+  },
+  "evidence": [
+    {
+      "label": "SEC — Valor Compute Infrastructure L.P. Form D/A",
+      "url": "https://www.sec.gov/Archives/edgar/data/2074951/000101297526000462/xslFormDX01/primary_doc.xml",
+      "purpose": "Legal identity, pooled-fund classification, adviser, general partner and current offering status",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "BROWSER_VERIFIED"
+    },
+    {
+      "label": "Apollo — Valor and xAI capital-solution announcement",
+      "url": "https://www.apollo.com/wealth/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463",
+      "purpose": "Direct characterization of VCI as a Valor-managed fund and Apollo's exposure as a capital solution",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "SEC — Apollo Debt Solutions BDC June 2026 holdings",
+      "url": "https://www.sec.gov/Archives/edgar/data/1837532/000119312526341358/ck0001837532-20260630.htm",
+      "purpose": "Current first-lien loans and non-controlling downstream TopCo equity interests held through an Apollo private-credit vehicle",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "BROWSER_VERIFIED"
+    },
+    {
+      "label": "Apollo — Financing Solutions transaction list",
+      "url": "https://www.apollo.com/strategies/financing-companies",
+      "purpose": "Apollo's current classification of the VCI transaction as a financing solution",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "databaseMutation": true,
+  "seedMutation": true,
+  "proposedMutation": {
+    "recordStatus": "ARCHIVED",
+    "companyStatus": "REALIZED",
+    "activeApolloOwnership": "RETIRE_AS_INVALID_PORTCO_ATTRIBUTION",
+    "seedEntry": "REMOVE_THROUGH_APPROVED_ARCHIVE_OVERLAY"
+  },
+  "unresolvedQuestions": [
+    "Apollo's complete participant allocation and aggregate percentage of incidental downstream TopCo equity are not publicly disclosed, but neither fact affects the exclusion because no Apollo ownership of VCI L.P. or operating platform is established."
+  ],
+  "blockingUnresolvedQuestions": []
+}
