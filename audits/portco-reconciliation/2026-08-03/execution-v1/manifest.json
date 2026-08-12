@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T21:07:04.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-12T21:25:04.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0059:stagecoach-renewables:326832cf",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -8403,20 +8403,32 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "443f33be20614ebdfefbcf489f6d5b7332305879dbaa830b4fbc3b930dc62a37",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-12T21:13:30.000Z",
+      "updatedAt": "2026-08-12T21:25:04.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "4d2936fdc7a36ecbb258493c809ada3fd63e8cee30a418c9a0f3dc3f27e43f8b",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0059-stagecoach-renewables/attempt-1/task-snapshot.json",
+          "sha256": "4d2936fdc7a36ecbb258493c809ada3fd63e8cee30a418c9a0f3dc3f27e43f8b"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0059-stagecoach-renewables-v1/proposal.json",
+          "sha256": "d385b126568b789e3efa397ac2d716c6914f84a5754445bf26f3c6f822ce9e5f"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0059-stagecoach-renewables-v1.json",
+          "sha256": "071a3f007488308756bc36e5a2baf5199445f703cfbe5488e572483a0be3d110"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0059-stagecoach-renewables/research-decision.json",
+          "sha256": "4e7ff7be37136b38d70c65d026088b9f7331ff2732f1f276c9effe16dfef78a2"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -8430,6 +8442,52 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-12T21:13:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-12T21:24:29.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4d2936fdc7a36ecbb258493c809ada3fd63e8cee30a418c9a0f3dc3f27e43f8b",
+          "evidenceSha256": [
+            "4d2936fdc7a36ecbb258493c809ada3fd63e8cee30a418c9a0f3dc3f27e43f8b",
+            "4e7ff7be37136b38d70c65d026088b9f7331ff2732f1f276c9effe16dfef78a2",
+            "d385b126568b789e3efa397ac2d716c6914f84a5754445bf26f3c6f822ce9e5f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-12T21:24:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4d2936fdc7a36ecbb258493c809ada3fd63e8cee30a418c9a0f3dc3f27e43f8b",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-12T21:25:04.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4d2936fdc7a36ecbb258493c809ada3fd63e8cee30a418c9a0f3dc3f27e43f8b",
+          "evidenceSha256": [
+            "071a3f007488308756bc36e5a2baf5199445f703cfbe5488e572483a0be3d110"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -25060,5 +25118,5 @@
       ]
     }
   ],
-  "manifestSha256": "20a848bc52c2d8f3bbf2c5f5fa41a163a59367a7b92e54ac3208e72123c1fdbb"
+  "manifestSha256": "02db43ffb527f0f1d416f985c423bfa5f910520d5fdd31a37b52b111f3a985dd"
 }
