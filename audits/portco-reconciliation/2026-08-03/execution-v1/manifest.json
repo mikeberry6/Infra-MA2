@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-12T20:47:12.000Z",
+  "updatedAt": "2026-08-12T21:07:04.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -8336,20 +8336,26 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "1bd2e793e79f25878a595f434c7e821969b6e4a55ec9663dcb9069bb43c6131b",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-12T20:57:49.000Z",
+      "updatedAt": "2026-08-12T21:07:04.000Z",
+      "completedAt": "2026-08-12T21:07:04.000Z",
+      "exceptionReason": "Pembina Gas Infrastructure JV is the stale census alias of existing Pembina Gas Infrastructure Inc.; route the Apollo holding and fresh ownership evidence to canonical task 324 without creating a duplicate.",
+      "supersededByTaskId": "ledger:0324:pembina-gas-infrastructure-inc:de0cbf95",
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0058-pembina-gas-infrastructure-jv/attempt-1/task-snapshot.json",
+          "sha256": "3c40bccfa44afc60d08a520c449c620472fd663fb93ee71eae7fedc429bdb212"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0058-pembina-gas-infrastructure-jv/research-decision.json",
+          "sha256": "acb5374c5a7b90e81a1663d23d3519b9b3b69c7ee6d3eeefd6080f4fb2327931"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -8363,6 +8369,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-12T20:57:49.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "SUPERSEDED",
+          "at": "2026-08-12T21:07:04.000Z",
+          "reason": "Pembina Gas Infrastructure JV is the stale census alias of existing Pembina Gas Infrastructure Inc.; route the Apollo holding and fresh ownership evidence to canonical task 324 without creating a duplicate.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "3c40bccfa44afc60d08a520c449c620472fd663fb93ee71eae7fedc429bdb212",
+            "acb5374c5a7b90e81a1663d23d3519b9b3b69c7ee6d3eeefd6080f4fb2327931"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -25031,5 +25060,5 @@
       ]
     }
   ],
-  "manifestSha256": "f8bd7b36bd9ddcc508ec71e1ea7c0e39918656bce7e7abf9806503cfc65c3690"
+  "manifestSha256": "20a848bc52c2d8f3bbf2c5f5fa41a163a59367a7b92e54ac3208e72123c1fdbb"
 }
