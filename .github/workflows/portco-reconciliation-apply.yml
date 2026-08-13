@@ -212,6 +212,15 @@ jobs:
             echo "::error::PRODUCTION_URL does not match the canonical InfraSight production alias."
             missing=1
           fi
+          expected_revalidate_url="${CANONICAL_PRODUCTION_URL}${PUBLIC_BASE_PATH}/api/internal/fund-refresh/revalidate"
+          if [ "$REVALIDATE_URL" != "$expected_revalidate_url" ]; then
+            echo "::error::FUND_REFRESH_REVALIDATE_URL does not match the canonical production endpoint."
+            missing=1
+          fi
+          [[ "$REVALIDATE_TOKEN" =~ ^[A-Fa-f0-9]{64}$ ]] || {
+            echo "::error::FUND_REFRESH_REVALIDATE_TOKEN must be a 64-character hexadecimal secret."
+            missing=1
+          }
           [[ "$EXPECTED_DATABASE_HOST" == *-pooler.* ]] || {
             echo "::error::The PortCo apply must use the production pooler hostname."
             missing=1

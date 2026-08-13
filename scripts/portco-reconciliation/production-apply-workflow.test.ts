@@ -68,6 +68,15 @@ describe("protected PortCo production apply workflow", () => {
     expect(workflow).toContain(
       'if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]',
     );
+    expect(workflow).toContain(
+      'expected_revalidate_url="${CANONICAL_PRODUCTION_URL}${PUBLIC_BASE_PATH}/api/internal/fund-refresh/revalidate"',
+    );
+    expect(workflow).toContain(
+      'if [ "$REVALIDATE_URL" != "$expected_revalidate_url" ]',
+    );
+    expect(workflow).toContain(
+      '[[ "$REVALIDATE_TOKEN" =~ ^[A-Fa-f0-9]{64}$ ]]',
+    );
   });
 
   it("accepts only one tightly related proposal, approval, and snapshot lineage", () => {

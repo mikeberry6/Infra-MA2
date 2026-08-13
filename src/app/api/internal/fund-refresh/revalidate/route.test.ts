@@ -10,7 +10,7 @@ vi.mock("@/lib/revalidation", () => ({
 
 import { GET, POST } from "./route";
 
-const TOKEN = "a-secure-fund-refresh-token-that-is-long-enough";
+const TOKEN = "a".repeat(64);
 const URL = "https://example.com/api/internal/fund-refresh/revalidate";
 
 function request(method: "GET" | "POST", token = TOKEN) {
@@ -50,6 +50,7 @@ describe("fund refresh cache revalidation route", () => {
   it.each([
     ["a missing token", undefined],
     ["a short configured token", "short"],
+    ["a non-hex configured token", "z".repeat(64)],
   ])("fails closed for %s", async (_label, configuredToken) => {
     if (configuredToken === undefined) {
       delete process.env.FUND_REFRESH_REVALIDATE_TOKEN;
@@ -64,7 +65,7 @@ describe("fund refresh cache revalidation route", () => {
   });
 
   it("rejects an incorrect bearer token", async () => {
-    const response = await GET(request("GET", "another-token-that-is-long-but-still-wrong"));
+    const response = await GET(request("GET", "b".repeat(64)));
 
     expect(response.status).toBe(401);
     expect(mocks.revalidateAppData).not.toHaveBeenCalled();

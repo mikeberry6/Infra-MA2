@@ -14,7 +14,7 @@ function digest(value: string) {
 
 function isAuthorized(request: Request) {
   const expectedToken = process.env.FUND_REFRESH_REVALIDATE_TOKEN;
-  if (!expectedToken || expectedToken.length < 32) return false;
+  if (!expectedToken || !/^[a-f0-9]{64}$/i.test(expectedToken)) return false;
 
   const authorization = request.headers.get("authorization");
   if (!authorization?.startsWith("Bearer ")) return false;
