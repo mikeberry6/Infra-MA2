@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0069:elevate-renewables:e4efa166",
+  "taskIndex": 69,
+  "companyName": "Elevate Renewables",
+  "generatedAt": "2026-08-13T05:21:58.466Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0069-elevate-renewables/attempt-2/approval-recapture/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 69,
+    "taskId": "ledger:0069:elevate-renewables:e4efa166",
+    "canonicalKey": "elevate-renewables|united-states",
+    "companyName": "Elevate Renewables",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:005:elevate-renewables"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj69300j1ivherdsury7a"
+    ],
+    "seedKeys": [
+      "elevate renewables|United States"
+    ],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj69300j1ivherdsury7a",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "elevate-renewables|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj69300j1ivherdsury7a",
+    "name": "Elevate Renewables",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Battery Energy Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Elevate Renewables develops and owns battery energy storage projects in the United States. The platform serves wholesale power markets and grid reliability needs through an asset-heavy development model focused on interconnection, site control, permitting, and long-duration storage operation. ArcLight stated in early 2023 that it had committed $150 million to Elevate and that the initial brownfield pipeline exceeded 5 GW across more than 20 sites. The company's strategy emphasizes storage development at or near existing power infrastructure rather than stand-alone greenfield land banking alone. ArcLight announced the capital commitment to Elevate in January 2023, while public sources do not disclose the platform's ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjra701fwivhevr7myg1g",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "ArcLight Energy Partners Fund VII",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpklc802nyivhemdc7z6cu",
+        "date": "2022",
+        "event": "ArcLight formed Elevate Renewables as its battery storage platform.",
+        "category": "FINANCING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklcw02nzivhep0w1fguw",
+        "date": "Jan 31, 2023",
+        "event": "ArcLight announced a $150 million commitment to Elevate Renewables.",
+        "category": "FINANCING",
+        "sortDate": "2023-01-31T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkldb02o0ivhef3byr4ty",
+        "date": "Jun 2024",
+        "event": "Elevate and ArcLight announced a large battery storage project at Arthur Kill in New York City.",
+        "category": "OTHER",
+        "sortDate": "2024-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoz5c07h4ivhel0lhyr2i",
+        "label": "Elevaterenewables — Elevate Renewables",
+        "url": "https://www.elevaterenewables.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Elevaterenewables company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoz6e07h6ivhe956h4tbe",
+        "label": "Investment date source — ArcLight Capital Partners — Elevate Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-makes-150-million-commitment-to-elevate-renewables-301734222.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoz7m07h8ivhea2arhqst",
+        "label": "PR Newswire — Elevate Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-and-elevate-announce-new-york-citys-largest-battery-storage-project-to-date-302157303.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PR Newswire operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Elevate Renewables",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Battery Energy Storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+    "description": "Elevate Renewables develops and owns battery energy storage projects in the United States. The platform serves wholesale power markets and grid reliability needs through an asset-heavy development model focused on interconnection, site control, permitting, and long-duration storage operation. ArcLight stated in early 2023 that it had committed $150 million to Elevate and that the initial brownfield pipeline exceeded 5 GW across more than 20 sites. The company's strategy emphasizes storage development at or near existing power infrastructure rather than stand-alone greenfield land banking alone. ArcLight announced the capital commitment to Elevate in January 2023, while public sources do not disclose the platform's ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2022",
+        "event": "ArcLight formed Elevate Renewables as its battery storage platform.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jan 31, 2023",
+        "event": "ArcLight announced a $150 million commitment to Elevate Renewables.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 2024",
+        "event": "Elevate and ArcLight announced a large battery storage project at Arthur Kill in New York City.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Elevaterenewables — Elevate Renewables",
+        "url": "https://www.elevaterenewables.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — ArcLight Capital Partners — Elevate Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-makes-150-million-commitment-to-elevate-renewables-301734222.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — Elevate Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-and-elevate-announce-new-york-citys-largest-battery-storage-project-to-date-302157303.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0069:elevate-renewables:e4efa166",
+    "taskIndex": 69,
+    "canonicalKey": "elevate-renewables|united-states",
+    "capturedAt": "2026-08-13T05:21:58.466Z",
+    "databaseRevision": "company-state:0470d37ebc1c7cd2685306c4647944428738926964b08fe742e67da5245f9106",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4b9976eca80bf4dfde830358fe18e60c15093726f84d8e95587d2e64038841e9",
+    "productionSnapshotSha256": "1494bce7e0e0ba79146d56811bbacd68dbbee6842a82b4f8ed023b5a0924d728",
+    "targetCompanySnapshotSha256": "0470d37ebc1c7cd2685306c4647944428738926964b08fe742e67da5245f9106",
+    "seedEntrySha256": "4c0d6a2a22937e07f392fc0ce75d9ca2c8620ca3ccf8acea9e0a444ea86ed43d",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "f44aa407562de32fa9b772b58c7a33558b78ff4fd2d01d0ff1cab9d0378c5c45",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "eb6ff5f1042cd75d0b0f07e33c0a25af502730aad3ea4ca8a871ebb0c4aadef6",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "59925b476a914cce19046b08ccfe4e9246e60a6a9c7a0f95e48d71fc95674ca7",
+    "stateSha256": "d30065dd51cdcd783c9ac5a9648412538f96ee3dad3e82a32df61b0281f03a94",
+    "taskSnapshotSha256": "201cb97f4ac621cceaeab3fc200cbe3e6cbcfd7c8ba39993b8f299c3e931a1a9"
+  },
+  "contextSha256": "b42c13434793bd06669ec0cbec895d48ff028a1546dfdd0687fed8d5d5cbb55c"
+}
