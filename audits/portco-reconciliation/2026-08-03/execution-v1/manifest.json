@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T07:09:15.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
+  "updatedAt": "2026-08-13T07:19:35.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -10330,11 +10330,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "69cf7403eaa3b347666e8d2c295b1b2858abad4ea8a9deef378c14107382649b",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 3,
       "startedAt": "2026-08-13T06:40:10.000Z",
-      "updatedAt": "2026-08-13T07:09:15.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-13T07:19:32.000Z",
+      "completedAt": "2026-08-13T07:19:32.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "6ec1a7259beffd9fbdbeb75646e2a05722c3b7003d7f4ba0cda8af0fd01aec01",
@@ -10547,6 +10547,16 @@
           "evidenceSha256": [
             "1816f5598765e61ad060b237b2702ad02e883998c0ee19be759b97ae4dae32b2"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 18,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-13T07:19:32.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6ec1a7259beffd9fbdbeb75646e2a05722c3b7003d7f4ba0cda8af0fd01aec01",
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -21123,13 +21133,13 @@
       "managerIndex": 70,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4175ed89fcfe097bd14498818d2d996036d8f2b6426ad3f407394f3fdcd8a6d3",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-13T07:19:33.000Z",
+      "completedAt": "2026-08-13T07:19:33.000Z",
+      "exceptionReason": "Canonicalized to completed task 70 for Gulf Coast Express Pipeline LLC (GCX); all current ownership periods and the redirect are represented there.",
+      "supersededByTaskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -21150,6 +21160,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-13T07:19:33.000Z",
+          "reason": "Canonicalized to completed task 70 for Gulf Coast Express Pipeline LLC (GCX); all current ownership periods and the redirect are represented there.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -26063,13 +26083,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "485293ecba49e8863c5a276514fb3af451c8adb76a37b761dca676c5f96760c4",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-13T07:19:34.000Z",
+      "completedAt": "2026-08-13T07:19:34.000Z",
+      "exceptionReason": "Canonicalized to completed task 70 for Gulf Coast Express Pipeline LLC (GCX); the seed-only duplicate is retired by the approved after-image.",
+      "supersededByTaskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -26090,6 +26110,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-13T07:19:34.000Z",
+          "reason": "Canonicalized to completed task 70 for Gulf Coast Express Pipeline LLC (GCX); the seed-only duplicate is retired by the approved after-image.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -26101,13 +26131,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "235fc2cb525be156ee34d14e31d36b93d8de2bbb2e07c45daed7920f7d083a48",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-13T07:19:35.000Z",
+      "completedAt": "2026-08-13T07:19:35.000Z",
+      "exceptionReason": "Canonicalized to completed task 70 for Gulf Coast Express Pipeline LLC (GCX); the seed-only duplicate is retired by the approved after-image.",
+      "supersededByTaskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -26128,6 +26158,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-13T07:19:35.000Z",
+          "reason": "Canonicalized to completed task 70 for Gulf Coast Express Pipeline LLC (GCX); the seed-only duplicate is retired by the approved after-image.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -26760,5 +26800,5 @@
       ]
     }
   ],
-  "manifestSha256": "771bb13d81124d6962f8241e91bbf60c05a21c23ca4f8133f7a6f296945ff515"
+  "manifestSha256": "8fa417faa12cf442bc96e7e8b4691f254d2b8e94f22940f910ed7524067a619a"
 }
