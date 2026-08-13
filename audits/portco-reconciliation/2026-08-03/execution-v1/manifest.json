@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T09:02:53.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0073:inspiration-mobility:1eba7153",
+  "updatedAt": "2026-08-13T09:11:44.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -10763,11 +10763,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "b65b9af9c237bc43aa36cea90990bb221294958dd4693c6a5a78c6cf89025fc7",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 3,
       "startedAt": "2026-08-13T08:45:16.000Z",
-      "updatedAt": "2026-08-13T09:02:53.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-13T09:11:43.000Z",
+      "completedAt": "2026-08-13T09:11:43.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
@@ -10983,6 +10983,21 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-13T09:02:53.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+          "evidenceSha256": [
+            "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+            "8336ec7493f4134831e0579e35991acc12ae0e2c45051ebe62189bd6b6bcce89",
+            "852caaf24cad331897149e60af54b7f65a9cdbe5013e04d6b48c5bea7d9d8cdb",
+            "a9f24bb5d68177976a8e4a4d221ae24a07a9fd1a4907a00da1704c120176c13b"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 18,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-13T09:11:43.000Z",
           "reason": null,
           "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
           "evidenceSha256": [
@@ -26499,13 +26514,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a01f7cd4f61377f6fe6f9414fdbdf3b5e849c01c1079145982068ff6679e271e",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-13T09:11:44.000Z",
+      "completedAt": "2026-08-13T09:11:44.000Z",
+      "exceptionReason": "Reciprocal production and seed identity canonicalized by completed task 73; the approved after-image covers the existing Inspiration Mobility Group record.",
+      "supersededByTaskId": "ledger:0073:inspiration-mobility:1eba7153",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -26526,6 +26541,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-13T09:11:44.000Z",
+          "reason": "Reciprocal production and seed identity canonicalized by completed task 73; the approved after-image covers the existing Inspiration Mobility Group record.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -27120,5 +27145,5 @@
       ]
     }
   ],
-  "manifestSha256": "8f47febd350985a2dc0bbdc68057932d92b98dfbcbc3a17ed05b403561d01253"
+  "manifestSha256": "ee0ef76f17f54de0ed8fdf9c019018b2caecb39fb0344077430fa8b3449db211"
 }
