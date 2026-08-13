@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T07:19:35.000Z",
+  "updatedAt": "2026-08-13T07:34:18.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -10569,20 +10569,23 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "436f4208905cfb01a93464eac2b92ecf1977813a6c21c199586bff38b587b6fe",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-13T07:25:55.000Z",
+      "updatedAt": "2026-08-13T07:34:18.000Z",
+      "completedAt": "2026-08-13T07:34:18.000Z",
+      "exceptionReason": "Task 71 is an identity-corrupted duplicate: IATP is Invenergy AMPCI Thermal Power, not International-Matex Tank Terminals. The existing canonical company and signed-pending ArcLight transaction are owned by task 215",
+      "supersededByTaskId": "ledger:0215:invenergy-ampci-thermal-power:7aff1fc4",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0071-iatp-50-stake/attempt-1/research-decision.json",
+          "sha256": "cc2ba1aaf08adeee0b7e56150cbf229422c6331cc80e6017576faa8319da7a1b"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -10596,6 +10599,28 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T07:25:55.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "SUPERSEDED",
+          "at": "2026-08-13T07:34:18.000Z",
+          "reason": "Task 71 is an identity-corrupted duplicate: IATP is Invenergy AMPCI Thermal Power, not International-Matex Tank Terminals. The existing canonical company and signed-pending ArcLight transaction are owned by task 215",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "cc2ba1aaf08adeee0b7e56150cbf229422c6331cc80e6017576faa8319da7a1b"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -26800,5 +26825,5 @@
       ]
     }
   ],
-  "manifestSha256": "8fa417faa12cf442bc96e7e8b4691f254d2b8e94f22940f910ed7524067a619a"
+  "manifestSha256": "e255ca3333b3d5477261592e4274567b30bd293712e84bdfc3ffa691de391f3d"
 }

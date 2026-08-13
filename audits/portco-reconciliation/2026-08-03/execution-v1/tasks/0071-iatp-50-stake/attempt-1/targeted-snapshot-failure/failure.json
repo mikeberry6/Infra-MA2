@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TASK_SNAPSHOT_FAILURE",
+  "taskId": "ledger:0071:iatp-50-stake:a18662ff",
+  "failedAt": "2026-08-13T07:28:58.000Z",
+  "requestedTargetCompanyId": "cmrxpj6er00j7ivhe4q6f5u9y",
+  "requestedTargetCompanyName": "Invenergy AMPCI Thermal Power",
+  "productionSnapshotSha256": "f08106c006c49fbc494ceb35544164b5c3889023b8c7cc70b4e6998a4afc1d0c",
+  "productionSnapshotRetained": false,
+  "retentionDecision": "The second full production snapshot was an unused duplicate-state capture. Its hash is recorded, but the artifact was not retained because target-specific context and a task snapshot were never produced.",
+  "error": "Reviewed target company is not supported by one symmetric immutable queue candidate",
+  "interpretation": "The immutable task-71 queue row is identity-corrupted and therefore cannot be rebound to the existing Invenergy AMPCI Thermal Power company. The existing company is represented by queue task ledger:0215:invenergy-ampci-thermal-power:7aff1fc4. No task-71 proposal or mutation was generated."
+}
