@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T09:29:53.000Z",
+  "updatedAt": "2026-08-13T09:50:34.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -11085,20 +11085,26 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "aeadde0291793febbeb184da75cca831cd2627fa972ae4c7c020d9292b0e3f9a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-08-13T09:37:24.000Z",
+      "updatedAt": "2026-08-13T09:50:34.000Z",
+      "completedAt": "2026-08-13T09:50:34.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "a4968eac826af9e129fe81cbca2aa9ae1c2d15c26739a4cdb72fd5c826c7fb52",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0075-lightstone-generation/attempt-1/task-snapshot.json",
+          "sha256": "a4968eac826af9e129fe81cbca2aa9ae1c2d15c26739a4cdb72fd5c826c7fb52"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0075-lightstone-generation/research-decision.json",
+          "sha256": "e6012569208ef822c2ec6d4ce18aead09d3e73fd3fde9d5a40c30797f4b6b249"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -11112,6 +11118,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T09:37:24.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "EXCLUDED",
+          "at": "2026-08-13T09:50:34.000Z",
+          "reason": "ArcLight and Blackstone exited Lightstone Generation on August 11, 2025. The platform split between separate Cornerstone and Gavin perimeters, so no current ArcLight holding remains and no company creation or one-to-one merge is warranted.",
+          "taskSnapshotSha256": "a4968eac826af9e129fe81cbca2aa9ae1c2d15c26739a4cdb72fd5c826c7fb52",
+          "evidenceSha256": [
+            "a4968eac826af9e129fe81cbca2aa9ae1c2d15c26739a4cdb72fd5c826c7fb52",
+            "e6012569208ef822c2ec6d4ce18aead09d3e73fd3fde9d5a40c30797f4b6b249"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -27174,5 +27203,5 @@
       ]
     }
   ],
-  "manifestSha256": "1cbec37e548dd87d91cdfe7d339414ea23504727689031c9275661b4e252367a"
+  "manifestSha256": "7bbbaf5761220ed99809ea463757904f8ec53271c36b680610c383aff70171f6"
 }

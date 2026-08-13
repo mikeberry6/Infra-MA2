@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-13T09:48:46.000Z",
+  "asOfDate": "2026-08-13",
+  "decision": "EXCLUDE_STALE_REALIZED_CENSUS_HOLDING",
+  "taskId": "ledger:0075:lightstone-generation:8a033389",
+  "taskIndex": 75,
+  "companyName": "Lightstone Generation",
+  "requestedManagers": [
+    "ArcLight Capital"
+  ],
+  "sourceHoldingIds": [
+    "012-arclight-capital:holding:022:lightstone-generation"
+  ],
+  "rationale": "Exclude the proposed Lightstone Generation census holding because ArcLight and Blackstone no longer own it. ArcLight's live investments page still labels Lightstone Current, but primary and regulatory transaction evidence establishes that the owners sold the platform and that the relevant closing occurred on August 11, 2025. Lightstone was then divided between a three-gas-plant Cornerstone Generation perimeter and a separately held Gavin Generation perimeter, so Lightstone must not be merged into Cornerstone as though Cornerstone were a one-to-one rename. No Lightstone company exists in production or the evaluated seed. Because this census is limited to current manager holdings, creating a realized historical shell would introduce a stale PortCo instead of correcting one. The durable result is an exclusion with no database, seed, ownership, redirect, or publication mutation.",
+  "identityResolution": {
+    "canonicalHistoricalName": "Lightstone Generation LLC",
+    "formerName": "Burgundy Power LLC",
+    "legalForm": "Delaware limited liability company",
+    "website": "DEAD_DNS",
+    "platformBoundary": "A distinct four-plant U.S. power-generation platform comprising Darby, Gavin, Lawrenceburg, and Waterford, together with Lightstone Marketing, through its 2025 disposition.",
+    "cornerstoneRelationship": "NOT_A_RENAME_OR_ONE_TO_ONE_SUCCESSOR",
+    "duplicateResolution": "Do not merge or supersede Lightstone Generation into Cornerstone Generation. Cornerstone was a newly formed purchaser and received only the three gas-fired plants and related perimeter; Gavin transferred through a separate purchaser structure.",
+    "productionCompanyId": null,
+    "seedKey": null
+  },
+  "ownershipResolution": {
+    "state": "REALIZED_BY_ARCLIGHT_AND_BLACKSTONE",
+    "entryDate": "2017-01-30",
+    "exitDate": "2025-08-11",
+    "arcLight": {
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Energy Partners Fund VI, L.P.",
+      "stake": "50%"
+    },
+    "blackstone": {
+      "manager": "Blackstone",
+      "aggregateStake": "50%",
+      "fundBreakdownAsOf2024": [
+        {
+          "vehicles": "Blackstone Energy Partners II NQ L.P. and Blackstone Energy Partners II.F NQ L.P.",
+          "aggregateStake": "approximately 28%"
+        },
+        {
+          "vehicle": "Blackstone Capital Partners VII NQ L.P.",
+          "stake": "approximately 19%"
+        },
+        {
+          "vehicles": "Certain other Blackstone funds",
+          "aggregateStake": "approximately 3%"
+        }
+      ]
+    }
+  },
+  "assetBoundary": {
+    "preExitAssets": [
+      "Darby Generating Station",
+      "Gavin Power Plant",
+      "Lawrenceburg Power Plant",
+      "Waterford Energy Center",
+      "Lightstone Marketing LLC"
+    ],
+    "postExitResolution": "Darby, Lawrenceburg, and Waterford entered the Cornerstone Generation perimeter controlled by ECP. Gavin transferred through a separate ECP-controlled structure with a Javelin minority interest. The split prevents a one-to-one Lightstone-to-Cornerstone canonical merge."
+  },
+  "acquisitionExitCheck": {
+    "acquisition": "AEP reported that the sale of the four competitive plants to Lightstone Generation, a Blackstone-and-ArcLight joint venture, closed on January 30, 2017 for approximately $2.1 billion.",
+    "ownershipBeforeExit": "A 2024 FERC filing identifies Lightstone Generation LLC as the direct or indirect owner of the five Lightstone seller entities and attributes 50% to ArcLight Fund VI and 50% in aggregate to Blackstone funds.",
+    "exit": "The later SEC transaction agreement defines August 11, 2025 as the Airborne Closing Date, while the Indiana regulatory docket records the associated post-closing notice. The transaction separated the Cornerstone and Gavin perimeters.",
+    "currentOwnership": "No current ArcLight or Blackstone ownership remains. ArcLight's Current label is contradicted by later closing evidence.",
+    "subsequentReacquisitionSearch": "No subsequent ArcLight or Blackstone reacquisition of Lightstone Generation was identified through August 13, 2026."
+  },
+  "staleSourceConflict": {
+    "staleSource": "ArcLight - Investments",
+    "staleClaim": "Lightstone Generation | Power | Current",
+    "resolution": "Treat the live portfolio label as stale because later regulatory and transaction documents establish the completed 2025 disposition."
+  },
+  "relatedListIssues": [
+    {
+      "subject": "Cornerstone Generation",
+      "action": "ROUTE_TO_SEPARATE_CORRECTION",
+      "reason": "The existing card's ECP ownership is stale: Talen Energy announced that it completed the Cornerstone acquisition on June 15, 2026. This must be handled through Cornerstone's own target-scoped reconciliation task."
+    },
+    {
+      "subject": "Gavin Generation",
+      "action": "ROUTE_TO_SEPARATE_REVIEW",
+      "reason": "Gavin did not enter Cornerstone's three-plant perimeter and may require a separate current PortCo record for the ECP-controlled, Javelin-minority structure. It must not be added within the Lightstone task."
+    }
+  ],
+  "evidence": [
+    {
+      "label": "ArcLight - Investments",
+      "url": "https://arclight.com/investments/",
+      "purpose": "Original census identity and the stale Current classification",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "b063ec872f511ced61fde82a4e3fc0bc93fc4cdf4547206cc1756b3c074f43ef",
+      "verifiedAt": "2026-08-13T09:48:46.000Z"
+    },
+    {
+      "label": "AEP - SEC Form 8-K announcing Lightstone closing",
+      "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490417000006/aepwishbonetransfer8k.htm",
+      "purpose": "Primary evidence of the January 30, 2017 acquisition closing, platform assets, joint-venture buyers, and approximately $2.1 billion consideration",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING",
+      "contentSha256": "595402cb9551c830cbeae8fac43c36b530384724acde429075528a999e3f2016",
+      "verifiedAt": "2026-08-13T09:48:46.000Z"
+    },
+    {
+      "label": "FERC filing - Lightstone seller ownership",
+      "url": "https://www.docketalarm.com/cases/FERC/ER17-242-020/Gavin_Power_LLC/20241031-5357/",
+      "purpose": "Regulatory filing mirror establishing the 2024 legal platform boundary and exact ArcLight and Blackstone fund ownership breakdown",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING",
+      "contentSha256": "5272a679fa80b37f023accc82b50896e3fcac93463017ceac4cb2a975c5cf2f8",
+      "verifiedAt": "2026-08-13T09:48:46.000Z"
+    },
+    {
+      "label": "Indiana Utility Regulatory Commission - Cause No. 46133 final order",
+      "url": "https://www.in.gov/iurc/files/ord_46133_031925.pdf",
+      "purpose": "Regulatory evidence of Lightstone's 50% ArcLight and 50% Blackstone ownership, the August 30, 2024 purchase agreement, and Cornerstone's newly formed purchaser identity",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING",
+      "contentSha256": "f9b1cca92555b174597f3272d9ea043a331ba7c0b93b2da7b68ff6369220f34a",
+      "verifiedAt": "2026-08-13T09:48:46.000Z"
+    },
+    {
+      "label": "Indiana Utility Regulatory Commission - weekly filing list for August 11-15, 2025",
+      "url": "https://www.in.gov/iurc/files/Weekly-Filing-List-wk-8.11.25-8.15.25.pdf",
+      "purpose": "Regulatory record of the post-closing filing associated with the Lightstone disposition",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING",
+      "contentSha256": "5945ae79eedbd585d5d45832f4635d6059cc6812d0fb11750ad15f1913d17b99",
+      "verifiedAt": "2026-08-13T09:48:46.000Z"
+    },
+    {
+      "label": "Talen Energy - Cornerstone merger agreement",
+      "url": "https://www.sec.gov/Archives/edgar/data/1622536/000162253626000017/tec-20251231ex21cornerston.htm",
+      "purpose": "Regulatory evidence defining the August 11, 2025 Airborne Closing Date and distinguishing the Cornerstone entities from Lightstone Generation and its other affiliates",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING",
+      "contentSha256": "0fa2703178cbbc2480f9ccb87f3d9699c4e61cefdd982dba7bc84b2576325baf",
+      "verifiedAt": "2026-08-13T09:48:46.000Z"
+    },
+    {
+      "label": "ECP - Cornerstone Generation",
+      "url": "https://www.ecpgp.com/equity/portfolio/cornerstone-generation",
+      "purpose": "Corroboration that Cornerstone was ECP's separate three-asset investment and is now realized",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedAt": "2026-08-13T09:48:46.000Z"
+    },
+    {
+      "label": "Talen Energy - completion of Cornerstone acquisition",
+      "url": "https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-completes-acquisition-high-quality-western-pjm",
+      "purpose": "Primary evidence for the separately routed Cornerstone ownership correction effective June 15, 2026",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedAt": "2026-08-13T09:48:46.000Z"
+    }
+  ],
+  "unresolvedQuestions": [],
+  "taskSnapshotSha256": "a4968eac826af9e129fe81cbca2aa9ae1c2d15c26739a4cdb72fd5c826c7fb52",
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "EXCLUDED"
+}
