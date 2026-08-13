@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0065:catalyst-old-river-hydroelectric:5f41df5c",
+  "taskIndex": 65,
+  "companyName": "Catalyst Old River Hydroelectric",
+  "generatedAt": "2026-08-13T01:45:12.943Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0065-catalyst-old-river-hydroelectric/attempt-3/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 65,
+    "taskId": "ledger:0065:catalyst-old-river-hydroelectric:5f41df5c",
+    "canonicalKey": "catalyst-old-river-hydroelectric|united-states",
+    "companyName": "Catalyst Old River Hydroelectric",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:024:catalyst-old-river-hydroelectric"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj67x00izivheqinytkio"
+    ],
+    "seedKeys": [
+      "catalyst old river hydroelectric|United States"
+    ],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj67x00izivheqinytkio",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "catalyst-old-river-hydroelectric|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj67x00izivheqinytkio",
+    "name": "Catalyst Old River Hydroelectric",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Hydroelectric Generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Catalyst Old River Hydroelectric owns the Sidney A. Murray Jr. Hydroelectric Station on the Mississippi River near Vidalia, Louisiana. The asset serves utility and municipal offtakers through an asset-heavy hydro generation model supported by long-duration contractual arrangements. Public financing materials describe the facility as a 192 MW hydro plant with power sales to an Entergy subsidiary and the Town of Vidalia through contracts extending to 2031. The project is a long-life essential power asset rather than a diversified development platform, and reviewed sources do not disclose a separate project-company founding year. ArcLight has identified Catalyst Old River as a current investment, while public sources do not disclose the current ownership percentages at the asset level.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Louisiana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr9601fuivhem1seogi3",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2011,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkl5g02nrivhez0q62ya6",
+        "date": "1990",
+        "event": "The Sidney A. Murray Jr. Hydroelectric Station entered commercial operation.",
+        "category": "EXPANSION",
+        "sortDate": "1990-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkl5u02nsivhes9pev3or",
+        "date": "2011",
+        "event": "ArcLight Energy Partners Fund V originally acquired an interest in the Sidney Murray hydro project.",
+        "category": "ACQUISITION",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkl6e02ntivhemdx3t0a9",
+        "date": "2021",
+        "event": "Prudential Private Capital invested $60 million in a refinancing tied to the hydro asset and its holding structure.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkl7002nuivhe90qlnfd3",
+        "date": "Jul 2021",
+        "event": "ArcLight announced the closing of a continuation fund that contemporaneously acquired a 25% interest in the 192 MW Sidney Murray hydro project from an older ArcLight fund.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoyve07gqivhed5yv4ml7",
+        "label": "Arclight — Catalyst Old River Hydroelectric",
+        "url": "https://arclight.com/investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Arclight company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoywf07gsivhe0gbdoglg",
+        "label": "Investment date source — ArcLight Capital Partners — Catalyst Old River Hydroelectric",
+        "url": "https://www.prnewswire.com/news-releases/arclight-announces-successful-closing-of-renewable-infrastructure-continuation-fund-301328260.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoyxb07guivhedcf5kgtv",
+        "label": "Prudentialprivatecapital — Catalyst Old River Hydroelectric",
+        "url": "https://www.prudentialprivatecapital.com/perspectives/prudential-private-capital-invests-60m-in-catalyst-vidalia-holding-corporation",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Prudentialprivatecapital — Catalyst Old River Hydroelectric",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoyya07gwivheuhzvg7vk",
+        "label": "Business Wire — Catalyst Old River Hydroelectric",
+        "url": "https://www.businesswire.com/news/home/20210805005056/en/Prudential-Private-Capital-invests-%2460M-in-Rougaroux-Power-Holdings",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Business Wire — Catalyst Old River Hydroelectric",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Catalyst Old River Hydroelectric",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Hydroelectric Generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Catalyst Old River Hydroelectric owns the Sidney A. Murray Jr. Hydroelectric Station on the Mississippi River near Vidalia, Louisiana. The asset serves utility and municipal offtakers through an asset-heavy hydro generation model supported by long-duration contractual arrangements. Public financing materials describe the facility as a 192 MW hydro plant with power sales to an Entergy subsidiary and the Town of Vidalia through contracts extending to 2031. The project is a long-life essential power asset rather than a diversified development platform, and reviewed sources do not disclose a separate project-company founding year. ArcLight has identified Catalyst Old River as a current investment, while public sources do not disclose the current ownership percentages at the asset level.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2011,
+    "headquarters": "Louisiana",
+    "milestones": [
+      {
+        "date": "1990",
+        "event": "The Sidney A. Murray Jr. Hydroelectric Station entered commercial operation.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2011",
+        "event": "ArcLight Energy Partners Fund V originally acquired an interest in the Sidney Murray hydro project.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2021",
+        "event": "Prudential Private Capital invested $60 million in a refinancing tied to the hydro asset and its holding structure.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2021",
+        "event": "ArcLight announced the closing of a continuation fund that contemporaneously acquired a 25% interest in the 192 MW Sidney Murray hydro project from an older ArcLight fund.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Arclight — Catalyst Old River Hydroelectric",
+        "url": "https://arclight.com/investments/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — ArcLight Capital Partners — Catalyst Old River Hydroelectric",
+        "url": "https://www.prnewswire.com/news-releases/arclight-announces-successful-closing-of-renewable-infrastructure-continuation-fund-301328260.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Prudentialprivatecapital — Catalyst Old River Hydroelectric",
+        "url": "https://www.prudentialprivatecapital.com/perspectives/prudential-private-capital-invests-60m-in-catalyst-vidalia-holding-corporation",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Business Wire — Catalyst Old River Hydroelectric",
+        "url": "https://www.businesswire.com/news/home/20210805005056/en/Prudential-Private-Capital-invests-%2460M-in-Rougaroux-Power-Holdings",
+        "type": "PRESS_RELEASE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2011,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpifpw0047ivhexsim174k",
+        "name": "Brookfield Asset Management",
+        "updatedAt": "2026-07-23T16:09:27.572Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0065:catalyst-old-river-hydroelectric:5f41df5c",
+    "taskIndex": 65,
+    "canonicalKey": "catalyst-old-river-hydroelectric|united-states",
+    "capturedAt": "2026-08-13T01:45:12.943Z",
+    "databaseRevision": "company-state:f9155fe730a4131b21735af0ae04d3d077732eb6e815433c65e07686ffba19ee",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "736ab87c3ab505eb64a1d8b90c237d682c5b6d948c01f1b259b2d6e907b68746",
+    "productionSnapshotSha256": "c7832c8571f5797db2cc89af3e3219978ca5f9fc89e6e232f3d506017d9d2913",
+    "targetCompanySnapshotSha256": "f9155fe730a4131b21735af0ae04d3d077732eb6e815433c65e07686ffba19ee",
+    "seedEntrySha256": "d2eeca19ac8059b9351a1f0d6eaf18f3b0a83143efc9dbf36049efd6616999c2",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "c38a1cfae7d5a7c564662aa092c143dd411ab90c040ebb47a72604737767a486",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "715c4a71c1bc13aeb06d306bcb7547c2b6d083fcd0cd7b407ab16f82009a1b3b",
+      "citationsSha256": "401de733c42b33d516ac0fe8a31d76fba9e56ae917c1c44ab5726f70abc96049",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8df0843723f7f221690945abe0387964fb6f1a6a4e4b5f38938633222500264b",
+    "stateSha256": "330bae1fb6749364740e359d4b3f71f33c0f180d7bfd194eaf52f50a0a1f44c4",
+    "taskSnapshotSha256": "9a0ddaff7e283c005114c620f4246bab1f2df3f2cde1da7866b1d948e2b108e9"
+  },
+  "contextSha256": "b296ce4f93697ceda5b8afb9d1f20c756327e95b8ab2353d10bf0e96406833db"
+}
