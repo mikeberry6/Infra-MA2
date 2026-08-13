@@ -269,6 +269,64 @@ describe("production snapshot read", () => {
 });
 
 describe("evaluated seed snapshot", () => {
+  it("counts distinct legal vehicles under the same manager and fund as separate ownership periods", () => {
+    const company = seedCompany();
+    company.owners = ["Alpha Holdco LLC", "Beta Holdco LLC", "Gamma Holdco LLC"].map(
+      (vehicleName) => ({
+        investmentFirm: "3i Infrastructure",
+        ownershipVehicle: "Acme Fund",
+        fundName: "Acme Fund",
+        vehicleName,
+        investmentYear: 2020,
+        status: "Active" as const,
+      }),
+    ) as NonNullable<PortCo["owners"]>;
+
+    const artifact = buildSeedSnapshot({
+      asOfDate: "2026-08-03",
+      capturedAt: NOW,
+      baseCommit: "b".repeat(40),
+      companies: [company],
+      approvedAfterImages: [],
+    });
+
+    expect(artifact.companies[0].relationCounts.ownershipPeriods).toBe(3);
+  });
+
+  it("preserves legacy ownershipVehicle deduplication when new owner fields are absent", () => {
+    const company = seedCompany();
+    company.owners = [
+      {
+        investmentFirm: "3i Infrastructure",
+        ownershipVehicle: "Acme Fund",
+        investmentYear: 2020,
+        status: "Active",
+      },
+      {
+        investmentFirm: "3i Infrastructure",
+        ownershipVehicle: "Acme Fund",
+        investmentYear: 2021,
+        status: "Active",
+      },
+      {
+        investmentFirm: "3i Infrastructure",
+        ownershipVehicle: "Acme Co-Investment Vehicle",
+        investmentYear: 2021,
+        status: "Active",
+      },
+    ];
+
+    const artifact = buildSeedSnapshot({
+      asOfDate: "2026-08-03",
+      capturedAt: NOW,
+      baseCommit: "b".repeat(40),
+      companies: [company],
+      approvedAfterImages: [],
+    });
+
+    expect(artifact.companies[0].relationCounts.ownershipPeriods).toBe(2);
+  });
+
   it("models seed-runner deduplication and approved redirect overlays", () => {
     const artifact = buildSeedSnapshot({
       asOfDate: "2026-08-03",

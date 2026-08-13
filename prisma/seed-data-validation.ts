@@ -561,7 +561,7 @@ function validateCompanies(
       }
 
       const ownershipKey =
-        `${resolveOrgName(owner.investmentFirm)}|${owner.ownershipVehicle || owner.investmentFirm}`;
+        `${resolveOrgName(owner.investmentFirm)}|${owner.vehicleName || owner.ownershipVehicle || owner.investmentFirm}`;
       if (ownershipKeys.has(ownershipKey)) {
         diagnostics.push({
           severity: "warning",
@@ -615,7 +615,7 @@ function buildPlanCounts(input: SeedDataInput): SeedPlanCounts {
 
     for (const owner of ownersFor(company)) {
       rawOrganizations.add(owner.investmentFirm);
-      const vehicle = owner.ownershipVehicle || owner.investmentFirm;
+      const vehicle = owner.vehicleName || owner.ownershipVehicle || owner.investmentFirm;
       const ownershipKey =
         `${companyKey}|${resolveOrgName(owner.investmentFirm)}|${vehicle}`;
       ownershipKeys.add(ownershipKey);
