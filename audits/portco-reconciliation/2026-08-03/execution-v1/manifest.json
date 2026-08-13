@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T09:50:34.000Z",
+  "updatedAt": "2026-08-13T10:06:30.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -11152,20 +11152,26 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "9fe83eb0e2831f82a96719eba34d2ba450311557e0a8b4d3e599177fde08d95e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-13T09:58:56.000Z",
+      "updatedAt": "2026-08-13T10:06:30.000Z",
+      "completedAt": "2026-08-13T10:06:30.000Z",
+      "exceptionReason": "ArcLight sources conflict: the live table labels Lodi Holdings II Current / Power, while ArcLight ESG and regulatory records tie the name to the realized Fund I/II Lodi Gas Storage investment. The exact current legal entity and operating boundary remain unresolved, so no active company creation is warranted.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-1/task-snapshot.json",
+          "sha256": "90838ce328b5f0d671ec9b917e95b2a7dd0ec80095d664f0b23e914e63015684"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/research-decision.json",
+          "sha256": "560709e0cd53beaf86a978ca0fd8167900076935729915acbfa24771779acfe2"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -11179,6 +11185,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T09:58:56.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "DEFERRED",
+          "at": "2026-08-13T10:06:30.000Z",
+          "reason": "ArcLight sources conflict: the live table labels Lodi Holdings II Current / Power, while ArcLight ESG and regulatory records tie the name to the realized Fund I/II Lodi Gas Storage investment. The exact current legal entity and operating boundary remain unresolved, so no active company creation is warranted.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "560709e0cd53beaf86a978ca0fd8167900076935729915acbfa24771779acfe2",
+            "90838ce328b5f0d671ec9b917e95b2a7dd0ec80095d664f0b23e914e63015684"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -27203,5 +27232,5 @@
       ]
     }
   ],
-  "manifestSha256": "7bbbaf5761220ed99809ea463757904f8ec53271c36b680610c383aff70171f6"
+  "manifestSha256": "43d13d5a53b2ca99ced6ce4ac6b532a3cb311be74b3b98df0c3edccde1ebf9fa"
 }

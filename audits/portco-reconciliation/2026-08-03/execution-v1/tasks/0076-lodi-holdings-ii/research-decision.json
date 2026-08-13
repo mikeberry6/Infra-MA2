@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-13T10:05:12.000Z",
+  "asOfDate": "2026-08-13",
+  "decision": "DEFER_CONFLICTING_IDENTITY_AND_CURRENT_OWNERSHIP",
+  "taskId": "ledger:0076:lodi-holdings-ii:062318ec",
+  "taskIndex": 76,
+  "companyName": "Lodi Holdings II",
+  "requestedManagers": [
+    "ArcLight Capital"
+  ],
+  "sourceHoldingIds": [
+    "012-arclight-capital:holding:021:lodi-holdings-ii"
+  ],
+  "rationale": "Do not create the proposed Lodi Holdings II company record. ArcLight's live investments table is the only current source found under the exact display name and labels it Power and Current, but it discloses no legal entity, assets, website, geography, ownership vehicle, stake, or investment date. ArcLight's 2023 through 2025 ESG appendices instead combine Lodi Holdings and Lodi Holdings II into one Strategic Gas investment attributed to Funds I and II. Contemporaneous CPUC and SEC records identify only the Lodi Gas Storage ownership chain: Lodi Holdings, L.L.C. owned the operating utility, WHP Acquisition and WHP Acquisition II represented the Fund I and Fund II 50% interests, and Buckeye acquired 100% of Lodi Gas Storage on January 18, 2008. This makes the live table's separate current-power row likely stale or mislabeled, but it does not conclusively prove whether ArcLight also uses the exact display name for a different undisclosed current platform. Because the two primary ArcLight representations conflict and no direct evidence resolves the exact current legal and operating identity, the task is deferred rather than converted into either a false active company or an unsupported exclusion. No production or evaluated-seed match exists, and no database, seed, ownership, redirect, or publication mutation is authorized.",
+  "identityResolution": {
+    "requestedDisplayName": "Lodi Holdings II",
+    "legalName": "UNRESOLVED",
+    "website": "NOT_PUBLICLY_DISCLOSED",
+    "headquarters": "NOT_PUBLICLY_DISCLOSED",
+    "country": "UNRESOLVED_FOR_THE_EXACT_DISPLAY_NAME",
+    "platformBoundary": "UNRESOLVED_FOR_THE_EXACT_DISPLAY_NAME",
+    "mostLikelyHistoricalReference": "The Fund II side of the former Lodi Gas Storage investment, represented legally by WHP Acquisition II, L.L.C. beneath Lodi Holdings, L.L.C.",
+    "canonicalHistoricalOperatingEntity": "Lodi Gas Storage, L.L.C.",
+    "duplicateResolution": "Do not create or merge. The historical gas-storage chain is directly supported, but treating the live current-power label as the same identity remains an inference rather than a resolved fact.",
+    "productionCompanyId": null,
+    "seedKey": null
+  },
+  "historicalOwnershipResolution": {
+    "operatingCompany": "Lodi Gas Storage, L.L.C.",
+    "parentCompany": "Lodi Holdings, L.L.C.",
+    "arcLightFundI": {
+      "fund": "ArcLight Energy Partners Fund I, L.P.",
+      "vehicle": "WHP Acquisition, L.L.C.",
+      "stake": "50%",
+      "entryDate": "2003-03-31"
+    },
+    "arcLightFundII": {
+      "fund": "ArcLight Energy Partners Fund II, L.P.",
+      "vehicle": "WHP Acquisition II, L.L.C.",
+      "stake": "50%",
+      "purchaseAgreementDate": "2005-07-16",
+      "transferCompletionDate": "2005-12-15"
+    },
+    "arcLightExit": {
+      "buyer": "Buckeye Gas Storage LLC / Buckeye Partners, L.P.",
+      "stakeSold": "100% of Lodi Gas Storage, L.L.C.",
+      "purchaseAgreementDate": "2007-07-24",
+      "closingDate": "2008-01-18",
+      "ownershipState": "REALIZED_BY_ARCLIGHT_FUNDS_I_AND_II"
+    }
+  },
+  "historicalAssetBoundary": {
+    "sector": "Strategic Gas / natural gas storage",
+    "country": "United States",
+    "operatingRegion": "Northern California",
+    "assets": [
+      "Lodi Gas Storage Facility in San Joaquin and Sacramento Counties",
+      "Kirby Hills Gas Storage Facility in Solano County"
+    ],
+    "excludedProjectIdentity": "Kirby Hills II was an expansion project beneath Lodi Gas Storage, not a separate company.",
+    "unrelatedIdentity": "Lodi Energy Center and similarly named solar projects are not supported matches."
+  },
+  "currentStatusConflict": {
+    "liveTableClaim": "Lodi Holdings II | Power | Current",
+    "esgAppendixClaim": "Lodi Holdings & Lodi Holdings II | Strategic Gas | Fund I/II",
+    "regulatoryEvidence": "ArcLight Funds I and II ceased to own the directly supported Lodi Gas Storage operating business when the sale to Buckeye closed in January 2008.",
+    "currentOperatorEvidence": "Rockpoint currently presents Lodi Gas Storage as a 31-Bcf Northern California natural-gas storage complex comprising the Lodi and Kirby Hills facilities.",
+    "resolution": "UNRESOLVED. The current-power row is not sufficient to create a company, while the historic chain is not sufficient to prove that ArcLight has not reused the display name for a different private holding."
+  },
+  "acquisitionExitCheck": {
+    "historicalAcquisition": "CPUC approved the Fund II vehicle's purchase of the second 50% interest, which completed December 15, 2005 and placed Lodi Holdings and Lodi Gas Storage under unified Fund I and Fund II management.",
+    "historicalExit": "Buckeye acquired all member interests in Lodi Gas Storage on January 18, 2008. CPUC expressly stated that Funds I and II would no longer directly or indirectly own Lodi Gas Storage after the transfer.",
+    "exactNameSearch": "No reliable acquisition, ownership, asset, restructuring, or exit document for a distinct company legally named Lodi Holdings II was identified through August 13, 2026.",
+    "subsequentReacquisitionSearch": "No direct evidence of an ArcLight reacquisition of Lodi Gas Storage was found. The current operating business is presented by Rockpoint, not ArcLight."
+  },
+  "evidence": [
+    {
+      "label": "ArcLight - Investments",
+      "url": "https://arclight.com/investments/",
+      "purpose": "Original census display name and the unsupported Current / Power classification",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "b063ec872f511ced61fde82a4e3fc0bc93fc4cdf4547206cc1756b3c074f43ef",
+      "verifiedAt": "2026-08-13T10:05:12.000Z"
+    },
+    {
+      "label": "ArcLight - 2025 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Primary ArcLight evidence combining Lodi Holdings and Lodi Holdings II as one Strategic Gas investment attributed to Funds I and II",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+      "verifiedAt": "2026-08-13T10:05:12.000Z"
+    },
+    {
+      "label": "California Public Utilities Commission - Decision 05-12-007",
+      "url": "https://docs.cpuc.ca.gov/published/Final_decision/51710.htm",
+      "purpose": "Regulatory evidence identifying Lodi Holdings as the operating company's parent, Fund I's existing 50% vehicle, and Fund II's acquisition of the other 50% through WHP Acquisition II",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING",
+      "contentSha256": "d18a68c35126cea928ada3feeff0d79c2e86dec78252156f25255838b71b49f9",
+      "verifiedAt": "2026-08-13T10:05:12.000Z"
+    },
+    {
+      "label": "California Public Utilities Commission - Buckeye transfer decision",
+      "url": "https://docs.cpuc.ca.gov/publishedDocs/published/AGENDA_DECISION/77448.htm",
+      "purpose": "Regulatory evidence for the two 50% holding vehicles, gas-storage asset boundary, July 24, 2007 purchase agreement, and the complete ArcLight Funds I and II exit",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING",
+      "contentSha256": "2b8f756c592a630e16fea7bdff7267552ae540579575c1b8b74814051cf08b96",
+      "verifiedAt": "2026-08-13T10:05:12.000Z"
+    },
+    {
+      "label": "Lodi Gas Storage - audited financial statements filed with the SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/805022/000110465908022585/a08-10038_1ex99d2.htm",
+      "purpose": "Regulatory evidence of the March 2003 and December 2005 ownership transactions, the legal operating-company boundary, and the January 18, 2008 Buckeye closing",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING",
+      "contentSha256": "0036f37b61dce24b5603c17d6b651cbe4bf34b57fec3be277c734c1fb68dcc6b",
+      "verifiedAt": "2026-08-13T10:05:12.000Z"
+    },
+    {
+      "label": "Buckeye - Lodi Gas Storage acquisition closing",
+      "url": "https://www.buckeye.com/wp-content/uploads/2021/08/08-02-Lodi-Closing.pdf",
+      "purpose": "Primary buyer evidence confirming the January 18, 2008 acquisition closing",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "12e81ee208b78c1b63b0d9d1f33dbb940636d6f51818a3295527dc357611ccd1",
+      "verifiedAt": "2026-08-13T10:05:12.000Z"
+    },
+    {
+      "label": "Rockpoint Gas Storage - Lodi",
+      "url": "https://www.rockpointgs.com/Businesses/Lodi",
+      "purpose": "Current operator evidence for the surviving Lodi Gas Storage business, its two-facility boundary, Northern California location, and 31-Bcf working-gas capacity",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "17895673aa7ac151e4333a236448687ddf79ea3c1316ac7ad47eb66b19414280",
+      "verifiedAt": "2026-08-13T10:05:12.000Z"
+    }
+  ],
+  "unresolvedQuestions": [
+    "Does ArcLight's live Lodi Holdings II row represent only the historical Fund II interest in Lodi Gas Storage, or a distinct current private power platform?",
+    "If it is distinct, what are its legal entity, operating assets, company-level geography, entry date, fund vehicle, stake, and co-owners?",
+    "Why does ArcLight's live table classify the name as Current / Power while its ESG appendices combine it with Lodi Holdings as Strategic Gas / Fund I/II?"
+  ],
+  "retryTriggers": [
+    "ArcLight corrects or expands the live investments row",
+    "An ArcLight fund schedule or company disclosure identifies the exact current legal entity and assets",
+    "A regulatory, corporate, or transaction filing links the exact Lodi Holdings II display name to a distinct current operating platform"
+  ],
+  "taskSnapshotSha256": "90838ce328b5f0d671ec9b917e95b2a7dd0ec80095d664f0b23e914e63015684",
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "DEFERRED"
+}
