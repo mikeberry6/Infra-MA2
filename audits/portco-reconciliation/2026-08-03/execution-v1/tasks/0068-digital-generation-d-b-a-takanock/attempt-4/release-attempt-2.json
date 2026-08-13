@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_ATTEMPT",
+  "taskId": "ledger:0068:digital-generation-d-b-a-takanock:0eb6960d",
+  "taskIndex": 68,
+  "attempt": 2,
+  "recordedAt": "2026-08-13T04:41:02.000Z",
+  "releaseSha": "8da4c51e61f669c6b5d1aa3324b2658fae104c9d",
+  "pullRequestNumber": 461,
+  "workflowRunId": 31667749367,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31667749367",
+  "outcome": "FAILED_BEFORE_DATABASE_ACCESS",
+  "reason": "The protected workflow reached release-provenance validation before the required main-branch build had completed, so the exact release SHA did not yet have a successful required build check.",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "remediation": "Wait for the required build on the same release SHA to succeed, then rerun the protected workflow with the unchanged proposal, approval, production snapshot, and release artifact paths."
+}

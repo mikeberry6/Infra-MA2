@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T04:24:12.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0068:digital-generation-d-b-a-takanock:0eb6960d",
+  "updatedAt": "2026-08-13T04:45:30.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -9860,11 +9860,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "2027de512cd25ae5abd72ebd5447c5cab06f4c6be662280791780a5c9246917d",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 4,
       "startedAt": "2026-08-13T04:22:59.000Z",
-      "updatedAt": "2026-08-13T04:24:12.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-13T04:45:30.000Z",
+      "completedAt": "2026-08-13T04:45:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "2f6e7a0af74aa25ce57aad7c69e70448bddfde45b741b17db2f931424f52d8df",
@@ -9881,11 +9881,23 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0068-takanock-v4.json",
           "sha256": "937e130baa5b43fc9517d42a205de250799becd8dc0a9acfa521fa6adccb6379"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31667817914",
+          "sha256": "e4d826bb73b986f661418faac00f7c7c268c0bc74b98dfdd3529bb968a3656f9"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0068-digital-generation-d-b-a-takanock/attempt-4/context.json",
+          "sha256": "f5b4f045d367245ae5af6dc8125e0253cea4bea0d082f7fdf23bc24bcf3e2bd8"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-13T04:45:30.000Z",
+        "auditEventId": "cmsr17vx5000aeh6h5shyy57x",
+        "transactionId": "2d536ff0-f777-44b7-a8e7-48bfb7274b37",
+        "receiptSha256": "e4d826bb73b986f661418faac00f7c7c268c0bc74b98dfdd3529bb968a3656f9",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31667817914"
+      },
       "history": [
         {
           "sequence": 1,
@@ -10106,6 +10118,21 @@
             "937e130baa5b43fc9517d42a205de250799becd8dc0a9acfa521fa6adccb6379"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 21,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-13T04:45:30.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "937e130baa5b43fc9517d42a205de250799becd8dc0a9acfa521fa6adccb6379",
+            "aecd14a0bb0ca521dad7ce170fa4f2798a2f03edd2252048342e215358a259ba",
+            "e4d826bb73b986f661418faac00f7c7c268c0bc74b98dfdd3529bb968a3656f9",
+            "f5b4f045d367245ae5af6dc8125e0253cea4bea0d082f7fdf23bc24bcf3e2bd8"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -26394,5 +26421,5 @@
       ]
     }
   ],
-  "manifestSha256": "880f34821a9dec5a57cce5cd460f649d080070f65d742f65dd7ab334d56fda35"
+  "manifestSha256": "d6255c25d58da73d34c63f08038f15e271273adb6ff6ccd0c911e9da7475ff48"
 }
