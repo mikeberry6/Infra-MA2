@@ -38,6 +38,8 @@ type SponsorFundRow = {
   key: string;
   sponsor: string;
   fund?: string | null;
+  period?: string | null;
+  stake?: string | null;
 };
 
 type MilestoneMeta = {
@@ -170,16 +172,15 @@ function isCurrentOwner(owner: OwnerView): boolean {
 }
 
 function ownerDisplayKey(owner: OwnerView): string {
-  return `${normalizeFirm(owner.firm) || owner.firm.trim().toLowerCase()}|${isCurrentOwner(owner) ? "active" : "former"}`;
-}
-
-function vehicleScore(owner: OwnerView): number {
-  if (!owner.vehicle) return 0;
-  let score = 1;
-  if (owner.fundName) score += 2;
-  if (owner.vehicle.length <= 72) score += 2;
-  if (owner.vehicle.length > 140 || /;/.test(owner.vehicle)) score -= 2;
-  return score;
+  return [
+    normalizeFirm(owner.firm) || owner.firm.trim().toLowerCase(),
+    normalizeFactValue(owner.vehicle || ""),
+    normalizeFactValue(owner.fundName || ""),
+    isCurrentOwner(owner) ? "active" : "former",
+    owner.investmentYear ?? "",
+    owner.exitYear ?? "",
+    normalizeFactValue(owner.stake || ""),
+  ].join("|");
 }
 
 function mergeOwnerDisplayRows(owners: OwnerView[]): OwnerView[] {
@@ -190,23 +191,7 @@ function mergeOwnerDisplayRows(owners: OwnerView[]): OwnerView[] {
     byOwner.set(key, [...(byOwner.get(key) || []), owner]);
   }
 
-  return Array.from(byOwner.values()).map((group) => {
-    const preferred = [...group].sort((a, b) => vehicleScore(b) - vehicleScore(a))[0];
-    const investmentYears = group
-      .map((owner) => owner.investmentYear)
-      .filter((year): year is number => typeof year === "number");
-    const exitYears = group
-      .map((owner) => owner.exitYear)
-      .filter((year): year is number => typeof year === "number");
-    const stakes = uniqueValues(group.map((owner) => owner.stake));
-
-    return {
-      ...preferred,
-      investmentYear: investmentYears.length > 0 ? Math.min(...investmentYears) : preferred.investmentYear,
-      exitYear: exitYears.length > 0 ? Math.max(...exitYears) : preferred.exitYear,
-      stake: stakes.length > 0 ? compactList(stakes, 2) : preferred.stake,
-    };
-  });
+  return Array.from(byOwner.values(), (group) => group[0]);
 }
 
 function splitOwners(owners: OwnerView[]): { active: OwnerView[]; former: OwnerView[] } {
@@ -314,11 +299,16 @@ function buildSponsorFundRows(
   fallbackSponsor: string,
   fallbackFund: string,
 ): SponsorFundRow[] {
-  const rows = owners.map((owner, index) => ({
-    key: `${owner.firm}-${owner.vehicle || owner.fundName || index}`,
-    sponsor: owner.firm || "Unknown sponsor",
-    fund: owner.vehicle || owner.fundName || null,
-  }));
+  const rows = owners.map((owner) => {
+    const period = formatCompactYearRange(owner);
+    return {
+      key: ownerDisplayKey(owner),
+      sponsor: owner.firm || "Unknown sponsor",
+      fund: owner.vehicle || owner.fundName || null,
+      period: period === "N/A" ? null : period,
+      stake: owner.stake || null,
+    };
+  });
 
   if (rows.length > 0) return rows;
   return [{
@@ -473,10 +463,8 @@ function getEvidenceLabel(source: SourceView, groupLabel?: string): string {
 
 function buildOwnershipFacts({
   strategies,
-  stakes,
 }: {
   strategies: string[];
-  stakes: string[];
 }): DiligenceFact[] {
   return buildUniqueFacts(
     [
@@ -491,11 +479,6 @@ function buildOwnershipFacts({
           </>
         ) : undefined,
       },
-      {
-        claim: "stake",
-        label: "Stake",
-        value: stakes.length > 0 ? compactList(stakes, 2) : undefined,
-      },
     ],
     ["status", "geography", "holdPeriod", "evidence"],
   );
@@ -503,15 +486,35 @@ function buildOwnershipFacts({
 
 function SponsorFundLine({ row }: { row: SponsorFundRow }) {
   const showFund = row.fund && normalizeFactValue(row.fund) !== normalizeFactValue(row.sponsor);
+  const accessibleLabel = [row.sponsor, showFund ? row.fund : null, row.period]
+    .filter(Boolean)
+    .join(" — ");
 
   return (
-    <div className="border-b border-[var(--border)] py-3 last:border-b-0">
-      <div className="type-row-title font-semibold">
-        {row.sponsor}
+    <div
+      role="group"
+      aria-label={`${accessibleLabel} ownership period`}
+      className="border-b border-[var(--border)] py-3 last:border-b-0"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="type-row-title font-semibold">
+          {row.sponsor}
+        </div>
+        {row.period && (
+          <span className="shrink-0 type-meta font-medium tabular-nums text-[var(--text-primary)] mono">
+            {row.period}
+          </span>
+        )}
       </div>
       {showFund && (
         <div className="mt-1 type-meta">
           {row.fund}
+        </div>
+      )}
+      {row.stake && (
+        <div className="mt-2 type-micro leading-relaxed">
+          <span className="font-medium text-[var(--text-secondary)]">Stake: </span>
+          {row.stake}
         </div>
       )}
     </div>
@@ -597,9 +600,16 @@ function OwnerLine({
   const visibleStrategies = strategies.filter((strategy) => (
     !repeatedStrategies.some((repeated) => normalizeFactValue(repeated) === normalizeFactValue(strategy))
   ));
+  const accessibleLabel = [owner.firm, owner.vehicle || owner.fundName, yearRange]
+    .filter(Boolean)
+    .join(" — ");
 
   return (
-    <div className="border-b border-[var(--border)] py-3 last:border-b-0">
+    <div
+      role="group"
+      aria-label={`${accessibleLabel} ownership period`}
+      className="border-b border-[var(--border)] py-3 last:border-b-0"
+    >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <div className="type-row-title font-semibold">
@@ -723,13 +733,11 @@ export function PortCoDrawer({
     ? String(company.investmentYear)
     : "N/A";
   const headerStatusPeriod = formatHeaderStatusPeriod(company, primaryOwner);
-  const disclosedStakes = uniqueValues(activeOwners.map((owner) => owner.stake));
   const ownershipFacts = useMemo(
     () => buildOwnershipFacts({
       strategies: primaryStrategies,
-      stakes: disclosedStakes,
     }),
-    [disclosedStakes, primaryStrategies],
+    [primaryStrategies],
   );
   const ownerRepeatedValues = uniqueValues([currentSponsorLabel, vehicleLabel, primaryOwnerPeriod, headerStatusPeriod]);
   const description = useMemo(() => splitDescription(company.description || ""), [company.description]);
