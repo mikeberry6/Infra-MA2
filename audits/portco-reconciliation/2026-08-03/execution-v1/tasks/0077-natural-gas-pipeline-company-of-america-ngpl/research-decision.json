@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-13T10:28:08.000Z",
+  "asOfDate": "2026-08-13",
+  "decision": "CORRECT_EXISTING_CANONICAL_COMPANY_AND_OWNERSHIP",
+  "taskId": "ledger:0077:natural-gas-pipeline-company-of-america-ngpl:d3c7cddc",
+  "taskIndex": 77,
+  "companyName": "Natural Gas Pipeline Company of America (NGPL)",
+  "requestedManagers": [
+    "ArcLight Capital"
+  ],
+  "sourceHoldingIds": [
+    "012-arclight-capital:holding:010:natural-gas-pipeline-company-of-america-ngpl"
+  ],
+  "rationale": "The census holding is not a new company. It is the same regulated U.S. interstate pipeline and storage operator already published as Natural Gas Pipeline Co. of America. The queue missed the match because its normalizer did not equate the terminal NGPL acronym and Company/Co. wording. Preserve the existing production ID, correct the canonical legal name and aliases, and replace the single unspecified ArcLight owner row with complete current and former ownership periods. Current direct economic ownership is ArcLight-managed funds at 62.5% and Kinder Morgan at 37.5%; Kinder Morgan remains operator. Brookfield completed the sale of its remaining 25% on May 13, 2025 and is a former owner. No NGPL-specific sale or pending exit was identified through August 13, 2026. DigitalBridge's announced acquisition of ArcLight is a manager-level transaction and does not make DigitalBridge a direct NGPL owner.",
+  "identityResolution": {
+    "canonicalLegalName": "Natural Gas Pipeline Company of America LLC",
+    "existingProductionCompanyId": "cmrxpj6gy00jbivheg6wo11g8",
+    "existingSeedKey": "natural gas pipeline co. of america|United States",
+    "aliases": [
+      "Natural Gas Pipeline Co. of America",
+      "Natural Gas Pipeline Company of America",
+      "Natural Gas Pipeline Company of America (NGPL)",
+      "NGPL",
+      "Natural"
+    ],
+    "parentBoundary": "NGPL PipeCo LLC is the equity-holding parent and is not a separate PortCo.",
+    "vehicleBoundary": "AL NGPL Holdings LLC, AL NGPL Fund VIII Funding LLC and Kinder Morgan NGPL Holdings LLC are ownership vehicles, not separate PortCos.",
+    "duplicateDecision": "Correct the existing company in place; do not create a duplicate or redirect the existing production ID."
+  },
+  "ownershipResolution": {
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "fund": "ArcLight Energy Partners Fund VII, L.P.",
+        "vehicle": "AL NGPL Holdings LLC",
+        "stake": "37.5%",
+        "entryDate": "2021-03-08",
+        "followOnDate": "2023-06-15",
+        "state": "CLOSED_ACTIVE"
+      },
+      {
+        "manager": "ArcLight Capital Partners",
+        "fund": "ArcLight Infrastructure Partners Fund VIII",
+        "vehicle": "AL NGPL Fund VIII Funding LLC / Fund VIII-A and parallel vehicles, including AL NGPL Fund VIII Co-Invest, L.P.",
+        "stake": "25% aggregate; internal vehicle split not publicly disclosed",
+        "announcementDate": "2025-03-21",
+        "entryDate": "2025-05-13",
+        "state": "CLOSED_ACTIVE"
+      },
+      {
+        "manager": "Kinder Morgan, Inc.",
+        "vehicle": "Kinder Morgan NGPL Holdings LLC",
+        "stake": "37.5%",
+        "entryYear": 1999,
+        "state": "CLOSED_ACTIVE",
+        "operator": true
+      }
+    ],
+    "formerOwners": [
+      {
+        "manager": "Brookfield Asset Management",
+        "vehicle": "BIP PipeCo Holdings LLC / predecessor vehicles",
+        "stake": "25% at exit; previously 50%",
+        "entryYear": 2009,
+        "exitDate": "2025-05-13",
+        "state": "REALIZED"
+      }
+    ],
+    "currentStakeTotal": "100%",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "sector": "Midstream",
+    "subsector": "Natural Gas Transmission & Storage",
+    "headquarters": "NOT_PUBLICLY_DISCLOSED",
+    "regulatoryOffice": "Downers Grove, Illinois",
+    "footprint": "Approximately 9,105 miles of pipeline and 288 Bcf of working gas storage as of December 31, 2025, spanning nine states and linking major U.S. supply basins with Midwest and Gulf Coast markets.",
+    "services": "Firm, flexible-firm and interruptible natural-gas transportation; multiple firm and interruptible storage services; balancing; park-and-loan; and line-pack services."
+  },
+  "acquisitionExitCheck": {
+    "initialArcLightAcquisition": "ArcLight's initial 25% acquisition closed March 8, 2021.",
+    "incrementalArcLightAcquisition": "ArcLight acquired an additional 12.5% on June 15, 2023, increasing its interest to 37.5%.",
+    "brookfieldExit": "Brookfield signed the sale of its remaining 25% on March 21, 2025. ArcLight announced completion on May 13, 2025, raising ArcLight-managed ownership to 62.5%, and Brookfield later reported that its remaining U.S. gas-pipeline interest had been sold.",
+    "currentOwnership": "Kinder Morgan's 2025 Form 10-K reports a 37.5% interest. Kinder Morgan's current NGPL overview states that Kinder Morgan indirectly owns 37.5%, operates the company and ArcLight-controlled funds own the remaining 62.5%.",
+    "subsequentExitSearch": "No later NGPL equity sale, pending exit or direct incoming buyer was identified through August 13, 2026."
+  },
+  "evidence": [
+    {
+      "label": "Kinder Morgan - NGPL company overview",
+      "url": "https://pipeline2.kindermorgan.com/Documents/NGPL/NGPL_CI_Cpny_Overview-20250702070807.pdf",
+      "purpose": "Current legal identity, operating boundary, services and 37.5% Kinder Morgan / 62.5% ArcLight-controlled ownership",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "ff61df6314b0949d49402569b58663ae42b98dff248b5788b46b001029e6e7ce",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    },
+    {
+      "label": "Kinder Morgan - 2025 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1506307/000150630726000011/kmi-20251231.htm",
+      "purpose": "Audited current 37.5% ownership and 9,105-mile / 288-Bcf system scale",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    },
+    {
+      "label": "Kinder Morgan - company history",
+      "url": "https://www.kindermorgan.com/About-Us/History",
+      "purpose": "Kinder Morgan's 1999 NGPL entry and continuing 37.5% operated interest",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "ba3c9140ad3142d247d4b7d404ac1fab9151abfa2b7f657584e144a6a890ab1e",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    },
+    {
+      "label": "ArcLight - completed 2025 NGPL acquisition",
+      "url": "https://www.prnewswire.com/news-releases/arclight-acquires-interest-in-natural-gas-pipeline-company-of-america-one-of-the-largest-natural-gas-infrastructure-assets-in-north-america-302453172.html",
+      "purpose": "May 13, 2025 completion and current ArcLight 62.5% / Kinder Morgan 37.5% ownership",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "d17c0fa7bbc115d45c5065c32b7409d23ecfe40c013b02048c00401a78f91816",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    },
+    {
+      "label": "ArcLight - 2023 incremental NGPL acquisition",
+      "url": "https://www.prnewswire.com/news-releases/arclight-acquires-an-incremental-interest-in-natural-gas-pipeline-company-of-america-llc-from-brookfield-infrastructure-301852235.html",
+      "purpose": "June 15, 2023 acquisition of an additional 12.5% and resulting 37.5% ArcLight interest",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "fb54cbbb62f56305682e37db54f4e80cb91595acf0b5ce6c152be4570163d25e",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    },
+    {
+      "label": "Kinder Morgan - 2022 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1506307/000150630723000023/kmi-20221231.htm",
+      "purpose": "March 8, 2021 initial ArcLight acquisition closing and post-close ownership",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    },
+    {
+      "label": "Brookfield Infrastructure - NGPL sale announcement",
+      "url": "https://bip.brookfield.com/press-releases/bipc/brookfield-infrastructure-announces-sale-ngpl-amidst-strong-capital-recycling",
+      "purpose": "March 21, 2025 signed sale of Brookfield's remaining 25% and complete-exit intent",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "b1c9261a8067f22a944bc20db724cade96c40c622f5fee81310cb5dea4ecf20c",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    },
+    {
+      "label": "Brookfield - Q2 2025 shareholder letter",
+      "url": "https://bip.brookfield.com/reports-filings/letters-shareholders/q2-2025-letter-shareholders",
+      "purpose": "Subsequent primary confirmation that Brookfield completed the sale of its remaining U.S. gas-pipeline interest",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "7ef6f11d1c62752b8ac31fa10f9ea3895c54a8afc70a26df18a3f36fe3de8892",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    },
+    {
+      "label": "ArcLight — 2025 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Fund VII attribution and strategic-gas infrastructure classification",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    },
+    {
+      "label": "SEC Form D - AL NGPL Fund VIII Co-Invest, L.P.",
+      "url": "https://www.sec.gov/Archives/edgar/data/2065706/000206570625000001/xslFormDX01/primary_doc.xml",
+      "purpose": "Regulatory corroboration of the Fund VIII co-invest vehicle",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedAt": "2026-08-13T10:28:08.000Z"
+    }
+  ],
+  "unresolvedQuestions": [],
+  "taskSnapshotSha256": "6be9568a1087b2889b96df11d7fb0c9859d7e5b2edc7a50881c66246f72a96c6",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION"
+}

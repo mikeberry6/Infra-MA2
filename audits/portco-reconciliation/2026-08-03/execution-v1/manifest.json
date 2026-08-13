@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T10:06:30.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-13T10:44:02.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0077:natural-gas-pipeline-company-of-america-ngpl:d3c7cddc",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -11219,20 +11219,32 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "fdba56b2e2d2c6c4159a1b2bb13937f4d9d17a37a02f4f224bafaa9bfa3a58b3",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-13T10:40:31.000Z",
+      "updatedAt": "2026-08-13T10:44:02.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0077-natural-gas-pipeline-company-of-america-ngpl/attempt-2/task-snapshot.json",
+          "sha256": "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0077-natural-gas-pipeline-company-of-america-ngpl/attempt-2/proposal.json",
+          "sha256": "a03fc2601429b63235ad90999fe132a92b9fedce2b9ea8da71b9aff4ffa63ccd"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0077-natural-gas-pipeline-company-of-america-ngpl-v2.json",
+          "sha256": "cfc55e32462baba38a266ac42779cdf78576b7b730dd7c7200ea0197164bfa28"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0077-natural-gas-pipeline-company-of-america-ngpl/attempt-2/audit-correction.json",
+          "sha256": "1f35cb8572b0e79a344bf9fa74e084f9655b7e92338d5e915a7ce12cc2200257"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -11246,6 +11258,110 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T10:13:35.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T10:32:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6be9568a1087b2889b96df11d7fb0c9859d7e5b2edc7a50881c66246f72a96c6",
+          "evidenceSha256": [
+            "6be9568a1087b2889b96df11d7fb0c9859d7e5b2edc7a50881c66246f72a96c6",
+            "7a63ac776d7a51b81a0ccfd4849e2ff3389ba93072bcae20eef683e2fd20f109",
+            "c8422230b1edcd69c27d36e2181f9fe6de56c62c7317f08db64208c0081605c6"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T10:32:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6be9568a1087b2889b96df11d7fb0c9859d7e5b2edc7a50881c66246f72a96c6",
+          "evidenceSha256": [
+            "6be9568a1087b2889b96df11d7fb0c9859d7e5b2edc7a50881c66246f72a96c6"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T10:40:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6be9568a1087b2889b96df11d7fb0c9859d7e5b2edc7a50881c66246f72a96c6",
+          "evidenceSha256": [
+            "8304948e317b5aef7dd4f377d44179478afa550e17630c1a1ae1e2eede66dfc6"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-13T10:40:31.000Z",
+          "reason": "Pre-release independent audit found exact ownership-vehicle and Brookfield entry-date fields more specific than the captured evidence contract; no code, seed, or database release occurred.",
+          "taskSnapshotSha256": "6be9568a1087b2889b96df11d7fb0c9859d7e5b2edc7a50881c66246f72a96c6",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-13T10:40:31.000Z",
+          "reason": "Retry with conservative evidence-bounded ownership fields after pre-release audit.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T10:43:17.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70",
+          "evidenceSha256": [
+            "1f35cb8572b0e79a344bf9fa74e084f9655b7e92338d5e915a7ce12cc2200257",
+            "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70",
+            "a03fc2601429b63235ad90999fe132a92b9fedce2b9ea8da71b9aff4ffa63ccd"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T10:43:17.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T10:44:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70",
+          "evidenceSha256": [
+            "cfc55e32462baba38a266ac42779cdf78576b7b730dd7c7200ea0197164bfa28"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -27232,5 +27348,5 @@
       ]
     }
   ],
-  "manifestSha256": "43d13d5a53b2ca99ced6ce4ac6b532a3cb311be74b3b98df0c3edccde1ebf9fa"
+  "manifestSha256": "0ef35964db7f6fa23b91cab109b3a8e589604d1700239d3e31dedd7300c482d1"
 }

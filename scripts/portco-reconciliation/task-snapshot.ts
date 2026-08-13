@@ -167,6 +167,11 @@ export type TaskSnapshotTargetResolution =
     linkedQueueTaskId: null;
   }
   | {
+    method: "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY";
+    targetCompanyId: string;
+    linkedQueueTaskId: null;
+  }
+  | {
     method: "NO_EXISTING_TARGET";
     targetCompanyId: null;
     linkedQueueTaskId: null;
@@ -268,6 +273,24 @@ export function resolveTaskSnapshotTarget(input: {
       linkedQueueTaskId: null,
     };
   }
+  const reviewedParentheticalAliasBase = parentheticalAcronymBase(input.queueEntry.companyName);
+  if (
+    symmetricLinks.length === 0
+    && reviewedParentheticalAliasBase
+    && input.queueEntry.queueKind === "CANONICAL_COMPANY"
+    && input.queueEntry.decisionStatus === "READY_FOR_PROPOSAL"
+    && input.queueEntry.sourceHoldingIds.length > 0
+    && input.queueEntry.sourceRepoOnlyIds.length === 0
+    && input.queueEntry.productionCompanyIds.length === 0
+    && input.queueEntry.seedKeys.length === 0
+    && input.queueEntry.candidateCanonicalKeys.length === 0
+  ) {
+    return {
+      method: "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY",
+      targetCompanyId: reviewedTargetCompanyId,
+      linkedQueueTaskId: null,
+    };
+  }
   if (symmetricLinks.length !== 1) {
     throw new Error(
       symmetricLinks.length === 0
@@ -291,6 +314,11 @@ function dbaAlias(value: string): string | null {
   return match?.[1]?.trim() || null;
 }
 
+function parentheticalAcronymBase(value: string): string | null {
+  const match = value.match(/^(.*?)\s*\(\s*([A-Z][A-Z0-9&.-]{1,15})\s*\)\s*$/);
+  return match?.[1]?.trim() || null;
+}
+
 const LEGAL_SUFFIXES = new Set([
   "co",
   "company",
@@ -310,6 +338,13 @@ function normalizedCompanyBaseName(value: string): string {
   const tokens = canonicalIdentityPart(value).split("-").filter(Boolean);
   while (tokens.length > 1 && LEGAL_SUFFIXES.has(tokens[tokens.length - 1])) tokens.pop();
   return tokens.join("-");
+}
+
+function normalizedParentheticalAliasBaseName(value: string): string {
+  return canonicalIdentityPart(value)
+    .split("-")
+    .map((token) => token === "co" ? "company" : token)
+    .join("-");
 }
 
 export function matchesImmutableTaskIdentity(
@@ -335,13 +370,16 @@ export function resolvedTaskCanonicalKey(input: {
   targetResolution: TaskSnapshotTargetResolution;
   targetCompanyImage: CompanyImage | null;
 }): string | null {
-  if (input.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY") {
+  if (
+    input.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
+    || input.targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
+  ) {
     if (!input.targetCompanyImage) {
-      throw new Error("Reviewed DBA target cannot resolve a canonical identity without a company");
+      throw new Error("Reviewed alias target cannot resolve a canonical identity without a company");
     }
     const name = canonicalIdentityPart(input.targetCompanyImage.name);
     const country = canonicalIdentityPart(input.targetCompanyImage.country);
-    if (!name || !country) throw new Error("Reviewed DBA target cannot resolve an empty canonical identity");
+    if (!name || !country) throw new Error("Reviewed alias target cannot resolve an empty canonical identity");
     return `${name}|${country}`;
   }
   if (input.queueEntry.canonicalKey) return input.queueEntry.canonicalKey;
@@ -366,21 +404,40 @@ export function assertReviewedPostQueueExactIdentity(input: {
   if (
     input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
+    && input.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
   ) return;
   if (!input.targetCompanyImage) {
     throw new Error("Reviewed post-queue target no longer exists");
   }
   const isDba = input.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY";
+  const isParentheticalAlias = input.targetResolution.method
+    === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY";
   const reviewedDbaAlias = isDba ? dbaAlias(input.queueEntry.companyName) : null;
-  const matchesTargetIdentity = (company: Pick<SnapshotCompany, "name" | "country">): boolean => isDba
-    ? reviewedDbaAlias !== null
-      && normalizedCompanyBaseName(company.name) === normalizedCompanyBaseName(reviewedDbaAlias)
-      && normalizedIdentity(company.country) === normalizedIdentity(input.queueEntry.country)
-    : matchesImmutableTaskIdentity(input.queueEntry, company);
+  const reviewedParentheticalAliasBase = isParentheticalAlias
+    ? parentheticalAcronymBase(input.queueEntry.companyName)
+    : null;
+  const matchesTargetIdentity = (company: Pick<SnapshotCompany, "name" | "country">): boolean => {
+    if (isDba) {
+      return reviewedDbaAlias !== null
+        && normalizedCompanyBaseName(company.name) === normalizedCompanyBaseName(reviewedDbaAlias)
+        && normalizedIdentity(company.country) === normalizedIdentity(input.queueEntry.country);
+    }
+    if (isParentheticalAlias) {
+      return reviewedParentheticalAliasBase !== null
+        && normalizedParentheticalAliasBaseName(company.name)
+          === normalizedParentheticalAliasBaseName(reviewedParentheticalAliasBase)
+        && normalizedIdentity(company.country) === normalizedIdentity(input.queueEntry.country);
+    }
+    return matchesImmutableTaskIdentity(input.queueEntry, company);
+  };
   if (!matchesTargetIdentity(input.targetCompanyImage)) {
-    throw new Error(isDba
-      ? "Reviewed post-queue target does not exactly match the immutable DBA alias and country"
-      : "Reviewed post-queue target does not exactly match the immutable task identity");
+    throw new Error(
+      isDba
+        ? "Reviewed post-queue target does not exactly match the immutable DBA alias and country"
+        : isParentheticalAlias
+          ? "Reviewed post-queue target does not exactly match the immutable parenthetical-alias base and country"
+          : "Reviewed post-queue target does not exactly match the immutable task identity",
+    );
   }
   const matches = input.productionCompanies.filter(matchesTargetIdentity);
   if (matches.length !== 1) {
@@ -420,6 +477,7 @@ export function resolvedTaskSeedKeys(input: {
   if (
     input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
+    && input.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
   ) return [];
   if (!input.targetCompanyImage) {
     throw new Error("Reviewed post-queue target cannot bind an absent evaluated seed identity");
@@ -650,7 +708,8 @@ export async function buildTaskSnapshotContext(input: {
     seedEntryPresent: seedEntry !== null,
     targetRecordStatus: targetCompanyImage?.recordStatus ?? null,
     requireEvaluatedSeedEntry: targetResolution.method === "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
-      || targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY",
+      || targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
+      || targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY",
   });
   const resolvedCanonicalKey = resolvedTaskCanonicalKey({
     queueEntry,
