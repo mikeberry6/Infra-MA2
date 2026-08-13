@@ -84,6 +84,8 @@ jobs:
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
       PUBLIC_BASE_PATH: /Infra-MA2
+      REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
+      REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
 
     steps:
       - name: Require protected-main dispatch and exact input shapes
@@ -200,7 +202,7 @@ jobs:
         shell: bash
         run: |
           missing=0
-          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2 FORBIDDEN_DATABASE_HOST_3 VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL; do
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2 FORBIDDEN_DATABASE_HOST_3 VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL REVALIDATE_URL REVALIDATE_TOKEN; do
             if [ -z "${!name:-}" ]; then
               echo "::error::$name is required."
               missing=1
@@ -294,6 +296,22 @@ jobs:
             --snapshot-sha256="$SNAPSHOT_SHA256" \
             2>&1 | tee tmp/portco-reconciliation/production/dry-run.log
 
+      - name: Prove cache revalidation readiness before database mutation
+        shell: bash
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --retry 3 \
+            --retry-delay 2 \
+            --retry-all-errors \
+            --request GET \
+            --header "Authorization: Bearer $REVALIDATE_TOKEN" \
+            "$REVALIDATE_URL" \
+            > tmp/portco-reconciliation/production/cache-preflight.json
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.ready !== true) throw new Error("Cache preflight did not confirm readiness")' \
+            tmp/portco-reconciliation/production/cache-preflight.json
+
       - name: Final authorization, release, schema, target, and artifact recheck
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -350,6 +368,36 @@ jobs:
             --receipt="$receipt" \
             --public-base-url="${PRODUCTION_URL}${PUBLIC_BASE_PATH}/" \
             2>&1 | tee tmp/portco-reconciliation/production/apply.log
+
+      - name: Revalidate public PortCo caches after apply
+        if: steps.apply.outcome == 'success'
+        shell: bash
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --retry 3 \
+            --retry-delay 2 \
+            --retry-all-errors \
+            --request POST \
+            --header "Authorization: Bearer $REVALIDATE_TOKEN" \
+            "$REVALIDATE_URL" \
+            > tmp/portco-reconciliation/production/cache-revalidation.json
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.revalidated !== true) throw new Error("PortCo cache revalidation did not succeed")' \
+            tmp/portco-reconciliation/production/cache-revalidation.json
+
+      - name: Verify ordinary unversioned detail API after cache revalidation
+        if: steps.apply.outcome == 'success'
+        shell: bash
+        run: |
+          npx tsx scripts/portco-reconciliation/verify-unversioned-public-api.ts \
+            --proposal="$PROPOSAL_PATH" \
+            --approval="$APPROVAL_PATH" \
+            --receipt=tmp/portco-reconciliation/production/apply-receipt.json \
+            --proposal-sha256="$PROPOSAL_SHA256" \
+            --approval-sha256="$APPROVAL_SHA256" \
+            --public-base-url="${PRODUCTION_URL}${PUBLIC_BASE_PATH}/" \
+            --output=tmp/portco-reconciliation/production/unversioned-public-api-verification.json
 
       - name: Verify receipt and canonical detail API after apply
         if: steps.apply.outcome == 'success'

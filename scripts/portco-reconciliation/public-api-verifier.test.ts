@@ -172,4 +172,43 @@ describe("public PortCo detail API verifier", () => {
 
     await expect(verify("company_acme", image, [])).rejects.toThrow(/remains available/i);
   });
+
+  it("uses the after-image hash by default and can exercise the ordinary unversioned cache key", async () => {
+    const image = companyImageFixture();
+    const requestedUrls: URL[] = [];
+    const expected = expectedPublicProjection({
+      companyId: "company_acme",
+      afterImage: image,
+      retiredCompanyIds: [],
+    });
+    const payload = {
+      company: {
+        ...expected,
+        focusIds: expected.requiredFocusIds,
+        owners: expected.owners,
+        milestones: expected.milestones.map((value) => JSON.parse(value)),
+        management: expected.management.map((value) => JSON.parse(value)),
+        sources: expected.sources.map((value) => JSON.parse(value)),
+      },
+    };
+    const fetchImpl = async (input: string | URL | Request) => {
+      requestedUrls.push(new URL(input instanceof Request ? input.url : input.toString()));
+      return Response.json(payload);
+    };
+    await createPublicDetailApiVerifier({
+      baseUrl: "https://example.com/Infra-MA2/",
+      attempts: 1,
+      fetchImpl,
+    })("company_acme", image, []);
+    await createPublicDetailApiVerifier({
+      baseUrl: "https://example.com/Infra-MA2/",
+      attempts: 1,
+      fetchImpl,
+      cacheVersion: "default",
+    })("company_acme", image, []);
+
+    expect(requestedUrls).toHaveLength(2);
+    expect(requestedUrls[0].searchParams.get("verification")).toMatch(/^[a-f0-9]{64}$/);
+    expect(requestedUrls[1].search).toBe("");
+  });
 });

@@ -106,6 +106,7 @@ export async function recoverAppliedReceipt(input: {
     taskId: proposal.taskId,
     taskIndex: proposal.taskIndex,
     companyName: proposal.companyName,
+    companyId: input.evidence.companyId,
     proposalSha256: proposal.proposalSha256,
     approvalSha256: approval.approvalSha256,
     productionSnapshotSha256: proposal.productionSnapshotSha256,

@@ -1008,6 +1008,10 @@ export const reconciliationApplyReceiptSchema = z.strictObject({
   taskId: nonEmpty,
   taskIndex: z.number().int().positive(),
   companyName: nonEmpty,
+  // Optional so receipts issued before the public-cache verification gate
+  // retain their historical hashes. New receipts bind the canonical public
+  // company id, including ids assigned during CREATE_COMPANY transactions.
+  companyId: nonEmpty.optional(),
   proposalSha256: sha256Value,
   approvalSha256: sha256Value,
   productionSnapshotSha256: sha256Value,

@@ -112,6 +112,7 @@ describe("PortCo apply receipt recovery", () => {
 
     expect(receipt.auditEventId).toBe("audit_1");
     expect(receipt.transactionId).toBe("recovered:revision_1");
+    expect(receipt.companyId).toBe(evidence.companyId);
     expect(receipt.verification).toEqual({
       databaseMatchesAfterImage: true,
       seedMatchesAfterImage: true,

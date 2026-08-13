@@ -284,6 +284,7 @@ export function createPublicDetailApiVerifier(options: {
   attempts?: number;
   retryDelayMs?: number;
   fetchImpl?: typeof fetch;
+  cacheVersion?: "after-image" | "default";
 }): (companyId: string, afterImage: CompanyImage, retiredCompanyIds: string[]) => Promise<void> {
   const baseUrl = new URL(options.baseUrl);
   const local = baseUrl.hostname === "127.0.0.1" || baseUrl.hostname === "localhost";
@@ -293,12 +294,15 @@ export function createPublicDetailApiVerifier(options: {
   const attempts = options.attempts ?? 12;
   const retryDelayMs = options.retryDelayMs ?? 5_000;
   const fetchImpl = options.fetchImpl ?? fetch;
+  const cacheVersion = options.cacheVersion ?? "after-image";
   return async (companyId, afterImage, retiredCompanyIds) => {
     let lastError: unknown;
     for (let attempt = 1; attempt <= attempts; attempt += 1) {
       try {
         const url = new URL(`api/portfolio/${encodeURIComponent(companyId)}`, `${baseUrl.toString().replace(/\/?$/, "/")}`);
-        url.searchParams.set("verification", companyImageSha256(afterImage));
+        if (cacheVersion === "after-image") {
+          url.searchParams.set("verification", companyImageSha256(afterImage));
+        }
         const response = await fetchImpl(url, {
           method: "GET",
           headers: { accept: "application/json", "cache-control": "no-cache" },
