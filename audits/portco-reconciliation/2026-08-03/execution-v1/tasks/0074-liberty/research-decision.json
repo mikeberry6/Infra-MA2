@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-13T09:29:53.000Z",
+  "asOfDate": "2026-08-13",
+  "decision": "DEFER_IDENTITY_GEOGRAPHY_AND_COMPANY_MUTATION",
+  "taskId": "ledger:0074:liberty:69ac2ee0",
+  "taskIndex": 74,
+  "companyName": "Liberty",
+  "requestedManagers": [
+    "ArcLight Capital"
+  ],
+  "rationale": "ArcLight's official investment materials establish Liberty as a distinct, current Strategic Gas investment of ArcLight Energy Partners Fund VII, L.P. no later than December 31, 2023. They do not disclose the underlying legal or operating entity, website, headquarters, operating footprint, assets, subsidiaries, customers, stake, exact entry date, co-owners, or company-level country. The census country and manager or fund context cannot substitute for direct evidence that this specific company is primarily based in or dedicated to the United States, Canada, or Mexico. Creating the repository's proposed United States company record would therefore infer mandatory identity, geography, and operating-boundary facts. No existing production or evaluated-seed company matches the identity, and no evidence supports merging Liberty with an existing company or any similarly named public candidate. The database and seed mutation are deferred until the legal or platform identity and company-level North American qualification can be directly verified.",
+  "identityResolution": {
+    "canonicalDisplayName": "Liberty",
+    "legalName": "UNRESOLVED",
+    "aliases": [],
+    "website": "NOT_PUBLICLY_DISCLOSED",
+    "platformBoundary": "ArcLight lists Liberty as a separate manager-level portfolio investment, but its public materials do not identify the legal entity or operating perimeter beneath that display name.",
+    "duplicateResolution": "No production company, evaluated-seed company, reciprocal ledger candidate, or current public evidence supports a merge. Liberty Renewables and Liberty Tire Recycling are existing repository companies owned by other managers and are unrelated."
+  },
+  "ownershipResolution": {
+    "manager": "ArcLight Capital Partners",
+    "fund": "ArcLight Energy Partners Fund VII, L.P.",
+    "state": "CLOSED_ACTIVE",
+    "earliestConfirmedOwnership": "2023-12-31",
+    "earliestConfirmedOwnershipPrecision": "ON_OR_BEFORE",
+    "exactEntryDate": "NOT_PUBLICLY_DISCLOSED",
+    "stake": "NOT_PUBLICLY_DISCLOSED",
+    "specificOwnershipVehicle": "NOT_PUBLICLY_DISCLOSED",
+    "coOwners": "NOT_PUBLICLY_DISCLOSED",
+    "exitSearch": "No Liberty-specific sale, exit, restructuring, or pending ownership transaction was identified through August 13, 2026; ArcLight's live investments page continues to label Liberty Current."
+  },
+  "geographyResolution": {
+    "companyCountry": "UNRESOLVED",
+    "companyHeadquarters": "NOT_PUBLICLY_DISCLOSED",
+    "operatingFootprint": "NOT_PUBLICLY_DISCLOSED",
+    "reason": "Manager, fund, and census geography do not directly establish the location or dedicated operating geography of this individual holding."
+  },
+  "identityChecks": [
+    {
+      "candidate": "Liberty Bell Power",
+      "disposition": "SEPARATE_ENTITY",
+      "basis": "ArcLight lists Liberty Bell Power separately as a realized power investment."
+    },
+    {
+      "candidate": "Natural Gas Pipeline Company of America and Gulf Coast Express",
+      "disposition": "SEPARATE_ENTITIES",
+      "basis": "ArcLight lists both separately from Liberty as current Strategic Gas investments."
+    },
+    {
+      "candidate": "Saber Midstream / Haynesville system",
+      "disposition": "SEPARATE_REALIZED_ENTITY",
+      "basis": "ArcLight identifies the platform separately and as realized."
+    },
+    {
+      "candidate": "Liberty NGL Pipeline",
+      "disposition": "UNRELATED",
+      "basis": "Kinder Morgan identifies the pipeline within a Kinder Morgan and Energy Transfer joint venture; no ArcLight ownership evidence was found."
+    },
+    {
+      "candidate": "Liberty Gas Storage / LA Storage",
+      "disposition": "UNSUPPORTED_MATCH",
+      "basis": "Public regulatory references do not establish that these names are ArcLight's Liberty investment."
+    },
+    {
+      "candidate": "Liberty Renewables, Liberty Tire Recycling, Liberty Energy, MarkWest Liberty, and Liberty Midstream Solutions",
+      "disposition": "UNRELATED",
+      "basis": "Their owners, businesses, and public identities do not match the unresolved ArcLight investment."
+    }
+  ],
+  "evidence": [
+    {
+      "label": "ArcLight - Investments",
+      "url": "https://arclight.com/investments/",
+      "purpose": "Distinct Liberty portfolio identity, Strategic Gas classification, and current status",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "b063ec872f511ced61fde82a4e3fc0bc93fc4cdf4547206cc1756b3c074f43ef",
+      "verifiedAt": "2026-08-13T09:29:53.000Z"
+    },
+    {
+      "label": "ArcLight - 2024 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/01/2024-ArcLight_ESGReport.pdf",
+      "purpose": "Fund VII attribution and ownership as of December 31, 2023",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "a0674ba82c66e7d82c265fdee4388670fc6e4bf5888e01c64d5e5d104aa82c5f",
+      "verifiedAt": "2026-08-13T09:29:53.000Z"
+    },
+    {
+      "label": "ArcLight - 2025 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Fund VII attribution and ownership as of December 31, 2024",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+      "verifiedAt": "2026-08-13T09:29:53.000Z"
+    },
+    {
+      "label": "ArcLight - Strategic Gas Focus",
+      "url": "https://arclight.com/focus/",
+      "purpose": "Strategic Gas infrastructure definition",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "73cfec449c3415e551255a60391934bf0daadbf165f2c0762d507caf8c904e60",
+      "verifiedAt": "2026-08-13T09:29:53.000Z"
+    },
+    {
+      "label": "SEC - ArcLight Energy Partners Fund VII, L.P. Form D",
+      "url": "https://www.sec.gov/Archives/edgar/data/1740500/000174050118000002/xslFormDX01/primary_doc.xml",
+      "purpose": "Fund VII legal identity",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING",
+      "contentSha256": "0f9ca2efbd4c929757b3e20929ece5a8d10be25eb765181374d66e48d0367189",
+      "verifiedAt": "2026-08-13T09:29:53.000Z"
+    },
+    {
+      "label": "Kinder Morgan - Natural Gas Operations",
+      "url": "https://www.kindermorgan.com/Operations/Natural-Gas/Index",
+      "purpose": "Exclusion of Liberty NGL Pipeline as an unsupported ArcLight identity match",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "contentSha256": "158a32c25982d1788c52bfb1b3cb100cf128dbb7e2713e7ca33ce5904159ef3f",
+      "verifiedAt": "2026-08-13T09:29:53.000Z"
+    }
+  ],
+  "unresolvedQuestions": [
+    "What legal entity, website, and operating assets sit beneath ArcLight's Liberty display name?",
+    "Is the company primarily based in or dedicated to the United States, Canada, or Mexico?",
+    "What are ArcLight's exact investment date, ownership vehicle, stake, and co-owner structure?"
+  ],
+  "retryTriggers": [
+    "An ArcLight or company disclosure identifies Liberty's legal entity, country, headquarters, or North American assets",
+    "A regulatory or corporate filing identifies the legal entity and operating perimeter",
+    "A transaction announcement discloses the original investment, current ownership structure, or disposition"
+  ],
+  "taskSnapshotSha256": "9950d97a3f3649292683753dac55232f67309cc0bb04e521cc47d89198232055",
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "DEFERRED"
+}

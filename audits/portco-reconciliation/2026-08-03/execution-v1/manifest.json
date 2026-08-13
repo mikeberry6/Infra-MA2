@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T09:11:44.000Z",
+  "updatedAt": "2026-08-13T09:29:53.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -11018,20 +11018,26 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "32ba7a29fc932f84e9b0117f15a55ccac0741c5b2fc91253f9d2dc1b313bdb5c",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-13T09:16:44.000Z",
+      "updatedAt": "2026-08-13T09:29:53.000Z",
+      "completedAt": "2026-08-13T09:29:53.000Z",
+      "exceptionReason": "ArcLight manager- and Fund VII-level ownership is supported, but the underlying legal or platform identity and company-level North American geography remain unresolved; mutation is deferred to avoid a false canonical record.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-1/task-snapshot.json",
+          "sha256": "9950d97a3f3649292683753dac55232f67309cc0bb04e521cc47d89198232055"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/research-decision.json",
+          "sha256": "c0c13e87d67b8a49a33a177f4905ea4ebea9e7461e1ed943076062ba2d36dbc6"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -11045,6 +11051,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T09:16:44.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "DEFERRED",
+          "at": "2026-08-13T09:29:53.000Z",
+          "reason": "ArcLight manager- and Fund VII-level ownership is supported, but the underlying legal or platform identity and company-level North American geography remain unresolved; mutation is deferred to avoid a false canonical record.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "9950d97a3f3649292683753dac55232f67309cc0bb04e521cc47d89198232055",
+            "c0c13e87d67b8a49a33a177f4905ea4ebea9e7461e1ed943076062ba2d36dbc6"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -27145,5 +27174,5 @@
       ]
     }
   ],
-  "manifestSha256": "ee0ef76f17f54de0ed8fdf9c019018b2caecb39fb0344077430fa8b3449db211"
+  "manifestSha256": "1cbec37e548dd87d91cdfe7d339414ea23504727689031c9275661b4e252367a"
 }
