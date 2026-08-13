@@ -238,11 +238,15 @@ function verifyContext(input: unknown): TaskSnapshotContext {
   if (
     context.sourceQueueEntry.canonicalKey !== null
     && context.resolvedCanonicalKey !== context.sourceQueueEntry.canonicalKey
+    && context.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
   ) {
     throw new Error("Task context resolved canonical key does not match its immutable queue identity");
   }
   if (
-    context.targetResolution.method === "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
+    (
+      context.targetResolution.method === "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
+      || context.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
+    )
     && !context.resolvedCanonicalKey
   ) {
     throw new Error("Reviewed post-queue task context is missing its resolved canonical identity");
@@ -312,6 +316,7 @@ export function proposalCanonicalKey(context: Pick<
   if (
     context.sourceQueueEntry.canonicalKey !== null
     && canonicalKey !== context.sourceQueueEntry.canonicalKey
+    && context.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
   ) {
     throw new Error("Proposal canonical identity differs from the immutable queue identity");
   }

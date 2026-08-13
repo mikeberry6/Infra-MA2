@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-13T04:09:41.000Z",
+  "asOfDate": "2026-08-13",
+  "decision": "CORRECT_EXISTING_CANONICAL_COMPANY_AND_ADD_CO_OWNER",
+  "taskId": "ledger:0068:digital-generation-d-b-a-takanock:0eb6960d",
+  "taskIndex": 68,
+  "companyName": "Digital Generation (d/b/a Takanock)",
+  "requestedManagers": [
+    "ArcLight Capital"
+  ],
+  "canonicalResolution": {
+    "canonicalCompanyId": "cmrxpj6lc00jjivhe2eyixi04",
+    "canonicalName": "Takanock, LLC",
+    "canonicalKey": "takanock-llc|united-states",
+    "aliases": [
+      "Digital Generation",
+      "Digital Generation (d/b/a Takanock)",
+      "Takanock"
+    ],
+    "rationale": "ArcLight's 2025 ESG report explicitly writes the identity as Digital Generation (d/b/a Takanock) and defines Takanock as the short form. The SEC Form D and company materials identify the legal issuer and operating platform as Takanock, LLC. This is the existing production and evaluated-seed company, not a second portfolio company.",
+    "platformBoundary": "Takanock, LLC is the manager-level digital-power platform. Project Baccara and other site or project entities are subsidiaries or assets beneath it and are not separate PortCos."
+  },
+  "ownershipResolution": {
+    "state": "CLOSED_ACTIVE",
+    "investmentYear": 2025,
+    "bestSupportedFirstSaleDate": "2025-04-30",
+    "publicAnnouncementDate": "2025-06-25",
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "stake": "Part of a collective majority interest; individual percentage not publicly disclosed",
+        "fund": "NOT_PUBLICLY_DISCLOSED",
+        "vehicle": "Jointly managed ArcLight / DigitalBridge investment vehicle"
+      },
+      {
+        "manager": "DigitalBridge",
+        "stake": "Part of a collective majority interest; individual percentage not publicly disclosed",
+        "fund": "NOT_PUBLICLY_DISCLOSED",
+        "vehicle": "Jointly managed ArcLight / DigitalBridge investment vehicle"
+      }
+    ],
+    "retainedMinority": "Original investors retained a collective minority interest; their complete identities and individual percentages are not publicly disclosed.",
+    "commitment": "The sponsors announced aggregate commitments of up to US$500 million. The May 15, 2025 Form D reported US$435 million sold; do not describe the entire US$500 million as funded at announcement.",
+    "exitSearch": "No Takanock sale, realization, sponsor exit, or pending company-level ownership transaction was identified through August 13, 2026. ArcLight's live investment page continues to list Digital Generation as Current. DigitalBridge's pending acquisition of ArcLight and SoftBank's pending acquisition of DigitalBridge are manager-level transactions and do not change Takanock's legal owner rows."
+  },
+  "companyResolution": {
+    "founded": 2023,
+    "legalEntityFormation": 2025,
+    "headquarters": "Traverse City, Michigan, United States",
+    "website": "https://takanock.com/",
+    "geography": "United States",
+    "classification": "Digital infrastructure / data-center power infrastructure",
+    "operatingProfile": "Takanock develops power-enabled sites and permanent on-site generation for data centers, including late-stage deployments in Northern Virginia and Phoenix."
+  },
+  "evidence": [
+    {
+      "label": "ArcLight - 2025 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Digital Generation DBA identity and ArcLight/DigitalBridge equity commitment",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "SEC - Takanock, LLC Form D",
+      "url": "https://www.sec.gov/Archives/edgar/data/2067303/000206730325000001/xslFormDX01/primary_doc.xml",
+      "purpose": "Legal identity, Delaware formation, Traverse City principal office, first equity sale and offering proceeds",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED"
+    },
+    {
+      "label": "Arizona Power Plant and Transmission Line Siting Committee - Project Baccara hearing transcript",
+      "url": "https://www.projectbaccara.com/_files/ugd/cbe98b_e62758f143b4475baf87cf6b7b029ac5.pdf",
+      "purpose": "Sworn CEO testimony on ArcLight/DigitalBridge majority ownership, retained original investors and project-subsidiary boundary",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "DigitalBridge - Takanock equity commitment announcement",
+      "url": "https://www.digitalbridge.com/news/2025-06-25-takanock-secures-500-million-commitment-from-arclight-and-digitalbridge",
+      "purpose": "Announcement date, aggregate commitment, company formation, U.S. portfolio and operating profile",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "Takanock - Company website",
+      "url": "https://takanock.com/",
+      "purpose": "Current operating platform and services",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "ArcLight - Investments",
+      "url": "https://arclight.com/investments/",
+      "purpose": "Current ArcLight ownership and exit search",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "supersededCensusJudgment": "DigitalBridge's earlier Takanock insufficient-evidence exclusion is superseded by the SEC filing, sworn testimony and DigitalBridge's own current disclosures. It does not create a second company task.",
+  "unresolvedNonblockingFacts": [
+    "Each sponsor's individual percentage is not publicly disclosed.",
+    "The exact legal name of the jointly managed investment vehicle is not publicly disclosed.",
+    "ArcLight's specific investing fund is not publicly disclosed."
+  ],
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION"
+}

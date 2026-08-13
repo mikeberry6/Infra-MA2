@@ -167,6 +167,49 @@ describe("task snapshot target resolution", () => {
     });
   });
 
+  it("pins a census DBA identity to the exact post-queue legal company", () => {
+    const active = entry({
+      taskId: "task-takanock",
+      canonicalKey: "digital-generation-d-b-a-takanock|united-states",
+      companyName: "Digital Generation (d/b/a Takanock)",
+      country: "United States",
+      sourceHoldingIds: ["holding-takanock"],
+    });
+
+    expect(resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-takanock",
+    })).toEqual({
+      method: "REVIEWED_POST_QUEUE_DBA_IDENTITY",
+      targetCompanyId: "company-takanock",
+      linkedQueueTaskId: null,
+    });
+  });
+
+  it.each([
+    { companyName: "Digital Generation / Takanock" },
+    { decisionStatus: "READY_FOR_PROPOSAL" as const },
+    { sourceHoldingIds: [] },
+    { sourceRepoOnlyIds: ["repo-only-takanock"] },
+    { candidateCanonicalKeys: ["takanock-llc|united-states"] },
+    { seedKeys: ["takanock, llc|United States"] },
+  ])("rejects a reviewed DBA target when the immutable task shape is not exact: %o", (override) => {
+    const active = entry({
+      taskId: "task-takanock",
+      canonicalKey: "digital-generation-d-b-a-takanock|united-states",
+      companyName: "Digital Generation (d/b/a Takanock)",
+      country: "United States",
+      sourceHoldingIds: ["holding-takanock"],
+      ...override,
+    });
+    expect(() => resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-takanock",
+    })).toThrow("not supported by one symmetric immutable queue candidate");
+  });
+
   it("does not relax reviewed-target rules for non-repo-only tasks", () => {
     const active = entry({
       taskId: "task-no-canonical-key",
@@ -218,6 +261,78 @@ describe("task snapshot target resolution", () => {
       name: "gfl environmental services",
       country: "UNITED STATES / CANADA",
     })).toBe(true);
+  });
+});
+
+describe("post-queue DBA identity binding", () => {
+  const queueEntry = entry({
+    taskId: "task-takanock",
+    canonicalKey: "digital-generation-d-b-a-takanock|united-states",
+    companyName: "Digital Generation (d/b/a Takanock)",
+    country: "United States",
+    sourceHoldingIds: ["holding-takanock"],
+  });
+  const targetResolution = {
+    method: "REVIEWED_POST_QUEUE_DBA_IDENTITY" as const,
+    targetCompanyId: "company-takanock",
+    linkedQueueTaskId: null,
+  };
+  const company = {
+    id: "company-takanock",
+    name: "Takanock, LLC",
+    country: "United States",
+  } as CompanyImage;
+  const productionCompanies = [{
+    id: "company-takanock",
+    name: "Takanock, LLC",
+    country: "United States",
+  }];
+
+  it("requires the legal company to match the immutable DBA alias and country", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies,
+    })).not.toThrow();
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, name: "Another Platform, LLC" },
+      productionCompanies,
+    })).toThrow("does not exactly match the immutable DBA alias and country");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, country: "Canada" },
+      productionCompanies,
+    })).toThrow("does not exactly match the immutable DBA alias and country");
+  });
+
+  it("requires one uniquely matching production identity pinned to the reviewed id", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [...productionCompanies, {
+        id: "company-duplicate",
+        name: "Takanock Ltd.",
+        country: "United States",
+      }],
+    })).toThrow("resolved to 2 production records instead of exactly one");
+  });
+
+  it("binds the target's evaluated seed identity and canonical key", () => {
+    expect(resolvedTaskSeedKeys({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+    })).toEqual(["takanock, llc|United States"]);
+    expect(resolvedTaskCanonicalKey({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+    })).toBe("takanock-llc|united-states");
   });
 });
 

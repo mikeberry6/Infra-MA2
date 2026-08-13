@@ -65,6 +65,20 @@ describe("proposal patch ownership additions", () => {
     })).toBe("gfl-environmental-services|united-states-canada");
   });
 
+  it("uses the target legal identity for an exact reviewed DBA mutation", () => {
+    expect(proposalCanonicalKey({
+      resolvedCanonicalKey: "takanock-llc|united-states",
+      sourceQueueEntry: {
+        canonicalKey: "digital-generation-d-b-a-takanock|united-states",
+      } as TaskSnapshotContext["sourceQueueEntry"],
+      targetResolution: {
+        method: "REVIEWED_POST_QUEUE_DBA_IDENTITY",
+        targetCompanyId: "company-takanock",
+        linkedQueueTaskId: null,
+      },
+    })).toBe("takanock-llc|united-states");
+  });
+
   it("rejects a canonical-null mutation without exact reviewed identity resolution", () => {
     expect(() => proposalCanonicalKey({
       resolvedCanonicalKey: "gfl-environmental-services|united-states-canada",
