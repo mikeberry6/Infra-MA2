@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_LIST_RESEARCH_DECISION",
+  "taskId": "ledger:0071:iatp-50-stake:a18662ff",
+  "generatedAt": "2026-08-13T07:34:18.000Z",
+  "decision": "SUPERSEDED",
+  "supersededByTaskId": "ledger:0215:invenergy-ampci-thermal-power:7aff1fc4",
+  "canonicalName": "Invenergy AMPCI Thermal Power",
+  "canonicalCompanyId": "cmrxpj6er00j7ivhe4q6f5u9y",
+  "identityDecision": "IATP is Invenergy AMPCI Thermal Power, a North American thermal-power joint venture and portfolio. It is not International-Matex Tank Terminals (IMTT). The task-71 census row combined the real IATP abbreviation, 50% stake and 2026 timing with unrelated IMTT sector, geography narrative and a now-dead ArcLight/IMTT URL.",
+  "currentTransactionDecision": {
+    "state": "SIGNED_PENDING_INCOMING",
+    "seller": "InfraBridge",
+    "buyer": "ArcLight Capital Partners",
+    "stake": "50%",
+    "announcementDate": "2026-03-12",
+    "closingDate": null,
+    "currentLegalOwner": "InfraBridge",
+    "continuingCoOwnerAndOperator": "Invenergy",
+    "vehicle": "Gray Wolf Power, LLC / Gray Wolf Power Aggregator, L.P. appears in regulatory records; exact fund attribution remains for task 215 to validate",
+    "statusRationale": "InfraBridge's official announcement says the transaction was signed, remained subject to regulatory approvals and closing conditions, and was expected to close in the second half of 2026. InfraBridge's current portfolio page still presents IATP as its 50/50 joint venture with Invenergy. HSR early termination was granted in April 2026, but that regulatory milestone is not evidence of legal closing. No closing announcement was identified through 2026-08-13."
+  },
+  "repoDecision": {
+    "task71Mutation": "NONE",
+    "productionTarget": "cmrxpj6er00j7ivhe4q6f5u9y",
+    "evaluatedSeedKey": "invenergy ampci thermal power|United States / Canada",
+    "authoritativeQueueTask": "ledger:0215:invenergy-ampci-thermal-power:7aff1fc4",
+    "futureActions": [
+      "CORRECT_COMPANY",
+      "ADD_PENDING_TRANSACTION"
+    ],
+    "reason": "Task 215 already owns the exact canonical production and seed identity and contains the DigitalBridge and InfraBridge holdings. Creating or redirecting a company under task 71 would duplicate or corrupt the existing power platform."
+  },
+  "existingRecordChecks": {
+    "productionCompanyCount": 1,
+    "seedCompanyCount": 1,
+    "activeStructuredOwnershipPeriodCount": 1,
+    "structuredPendingTransactionCount": 0,
+    "milestoneCount": 5,
+    "citationCount": 8,
+    "approvedOverlayCount": 0,
+    "redirectCount": 0,
+    "seedAheadDuplicate": false
+  },
+  "evidenceUrls": [
+    "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+    "https://www.infrabridge.com/our-portfolio",
+    "https://www.businesswire.com/news/home/20260311462798/en/ArcLight-to-Acquire-InfraBridges-50-Stake-in-5.4-GW-Power-Portfolio",
+    "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261126",
+    "https://www.monitoringanalytics.com/filings/2026/2026-05-26%20IMM%20Comments%20%28EC26-76%29-AS%20FILED%20-%20PUBLIC.pdf",
+    "https://imtt.com/our-company/",
+    "https://arclight.com/news/arclight-enters-agreement-to-acquire-50-interest-in-international-matex-tank-terminals/"
+  ],
+  "sourceHealth": {
+    "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio": "WORKING_HTTP_200",
+    "https://www.infrabridge.com/our-portfolio": "WORKING_HTTP_200",
+    "https://www.businesswire.com/news/home/20260311462798/en/ArcLight-to-Acquire-InfraBridges-50-Stake-in-5.4-GW-Power-Portfolio": "BROWSER_BLOCKED_HTTP_403_BUT_VERIFIED",
+    "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261126": "BROWSER_BLOCKED_HTTP_403_BUT_VERIFIED",
+    "https://www.monitoringanalytics.com/filings/2026/2026-05-26%20IMM%20Comments%20%28EC26-76%29-AS%20FILED%20-%20PUBLIC.pdf": "WORKING_HTTP_200",
+    "https://imtt.com/our-company/": "WORKING_HTTP_200",
+    "https://arclight.com/news/arclight-enters-agreement-to-acquire-50-interest-in-international-matex-tank-terminals/": "DEAD_HTTP_404"
+  },
+  "exitAndClosingSearch": "Searched current ArcLight, InfraBridge, Invenergy, transaction-wire, FTC and FERC-related records for acquisition, approval, closing, sale and exit evidence. The evidence supports a signed transaction and regulatory review but not a legal closing through 2026-08-13.",
+  "unresolvedQuestions": [
+    "Task 215 must validate the final ArcLight acquisition vehicle and any post-research closing before applying its pending transaction correction.",
+    "Task 215 must reconcile the existing seed record's ArcLight top-level display firm with its sole structured InfraBridge ownership period and remove the duplicate March 2026 announcement milestone if appropriate."
+  ],
+  "confidence": "HIGH"
+}

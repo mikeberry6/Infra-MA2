@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0071:iatp-50-stake:a18662ff",
+  "taskIndex": 71,
+  "companyName": "IATP (50% stake)",
+  "generatedAt": "2026-08-13T07:28:25.083Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0071-iatp-50-stake/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 71,
+    "taskId": "ledger:0071:iatp-50-stake:a18662ff",
+    "canonicalKey": "iatp-50-stake|canada",
+    "companyName": "IATP (50% stake)",
+    "country": "Canada / United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:025:iatp-50-stake"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/news/arclight-enters-agreement-to-acquire-50-interest-in-international-matex-tank-terminals/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "iatp-50-stake|canada",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0071:iatp-50-stake:a18662ff",
+    "taskIndex": 71,
+    "canonicalKey": "iatp-50-stake|canada",
+    "capturedAt": "2026-08-13T07:28:25.083Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "436f4208905cfb01a93464eac2b92ecf1977813a6c21c199586bff38b587b6fe",
+    "productionSnapshotSha256": "d1f0940dfc4bf2797ec460aeeeed9c5eac65878347cc9e5d5312822e051553ff",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "541bb14513aa086dcba1c3d130d2b53647a0f9de2640bc9976eca305ed8be3a8",
+    "taskSnapshotSha256": "415c24a4381b24fa2f3ecc7563b238f1331d4110d6db33426655665b95df1b9e"
+  },
+  "contextSha256": "b66aad7c7126c89607adbe510de6b68f675ff476274cdca2247468bf85465db3"
+}
