@@ -1,0 +1,241 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0072-infinigen-renewables-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0072-infinigen-renewables-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0072-infinigen-renewables/attempt-1/locked-production-snapshot.json --proposal-sha256=0152a61370697336f6867cb2e073e1974898529e5cd1db3b9983b39922d73531 --approval-sha256=5f61493274dd26fc0f42215df5a662c3a45777f0dbb1e97ef53b8d4cc95243cc --snapshot-sha256=70eaff2a53b62c1f1e2f0821dc3a607d4a1445450de72285e52b65e75a2e05f0
+
+(node:2761) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "0152a61370697336f6867cb2e073e1974898529e5cd1db3b9983b39922d73531",
+    "approvalSha256": "5f61493274dd26fc0f42215df5a662c3a45777f0dbb1e97ef53b8d4cc95243cc",
+    "afterImageSha256": "d01d8229c29ee533c93613c7ad743fcb497284bffdd51d7cb63598dd209e1ad8",
+    "taskId": "ledger:0072:infinigen-renewables:07524184",
+    "operation": "UPSERT",
+    "company": {
+      "name": "Infinigen Renewables",
+      "investmentFirm": "ArcLight Capital Partners",
+      "sector": "Power & ET",
+      "subsector": "Solar & Battery Storage",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "ArcLight Energy Partners Fund VII, L.P.",
+      "description": "Infinigen Renewables is a San Juan, Puerto Rico-based independent power producer that owns, develops and operates utility-scale and commercial-and-industrial solar and battery-storage infrastructure. Its operating portfolio includes the 73.2 MW Horizon and Oriana solar plants, while Yabucoa adds a 32.1 MW solar project paired with 15 MW of storage and its development pipeline exceeds 1 GW. ArcLight launched the platform in 2021 with a $400 million capital commitment; current ArcLight and company materials identify Infinigen as an unrealized Fund VII portfolio company and a wholly owned subsidiary of an ArcLight-managed fund. No Infinigen-specific sale or pending exit was identified through August 13, 2026.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "website": "https://infinigenrenewables.com/",
+      "yearFounded": 2021,
+      "investmentYear": 2021,
+      "headquarters": "San Juan, Puerto Rico",
+      "milestones": [
+        {
+          "date": "2021",
+          "event": "ArcLight described Infinigen as the largest solar and storage operating platform in Puerto Rico at launch.",
+          "category": "Expansion"
+        },
+        {
+          "date": "Nov 11, 2021",
+          "event": "Sonnedix agreed to sell its Puerto Rico solar operations to Infinigen and ArcLight.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Dec 16, 2021",
+          "event": "ArcLight launched Infinigen Renewables with a $400 million capital commitment.",
+          "category": "Financing"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Investment date source — ArcLight Capital Partners — Infinigen Renewables",
+          "url": "https://www.prnewswire.com/news-releases/arclight-launches-infinigen-renewables-platform-301447102.html",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "December 2021 platform launch, capital commitment, completed initial acquisition and ArcLight ownership"
+        },
+        {
+          "label": "Infinigenrenewables — Infinigen Renewables",
+          "url": "https://infinigenrenewables.com/about-us/",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current company profile, Puerto Rico headquarters, operating footprint and continuing ArcLight backing"
+        },
+        {
+          "label": "Sonnedix — Infinigen Renewables",
+          "url": "https://www.sonnedix.com/pl/news/sonnedix-agrees-to-sell-its-puerto-rico-solar-operations-to-infinigen-arclight",
+          "type": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "November 2021 sale announcement and initial Puerto Rico operating-asset acquisition boundary"
+        },
+        {
+          "label": "Infinigen Renewables — ArcLight ownership and Yabucoa project",
+          "url": "https://www.prnewswire.com/news-releases/infinigen-renewables-announces-strategic-solar-battery-storage-project-in-puerto-rico-302118849.html",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Direct current evidence that Infinigen is wholly owned by an ArcLight-managed fund, plus San Juan headquarters and operating profile"
+        },
+        {
+          "label": "Puerto Rico Energy Bureau — Infinigen group filing",
+          "url": "https://energia.pr.gov/wp-content/uploads/sites/7/2026/03/20260330-AP20230004-Infinigen-Peticion_Intervencion.pdf",
+          "type": "OTHER",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Legal LLC identity, subsidiary and project boundary, current Puerto Rico operating assets and San Juan office"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "ArcLight Capital Partners",
+          "ownershipVehicle": "ArcLight Energy Partners Fund VII, L.P.",
+          "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+          "vehicleName": "ArcLight Energy Partners Fund VII, L.P.",
+          "investmentYear": 2021,
+          "stake": "100%",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": "cmrxpj6do00j5ivhewj38gcr5",
+      "name": "Infinigen Renewables",
+      "aliases": [
+        "Infinigen Renewables LLC"
+      ],
+      "sector": "POWER_ET",
+      "subsector": "Solar & Battery Storage",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Infinigen Renewables is a San Juan, Puerto Rico-based independent power producer that owns, develops and operates utility-scale and commercial-and-industrial solar and battery-storage infrastructure. Its operating portfolio includes the 73.2 MW Horizon and Oriana solar plants, while Yabucoa adds a 32.1 MW solar project paired with 15 MW of storage and its development pipeline exceeds 1 GW. ArcLight launched the platform in 2021 with a $400 million capital commitment; current ArcLight and company materials identify Infinigen as an unrealized Fund VII portfolio company and a wholly owned subsidiary of an ArcLight-managed fund. No Infinigen-specific sale or pending exit was identified through August 13, 2026.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": "https://infinigenrenewables.com/",
+      "yearFounded": 2021,
+      "headquarters": "San Juan, Puerto Rico",
+      "lastVerifiedAt": "2026-08-13T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjrec01g0ivhe4b07oqxs",
+          "managerName": "ArcLight Capital Partners",
+          "organizationName": "ArcLight Capital Partners",
+          "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+          "vehicleName": "ArcLight Energy Partners Fund VII, L.P.",
+          "stake": "100%",
+          "investmentYear": 2021,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpklkn02oaivhe0s7m8zxx",
+          "date": "2021",
+          "event": "ArcLight described Infinigen as the largest solar and storage operating platform in Puerto Rico at launch.",
+          "category": "EXPANSION",
+          "sortDate": "2021-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.prnewswire.com/news-releases/arclight-launches-infinigen-renewables-platform-301447102.html"
+          ]
+        },
+        {
+          "id": "cmrxpkll202obivhe6kf4y2oo",
+          "date": "Nov 11, 2021",
+          "event": "Sonnedix agreed to sell its Puerto Rico solar operations to Infinigen and ArcLight.",
+          "category": "ACQUISITION",
+          "sortDate": "2021-11-11T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.sonnedix.com/pl/news/sonnedix-agrees-to-sell-its-puerto-rico-solar-operations-to-infinigen-arclight"
+          ]
+        },
+        {
+          "id": "cmrxpkllm02ocivheutdlrc9e",
+          "date": "Dec 16, 2021",
+          "event": "ArcLight launched Infinigen Renewables with a $400 million capital commitment.",
+          "category": "FINANCING",
+          "sortDate": "2021-12-16T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.prnewswire.com/news-releases/arclight-launches-infinigen-renewables-platform-301447102.html"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxpozml07hsivheon5glpws",
+          "label": "Investment date source — ArcLight Capital Partners — Infinigen Renewables",
+          "url": "https://www.prnewswire.com/news-releases/arclight-launches-infinigen-renewables-platform-301447102.html",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "December 2021 platform launch, capital commitment, completed initial acquisition and ArcLight ownership",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpoznw07huivhejj1d2f1a",
+          "label": "Infinigenrenewables — Infinigen Renewables",
+          "url": "https://infinigenrenewables.com/about-us/",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current company profile, Puerto Rico headquarters, operating footprint and continuing ArcLight backing",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpozoy07hwivhe3qmx68tc",
+          "label": "Sonnedix — Infinigen Renewables",
+          "url": "https://www.sonnedix.com/pl/news/sonnedix-agrees-to-sell-its-puerto-rico-solar-operations-to-infinigen-arclight",
+          "sourceType": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "November 2021 sale announcement and initial Puerto Rico operating-asset acquisition boundary",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Infinigen Renewables — ArcLight ownership and Yabucoa project",
+          "url": "https://www.prnewswire.com/news-releases/infinigen-renewables-announces-strategic-solar-battery-storage-project-in-puerto-rico-302118849.html",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Direct current evidence that Infinigen is wholly owned by an ArcLight-managed fund, plus San Juan headquarters and operating profile",
+          "isPrimary": true
+        },
+        {
+          "id": null,
+          "label": "Puerto Rico Energy Bureau — Infinigen group filing",
+          "url": "https://energia.pr.gov/wp-content/uploads/sites/7/2026/03/20260330-AP20230004-Infinigen-Peticion_Intervencion.pdf",
+          "sourceType": "OTHER",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Legal LLC identity, subsidiary and project boundary, current Puerto Rico operating assets and San Juan office",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Infinigen Renewables",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+      }
+    ],
+    "changedFields": [
+      "aliases",
+      "citations",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "ownershipPeriods",
+      "website"
+    ],
+    "retiredCompanyIds": []
+  }
+}
