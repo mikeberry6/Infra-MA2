@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
+  "taskIndex": 70,
+  "companyName": "Gulf Coast Express Pipeline",
+  "generatedAt": "2026-08-13T06:19:44.691Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0070-gulf-coast-express-pipeline/attempt-1/approval-recapture/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 70,
+    "taskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
+    "canonicalKey": "gulf-coast-express-pipeline|united-states",
+    "companyName": "Gulf Coast Express Pipeline",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:006:gulf-coast-express-pipeline"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [
+      "gulf-coast-express-pipeline-gcx|united-states",
+      "gulf-coast-express-pipeline-llc-gcx|united-states",
+      "gulf-coast-express-pipeline-llc|united-states"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: gulf-coast-express-pipeline-gcx|united-states, gulf-coast-express-pipeline-llc-gcx|united-states, gulf-coast-express-pipeline-llc|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: gulf-coast-express-pipeline-gcx|united-states, gulf-coast-express-pipeline-llc-gcx|united-states, gulf-coast-express-pipeline-llc|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpjln4016sivhe00yic3tw",
+    "linkedQueueTaskId": "ledger:0349:gulf-coast-express-pipeline-llc-gcx:e104a7ea"
+  },
+  "resolvedCanonicalKey": "gulf-coast-express-pipeline|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjln4016sivhe00yic3tw",
+    "name": "Gulf Coast Express Pipeline LLC (GCX)",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural gas transmission pipeline",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Gulf Coast Express is a large-diameter natural gas transmission pipeline moving Permian gas to South Texas markets. Its customers are upstream producers, marketers, and downstream gas market participants, and the asset operates under an asset-heavy pipeline model supported by long-term transportation agreements. Public filings describe the pipeline as approximately 500 miles in length with 2.0 Bcf/d of capacity. The system is located entirely in Texas and links Waha-area supply to Agua Dulce, a major downstream trading and delivery hub. Kinder Morgan's public materials state that it owns 34% of the pipeline and that the remaining ownership includes an ArcLight affiliate after ArcLight acquired an additional 25% interest from Phillips 66 in early 2025. Mubadala lists Gulf Coast Express as a real-assets infrastructure holding, and ArcLight's official public post states that Mubadala partnered with ArcLight to acquire an interest in the pipeline in the 2025 $865 million transaction. The reviewed public materials do not disclose the full current ownership split among all non-Kinder Morgan holders or a distinct Mubadala fund vehicle.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrdg01fyivhemafebf8q",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "AL GCX Holdings LLC (Fund VIII)",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk81c0266ivhe05djrrfq",
+        "managerName": "Mubadala",
+        "organizationName": "Mubadala",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpklfz02o3ivhelkoegtxb",
+        "date": "Dec 2017",
+        "event": "Kinder Morgan, DCP Midstream, and Targa announced a final investment decision for the Gulf Coast Express Pipeline project.",
+        "category": "FINANCING",
+        "sortDate": "2017-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklgm02o4ivhetxk9b50n",
+        "date": "Sep 2019",
+        "event": "Gulf Coast Express Pipeline entered service as a major Permian takeaway project.",
+        "category": "EXPANSION",
+        "sortDate": "2019-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklh302o5ivhenb25pd3c",
+        "date": "2024",
+        "event": "Kinder Morgan advanced a compression-based expansion project to increase GCX deliveries to South Texas markets.",
+        "category": "OTHER",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklhi02o6ivhed3zmdd1j",
+        "date": "Dec 2024",
+        "event": "Phillips 66 announced an agreement to sell its 25% non-operated equity interest in GCX to an ArcLight affiliate.",
+        "category": "DIVESTITURE",
+        "sortDate": "2024-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkli202o7ivhee7nspfoo",
+        "date": "Feb 3, 2025",
+        "event": "ArcLight completed the $865 million acquisition of a 25% interest in GCX from Phillips 66; pipeline jointly owned by Kinder Morgan and ArcLight.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-02-03T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmghp04w3ivhe8bb5n0n9",
+        "date": "2018",
+        "event": "Gulf Coast Express was sanctioned to transport Permian gas to the Texas Gulf Coast.",
+        "category": "OTHER",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmgia04w4ivhejnal59a0",
+        "date": "Sep 2019",
+        "event": "Gulf Coast Express entered commercial service.",
+        "category": "EXPANSION",
+        "sortDate": "2019-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmgir04w5ivheldgicvfn",
+        "date": "2020",
+        "event": "Kinder Morgan expanded its Permian gas transmission footprint around the pipeline's delivery corridor.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmgj604w6ivheo717dga1",
+        "date": "Feb 3, 2025",
+        "event": "ArcLight completed the acquisition of a 25% stake in GCX from Phillips 66 and publicly identified Mubadala as its partner in acquiring an interest in the pipeline.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-02-03T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpozb607heivheuwzramgc",
+        "label": "Close date source — ArcLight Capital Partners — Gulf Coast Express Pipeline (GCX)",
+        "url": "https://www.prnewswire.com/news-releases/arclight-announces-865-million-acquisition-of-strategic-pipeline-interest-302365746.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozcj07hgivhe2lgtwzls",
+        "label": "Investor — Gulf Coast Express Pipeline (GCX)",
+        "url": "https://investor.phillips66.com/financial-information/news-releases/news-release-details/2024/Phillips-66-announces-agreement-to-sell-interest-in-Gulf-Coast-Express/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investor — Gulf Coast Express Pipeline (GCX)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozdq07hiivhee0qsj0wc",
+        "label": "Kindermorgan — Gulf Coast Express Pipeline (GCX)",
+        "url": "https://www.kindermorgan.com/Operations/Natural-Gas/Index",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Kindermorgan operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozh207hkivheorln442p",
+        "label": "Kindermorgan — Gulf Coast Express Pipeline (GCX)",
+        "url": "https://www.kindermorgan.com/Operations/Projects/GCX-Expansion-Project",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Kindermorgan operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsd5f0cgwivhelaebmxrx",
+        "label": "Kindermorgan — Gulf Coast Express Pipeline LLC",
+        "url": "https://www.kindermorgan.com/operations/natural-gas/gulf-coast-express-pipeline",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Kindermorgan operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsd8r0cgyivherstnyo78",
+        "label": "Ownership source — Mubadala — Gulf Coast Express Pipeline LLC",
+        "url": "https://www.mubadala.com/en/what-we-do/gulf-coast-express",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership source — Mubadala — Gulf Coast Express Pipeline LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsd9s0cgzivhezrk2ilqw",
+        "label": "Close date source — ArcLight Capital Partners — Gulf Coast Express Pipeline (GCX)",
+        "url": "https://www.prnewswire.com/news-releases/arclight-announces-865-million-acquisition-of-strategic-pipeline-interest-302365746.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Mubadala closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsdaz0ch1ivhebvpasqka",
+        "label": "Investment date source — Mubadala — Gulf Coast Express Pipeline LLC",
+        "url": "https://www.linkedin.com/posts/arclight-capital-partners_infrastructure-datacenters-naturalgas-activity-7297604147405602816-xeoy",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Mubadala initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsdc00ch3ivheehu0gkjr",
+        "label": "S&P Global — Gulf Coast Express Pipeline LLC",
+        "url": "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/natural-gas/011325-arclight-to-buy-additional-gulf-coast-express-stake-phillips-66-says",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "S&P Global — Gulf Coast Express Pipeline LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsdcw0ch5ivhew22kakgu",
+        "label": "Kindermorgan — Gulf Coast Express Pipeline LLC",
+        "url": "https://www.kindermorgan.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Kindermorgan company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": null,
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0479:gulf-coast-express-pipeline-gcx:80ffe67c",
+      "sourceQueueEntrySha256": "485293ecba49e8863c5a276514fb3af451c8adb76a37b761dca676c5f96760c4",
+      "name": "Gulf Coast Express Pipeline (GCX)",
+      "country": "United States",
+      "rawSeedEntrySha256": "5a675a4a5cf898586bd42772d0042d5839cc86f035c30c0b248c0366f341f47b",
+      "evaluatedSeedEntrySha256": "5a675a4a5cf898586bd42772d0042d5839cc86f035c30c0b248c0366f341f47b"
+    },
+    {
+      "sourceQueueTaskId": "ledger:0480:gulf-coast-express-pipeline-llc:9e2ebb7a",
+      "sourceQueueEntrySha256": "235fc2cb525be156ee34d14e31d36b93d8de2bbb2e07c45daed7920f7d083a48",
+      "name": "Gulf Coast Express Pipeline LLC",
+      "country": "United States",
+      "rawSeedEntrySha256": "bdb63318e8faf66cf2d7521c31793486018739cc3da68e8c1ae955e8b2f3c0bc",
+      "evaluatedSeedEntrySha256": "bdb63318e8faf66cf2d7521c31793486018739cc3da68e8c1ae955e8b2f3c0bc"
+    }
+  ],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpihu7004vivheoemw7s8z",
+        "name": "Mubadala",
+        "updatedAt": "2026-07-23T16:09:30.319Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpj6cn00j3ivhegemd6wso",
+        "companyId": "cmrxpjln4016sivhe00yic3tw",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:43.848Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
+    "taskIndex": 70,
+    "canonicalKey": "gulf-coast-express-pipeline|united-states",
+    "capturedAt": "2026-08-13T06:19:44.691Z",
+    "databaseRevision": "company-state:1e717e46d25a602669058eadfabc7dd53a83cc23e8310cabdd7e5f0cd971ee15",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "69cf7403eaa3b347666e8d2c295b1b2858abad4ea8a9deef378c14107382649b",
+    "productionSnapshotSha256": "4eafccca4e90758c25ec213fa729e22ca89a9059b802fa86d520ed20b7427b0e",
+    "targetCompanySnapshotSha256": "1e717e46d25a602669058eadfabc7dd53a83cc23e8310cabdd7e5f0cd971ee15",
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0479:gulf-coast-express-pipeline-gcx:80ffe67c",
+        "sourceQueueEntrySha256": "485293ecba49e8863c5a276514fb3af451c8adb76a37b761dca676c5f96760c4",
+        "name": "Gulf Coast Express Pipeline (GCX)",
+        "country": "United States",
+        "rawSeedEntrySha256": "5a675a4a5cf898586bd42772d0042d5839cc86f035c30c0b248c0366f341f47b",
+        "evaluatedSeedEntrySha256": "5a675a4a5cf898586bd42772d0042d5839cc86f035c30c0b248c0366f341f47b"
+      },
+      {
+        "sourceQueueTaskId": "ledger:0480:gulf-coast-express-pipeline-llc:9e2ebb7a",
+        "sourceQueueEntrySha256": "235fc2cb525be156ee34d14e31d36b93d8de2bbb2e07c45daed7920f7d083a48",
+        "name": "Gulf Coast Express Pipeline LLC",
+        "country": "United States",
+        "rawSeedEntrySha256": "bdb63318e8faf66cf2d7521c31793486018739cc3da68e8c1ae955e8b2f3c0bc",
+        "evaluatedSeedEntrySha256": "bdb63318e8faf66cf2d7521c31793486018739cc3da68e8c1ae955e8b2f3c0bc"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "aba30486a70aa28dc8222296f2c1a330080005cfd25ffb998952b981d79acdcb",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "34aab8117d69f605202b6f81a2e3fdd269b23344010f71460ab5d03ab7d6e29c",
+      "citationsSha256": "0d593aae7a07458fedc3ae435ef73e6c323b456314f6de588bc93ee3f9c5374f",
+      "redirectsSha256": "b85aa94fdb03a2ade78d836ea473142d7edd20ac441f13e6f1d5239e4f72db51"
+    },
+    "dependencySha256": "ef51235b8567f88181eb800d079d43a20a4e76928f41954b6ce00106dd6ed9a1",
+    "stateSha256": "b218e4410a313832400c9c97a0aaa1cd0987425a8cfbb4e0c753950535459963",
+    "taskSnapshotSha256": "dd200cee8da521e1b4c43f376171918abd41f858369924b7d7b15956bc5646ae"
+  },
+  "contextSha256": "704c242e74c039cf4393e58ba0d8f8ff9c1aa05bf1e718e7200f8cadce56cf97"
+}
