@@ -1118,6 +1118,7 @@ describe("approved apply coordinator", () => {
       seedMatchesAfterImage: true,
       detailApiVerified: true,
     });
+    expect(receipt.companyId).toBe("company_acme");
   });
 
   it("preserves complete retired before-images in the merge revision and audit event", async () => {

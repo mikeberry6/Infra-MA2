@@ -128,14 +128,27 @@ describe("protected PortCo production apply workflow", () => {
     const finalGate = position(
       "Final authorization, release, schema, target, and artifact recheck",
     );
+    const cachePreflight = position(
+      "Prove cache revalidation readiness before database mutation",
+    );
     const apply = position(
       "Apply the exact approved PortCo proposal transactionally",
+    );
+    const cacheRevalidation = position(
+      "Revalidate public PortCo caches after apply",
+    );
+    const unversionedApi = position(
+      "Verify ordinary unversioned detail API after cache revalidation",
     );
     const receipt = position(
       "Verify receipt and canonical detail API after apply",
     );
-    expect(dryRun).toBeLessThan(finalGate);
+    expect(dryRun).toBeLessThan(cachePreflight);
+    expect(cachePreflight).toBeLessThan(finalGate);
     expect(finalGate).toBeLessThan(apply);
+    expect(apply).toBeLessThan(cacheRevalidation);
+    expect(cacheRevalidation).toBeLessThan(unversionedApi);
+    expect(unversionedApi).toBeLessThan(receipt);
     expect(apply).toBeLessThan(receipt);
     expect(workflow).toContain(
       "PROTECTED_PRODUCTION_WRITE_APPROVAL_SHA256: ${{ inputs.approval_sha256 }}",
@@ -146,6 +159,12 @@ describe("protected PortCo production apply workflow", () => {
       '--public-base-url="${PRODUCTION_URL}${PUBLIC_BASE_PATH}/"',
     );
     expect(workflow).toContain("verify-production-receipt.ts");
+    expect(workflow).toContain("FUND_REFRESH_REVALIDATE_URL");
+    expect(workflow).toContain("FUND_REFRESH_REVALIDATE_TOKEN");
+    expect(workflow).toContain("cache-preflight.json");
+    expect(workflow).toContain("cache-revalidation.json");
+    expect(workflow).toContain("verify-unversioned-public-api.ts");
+    expect(workflow).toContain("unversioned-public-api-verification.json");
     expect(workflow).toContain("tmp/portco-reconciliation/production/");
     expect(workflow).toContain("retention-days: 90");
     expect(workflow).not.toContain("vercel promote");

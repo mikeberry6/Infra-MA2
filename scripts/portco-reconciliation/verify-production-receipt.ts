@@ -70,6 +70,7 @@ async function main(): Promise<void> {
   const report = {
     verifiedAt: new Date().toISOString(),
     companyName: receipt.companyName,
+    companyId: receipt.companyId ?? null,
     taskId: receipt.taskId,
     proposalSha256: receipt.proposalSha256,
     approvalSha256: receipt.approvalSha256,
