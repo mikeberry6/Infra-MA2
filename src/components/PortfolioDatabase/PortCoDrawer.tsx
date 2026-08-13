@@ -37,7 +37,10 @@ type DiligenceFact = {
 type SponsorFundRow = {
   key: string;
   sponsor: string;
-  fund?: string | null;
+  fundName?: string | null;
+  vehicle?: string | null;
+  period?: string | null;
+  stake?: string | null;
 };
 
 type MilestoneMeta = {
@@ -169,46 +172,6 @@ function isCurrentOwner(owner: OwnerView): boolean {
   return owner.isActive && !owner.exitYear;
 }
 
-function ownerDisplayKey(owner: OwnerView): string {
-  return `${normalizeFirm(owner.firm) || owner.firm.trim().toLowerCase()}|${isCurrentOwner(owner) ? "active" : "former"}`;
-}
-
-function vehicleScore(owner: OwnerView): number {
-  if (!owner.vehicle) return 0;
-  let score = 1;
-  if (owner.fundName) score += 2;
-  if (owner.vehicle.length <= 72) score += 2;
-  if (owner.vehicle.length > 140 || /;/.test(owner.vehicle)) score -= 2;
-  return score;
-}
-
-function mergeOwnerDisplayRows(owners: OwnerView[]): OwnerView[] {
-  const byOwner = new Map<string, OwnerView[]>();
-
-  for (const owner of owners) {
-    const key = ownerDisplayKey(owner);
-    byOwner.set(key, [...(byOwner.get(key) || []), owner]);
-  }
-
-  return Array.from(byOwner.values()).map((group) => {
-    const preferred = [...group].sort((a, b) => vehicleScore(b) - vehicleScore(a))[0];
-    const investmentYears = group
-      .map((owner) => owner.investmentYear)
-      .filter((year): year is number => typeof year === "number");
-    const exitYears = group
-      .map((owner) => owner.exitYear)
-      .filter((year): year is number => typeof year === "number");
-    const stakes = uniqueValues(group.map((owner) => owner.stake));
-
-    return {
-      ...preferred,
-      investmentYear: investmentYears.length > 0 ? Math.min(...investmentYears) : preferred.investmentYear,
-      exitYear: exitYears.length > 0 ? Math.max(...exitYears) : preferred.exitYear,
-      stake: stakes.length > 0 ? compactList(stakes, 2) : preferred.stake,
-    };
-  });
-}
-
 function splitOwners(owners: OwnerView[]): { active: OwnerView[]; former: OwnerView[] } {
   return {
     active: owners.filter((owner) => isCurrentOwner(owner)),
@@ -223,12 +186,6 @@ function getPrimaryOwner(owners: OwnerView[]): OwnerView | null {
 
 function uniqueValues(values: Array<string | undefined | null>): string[] {
   return Array.from(new Set(values.map((value) => value?.trim()).filter((value): value is string => !!value)));
-}
-
-function compactList(values: string[], max = 2): string {
-  if (values.length === 0) return "Not disclosed";
-  if (values.length <= max) return values.join(", ");
-  return `${values.slice(0, max).join(", ")} +${values.length - max}`;
 }
 
 function normalizeFactValue(value: string): string {
@@ -272,8 +229,13 @@ function getIdentityDescriptor(company: CompanyView): string {
   return company.subsector?.trim() || company.sector || "Portfolio company";
 }
 
-function formatHeaderStatusPeriod(company: CompanyView, owner: OwnerView | null): string {
-  const investmentYear = owner?.investmentYear ?? company.investmentYear;
+function formatHeaderStatusPeriod(company: CompanyView, owner: OwnerView | null, activeOwners: OwnerView[]): string {
+  const activeInvestmentYears = activeOwners
+    .map((activeOwner) => activeOwner.investmentYear)
+    .filter((year): year is number => typeof year === "number");
+  const investmentYear = activeInvestmentYears.length > 0
+    ? Math.min(...activeInvestmentYears)
+    : owner?.investmentYear ?? company.investmentYear;
 
   if (owner?.investmentYear && owner.exitYear) return `Held ${owner.investmentYear}-${owner.exitYear}`;
   if (company.status === "Active" && investmentYear) return `Active since ${investmentYear}`;
@@ -285,12 +247,6 @@ function shouldRenderLead(lead: string, descriptor: string): boolean {
   return !!lead.trim() && !isRedundantText(lead, descriptor);
 }
 
-function formatSponsorList(values: string[], max = 3): string {
-  if (values.length === 0) return "Not disclosed";
-  if (values.length <= max) return values.join(", ");
-  return `${values.slice(0, max).join(", ")} +${values.length - max}`;
-}
-
 function buildUniqueFacts(facts: DiligenceFact[], reservedClaims: string[] = []): DiligenceFact[] {
   const seen = new Set(reservedClaims);
   return facts.filter((fact) => {
@@ -300,31 +256,28 @@ function buildUniqueFacts(facts: DiligenceFact[], reservedClaims: string[] = [])
   });
 }
 
-function shouldShowOwnerField(value: string | undefined | null, repeatedValues: string[]): boolean {
-  if (!value?.trim()) return false;
-  const normalized = normalizeFactValue(value);
-  if (normalized === "not disclosed" || normalized === "n/a") return false;
-  return !repeatedValues.some((repeated) => (
-    normalizeFactValue(repeated) === normalized || isRedundantText(value, repeated)
-  ));
-}
-
 function buildSponsorFundRows(
   owners: OwnerView[],
   fallbackSponsor: string,
   fallbackFund: string,
 ): SponsorFundRow[] {
-  const rows = owners.map((owner, index) => ({
-    key: `${owner.firm}-${owner.vehicle || owner.fundName || index}`,
-    sponsor: owner.firm || "Unknown sponsor",
-    fund: owner.vehicle || owner.fundName || null,
-  }));
+  const rows = owners.map((owner, index) => {
+    const period = formatCompactYearRange(owner);
+    return {
+      key: owner.id || `${owner.firm}-${owner.vehicle}-${owner.investmentYear}-${owner.exitYear}-${index}`,
+      sponsor: owner.firm || "Unknown sponsor",
+      fundName: owner.fundName || null,
+      vehicle: owner.vehicle || null,
+      period: period === "N/A" ? null : period,
+      stake: owner.stake || null,
+    };
+  });
 
   if (rows.length > 0) return rows;
   return [{
     key: "fallback-sponsor-fund",
     sponsor: fallbackSponsor || "Not disclosed",
-    fund: fallbackFund !== "Not disclosed" ? fallbackFund : null,
+    vehicle: fallbackFund !== "Not disclosed" ? fallbackFund : null,
   }];
 }
 
@@ -473,10 +426,8 @@ function getEvidenceLabel(source: SourceView, groupLabel?: string): string {
 
 function buildOwnershipFacts({
   strategies,
-  stakes,
 }: {
   strategies: string[];
-  stakes: string[];
 }): DiligenceFact[] {
   return buildUniqueFacts(
     [
@@ -491,27 +442,51 @@ function buildOwnershipFacts({
           </>
         ) : undefined,
       },
-      {
-        claim: "stake",
-        label: "Stake",
-        value: stakes.length > 0 ? compactList(stakes, 2) : undefined,
-      },
     ],
     ["status", "geography", "holdPeriod", "evidence"],
   );
 }
 
 function SponsorFundLine({ row }: { row: SponsorFundRow }) {
-  const showFund = row.fund && normalizeFactValue(row.fund) !== normalizeFactValue(row.sponsor);
+  const showFund = row.fundName && normalizeFactValue(row.fundName) !== normalizeFactValue(row.sponsor);
+  const showVehicle = row.vehicle
+    && normalizeFactValue(row.vehicle) !== normalizeFactValue(row.sponsor)
+    && (!showFund || normalizeFactValue(row.vehicle) !== normalizeFactValue(row.fundName || ""));
+  const accessibleLabel = [row.sponsor, showFund ? row.fundName : null, showVehicle ? row.vehicle : null, row.period]
+    .filter(Boolean)
+    .join(" — ");
 
   return (
-    <div className="border-b border-[var(--border)] py-3 last:border-b-0">
-      <div className="type-row-title font-semibold">
-        {row.sponsor}
+    <div
+      role="group"
+      aria-label={`${accessibleLabel} ownership period`}
+      className="border-b border-[var(--border)] py-3 last:border-b-0"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="type-row-title font-semibold">
+          {row.sponsor}
+        </div>
+        {row.period && (
+          <span className="shrink-0 type-meta font-medium tabular-nums text-[var(--text-primary)] mono">
+            {row.period}
+          </span>
+        )}
       </div>
       {showFund && (
         <div className="mt-1 type-meta">
-          {row.fund}
+          {row.fundName}
+        </div>
+      )}
+      {showVehicle && (
+        <div className="mt-1 type-micro leading-relaxed">
+          <span className="font-medium text-[var(--text-secondary)]">Vehicle: </span>
+          {row.vehicle}
+        </div>
+      )}
+      {row.stake && (
+        <div className="mt-2 type-micro leading-relaxed">
+          <span className="font-medium text-[var(--text-secondary)]">Stake: </span>
+          {row.stake}
         </div>
       )}
     </div>
@@ -582,31 +557,45 @@ function FactRow({ label, value, children }: { label: string; value?: ReactNode;
 function OwnerLine({
   owner,
   funds,
-  repeatedValues,
   repeatedStrategies,
 }: {
   owner: OwnerView;
   funds: FundStrategyView[];
-  repeatedValues: string[];
   repeatedStrategies: string[];
 }) {
   const strategies = getOwnerStrategies(owner, funds);
   const yearRange = formatCompactYearRange(owner);
-  const showVehicle = shouldShowOwnerField(owner.vehicle, repeatedValues);
-  const showYear = shouldShowOwnerField(yearRange, repeatedValues);
+  const showFund = !!owner.fundName && normalizeFactValue(owner.fundName) !== normalizeFactValue(owner.firm);
+  const showVehicle = !!owner.vehicle
+    && normalizeFactValue(owner.vehicle) !== normalizeFactValue(owner.firm)
+    && (!showFund || normalizeFactValue(owner.vehicle) !== normalizeFactValue(owner.fundName || ""));
+  const showYear = yearRange !== "N/A";
   const visibleStrategies = strategies.filter((strategy) => (
     !repeatedStrategies.some((repeated) => normalizeFactValue(repeated) === normalizeFactValue(strategy))
   ));
+  const accessibleLabel = [owner.firm, showFund ? owner.fundName : null, showVehicle ? owner.vehicle : null, yearRange]
+    .filter(Boolean)
+    .join(" — ");
 
   return (
-    <div className="border-b border-[var(--border)] py-3 last:border-b-0">
+    <div
+      role="group"
+      aria-label={`${accessibleLabel} ownership period`}
+      className="border-b border-[var(--border)] py-3 last:border-b-0"
+    >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <div className="type-row-title font-semibold">
             {owner.firm || "Unknown owner"}
           </div>
-          {showVehicle && (
+          {showFund && (
             <div className="mt-1 type-meta">
+              {owner.fundName}
+            </div>
+          )}
+          {showVehicle && (
+            <div className="mt-1 type-micro leading-relaxed">
+              <span className="font-medium text-[var(--text-secondary)]">Vehicle: </span>
               {owner.vehicle}
             </div>
           )}
@@ -700,38 +689,24 @@ export function PortCoDrawer({
   const sectorColor = getPortCoSectorColor(company.sector);
   const statusColor = getPortCoStatusColor(company.status);
   const locationDisplay = company.headquarters || company.country || "Not disclosed";
-  const owners = company.owners;
-  const displayOwners = useMemo(() => mergeOwnerDisplayRows(owners), [owners]);
+  const displayOwners = company.owners;
   const { active: activeOwners, former: formerOwners } = useMemo(() => splitOwners(displayOwners), [displayOwners]);
   const primaryOwner = useMemo(() => getPrimaryOwner(displayOwners), [displayOwners]);
   const primaryStrategies = useMemo(() => getOwnerStrategies(primaryOwner, funds), [primaryOwner, funds]);
   const identityDescriptor = useMemo(() => getIdentityDescriptor(company), [company]);
   const descriptorOwnsSector = isRedundantText(identityDescriptor, company.sector);
-  const activeSponsorNames = uniqueValues(activeOwners.map((owner) => owner.firm));
-  const currentSponsorNames = activeSponsorNames.length > 0
-    ? activeSponsorNames
-    : uniqueValues([primaryOwner?.firm || company.investmentFirm]);
-  const currentSponsorLabel = formatSponsorList(currentSponsorNames);
   const vehicleLabel = primaryOwner?.vehicle || company.ownershipVehicle || "Not disclosed";
   const sponsorFundRows = useMemo(
     () => buildSponsorFundRows(activeOwners.length > 0 ? activeOwners : primaryOwner ? [primaryOwner] : [], company.investmentFirm, vehicleLabel),
     [activeOwners, company.investmentFirm, primaryOwner, vehicleLabel],
   );
-  const primaryOwnerPeriod = primaryOwner
-    ? formatCompactYearRange(primaryOwner)
-    : company.investmentYear
-    ? String(company.investmentYear)
-    : "N/A";
-  const headerStatusPeriod = formatHeaderStatusPeriod(company, primaryOwner);
-  const disclosedStakes = uniqueValues(activeOwners.map((owner) => owner.stake));
+  const headerStatusPeriod = formatHeaderStatusPeriod(company, primaryOwner, activeOwners);
   const ownershipFacts = useMemo(
     () => buildOwnershipFacts({
       strategies: primaryStrategies,
-      stakes: disclosedStakes,
     }),
-    [disclosedStakes, primaryStrategies],
+    [primaryStrategies],
   );
-  const ownerRepeatedValues = uniqueValues([currentSponsorLabel, vehicleLabel, primaryOwnerPeriod, headerStatusPeriod]);
   const description = useMemo(() => splitDescription(company.description || ""), [company.description]);
   const leadAddsMeaning = shouldRenderLead(description.lead, identityDescriptor);
   const overviewBodyText = [leadAddsMeaning ? "" : description.lead, description.body]
@@ -824,7 +799,7 @@ export function PortCoDrawer({
               <DetailSection title="Ownership">
                 <div>
                   <div className="type-label">
-                    Sponsor / fund
+                    Sponsor / fund / vehicle
                   </div>
                   <div className="mt-1 divide-y divide-[var(--border)]">
                     {sponsorFundRows.map((row) => (
@@ -856,10 +831,9 @@ export function PortCoDrawer({
                       <div className="mt-2 divide-y divide-[var(--border)] border-t border-[var(--border)]">
                         {formerOwners.map((owner, idx) => (
                           <OwnerLine
-                            key={`${owner.firm}-${owner.vehicle}-${idx}`}
+                            key={owner.id || `${owner.firm}-${owner.vehicle}-${owner.investmentYear}-${owner.exitYear}-${idx}`}
                             owner={owner}
                             funds={funds}
-                            repeatedValues={ownerRepeatedValues}
                             repeatedStrategies={primaryStrategies}
                           />
                         ))}

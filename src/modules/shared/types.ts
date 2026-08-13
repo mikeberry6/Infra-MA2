@@ -78,6 +78,7 @@ export interface PortfolioCompanyView {
 }
 
 export interface OwnerView {
+  id?: string;
   firm: string;
   vehicle: string;
   fundName?: string;
