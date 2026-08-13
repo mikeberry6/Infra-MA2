@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-13T03:54:09.000Z",
+  "asOfDate": "2026-08-13",
+  "decision": "DEFER_GEOGRAPHY_AND_COMPANY_MUTATION",
+  "taskId": "ledger:0067:clean-computational-infrastructure:93bcf245",
+  "taskIndex": 67,
+  "companyName": "Clean Computational Infrastructure",
+  "requestedManagers": [
+    "ArcLight Capital"
+  ],
+  "rationale": "ArcLight's official investment materials establish Clean Computational Infrastructure as a distinct, current Transformative portfolio-company investment of ArcLight Energy Partners Fund VII, L.P. no later than June 30, 2022. They do not disclose the company's legal suffix, website, headquarters, operating footprint, assets, subsidiaries, customers, stake, exact entry date, or company-level country. Fund VII's North American mandate and ArcLight's Boston address cannot substitute for direct evidence that this specific company is primarily based in or dedicated to the United States, Canada, or Mexico. Creating the repository's proposed United States company record would therefore infer a mandatory geography field and an operating description that public evidence does not support. No existing production or evaluated-seed company matches the identity, and no evidence supports merging it with another computational, data-center, or energy-transition platform. The database and seed mutation are deferred until the company-level North American qualification and operating boundary can be directly verified.",
+  "identityResolution": {
+    "canonicalDisplayName": "Clean Computational Infrastructure",
+    "legalName": "NOT_PUBLICLY_DISCLOSED",
+    "aliases": [],
+    "website": "NOT_PUBLICLY_DISCLOSED",
+    "platformBoundary": "ArcLight lists the name as a separate portfolio-company investment. Treat it as a distinct manager-level platform, not as a project or subsidiary, but do not infer specific assets or services.",
+    "duplicateResolution": "No production company, evaluated-seed company, reciprocal ledger candidate, or current public evidence supports a merge with another platform."
+  },
+  "ownershipResolution": {
+    "manager": "ArcLight Capital Partners, LLC",
+    "fund": "ArcLight Energy Partners Fund VII, L.P.",
+    "state": "CLOSED_ACTIVE",
+    "earliestConfirmedOwnership": "2022-06-30",
+    "earliestConfirmedOwnershipPrecision": "ON_OR_BEFORE",
+    "exactEntryDate": "NOT_PUBLICLY_DISCLOSED",
+    "stake": "NOT_PUBLICLY_DISCLOSED",
+    "specificOwnershipVehicle": "NOT_PUBLICLY_DISCLOSED",
+    "coOwners": "NOT_PUBLICLY_DISCLOSED",
+    "exitSearch": "No company-specific sale, exit, restructuring, or pending ownership transaction was identified through August 13, 2026; ArcLight's live investments page continues to label the investment Current."
+  },
+  "geographyResolution": {
+    "companyCountry": "UNRESOLVED",
+    "companyHeadquarters": "NOT_PUBLICLY_DISCLOSED",
+    "operatingFootprint": "NOT_PUBLICLY_DISCLOSED",
+    "fundMandate": "North America",
+    "reasonFundMandateIsInsufficient": "A fund-level investment mandate does not directly establish the location or dedicated operating geography of an individual holding."
+  },
+  "managerTransactionContext": {
+    "finding": "DigitalBridge's announced acquisition of ArcLight is a signed but pending manager-level combination. ArcLight is to remain separately managed, and the transaction is not evidence of a sale or ownership change for Clean Computational Infrastructure.",
+    "portcoMutationEffect": "NONE"
+  },
+  "evidence": [
+    {
+      "label": "ArcLight - Investments",
+      "url": "https://arclight.com/investments/",
+      "purpose": "Distinct portfolio-company identity, Transformative classification, and current status",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "verifiedAt": "2026-08-13T03:54:09.000Z"
+    },
+    {
+      "label": "ArcLight - 2025 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Fund VII attribution as of December 31, 2024",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "verifiedAt": "2026-08-13T03:54:09.000Z"
+    },
+    {
+      "label": "ArcLight - 2022 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2022/08/2022-ArcLight-ESG-Report.pdf",
+      "purpose": "Fund VII attribution and ownership no later than June 30, 2022",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "DEAD_BUT_ARCHIVED_IN_ACCEPTED_CENSUS",
+      "verifiedAt": "2026-08-13T03:54:09.000Z"
+    },
+    {
+      "label": "ArcLight - Sector Focus",
+      "url": "https://arclight.com/focus/",
+      "purpose": "ArcLight Transformative Infrastructure strategy definition",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING",
+      "verifiedAt": "2026-08-13T03:54:09.000Z"
+    },
+    {
+      "label": "SEC - ArcLight Energy Partners Fund VII, L.P. Form D",
+      "url": "https://www.sec.gov/Archives/edgar/data/1740500/000174050118000002/xslFormDX01/primary_doc.xml",
+      "purpose": "Fund VII legal identity",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedAt": "2026-08-13T03:54:09.000Z"
+    },
+    {
+      "label": "DigitalBridge and ArcLight - Strategic Combination Announcement",
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-arclight-announce-strategic-combination-form/",
+      "purpose": "Pending manager-level combination and separately managed ArcLight treatment",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedAt": "2026-08-13T03:54:09.000Z"
+    }
+  ],
+  "unresolvedQuestions": [
+    "What legal entity, website, and operating assets sit beneath the Clean Computational Infrastructure display name?",
+    "Is the company primarily based in or dedicated to the United States, Canada, or Mexico?",
+    "What are ArcLight's exact investment date, ownership vehicle, and stake?"
+  ],
+  "retryTriggers": [
+    "An ArcLight or company disclosure identifies the platform's country, headquarters, or North American assets",
+    "A regulatory or corporate filing identifies the legal entity and operating perimeter",
+    "A transaction announcement discloses the original investment, current structure, or disposition"
+  ],
+  "taskSnapshotSha256": "786c4f22596688376b345c85639ec54a5d2f8b16d885871fbc168b00cb9e07d5",
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "DEFERRED"
+}

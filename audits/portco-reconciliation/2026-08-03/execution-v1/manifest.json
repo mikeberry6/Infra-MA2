@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T03:14:00.000Z",
+  "updatedAt": "2026-08-13T03:54:09.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -9793,20 +9793,26 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "0e031d19f80266962d27a9aa1453a4a5aea371fceb1ecce8162e84c5c1710b61",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-13T03:47:14.000Z",
+      "updatedAt": "2026-08-13T03:54:09.000Z",
+      "completedAt": "2026-08-13T03:54:09.000Z",
+      "exceptionReason": "Company-level North American geography and operating boundary are not publicly disclosed; mutation is deferred to avoid inferring a mandatory country or inventing operating facts despite confirmed current ArcLight Fund VII ownership.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-1/task-snapshot.json",
+          "sha256": "786c4f22596688376b345c85639ec54a5d2f8b16d885871fbc168b00cb9e07d5"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/research-decision.json",
+          "sha256": "30a3247e346a7eadafca1d14baa311bad231ecb5000ebb8f6a9c057934cd8f03"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -9820,6 +9826,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T03:47:14.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "DEFERRED",
+          "at": "2026-08-13T03:54:09.000Z",
+          "reason": "Company-level North American geography and operating boundary are not publicly disclosed; mutation is deferred to avoid inferring a mandatory country or inventing operating facts despite confirmed current ArcLight Fund VII ownership.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "30a3247e346a7eadafca1d14baa311bad231ecb5000ebb8f6a9c057934cd8f03",
+            "786c4f22596688376b345c85639ec54a5d2f8b16d885871fbc168b00cb9e07d5"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -26146,5 +26175,5 @@
       ]
     }
   ],
-  "manifestSha256": "8bb1e16e432eed306d1aff53254a1b59d9022ef4f9dede5bb5b2202b27759b90"
+  "manifestSha256": "2414dd5f57b0cacab4ced09c6a227aee55da84ed24ce0f092cc115c4c311af46"
 }
