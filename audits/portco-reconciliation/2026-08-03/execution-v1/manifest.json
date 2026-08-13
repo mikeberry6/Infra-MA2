@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T05:27:00.000Z",
+  "updatedAt": "2026-08-13T05:35:06.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0069:elevate-renewables:e4efa166",
   "source": {
@@ -10144,10 +10144,10 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "4b9976eca80bf4dfde830358fe18e60c15093726f84d8e95587d2e64038841e9",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 2,
       "startedAt": "2026-08-13T05:23:01.000Z",
-      "updatedAt": "2026-08-13T05:27:00.000Z",
+      "updatedAt": "2026-08-13T05:35:06.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -10165,7 +10165,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0069-elevate-renewables/attempt-2/approval.json",
           "sha256": "1fc705242ab669098d0a697591d9b4e89d5862ed3b10682f3096f9bc88737838"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0069-elevate-renewables/attempt-2/production-apply/apply-receipt.json",
+          "sha256": "88b248a8d613b173bd1304da2b8e72d24e418f3b4a923e8f429388b6904199a2"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -10278,6 +10281,30 @@
           "taskSnapshotSha256": "c747e51ee783eb9b247aa5d5fc2e31f8090941b4d1f54111cc0d31e4981de6c5",
           "evidenceSha256": [
             "1fc705242ab669098d0a697591d9b4e89d5862ed3b10682f3096f9bc88737838"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-13T05:35:05.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c747e51ee783eb9b247aa5d5fc2e31f8090941b4d1f54111cc0d31e4981de6c5",
+          "evidenceSha256": [
+            "c747e51ee783eb9b247aa5d5fc2e31f8090941b4d1f54111cc0d31e4981de6c5"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-13T05:35:06.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c747e51ee783eb9b247aa5d5fc2e31f8090941b4d1f54111cc0d31e4981de6c5",
+          "evidenceSha256": [
+            "88b248a8d613b173bd1304da2b8e72d24e418f3b4a923e8f429388b6904199a2"
           ],
           "kind": "TRANSITION"
         }
@@ -26530,5 +26557,5 @@
       ]
     }
   ],
-  "manifestSha256": "29e74bdb4c75bb7477cbf022b870b60841c12a4ad9330d7743425f496bc6b474"
+  "manifestSha256": "a6351e674651a59efbf47a63dba0ee000d5941bcf5c8e95d67bbb9e1123fc6c0"
 }

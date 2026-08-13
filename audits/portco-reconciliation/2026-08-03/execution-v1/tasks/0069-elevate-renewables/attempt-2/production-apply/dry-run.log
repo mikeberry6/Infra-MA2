@@ -1,0 +1,248 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0069-elevate-renewables-v2/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0069-elevate-renewables-v2.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0069-elevate-renewables/attempt-2/production-snapshot.json --proposal-sha256=42bf871afd654bb867c47edc61729cbc3f5653e8f8aa395976cbde688c5b9bf7 --approval-sha256=1fc705242ab669098d0a697591d9b4e89d5862ed3b10682f3096f9bc88737838 --snapshot-sha256=650d51654a4e3156c2ece3b09017ac21f4847f61b5d76425bcafd5ecbb857406
+
+(node:2874) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "42bf871afd654bb867c47edc61729cbc3f5653e8f8aa395976cbde688c5b9bf7",
+    "approvalSha256": "1fc705242ab669098d0a697591d9b4e89d5862ed3b10682f3096f9bc88737838",
+    "afterImageSha256": "8c579b055b3575cd05beda9955ec44232e4dbec8f2a4e95d57211537869cfbbf",
+    "taskId": "ledger:0069:elevate-renewables:e4efa166",
+    "operation": "UPSERT",
+    "company": {
+      "name": "Elevate Infrastructure",
+      "investmentFirm": "ArcLight Capital Partners",
+      "sector": "Power & ET",
+      "subsector": "Battery Energy Storage",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "ArcLight Energy Partners Fund VII, L.P.",
+      "description": "Elevate Infrastructure, formerly Elevate Renewables, develops, owns and operates utility-scale battery storage and related grid infrastructure in the United States. ArcLight formed the platform in 2022, and ArcLight Energy Partners Fund VII remains its 100% owner. The Boston-based company develops projects through co-location, greenfield development and acquisitions; it reports 630 MWh operating in 2026 and more than 12 GWh in development across nine states. No Elevate-specific sale or pending exit was identified through August 13, 2026.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "website": "https://www.elevateinfra.com/",
+      "yearFounded": 2022,
+      "investmentYear": 2022,
+      "headquarters": "Boston, Massachusetts, United States",
+      "milestones": [
+        {
+          "date": "2022",
+          "event": "ArcLight formed Elevate Renewables, now Elevate Infrastructure, as its utility-scale battery-storage platform.",
+          "category": "Financing"
+        },
+        {
+          "date": "Jan 31, 2023",
+          "event": "ArcLight announced a $150 million commitment to Elevate Renewables.",
+          "category": "Financing"
+        },
+        {
+          "date": "May 29, 2024",
+          "event": "ArcLight and Elevate announced a 15 MW / 60 MWh battery-storage project at the Arthur Kill Power Station in New York City.",
+          "category": "Other"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Elevate Infrastructure — company website",
+          "url": "https://www.elevateinfra.com/",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current Elevate Infrastructure identity, website, operating profile and U.S. footprint"
+        },
+        {
+          "label": "Investment date source — ArcLight Capital Partners — Elevate Renewables",
+          "url": "https://www.prnewswire.com/news-releases/arclight-makes-150-million-commitment-to-elevate-renewables-301734222.html",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "2022 platform formation, January 2023 capital commitment and infrastructure-strategy basis"
+        },
+        {
+          "label": "PR Newswire — Elevate Renewables",
+          "url": "https://www.prnewswire.com/news-releases/arclight-and-elevate-announce-new-york-citys-largest-battery-storage-project-to-date-302157303.html",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Direct wholly-owned disclosure and May 2024 Arthur Kill battery-storage announcement"
+        },
+        {
+          "label": "NYCIDA — Elevate Renewables F7 project analysis",
+          "url": "https://edc.nyc/sites/default/files/2024-04/Elevate%20Renewables%20F7%2C%20LLC%20PHP_Redacted.pdf",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Legal identity, ArcLight Energy Partners Fund VII ownership, Boston headquarters and project-subsidiary boundary"
+        },
+        {
+          "label": "Elevate Infrastructure — Prospect Power operations",
+          "url": "https://www.prnewswire.com/news-releases/elevate-and-arclight-bring-prospect-power-online-largest-standalone-battery-storage-facility-in-pjm-supports-virginias-expanding-energy-needs-302797453.html",
+          "type": "PRESS_RELEASE",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "Current Elevate Infrastructure identity, ArcLight backing and June 2026 operating continuity"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "ArcLight Capital Partners",
+          "ownershipVehicle": "ArcLight Energy Partners Fund VII, L.P.",
+          "vehicleName": "ArcLight Energy Partners Fund VII, L.P.",
+          "investmentYear": 2022,
+          "stake": "100%",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [
+      {
+        "name": "Elevate Renewables",
+        "country": "United States"
+      }
+    ],
+    "canonicalAfterImage": {
+      "id": "cmrxpj69300j1ivherdsury7a",
+      "name": "Elevate Infrastructure",
+      "aliases": [
+        "Elevate Renewables",
+        "Elevate Renewable Energy",
+        "Elevate Renewables F7, LLC"
+      ],
+      "sector": "POWER_ET",
+      "subsector": "Battery Energy Storage",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Elevate Infrastructure, formerly Elevate Renewables, develops, owns and operates utility-scale battery storage and related grid infrastructure in the United States. ArcLight formed the platform in 2022, and ArcLight Energy Partners Fund VII remains its 100% owner. The Boston-based company develops projects through co-location, greenfield development and acquisitions; it reports 630 MWh operating in 2026 and more than 12 GWh in development across nine states. No Elevate-specific sale or pending exit was identified through August 13, 2026.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": "https://www.elevateinfra.com/",
+      "yearFounded": 2022,
+      "headquarters": "Boston, Massachusetts, United States",
+      "lastVerifiedAt": "2026-08-13T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjra701fwivhevr7myg1g",
+          "managerName": "ArcLight Capital Partners",
+          "organizationName": "ArcLight Capital Partners",
+          "fundName": null,
+          "vehicleName": "ArcLight Energy Partners Fund VII, L.P.",
+          "stake": "100%",
+          "investmentYear": 2022,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpklc802nyivhemdc7z6cu",
+          "date": "2022",
+          "event": "ArcLight formed Elevate Renewables, now Elevate Infrastructure, as its utility-scale battery-storage platform.",
+          "category": "FINANCING",
+          "sortDate": "2022-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.prnewswire.com/news-releases/arclight-makes-150-million-commitment-to-elevate-renewables-301734222.html"
+          ]
+        },
+        {
+          "id": "cmrxpklcw02nzivhep0w1fguw",
+          "date": "Jan 31, 2023",
+          "event": "ArcLight announced a $150 million commitment to Elevate Renewables.",
+          "category": "FINANCING",
+          "sortDate": "2023-01-31T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.prnewswire.com/news-releases/arclight-makes-150-million-commitment-to-elevate-renewables-301734222.html"
+          ]
+        },
+        {
+          "id": "cmrxpkldb02o0ivhef3byr4ty",
+          "date": "May 29, 2024",
+          "event": "ArcLight and Elevate announced a 15 MW / 60 MWh battery-storage project at the Arthur Kill Power Station in New York City.",
+          "category": "OTHER",
+          "sortDate": "2024-05-29T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.prnewswire.com/news-releases/arclight-and-elevate-announce-new-york-citys-largest-battery-storage-project-to-date-302157303.html"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxpoz5c07h4ivhel0lhyr2i",
+          "label": "Elevate Infrastructure — company website",
+          "url": "https://www.elevateinfra.com/",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current Elevate Infrastructure identity, website, operating profile and U.S. footprint",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpoz6e07h6ivhe956h4tbe",
+          "label": "Investment date source — ArcLight Capital Partners — Elevate Renewables",
+          "url": "https://www.prnewswire.com/news-releases/arclight-makes-150-million-commitment-to-elevate-renewables-301734222.html",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "2022 platform formation, January 2023 capital commitment and infrastructure-strategy basis",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpoz7m07h8ivhea2arhqst",
+          "label": "PR Newswire — Elevate Renewables",
+          "url": "https://www.prnewswire.com/news-releases/arclight-and-elevate-announce-new-york-citys-largest-battery-storage-project-to-date-302157303.html",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Direct wholly-owned disclosure and May 2024 Arthur Kill battery-storage announcement",
+          "isPrimary": true
+        },
+        {
+          "id": null,
+          "label": "NYCIDA — Elevate Renewables F7 project analysis",
+          "url": "https://edc.nyc/sites/default/files/2024-04/Elevate%20Renewables%20F7%2C%20LLC%20PHP_Redacted.pdf",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Legal identity, ArcLight Energy Partners Fund VII ownership, Boston headquarters and project-subsidiary boundary",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Elevate Infrastructure — Prospect Power operations",
+          "url": "https://www.prnewswire.com/news-releases/elevate-and-arclight-bring-prospect-power-online-largest-standalone-battery-storage-facility-in-pjm-supports-virginias-expanding-energy-needs-302797453.html",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "Current Elevate Infrastructure identity, ArcLight backing and June 2026 operating continuity",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Elevate Infrastructure",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to name, aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+      }
+    ],
+    "changedFields": [
+      "aliases",
+      "citations",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "name",
+      "ownershipPeriods",
+      "website"
+    ],
+    "retiredCompanyIds": []
+  }
+}
