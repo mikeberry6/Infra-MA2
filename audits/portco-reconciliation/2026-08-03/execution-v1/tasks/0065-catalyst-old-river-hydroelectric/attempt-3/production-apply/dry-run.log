@@ -1,0 +1,364 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0065-catalyst-old-river-hydroelectric-v2/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0065-catalyst-old-river-hydroelectric-v2.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0065-catalyst-old-river-hydroelectric/attempt-3/production-snapshot.json --proposal-sha256=95fd564c969b6c16ffde1fbbcf4fa683190eaf0e057fe054caa32607694a0179 --approval-sha256=7502c4429709af1a9bccb4e9e06ac2a922df912cb350c09810977f83b258448c --snapshot-sha256=c7832c8571f5797db2cc89af3e3219978ca5f9fc89e6e232f3d506017d9d2913
+
+(node:3042) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "95fd564c969b6c16ffde1fbbcf4fa683190eaf0e057fe054caa32607694a0179",
+    "approvalSha256": "7502c4429709af1a9bccb4e9e06ac2a922df912cb350c09810977f83b258448c",
+    "afterImageSha256": "c388d7b7eb01ff4426d4a9b340ee397d040a6f3bb6240f95f7aeba4c085326f5",
+    "taskId": "ledger:0065:catalyst-old-river-hydroelectric:5f41df5c",
+    "operation": "UPSERT",
+    "company": {
+      "name": "Catalyst Old River Hydroelectric Limited Partnership",
+      "investmentFirm": "ArcLight Capital Partners",
+      "sector": "Power & ET",
+      "subsector": "Hydroelectric Generation",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "ArcLight Renewable Infrastructure Fund SM SPV, L.P.",
+      "description": "Catalyst Old River Hydroelectric Limited Partnership owns and operates the 192 MW Sidney A. Murray Jr. Hydroelectric Station on a diversion of the Mississippi River near Vidalia, Louisiana. The run-of-river facility entered service in 1990 and sells power to an Entergy utility and the Town of Vidalia under long-term arrangements extending through 2031. Brookfield Renewable affiliates hold the 75% economic balance and the managing/control position. ArcLight Capital Partners holds the remaining 25% through ArcLight Renewable Infrastructure Fund SM SPV, L.P., which acquired the interest from ArcLight Energy Partners Fund V on July 8, 2021. The project company is the single PortCo; its upstream holdcos, co-licensee and lenders are not separate owners.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "investmentYear": 2021,
+      "headquarters": "Vidalia, Louisiana, United States",
+      "milestones": [
+        {
+          "date": "1990",
+          "event": "The 192 MW Sidney A. Murray Jr. Hydroelectric Station entered commercial operation near Vidalia, Louisiana.",
+          "category": "Expansion"
+        },
+        {
+          "date": "2011",
+          "event": "ArcLight Energy Partners Fund V acquired its initial interest in the Sidney Murray hydro project.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "2021",
+          "event": "Prudential Private Capital provided $60 million of senior-secured debt to Rougaroux Power Holdings to recapitalize the non-managing interest in the hydro project; the financing did not create a separate equity owner.",
+          "category": "Financing"
+        },
+        {
+          "date": "Jul 8, 2021",
+          "event": "ArcLight Renewable Infrastructure Fund SM SPV, L.P. acquired a 25% interest in the project from ArcLight Energy Partners Fund V, L.P.",
+          "category": "Acquisition"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Arclight — Catalyst Old River Hydroelectric",
+          "url": "https://arclight.com/investments/",
+          "type": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "ArcLight identifies Catalyst Old River as a current power investment"
+        },
+        {
+          "label": "Investment date source — ArcLight Capital Partners — Catalyst Old River Hydroelectric",
+          "url": "https://www.prnewswire.com/news-releases/arclight-announces-successful-closing-of-renewable-infrastructure-continuation-fund-301328260.html",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "ArcLight SM SPV acquired 25% from Fund V on July 8, 2021; Brookfield affiliates own the balance"
+        },
+        {
+          "label": "Prudentialprivatecapital — Catalyst Old River Hydroelectric",
+          "url": "https://www.prudentialprivatecapital.com/perspectives/prudential-private-capital-invests-60m-in-catalyst-vidalia-holding-corporation",
+          "type": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Brookfield Renewable Partners indirectly owns the managing member side of the 192 MW project"
+        },
+        {
+          "label": "Business Wire — Catalyst Old River Hydroelectric",
+          "url": "https://www.businesswire.com/news/home/20210805005056/en/Prudential-Private-Capital-invests-%2460M-in-Rougaroux-Power-Holdings",
+          "type": "PRESS_RELEASE",
+          "purpose": "FINANCING_FILINGS",
+          "evidenceLabel": "Debt-only financing of the non-managing-interest holdco"
+        },
+        {
+          "label": "Brookfield Renewable — Q1 2026 interim report",
+          "url": "https://bep.brookfield.com/sites/brookfield-bep-v2/files/Brookfield-BEP-IR-V2/2026/Q1/bep-q1-2026-interim-report.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "March 31, 2026 reporting identifies a continuing 25% third-party interest in The Catalyst Group"
+        },
+        {
+          "label": "FERC — Brookfield control of Catalyst",
+          "url": "https://www.ferc.gov/sites/default/files/2020-07/07-2020-E-29.pdf",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Brookfield elected to acquire 100% voting control over Catalyst's general-partnership interests"
+        },
+        {
+          "label": "SEC — Catalyst legal identity and operating profile",
+          "url": "https://www.sec.gov/Archives/edgar/data/926807/000090956703000687/t09928exv99w1.htm",
+          "type": "SEC_FILING",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Legal project-company name, 192 MW Sidney A. Murray Jr. station and Brookfield predecessor's 75% residual interest"
+        },
+        {
+          "label": "FERC — April 2026 Brookfield affiliate-group filing",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-05-12/pdf/2026-09378.pdf",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Catalyst remained grouped with Brookfield Renewable entities in the April 29, 2026 change-in-status filing"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "ArcLight Capital Partners",
+          "ownershipVehicle": "ArcLight Energy Partners Fund V, L.P.",
+          "investmentYear": 2011,
+          "exitYear": 2021,
+          "stake": "25% at transfer; initial and interim percentages not publicly disclosed",
+          "status": "Realized",
+          "transactionState": "REALIZED"
+        },
+        {
+          "investmentFirm": "ArcLight Capital Partners",
+          "ownershipVehicle": "ArcLight Renewable Infrastructure Fund SM SPV, L.P.",
+          "investmentYear": 2021,
+          "stake": "25% economic interest; non-managing position",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "investmentFirm": "Brookfield Asset Management",
+          "ownershipVehicle": "Brookfield Renewable Partners affiliates (exact fund not publicly disclosed)",
+          "stake": "75% economic interest; managing/controlling position",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [
+      {
+        "name": "Catalyst Old River Hydroelectric",
+        "country": "United States"
+      }
+    ],
+    "canonicalAfterImage": {
+      "id": "cmrxpj67x00izivheqinytkio",
+      "name": "Catalyst Old River Hydroelectric Limited Partnership",
+      "aliases": [
+        "Catalyst Old River",
+        "Catalyst Old River Hydro",
+        "Catalyst Old River Hydroelectric",
+        "Catalyst Old River Hydroelectric L.P.",
+        "Louisiana Hydroelectric Power",
+        "Old River Hydro",
+        "Sidney A. Murray Jr. Hydroelectric Station",
+        "Sidney Murray Hydroelectric Project"
+      ],
+      "sector": "POWER_ET",
+      "subsector": "Hydroelectric Generation",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Catalyst Old River Hydroelectric Limited Partnership owns and operates the 192 MW Sidney A. Murray Jr. Hydroelectric Station on a diversion of the Mississippi River near Vidalia, Louisiana. The run-of-river facility entered service in 1990 and sells power to an Entergy utility and the Town of Vidalia under long-term arrangements extending through 2031. Brookfield Renewable affiliates hold the 75% economic balance and the managing/control position. ArcLight Capital Partners holds the remaining 25% through ArcLight Renewable Infrastructure Fund SM SPV, L.P., which acquired the interest from ArcLight Energy Partners Fund V on July 8, 2021. The project company is the single PortCo; its upstream holdcos, co-licensee and lenders are not separate owners.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": null,
+      "yearFounded": null,
+      "headquarters": "Vidalia, Louisiana, United States",
+      "lastVerifiedAt": "2026-08-13T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjr9601fuivhem1seogi3",
+          "managerName": "ArcLight Capital Partners",
+          "organizationName": "ArcLight Capital Partners",
+          "fundName": null,
+          "vehicleName": "ArcLight Energy Partners Fund V, L.P.",
+          "stake": "25% at transfer; initial and interim percentages not publicly disclosed",
+          "investmentYear": 2011,
+          "exitYear": 2021,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        },
+        {
+          "id": null,
+          "managerName": "ArcLight Capital Partners",
+          "organizationName": "ArcLight Capital Partners",
+          "fundName": null,
+          "vehicleName": "ArcLight Renewable Infrastructure Fund SM SPV, L.P.",
+          "stake": "25% economic interest; non-managing position",
+          "investmentYear": 2021,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "id": null,
+          "managerName": "Brookfield Asset Management",
+          "organizationName": "Brookfield Asset Management",
+          "fundName": null,
+          "vehicleName": "Brookfield Renewable Partners affiliates (exact fund not publicly disclosed)",
+          "stake": "75% economic interest; managing/controlling position",
+          "investmentYear": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpkl5g02nrivhez0q62ya6",
+          "date": "1990",
+          "event": "The 192 MW Sidney A. Murray Jr. Hydroelectric Station entered commercial operation near Vidalia, Louisiana.",
+          "category": "EXPANSION",
+          "sortDate": "1990-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/926807/000090956703000687/t09928exv99w1.htm"
+          ]
+        },
+        {
+          "id": "cmrxpkl5u02nsivhes9pev3or",
+          "date": "2011",
+          "event": "ArcLight Energy Partners Fund V acquired its initial interest in the Sidney Murray hydro project.",
+          "category": "ACQUISITION",
+          "sortDate": "2011-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.prnewswire.com/news-releases/arclight-announces-successful-closing-of-renewable-infrastructure-continuation-fund-301328260.html"
+          ]
+        },
+        {
+          "id": "cmrxpkl6e02ntivhemdx3t0a9",
+          "date": "2021",
+          "event": "Prudential Private Capital provided $60 million of senior-secured debt to Rougaroux Power Holdings to recapitalize the non-managing interest in the hydro project; the financing did not create a separate equity owner.",
+          "category": "FINANCING",
+          "sortDate": "2021-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.businesswire.com/news/home/20210805005056/en/Prudential-Private-Capital-invests-%2460M-in-Rougaroux-Power-Holdings"
+          ]
+        },
+        {
+          "id": "cmrxpkl7002nuivhe90qlnfd3",
+          "date": "Jul 8, 2021",
+          "event": "ArcLight Renewable Infrastructure Fund SM SPV, L.P. acquired a 25% interest in the project from ArcLight Energy Partners Fund V, L.P.",
+          "category": "ACQUISITION",
+          "sortDate": "2021-07-08T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.prnewswire.com/news-releases/arclight-announces-successful-closing-of-renewable-infrastructure-continuation-fund-301328260.html"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxpoyve07gqivhed5yv4ml7",
+          "label": "Arclight — Catalyst Old River Hydroelectric",
+          "url": "https://arclight.com/investments/",
+          "sourceType": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "ArcLight identifies Catalyst Old River as a current power investment",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpoywf07gsivhe0gbdoglg",
+          "label": "Investment date source — ArcLight Capital Partners — Catalyst Old River Hydroelectric",
+          "url": "https://www.prnewswire.com/news-releases/arclight-announces-successful-closing-of-renewable-infrastructure-continuation-fund-301328260.html",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "ArcLight SM SPV acquired 25% from Fund V on July 8, 2021; Brookfield affiliates own the balance",
+          "isPrimary": true
+        },
+        {
+          "id": "cmrxpoyxb07guivhedcf5kgtv",
+          "label": "Prudentialprivatecapital — Catalyst Old River Hydroelectric",
+          "url": "https://www.prudentialprivatecapital.com/perspectives/prudential-private-capital-invests-60m-in-catalyst-vidalia-holding-corporation",
+          "sourceType": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Brookfield Renewable Partners indirectly owns the managing member side of the 192 MW project",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpoyya07gwivheuhzvg7vk",
+          "label": "Business Wire — Catalyst Old River Hydroelectric",
+          "url": "https://www.businesswire.com/news/home/20210805005056/en/Prudential-Private-Capital-invests-%2460M-in-Rougaroux-Power-Holdings",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "FINANCING_FILINGS",
+          "evidenceLabel": "Debt-only financing of the non-managing-interest holdco",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Brookfield Renewable — Q1 2026 interim report",
+          "url": "https://bep.brookfield.com/sites/brookfield-bep-v2/files/Brookfield-BEP-IR-V2/2026/Q1/bep-q1-2026-interim-report.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "March 31, 2026 reporting identifies a continuing 25% third-party interest in The Catalyst Group",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "FERC — Brookfield control of Catalyst",
+          "url": "https://www.ferc.gov/sites/default/files/2020-07/07-2020-E-29.pdf",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Brookfield elected to acquire 100% voting control over Catalyst's general-partnership interests",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "SEC — Catalyst legal identity and operating profile",
+          "url": "https://www.sec.gov/Archives/edgar/data/926807/000090956703000687/t09928exv99w1.htm",
+          "sourceType": "SEC_FILING",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Legal project-company name, 192 MW Sidney A. Murray Jr. station and Brookfield predecessor's 75% residual interest",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "FERC — April 2026 Brookfield affiliate-group filing",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-05-12/pdf/2026-09378.pdf",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Catalyst remained grouped with Brookfield Renewable entities in the April 29, 2026 change-in-status filing",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Catalyst Old River Hydroelectric Limited Partnership",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to name, aliases, description, headquarters, lastVerifiedAt, milestones, citations."
+      },
+      {
+        "kind": "ADD_OWNER",
+        "relationIds": [],
+        "detail": "Add 2 approved ownership period(s)."
+      },
+      {
+        "kind": "RETIRE_OWNERSHIP",
+        "relationIds": [
+          "cmrxpjr9601fuivhem1seogi3"
+        ],
+        "detail": "Retire 1 ownership period(s) without deleting history."
+      }
+    ],
+    "changedFields": [
+      "aliases",
+      "citations",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "name",
+      "ownershipPeriods"
+    ],
+    "retiredCompanyIds": []
+  }
+}
