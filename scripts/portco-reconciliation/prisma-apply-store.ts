@@ -237,6 +237,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "BC Partners": "FUND_MANAGER",
   "GFL Environmental Inc.": "CORPORATE",
   "HPS Investment Partners": "FUND_MANAGER",
+  "Kinder Morgan, Inc.": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(name: string): ["CORPORATE"] | ["FUND_MANAGER"] {

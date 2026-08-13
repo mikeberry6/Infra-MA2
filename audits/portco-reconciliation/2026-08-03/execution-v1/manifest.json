@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T05:44:34.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-13T06:32:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -10330,18 +10330,27 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "69cf7403eaa3b347666e8d2c295b1b2858abad4ea8a9deef378c14107382649b",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-13T06:27:01.000Z",
+      "updatedAt": "2026-08-13T06:32:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0070-gulf-coast-express-pipeline/attempt-2/locked-task-snapshot.json",
+          "sha256": "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0070-gulf-coast-express-pipeline-v2/proposal.json",
+          "sha256": "351959298d59bf4d85f584db7e7e4e72a9e71290b1ffae6e5f64d28ee5ab97cf"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0070-gulf-coast-express-pipeline-v2.json",
+          "sha256": "4564c3230cbe740e09c94a0d6a91baffdd16fe0cc0939c99587bd08fd935b5f7"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -10357,6 +10366,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T05:49:48.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T06:19:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "20754f20535691373eb6288d028694a545a9071cf0e7ce814db256bf9022f892",
+          "evidenceSha256": [
+            "20754f20535691373eb6288d028694a545a9071cf0e7ce814db256bf9022f892",
+            "9c66b042854b7c2c14ad8dfce9bcd6541714e36b55e252576416a1e35e42e1c0"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T06:19:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "20754f20535691373eb6288d028694a545a9071cf0e7ce814db256bf9022f892",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T06:21:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "20754f20535691373eb6288d028694a545a9071cf0e7ce814db256bf9022f892",
+          "evidenceSha256": [
+            "0eb3567222fde0482bf7ae2fa5672d66545dbb8013d92b6088d34ca9e67d554f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-13T06:27:00.000Z",
+          "reason": "Pre-release source-health validation found the proposed ArcLight 2024 ESG report URL returned HTTP 404. No production write occurred; the staged seed entry was removed. Retry with the current 2025 ArcLight ESG report and fresh immutable artifacts.",
+          "taskSnapshotSha256": "20754f20535691373eb6288d028694a545a9071cf0e7ce814db256bf9022f892",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-13T06:27:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T06:31:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15",
+          "evidenceSha256": [
+            "351959298d59bf4d85f584db7e7e4e72a9e71290b1ffae6e5f64d28ee5ab97cf",
+            "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T06:31:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T06:32:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15",
+          "evidenceSha256": [
+            "4564c3230cbe740e09c94a0d6a91baffdd16fe0cc0939c99587bd08fd935b5f7"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -26569,5 +26678,5 @@
       ]
     }
   ],
-  "manifestSha256": "2566230a3e7dcb841400a7ef8705da9da55354330cdc544f6f084b4208cb0b57"
+  "manifestSha256": "f6f8506974ea49ff795cf761f377be9446e76b85d98c03b6d103891830cbcca2"
 }
