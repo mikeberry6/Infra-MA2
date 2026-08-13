@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T00:44:00.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-13T01:48:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0065:catalyst-old-river-hydroelectric:5f41df5c",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -9445,18 +9445,27 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "736ab87c3ab505eb64a1d8b90c237d682c5b6d948c01f1b259b2d6e907b68746",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-13T01:44:01.000Z",
+      "updatedAt": "2026-08-13T01:48:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "9a0ddaff7e283c005114c620f4246bab1f2df3f2cde1da7866b1d948e2b108e9",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0065-catalyst-old-river-hydroelectric/attempt-3/task-snapshot.json",
+          "sha256": "9a0ddaff7e283c005114c620f4246bab1f2df3f2cde1da7866b1d948e2b108e9"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0065-catalyst-old-river-hydroelectric-v2/proposal.json",
+          "sha256": "95fd564c969b6c16ffde1fbbcf4fa683190eaf0e057fe054caa32607694a0179"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0065-catalyst-old-river-hydroelectric-v2.json",
+          "sha256": "7502c4429709af1a9bccb4e9e06ac2a922df912cb350c09810977f83b258448c"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -9472,6 +9481,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T01:22:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T01:40:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3a28d7dd5014390342f9364fa7175070bcec2750b94b03beb3fe6a7ac9fb91c5",
+          "evidenceSha256": [
+            "0e0d3d01bb933bf708164a29bfcf4452c6f44a0e4d7ef00f7e28ea25914e6f39",
+            "3a28d7dd5014390342f9364fa7175070bcec2750b94b03beb3fe6a7ac9fb91c5"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T01:40:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3a28d7dd5014390342f9364fa7175070bcec2750b94b03beb3fe6a7ac9fb91c5",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T01:42:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3a28d7dd5014390342f9364fa7175070bcec2750b94b03beb3fe6a7ac9fb91c5",
+          "evidenceSha256": [
+            "4489a934546f70d6a67f4f49937154c58c1942b1ab9f0644f714fd7000581fb1"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-13T01:44:00.000Z",
+          "reason": "Fail-closed dry run rejected modified titles for shared Source rows; no release or database write occurred and the staged seed entry was removed.",
+          "taskSnapshotSha256": "3a28d7dd5014390342f9364fa7175070bcec2750b94b03beb3fe6a7ac9fb91c5",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-13T01:44:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T01:46:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9a0ddaff7e283c005114c620f4246bab1f2df3f2cde1da7866b1d948e2b108e9",
+          "evidenceSha256": [
+            "95fd564c969b6c16ffde1fbbcf4fa683190eaf0e057fe054caa32607694a0179",
+            "9a0ddaff7e283c005114c620f4246bab1f2df3f2cde1da7866b1d948e2b108e9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T01:46:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9a0ddaff7e283c005114c620f4246bab1f2df3f2cde1da7866b1d948e2b108e9",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T01:48:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9a0ddaff7e283c005114c620f4246bab1f2df3f2cde1da7866b1d948e2b108e9",
+          "evidenceSha256": [
+            "7502c4429709af1a9bccb4e9e06ac2a922df912cb350c09810977f83b258448c"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -25874,5 +25983,5 @@
       ]
     }
   ],
-  "manifestSha256": "03872dfdcdf77db7d9200834b6692e1a30d2ff4ca767a571f059e3aa044c347b"
+  "manifestSha256": "161da2b0b78d9b01cdd2d57378014b99c220357f6f13916f292bf2a3159dadab"
 }
