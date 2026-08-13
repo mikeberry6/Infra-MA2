@@ -6,6 +6,7 @@ import { z } from "zod";
 import {
   companyImageSha256,
   finalizeProposal,
+  verifyProposal,
   verifyDatasetSnapshot,
 } from "./artifacts";
 import { verifyExecutionTaskSnapshot } from "./execution-control";
@@ -17,6 +18,10 @@ import {
   ownershipPeriodImageSchema,
   proposalActions,
   relationMergeSchema,
+  type CompanyImage,
+  type ProductionSnapshot,
+  type ReconciliationProposal,
+  type ReviewedSeedRetirement,
 } from "./schema";
 import type { TaskSnapshotContext } from "./task-snapshot";
 
@@ -176,7 +181,8 @@ const proposalSpecSchema = z.strictObject({
 
 interface Arguments {
   context: string;
-  spec: string;
+  spec?: string;
+  supersededProposal?: string;
   json: string;
   markdown: string;
   generatedAt?: string;
@@ -191,19 +197,32 @@ function argumentsFrom(argv: readonly string[]): Arguments {
     const separator = argument.indexOf("=");
     values.set(argument.slice(2, separator), argument.slice(separator + 1));
   }
-  const required = (name: keyof Arguments): string => {
+  const required = (name: "context" | "json" | "markdown"): string => {
     const value = values.get(name)?.trim();
     if (!value) throw new Error(`--${name}=... is required`);
     return value;
   };
   for (const key of values.keys()) {
-    if (!["context", "spec", "json", "markdown", "generated-at"].includes(key)) {
+    if (![
+      "context",
+      "spec",
+      "superseded-proposal",
+      "json",
+      "markdown",
+      "generated-at",
+    ].includes(key)) {
       throw new Error(`Unknown option --${key}`);
     }
   }
+  const spec = values.get("spec")?.trim() || undefined;
+  const supersededProposal = values.get("superseded-proposal")?.trim() || undefined;
+  if ((spec ? 1 : 0) + (supersededProposal ? 1 : 0) !== 1) {
+    throw new Error("Provide exactly one of --spec=... or --superseded-proposal=...");
+  }
   return {
     context: required("context"),
-    spec: required("spec"),
+    spec,
+    supersededProposal,
     json: required("json"),
     markdown: required("markdown"),
     generatedAt: values.get("generated-at")?.trim() || undefined,
@@ -384,29 +403,45 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
   return { spec, beforeImage, afterImage, reviewedSeedRetirements };
 }
 
-export async function executeGenerateProposalCli(argv: readonly string[]): Promise<void> {
-  const args = argumentsFrom(argv);
-  const context = verifyContext(await jsonFile(args.context));
-  const production = verifyDatasetSnapshot(await jsonFile(context.productionSnapshotLocation));
+interface BoundProposalContent {
+  generatedAt: string;
+  actions: ReconciliationProposal["actions"];
+  retiredCompanyIds: ReconciliationProposal["retiredCompanyIds"];
+  relationMerges?: ReconciliationProposal["relationMerges"];
+  reviewedSeedRetirements?: ReconciliationProposal["reviewedSeedRetirements"];
+  rationale: ReconciliationProposal["rationale"];
+  evidence: ReconciliationProposal["evidence"];
+  unresolvedQuestions: ReconciliationProposal["unresolvedQuestions"];
+  beforeImage: CompanyImage | null;
+  afterImage: CompanyImage | null;
+}
+
+function verifyBoundProductionSnapshot(
+  context: TaskSnapshotContext,
+  input: unknown,
+): ProductionSnapshot {
+  const production = verifyDatasetSnapshot(input);
   if (production.artifactType !== "PORTCO_PRODUCTION_SNAPSHOT") {
     throw new Error("Task context must reference a production snapshot");
   }
   if (!digestsEqual(production.snapshotSha256, context.taskSnapshot.productionSnapshotSha256)) {
     throw new Error("Task context production snapshot binding is stale");
   }
-  const {
-    spec,
-    beforeImage,
-    afterImage,
-    reviewedSeedRetirements,
-  } = applySpec(context, await jsonFile(args.spec));
+  return production;
+}
+
+function finalizeBoundProposal(
+  context: TaskSnapshotContext,
+  production: ProductionSnapshot,
+  content: BoundProposalContent,
+): ReconciliationProposal {
   const canonicalKey = proposalCanonicalKey(context);
-  const beforeImageSha256 = beforeImage ? companyImageSha256(beforeImage) : null;
+  const beforeImageSha256 = content.beforeImage ? companyImageSha256(content.beforeImage) : null;
   if (beforeImageSha256 !== context.taskSnapshot.targetCompanySnapshotSha256) {
     throw new Error("Task context before-image does not match the locked target snapshot");
   }
-  if (afterImage) assertAfterImageDependenciesCaptured(context, afterImage);
-  const proposal = finalizeProposal({
+  if (content.afterImage) assertAfterImageDependenciesCaptured(context, content.afterImage);
+  return finalizeProposal({
     schemaVersion: 1,
     artifactType: "PORTCO_CHANGE_PROPOSAL",
     methodologyVersion: "PORTCO_RECONCILIATION_V1",
@@ -414,17 +449,19 @@ export async function executeGenerateProposalCli(argv: readonly string[]): Promi
     taskId: context.taskId,
     taskIndex: context.taskIndex,
     asOfDate: production.asOfDate,
-    generatedAt: args.generatedAt ?? spec.generatedAt,
+    generatedAt: content.generatedAt,
     canonicalKey,
     companyName: context.companyName,
-    actions: spec.actions,
+    actions: content.actions,
     sourceHoldingIds: context.sourceQueueEntry.sourceHoldingIds,
-    retiredCompanyIds: spec.retiredCompanyIds,
-    relationMerges: spec.relationMerges,
-    ...(reviewedSeedRetirements.length === 0 ? {} : { reviewedSeedRetirements }),
-    rationale: spec.rationale,
-    evidence: spec.evidence,
-    unresolvedQuestions: spec.unresolvedQuestions,
+    retiredCompanyIds: content.retiredCompanyIds,
+    ...(content.relationMerges === undefined ? {} : { relationMerges: content.relationMerges }),
+    ...(content.reviewedSeedRetirements === undefined
+      ? {}
+      : { reviewedSeedRetirements: content.reviewedSeedRetirements }),
+    rationale: content.rationale,
+    evidence: content.evidence,
+    unresolvedQuestions: content.unresolvedQuestions,
     ledgerSha256: context.taskSnapshot.sourceLedgerSha256,
     productionSnapshotSha256: production.snapshotSha256,
     currentCompanySnapshotSha256: context.taskSnapshot.targetCompanySnapshotSha256,
@@ -438,11 +475,145 @@ export async function executeGenerateProposalCli(argv: readonly string[]): Promi
       organizations: context.dependencies.organizations,
       redirects: context.dependencies.redirects,
     },
-    beforeImage,
+    beforeImage: content.beforeImage,
     beforeImageSha256,
-    afterImage,
-    afterImageSha256: afterImage ? companyImageSha256(afterImage) : null,
+    afterImage: content.afterImage,
+    afterImageSha256: content.afterImage ? companyImageSha256(content.afterImage) : null,
   });
+}
+
+function remapReviewedSeedRetirements(
+  context: TaskSnapshotContext,
+  supersededProposal: ReconciliationProposal,
+): ReviewedSeedRetirement[] | undefined {
+  const supersededRetirements = supersededProposal.reviewedSeedRetirements;
+  if (supersededRetirements === undefined) return undefined;
+  const freshCandidates = new Map(
+    (context.seedRetirementCandidates ?? []).map((candidate) => [candidate.sourceQueueTaskId, candidate]),
+  );
+  const identityFields = ["sourceQueueEntrySha256", "name", "country"] as const;
+  const hashFields = ["rawSeedEntrySha256", "evaluatedSeedEntrySha256"] as const;
+  return supersededRetirements.map((retirement) => {
+    const fresh = freshCandidates.get(retirement.sourceQueueTaskId);
+    if (!fresh) {
+      throw new Error(
+        `Superseded proposal seed retirement ${retirement.sourceQueueTaskId} is absent from the fresh task context`,
+      );
+    }
+    for (const field of identityFields) {
+      if (fresh[field] !== retirement[field]) {
+        throw new Error(
+          `Superseded proposal seed retirement ${retirement.sourceQueueTaskId} changed identity field ${field}`,
+        );
+      }
+    }
+    for (const field of hashFields) {
+      if (!digestsEqual(fresh[field], retirement[field])) {
+        throw new Error(
+          `Superseded proposal seed retirement ${retirement.sourceQueueTaskId} changed ${field}`,
+        );
+      }
+    }
+    return fresh;
+  });
+}
+
+export function rebindSupersededProposal(input: {
+  context: TaskSnapshotContext;
+  production: ProductionSnapshot;
+  supersededProposal: unknown;
+  generatedAt?: string;
+}): ReconciliationProposal {
+  const { context } = input;
+  const production = verifyBoundProductionSnapshot(context, input.production);
+  const superseded = verifyProposal(input.supersededProposal);
+  const canonicalKey = proposalCanonicalKey(context);
+  const identityChecks = [
+    ["run", superseded.runId, context.runId],
+    ["task", superseded.taskId, context.taskId],
+    ["task index", superseded.taskIndex, context.taskIndex],
+    ["company", superseded.companyName, context.companyName],
+    ["canonical", superseded.canonicalKey, canonicalKey],
+  ] as const;
+  for (const [label, supersededValue, freshValue] of identityChecks) {
+    if (supersededValue !== freshValue) {
+      throw new Error(`Superseded proposal ${label} identity does not match the fresh task context`);
+    }
+  }
+  if (superseded.unresolvedQuestions.length > 0) {
+    throw new Error("A superseded proposal with unresolved questions cannot be rebound");
+  }
+  if (!superseded.afterImage) {
+    throw new Error("A superseded proposal without a resolved after-image cannot be rebound");
+  }
+  if (!digestsEqual(superseded.ledgerSha256, context.taskSnapshot.sourceLedgerSha256)) {
+    throw new Error("Superseded proposal source ledger does not match the fresh task context");
+  }
+  if (
+    sha256Canonical(superseded.sourceHoldingIds)
+    !== sha256Canonical(context.sourceQueueEntry.sourceHoldingIds)
+  ) {
+    throw new Error("Superseded proposal source holdings do not match the fresh task context");
+  }
+  const freshBeforeImageSha256 = context.targetCompanyImage
+    ? companyImageSha256(context.targetCompanyImage)
+    : null;
+  if (
+    superseded.beforeImageSha256 !== freshBeforeImageSha256
+    || superseded.currentCompanySnapshotSha256 !== freshBeforeImageSha256
+  ) {
+    throw new Error("Superseded proposal target company image changed; fresh research is required");
+  }
+  const reviewedSeedRetirements = remapReviewedSeedRetirements(context, superseded);
+  return finalizeBoundProposal(context, production, {
+    generatedAt: input.generatedAt ?? superseded.generatedAt,
+    actions: superseded.actions,
+    retiredCompanyIds: superseded.retiredCompanyIds,
+    relationMerges: superseded.relationMerges,
+    reviewedSeedRetirements,
+    rationale: superseded.rationale,
+    evidence: superseded.evidence,
+    unresolvedQuestions: superseded.unresolvedQuestions,
+    beforeImage: context.targetCompanyImage,
+    afterImage: superseded.afterImage,
+  });
+}
+
+export async function executeGenerateProposalCli(argv: readonly string[]): Promise<void> {
+  const args = argumentsFrom(argv);
+  const context = verifyContext(await jsonFile(args.context));
+  const production = verifyBoundProductionSnapshot(
+    context,
+    await jsonFile(context.productionSnapshotLocation),
+  );
+  let proposal: ReconciliationProposal;
+  if (args.spec) {
+    const {
+      spec,
+      beforeImage,
+      afterImage,
+      reviewedSeedRetirements,
+    } = applySpec(context, await jsonFile(args.spec));
+    proposal = finalizeBoundProposal(context, production, {
+      generatedAt: args.generatedAt ?? spec.generatedAt,
+      actions: spec.actions,
+      retiredCompanyIds: spec.retiredCompanyIds,
+      relationMerges: spec.relationMerges,
+      ...(reviewedSeedRetirements.length === 0 ? {} : { reviewedSeedRetirements }),
+      rationale: spec.rationale,
+      evidence: spec.evidence,
+      unresolvedQuestions: spec.unresolvedQuestions,
+      beforeImage,
+      afterImage,
+    });
+  } else {
+    proposal = rebindSupersededProposal({
+      context,
+      production,
+      supersededProposal: await jsonFile(args.supersededProposal!),
+      generatedAt: args.generatedAt,
+    });
+  }
   const jsonOutput = resolve(args.json);
   const markdownOutput = resolve(args.markdown);
   await mkdir(dirname(jsonOutput), { recursive: true });

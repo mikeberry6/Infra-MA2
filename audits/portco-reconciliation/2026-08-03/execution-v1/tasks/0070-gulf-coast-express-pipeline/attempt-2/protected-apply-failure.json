@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_PROTECTED_APPLY_FAILURE",
+  "taskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
+  "attempt": 2,
+  "recordedAt": "2026-08-13T06:40:08.000Z",
+  "workflowRunId": 31674412906,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31674412906",
+  "workflowArtifact": {
+    "id": 9170963130,
+    "name": "portco-production-351959298d59bf4d85f584db7e7e4e72a9e71290b1ffae6e5f64d28ee5ab97cf-b1023b0ffc768a4bcd98cceffc9f3a436b8ae936-31674412906",
+    "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0070-gulf-coast-express-pipeline/attempt-2/failed-production-apply"
+  },
+  "releaseSha": "b1023b0ffc768a4bcd98cceffc9f3a436b8ae936",
+  "proposalSha256": "351959298d59bf4d85f584db7e7e4e72a9e71290b1ffae6e5f64d28ee5ab97cf",
+  "approvalSha256": "4564c3230cbe740e09c94a0d6a91baffdd16fe0cc0939c99587bd08fd935b5f7",
+  "failedStep": "Apply the exact approved PortCo proposal transactionally",
+  "error": "Database after-image does not match the exact approved semantic after-image",
+  "cause": "The approved new Kinder Morgan ownership period omitted organizationName even though a direct, non-fund ownership period persists through a provisioned Organization relation and reads back organizationName as Kinder Morgan, Inc.",
+  "transactionOutcome": "ROLLED_BACK",
+  "rollbackVerification": {
+    "verifiedAt": "2026-08-13T06:40:08.000Z",
+    "companyId": "cmrxpjln4016sivhe00yic3tw",
+    "companyUpdatedAt": "2026-07-29T04:08:43.889Z",
+    "ownershipPeriodCount": 2,
+    "milestoneCount": 9,
+    "citationCount": 10,
+    "redirectCount": 1,
+    "kinderMorganOrganizationCount": 0,
+    "reconciliationAuditEventCount": 0,
+    "matchesLockedBeforeImage": true
+  },
+  "databaseWritesPersisted": false,
+  "seedArtifactAlreadyReleased": true,
+  "nextAction": "Create fresh attempt 3 artifacts with an explicit Kinder Morgan organizationName, supersede the released v2 seed entry with v3, and repeat the full protected release and apply sequence."
+}
