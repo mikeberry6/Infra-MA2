@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_ATTEMPT",
+  "taskId": "ledger:0068:digital-generation-d-b-a-takanock:0eb6960d",
+  "taskIndex": 68,
+  "attempt": 1,
+  "recordedAt": "2026-08-13T04:33:30.000Z",
+  "releaseSha": "cc63c671b8aec52b7dac3c730bba930ec3a4315b",
+  "pullRequestNumber": 460,
+  "workflowRunId": 31667357168,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31667357168",
+  "outcome": "FAILED_BEFORE_CHECKOUT",
+  "reason": "The protected workflow path guard required the proposal key to begin with the immutable task slug; 0068-takanock-v4 did not match 0068-digital-generation-d-b-a-takanock.",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "remediation": "Publish immutable aliases of the exact same v4 proposal and approval under the task-slug-matching artifact key, then rerun the protected workflow without changing proposal, approval, snapshot, or after-image hashes."
+}
