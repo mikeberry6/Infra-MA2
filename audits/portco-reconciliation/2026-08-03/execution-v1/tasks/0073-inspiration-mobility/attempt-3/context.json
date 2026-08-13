@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0073:inspiration-mobility:1eba7153",
+  "taskIndex": 73,
+  "companyName": "Inspiration Mobility",
+  "generatedAt": "2026-08-13T08:46:46.198Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0073-inspiration-mobility/attempt-3/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 73,
+    "taskId": "ledger:0073:inspiration-mobility:1eba7153",
+    "canonicalKey": "inspiration-mobility|united-states",
+    "companyName": "Inspiration Mobility",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:008:inspiration-mobility"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [
+      "inspiration-mobility-group|united-states"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: inspiration-mobility-group|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: inspiration-mobility-group|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpj6ea00j6ivhe1ojh2ca6",
+    "linkedQueueTaskId": "ledger:0481:inspiration-mobility-group:80503438"
+  },
+  "resolvedCanonicalKey": "inspiration-mobility|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6ea00j6ivhe1ojh2ca6",
+    "name": "Inspiration Mobility Group",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "EV Fleet Charging Infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Inspiration Mobility Group provides electric-vehicle infrastructure and fleet electrification solutions for commercial fleet operators. The platform serves customers that need vehicles, charging, and operating support, and its model combines service delivery with ownership and deployment of charging assets. At launch, the company announced a fleet partnership with Revel and an initial $200 million capital commitment from ArcLight, and later stated that it had grown to more than 60 employees with thousands of EVs on the road. Its footprint is U.S.-focused and tied to commercial fleet use cases rather than passenger retail charging alone. ArcLight backed the launch in November 2021 and Macquarie Asset Management and Ferrovial later provided additional capital in 2024, while public sources do not disclose the detailed ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2021,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrex01g1ivhebvxggtco",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "ArcLight Energy Partners Fund VII",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpklmn02odivheys8df0ny",
+        "date": "2021",
+        "event": "The company entered the market as a purpose-built EV solutions platform for commercial fleets.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkln402oeivhe6n1iy1v8",
+        "date": "Nov 10, 2021",
+        "event": "Inspiration Mobility launched with a $200 million capital commitment from ArcLight and a fleet partnership with Revel.",
+        "category": "FINANCING",
+        "sortDate": "2021-11-10T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklpq02ofivhe74u79f4b",
+        "date": "Sep 2024",
+        "event": "Inspiration announced $215 million of additional capital from Macquarie Asset Management and Ferrovial.",
+        "category": "OTHER",
+        "sortDate": "2024-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpozps07hyivhecp1dzgf8",
+        "label": "Inspirationmobility — Inspiration Mobility Group",
+        "url": "https://inspirationmobility.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Inspirationmobility company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpozqq07i0ivhe39tbvn81",
+        "label": "Investment date source — ArcLight Capital Partners — Inspiration Mobility Group",
+        "url": "https://inspirationmobility.com/news/inspiration-launches-as-first-purpose-built-ev-solutions-company-announces-200m-commitment-and-fleet-partnership-with-revel",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozro07i2ivhegir35z6z",
+        "label": "Inspirationmobility — Inspiration Mobility Group",
+        "url": "https://inspirationmobility.com/news/inspiration-announces-215-million-in-new-capital-from-macquarie-asset-management-and-ferrovial-s-a",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Inspirationmobility — Inspiration Mobility Group",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Inspiration Mobility Group",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Transportation",
+    "subsector": "EV Fleet Charging Infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+    "description": "Inspiration Mobility Group provides electric-vehicle infrastructure and fleet electrification solutions for commercial fleet operators. The platform serves customers that need vehicles, charging, and operating support, and its model combines service delivery with ownership and deployment of charging assets. At launch, the company announced a fleet partnership with Revel and an initial $200 million capital commitment from ArcLight, and later stated that it had grown to more than 60 employees with thousands of EVs on the road. Its footprint is U.S.-focused and tied to commercial fleet use cases rather than passenger retail charging alone. ArcLight backed the launch in November 2021 and Macquarie Asset Management and Ferrovial later provided additional capital in 2024, while public sources do not disclose the detailed ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2021,
+    "investmentYear": 2021,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "The company entered the market as a purpose-built EV solutions platform for commercial fleets.",
+        "category": "Founding"
+      },
+      {
+        "date": "Nov 10, 2021",
+        "event": "Inspiration Mobility launched with a $200 million capital commitment from ArcLight and a fleet partnership with Revel.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 2024",
+        "event": "Inspiration announced $215 million of additional capital from Macquarie Asset Management and Ferrovial.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Inspirationmobility — Inspiration Mobility Group",
+        "url": "https://inspirationmobility.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — ArcLight Capital Partners — Inspiration Mobility Group",
+        "url": "https://inspirationmobility.com/news/inspiration-launches-as-first-purpose-built-ev-solutions-company-announces-200m-commitment-and-fleet-partnership-with-revel",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Inspirationmobility — Inspiration Mobility Group",
+        "url": "https://inspirationmobility.com/news/inspiration-announces-215-million-in-new-capital-from-macquarie-asset-management-and-ferrovial-s-a",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0073:inspiration-mobility:1eba7153",
+    "taskIndex": 73,
+    "canonicalKey": "inspiration-mobility|united-states",
+    "capturedAt": "2026-08-13T08:46:46.198Z",
+    "databaseRevision": "company-state:c22c1ff38670092f6b9edfd2825f974a876569bc2a0200fcdf145ec9c50976b5",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "b65b9af9c237bc43aa36cea90990bb221294958dd4693c6a5a78c6cf89025fc7",
+    "productionSnapshotSha256": "efe50d7e8642dd6e99d64de1f08c95424129e712aefef75dd701c4501b433210",
+    "targetCompanySnapshotSha256": "c22c1ff38670092f6b9edfd2825f974a876569bc2a0200fcdf145ec9c50976b5",
+    "seedEntrySha256": "6d55a698fcb7697378b390531cb4e4614ad39b16d35f98dd4adf66d01bb0c92e",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "ba6ff9cff622d126e32774a17a27b0aa7df71d0d81a310bffef87e6da5f6d9dd",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "ebed7297f921828ff4808a309e294748c2a8a023f9109e0f31e09fa772529666",
+      "citationsSha256": "27dba9870c69c2d468f096fa0c1b6a445b2c263651e2a6a6c0dab2ec75d476d6",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ce688e27fc4ca4cac46af9c6b4e82807382d08c616ba13017371c4e5c6a86ec8",
+    "stateSha256": "9198d9a8753d2b9a6bdc5379d6a71d4b55bdf1177e66b1fc79a9cfb20bd1916d",
+    "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74"
+  },
+  "contextSha256": "b8b7627fb66ba6b5e69a14028b9b57232944abd98b2e9980be6e91af16e74805"
+}

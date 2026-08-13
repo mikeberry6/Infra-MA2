@@ -325,6 +325,7 @@ describe("post-queue DBA identity binding", () => {
   it("binds the target's evaluated seed identity and canonical key", () => {
     expect(resolvedTaskSeedKeys({
       queueEntry,
+      queueEntries: [queueEntry],
       targetResolution,
       targetCompanyImage: company,
     })).toEqual(["takanock, llc|United States"]);
@@ -400,6 +401,7 @@ describe("post-queue exact identity binding", () => {
   it("binds the matching evaluated seed identity even though the older queue had no seed key", () => {
     expect(resolvedTaskSeedKeys({
       queueEntry,
+      queueEntries: [queueEntry],
       targetResolution,
       targetCompanyImage: company,
     })).toEqual(["gfl environmental services|United States / Canada"]);
@@ -426,6 +428,64 @@ describe("post-queue exact identity binding", () => {
       seedEntryPresent: false,
       targetRecordStatus: "ARCHIVED",
     })).not.toThrow();
+  });
+});
+
+describe("reviewed symmetric seed binding", () => {
+  it("binds the existing target's reciprocal evaluated seed identity", () => {
+    const active = entry({
+      taskIndex: 73,
+      taskId: "task-73",
+      canonicalKey: "inspiration-mobility|united-states",
+      candidateCanonicalKeys: ["inspiration-mobility-group|united-states"],
+    });
+    const linked = entry({
+      taskIndex: 481,
+      taskId: "task-481",
+      canonicalKey: "inspiration-mobility-group|united-states",
+      productionCompanyIds: ["company-inspiration"],
+      seedKeys: ["inspiration mobility group|United States"],
+      candidateCanonicalKeys: ["inspiration-mobility|united-states"],
+    });
+    const targetResolution = resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active, linked],
+      reviewedTargetCompanyId: "company-inspiration",
+    });
+
+    expect(resolvedTaskSeedKeys({
+      queueEntry: active,
+      queueEntries: [active, linked],
+      targetResolution,
+      targetCompanyImage: { id: "company-inspiration" } as CompanyImage,
+    })).toEqual(["inspiration mobility group|United States"]);
+  });
+
+  it("fails closed if the reciprocal target has ambiguous seed identities", () => {
+    const active = entry({
+      taskId: "task-73",
+      canonicalKey: "inspiration-mobility|united-states",
+      candidateCanonicalKeys: ["inspiration-mobility-group|united-states"],
+    });
+    const linked = entry({
+      taskId: "task-481",
+      canonicalKey: "inspiration-mobility-group|united-states",
+      productionCompanyIds: ["company-inspiration"],
+      seedKeys: ["seed-one|United States", "seed-two|United States"],
+      candidateCanonicalKeys: ["inspiration-mobility|united-states"],
+    });
+    const targetResolution = resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active, linked],
+      reviewedTargetCompanyId: "company-inspiration",
+    });
+
+    expect(() => resolvedTaskSeedKeys({
+      queueEntry: active,
+      queueEntries: [active, linked],
+      targetResolution,
+      targetCompanyImage: { id: "company-inspiration" } as CompanyImage,
+    })).toThrow("more than one evaluated seed identity");
   });
 });
 

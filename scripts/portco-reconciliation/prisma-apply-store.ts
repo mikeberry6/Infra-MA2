@@ -235,6 +235,7 @@ export function assertOwnershipManagerCompatible(input: {
 
 const approvedOwnershipOrganizationProvisioning = {
   "BC Partners": "FUND_MANAGER",
+  "Ferrovial N.V.": "CORPORATE",
   "GFL Environmental Inc.": "CORPORATE",
   "HPS Investment Partners": "FUND_MANAGER",
   "Kinder Morgan, Inc.": "CORPORATE",

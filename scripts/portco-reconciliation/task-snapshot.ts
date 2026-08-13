@@ -398,10 +398,25 @@ export function assertReviewedPostQueueExactIdentity(input: {
 
 export function resolvedTaskSeedKeys(input: {
   queueEntry: ProposalQueueIndexArtifact["entries"][number];
+  queueEntries: ProposalQueueIndexArtifact["entries"];
   targetResolution: TaskSnapshotTargetResolution;
   targetCompanyImage: CompanyImage | null;
 }): string[] {
   if (input.queueEntry.seedKeys.length > 0) return input.queueEntry.seedKeys;
+  if (input.targetResolution.method === "REVIEWED_SYMMETRIC_CANDIDATE") {
+    const linked = input.queueEntries.filter((entry) =>
+      entry.taskId === input.targetResolution.linkedQueueTaskId
+      && entry.productionCompanyIds.length === 1
+      && entry.productionCompanyIds[0] === input.targetResolution.targetCompanyId,
+    );
+    if (linked.length !== 1) {
+      throw new Error("Reviewed symmetric target no longer has one linked immutable queue entry");
+    }
+    if (linked[0].seedKeys.length > 1) {
+      throw new Error("Reviewed symmetric target resolves to more than one evaluated seed identity");
+    }
+    return linked[0].seedKeys;
+  }
   if (
     input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
@@ -622,6 +637,7 @@ export async function buildTaskSnapshotContext(input: {
 
   const expectedSeedKeys = resolvedTaskSeedKeys({
     queueEntry,
+    queueEntries: input.proposalQueue.entries,
     targetResolution,
     targetCompanyImage,
   });

@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T08:17:52.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-13T08:47:30.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0073:inspiration-mobility:1eba7153",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -10763,20 +10763,32 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "b65b9af9c237bc43aa36cea90990bb221294958dd4693c6a5a78c6cf89025fc7",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 3,
+      "startedAt": "2026-08-13T08:45:16.000Z",
+      "updatedAt": "2026-08-13T08:47:30.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0073-inspiration-mobility/attempt-3/task-snapshot.json",
+          "sha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0073-inspiration-mobility-v3/proposal.json",
+          "sha256": "8336ec7493f4134831e0579e35991acc12ae0e2c45051ebe62189bd6b6bcce89"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0073-inspiration-mobility-v3.json",
+          "sha256": "852caaf24cad331897149e60af54b7f65a9cdbe5013e04d6b48c5bea7d9d8cdb"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0073-inspiration-mobility/research-decision-v2.json",
+          "sha256": "ddb592bf0e3aae689e7ef176591f971296e6f2d0925f76bd6c64f8a375ffc59d"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -10790,6 +10802,164 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T08:23:53.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T08:38:47.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "75439b84583ef6d273513c2211ccec848b31db72b97e5a7113ca4914c7ecba14",
+          "evidenceSha256": [
+            "066a1141b72c60314925a328ba601e2d115ac1ce28e49419dc4c845cb48cd8ce",
+            "6d8577d89977f420026e16aa07fda6c11f8201c2dbe25ac55d917909fe9dd224",
+            "75439b84583ef6d273513c2211ccec848b31db72b97e5a7113ca4914c7ecba14"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T08:38:48.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "75439b84583ef6d273513c2211ccec848b31db72b97e5a7113ca4914c7ecba14",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T08:39:37.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "75439b84583ef6d273513c2211ccec848b31db72b97e5a7113ca4914c7ecba14",
+          "evidenceSha256": [
+            "218e2245065218fc2bb601393774bd6ab65106972b98d8dcb8ef47b8b832552a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-13T08:41:39.000Z",
+          "reason": "Protected dry run rejected relabeling existing shared Source records; no seed staging, release, or database write occurred.",
+          "taskSnapshotSha256": "75439b84583ef6d273513c2211ccec848b31db72b97e5a7113ca4914c7ecba14",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-13T08:41:40.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T08:42:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1249f6dad27c5b61ac047aa95233d2164df4273d9d4d50353e8ee53252d4ca66",
+          "evidenceSha256": [
+            "1249f6dad27c5b61ac047aa95233d2164df4273d9d4d50353e8ee53252d4ca66",
+            "41272dd2f38f5f4fc1c6adc5980f3b2e125ed13d7fd0183e0a73ff9e31144e99",
+            "6d8577d89977f420026e16aa07fda6c11f8201c2dbe25ac55d917909fe9dd224"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T08:42:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1249f6dad27c5b61ac047aa95233d2164df4273d9d4d50353e8ee53252d4ca66",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T08:43:06.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1249f6dad27c5b61ac047aa95233d2164df4273d9d4d50353e8ee53252d4ca66",
+          "evidenceSha256": [
+            "8fb1ffbc0766477a921c2c9909192c7ea11aa23bd99ff2d2b3c921b753cef66f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-13T08:45:15.000Z",
+          "reason": "Protected dry run rejected the uncaptured and unprovisionable Ferrovial corporate owner dependency; no seed staging, release, or database write occurred.",
+          "taskSnapshotSha256": "1249f6dad27c5b61ac047aa95233d2164df4273d9d4d50353e8ee53252d4ca66",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-13T08:45:16.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T08:47:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+          "evidenceSha256": [
+            "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+            "8336ec7493f4134831e0579e35991acc12ae0e2c45051ebe62189bd6b6bcce89",
+            "ddb592bf0e3aae689e7ef176591f971296e6f2d0925f76bd6c64f8a375ffc59d"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T08:47:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T08:47:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+          "evidenceSha256": [
+            "852caaf24cad331897149e60af54b7f65a9cdbe5013e04d6b48c5bea7d9d8cdb"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -26918,5 +27088,5 @@
       ]
     }
   ],
-  "manifestSha256": "4e2e0cc556c1887641f942ecd18357c8459f33d8bab19fb669cd067641b42844"
+  "manifestSha256": "1930bd64323dd9a4578b3957f00ca7bdac33265fcb457acf8e23d9226aaa296c"
 }
