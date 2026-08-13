@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
-    title: "CRA strategic positioning workshop agenda",
+    title: "Word format",
     description:
       "Editable one-page Word agenda with initials-only text treatment and CRA branding removed.",
-    href: "/one-off-requests/cra-strategic-positioning-workshop-agenda.docx",
+    href: "/one-off-requests/word-format.docx",
     format: "Word",
     date: "Aug 2026",
     download: true,
