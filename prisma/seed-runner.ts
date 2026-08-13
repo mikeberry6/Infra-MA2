@@ -1,6 +1,7 @@
 import { deals } from "./seed-data/deals";
 import { funds } from "./seed-data/funds";
 import { companies as portcos } from "./seed-data/companies";
+import type { PortCoOwner } from "./seed-data/portco-types";
 import { resolveOrgName, getOrgType, NON_INFRA_FUND_ENTITIES, ORG_CANONICAL } from "./entity-resolution";
 import {
   FUND_STRATEGY_MAP,
@@ -88,6 +89,19 @@ function splitParticipants(name: string): string[] {
   if (!name || name === "N/A" || name === "—" || name === "n/a") return [];
   // Split on " / " but not on " / " that's inside parentheses
   return name.split(/\s+\/\s+/).map((s) => s.trim()).filter(Boolean);
+}
+
+export function resolveSeedOwnership(owner: PortCoOwner): {
+  fundLookupName: string;
+  transactionState: "CLOSED_ACTIVE" | "SIGNED_PENDING_EXIT" | "REALIZED";
+  vehicleName: string;
+} {
+  return {
+    fundLookupName: owner.fundName || owner.ownershipVehicle,
+    vehicleName: owner.vehicleName || owner.ownershipVehicle || owner.investmentFirm,
+    transactionState:
+      owner.transactionState || (owner.status === "Active" ? "CLOSED_ACTIVE" : "REALIZED"),
+  };
 }
 
 // ── Main Seed ───────────────────────────────────────────────
@@ -328,27 +342,24 @@ export async function seedDatabase(prisma: PrismaClient) {
 
   async function createOwnership(
     companyId: string,
-    investmentFirm: string,
-    ownershipVehicle: string,
-    investmentYear: number | undefined,
-    isActive: boolean,
-    stake?: string,
-    exitYear?: number,
+    owner: PortCoOwner,
   ) {
-    const orgId = getOrgId(investmentFirm);
+    const orgId = getOrgId(owner.investmentFirm);
     if (!orgId) {
       throw new Error(
-        `No organization was created for owner ${JSON.stringify(investmentFirm)}.`,
+        `No organization was created for owner ${JSON.stringify(owner.investmentFirm)}.`,
       );
     }
 
-    const vehicleName = ownershipVehicle || investmentFirm;
+    const resolved = resolveSeedOwnership(owner);
+    const vehicleName = resolved.vehicleName;
     const dedupeKey = `${companyId}|${orgId}|${vehicleName}`;
     if (ownershipSeen.has(dedupeKey)) return;
     ownershipSeen.add(dedupeKey);
 
-    // Try to match fund by ownershipVehicle
-    const fundId = fundIdMap.get(ownershipVehicle) || null;
+    // New records separate exact fund linkage from the legal holding vehicle.
+    // Historical records omit both fields and retain ownershipVehicle behavior.
+    const fundId = fundIdMap.get(resolved.fundLookupName) || null;
 
     try {
       await prisma.ownershipPeriod.create({
@@ -357,10 +368,11 @@ export async function seedDatabase(prisma: PrismaClient) {
           organizationId: orgId,
           fundId,
           vehicleName,
-          stake: stake || null,
-          investmentYear: investmentYear || null,
-          exitYear: exitYear || null,
-          isActive,
+          stake: owner.stake || null,
+          investmentYear: owner.investmentYear || null,
+          exitYear: owner.exitYear || null,
+          isActive: owner.status === "Active",
+          transactionState: resolved.transactionState,
         },
       });
       ownershipCount++;
@@ -377,25 +389,16 @@ export async function seedDatabase(prisma: PrismaClient) {
     // If the company has an owners array (consolidated multi-owner), process each owner
     if (pc.owners && pc.owners.length > 0) {
       for (const owner of pc.owners) {
-        await createOwnership(
-          companyId,
-          owner.investmentFirm,
-          owner.ownershipVehicle,
-          owner.investmentYear,
-          owner.status === "Active",
-          owner.stake,
-          owner.exitYear,
-        );
+        await createOwnership(companyId, owner);
       }
     } else {
       // Single-owner company: use the top-level fields
-      await createOwnership(
-        companyId,
-        pc.investmentFirm,
-        pc.ownershipVehicle,
-        pc.investmentYear,
-        pc.status === "Active",
-      );
+      await createOwnership(companyId, {
+        investmentFirm: pc.investmentFirm,
+        ownershipVehicle: pc.ownershipVehicle,
+        investmentYear: pc.investmentYear,
+        status: pc.status,
+      });
     }
   }
 

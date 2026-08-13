@@ -54,7 +54,15 @@ export interface PortCoSource {
 
 export interface PortCoOwner {
   investmentFirm: string;
+  /**
+   * Legacy combined fund/vehicle label. Keep this required so historical seed
+   * records retain their existing behavior.
+   */
   ownershipVehicle: string;
+  /** Exact fund name used for Fund linkage when it differs from the legal vehicle. */
+  fundName?: string;
+  /** Exact legal holding vehicle used to distinguish ownership periods. */
+  vehicleName?: string;
   investmentYear?: number;
   exitYear?: number;
   stake?: string;

@@ -26,6 +26,8 @@ const APPROVED_SEED_BASENAME = "approved-portco-after-images.json";
 interface SeedOwner {
   investmentFirm: string;
   ownershipVehicle: string;
+  fundName?: string;
+  vehicleName?: string;
   investmentYear?: number;
   exitYear?: number;
   stake?: string;
@@ -126,6 +128,8 @@ function seedPortCo(image: CompanyImage): SeedPortCo {
   const owners: SeedOwner[] = image.ownershipPeriods.map((owner) => ({
     investmentFirm: owner.organizationName ?? owner.managerName,
     ownershipVehicle: owner.fundName ?? owner.vehicleName ?? owner.managerName,
+    ...(owner.fundName === null ? {} : { fundName: owner.fundName }),
+    ...(owner.vehicleName === null ? {} : { vehicleName: owner.vehicleName }),
     ...(owner.investmentYear === null ? {} : { investmentYear: owner.investmentYear }),
     ...(owner.exitYear === null ? {} : { exitYear: owner.exitYear }),
     ...(owner.stake === null ? {} : { stake: owner.stake }),

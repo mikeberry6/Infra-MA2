@@ -432,7 +432,7 @@ function ownersFor(company: PortCo): NonNullable<PortCo["owners"]> {
 
 function exactOwnershipCount(company: PortCo): number {
   return new Set(ownersFor(company).map((owner) => {
-    const vehicle = owner.ownershipVehicle || owner.investmentFirm;
+    const vehicle = owner.vehicleName || owner.ownershipVehicle || owner.investmentFirm;
     return `${resolveOrgName(owner.investmentFirm)}\u0000${vehicle}`;
   })).size;
 }

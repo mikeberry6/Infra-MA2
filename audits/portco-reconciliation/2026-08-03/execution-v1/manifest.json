@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T02:13:26.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-13T02:56:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0066:chief-power:131a35b6",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -9619,18 +9619,27 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "0de6aac322552f86046c01b4392f5b320a22b34ea5e4763ec1a125387011cc96",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-13T02:50:01.000Z",
+      "updatedAt": "2026-08-13T02:56:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "c36de9ce49c4ab2a6bc96f1528a0f92c11a2be06e3509f47a5949f41db571d6b",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/task-snapshot.json",
+          "sha256": "c36de9ce49c4ab2a6bc96f1528a0f92c11a2be06e3509f47a5949f41db571d6b"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0066-chief-power-v2/proposal.json",
+          "sha256": "448ebd890fa1fa623fe6197c6992ae894d623197b9fb2fee1b538cf1f87f35d0"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0066-chief-power-v2.json",
+          "sha256": "ef99ee6ddaf130bcfd4e5d5e5b6b3a82f581b6f2048ff551edaef82e0f8c651d"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -9646,6 +9655,106 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T02:32:39.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T02:46:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6fac821d2b096a1a0e3d3ebae95c015c939e774f34a93f89b5a5d99377685d34",
+          "evidenceSha256": [
+            "66fbded8031c6e09025c1d5a9328fdfd68ca0c88177461ebbcba41219a372184",
+            "6fac821d2b096a1a0e3d3ebae95c015c939e774f34a93f89b5a5d99377685d34"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T02:46:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6fac821d2b096a1a0e3d3ebae95c015c939e774f34a93f89b5a5d99377685d34",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T02:48:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6fac821d2b096a1a0e3d3ebae95c015c939e774f34a93f89b5a5d99377685d34",
+          "evidenceSha256": [
+            "c35ea4fed5f10802a016b8c4042f0b49d9e87bffff0261bc679cf5887ee65ca6"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-13T02:50:00.000Z",
+          "reason": "Fail-closed dry run rejected new metadata for the existing shared ArcLight investments Source; no release or database write occurred and the staged seed entry was removed.",
+          "taskSnapshotSha256": "6fac821d2b096a1a0e3d3ebae95c015c939e774f34a93f89b5a5d99377685d34",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-13T02:50:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T02:54:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c36de9ce49c4ab2a6bc96f1528a0f92c11a2be06e3509f47a5949f41db571d6b",
+          "evidenceSha256": [
+            "448ebd890fa1fa623fe6197c6992ae894d623197b9fb2fee1b538cf1f87f35d0",
+            "c36de9ce49c4ab2a6bc96f1528a0f92c11a2be06e3509f47a5949f41db571d6b"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T02:54:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c36de9ce49c4ab2a6bc96f1528a0f92c11a2be06e3509f47a5949f41db571d6b",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T02:56:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c36de9ce49c4ab2a6bc96f1528a0f92c11a2be06e3509f47a5949f41db571d6b",
+          "evidenceSha256": [
+            "ef99ee6ddaf130bcfd4e5d5e5b6b3a82f581b6f2048ff551edaef82e0f8c651d"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -26010,5 +26119,5 @@
       ]
     }
   ],
-  "manifestSha256": "8058f4c3b3bfb44f33b5feb7a03d301816a1b25e4e20d982973014a65e921759"
+  "manifestSha256": "857b0bdcb14789b0693ffc875a5c7fdb52c6e96aa5becd83d47e26d4b3e4297d"
 }

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0066:chief-power:131a35b6",
+  "taskIndex": 66,
+  "companyName": "Chief Power",
+  "generatedAt": "2026-08-13T02:41:52.857Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-1/dependency-recapture/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 66,
+    "taskId": "ledger:0066:chief-power:131a35b6",
+    "canonicalKey": "chief-power|united-states",
+    "companyName": "Chief Power",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:023:chief-power"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:023:chief-power: Chief Power remains listed in the final index, but potential historical sale activity makes its current ArcLight ownership status appropriate for review. The accepted census result explicitly requires identity or duplicate review. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:023:chief-power: Chief Power remains listed in the final index, but potential historical sale activity makes its current ArcLight ownership status appropriate for review.",
+      "The accepted census result explicitly requires identity or duplicate review."
+    ]
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "chief-power|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3o8c002x7h4spgye7z2d",
+        "fundName": "ArcLight Energy Partners Fund V, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:20.268Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0066:chief-power:131a35b6",
+    "taskIndex": 66,
+    "canonicalKey": "chief-power|united-states",
+    "capturedAt": "2026-08-13T02:41:52.857Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "0de6aac322552f86046c01b4392f5b320a22b34ea5e4763ec1a125387011cc96",
+    "productionSnapshotSha256": "e9764340b10723ea956e8caffbad684bdf8dcaf9e8f2ae2b5599c62622a51d8b",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "dd4d100f69739dffd27c872501d228dac8233a82fcdf45f20bac371c3db031d7",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "2acd7255d90ff6c4b86887a8ba3708217da0e541f4c3b5c899de5fbaa2d2c55b",
+    "stateSha256": "e9258f6e27e3fd54888fe44aa445f1b4421a5df8d9eda736fa3e6a054cf90fd3",
+    "taskSnapshotSha256": "6fac821d2b096a1a0e3d3ebae95c015c939e774f34a93f89b5a5d99377685d34"
+  },
+  "contextSha256": "d0a0b8acdd69f275a58b44be7b587bc8f4e8f9b794f5a95ba0a2f61cfdf0c625"
+}
