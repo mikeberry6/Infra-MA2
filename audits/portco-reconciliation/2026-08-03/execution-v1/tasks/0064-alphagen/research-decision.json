@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-08-13T00:35:00.000Z",
+  "decision": "MERGE_CORRECT_AND_RETAIN_ACTIVE",
+  "taskId": "ledger:0064:alphagen:b9424b11",
+  "companyName": "AlphaGen",
+  "requestedManagers": [
+    "ArcLight Capital",
+    "CPP Investments"
+  ],
+  "sourceHoldingIds": [
+    "012-arclight-capital:holding:001:alphagen",
+    "032-cpp-investments:holding:003:alphagen"
+  ],
+  "rationale": "Merge the duplicate AlphaGen and Alpha Generation, LLC production identities into one legal-company record. Alpha Generation, LLC is the legal name and AlphaGen is its operating name. Preserve ArcLight Capital Partners as the controlling majority owner, ADIA's 16.8% interest and CPP Investments' strategic minority interest. Correct CPP's investment date from its October 2025 announcement to the March 9, 2026 legal closing, preserve ADIA's May 23, 2025 equity close, and add current legal, regulatory and post-closing evidence. No AlphaGen owner-level exit or pending disposition was found through August 12, 2026.",
+  "identityResolution": {
+    "canonicalProductionCompanyId": "cmrxpjcgh00slivheg8qw8idf",
+    "retiredProductionCompanyId": "cmrxpj46m00g5ivhe8bi5r2wb",
+    "canonicalName": "Alpha Generation, LLC",
+    "operatingName": "AlphaGen",
+    "aliases": [
+      "Alpha Generation",
+      "Alpha Generation (AlphaGen)"
+    ],
+    "formed": 2024,
+    "headquarters": "Houston, Texas, United States",
+    "operatingCompany": true,
+    "platformBoundary": "Count Alpha Generation, LLC once as the manager-level U.S. power-generation platform. Do not separately count its generation facilities, projects or upstream holding entities."
+  },
+  "ownershipResolution": [
+    {
+      "owner": "ArcLight Capital Partners",
+      "vehicle": "ArcLight Energy Partners Fund VII",
+      "stake": "Controlling majority interest; exact percentage not publicly disclosed",
+      "investmentYear": 2024,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "owner": "Abu Dhabi Investment Authority (ADIA)",
+      "vehicle": "Black Volt B 2024 LLC",
+      "stake": "16.8%",
+      "announcementDate": "2025-01-13",
+      "closingDate": "2025-05-23",
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "owner": "CPP Investments",
+      "vehicle": "CPPIB AlphaGen US LLC",
+      "stake": "Strategic minority interest; at least 10% and less than 50%, with the exact percentage not publicly disclosed",
+      "announcementDate": "2025-10-02",
+      "closingDate": "2026-03-09",
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "exitSearch": "No subsequent AlphaGen sale, ArcLight exit, ADIA exit or CPP exit was identified through August 12, 2026. DigitalBridge's May 2026 agreement to acquire the ArcLight manager is a conditional manager-level transaction and does not itself transfer AlphaGen ownership.",
+  "evidence": [
+    {
+      "label": "AlphaGen — Terms of Use",
+      "url": "https://www.alphagen.com/terms-of-use/",
+      "purpose": "Legal identity, operating name and Houston address",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "AlphaGen — About Us",
+      "url": "https://www.alphagen.com/about-us/",
+      "purpose": "Current operations, scale, geography and ArcLight relationship",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "AlphaGen — ArcLight formation announcement",
+      "url": "https://www.alphagen.com/newsroom/press-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states/",
+      "purpose": "January 2024 formation and ArcLight infrastructure-strategy basis",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "New York PSC — ADIA closing notice",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B005A3297-0000-C375-AEDB-F5A75B5B08B6%7D",
+      "purpose": "May 23, 2025 ADIA equity-investment close",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "BROWSER_BLOCKED_VERIFIED"
+    },
+    {
+      "label": "New York PSC — CPP ownership ruling",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BA01BFB9B-0000-C91F-B9E1-724E88CA2CEF%7D&DocTitle=Declaratory+Ruling+on+Transfer",
+      "purpose": "ArcLight control, ADIA 16.8% stake and CPP minority-owner structure",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "BROWSER_BLOCKED_VERIFIED"
+    },
+    {
+      "label": "CPP Investments — AlphaGen announcement",
+      "url": "https://www.cppinvestments.com/newsroom/arclight-announces-us1-0-billion-investment-by-cpp-investments-in-alphagen/",
+      "purpose": "October 2, 2025 announcement, US$1.0 billion commitment and strategic minority mandate",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    },
+    {
+      "label": "New York PSC — CPP consummation notice",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B403BFC9C-0000-CA44-9615-25956B0326D0%7D&DocTitle=Notice+of+Transaction+Consummation",
+      "purpose": "March 9, 2026 CPP Investments closing",
+      "sourceTier": "REGULATORY",
+      "healthStatus": "BROWSER_BLOCKED_VERIFIED"
+    },
+    {
+      "label": "CPP Investments — fiscal 2026 results",
+      "url": "https://www.newswire.ca/news-releases/cpp-investments-net-assets-total-793-3-billion-at-2026-fiscal-year-end-814459989.html",
+      "purpose": "Post-closing confirmation of CPP's AlphaGen investment",
+      "sourceTier": "PRIMARY",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "databaseMutation": true,
+  "seedMutation": true,
+  "proposedMutation": {
+    "recordStatus": "PUBLISHED",
+    "companyStatus": "ACTIVE",
+    "productionDuplicatesRetired": 1,
+    "activeOwners": 3,
+    "pendingOwnershipTransactions": 0
+  },
+  "unresolvedQuestions": [],
+  "blockingUnresolvedQuestions": []
+}
