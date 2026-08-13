@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0073:inspiration-mobility:1eba7153",
+  "taskIndex": 73,
+  "asOfDate": "2026-08-13",
+  "generatedAt": "2026-08-13T08:34:09.000Z",
+  "canonicalKey": "inspiration-mobility|united-states",
+  "companyName": "Inspiration Mobility",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "012-arclight-capital:holding:008:inspiration-mobility"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Resolve the ArcLight census holding Inspiration Mobility to the existing Inspiration Mobility Group platform rather than creating a duplicate. Retain Inspiration Mobility Group as the canonical display name and add the shorter operating name as an alias. Correct the existing ArcLight ownership period to the canonical ArcLight Energy Partners Fund VII, L.P. record. Add Macquarie Asset Management and Ferrovial, S.A. as separately visible current equity investors based on the closed May 2022 capital raise and current investor and portfolio pages; retain null for undisclosed percentages and vehicles, while recording Ferrovial's publicly described minority position. Correct the inaccurately dated September 2024 milestone to the May 18, 2022 closing and attach direct evidence to all three existing milestones. Inspiration Fleet, Inspiration Energy and the acquired Electrada assets remain beneath the single platform boundary. ArcLight, Macquarie, Ferrovial and company materials support continuing ownership, and no Inspiration-specific sale or pending exit was identified through August 13, 2026. The reciprocal queue task for Inspiration Mobility Group will be superseded only after this task is released and production-verified; there is no second database company to merge or redirect.",
+  "evidence": [
+    {
+      "url": "https://inspirationmobility.com/about",
+      "purpose": "Current company identity, platform profile and all three current investors",
+      "supports": [
+        "The company currently presents itself as Inspiration Mobility and identifies Macquarie, ArcLight and Ferrovial as its investors",
+        "Inspiration Fleet and Inspiration Energy are businesses beneath the platform"
+      ]
+    },
+    {
+      "url": "https://inspirationmobility.com/about/careers",
+      "purpose": "Current headquarters",
+      "supports": [
+        "Inspiration identifies Washington, D.C. as its headquarters and New York City as its second office"
+      ]
+    },
+    {
+      "url": "https://inspirationmobility.com/news/inspiration-launches-as-first-purpose-built-ev-solutions-company-announces-200m-commitment-and-fleet-partnership-with-revel",
+      "purpose": "ArcLight entry, fund vehicle, investment date and infrastructure-strategy basis",
+      "supports": [
+        "Inspiration launched on November 10, 2021",
+        "ArcLight Energy Partners Fund VII, L.P. supplied the initial $200 million commitment",
+        "The platform finances EV fleets and builds, owns and operates enabling charging infrastructure"
+      ]
+    },
+    {
+      "url": "https://inspirationmobility.com/news/inspiration-mobility-215-million-ev-fleet-funding",
+      "purpose": "Macquarie and Ferrovial entry, capital closing and ownership",
+      "supports": [
+        "Inspiration closed $215 million of additional capital from Macquarie Asset Management and Ferrovial on May 18, 2022",
+        "Macquarie and Ferrovial joined existing lead investor ArcLight",
+        "The release identifies the platform legal name Inspiration Mobility, LLC"
+      ]
+    },
+    {
+      "url": "https://arclight.com/investments/",
+      "purpose": "Current ArcLight ownership and exit search",
+      "supports": [
+        "ArcLight lists Inspiration Mobility as a Current Transformative investment",
+        "ArcLight does not report a realization date"
+      ]
+    },
+    {
+      "url": "https://www.macquarie.com/id/en/about/news/2022/macquarie-asset-management-makes-equity-commitment-to-sustainable-infrastructure-platform-inspiration-mobility-group.html",
+      "purpose": "Macquarie equity investment, platform boundary and infrastructure-strategy basis",
+      "supports": [
+        "Macquarie made an equity investment in Inspiration Mobility Holdings on May 18, 2022",
+        "Inspiration Mobility Holdings owns Inspiration Mobility Group",
+        "Macquarie appointed a representative to the board and classified the investment under its energy-transition strategy"
+      ]
+    },
+    {
+      "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/inspiration-mobility.html",
+      "purpose": "Current Macquarie ownership and exit search",
+      "supports": [
+        "Macquarie currently lists Inspiration Mobility in its portfolio",
+        "Macquarie classifies it as U.S.-based fleet electrification services in the Americas energy-transition sector"
+      ]
+    },
+    {
+      "url": "https://www.ferrovial.com/en-us/business-lines/mobility/",
+      "purpose": "Ferrovial entry timing, minority ownership and current status",
+      "supports": [
+        "Ferrovial reports investing in Inspiration at the end of 2021",
+        "Ferrovial describes its position as a minority investment and continues to list Inspiration in its mobility portfolio"
+      ]
+    },
+    {
+      "url": "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets",
+      "purpose": "Current operating profile and platform boundary",
+      "supports": [
+        "Inspiration acquired select Electrada assets on June 17, 2026",
+        "The acquired assets and team became part of Inspiration Energy and are not a separate manager-level PortCo"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "f71bfc6fe226e6fe250fb4bf176b3cc8143fb18201257a0c25a31b19b1959a36",
+  "currentCompanySnapshotSha256": "c22c1ff38670092f6b9edfd2825f974a876569bc2a0200fcdf145ec9c50976b5",
+  "executionLock": {
+    "taskSnapshotSha256": "75439b84583ef6d273513c2211ccec848b31db72b97e5a7113ca4914c7ecba14",
+    "taskStateSha256": "9198d9a8753d2b9a6bdc5379d6a71d4b55bdf1177e66b1fc79a9cfb20bd1916d",
+    "taskDependencySha256": "ce688e27fc4ca4cac46af9c6b4e82807382d08c616ba13017371c4e5c6a86ec8",
+    "seedEntrySha256": "6d55a698fcb7697378b390531cb4e4614ad39b16d35f98dd4adf66d01bb0c92e",
+    "dependencies": {
+      "ownershipPeriodsSha256": "ba6ff9cff622d126e32774a17a27b0aa7df71d0d81a310bffef87e6da5f6d9dd",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "ebed7297f921828ff4808a309e294748c2a8a023f9109e0f31e09fa772529666",
+      "citationsSha256": "27dba9870c69c2d468f096fa0c1b6a445b2c263651e2a6a6c0dab2ec75d476d6",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj6ea00j6ivhe1ojh2ca6",
+    "name": "Inspiration Mobility Group",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "EV Fleet Charging Infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Inspiration Mobility Group provides electric-vehicle infrastructure and fleet electrification solutions for commercial fleet operators. The platform serves customers that need vehicles, charging, and operating support, and its model combines service delivery with ownership and deployment of charging assets. At launch, the company announced a fleet partnership with Revel and an initial $200 million capital commitment from ArcLight, and later stated that it had grown to more than 60 employees with thousands of EVs on the road. Its footprint is U.S.-focused and tied to commercial fleet use cases rather than passenger retail charging alone. ArcLight backed the launch in November 2021 and Macquarie Asset Management and Ferrovial later provided additional capital in 2024, while public sources do not disclose the detailed ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2021,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrex01g1ivhebvxggtco",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "ArcLight Energy Partners Fund VII",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpklmn02odivheys8df0ny",
+        "date": "2021",
+        "event": "The company entered the market as a purpose-built EV solutions platform for commercial fleets.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkln402oeivhe6n1iy1v8",
+        "date": "Nov 10, 2021",
+        "event": "Inspiration Mobility launched with a $200 million capital commitment from ArcLight and a fleet partnership with Revel.",
+        "category": "FINANCING",
+        "sortDate": "2021-11-10T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklpq02ofivhe74u79f4b",
+        "date": "Sep 2024",
+        "event": "Inspiration announced $215 million of additional capital from Macquarie Asset Management and Ferrovial.",
+        "category": "OTHER",
+        "sortDate": "2024-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpozps07hyivhecp1dzgf8",
+        "label": "Inspirationmobility — Inspiration Mobility Group",
+        "url": "https://inspirationmobility.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Inspirationmobility company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpozqq07i0ivhe39tbvn81",
+        "label": "Investment date source — ArcLight Capital Partners — Inspiration Mobility Group",
+        "url": "https://inspirationmobility.com/news/inspiration-launches-as-first-purpose-built-ev-solutions-company-announces-200m-commitment-and-fleet-partnership-with-revel",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozro07i2ivhegir35z6z",
+        "label": "Inspirationmobility — Inspiration Mobility Group",
+        "url": "https://inspirationmobility.com/news/inspiration-announces-215-million-in-new-capital-from-macquarie-asset-management-and-ferrovial-s-a",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Inspirationmobility — Inspiration Mobility Group",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "c22c1ff38670092f6b9edfd2825f974a876569bc2a0200fcdf145ec9c50976b5",
+  "afterImage": {
+    "id": "cmrxpj6ea00j6ivhe1ojh2ca6",
+    "name": "Inspiration Mobility Group",
+    "aliases": [
+      "Inspiration Mobility",
+      "Inspiration Mobility, LLC"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "EV Fleet Charging Infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Inspiration Mobility Group is a Washington, D.C.-headquartered sustainable infrastructure platform that finances, owns, develops and operates commercial electric-vehicle fleets, charging systems and related energy assets across North America. Its operating businesses include Inspiration Fleet and Inspiration Energy. ArcLight Energy Partners Fund VII launched the platform in 2021 with an initial $200 million commitment; Macquarie Asset Management and Ferrovial supplied a further $215 million of capital that closed in May 2022. Current company and investor materials identify ArcLight, Macquarie and Ferrovial as continuing investors, while their exact ownership percentages and Macquarie and Ferrovial investment vehicles are not publicly disclosed. Select Electrada assets acquired in June 2026 were integrated into Inspiration Energy and are not counted as a separate PortCo. No Inspiration-specific sale or pending ownership transfer was identified through August 13, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://inspirationmobility.com/",
+    "yearFounded": 2021,
+    "headquarters": "Washington, D.C.",
+    "lastVerifiedAt": "2026-08-13T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrex01g1ivhebvxggtco",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "vehicleName": "ArcLight Energy Partners Fund VII, L.P.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Ferrovial, S.A.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Minority interest",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpklmn02odivheys8df0ny",
+        "date": "2021",
+        "event": "Inspiration launched as a purpose-built platform that finances electric fleets and builds, owns and operates charging infrastructure.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://inspirationmobility.com/news/inspiration-launches-as-first-purpose-built-ev-solutions-company-announces-200m-commitment-and-fleet-partnership-with-revel"
+        ]
+      },
+      {
+        "id": "cmrxpkln402oeivhe6n1iy1v8",
+        "date": "Nov 10, 2021",
+        "event": "ArcLight Energy Partners Fund VII launched Inspiration with an initial $200 million capital commitment and a fleet partnership with Revel.",
+        "category": "FINANCING",
+        "sortDate": "2021-11-10T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://inspirationmobility.com/news/inspiration-launches-as-first-purpose-built-ev-solutions-company-announces-200m-commitment-and-fleet-partnership-with-revel"
+        ]
+      },
+      {
+        "id": "cmrxpklpq02ofivhe74u79f4b",
+        "date": "May 18, 2022",
+        "event": "Inspiration closed $215 million of additional capital from Macquarie Asset Management and Ferrovial, which joined existing lead investor ArcLight.",
+        "category": "FINANCING",
+        "sortDate": "2022-05-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://inspirationmobility.com/news/inspiration-mobility-215-million-ev-fleet-funding",
+          "https://www.macquarie.com/id/en/about/news/2022/macquarie-asset-management-makes-equity-commitment-to-sustainable-infrastructure-platform-inspiration-mobility-group.html"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpozps07hyivhecp1dzgf8",
+        "label": "Inspiration Mobility — current company profile and investors",
+        "url": "https://inspirationmobility.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current platform profile and direct identification of Macquarie, ArcLight and Ferrovial as investors",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpozqq07i0ivhe39tbvn81",
+        "label": "Inspiration Mobility — November 2021 launch and ArcLight Fund VII commitment",
+        "url": "https://inspirationmobility.com/news/inspiration-launches-as-first-purpose-built-ev-solutions-company-announces-200m-commitment-and-fleet-partnership-with-revel",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Platform launch, initial $200 million commitment, exact ArcLight Fund VII vehicle and infrastructure strategy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozro07i2ivhegir35z6z",
+        "label": "Inspiration Mobility — May 2022 Macquarie and Ferrovial capital closing",
+        "url": "https://inspirationmobility.com/news/inspiration-mobility-215-million-ev-fleet-funding",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Closed $215 million capital raise, Macquarie and Ferrovial entry, and continuing ArcLight lead ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Inspiration Mobility — current Washington, D.C. headquarters",
+        "url": "https://inspirationmobility.com/about/careers",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Washington, D.C. headquarters and New York City office",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ArcLight — current Inspiration Mobility portfolio status",
+        "url": "https://arclight.com/investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ArcLight portfolio classification and no realization date",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Macquarie Asset Management — Inspiration Mobility equity investment",
+        "url": "https://www.macquarie.com/id/en/about/news/2022/macquarie-asset-management-makes-equity-commitment-to-sustainable-infrastructure-platform-inspiration-mobility-group.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 2022 equity entry, board representation, energy-transition mandate and holdco/platform boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Macquarie Asset Management — current Inspiration Mobility portfolio page",
+        "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/inspiration-mobility.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Macquarie portfolio status and Americas energy-transition classification",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ferrovial — current Inspiration Mobility investment",
+        "url": "https://www.ferrovial.com/en-us/business-lines/mobility/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "End-2021 entry, minority investment and current mobility-portfolio status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Inspiration Mobility — June 2026 Electrada asset acquisition",
+        "url": "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current operating profile and confirmation that acquired Electrada assets sit beneath Inspiration Energy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "e6dba9b607fd5a45859b259e71455f28c40b4d21893e5055ba1996f88ed85946",
+  "proposalSha256": "066a1141b72c60314925a328ba601e2d115ac1ce28e49419dc4c845cb48cd8ce"
+}
