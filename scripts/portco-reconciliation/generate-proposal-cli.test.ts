@@ -273,6 +273,20 @@ describe("proposal patch ownership additions", () => {
     })).toBe("takanock-llc|united-states");
   });
 
+  it("uses the target legal identity for an exact reviewed parenthetical-alias mutation", () => {
+    expect(proposalCanonicalKey({
+      resolvedCanonicalKey: "natural-gas-pipeline-co-of-america|united-states",
+      sourceQueueEntry: {
+        canonicalKey: "natural-gas-pipeline-company-of-america-ngpl|united-states",
+      } as TaskSnapshotContext["sourceQueueEntry"],
+      targetResolution: {
+        method: "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY",
+        targetCompanyId: "company-ngpl",
+        linkedQueueTaskId: null,
+      },
+    })).toBe("natural-gas-pipeline-co-of-america|united-states");
+  });
+
   it("rejects a canonical-null mutation without exact reviewed identity resolution", () => {
     expect(() => proposalCanonicalKey({
       resolvedCanonicalKey: "gfl-environmental-services|united-states-canada",

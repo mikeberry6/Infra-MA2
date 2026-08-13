@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0077:natural-gas-pipeline-company-of-america-ngpl:d3c7cddc",
+  "taskIndex": 77,
+  "asOfDate": "2026-08-13",
+  "generatedAt": "2026-08-13T10:28:08.000Z",
+  "canonicalKey": "natural-gas-pipeline-co-of-america|united-states",
+  "companyName": "Natural Gas Pipeline Company of America (NGPL)",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "012-arclight-capital:holding:010:natural-gas-pipeline-company-of-america-ngpl"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Resolve the census holding Natural Gas Pipeline Company of America (NGPL) into the existing Natural Gas Pipeline Co. of America production and seed record rather than creating a duplicate. Correct the canonical display to the full legal operating-company name and retain the census, short-form and tariff aliases. Replace the single unspecified ArcLight ownership row with the supported Fund VII 37.5% period, add ArcLight's separate 25% Fund VIII acquisition, and add Kinder Morgan's continuing 37.5% operated interest. Preserve Brookfield as a realized former owner through May 13, 2025. Update the four existing milestones to distinguish the initial ArcLight close, 2023 follow-on, 2025 signed Brookfield exit and 2025 closing. Current direct ownership totals 100%; no NGPL-specific pending sale or subsequent exit was identified through August 13, 2026.",
+  "evidence": [
+    {
+      "url": "https://pipeline2.kindermorgan.com/Documents/NGPL/NGPL_CI_Cpny_Overview-20250702070807.pdf",
+      "purpose": "Current company identity, operating boundary, services and ownership",
+      "supports": [
+        "Natural Gas Pipeline Company of America is a limited liability company owned beneath NGPL PipeCo LLC",
+        "Kinder Morgan indirectly owns 37.5% and operates the company",
+        "ArcLight-controlled funds own the remaining 62.5%"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1506307/000150630726000011/kmi-20251231.htm",
+      "purpose": "Current audited Kinder Morgan ownership and system scale",
+      "supports": [
+        "Kinder Morgan reported a 37.5% NGPL interest as of December 31, 2025",
+        "The system included 9,105 miles of pipeline and 288 Bcf of storage capacity"
+      ]
+    },
+    {
+      "url": "https://www.kindermorgan.com/About-Us/History",
+      "purpose": "Kinder Morgan's entry year and continuing operated interest",
+      "supports": [
+        "Kinder Morgan acquired NGPL as part of the 1999 KN Energy transaction",
+        "Kinder Morgan currently owns 37.5% and operates NGPL"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1506307/000150630723000023/kmi-20221231.htm",
+      "purpose": "Initial ArcLight acquisition closing",
+      "supports": [
+        "ArcLight's initial 25% NGPL acquisition closed March 8, 2021",
+        "Kinder Morgan and Brookfield each retained 37.5% after the close"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/arclight-acquires-an-incremental-interest-in-natural-gas-pipeline-company-of-america-llc-from-brookfield-infrastructure-301852235.html",
+      "purpose": "ArcLight's 2023 follow-on acquisition",
+      "supports": [
+        "ArcLight acquired an additional 12.5% from Brookfield on June 15, 2023",
+        "ArcLight's total interest increased to 37.5%"
+      ]
+    },
+    {
+      "url": "https://bip.brookfield.com/press-releases/bipc/brookfield-infrastructure-announces-sale-ngpl-amidst-strong-capital-recycling",
+      "purpose": "Brookfield's signed exit and ownership history",
+      "supports": [
+        "Brookfield signed the sale of its remaining 25% on March 21, 2025",
+        "Brookfield characterized the sale as its complete exit",
+        "Brookfield had previously increased its interest to 50% in 2015"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/arclight-acquires-interest-in-natural-gas-pipeline-company-of-america-one-of-the-largest-natural-gas-infrastructure-assets-in-north-america-302453172.html",
+      "purpose": "ArcLight's completed 2025 acquisition",
+      "supports": [
+        "ArcLight completed the acquisition of Brookfield's remaining 25% on May 13, 2025",
+        "ArcLight-controlled ownership increased to 62.5%",
+        "Kinder Morgan continued to own 37.5% and operate NGPL"
+      ]
+    },
+    {
+      "url": "https://bip.brookfield.com/reports-filings/letters-shareholders/q2-2025-letter-shareholders",
+      "purpose": "Brookfield's subsequent completed-exit confirmation",
+      "supports": [
+        "Brookfield reported completing the sale of its remaining U.S. gas-pipeline interest"
+      ]
+    },
+    {
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "ArcLight fund and infrastructure-strategy attribution",
+      "supports": [
+        "ArcLight attributes NGPL to Fund VII",
+        "ArcLight classifies NGPL within its strategic-gas infrastructure investments"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2065706/000206570625000001/xslFormDX01/primary_doc.xml",
+      "purpose": "Fund VIII co-invest vehicle corroboration",
+      "supports": [
+        "The regulatory filing identifies AL NGPL Fund VIII Co-Invest, L.P."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "c1f131c7b4c73600d7c308984770c9109ce5babe9bdcf50861668fdc8c3b7608",
+  "currentCompanySnapshotSha256": "2f54f38284969476d18426e195025cd852071141d5746a4cd937f39a193f841b",
+  "executionLock": {
+    "taskSnapshotSha256": "6be9568a1087b2889b96df11d7fb0c9859d7e5b2edc7a50881c66246f72a96c6",
+    "taskStateSha256": "e9bf6895c99d2009c57538662bf51b3003cce7790ad3b54e63ec649d494ab038",
+    "taskDependencySha256": "4f1a9ecb72598f608baf4be092fd023e3ec2c63fb21eb4e529adc7e857757b67",
+    "seedEntrySha256": "53065d47dea44670b92404e95fa390e3933592264525105c3dd0e8cfc4ff5c0a",
+    "dependencies": {
+      "ownershipPeriodsSha256": "de3fd59e5e4151ada7380ff376daf68be1973d91edc13cfb8007b5b57b59ee59",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "8efbe6e7085d3908afbf9bbececb714941258d6b90349c052f7863f8841681e0",
+      "organizationsSha256": "d9ec1da47122c0eef7122673af1108c7801fd98d78c37211ad8fae910b8b9e32",
+      "citationsSha256": "d26a6636ffeca96777ddafc4d099987bbf265fee8b28100989f8977ea6166dbf",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj13m00bgivhetxigjot9",
+        "fundName": "ArcLight Infrastructure Partners Fund VIII",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-07-23T16:09:55.282Z"
+      },
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpifpw0047ivhexsim174k",
+        "name": "Brookfield Asset Management",
+        "updatedAt": "2026-07-23T16:09:27.572Z"
+      },
+      {
+        "id": "cmsr6aypb000jdq4sr60cuca4",
+        "name": "Kinder Morgan, Inc.",
+        "updatedAt": "2026-08-13T07:04:51.503Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj6gy00jbivheg6wo11g8",
+    "name": "Natural Gas Pipeline Co. of America",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural Gas Transmission & Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Natural Gas Pipeline Company of America is a large interstate natural gas transmission and storage system. The asset serves producers, utilities, marketers, and industrial users through an asset-heavy, predominantly fee-based transportation and storage model. ArcLight stated in 2025 that NGPL includes about 9,100 miles of pipeline, more than one million horsepower of compression, and approximately 288 Bcf of working gas storage. The scale of the system makes it one of the larger gas infrastructure platforms in North America. ArcLight announced in May 2025 that, after acquiring Brookfield's remaining 25% interest, it would become NGPL's largest owner with a 62.5% economic interest alongside operator Kinder Morgan's 37.5% interest.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Midcontinent & Gulf Coast United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrhq01g6ivhe712catqr",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkm0802ouivhewmtxojty",
+        "date": "Mar 8, 2021",
+        "event": "ArcLight completed the acquisition of an initial 25% stake in NGPL from Kinder Morgan and Brookfield Infrastructure.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-03-08T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkm0v02ovivhes1ms5ohx",
+        "date": "Jun 2023",
+        "event": "ArcLight acquired an incremental 12.5% stake in NGPL from Brookfield Infrastructure, increasing its ownership to 37.5%.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkm1c02owivhei9tscomk",
+        "date": "May 2025",
+        "event": "ArcLight announced the acquisition of Brookfield's remaining 25% interest in NGPL.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkm4b02oxivhenela2f3e",
+        "date": "May 2025",
+        "event": "ArcLight stated that it would become the largest owner of NGPL with a 62.5% economic interest.",
+        "category": "FINANCING",
+        "sortDate": "2025-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp0fb07izivhee0twz913",
+        "label": "Close date source — ArcLight Capital Partners — Natural Gas Pipeline Co. of America",
+        "url": "https://www.sec.gov/Archives/edgar/data/1506307/000150630723000023/kmi-20221231.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "ArcLight Capital Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp0gn07j1ivheo9fmernd",
+        "label": "Follow-on acquisition source — ArcLight Capital Partners — Natural Gas Pipeline Co. of America",
+        "url": "https://www.prnewswire.com/news-releases/arclight-acquires-interest-in-natural-gas-pipeline-company-of-america-one-of-the-largest-natural-gas-infrastructure-assets-in-north-america-302453172.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp0hq07j3ivhepqjq2spo",
+        "label": "Lw — Natural Gas Pipeline Co. of America",
+        "url": "https://www.lw.com/en/news/latham-watkins-advises-arclight-capital-partners-in-completed-acquisition-of-ngpl",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Lw transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp0ix07j5ivheljk8lgsh",
+        "label": "Kindermorgan — Natural Gas Pipeline Co. of America",
+        "url": "https://www.kindermorgan.com/Operations/Natural_Gas/NGPL",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Kindermorgan operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "2f54f38284969476d18426e195025cd852071141d5746a4cd937f39a193f841b",
+  "afterImage": {
+    "id": "cmrxpj6gy00jbivheg6wo11g8",
+    "name": "Natural Gas Pipeline Company of America LLC",
+    "aliases": [
+      "Natural Gas Pipeline Co. of America",
+      "Natural Gas Pipeline Company of America",
+      "Natural Gas Pipeline Company of America (NGPL)",
+      "NGPL",
+      "Natural"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural Gas Transmission & Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Natural Gas Pipeline Company of America LLC (NGPL) is a major U.S. interstate natural-gas transmission and storage company serving producers, utilities, marketers, power generators, industrial users and LNG-linked markets. Kinder Morgan's audited 2025 reporting lists approximately 9,105 miles of pipeline, 8.40 Bcf/d of design capacity and 288 Bcf of storage capacity. The network spans nine states and connects major U.S. supply basins with Midwest demand centers and Texas and Louisiana Gulf Coast markets. NGPL provides firm, flexible-firm and interruptible transportation, multiple storage products, balancing, park-and-loan and line-pack services. ArcLight-controlled funds own 62.5%, across separate Fund VII and Fund VIII investments, while Kinder Morgan owns 37.5% and operates the system. Brookfield fully exited in May 2025, and no later NGPL-specific sale or pending ownership change was identified through August 13, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.kindermorgan.com/Operations/Natural-Gas/Index",
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-13T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrhq01g6ivhe712catqr",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": null,
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "vehicleName": "AL NGPL Holdings LLC",
+        "stake": "37.5%",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": null,
+        "fundName": "ArcLight Infrastructure Partners Fund VIII",
+        "vehicleName": "AL NGPL Fund VIII Funding LLC / Fund VIII-A and parallel vehicles, including AL NGPL Fund VIII Co-Invest, L.P.",
+        "stake": "25% aggregate; internal vehicle split not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Kinder Morgan, Inc.",
+        "organizationName": "Kinder Morgan, Inc.",
+        "fundName": null,
+        "vehicleName": "Kinder Morgan NGPL Holdings LLC",
+        "stake": "37.5%",
+        "investmentYear": 1999,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Brookfield Asset Management",
+        "organizationName": "Brookfield Asset Management",
+        "fundName": null,
+        "vehicleName": "BIP PipeCo Holdings LLC / predecessor vehicles",
+        "stake": "25% at exit; previously 50%",
+        "investmentYear": 2009,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkm0802ouivhewmtxojty",
+        "date": "Mar 8, 2021",
+        "event": "ArcLight completed its initial $830 million acquisition of a 25% NGPL interest from Kinder Morgan and Brookfield Infrastructure; Kinder Morgan and Brookfield each retained 37.5%.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-03-08T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1506307/000150630723000023/kmi-20221231.htm"
+        ]
+      },
+      {
+        "id": "cmrxpkm0v02ovivhes1ms5ohx",
+        "date": "Jun 15, 2023",
+        "event": "ArcLight acquired an additional 12.5% NGPL interest from Brookfield Infrastructure, increasing ArcLight's ownership to 37.5% and reducing Brookfield's interest to 25%.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-06-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/arclight-acquires-an-incremental-interest-in-natural-gas-pipeline-company-of-america-llc-from-brookfield-infrastructure-301852235.html"
+        ]
+      },
+      {
+        "id": "cmrxpkm1c02owivhei9tscomk",
+        "date": "Mar 21, 2025",
+        "event": "Brookfield Infrastructure signed an agreement to sell its remaining 25% NGPL interest to an existing owner, describing the transaction as its complete exit from the business.",
+        "category": "DIVESTITURE",
+        "sortDate": "2025-03-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://bip.brookfield.com/press-releases/bipc/brookfield-infrastructure-announces-sale-ngpl-amidst-strong-capital-recycling"
+        ]
+      },
+      {
+        "id": "cmrxpkm4b02oxivhenela2f3e",
+        "date": "May 13, 2025",
+        "event": "ArcLight completed the acquisition of Brookfield's remaining 25% NGPL interest, increasing ArcLight-controlled ownership to 62.5%; Kinder Morgan retained 37.5% and continued as operator.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-05-13T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/arclight-acquires-interest-in-natural-gas-pipeline-company-of-america-one-of-the-largest-natural-gas-infrastructure-assets-in-north-america-302453172.html",
+          "https://bip.brookfield.com/reports-filings/letters-shareholders/q2-2025-letter-shareholders"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp0fb07izivhee0twz913",
+        "label": "Close date source — ArcLight Capital Partners — Natural Gas Pipeline Co. of America",
+        "url": "https://www.sec.gov/Archives/edgar/data/1506307/000150630723000023/kmi-20221231.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 8, 2021 close of ArcLight's initial 25% NGPL acquisition and post-close ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp0gn07j1ivheo9fmernd",
+        "label": "Follow-on acquisition source — ArcLight Capital Partners — Natural Gas Pipeline Co. of America",
+        "url": "https://www.prnewswire.com/news-releases/arclight-acquires-interest-in-natural-gas-pipeline-company-of-america-one-of-the-largest-natural-gas-infrastructure-assets-in-north-america-302453172.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 13, 2025 completion of ArcLight's 25% follow-on acquisition and current 62.5% / 37.5% ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp0hq07j3ivhepqjq2spo",
+        "label": "Brookfield - Q2 2025 shareholder letter",
+        "url": "https://bip.brookfield.com/reports-filings/letters-shareholders/q2-2025-letter-shareholders",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Brookfield's subsequent confirmation that it completed the sale of its remaining U.S. gas-pipeline interest",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp0ix07j5ivheljk8lgsh",
+        "label": "Kinder Morgan - NGPL company overview",
+        "url": "https://pipeline2.kindermorgan.com/Documents/NGPL/NGPL_CI_Cpny_Overview-20250702070807.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current legal identity, operating boundary, services and 37.5% Kinder Morgan / 62.5% ArcLight-controlled ownership",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Kinder Morgan - 2025 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1506307/000150630726000011/kmi-20251231.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Current 37.5% Kinder Morgan interest and audited 9,105-mile / 288-Bcf system scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Kinder Morgan - company history",
+        "url": "https://www.kindermorgan.com/About-Us/History",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Kinder Morgan's 1999 NGPL entry and continuing 37.5% operated interest",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ArcLight - 2023 incremental NGPL acquisition",
+        "url": "https://www.prnewswire.com/news-releases/arclight-acquires-an-incremental-interest-in-natural-gas-pipeline-company-of-america-llc-from-brookfield-infrastructure-301852235.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 15, 2023 acquisition of an additional 12.5% and resulting 37.5% ArcLight interest",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Brookfield Infrastructure - NGPL sale announcement",
+        "url": "https://bip.brookfield.com/press-releases/bipc/brookfield-infrastructure-announces-sale-ngpl-amidst-strong-capital-recycling",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 21, 2025 signed sale of Brookfield's remaining 25% and complete-exit intent",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ArcLight — 2025 ESG Report",
+        "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fund VII attribution and strategic-gas infrastructure classification",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC Form D - AL NGPL Fund VIII Co-Invest, L.P.",
+        "url": "https://www.sec.gov/Archives/edgar/data/2065706/000206570625000001/xslFormDX01/primary_doc.xml",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Regulatory corroboration of AL NGPL Fund VIII Co-Invest, L.P.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "4db60cc797a604ab65acaf4c5755af1fafba85dd30201f9e4d174ca9ae14fe65",
+  "proposalSha256": "c8422230b1edcd69c27d36e2181f9fe6de56c62c7317f08db64208c0081605c6"
+}

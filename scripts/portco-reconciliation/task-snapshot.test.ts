@@ -187,6 +187,52 @@ describe("task snapshot target resolution", () => {
     });
   });
 
+  it("pins a missed parenthetical-acronym census identity to an existing legal company", () => {
+    const active = entry({
+      taskId: "task-ngpl",
+      canonicalKey: "natural-gas-pipeline-company-of-america-ngpl|united-states",
+      companyName: "Natural Gas Pipeline Company of America (NGPL)",
+      country: "United States",
+      decisionStatus: "READY_FOR_PROPOSAL",
+      sourceHoldingIds: ["holding-ngpl"],
+    });
+
+    expect(resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-ngpl",
+    })).toEqual({
+      method: "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY",
+      targetCompanyId: "company-ngpl",
+      linkedQueueTaskId: null,
+    });
+  });
+
+  it.each([
+    { companyName: "Natural Gas Pipeline Company of America" },
+    { companyName: "Natural Gas Pipeline Company of America (natural gas pipeline)" },
+    { decisionStatus: "NEEDS_REVIEW" as const },
+    { sourceHoldingIds: [] },
+    { sourceRepoOnlyIds: ["repo-only-ngpl"] },
+    { candidateCanonicalKeys: ["natural-gas-pipeline-co-of-america|united-states"] },
+    { seedKeys: ["natural gas pipeline co. of america|United States"] },
+  ])("rejects a reviewed parenthetical alias when the immutable task shape is not exact: %o", (override) => {
+    const active = entry({
+      taskId: "task-ngpl",
+      canonicalKey: "natural-gas-pipeline-company-of-america-ngpl|united-states",
+      companyName: "Natural Gas Pipeline Company of America (NGPL)",
+      country: "United States",
+      decisionStatus: "READY_FOR_PROPOSAL",
+      sourceHoldingIds: ["holding-ngpl"],
+      ...override,
+    });
+    expect(() => resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-ngpl",
+    })).toThrow("not supported by one symmetric immutable queue candidate");
+  });
+
   it.each([
     { companyName: "Digital Generation / Takanock" },
     { decisionStatus: "READY_FOR_PROPOSAL" as const },
@@ -334,6 +380,92 @@ describe("post-queue DBA identity binding", () => {
       targetResolution,
       targetCompanyImage: company,
     })).toBe("takanock-llc|united-states");
+  });
+});
+
+describe("post-queue parenthetical-alias identity binding", () => {
+  const queueEntry = entry({
+    taskId: "task-ngpl",
+    canonicalKey: "natural-gas-pipeline-company-of-america-ngpl|united-states",
+    companyName: "Natural Gas Pipeline Company of America (NGPL)",
+    country: "United States",
+    decisionStatus: "READY_FOR_PROPOSAL",
+    sourceHoldingIds: ["holding-ngpl"],
+  });
+  const targetResolution = {
+    method: "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY" as const,
+    targetCompanyId: "company-ngpl",
+    linkedQueueTaskId: null,
+  };
+  const company = {
+    id: "company-ngpl",
+    name: "Natural Gas Pipeline Co. of America",
+    country: "United States",
+  } as CompanyImage;
+  const productionCompanies = [{
+    id: "company-ngpl",
+    name: "Natural Gas Pipeline Co. of America",
+    country: "United States",
+  }];
+
+  it("requires the legal company to match the immutable parenthetical-alias base and country", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies,
+    })).not.toThrow();
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, name: "Natural Gas Pipeline Co. of Canada" },
+      productionCompanies,
+    })).toThrow("does not exactly match the immutable parenthetical-alias base and country");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, country: "Canada" },
+      productionCompanies,
+    })).toThrow("does not exactly match the immutable parenthetical-alias base and country");
+  });
+
+  it("requires one uniquely matching production identity pinned to the reviewed id", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [],
+    })).toThrow("resolved to 0 production records instead of exactly one");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [...productionCompanies, {
+        id: "company-ngpl-duplicate",
+        name: "Natural Gas Pipeline Company of America",
+        country: "United States",
+      }],
+    })).toThrow("resolved to 2 production records instead of exactly one");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [{ ...productionCompanies[0], id: "company-other" }],
+    })).toThrow("target id does not match the unique exact production identity");
+  });
+
+  it("binds the target legal evaluated-seed identity and canonical key", () => {
+    expect(resolvedTaskSeedKeys({
+      queueEntry,
+      queueEntries: [queueEntry],
+      targetResolution,
+      targetCompanyImage: company,
+    })).toEqual(["natural gas pipeline co. of america|United States"]);
+    expect(resolvedTaskCanonicalKey({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+    })).toBe("natural-gas-pipeline-co-of-america|united-states");
   });
 });
 
