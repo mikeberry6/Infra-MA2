@@ -10,6 +10,7 @@ const funds: FundStrategyView[] = [{
 }];
 
 const financeIiOwner: OwnerView = {
+  id: "finance-ii",
   firm: "ArcLight Capital Partners",
   fundName: "ArcLight Energy Partners Fund V, L.P.",
   vehicle: "Chief Power Finance II, LLC",
@@ -19,6 +20,7 @@ const financeIiOwner: OwnerView = {
 };
 
 const residualOwner: OwnerView = {
+  id: "residual",
   firm: "ArcLight Capital Partners",
   fundName: "ArcLight Energy Partners Fund V, L.P.",
   vehicle: "Chief Power Transfer Parent, LLC / Chief Power Finance, LLC residual tranche",
@@ -28,6 +30,7 @@ const residualOwner: OwnerView = {
 };
 
 const formerOwner: OwnerView = {
+  id: "former",
   firm: "ArcLight Capital Partners",
   fundName: "ArcLight Energy Partners Fund V, L.P.",
   vehicle: "Chief Power Finance, LLC (pre-restructuring controlling tranche)",
@@ -66,38 +69,44 @@ describe("PortCoDrawer ownership periods", () => {
         onClose={vi.fn()}
       />,
     );
+    expect(screen.getByText("Active since 2014")).toBeInTheDocument();
 
     const financeIi = screen.getByRole("group", {
-      name: "ArcLight Capital Partners — Chief Power Finance II, LLC — 2019-Present ownership period",
+      name: "ArcLight Capital Partners — ArcLight Energy Partners Fund V, L.P. — Chief Power Finance II, LLC — 2019-Present ownership period",
     });
+    expect(within(financeIi).getByText("ArcLight Energy Partners Fund V, L.P.")).toBeInTheDocument();
     expect(within(financeIi).getByText("Chief Power Finance II, LLC")).toBeInTheDocument();
+    expect(within(financeIi).getByText("2019-Present")).toBeInTheDocument();
     expect(financeIi).toHaveTextContent("Stake: Greater than 10% voting interest");
 
     const residual = screen.getByRole("group", {
-      name: "ArcLight Capital Partners — Chief Power Transfer Parent, LLC / Chief Power Finance, LLC residual tranche — 2014-Present ownership period",
+      name: "ArcLight Capital Partners — ArcLight Energy Partners Fund V, L.P. — Chief Power Transfer Parent, LLC / Chief Power Finance, LLC residual tranche — 2014-Present ownership period",
     });
+    expect(within(residual).getByText("2014-Present")).toBeInTheDocument();
     expect(within(residual).getByText("Chief Power Transfer Parent, LLC / Chief Power Finance, LLC residual tranche")).toBeInTheDocument();
     expect(residual).toHaveTextContent("Stake: Approximately 3% interest retained");
 
     await user.click(screen.getByRole("button", { name: "Show 1 prior owner" }));
     const former = screen.getByRole("group", {
-      name: "ArcLight Capital Partners — Chief Power Finance, LLC (pre-restructuring controlling tranche) — 2014-2020 ownership period",
+      name: "ArcLight Capital Partners — ArcLight Energy Partners Fund V, L.P. — Chief Power Finance, LLC (pre-restructuring controlling tranche) — 2014-2020 ownership period",
     });
+    expect(within(former).getByText("ArcLight Energy Partners Fund V, L.P.")).toBeInTheDocument();
+    expect(within(former).getByText("2014-2020")).toBeInTheDocument();
     expect(former).toHaveTextContent("Stake: 96.4% voting interest");
   });
 
-  it("deduplicates only identical ownership display records", () => {
+  it("preserves every ownership period even when the display fields match", () => {
     render(
       <PortCoDrawer
-        company={chiefPower([financeIiOwner, { ...financeIiOwner }])}
+        company={chiefPower([financeIiOwner, { ...financeIiOwner, id: "finance-ii-second-period" }])}
         funds={funds}
         onClose={vi.fn()}
       />,
     );
 
-    expect(screen.getAllByText("Chief Power Finance II, LLC")).toHaveLength(1);
+    expect(screen.getAllByText("Chief Power Finance II, LLC")).toHaveLength(2);
     expect(screen.getAllByRole("group", {
-      name: "ArcLight Capital Partners — Chief Power Finance II, LLC — 2019-Present ownership period",
-    })).toHaveLength(1);
+      name: "ArcLight Capital Partners — ArcLight Energy Partners Fund V, L.P. — Chief Power Finance II, LLC — 2019-Present ownership period",
+    })).toHaveLength(2);
   });
 });
