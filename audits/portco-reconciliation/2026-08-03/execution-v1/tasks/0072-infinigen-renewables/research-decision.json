@@ -1,0 +1,108 @@
+{
+  "generatedAt": "2026-08-13T07:50:51.000Z",
+  "decision": "CORRECT_EXISTING_OWNER_NOT_ADD_DUPLICATE",
+  "taskId": "ledger:0072:infinigen-renewables:07524184",
+  "companyName": "Infinigen Renewables",
+  "canonicalCompanyId": "cmrxpj6do00j5ivhewj38gcr5",
+  "seedKey": "infinigen renewables|United States",
+  "rationale": "The census ADD_OWNER action is already satisfied: production and evaluated seed each contain one active ArcLight Capital Partners ownership period, and ArcLight Capital is the same manager. Adding another owner would duplicate the manager. Correct that existing period in place because current primary evidence identifies Infinigen as wholly owned by an ArcLight-managed fund and ArcLight identifies Infinigen as a current Fund VII portfolio company. Preserve 2021 as the year of investment, retain CLOSED_ACTIVE status, and record no pending transaction because no Infinigen-specific sale or exit was found through August 13, 2026.",
+  "identityResolution": {
+    "canonicalDecision": "KEEP_EXISTING_INFINIGEN_RENEWABLES",
+    "legalAlias": "Infinigen Renewables LLC",
+    "platformBoundary": "Count the Infinigen Renewables platform once. Oriana Energy, Horizon Energy, YFN Yabucoa Solar, Infinigen Asset Management, Infinigen O&M and other project entities are subsidiaries or assets beneath the platform and are not separate PortCos.",
+    "duplicateCompanyFound": false,
+    "duplicateOwnerFound": false
+  },
+  "ownershipResolution": {
+    "manager": "ArcLight Capital Partners",
+    "organizationId": "cmrxpi435000kivhegfx84axs",
+    "ownershipPeriodId": "cmrxpjrec01g0ivhe4b07oqxs",
+    "fund": "ArcLight Energy Partners Fund VII, L.P.",
+    "fundId": "cmsdi3ppx00357h4sa1kokybn",
+    "stake": "100%",
+    "investmentYear": 2021,
+    "transactionState": "CLOSED_ACTIVE",
+    "helioBoundary": "Helios Alternative Energy reports an undisclosed minority interest in the Oriana and Horizon operating-asset portfolio. That project-level participation is not evidence that Helios owns the Infinigen Renewables platform, so no platform owner row is added."
+  },
+  "acquisitionExitCheck": {
+    "acquisitionSearch": "Sonnedix announced the sale of its Puerto Rico solar operations to Infinigen and ArcLight on November 11, 2021. ArcLight announced on December 16, 2021 that the platform had launched with a $400 million commitment and had completed the initial acquisition of the 73.2 MW Oriana and Horizon portfolio.",
+    "currentStatusSearch": "ArcLight's current investments page lists Infinigen as Current, and its portfolio-services page identifies it as ArcLight Fund VII's portfolio company. Infinigen's current site says it is backed by ArcLight, and an April 2024 company release describes it as wholly owned by an ArcLight-managed fund.",
+    "exitSearch": "No Infinigen-specific sale, divestiture, pending buyer or ArcLight Fund VII exit was identified through August 13, 2026. DigitalBridge's May 2026 agreement to acquire ArcLight remains conditional and is a manager-level transaction, not a transfer of Infinigen or Fund VII's stake.",
+    "transactionState": "CLOSED_ACTIVE"
+  },
+  "evidence": [
+    {
+      "url": "https://arclight.com/investments/",
+      "purpose": "Current ArcLight portfolio status, 2021 investment year and exit search",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "url": "https://arclight.com/portfolio-services/",
+      "purpose": "Direct Fund VII attribution and current portfolio-company relationship",
+      "sourceTier": "PRIMARY"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/arclight-launches-infinigen-renewables-platform-301447102.html",
+      "purpose": "December 2021 launch, $400 million capital commitment, completed initial acquisition and infrastructure strategy",
+      "sourceTier": "PRIMARY_MANAGER_RELEASE"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/infinigen-renewables-announces-strategic-solar-battery-storage-project-in-puerto-rico-302118849.html",
+      "purpose": "Direct 100% ownership evidence, current San Juan headquarters and operating profile",
+      "sourceTier": "PRIMARY_COMPANY_RELEASE"
+    },
+    {
+      "url": "https://energia.pr.gov/wp-content/uploads/sites/7/2026/03/20260330-AP20230004-Infinigen-Peticion_Intervencion.pdf",
+      "purpose": "Legal identity, subsidiary boundary, Puerto Rico operations and current asset footprint",
+      "sourceTier": "PRIMARY_REGULATORY"
+    },
+    {
+      "url": "https://www.heliosae.com/projects",
+      "purpose": "Asset-level minority-interest boundary for Oriana and Horizon",
+      "sourceTier": "PRIMARY_COMPANY"
+    },
+    {
+      "url": "https://www.digitalbridge.com/news/2026-05-27-digitalbridge-and-arclight-announce-strategic-combination-to-form-a-leading-alternative-asset-manager-at-the-convergence-of-power-ai-and-digital-infrastructure",
+      "purpose": "Confirm the ArcLight manager transaction remains conditional and does not establish an Infinigen ownership transfer",
+      "sourceTier": "PRIMARY_BUYER_RELEASE"
+    }
+  ],
+  "sourceHealth": {
+    "https://arclight.com/investments/": {
+      "status": "WORKING",
+      "httpStatus": 200,
+      "sha256": "b063ec872f511ced61fde82a4e3fc0bc93fc4cdf4547206cc1756b3c074f43ef"
+    },
+    "https://arclight.com/portfolio-services/": {
+      "status": "WORKING",
+      "httpStatus": 200,
+      "sha256": "8e9d328045e5603b719dbcc5f116cbb562c06d43e10ea4e404eb3948d4bad551"
+    },
+    "https://www.prnewswire.com/news-releases/arclight-launches-infinigen-renewables-platform-301447102.html": {
+      "status": "WORKING",
+      "httpStatus": 200,
+      "sha256": "ed914bec7f050e648ff87c74d1cfd334d198e98526a39afdee15dedf608fc7ae"
+    },
+    "https://www.prnewswire.com/news-releases/infinigen-renewables-announces-strategic-solar-battery-storage-project-in-puerto-rico-302118849.html": {
+      "status": "WORKING",
+      "httpStatus": 200,
+      "sha256": "f1d2c1d0187739769e482d0ed1038bdccc60dbf1353b4c8da3c075016c8d8b51"
+    },
+    "https://energia.pr.gov/wp-content/uploads/sites/7/2026/03/20260330-AP20230004-Infinigen-Peticion_Intervencion.pdf": {
+      "status": "WORKING",
+      "httpStatus": 200,
+      "sha256": "3cd5f993b672a32d980cf1ef85df51beef96a094fd414a04c14e6b87877171c9"
+    },
+    "https://www.digitalbridge.com/news/2026-05-27-digitalbridge-and-arclight-announce-strategic-combination-to-form-a-leading-alternative-asset-manager-at-the-convergence-of-power-ai-and-digital-infrastructure": {
+      "status": "WORKING",
+      "httpStatus": 200,
+      "sha256": "7ace223de3b281b8b22eac50169f1554c1b0930bd5eb74a55dbe126a381eacb2"
+    },
+    "https://infinigenrenewables.com/about-us/": {
+      "status": "BROWSER_VERIFIED_COMMAND_LINE_TLS_BLOCKED"
+    }
+  },
+  "databaseMutation": true,
+  "seedMutation": true,
+  "unresolvedQuestions": []
+}

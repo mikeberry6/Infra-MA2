@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T07:34:18.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-13T07:53:59.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0072:infinigen-renewables:07524184",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -10632,18 +10632,27 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "183cff97298e9c3cad20de132fe69ed244515e66969878d1e7b702b4f24c0851",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-13T07:42:20.000Z",
+      "updatedAt": "2026-08-13T07:53:59.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0072-infinigen-renewables/attempt-1/locked-task-snapshot.json",
+          "sha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0072-infinigen-renewables/attempt-1/proposal.json",
+          "sha256": "0152a61370697336f6867cb2e073e1974898529e5cd1db3b9983b39922d73531"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0072-infinigen-renewables/attempt-1/approval.json",
+          "sha256": "5f61493274dd26fc0f42215df5a662c3a45777f0dbb1e97ef53b8d4cc95243cc"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -10659,6 +10668,51 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-13T07:42:20.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T07:53:16.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7",
+          "evidenceSha256": [
+            "0152a61370697336f6867cb2e073e1974898529e5cd1db3b9983b39922d73531",
+            "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T07:53:17.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T07:53:59.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7",
+          "evidenceSha256": [
+            "5f61493274dd26fc0f42215df5a662c3a45777f0dbb1e97ef53b8d4cc95243cc"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -26825,5 +26879,5 @@
       ]
     }
   ],
-  "manifestSha256": "e255ca3333b3d5477261592e4274567b30bd293712e84bdfc3ffa691de391f3d"
+  "manifestSha256": "be60edb8285d054e0f2e43700cea4ef118b9f2a23c77190ced61804eca053cb1"
 }

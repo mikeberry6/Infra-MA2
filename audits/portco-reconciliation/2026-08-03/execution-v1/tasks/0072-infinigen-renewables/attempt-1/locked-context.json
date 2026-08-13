@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0072:infinigen-renewables:07524184",
+  "taskIndex": 72,
+  "companyName": "Infinigen Renewables",
+  "generatedAt": "2026-08-13T07:48:44.560Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0072-infinigen-renewables/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 72,
+    "taskId": "ledger:0072:infinigen-renewables:07524184",
+    "canonicalKey": "infinigen-renewables|united-states",
+    "companyName": "Infinigen Renewables",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:007:infinigen-renewables"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj6do00j5ivhewj38gcr5"
+    ],
+    "seedKeys": [
+      "infinigen renewables|United States"
+    ],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj6do00j5ivhewj38gcr5",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "infinigen-renewables|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6do00j5ivhewj38gcr5",
+    "name": "Infinigen Renewables",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar & Battery Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Infinigen Renewables is a solar and storage platform focused on Puerto Rico. The business serves the island's power market through an asset-heavy model combining operating renewable assets, new development, and storage integration. ArcLight stated at launch that the platform included what it described as the largest solar and storage operating fleet in Puerto Rico and a controlled pipeline approaching 1 GW of additional projects. Later public disclosures included the acquisition of Sonnedix's Puerto Rico solar portfolio, extending the platform's operating base. ArcLight launched Infinigen in December 2021 with a $400 million capital commitment through ArcLight Energy Partners Fund VII, while public sources do not disclose the detailed ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2021,
+    "headquarters": "Puerto Rico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrec01g0ivhe4b07oqxs",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "ArcLight Energy Partners Fund VII",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpklkn02oaivhe0s7m8zxx",
+        "date": "2021",
+        "event": "ArcLight described Infinigen as the largest solar and storage operating platform in Puerto Rico at launch.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkll202obivhe6kf4y2oo",
+        "date": "2021",
+        "event": "Sonnedix agreed to sell its Puerto Rico solar operations to Infinigen and ArcLight.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkllm02ocivheutdlrc9e",
+        "date": "Dec 16, 2021",
+        "event": "ArcLight launched Infinigen Renewables with a $400 million capital commitment.",
+        "category": "FINANCING",
+        "sortDate": "2021-12-16T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpozml07hsivheon5glpws",
+        "label": "Investment date source — ArcLight Capital Partners — Infinigen Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-launches-infinigen-renewables-platform-301447102.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoznw07huivhejj1d2f1a",
+        "label": "Infinigenrenewables — Infinigen Renewables",
+        "url": "https://infinigenrenewables.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Infinigenrenewables company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozoy07hwivhe3qmx68tc",
+        "label": "Sonnedix — Infinigen Renewables",
+        "url": "https://www.sonnedix.com/pl/news/sonnedix-agrees-to-sell-its-puerto-rico-solar-operations-to-infinigen-arclight",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Sonnedix operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Infinigen Renewables",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Solar & Battery Storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+    "description": "Infinigen Renewables is a solar and storage platform focused on Puerto Rico. The business serves the island's power market through an asset-heavy model combining operating renewable assets, new development, and storage integration. ArcLight stated at launch that the platform included what it described as the largest solar and storage operating fleet in Puerto Rico and a controlled pipeline approaching 1 GW of additional projects. Later public disclosures included the acquisition of Sonnedix's Puerto Rico solar portfolio, extending the platform's operating base. ArcLight launched Infinigen in December 2021 with a $400 million capital commitment through ArcLight Energy Partners Fund VII, while public sources do not disclose the detailed ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2021,
+    "investmentYear": 2021,
+    "headquarters": "Puerto Rico",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "ArcLight described Infinigen as the largest solar and storage operating platform in Puerto Rico at launch.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2021",
+        "event": "Sonnedix agreed to sell its Puerto Rico solar operations to Infinigen and ArcLight.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 16, 2021",
+        "event": "ArcLight launched Infinigen Renewables with a $400 million capital commitment.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — ArcLight Capital Partners — Infinigen Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-launches-infinigen-renewables-platform-301447102.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Infinigenrenewables — Infinigen Renewables",
+        "url": "https://infinigenrenewables.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Sonnedix — Infinigen Renewables",
+        "url": "https://www.sonnedix.com/pl/news/sonnedix-agrees-to-sell-its-puerto-rico-solar-operations-to-infinigen-arclight",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0072:infinigen-renewables:07524184",
+    "taskIndex": 72,
+    "canonicalKey": "infinigen-renewables|united-states",
+    "capturedAt": "2026-08-13T07:48:44.560Z",
+    "databaseRevision": "company-state:75cb439ce97e791190ee6e299e1de98e1bda1a30366366cbaae4e92a570eb221",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "183cff97298e9c3cad20de132fe69ed244515e66969878d1e7b702b4f24c0851",
+    "productionSnapshotSha256": "70eaff2a53b62c1f1e2f0821dc3a607d4a1445450de72285e52b65e75a2e05f0",
+    "targetCompanySnapshotSha256": "75cb439ce97e791190ee6e299e1de98e1bda1a30366366cbaae4e92a570eb221",
+    "seedEntrySha256": "c34b78b68b5cf362fcf89b7b70f86414dde1b5093f9137199337b454df477347",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "26db449aaf3f135a96281d72e078f6d5d5c5acab55650384d7fd234e5d8499ea",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "f06746bfac2d33aa871e82ea37cd372c59a4d71dd88293931656d3e2708a0589",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8d47e9c1615f7e1aec95a215b8b7dd1d1a22c2b05fc8084e61b91cd608bcbb4a",
+    "stateSha256": "51ac7f65d4689e6bfa39044dc3345c7815d748bfe770ce6722717050d423960b",
+    "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7"
+  },
+  "contextSha256": "260a5c9affa098bc8db573d3ca93877166f3568bdcd1c8abb7c82f2b42a9d16d"
+}
