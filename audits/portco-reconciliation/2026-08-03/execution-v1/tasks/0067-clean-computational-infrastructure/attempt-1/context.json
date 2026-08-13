@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0067:clean-computational-infrastructure:93bcf245",
+  "taskIndex": 67,
+  "companyName": "Clean Computational Infrastructure",
+  "generatedAt": "2026-08-13T03:52:42.004Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 67,
+    "taskId": "ledger:0067:clean-computational-infrastructure:93bcf245",
+    "canonicalKey": "clean-computational-infrastructure|united-states",
+    "companyName": "Clean Computational Infrastructure",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:004:clean-computational-infrastructure"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:004:clean-computational-infrastructure: Limited public disclosure on structure and specifics of the platform. The accepted census result explicitly requires identity or duplicate review. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:004:clean-computational-infrastructure: Limited public disclosure on structure and specifics of the platform.",
+      "The accepted census result explicitly requires identity or duplicate review."
+    ]
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "clean-computational-infrastructure|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0067:clean-computational-infrastructure:93bcf245",
+    "taskIndex": 67,
+    "canonicalKey": "clean-computational-infrastructure|united-states",
+    "capturedAt": "2026-08-13T03:52:42.004Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "0e031d19f80266962d27a9aa1453a4a5aea371fceb1ecce8162e84c5c1710b61",
+    "productionSnapshotSha256": "906061d2108df236b5f34e9b2341f3232717fe84a636356ed0ec3af28d3b6956",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c6b22a011308fac0d8412793ba4230c8a79fba5b2ee35a4c7ce8aeab1241de7f",
+    "stateSha256": "880530ca54cde0e0fc8dc764f28bdd51ccb383ba22d4120ad2b535b49b011895",
+    "taskSnapshotSha256": "786c4f22596688376b345c85639ec54a5d2f8b16d885871fbc168b00cb9e07d5"
+  },
+  "contextSha256": "571169d34aaa3d5a3e02af90045c728f0c34331682d056bf8737ab13c8041371"
+}
