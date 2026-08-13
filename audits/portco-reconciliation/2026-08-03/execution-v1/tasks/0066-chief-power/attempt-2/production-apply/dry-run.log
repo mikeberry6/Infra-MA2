@@ -1,0 +1,343 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0066-chief-power-v2/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0066-chief-power-v2.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/production-snapshot.json --proposal-sha256=448ebd890fa1fa623fe6197c6992ae894d623197b9fb2fee1b538cf1f87f35d0 --approval-sha256=ef99ee6ddaf130bcfd4e5d5e5b6b3a82f581b6f2048ff551edaef82e0f8c651d --snapshot-sha256=ea223722b81b1c9f5868949c8bdbed7dff3a7c6790ab91de6cc9e8e308232353
+
+(node:2862) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "448ebd890fa1fa623fe6197c6992ae894d623197b9fb2fee1b538cf1f87f35d0",
+    "approvalSha256": "ef99ee6ddaf130bcfd4e5d5e5b6b3a82f581b6f2048ff551edaef82e0f8c651d",
+    "afterImageSha256": "fccd895729b81526a60dedee942db357c5ccde6fd8b748334fe9613cf78f83a2",
+    "taskId": "ledger:0066:chief-power:131a35b6",
+    "operation": "UPSERT",
+    "company": {
+      "name": "Chief Power",
+      "investmentFirm": "ArcLight Capital Partners",
+      "sector": "Power & ET",
+      "subsector": "Coal-fired power generation",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "ArcLight Energy Partners Fund V, L.P.",
+      "description": "Chief Power is an ArcLight Energy Partners Fund V-backed merchant-generation platform holding partial tenant-in-common interests in the Keystone and Conemaugh coal-fired generating stations in western Pennsylvania. ArcLight established the platform in 2014 and expanded it through a separately financed acquisition in 2019. After a 2020 lender restructuring transferred control of the original tranche, Fund V retained a small minority voting interest and continued to control the separately owned Chief Power Finance II tranche. Current public filings identify Fund V as holding greater than 10% voting interests in each II plant-owner entity, while the exact Fund V economic percentage is not publicly disclosed. Chief Power is the single PortCo; its financing entities, transfer parent, plant-owner subsidiaries and the two jointly owned generating stations are not separate portfolio companies.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "yearFounded": 2014,
+      "investmentYear": 2014,
+      "milestones": [
+        {
+          "date": "Dec 31, 2014",
+          "event": "ArcLight Energy Partners Fund V completed the acquisition of Exelon's 41.98% Keystone and 31.28% Conemaugh ownership interests and established the Chief Power platform.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "2015",
+          "event": "Chief Power acquired additional minority interests, increasing its original tranche to 44.45% of Keystone and 35.11% of Conemaugh.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Sep 30, 2019",
+          "event": "ArcLight's separately financed Chief II entities completed the acquisition of PSEG's 22.84% Keystone and 22.5% Conemaugh interests.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "2020",
+          "event": "A lender restructuring transferred control of the original Chief Power Finance tranche to Chief Power Transfer Parent; Fund V retained a small interest subsequently reported at approximately 3%, while the separate Chief Power Finance II tranche remained outside the transfer and under ArcLight control.",
+          "category": "Financing"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "FERC filing — ArcLight Fund V ownership of Chief II entities",
+          "url": "https://www.docketalarm.com/cases/FERC/ER19-2231-010/Chief_Conemaugh_Power_II_LLC/20241031-5380/",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Fund V greater-than-10% voting interests and current ArcLight control"
+        },
+        {
+          "label": "ArcLight — 2025 ESG Report",
+          "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Official attribution of Chief Power to ArcLight Energy Partners Fund V"
+        },
+        {
+          "label": "FERC filing — 2020 Chief Power restructuring",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20200911-5213&optimized=false",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Original-tranche transfer, retained Fund V interest and II-tranche exclusion"
+        },
+        {
+          "label": "New York DPS — 2026 ArcLight annual report",
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B909B109C-0000-C03B-9B29-CBFAE3D27AD9%7D&DocTitle=2026+Annual+Report+of+Cricket+Valley+Energy+Center%2C+LLC%2C+et+al.",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current approximately 3% ArcLight interest in Chief Power JV"
+        },
+        {
+          "label": "Exelon — 2014 Keystone and Conemaugh disposition",
+          "url": "https://www.sec.gov/Archives/edgar/data/9466/000119312515305153/d54970dex991.htm",
+          "type": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "December 2014 closing and initial plant ownership interests"
+        },
+        {
+          "label": "Monitoring Analytics — 2019 PJM ownership transfers",
+          "url": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2019/2019-som-pjm-sec3.pdf",
+          "type": "PRESENTATION",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "September 2019 Chief II acquisition closing and plant interests"
+        },
+        {
+          "label": "Federal Register — 2015 succession to Duquesne interests",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2015-07-20/pdf/FR-2015-07-20.pdf",
+          "type": "OTHER",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "July 2015 succession to additional Keystone and Conemaugh interests"
+        },
+        {
+          "label": "RPA Advisors — Chief Power asset management",
+          "url": "https://rpaadvisors.com/our-team/rich-divito/",
+          "type": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current operating platform, approximate ownership capacity and post-restructuring management"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "ArcLight Capital Partners",
+          "ownershipVehicle": "ArcLight Energy Partners Fund V, L.P.",
+          "fundName": "ArcLight Energy Partners Fund V, L.P.",
+          "vehicleName": "Chief Power Finance, LLC (pre-restructuring controlling tranche)",
+          "investmentYear": 2014,
+          "exitYear": 2020,
+          "stake": "96.4% voting interest before the 2020 restructuring; underlying interests included 44.45% of Keystone and 35.11% of Conemaugh",
+          "status": "Realized",
+          "transactionState": "REALIZED"
+        },
+        {
+          "investmentFirm": "ArcLight Capital Partners",
+          "ownershipVehicle": "ArcLight Energy Partners Fund V, L.P.",
+          "fundName": "ArcLight Energy Partners Fund V, L.P.",
+          "vehicleName": "Chief Power Transfer Parent, LLC / Chief Power Finance, LLC residual tranche",
+          "investmentYear": 2014,
+          "stake": "Approximately 3% interest retained after the 2020 lender restructuring; exact economic percentage not publicly disclosed",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "investmentFirm": "ArcLight Capital Partners",
+          "ownershipVehicle": "ArcLight Energy Partners Fund V, L.P.",
+          "fundName": "ArcLight Energy Partners Fund V, L.P.",
+          "vehicleName": "Chief Power Finance II, LLC",
+          "investmentYear": 2019,
+          "stake": "Greater than 10% voting interest in each of Chief Conemaugh Power II, LLC and Chief Keystone Power II, LLC; exact economic percentage not publicly disclosed",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": null,
+      "name": "Chief Power",
+      "aliases": [
+        "AL Chief Power, LLC",
+        "Chief Power Finance, LLC",
+        "Chief Power Finance II, LLC",
+        "Chief Power Transfer Parent, LLC"
+      ],
+      "sector": "POWER_ET",
+      "subsector": "Coal-fired power generation",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Chief Power is an ArcLight Energy Partners Fund V-backed merchant-generation platform holding partial tenant-in-common interests in the Keystone and Conemaugh coal-fired generating stations in western Pennsylvania. ArcLight established the platform in 2014 and expanded it through a separately financed acquisition in 2019. After a 2020 lender restructuring transferred control of the original tranche, Fund V retained a small minority voting interest and continued to control the separately owned Chief Power Finance II tranche. Current public filings identify Fund V as holding greater than 10% voting interests in each II plant-owner entity, while the exact Fund V economic percentage is not publicly disclosed. Chief Power is the single PortCo; its financing entities, transfer parent, plant-owner subsidiaries and the two jointly owned generating stations are not separate portfolio companies.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": null,
+      "yearFounded": 2014,
+      "headquarters": null,
+      "lastVerifiedAt": "2026-08-13T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": null,
+          "managerName": "ArcLight Capital Partners",
+          "organizationName": "ArcLight Capital Partners",
+          "fundName": "ArcLight Energy Partners Fund V, L.P.",
+          "vehicleName": "Chief Power Finance, LLC (pre-restructuring controlling tranche)",
+          "stake": "96.4% voting interest before the 2020 restructuring; underlying interests included 44.45% of Keystone and 35.11% of Conemaugh",
+          "investmentYear": 2014,
+          "exitYear": 2020,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        },
+        {
+          "id": null,
+          "managerName": "ArcLight Capital Partners",
+          "organizationName": "ArcLight Capital Partners",
+          "fundName": "ArcLight Energy Partners Fund V, L.P.",
+          "vehicleName": "Chief Power Transfer Parent, LLC / Chief Power Finance, LLC residual tranche",
+          "stake": "Approximately 3% interest retained after the 2020 lender restructuring; exact economic percentage not publicly disclosed",
+          "investmentYear": 2014,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "id": null,
+          "managerName": "ArcLight Capital Partners",
+          "organizationName": "ArcLight Capital Partners",
+          "fundName": "ArcLight Energy Partners Fund V, L.P.",
+          "vehicleName": "Chief Power Finance II, LLC",
+          "stake": "Greater than 10% voting interest in each of Chief Conemaugh Power II, LLC and Chief Keystone Power II, LLC; exact economic percentage not publicly disclosed",
+          "investmentYear": 2019,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": null,
+          "date": "Dec 31, 2014",
+          "event": "ArcLight Energy Partners Fund V completed the acquisition of Exelon's 41.98% Keystone and 31.28% Conemaugh ownership interests and established the Chief Power platform.",
+          "category": "ACQUISITION",
+          "sortDate": "2014-12-31T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/9466/000119312515305153/d54970dex991.htm"
+          ]
+        },
+        {
+          "id": null,
+          "date": "2015",
+          "event": "Chief Power acquired additional minority interests, increasing its original tranche to 44.45% of Keystone and 35.11% of Conemaugh.",
+          "category": "ACQUISITION",
+          "sortDate": "2015-07-14T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.govinfo.gov/content/pkg/FR-2015-07-20/pdf/FR-2015-07-20.pdf"
+          ]
+        },
+        {
+          "id": null,
+          "date": "Sep 30, 2019",
+          "event": "ArcLight's separately financed Chief II entities completed the acquisition of PSEG's 22.84% Keystone and 22.5% Conemaugh interests.",
+          "category": "ACQUISITION",
+          "sortDate": "2019-09-30T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2019/2019-som-pjm-sec3.pdf"
+          ]
+        },
+        {
+          "id": null,
+          "date": "2020",
+          "event": "A lender restructuring transferred control of the original Chief Power Finance tranche to Chief Power Transfer Parent; Fund V retained a small interest subsequently reported at approximately 3%, while the separate Chief Power Finance II tranche remained outside the transfer and under ArcLight control.",
+          "category": "FINANCING",
+          "sortDate": "2020-12-31T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20200911-5213&optimized=false"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": null,
+          "label": "FERC filing — ArcLight Fund V ownership of Chief II entities",
+          "url": "https://www.docketalarm.com/cases/FERC/ER19-2231-010/Chief_Conemaugh_Power_II_LLC/20241031-5380/",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Fund V greater-than-10% voting interests and current ArcLight control",
+          "isPrimary": true
+        },
+        {
+          "id": null,
+          "label": "ArcLight — 2025 ESG Report",
+          "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Official attribution of Chief Power to ArcLight Energy Partners Fund V",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "FERC filing — 2020 Chief Power restructuring",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20200911-5213&optimized=false",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Original-tranche transfer, retained Fund V interest and II-tranche exclusion",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "New York DPS — 2026 ArcLight annual report",
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B909B109C-0000-C03B-9B29-CBFAE3D27AD9%7D&DocTitle=2026+Annual+Report+of+Cricket+Valley+Energy+Center%2C+LLC%2C+et+al.",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current approximately 3% ArcLight interest in Chief Power JV",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Exelon — 2014 Keystone and Conemaugh disposition",
+          "url": "https://www.sec.gov/Archives/edgar/data/9466/000119312515305153/d54970dex991.htm",
+          "sourceType": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "December 2014 closing and initial plant ownership interests",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Monitoring Analytics — 2019 PJM ownership transfers",
+          "url": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2019/2019-som-pjm-sec3.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "September 2019 Chief II acquisition closing and plant interests",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Federal Register — 2015 succession to Duquesne interests",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2015-07-20/pdf/FR-2015-07-20.pdf",
+          "sourceType": "OTHER",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "July 2015 succession to additional Keystone and Conemaugh interests",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "RPA Advisors — Chief Power asset management",
+          "url": "https://rpaadvisors.com/our-team/rich-divito/",
+          "sourceType": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current operating platform, approximate ownership capacity and post-restructuring management",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Chief Power",
+    "mutations": [
+      {
+        "kind": "CREATE_COMPANY",
+        "relationIds": [],
+        "detail": "Create the approved canonical company and all approved relations."
+      }
+    ],
+    "changedFields": [
+      "company"
+    ],
+    "retiredCompanyIds": []
+  }
+}
