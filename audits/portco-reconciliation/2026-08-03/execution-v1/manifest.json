@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T08:06:05.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0072:infinigen-renewables:07524184",
+  "updatedAt": "2026-08-13T08:17:52.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -10632,11 +10632,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "183cff97298e9c3cad20de132fe69ed244515e66969878d1e7b702b4f24c0851",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-13T07:42:20.000Z",
-      "updatedAt": "2026-08-13T08:06:05.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-13T08:17:52.000Z",
+      "completedAt": "2026-08-13T08:17:52.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7",
@@ -10741,6 +10741,16 @@
           "evidenceSha256": [
             "45471f29a8ec25d13044702b6eaee2e5f0f4dce12338e6fb38bcf11de1424340"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-13T08:17:52.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7",
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -26908,5 +26918,5 @@
       ]
     }
   ],
-  "manifestSha256": "8e701cc50985fae7ccbbcdefb688c57b6b654b84a325e9b19a9e13ca9d41ea3c"
+  "manifestSha256": "4e2e0cc556c1887641f942ecd18357c8459f33d8bab19fb669cd067641b42844"
 }
