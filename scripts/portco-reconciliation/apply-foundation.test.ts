@@ -444,6 +444,48 @@ describe("approved PortCo apply planner", () => {
     expect(semanticCompanyImageSha256(observed)).toBe(semanticCompanyImageSha256(approved));
   });
 
+  it("treats an implicit direct-owner organization as its persisted manager organization", () => {
+    const approved = companyImageFixture();
+    approved.ownershipPeriods[0] = {
+      ...approved.ownershipPeriods[0],
+      managerName: "Kinder Morgan, Inc.",
+      organizationName: null,
+      fundName: null,
+    };
+    const observed = structuredClone(approved);
+    observed.ownershipPeriods[0].organizationName = "Kinder Morgan, Inc.";
+
+    expect(semanticCompanyImageSha256(observed)).toBe(semanticCompanyImageSha256(approved));
+  });
+
+  it("does not equate an implicit direct owner with a different explicit organization", () => {
+    const approved = companyImageFixture();
+    approved.ownershipPeriods[0] = {
+      ...approved.ownershipPeriods[0],
+      managerName: "Kinder Morgan, Inc.",
+      organizationName: null,
+      fundName: null,
+    };
+    const observed = structuredClone(approved);
+    observed.ownershipPeriods[0].organizationName = "Different Holding Company";
+
+    expect(semanticCompanyImageSha256(observed)).not.toBe(semanticCompanyImageSha256(approved));
+  });
+
+  it("does not infer a manager organization for a fund-linked owner", () => {
+    const approved = companyImageFixture();
+    approved.ownershipPeriods[0] = {
+      ...approved.ownershipPeriods[0],
+      managerName: "ArcLight Capital Partners",
+      organizationName: null,
+      fundName: "ArcLight Energy Partners Fund VII, L.P.",
+    };
+    const observed = structuredClone(approved);
+    observed.ownershipPeriods[0].organizationName = "ArcLight Capital Partners";
+
+    expect(semanticCompanyImageSha256(observed)).not.toBe(semanticCompanyImageSha256(approved));
+  });
+
   it("treats relation evidence URLs as order-independent after database round-trip", () => {
     const approved = companyImageFixture();
     approved.milestones[0].evidenceUrls = [

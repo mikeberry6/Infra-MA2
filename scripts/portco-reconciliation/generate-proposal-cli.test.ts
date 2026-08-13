@@ -1,6 +1,27 @@
 import { describe, expect, it } from "vitest";
-import { applySpec, proposalCanonicalKey } from "./generate-proposal-cli";
-import { companyImageFixture, FIXTURE_NOW } from "./test-fixtures";
+import {
+  companyImageSha256,
+  finalizeDatasetSnapshot,
+  finalizeProposal,
+} from "./artifacts";
+import { finalizeExecutionTaskSnapshot } from "./execution-control";
+import {
+  applySpec,
+  executeGenerateProposalCli,
+  proposalCanonicalKey,
+  rebindSupersededProposal,
+} from "./generate-proposal-cli";
+import { sha256Canonical } from "./hash";
+import type {
+  ProductionSnapshot,
+  ReconciliationProposal,
+  ReviewedSeedRetirement,
+} from "./schema";
+import {
+  companyImageFixture,
+  FIXTURE_NOW,
+  productionSnapshotFixture,
+} from "./test-fixtures";
 import type { TaskSnapshotContext } from "./task-snapshot";
 
 function contextFixture(): TaskSnapshotContext {
@@ -50,6 +71,179 @@ function baseSpec() {
     citationUpdates: [],
     citationAdditions: [],
   };
+}
+
+const REBIND_CANONICAL_KEY = "acme-infrastructure|united-states";
+const REBIND_TASK_ID = "change:acme";
+
+function reviewedSeedRetirementFixture(
+  updates: Partial<ReviewedSeedRetirement> = {},
+): ReviewedSeedRetirement {
+  return {
+    sourceQueueTaskId: "task-seed-duplicate",
+    sourceQueueEntrySha256: "a".repeat(64),
+    name: "Acme Infrastructure",
+    country: "United States",
+    rawSeedEntrySha256: "b".repeat(64),
+    evaluatedSeedEntrySha256: "c".repeat(64),
+    ...updates,
+  };
+}
+
+function recapturedProductionSnapshot(): ProductionSnapshot {
+  const original = productionSnapshotFixture();
+  const { snapshotSha256: _snapshotSha256, ...withoutHash } = original;
+  const recaptured = finalizeDatasetSnapshot({
+    ...withoutHash,
+    asOfDate: "2026-08-04",
+    capturedAt: "2026-08-04T12:00:00.000Z",
+  });
+  if (recaptured.artifactType !== "PORTCO_PRODUCTION_SNAPSHOT") {
+    throw new Error("Expected production fixture");
+  }
+  return recaptured;
+}
+
+function rebindContextFixture(input: {
+  production?: ProductionSnapshot;
+  taskId?: string;
+  taskIndex?: number;
+  companyName?: string;
+  canonicalKey?: string;
+  capturedAt?: string;
+  databaseRevision?: string;
+  seedRetirement?: ReviewedSeedRetirement;
+} = {}): TaskSnapshotContext {
+  const production = input.production ?? productionSnapshotFixture();
+  const beforeImage = companyImageFixture();
+  const seedRetirement = input.seedRetirement ?? reviewedSeedRetirementFixture();
+  const funds = [{
+    id: "fund_3i_na",
+    fundName: "3i North American Infrastructure Fund",
+    managerId: "organization_3i",
+    updatedAt: FIXTURE_NOW,
+  }];
+  const organizations = [{
+    id: "organization_3i",
+    name: "3i Group plc",
+    updatedAt: FIXTURE_NOW,
+  }];
+  const redirects: TaskSnapshotContext["dependencies"]["redirects"] = [];
+  const taskId = input.taskId ?? REBIND_TASK_ID;
+  const taskIndex = input.taskIndex ?? 1;
+  const canonicalKey = input.canonicalKey ?? REBIND_CANONICAL_KEY;
+  const capturedAt = input.capturedAt ?? FIXTURE_NOW;
+  const sourceQueueEntrySha256 = "d".repeat(64);
+  const taskSnapshot = finalizeExecutionTaskSnapshot({
+    schemaVersion: 1,
+    artifactType: "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    methodologyVersion: "PORTCO_TASK_SNAPSHOT_V1",
+    runId: "portco-2026-08-03",
+    taskId,
+    taskIndex,
+    canonicalKey,
+    capturedAt,
+    databaseRevision: input.databaseRevision ?? "company-state:old",
+    databaseTargetFingerprint: "e".repeat(64),
+    sourceLedgerSha256: "f".repeat(64),
+    sourceQueueEntrySha256,
+    productionSnapshotSha256: production.snapshotSha256,
+    targetCompanySnapshotSha256: companyImageSha256(beforeImage),
+    seedEntrySha256: "1".repeat(64),
+    seedRetirementCandidates: [seedRetirement],
+    dependencies: {
+      ownershipPeriodsSha256: sha256Canonical(beforeImage.ownershipPeriods),
+      pendingTransactionsSha256: sha256Canonical(beforeImage.pendingOwnershipTransactions),
+      fundsSha256: sha256Canonical(funds),
+      organizationsSha256: sha256Canonical(organizations),
+      citationsSha256: sha256Canonical(beforeImage.citations),
+      redirectsSha256: sha256Canonical(redirects),
+    },
+  });
+  return {
+    schemaVersion: 1,
+    artifactType: "PORTCO_RECONCILIATION_TASK_CONTEXT",
+    methodologyVersion: "PORTCO_TASK_SNAPSHOT_V1",
+    runId: "portco-2026-08-03",
+    taskId,
+    taskIndex,
+    companyName: input.companyName ?? "Acme Infrastructure, LLC",
+    generatedAt: capturedAt,
+    productionSnapshotLocation: "unused-by-unit-test.json",
+    sourceQueueEntry: {
+      taskId,
+      canonicalKey,
+      sourceHoldingIds: ["001:acme-infrastructure"],
+    } as TaskSnapshotContext["sourceQueueEntry"],
+    targetResolution: {
+      method: "IMMUTABLE_QUEUE_TARGET",
+      targetCompanyId: beforeImage.id!,
+      linkedQueueTaskId: null,
+    },
+    resolvedCanonicalKey: canonicalKey,
+    targetCompanyImage: beforeImage,
+    seedEntry: null,
+    seedRetirementCandidates: [seedRetirement],
+    dependencies: { funds, organizations, redirects },
+    taskSnapshot,
+    contextSha256: "2".repeat(64),
+  };
+}
+
+function supersededProposalFixture(
+  context: TaskSnapshotContext,
+  production: ProductionSnapshot,
+): ReconciliationProposal {
+  const beforeImage = context.targetCompanyImage!;
+  const afterImage = companyImageFixture(
+    "Acme operates regulated water infrastructure with a verified canonical identity.",
+  );
+  return finalizeProposal({
+    schemaVersion: 1,
+    artifactType: "PORTCO_CHANGE_PROPOSAL",
+    methodologyVersion: "PORTCO_RECONCILIATION_V1",
+    runId: context.runId,
+    taskId: context.taskId,
+    taskIndex: context.taskIndex,
+    asOfDate: production.asOfDate,
+    generatedAt: FIXTURE_NOW,
+    canonicalKey: context.resolvedCanonicalKey!,
+    companyName: context.companyName,
+    actions: ["CORRECT_COMPANY", "MERGE_COMPANIES"],
+    sourceHoldingIds: context.sourceQueueEntry.sourceHoldingIds,
+    retiredCompanyIds: ["company_acme_duplicate"],
+    relationMerges: [{
+      kind: "MILESTONE",
+      retiredRelationId: "milestone_duplicate",
+      canonicalRelationId: "milestone_1",
+      rationale: "The duplicate milestone is represented by the canonical event.",
+    }],
+    reviewedSeedRetirements: context.seedRetirementCandidates,
+    rationale: "Official evidence supports the verified correction and duplicate retirement.",
+    evidence: [{
+      url: "https://acme.example.com/owners",
+      purpose: "Current ownership and canonical identity",
+      supports: ["CURRENT_OWNERSHIP", "CANONICAL_IDENTITY"],
+    }],
+    unresolvedQuestions: [],
+    ledgerSha256: context.taskSnapshot.sourceLedgerSha256,
+    productionSnapshotSha256: production.snapshotSha256,
+    currentCompanySnapshotSha256: companyImageSha256(beforeImage),
+    executionLock: {
+      taskSnapshotSha256: context.taskSnapshot.taskSnapshotSha256,
+      taskStateSha256: context.taskSnapshot.stateSha256,
+      taskDependencySha256: context.taskSnapshot.dependencySha256,
+      seedEntrySha256: context.taskSnapshot.seedEntrySha256,
+      dependencies: context.taskSnapshot.dependencies,
+      funds: context.dependencies.funds,
+      organizations: context.dependencies.organizations,
+      redirects: context.dependencies.redirects,
+    },
+    beforeImage,
+    beforeImageSha256: companyImageSha256(beforeImage),
+    afterImage,
+    afterImageSha256: companyImageSha256(afterImage),
+  });
 }
 
 describe("proposal patch ownership additions", () => {
@@ -209,5 +403,93 @@ describe("proposal patch ownership additions", () => {
       ...baseSpec(),
       reviewedSeedRetirementTaskIds: ["task-seed-duplicate"],
     })).toThrow(/require a MERGE_COMPANIES/i);
+  });
+});
+
+describe("superseded proposal retry binding", () => {
+  it("reuses reviewed content while binding a fresh production and task lock", () => {
+    const oldProduction = productionSnapshotFixture();
+    const oldContext = rebindContextFixture({ production: oldProduction });
+    const superseded = supersededProposalFixture(oldContext, oldProduction);
+    const freshProduction = recapturedProductionSnapshot();
+    const freshContext = rebindContextFixture({
+      production: freshProduction,
+      capturedAt: "2026-08-04T12:00:00.000Z",
+      databaseRevision: "company-state:fresh-attempt",
+    });
+
+    const rebound = rebindSupersededProposal({
+      context: freshContext,
+      production: freshProduction,
+      supersededProposal: superseded,
+      generatedAt: "2026-08-04T12:05:00.000Z",
+    });
+
+    expect(rebound.generatedAt).toBe("2026-08-04T12:05:00.000Z");
+    expect(rebound.productionSnapshotSha256).toBe(freshProduction.snapshotSha256);
+    expect(rebound.executionLock?.taskSnapshotSha256)
+      .toBe(freshContext.taskSnapshot.taskSnapshotSha256);
+    expect(rebound.executionLock?.taskSnapshotSha256)
+      .not.toBe(superseded.executionLock?.taskSnapshotSha256);
+    expect(rebound.proposalSha256).not.toBe(superseded.proposalSha256);
+    expect(rebound.actions).toEqual(superseded.actions);
+    expect(rebound.retiredCompanyIds).toEqual(superseded.retiredCompanyIds);
+    expect(rebound.relationMerges).toEqual(superseded.relationMerges);
+    expect(rebound.rationale).toBe(superseded.rationale);
+    expect(rebound.evidence).toEqual(superseded.evidence);
+    expect(rebound.afterImage).toEqual(superseded.afterImage);
+    expect(rebound.afterImageSha256).toBe(superseded.afterImageSha256);
+    expect(rebound.reviewedSeedRetirements).toEqual(freshContext.seedRetirementCandidates);
+  });
+
+  it("rejects a superseded proposal from another task", () => {
+    const production = productionSnapshotFixture();
+    const originalContext = rebindContextFixture({ production });
+    const superseded = supersededProposalFixture(originalContext, production);
+    const otherTaskContext = rebindContextFixture({
+      production,
+      taskId: "change:other-company",
+    });
+
+    expect(() => rebindSupersededProposal({
+      context: otherTaskContext,
+      production,
+      supersededProposal: superseded,
+    })).toThrow(/task identity does not match/i);
+  });
+
+  it.each([
+    ["raw seed hash", { rawSeedEntrySha256: "3".repeat(64) }, /rawSeedEntrySha256/],
+    ["evaluated seed hash", { evaluatedSeedEntrySha256: "4".repeat(64) }, /evaluatedSeedEntrySha256/],
+    ["queue identity hash", { sourceQueueEntrySha256: "5".repeat(64) }, /identity field sourceQueueEntrySha256/],
+  ])("rejects a changed retirement %s", (_label, updates, message) => {
+    const production = productionSnapshotFixture();
+    const oldContext = rebindContextFixture({ production });
+    const superseded = supersededProposalFixture(oldContext, production);
+    const freshContext = rebindContextFixture({
+      production,
+      seedRetirement: reviewedSeedRetirementFixture(updates),
+      capturedAt: "2026-08-04T12:00:00.000Z",
+    });
+
+    expect(() => rebindSupersededProposal({
+      context: freshContext,
+      production,
+      supersededProposal: superseded,
+    })).toThrow(message);
+  });
+
+  it("requires exactly one proposal input mode", async () => {
+    const common = [
+      "--context=context.json",
+      "--json=proposal.json",
+      "--markdown=proposal.md",
+    ];
+    await expect(executeGenerateProposalCli(common)).rejects.toThrow(/exactly one/i);
+    await expect(executeGenerateProposalCli([
+      ...common,
+      "--spec=spec.json",
+      "--superseded-proposal=old-proposal.json",
+    ])).rejects.toThrow(/exactly one/i);
   });
 });

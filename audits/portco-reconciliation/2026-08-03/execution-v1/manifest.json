@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T06:32:00.000Z",
+  "updatedAt": "2026-08-13T06:54:00.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0070:gulf-coast-express-pipeline:5147d87a",
   "source": {
@@ -10331,25 +10331,25 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "69cf7403eaa3b347666e8d2c295b1b2858abad4ea8a9deef378c14107382649b",
       "status": "RELEASING",
-      "attempts": 2,
-      "startedAt": "2026-08-13T06:27:01.000Z",
-      "updatedAt": "2026-08-13T06:32:00.000Z",
+      "attempts": 3,
+      "startedAt": "2026-08-13T06:40:10.000Z",
+      "updatedAt": "2026-08-13T06:54:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15",
+      "taskSnapshotSha256": "6ec1a7259beffd9fbdbeb75646e2a05722c3b7003d7f4ba0cda8af0fd01aec01",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0070-gulf-coast-express-pipeline/attempt-2/locked-task-snapshot.json",
-          "sha256": "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0070-gulf-coast-express-pipeline/attempt-3/task-snapshot.json",
+          "sha256": "6ec1a7259beffd9fbdbeb75646e2a05722c3b7003d7f4ba0cda8af0fd01aec01"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/proposals/0070-gulf-coast-express-pipeline-v2/proposal.json",
-          "sha256": "351959298d59bf4d85f584db7e7e4e72a9e71290b1ffae6e5f64d28ee5ab97cf"
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0070-gulf-coast-express-pipeline-v3/proposal.json",
+          "sha256": "a5a0bd79d971d9a5ffb86b8901b67a551f2e3dc4fe1c07538f83f91cca1b2659"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/approvals/0070-gulf-coast-express-pipeline-v2.json",
-          "sha256": "4564c3230cbe740e09c94a0d6a91baffdd16fe0cc0939c99587bd08fd935b5f7"
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0070-gulf-coast-express-pipeline-v3.json",
+          "sha256": "c05558d5f619e54d20e5ba19fd4238cdd0b3760f5b50fa223fd17f64998e7fc7"
         },
         "applyReceipt": null,
         "decision": null,
@@ -10464,6 +10464,61 @@
           "taskSnapshotSha256": "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15",
           "evidenceSha256": [
             "4564c3230cbe740e09c94a0d6a91baffdd16fe0cc0939c99587bd08fd935b5f7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-13T06:40:09.000Z",
+          "reason": "Protected apply run 31674412906 rolled back because the approved direct Kinder Morgan ownership omitted organizationName and could not round-trip through the required Organization relation. No production database write persisted.",
+          "taskSnapshotSha256": "d27b1f9960f82bb0abfd4ef38264266e9b101ba1c447a93ae37a30c27a866f15",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-13T06:40:10.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-13T06:53:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6ec1a7259beffd9fbdbeb75646e2a05722c3b7003d7f4ba0cda8af0fd01aec01",
+          "evidenceSha256": [
+            "6ec1a7259beffd9fbdbeb75646e2a05722c3b7003d7f4ba0cda8af0fd01aec01",
+            "a5a0bd79d971d9a5ffb86b8901b67a551f2e3dc4fe1c07538f83f91cca1b2659"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-13T06:53:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6ec1a7259beffd9fbdbeb75646e2a05722c3b7003d7f4ba0cda8af0fd01aec01",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-13T06:54:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6ec1a7259beffd9fbdbeb75646e2a05722c3b7003d7f4ba0cda8af0fd01aec01",
+          "evidenceSha256": [
+            "c05558d5f619e54d20e5ba19fd4238cdd0b3760f5b50fa223fd17f64998e7fc7"
           ],
           "kind": "TRANSITION"
         }
@@ -26678,5 +26733,5 @@
       ]
     }
   ],
-  "manifestSha256": "f6f8506974ea49ff795cf761f377be9446e76b85d98c03b6d103891830cbcca2"
+  "manifestSha256": "9e71e55fc4221d7cfedf2fc8df92669285772a571acb6e278f3942c092a086ce"
 }

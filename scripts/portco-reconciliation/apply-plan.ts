@@ -93,6 +93,10 @@ export function semanticCompanyImageSha256(image: CompanyImage): string {
     ownershipPeriods: sortCanonical(image.ownershipPeriods.map((row) => ({
       ...row,
       id: null,
+      // Direct owners without a fund are persisted through an Organization
+      // link. An omitted organizationName therefore round-trips as the
+      // managerName without changing the approved ownership semantics.
+      organizationName: row.organizationName ?? (row.fundName === null ? row.managerName : null),
     }))),
     pendingOwnershipTransactions: sortCanonical(
       image.pendingOwnershipTransactions.map((row) => ({

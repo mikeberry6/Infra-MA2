@@ -93,6 +93,13 @@ its source queue task/hash plus both the raw `baseCompanies` entry hash and the
 fully evaluated pre-proposal seed entry hash. One-way links, ambiguous seed
 keys, missing raw entries, and missing evaluated entries fail snapshotting.
 
+Task snapshotting reconstructs that evaluated pre-task seed directly from
+`baseCompanies` plus all approved overlays except entries whose `taskId`
+matches the sole active task. This is automatic and preserves every unrelated
+overlay. It allows a retry to recover the task's original seed aliases when a
+seed release succeeded but the matching database transaction rolled back,
+without rewinding any other completed PortCo release.
+
 The proposal binds the production baseline and full company before-image. When
 the proposal is recorded, the execution manifest additionally locks the task
 snapshot artifact and its target/dependency state digest. Release and apply
@@ -114,6 +121,13 @@ npm run portco:reconciliation:proposal -- \
   --json=<new-proposal.json> \
   --markdown=<new-proposal.md>
 ```
+
+When a failed apply leaves production unchanged, a fresh attempt may rebind the
+same reviewed research to a newly captured task context without duplicating the
+research specification. Use `--superseded-proposal=<old-proposal.json>` instead
+of `--spec`. The command refuses cross-task reuse, changed target images,
+changed source holdings, unresolved proposals, and any changed seed-retirement
+identity or hash before emitting a new immutable proposal.
 
 To retire reviewed seed-only duplicates through the canonical company's
 proposal, add `MERGE_COMPANIES` and list their captured queue task IDs in the

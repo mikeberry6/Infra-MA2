@@ -55,3 +55,22 @@ export function applyApprovedPortCoAfterImages(
   }
   return companies;
 }
+
+/**
+ * Reconstruct the evaluated seed state that existed before the active task's
+ * approved overlay. This is required when a seed release succeeds but the
+ * matching database transaction rolls back: a retry must still snapshot the
+ * task's original seed identities while preserving every unrelated release.
+ */
+export function applyApprovedPortCoAfterImagesBeforeTask(
+  input: PortCo[],
+  activeTaskId: string,
+  approvedAfterImages: readonly ApprovedPortCoAfterImage[] = afterImages,
+): PortCo[] {
+  const taskId = activeTaskId.trim();
+  if (!taskId) throw new Error("Active PortCo task id is required for pre-task seed evaluation");
+  return applyApprovedPortCoAfterImages(
+    input,
+    approvedAfterImages.filter((entry) => entry.taskId !== taskId),
+  );
+}

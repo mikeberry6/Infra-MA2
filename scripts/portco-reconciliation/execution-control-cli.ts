@@ -3,6 +3,7 @@ import { mkdir, open, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { applyApprovedPortCoAfterImagesBeforeTask } from "../../prisma/seed-data/approved-portco-after-images";
 import type { PortCo } from "../../prisma/seed-data/portco-types";
 import {
   finalizeApproval,
@@ -304,10 +305,13 @@ async function snapshot(values: Map<string, string>, flags: Set<string>): Promis
     let context;
     try {
       const seedCompaniesModule = "../../prisma/seed-data/companies";
-      const { baseCompanies, companies } = await import(seedCompaniesModule) as {
+      const { baseCompanies } = await import(seedCompaniesModule) as {
         baseCompanies: PortCo[];
-        companies: PortCo[];
       };
+      const seedCompanies = applyApprovedPortCoAfterImagesBeforeTask(
+        baseCompanies,
+        manifest.activeTaskId,
+      );
       context = await buildTaskSnapshotContext({
         client,
         manifest,
@@ -316,7 +320,7 @@ async function snapshot(values: Map<string, string>, flags: Set<string>): Promis
         productionSnapshotLocation: repositoryLocation(productionOutput),
         target,
         baseSeedCompanies: baseCompanies,
-        seedCompanies: companies,
+        seedCompanies,
         capturedAt: new Date().toISOString(),
         reviewedTargetCompanyId: values.get("target-company-id"),
         dependencySpec: values.has("dependency-spec")

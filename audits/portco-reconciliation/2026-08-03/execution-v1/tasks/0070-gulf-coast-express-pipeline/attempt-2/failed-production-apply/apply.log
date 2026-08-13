@@ -1,0 +1,7 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0070-gulf-coast-express-pipeline-v2/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0070-gulf-coast-express-pipeline-v2.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0070-gulf-coast-express-pipeline/attempt-2/locked-production-snapshot.json --proposal-sha256=351959298d59bf4d85f584db7e7e4e72a9e71290b1ffae6e5f64d28ee5ab97cf --approval-sha256=4564c3230cbe740e09c94a0d6a91baffdd16fe0cc0939c99587bd08fd935b5f7 --snapshot-sha256=30d5035534b9fad19609b4dcb5ed70f7e49df3e2a2c1f1c0ef6b542e5175b5ad --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_CHANGE --receipt=tmp/portco-reconciliation/production/apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3125) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Database after-image does not match the exact approved semantic after-image
