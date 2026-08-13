@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0068:digital-generation-d-b-a-takanock:0eb6960d",
+  "taskIndex": 68,
+  "companyName": "Digital Generation (d/b/a Takanock)",
+  "generatedAt": "2026-08-13T04:20:43.258Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0068-digital-generation-d-b-a-takanock/attempt-3/approval-recapture/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 68,
+    "taskId": "ledger:0068:digital-generation-d-b-a-takanock:0eb6960d",
+    "canonicalKey": "digital-generation-d-b-a-takanock|united-states",
+    "companyName": "Digital Generation (d/b/a Takanock)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:003:digital-generation-d-b-a-takanock"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/news/arclight-portfolio-services-announces-alpha-generation/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:003:digital-generation-d-b-a-takanock: Entity naming and structure (Digital Generation vs Takanock) remain ambiguous. The accepted census result explicitly requires identity or duplicate review. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:003:digital-generation-d-b-a-takanock: Entity naming and structure (Digital Generation vs Takanock) remain ambiguous.",
+      "The accepted census result explicitly requires identity or duplicate review."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_POST_QUEUE_DBA_IDENTITY",
+    "targetCompanyId": "cmrxpj6lc00jjivhe2eyixi04",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "takanock-llc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6lc00jjivhe2eyixi04",
+    "name": "Takanock, LLC",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Data Center Power Infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Takanock develops and finances digital and power infrastructure solutions for data centers in power-constrained markets. The platform serves hyperscale and other large data center demand through an asset-heavy model tied to power delivery, infrastructure deployment, and site enablement rather than retail colocation. Public disclosures state that Takanock secured $500 million of capital from ArcLight and DigitalBridge in June 2025 and identified the company as being based in Traverse City, Michigan. The business is designed to address the power and infrastructure bottlenecks associated with rapid data center expansion. ArcLight and DigitalBridge announced the capital commitment in June 2025, while public sources do not disclose the ownership percentages within Takanock.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Michigan & United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrmc01gfivheeld2p2q2",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkmmn02piivhe2dg6sbqt",
+        "date": "2025",
+        "event": "The transaction positioned Takanock to pursue deployments in power-constrained data center markets.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmn702pjivhe61hot3u6",
+        "date": "Jun 25, 2025",
+        "event": "Takanock announced a $500 million capital commitment from ArcLight and DigitalBridge.",
+        "category": "FINANCING",
+        "sortDate": "2025-06-25T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp1ao07kaivhew00z607e",
+        "label": "Investment date source — ArcLight Capital Partners — Takanock, LLC",
+        "url": "https://www.digitalbridge.com/news/2025-06-25-takanock-secures-500-million-commitment-from-arclight-and-digitalbridge",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp1bn07kcivheobnqnnvr",
+        "label": "PR Newswire — Takanock, LLC",
+        "url": "https://www.prnewswire.com/news-releases/takanock-secures-500-million-commitment-from-arclight-and-digitalbridge-302490366.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Takanock, LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp1ck07keivhe8lih8a1p",
+        "label": "Hl — Takanock, LLC",
+        "url": "https://hl.com/about-us/transactions/takanock-arclight-digitalbridge/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Hl company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Takanock, LLC",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Digital",
+    "subsector": "Data Center Power Infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Takanock develops and finances digital and power infrastructure solutions for data centers in power-constrained markets. The platform serves hyperscale and other large data center demand through an asset-heavy model tied to power delivery, infrastructure deployment, and site enablement rather than retail colocation. Public disclosures state that Takanock secured $500 million of capital from ArcLight and DigitalBridge in June 2025 and identified the company as being based in Traverse City, Michigan. The business is designed to address the power and infrastructure bottlenecks associated with rapid data center expansion. ArcLight and DigitalBridge announced the capital commitment in June 2025, while public sources do not disclose the ownership percentages within Takanock.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Michigan & United States",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "The transaction positioned Takanock to pursue deployments in power-constrained data center markets.",
+        "category": "Other"
+      },
+      {
+        "date": "Jun 25, 2025",
+        "event": "Takanock announced a $500 million capital commitment from ArcLight and DigitalBridge.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — ArcLight Capital Partners — Takanock, LLC",
+        "url": "https://www.digitalbridge.com/news/2025-06-25-takanock-secures-500-million-commitment-from-arclight-and-digitalbridge",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — Takanock, LLC",
+        "url": "https://www.prnewswire.com/news-releases/takanock-secures-500-million-commitment-from-arclight-and-digitalbridge-302490366.html",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Hl — Takanock, LLC",
+        "url": "https://hl.com/about-us/transactions/takanock-arclight-digitalbridge/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0068:digital-generation-d-b-a-takanock:0eb6960d",
+    "taskIndex": 68,
+    "canonicalKey": "digital-generation-d-b-a-takanock|united-states",
+    "capturedAt": "2026-08-13T04:20:43.258Z",
+    "databaseRevision": "company-state:e4cdfc5081df0dc04f53993558bfc55a27b17f396dfa8049e9677373b32a4db3",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2027de512cd25ae5abd72ebd5447c5cab06f4c6be662280791780a5c9246917d",
+    "productionSnapshotSha256": "84c7d0f5632f7da1464dc79179b8cd53b30f9553d66f5bfd6a79cc81c7e83deb",
+    "targetCompanySnapshotSha256": "e4cdfc5081df0dc04f53993558bfc55a27b17f396dfa8049e9677373b32a4db3",
+    "seedEntrySha256": "f4cdac8b253e242ef21bbacdccdc44b41c46e91226896564799540feab7a88e9",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "ebc79ef4881ed69312d8460d8081d17f2775a0ed604558efe245d2a6f335aafc",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "6565e1e0e509a5f44654afb7e19294e79d3a1f2c1133632671f4d25b1066872a",
+      "citationsSha256": "a562ee4c5a29f4188fba4cda037edcab53a7a6f74d1f490210de222040705d3b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c1f79a6d9a1b93b49db8412ea62ba59c178170272bb62fe1cba617c162c7ce73",
+    "stateSha256": "a84c3914fe4163130950131ecd29fe9a425fd6f58dcbd9f7226e82053ab6f2c2",
+    "taskSnapshotSha256": "244932a799bc32c7418b1e62d0a6977792d305a9ec5b9e36263864bafac6a580"
+  },
+  "contextSha256": "90baac9f5750385911e223d37676606dd033f736fdfe2eb0754fb94e8e2f5a6c"
+}
