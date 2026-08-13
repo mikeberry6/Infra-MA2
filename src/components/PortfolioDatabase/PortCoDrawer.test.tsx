@@ -60,6 +60,24 @@ function chiefPower(owners: OwnerView[]): CompanyView {
 }
 
 describe("PortCoDrawer ownership periods", () => {
+  it("renders the overlay and drawer in their final visible state without relying on an entrance animation", () => {
+    const { container } = render(
+      <PortCoDrawer
+        company={chiefPower([financeIiOwner])}
+        funds={funds}
+        onClose={vi.fn()}
+      />,
+    );
+
+    const overlay = container.firstElementChild;
+    const dialog = screen.getByRole("dialog", { name: "Chief Power" });
+
+    expect(overlay).toHaveClass("opacity-100");
+    expect(overlay).not.toHaveClass("animate-fade-in");
+    expect(dialog).toHaveClass("translate-x-0", "opacity-100");
+    expect(dialog).not.toHaveClass("animate-slide-in-right");
+  });
+
   it("keeps same-manager active vehicles separate and binds each stake and date to its period", async () => {
     const user = userEvent.setup();
     render(

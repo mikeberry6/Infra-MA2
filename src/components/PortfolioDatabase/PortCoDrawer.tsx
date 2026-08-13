@@ -723,7 +723,7 @@ export function PortCoDrawer({
   return (
     <>
       <div
-        className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
+        className="fixed inset-0 z-50 bg-[var(--bg-overlay)] opacity-100 backdrop-blur-[2px]"
         onClick={onClose}
       />
       <div
@@ -732,7 +732,7 @@ export function PortCoDrawer({
         aria-modal="true"
         aria-labelledby="portco-drawer-title"
         tabIndex={-1}
-        className="fixed top-0 right-0 bottom-0 z-50 w-full bg-[var(--bg-surface)] shadow-overlay overflow-y-auto animate-slide-in-right sm:max-w-[760px] xl:max-w-[860px]"
+        className="fixed top-0 right-0 bottom-0 z-50 w-full translate-x-0 bg-[var(--bg-surface)] opacity-100 shadow-overlay overflow-y-auto sm:max-w-[760px] xl:max-w-[860px]"
       >
         <header
           className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-6 py-6 backdrop-blur-md transition-shadow duration-150 sm:px-8 lg:px-10 ${
