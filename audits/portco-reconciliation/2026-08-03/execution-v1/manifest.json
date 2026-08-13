@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T08:47:30.000Z",
+  "updatedAt": "2026-08-13T09:02:53.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0073:inspiration-mobility:1eba7153",
   "source": {
@@ -10763,10 +10763,10 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "b65b9af9c237bc43aa36cea90990bb221294958dd4693c6a5a78c6cf89025fc7",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 3,
       "startedAt": "2026-08-13T08:45:16.000Z",
-      "updatedAt": "2026-08-13T08:47:30.000Z",
+      "updatedAt": "2026-08-13T09:02:53.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -10784,7 +10784,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0073-inspiration-mobility-v3.json",
           "sha256": "852caaf24cad331897149e60af54b7f65a9cdbe5013e04d6b48c5bea7d9d8cdb"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0073-inspiration-mobility/attempt-3/production-apply/apply-receipt.json",
+          "sha256": "a9f24bb5d68177976a8e4a4d221ae24a07a9fd1a4907a00da1704c120176c13b"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0073-inspiration-mobility/research-decision-v2.json",
           "sha256": "ddb592bf0e3aae689e7ef176591f971296e6f2d0925f76bd6c64f8a375ffc59d"
@@ -10958,6 +10961,35 @@
           "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
           "evidenceSha256": [
             "852caaf24cad331897149e60af54b7f65a9cdbe5013e04d6b48c5bea7d9d8cdb"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 16,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-13T08:59:17.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+          "evidenceSha256": [
+            "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+            "8336ec7493f4134831e0579e35991acc12ae0e2c45051ebe62189bd6b6bcce89",
+            "852caaf24cad331897149e60af54b7f65a9cdbe5013e04d6b48c5bea7d9d8cdb"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 17,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-13T09:02:53.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+          "evidenceSha256": [
+            "4c6812b8848aa2c532e9d9b1894e09b378015c8caea58b74793ee8e9481bca74",
+            "8336ec7493f4134831e0579e35991acc12ae0e2c45051ebe62189bd6b6bcce89",
+            "852caaf24cad331897149e60af54b7f65a9cdbe5013e04d6b48c5bea7d9d8cdb",
+            "a9f24bb5d68177976a8e4a4d221ae24a07a9fd1a4907a00da1704c120176c13b"
           ],
           "kind": "TRANSITION"
         }
@@ -27088,5 +27120,5 @@
       ]
     }
   ],
-  "manifestSha256": "1930bd64323dd9a4578b3957f00ca7bdac33265fcb457acf8e23d9226aaa296c"
+  "manifestSha256": "8f47febd350985a2dc0bbdc68057932d92b98dfbcbc3a17ed05b403561d01253"
 }
