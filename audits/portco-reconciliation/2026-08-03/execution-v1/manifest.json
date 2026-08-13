@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T10:44:02.000Z",
+  "updatedAt": "2026-08-13T10:55:50.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0077:natural-gas-pipeline-company-of-america-ngpl:d3c7cddc",
   "source": {
@@ -11219,10 +11219,10 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "fdba56b2e2d2c6c4159a1b2bb13937f4d9d17a37a02f4f224bafaa9bfa3a58b3",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 2,
       "startedAt": "2026-08-13T10:40:31.000Z",
-      "updatedAt": "2026-08-13T10:44:02.000Z",
+      "updatedAt": "2026-08-13T10:55:50.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -11240,7 +11240,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0077-natural-gas-pipeline-company-of-america-ngpl-v2.json",
           "sha256": "cfc55e32462baba38a266ac42779cdf78576b7b730dd7c7200ea0197164bfa28"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0077-natural-gas-pipeline-company-of-america-ngpl/attempt-2/production-apply/apply-receipt.json",
+          "sha256": "f2b4661d0581b3fea9120cf09523b688a44108437348bb04c8af5f755132c4eb"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0077-natural-gas-pipeline-company-of-america-ngpl/attempt-2/audit-correction.json",
           "sha256": "1f35cb8572b0e79a344bf9fa74e084f9655b7e92338d5e915a7ce12cc2200257"
@@ -11360,6 +11363,30 @@
           "taskSnapshotSha256": "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70",
           "evidenceSha256": [
             "cfc55e32462baba38a266ac42779cdf78576b7b730dd7c7200ea0197164bfa28"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-13T10:52:06.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70",
+          "evidenceSha256": [
+            "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-13T10:55:50.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "62bcca8516c2a6212f398a00325fc8950fd27ae37e46d1268dfcc356d84f4e70",
+          "evidenceSha256": [
+            "f2b4661d0581b3fea9120cf09523b688a44108437348bb04c8af5f755132c4eb"
           ],
           "kind": "TRANSITION"
         }
@@ -27348,5 +27375,5 @@
       ]
     }
   ],
-  "manifestSha256": "0ef35964db7f6fa23b91cab109b3a8e589604d1700239d3e31dedd7300c482d1"
+  "manifestSha256": "e7fa65b2d8a5a0aa01fefcfe53b193d71c9eec7e9b1c344eccaa9e4e61d5de8c"
 }
