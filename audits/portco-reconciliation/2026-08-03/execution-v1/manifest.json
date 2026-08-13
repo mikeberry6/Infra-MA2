@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-13T07:53:59.000Z",
+  "updatedAt": "2026-08-13T08:06:05.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0072:infinigen-renewables:07524184",
   "source": {
@@ -10632,10 +10632,10 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "183cff97298e9c3cad20de132fe69ed244515e66969878d1e7b702b4f24c0851",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 1,
       "startedAt": "2026-08-13T07:42:20.000Z",
-      "updatedAt": "2026-08-13T07:53:59.000Z",
+      "updatedAt": "2026-08-13T08:06:05.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -10646,14 +10646,17 @@
           "sha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7"
         },
         "proposal": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0072-infinigen-renewables/attempt-1/proposal.json",
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0072-infinigen-renewables-v1/proposal.json",
           "sha256": "0152a61370697336f6867cb2e073e1974898529e5cd1db3b9983b39922d73531"
         },
         "approval": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0072-infinigen-renewables/attempt-1/approval.json",
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0072-infinigen-renewables-v1.json",
           "sha256": "5f61493274dd26fc0f42215df5a662c3a45777f0dbb1e97ef53b8d4cc95243cc"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0072-infinigen-renewables/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "45471f29a8ec25d13044702b6eaee2e5f0f4dce12338e6fb38bcf11de1424340"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -10711,6 +10714,32 @@
           "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7",
           "evidenceSha256": [
             "5f61493274dd26fc0f42215df5a662c3a45777f0dbb1e97ef53b8d4cc95243cc"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-13T08:04:32.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7",
+          "evidenceSha256": [
+            "0152a61370697336f6867cb2e073e1974898529e5cd1db3b9983b39922d73531",
+            "5f61493274dd26fc0f42215df5a662c3a45777f0dbb1e97ef53b8d4cc95243cc",
+            "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-13T08:06:05.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "99f3bd1d37ec5f65cfed503c2130abc5e7abad65ec80d12643996862f0f4dfe7",
+          "evidenceSha256": [
+            "45471f29a8ec25d13044702b6eaee2e5f0f4dce12338e6fb38bcf11de1424340"
           ],
           "kind": "TRANSITION"
         }
@@ -26879,5 +26908,5 @@
       ]
     }
   ],
-  "manifestSha256": "be60edb8285d054e0f2e43700cea4ef118b9f2a23c77190ced61804eca053cb1"
+  "manifestSha256": "8e701cc50985fae7ccbbcdefb688c57b6b654b84a325e9b19a9e13ca9d41ea3c"
 }
