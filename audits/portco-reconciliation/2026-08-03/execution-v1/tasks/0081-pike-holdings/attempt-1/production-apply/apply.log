@@ -1,0 +1,36 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0081-pike-holdings-transmontaigne-partners-llc-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0081-pike-holdings-transmontaigne-partners-llc-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/locked-production-snapshot.json --proposal-sha256=9cacb3a4cfaaea9adb8bd6e00aab52827919ef751ce0a2b76d5d91fea6e1dd14 --approval-sha256=49bfec2682b10fa036b622ccc8bba85d3297e6c9a71b36f3bd74812c2c3c1223 --snapshot-sha256=d0de28e74eaf12a66008c5a42d88de7cf308a660dcd43f2906463c645a9c8847 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_CHANGE --receipt=tmp/portco-reconciliation/production/apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:2970) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0081:pike-holdings:0d434dde",
+    "taskIndex": 81,
+    "companyName": "Pike Holdings",
+    "companyId": "cmstz2o5i0000ai6hiuspmigq",
+    "proposalSha256": "9cacb3a4cfaaea9adb8bd6e00aab52827919ef751ce0a2b76d5d91fea6e1dd14",
+    "approvalSha256": "49bfec2682b10fa036b622ccc8bba85d3297e6c9a71b36f3bd74812c2c3c1223",
+    "productionSnapshotSha256": "d0de28e74eaf12a66008c5a42d88de7cf308a660dcd43f2906463c645a9c8847",
+    "beforeCompanySnapshotSha256": null,
+    "appliedAfterImageSha256": "0e3a2778301fe5fcff3fe2bc67b80f099b538e29d67cc89b0f9ef470e5301608",
+    "seedAfterImageSha256": "0e3a2778301fe5fcff3fe2bc67b80f099b538e29d67cc89b0f9ef470e5301608",
+    "approvedSeedEntrySha256": "d2790fd329f8aae882a5794b527d71a98dc649dcb3217b2be62e1d12ece83d49",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "2853759c-37ca-41a5-a7f9-0249571caa5f",
+    "auditEventId": "cmstz2pqn000kai6h4qtcsi9s",
+    "appliedAt": "2026-08-15T06:05:48.880Z",
+    "verification": {
+      "databaseMatchesAfterImage": true,
+      "seedMatchesAfterImage": true,
+      "detailApiVerified": true
+    },
+    "receiptSha256": "063037860b0803792ece2f2219fba2b85b1a2f81f2118ffc0e99c9abd77c4177"
+  }
+}

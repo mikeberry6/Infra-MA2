@@ -1,0 +1,268 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0081-pike-holdings-transmontaigne-partners-llc-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0081-pike-holdings-transmontaigne-partners-llc-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/locked-production-snapshot.json --proposal-sha256=9cacb3a4cfaaea9adb8bd6e00aab52827919ef751ce0a2b76d5d91fea6e1dd14 --approval-sha256=49bfec2682b10fa036b622ccc8bba85d3297e6c9a71b36f3bd74812c2c3c1223 --snapshot-sha256=d0de28e74eaf12a66008c5a42d88de7cf308a660dcd43f2906463c645a9c8847
+
+(node:2720) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "9cacb3a4cfaaea9adb8bd6e00aab52827919ef751ce0a2b76d5d91fea6e1dd14",
+    "approvalSha256": "49bfec2682b10fa036b622ccc8bba85d3297e6c9a71b36f3bd74812c2c3c1223",
+    "afterImageSha256": "0e3a2778301fe5fcff3fe2bc67b80f099b538e29d67cc89b0f9ef470e5301608",
+    "taskId": "ledger:0081:pike-holdings:0d434dde",
+    "operation": "UPSERT",
+    "company": {
+      "name": "TransMontaigne Partners LLC",
+      "investmentFirm": "ArcLight Capital Partners",
+      "sector": "Midstream",
+      "subsector": "Bulk liquid storage, terminaling and transportation",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "ArcLight Energy Partners Fund VI, L.P.",
+      "description": "TransMontaigne Partners LLC is a Denver-based U.S. midstream infrastructure platform providing terminaling, storage, transportation, blending and related logistics for refined petroleum products, renewable fuels and feedstocks, crude oil, chemicals, fertilizers and other bulk liquids. Its network spans 54 terminal facilities across major U.S. markets. ArcLight acquired platform control through the general partner in February 2016, and ArcLight Energy Partners Fund VI completed the take-private in February 2019. TLP Finance Holdings now owns 100% of TransMontaigne and is an indirect wholly owned Fund VI subsidiary. Pike Holdings and Pike Petroleum Holdings are upstream sponsor-shell census labels, not separate PortCos; intermediate holding vehicles, operating subsidiaries and individual assets beneath TransMontaigne are subsumed. No platform-level sale or signed pending ownership transfer was identified through August 15, 2026.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "website": "https://www.transmontaignepartners.com/",
+      "investmentYear": 2016,
+      "headquarters": "Denver, Colorado",
+      "milestones": [
+        {
+          "date": "Feb 1, 2016",
+          "event": "An ArcLight affiliate completed its $350 million acquisition of TransMontaigne GP and obtained control of the platform; NGL retained public units and its separate marketing business.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Nov 26, 2018",
+          "event": "TransMontaigne announced a definitive agreement for an indirect ArcLight Energy Partners Fund VI subsidiary to acquire the remaining public units for approximately $536 million.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Feb 26, 2019",
+          "event": "Fund VI's take-private closed, making TransMontaigne wholly owned; the platform converted from TransMontaigne Partners L.P. to TransMontaigne Partners LLC and TLP Finance became sole managing member.",
+          "category": "Acquisition"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "TransMontaigne — 2025 Form 10-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465926032830/tmb-20251231x10k.htm",
+          "type": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current 100% TLP Finance ownership, ArcLight control, U.S. operating profile and platform-level exit check"
+        },
+        {
+          "label": "TransMontaigne — September 2025 ownership release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465925086822/tm2524750d1_ex99-1.htm",
+          "type": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current Fund VI ownership chain, Denver headquarters and operating profile"
+        },
+        {
+          "label": "TransMontaigne — 2021 contribution agreement",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465921141709/tm2133423d1_ex10-1.htm",
+          "type": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Pike Holdings legal identity and the sponsor holding chain above TransMontaigne"
+        },
+        {
+          "label": "NGL Energy Partners — ArcLight control acquisition closing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1504461/000110465916094285/a16-3576_1ex99d1.htm",
+          "type": "SEC_FILING",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "February 2016 ArcLight control acquisition, acquired interests and retained NGL units and business"
+        },
+        {
+          "label": "TransMontaigne — Fund VI take-private announcement",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465918069905/a18-40638_1ex99d1.htm",
+          "type": "SEC_FILING",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "November 2018 definitive agreement, Fund VI purchaser and disclosed transaction value"
+        },
+        {
+          "label": "TransMontaigne — Fund VI take-private closing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465919011614/a19-5348_28k.htm",
+          "type": "SEC_FILING",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "February 2019 full-ownership closing, L.P.-to-LLC conversion and sole managing member"
+        },
+        {
+          "label": "TransMontaigne — About Us",
+          "url": "https://www.transmontaignepartners.com/about-us/",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Official operating-platform boundary, U.S. footprint, services, scale and ArcLight sponsor relationship"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "ArcLight Capital Partners",
+          "ownershipVehicle": "ArcLight Energy Partners Fund VI, L.P.",
+          "fundName": "ArcLight Energy Partners Fund VI, L.P.",
+          "vehicleName": "TLP Finance Holdings, LLC",
+          "investmentYear": 2016,
+          "stake": "100% of TransMontaigne Partners LLC at the operating-platform level; ArcLight acquired control in 2016 and full platform ownership followed the 2019 take-private; current Pike Petroleum Holdings shell capitalization is not publicly disclosed",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": null,
+      "name": "TransMontaigne Partners LLC",
+      "aliases": [
+        "TransMontaigne Partners L.P.",
+        "TLP",
+        "Pike Holdings",
+        "Pike Petroleum Holdings, LLC"
+      ],
+      "sector": "MIDSTREAM",
+      "subsector": "Bulk liquid storage, terminaling and transportation",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "TransMontaigne Partners LLC is a Denver-based U.S. midstream infrastructure platform providing terminaling, storage, transportation, blending and related logistics for refined petroleum products, renewable fuels and feedstocks, crude oil, chemicals, fertilizers and other bulk liquids. Its network spans 54 terminal facilities across major U.S. markets. ArcLight acquired platform control through the general partner in February 2016, and ArcLight Energy Partners Fund VI completed the take-private in February 2019. TLP Finance Holdings now owns 100% of TransMontaigne and is an indirect wholly owned Fund VI subsidiary. Pike Holdings and Pike Petroleum Holdings are upstream sponsor-shell census labels, not separate PortCos; intermediate holding vehicles, operating subsidiaries and individual assets beneath TransMontaigne are subsumed. No platform-level sale or signed pending ownership transfer was identified through August 15, 2026.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": "https://www.transmontaignepartners.com/",
+      "yearFounded": null,
+      "headquarters": "Denver, Colorado",
+      "lastVerifiedAt": "2026-08-15T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": null,
+          "managerName": "ArcLight Capital Partners",
+          "organizationName": "ArcLight Capital Partners",
+          "fundName": "ArcLight Energy Partners Fund VI, L.P.",
+          "vehicleName": "TLP Finance Holdings, LLC",
+          "stake": "100% of TransMontaigne Partners LLC at the operating-platform level; ArcLight acquired control in 2016 and full platform ownership followed the 2019 take-private; current Pike Petroleum Holdings shell capitalization is not publicly disclosed",
+          "investmentYear": 2016,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": null,
+          "date": "Feb 1, 2016",
+          "event": "An ArcLight affiliate completed its $350 million acquisition of TransMontaigne GP and obtained control of the platform; NGL retained public units and its separate marketing business.",
+          "category": "ACQUISITION",
+          "sortDate": "2016-02-01T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/1504461/000110465916094285/a16-3576_1ex99d1.htm"
+          ]
+        },
+        {
+          "id": null,
+          "date": "Nov 26, 2018",
+          "event": "TransMontaigne announced a definitive agreement for an indirect ArcLight Energy Partners Fund VI subsidiary to acquire the remaining public units for approximately $536 million.",
+          "category": "ACQUISITION",
+          "sortDate": "2018-11-26T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/1319229/000110465918069905/a18-40638_1ex99d1.htm"
+          ]
+        },
+        {
+          "id": null,
+          "date": "Feb 26, 2019",
+          "event": "Fund VI's take-private closed, making TransMontaigne wholly owned; the platform converted from TransMontaigne Partners L.P. to TransMontaigne Partners LLC and TLP Finance became sole managing member.",
+          "category": "ACQUISITION",
+          "sortDate": "2019-02-26T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/1319229/000110465919011614/a19-5348_28k.htm"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": null,
+          "label": "TransMontaigne — 2025 Form 10-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465926032830/tmb-20251231x10k.htm",
+          "sourceType": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current 100% TLP Finance ownership, ArcLight control, U.S. operating profile and platform-level exit check",
+          "isPrimary": true
+        },
+        {
+          "id": null,
+          "label": "TransMontaigne — September 2025 ownership release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465925086822/tm2524750d1_ex99-1.htm",
+          "sourceType": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current Fund VI ownership chain, Denver headquarters and operating profile",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "TransMontaigne — 2021 contribution agreement",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465921141709/tm2133423d1_ex10-1.htm",
+          "sourceType": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Pike Holdings legal identity and the sponsor holding chain above TransMontaigne",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "NGL Energy Partners — ArcLight control acquisition closing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1504461/000110465916094285/a16-3576_1ex99d1.htm",
+          "sourceType": "SEC_FILING",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "February 2016 ArcLight control acquisition, acquired interests and retained NGL units and business",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "TransMontaigne — Fund VI take-private announcement",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465918069905/a18-40638_1ex99d1.htm",
+          "sourceType": "SEC_FILING",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "November 2018 definitive agreement, Fund VI purchaser and disclosed transaction value",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "TransMontaigne — Fund VI take-private closing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465919011614/a19-5348_28k.htm",
+          "sourceType": "SEC_FILING",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "February 2019 full-ownership closing, L.P.-to-LLC conversion and sole managing member",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "TransMontaigne — About Us",
+          "url": "https://www.transmontaignepartners.com/about-us/",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Official operating-platform boundary, U.S. footprint, services, scale and ArcLight sponsor relationship",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "TransMontaigne Partners LLC",
+    "mutations": [
+      {
+        "kind": "CREATE_COMPANY",
+        "relationIds": [],
+        "detail": "Create the approved canonical company and all approved relations."
+      }
+    ],
+    "changedFields": [
+      "company"
+    ],
+    "retiredCompanyIds": []
+  }
+}
