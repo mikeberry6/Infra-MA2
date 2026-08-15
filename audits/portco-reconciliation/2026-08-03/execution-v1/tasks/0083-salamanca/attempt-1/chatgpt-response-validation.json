@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CHATGPT_RESEARCH_RESPONSE_VALIDATION",
+  "taskId": "ledger:0083:salamanca:0c228ba6",
+  "attempt": "REPAIR",
+  "validatedAt": "2026-08-15T08:42:00.000Z",
+  "initialAttempt": {
+    "valid": false,
+    "responseJsonSha256": "79c2807faff788c451b4c12168d3df0f7a48813cce5f67d006b0ccb6f6416607",
+    "renderedTurnCaptureSha256": "662a7268c4cf3f53954a2c2be1eb085f6d473e350fba1d28fcb936da8246a4d6",
+    "errors": [
+      "The response attributed an unsupported 32.8% October 2025 Salamanca stake to Third Coast; 32.83% belongs to GOM 1's separate Sicily upstream interest.",
+      "The response marked the ArcLight fund as not publicly disclosed even though ArcLight's 2025 ESG report expressly attributes Salamanca to ArcLight Energy Partners Fund VII, L.P."
+    ],
+    "captureAnomaly": "The first viewport-only extraction was incomplete because ChatGPT rendered the long JSON in a virtualized read-only CodeMirror editor. Full line reconstruction later parsed successfully."
+  },
+  "repairAttempt": {
+    "valid": true,
+    "responseJsonSha256": "4a654306dbb07d86adb2077250590ed68b6da16237a2f78bde96e6fdbc0ffccf",
+    "errors": [],
+    "byteForByteIdenticalToInitial": false
+  },
+  "valid": true,
+  "errors": [],
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "proposedRelations",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "schemaChecks": {
+    "decision": "PROPOSED_NEW",
+    "confidence": "MEDIUM",
+    "canonicalName": "Salamanca Infrastructure, LLC",
+    "currentOwnerCount": 3,
+    "evidenceCount": 17,
+    "unresolvedQuestionsCount": 4,
+    "allEvidenceUrlsDirectHttps": true,
+    "activeOwnershipHasCurrentDirectEvidence": true,
+    "subsequentExitSearchPresent": true
+  },
+  "repairInitiatedAfterInitialFailure": true,
+  "repairInitiatedAfterCaptureAmbiguity": false,
+  "repairsUsed": 1,
+  "repairDecisionMatchesInitial": true,
+  "repairDecisionMatchesFinalProposal": true,
+  "acceptedWithCodexCorrections": true,
+  "corrections": [
+    {
+      "modelClaim": "The canonical persisted name should include a comma before LLC.",
+      "disposition": "LEGAL_NAME_NORMALIZED",
+      "finalTreatment": "Use Salamanca Infrastructure LLC, matching the active GLEIF legal name, and preserve Salamanca Infrastructure, LLC as an alias."
+    },
+    {
+      "modelClaim": "The list proposal should create structured Third Coast and Repsol ownership rows and historical Beacon, Centaurus and GOM 1 relations.",
+      "disposition": "RESEARCH_CONTEXT_ONLY",
+      "finalTreatment": "This manager-census task structures the directly supported ArcLight/Fund VII ownership period. Preserve supported co-owner and transaction evidence in the research record, description, milestones and citations. A complete cap table is not publicly disclosed, Third Coast's interest may overlap ArcLight-backed exposure, and uncaptured corporate-organization dependencies are not silently provisioned."
+    },
+    {
+      "modelClaim": "The incomplete capitalization table requires medium confidence in the list decision.",
+      "disposition": "SCOPE_CONFIDENCE_NORMALIZED",
+      "finalTreatment": "The scoped ArcLight census decision is high confidence because canonical identity, current ArcLight equity ownership, Fund VII attribution, U.S. infrastructure qualification and active status are directly supported. Noncritical cap-table gaps remain explicitly disclosed."
+    },
+    {
+      "modelClaim": "ArcLight's exact current stake should be recorded as not publicly disclosed only.",
+      "disposition": "QUALITATIVE_DISCLOSURE_PRESERVED",
+      "finalTreatment": "Persist the directly disclosed qualitative plurality interest and state that the exact percentage is not publicly disclosed; do not invent a numeric stake."
+    },
+    {
+      "modelClaim": "The model's recommended primary sources should control persistence.",
+      "disposition": "PRIMARY_CITATION_NORMALIZED",
+      "finalTreatment": "Use exactly one primary citation: ArcLight's live investments page, which directly supports current portfolio status and Opportunistic strategy classification."
+    }
+  ],
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json",
+  "finalProposal": "audits/portco-reconciliation/2026-08-03/proposals/0083-salamanca-salamanca-infrastructure-llc-v1/proposal.json"
+}
