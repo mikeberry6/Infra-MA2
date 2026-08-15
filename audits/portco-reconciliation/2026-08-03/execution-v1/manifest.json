@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T05:55:16.000Z",
+  "updatedAt": "2026-08-15T06:05:50.351Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0081:pike-holdings:0d434dde",
   "source": {
@@ -11745,10 +11745,10 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "8a027c159766374a68b766bf2ab5b9e3eababb4713acfc028d5ef9b42918af64",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 1,
       "startedAt": "2026-08-15T05:05:59.000Z",
-      "updatedAt": "2026-08-15T05:55:16.000Z",
+      "updatedAt": "2026-08-15T06:05:50.351Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -11766,7 +11766,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0081-pike-holdings-transmontaigne-partners-llc-v1.json",
           "sha256": "49bfec2682b10fa036b622ccc8bba85d3297e6c9a71b36f3bd74812c2c3c1223"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "063037860b0803792ece2f2219fba2b85b1a2f81f2118ffc0e99c9abd77c4177"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/research-decision.json",
           "sha256": "c65cbbaaa5acb3b52858f44505a99d0052c12cf4af51417c9a831b2d9c7a9333"
@@ -11828,6 +11831,30 @@
           "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
           "evidenceSha256": [
             "49bfec2682b10fa036b622ccc8bba85d3297e6c9a71b36f3bd74812c2c3c1223"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-15T06:05:48.880Z",
+          "reason": null,
+          "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
+          "evidenceSha256": [
+            "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-15T06:05:50.351Z",
+          "reason": null,
+          "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
+          "evidenceSha256": [
+            "063037860b0803792ece2f2219fba2b85b1a2f81f2118ffc0e99c9abd77c4177"
           ],
           "kind": "TRANSITION"
         }
@@ -27664,5 +27691,5 @@
       ]
     }
   ],
-  "manifestSha256": "de82c3c20139aea8311a0ec6156d516938ff851eacc07f98736ae68fd45ed467"
+  "manifestSha256": "d519cc713fd314628431fe488090217f231aa2ef537a3356611e5d27689e8705"
 }
