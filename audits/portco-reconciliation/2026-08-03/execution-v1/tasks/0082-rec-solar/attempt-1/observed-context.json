@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0082:rec-solar:f4e1cc1f",
+  "taskIndex": 82,
+  "companyName": "REC Solar",
+  "generatedAt": "2026-08-15T07:21:42.386Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0082-rec-solar/attempt-1/observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 82,
+    "taskId": "ledger:0082:rec-solar:f4e1cc1f",
+    "canonicalKey": "rec-solar|united-states",
+    "companyName": "REC Solar",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:012:rec-solar"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj6jr00jgivheinookosn"
+    ],
+    "seedKeys": [
+      "rec solar|United States"
+    ],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj6jr00jgivheinookosn",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "rec-solar|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6jr00jgivheinookosn",
+    "name": "REC Solar",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed Solar & Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "REC Solar develops, installs, owns, and operates distributed solar, storage, fuel cell, and microgrid systems for commercial and public-sector customers. The platform combines development, engineering, construction, financing, and operations services, so its model blends project execution income with long-lived distributed energy assets. Company materials state that REC Solar was founded in 1997 and now has a national record spanning more than 700 projects across 29 states. Its customer base includes businesses, public agencies, and institutional buyers seeking on-site or behind-the-meter energy infrastructure. Duke Energy completed the sale of its commercial distributed generation portfolio, including REC Solar, to ArcLight in October 2023, while public sources do not disclose the detailed post-closing ownership structure within ArcLight's fund.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1997,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrkw01gcivhe7028g0no",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "ArcLight Energy Partners Fund VII",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkmdn02p9ivhev00fe41w",
+        "date": "1997",
+        "event": "REC Solar was founded in California.",
+        "category": "FOUNDING",
+        "sortDate": "1997-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkme802paivhejwuwpuqb",
+        "date": "Oct 4, 2023",
+        "event": "Duke Energy completed the sale of its commercial distributed generation portfolio, including REC Solar, to an investment fund managed by ArcLight.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-10-04T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmer02pbivhe8o2q7d6j",
+        "date": "2025",
+        "event": "REC Solar stated that it had delivered more than 700 projects across 29 states.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp0xz07jqivhetcsaobk2",
+        "label": "Close date source — ArcLight Capital Partners — REC Solar",
+        "url": "https://investors.duke-energy.com/news/news-details/2023/Duke-Energy-completes-sale-of-commercial-distributed-generation-portfolio-including-REC-Solar-to-ArcLight/default.aspx",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp0z407jsivhezgvs9jv0",
+        "label": "Recsolar — REC Solar",
+        "url": "https://recsolar.com/why-rec-solar/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Recsolar — REC Solar",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp10107juivheq5w773jp",
+        "label": "Recsolar — REC Solar",
+        "url": "https://recsolar.com/resources/blog/powering-possibilities-the-evolution-of-rec-solar/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Recsolar — REC Solar",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp13b07jwivheucwmtclr",
+        "label": "Recsolar — REC Solar",
+        "url": "https://recsolar.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Recsolar company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "REC Solar",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Distributed Solar & Storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+    "description": "REC Solar develops, installs, owns, and operates distributed solar, storage, fuel cell, and microgrid systems for commercial and public-sector customers. The platform combines development, engineering, construction, financing, and operations services, so its model blends project execution income with long-lived distributed energy assets. Company materials state that REC Solar was founded in 1997 and now has a national record spanning more than 700 projects across 29 states. Its customer base includes businesses, public agencies, and institutional buyers seeking on-site or behind-the-meter energy infrastructure. Duke Energy completed the sale of its commercial distributed generation portfolio, including REC Solar, to ArcLight in October 2023, while public sources do not disclose the detailed post-closing ownership structure within ArcLight's fund.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1997,
+    "investmentYear": 2023,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "1997",
+        "event": "REC Solar was founded in California.",
+        "category": "Founding"
+      },
+      {
+        "date": "Oct 4, 2023",
+        "event": "Duke Energy completed the sale of its commercial distributed generation portfolio, including REC Solar, to an investment fund managed by ArcLight.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025",
+        "event": "REC Solar stated that it had delivered more than 700 projects across 29 states.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — ArcLight Capital Partners — REC Solar",
+        "url": "https://investors.duke-energy.com/news/news-details/2023/Duke-Energy-completes-sale-of-commercial-distributed-generation-portfolio-including-REC-Solar-to-ArcLight/default.aspx",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Recsolar — REC Solar",
+        "url": "https://recsolar.com/why-rec-solar/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Recsolar — REC Solar",
+        "url": "https://recsolar.com/resources/blog/powering-possibilities-the-evolution-of-rec-solar/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Recsolar — REC Solar",
+        "url": "https://recsolar.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0082:rec-solar:f4e1cc1f",
+    "taskIndex": 82,
+    "canonicalKey": "rec-solar|united-states",
+    "capturedAt": "2026-08-15T07:21:42.386Z",
+    "databaseRevision": "company-state:ec3b1f29015a2e661d13e2182dcf1889706e26d6d2f948f8ddadc68ce63da2ca",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3ba0e84432da47333d58d381ac48340db02a23c5be082816e6231b328b961889",
+    "productionSnapshotSha256": "67333da9267330caf4edc8b8d7d376e6558c500c60bb3ade8ede8146ad620ffe",
+    "targetCompanySnapshotSha256": "ec3b1f29015a2e661d13e2182dcf1889706e26d6d2f948f8ddadc68ce63da2ca",
+    "seedEntrySha256": "3a5efc62d1b6a5a02809e74ad45c159bcf2302ee00852038efaef93eb94becbb",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "3fce11b38e315a4bfc6364565b000e5253938533d69318ef86031ee9048c29ec",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "65a78c758a10651140419f0342d562916be2d376d5797107f16ef41efa19ffd4",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "afa57c46a73feb32a816291ecd0aa5b526b625881c52573223418b0114090e33",
+    "stateSha256": "f200a15e8acc272d4f2454d425e4475d5a6b4d1ef64ac3d7b1810993400740cf",
+    "taskSnapshotSha256": "48b230703b4ee60a4f1efba6aa20055cd1e619ff447bbc919c1d1be87aa61578"
+  },
+  "contextSha256": "4f5fadc4d267fb24666bfeddaa718cea132e8c9dcd37b694fb89dc0d58386159"
+}

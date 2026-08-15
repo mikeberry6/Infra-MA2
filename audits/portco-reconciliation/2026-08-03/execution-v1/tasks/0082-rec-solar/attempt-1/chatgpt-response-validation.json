@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CHATGPT_RESEARCH_RESPONSE_VALIDATION",
+  "taskId": "ledger:0082:rec-solar:f4e1cc1f",
+  "attempt": "REPAIR",
+  "validatedAt": "2026-08-15T07:16:00.000Z",
+  "initialAttempt": {
+    "valid": true,
+    "responseJsonSha256": "df7b5f109c6dee4ce8a8430f1709a68550352649b6f1c60e6fc933c2d4948c72",
+    "renderedTurnCaptureSha256": "ab01a8dec61b98e2e55666082687ca4bc40945ba8712f4251406da24e2f4ae91",
+    "errors": [],
+    "captureAnomaly": "The first viewport-only extraction was incomplete because ChatGPT rendered the long JSON in a virtualized read-only CodeMirror editor. Full line reconstruction later parsed successfully."
+  },
+  "repairAttempt": {
+    "valid": true,
+    "responseJsonSha256": "df7b5f109c6dee4ce8a8430f1709a68550352649b6f1c60e6fc933c2d4948c72",
+    "errors": [],
+    "byteForByteIdenticalToInitial": true
+  },
+  "valid": true,
+  "errors": [],
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "schemaChecks": {
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "canonicalName": "REC Power",
+    "currentOwnerCount": 1,
+    "evidenceCount": 23,
+    "unresolvedQuestionsCount": 0,
+    "allEvidenceUrlsDirectHttps": true,
+    "activeOwnershipHasCurrentDirectEvidence": true,
+    "subsequentExitSearchPresent": true
+  },
+  "repairInitiatedAfterInitialFailure": false,
+  "repairInitiatedAfterCaptureAmbiguity": true,
+  "repairsUsed": 1,
+  "repairDecisionMatchesInitial": true,
+  "repairDecisionMatchesFinalProposal": true,
+  "acceptedWithCodexCorrections": true,
+  "corrections": [
+    {
+      "modelClaim": "The current persistence record should add exact announcement and closing date fields to the ownership period.",
+      "disposition": "SCHEMA_DEFERRED",
+      "finalTreatment": "The active Phase 1 persistence schema stores investmentYear only. Preserve 2023 on the ownership period and retain exact July 5 and October 4 dates in evidence and milestones for the later scorecard data-contract phase."
+    },
+    {
+      "modelClaim": "Duke Energy should be retained as a realized former owner row in this list proposal.",
+      "disposition": "AUDIT_AND_MILESTONE_ONLY",
+      "finalTreatment": "This manager-census list task corrects the infrastructure-manager ownership row. Preserve Duke's history in the research decision and milestone, without creating a current manager mapping or expanding the proposal with a corporate-owner dependency."
+    },
+    {
+      "modelClaim": "The proposal should update the canonical key to rec-power|united-states.",
+      "disposition": "WORKFLOW_NORMALIZED",
+      "finalTreatment": "The immutable queue canonicalKey remains rec-solar|united-states. The same-record after-image rename and approved seed retirement workflow produce REC Power while preserving REC Solar as an alias; no manual key rewrite or production redirect is created."
+    },
+    {
+      "modelClaim": "The 2024 ArcLight ESG report is a working direct source.",
+      "disposition": "SOURCE_REPLACED",
+      "finalTreatment": "The direct 2024 PDF URL returned HTTP 404. Use the working 2025 ArcLight ESG report, ArcLight portfolio-services page and regulatory filing for fund attribution."
+    },
+    {
+      "modelClaim": "Numerous model-recommended sources should each be primary.",
+      "disposition": "PRIMARY_CITATION_NORMALIZED",
+      "finalTreatment": "The after-image has exactly one primary citation: REC Power's June 30, 2026 rebrand announcement. Other direct sources remain non-primary."
+    }
+  ],
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json",
+  "finalProposal": "audits/portco-reconciliation/2026-08-03/proposals/0082-rec-solar-rec-power-v1/proposal.json"
+}
+

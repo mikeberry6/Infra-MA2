@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0082:rec-solar:f4e1cc1f",
+  "taskIndex": 82,
+  "companyName": "REC Solar",
+  "asOfDate": "2026-08-15",
+  "decision": "PROPOSED_CORRECTION",
+  "rationale": "Correct the existing REC Solar record in place to the current public brand REC Power and suppress the stale queued ADD_OWNER action. ArcLight Capital is the census shorthand for the existing ArcLight Capital Partners organization, so one owner period remains. Direct ArcLight and regulatory evidence supports Fund VII and its canonical legal name, but not a platform-level legal vehicle or stake. Preserve the 2023 closed-active entry year, move the fund name out of the vehicle field, add the current website and San Luis Obispo headquarters, update the distributed-power description, replace the unsupported 2025 milestone date with directly dated 2026 events, and retain the same production company ID.",
+  "identityResolution": {
+    "canonicalName": "REC Power",
+    "aliases": [
+      "REC Solar",
+      "REC (Renewable Energy Concepts) Solar",
+      "REC Solar Commercial Corporation",
+      "REC Solar Commercial Corp."
+    ],
+    "website": "https://recpower.com/",
+    "country": "United States",
+    "headquarters": "San Luis Obispo, California, United States",
+    "managerLevelBoundary": "REC Power is the continuing manager-level commercial distributed-power platform formerly branded REC Solar. The Duke commercial distributed-generation portfolio is incorporated within the platform; individual projects, holding entities, tax-equity structures, the former residential division, REC Group and REC Silicon are not separate records for this task.",
+    "duplicateDecision": "Update production company cmrxpj6jr00jgivheinookosn in place. Do not create a second REC Power company or a redirect between two production IDs."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Resolve ArcLight Capital to the existing ArcLight Capital Partners organization.",
+    "structuredManagerOwner": {
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Energy Partners Fund VII, L.P.",
+      "vehicle": "NOT_PUBLICLY_DISCLOSED",
+      "stake": "NOT_PUBLICLY_DISCLOSED",
+      "investmentYear": 2023,
+      "state": "CLOSED_ACTIVE"
+    },
+    "ownerAddition": "NONE",
+    "pendingOwnershipTransactions": [],
+    "formerCorporateOwnerTreatment": "Duke Energy's supported prior ownership is retained in the research record and historical milestones, not added as a current infrastructure-manager owner in this Phase 1 list task."
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Power & Energy Transition",
+    "subsector": "Distributed Power & Energy Resources",
+    "yearFounded": 1997,
+    "reportedScale": "More than 700 projects across 29 states; after the July 28, 2026 acquisition, more than 410 MW of operating assets across 25 states."
+  },
+  "acquisitionExitCheck": {
+    "announcement": "Duke announced the $364 million ArcLight agreement on July 5, 2023.",
+    "closing": "Duke completed the sale to an ArcLight-managed investment fund on October 4, 2023.",
+    "currentOwnership": "REC Power directly stated on July 28, 2026 that it is owned by ArcLight Capital Partners; ArcLight's current table continues to list REC Solar as Current.",
+    "subsequentExitSearch": "No company-level sale, completed exit or signed pending ownership transfer was identified through August 15, 2026."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj6jr00jgivheinookosn",
+    "productionOwnershipPeriodId": "cmrxpjrkw01gcivhe7028g0no",
+    "mutation": "CORRECT_EXISTING_COMPANY_AND_OWNER_PERIOD",
+    "queueAddOwnerDisposition": "SUPERSEDED_BY_EXISTING_ALIAS_RESOLVED_OWNER",
+    "duplicateMapping": "NONE",
+    "seedIdentityTreatment": "UPSERT REC Power and retire the prior REC Solar seed identity through the approved same-record rename workflow."
+  },
+  "primaryEvidenceUrl": "https://recpower.com/about/news/rec-solar-rebrands-as-rec-power-better-reflecting-its-ownership-of-distributed-power-resources/",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0082-rec-solar/attempt-1/source-verification.json",
+  "chatgptConversationUrl": "https://chatgpt.com/c/6a8008b5-dc7c-83ea-a7a2-dd564aa0d598",
+  "chatgptAcceptedResponseArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0082-rec-solar/attempt-1/chatgpt-repair-response.json",
+  "unresolvedQuestions": [
+    "The platform-level percentage stake is not publicly disclosed.",
+    "The contractual platform acquisition vehicle is not publicly disclosed.",
+    "Current public branding is REC Power while some registrations still use REC Solar Commercial Corporation."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "b2efe1db972b1e4261a40e1ec7d9aa7c8c7162cb8bd1f091710d84641489473e",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}
+
