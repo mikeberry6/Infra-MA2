@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CHATGPT_RESEARCH_RESPONSE_VALIDATION",
+  "taskId": "ledger:0078:onpoint-energy:e5831cf5",
+  "attempt": "INITIAL",
+  "validatedAt": "2026-08-15T02:07:27.000Z",
+  "renderedTurnCaptureSha256": "ab26a9c3cd76a9229d2239aacf8f009a293fe04cd9df2ce15a75a953296bde13",
+  "responseJsonSha256": "e66413321246623fcecbbcf8ed4541a929b5c07ca65201ef3f414822f7190341",
+  "valid": true,
+  "errors": [],
+  "captureNote": "The initial rendered-turn innerText omitted the middle of ChatGPT's virtualized code editor and produced a false truncation signal. Copying the code block through its UI control recovered a complete, parseable JSON object with ten direct evidence rows.",
+  "repairInitiatedBeforeFullCodeRecovery": true,
+  "repairResponseJsonSha256": "1c6e4e32376e59556f2293a48f2fb54e574f477b48daf25ecb3ac7a3879772f6",
+  "repairDecisionMatchesInitial": true,
+  "repairsUsed": 1
+}
