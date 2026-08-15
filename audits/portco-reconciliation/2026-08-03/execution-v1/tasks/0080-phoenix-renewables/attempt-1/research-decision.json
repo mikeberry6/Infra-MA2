@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0080:phoenix-renewables:9685ebc7",
+  "taskIndex": 80,
+  "companyName": "Phoenix Renewables",
+  "asOfDate": "2026-08-14",
+  "decision": "PROPOSED_CORRECTION",
+  "rationale": "Retain one canonical Phoenix Renewables manager-level operating-renewables portfolio and the existing ArcLight Capital Partners / Fund VIII ownership period. ArcLight Capital is the census's shortened label for the same manager, so the queued ADD_OWNER is superseded and no duplicate ownership row is created. Current ArcLight sources support Fund VIII attribution, Phoenix's manager-level boundary, U.S. geography and active status, but no direct source supports the existing 2024 ownership-entry year or a Phoenix headquarters. Correct both to null. Correct the existing milestones so the July 2024 SkyVest launch is not misrepresented as a Phoenix acquisition or as a release that itself named Phoenix.",
+  "identityResolution": {
+    "canonicalName": "Phoenix Renewables",
+    "aliases": [],
+    "legalSuffix": "NOT_PUBLICLY_DISCLOSED",
+    "website": "NOT_PUBLICLY_DISCLOSED",
+    "country": "United States",
+    "headquarters": "NOT_PUBLICLY_DISCLOSED",
+    "managerLevelBoundary": "Phoenix is the Fund VIII operating-renewables portfolio. SkyVest is its management and operating-services platform; Thunderbird is a separate portfolio; individual projects and subsidiaries beneath Phoenix are not separate PortCos.",
+    "duplicateDecision": "Retain the existing Phoenix record; do not merge it with SkyVest, Thunderbird or a project."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Resolve ArcLight Capital to the existing ArcLight Capital Partners organization.",
+    "structuredManagerOwner": {
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Infrastructure Partners Fund VIII",
+      "vehicle": "ArcLight Infrastructure Partners Fund VIII",
+      "stake": "NOT_PUBLICLY_DISCLOSED",
+      "investmentYear": "NOT_PUBLICLY_DISCLOSED",
+      "state": "CLOSED_ACTIVE"
+    },
+    "ownerAddition": "NONE",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Power & Energy Transition",
+    "subsector": "Operating Renewables Portfolio",
+    "reportedScale": "ArcLight's 2025 ESG report reports 467 MW for Phoenix Renewables.",
+    "yearFounded": "NOT_PUBLICLY_DISCLOSED"
+  },
+  "acquisitionExitCheck": {
+    "ownershipEntry": "NOT_PUBLICLY_DISCLOSED",
+    "skyVestLaunch": "ArcLight launched SkyVest Renewables on July 29, 2024; this is a management-platform milestone, not proof of Phoenix's ownership closing.",
+    "currentOwnership": "ArcLight's live investments page marks Phoenix Current, and its portfolio-services page identifies Phoenix as a Fund VIII portfolio managed through SkyVest.",
+    "assetLevelActivity": "A July 2026 FERC application concerns a Northwest Ohio asset-level add-on beneath the portfolio and does not change Phoenix's manager-level ownership.",
+    "subsequentExitSearch": "No Phoenix-level completed sale, signed pending exit, dissolution, successor or rename was identified through 2026-08-14."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj6im00jeivhecwke4ndp",
+    "productionOwnershipPeriodId": "cmrxpjrjb01g9ivheyyxrg77r",
+    "mutation": "CORRECT_EXISTING_COMPANY_AND_OWNER_PERIOD",
+    "queueAddOwnerDisposition": "SUPERSEDED_BY_EXISTING_ALIAS_RESOLVED_OWNER",
+    "duplicateMapping": "NONE"
+  },
+  "primaryEvidenceUrl": "https://arclight.com/portfolio-services/",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0080-phoenix-renewables/attempt-1/source-verification.json",
+  "unresolvedQuestions": [
+    "Phoenix's exact legal-entity suffix, website, headquarters, founding date, ownership-entry date and ArcLight stake are not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}

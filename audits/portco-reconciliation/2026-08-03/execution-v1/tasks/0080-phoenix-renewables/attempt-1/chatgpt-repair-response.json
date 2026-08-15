@@ -1,0 +1,113 @@
+{
+  "asOfDate": "2026-08-14",
+  "requestedCompany": "Phoenix Renewables",
+  "requestedManager": "ArcLight Capital",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "Phoenix Renewables remains a current, manager-presented ArcLight Infrastructure Partners Fund VIII renewable portfolio and is suitable for one manager-level PortCo record. SkyVest Renewables provides management and operating services to Phoenix but is not a second owner and is not the same company. The census label ArcLight Capital refers to the existing ArcLight Capital Partners organization, so the queued ADD_OWNER would create a duplicate ownership row. The existing 2024 ownership-entry year is not directly supported: ArcLight's July 2024 announcement establishes the launch of SkyVest and its management role, but it does not establish that ArcLight acquired or closed its investment in Phoenix in 2024. The entry year should therefore be changed to null / NOT_PUBLICLY_DISCLOSED. The current United States headquarters claim should also be removed because the sources support country and portfolio geography, not a specific headquarters.",
+  "identityResolution": {
+    "canonicalLegalName": "Phoenix Renewables",
+    "aliases": [],
+    "officialWebsite": null,
+    "headquarters": null,
+    "country": "United States",
+    "platformBoundary": "A distinct ArcLight Fund VIII operating-renewables portfolio comprising renewable generation interests and managed operationally through SkyVest Renewables. The canonical record is Phoenix Renewables itself, not SkyVest Renewables, Thunderbird Renewables, Mesquite Sky, or an individual project or subsidiary within the Phoenix portfolio. The reviewed sources do not disclose a fuller legal-entity name or legal suffix.",
+    "duplicateDecision": "Retain Phoenix Renewables as its own canonical manager-level portfolio record. It is not a duplicate of SkyVest Renewables, which is the operating and asset-management platform; Thunderbird Renewables is a separate portfolio; and Mesquite Sky is a separate project-level investment."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "ArcLight Capital is a shortened census label for ArcLight Capital Partners, LLC and must be resolved to the repository's existing ArcLight Capital Partners organization. No second manager organization or ownership period should be created.",
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "fund": "ArcLight Infrastructure Partners Fund VIII",
+        "vehicle": "ArcLight Infrastructure Partners Fund VIII",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "entryYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerOwners": [],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "sector": "Power & Energy Transition",
+    "subsector": "Operating Renewables Portfolio",
+    "region": "North America",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Phoenix Renewables is a Fund VIII operating-renewables portfolio managed through SkyVest Renewables.",
+    "companyStatus": "ACTIVE",
+    "yearFounded": null,
+    "services": "Ownership and operation of renewable generation assets through an operating portfolio.",
+    "footprint": "United States renewable generation assets; the exact complete asset roster is not publicly disclosed."
+  },
+  "acquisitionExitCheck": {
+    "formationOrAcquisition": "ArcLight's 2025 ESG report retrospectively says it established Phoenix Renewables under SkyVest Renewables during 2024; that statement does not establish an ArcLight acquisition or closing date.",
+    "legalClosing": "NOT_PUBLICLY_DISCLOSED",
+    "subsequentExitSearch": "ArcLight's live investments page continued to list Phoenix as Current, and no direct source reviewed established a Phoenix-level sale, completed exit, superseding rename or signed pending ownership transaction through 2026-08-14."
+  },
+  "milestones": [
+    "2024 — ArcLight established Phoenix Renewables under SkyVest Renewables as an operating-renewables portfolio.",
+    "July 2024 — ArcLight launched SkyVest Renewables; current ArcLight materials separately identify Phoenix as an initial Fund VIII portfolio managed through SkyVest."
+  ],
+  "evidence": [
+    {
+      "label": "ArcLight investments",
+      "url": "https://arclight.com/investments/",
+      "purpose": "Current Phoenix portfolio status and renewable-infrastructure classification.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "ArcLight portfolio services",
+      "url": "https://arclight.com/portfolio-services/",
+      "purpose": "Fund VIII attribution and Phoenix/SkyVest platform boundary.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "ArcLight 2025 ESG report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Phoenix Fund VIII attribution, establishment under SkyVest and reported portfolio scale.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "ArcLight and SkyVest launch announcement",
+      "url": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+      "purpose": "SkyVest launch date and operating-focused renewables initiative; not Phoenix acquisition evidence.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "beforeAfterChanges": [
+    {
+      "field": "ownershipPeriods[cmrxpjrjb01g9ivheyyxrg77r].investmentYear",
+      "before": 2024,
+      "after": null,
+      "reason": "No direct source establishes ArcLight's Phoenix ownership entry or legal closing in 2024."
+    },
+    {
+      "field": "headquarters",
+      "before": "United States",
+      "after": null,
+      "reason": "The sources support U.S. geography but do not disclose a Phoenix headquarters."
+    }
+  ],
+  "excludedOrDuplicateCandidates": [
+    "SkyVest Renewables — management and operating-services platform, not a second Phoenix owner",
+    "Thunderbird Renewables — separate Fund VIII operating-renewables portfolio",
+    "Mesquite Sky and individual Phoenix projects or subsidiaries — assets below manager-level PortCo scope",
+    "ArcLight Capital — shortened manager label, not a separate owner from ArcLight Capital Partners"
+  ],
+  "unresolvedQuestions": [
+    "Phoenix's exact legal-entity suffix, official website, headquarters, founding date, ownership-entry date and ArcLight stake are not publicly disclosed."
+  ],
+  "recommendedListAction": "Retain one Phoenix Renewables record and the existing ArcLight Capital Partners / Fund VIII CLOSED_ACTIVE ownership period; do not add a duplicate ArcLight owner; set investmentYear and headquarters to null."
+}
