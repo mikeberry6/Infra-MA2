@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0085:third-coast-infrastructure-cv:56f00f29",
+  "taskIndex": 85,
+  "validatedAt": "2026-08-15T19:50:00.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a80baac-1254-83ea-b2ec-17593b4611d7",
+  "initialResponse": {
+    "valid": false,
+    "failure": "The model asked for confirmation instead of returning the required fenced JSON and Markdown review."
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "valid": true
+  },
+  "finalResponse": {
+    "fencedJsonPresent": true,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "evidenceCount": 15,
+    "currentOwnerCount": 2,
+    "formerOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "laterTaskDispositionPresent": true,
+    "result": "PASS"
+  }
+}

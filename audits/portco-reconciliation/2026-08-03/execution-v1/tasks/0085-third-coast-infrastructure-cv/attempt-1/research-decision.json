@@ -1,0 +1,352 @@
+{
+  "asOfDate": "2026-08-15",
+  "requestedCompany": "Third Coast Infrastructure (CV)",
+  "requestedManager": "ArcLight Capital",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "ArcLight's current portfolio distinguishes \"Third Coast CV\" as Current from \"Third Coast Midstream\" as Realized, while ArcLight's continuation-fund announcement states that ArcLight 3C SPV, L.P. acquired an ArcLight Energy Partners Fund V, L.P. affiliate's remaining 25.1% interest in Third Coast Super Holdings, LLC in July 2022. Company, regulatory and manager sources support treating Third Coast Super Holdings, LLC, its wholly owned operating company Third Coast Infrastructure, LLC, and the former American Midstream Partners / Third Coast Midstream business as parent, operating-company and predecessor layers of one Third Coast platform for list purposes, although the intermediate legal reorganization steps are not publicly disclosed. Current direct evidence also supports an active J.P. Morgan Asset Management / Infrastructure Investments Fund interest. The existing company is therefore the correct canonical match, but the ownership ledger must replace the undifferentiated active ArcLight row beginning in 2019 with a realized Fund V period and an active ArcLight 3C SPV continuation-vehicle period beginning in July 2022, while preserving the J.P. Morgan co-ownership period and correcting the stake and vehicle caveats.",
+  "identityResolution": {
+    "canonicalLegalName": "Third Coast Infrastructure, LLC",
+    "canonicalDisplayName": "Third Coast Infrastructure",
+    "aliases": [
+      "Third Coast",
+      "Third Coast Infrastructure (CV)",
+      "Third Coast CV",
+      "Third Coast Midstream",
+      "Third Coast Midstream, LLC",
+      "American Midstream Partners, LP"
+    ],
+    "officialWebsite": "https://www.third-coast.com/",
+    "headquartersOrOperatingLocation": "Houston, Texas; U.S. Gulf Coast and deepwater Gulf of Mexico",
+    "country": "United States",
+    "platformBoundary": "One manager-level offshore and coastal midstream platform. The current parent is Third Coast Super Holdings, LLC and its wholly owned operating company is Third Coast Infrastructure, LLC. The canonical PortCo includes the legacy American Midstream Partners / Third Coast Midstream business and its operating subsidiaries and infrastructure interests. ArcLight 3C SPV, L.P., Magnolia and other acquisition entities, Lighthouse Super Holdings, LLC, pipelines, processing plants, floating production systems and individual operating subsidiaries are ownership, holding or downstream asset layers and must not be counted as separate PortCos.",
+    "duplicateDecision": "\"Third Coast Infrastructure (CV)\" and ArcLight's \"Third Coast CV\" are continuation-vehicle labels for an ownership interest in the existing Third Coast Infrastructure platform. Map both to production company cmrxpj6lv00jkivheo08wzrt4 and do not create a new company."
+  },
+  "existingRecordDisposition": {
+    "productionCompanyId": "cmrxpj6lv00jkivheo08wzrt4",
+    "mapsToExisting": true,
+    "keepCanonicalName": true,
+    "exactListLevelCorrections": [
+      "Add \"Third Coast CV\" and \"Third Coast Infrastructure (CV)\" as non-canonical aliases of Third Coast Infrastructure; do not create a second PortCo.",
+      "Replace the existing active ArcLight row that starts in 2019 and records vehicle \"n.a.\" with two periods: ArcLight Energy Partners Fund V, L.P. as realized from 2019-07-23 through 2022-07 with its exact holding affiliate set to NOT_PUBLICLY_DISCLOSED, and ArcLight 3C SPV, L.P. as active from 2022-07.",
+      "Use ArcLight 3C SPV, L.P. as the supported current ArcLight fund and legal vehicle; do not retain \"n.a.\" as a factual vehicle.",
+      "Retain J.P. Morgan Asset Management / Infrastructure Investments Fund (IIF) as an active co-owner from 2021-06-07, but set its exact legal holding vehicle and exact current parent-level percentage to NOT_PUBLICLY_DISCLOSED.",
+      "Do not apply the approximately 50% figure as J.P. Morgan's exact current PortCo stake; the direct 2021 announcement applied that figure to Lighthouse Super Holdings, LLC.",
+      "Record Third Coast Super Holdings, LLC as the parent platform entity and Third Coast Infrastructure, LLC as its wholly owned operating company, without creating a separate company record.",
+      "Keep Active status, Midstream classification, Offshore & Coastal Midstream Infrastructure subsector, United States geography and 2009 as the predecessor platform formation year; qualify 2009 as American Midstream Partners, LP's formation rather than the formation date of the current-named LLC."
+    ],
+    "newCompanyRequired": false,
+    "laterTaskDisposition": "Reroute task ledger:0318:third-coast-infrastructure:68ab0519 to production company cmrxpj6lv00jkivheo08wzrt4. Suppress any new-company mutation and mark its company-identity work superseded by this reconciliation; preserve only the J.P. Morgan Asset Management / IIF ownership-relation verification or update on the same canonical PortCo."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "\"ArcLight Capital\" is a shortened census label for the existing ArcLight Capital Partners organization, legally ArcLight Capital Partners, LLC. Reuse the existing owner organization and do not create a duplicate.",
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "organization": "ArcLight Capital Partners, LLC",
+        "fund": "ArcLight 3C SPV, L.P.",
+        "vehicle": "ArcLight 3C SPV, L.P.",
+        "stake": "25.1% of Third Coast Super Holdings, LLC at the July 2022 acquisition; current percentage NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2023-01-23",
+        "entryDate": "2022-07",
+        "entryYear": 2022,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "manager": "J.P. Morgan Asset Management",
+        "organization": "J.P. Morgan Asset Management",
+        "fund": "Infrastructure Investments Fund (IIF)",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "stake": "Significant minority interest in Third Coast Super Holdings, LLC at 2021 entry; exact current percentage NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2021-06-07",
+        "entryDate": "2021-06-07",
+        "entryYear": 2021,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "organization": "ArcLight Capital Partners, LLC",
+        "fund": "ArcLight Energy Partners Fund V, L.P.",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "stake": "Remaining 25.1% interest in Third Coast Super Holdings, LLC immediately before the July 2022 transfer",
+        "entryDate": "2019-07-23",
+        "entryYear": 2019,
+        "exitDate": "2022-07",
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "duplicateOwnerAction": "Reuse the existing ArcLight Capital Partners and J.P. Morgan Asset Management organizations. Do not create owner records for ArcLight 3C SPV, Fund V, IIF affiliates or their holding entities; store them as fund/vehicle attributes on the ownership relations."
+  },
+  "operatingResolution": {
+    "sector": "Midstream",
+    "subsector": "Offshore & Coastal Midstream Infrastructure",
+    "region": "U.S. Gulf Coast and Gulf of Mexico",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Houston-headquartered, offshore-focused full-service midstream platform providing integrated natural gas, crude oil and NGL gathering, transmission, processing and floating-production infrastructure linking Gulf of Mexico producers with Gulf Coast pipelines, utilities, industrial users and other end markets.",
+    "companyStatus": "Active",
+    "yearFounded": 2009,
+    "services": "Natural gas gathering and transmission; crude oil and NGL transportation; gas processing; offshore pipeline and flow-assurance services; and ownership interests in floating production systems.",
+    "customersAndEndMarkets": "Deepwater and shallow-water Gulf of Mexico producers; downstream interstate and intrastate pipelines; gas utilities; industrial users; refineries; and other Gulf Coast energy markets.",
+    "footprint": "Houston headquarters with infrastructure along the U.S. Gulf Coast and in eastern and western deepwater Gulf of Mexico producing regions.",
+    "disclosedScale": "As disclosed in the May 2026 company update: approximately 1,900 miles of interstate and intrastate pipelines, one gas processing plant, and interests in four offshore semi-submersible floating production systems with combined processing capacity of up to 340 MBbl/d of crude oil and 580 MMcf/d of natural gas."
+  },
+  "acquisitionExitCheck": {
+    "arcLightEntry": "CLOSED: On 2019-07-23, affiliates of ArcLight Energy Partners Fund V, L.P. completed the American Midstream Partners, LP take-private. Effective the same day, American Midstream Partners converted to Third Coast Midstream, LLC. This is the supported ArcLight manager-level entry into the predecessor platform.",
+    "jpmMinorityTransaction": "CLOSED: On 2021-06-07, Third Coast completed the sale of an approximately 50% interest in Lighthouse Super Holdings, LLC to an affiliate of a global infrastructure investment vehicle. Third Coast's 2021 Sustainability Report subsequently identifies an Infrastructure Investment Funds affiliate as a significant minority owner of Third Coast Super Holdings, LLC and dates the IIF investment to the second quarter of 2021. The approximately 50% disclosure is a Lighthouse-level transaction figure, not a supported exact current percentage of the canonical parent platform.",
+    "continuationVehicleCheck": "CLOSED: ArcLight 3C SPV, L.P., expressly described by ArcLight as a continuation fund, held its initial close and acquired Fund V's remaining 25.1% interest in Third Coast Super Holdings, LLC in July 2022; the final close was announced on 2023-01-23. ArcLight's current portfolio page lists \"Third Coast CV\" as Current and \"Third Coast Midstream\" as Realized. The \"(CV)\" label therefore denotes the current continuation-vehicle investment in the same Third Coast platform, not a distinct company.",
+    "subsequentExitSearch": "Fresh searches through 2026-08-15 covered Third Coast, Third Coast Super Holdings, Third Coast Infrastructure, Third Coast Midstream, ArcLight 3C SPV, ArcLight and J.P. Morgan/IIF for sales, exits, divestitures, mergers, restructurings, dissolutions, bankruptcy and signed pending deals. No public direct-source evidence of a later sponsor exit, company sale or signed pending ownership transfer was identified. Public events after the July 2022 continuation transfer were asset-level growth transactions and 2024-2026 debt refinancings or upsizes, not PortCo equity transfers. ArcLight still lists Third Coast CV as Current; Third Coast's current board states that a J.P. Morgan Asset Management-advised vehicle owns Third Coast; a March 2026 institutional report calls Third Coast an IIF company; and Third Coast continued active operations and financing in May 2026."
+  },
+  "milestones": [
+    {
+      "date": "2019-07-23",
+      "event": "ArcLight Fund V take-private and predecessor conversion",
+      "listRelevance": "ArcLight Fund V affiliates completed the American Midstream merger; the public partnership converted into Third Coast Midstream, LLC on the same date.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/american-midstream-announces-completion-of-merger-300889399.html",
+        "https://www.sec.gov/Archives/edgar/data/1513965/000119312519199793/d778127d8k.htm"
+      ]
+    },
+    {
+      "date": "2021-06-07",
+      "event": "Infrastructure investor minority transaction",
+      "listRelevance": "Third Coast sold approximately 50% of Lighthouse Super Holdings, LLC to a global infrastructure vehicle; subsequent company reporting identifies IIF as a significant minority owner of Third Coast's parent. Record J.P. Morgan/IIF on the same PortCo, without importing the Lighthouse percentage as an exact parent-level stake.",
+      "evidenceUrls": [
+        "https://www.third-coast.com/post/third-coast-midstream-completes-sale-of-significant-minority-interest",
+        "https://arclight.com/wp-content/uploads/2022/09/Third-Coast-Sustainability-Report.pdf"
+      ]
+    },
+    {
+      "date": "2022-07",
+      "event": "ArcLight continuation-vehicle transfer",
+      "listRelevance": "ArcLight 3C SPV, L.P. acquired Fund V's remaining 25.1% of Third Coast Super Holdings, LLC. Close Fund V's ownership period and begin the current ArcLight 3C SPV period at month precision.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/arclight-announces-closing-of-407-million-continuation-fund-for-third-coast-301727616.html",
+        "https://www.sec.gov/Archives/edgar/data/1940107/000194010722000001/xslFormDX01/primary_doc.xml"
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "event": "Active platform financing and four-FPS update",
+      "listRelevance": "Third Coast Super Holdings announced a debt upsize by wholly owned Third Coast Infrastructure, LLC and described an active platform with approximately 1,900 pipeline miles, a processing plant and four FPS interests. This is current operating evidence, not an equity transaction.",
+      "evidenceUrls": [
+        "https://www.third-coast.com/post/third-coast-term-loan-b-announcement"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "label": "ArcLight current investments",
+      "url": "https://arclight.com/investments/",
+      "purpose": "Current manager portfolio evidence distinguishing Third Coast CV as Current from Third Coast Midstream as Realized.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "ArcLight Third Coast continuation fund closing",
+      "url": "https://www.prnewswire.com/news-releases/arclight-announces-closing-of-407-million-continuation-fund-for-third-coast-301727616.html",
+      "purpose": "Identifies ArcLight 3C SPV, L.P. as a continuation fund, the July 2022 acquisition of Fund V's remaining 25.1% of Third Coast Super Holdings, and the one-platform boundary.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "ArcLight 3C SPV SEC Form D",
+      "url": "https://www.sec.gov/Archives/edgar/data/1940107/000194010722000001/xslFormDX01/primary_doc.xml",
+      "purpose": "Regulatory evidence for ArcLight 3C SPV, L.P. and its 2022-07-21 fund first-sale date; the date is not treated as the PortCo acquisition closing date.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "ArcLight Form ADV filed July 1, 2026",
+      "url": "https://reports.adviserinfo.sec.gov/reports/ADV/161228/PDF/161228.pdf",
+      "purpose": "Current regulatory schedule identifying ArcLight Capital Partners, LLC and ArcLight 3C SPV, L.P. as an advised private fund.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "American Midstream merger closing",
+      "url": "https://www.prnewswire.com/news-releases/american-midstream-announces-completion-of-merger-300889399.html",
+      "purpose": "Primary evidence that ArcLight Energy Partners Fund V affiliates completed the take-private on 2019-07-23.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "American Midstream SEC identity conversion",
+      "url": "https://www.sec.gov/Archives/edgar/data/1513965/000119312519199793/d778127d8k.htm",
+      "purpose": "Regulatory evidence that American Midstream Partners converted to Third Coast Midstream, LLC effective 2019-07-23.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "American Midstream definitive merger information statement",
+      "url": "https://www.sec.gov/Archives/edgar/data/1513965/000119312519188517/d730607ddefm14c.htm",
+      "purpose": "Regulatory support that the predecessor platform was formed in August 2009 and operated a diversified midstream portfolio.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "Third Coast 2021 Sustainability Report",
+      "url": "https://arclight.com/wp-content/uploads/2022/09/Third-Coast-Sustainability-Report.pdf",
+      "purpose": "Primary company evidence for Third Coast Infrastructure, LLC's operating identity, Houston/Gulf footprint, parent Third Coast Super Holdings and joint ArcLight/IIF ownership, including IIF's significant minority investment in the parent.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Third Coast 2021 minority-interest closing",
+      "url": "https://www.third-coast.com/post/third-coast-midstream-completes-sale-of-significant-minority-interest",
+      "purpose": "Primary evidence for the 2021-06-07 closing and the approximately 50% interest sold at the Lighthouse Super Holdings subsidiary level.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Third Coast current board",
+      "url": "https://www.third-coast.com/copy-of-board-of-directors",
+      "purpose": "Current company evidence that J.P. Morgan Asset Management's Infrastructure Investments Group advises an investment vehicle that owns Third Coast and has a shareholder representative on the board.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Mendocino County retirement report, March 18, 2026",
+      "url": "https://www.mendocinocounty.gov/home/showpublisheddocument/76565/639089991377570000",
+      "purpose": "Current institutional evidence identifying Third Coast as an IIF company and discussing its Delta House activity in the J.P. Morgan IIF portfolio.",
+      "sourceTier": "INSTITUTIONAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Third Coast May 2026 term-loan and operating update",
+      "url": "https://www.third-coast.com/post/third-coast-term-loan-b-announcement",
+      "purpose": "Current primary evidence for the parent/opco relationship, active status, Houston/Gulf footprint and disclosed operating scale; the transaction is debt, not equity.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Third Coast news and announcements",
+      "url": "https://www.third-coast.com/news-and-announcements",
+      "purpose": "Current company news index checked for later sales, exits, restructurings and pending ownership transactions; listed 2024-2026 events are operating, leasing or debt items.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "Third Coast acquisition of Perdido interest from ArcLight Fund VI",
+      "url": "https://www.prnewswire.com/news-releases/third-coast-acquires-interest-in-deepwater-perdido-platform-from-arclight-301870603.html",
+      "purpose": "Primary evidence that the July 2023 transaction was an asset-level acquisition by a Third Coast subsidiary, not an acquisition or exit of the canonical PortCo.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "Petershill sale of non-control stake in ArcLight manager",
+      "url": "https://am.gs.com/en-us/advisors/news/press-release/2026/arclight-capital-partners",
+      "purpose": "Primary evidence that the 2026 transaction concerned a non-control stake in the ArcLight management firm, not Third Coast equity, and is excluded from the PortCo exit analysis.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "proposedRelations": [
+    {
+      "relationType": "ACTIVE_OWNER",
+      "ownerOrganization": "ArcLight Capital Partners",
+      "fundOrVehicle": "ArcLight 3C SPV, L.P.",
+      "companyProductionId": "cmrxpj6lv00jkivheo08wzrt4",
+      "company": "Third Coast Infrastructure",
+      "effectiveFrom": "2022-07",
+      "stake": "25.1% at entry; current percentage NOT_PUBLICLY_DISCLOSED"
+    },
+    {
+      "relationType": "ACTIVE_OWNER",
+      "ownerOrganization": "J.P. Morgan Asset Management",
+      "fundOrVehicle": "Infrastructure Investments Fund (IIF); legal holding vehicle NOT_PUBLICLY_DISCLOSED",
+      "companyProductionId": "cmrxpj6lv00jkivheo08wzrt4",
+      "company": "Third Coast Infrastructure",
+      "effectiveFrom": "2021-06-07",
+      "stake": "Significant minority at 2021 entry; exact current percentage NOT_PUBLICLY_DISCLOSED"
+    },
+    {
+      "relationType": "PARENT_OF",
+      "fromEntity": "Third Coast Super Holdings, LLC",
+      "toEntity": "Third Coast Infrastructure, LLC",
+      "status": "CURRENT",
+      "canonicalTreatment": "One PortCo"
+    },
+    {
+      "relationType": "PREDECESSOR_OF",
+      "fromEntity": "American Midstream Partners, LP",
+      "toEntity": "Third Coast Midstream, LLC",
+      "effectiveDate": "2019-07-23",
+      "canonicalTreatment": "One PortCo"
+    },
+    {
+      "relationType": "LEGACY_PLATFORM_CONTINUITY",
+      "fromEntity": "Third Coast Midstream, LLC",
+      "toEntity": "Third Coast Super Holdings, LLC / Third Coast Infrastructure, LLC",
+      "effectiveDate": "NOT_PUBLICLY_DISCLOSED",
+      "canonicalTreatment": "One PortCo; exact intermediate reorganization steps NOT_PUBLICLY_DISCLOSED"
+    }
+  ],
+  "excludedOrDuplicateCandidates": [
+    {
+      "candidate": "Third Coast Infrastructure (CV) / Third Coast CV",
+      "disposition": "DUPLICATE_ALIAS",
+      "reason": "ArcLight continuation-vehicle label for the existing Third Coast Infrastructure platform."
+    },
+    {
+      "candidate": "Third Coast Super Holdings, LLC",
+      "disposition": "PARENT_HOLDING_LAYER",
+      "reason": "Current ownership-level parent of the wholly owned operating company; retain within the same canonical PortCo."
+    },
+    {
+      "candidate": "Third Coast Midstream, LLC / American Midstream Partners, LP",
+      "disposition": "PREDECESSOR_OR_LEGACY_IDENTITY",
+      "reason": "Predecessor and legacy legal/display identities of the same platform."
+    },
+    {
+      "candidate": "Lighthouse Super Holdings, LLC",
+      "disposition": "SUBHOLDING_LAYER",
+      "reason": "Subsidiary/transaction layer that held the offshore-focused business and King's Quay interest; not a separate manager-level PortCo."
+    },
+    {
+      "candidate": "Magnolia Infrastructure Holdings and ArcLight's 2019 merger/acquisition entities",
+      "disposition": "ACQUISITION_OR_HOLDING_VEHICLES",
+      "reason": "Legal transaction entities beneath the ArcLight acquisition structure, not operating platforms."
+    },
+    {
+      "candidate": "Third Coast pipelines, processing plants, floating production systems and operating subsidiaries",
+      "disposition": "DOWNSTREAM_ASSETS_OR_SUBSIDIARIES",
+      "reason": "Assets and subsidiaries beneath the already-counted Third Coast platform."
+    },
+    {
+      "candidate": "July 2023 Perdido interest acquisition from ArcLight Fund VI",
+      "disposition": "ASSET_LEVEL_TRANSACTION",
+      "reason": "A Third Coast subsidiary acquired a non-operated platform interest; it did not change ownership of the canonical Third Coast PortCo."
+    }
+  ],
+  "unresolvedQuestions": [
+    "J.P. Morgan/IIF's exact legal holding vehicle and exact current percentage at Third Coast Super Holdings, LLC are NOT_PUBLICLY_DISCLOSED; the approximately 50% figure publicly disclosed in 2021 applied to Lighthouse Super Holdings, LLC.",
+    "ArcLight 3C SPV's exact day-level acquisition closing in July 2022 is NOT_PUBLICLY_DISCLOSED; the SEC Form D's 2022-07-21 first-sale date is a fund offering date and is not used as the PortCo acquisition date.",
+    "Formal post-2021 control rights between ArcLight and IIF are NOT_PUBLICLY_DISCLOSED; the available direct sources establish joint ownership and governance participation but do not identify a definitive controller.",
+    "The exact legal reorganization steps linking Third Coast Midstream, LLC and Lighthouse Super Holdings, LLC to the current Third Coast Super Holdings, LLC / Third Coast Infrastructure, LLC structure are NOT_PUBLICLY_DISCLOSED."
+  ],
+  "recommendedListAction": "Apply PROPOSED_CORRECTION to production company cmrxpj6lv00jkivheo08wzrt4. Map census holding 012-arclight-capital:holding:016:third-coast-infrastructure-cv to the existing Third Coast Infrastructure PortCo; retain the canonical display name and add the CV aliases; do not create a new company or owner. Replace the single ArcLight 2019-present row with a realized Fund V relation from 2019-07-23 through 2022-07 and an active ArcLight 3C SPV relation from 2022-07. Retain an active J.P. Morgan Asset Management / IIF relation from 2021-06-07 with legal vehicle and exact current stake set to NOT_PUBLICLY_DISCLOSED. Reroute later task 318 to the same production ID, suppress its duplicate company mutation and use it only to confirm or update the J.P. Morgan ownership relation."
+}
