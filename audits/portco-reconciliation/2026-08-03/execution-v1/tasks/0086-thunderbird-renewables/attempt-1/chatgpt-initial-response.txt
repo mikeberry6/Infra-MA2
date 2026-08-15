@@ -1,0 +1,59 @@
+Worked for 38m 58s
+JSON
+{
+  "asOfDate": "2026-08-15",
+  "requestedCompany": "Thunderbird Renewables",
+  "requestedManager": "ArcLight Capital",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "Thunderbird Renewables is a distinct, current ArcLight Fund VIII portfolio of operating renewable-generation assets, and the existing single ArcLight Capital Partners ownership period is the correct owner relationship. The queued ADD_OWNER must therefore be suppressed. Corrections are nevertheless required because the July 2024 SkyVest launch did not name Thunderbird and does not support a 2024 ArcLight entry year. ArcLight's official year-end 2024 investment list includes Phoenix Renewables but omits Thunderbird, while regulatory acquisition activity involving an ArcLight-linked vehicle and a Thunderbird-identified asset moved from a late-2024 application to 2025 authorization. The supported year-level entry is 2025; the exact closing date remains NOT_PUBLICLY_DISCLOSED. The headquarters claim should also be changed to NOT_PUBLICLY_DISCLOSED, and ArcLight's disclosed 309 MW portfolio scale should be added with its limited date scope.",
+  "identityResolution": {
+    "canonicalLegalName": "Thunderbird Renewables",
+    "aliases": [],
+    "officialWebsite": "NOT_PUBLICLY_DISCLOSED",
+    "headquarters": "NOT_PUBLICLY_DISCLOSED",
+    "country": "United States",
+    "platformBoundary": "Retain Thunderbird Renewables as the manager-presented canonical name for one distinct Fund VIII operating-renewables portfolio/platform. ArcLight Renewable Services, LLC, doing business as SkyVest Renewables, provides management and operational services; SkyVest is not Thunderbird. Individual project companies and generation assets beneath the portfolio are not separate Thunderbird-level PortCos. The exact Thunderbird legal holding entity is NOT_PUBLICLY_DISCLOSED.",
+    "duplicateDecision": "NOT_A_DUPLICATE. Retain existing production company ID cmrxpj6mi00jlivhev0ljria1 and canonical key thunderbird-renewables|united-states. Thunderbird is distinct from SkyVest Renewables, Phoenix Renewables, Mesquite Sky, and downstream project entities."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "ArcLight Capital is a shortened census label for the existing ArcLight Capital Partners organization. ArcLight's own terms identify ArcLight Capital Partners, LLC together with its affiliates as 'ArcLight'; do not create a second manager or ownership row.",
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "fund": "ArcLight Infrastructure Partners Fund VIII",
+        "vehicle": "ArcLight Infrastructure Partners Fund VIII",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "entryYear": 2025,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerOwners": [],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "sector": "Power & Energy Transition",
+    "subsector": "Operating Renewables Portfolio",
+    "region": "North America",
+Review
+
+Decision: PROPOSED_CORRECTION. Thunderbird should remain one distinct PortCo. ArcLight currently lists it as a current renewable investment, while ArcLight’s portfolio-services page identifies Thunderbird and Phoenix as separate initial Fund VIII operating-renewables portfolios managed through SkyVest. SkyVest is the management and services platform, not Thunderbird itself. ArcLight’s terms also resolve “ArcLight” to ArcLight Capital Partners, LLC and its affiliates, so the queued ADD_OWNER would duplicate the existing manager relationship. 
+arclight
++2
+arclight
++2
+
+The key correction is entryYear: 2024 → 2025. The July 29, 2024 release launched SkyVest and described an unnamed 160 MW Texas investment, but did not name Thunderbird. The Lakefield application was filed in November 2024 and authorized on January 22, 2025, while the related F8 regulatory chronology continued into 2025. Taken together with ArcLight’s year-end-2024 investment list and 2025 ESG reporting, that supports 2025 at year precision—but not a precise Thunderbird closing date. The July 2024 Thunderbird milestone should therefore be removed. 
+arclight
++5
+PR Newswire
++5
+Federal Register
++5
+
+No Thunderbird-specific exit or pending portfolio transfer was identified through August 15, 2026, and ArcLight continues to mark the investment as current. DigitalBridge’s May 27, 2026 agreement to acquire ArcLight is a pending manager-level transaction; the announcement says ArcLight will remain a distinct, separately managed business, so it does not justify a pending or incoming Thunderbird owner row. 
+arclight
++2
+DigitalBridge
++2

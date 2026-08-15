@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0086:thunderbird-renewables:63a5d8e7",
+  "taskIndex": 86,
+  "companyName": "Thunderbird Renewables",
+  "conversationUrl": "https://chatgpt.com/c/6a80d00a-be20-83ea-b197-20051485a4af",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-15T20:46:01.847Z",
+  "initialCompletedAt": "2026-08-15T21:25:22.019Z",
+  "repairSubmittedAt": "2026-08-15T21:26:52.033Z",
+  "repairCompletedAt": "2026-08-15T21:32:01.958Z",
+  "repairCount": 1,
+  "initialOutcome": "MALFORMED_TRUNCATED_JSON",
+  "finalOutcome": "FAILED_SECOND_MALFORMED_RESPONSE",
+  "contentHashes": {
+    "promptSha256": "c4bc0ad418db7eb8f568cf0b29f2c5619f7d7d8a8fe0bd12060fab1bcde178d9",
+    "initialResponseSha256": "fad4286ae5016b308e87fc9153580a048adc5beda04f429a7dbbff7e2e781b02",
+    "acceptedResponseSha256": null,
+    "transcriptSha256": "bf2dad296bdfd25769babc54b8d6ba85312f93d5e704d094f793d92463a9e5cc",
+    "repairPromptSha256": "3a0d9349f7be082820363023e82ac5bfa6152f7b17f4d1443f5f3df200e44680",
+    "repairResponseSha256": "198235623cf808352d1db3efd2dfba4ba41e63a47e325bdde433db07c732325e"
+  },
+  "captureMethod": "Signed-in ChatGPT web application controlled through the in-app browser",
+  "captureNote": "Both assistant responses rendered a JSON code block that terminated immediately after operatingResolution.region and then began the Markdown review. DOM inspection confirmed the code blocks themselves were truncated, rather than merely visually collapsed."
+}
