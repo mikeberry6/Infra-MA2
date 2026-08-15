@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0083:salamanca:0c228ba6",
+  "taskIndex": 83,
+  "companyName": "Salamanca",
+  "generatedAt": "2026-08-15T07:53:51.064Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0083-salamanca/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 83,
+    "taskId": "ledger:0083:salamanca:0c228ba6",
+    "canonicalKey": "salamanca|united-states",
+    "companyName": "Salamanca",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:014:salamanca"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "salamanca|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0083:salamanca:0c228ba6",
+    "taskIndex": 83,
+    "canonicalKey": "salamanca|united-states",
+    "capturedAt": "2026-08-15T07:53:51.064Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "7cc05fdac20dcf4013db1a0bd43332cda8cca66be747a352222d23414eb7b5b1",
+    "productionSnapshotSha256": "6d2e50ace92f6e354cd909b5df99bbff1041c6c335180a6b5fd01b383f9d322e",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "dc16a705228e043b4ae02e391ccf24d3f79223ae7d3117fdbe485b53a6f9cf79",
+    "taskSnapshotSha256": "54be318c5d4e8d7597010bbb53a7a9cebd29c4295bd6d8c43dd002fb3a3773b8"
+  },
+  "contextSha256": "ae4adf44c726def452f5b41339111f3f101c169963120d87edf8ab9318d88a7f"
+}

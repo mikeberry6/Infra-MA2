@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0083:salamanca:0c228ba6",
+  "taskIndex": 83,
+  "companyName": "Salamanca / Salamanca Infrastructure LLC",
+  "asOfDate": "2026-08-15",
+  "retrievedAt": "2026-08-15T08:38:00.000Z",
+  "methodology": "Codex independently reopened the direct manager, operator, company, government, regulatory and transaction sources used in the list decision; verified the cited claims against retrieved content; recorded final URL, status, media type, byte length and SHA-256 where retrieval succeeded; and separately extracted the relevant ArcLight, Repsol and industry-report PDF text. Search-result snippets were not treated as proposal evidence.",
+  "exitSearchConclusion": "No Salamanca-specific completed ArcLight sale, signed pending exit, dissolution or successor platform was identified through 2026-08-15. ArcLight's live investments page continues to list Salamanca as Current, while current Repsol and Third Coast disclosures corroborate an operating multi-owner asset. The pending DigitalBridge acquisition of ArcLight is a manager-level transaction and does not create a Salamanca ownership transfer.",
+  "modelEvidenceCorrections": [
+    {
+      "claim": "Third Coast acquired 32.8% of Salamanca in October 2025.",
+      "disposition": "REJECTED_AS_UNSUPPORTED",
+      "reason": "Public evidence supports only an unspecified non-operated Salamanca platform interest acquired during 2025 and held in May 2026. The 32.83% figure concerns GOM 1's separate Sicily upstream interest; Third Coast's stake, seller and exact acquisition date are not publicly disclosed."
+    },
+    {
+      "claim": "ArcLight's exact Salamanca fund is not publicly disclosed.",
+      "disposition": "FUND_ATTRIBUTION_CORRECTED",
+      "reason": "ArcLight's 2025 ESG report expressly attributes Salamanca to ArcLight Energy Partners Fund VII, L.P. The legal holding vehicle and exact percentage remain undisclosed."
+    },
+    {
+      "claim": "Repsol's combined 20% sale to ArcLight and Centaurus establishes a 20% ArcLight stake.",
+      "disposition": "REJECTED_AS_UNSUPPORTED",
+      "reason": "Repsol does not disclose the allocation between the two buyers. ArcLight's structured stake remains the disclosed qualitative plurality interest, not a numeric percentage."
+    },
+    {
+      "claim": "Repsol's 1.88% group effective interest is its direct Salamanca stake.",
+      "disposition": "DIRECT_AND_EFFECTIVE_INTEREST_DISTINGUISHED",
+      "reason": "Repsol reports a 2.5% direct interest and a 1.88% effective group interest. The figures are not interchangeable."
+    },
+    {
+      "claim": "LLOG's operator role establishes LLOG equity ownership.",
+      "disposition": "REJECTED_AS_UNSUPPORTED",
+      "reason": "Reviewed sources establish LLOG as operator and project manager but do not establish a manager-level LLOG ownership percentage."
+    }
+  ],
+  "sources": [
+    {
+      "evidenceUrl": "https://arclight.com/investments",
+      "verificationUrl": "https://arclight.com/investments",
+      "status": "REDIRECTED_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/investments/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 153928,
+      "contentSha256": "1b0fd1bb45b31ea90fb2249a65ec654de573bb2c5f760c377fd08317e25f78e5",
+      "verifiedClaims": [
+        "ArcLight lists Salamanca as a Current investment.",
+        "ArcLight classifies Salamanca as Opportunistic.",
+        "The page supports continuing manager portfolio status through the verification date."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "verificationUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 10657395,
+      "contentSha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+      "verifiedClaims": [
+        "ArcLight attributes Salamanca to Fund VII.",
+        "The report defines Fund VII as ArcLight Energy Partners Fund VII, L.P.",
+        "The report identifies Salamanca as an infrastructure investment."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://www.globenewswire.com/news-release/2022/05/04/2435746/0/en/LLOG-Exploration-Announces-Development-of-Salamanca-Production-Facility.html",
+      "verificationUrl": "https://www.globenewswire.com/news-release/2022/05/04/2435746/0/en/LLOG-Exploration-Announces-Development-of-Salamanca-Production-Facility.html",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.globenewswire.com/news-release/2022/05/04/2435746/0/en/LLOG-Exploration-Announces-Development-of-Salamanca-Production-Facility.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 55383,
+      "contentSha256": "25f94488b58659cf7008df2116cd16a9f72c4a60955ccdb78580b05c432c1403",
+      "verifiedClaims": [
+        "LLOG announced Salamanca development on May 4, 2022.",
+        "ArcLight-managed vehicles financed the facility through an ownership arrangement.",
+        "The floating production facility is at Keathley Canyon Block 689 and serves the separate Leon and Castile fields.",
+        "LLOG is the operator."
+      ]
+    },
+    {
+      "evidenceUrl": "https://img.ogj.com/files/base/ebm/ogj/document/2025/12/69432212994616a66307819e-ogj_off_llog_salamanca_ebook_2025_low_res.pdf",
+      "verificationUrl": "https://img.ogj.com/files/base/ebm/ogj/document/2025/12/69432212994616a66307819e-ogj_off_llog_salamanca_ebook_2025_low_res.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://img.ogj.com/files/base/ebm/ogj/document/2025/12/69432212994616a66307819e-ogj_off_llog_salamanca_ebook_2025_low_res.pdf",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 9457590,
+      "contentSha256": "4a4d6865024271e09781e7c4ba4876174c019a0f49b10aa1db730c049bee9ba9",
+      "verifiedClaims": [
+        "ArcLight affiliates hold a plurality ownership interest in the Salamanca infrastructure.",
+        "The infrastructure includes the FPS and associated oil and gas export laterals.",
+        "The exact ArcLight percentage is not disclosed."
+      ]
+    },
+    {
+      "evidenceUrl": "https://api.gleif.org/api/v1/lei-records/25490053T629X928P208",
+      "verificationUrl": "https://api.gleif.org/api/v1/lei-records/25490053T629X928P208",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://api.gleif.org/api/v1/lei-records/25490053T629X928P208",
+      "mediaType": "application/vnd.api+json",
+      "contentLengthBytes": 2451,
+      "contentSha256": "3bbfd10abd4c59ecbbd170a4328a02d2e4968bc8ecbb8a6864088b386f3997db",
+      "verifiedClaims": [
+        "The canonical legal entity is Salamanca Infrastructure LLC.",
+        "It is an active Delaware limited liability company created on March 22, 2022.",
+        "The registered address is in Boston, Massachusetts."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/informes-jga/2024/accessible-documents/consolidated-annual-statements-auditors-report-consolidated-management-report-and-independent-verifying-report-accessible.pdf",
+      "verificationUrl": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/informes-jga/2024/accessible-documents/consolidated-annual-statements-auditors-report-consolidated-management-report-and-independent-verifying-report-accessible.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/informes-jga/2024/accessible-documents/consolidated-annual-statements-auditors-report-consolidated-management-report-and-independent-verifying-report-accessible.pdf",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 2886188,
+      "contentSha256": "83be2f36f8f8fcd5d3e888631dc55012741f065d9cf40cf613f11458a3e99b39",
+      "verifiedClaims": [
+        "Repsol completed a combined 20% sale to ArcLight and Centaurus on December 1, 2023 for $129 million.",
+        "Repsol retained 2.5%.",
+        "The report does not allocate the sold 20% between the two buyers."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/ref/2026/ref19022026-2025-group-annual-financial-report.pdf",
+      "verificationUrl": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/ref/2026/ref19022026-2025-group-annual-financial-report.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/ref/2026/ref19022026-2025-group-annual-financial-report.pdf",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 12526196,
+      "contentSha256": "1974d017d361474ed31f02db7a6273799def252384e098ce2d41d89a53d247f4",
+      "verifiedClaims": [
+        "Repsol reported a 2.5% direct interest and 1.88% effective group interest in Salamanca Infrastructure LLC at December 2025.",
+        "Salamanca Infrastructure Finance, Salamanca FPS Infra and Salamanca OGL Infra are subordinate entities.",
+        "Salamanca was operating in 2025."
+      ],
+      "visualInspection": {
+        "pages": [105, 178],
+        "status": "TEXT_EXTRACTED_AND_VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://www.globenewswire.com/news-release/2025/09/29/3157792/0/en/LLOG-Exploration-Announces-First-Production-at-Salamanca-Floating-Production-Unit.html",
+      "verificationUrl": "https://www.globenewswire.com/news-release/2025/09/29/3157792/0/en/LLOG-Exploration-Announces-First-Production-at-Salamanca-Floating-Production-Unit.html",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.globenewswire.com/news-release/2025/09/29/3157792/0/en/LLOG-Exploration-Announces-First-Production-at-Salamanca-Floating-Production-Unit.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 57395,
+      "contentSha256": "e16d6c769c0f4c5e58790847e7667eb2913dfd324875017b432a0cd7aa2bc8ec",
+      "verifiedClaims": [
+        "Salamanca achieved first production on September 29, 2025.",
+        "The facility is at Keathley Canyon Block 689 in approximately 6,400 feet of water.",
+        "Capacity is 60,000 barrels of oil per day and 40 million cubic feet of gas per day.",
+        "LLOG operates the FPU."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.bsee.gov/newsroom/latest-news/statements-and-releases/press-releases/american-energy-dominance-a-new",
+      "verificationUrl": "https://www.bsee.gov/newsroom/latest-news/statements-and-releases/press-releases/american-energy-dominance-a-new",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bsee.gov/newsroom/latest-news/statements-and-releases/press-releases/american-energy-dominance-a-new",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 48897,
+      "contentSha256": "d7aa1187107fb3daf4ce23878dcf4259cfcda2e85c58204fad11bc87cf16ba51",
+      "verifiedClaims": [
+        "BSEE identifies Salamanca as an operating offshore production hub brought online in 2025.",
+        "BSEE confirms the reused floating-production-unit infrastructure boundary."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.pickeringenergypartners.com/expertise/investment-banking",
+      "verificationUrl": "https://www.pickeringenergypartners.com/expertise/investment-banking",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.pickeringenergypartners.com/expertise/investment-banking",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLengthBytes": 346042,
+      "contentSha256": "e1bc9a3a1eb635522dd33222a246287233866cc03ab33e76aad73e3b8408d4c1",
+      "verifiedClaims": [
+        "Third Coast acquired a non-operated interest in the Salamanca platform during 2025.",
+        "The transaction listing does not disclose a stake, exact date or identifiable seller."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.third-coast.com/post/third-coast-term-loan-b-announcement",
+      "verificationUrl": "https://www.third-coast.com/post/third-coast-term-loan-b-announcement",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.third-coast.com/post/third-coast-term-loan-b-announcement",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 1130709,
+      "contentSha256": "ec56490a0085e2b976a1abb5533a622bcd40b2e68446a402754b16aaf9f75389",
+      "verifiedClaims": [
+        "Third Coast still identified Salamanca among its FPS interests in May 2026.",
+        "The announcement does not disclose Third Coast's Salamanca stake or seller."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.beaconoffshore.com/media-copy",
+      "verificationUrl": "https://www.beaconoffshore.com/media-copy",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.beaconoffshore.com/media-copy",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 112865,
+      "contentSha256": "7fd8971fd701ec172bf91ca323baba6e87e4d2d0899b081720e11bf0aef5b6ee",
+      "verifiedClaims": [
+        "Beacon transferred its 0.5% Salamanca FPS and lateral infrastructure interest to GOM 1 in March 2024.",
+        "The separate 32.83% figure concerns GOM 1's Sicily upstream interest and is not a Third Coast Salamanca infrastructure stake."
+      ]
+    }
+  ]
+}

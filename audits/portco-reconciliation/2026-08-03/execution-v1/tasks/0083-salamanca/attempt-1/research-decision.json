@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0083:salamanca:0c228ba6",
+  "taskIndex": 83,
+  "companyName": "Salamanca",
+  "asOfDate": "2026-08-15",
+  "decision": "PROPOSED_NEW",
+  "rationale": "Create one canonical Salamanca Infrastructure LLC record for ArcLight's Salamanca census holding. The active Delaware company is the parent of the Salamanca floating production system and associated oil and natural-gas export lateral entities at Keathley Canyon Block 689 in the deepwater U.S. Gulf of Mexico. Count this infrastructure once; exclude the separate Leon and Castile upstream fields, wells and leases, the former Independence Hub identity, LLOG as operator, and the subordinate finance and asset SPVs. ArcLight-managed Fund VII vehicles financed the development through an ownership arrangement and hold a disclosed plurality equity interest. ArcLight continues to list Salamanca as Current, and no ArcLight exit or signed pending Salamanca sale was identified through August 15, 2026. The exact ArcLight percentage, legal vehicle, closing date and complete multi-owner capitalization table are not publicly disclosed and are not inferred.",
+  "identityResolution": {
+    "canonicalName": "Salamanca Infrastructure LLC",
+    "aliases": [
+      "Salamanca Infrastructure, LLC",
+      "Salamanca",
+      "Salamanca Floating Production System",
+      "Salamanca FPS",
+      "Salamanca Floating Production Unit",
+      "Salamanca FPU"
+    ],
+    "website": null,
+    "country": "United States",
+    "headquarters": "Keathley Canyon Block 689, U.S. Gulf of Mexico",
+    "managerLevelBoundary": "One parent-level standalone infrastructure record covering Salamanca Infrastructure LLC, the Salamanca floating production system and its dedicated oil and gas export laterals. The finance and asset SPVs are subordinate relations. Leon and Castile are separate upstream fields; wells, leases, subsea equipment and third-party downstream systems are excluded. LLOG is the operator, not a separately proven manager-level owner.",
+    "duplicateDecision": "No production company, evaluated seed entry or candidate canonical company represents this holding. Create one new company and no redirect."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Resolve ArcLight Capital to the existing ArcLight Capital Partners organization.",
+    "structuredManagerOwner": {
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Energy Partners Fund VII, L.P.",
+      "vehicle": "NOT_PUBLICLY_DISCLOSED",
+      "stake": "Plurality ownership interest in the Salamanca FPS and associated oil and natural-gas export laterals; exact percentage not publicly disclosed",
+      "investmentYear": 2022,
+      "state": "CLOSED_ACTIVE"
+    },
+    "ownerAddition": "ONE_ARCLIGHT_FUND_VII_PERIOD_IN_CREATE_AFTER_IMAGE",
+    "pendingOwnershipTransactions": [],
+    "coOwnerResearchTreatment": "Repsol's current 2.5% direct interest, Third Coast's unspecified 2025 non-operated interest, Beacon's former 0.5% interest, GOM 1's 2024 acquisition and the combined 2023 ArcLight/Centaurus purchase are retained in research, description, milestones and citations. They are not converted into additional manager-owner periods in this ArcLight census task because no complete cap table is public, Third Coast may represent nested ArcLight-backed exposure, and the required corporate organization dependencies are outside the locked mutation scope."
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Midstream",
+    "subsector": "Offshore floating production and export infrastructure",
+    "yearFounded": 2022,
+    "reportedScale": "Capacity of 60,000 barrels of oil per day and 40 million cubic feet of natural gas per day at Keathley Canyon Block 689 in approximately 6,400 feet of water."
+  },
+  "acquisitionExitCheck": {
+    "initialArrangement": "LLOG announced the ArcLight-managed ownership and construction-financing arrangement on May 4, 2022.",
+    "laterOwnershipEvidence": "Repsol completed a combined 20% sale to ArcLight and Centaurus on December 1, 2023 and retained 2.5%; the buyer allocation was not disclosed. Third Coast acquired an unspecified non-operated interest during 2025; its stake, seller and exact date are not public.",
+    "currentOwnership": "ArcLight's live portfolio lists Salamanca as Current, ArcLight's 2025 ESG report attributes it to Fund VII, Repsol reported its retained direct interest at December 2025 and Third Coast still identified Salamanca among its interests in May 2026.",
+    "subsequentExitSearch": "No Salamanca-level completed ArcLight exit, dissolution or signed pending ownership transfer was identified through August 15, 2026. The pending DigitalBridge acquisition of ArcLight is a manager-level transaction and does not create a Salamanca pending owner."
+  },
+  "repoDecision": {
+    "productionCompanyId": null,
+    "productionOwnershipPeriodId": null,
+    "mutation": "CREATE_CANONICAL_COMPANY_WITH_ARCLIGHT_OWNER",
+    "queueAddOwnerDisposition": "SATISFIED_BY_CREATE_AFTER_IMAGE",
+    "duplicateMapping": "NONE",
+    "seedIdentityTreatment": "ADD_ONE_APPROVED_CANONICAL_SEED_ENTRY"
+  },
+  "primaryEvidenceUrl": "https://arclight.com/investments",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0083-salamanca/attempt-1/source-verification.json",
+  "chatgptConversationUrl": "https://chatgpt.com/c/6a801bee-6800-83ea-958d-7e637a2c3153",
+  "chatgptAcceptedResponseArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0083-salamanca/attempt-1/chatgpt-repair-response.json",
+  "unresolvedQuestions": [
+    "ArcLight's exact percentage, legal holding vehicle and legal closing date are not publicly disclosed.",
+    "The complete current capitalization table and the allocation of Repsol's combined 20% sale between ArcLight and Centaurus are not publicly disclosed.",
+    "Third Coast's exact stake, seller, acquisition date and precise legal perimeter are not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "960ad8fd047ead459066010c6262a263a7f79335534567c8ef3435c67f5fdc79",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_NEW",
+  "confidence": "HIGH"
+}

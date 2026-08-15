@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0083:salamanca:0c228ba6",
+  "taskIndex": 83,
+  "companyName": "Salamanca",
+  "generatedAt": "2026-08-15T08:44:06.737Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0083-salamanca/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 83,
+    "taskId": "ledger:0083:salamanca:0c228ba6",
+    "canonicalKey": "salamanca|united-states",
+    "companyName": "Salamanca",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:014:salamanca"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "salamanca|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0083:salamanca:0c228ba6",
+    "taskIndex": 83,
+    "canonicalKey": "salamanca|united-states",
+    "capturedAt": "2026-08-15T08:44:06.737Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "7cc05fdac20dcf4013db1a0bd43332cda8cca66be747a352222d23414eb7b5b1",
+    "productionSnapshotSha256": "0558c5c2406a2c1302d85ac2e7e5524a416f00391eacba556235ffc15d09deb7",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c6b22a011308fac0d8412793ba4230c8a79fba5b2ee35a4c7ce8aeab1241de7f",
+    "stateSha256": "105a662f949d27db967395c56b56ef3889defcb7215803cbc8385929da1d0c1a",
+    "taskSnapshotSha256": "960ad8fd047ead459066010c6262a263a7f79335534567c8ef3435c67f5fdc79"
+  },
+  "contextSha256": "a6b63eb39c0513c4a9196433e653d10822d800e1df9f59109bffe4b1ebf8d267"
+}
