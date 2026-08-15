@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0087:zeem-solutions:fb68d7c4",
+  "taskIndex": 87,
+  "companyName": "Zeem Solutions",
+  "conversationUrl": "https://chatgpt.com/c/6a80f0b3-9f6c-83ea-8e17-bcd3ed8cad61",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-15T23:05:23.098Z",
+  "initialCompletedAt": "2026-08-15T23:17:29.935Z",
+  "repairSubmittedAt": "2026-08-15T23:18:44.024Z",
+  "repairCompletedAt": "2026-08-15T23:23:25.105Z",
+  "repairCount": 1,
+  "initialOutcome": "MALFORMED_TRUNCATED_JSON",
+  "finalOutcome": "FAILED_SECOND_MALFORMED_RESPONSE",
+  "contentHashes": {
+    "promptSha256": "4a9894cc7d0a6279ccf42c61ecd9c528790f4ad57d28936161c903dd68385b27",
+    "initialResponseSha256": "fe182a64308cb6eb66700068fd71e47e64ee59e243d2323667af49abb5d0bea1",
+    "acceptedResponseSha256": null,
+    "transcriptSha256": "185bfce41674afa2b19d93217dbf5c92f07a3bbe1951297071bc80ad3a5ae8b2",
+    "repairPromptSha256": "abb1b773a46a782f7e1cb9a98e0cf1aaa6ff4fc5a98a2c3fd1298c171851a177",
+    "repairResponseSha256": "4880140472602bfa947142b7b6764438d91c0f53aa39128a25f4611ee03b6295"
+  },
+  "captureMethod": "Signed-in ChatGPT web application controlled through the in-app browser",
+  "captureNote": "The initial response began inside beforeAfterChanges instead of at the required top-level object. The single permitted repair again truncated inside ownershipResolution.currentOwners and then began the Markdown review. DOM text extraction confirmed both failures were present in the rendered responses."
+}

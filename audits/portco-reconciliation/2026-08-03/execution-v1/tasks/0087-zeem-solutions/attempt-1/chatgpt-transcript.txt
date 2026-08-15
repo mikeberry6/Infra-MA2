@@ -1,0 +1,128 @@
+Zeem Solutions — GPT-5.6 Sol Pro reconciliation transcript
+Conversation: https://chatgpt.com/c/6a80f0b3-9f6c-83ea-8e17-bcd3ed8cad61
+
+=== USER — INITIAL PROMPT ===
+
+# North American PortCo reconciliation — Zeem Solutions
+
+Research one manager-level holding as of **2026-08-15**. Independently search the current web and return a list-reconciliation decision for **Zeem Solutions** under census manager **ArcLight Capital**.
+
+## Existing repository claim to verify
+
+- Existing canonical company: `Zeem Solutions`
+- Production ID: `cmrxpj6nk00jnivhe6mtdjqda`
+- Country: United States; region: North America
+- Existing active owner: ArcLight Capital Partners
+- Existing vehicle: `n.a.`; investment year: 2022; stake: not disclosed
+- Existing company fields: founded 2020; headquarters `California`; no official website stored
+- Existing milestones: 2020 founding, July 2022 LAZ Parking partnership, and July 6, 2022 $50 million Series A investment from ArcLight affiliates
+- Census queue action: `ADD_OWNER` for manager label `ArcLight Capital`
+
+Treat every field as an unverified claim. Determine whether `ArcLight Capital` is merely a shortened label for the existing ArcLight Capital Partners owner; do not add a duplicate owner if so. Also determine whether ArcLight's $50 million investment is direct equity ownership within its infrastructure strategy rather than debt-only exposure, and whether any fund or vehicle is publicly disclosed.
+
+## Required research
+
+Verify identity and legal/brand aliases, platform/subsidiary boundaries, current and former legal owners, ArcLight infrastructure-strategy basis, fund or vehicle, stake, announcement and legal closing dates, current status, later financings or restructurings, subsequent exits or signed pending transactions, official website, headquarters, founding year, services, customers/end markets, operating footprint, and publicly disclosed scale. Search explicitly for both the 2022 investment and any later exit through the as-of date.
+
+Keep Zeem Solutions as the manager-level company unless evidence establishes a different canonical boundary. Do not count LAZ Parking, fleet customers, charging depots, projects, or financing providers as owners without direct evidence. Do not infer a fund, ownership percentage, headquarters, or legal closing date.
+
+Open direct pages. These are leads, not assumed facts:
+
+- https://arclight.com/investments/
+- https://www.zeemsolutions.com/about
+- https://www.zeemsolutions.com/press
+- https://www.globenewswire.com/news-release/2022/07/06/2475140/0/en/Zeem-Solutions-EV-Fleet-as-a-Service-Provider-Secures-50-Million-Capital-Investment-from-Affiliates-of-ArcLight-Capital-Partners-Announces-Strategic-Partnership-with-LAZ-Parking-Re.html
+
+Choose exactly one decision: `VERIFIED_NO_CHANGE`, `PROPOSED_CORRECTION`, `SUPERSEDED_OR_DUPLICATE`, `EXCLUDED`, or `DEFERRED`. Use `NOT_PUBLICLY_DISCLOSED` for noncritical unavailable facts. Use `UNRESOLVED` only for identity or active ownership uncertainty; either unresolved item requires `DEFERRED`.
+
+## Output contract — compact and complete
+
+Return exactly one fenced `json` object followed by a Markdown review of no more than five bullets. Do not output research narration before the JSON. Keep the JSON compact: every ordinary string under 300 characters, the description under 600 characters, at most four milestones, and at most ten evidence rows. Do not omit any required key.
+
+```json
+{
+  "asOfDate": "2026-08-15",
+  "requestedCompany": "Zeem Solutions",
+  "requestedManager": "ArcLight Capital",
+  "decision": "",
+  "confidence": "HIGH | MEDIUM | LOW",
+  "rationale": "",
+  "identityResolution": {
+    "canonicalLegalName": "",
+    "aliases": [],
+    "officialWebsite": null,
+    "headquarters": null,
+    "country": null,
+    "platformBoundary": "",
+    "duplicateDecision": ""
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "",
+    "currentOwners": [],
+    "formerOwners": [],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "sector": null,
+    "subsector": null,
+    "region": null,
+    "countryTags": [],
+    "description": null,
+    "companyStatus": null,
+    "yearFounded": null,
+    "services": null,
+    "footprint": null,
+    "scale": []
+  },
+  "acquisitionExitCheck": {
+    "formationOrAcquisition": "",
+    "legalClosing": "",
+    "subsequentExitSearch": ""
+  },
+  "milestones": [],
+  "evidence": [
+    {
+      "label": "",
+      "url": "https://...",
+      "purpose": "",
+      "sourceTier": "PRIMARY | REGULATORY | INSTITUTIONAL | REPUTABLE_SECONDARY",
+      "workingStatus": "WORKING | REDIRECTED | BROWSER_BLOCKED_BUT_VERIFIED | DEAD",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "beforeAfterChanges": [],
+  "excludedOrDuplicateCandidates": [],
+  "unresolvedQuestions": [],
+  "recommendedListAction": ""
+}
+```
+
+For ownership rows, include only supported fields from `manager`, `fund`, `vehicle`, `stake`, `announcementDate`, `entryDate`, `entryYear`, `exitDate`, `exitYear`, `isActive`, and `transactionState`. Verify every active owner with a current direct source and a documented exit search. A complete parseable JSON object is mandatory.
+
+=== ASSISTANT — INITIAL RESPONSE ===
+
+JSON{      "after": "Founded 2017; $50 million capital commitment, round type NOT_PUBLICLY_DISCLOSED"    },    {      "field": "headquarters and website",      "before": "California; no website",      "after": "Los Angeles area/Inglewood address; https://www.zeemsolutions.com/"    }  ],  "excludedOrDuplicateCandidates": [    {      "candidate": "ArcLight Capital",      "decision": "DUPLICATE_MANAGER_ALIAS",      "reason": "Shortened label for ArcLight Capital Partners, LLC."    },    {      "candidate": "LAZ Parking Realty Investors",      "decision": "DO_NOT_ADD",      "reason": "The 2022 release said LPRI would become an equity partner, but no legal closing or current direct confirmation was located."    },    {      "candidate": "Depots, customers, grantors and financing providers",      "decision": "EXCLUDE_AS_OWNERS",      "reason": "They are assets or commercial/project counterparties, not supported owners."    }  ],  "unresolvedQuestions": [    "ArcLight's exact ownership percentage, security class and Zeem-level holding vehicle are NOT_PUBLICLY_DISCLOSED.",    "The exact day of the June 2022 legal closing is NOT_PUBLICLY_DISCLOSED."  ],  "recommendedListAction": "Reject ADD_OWNER as a duplicate alias; retain ArcLight Capital Partners, LLC as active owner, add Fund VII, correct founding/HQ/website and transaction label, and keep stake, separate vehicle and exact closing day as NOT_PUBLICLY_DISCLOSED."}
+
+Decision: PROPOSED_CORRECTION. ArcLight’s live portfolio page classifies Zeem as Current, while Zeem describes itself as backed by ArcLight; ArcLight Capital should therefore map to the existing ArcLight Capital Partners owner rather than create a duplicate. arclight+1
+
+Ownership: ArcLight identifies Zeem as a Fund VII portfolio company and states Fund VII invested in June 2022. The July 6 release announced a $50 million commitment from an ArcLight-managed fund, supporting direct portfolio ownership rather than debt-only exposure. SEC+3LinkedIn+3LinkedIn+3
+
+Field corrections: Zeem’s official site gives a 2017 founding year and a Los Angeles/Inglewood headquarters address. Its legal materials identify Zeem Solutions, Inc.; public operating contracts also use Zeem Solutions LLC. Granicus+3Zeem Solutions+3Zeem Solutions+3
+
+Current status: Zeem reported 350,000 LAX charging sessions and 13.4 million kWh by May 4, 2026. No later owner-level financing, restructuring, sale or pending exit was located, and ArcLight continues to classify the investment as current. Zeem Solutions+1
+
+LPRI treatment: The 2022 announcement described LPRI’s equity participation prospectively; absent a disclosed closing and current direct confirmation, it should not be added as an active owner. GlobeNewswire
+
+=== USER — REPAIR 1 OF 1 ===
+
+REPAIR 1 OF 1 — schema only. Your JSON began mid-object at an "after" field, so it is not parseable. Do not do new research and do not narrate the repair. Reconstruct the same Zeem Solutions findings as exactly one complete fenced json object followed by no more than three short Markdown bullets. Include all 16 required top-level keys from the original schema, from asOfDate through recommendedListAction. Keep ordinary strings under 220 characters, description under 450, at most 3 milestones and at most 6 evidence rows with direct https URLs. Use requestedCompany "Zeem Solutions", requestedManager "ArcLight Capital", decision "PROPOSED_CORRECTION", and confidence "HIGH". Preserve the researched conclusions: ArcLight Capital is the existing ArcLight Capital Partners alias; retain one active ArcLight owner; use the exact publicly supported Fund VII name; no duplicate owner; no active LPRI owner without closing/current evidence; 2017 founding; official Zeem website; Los Angeles/Inglewood headquarters; current status and no later owner-level exit. Treat unavailable stake, security class, separate holding vehicle, and exact June 2022 closing day as NOT_PUBLICLY_DISCLOSED limitations in rationale/fields, not unresolved identity or active-ownership questions, so unresolvedQuestions must be []. Recommend exactly one primary evidence row. Output must start with ```json and end after the short review bullets.
+
+=== ASSISTANT — REPAIR RESPONSE ===
+
+JSON{  "asOfDate": "2026-08-15",  "requestedCompany": "Zeem Solutions",  "requestedManager": "ArcLight Capital",  "decision": "PROPOSED_CORRECTION",  "confidence": "HIGH",  "rationale": "ArcLight Capital is ArcLight Capital Partners' short label; Zeem remains current. Correct the fund, 2017 founding, HQ and website. Stake, class, separate vehicle and exact June 2022 close day are NOT_PUBLICLY_DISCLOSED.",  "identityResolution": {    "canonicalLegalName": "Zeem Solutions, Inc.",    "aliases": [      "Zeem Solutions",      "Zeem",      "Zeem Solutions LLC"    ],    "officialWebsite": "https://www.zeemsolutions.com/",    "headquarters": "Los Angeles area; operating address in Inglewood, California",    "country": "United States",    "platformBoundary": "Zeem is the manager-level operating company. Depots, customers, LAZ/LPRI, grantors and financing providers are not separate PortCos or supported owners.",    "duplicateDecision": "Retain Zeem Solutions; no company duplicate was identified."  },  "ownershipResolution": {    "managerAliasDecision": "ArcLight Capital is a shortened label for ArcLight Capital Partners, LLC; retain one owner row and reject ADD_OWNER.",    "currentOwners": [      {        "manager": "ArcLight Capital Partners, LLC",        "fund": "ArcLight Energy Partners Fund VII, L.P.",        "vehicle": "NOT_PUBLICLY_DISCLOSED",        "stake": "NOT_PUBLICLY_DISCLOSED",        "announcementDate": "2022-07-06",        "entryDate": "2022-06",        "entryYear": 2022,        "isActive": true,        "transactionState": "CLOSED_ACTIVE"      }    ],    "formerOwners": [],
+
+Reject ADD_OWNER; ArcLight Capital is the existing manager’s alias.
+
+Record Fund VII, the 2017 founding year, official website and Los Angeles/Inglewood headquarters.
+
+Do not add LPRI; no later owner-level exit was identified.

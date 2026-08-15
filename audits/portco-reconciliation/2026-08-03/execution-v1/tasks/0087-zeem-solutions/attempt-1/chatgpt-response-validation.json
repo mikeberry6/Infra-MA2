@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0087:zeem-solutions:fb68d7c4",
+  "taskIndex": 87,
+  "validatedAt": "2026-08-15T23:26:28.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a80f0b3-9f6c-83ea-8e17-bcd3ed8cad61",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "fe182a64308cb6eb66700068fd71e47e64ee59e243d2323667af49abb5d0bea1",
+    "errors": [
+      "The response began inside beforeAfterChanges at an after field rather than at the required top-level object.",
+      "Parsing from the first opening brace failed with an unexpected non-whitespace character after the first partial object.",
+      "Most required top-level keys were absent from the rendered JSON."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-15T23:18:44.024Z",
+    "completedAt": "2026-08-15T23:23:25.105Z",
+    "valid": false,
+    "responseSha256": "4880140472602bfa947142b7b6764438d91c0f53aa39128a25f4611ee03b6295",
+    "errors": [
+      "The repaired response contained four opening braces and only two closing braces.",
+      "The repaired JSON truncated after ownershipResolution.formerOwners and began the Markdown review before completing the object.",
+      "A second repair is prohibited by the one-repair limit."
+    ]
+  },
+  "finalResponse": {
+    "valid": false,
+    "decisionVisibleInPartialResponse": "PROPOSED_CORRECTION",
+    "confidenceVisibleInPartialResponse": "HIGH",
+    "jsonParsed": false,
+    "requiredTopLevelKeysPresent": false,
+    "result": "FAIL_SECOND_MALFORMED_RESPONSE"
+  },
+  "valid": false,
+  "errors": [
+    "No complete machine-parseable response exists after the single permitted repair."
+  ],
+  "repairsUsed": 1,
+  "independentSourceVerification": {
+    "status": "NOT_RUN_AFTER_SCHEMA_HARD_STOP",
+    "reason": "The response never produced a complete evidence array; the task stopped before proposal research validation."
+  },
+  "proposalGenerated": false,
+  "databaseMutation": false,
+  "seedMutation": false,
+  "releaseStarted": false,
+  "terminalDisposition": "FAILED"
+}
