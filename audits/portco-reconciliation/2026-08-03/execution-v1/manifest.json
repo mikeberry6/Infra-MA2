@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T04:54:18.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-15T05:55:16.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0081:pike-holdings:0d434dde",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -11745,20 +11745,32 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "8a027c159766374a68b766bf2ab5b9e3eababb4713acfc028d5ef9b42918af64",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-15T05:05:59.000Z",
+      "updatedAt": "2026-08-15T05:55:16.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/locked-task-snapshot.json",
+          "sha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0081-pike-holdings-transmontaigne-partners-llc-v1/proposal.json",
+          "sha256": "9cacb3a4cfaaea9adb8bd6e00aab52827919ef751ce0a2b76d5d91fea6e1dd14"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0081-pike-holdings-transmontaigne-partners-llc-v1.json",
+          "sha256": "49bfec2682b10fa036b622ccc8bba85d3297e6c9a71b36f3bd74812c2c3c1223"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/research-decision.json",
+          "sha256": "c65cbbaaa5acb3b52858f44505a99d0052c12cf4af51417c9a831b2d9c7a9333"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -11772,6 +11784,52 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-15T05:05:59.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-15T05:51:50.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
+          "evidenceSha256": [
+            "9cacb3a4cfaaea9adb8bd6e00aab52827919ef751ce0a2b76d5d91fea6e1dd14",
+            "c65cbbaaa5acb3b52858f44505a99d0052c12cf4af51417c9a831b2d9c7a9333",
+            "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-15T05:51:51.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-15T05:55:16.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
+          "evidenceSha256": [
+            "49bfec2682b10fa036b622ccc8bba85d3297e6c9a71b36f3bd74812c2c3c1223"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -27606,5 +27664,5 @@
       ]
     }
   ],
-  "manifestSha256": "f1e580f398ca2e8796c7ca56ea17168c1179700c9aa59a288b91acb80cb6a160"
+  "manifestSha256": "de82c3c20139aea8311a0ec6156d516938ff851eacc07f98736ae68fd45ed467"
 }

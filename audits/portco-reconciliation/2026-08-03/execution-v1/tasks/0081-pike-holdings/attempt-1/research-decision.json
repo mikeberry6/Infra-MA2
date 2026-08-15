@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0081:pike-holdings:0d434dde",
+  "taskIndex": 81,
+  "companyName": "Pike Holdings",
+  "canonicalCompanyName": "TransMontaigne Partners LLC",
+  "asOfDate": "2026-08-15",
+  "decision": "PROPOSED_NEW",
+  "rationale": "Create one canonical manager-level PortCo for TransMontaigne Partners LLC. ArcLight's Pike Holdings census label resolves to Pike Petroleum Holdings, LLC, an intermediate sponsor shell in the ownership chain above TransMontaigne. TransMontaigne is the operating U.S. bulk-liquids terminaling, storage and transportation platform. ArcLight acquired control in February 2016, Fund VI completed the take-private in February 2019, and current filings establish that TLP Finance Holdings owns 100% of TransMontaigne and is an indirect wholly owned subsidiary of Fund VI. Pike Corporation and Pike County Light & Power are unrelated and remain unchanged.",
+  "identityResolution": {
+    "canonicalName": "TransMontaigne Partners LLC",
+    "aliases": [
+      "TransMontaigne Partners L.P.",
+      "TLP",
+      "Pike Holdings",
+      "Pike Petroleum Holdings, LLC"
+    ],
+    "website": "https://www.transmontaignepartners.com/",
+    "country": "United States",
+    "headquarters": "Denver, Colorado",
+    "managerLevelBoundary": "Count TransMontaigne once. Pike Petroleum Holdings, PPH Management Holdings, TLP Acquisition Holdings and TLP Finance Holdings are sponsor or intermediate holding layers. TransMontaigne Operating Company, SeaPort entities, terminals, pipelines, local subsidiaries and company-held joint-venture interests are subsumed beneath the platform.",
+    "duplicateDecision": "Pike Corporation and Pike County Light & Power are unrelated. Do not merge, redirect, supersede or amend either record."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Resolve the census label ArcLight Capital to the existing ArcLight Capital Partners organization.",
+    "structuredManagerOwner": {
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Energy Partners Fund VI, L.P.",
+      "vehicle": "TLP Finance Holdings, LLC",
+      "stake": "100% of TransMontaigne Partners LLC at the operating-platform level; ArcLight obtained control in 2016 and full ownership followed the 2019 take-private. Current Pike Petroleum Holdings shell capitalization is not publicly disclosed.",
+      "investmentYear": 2016,
+      "state": "CLOSED_ACTIVE"
+    },
+    "ownerAddition": "CREATE_ONE_ACTIVE_ARCLIGHT_FUND_VI_PERIOD",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Midstream",
+    "subsector": "Bulk liquid storage, terminaling and transportation",
+    "reportedScale": "The current company profile reports 54 U.S. terminal facilities.",
+    "yearFounded": "NOT_PUBLICLY_DISCLOSED_AS_STRUCTURED_FIELD"
+  },
+  "acquisitionExitCheck": {
+    "controlEntry": "ArcLight affiliate Gulf TLP Holdings closed its $350 million acquisition of TransMontaigne GP on 2016-02-01, obtaining platform control while NGL retained public units and its separate marketing business.",
+    "fullOwnership": "Fund VI's remaining-unit acquisition was announced on 2018-11-26 and closed on 2019-02-26, making TransMontaigne wholly owned and converting the entity from an L.P. to an LLC.",
+    "currentOwnership": "The 2025 annual filing states that TLP Finance owns 100% of TransMontaigne, and a September 2025 company release states that TLP Finance is an indirect wholly owned subsidiary of Fund VI.",
+    "subsequentExitSearch": "No TransMontaigne platform-level completed sale, signed pending ownership transfer, dissolution, successor or rename was identified through 2026-08-15. Individual terminal transactions were asset-level dispositions beneath the platform."
+  },
+  "repoDecision": {
+    "productionCompanyId": null,
+    "productionOwnershipPeriodId": null,
+    "mutation": "CREATE_COMPANY_AND_ACTIVE_OWNER",
+    "queueCorrectionDisposition": "REPLACE_FALSE_PIKE_CORPORATION_HEURISTIC_WITH_NEW_TRANSMONTAIGNE_TARGET",
+    "duplicateMapping": "NONE"
+  },
+  "primaryEvidenceUrl": "https://www.sec.gov/Archives/edgar/data/1319229/000110465926032830/tmb-20251231x10k.htm",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/source-verification.json",
+  "unresolvedQuestions": [
+    "Current economic capitalization at the Pike Petroleum Holdings shell is not publicly disclosed; the proposal records only the directly supported 100% ownership of TransMontaigne Partners LLC.",
+    "Public materials use different operating-lineage and legal-formation reference points, so yearFounded remains null pending the later full scorecard refresh."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_NEW",
+  "confidence": "HIGH"
+}
