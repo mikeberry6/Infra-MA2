@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_LIST_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0078:onpoint-energy:e5831cf5",
+  "taskIndex": 78,
+  "generatedAt": "2026-08-15T02:13:38.000Z",
+  "asOfDate": "2026-08-14",
+  "decision": "EXCLUDED",
+  "canonicalName": "OnPoint Energy, LLC",
+  "identityDecision": "OnPoint Energy resolves to OnPoint Energy, LLC, the Houston retail-electricity platform ArcLight announced in 2022. Same-name Texas and FERC entities are operating or regulatory affiliates beneath that platform and must not be counted separately. OnPoint is not Onward Energy, which has a different formation history, business, headquarters footprint, and ownership lineage.",
+  "ownershipDecision": {
+    "manager": "ArcLight Capital Partners, LLC",
+    "managerPortfolioStatus": "CURRENT",
+    "legalOwnershipState": "RESIDUAL_OR_WIND_DOWN_OWNERSHIP_SUPPORTED",
+    "investmentAnnouncementDate": "2022-08-17",
+    "investmentDatePrecision": "DAY",
+    "fund": "NOT_PUBLICLY_DISCLOSED",
+    "legalHoldingVehicle": "NOT_PUBLICLY_DISCLOSED",
+    "stake": "NOT_PUBLICLY_DISCLOSED",
+    "parentLevelExit": "NOT_IDENTIFIED",
+    "rationale": "ArcLight's live investment table still labels OnPoint as Current, but no opened source discloses a parent-level sale, dissolution, fund, holding vehicle, or stake. The evidence supports residual or wind-down ownership, not an active operating platform."
+  },
+  "operatingDecision": {
+    "historicalBusiness": "Retail electricity supply and energy marketing",
+    "historicalGeography": "United States, initially Texas/ERCOT",
+    "status": "NON_OPERATING_WIND_DOWN",
+    "customerBookDisposition": "OnPoint sold its Texas customer contracts to Good Charlie on 2024-01-30 and completed the customer transfer on 2024-02-02.",
+    "regulatoryDisposition": "OnPoint ceased REP activity in ERCOT on 2024-02-02; its Northeast affiliate cancelled its market-based-rate tariff effective 2024-01-31; PUCT revoked Texas REP certificate 10326 on 2025-11-14.",
+    "infrastructureBoundary": "The opened sources establish a retail supplier and energy-marketing platform, not an owner or operator of a power-generation fleet or other physical infrastructure assets."
+  },
+  "listDecision": {
+    "terminalOutcome": "EXCLUDED",
+    "reasonCode": "NON_OPERATING_WIND_DOWN_AND_NO_DIRECT_INFRASTRUCTURE_ASSETS",
+    "rationale": "OnPoint no longer serves retail-electricity customers, ceased REP activity, lost its Texas certificate, and was formed as a retailer rather than a physical infrastructure owner or operator. A current ArcLight portfolio label does not override the direct regulatory evidence that the operating business wound down.",
+    "historicalRecordPolicy": "Retain the immutable census holding and this decision lineage. Do not create an active, realized, or pending portfolio-company record because no canonical company record currently exists and ArcLight may still retain a residual legal entity.",
+    "databaseMutation": false,
+    "seedMutation": false,
+    "dealDatabaseMutation": false
+  },
+  "acquisitionAndExitCheck": {
+    "formation": "ArcLight announced formation and a $50 million retail commitment on 2022-08-17; no predecessor acquisition or separate legal-closing announcement was identified.",
+    "subsequentDisposition": "Regulatory evidence establishes a customer-book sale and operating wind-down, but no sale of OnPoint Energy, LLC itself, merger, rename, dissolution, bankruptcy, or signed parent-level ownership transfer was identified through 2026-08-14.",
+    "currentManagerEvidence": "ArcLight's current investments table continues to list OnPoint as Current in Power.",
+    "searchConclusion": "Exclude the non-operating business without falsely marking ArcLight's residual ownership as realized."
+  },
+  "repoDecision": {
+    "productionCompanyCount": 0,
+    "seedCompanyCount": 0,
+    "canonicalRedirectCount": 0,
+    "mutation": "NONE",
+    "duplicateMapping": "NONE",
+    "onwardEnergyMapping": "DO_NOT_MERGE",
+    "goodCharlieMapping": "CUSTOMER_BOOK_PURCHASER_NOT_CORPORATE_SUCCESSOR"
+  },
+  "evidenceUrls": [
+    "https://www.prnewswire.com/news-releases/arclight-announces-launch-of-energy-retailer-onpoint-energy-301607797.html",
+    "https://arclight.com/investments/",
+    "https://www.getonpointenergy.com/",
+    "https://www.kirkland.com/news/press-release/2022/08/kirkland-advises-arclight-on-investment-in-onpoint-energy",
+    "https://www.federalregister.gov/documents/2022/11/09/2022-24439/combined-notice-of-filings-2",
+    "https://interchange.puc.texas.gov/Documents/56201_38_1404859.PDF",
+    "https://interchange.puc.texas.gov/Documents/56201_55_1448044.PDF",
+    "https://www.federalregister.gov/documents/2024/02/05/2024-02206/combined-notice-of-filings-1",
+    "https://interchange.puc.texas.gov/Documents/58756_7_1558237.PDF",
+    "https://www.onwardenergy.com/post/steve-berberich-appointed-ceo-of-onward-energy-following-retirement-of-ceo-steve-doyon"
+  ],
+  "primaryEvidenceUrl": "https://interchange.puc.texas.gov/Documents/58756_7_1558237.PDF",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0078-onpoint-energy/attempt-1/source-verification.json",
+  "chatgptResearchArtifacts": {
+    "conversationUrl": "https://chatgpt.com/c/6a7fc33e-f88c-83ea-bf15-cfd45fbb311b",
+    "initialResponse": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0078-onpoint-energy/attempt-1/chatgpt-initial-response.json",
+    "repairResponse": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0078-onpoint-energy/attempt-1/chatgpt-repair-response.json",
+    "repairsUsed": 1,
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro"
+  },
+  "unresolvedQuestions": [
+    "ArcLight's specific fund, legal holding vehicle, and ownership percentage are not publicly disclosed.",
+    "The parent entity's state-law good-standing or dissolution status and any residual assets or liabilities are not publicly disclosed.",
+    "The exact legal closing date for ArcLight's formation investment is not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "confidence": "HIGH"
+}

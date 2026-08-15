@@ -1,0 +1,41 @@
+Worked for 2m 51s
+JSON
+{
+  "asOfDate": "2026-08-14",
+  "requestedCompany": "OnPoint Energy",
+  "requestedManager": "ArcLight Capital Partners, LLC",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "rationale": "OnPoint resolves to OnPoint Energy, LLC, an ArcLight-sponsored U.S. retail-electricity platform formed in 2022 rather than a power-generation fleet. Direct regulatory evidence shows that it transferred all customers, ceased providing retail electric service, cancelled its remaining federal market-based-rate tariff effective 2024-01-31, and later lost its Texas retail electric provider certificate. ArcLight still lists OnPoint as a current Power investment, supporting retained ownership of a residual or wind-down entity rather than a currently operating manager-level infrastructure platform. It should therefore be excluded from the active operating-company census.",
+  "identityResolution": {
+    "canonicalLegalName": "OnPoint Energy, LLC",
+    "aliases": [
+      "OnPoint Energy",
+      "OnPoint"
+    ],
+    "officialWebsite": "https://www.getonpointenergy.com/",
+    "headquarters": "Houston, Texas, United States",
+    "country": "United States",
+    "platformBoundary": "Manager-level retail-electricity platform represented by OnPoint Energy, LLC. Regulated activity was conducted through same-name affiliates including OnPoint Energy Texas, LLC and federal market-based-rate entities for Illinois, Ohio, Pennsylvania, and the Northeast. Direct sources identify a retail supplier and energy-marketing platform, not an owned power-generation fleet. The regulated affiliates are subsidiaries or operating entities beneath the same manager-level platform and should not be counted separately.",
+    "duplicateDecision": "OnPoint Energy is distinct from Onward Energy. FERC records list the OnPoint entities and Onward Energy Management, LLC under separate legal names and identifiers, and no opened source established an alias, predecessor, successor, merger, or ownership relationship between them."
+  },
+  "ownershipResolution": {
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners, LLC",
+        "fund": "NOT_PUBLICLY_DISCLOSED",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2022-08-17",
+        "entryYear": 2022,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerOwners": [],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+Review
+
+The repaired JSON is complete and syntactically valid. The EXCLUDED decision is preserved because the previously opened regulatory evidence establishes that OnPoint transferred all customers, stopped providing retail electric service, cancelled its remaining federal tariff, and later lost its Texas retail-electric-provider certificate. ArcLight’s continued “Current” portfolio classification is treated as residual ownership rather than evidence of a functioning operating platform. OnPoint remains separate from Onward Energy, and exactly one evidence row—the Texas cessation-of-service record—is marked as the recommended primary citation.
