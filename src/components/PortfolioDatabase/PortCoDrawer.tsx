@@ -226,7 +226,7 @@ function isRedundantText(a?: string | null, b?: string | null): boolean {
 }
 
 function getIdentityDescriptor(company: CompanyView): string {
-  return company.subsector?.trim() || company.sector || "Portfolio company";
+  return company.subsector?.trim() || company.sector || "PortCo";
 }
 
 function formatHeaderStatusPeriod(company: CompanyView, owner: OwnerView | null, activeOwners: OwnerView[]): string {
@@ -407,7 +407,7 @@ function getEvidenceLabel(source: SourceView, groupLabel?: string): string {
   } else if (/\b(operations|asset|project|facility|network|locations)\b/.test(sourceText)) {
     label = "Operations";
   } else if (/\b(company profile|portfolio|about)\b/.test(sourceText)) {
-    label = "Company profile";
+    label = "PortCo profile";
   } else if (/\b(transaction|milestone|acquisition|acquired|divestiture|sale|announcement)\b/.test(sourceText)) {
     label = "Event detail";
   } else if (source.evidenceLabel?.trim()) {
@@ -417,7 +417,7 @@ function getEvidenceLabel(source: SourceView, groupLabel?: string): string {
   }
 
   if (!groupLabel || !isRedundantText(label, groupLabel)) return label;
-  if (label === "Company profile") return sourceBrand(source);
+  if (label === "PortCo profile") return sourceBrand(source);
   if (label === "Operations") return "Asset detail";
   if (label === "Financing") return sourceType === "SEC_FILING" ? "SEC filing" : "Public filing";
   if (label === "Event detail") return "Transaction detail";
@@ -756,7 +756,7 @@ export function PortCoDrawer({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 shrink-0 rounded-full p-1.5 text-[var(--text-tertiary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-                    title="Company website"
+                    title="PortCo website"
                   >
                     <ExternalLink className="h-4 w-4" />
                   </a>

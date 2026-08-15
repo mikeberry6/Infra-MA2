@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "Deals | InfraSight",
   },
   description:
-    "InfraSight — the data platform for global infrastructure investing. Deals, fund managers, and portfolio companies in one place.",
+    "InfraSight — the data platform for global infrastructure investing. Deals, fund managers, and PortCos in one place.",
 };
 
 export default function RootLayout({

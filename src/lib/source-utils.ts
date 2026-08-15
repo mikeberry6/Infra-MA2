@@ -257,7 +257,7 @@ export function dedupeExactPortCoSources<T extends SourceLike>(sources: T[]): {
       removed.push({
         source,
         reason:
-          "Exact duplicate source metadata for the same portfolio company.",
+          "Exact duplicate source metadata for the same PortCo.",
       });
       continue;
     }

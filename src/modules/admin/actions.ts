@@ -563,7 +563,7 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
     return { success: true, id: company.id };
   } catch (error) {
     console.error("createCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to create company" };
+    return { success: false, error: error instanceof Error ? error.message : "Failed to create PortCo" };
   }
 }
 
@@ -611,7 +611,7 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
     return { success: true };
   } catch (error) {
     console.error("updateCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update company" };
+    return { success: false, error: error instanceof Error ? error.message : "Failed to update PortCo" };
   }
 }
 
@@ -632,7 +632,7 @@ export async function deleteCompany(id: string): Promise<ActionResult> {
     return { success: true };
   } catch (error) {
     console.error("deleteCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to delete company" };
+    return { success: false, error: error instanceof Error ? error.message : "Failed to delete PortCo" };
   }
 }
 
@@ -646,7 +646,7 @@ export async function publishCompany(id: string): Promise<ActionResult> {
     return { success: true };
   } catch (error) {
     console.error("publishCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to publish company" };
+    return { success: false, error: error instanceof Error ? error.message : "Failed to publish PortCo" };
   }
 }
 

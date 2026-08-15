@@ -37,7 +37,7 @@ const ENTITY_LABELS: Record<
 > = {
   deals: { singular: "deal", plural: "deals" },
   funds: { singular: "fund", plural: "funds" },
-  portfolio: { singular: "company", plural: "companies" },
+  portfolio: { singular: "PortCo", plural: "PortCos" },
 };
 
 const DISPOSITION_STYLES: Record<ImportDisposition, string> = {

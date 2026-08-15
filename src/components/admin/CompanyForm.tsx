@@ -63,7 +63,7 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
     startTransition(async () => {
       const result = await action(formData);
       if (result.success) {
-        setMessage({ type: "success", text: mode === "create" ? "Company created" : "Company updated" });
+        setMessage({ type: "success", text: mode === "create" ? "PortCo created" : "PortCo updated" });
         if (mode === "create") {
           router.push("/admin/companies");
         }
@@ -89,7 +89,7 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
 
       {/* Name */}
       <div>
-        <label className={labelClass}>Company Name *</label>
+        <label className={labelClass}>PortCo Name *</label>
         <input
           type="text"
           required
@@ -270,7 +270,7 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
               ? "Creating..."
               : "Saving..."
             : mode === "create"
-            ? "Create Company"
+            ? "Create PortCo"
             : "Save Changes"}
         </button>
         <Link href="/admin/companies" className="text-sm text-[#71717A] hover:text-[#1a1a1a]">

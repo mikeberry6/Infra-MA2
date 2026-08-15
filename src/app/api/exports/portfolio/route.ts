@@ -55,13 +55,13 @@ export async function GET(request: NextRequest) {
     return new Response(csvString, {
       headers: {
         "Content-Type": "text/csv; charset=utf-8",
-        "Content-Disposition": `attachment; filename="portfolio_export_${date}.csv"`,
+        "Content-Disposition": `attachment; filename="portco_export_${date}.csv"`,
       },
     });
   } catch (error) {
-    console.error("Portfolio export failed:", error);
+    console.error("PortCo export failed:", error);
     return NextResponse.json(
-      { error: "Failed to export portfolio" },
+      { error: "Failed to export PortCos" },
       { status: 500 },
     );
   }

@@ -139,7 +139,7 @@ export interface DatabaseCounts {
 export type NewsCategory =
   | "Transaction Activity"
   | "Fundraising Activity"
-  | "Portfolio Company News"
+  | "PortCo News"
   | "Investment Firm News"
   | "Rumored Sales Processes"
   | "Low Confidence / Needs Review";

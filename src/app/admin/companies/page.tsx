@@ -10,7 +10,7 @@ import { deleteCompany } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
 import { Button } from "@/components/shared/Button";
 
-export const metadata = { title: "Admin · Companies" };
+export const metadata = { title: "Admin · PortCos" };
 
 export default async function AdminCompaniesPage() {
   const companies = await prisma.company.findMany({
@@ -36,7 +36,7 @@ export default async function AdminCompaniesPage() {
             <ArrowLeft className="h-3 w-3" /> Admin
           </Link>
           <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
-            Companies
+            PortCos
           </h1>
           <p className="text-xs text-[var(--text-secondary)] mt-0.5">
             <span className="mono tabular-nums">{companies.length.toLocaleString()}</span> total
@@ -44,7 +44,7 @@ export default async function AdminCompaniesPage() {
         </div>
         <Link href="/admin/companies/new">
           <Button variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
-            New company
+            New PortCo
           </Button>
         </Link>
       </div>
@@ -89,7 +89,7 @@ export default async function AdminCompaniesPage() {
           </tbody>
         </table>
         {companies.length === 0 && (
-          <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No companies yet.</div>
+          <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No PortCos yet.</div>
         )}
       </div>
     </div>

@@ -17,7 +17,7 @@ export function CTABlock() {
             </h3>
             <p className="type-meta">
               Ask InfraSight Research to prioritize a market, verify a company profile,
-              or package the evidence behind a transaction, fund, or portfolio company.
+              or package the evidence behind a transaction, fund, or PortCo.
             </p>
           </div>
           <a

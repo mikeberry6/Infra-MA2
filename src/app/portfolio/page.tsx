@@ -27,6 +27,6 @@ export default async function PortfolioPage() {
     );
   } catch (error) {
     console.error("Database query failed on /portfolio:", error);
-    return <DataUnavailable title="Portfolio company data could not be loaded." />;
+    return <DataUnavailable title="PortCo data could not be loaded." />;
   }
 }

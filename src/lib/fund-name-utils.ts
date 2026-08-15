@@ -49,7 +49,7 @@ export const FUND_NAME_ALIASES: Record<string, string> = {
 /** Normalize a fund name to its canonical form using known aliases. */
 export function normalizeFundName(name: string): string {
   if (FUND_NAME_ALIASES[name]) return FUND_NAME_ALIASES[name];
-  // Strip "(via ...)" suffix used for subsidiary/portfolio company context
+  // Strip "(via ...)" suffix used for subsidiary/PortCo context
   const stripped = name.replace(/\s*\(via\s+[^)]+\)\s*$/, "").trim();
   return FUND_NAME_ALIASES[stripped] ?? stripped;
 }
