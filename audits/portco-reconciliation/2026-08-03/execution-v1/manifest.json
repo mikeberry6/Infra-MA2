@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T22:56:45.000Z",
-  "runStatus": "IDLE",
+  "updatedAt": "2026-08-15T23:27:34.000Z",
+  "runStatus": "BLOCKED",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -12627,20 +12627,26 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "25a3cdfc3750454774c835832efb440c946ccfd08e5b36f9ffda62065f970405",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "FAILED",
+      "attempts": 1,
+      "startedAt": "2026-08-15T23:02:31.000Z",
+      "updatedAt": "2026-08-15T23:27:34.000Z",
       "completedAt": null,
-      "exceptionReason": null,
+      "exceptionReason": "GPT-5.6 Sol Pro returned malformed JSON in both the initial response and the single permitted repair: the initial response began inside beforeAfterChanges, and the repair truncated inside ownershipResolution before beginning Markdown. No complete parseable response exists, so the task stopped without proposal, release, or mutation.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0087-zeem-solutions/attempt-1/task-snapshot.json",
+          "sha256": "2b0d043f50bd30e10039158753e1df58ea6c29cc90de5afcdae194558ccd776d"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0087-zeem-solutions/attempt-1/chatgpt-response-validation.json",
+          "sha256": "a9ad2ad899092e58d57beb2f8e138a81e0278e2b877f1cc289c8d2544c0a5c6f"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -12654,6 +12660,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-15T23:02:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "FAILED",
+          "at": "2026-08-15T23:27:34.000Z",
+          "reason": "GPT-5.6 Sol Pro returned malformed JSON in both the initial response and the single permitted repair: the initial response began inside beforeAfterChanges, and the repair truncated inside ownershipResolution before beginning Markdown. No complete parseable response exists, so the task stopped without proposal, release, or mutation.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "2b0d043f50bd30e10039158753e1df58ea6c29cc90de5afcdae194558ccd776d",
+            "a9ad2ad899092e58d57beb2f8e138a81e0278e2b877f1cc289c8d2544c0a5c6f"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -28270,5 +28299,5 @@
       ]
     }
   ],
-  "manifestSha256": "6bd9198cfd63e25f61ba6170043b276dcf9ec7ebaed63d4f788973d37f7cfd13"
+  "manifestSha256": "c309d093c85069149f4600f932cda5bb04e8471635e0f974edb19c16f0e2a597"
 }

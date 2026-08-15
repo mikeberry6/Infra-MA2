@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0087:zeem-solutions:fb68d7c4",
+  "taskIndex": 87,
+  "companyName": "Zeem Solutions",
+  "generatedAt": "2026-08-15T23:03:41.978Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0087-zeem-solutions/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 87,
+    "taskId": "ledger:0087:zeem-solutions:fb68d7c4",
+    "canonicalKey": "zeem-solutions|united-states",
+    "companyName": "Zeem Solutions",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:018:zeem-solutions"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj6nk00jnivhe6mtdjqda"
+    ],
+    "seedKeys": [
+      "zeem solutions|United States"
+    ],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj6nk00jnivhe6mtdjqda",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "zeem-solutions|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6nk00jnivhe6mtdjqda",
+    "name": "Zeem Solutions",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "EV Fleet Charging Infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Zeem Solutions provides electric-vehicle fleet charging infrastructure and fleet-as-a-service solutions. Its customers are commercial fleet operators, and the business combines charging depots, fleet support services, and related operating infrastructure in an asset-heavy model. Public materials identify Inglewood, California as a key operating site and describe the company as focused on accelerating electrification for medium- and heavy-duty fleets. The platform is therefore aligned with fleet transition infrastructure rather than with consumer charging networks. Zeem announced in July 2022 that it had secured a $50 million capital investment from ArcLight affiliates and a strategic partnership with LAZ Parking, while public sources do not disclose the detailed ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrp001gkivhetkl41na9",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkmua02ptivhe3tlmegue",
+        "date": "2020",
+        "event": "Zeem Solutions was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmuo02puivheonveprjh",
+        "date": "Jul 2022",
+        "event": "Zeem also announced a strategic partnership with LAZ Parking.",
+        "category": "EXPANSION",
+        "sortDate": "2022-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmxh02pvivheh4c1pduc",
+        "date": "Jul 6, 2022",
+        "event": "Zeem secured a $50 million Series A capital investment from affiliates of ArcLight Capital Partners.",
+        "category": "FINANCING",
+        "sortDate": "2022-07-06T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp1pp07kzivhedwue9gxu",
+        "label": "Zeemsolutions — Zeem Solutions",
+        "url": "https://www.zeemsolutions.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Zeemsolutions company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp1qu07l1ivhe8mjxjcg4",
+        "label": "Zeemsolutions — Zeem Solutions",
+        "url": "https://www.zeemsolutions.com/press",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Zeemsolutions — Zeem Solutions",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp1s307l3ivherw53lq2d",
+        "label": "Investment date source — ArcLight Capital Partners — Zeem Solutions",
+        "url": "https://www.globenewswire.com/news-release/2022/07/06/2475140/0/en/Zeem-Solutions-EV-Fleet-as-a-Service-Provider-Secures-50-Million-Capital-Investment-from-Affiliates-of-ArcLight-Capital-Partners-Announces-Strategic-Partnership-with-LAZ-Parking-Re.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Zeem Solutions",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Transportation",
+    "subsector": "EV Fleet Charging Infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Zeem Solutions provides electric-vehicle fleet charging infrastructure and fleet-as-a-service solutions. Its customers are commercial fleet operators, and the business combines charging depots, fleet support services, and related operating infrastructure in an asset-heavy model. Public materials identify Inglewood, California as a key operating site and describe the company as focused on accelerating electrification for medium- and heavy-duty fleets. The platform is therefore aligned with fleet transition infrastructure rather than with consumer charging networks. Zeem announced in July 2022 that it had secured a $50 million capital investment from ArcLight affiliates and a strategic partnership with LAZ Parking, while public sources do not disclose the detailed ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2020,
+    "investmentYear": 2022,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "Zeem Solutions was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jul 2022",
+        "event": "Zeem also announced a strategic partnership with LAZ Parking.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jul 6, 2022",
+        "event": "Zeem secured a $50 million Series A capital investment from affiliates of ArcLight Capital Partners.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Zeemsolutions — Zeem Solutions",
+        "url": "https://www.zeemsolutions.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Zeemsolutions — Zeem Solutions",
+        "url": "https://www.zeemsolutions.com/press",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — ArcLight Capital Partners — Zeem Solutions",
+        "url": "https://www.globenewswire.com/news-release/2022/07/06/2475140/0/en/Zeem-Solutions-EV-Fleet-as-a-Service-Provider-Secures-50-Million-Capital-Investment-from-Affiliates-of-ArcLight-Capital-Partners-Announces-Strategic-Partnership-with-LAZ-Parking-Re.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0087:zeem-solutions:fb68d7c4",
+    "taskIndex": 87,
+    "canonicalKey": "zeem-solutions|united-states",
+    "capturedAt": "2026-08-15T23:03:41.978Z",
+    "databaseRevision": "company-state:36bc56ecb592033e5048eb578a39bb0aa9ea1e5a37f8237de6fc1a6b8c4af53b",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "25a3cdfc3750454774c835832efb440c946ccfd08e5b36f9ffda62065f970405",
+    "productionSnapshotSha256": "a8e8c6a3fcc69dcad1d5ab0c4e3bbf83098a7063167ac6e907f2f77dc86dadf4",
+    "targetCompanySnapshotSha256": "36bc56ecb592033e5048eb578a39bb0aa9ea1e5a37f8237de6fc1a6b8c4af53b",
+    "seedEntrySha256": "b2a4342503bc25acffd5370e471bed0e61ff04f1b474aebee84096ebfbf45af9",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "f485dfafebce84882e8b2c038713307187610e9d3f58f0c026f57091c05794d9",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "24dc5bc5b57afb04b58026a283fc9d3a6bbc3da444df391c653e493d6927fb89",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "123096ac4fee29717c841a189e55c4795d949f92ece5953549a3bcd0e4887474",
+    "stateSha256": "9b7d2cfccff9196cf49d98c432ced76fbbf56b3483079a619ed70842e4d6b27c",
+    "taskSnapshotSha256": "2b0d043f50bd30e10039158753e1df58ea6c29cc90de5afcdae194558ccd776d"
+  },
+  "contextSha256": "3838d00da52053e5e56183e36bba6554e9561f44fe8699d6e2ae4483f285a70d"
+}
