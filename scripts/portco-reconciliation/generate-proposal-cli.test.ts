@@ -287,6 +287,20 @@ describe("proposal patch ownership additions", () => {
     })).toBe("natural-gas-pipeline-co-of-america|united-states");
   });
 
+  it("uses the target identity for a reviewed manager short-name alias mutation", () => {
+    expect(proposalCanonicalKey({
+      resolvedCanonicalKey: "sequitur-renewables|united-states",
+      sourceQueueEntry: {
+        canonicalKey: "sequitur|united-states",
+      } as TaskSnapshotContext["sourceQueueEntry"],
+      targetResolution: {
+        method: "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY",
+        targetCompanyId: "company-sequitur-renewables",
+        linkedQueueTaskId: null,
+      },
+    })).toBe("sequitur-renewables|united-states");
+  });
+
   it("rejects a canonical-null mutation without exact reviewed identity resolution", () => {
     expect(() => proposalCanonicalKey({
       resolvedCanonicalKey: "gfl-environmental-services|united-states-canada",

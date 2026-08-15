@@ -172,6 +172,11 @@ export type TaskSnapshotTargetResolution =
     linkedQueueTaskId: null;
   }
   | {
+    method: "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY";
+    targetCompanyId: string;
+    linkedQueueTaskId: null;
+  }
+  | {
     method: "NO_EXISTING_TARGET";
     targetCompanyId: null;
     linkedQueueTaskId: null;
@@ -291,6 +296,23 @@ export function resolveTaskSnapshotTarget(input: {
       linkedQueueTaskId: null,
     };
   }
+  if (
+    symmetricLinks.length === 0
+    && !/[()[\]/]/.test(input.queueEntry.companyName)
+    && input.queueEntry.queueKind === "CANONICAL_COMPANY"
+    && input.queueEntry.decisionStatus === "NEEDS_REVIEW"
+    && input.queueEntry.sourceHoldingIds.length > 0
+    && input.queueEntry.sourceRepoOnlyIds.length === 0
+    && input.queueEntry.productionCompanyIds.length === 0
+    && input.queueEntry.seedKeys.length === 0
+    && input.queueEntry.candidateCanonicalKeys.length === 0
+  ) {
+    return {
+      method: "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY",
+      targetCompanyId: reviewedTargetCompanyId,
+      linkedQueueTaskId: null,
+    };
+  }
   if (symmetricLinks.length !== 1) {
     throw new Error(
       symmetricLinks.length === 0
@@ -335,9 +357,24 @@ const LEGAL_SUFFIXES = new Set([
 ]);
 
 function normalizedCompanyBaseName(value: string): string {
+  return normalizedCompanyBaseTokens(value).join("-");
+}
+
+function normalizedCompanyBaseTokens(value: string): string[] {
   const tokens = canonicalIdentityPart(value).split("-").filter(Boolean);
   while (tokens.length > 1 && LEGAL_SUFFIXES.has(tokens[tokens.length - 1])) tokens.pop();
-  return tokens.join("-");
+  return tokens;
+}
+
+const REVIEWED_MANAGER_SHORT_NAME_DESCRIPTORS = new Set(["renewable", "renewables"]);
+
+function isReviewedManagerShortNameAlias(shortName: string, fullName: string): boolean {
+  const prefixTokens = normalizedCompanyBaseTokens(shortName);
+  const fullNameTokens = normalizedCompanyBaseTokens(fullName);
+  return prefixTokens.length > 0
+    && fullNameTokens.length === prefixTokens.length + 1
+    && prefixTokens.every((token, index) => token === fullNameTokens[index])
+    && REVIEWED_MANAGER_SHORT_NAME_DESCRIPTORS.has(fullNameTokens[fullNameTokens.length - 1]);
 }
 
 function normalizedParentheticalAliasBaseName(value: string): string {
@@ -373,6 +410,7 @@ export function resolvedTaskCanonicalKey(input: {
   if (
     input.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     || input.targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
+    || input.targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
   ) {
     if (!input.targetCompanyImage) {
       throw new Error("Reviewed alias target cannot resolve a canonical identity without a company");
@@ -405,6 +443,7 @@ export function assertReviewedPostQueueExactIdentity(input: {
     input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
+    && input.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
   ) return;
   if (!input.targetCompanyImage) {
     throw new Error("Reviewed post-queue target no longer exists");
@@ -412,6 +451,8 @@ export function assertReviewedPostQueueExactIdentity(input: {
   const isDba = input.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY";
   const isParentheticalAlias = input.targetResolution.method
     === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY";
+  const isManagerShortNameAlias = input.targetResolution.method
+    === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY";
   const reviewedDbaAlias = isDba ? dbaAlias(input.queueEntry.companyName) : null;
   const reviewedParentheticalAliasBase = isParentheticalAlias
     ? parentheticalAcronymBase(input.queueEntry.companyName)
@@ -428,6 +469,10 @@ export function assertReviewedPostQueueExactIdentity(input: {
           === normalizedParentheticalAliasBaseName(reviewedParentheticalAliasBase)
         && normalizedIdentity(company.country) === normalizedIdentity(input.queueEntry.country);
     }
+    if (isManagerShortNameAlias) {
+      return isReviewedManagerShortNameAlias(input.queueEntry.companyName, company.name)
+        && normalizedIdentity(company.country) === normalizedIdentity(input.queueEntry.country);
+    }
     return matchesImmutableTaskIdentity(input.queueEntry, company);
   };
   if (!matchesTargetIdentity(input.targetCompanyImage)) {
@@ -436,6 +481,8 @@ export function assertReviewedPostQueueExactIdentity(input: {
         ? "Reviewed post-queue target does not exactly match the immutable DBA alias and country"
         : isParentheticalAlias
           ? "Reviewed post-queue target does not exactly match the immutable parenthetical-alias base and country"
+          : isManagerShortNameAlias
+            ? "Reviewed post-queue target does not match the immutable manager short-name alias and country"
           : "Reviewed post-queue target does not exactly match the immutable task identity",
     );
   }
@@ -478,6 +525,7 @@ export function resolvedTaskSeedKeys(input: {
     input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
+    && input.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
   ) return [];
   if (!input.targetCompanyImage) {
     throw new Error("Reviewed post-queue target cannot bind an absent evaluated seed identity");
@@ -709,7 +757,8 @@ export async function buildTaskSnapshotContext(input: {
     targetRecordStatus: targetCompanyImage?.recordStatus ?? null,
     requireEvaluatedSeedEntry: targetResolution.method === "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
       || targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
-      || targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY",
+      || targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
+      || targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY",
   });
   const resolvedCanonicalKey = resolvedTaskCanonicalKey({
     queueEntry,

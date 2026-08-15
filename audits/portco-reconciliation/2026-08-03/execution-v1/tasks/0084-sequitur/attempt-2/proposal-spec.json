@@ -1,0 +1,277 @@
+{
+  "generatedAt": "2026-08-15T10:11:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Correct the existing Sequitur Renewables record in place and map ArcLight's short census label Sequitur to that canonical company. ArcLight and company transaction materials identify Sequitur as Sequitur Renewables, LLC, so a new company would be duplicative. ArcLight's current portfolio still lists Sequitur as current, ArcLight's 2025 ESG report and direct GLEIF records attribute the company to ArcLight Energy Partners Fund VII, L.P., and no Sequitur-level exit or signed pending sale was identified through August 15, 2026. The initial five-project 185 MW PJM wind acquisition closed in October 2022; FERC and the PJM Market Monitor differ by one day, so only month precision is persisted. ArcLight's numeric platform stake, immediate legal holding vehicle, and operating headquarters are not publicly disclosed and remain null. The individual wind farms and Diablo Wind are assets beneath the one manager-level platform. Existing shared Source rows retain their global labels; company-specific purpose and evidence text remain on the Sequitur citations.",
+  "evidence": [
+    {
+      "url": "https://arclight.com/investments",
+      "purpose": "Current manager portfolio status, short-name identity and exit check",
+      "supports": [
+        "ArcLight lists Sequitur as a Current renewable investment",
+        "The manager uses the Sequitur short name",
+        "No ArcLight exit or pending Sequitur sale is shown"
+      ]
+    },
+    {
+      "url": "https://sequiturrenewables.com/",
+      "purpose": "Current official identity and operating profile",
+      "supports": [
+        "The official display name is Sequitur Renewables",
+        "The company is a U.S. operating-wind platform",
+        "The official website remained active through the verification date"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/arclight-to-acquire-operating-pjm-windfarms-301596749.html",
+      "purpose": "Initial signed acquisition, platform establishment, geography and scale",
+      "supports": [
+        "ArcLight announced the acquisition agreement on August 1, 2022",
+        "Five operating Pennsylvania and West Virginia wind farms totaled 185 MW",
+        "The transaction established the Sequitur platform and remained subject to closing conditions"
+      ]
+    },
+    {
+      "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "purpose": "Regulatory closing and asset evidence",
+      "supports": [
+        "FERC reports subsequent consummation on October 31, 2022",
+        "The page identifies the initial operating wind assets",
+        "Together with the conflicting PJM date, the source supports October 2022 month precision"
+      ]
+    },
+    {
+      "url": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2022/2022-som-pjm-sec3.pdf",
+      "purpose": "Independent closing-date corroboration and conflict control",
+      "supports": [
+        "The PJM Market Monitor reports completion on October 30, 2022",
+        "Together with the conflicting FERC date, the source supports October 2022 month precision"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/arclights-sequitur-platform-to-acquire-operating-california-wind-farm-301825282.html",
+      "purpose": "Canonical identity and California bolt-on boundary",
+      "supports": [
+        "The announcement identifies Sequitur Renewables, LLC as Sequitur",
+        "The operating California wind farm had been acquired by May 16, 2023",
+        "The acquisition was an addition to the existing Sequitur platform"
+      ]
+    },
+    {
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Fund attribution and infrastructure-strategy basis",
+      "supports": [
+        "ArcLight attributes Sequitur to Fund VII",
+        "The report defines Fund VII as ArcLight Energy Partners Fund VII, L.P.",
+        "Sequitur is identified as a renewable infrastructure investment"
+      ]
+    },
+    {
+      "url": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95",
+      "purpose": "Canonical legal identity and formation",
+      "supports": [
+        "The legal name is Sequitur Renewables, LLC",
+        "The active Delaware entity was created June 27, 2022",
+        "Boston is a registered c/o ArcLight address rather than a proven operating headquarters"
+      ]
+    },
+    {
+      "url": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95/ultimate-parent-relationship",
+      "purpose": "Current Fund VII relationship",
+      "supports": [
+        "An active ultimate-parent consolidation relationship with Fund VII began June 27, 2022",
+        "The relationship does not disclose an immediate legal vehicle or numeric stake"
+      ]
+    },
+    {
+      "url": "https://api.gleif.org/api/v1/lei-records/549300LD7O6QR7ZLUB34",
+      "purpose": "Exact fund legal identity",
+      "supports": [
+        "The legal fund name is ArcLight Energy Partners Fund VII, L.P.",
+        "The fund entity is active"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "Sequitur",
+      "Sequitur Renewable",
+      "Sequitur Renewables, LLC"
+    ],
+    "description": "Sequitur Renewables is an ArcLight-backed U.S. renewable-energy platform that owns and operates wind assets. ArcLight established the platform in 2022 around five operating PJM wind farms totaling 185 MW in Pennsylvania and West Virginia; public regulatory sources establish an October 2022 closing but conflict on the exact day. Sequitur expanded into California in May 2023 by acquiring an operating wind farm in Altamont Pass. ArcLight's current portfolio lists Sequitur as current, and ArcLight and GLEIF records attribute the company to ArcLight Energy Partners Fund VII, L.P. Public sources do not disclose ArcLight's platform-level stake or immediate legal acquisition vehicle. No Sequitur-level exit or signed pending ownership transfer was identified through August 15, 2026.",
+    "website": "https://sequiturrenewables.com/",
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-15T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjrlf01gdivhej0bztveb",
+      "set": {
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "vehicleName": null,
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpkmfu02pcivherp0kjerg",
+      "set": {
+        "date": "Jun 27, 2022",
+        "event": "Sequitur Renewables, LLC was created as a Delaware limited liability company.",
+        "category": "FOUNDING",
+        "sortDate": "2022-06-27T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkmiv02pdivhet5h7mujx",
+      "set": {
+        "date": "Aug 1, 2022",
+        "event": "Sequitur Renewables entered into an agreement to acquire five operating PJM wind farms totaling 185 MW in Pennsylvania and West Virginia, establishing the operating platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/arclight-to-acquire-operating-pjm-windfarms-301596749.html"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkmjf02peivheeqamwf70",
+      "set": {
+        "date": "Oct 2022",
+        "event": "ArcLight's Sequitur platform completed the acquisition of the five-project 185 MW PJM wind portfolio in October 2022; public sources differ by one day, so only month precision is recorded.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-10-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2022/2022-som-pjm-sec3.pdf",
+          "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkmjz02pfivheaxxks30y",
+      "set": {
+        "date": "May 16, 2023",
+        "event": "Sequitur acquired an operating wind farm in Altamont Pass, California, expanding beyond its original PJM portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-05-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/arclights-sequitur-platform-to-acquire-operating-california-wind-farm-301825282.html"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpp14b07jyivhelooz4y98",
+      "set": {
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official identity, current U.S. operating-wind profile and company website",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpp15707k0ivheykw1faph",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 2022 agreement, five-project 185 MW portfolio, Pennsylvania and West Virginia geography and platform formation",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpp16d07k2ivhe3og7bvon",
+      "set": {
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "May 2023 Altamont Pass acquisition and bolt-on boundary",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpp17f07k4ivhesupf153l",
+      "set": {
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Official transaction-history archive and Sequitur identity bridge",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "ArcLight — Current investments",
+      "url": "https://arclight.com/investments",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current Sequitur portfolio status, manager short-name identity, renewable classification and exit check",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "ArcLight — 2025 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Sequitur attribution to ArcLight Energy Partners Fund VII, L.P.",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "GLEIF — Sequitur Renewables, LLC LEI record",
+      "url": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95",
+      "sourceType": "OTHER",
+      "purpose": "COMPANY_PROFILE",
+      "evidenceLabel": "Legal identity, active Delaware entity and June 2022 creation; Boston is a registered c/o address only",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "GLEIF — Sequitur ultimate-parent relationship",
+      "url": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95/ultimate-parent-relationship",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Active Fund VII consolidation relationship beginning June 2022 without a disclosed percentage or immediate vehicle",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "GLEIF — ArcLight Energy Partners Fund VII, L.P. LEI record",
+      "url": "https://api.gleif.org/api/v1/lei-records/549300LD7O6QR7ZLUB34",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Exact legal identity and active status of Fund VII",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Monitoring Analytics — 2022 PJM State of the Market",
+      "url": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2022/2022-som-pjm-sec3.pdf",
+      "sourceType": "OTHER",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "October 30, 2022 reported completion date; used with FERC to support month-only precision",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FERC — Sequitur asset appendix",
+      "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "sourceType": "WEBSITE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "October 31, 2022 reported consummation date and initial asset evidence; used with PJM to support month-only precision",
+      "isPrimary": false
+    }
+  ]
+}
+

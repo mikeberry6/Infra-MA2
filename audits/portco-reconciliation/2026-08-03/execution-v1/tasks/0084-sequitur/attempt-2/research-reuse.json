@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_REUSE",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0084:sequitur:dadaff66",
+  "taskIndex": 84,
+  "attempt": 2,
+  "priorAttempt": 1,
+  "reason": "Attempt 1 failed before release because proposed labels differed from existing shared Source metadata. The company identity, ownership, date-precision, exit-search and operating conclusions remain unchanged.",
+  "substantiveResearchReused": true,
+  "newChatgptConversationRequired": false,
+  "chatgptAttestation": {
+    "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0084-sequitur/attempt-1/chatgpt-attestation.json",
+    "sha256": "2c5c20895ae67d3fee5dc350ffca89a6555ba0ab4cfb489506de3872b8fdc43c"
+  },
+  "acceptedChatgptResponse": {
+    "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0084-sequitur/attempt-1/chatgpt-repair-response.json",
+    "sha256": "9b7dd538d4edb88b6b1df6d9abe8aa183a2e3f12170d33e015c851437a374a2e"
+  },
+  "sourceVerification": {
+    "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0084-sequitur/attempt-1/source-verification.json",
+    "sha256": "c6b903d50195c763f9394354893d1b510f3a48fe36673ff830aaebc0d8d4807b"
+  },
+  "changedScope": [
+    "Preserve the four existing Sequitur Source labels.",
+    "Use the already-approved no-trailing-slash ArcLight current-investments Source record.",
+    "Retain all company, ownership, milestone and evidence conclusions."
+  ]
+}
+

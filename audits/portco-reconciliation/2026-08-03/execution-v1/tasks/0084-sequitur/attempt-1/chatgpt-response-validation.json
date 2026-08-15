@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CHATGPT_RESEARCH_RESPONSE_VALIDATION",
+  "taskId": "ledger:0084:sequitur:dadaff66",
+  "attempt": "REPAIR",
+  "validatedAt": "2026-08-15T09:58:00.000Z",
+  "initialAttempt": {
+    "valid": false,
+    "responseJsonSha256": "c0415fa3379cad53aeb2394f5c68627eb9d36c3b6aded1b2eeb0cd70be7cc9b0",
+    "renderedTurnCaptureSha256": "541e35139235124a6df06eaf750c0be0ff2e596c9aa8ee5fc7d65455e9585cd7",
+    "errors": [
+      "The response selected 2022-10-31 even though the FERC asset appendix and PJM Market Monitor conflict by one day; the supported precision is October 2022.",
+      "The response used a third-party LEI Register page instead of the supplied direct GLEIF entity and relationship records."
+    ],
+    "captureAnomaly": "The first viewport-only extraction was incomplete because ChatGPT rendered the long JSON in a virtualized read-only CodeMirror editor. Full line reconstruction later parsed successfully."
+  },
+  "repairAttempt": {
+    "valid": true,
+    "responseJsonSha256": "9b7dd538d4edb88b6b1df6d9abe8aa183a2e3f12170d33e015c851437a374a2e",
+    "errors": [],
+    "byteForByteIdenticalToInitial": false
+  },
+  "valid": true,
+  "errors": [],
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "existingRecordDisposition",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "proposedRelations",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "schemaChecks": {
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "canonicalName": "Sequitur Renewables",
+    "productionCompanyId": "cmrxpj6k800jhivheu0xn4hyt",
+    "currentOwnerCount": 1,
+    "ownershipEntryDate": "2022-10",
+    "evidenceCount": 15,
+    "directGleifSourceCount": 3,
+    "thirdPartyLeiSourceCount": 0,
+    "allEvidenceUrlsDirectHttps": true,
+    "activeOwnershipHasCurrentDirectEvidence": true,
+    "subsequentExitSearchPresent": true
+  },
+  "repairInitiatedAfterInitialFailure": true,
+  "repairInitiatedAfterCaptureAmbiguity": false,
+  "repairsUsed": 1,
+  "repairDecisionMatchesInitial": true,
+  "repairDecisionMatchesFinalProposal": true,
+  "acceptedWithCodexCorrections": true,
+  "corrections": [
+    {
+      "modelClaim": "The GLEIF c/o ArcLight address is a company headquarters.",
+      "disposition": "REGISTERED_ADDRESS_ONLY",
+      "finalTreatment": "Persist headquarters as null because no operating headquarters is publicly established; retain Pennsylvania, West Virginia and California only as operating footprint."
+    },
+    {
+      "modelClaim": "NOT_PUBLICLY_DISCLOSED should be persisted as literal vehicle and stake text.",
+      "disposition": "NULL_NORMALIZATION",
+      "finalTreatment": "Persist vehicleName and stake as null while explaining that both facts are not publicly disclosed."
+    },
+    {
+      "modelClaim": "The accepted alias set needs only Sequitur.",
+      "disposition": "ALIAS_SET_COMPLETED",
+      "finalTreatment": "Preserve the canonical display name and add the directly supported Sequitur, Sequitur Renewable and Sequitur Renewables, LLC variants."
+    },
+    {
+      "modelClaim": "Multiple sources are recommended primary.",
+      "disposition": "PRIMARY_CITATION_NORMALIZED",
+      "finalTreatment": "Use exactly one primary citation: ArcLight's live current-investments page."
+    }
+  ],
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json",
+  "finalProposal": "audits/portco-reconciliation/2026-08-03/proposals/0084-sequitur-renewables-v1/proposal.json"
+}
+

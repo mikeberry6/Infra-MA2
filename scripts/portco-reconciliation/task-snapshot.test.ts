@@ -208,6 +208,48 @@ describe("task snapshot target resolution", () => {
     });
   });
 
+  it("pins a reviewed manager short name to one existing renewable descriptor identity", () => {
+    const active = entry({
+      taskId: "task-sequitur",
+      canonicalKey: "sequitur|united-states",
+      companyName: "Sequitur",
+      country: "United States",
+      sourceHoldingIds: ["holding-sequitur"],
+    });
+
+    expect(resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-sequitur-renewables",
+    })).toEqual({
+      method: "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY",
+      targetCompanyId: "company-sequitur-renewables",
+      linkedQueueTaskId: null,
+    });
+  });
+
+  it.each([
+    { decisionStatus: "READY_FOR_PROPOSAL" as const },
+    { sourceHoldingIds: [] },
+    { sourceRepoOnlyIds: ["repo-only-sequitur"] },
+    { candidateCanonicalKeys: ["sequitur-renewables|united-states"] },
+    { seedKeys: ["sequitur renewables|United States"] },
+  ])("rejects a manager short-name target when the immutable task shape is not exact: %o", (override) => {
+    const active = entry({
+      taskId: "task-sequitur",
+      canonicalKey: "sequitur|united-states",
+      companyName: "Sequitur",
+      country: "United States",
+      sourceHoldingIds: ["holding-sequitur"],
+      ...override,
+    });
+    expect(() => resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-sequitur-renewables",
+    })).toThrow("not supported by one symmetric immutable queue candidate");
+  });
+
   it.each([
     { companyName: "Natural Gas Pipeline Company of America" },
     { companyName: "Natural Gas Pipeline Company of America (natural gas pipeline)" },
@@ -466,6 +508,92 @@ describe("post-queue parenthetical-alias identity binding", () => {
       targetResolution,
       targetCompanyImage: company,
     })).toBe("natural-gas-pipeline-co-of-america|united-states");
+  });
+});
+
+describe("post-queue manager short-name alias identity binding", () => {
+  const queueEntry = entry({
+    taskId: "task-sequitur",
+    canonicalKey: "sequitur|united-states",
+    companyName: "Sequitur",
+    country: "United States",
+    sourceHoldingIds: ["holding-sequitur"],
+  });
+  const targetResolution = {
+    method: "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY" as const,
+    targetCompanyId: "company-sequitur-renewables",
+    linkedQueueTaskId: null,
+  };
+  const company = {
+    id: "company-sequitur-renewables",
+    name: "Sequitur Renewables, LLC",
+    country: "United States",
+  } as CompanyImage;
+  const productionCompanies = [{
+    id: "company-sequitur-renewables",
+    name: "Sequitur Renewables, LLC",
+    country: "United States",
+  }];
+
+  it("requires one whitelisted descriptor token after the immutable whole-token name", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies,
+    })).not.toThrow();
+    for (const name of [
+      "Sequitur, LLC",
+      "Sequitur Energy, LLC",
+      "Sequitur Renewable Energy, LLC",
+      "Sequiturn Renewables, LLC",
+    ]) {
+      expect(() => assertReviewedPostQueueExactIdentity({
+        queueEntry,
+        targetResolution,
+        targetCompanyImage: { ...company, name },
+        productionCompanies,
+      })).toThrow("does not match the immutable manager short-name alias and country");
+    }
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, country: "Canada" },
+      productionCompanies,
+    })).toThrow("does not match the immutable manager short-name alias and country");
+  });
+
+  it("requires exactly one matching production identity pinned to the reviewed id", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [...productionCompanies, {
+        id: "company-sequitur-renewable",
+        name: "Sequitur Renewable",
+        country: "United States",
+      }],
+    })).toThrow("resolved to 2 production records instead of exactly one");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [{ ...productionCompanies[0], id: "company-other" }],
+    })).toThrow("target id does not match the unique exact production identity");
+  });
+
+  it("binds the target evaluated seed identity and target canonical key", () => {
+    expect(resolvedTaskSeedKeys({
+      queueEntry,
+      queueEntries: [queueEntry],
+      targetResolution,
+      targetCompanyImage: company,
+    })).toEqual(["sequitur renewables, llc|United States"]);
+    expect(resolvedTaskCanonicalKey({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+    })).toBe("sequitur-renewables-llc|united-states");
   });
 });
 

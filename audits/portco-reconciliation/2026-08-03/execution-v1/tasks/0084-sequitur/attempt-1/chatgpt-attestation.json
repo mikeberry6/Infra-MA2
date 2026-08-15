@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CHATGPT_WEB_EXECUTION_ATTESTATION",
+  "taskId": "ledger:0084:sequitur:dadaff66",
+  "taskIndex": 84,
+  "requestedCompany": "Sequitur",
+  "conversationUrl": "https://chatgpt.com/c/6a80314c-5438-83ea-bef3-0601b4c5352e",
+  "model": "GPT-5.6 Sol",
+  "mode": "Pro",
+  "accountPlan": "Pro",
+  "uiVerified": true,
+  "attestationMethod": "DOM_SEMANTIC_SNAPSHOT",
+  "uiEvidence": [
+    "Model GPT-5.6 Sol",
+    "Effort Pro",
+    "Pro, 5 of 5."
+  ],
+  "attestationScreenshot": null,
+  "screenshotCapture": {
+    "status": "NOT_REQUESTED",
+    "reason": "The visible model, execution mode and account plan were captured in the semantic DOM before prompt submission."
+  },
+  "submittedAt": "2026-08-15T09:28:43.981Z",
+  "submittedAtPrecision": "MILLISECOND_FROM_BROWSER_ORCHESTRATION_LOG",
+  "initialResponseCompletedAt": "2026-08-15T09:45:21.794Z",
+  "repairSubmittedAt": "2026-08-15T09:50:22.177Z",
+  "repairCompletedAt": "2026-08-15T09:56:15.360Z",
+  "promptSha256": "ac2f9e1bb9f820ba082035d251f1c35be7f7818ed86bc52ab4ced5a947cec69a",
+  "repairPromptSha256": "f908d9280f1d402a2b8260c1bd53c355e2ebd5e10380fc94a108814ac363413a",
+  "initialResponseJsonSha256": "c0415fa3379cad53aeb2394f5c68627eb9d36c3b6aded1b2eeb0cd70be7cc9b0",
+  "initialRenderedTurnCaptureSha256": "541e35139235124a6df06eaf750c0be0ff2e596c9aa8ee5fc7d65455e9585cd7",
+  "initialTranscriptSha256": "5f8321e950d176dade90c667409b23b0e26066bb46c5eeaf93775a1197fc5282",
+  "repairResponseJsonSha256": "9b7dd538d4edb88b6b1df6d9abe8aa183a2e3f12170d33e015c851437a374a2e",
+  "acceptedResponseSha256": "9b7dd538d4edb88b6b1df6d9abe8aa183a2e3f12170d33e015c851437a374a2e",
+  "completeTranscriptSha256": "f4d9d463bd4eb69018412de8a74d4e03da64c8574be189cc00d7ffd3a097d941",
+  "captureMethod": "DOM-scoped reconstruction of each ChatGPT read-only CodeMirror editor by scrolling the visible conversation container and collecting rendered lines with stable editor-relative positions.",
+  "captureNote": "The initial response correctly resolved the company but selected one of two conflicting day-level closing dates and used a third-party LEI page. One narrowly scoped repair changed the closing to month precision and replaced that page with direct GLEIF entity and relationship sources. The repaired JSON was reconstructed completely and parsed successfully; no second repair was sent.",
+  "repairsUsed": 1
+}
+
