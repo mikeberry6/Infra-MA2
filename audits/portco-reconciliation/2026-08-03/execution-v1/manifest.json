@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T10:24:01.332Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0084:sequitur:dadaff66",
+  "updatedAt": "2026-08-15T10:32:47.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -12148,11 +12148,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a65f4d8609bc557864623d9c49f10c8c216d274271b1f6f613ead74e58e5f6bb",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-15T10:10:15.000Z",
-      "updatedAt": "2026-08-15T10:24:01.332Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-15T10:32:47.000Z",
+      "completedAt": "2026-08-15T10:32:47.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "d13476c223ae3fdd1905b7549de08eb1dea0f87cff63e3c311627e34cb0e7250",
@@ -12308,6 +12308,18 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-15T10:24:01.332Z",
+          "reason": null,
+          "taskSnapshotSha256": "d13476c223ae3fdd1905b7549de08eb1dea0f87cff63e3c311627e34cb0e7250",
+          "evidenceSha256": [
+            "27af2eedd82c6a001fbe7d25274a14f28b748a16e441f73324c5c43afe7d33c6"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-15T10:32:47.000Z",
           "reason": null,
           "taskSnapshotSha256": "d13476c223ae3fdd1905b7549de08eb1dea0f87cff63e3c311627e34cb0e7250",
           "evidenceSha256": [
@@ -28034,5 +28046,5 @@
       ]
     }
   ],
-  "manifestSha256": "10a88c340118740923fd764da3359f8fb0df7860481050f157dfb5ecf2244051"
+  "manifestSha256": "5d3044f05e0fa88929ca3406d25e01b117a32658f6bdd9334c33e5a5aca093f7"
 }
