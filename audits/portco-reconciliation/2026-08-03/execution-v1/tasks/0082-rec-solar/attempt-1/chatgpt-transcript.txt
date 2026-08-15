@@ -1,0 +1,592 @@
+USER PROMPT
+
+# REC Solar — Phase 1 list-reconciliation research
+
+You are researching one infrastructure portfolio-company record for a North American ownership census. Perform fresh, current web research as of **2026-08-15**. Open direct source pages; do not rely on search-result snippets.
+
+## Task identity
+
+- Requested company: **REC Solar**
+- Requested infrastructure manager: **ArcLight Capital** (resolve this census label against the repository's **ArcLight Capital Partners** organization; do not create a duplicate owner merely because the labels differ)
+- Census holding ID: `012-arclight-capital:holding:012:rec-solar`
+- Census evidence lead: <https://arclight.com/investments/>
+- Existing production company ID: `cmrxpj6jr00jgivheinookosn`
+- Existing canonical key: `rec-solar|united-states`
+- Existing evaluated seed key: `rec solar|United States`
+- Queue action to sense-check, not assume: `ADD_OWNER`
+
+The current production and evaluated-seed records already contain one active ownership period:
+
+- Manager / organization: **ArcLight Capital Partners**
+- Fund: not separately recorded
+- Displayed vehicle: **ArcLight Energy Partners Fund VII**
+- Stake: not publicly disclosed
+- Investment year: **2023**
+- State: `CLOSED_ACTIVE`
+
+Do not add a second ArcLight row if `ArcLight Capital` and `ArcLight Capital Partners` are the same manager for this holding. Determine whether the existing single ownership period already satisfies the census holding and whether the Fund VII attribution is directly supported.
+
+Current record summary, all of which must be treated as claims to verify rather than trusted facts:
+
+- Name: REC Solar
+- Country / region: United States / North America
+- Sector / subsector: Power & Energy Transition / Distributed Solar & Storage
+- Status: Active
+- Website: not recorded
+- Founded: 1997
+- Headquarters: United States only; no city or state recorded
+- Description: REC Solar develops, installs, owns and operates distributed solar, storage, fuel-cell and microgrid systems for commercial and public-sector customers; company materials claim more than 700 projects across 29 states.
+- Boundary claim: REC Solar is the manager-level commercial distributed-energy operating platform acquired as part of Duke Energy's commercial distributed-generation portfolio, not every underlying solar project or the entire former Duke portfolio as a second company.
+
+Current milestone claims:
+
+1. `1997` — REC Solar was founded in California.
+2. `Oct 4, 2023` — Duke Energy completed the sale of its commercial distributed-generation portfolio, including REC Solar, to an investment fund managed by ArcLight.
+3. `2025` — REC Solar stated that it had delivered more than 700 projects across 29 states.
+
+Current source leads, which must be reopened and assessed:
+
+- Duke Energy closing release: <https://investors.duke-energy.com/news/news-details/2023/Duke-Energy-completes-sale-of-commercial-distributed-generation-portfolio-including-REC-Solar-to-ArcLight/default.aspx>
+- ArcLight current investments: <https://arclight.com/investments/>
+- REC Solar official site: <https://recsolar.com/>
+- REC Solar “Why REC Solar”: <https://recsolar.com/why-rec-solar/>
+- REC Solar company-history article: <https://recsolar.com/resources/blog/powering-possibilities-the-evolution-of-rec-solar/>
+
+These links are leads only. Reopen them and state exactly what each supports.
+
+## Required decision
+
+Determine which outcome is correct:
+
+1. `VERIFIED_NO_CHANGE` — the current canonical company and its single ArcLight Capital Partners ownership period already represent the census holding correctly, including every retained fund/vehicle, date and status claim, so the queued `ADD_OWNER` must not create a duplicate.
+2. `PROPOSED_CORRECTION` — REC Solar remains in scope but one or more list-level identity, boundary, website, geography, owner, fund, vehicle, stake, investment date, status, milestone or primary-citation claims require an exact correction.
+3. `SUPERSEDED_OR_DUPLICATE` — REC Solar is demonstrably another canonical company's alias, predecessor, successor, subsidiary or duplicate and should not remain a separate canonical PortCo.
+4. `EXCLUDED` — REC Solar is only a project, passive holding shell, debt exposure, LP/fund exposure, public security, non-infrastructure business, or realized/stale investment.
+5. `DEFERRED` — canonical identity or current legal ownership remains unresolved after reasonable direct-source research.
+
+Use `NOT_PUBLICLY_DISCLOSED` for unavailable noncritical facts. Use `UNRESOLVED` for canonical identity or active-ownership uncertainty; either unresolved item requires `DEFERRED`.
+
+## Research requirements
+
+- Establish REC Solar's exact current legal/public identity, official website, aliases, predecessors or successors, headquarters, country and platform boundary.
+- Distinguish REC Solar from REC Group, REC Silicon, Renewable Energy Corporation, unrelated REC-branded businesses, and every individual project or subsidiary beneath the platform.
+- Determine whether REC Solar remains a distinct manager-level commercial distributed-energy platform suitable for one PortCo record after ArcLight's acquisition of Duke Energy's broader commercial distributed-generation portfolio.
+- Reopen ArcLight's current investments page and establish whether REC Solar remains a current ArcLight investment as of 2026-08-15.
+- Establish direct evidence tying the position to ArcLight's infrastructure or energy-transition strategy and the exact fund and legal acquisition vehicle, if public.
+- Verify whether **ArcLight Energy Partners Fund VII** is directly disclosed for REC Solar. Do not convert a fund name into a legal vehicle, or retain Fund VII merely because it appears in the repository. If public evidence says only “investment funds managed by ArcLight,” preserve that narrower disclosure.
+- Verify whether `ArcLight Capital` in the census is merely a shortened label for `ArcLight Capital Partners`.
+- Find the acquisition announcement and legal closing. Distinguish the sale of Duke's asset portfolio from the transfer of the REC Solar operating company.
+- Determine the supported current stake. Do not infer 100%, majority or another percentage from a sale announcement unless a source establishes it.
+- Verify Duke Energy's former ownership and acquisition/exit dates when direct sources establish them; do not create a current Duke ownership row.
+- Search explicitly for subsequent sales, exits, restructurings, dissolutions, renamings and signed pending transactions through 2026-08-15.
+- Verify founding year, company scale, services, customer/end-market scope, U.S. footprint and any precise headquarters location retained in a list-ready record.
+- Prefer official company, manager, counterparty, regulatory, government or filing sources. Reliable secondary sources may fill gaps.
+- Every included fact must have a direct URL whose opened page supports it. One source is sufficient when it directly proves the fact; add evidence when ownership, current status, geography, fund, entry date, stake or platform boundary is not established by the first.
+
+## Existing-repository guardrails
+
+- Do not add a second ArcLight owner merely because the census uses the shorter manager label.
+- Do not infer Fund VII, a special-purpose acquisition vehicle or a stake percentage from transaction timing, fund vintage or ArcLight's general fund materials.
+- Do not count the entire former Duke commercial distributed-generation asset portfolio and REC Solar separately unless direct evidence establishes two manager-level operating platforms.
+- Do not count individual solar, storage, microgrid, fuel-cell or development projects beneath REC Solar as separate PortCos.
+- Do not map former corporate owner Duke Energy to an infrastructure-fund strategy.
+- If the current record is correct except the queued owner addition is stale, return `VERIFIED_NO_CHANGE` and explicitly suppress that duplicate action.
+- If any retained field changes, return one complete corrected list-ready record and enumerate the exact before/after differences.
+
+## Output contract
+
+Return one JSON object in a fenced `json` block, followed by a concise Markdown review. Use this top-level shape:
+
+```json
+{
+  "asOfDate": "2026-08-15",
+  "requestedCompany": "REC Solar",
+  "requestedManager": "ArcLight Capital",
+  "decision": "VERIFIED_NO_CHANGE | PROPOSED_CORRECTION | SUPERSEDED_OR_DUPLICATE | EXCLUDED | DEFERRED",
+  "confidence": "HIGH | MEDIUM | LOW",
+  "rationale": "",
+  "identityResolution": {
+    "canonicalLegalName": "",
+    "aliases": [],
+    "officialWebsite": null,
+    "headquarters": null,
+    "country": null,
+    "platformBoundary": "",
+    "duplicateDecision": ""
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "",
+    "currentOwners": [],
+    "formerOwners": [],
+    "pendingOwnershipTransactions": [],
+    "duplicateOwnerAction": ""
+  },
+  "operatingResolution": {
+    "sector": null,
+    "subsector": null,
+    "region": null,
+    "countryTags": [],
+    "description": null,
+    "companyStatus": null,
+    "yearFounded": null,
+    "services": null,
+    "customersAndEndMarkets": null,
+    "footprint": null,
+    "disclosedScale": null
+  },
+  "acquisitionExitCheck": {
+    "dukeOwnershipHistory": "",
+    "arcLightAnnouncement": "",
+    "arcLightClosing": "",
+    "subsequentExitSearch": ""
+  },
+  "milestones": [],
+  "evidence": [
+    {
+      "label": "",
+      "url": "https://...",
+      "purpose": "",
+      "sourceTier": "PRIMARY | REGULATORY | INSTITUTIONAL | REPUTABLE_SECONDARY",
+      "workingStatus": "WORKING | REDIRECTED | BROWSER_BLOCKED_BUT_VERIFIED | DEAD",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "beforeAfterChanges": [],
+  "excludedOrDuplicateCandidates": [],
+  "unresolvedQuestions": [],
+  "recommendedListAction": ""
+}
+```
+
+For ownership rows, include only supported fields from: `manager`, `organization`, `fund`, `vehicle`, `stake`, `announcementDate`, `entryDate`, `entryYear`, `exitDate`, `exitYear`, `isActive`, and `transactionState` (`CLOSED_ACTIVE`, `SIGNED_PENDING_INCOMING`, `SIGNED_PENDING_EXIT`, or `REALIZED`).
+
+Before answering, verify that every included active owner has direct current evidence and a documented exit search. If ArcLight ownership and the October 2023 closing are supported but Fund VII, a legal vehicle or a stake is not, do not hide that distinction: return the precise correction and use `NOT_PUBLICLY_DISCLOSED` for the unsupported fields.
+
+ASSISTANT INITIAL RESPONSE (structured JSON)
+
+{
+  "asOfDate": "2026-08-15",
+  "requestedCompany": "REC Solar",
+  "requestedManager": "ArcLight Capital",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "The census holding is already represented by the existing single ArcLight Capital Partners ownership period, so the queued ADD_OWNER action must be suppressed. REC Solar nevertheless requires record-level corrections: the same operating platform rebranded as REC Power on 2026-06-30; its current website, headquarters and broader distributed-power scope should be recorded; ArcLight Fund VII is directly supported as the fund rather than as a legal acquisition vehicle; the platform-level acquisition vehicle and percentage stake are not publicly disclosed; exact announcement and closing dates should be added; and the unsupported 2025 dating of the scale milestone should be replaced with directly dated 2026 evidence.",
+  "identityResolution": {
+    "canonicalLegalName": "REC Power",
+    "aliases": [
+      "REC Solar",
+      "REC (Renewable Energy Concepts) Solar",
+      "REC Solar Commercial Corporation",
+      "REC Solar Commercial Corp."
+    ],
+    "officialWebsite": "https://recpower.com/",
+    "headquarters": "San Luis Obispo, California, United States",
+    "country": "United States",
+    "platformBoundary": "One manager-level nationwide distributed-power independent power producer and operating platform, now publicly branded REC Power. It develops and acquires projects, finances them, and owns, operates and services distributed solar, battery-storage, fuel-cell, microgrid and genset assets. The platform is the continuing commercial REC Solar business after its residential division was sold to Sunrun in 2014, and it incorporates the commercial distributed-generation assets, pipeline, O&M portfolio and personnel transferred by Duke Energy in 2023. The former Duke portfolio, Bloom-managed fuel-cell assets, individual projects, project LLCs, tax-equity structures and intermediate holding entities are not separate manager-level PortCos. Current regulatory sources still use REC Solar Commercial Corporation for certain legal registrations; no direct source establishes a platform-wide corporate-name conversion to a newly incorporated REC Power legal entity.",
+    "duplicateDecision": "NOT_DUPLICATE. Update existing production company ID cmrxpj6jr00jgivheinookosn in place. REC Power is the 2026 successor public name of REC Solar, not a second company, and the acquired Duke commercial distributed-generation portfolio is part of this platform rather than a second canonical PortCo."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "ArcLight Capital is an expressly disclosed short form of ArcLight Capital Partners, LLC in regulatory filings. Resolve the census label to the existing ArcLight Capital Partners organization and do not create a second manager.",
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "organization": "ArcLight Capital Partners, LLC",
+        "fund": "ArcLight Energy Partners Fund VII, L.P.",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2023-07-05",
+        "entryDate": "2023-10-04",
+        "entryYear": 2023,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerOwners": [
+      {
+        "organization": "Duke Energy Corporation",
+        "stake": "Majority from 2015-02-09; 100% from 2017-12-06 until exit",
+        "announcementDate": "2015-02-09",
+        "entryDate": "2015-02-09",
+        "entryYear": 2015,
+        "exitDate": "2023-10-04",
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "duplicateOwnerAction": "SUPPRESS_ADD_OWNER. Map census holding 012-arclight-capital:holding:012:rec-solar to the existing single ArcLight Capital Partners ownership period; do not append another ArcLight row."
+  },
+  "operatingResolution": {
+    "sector": "Power & Energy Transition",
+    "subsector": "Distributed Power & Energy Resources",
+    "region": "North America",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "REC Power, formerly REC Solar, is a nationwide independent power producer that develops and acquires, finances, owns, operates and services distributed power systems for commercial, industrial, institutional, public-sector, small-utility, data-center and community-solar customers.",
+    "companyStatus": "Active",
+    "yearFounded": 1997,
+    "services": [
+      "Distributed-power project development and acquisition",
+      "Project financing and long-term power contracting",
+      "Long-term ownership and operation",
+      "Operations, maintenance and asset management",
+      "Solar, battery-storage, fuel-cell, microgrid and genset solutions",
+      "Repowering and optimization of operating assets"
+    ],
+    "customersAndEndMarkets": [
+      "Commercial and industrial",
+      "Small utilities",
+      "Data centers",
+      "Community solar",
+      "Municipal and other public-sector entities",
+      "Educational institutions",
+      "Retail, manufacturing, agriculture, technology and nonprofit organizations"
+    ],
+    "footprint": "United States nationwide: more than 700 projects deployed across 29 states; the operating portfolio exceeded 410 MW across 25 states after the 2026-07-28 acquisition.",
+    "disclosedScale": "More than 700 projects deployed. The latest dated company release states that the operating portfolio exceeded 410 MW across 25 states on 2026-07-28; this supersedes the lower 350+ MW figure still shown on the undated Our Story page for current-capacity purposes."
+  },
+  "acquisitionExitCheck": {
+    "dukeOwnershipHistory": "Duke Energy announced that it acquired a majority interest in REC Solar on 2015-02-09, acquired full ownership on 2017-12-06, and ceased to be an owner when the ArcLight transaction closed on 2023-10-04. Duke is a former corporate owner only and must not be mapped to an infrastructure-fund strategy or retained as a current owner.",
+    "arcLightAnnouncement": "On 2023-07-05, Duke Energy announced a definitive agreement to sell its commercial distributed-generation business to an affiliate of ArcLight Capital Partners, LLC for $364 million of enterprise value, inclusive of non-controlling tax-equity interests. The sold business included REC Solar operating assets, development pipeline and O&M portfolio, plus distributed fuel-cell projects managed by Bloom Energy; employees were to transition with the business.",
+    "arcLightClosing": "On 2023-10-04, Duke Energy announced completion of the sale to an investment fund managed by ArcLight Capital Partners. That legal closing is the supported ArcLight entry date. The sources establish transfer of the broader commercial distributed-generation business and continuation of REC Solar as the operating platform, but do not disclose a platform-level percentage stake or name the contractual acquisition SPV.",
+    "subsequentExitSearch": "Targeted searches through 2026-08-15 for REC Solar or REC Power sales, exits, divestitures, mergers, dissolutions, restructurings, successor names and signed pending transactions found no PortCo-level exit or pending ownership transfer. ArcLight's current-investments table still lists REC Solar as Current, the 2026-06-30 rebrand release calls REC Power an ArcLight portfolio company, and the 2026-07-28 company release says REC Power is owned by ArcLight Capital Partners. DigitalBridge's 2026-05-27 signed agreement to acquire ArcLight itself remained contingent on the pending SoftBank/DigitalBridge transaction and other approvals; it is a manager-level transaction, not a disclosed transfer of the REC Power holding, and therefore does not create a pending PortCo owner row."
+  },
+  "milestones": [
+    {
+      "date": "1997",
+      "event": "Judy Staley and Fred Sisson co-founded REC (Renewable Energy Concepts) Solar in California.",
+      "sourceUrl": "https://recpower.com/about-rec-power/"
+    },
+    {
+      "date": "2014-02-04",
+      "event": "Sunrun acquired REC Solar's residential division; the commercial business continued independently under the legal name REC Solar Commercial Corp., establishing the boundary of the later Duke/ArcLight platform.",
+      "sourceUrl": "https://investors.sunrun.com/news-events/press-releases/detail/145/sunrun-acquires-rec-solars-residential-division-aee-solar"
+    },
+    {
+      "date": "2015-02-09",
+      "event": "Duke Energy acquired a majority interest in REC Solar.",
+      "sourceUrl": "https://news.duke-energy.com/releases/duke-energy-and-rec-solar-team-to-make-distributed-solar-more-affordable-and-accessible-to-commercial-customers"
+    },
+    {
+      "date": "2017-12-06",
+      "event": "Duke Energy acquired full ownership of REC Solar.",
+      "sourceUrl": "https://investors.duke-energy.com/news/news-details/2017/Duke-Energy-assumes-full-ownership-of-California-based-REC-Solar-12-06-2017/default.aspx"
+    },
+    {
+      "date": "2023-07-05",
+      "event": "Duke Energy announced the definitive sale agreement for its commercial distributed-generation business, including REC Solar, to an ArcLight affiliate.",
+      "sourceUrl": "https://news.duke-energy.com/releases/duke-energy-to-sell-commercial-distributed-generation-business-to-arclight-for-364-million"
+    },
+    {
+      "date": "2023-10-04",
+      "event": "Duke Energy completed the sale to an investment fund managed by ArcLight Capital Partners; this is the ArcLight entry date.",
+      "sourceUrl": "https://investors.duke-energy.com/news/news-details/2023/Duke-Energy-completes-sale-of-commercial-distributed-generation-portfolio-including-REC-Solar-to-ArcLight/default.aspx"
+    },
+    {
+      "date": "2026-06-30",
+      "event": "REC Solar rebranded as REC Power, explicitly stating that the name changed while the company and customer commitment continued; the release described 700+ deployed projects and continued ArcLight backing.",
+      "sourceUrl": "https://recpower.com/about/news/rec-solar-rebrands-as-rec-power-better-reflecting-its-ownership-of-distributed-power-resources/"
+    },
+    {
+      "date": "2026-07-28",
+      "event": "REC Power completed the acquisition of fifteen operating distributed-generation solar projects totaling 68 MW, taking its operating portfolio above 410 MW across 25 states; the release directly stated that REC Power is owned by ArcLight Capital Partners.",
+      "sourceUrl": "https://recpower.com/about/news/adapture-renewables-and-rec-power-announce-completion-of-transaction-for-68-mw-operating-dg-solar-portfolio/"
+    }
+  ],
+  "evidence": [
+    {
+      "label": "Duke Energy ArcLight closing release",
+      "url": "https://investors.duke-energy.com/news/news-details/2023/Duke-Energy-completes-sale-of-commercial-distributed-generation-portfolio-including-REC-Solar-to-ArcLight/default.aspx",
+      "purpose": "Lead reopened. Directly supports the 2023-10-04 legal closing, sale to an investment fund managed by ArcLight Capital Partners, the included REC Solar assets, pipeline, O&M and fuel-cell projects, employee transition, and standalone-platform intent.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "ArcLight current investments",
+      "url": "https://arclight.com/investments/",
+      "purpose": "Lead reopened. The portfolio table lists REC Solar as Renewable and Current, directly supporting active ArcLight status. The separate REC Solar modal contains placeholder text and a conflicting 2021 date and is not relied upon.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "REC Solar legacy homepage",
+      "url": "https://recsolar.com/",
+      "purpose": "Lead reopened. Redirects to the REC Power website and supports the successor website relationship; it does not support a separate surviving REC Solar platform.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "REDIRECTED",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "REC Solar legacy Why REC Solar page",
+      "url": "https://recsolar.com/why-rec-solar/",
+      "purpose": "Lead reopened. Redirects to the REC Power homepage; it supports the website and name transition only and no longer independently supports page-specific historical claims.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "REDIRECTED",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "REC Solar legacy company-history article",
+      "url": "https://recsolar.com/resources/blog/powering-possibilities-the-evolution-of-rec-solar/",
+      "purpose": "Lead reopened. Redirects to the REC Power homepage and therefore does not directly support an exact 2025 date for the 700-project and 29-state milestone.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "REDIRECTED",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "REC Power rebrand announcement",
+      "url": "https://recpower.com/about/news/rec-solar-rebrands-as-rec-power-better-reflecting-its-ownership-of-distributed-power-resources/",
+      "purpose": "Directly supports the 2026-06-30 REC Solar-to-REC Power rebrand, same-company continuity, current ArcLight portfolio status, broadened distributed-power technologies, nationwide U.S. scope, 700+ projects and the recpower.com website.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "REC Power Our Story",
+      "url": "https://recpower.com/about-rec-power/",
+      "purpose": "Supports the 1997 founding, Renewable Energy Concepts name, founders, nationwide expansion, 2023 investment from an ArcLight-managed fund, current REC Power identity and distributed-power platform boundary.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "REC Power July 2026 acquisition and current-owner release",
+      "url": "https://recpower.com/about/news/adapture-renewables-and-rec-power-announce-completion-of-transaction-for-68-mw-operating-dg-solar-portfolio/",
+      "purpose": "Direct current evidence that REC Power is owned by ArcLight Capital Partners as of 2026-07-28, and support for current IPP identity, technologies, U.S. scope and operating scale above 410 MW across 25 states.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "ArcLight REC Solar investment showcase",
+      "url": "https://arclight.com/",
+      "purpose": "Supports REC Solar as a leading distributed-energy platform founded in 1997, with 700+ projects across 29 states and customer focus spanning small utilities, C&I, data centers and community solar.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "ArcLight portfolio services and Fund VII attribution",
+      "url": "https://arclight.com/portfolio-services/",
+      "purpose": "Directly calls the Duke portfolio acquisition part of ArcLight Fund VII's REC Solar investment and distinguishes the REC Solar investment from more than 160 underlying projects.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "2023 FERC Form 556 ownership disclosure",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF0F6EC8B-0000-C458-8879-2FA65887646F%7D",
+      "purpose": "Regulatory evidence that AL REC Holdings, LLC was wholly owned by ArcLight Energy Partners Fund VII, L.P. and that ArcLight Capital Partners, LLC is expressly abbreviated as ArcLight Capital and serves as the fund's investment adviser. The form concerns a downstream project chain and is not used to infer the platform's contractual acquisition SPV or stake.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "2025 FERC Form 556 current project-chain disclosure",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B0063DE95-0000-CE5F-9E03-CF84D060B9A7%7D",
+      "purpose": "Corroborates a Fund VII renewables AIV and ArcLight Capital Partners adviser relationship in a downstream REC project ownership chain. It also documents project-level sale-leaseback financing, which is not a PortCo exit and does not establish the platform-level acquisition vehicle or percentage stake.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "Duke Energy ArcLight sale announcement",
+      "url": "https://news.duke-energy.com/releases/duke-energy-to-sell-commercial-distributed-generation-business-to-arclight-for-364-million",
+      "purpose": "Supports the 2023-07-05 definitive agreement, ArcLight affiliate description, $364 million enterprise value, portfolio components and employee transition; it does not name the affiliate or disclose ArcLight's percentage stake.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Duke Energy majority acquisition",
+      "url": "https://news.duke-energy.com/releases/duke-energy-and-rec-solar-team-to-make-distributed-solar-more-affordable-and-accessible-to-commercial-customers",
+      "purpose": "Supports Duke's 2015-02-09 majority acquisition, San Luis Obispo headquarters, nationwide commercial focus and stated customer sectors.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Duke Energy full-ownership acquisition",
+      "url": "https://investors.duke-energy.com/news/news-details/2017/Duke-Energy-assumes-full-ownership-of-California-based-REC-Solar-12-06-2017/default.aspx",
+      "purpose": "Supports Duke's 2017-12-06 acquisition of full ownership and confirms the earlier February 2015 majority investment.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Sunrun acquisition of REC Solar residential division",
+      "url": "https://investors.sunrun.com/news-events/press-releases/detail/145/sunrun-acquires-rec-solars-residential-division-aee-solar",
+      "purpose": "Supports the 2014 sale of REC Solar's residential division and continuation of the commercial platform under REC Solar Commercial Corp., preventing the former residential business from being conflated with the ArcLight platform.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "REC Power financing and acquisition model",
+      "url": "https://recpower.com/financing/",
+      "purpose": "Supports REC Power's project financing, acquisition, long-term ownership, operation, asset-management, repowering and optimization services.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "REC Power current contact address",
+      "url": "https://www.iubenda.com/privacy-policy/44376993",
+      "purpose": "The current REC Power site-linked privacy policy, updated 2026-06-30, lists REC SOLAR at 641 Higuera St., Suite 300, San Luis Obispo, California, supporting the current city and state location. It is treated as a contact and data-controller address rather than proof of a registered office.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "North Carolina Utilities Commission registry",
+      "url": "https://www.ncuc.gov/Industries/elecgen.aspx",
+      "purpose": "Current regulatory registry lists REC Solar Commercial Corporation, supporting continued use of that legal entity name for certain registrations. The registry warns that listed addresses may not be current.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "DigitalBridge agreement to acquire ArcLight",
+      "url": "https://www.businesswire.com/news/home/20260527979091/en/DigitalBridge-and-ArcLight-Announce-Strategic-Combination-to-Form-a-Leading-Alternative-Asset-Manager-at-the-Convergence-of-Power-AI-and-Digital-Infrastructure",
+      "purpose": "Documents the 2026-05-27 signed manager-level transaction and its conditions, including the pending SoftBank and DigitalBridge transaction. It does not disclose a sale or pending transfer of REC Power or Fund VII's portfolio interest.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "DigitalBridge second-quarter 2026 status",
+      "url": "https://www.businesswire.com/news/home/20260804526427/en/DigitalBridge-Reports-Second-Quarter-2026-Financial-Results",
+      "purpose": "Corroborates that the SoftBank and DigitalBridge transaction remained proposed and pending as of 2026-08-04, so the contingent ArcLight acquisition was not treated as a completed manager change.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "REC Group official profile",
+      "url": "https://www.recgroup.com/en-us/about-rec",
+      "purpose": "Distinguishes the unrelated Norway and Singapore-based solar-panel manufacturer REC Group and REC Solar Holdings AS from REC Power.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "REC Silicon official profile",
+      "url": "https://recsilicon.com/about-us/",
+      "purpose": "Distinguishes the unrelated Norway-headquartered, Oslo-listed silicon and silane materials producer REC Silicon ASA.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "beforeAfterChanges": [
+    {
+      "field": "queueAction",
+      "before": "ADD_OWNER",
+      "after": "SUPPRESS_ADD_OWNER",
+      "reason": "The requested ArcLight Capital holding maps to the existing ArcLight Capital Partners ownership period; the names are manager-label variants, not different owners."
+    },
+    {
+      "field": "name",
+      "before": "REC Solar",
+      "after": "REC Power",
+      "reason": "The same company formally rebranded on 2026-06-30. Preserve REC Solar as an alias and historical transaction name."
+    },
+    {
+      "field": "canonicalKey",
+      "before": "rec-solar|united-states",
+      "after": "rec-power|united-states",
+      "reason": "Align the canonical key to the current public name while preserving rec-solar|united-states and the evaluated seed rec solar|United States as aliases to the same production company ID."
+    },
+    {
+      "field": "officialWebsite",
+      "before": null,
+      "after": "https://recpower.com/",
+      "reason": "The former recsolar.com URLs redirect to the current REC Power site."
+    },
+    {
+      "field": "headquarters",
+      "before": "United States only",
+      "after": "San Luis Obispo, California, United States",
+      "reason": "Duke's ownership announcement identifies REC Solar as based in San Luis Obispo, and the current site-linked privacy policy retains a San Luis Obispo contact address."
+    },
+    {
+      "field": "subsectorAndDescription",
+      "before": "Distributed Solar & Storage; develops, installs, owns and operates solar, storage, fuel-cell and microgrid systems",
+      "after": "Distributed Power & Energy Resources; a nationwide IPP that develops and acquires, finances, owns, operates and services solar, storage, fuel-cell, microgrid and genset assets",
+      "reason": "The 2026 rebrand expressly reflects the platform's broader multi-technology distributed-power scope."
+    },
+    {
+      "field": "fundAndVehicle",
+      "before": {
+        "fund": null,
+        "vehicle": "ArcLight Energy Partners Fund VII"
+      },
+      "after": {
+        "fund": "ArcLight Energy Partners Fund VII, L.P.",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED"
+      },
+      "reason": "ArcLight directly describes REC Solar as a Fund VII investment, and a 2023 FERC filing gives the formal fund name. The Duke transaction pages name only an ArcLight affiliate or investment fund; downstream FERC holding and project entities do not directly identify the contractual platform acquisition SPV."
+    },
+    {
+      "field": "ArcLightOwnershipDates",
+      "before": {
+        "entryYear": 2023
+      },
+      "after": {
+        "announcementDate": "2023-07-05",
+        "entryDate": "2023-10-04",
+        "entryYear": 2023
+      },
+      "reason": "Duke's direct announcement and closing releases distinguish signing from legal completion."
+    },
+    {
+      "field": "scaleMilestone",
+      "before": "2025 — REC Solar stated that it had delivered more than 700 projects across 29 states",
+      "after": "Remove the unsupported 2025 date. Retain 700+ projects and 29 states as current undated or 2026-supported scale, and add the dated 2026-07-28 operating scale of more than 410 MW across 25 states.",
+      "reason": "The legacy history URL now redirects and does not support an exact 2025 milestone date; current ArcLight and REC Power pages support the figures without that date."
+    }
+  ],
+  "excludedOrDuplicateCandidates": [
+    {
+      "candidate": "REC Power",
+      "decision": "SAME_CANONICAL_COMPANY",
+      "reason": "Successor public name of REC Solar effective 2026-06-30; update in place rather than create a second PortCo."
+    },
+    {
+      "candidate": "Duke Energy commercial distributed-generation portfolio",
+      "decision": "INCLUDED_WITHIN_REC_POWER_BOUNDARY",
+      "reason": "The assets, pipeline, O&M portfolio, fuel-cell projects and personnel transferred in the 2023 sale form the asset base of the REC Solar and REC Power operating platform, not a separately evidenced second manager-level company."
+    },
+    {
+      "candidate": "REC Solar residential division acquired by Sunrun",
+      "decision": "OUTSIDE_PLATFORM_BOUNDARY",
+      "reason": "The residential division was sold in 2014; the commercial organization continued separately and became the Duke and ArcLight platform."
+    },
+    {
+      "candidate": "REC Group; Renewable Energy Corporation; REC Solar Holdings AS",
+      "decision": "UNRELATED",
+      "reason": "These names refer to the Norway and Singapore-based solar-panel manufacturer, not the U.S. distributed-power platform."
+    },
+    {
+      "candidate": "REC Silicon ASA",
+      "decision": "UNRELATED",
+      "reason": "Separate silicon and silane materials producer headquartered in Norway and listed in Oslo."
+    },
+    {
+      "candidate": "AL REC Holdings, LLC; AL Solar Parent, LLC; AL Solar Acquirer, LLC; ArcLight Fund VII Renewables AIV, L.P.; REC-branded project and asset-holding LLCs",
+      "decision": "DO_NOT_CREATE_PORTCO_OR_PLATFORM_VEHICLE_FROM_PROJECT_FILINGS",
+      "reason": "Regulatory filings disclose these entities in downstream project ownership chains. They are not separate manager-level operating companies, and the reviewed sources do not establish any one of them as the contractual buyer of the REC Solar operating company."
+    },
+    {
+      "candidate": "Individual solar, storage, microgrid, fuel-cell and genset projects",
+      "decision": "DOWNSTREAM_ASSETS",
+      "reason": "Assets or project subsidiaries beneath REC Power; do not create separate PortCos."
+    }
+  ],
+  "unresolvedQuestions": [],
+  "recommendedListAction": "UPDATE_EXISTING_COMPANY_IN_PLACE_AND_SUPPRESS_ADD_OWNER. Retain production company ID cmrxpj6jr00jgivheinookosn; rename the canonical record to REC Power; update the canonical key to rec-power|united-states while preserving REC Solar and the prior keys as aliases; add the current website and San Luis Obispo headquarters; broaden the subsector and description; retain exactly one active ArcLight Capital Partners ownership period; record ArcLight Energy Partners Fund VII, L.P. in the fund field; set vehicle and stake to NOT_PUBLICLY_DISCLOSED; add the exact 2023 signing and closing dates; retain Duke only as a realized former corporate owner; remove the unsupported 2025 milestone date; and create no separate PortCo for the Duke asset portfolio, project entities or REC Power successor name."
+}
+

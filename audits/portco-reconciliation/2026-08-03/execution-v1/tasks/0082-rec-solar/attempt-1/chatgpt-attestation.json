@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CHATGPT_WEB_EXECUTION_ATTESTATION",
+  "taskId": "ledger:0082:rec-solar:f4e1cc1f",
+  "taskIndex": 82,
+  "requestedCompany": "REC Solar",
+  "conversationUrl": "https://chatgpt.com/c/6a8008b5-dc7c-83ea-a7a2-dd564aa0d598",
+  "model": "GPT-5.6 Sol",
+  "mode": "Pro",
+  "accountPlan": "Pro",
+  "uiVerified": true,
+  "attestationMethod": "DOM_SEMANTIC_SNAPSHOT",
+  "uiEvidence": [
+    "Model GPT-5.6 Sol",
+    "Effort Pro",
+    "Pro, 5 of 5."
+  ],
+  "attestationScreenshot": null,
+  "screenshotCapture": {
+    "status": "NOT_REQUESTED",
+    "reason": "The visible model, execution mode and account plan were captured in the semantic DOM before prompt submission."
+  },
+  "submittedAt": "2026-08-15T06:35:33.458Z",
+  "submittedAtPrecision": "MILLISECOND_FROM_BROWSER_ORCHESTRATION_LOG",
+  "initialResponseCompletedAt": "2026-08-15T07:01:40.896Z",
+  "repairSubmittedAt": "2026-08-15T07:02:39.841Z",
+  "repairCompletedAt": "2026-08-15T07:06:16.984Z",
+  "promptSha256": "3680b8f7b5659c97d7e04198b3bd162a0f6b1b5a75b54d151214aefa60429ba7",
+  "repairPromptSha256": "2228429459f33a8c9e186a812476604c1f2e569376960577575db490bcb72a9e",
+  "initialResponseJsonSha256": "df7b5f109c6dee4ce8a8430f1709a68550352649b6f1c60e6fc933c2d4948c72",
+  "initialRenderedTurnCaptureSha256": "ab01a8dec61b98e2e55666082687ca4bc40945ba8712f4251406da24e2f4ae91",
+  "initialTranscriptSha256": "16dc0cf01a9cedbcb03f071014cda5da0e224dc5ee82bbfb26f92581c2941c91",
+  "repairResponseJsonSha256": "df7b5f109c6dee4ce8a8430f1709a68550352649b6f1c60e6fc933c2d4948c72",
+  "completeTranscriptSha256": "37cff9e41ae44b734cca0b392e28ecad32e56110687b93e56d5fd3b1704d91c0",
+  "captureMethod": "DOM-scoped reconstruction of ChatGPT's read-only CodeMirror editor by scrolling the visible conversation container and collecting rendered lines with absolute line positions.",
+  "captureNote": "The initially visible CodeMirror DOM window ended after the first current-owner object and appeared truncated. A narrow repair was sent before the editor's full virtualized contents were reconstructed. Complete DOM-scoped reconstruction proved the initial response was valid JSON; the repair returned a byte-for-byte identical JSON object. One repair was used and no second repair was sent.",
+  "repairsUsed": 1
+}
+
