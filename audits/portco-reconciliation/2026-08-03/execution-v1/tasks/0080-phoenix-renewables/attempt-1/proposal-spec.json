@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-08-15T04:30:30.000Z",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Correct the existing Phoenix Renewables record and supersede the census's queued ADD_OWNER because ArcLight Capital is the shortened census label for the existing ArcLight Capital Partners organization. ArcLight's current portfolio-services page identifies Phoenix as a Fund VIII operating-renewables portfolio managed through SkyVest, and ArcLight's live investments page marks Phoenix Current. No second manager or ownership period is warranted. No direct source supports the existing 2024 ownership-entry year or a Phoenix headquarters, so both become null. Correct the historical wording so ArcLight's July 2024 SkyVest launch is not presented as a Phoenix acquisition or as a release that itself named Phoenix. ArcLight's 2025 ESG report supports Phoenix's Fund VIII attribution, establishment under SkyVest and 467 MW reported scale. No Phoenix-level sale, signed pending exit, dissolution, successor or rename was identified through August 14, 2026; a July 2026 FERC filing concerns an asset-level add-on beneath the portfolio and does not alter manager-level ownership.",
+  "evidence": [
+    {
+      "url": "https://arclight.com/portfolio-services/",
+      "purpose": "Current Fund VIII attribution and Phoenix/SkyVest platform boundary",
+      "supports": [
+        "ArcLight identifies Phoenix as an initial Fund VIII portfolio managed through SkyVest",
+        "Phoenix is a portfolio of operating renewable assets and SkyVest provides management and operating services",
+        "Phoenix is the manager-level portfolio rather than one underlying project"
+      ]
+    },
+    {
+      "url": "https://arclight.com/investments/",
+      "purpose": "Current portfolio status and infrastructure-strategy basis",
+      "supports": [
+        "ArcLight's live investments table lists Phoenix Renewables as Current in Renewables"
+      ]
+    },
+    {
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Fund VIII attribution, establishment under SkyVest and reported scale",
+      "supports": [
+        "ArcLight identifies Phoenix Renewable as a Fund VIII Renewables investment",
+        "ArcLight reports establishing Phoenix Renewables under SkyVest Renewables",
+        "ArcLight reports 467 MW for Phoenix",
+        "The report does not establish an exact ArcLight acquisition or closing date"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+      "purpose": "SkyVest management-platform launch and announcement-versus-acquisition distinction",
+      "supports": [
+        "ArcLight launched SkyVest Renewables on July 29, 2024",
+        "SkyVest provides operating and asset-management services for renewable assets",
+        "The release does not name Phoenix or establish a Phoenix acquisition date"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20260714-5195",
+      "purpose": "Current asset-level activity and exit check",
+      "supports": [
+        "Fund VIII-controlled F8 Renewables NWO Wind sought approval for a Northwest Ohio asset-level add-on",
+        "The application concerns assets beneath the portfolio and is not a Phoenix-level ownership exit",
+        "The public application does not establish a signed definitive Phoenix-level ownership transaction"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "description": "Phoenix Renewables is an ArcLight Infrastructure Partners Fund VIII portfolio of operating renewable generation assets managed through ArcLight's SkyVest Renewables portfolio-services platform. ArcLight's current portfolio-services page identifies Phoenix and Thunderbird as the initial Fund VIII operating portfolios managed by SkyVest, while ArcLight's 2025 ESG report reports 467 MW for Phoenix. Phoenix is counted as the manager-level portfolio; SkyVest is the management platform, and individual assets or projects beneath Phoenix are not separate PortCos. ArcLight's live investments page lists Phoenix as Current. Public sources reviewed do not disclose an exact ownership-entry date, stake, website, founding year, headquarters, or a Phoenix-level exit through August 14, 2026.",
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-14T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjrjb01g9ivheyyxrg77r",
+      "set": {
+        "investmentYear": null
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpkm9v02p4ivheorezj3ew",
+      "set": {
+        "date": "2024–early 2025",
+        "event": "ArcLight reported that it had established Phoenix Renewables under SkyVest Renewables as an operating-renewables portfolio with 467 MW.",
+        "category": "OTHER",
+        "sortDate": null,
+        "evidenceUrls": [
+          "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkmaf02p5ivhe9g8eq5os",
+      "set": {
+        "date": "Jul 29, 2024",
+        "event": "ArcLight launched SkyVest Renewables to manage operating renewable assets; ArcLight's current portfolio-services page separately identifies Phoenix as an initial Fund VIII portfolio managed through SkyVest.",
+        "category": "OTHER",
+        "sortDate": "2024-07-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+          "https://arclight.com/portfolio-services/"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "ArcLight — 2025 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Phoenix Renewables Fund VIII attribution, establishment under SkyVest and reported operating-portfolio scale",
+      "isPrimary": false
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CHATGPT_RESEARCH_RESPONSE_VALIDATION",
+  "taskId": "ledger:0080:phoenix-renewables:9685ebc7",
+  "attempt": "REPAIR",
+  "validatedAt": "2026-08-15T04:30:30.000Z",
+  "initialAttempt": {
+    "valid": false,
+    "responseJsonSha256": "40703118d8206c8821c29e3b3115fc28242513762e54f7e1c8690f509e04a8ca",
+    "renderedTurnCaptureSha256": "a508579d7778bb5f2e0909e991ba7d54390157a5b7e8fbecc61c593ee1be2dc3",
+    "errors": [
+      "The turn remained in research and ended without final Markdown or parseable JSON."
+    ]
+  },
+  "renderedTurnCaptureSha256": "f23cb6e8ba7bd56b059284c6cad2041eb96e24f1638b135db617cd58625b74c7",
+  "responseJsonSha256": "01175816847b0d78c20c0ae57c9c2c4ae6c3487a6db04b77aef7502809dcc41e",
+  "valid": true,
+  "errors": [],
+  "captureNote": "The repaired response was rendered inside ChatGPT's virtualized code editor. The structured JSON file is a normalized capture of the visible response fields and decision, not a byte-for-byte editor-buffer export. The rendered output contained the required top-level sections and a concise review.",
+  "repairInitiatedAfterInitialFailure": true,
+  "repairsUsed": 1,
+  "repairDecisionMatchesFinalProposal": true,
+  "acceptedWithCodexCorrections": true,
+  "corrections": [
+    {
+      "modelClaim": "The July 2024 announcement proves the SkyVest management relationship and Fund VIII association.",
+      "disposition": "QUALIFIED",
+      "finalTreatment": "The July 2024 release proves only the SkyVest launch and operating-services initiative. ArcLight's separate current portfolio-services page establishes Phoenix's Fund VIII attribution and management through SkyVest."
+    },
+    {
+      "modelClaim": "ArcLight established Phoenix Renewables under SkyVest during 2024.",
+      "disposition": "DATE_PRECISION_REDUCED",
+      "finalTreatment": "Use 2024–early 2025 for the establishment milestone because ArcLight's ESG-report highlights cover 2024 and into early 2025; do not use that milestone as an ownership-entry date."
+    },
+    {
+      "modelClaim": "The existing list needs only the investmentYear and headquarters corrections.",
+      "disposition": "EVIDENCE_WORDING_CORRECTED",
+      "finalTreatment": "Also correct the two existing milestone descriptions so neither presents the SkyVest launch as a Phoenix acquisition or claims the launch release itself named Phoenix. No additional ownership action is created."
+    }
+  ],
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

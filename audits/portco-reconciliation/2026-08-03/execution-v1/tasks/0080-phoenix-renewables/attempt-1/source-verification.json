@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0080:phoenix-renewables:9685ebc7",
+  "taskIndex": 80,
+  "companyName": "Phoenix Renewables",
+  "asOfDate": "2026-08-14",
+  "retrievedAt": "2026-08-15T04:30:30.000Z",
+  "methodology": "Codex independently reopened each direct manager, company or regulatory source, verified the cited claim in the retrieved content, recorded access behavior, and hashed the retrieved bytes. Relevant ArcLight and FERC PDFs were retrieved from the official publisher and visually checked on the cited pages. Search-result snippets were not treated as evidence.",
+  "sources": [
+    {
+      "evidenceUrl": "https://arclight.com/investments/",
+      "verificationUrl": "https://arclight.com/investments/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/investments/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 153928,
+      "contentSha256": "1b0fd1bb45b31ea90fb2249a65ec654de573bb2c5f760c377fd08317e25f78e5",
+      "databaseSourceMetadata": {
+        "label": "Arclight — Catalyst Old River Hydroelectric",
+        "type": "WEBSITE"
+      },
+      "verifiedClaims": [
+        "ArcLight's live investments table lists Phoenix Renewables in Renewables with Current status."
+      ],
+      "notes": "The existing Source is shared and has a legacy company-specific label. The proposal does not change that globally shared Source metadata."
+    },
+    {
+      "evidenceUrl": "https://arclight.com/portfolio-services/",
+      "verificationUrl": "https://arclight.com/portfolio-services/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/portfolio-services/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 154293,
+      "contentSha256": "ec69adcda533cae72975d3ac9e0c776d4d141e37d064adba41d9d48ba8076c6e",
+      "databaseSourceMetadata": {
+        "label": "Arclight — Alpha Generation (AlphaGen)",
+        "type": "WEBSITE"
+      },
+      "verifiedClaims": [
+        "ArcLight identifies Phoenix Renewables and Thunderbird Renewables as the initial Fund VIII portfolios managed through SkyVest Renewables.",
+        "The page describes Phoenix and Thunderbird as portfolios of operating renewable assets and distinguishes them from SkyVest's management and operating-services role.",
+        "The manager presents Phoenix as a Fund VIII portfolio rather than as an individual project beneath another counted PortCo."
+      ],
+      "isPrimary": true,
+      "notes": "The existing Source is shared and has a legacy company-specific label. The proposal preserves that label and type."
+    },
+    {
+      "evidenceUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "verificationUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 10657395,
+      "contentSha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+      "databaseSourceMetadata": {
+        "label": "ArcLight — 2025 ESG Report",
+        "type": "PRESENTATION"
+      },
+      "verifiedClaims": [
+        "The portfolio appendix identifies Phoenix Renewable as a Renewables investment of Fund VIII.",
+        "The report says ArcLight established Phoenix Renewables and Thunderbird Renewables under SkyVest Renewables and reports 467 MW for Phoenix.",
+        "The report's highlighted period is 2024 and into early 2025, so it does not prove an exact 2024 Phoenix acquisition or closing date."
+      ],
+      "visualInspection": {
+        "pages": [
+          5,
+          19
+        ],
+        "status": "VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+      "verificationUrl": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 216670,
+      "contentSha256": "53e987775311dcfba35f7cf779b61d805a21a5fa34860c4eae61de191b72c96b",
+      "verifiedClaims": [
+        "ArcLight announced the launch of SkyVest Renewables on July 29, 2024.",
+        "SkyVest was established to provide operational, technical, commercial and financial asset-management services for operating renewable-energy assets.",
+        "The release does not name Phoenix Renewables and does not establish an ArcLight acquisition or closing date for Phoenix."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.skyvest.com/",
+      "verificationUrl": "https://www.skyvest.com/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.skyvest.com/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 94162,
+      "contentSha256": "b0e79e71b570d821569ec3a437b42dced306fec15dc4c99d5f021bc2e7e51c0c",
+      "verifiedClaims": [
+        "SkyVest describes itself as an asset-management and operating-services platform for renewable-energy assets.",
+        "SkyVest's role supports treating it as Phoenix's manager rather than as a second legal owner of Phoenix."
+      ]
+    },
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20260714-5195",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/GetFileListFromP8/20260714-5195",
+      "status": "WORKING_HUMAN_PAGE_AND_OFFICIAL_API_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20260714-5195",
+      "mediaType": "application/pdf",
+      "metadataContentLengthBytes": 4515,
+      "metadataContentSha256": "9c81fd8bca0fbfff101b0c73e1a457d06b5e3f780de41163a41f0eb20c83ff74",
+      "componentContentSha256": "e337536b763e1c5760546102acd90617fca79ee01b1568a9238694db88f86c10",
+      "fileId": "2943DB01-97C1-C678-B60C-9F6CBFE00000",
+      "verifiedClaims": [
+        "F8 Renewables NWO Wind, LLC is indirectly owned by Fund VIII vehicles advised, managed or controlled by ArcLight Capital Partners, LLC.",
+        "The July 2026 application concerns an asset-level acquisition of the remaining Northwest Ohio Wind interest and Northwest Ohio Solar beneath the portfolio, not a Phoenix-level ownership exit.",
+        "The public application refers to a confidential term sheet for a purchase-and-sale agreement, not a publicly established signed definitive Phoenix-level ownership transaction."
+      ],
+      "visualInspection": {
+        "pages": [
+          2
+        ],
+        "status": "VERIFIED"
+      },
+      "notes": "Used only for the acquisition-and-exit check. It is not added as a Phoenix manager-level pending ownership transaction or company citation."
+    },
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20250310-5117",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20250310-5117",
+      "status": "WORKING_OFFICIAL_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20250310-5117",
+      "mediaType": "application/pdf",
+      "componentContentSha256": "39737d16ac8f1c792f59d38da60ed71ffda778ffaadd405459dadb560ebff90e",
+      "fileId": "400A1E06-8072-CDEF-AD11-958113800000",
+      "verifiedClaims": [
+        "The prior Northwest Ohio transaction was consummated on March 3, 2025.",
+        "The filing is project-level evidence and does not establish Phoenix's original ArcLight ownership-entry date."
+      ],
+      "notes": "Used only to distinguish asset-level transaction activity from manager-level Phoenix ownership."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    {
+      "claim": "The July 2024 SkyVest launch establishes Phoenix's 2024 ArcLight investment year.",
+      "disposition": "REJECTED_AS_UNSUPPORTED",
+      "reason": "The launch release does not name Phoenix and does not disclose a Phoenix acquisition or closing. The structured ownership period therefore uses a null investment year."
+    },
+    {
+      "claim": "United States is Phoenix's headquarters.",
+      "disposition": "REJECTED_AS_UNSUPPORTED",
+      "reason": "The sources support U.S. country and operating geography but disclose no Phoenix headquarters."
+    },
+    {
+      "claim": "ArcLight's July 2024 release disclosed Phoenix as an initial Fund VIII portfolio.",
+      "disposition": "CORRECTED",
+      "reason": "The release supports the SkyVest launch; ArcLight's separate current portfolio-services page supplies the Phoenix and Fund VIII attribution."
+    }
+  ],
+  "exitSearchConclusion": "No Phoenix-level sale, completed exit, signed pending ownership transfer, dissolution, superseding rename or successor platform was identified through 2026-08-14. ArcLight's live investments page continues to mark Phoenix Current. The July 2026 FERC matter is a project-level add-on beneath the portfolio and not an ownership exit."
+}

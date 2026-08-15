@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T03:52:39.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-15T04:34:27.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0080:phoenix-renewables:9685ebc7",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -11610,20 +11610,32 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "fa7bf5d1286cd9325afa191f75f2246ee059c3b1f9af538176a5c6a99ce77f8d",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-15T03:58:46.000Z",
+      "updatedAt": "2026-08-15T04:34:27.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0080-phoenix-renewables/attempt-1/locked-task-snapshot.json",
+          "sha256": "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0080-phoenix-renewables-v1/proposal.json",
+          "sha256": "e91133843404da469e6b606733125d58dc877c181146871f136e59d8ca28b4c3"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0080-phoenix-renewables-v1.json",
+          "sha256": "b8753f1761f48cfee00733213da5ad0f8dca73ab67cf05aaba7c06184e6eeae8"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0080-phoenix-renewables/attempt-1/research-decision.json",
+          "sha256": "6218cf49d2aaf984caabcfe5c2c5a28088cf026ab2addc578d8bf214dae478c8"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -11637,6 +11649,52 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-15T03:58:46.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-15T04:34:10.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7",
+          "evidenceSha256": [
+            "6218cf49d2aaf984caabcfe5c2c5a28088cf026ab2addc578d8bf214dae478c8",
+            "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7",
+            "e91133843404da469e6b606733125d58dc877c181146871f136e59d8ca28b4c3"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-15T04:34:11.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-15T04:34:27.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7",
+          "evidenceSha256": [
+            "b8753f1761f48cfee00733213da5ad0f8dca73ab67cf05aaba7c06184e6eeae8"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -27509,5 +27567,5 @@
       ]
     }
   ],
-  "manifestSha256": "2a045159a363eb870df5adc08fa98e2f1102d997b4b7e185bb6aeda5f63c087c"
+  "manifestSha256": "9715d93dab223cbb7b55972b38031310d3165d567c49f63f03d60a0aead03c79"
 }
