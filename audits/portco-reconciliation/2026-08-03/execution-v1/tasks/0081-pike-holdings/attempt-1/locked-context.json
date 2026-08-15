@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0081:pike-holdings:0d434dde",
+  "taskIndex": 81,
+  "companyName": "Pike Holdings",
+  "generatedAt": "2026-08-15T05:48:07.804Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 81,
+    "taskId": "ledger:0081:pike-holdings:0d434dde",
+    "canonicalKey": "pike-holdings|united-states",
+    "companyName": "Pike Holdings",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:013:pike-holdings"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [
+      "pike-corporation|united-states"
+    ],
+    "rationale": "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:013:pike-holdings: Entity structure and ownership specifics require further confirmation. Only heuristic repository candidate(s) exist: pike-corporation|united-states; no automatic merge was made. The accepted census result explicitly requires identity or duplicate review. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:013:pike-holdings: Entity structure and ownership specifics require further confirmation.",
+      "Only heuristic repository candidate(s) exist: pike-corporation|united-states; no automatic merge was made.",
+      "The accepted census result explicitly requires identity or duplicate review."
+    ]
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pike-holdings|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3oz600317h4s25n36p6m",
+        "fundName": "ArcLight Energy Partners Fund VI, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:21.234Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0081:pike-holdings:0d434dde",
+    "taskIndex": 81,
+    "canonicalKey": "pike-holdings|united-states",
+    "capturedAt": "2026-08-15T05:48:07.804Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8a027c159766374a68b766bf2ab5b9e3eababb4713acfc028d5ef9b42918af64",
+    "productionSnapshotSha256": "d0de28e74eaf12a66008c5a42d88de7cf308a660dcd43f2906463c645a9c8847",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "d0d68b93c438be0d786095a78018c6604a3d61d044e4a590decfc85893e38117",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "790f9ece04def2801507c12058cdeb07f445367b5a4b430fbd1ddf016bec7962",
+    "stateSha256": "c24552a1c10e4c5080108773372ebb3fd5d6e2f7a4a8a6d613a892a05d06b1ea",
+    "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7"
+  },
+  "contextSha256": "66737886f2a806360ea408359b4c762d7d698be06094dfebb5331df25739c4b0"
+}

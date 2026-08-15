@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CHATGPT_RESEARCH_RESPONSE_VALIDATION",
+  "taskId": "ledger:0081:pike-holdings:0d434dde",
+  "attempt": "REPAIR",
+  "validatedAt": "2026-08-15T05:45:14.000Z",
+  "initialAttempt": {
+    "valid": false,
+    "responseJsonSha256": "914e7fd918dddafaa7c442b3403f4464713eeba8df0e2ac553e3ef0de5c5665c",
+    "errors": [
+      "The initial turn continued research without delivering the required final JSON and Markdown report before it was stopped."
+    ]
+  },
+  "responseJsonSha256": "ee7251b9a9bda446eda3752b6dd0d2276854d15788dbe944f07a8088baea773b",
+  "finalResponseSha256": "4ab938279fabfcf89033f53f2eacbac1b8f1d01c712f3fa993754fb9d86cccd4",
+  "valid": true,
+  "errors": [],
+  "captureNote": "The repaired response was copied from ChatGPT's code-block copy control and parsed as strict JSON. The concise review was independently captured from the rendered semantic DOM and appended to chatgpt-response.txt.",
+  "repairInitiatedAfterInitialFailure": true,
+  "repairsUsed": 1,
+  "repairDecisionMatchesFinalProposal": true,
+  "acceptedWithCodexCorrections": true,
+  "corrections": [
+    {
+      "modelClaim": "Use ArcLight Capital Partners, LLC as the repository manager name.",
+      "disposition": "NORMALIZED_TO_REPOSITORY_IDENTITY",
+      "finalTreatment": "Use the existing canonical organization name ArcLight Capital Partners and Fund VI dependency; do not create a duplicate organization."
+    },
+    {
+      "modelClaim": "Use 2019 as the active ownership row's entry year.",
+      "disposition": "CORRECTED_TO_INITIAL_MANAGER_ENTRY",
+      "finalTreatment": "The ownership period begins in 2016, when ArcLight acquired platform control. Stake text separately states that full 100% platform ownership began with the 2019 take-private."
+    },
+    {
+      "modelClaim": "Use 1995 as year founded.",
+      "disposition": "WITHHELD_AS_STRUCTURED_FIELD",
+      "finalTreatment": "Codex independently verified the current operating profile and footprint but did not recover a direct page statement that establishes a legal founding year, so yearFounded remains null."
+    },
+    {
+      "modelClaim": "Several asset-level sales are material company milestones.",
+      "disposition": "OMITTED_FROM_LIST_READY_CARD",
+      "finalTreatment": "Asset dispositions remain part of the documented exit search but are not added as manager-level ownership milestones in the Phase 1 list proposal."
+    }
+  ],
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

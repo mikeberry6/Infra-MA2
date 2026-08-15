@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_PRE_RESEARCH_SNAPSHOT_REJECTION",
+  "taskId": "ledger:0081:pike-holdings:0d434dde",
+  "rejectedAt": "2026-08-15T05:50:00.000Z",
+  "reason": "The initial snapshot was explicitly targeted to Pike Corporation before direct identity research. The completed research proves that Pike Corporation is unrelated and that the correct canonical create target is TransMontaigne Partners LLC.",
+  "rejectedArtifacts": {
+    "productionSnapshotSha256": "6b4c4e327e2c3bc7bed730734949abd4a7403e7d6eafcef4947df043d842d1a8",
+    "taskSnapshotSha256": "d7e6aafd3bb3f4e950f82e3a48e8993c7c7276105b7dbc23dcd77a57d133e6ef",
+    "contextSha256": "f388ca56acbee86a018a68fe8165740e4219332c2cc692cd6ee05aba349cc55e",
+    "targetCompanyId": "cmrxpjob301b2ivhenp2i7eq1",
+    "targetResolutionMethod": "REVIEWED_SYMMETRIC_CANDIDATE"
+  },
+  "applicationPolicy": "NEVER_LOCK_NEVER_PROPOSE_NEVER_APPLY",
+  "supersedingLockedTaskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
+  "supersedingTargetResolutionMethod": "NO_EXISTING_TARGET",
+  "unrelatedRecordsRemainUnchanged": [
+    "Pike Corporation",
+    "Pike County Light & Power"
+  ]
+}

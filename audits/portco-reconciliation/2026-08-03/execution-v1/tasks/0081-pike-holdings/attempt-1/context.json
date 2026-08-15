@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0081:pike-holdings:0d434dde",
+  "taskIndex": 81,
+  "companyName": "Pike Holdings",
+  "generatedAt": "2026-08-15T05:08:18.548Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 81,
+    "taskId": "ledger:0081:pike-holdings:0d434dde",
+    "canonicalKey": "pike-holdings|united-states",
+    "companyName": "Pike Holdings",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:013:pike-holdings"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [
+      "pike-corporation|united-states"
+    ],
+    "rationale": "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:013:pike-holdings: Entity structure and ownership specifics require further confirmation. Only heuristic repository candidate(s) exist: pike-corporation|united-states; no automatic merge was made. The accepted census result explicitly requires identity or duplicate review. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:013:pike-holdings: Entity structure and ownership specifics require further confirmation.",
+      "Only heuristic repository candidate(s) exist: pike-corporation|united-states; no automatic merge was made.",
+      "The accepted census result explicitly requires identity or duplicate review."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpjob301b2ivhenp2i7eq1",
+    "linkedQueueTaskId": "ledger:0449:pike-corporation:5a43238f"
+  },
+  "resolvedCanonicalKey": "pike-holdings|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjob301b2ivhenp2i7eq1",
+    "name": "Pike Corporation",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Electric and gas utility infrastructure services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pike Corporation provides engineering, construction, and maintenance services for electric and gas utilities and telecommunications customers. Its customer base includes utilities that outsource transmission, distribution, substation, storm response, and related field services. The business operates an asset-light services model supported by labor, equipment, and a nationwide field organization rather than a concession or merchant generation structure. Public disclosures cite about 12,000 employees and more than 400 customers across the United States. TPG Rise Climate announced a majority investment in November 2025, and TPG stated in February 2026 that the acquisition closed during the fourth quarter of 2025 with La Caisse as a significant minority partner.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1945,
+    "headquarters": "North Carolina and multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkawo02aqivhefbfqht5c",
+        "managerName": "TPG",
+        "organizationName": "TPG",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmt2y05bmivhe1r160ofg",
+        "date": "1945",
+        "event": "Pike Corporation was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1945-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmt3i05bnivhe2m6w9o9d",
+        "date": "2005",
+        "event": "Pike completed its initial public offering.",
+        "category": "IPO",
+        "sortDate": "2005-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmt4205boivhe9sc33lsk",
+        "date": "Dec 2020",
+        "event": "Lindsay Goldberg affiliates acquired a majority interest in Pike.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmt4n05bpivhemt9i5wy0",
+        "date": "Nov 2025",
+        "event": "TPG Rise Climate, La Caisse, and management announced an acquisition of Pike.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmt5705bqivheaieal3fa",
+        "date": "Dec 2025",
+        "event": "Lindsay Goldberg exited its remaining stake in Pike.",
+        "category": "DIVESTITURE",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsz8t0deyivhew90wpfh8",
+        "label": "Pike — Pike Corporation",
+        "url": "https://www.pike.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pike company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsz9y0df0ivhen1ixs4ct",
+        "label": "Pike — Pike Corporation",
+        "url": "https://www.pike.com/About/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pike company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpszaz0df2ivhechf4u2ml",
+        "label": "Announcement date source — TPG — Pike Corporation",
+        "url": "https://www.tpg.com/news-and-insights/pike-corporation-to-accelerate-growth-through-partnership-with-tpg-la-caisse-and-management",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "TPG transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpszc70df4ivhe180l6zmi",
+        "label": "Q4 close source — TPG — Pike Corporation",
+        "url": "https://shareholders.tpg.com/static-files/f52ae0ce-34e2-428b-83c8-5d450796ea45",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Q4 close source — TPG — Pike Corporation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Pike Corporation",
+    "investmentFirm": "TPG",
+    "sector": "Utilities",
+    "subsector": "Electric and gas utility infrastructure services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Pike Corporation provides engineering, construction, and maintenance services for electric and gas utilities and telecommunications customers. Its customer base includes utilities that outsource transmission, distribution, substation, storm response, and related field services. The business operates an asset-light services model supported by labor, equipment, and a nationwide field organization rather than a concession or merchant generation structure. Public disclosures cite about 12,000 employees and more than 400 customers across the United States. TPG Rise Climate announced a majority investment in November 2025, and TPG stated in February 2026 that the acquisition closed during the fourth quarter of 2025 with La Caisse as a significant minority partner.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1945,
+    "investmentYear": 2025,
+    "headquarters": "North Carolina and multi-state United States",
+    "milestones": [
+      {
+        "date": "1945",
+        "event": "Pike Corporation was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2005",
+        "event": "Pike completed its initial public offering.",
+        "category": "IPO"
+      },
+      {
+        "date": "Dec 2020",
+        "event": "Lindsay Goldberg affiliates acquired a majority interest in Pike.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 2025",
+        "event": "TPG Rise Climate, La Caisse, and management announced an acquisition of Pike.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 2025",
+        "event": "Lindsay Goldberg exited its remaining stake in Pike.",
+        "category": "Divestiture"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Pike — Pike Corporation",
+        "url": "https://www.pike.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Pike — Pike Corporation",
+        "url": "https://www.pike.com/About/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — TPG — Pike Corporation",
+        "url": "https://www.tpg.com/news-and-insights/pike-corporation-to-accelerate-growth-through-partnership-with-tpg-la-caisse-and-management",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Q4 close source — TPG — Pike Corporation",
+        "url": "https://shareholders.tpg.com/static-files/f52ae0ce-34e2-428b-83c8-5d450796ea45",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "TPG",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiec5003sivhekn2yjy5t",
+        "name": "TPG",
+        "updatedAt": "2026-07-23T16:09:25.781Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0081:pike-holdings:0d434dde",
+    "taskIndex": 81,
+    "canonicalKey": "pike-holdings|united-states",
+    "capturedAt": "2026-08-15T05:08:18.548Z",
+    "databaseRevision": "company-state:7fbe9f08cff943cabb03028aeb7b7a5313d7412e020c53c91cae13afd0e4df34",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8a027c159766374a68b766bf2ab5b9e3eababb4713acfc028d5ef9b42918af64",
+    "productionSnapshotSha256": "6b4c4e327e2c3bc7bed730734949abd4a7403e7d6eafcef4947df043d842d1a8",
+    "targetCompanySnapshotSha256": "7fbe9f08cff943cabb03028aeb7b7a5313d7412e020c53c91cae13afd0e4df34",
+    "seedEntrySha256": "a6669792633a63270729538d763b4573235e786374def63a21048c831bde4b4c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "93ee438f701d8e2da1a26a31c6c745e76f694164920c4a1c445e52d2cdc2115d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5db9ab28fc44a0761fd5fe2f88fa5628505b50b10b55b4ae3897a1eed9382ecf",
+      "citationsSha256": "0a806d73e0ad8ab4a0b9eadfd5ae6f96d9f5edff5d2bce7fa97f3face84c78cc",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "902e6a71f680f2b317922d51a8bdfe88ff0bd379bac62255feb67b1576689ad3",
+    "stateSha256": "d46c49a04ede053551b9a9e214afa88c2bc054a62968180d277c66aede11efd1",
+    "taskSnapshotSha256": "d7e6aafd3bb3f4e950f82e3a48e8993c7c7276105b7dbc23dcd77a57d133e6ef"
+  },
+  "contextSha256": "f388ca56acbee86a018a68fe8165740e4219332c2cc692cd6ee05aba349cc55e"
+}
