@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T04:47:25.718Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0080:phoenix-renewables:9685ebc7",
+  "updatedAt": "2026-08-15T04:54:18.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -11610,11 +11610,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "fa7bf5d1286cd9325afa191f75f2246ee059c3b1f9af538176a5c6a99ce77f8d",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-15T03:58:46.000Z",
-      "updatedAt": "2026-08-15T04:47:25.718Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-15T04:54:18.000Z",
+      "completedAt": "2026-08-15T04:54:18.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7",
@@ -11716,6 +11716,18 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-15T04:47:25.718Z",
+          "reason": null,
+          "taskSnapshotSha256": "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7",
+          "evidenceSha256": [
+            "8831a8bb6a80d150e24a1988e385e7f64d09e860b39f95edbb2eeedf0c76b276"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-15T04:54:18.000Z",
           "reason": null,
           "taskSnapshotSha256": "9b6e266e8e82a2f9220d041137dbe9c61fa2f8c50b9cfb13f329159278b93cf7",
           "evidenceSha256": [
@@ -27594,5 +27606,5 @@
       ]
     }
   ],
-  "manifestSha256": "d2afb53771c83b92da31a527757b48bd2b068842a13770b0a2a4219f282d0bbc"
+  "manifestSha256": "f1e580f398ca2e8796c7ca56ea17168c1179700c9aa59a288b91acb80cb6a160"
 }
