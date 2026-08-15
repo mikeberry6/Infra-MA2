@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0084:sequitur:dadaff66",
+  "taskIndex": 84,
+  "companyName": "Sequitur",
+  "generatedAt": "2026-08-15T10:02:28.221Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0084-sequitur/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 84,
+    "taskId": "ledger:0084:sequitur:dadaff66",
+    "canonicalKey": "sequitur|united-states",
+    "companyName": "Sequitur",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:015:sequitur"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:015:sequitur: Limited public disclosure on structure and activities. The accepted census result explicitly requires identity or duplicate review. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 012-arclight-capital:holding:015:sequitur: Limited public disclosure on structure and activities.",
+      "The accepted census result explicitly requires identity or duplicate review."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY",
+    "targetCompanyId": "cmrxpj6k800jhivheu0xn4hyt",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "sequitur-renewables|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6k800jhivheu0xn4hyt",
+    "name": "Sequitur Renewables",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Operating Wind Portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Sequitur Renewables is an operating renewable-energy platform built around wind assets and related optimization opportunities. The business serves wholesale power markets through an asset-heavy operating model focused on existing projects rather than early-stage development alone. ArcLight launched the platform in 2022 with the acquisition of a 185 MW wind portfolio in PJM spanning Pennsylvania and West Virginia, and later expanded it with an operating California wind farm in Altamont Pass. The platform is therefore oriented toward ownership, operation, and commercial optimization of renewable assets across multiple markets. ArcLight established Sequitur in 2022 and public sources do not disclose the detailed ownership percentages within the platform.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Pennsylvania, West Virginia & California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrlf01gdivhej0bztveb",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkmfu02pcivherp0kjerg",
+        "date": "2022",
+        "event": "Sequitur Renewables was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmiv02pdivhet5h7mujx",
+        "date": "Aug 1, 2022",
+        "event": "ArcLight announced that Sequitur Renewables entered into an agreement to acquire a 185 MW wind portfolio in PJM.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmjf02peivheeqamwf70",
+        "date": "2023",
+        "event": "The California acquisition expanded Sequitur beyond its original PJM wind portfolio.",
+        "category": "EXPANSION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmjz02pfivheaxxks30y",
+        "date": "May 2023",
+        "event": "Sequitur announced the acquisition of an operating California wind farm in Altamont Pass.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp14b07jyivhelooz4y98",
+        "label": "Sequitur Renewables — Sequitur Renewables",
+        "url": "https://sequiturrenewables.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Sequitur Renewables company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp15707k0ivheykw1faph",
+        "label": "Announcement date source — ArcLight Capital Partners — Sequitur Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-to-acquire-operating-pjm-windfarms-301596749.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp16d07k2ivhe3og7bvon",
+        "label": "PR Newswire — Sequitur Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclights-sequitur-platform-to-acquire-operating-california-wind-farm-301825282.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Sequitur Renewables",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp17f07k4ivhesupf153l",
+        "label": "Sequiturrenewables — Sequitur Renewables",
+        "url": "https://sequiturrenewables.com/category/news/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Sequiturrenewables — Sequitur Renewables",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Sequitur Renewables",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Operating Wind Portfolio",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Sequitur Renewables is an operating renewable-energy platform built around wind assets and related optimization opportunities. The business serves wholesale power markets through an asset-heavy operating model focused on existing projects rather than early-stage development alone. ArcLight launched the platform in 2022 with the acquisition of a 185 MW wind portfolio in PJM spanning Pennsylvania and West Virginia, and later expanded it with an operating California wind farm in Altamont Pass. The platform is therefore oriented toward ownership, operation, and commercial optimization of renewable assets across multiple markets. ArcLight established Sequitur in 2022 and public sources do not disclose the detailed ownership percentages within the platform.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "Pennsylvania, West Virginia & California",
+    "milestones": [
+      {
+        "date": "2022",
+        "event": "Sequitur Renewables was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Aug 1, 2022",
+        "event": "ArcLight announced that Sequitur Renewables entered into an agreement to acquire a 185 MW wind portfolio in PJM.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2023",
+        "event": "The California acquisition expanded Sequitur beyond its original PJM wind portfolio.",
+        "category": "Expansion"
+      },
+      {
+        "date": "May 2023",
+        "event": "Sequitur announced the acquisition of an operating California wind farm in Altamont Pass.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Sequitur Renewables — Sequitur Renewables",
+        "url": "https://sequiturrenewables.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — ArcLight Capital Partners — Sequitur Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-to-acquire-operating-pjm-windfarms-301596749.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — Sequitur Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclights-sequitur-platform-to-acquire-operating-california-wind-farm-301825282.html",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Sequiturrenewables — Sequitur Renewables",
+        "url": "https://sequiturrenewables.com/category/news/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0084:sequitur:dadaff66",
+    "taskIndex": 84,
+    "canonicalKey": "sequitur|united-states",
+    "capturedAt": "2026-08-15T10:02:28.221Z",
+    "databaseRevision": "company-state:a509f3086dad203c77088848cf65e0f60643bb71989ae522c1acc9c0a37d30c5",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "a65f4d8609bc557864623d9c49f10c8c216d274271b1f6f613ead74e58e5f6bb",
+    "productionSnapshotSha256": "aa90c425373ba5d7d2d09d89c6fee80e63742c1856a43987cbec4dadacc4bec8",
+    "targetCompanySnapshotSha256": "a509f3086dad203c77088848cf65e0f60643bb71989ae522c1acc9c0a37d30c5",
+    "seedEntrySha256": "2a1af09c3ece9339298c1a83389d472cd6ff5fd2409a19dc1f65702d945c916d",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d7bfebae68275268e2a724502c2dc5b9316f230a53a34331ad50ca35c330ff70",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "7c7661d5c3a36503340f208841c903f2ac6647055eb2d5869346c60bcfe1153c",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "b61e951547aa1d593506addfe9ca0cf2e03dc3377ce5c46cf13d61a3d1e9d27b",
+    "stateSha256": "0d3fe8bacd2574712adb9c504c77333936bffd6fb327d87f5af428260fe063e1",
+    "taskSnapshotSha256": "b1a7aaf94992299e9accd4145a506849677ebfc6425bad087267d2d16ed315a2"
+  },
+  "contextSha256": "e0f2c7f007aa2863fe39f0f8c466d26ab3f210fd47c8486672afef7b565328c7"
+}

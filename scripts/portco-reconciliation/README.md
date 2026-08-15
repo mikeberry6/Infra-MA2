@@ -81,11 +81,18 @@ npm run portco:reconciliation:control -- snapshot \
 
 If a review task has no direct `productionCompanyIds` binding but research
 resolves it to an existing company, pass `--target-company-id=<company ID>`.
-The override is accepted only when exactly one other immutable queue entry
-binds that ID and the two queue entries identify each other in their
-`candidateCanonicalKeys`. It cannot replace a direct queue target, use a
-one-way candidate link, or choose among ambiguous symmetric links. The selected
-ID and supporting queue task are recorded in the hash-bound task context.
+The normal override is accepted only when exactly one other immutable queue
+entry binds that ID and the two queue entries identify each other in their
+`candidateCanonicalKeys`. Narrow reviewed post-queue identity bindings also
+cover the existing exact repo-only, DBA, and parenthetical-acronym cases. A
+manager-supplied short name can bind an existing company only for a
+`CANONICAL_COMPANY` / `NEEDS_REVIEW` holding task with no repo-only, production,
+seed, or candidate binding; after legal-suffix normalization, the target must
+add exactly one whole descriptor token (`renewable` or `renewables`), match the
+country, and be the sole production match. Every path requires an explicit
+`--target-company-id`; none can replace a direct queue target, use a one-way
+candidate link, or choose among ambiguous matches. The selected ID and
+resolution method are recorded in the hash-bound task context.
 
 Review tasks also capture every reciprocally linked seed-only queue candidate
 that has no production company and exactly one seed key. Each candidate binds

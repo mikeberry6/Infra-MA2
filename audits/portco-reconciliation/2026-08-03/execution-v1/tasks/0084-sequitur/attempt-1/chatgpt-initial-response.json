@@ -1,0 +1,238 @@
+{
+  "asOfDate": "2026-08-15",
+  "requestedCompany": "Sequitur",
+  "requestedManager": "ArcLight Capital",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "ArcLight's current investments page lists Sequitur as a current renewable investment, and ArcLight's company-issued announcements expressly define Sequitur as Sequitur Renewables, LLC. The requested holding therefore maps to the existing Sequitur Renewables record rather than requiring a new company. The existing canonical identity, active status, 2022 investment year, Power & ET / Operating Wind Portfolio classification and U.S. geography remain list-level accurate. The required correction is to add the Sequitur alias, attribute the ownership to ArcLight Energy Partners Fund VII, L.P., and replace the nonfactual vehicle value 'n.a.' with NOT_PUBLICLY_DISCLOSED because the immediate legal holding vehicle and numeric stake are not publicly disclosed.",
+  "identityResolution": {
+    "canonicalLegalName": "Sequitur Renewables, LLC",
+    "canonicalDisplayName": "Sequitur Renewables",
+    "aliases": [
+      "Sequitur"
+    ],
+    "officialWebsite": "https://sequiturrenewables.com/",
+    "headquartersOrOperatingLocation": "Headquarters address reported in LEI data: Boston, Massachusetts; operating wind portfolio in Pennsylvania, West Virginia and California",
+    "country": "United States",
+    "platformBoundary": "Manager-level U.S. operating-wind platform established by ArcLight around five acquired PJM wind-farm asset companies and later expanded with the Diablo Wind asset in California. The platform is the PortCo; the individual wind-farm entities, projects and any local acquisition vehicles beneath it are not separate PortCos.",
+    "duplicateDecision": "ArcLight's portfolio label 'Sequitur' is a shortened name for Sequitur Renewables, LLC. Map it to the existing Sequitur Renewables production company and do not create a second company."
+  },
+  "existingRecordDisposition": {
+    "productionCompanyId": "cmrxpj6k800jhivheu0xn4hyt",
+    "mapsToExisting": true,
+    "keepCanonicalName": true,
+    "exactListLevelCorrections": [
+      "Map census holding 012-arclight-capital:holding:015:sequitur to production company cmrxpj6k800jhivheu0xn4hyt and add 'Sequitur' as an alias.",
+      "Set the active ArcLight ownership fund to ArcLight Energy Partners Fund VII, L.P.",
+      "Replace ownership vehicle 'n.a.' with 'NOT_PUBLICLY_DISCLOSED'; the immediate legal holding vehicle is not publicly disclosed.",
+      "Retain Active status, 2022 investment year, Power & ET sector, Operating Wind Portfolio subsector, United States geography and the Sequitur Renewables canonical display name."
+    ],
+    "newCompanyRequired": false
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "ArcLight Capital is a shortened census label for ArcLight Capital Partners, LLC. Reuse the repository's existing ArcLight Capital Partners organization.",
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "organization": "ArcLight Capital Partners, LLC",
+        "fund": "ArcLight Energy Partners Fund VII, L.P.",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2022-08-01",
+        "entryDate": "2022-10-31",
+        "entryYear": 2022,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerOwners": [],
+    "pendingOwnershipTransactions": [],
+    "duplicateOwnerAction": "Do not create a separate ArcLight Capital owner. Normalize the requested manager label to the existing ArcLight Capital Partners organization."
+  },
+  "operatingResolution": {
+    "sector": "Power & ET",
+    "subsector": "Operating Wind Portfolio",
+    "region": "North America",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Sequitur Renewables is ArcLight's U.S. platform for acquiring and optimizing mature operating wind farms through operational, commercial and financial value-add initiatives. Its portfolio comprises five PJM wind facilities in Pennsylvania and West Virginia plus Diablo Wind in Alameda County, California.",
+    "companyStatus": "Active",
+    "yearFounded": 2022,
+    "services": "Ownership, operation and value optimization of mature operating wind farms, including operational, commercial and financial management.",
+    "customersAndEndMarkets": "Wholesale electricity and renewable-energy-credit markets; the initial portfolio sells power and renewable energy credits into the merchant PJM market, and the California asset operates in the Altamont Pass market footprint.",
+    "footprint": "Mountaineer Wind Energy Center / Backbone Mountain Windpower, Meyersdale Windpower, Mill Run Windpower, Somerset Windpower and Waymart Wind Farm in Pennsylvania and West Virginia, plus Diablo Wind in Alameda County, California.",
+    "disclosedScale": "185 MW initial operating PJM portfolio, reported as 184.5 MW in FERC asset-level capacities, plus one operating Altamont Pass wind farm; ArcLight also announced 80 MWh of adjunct BESS development opportunities in 2022."
+  },
+  "acquisitionExitCheck": {
+    "initialInvestment": "ArcLight announced on 2022-08-01 that Sequitur had signed an agreement with affiliates of GlidePath Power Solutions LLC to acquire five operating Pennsylvania and West Virginia wind farms totaling 185 MW; closing was then subject to conditions. FERC docket EC22-101 identified Backbone Mountain Windpower LLC, Meyersdale Windpower LLC, Mill Run Windpower LLC, Somerset Windpower LLC and Waymart Wind Farm LLC and was filed on 2022-08-11. FERC authorized the disposition on 2022-10-20, and a FERC asset-appendix report states that the transaction was consummated on 2022-10-31. PJM's 2022 market-monitor report lists 2022-10-30; the ownership ledger adopts FERC's 2022-10-31 date while retaining the one-day discrepancy as an unresolved noncritical point.",
+    "californiaBoltOn": "On 2023-05-16, ArcLight announced that Sequitur had acquired an operating wind farm in California's Altamont Pass region and expressly described it as another acquisition added to the Sequitur platform. Sequitur's official portfolio identifies its California holding as Diablo Wind in Alameda County. The seller, consideration, numeric stake and exact legal closing date are NOT_PUBLICLY_DISCLOSED. This is a platform bolt-on asset, not a separate manager-level PortCo.",
+    "subsequentExitSearch": "Targeted searches for a Sequitur sale, exit, ownership change, rebrand, insolvency, dissolution or signed pending PortCo transaction through 2026-08-15 found none. ArcLight still lists Sequitur as Current, and Sequitur's official website remains active in 2026. DigitalBridge signed a pending agreement in May 2026 to acquire ArcLight at the manager level, conditioned on other transaction and regulatory steps; that agreement is not a disclosed transfer of Sequitur or Fund VII's portfolio interest and therefore is not entered as a Sequitur ownership transaction."
+  },
+  "milestones": [
+    {
+      "date": "2022-10-31",
+      "type": "INITIAL_ACQUISITION_CLOSED",
+      "title": "Sequitur platform established around five operating PJM wind farms",
+      "description": "The acquisition announced on 2022-08-01 closed following FERC authorization; FERC reports consummation on 2022-10-31. The acquired asset companies operate five wind farms in Pennsylvania and West Virginia with approximately 185 MW of capacity.",
+      "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715"
+    },
+    {
+      "date": "2023-05-16",
+      "type": "CALIFORNIA_BOLT_ON_ACQUIRED",
+      "title": "Sequitur added the Diablo Wind asset in California",
+      "description": "ArcLight announced that Sequitur had acquired an operating Altamont Pass wind farm and characterized the transaction as an addition to the existing Sequitur platform.",
+      "url": "https://www.prnewswire.com/news-releases/arclights-sequitur-platform-to-acquire-operating-california-wind-farm-301825282.html"
+    }
+  ],
+  "evidence": [
+    {
+      "label": "ArcLight current investments",
+      "url": "https://arclight.com/investments/",
+      "purpose": "Direct current evidence that ArcLight lists Sequitur as a Current renewable investment.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Sequitur Renewables official website",
+      "url": "https://sequiturrenewables.com/",
+      "purpose": "Official platform identity, strategy, current 2026 website, portfolio locations and Diablo Wind asset name.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Sequitur Renewables official news archive",
+      "url": "https://sequiturrenewables.com/category/news/",
+      "purpose": "Direct identity bridge defining Sequitur Renewables, LLC as Sequitur and presenting both platform acquisitions.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "ArcLight August 2022 PJM acquisition announcement",
+      "url": "https://www.prnewswire.com/news-releases/arclight-to-acquire-operating-pjm-windfarms-301596749.html",
+      "purpose": "Signed acquisition announcement, ArcLight affiliation, GlidePath seller lineage, 185 MW scale, PJM market, BESS opportunities and platform establishment.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Federal Register notice for FERC docket EC22-101",
+      "url": "https://www.federalregister.gov/documents/2022/08/19/2022-17819/combined-notice-of-filings-1",
+      "purpose": "Regulatory identification of Sequitur and the five acquired wind-farm entities and the 2022-08-11 filing date.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "FERC MBR asset appendix report",
+      "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "purpose": "Asset-level capacities, FERC authorization date and direct statement that the initial acquisition was consummated on 2022-10-31.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "PJM 2022 State of the Market report",
+      "url": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2022/2022-som-pjm-sec3.pdf",
+      "purpose": "Institutional corroboration of the GlidePath-to-Sequitur transfer and the alternative reported transfer date of 2022-10-30.",
+      "sourceTier": "INSTITUTIONAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "ArcLight May 2023 California acquisition announcement",
+      "url": "https://www.prnewswire.com/news-releases/arclights-sequitur-platform-to-acquire-operating-california-wind-farm-301825282.html",
+      "purpose": "Direct evidence that Sequitur Renewables, LLC is Sequitur, that ArcLight established it in 2022 and that the California acquisition was a closed bolt-on to the platform.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "ArcLight 2025 ESG report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "ArcLight's direct attribution of Sequitur to ArcLight Energy Partners Fund VII, L.P.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Sequitur Renewables LEI record",
+      "url": "https://www.leinumber.com/leicert/254900IHCZT8GGFOZW95/",
+      "purpose": "Current legal name, Delaware entity status, formation date, Boston headquarters address, Fund VII ultimate-parent relationship and direct-parent exception.",
+      "sourceTier": "REPUTABLE_SECONDARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "EIA-derived current Sequitur operating portfolio",
+      "url": "https://www.gridinfo.com/sequitur-renewables-llc",
+      "purpose": "Current operating footprint and six-plant portfolio corroboration from EIA-derived data.",
+      "sourceTier": "REPUTABLE_SECONDARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "DigitalBridge and ArcLight strategic combination announcement",
+      "url": "https://www.digitalbridge.com/news/2026-05-27-digitalbridge-and-arclight-announce-strategic-combination-to-form-a-leading-alternative-asset-manager-at-the-convergence-of-power-ai-and-digital-infrastructure",
+      "purpose": "Direct evidence that the 2026 transaction is a signed, pending manager-level acquisition of ArcLight rather than a disclosed Sequitur PortCo transfer.",
+      "sourceTier": "PRIMARY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "DigitalBridge SEC Form 8-K for pending ArcLight transaction",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679688/000110465926066617/tm2615653d1_8k.htm",
+      "purpose": "Regulatory confirmation that the ArcLight manager transaction remains subject to prior transaction completion and regulatory closing conditions.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "proposedRelations": [
+    {
+      "relationType": "ALIAS_OF",
+      "subject": "Sequitur",
+      "objectProductionCompanyId": "cmrxpj6k800jhivheu0xn4hyt",
+      "object": "Sequitur Renewables",
+      "status": "PROPOSED"
+    },
+    {
+      "relationType": "OWNED_THROUGH_FUND",
+      "subjectProductionCompanyId": "cmrxpj6k800jhivheu0xn4hyt",
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Energy Partners Fund VII, L.P.",
+      "vehicle": "NOT_PUBLICLY_DISCLOSED",
+      "stake": "NOT_PUBLICLY_DISCLOSED",
+      "isActive": true
+    }
+  ],
+  "excludedOrDuplicateCandidates": [
+    {
+      "candidate": "Sequitur as a separate company",
+      "disposition": "DUPLICATE_ALIAS",
+      "reason": "ArcLight and Sequitur's own materials define Sequitur as Sequitur Renewables, LLC."
+    },
+    {
+      "candidate": "The five initial PJM wind-farm entities",
+      "disposition": "SUBSIDIARY_ASSETS_NOT_SEPARATE_PORTCOS",
+      "reason": "They are the operating assets acquired to establish the already-counted Sequitur platform."
+    },
+    {
+      "candidate": "Diablo Wind / Diablo Winds, LLC",
+      "disposition": "BOLT_ON_ASSET_NOT_SEPARATE_PORTCO",
+      "reason": "ArcLight expressly presents the California acquisition as an addition to the Sequitur platform."
+    }
+  ],
+  "unresolvedQuestions": [
+    "The immediate legal direct-parent or holding vehicle between Fund VII and Sequitur is not publicly disclosed; the LEI relationship reports a direct-parent exception.",
+    "ArcLight's numeric economic ownership stake in Sequitur is not publicly disclosed.",
+    "FERC reports the initial transaction consummated on 2022-10-31, while PJM's market-monitor report lists 2022-10-30; the recommended ledger date is 2022-10-31 based on FERC's direct consummation statement.",
+    "The seller and exact legal closing date for the California bolt-on are not publicly disclosed; the 2023-05-16 announcement states that Sequitur had already acquired the asset.",
+    "The current development status of the 80 MWh of adjunct BESS opportunities announced in 2022 is not publicly disclosed."
+  ],
+  "recommendedListAction": "Apply PROPOSED_CORRECTION: map census holding 012-arclight-capital:holding:015:sequitur to existing production company cmrxpj6k800jhivheu0xn4hyt; add 'Sequitur' as an alias; retain the Sequitur Renewables canonical name, Active status, 2022 investment year, existing sector/subsector and U.S. geography; set the active ownership fund to ArcLight Energy Partners Fund VII, L.P.; replace vehicle 'n.a.' with NOT_PUBLICLY_DISCLOSED; keep stake as NOT_PUBLICLY_DISCLOSED; create neither a new company nor a duplicate ArcLight owner."
+}
+

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0084:sequitur:dadaff66",
+  "taskIndex": 84,
+  "requestedCompany": "Sequitur",
+  "asOfDate": "2026-08-15",
+  "decision": "PROPOSED_CORRECTION",
+  "rationale": "ArcLight's short Sequitur label is the existing Sequitur Renewables platform. Correct the existing company and owner relation in place; do not create or merge a company.",
+  "identityResolution": {
+    "canonicalCompanyId": "cmrxpj6k800jhivheu0xn4hyt",
+    "canonicalDisplayName": "Sequitur Renewables",
+    "canonicalLegalName": "Sequitur Renewables, LLC",
+    "aliases": [
+      "Sequitur",
+      "Sequitur Renewable",
+      "Sequitur Renewables, LLC"
+    ],
+    "method": "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY",
+    "platformBoundary": "One manager-level operating-wind platform. The five initial PJM wind farms and Diablo Wind are downstream assets, not separate PortCos.",
+    "headquarters": null,
+    "operatingFootprint": "Pennsylvania, West Virginia and California"
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Resolve ArcLight Capital to the existing ArcLight Capital Partners organization.",
+    "currentOwner": {
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Energy Partners Fund VII, L.P.",
+      "vehicle": "NOT_PUBLICLY_DISCLOSED",
+      "stake": "NOT_PUBLICLY_DISCLOSED",
+      "investmentYear": 2022,
+      "state": "CLOSED_ACTIVE"
+    },
+    "ownerAction": "UPDATE_EXISTING_PERIOD",
+    "pendingOwnershipTransactions": [],
+    "exitSearch": "No Sequitur-specific completed exit or signed pending sale was identified through August 15, 2026."
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Power & ET",
+    "subsector": "Operating Wind Portfolio",
+    "yearFounded": 2022,
+    "reportedScale": "Five initial PJM wind farms totaling 185 MW plus an operating Altamont Pass wind-farm bolt-on."
+  },
+  "acquisitionResolution": {
+    "announcementDate": "2022-08-01",
+    "closingDate": "2022-10",
+    "closingDatePrecision": "MONTH",
+    "closingDayConflict": "PJM reports October 30, 2022; FERC reports October 31, 2022. Do not choose a day."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj6k800jhivheu0xn4hyt",
+    "productionOwnershipPeriodId": "cmrxpjrlf01gdivhej0bztveb",
+    "mutation": "CORRECT_COMPANY",
+    "duplicateMapping": "MAP_CENSUS_ALIAS_TO_EXISTING_COMPANY",
+    "seedIdentityTreatment": "UPDATE_ONE_APPROVED_CANONICAL_SEED_ENTRY"
+  },
+  "primaryEvidenceUrl": "https://arclight.com/investments/",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0084-sequitur/attempt-1/source-verification.json",
+  "chatgptConversationUrl": "https://chatgpt.com/c/6a80314c-5438-83ea-bef3-0601b4c5352e",
+  "chatgptAcceptedResponseArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0084-sequitur/attempt-1/chatgpt-repair-response.json",
+  "nonBlockingNotPublicFacts": [
+    "ArcLight's exact numeric stake",
+    "The immediate legal holding vehicle",
+    "An operating headquarters",
+    "The exact day of the October 2022 closing",
+    "The California seller, exact closing date, capacity and transaction consideration"
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "b1a7aaf94992299e9accd4145a506849677ebfc6425bad087267d2d16ed315a2",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}
+

@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0084:sequitur:dadaff66",
+  "taskIndex": 84,
+  "companyName": "Sequitur / Sequitur Renewables",
+  "asOfDate": "2026-08-15",
+  "retrievedAt": "2026-08-15T09:36:00.000Z",
+  "methodology": "Codex independently reopened the direct manager, company, regulatory, institutional and transaction sources used in the list decision; verified the cited claims against retrieved content; recorded final status and SHA-256 where retrieval succeeded; and separately checked acquisition, closing and subsequent-exit evidence. Search-result snippets were not treated as proposal evidence.",
+  "exitSearchConclusion": "No Sequitur-specific completed ArcLight exit, signed pending sale, dissolution or successor platform was identified through 2026-08-15. ArcLight's live investments page continues to list Sequitur as Current, the company website remains active, and the 2025 ArcLight ESG report attributes Sequitur to Fund VII. DigitalBridge's signed ArcLight transaction is manager-level and does not create a Sequitur ownership transfer.",
+  "modelEvidenceCorrections": [
+    {
+      "claim": "The initial acquisition closed on 2022-10-31.",
+      "disposition": "DATE_PRECISION_REDUCED",
+      "reason": "FERC reports 2022-10-31 while the PJM Market Monitor reports 2022-10-30. Persist October 2022 only and retain the one-day conflict."
+    },
+    {
+      "claim": "A third-party LEI Register page should support identity and parentage.",
+      "disposition": "REPLACED_WITH_DIRECT_GLEIF",
+      "reason": "Direct GLEIF entity, ultimate-parent relationship and Fund VII entity endpoints support the relevant facts without relying on an intermediary."
+    },
+    {
+      "claim": "The c/o ArcLight Boston legal address is Sequitur's operating headquarters.",
+      "disposition": "NOT_PERSISTED",
+      "reason": "GLEIF establishes a registered c/o address, not a proven operating headquarters."
+    },
+    {
+      "claim": "The GLEIF ultimate-parent relationship supports a numeric stake.",
+      "disposition": "NOT_INFERRED",
+      "reason": "The active consolidation relationship supports Fund VII attribution but does not disclose a percentage or immediate legal holding vehicle."
+    }
+  ],
+  "sources": [
+    {
+      "evidenceUrl": "https://arclight.com/investments/",
+      "verificationUrl": "https://arclight.com/investments/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/investments/",
+      "contentSha256": "1b0fd1bb45b31ea90fb2249a65ec654de573bb2c5f760c377fd08317e25f78e5",
+      "verifiedClaims": [
+        "ArcLight lists Sequitur as a Current renewable investment.",
+        "The manager uses the short Sequitur label.",
+        "No ArcLight exit or pending Sequitur sale is shown."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://sequiturrenewables.com/",
+      "verificationUrl": "https://sequiturrenewables.com/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://sequiturrenewables.com/",
+      "contentSha256": "917cdd8184465655097f08541f334b8d88d799247a934276f65a7857665b3471",
+      "verifiedClaims": [
+        "The official display identity is Sequitur Renewables.",
+        "The live site describes a U.S. operating-wind platform.",
+        "The site remained active through the verification date."
+      ]
+    },
+    {
+      "evidenceUrl": "https://sequiturrenewables.com/category/news/",
+      "verificationUrl": "https://sequiturrenewables.com/category/news/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://sequiturrenewables.com/category/news/",
+      "contentSha256": "ed91a6e02be903855a7cca5a6863808f322059375dc427d7e0cd8ff11e4478fb",
+      "verifiedClaims": [
+        "The official news archive links the Sequitur and Sequitur Renewables identities.",
+        "The archive presents the initial and California platform transactions."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.prnewswire.com/news-releases/arclight-to-acquire-operating-pjm-windfarms-301596749.html",
+      "verificationUrl": "https://www.prnewswire.com/news-releases/arclight-to-acquire-operating-pjm-windfarms-301596749.html",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/arclight-to-acquire-operating-pjm-windfarms-301596749.html",
+      "contentSha256": "3e7fbb4c5bd27a7e25c9091af9e40ef2f03a4c2f5558bb8b9a4ff58ebe1baea1",
+      "verifiedClaims": [
+        "ArcLight announced the signed acquisition on August 1, 2022.",
+        "Five Pennsylvania and West Virginia wind farms totaled 185 MW.",
+        "The acquisition established the Sequitur platform and was subject to closing conditions."
+      ]
+    },
+    {
+      "evidenceUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "verificationUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "contentSha256": "88de7c07888ceb6cc76d4c1f0d583c2bb1db63a2925bd4ed9278f19ff2ed0d5d",
+      "verifiedClaims": [
+        "FERC reports subsequent consummation on October 31, 2022.",
+        "The page identifies the initial operating wind assets."
+      ],
+      "dateConflict": "PJM reports October 30, 2022; final treatment is month precision."
+    },
+    {
+      "evidenceUrl": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2022/2022-som-pjm-sec3.pdf",
+      "verificationUrl": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2022/2022-som-pjm-sec3.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2022/2022-som-pjm-sec3.pdf",
+      "contentSha256": "f81a2d2919b4f99f28a8061b839701901a337855c99ccc8c41ce602f3d4af2f9",
+      "verifiedClaims": [
+        "The PJM Market Monitor reports completion on October 30, 2022."
+      ],
+      "visualInspection": {
+        "page": 111,
+        "status": "TEXT_EXTRACTED_AND_VERIFIED"
+      },
+      "dateConflict": "FERC reports October 31, 2022; final treatment is month precision."
+    },
+    {
+      "evidenceUrl": "https://www.prnewswire.com/news-releases/arclights-sequitur-platform-to-acquire-operating-california-wind-farm-301825282.html",
+      "verificationUrl": "https://www.prnewswire.com/news-releases/arclights-sequitur-platform-to-acquire-operating-california-wind-farm-301825282.html",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/arclights-sequitur-platform-to-acquire-operating-california-wind-farm-301825282.html",
+      "contentSha256": "69a8c42710a4270571083e55539e9eb2818cbc45e6bb9bb8ad7d258e21a6d7d6",
+      "verifiedClaims": [
+        "Sequitur Renewables, LLC is identified as Sequitur.",
+        "ArcLight established Sequitur in 2022.",
+        "The California wind farm had been acquired as a platform bolt-on by May 16, 2023."
+      ]
+    },
+    {
+      "evidenceUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "verificationUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "contentSha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+      "verifiedClaims": [
+        "ArcLight identifies Sequitur as a renewable investment.",
+        "The appendix attributes Sequitur to Fund VII.",
+        "The report defines Fund VII as ArcLight Energy Partners Fund VII, L.P."
+      ],
+      "visualInspection": {
+        "page": 19,
+        "status": "TEXT_EXTRACTED_AND_VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95",
+      "verificationUrl": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95",
+      "contentSha256": "76a7610e8cf41ad7199ecbc541eea999129ef815eeba530efe41a2753719a472",
+      "verifiedClaims": [
+        "The legal name is Sequitur Renewables, LLC.",
+        "The Delaware entity is active and was created June 27, 2022.",
+        "Boston is a registered c/o ArcLight address, not proven operating headquarters."
+      ]
+    },
+    {
+      "evidenceUrl": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95/ultimate-parent-relationship",
+      "verificationUrl": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95/ultimate-parent-relationship",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://api.gleif.org/api/v1/lei-records/254900IHCZT8GGFOZW95/ultimate-parent-relationship",
+      "contentSha256": "63a773f59f083daaf42fb6315bd649dc9e42209212449aafcb4c162870e66b35",
+      "verifiedClaims": [
+        "An active consolidation relationship with the Fund VII LEI began June 27, 2022.",
+        "The endpoint does not disclose an immediate legal vehicle or numeric stake."
+      ]
+    },
+    {
+      "evidenceUrl": "https://api.gleif.org/api/v1/lei-records/549300LD7O6QR7ZLUB34",
+      "verificationUrl": "https://api.gleif.org/api/v1/lei-records/549300LD7O6QR7ZLUB34",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://api.gleif.org/api/v1/lei-records/549300LD7O6QR7ZLUB34",
+      "contentSha256": "4f9b0d8275122c6c60c8a1326f05aa9c8e63105f5e676803f39acfcd9c1792e2",
+      "verifiedClaims": [
+        "The legal fund name is ArcLight Energy Partners Fund VII, L.P.",
+        "The fund entity is active."
+      ]
+    }
+  ],
+  "deadOrSupersededSources": [
+    {
+      "url": "https://arclight.com/wp-content/uploads/2023/11/ArcLight-2023-ESG-Report.pdf",
+      "status": "DEAD_HTTP_404",
+      "contentSha256": "4439e339a889aa5ff918e103e7fb33a9704e5b90659fedf3b28405294c62f5f6",
+      "disposition": "NOT_USED"
+    },
+    {
+      "url": "https://arclight.com/wp-content/uploads/2024/11/2024-ArcLight_ESGReport.pdf",
+      "status": "DEAD_OR_MOVED",
+      "replacementUrl": "https://arclight.com/wp-content/uploads/2025/01/2024-ArcLight_ESGReport.pdf",
+      "replacementContentSha256": "a0674ba82c66e7d82c265fdee4388670fc6e4bf5888e01c64d5e5d104aa82c5f",
+      "disposition": "NOT_NEEDED_FOR_FINAL_PROPOSAL"
+    }
+  ]
+}
+
