@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RELEASE_ARTIFACT_ALIASES",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0085:third-coast-infrastructure-cv:56f00f29",
+  "taskIndex": 85,
+  "createdAt": "2026-08-15T20:14:00.000Z",
+  "reason": "Provide immutable byte-identical aliases whose proposal key and snapshot filename satisfy the protected production workflow's task-scoped path contract. The verified proposal, approval and production snapshot contents and their embedded hashes are unchanged.",
+  "aliases": [
+    {
+      "source": "audits/portco-reconciliation/2026-08-03/proposals/0085-third-coast-infrastructure-v1/proposal.json",
+      "releasePath": "audits/portco-reconciliation/2026-08-03/proposals/0085-third-coast-infrastructure-cv-v1/proposal.json",
+      "contentSha256": "2fbee7496b3604cca20421e72360e3f7d40ba225701481dd23cb5eca00e927bb",
+      "proposalSha256": "64b527745b4b04cd4df6d5cf75575cfe9d87d96bddb822366704a0857aa35578"
+    },
+    {
+      "source": "audits/portco-reconciliation/2026-08-03/approvals/0085-third-coast-infrastructure-v1.json",
+      "releasePath": "audits/portco-reconciliation/2026-08-03/approvals/0085-third-coast-infrastructure-cv-v1.json",
+      "contentSha256": "f5d6b2b57ad436b1aea511e3d6f687fa504a93144782587e3b9c2a1ff8a5d852",
+      "approvalSha256": "db14f87039a2828dd505c3cf026bb87b4fd5d9b377c94d01529c9b85f229978c"
+    },
+    {
+      "source": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0085-third-coast-infrastructure-cv/attempt-1/locked-v2-production-snapshot.json",
+      "releasePath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0085-third-coast-infrastructure-cv/attempt-2/locked-production-snapshot.json",
+      "contentSha256": "cb34c4fda1a35d31739bc25bb53929e092078259b2db9b3817479632dd85bb22",
+      "snapshotSha256": "ba13ba43b6765a71ae8bbbb31757ccb4572817757b1092a6771120d634d47de7"
+    }
+  ]
+}
