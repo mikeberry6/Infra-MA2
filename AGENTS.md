@@ -58,7 +58,7 @@
 
 - Key Themes must contain exactly two short, succinct paragraphs, normally one sentence each.
 - Paragraph 1 must lead with the week's largest-scale transactions, prioritizing disclosed transaction or project value and using physical scale only when economics are undisclosed.
-- When U.S. transactions are present, paragraph 2 (the final paragraph) must focus on **U.S. deployment** and name the strongest U.S. operating-asset, platform, and portfolio-company transactions.
+- When U.S. transactions are present, paragraph 2 (the final paragraph) must focus on **U.S. deployment** and name the strongest U.S. operating-asset, platform, and PortCo transactions.
 - Use non-U.S. platform activity only as selective contrast in paragraph 1.
 - Distinguish new U.S. capital deployment and operating-asset/platform acquisitions from secondaries, exits, and broad platform announcements when writing theme language.
 
@@ -78,13 +78,13 @@
   2. **Metadata line:** `{Sponsor} ({transaction type}) · {subsector} · {region/country}`
   3. **Overview paragraph:** one concise paragraph, generally 1–2 sentences
   4. **Source:** one source link labeled "Source"
-- In deal card titles, the name after `|` must be the infrastructure fund or fund manager only. Do not put portfolio companies, sponsor-backed platforms, developers, sellers, or co-developers after the pipe; mention those parties in metadata or the overview paragraph.
+- In deal card titles, the name after `|` must be the infrastructure fund or fund manager only. Do not put PortCos, sponsor-backed platforms, developers, sellers, or co-developers after the pipe; mention those parties in metadata or the overview paragraph.
 - If multiple infrastructure funds are direct sponsors, separate fund names with `/`.
 - Use canonical sponsor short names consistently across titles, metadata, themes, and body copy. For Goldman Sachs Asset Management, always use **GSAM**.
 - Overview paragraphs should state what happened, who is buying/selling/investing, and why the asset or platform matters.
 - Prefer concrete facts when available: capacity, geography, market role, enterprise value, capital commitment, customer base, development status, or strategic rationale.
 - Keep language factual and restrained. Avoid generic hype or unsupported "strategic fit" phrasing.
-- Use consistent transaction labels such as Buyout, Minority Stake, Majority Stake, Joint Venture, Platform Launch, Bolt-On, Portfolio Company Acquisition, Portfolio Company Divestiture, Primary Capital Raise, Sale, and Co-Investment.
+- Use consistent transaction labels such as Buyout, Minority Stake, Majority Stake, Joint Venture, Platform Launch, Bolt-On, PortCo Acquisition, PortCo Divestiture, Primary Capital Raise, Sale, and Co-Investment.
 
 ### YTD Bar Charts
 
