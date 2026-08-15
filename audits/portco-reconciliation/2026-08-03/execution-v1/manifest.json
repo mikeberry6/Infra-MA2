@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T06:05:50.351Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0081:pike-holdings:0d434dde",
+  "updatedAt": "2026-08-15T06:20:29.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -11745,11 +11745,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "8a027c159766374a68b766bf2ab5b9e3eababb4713acfc028d5ef9b42918af64",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-15T05:05:59.000Z",
-      "updatedAt": "2026-08-15T06:05:50.351Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-15T06:20:29.000Z",
+      "completedAt": "2026-08-15T06:20:29.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
@@ -11851,6 +11851,18 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-15T06:05:50.351Z",
+          "reason": null,
+          "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
+          "evidenceSha256": [
+            "063037860b0803792ece2f2219fba2b85b1a2f81f2118ffc0e99c9abd77c4177"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-15T06:20:29.000Z",
           "reason": null,
           "taskSnapshotSha256": "e8f5ac8185a496c6ece8b9ef330026864a8d774fa5babac86d4c819cdd019cb7",
           "evidenceSha256": [
@@ -27691,5 +27703,5 @@
       ]
     }
   ],
-  "manifestSha256": "d519cc713fd314628431fe488090217f231aa2ef537a3356611e5d27689e8705"
+  "manifestSha256": "d7b84233fa95431741472a2b3e4e13ac6d5ca3a8a811c53c6a3fd1994c65a043"
 }
