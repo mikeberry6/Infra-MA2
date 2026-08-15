@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T09:02:35.142Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0083:salamanca:0c228ba6",
+  "updatedAt": "2026-08-15T09:14:47.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -12013,11 +12013,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "7cc05fdac20dcf4013db1a0bd43332cda8cca66be747a352222d23414eb7b5b1",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-15T07:52:46.000Z",
-      "updatedAt": "2026-08-15T09:02:35.142Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-15T09:14:47.000Z",
+      "completedAt": "2026-08-15T09:14:47.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "960ad8fd047ead459066010c6262a263a7f79335534567c8ef3435c67f5fdc79",
@@ -12119,6 +12119,18 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-15T09:02:35.142Z",
+          "reason": null,
+          "taskSnapshotSha256": "960ad8fd047ead459066010c6262a263a7f79335534567c8ef3435c67f5fdc79",
+          "evidenceSha256": [
+            "d6f9f609b0360da72d6a7dedd8459d685937d015770308c84dc9a80df4b185ae"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-15T09:14:47.000Z",
           "reason": null,
           "taskSnapshotSha256": "960ad8fd047ead459066010c6262a263a7f79335534567c8ef3435c67f5fdc79",
           "evidenceSha256": [
@@ -27883,5 +27895,5 @@
       ]
     }
   ],
-  "manifestSha256": "27fec4802868b2776f661e200ba2314f57d85551abf17e0d7dc00e508501b562"
+  "manifestSha256": "b9a90b71564a5f7aec2af980983bf33c4695fae569668850a34adace6fb41242"
 }
