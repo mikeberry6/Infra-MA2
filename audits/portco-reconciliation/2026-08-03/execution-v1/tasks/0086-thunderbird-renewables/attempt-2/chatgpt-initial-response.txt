@@ -1,0 +1,84 @@
+Worked for 35m 13s
+JSON
+{
+      "label": "Shiloh IV Fund VIII confirmation",
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250430-5412",
+      "purpose": "Post-closing market-based-rate filing confirming the Shiloh IV ownership change and Fund VIII chain.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Remaining Lakefield close",
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250708-5177",
+      "purpose": "Notice of consummation verifying the remaining 50% Lakefield closing on 2025-07-01.",
+      "sourceTier": "REGULATORY",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "isRecommendedPrimary": true
+    }
+  ],
+  "beforeAfterChanges": [
+    {
+      "field": "queuedAction",
+      "before": "ADD_OWNER for ArcLight Capital",
+      "after": "Reject; retain one ArcLight Capital Partners owner",
+      "reason": "The manager labels are aliases."
+    },
+    {
+      "field": "investmentYear",
+      "before": 2024,
+      "after": 2025,
+      "reason": "The first verified legal close was 2025-02-21."
+    },
+    {
+      "field": "headquarters",
+      "before": "United States",
+      "after": "NOT_PUBLICLY_DISCLOSED",
+      "reason": "No Thunderbird-level headquarters is disclosed; SkyVest's headquarters cannot be inherited."
+    },
+    {
+      "field": "milestones",
+      "before": "Generic 2024 entry and July 2024 SkyVest launch",
+      "after": "Thunderbird project closings on 2025-02-21, 2025-03-12 and 2025-07-01",
+      "reason": "The SkyVest launch was not Thunderbird's acquisition."
+    },
+    {
+      "field": "stake",
+      "before": "Unverified or inferred from project percentages",
+      "after": "NOT_PUBLICLY_DISCLOSED",
+      "reason": "50% and 100% figures apply to Lakefield or Shiloh IV, not the manager-level Thunderbird stake."
+    }
+  ],
+  "excludedOrDuplicateCandidates": [
+    "ArcLight Capital: alias of ArcLight Capital Partners, not a second owner.",
+    "SkyVest Renewables: ArcLight-owned operating and management platform, not Thunderbird.",
+    "Phoenix Renewables: separate Fund VIII portfolio, not an alias or asset of Thunderbird.",
+    "Lakefield and Shiloh IV: underlying projects/SPVs; project-level percentages are not Thunderbird's manager-level stake.",
+    "Shiloh III: not the acquired asset; the regulatory record identifies Shiloh IV.",
+    "July 29, 2024 160 MW Texas wind acquisition: part of the SkyVest launch, not Thunderbird's entry."
+  ],
+  "unresolvedQuestions": [],
+  "recommendedListAction": "REJECT ADD_OWNER; retain one ArcLight Capital Partners/Fund VIII owner, set entryDate to 2025-02-21 and entryYear to 2025, clear unsupported headquarters and stake, and replace generic 2024/SkyVest milestones with the three verified 2025 closings."
+}
+
+Decision: PROPOSED_CORRECTION. ArcLight Capital is shorthand for ArcLight Capital Partners and should not create a second owner; ArcLight still lists Thunderbird as a current renewable investment. 
+PR Newswire
++1
+
+Thunderbird and Phoenix are separately named initial Fund VIII portfolios, with SkyVest/ARS providing management services. The July 29, 2024 release launched SkyVest and closed a separate 160 MW Texas wind investment, not Thunderbird’s acquisition. 
+arclight
++1
+
+The supported filings occurred on November 19, 2024, December 19, 2024, and March 28, 2025; FERC consummation records support the corresponding February 21, March 12, and July 1, 2025 closings. 
+eLibrary
++5
+GovInfo
++5
+Federal Register
++5
+
+Manager-level stake, standalone website, headquarters and founding year remain NOT_PUBLICLY_DISCLOSED. The 309 MW disclosed scale reconciles to SkyVest’s 206 MW Lakefield and 103 MW Shiloh IV listings; no Thunderbird-level exit or signed pending sale surfaced. 
+SkyVest
++1
+
+Sources

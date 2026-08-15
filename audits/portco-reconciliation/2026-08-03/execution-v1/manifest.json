@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T21:35:22.000Z",
-  "runStatus": "BLOCKED",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-15T22:32:48.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0086:thunderbird-renewables:63a5d8e7",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -12462,25 +12462,31 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "01c984c21818a415c134faf5b68889e9cd8f01913350fac720805c50cf0ab55e",
-      "status": "FAILED",
-      "attempts": 1,
-      "startedAt": "2026-08-15T20:41:30.000Z",
-      "updatedAt": "2026-08-15T21:35:22.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-15T21:44:33.000Z",
+      "updatedAt": "2026-08-15T22:32:48.000Z",
       "completedAt": null,
-      "exceptionReason": "GPT-5.6 Sol Pro returned a JSON code block truncated after operatingResolution.region in both the initial response and the single permitted repair; no complete parseable response exists, so the task stopped without proposal or mutation.",
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "0d4d14c276efed2f29fc832425a0d20c18f2ef8211e6ea0e36bf520499039a03",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-1/locked-task-snapshot.json",
-          "sha256": "1b43a0908acb30ce4dbab6c970819dea11514f722402d918869859ac39ccc30c"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-2/locked-task-snapshot.json",
+          "sha256": "0d4d14c276efed2f29fc832425a0d20c18f2ef8211e6ea0e36bf520499039a03"
         },
-        "proposal": null,
-        "approval": null,
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0086-thunderbird-renewables-v2/proposal.json",
+          "sha256": "a05046979e15181c586cc67b0cec684e105f935ce179e9b190688c648ae56ef7"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0086-thunderbird-renewables-v2.json",
+          "sha256": "9d1094e69bd9248f3fd5a4ddda0288cb4b715e450c1a47d9b43c49f6188a1385"
+        },
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-1/research-decision.json",
-          "sha256": "e2e155dde3e50ea319bf6fdd38960b08b171f115089d8f8ea2528c44f7ae352d"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-2/research-decision.json",
+          "sha256": "a8135b00e18a683ddd178b658c5af8bc8597d417697dc4d3489505d7e41fb780"
         },
         "companySnapshot": null
       },
@@ -12516,6 +12522,54 @@
           "evidenceSha256": [
             "1b43a0908acb30ce4dbab6c970819dea11514f722402d918869859ac39ccc30c",
             "e2e155dde3e50ea319bf6fdd38960b08b171f115089d8f8ea2528c44f7ae352d"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-15T21:44:33.000Z",
+          "reason": "Fresh attempt 2 after the prior conversation exhausted its one-repair allowance; the failed attempt remains immutable and this retry will use a new GPT-5.6 Sol Pro conversation.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-15T22:32:22.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0d4d14c276efed2f29fc832425a0d20c18f2ef8211e6ea0e36bf520499039a03",
+          "evidenceSha256": [
+            "0d4d14c276efed2f29fc832425a0d20c18f2ef8211e6ea0e36bf520499039a03",
+            "a05046979e15181c586cc67b0cec684e105f935ce179e9b190688c648ae56ef7",
+            "a8135b00e18a683ddd178b658c5af8bc8597d417697dc4d3489505d7e41fb780"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-15T22:32:23.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0d4d14c276efed2f29fc832425a0d20c18f2ef8211e6ea0e36bf520499039a03",
+          "evidenceSha256": [
+            "a05046979e15181c586cc67b0cec684e105f935ce179e9b190688c648ae56ef7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-15T22:32:48.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0d4d14c276efed2f29fc832425a0d20c18f2ef8211e6ea0e36bf520499039a03",
+          "evidenceSha256": [
+            "9d1094e69bd9248f3fd5a4ddda0288cb4b715e450c1a47d9b43c49f6188a1385"
           ],
           "kind": "TRANSITION"
         }
@@ -28172,5 +28226,5 @@
       ]
     }
   ],
-  "manifestSha256": "419e40c0aaff541d8508b4d16af394c5315c965056313acf6a51885f6808c3dd"
+  "manifestSha256": "ba16b00f812950d2e30208a29a74642e4cee9bd8964c1f333d0f589cc6f8ef1e"
 }

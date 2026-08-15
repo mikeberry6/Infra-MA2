@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0086:thunderbird-renewables:63a5d8e7",
+  "taskIndex": 86,
+  "attempt": 2,
+  "companyName": "Thunderbird Renewables",
+  "asOfDate": "2026-08-15",
+  "decision": "PROPOSED_CORRECTION",
+  "rationale": "Retain one canonical Thunderbird Renewables manager-level operating-renewables portfolio and the existing ArcLight Capital Partners / Fund VIII ownership period. ArcLight Capital is the census's shortened manager label, so the queued ADD_OWNER is rejected. Correct the ownership entry year from 2024 to 2025, clear the unsupported headquarters, and replace the two unsupported 2024 milestones with the verified February 21, March 12 and July 1, 2025 underlying-asset closings. Do not convert project-level percentages into a Thunderbird-level stake.",
+  "identityResolution": {
+    "canonicalName": "Thunderbird Renewables",
+    "aliases": [],
+    "legalSuffix": "NOT_PUBLICLY_DISCLOSED",
+    "website": "NOT_PUBLICLY_DISCLOSED",
+    "country": "United States",
+    "headquarters": "NOT_PUBLICLY_DISCLOSED",
+    "managerLevelBoundary": "Thunderbird is the Fund VIII operating-wind portfolio. SkyVest is the management platform, Phoenix is a separate portfolio, and Lakefield and Shiloh IV are underlying assets rather than separate Thunderbird-level PortCos.",
+    "duplicateDecision": "Retain the existing Thunderbird record; do not merge it with SkyVest, Phoenix or an underlying project."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Resolve ArcLight Capital to the existing ArcLight Capital Partners organization.",
+    "structuredManagerOwner": {
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Infrastructure Partners Fund VIII",
+      "vehicle": "ArcLight Infrastructure Partners Fund VIII",
+      "stake": "NOT_PUBLICLY_DISCLOSED",
+      "entryDate": "2025-02-21",
+      "investmentYear": 2025,
+      "state": "CLOSED_ACTIVE"
+    },
+    "ownerAddition": "NONE",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Power & Energy Transition",
+    "subsector": "Operating Renewables Portfolio",
+    "reportedScale": "ArcLight's 2025 ESG report reports 309 MW for Thunderbird Renewables.",
+    "yearFounded": "NOT_PUBLICLY_DISCLOSED"
+  },
+  "acquisitionExitCheck": {
+    "ownershipEntry": "Fund VIII's F8 Renewables vehicle completed its initial 50% Lakefield interest on 2025-02-21 and 100% Shiloh IV interest on 2025-03-12.",
+    "portfolioConsolidation": "The same Fund VIII vehicle completed the remaining 50% Lakefield interest on 2025-07-01.",
+    "currentOwnership": "ArcLight's live investments page marks Thunderbird Current, and its portfolio-services page identifies Thunderbird as a Fund VIII portfolio managed through SkyVest.",
+    "subsequentExitSearch": "No Thunderbird-level completed sale, signed pending exit, dissolution, successor or rename was identified through 2026-08-15."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj6mi00jlivhev0ljria1",
+    "productionOwnershipPeriodId": "cmrxpjrnv01giivhe9otuuxad",
+    "mutation": "CORRECT_EXISTING_COMPANY_AND_OWNER_PERIOD",
+    "queueAddOwnerDisposition": "SUPERSEDED_BY_EXISTING_ALIAS_RESOLVED_OWNER",
+    "duplicateMapping": "NONE"
+  },
+  "primaryEvidenceUrl": "https://arclight.com/investments/",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-2/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-2/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-2/chatgpt-response-validation.json",
+  "unresolvedQuestions": [
+    "Thunderbird's exact legal-entity suffix, standalone website, headquarters, founding date and manager-level ArcLight stake are not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "0d4d14c276efed2f29fc832425a0d20c18f2ef8211e6ea0e36bf520499039a03",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}
