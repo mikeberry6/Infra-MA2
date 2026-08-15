@@ -92,8 +92,8 @@ function PortCoFilterBar({
             leadingIcon={<Search />}
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Search portfolio companies..."
-            aria-label="Search portfolio companies"
+            placeholder="Search PortCos..."
+            aria-label="Search PortCos"
           />
         </div>
 
@@ -196,7 +196,7 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
   if (companies.length === 0) {
     return (
       <div className="py-10 text-center type-meta text-[var(--text-tertiary)]">
-        No portfolio companies match your current filters. Try broadening your search.
+        No PortCos match your current filters. Try broadening your search.
       </div>
     );
   }
@@ -204,7 +204,7 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
   return (
     <div>
       <p className="type-meta mb-5">
-        <span className="mono text-[var(--text-primary)] font-medium tabular-nums">{companies.length}</span> portfolio companies
+        <span className="mono text-[var(--text-primary)] font-medium tabular-nums">{companies.length}</span> PortCos
         {" · "}
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">
           {new Set(companies.flatMap((c) => getAllOwnerFirms(c))).size}
@@ -392,7 +392,7 @@ function PortCoTable({
   if (companies.length === 0) {
     return (
       <div className="flex items-center justify-center py-16 type-meta text-[var(--text-tertiary)]">
-        No portfolio companies match your current filters.
+        No PortCos match your current filters.
       </div>
     );
   }
@@ -405,7 +405,7 @@ function PortCoTable({
           <table className="w-full text-left border-collapse whitespace-nowrap">
             <thead className="sticky top-0 z-10">
               <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
-                <SortHeader field="name" label="Company" />
+                <SortHeader field="name" label="PortCo" />
                 <SortHeader field="firm" label="Firm" />
                 <SortHeader field="sector" label="Sector" />
                 <th className="text-left px-3 py-2 type-table-header">
@@ -636,7 +636,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
       {
         label: "Visible PortCos",
         value: filteredCompanies.length.toLocaleString(),
-        detail: filteredCompanies.length === portcos.length ? "Full portfolio universe" : `${filterCount} active filter${filterCount === 1 ? "" : "s"}`,
+        detail: filteredCompanies.length === portcos.length ? "Full PortCo universe" : `${filterCount} active filter${filterCount === 1 ? "" : "s"}`,
         color: "var(--accent)",
       },
       {
@@ -646,9 +646,9 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         color: "#7d6cf0",
       },
       {
-        label: "Active holdings",
+        label: "Active PortCos",
         value: activeCount.toLocaleString(),
-        detail: `${(filteredCompanies.length - activeCount).toLocaleString()} realized records`,
+        detail: `${(filteredCompanies.length - activeCount).toLocaleString()} realized PortCos`,
         color: "#3b6cf2",
       },
       {
@@ -663,9 +663,9 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
       <DatabaseIntelligenceHeader
-        eyebrow="Portfolio intelligence"
-        title="Infrastructure Portfolio Company Database"
-        summary="Operating companies, projects, ownership periods, strategy exposure, and evidence trails across infrastructure fund portfolios."
+        eyebrow="PortCo intelligence"
+        title="Infrastructure PortCo Database"
+        summary="PortCos, projects, ownership periods, strategy exposure, and evidence trails across infrastructure fund holdings."
         metrics={headerMetrics}
         actions={<DatabaseTiles counts={counts} />}
       />
@@ -695,7 +695,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
           <span className="type-micro">
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredCompanies.length}</span>
             {" "}of{" "}
-            <span className="mono text-[var(--text-secondary)] tabular-nums">{portcos.length}</span> companies
+            <span className="mono text-[var(--text-secondary)] tabular-nums">{portcos.length}</span> PortCos
           </span>
           <div className="hidden sm:flex items-center gap-1">
             {canExport && (

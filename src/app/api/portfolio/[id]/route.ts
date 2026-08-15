@@ -19,7 +19,7 @@ export async function GET(
   );
 
   if (!company) {
-    return NextResponse.json({ error: "Company not found" }, { status: 404 });
+    return NextResponse.json({ error: "PortCo not found" }, { status: 404 });
   }
 
   return NextResponse.json({ company });

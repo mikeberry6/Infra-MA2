@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Search",
 };
 
-const TYPE_LABEL = { deal: "Deal", company: "Company", fund: "Fund" } as const;
+const TYPE_LABEL = { deal: "Deal", company: "PortCo", fund: "Fund" } as const;
 const TYPE_DOT_COLOR: Record<SearchResult["type"], string> = {
   deal: "#3b82f6",
   company: "#10b981",
@@ -49,12 +49,12 @@ export default async function SearchPage({
       <DatabaseIntelligenceHeader
         eyebrow="Cross-database search"
         title="Search InfraSight"
-        summary="Search across transactions, fund vehicles, and portfolio companies, then jump directly into the owning database record."
+        summary="Search across transactions, fund vehicles, and PortCos, then jump directly into the owning database record."
         metrics={[
           {
             label: "Results",
             value: query ? results.length.toLocaleString() : "Ready",
-            detail: query ? `for "${query}"` : "Enter a company, fund, or buyer",
+            detail: query ? `for "${query}"` : "Enter a PortCo, fund, or buyer",
             color: "var(--accent)",
           },
           {
@@ -66,7 +66,7 @@ export default async function SearchPage({
           {
             label: "PortCos",
             value: companyCount.toLocaleString(),
-            detail: "Portfolio companies",
+            detail: "Infrastructure PortCos",
             color: TYPE_DOT_COLOR.company,
           },
           {
@@ -85,7 +85,7 @@ export default async function SearchPage({
           size="md"
           defaultValue={query}
           leadingIcon={<Search />}
-          placeholder="Search deals, companies, and funds..."
+          placeholder="Search deals, PortCos, and funds..."
           autoFocus
         />
       </form>

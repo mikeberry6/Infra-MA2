@@ -54,7 +54,7 @@ type NewsCounts = {
 
 function categoryIcon(category: NewsCategory): LucideIcon {
   if (category === "Fundraising Activity") return DollarSign;
-  if (category === "Portfolio Company News") return Building2;
+  if (category === "PortCo News") return Building2;
   if (category === "Investment Firm News") return Landmark;
   if (category === "Rumored Sales Processes") return Radio;
   if (category === "Low Confidence / Needs Review") return AlertTriangle;
@@ -64,7 +64,7 @@ function categoryIcon(category: NewsCategory): LucideIcon {
 function categoryShortLabel(category: NewsCategory): string {
   if (category === "Transaction Activity") return "Transactions";
   if (category === "Fundraising Activity") return "Fundraising";
-  if (category === "Portfolio Company News") return "PortCo News";
+  if (category === "PortCo News") return "PortCo News";
   if (category === "Investment Firm News") return "Firm News";
   if (category === "Rumored Sales Processes") return "Rumored Sales";
   return "Needs Review";

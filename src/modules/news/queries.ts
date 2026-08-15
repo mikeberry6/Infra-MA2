@@ -13,7 +13,7 @@ import type {
 const CATEGORY_FROM_DB: Record<string, NewsCategory> = {
   TRANSACTION_ACTIVITY: "Transaction Activity",
   FUNDRAISING_ACTIVITY: "Fundraising Activity",
-  PORTFOLIO_COMPANY_NEWS: "Portfolio Company News",
+  PORTFOLIO_COMPANY_NEWS: "PortCo News",
   INVESTMENT_FIRM_NEWS: "Investment Firm News",
   RUMORED_SALES_PROCESS: "Rumored Sales Processes",
   LOW_CONFIDENCE_NEEDS_REVIEW: "Low Confidence / Needs Review",

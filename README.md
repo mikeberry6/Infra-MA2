@@ -1,6 +1,6 @@
 # Infra-MA2
 
-Next.js + Prisma application for infrastructure M&A, portfolio company, fund, and public news monitoring.
+Next.js + Prisma application for infrastructure M&A, PortCo, fund, and public news monitoring.
 
 ## Daily News Monitoring
 
@@ -16,7 +16,7 @@ Run the importer:
 npm run news:scan
 ```
 
-Both commands scan published portfolio companies, fund managers, and funds from Prisma. The scanner crawls only bounded public surfaces: official websites, stored source URLs, `sitemap.xml`, and common news or press paths. It respects `robots.txt`, applies per-origin delays, skips direct LinkedIn crawling, and only records LinkedIn URLs found on public pages.
+Both commands scan published PortCos, fund managers, and funds from Prisma. The scanner crawls only bounded public surfaces: official websites, stored source URLs, `sitemap.xml`, and common news or press paths. It respects `robots.txt`, applies per-origin delays, skips direct LinkedIn crawling, and only records LinkedIn URLs found on public pages.
 
 Large scheduled scans use deterministic `--shard-count` and `--shard-index` options. Every tracked entity belongs to exactly one rotating shard, and the reliability gate fails instead of silently dropping entities if `--max-targets` is too low for the selected shard.
 

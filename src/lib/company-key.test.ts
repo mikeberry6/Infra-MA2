@@ -125,7 +125,7 @@ describe("companyDedupKeys — multi-key matching", () => {
     )).toBe(true);
   });
 
-  it("collapses BCI portfolio company duplicate variants", () => {
+  it("collapses BCI PortCo duplicate variants", () => {
     const cleco = companyDedupKeys("Cleco Corporation");
     expect(intersects(
       cleco,

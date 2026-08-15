@@ -234,7 +234,7 @@ describe("ImportExportBar", () => {
     vi.stubGlobal("fetch", fetchMock);
 
     render(<ImportExportBar entityType="portfolio" />);
-    fireEvent.change(screen.getByLabelText("Select companies CSV file"), {
+    fireEvent.change(screen.getByLabelText("Select PortCos CSV file"), {
       target: { files: [file("companies.csv")] },
     });
 

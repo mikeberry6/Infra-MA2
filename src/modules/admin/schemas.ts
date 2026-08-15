@@ -187,13 +187,13 @@ export type FundInput = z.infer<typeof fundSchema>;
 // ── Company Schema ────────────────────────────────────────────────────
 
 export const companySchema = z.object({
-  name: z.string().min(1, "Company name is required"),
+  name: z.string().min(1, "PortCo name is required"),
   country: z.string().min(1, "Country is required"),
-  sector: z.enum(COMPANY_SECTORS, { message: "Invalid company sector" }),
+  sector: z.enum(COMPANY_SECTORS, { message: "Invalid PortCo sector" }),
   subsector: z.string().optional(),
-  region: z.enum(COMPANY_REGIONS, { message: "Invalid company region" }),
+  region: z.enum(COMPANY_REGIONS, { message: "Invalid PortCo region" }),
   description: z.string().optional(),
-  status: z.enum(COMPANY_STATUSES, { message: "Invalid company status" }).default("Active"),
+  status: z.enum(COMPANY_STATUSES, { message: "Invalid PortCo status" }).default("Active"),
   website: z.string().url("Invalid website URL").optional().or(z.literal("")),
   yearFounded: z.number().int().min(1800).max(2100).optional(),
   investmentYear: z.number().int().min(1900).max(2100).optional(),

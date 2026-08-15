@@ -4,7 +4,7 @@ import type { NewsCategory, NewsConfidence, NewsMentionView, NewsMentionType } f
 export const NEWS_CATEGORIES: NewsCategory[] = [
   "Transaction Activity",
   "Fundraising Activity",
-  "Portfolio Company News",
+  "PortCo News",
   "Investment Firm News",
   "Rumored Sales Processes",
   "Low Confidence / Needs Review",
@@ -13,7 +13,7 @@ export const NEWS_CATEGORIES: NewsCategory[] = [
 const NEWS_CATEGORY_COLORS: Record<NewsCategory, string> = {
   "Transaction Activity": "#3b6cf2",
   "Fundraising Activity": "#1d9d76",
-  "Portfolio Company News": "#0ea5e9",
+  "PortCo News": "#0ea5e9",
   "Investment Firm News": "#7d6cf0",
   "Rumored Sales Processes": "#d98b1c",
   "Low Confidence / Needs Review": "#71717a",

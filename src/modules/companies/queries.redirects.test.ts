@@ -138,7 +138,7 @@ function companyFixture(overrides: Record<string, unknown> = {}) {
     country: "United States",
     countryTags: ["United States"],
     companyStatus: "ACTIVE",
-    description: "A portfolio company.",
+    description: "A PortCo.",
     website: null,
     yearFounded: null,
     headquarters: null,

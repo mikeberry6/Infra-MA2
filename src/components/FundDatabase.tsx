@@ -675,7 +675,7 @@ function FundDrawer({
     (f) => f.managerName === fund.managerName && f.id !== fund.id
   );
 
-  // Aggregate all portfolio companies across the firm (all funds for this manager)
+  // Aggregate all PortCos across the firm (all funds for this manager)
   const firmFunds = [fund, ...siblingFunds];
   const firmPortfolio = useMemo(() => {
     const companiesByFund: { company: PortfolioCompanyView; fundName: string; strategies: string[] }[] = [];
@@ -859,12 +859,12 @@ function FundDrawer({
             </section>
           )}
 
-          {/* Portfolio Companies */}
+          {/* PortCos */}
           {firmPortfolio.total > 0 && (
             <section className="border-t border-[var(--border)] pt-6">
               <div className="flex items-center justify-between mb-4">
                 <span className="type-section-title text-[var(--text-tertiary)]">
-                  Portfolio companies
+                  PortCos
                 </span>
                 <span className="type-micro">
                   <span className="mono tabular-nums">{firmPortfolio.total}</span>
