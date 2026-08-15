@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T20:10:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0085:third-coast-infrastructure-cv:56f00f29",
+  "updatedAt": "2026-08-15T20:35:28.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -12337,11 +12337,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "86758ccc592bd273d7a6c7dcd1ea13c9f326d61f1667423951562a1645bc7f31",
-      "status": "RELEASING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-15T10:38:42.000Z",
-      "updatedAt": "2026-08-15T20:10:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-15T20:35:27.000Z",
+      "completedAt": "2026-08-15T20:35:27.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "51255618cb2fdbc0c2c393506687d6a485cb7c24ffdb1cfdb80e30968cb27a83",
@@ -12358,14 +12358,26 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0085-third-coast-infrastructure-v1.json",
           "sha256": "db14f87039a2828dd505c3cf026bb87b4fd5d9b377c94d01529c9b85f229978c"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0085-third-coast-infrastructure-cv/attempt-2/production-apply/apply-receipt.json",
+          "sha256": "67c2158b54c2c0d91e06caa9a5972241caac8ccf79c9ef3a939aa4a583847bdb"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0085-third-coast-infrastructure-cv/attempt-1/research-decision.json",
           "sha256": "9f83e5ce506afebd146ea7b1ef222726c842816b5dddb89c887a1cb0474d62d1"
         },
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0085-third-coast-infrastructure-cv/attempt-1/locked-v2-context.json",
+          "sha256": "fa7aa86da4fa299a97f6ef20fe89929bfc3f90aecfe6d1fca71eda1f791f5fac"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-15T20:35:27.000Z",
+        "auditEventId": "cmsutnuvb000nee6heslul4vm",
+        "transactionId": "02877e0f-acbd-4ae2-a251-60f4463c89b9",
+        "receiptSha256": "67c2158b54c2c0d91e06caa9a5972241caac8ccf79c9ef3a939aa4a583847bdb",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/31906417860"
+      },
       "history": [
         {
           "sequence": 1,
@@ -12424,6 +12436,21 @@
             "db14f87039a2828dd505c3cf026bb87b4fd5d9b377c94d01529c9b85f229978c"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "COMPLETED",
+          "at": "2026-08-15T20:35:27.000Z",
+          "reason": "Recovered from a verified protected production apply receipt and audit event.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "64b527745b4b04cd4df6d5cf75575cfe9d87d96bddb822366704a0857aa35578",
+            "67c2158b54c2c0d91e06caa9a5972241caac8ccf79c9ef3a939aa4a583847bdb",
+            "db14f87039a2828dd505c3cf026bb87b4fd5d9b377c94d01529c9b85f229978c",
+            "fa7aa86da4fa299a97f6ef20fe89929bfc3f90aecfe6d1fca71eda1f791f5fac"
+          ],
+          "kind": "RECOVERY"
         }
       ]
     },
@@ -21251,13 +21278,13 @@
       "managerIndex": 62,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "138d813bbb51747415242682defa74b35537c611a9ae8e2c0590c4ca3a71bb1f",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-15T20:35:28.000Z",
+      "completedAt": "2026-08-15T20:35:28.000Z",
+      "exceptionReason": "Task 85 proved Third Coast Infrastructure (CV), Third Coast CV and Third Coast Infrastructure are one canonical company (cmrxpj6lv00jkivheo08wzrt4) and released the complete ArcLight Fund V, ArcLight 3C SPV and J.P. Morgan/IIF ownership after-image; task 318 would duplicate that identity and ownership work.",
+      "supersededByTaskId": "ledger:0085:third-coast-infrastructure-cv:56f00f29",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -21278,6 +21305,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-15T20:35:28.000Z",
+          "reason": "Task 85 proved Third Coast Infrastructure (CV), Third Coast CV and Third Coast Infrastructure are one canonical company (cmrxpj6lv00jkivheo08wzrt4) and released the complete ArcLight Fund V, ArcLight 3C SPV and J.P. Morgan/IIF ownership after-image; task 318 would duplicate that identity and ownership work.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -28106,5 +28143,5 @@
       ]
     }
   ],
-  "manifestSha256": "998e22e917f116701eff987cb73157fe10641454a097bc1b629e355dee4fd965"
+  "manifestSha256": "21f2400f56c3179f30da5412e47f8e4dab3450947acaea3ece2331c9a2c99827"
 }
