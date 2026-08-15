@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T20:35:28.000Z",
-  "runStatus": "IDLE",
+  "updatedAt": "2026-08-15T21:35:22.000Z",
+  "runStatus": "BLOCKED",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -12462,20 +12462,26 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "01c984c21818a415c134faf5b68889e9cd8f01913350fac720805c50cf0ab55e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "FAILED",
+      "attempts": 1,
+      "startedAt": "2026-08-15T20:41:30.000Z",
+      "updatedAt": "2026-08-15T21:35:22.000Z",
       "completedAt": null,
-      "exceptionReason": null,
+      "exceptionReason": "GPT-5.6 Sol Pro returned a JSON code block truncated after operatingResolution.region in both the initial response and the single permitted repair; no complete parseable response exists, so the task stopped without proposal or mutation.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-1/locked-task-snapshot.json",
+          "sha256": "1b43a0908acb30ce4dbab6c970819dea11514f722402d918869859ac39ccc30c"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-1/research-decision.json",
+          "sha256": "e2e155dde3e50ea319bf6fdd38960b08b171f115089d8f8ea2528c44f7ae352d"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -12489,6 +12495,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-15T20:41:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "FAILED",
+          "at": "2026-08-15T21:35:22.000Z",
+          "reason": "GPT-5.6 Sol Pro returned a JSON code block truncated after operatingResolution.region in both the initial response and the single permitted repair; no complete parseable response exists, so the task stopped without proposal or mutation.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "1b43a0908acb30ce4dbab6c970819dea11514f722402d918869859ac39ccc30c",
+            "e2e155dde3e50ea319bf6fdd38960b08b171f115089d8f8ea2528c44f7ae352d"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -28143,5 +28172,5 @@
       ]
     }
   ],
-  "manifestSha256": "21f2400f56c3179f30da5412e47f8e4dab3450947acaea3ece2331c9a2c99827"
+  "manifestSha256": "419e40c0aaff541d8508b4d16af394c5315c965056313acf6a51885f6808c3dd"
 }

@@ -1,0 +1,45 @@
+Worked for 4m 39s
+JSON
+{
+  "asOfDate": "2026-08-15",
+  "requestedCompany": "Thunderbird Renewables",
+  "requestedManager": "ArcLight Capital",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "Thunderbird Renewables remains an in-scope, current ArcLight Infrastructure Partners Fund VIII operating-renewables portfolio and should retain one existing ArcLight Capital Partners ownership period. ArcLight's current investment and portfolio-services materials distinguish Thunderbird from the SkyVest Renewables management platform and from Phoenix Renewables. The record nevertheless requires correction because the July 2024 SkyVest launch did not establish a Thunderbird acquisition or closing. Official FERC records show the relevant project-level acquisition sequence occurred in 2025: an initial 50% Lakefield closing on February 21, 2025, a 100% Shiloh IV closing on March 12, 2025, and the remaining 50% Lakefield closing on July 1, 2025. Those percentages apply to the underlying projects, not to ArcLight's manager-level economic stake in Thunderbird, which remains NOT_PUBLICLY_DISCLOSED. The corrected owner entry year is therefore 2025, no second ArcLight owner should be added, and the July 2024 milestone must not be treated as Thunderbird's acquisition.",
+  "identityResolution": {
+    "canonicalLegalName": "Thunderbird Renewables",
+    "aliases": [],
+    "officialWebsite": "NOT_PUBLICLY_DISCLOSED",
+    "headquarters": "NOT_PUBLICLY_DISCLOSED",
+    "country": "United States",
+    "platformBoundary": "Thunderbird Renewables is the manager-presented Fund VIII portfolio/platform comprising operating U.S. renewable-generation assets. ArcLight Renewable Services, LLC, operating as SkyVest Renewables, provides management and operating services and is not the Thunderbird PortCo. Phoenix Renewables is a separate Fund VIII portfolio. Lakefield, Shiloh IV, and other individual project entities or assets beneath Thunderbird are downstream assets and should not be counted as separate manager-level Thunderbird PortCos.",
+    "duplicateDecision": "NOT_A_DUPLICATE. Retain the existing production company ID cmrxpj6mi00jlivhev0ljria1 and canonical key thunderbird-renewables|united-states. Do not merge Thunderbird into SkyVest Renewables or Phoenix Renewables, and do not create another Thunderbird record for an underlying project entity."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "ArcLight Capital is a shortened census label for the existing ArcLight Capital Partners organization. It does not represent a second manager. The queued ADD_OWNER action must not create a duplicate ArcLight ownership row.",
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "fund": "ArcLight Infrastructure Partners Fund VIII",
+        "vehicle": "ArcLight Infrastructure Partners Fund VIII",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "entryYear": 2025,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerOwners": [],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "sector": "Power & Energy Transition",
+    "subsector": "Operating Renewables Portfolio",
+    "region": "North America",
+Review
+
+Decision: PROPOSED_CORRECTION. Thunderbird remains a distinct, active ArcLight Fund VIII operating-renewables portfolio. It is not SkyVest—the management and operating-services platform—and it is not Phoenix Renewables, which is a separate Fund VIII portfolio. “ArcLight Capital” is only a shortened label for ArcLight Capital Partners, so the existing ownership period should be retained and the queued ADD_OWNER suppressed.
+
+The owner entry year should change from 2024 to 2025. The July 2024 SkyVest launch did not establish a Thunderbird acquisition or closing. Official FERC records instead verify the underlying 2025 acquisition sequence: the initial 50% of Lakefield closed on February 21, Shiloh IV closed at 100% on March 12, and the remaining 50% of Lakefield closed on July 1. Those percentages are project-level and do not disclose ArcLight’s economic stake in Thunderbird.
+
+The corrected record should also use NOT_PUBLICLY_DISCLOSED for headquarters and manager-level stake, retain CLOSED_ACTIVE status, add the disclosed 309 MW scale, and show no Thunderbird-level exit or pending ownership transaction through August 15, 2026.

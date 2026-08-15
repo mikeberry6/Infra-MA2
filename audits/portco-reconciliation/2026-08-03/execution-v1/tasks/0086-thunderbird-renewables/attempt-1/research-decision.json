@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_FAILURE",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0086:thunderbird-renewables:63a5d8e7",
+  "taskIndex": 86,
+  "companyName": "Thunderbird Renewables",
+  "asOfDate": "2026-08-15",
+  "terminalOutcome": "FAILED",
+  "failureCode": "SECOND_MALFORMED_CHATGPT_RESPONSE",
+  "failureReason": "GPT-5.6 Sol Pro returned a JSON code block truncated after operatingResolution.region, then repeated the same truncation after the single permitted repair prompt.",
+  "chatgptExecution": {
+    "conversationUrl": "https://chatgpt.com/c/6a80d00a-be20-83ea-b197-20051485a4af",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "initialResponseSha256": "fad4286ae5016b308e87fc9153580a048adc5beda04f429a7dbbff7e2e781b02",
+    "repairResponseSha256": "198235623cf808352d1db3efd2dfba4ba41e63a47e325bdde433db07c732325e",
+    "repairCount": 1,
+    "repairLimit": 1,
+    "validationArtifact": "chatgpt-response-validation.json"
+  },
+  "independentEvidenceConclusion": {
+    "status": "SUPPORTED_BUT_NOT_APPLIED",
+    "summary": "Independent direct-source verification supports retaining one ArcLight Capital Partners / Fund VIII owner, correcting the entry year from 2024 to 2025, clearing the unsupported headquarters, replacing the two 2024 milestones with the verified February/March and July 2025 closings, retaining manager-level stake as not publicly disclosed, and recording no Thunderbird-level exit or pending transaction through 2026-08-15.",
+    "sourceVerificationArtifact": "source-verification.json",
+    "sourceVerificationSha256": "fa9ba994e1f1a83a698eb44807040b96a3921afc853fe218baf5f91097c36f6b"
+  },
+  "lockedTaskSnapshotSha256": "1b43a0908acb30ce4dbab6c970819dea11514f722402d918869859ac39ccc30c",
+  "proposalGenerated": false,
+  "approvalGenerated": false,
+  "databaseMutation": false,
+  "seedMutation": false,
+  "releaseStarted": false,
+  "nextTaskActivated": false,
+  "recoveryRequirement": "A new Thunderbird attempt must open a fresh GPT-5.6 Sol Pro conversation and may start only after the failed task is explicitly reactivated; the failed attempt and one-repair limit remain immutable."
+}

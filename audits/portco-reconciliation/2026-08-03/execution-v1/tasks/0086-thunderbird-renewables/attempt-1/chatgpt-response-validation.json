@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0086:thunderbird-renewables:63a5d8e7",
+  "taskIndex": 86,
+  "validatedAt": "2026-08-15T21:32:10.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a80d00a-be20-83ea-b197-20051485a4af",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "fad4286ae5016b308e87fc9153580a048adc5beda04f429a7dbbff7e2e781b02",
+    "errors": [
+      "The JSON code block terminated after operatingResolution.region without closing operatingResolution or the top-level object.",
+      "The Markdown review began inside the incomplete JSON response.",
+      "Required top-level keys after operatingResolution were absent from the JSON object."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-15T21:26:52.033Z",
+    "completedAt": "2026-08-15T21:32:01.958Z",
+    "valid": false,
+    "responseSha256": "198235623cf808352d1db3efd2dfba4ba41e63a47e325bdde433db07c732325e",
+    "errors": [
+      "The repaired JSON code block again terminated after operatingResolution.region without closing the object.",
+      "The repaired Markdown review again began before the JSON object was complete.",
+      "A second repair is prohibited by the one-repair limit."
+    ]
+  },
+  "finalResponse": {
+    "valid": false,
+    "decisionVisibleInPartialResponse": "PROPOSED_CORRECTION",
+    "confidenceVisibleInPartialResponse": "HIGH",
+    "jsonParsed": false,
+    "requiredTopLevelKeysPresent": false,
+    "result": "FAIL_SECOND_MALFORMED_RESPONSE"
+  },
+  "valid": false,
+  "errors": [
+    "No complete machine-parseable response exists after the single permitted repair."
+  ],
+  "repairsUsed": 1,
+  "independentSourceVerification": {
+    "artifact": "source-verification.json",
+    "sha256": "fa9ba994e1f1a83a698eb44807040b96a3921afc853fe218baf5f91097c36f6b",
+    "status": "PASS_BUT_DOES_NOT_OVERRIDE_CHATGPT_SCHEMA_FAILURE"
+  },
+  "proposalGenerated": false,
+  "databaseMutation": false,
+  "seedMutation": false,
+  "releaseStarted": false,
+  "terminalDisposition": "FAILED"
+}
