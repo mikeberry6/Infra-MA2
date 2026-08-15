@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "generatedAt": "2026-08-15T03:20:07.000Z",
+  "asOfDate": "2026-08-14",
+  "decision": "CREATE_CANONICAL_MANAGER_LEVEL_PLATFORM",
+  "taskId": "ledger:0079:orca:0d6c01b2",
+  "taskIndex": 79,
+  "companyName": "Orca",
+  "canonicalName": "Orca Acquisitions, LLC",
+  "requestedManagers": [
+    "ArcLight Capital"
+  ],
+  "sourceHoldingIds": [
+    "012-arclight-capital:holding:019:orca"
+  ],
+  "rationale": "Orca resolves to Orca Acquisitions, LLC, a manager-level ArcLight Fund VI and Olympus joint-venture platform. It is not merely an individual generating project or a duplicate of Walleye Power. Orca indirectly owns Walleye through Walleye Energy Holdings, and Walleye owns and operates Bay Shore. The authoritative methodology includes manager-level platforms and excludes subsidiaries or projects only when they sit beneath an already-counted platform. Create Orca once and keep Walleye, its intermediate holding company, Bay Shore and the generating units below the canonical boundary.",
+  "identityResolution": {
+    "canonicalLegalName": "Orca Acquisitions, LLC",
+    "aliases": [
+      "Orca",
+      "Orca Acquisitions"
+    ],
+    "existingProductionCompanyId": null,
+    "existingSeedKey": null,
+    "platformBoundary": "Orca Acquisitions, LLC is the canonical manager-level joint-venture platform.",
+    "subsidiaryBoundary": "Walleye Energy Holdings, LLC and Walleye Power, LLC are downstream holding and operating companies and are not separate PortCos.",
+    "assetBoundary": "Bay Shore and its individual generating units are assets beneath Walleye and are not separate PortCos.",
+    "duplicateDecision": "No existing canonical company or seed record matches Orca."
+  },
+  "ownershipResolution": {
+    "structuredManagerOwner": {
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Energy Partners Fund VI, L.P.",
+      "vehicle": "ArcLight Orca Holdings, LLC",
+      "stake": "95% of Class A managing interests; exact overall economic interest not publicly disclosed",
+      "investmentYear": 2016,
+      "state": "CLOSED_ACTIVE",
+      "control": "ArcLight appoints two management-committee members and controls day-to-day decisions."
+    },
+    "otherLegalEquityParticipation": {
+      "participant": "Olympus Power affiliates",
+      "vehicles": [
+        "Orca Funding, LLC",
+        "Beluga Partners, LLC"
+      ],
+      "stake": "Remaining 5% of Class A managing interests plus all non-managing, non-voting Class B interests; exact overall economic interest not publicly disclosed",
+      "state": "CLOSED_ACTIVE",
+      "repoTreatment": "Preserve in the description and evidence. Do not characterize Olympus as only a 5% economic owner."
+    },
+    "currentStakeTotal": "NOT_CALCULABLE_ACROSS_CLASSES",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "sector": "Power & Energy Transition",
+    "subsector": "Merchant power generation and industrial steam",
+    "headquarters": "NOT_PUBLICLY_DISCLOSED",
+    "operatingAsset": "Bay Shore Generating Facility, Oregon, Ohio",
+    "currentScale": "FERC reports a 136 MW summer-rated steam unit and a 16 MW oil-fired unit in its June 2026 filing.",
+    "services": "Merchant electricity generation in PJM and industrial steam supply.",
+    "ratingDifference": "Olympus presents 154 MW and 17 MW figures without the same summer-rating basis. Use the newer FERC summer-rated figures and label their basis."
+  },
+  "acquisitionExitCheck": {
+    "ownershipStructureDate": "The disclosed amended and restated Orca LLC agreement is dated 2016-07-25.",
+    "bayShoreSigning": "Walleye signed the Bay Shore asset-purchase agreement on 2018-03-09.",
+    "walleyeRename": "Walleye Energy changed its name to Walleye Power effective 2018-05-23.",
+    "bayShoreClosing": "The Bay Shore acquisition closed on 2018-07-31.",
+    "currentOwnership": "A 2026 FERC filing continues to show Orca above Walleye and ArcLight Fund VI above ArcLight Orca Holdings. ArcLight's live investment page continues to list Orca as Current.",
+    "subsequentExitSearch": "No Orca-, Walleye- or Bay Shore-specific equity sale, signed exit, dissolution, rename of the parent platform or pending change of control was identified through 2026-08-14."
+  },
+  "repoDecision": {
+    "productionCompanyCount": 0,
+    "seedCompanyCount": 0,
+    "canonicalRedirectCount": 0,
+    "mutation": "CREATE_COMPANY_AND_REQUIRED_RELATIONS",
+    "duplicateMapping": "NONE"
+  },
+  "primaryEvidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20260630-5438",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/source-verification.json",
+  "unresolvedQuestions": [
+    "The relative economic rights of the Class A and Class B interests are not publicly disclosed.",
+    "Orca's original state-law formation date and headquarters are not established by the opened sources.",
+    "An exact ArcLight investment closing date separate from the July 2016 governing-agreement date is not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "d671105e6b637ccc92e795bd4d069ee008bb80e5f8895cecc8ef20982407da4a",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_NEW",
+  "confidence": "HIGH"
+}

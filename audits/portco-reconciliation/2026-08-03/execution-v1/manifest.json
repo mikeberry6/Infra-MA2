@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-15T02:16:42.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-15T03:22:15.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0079:orca:0d6c01b2",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -11477,20 +11477,32 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "2bcbd4ccd016c15d2c15829d0bbaf18038d87f1fdbc3abaa27e647be284ff3e7",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-15T02:22:56.000Z",
+      "updatedAt": "2026-08-15T03:22:15.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d671105e6b637ccc92e795bd4d069ee008bb80e5f8895cecc8ef20982407da4a",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/locked-task-snapshot.json",
+          "sha256": "d671105e6b637ccc92e795bd4d069ee008bb80e5f8895cecc8ef20982407da4a"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0079-orca-v1/proposal.json",
+          "sha256": "6e8348b76e14a9a4e5fac8c6e79c8dad645787ab55b96eb280336b32245bd30e"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0079-orca-v1.json",
+          "sha256": "6fbb8049a4c93342fa8f6eb7a6ca6870edf27061b25904531e90a626b949eaa7"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/research-decision.json",
+          "sha256": "b040c03e8da85561983350546447e0414b0e96fd41e647113352f4ae978c9610"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -11504,6 +11516,52 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-15T02:22:56.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-15T03:21:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d671105e6b637ccc92e795bd4d069ee008bb80e5f8895cecc8ef20982407da4a",
+          "evidenceSha256": [
+            "6e8348b76e14a9a4e5fac8c6e79c8dad645787ab55b96eb280336b32245bd30e",
+            "b040c03e8da85561983350546447e0414b0e96fd41e647113352f4ae978c9610",
+            "d671105e6b637ccc92e795bd4d069ee008bb80e5f8895cecc8ef20982407da4a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-15T03:21:15.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d671105e6b637ccc92e795bd4d069ee008bb80e5f8895cecc8ef20982407da4a",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-15T03:22:15.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d671105e6b637ccc92e795bd4d069ee008bb80e5f8895cecc8ef20982407da4a",
+          "evidenceSha256": [
+            "6fbb8049a4c93342fa8f6eb7a6ca6870edf27061b25904531e90a626b949eaa7"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -27414,5 +27472,5 @@
       ]
     }
   ],
-  "manifestSha256": "e29016f246ee9945d376acf960c47475bfebc3db5cd6cee7acecdbf17e81daf3"
+  "manifestSha256": "97c762f58cd84ff8761dbade706bcf017aad0b663c4594749994a3c8edb9e995"
 }

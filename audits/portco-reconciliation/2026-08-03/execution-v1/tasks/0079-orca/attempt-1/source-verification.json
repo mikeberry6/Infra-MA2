@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0079:orca:0d6c01b2",
+  "taskIndex": 79,
+  "companyName": "Orca",
+  "asOfDate": "2026-08-14",
+  "retrievedAt": "2026-08-15T03:20:07.000Z",
+  "methodology": "Codex independently reopened each direct manager, company, SEC or regulatory source, verified the cited claim in the retrieved content, recorded access behavior, and hashed the retrieved bytes. FERC filing components were retrieved from the official eLibrary API and visually checked on the cited PDF pages. Search-result snippets were not treated as evidence.",
+  "sources": [
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20260630-5438",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/GetFileListFromP8/20260630-5438",
+      "status": "WORKING_HUMAN_PAGE_AND_OFFICIAL_API_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20260630-5438",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 502690,
+      "contentSha256": "17ec8e21457ed576cef443ea1a28b3d2df98275ab8a8b193dbec3f25b4e36dab",
+      "fileId": "87B152FD-CA56-C1F0-BBD4-9F80F1500001",
+      "verifiedClaims": [
+        "Walleye Power is wholly owned by Walleye Energy Holdings, which is wholly owned by Orca Acquisitions.",
+        "ArcLight Orca Holdings owns 95% of Orca's Class A managing interests and appoints two management-committee members.",
+        "ArcLight Orca Holdings is wholly owned by ArcLight Energy Partners Fund VI.",
+        "Olympus affiliates hold the remaining 5% of Class A interests and all Class B interests.",
+        "Walleye owns and operates the 136 MW summer-rated steam unit and 16 MW oil-fired unit in Lucas County, Ohio."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20180320-5213",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/GetFileListFromP8/20180320-5213",
+      "status": "WORKING_HUMAN_PAGE_AND_OFFICIAL_API_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20180320-5213",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 452441,
+      "contentSha256": "69d12d8b6783fc854dfe44ec4b70a6c3e5d01a2e01c55271629a5ae81af50f1e",
+      "fileId": "01F3B9B2-66E2-5005-8110-C31FAFC91712",
+      "verifiedClaims": [
+        "Orca owns Walleye Energy Holdings, the parent of Walleye.",
+        "ArcLight Fund VI owns ArcLight Orca Holdings.",
+        "ArcLight Orca Holdings holds 95% of Class A managing interests and controls day-to-day decisions.",
+        "Olympus subsidiaries hold the remaining Class A and all Class B interests.",
+        "The amended and restated Orca LLC agreement is dated July 25, 2016."
+      ]
+    },
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20180622-5127",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/GetFileListFromP8/20180622-5127",
+      "status": "WORKING_HUMAN_PAGE_AND_OFFICIAL_API_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20180622-5127",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 41339,
+      "contentSha256": "b3fc5c52c6abc562bbb8d621c0c46574e0c1275986aa8a1c641bfd098d505d3f",
+      "fileId": "01F70A4B-66E2-5005-8110-C31FAFC91712",
+      "verifiedClaims": [
+        "Walleye Energy, LLC changed its name to Walleye Power, LLC effective May 23, 2018.",
+        "Walleye filed its notice of succession under the new name."
+      ]
+    },
+    {
+      "evidenceUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "verificationUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 10657395,
+      "contentSha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+      "databaseSourceMetadata": {
+        "label": "ArcLight — 2025 ESG Report",
+        "type": "PRESENTATION"
+      },
+      "verifiedClaims": [
+        "ArcLight's portfolio appendix identifies Orca as a Power investment of Fund VI."
+      ]
+    },
+    {
+      "evidenceUrl": "https://arclight.com/investments/",
+      "verificationUrl": "https://arclight.com/investments/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/investments/",
+      "mediaType": "text/html",
+      "contentLengthBytes": 153928,
+      "contentSha256": "1b0fd1bb45b31ea90fb2249a65ec654de573bb2c5f760c377fd08317e25f78e5",
+      "verifiedClaims": [
+        "ArcLight's live investments table lists Orca in Power with Current status."
+      ],
+      "notes": "Use as proposal evidence only. The globally shared Source has a legacy company-specific label, so no conflicting Orca citation is added."
+    },
+    {
+      "evidenceUrl": "https://www.olympuspower.com/management/cooper-schieffelin",
+      "verificationUrl": "https://www.olympuspower.com/management/cooper-schieffelin",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.olympuspower.com/management/cooper-schieffelin",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 24649,
+      "contentSha256": "4b8dba4c8c96986e991a0ddbfdd7c94519869699f7cf223626cf9d6d80fe1909",
+      "verifiedClaims": [
+        "Olympus identifies Orca Acquisitions, LLC as a joint venture with ArcLight."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.olympuspower.com/node/25",
+      "verificationUrl": "https://www.olympuspower.com/node/25",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.olympuspower.com/node/25",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 24589,
+      "contentSha256": "04fa724fb9a3e45a56f368f1552da194e5787bd6ff600c9d98bf94ab0b9ed559",
+      "verifiedClaims": [
+        "Walleye owns Bay Shore in Oregon, Ohio.",
+        "Bay Shore sells merchant electricity and supplies industrial steam.",
+        "Olympus affiliates provide asset-management and operating services."
+      ],
+      "notes": "Olympus's 154 MW and 17 MW figures use a different rating basis from FERC's current 136 MW and 16 MW summer-rated figures."
+    },
+    {
+      "evidenceUrl": "https://www.sec.gov/Archives/edgar/data/1031296/000103129618000051/fe-06302018x10q.htm",
+      "verificationUrl": "https://www.sec.gov/Archives/edgar/data/1031296/000103129618000051/fe-06302018x10q.htm",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1031296/000103129618000051/fe-06302018x10q.htm",
+      "mediaType": "text/html",
+      "contentLengthBytes": 3298155,
+      "contentSha256": "328493212eedf76fd7a5302e30b9ab24e802c78836db2ea0e8b722bac0159aa0",
+      "verifiedClaims": [
+        "Walleye entered into the Bay Shore asset-purchase agreement on March 9, 2018.",
+        "The bankruptcy court approved the sale on July 13, 2018.",
+        "The transaction completed on July 31, 2018."
+      ]
+    },
+    {
+      "evidenceUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B909B109C-0000-C03B-9B29-CBFAE3D27AD9%7D&DocTitle=2026+Annual+Report+of+Cricket+Valley+Energy+Center%2C+LLC%2C+et+al.",
+      "verificationUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B909B109C-0000-C03B-9B29-CBFAE3D27AD9%7D&DocTitle=2026+Annual+Report+of+Cricket+Valley+Energy+Center%2C+LLC%2C+et+al.",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B909B109C-0000-C03B-9B29-CBFAE3D27AD9%7D&DocTitle=2026+Annual+Report+of+Cricket+Valley+Energy+Center%2C+LLC%2C+et+al.",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 179677,
+      "contentSha256": "3112aeab0239a1c414019b66172cbb38a3bb2536bb00d9e353d93d7b6b3572f5",
+      "databaseSourceMetadata": {
+        "label": "New York DPS — 2026 ArcLight annual report",
+        "type": "OTHER"
+      },
+      "verifiedClaims": [
+        "The filing reports Olympus Power's continuing 5% interest associated with Walleye and Bay Shore."
+      ],
+      "notes": "Do not use this simplified 5% disclosure to infer Olympus's total economic percentage because FERC separately identifies all Class B interests as Olympus-held."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    {
+      "claim": "ArcLight and Olympus entered Orca in 2015",
+      "disposition": "REMOVED_AS_UNSUPPORTED",
+      "reason": "The model supplied 2015 without direct evidence. The structured manager period uses 2016, the year of the disclosed governing agreement, with day precision deliberately omitted."
+    },
+    {
+      "url": "https://arclight.com/investments/",
+      "disposition": "DEMOTED_FROM_MODEL_PRIMARY",
+      "reason": "The generic manager table supports current portfolio status but not the legal ownership chain, stake class, governance, or operating boundary. The June 2026 FERC filing is primary."
+    },
+    {
+      "url": "https://arclight.com/wp-content/uploads/2024/09/2024-ArcLight-ESG-Report.pdf",
+      "disposition": "REPLACED_WITH_CURRENT_DIRECT_REPORT",
+      "reason": "The model cited the 2024 report. Codex reopened the current 2025 report, which directly identifies Orca as Fund VI / Power."
+    }
+  ],
+  "primarySourceCount": 1,
+  "allIncludedSourcesVerified": true
+}
