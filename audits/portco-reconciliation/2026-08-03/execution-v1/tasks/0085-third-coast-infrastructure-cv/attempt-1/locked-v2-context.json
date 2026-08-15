@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0085:third-coast-infrastructure-cv:56f00f29",
+  "taskIndex": 85,
+  "companyName": "Third Coast Infrastructure (CV)",
+  "generatedAt": "2026-08-15T10:54:30.664Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0085-third-coast-infrastructure-cv/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 85,
+    "taskId": "ledger:0085:third-coast-infrastructure-cv:56f00f29",
+    "canonicalKey": "third-coast-infrastructure-cv|united-states",
+    "companyName": "Third Coast Infrastructure (CV)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:016:third-coast-infrastructure-cv"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [
+      "third-coast-infrastructure|united-states"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: third-coast-infrastructure|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: third-coast-infrastructure|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpj6lv00jkivheo08wzrt4",
+    "linkedQueueTaskId": "ledger:0318:third-coast-infrastructure:68ab0519"
+  },
+  "resolvedCanonicalKey": "third-coast-infrastructure-cv|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6lv00jkivheo08wzrt4",
+    "name": "Third Coast Infrastructure",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Offshore & Coastal Midstream Infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Third Coast Infrastructure owns and operates offshore-focused midstream assets serving Gulf of Mexico oil and natural gas production. Its customers are upstream producers that require gathering, transportation, processing, and related infrastructure services to move hydrocarbons to market. The operating model is asset-heavy and fee-based, built around pipelines, processing assets, and floating production infrastructure rather than an asset-light services platform. Public materials describe operations concentrated along the Gulf Coast and in deepwater Gulf of Mexico producing regions, including natural gas and crude pipelines, gas processing assets, NGL infrastructure, and a floating production system. Reviewed public materials indicate that J.P. Morgan Asset Management's infrastructure team has investment responsibilities for Third Coast, while the precise current ownership percentage was not publicly disclosed in the reviewed sources.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2009,
+    "headquarters": "Gulf Coast",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrmu01ggivhebwqw3yyl",
+        "managerName": "J.P. Morgan Asset Management",
+        "organizationName": "J.P. Morgan Asset Management",
+        "fundName": "Infrastructure Investments Fund (IIF)",
+        "vehicleName": "Infrastructure Investments Fund (IIF)",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjrne01ghivheoikax5p4",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkmo602pkivhe3nomidl0",
+        "date": "2009",
+        "event": "Third Coast Infrastructure was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmoq02plivhe5a3e2ijz",
+        "date": "Jul 23, 2019",
+        "event": "ArcLight completed the take-private of American Midstream Partners, which converted into Third Coast Midstream, LLC, via Magnolia Infrastructure Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-07-23T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmp702pmivhemq5udn19",
+        "date": "Jun 2021",
+        "event": "Third Coast Midstream completed the sale of a significant minority interest in a subsidiary infrastructure holding company.",
+        "category": "DIVESTITURE",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmpo02pnivhe5z57vs4p",
+        "date": "Jun 7, 2021",
+        "event": "Third Coast announced the sale of an approximately 50% interest in Lighthouse Super Holdings to an affiliate later publicly identified as J.P. Morgan Asset Management's Infrastructure Investments Fund.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-07T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmq902poivhey5lg3nrb",
+        "date": "Jan 2025",
+        "event": "Third Coast Super Holdings announced a $25 million loan upsize and repricing at the infrastructure subsidiary level.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp1dr07kgivhep1x9xfya",
+        "label": "Third Coast — Third Coast Infrastructure",
+        "url": "https://www.third-coast.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Third Coast company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp1es07kiivhet9wod5pc",
+        "label": "Close date source — J.P. Morgan Asset Management — Third Coast Infrastructure",
+        "url": "https://www.third-coast.com/post/third-coast-midstream-completes-sale-of-significant-minority-interest",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "J.P. Morgan Asset Management closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp1hw07kkivhee4i9ggk0",
+        "label": "Close date source — ArcLight Capital Partners — Third Coast Infrastructure",
+        "url": "https://www.prnewswire.com/news-releases/american-midstream-announces-completion-of-merger-300889399.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp1ir07kmivhe3la60ax8",
+        "label": "Third Coast — Third Coast Infrastructure, LLC",
+        "url": "https://www.third-coast.com/operations",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Third Coast operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp1jr07koivhejgw9864i",
+        "label": "Am — Third Coast Infrastructure, LLC",
+        "url": "https://am.jpmorgan.com/us/en/asset-management/institutional/investment-strategies/alternatives/infrastructure-transport/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Am — Third Coast Infrastructure, LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Third Coast Infrastructure",
+    "investmentFirm": "J.P. Morgan Asset Management",
+    "sector": "Midstream",
+    "subsector": "Offshore & Coastal Midstream Infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Infrastructure Investments Fund (IIF)",
+    "description": "Third Coast Infrastructure owns and operates offshore-focused midstream assets serving Gulf of Mexico oil and natural gas production. Its customers are upstream producers that require gathering, transportation, processing, and related infrastructure services to move hydrocarbons to market. The operating model is asset-heavy and fee-based, built around pipelines, processing assets, and floating production infrastructure rather than an asset-light services platform. Public materials describe operations concentrated along the Gulf Coast and in deepwater Gulf of Mexico producing regions, including natural gas and crude pipelines, gas processing assets, NGL infrastructure, and a floating production system. Reviewed public materials indicate that J.P. Morgan Asset Management's infrastructure team has investment responsibilities for Third Coast, while the precise current ownership percentage was not publicly disclosed in the reviewed sources.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2009,
+    "investmentYear": 2021,
+    "headquarters": "Gulf Coast",
+    "milestones": [
+      {
+        "date": "2009",
+        "event": "Third Coast Infrastructure was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jul 23, 2019",
+        "event": "ArcLight completed the take-private of American Midstream Partners, which converted into Third Coast Midstream, LLC, via Magnolia Infrastructure Holdings.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 2021",
+        "event": "Third Coast Midstream completed the sale of a significant minority interest in a subsidiary infrastructure holding company.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "Jun 7, 2021",
+        "event": "Third Coast announced the sale of an approximately 50% interest in Lighthouse Super Holdings to an affiliate later publicly identified as J.P. Morgan Asset Management's Infrastructure Investments Fund.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 2025",
+        "event": "Third Coast Super Holdings announced a $25 million loan upsize and repricing at the infrastructure subsidiary level.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Third Coast — Third Coast Infrastructure",
+        "url": "https://www.third-coast.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — J.P. Morgan Asset Management — Third Coast Infrastructure",
+        "url": "https://www.third-coast.com/post/third-coast-midstream-completes-sale-of-significant-minority-interest",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — ArcLight Capital Partners — Third Coast Infrastructure",
+        "url": "https://www.prnewswire.com/news-releases/american-midstream-announces-completion-of-merger-300889399.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Third Coast — Third Coast Infrastructure, LLC",
+        "url": "https://www.third-coast.com/operations",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Am — Third Coast Infrastructure, LLC",
+        "url": "https://am.jpmorgan.com/us/en/asset-management/institutional/investment-strategies/alternatives/infrastructure-transport/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "J.P. Morgan Asset Management",
+        "ownershipVehicle": "Infrastructure Investments Fund (IIF)",
+        "investmentYear": 2021,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2wc00e8ivhey9g23bh2",
+        "fundName": "Infrastructure Investments Fund (IIF)",
+        "managerId": "cmrxpiavd002oivhe0incyak4",
+        "updatedAt": "2026-07-23T16:09:57.612Z"
+      },
+      {
+        "id": "cmsdi3o8c002x7h4spgye7z2d",
+        "fundName": "ArcLight Energy Partners Fund V, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:20.268Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpiavd002oivhe0incyak4",
+        "name": "J.P. Morgan Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.289Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0085:third-coast-infrastructure-cv:56f00f29",
+    "taskIndex": 85,
+    "canonicalKey": "third-coast-infrastructure-cv|united-states",
+    "capturedAt": "2026-08-15T10:54:30.664Z",
+    "databaseRevision": "company-state:9c7738fc9ed4e5a73342744cd69b822cc808aa831e16c550bf17f1b3a9fe1feb",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "86758ccc592bd273d7a6c7dcd1ea13c9f326d61f1667423951562a1645bc7f31",
+    "productionSnapshotSha256": "ba13ba43b6765a71ae8bbbb31757ccb4572817757b1092a6771120d634d47de7",
+    "targetCompanySnapshotSha256": "9c7738fc9ed4e5a73342744cd69b822cc808aa831e16c550bf17f1b3a9fe1feb",
+    "seedEntrySha256": "a6d6410dcccce64b83b76baeb48d31043a1e6fbfd7f586a56cf4a362959cdafa",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8b3c00e705cdb6a244c5231a5ad36a44456faf8b8ed18cbe3fee4f00e6cfa7cb",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "6e1864c784b40ceec6355d653de45f3be22123b68f71b70e2b5e569d40e26cd4",
+      "organizationsSha256": "ab17fc77f0327d6a98a41f9d189458ba7e680e886d36f503f4f8e3a185f79c17",
+      "citationsSha256": "4d73705e968550dd530225e060437b2e9ec75d205170ea6a614a94e41bc8eab2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7ad89cd34f197f1707ea20c0820e7622f1dfb090e9c2aec915799208a918e175",
+    "stateSha256": "26309781ac58af597beb410008b665a47ffa440916eae0a3c6887afaaadca338",
+    "taskSnapshotSha256": "51255618cb2fdbc0c2c393506687d6a485cb7c24ffdb1cfdb80e30968cb27a83"
+  },
+  "contextSha256": "6def64218e4c5f9fd1e65ef5bf3b78b816a05e78625643f87e6c1c6dc7bbf60f"
+}
