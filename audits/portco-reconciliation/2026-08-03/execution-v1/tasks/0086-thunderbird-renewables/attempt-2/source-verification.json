@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0086:thunderbird-renewables:63a5d8e7",
+  "taskIndex": 86,
+  "companyName": "Thunderbird Renewables",
+  "asOfDate": "2026-08-15",
+  "retrievedAt": "2026-08-15T21:00:09.000Z",
+  "methodology": "Codex independently reopened the direct manager, operator and regulatory sources, recorded access behavior, and hashed the retrieved bytes. The ArcLight ESG report and the three FERC notices were downloaded from their official publishers; the relevant pages were both text-extracted and rendered to images for visual verification. Search-result snippets were not treated as evidence.",
+  "sources": [
+    {
+      "evidenceUrl": "https://arclight.com/investments/",
+      "verificationUrl": "https://arclight.com/investments/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/investments/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 153928,
+      "contentSha256": "6d0c603f39d07e92700c98a58baeac231fd1273f92073f5c8b918979c1e48ed8",
+      "databaseSourceMetadata": {
+        "label": "Arclight — Catalyst Old River Hydroelectric",
+        "type": "WEBSITE"
+      },
+      "verifiedClaims": [
+        "ArcLight's live investments table lists Thunderbird Renewables in Renewables with Current status."
+      ],
+      "notes": "The existing Source is shared and has a legacy company-specific label. The proposal preserves that shared Source metadata."
+    },
+    {
+      "evidenceUrl": "https://arclight.com/portfolio-services/",
+      "verificationUrl": "https://arclight.com/portfolio-services/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/portfolio-services/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 154293,
+      "contentSha256": "dd4df74cae36e2cbfdf60601a67f8fe2d86c78c54ebc2a49ee5bac2b06bedd32",
+      "databaseSourceMetadata": {
+        "label": "Arclight — Alpha Generation (AlphaGen)",
+        "type": "WEBSITE"
+      },
+      "verifiedClaims": [
+        "ArcLight identifies Thunderbird and Phoenix as initial Fund VIII portfolios managed through SkyVest.",
+        "The page distinguishes the operating-asset portfolios from SkyVest's management and operating-services role.",
+        "Thunderbird is presented as the manager-level portfolio rather than as an individual project."
+      ],
+      "isPrimary": true,
+      "notes": "The existing Source is shared and has a legacy company-specific label. The proposal preserves that label and type."
+    },
+    {
+      "evidenceUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "verificationUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 10657395,
+      "contentSha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+      "databaseSourceMetadata": {
+        "label": "ArcLight — 2025 ESG Report",
+        "type": "PRESENTATION"
+      },
+      "verifiedClaims": [
+        "ArcLight says it established Thunderbird Renewables under SkyVest Renewables.",
+        "ArcLight reports 309 MW of operating renewable assets for Thunderbird.",
+        "The report captions Lakefield Wind Project as Thunderbird Renewables and lists Thunderbird as a Fund VIII renewable investment."
+      ],
+      "visualInspection": {
+        "pages": [
+          4,
+          5,
+          19
+        ],
+        "status": "VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250303-5288",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/GetFileListFromP8/20250303-5288",
+      "componentDownloadEndpoint": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/DownloadP8File",
+      "componentDownloadMethod": "POST",
+      "componentMediaType": "application/pdf",
+      "componentDownloadContentType": "application/json",
+      "landingMediaType": "text/html",
+      "verificationMediaType": "application/json",
+      "status": "WORKING_HUMAN_PAGE_METADATA_AND_OFFICIAL_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250303-5288",
+      "mediaType": "application/pdf",
+      "landingContentLengthBytes": 22464,
+      "landingContentSha256": "ce36ea1a53afa1f0f2ad8a032f7845ecef684774e4f9bad2141a68f7b0d20bc2",
+      "componentContentLengthBytes": 175238,
+      "componentContentSha256": "cb3d11815665b85180a840953867bf372962da3dea9c70c1b79939534be96dd1",
+      "fileId": "37174C6D-A7AC-C5A2-9E5A-95614E700000",
+      "fileName": "20250303 EC25-24-000 Notice of Consummation.pdf",
+      "verifiedClaims": [
+        "F8 Renewables CAMN Funding acquired 50% of the membership interests in LWP Lessee.",
+        "The Lakefield transaction completed on February 21, 2025.",
+        "LWP Lessee manages and operates the 205.5 MW Lakefield wind facility in Minnesota."
+      ],
+      "visualInspection": {
+        "pages": [
+          1
+        ],
+        "status": "VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250313-5247",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/GetFileListFromP8/20250313-5247",
+      "componentDownloadEndpoint": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/DownloadP8File",
+      "componentDownloadMethod": "POST",
+      "componentMediaType": "application/pdf",
+      "componentDownloadContentType": "application/json",
+      "landingMediaType": "text/html",
+      "verificationMediaType": "application/json",
+      "status": "WORKING_HUMAN_PAGE_METADATA_AND_OFFICIAL_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250313-5247",
+      "mediaType": "application/pdf",
+      "landingContentLengthBytes": 22464,
+      "landingContentSha256": "79d256d05284fa046f2ee46f130481014a1cd3e645bbafb95c7e2e2b6882e27f",
+      "componentContentLengthBytes": 177504,
+      "componentContentSha256": "a4be7429ef816a7bd46c2994d0c5bbd20bea307cd964a08372b6565ab7fff3d5",
+      "fileId": "984BBA68-C57F-CF98-93C5-95A4FA800000",
+      "fileName": "202503012 EC25-31-000 Notice of Consummation.pdf",
+      "verifiedClaims": [
+        "F8 Renewables CAMN Funding acquired 100% of the membership interests in Shiloh IV Lessee.",
+        "The Shiloh IV transaction completed on March 12, 2025.",
+        "Shiloh IV Lessee manages and operates the 102.5 MW Shiloh IV wind facility in California."
+      ],
+      "visualInspection": {
+        "pages": [
+          1
+        ],
+        "status": "VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250708-5177",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/GetFileListFromP8/20250708-5177",
+      "componentDownloadEndpoint": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/DownloadP8File",
+      "componentDownloadMethod": "POST",
+      "componentMediaType": "application/pdf",
+      "componentDownloadContentType": "application/json",
+      "landingMediaType": "text/html",
+      "verificationMediaType": "application/json",
+      "status": "WORKING_HUMAN_PAGE_METADATA_AND_OFFICIAL_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250708-5177",
+      "mediaType": "application/pdf",
+      "landingContentLengthBytes": 22464,
+      "landingContentSha256": "e7579ba325fed181a0ae735ba90a7c38ea465f4189102e67aeb40e3d17aeead2",
+      "componentContentLengthBytes": 172906,
+      "componentContentSha256": "9612564b71abf15e4f5d1fa2cb85728235f45323031763938c943665be0ec98d",
+      "fileId": "3D10D11A-F9FE-C4A0-9ADA-97F01BB00000",
+      "fileName": "EC25-74-000 Notice of Consummation.pdf",
+      "verifiedClaims": [
+        "F8 Renewables CAMN Funding acquired TAQA's 50% membership interest in LWP Lessee.",
+        "The remaining Lakefield-interest transaction completed on July 1, 2025."
+      ],
+      "visualInspection": {
+        "pages": [
+          1
+        ],
+        "status": "VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250328-5462",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/GetFileListFromP8/20250328-5462",
+      "componentDownloadEndpoint": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/DownloadP8File",
+      "componentDownloadMethod": "POST",
+      "componentMediaType": "application/pdf",
+      "componentDownloadContentType": "application/json",
+      "landingMediaType": "text/html",
+      "verificationMediaType": "application/json",
+      "status": "WORKING_HUMAN_PAGE_METADATA_AND_OFFICIAL_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250328-5462",
+      "mediaType": "application/pdf",
+      "landingContentLengthBytes": 22464,
+      "landingContentSha256": "9c8323f74943f58371f4caa3c9a88eb5792bd056e726d29c65e24539f386d876",
+      "componentContentLengthBytes": 1610423,
+      "componentContentSha256": "e852cd0909e2573253faa530cffa33c7303121ab30e6a3a93c7504bd4786b162",
+      "fileId": "7F667C8D-FC41-C101-AD53-95FCE1B00000",
+      "fileName": "20250328 LWP Lessee 203 FINAL.v2.pdf",
+      "verifiedClaims": [
+        "F8 Renewables CAMN Funding is an indirect subsidiary of ArcLight Infrastructure Partners Fund VIII vehicles.",
+        "The filing states that F8 had acquired 50% of LWP Lessee on February 21, 2025 and would own 100% after acquiring the remaining 50%."
+      ],
+      "visualInspection": {
+        "pages": [
+          1
+        ],
+        "status": "VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250430-5412",
+      "verificationUrl": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/GetFileListFromP8/20250430-5412",
+      "componentDownloadEndpoint": "https://elibrary.ferc.gov/eLibraryWebAPI/api/File/DownloadP8File",
+      "componentDownloadMethod": "POST",
+      "componentMediaType": "application/pdf",
+      "componentDownloadContentType": "application/json",
+      "landingMediaType": "text/html",
+      "verificationMediaType": "application/json",
+      "status": "WORKING_HUMAN_PAGE_METADATA_AND_OFFICIAL_COMPONENT",
+      "httpStatus": 200,
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250430-5412",
+      "mediaType": "application/pdf",
+      "landingContentLengthBytes": 22464,
+      "landingContentSha256": "edb5f42dbc4929b276d640bd51aa1ab84b12082cd9b59e83f3acc1a9bf5fd53c",
+      "componentContentLengthBytes": 297661,
+      "componentContentSha256": "03207b9b2b6b7b6cd4a61e64f87962746609787408fea205e75e7b75635da37c",
+      "fileId": "5BECF5F8-1175-CF20-9E9D-968832E00000",
+      "fileName": "2025-04-30 Shiloh IV CIS FINAL.pdf",
+      "verifiedClaims": [
+        "F8 Renewables CAMN Funding acquired 100% of Shiloh IV Lessee on March 12, 2025.",
+        "F8 Renewables CAMN Funding is a wholly owned indirect subsidiary of ArcLight Fund VIII."
+      ],
+      "visualInspection": {
+        "pages": [
+          1,
+          4
+        ],
+        "status": "VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://www.skyvest.com/",
+      "verificationUrl": "https://www.skyvest.com/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.skyvest.com/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 94162,
+      "contentSha256": "b0e79e71b570d821569ec3a437b42dced306fec15dc4c99d5f021bc2e7e51c0c",
+      "verifiedClaims": [
+        "SkyVest's live portfolio lists Lakefield at 206 MW in Minnesota and Shiloh IV at 103 MW in California.",
+        "The two rounded capacity figures total Thunderbird's reported 309 MW."
+      ],
+      "notes": "The 309 MW composition is a strong cross-source inference from ArcLight's report and SkyVest's live project list, not a separately published Thunderbird asset schedule."
+    },
+    {
+      "evidenceUrl": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+      "verificationUrl": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 216670,
+      "contentSha256": "26597d2316e217bdf78a9974cb627017cbd01da03e7a1d886900af44f82402e2",
+      "databaseSourceMetadata": {
+        "label": "PR Newswire — Phoenix Renewables",
+        "type": "PRESS_RELEASE"
+      },
+      "verifiedClaims": [
+        "ArcLight announced the SkyVest Renewables management-platform launch on July 29, 2024.",
+        "The release does not name Thunderbird and does not establish a Thunderbird acquisition or closing date."
+      ],
+      "notes": "The proposal retains the shared source only as supporting context and does not use it as Thunderbird ownership-entry evidence."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    {
+      "claim": "The July 2024 SkyVest launch establishes Thunderbird's 2024 ArcLight investment year.",
+      "disposition": "REJECTED_AS_UNSUPPORTED",
+      "reason": "The launch release does not name Thunderbird. Official FERC filings instead establish the first Thunderbird asset closing on February 21, 2025."
+    },
+    {
+      "claim": "United States is Thunderbird's headquarters.",
+      "disposition": "REJECTED_AS_UNSUPPORTED",
+      "reason": "The sources support U.S. operating geography but disclose no separate Thunderbird headquarters."
+    },
+    {
+      "claim": "The 100% project interests are a disclosed 100% manager-level stake in Thunderbird Renewables.",
+      "disposition": "REJECTED_AS_ENTITY_LEVEL_MISMATCH",
+      "reason": "The percentages are membership interests in LWP Lessee and Shiloh IV Lessee, not a disclosed percentage of the manager-level Thunderbird portfolio."
+    }
+  ],
+  "exitSearchConclusion": "No Thunderbird-level sale, completed exit, signed pending ownership transfer, dissolution, successor or rename was identified through 2026-08-15. ArcLight's live investments page continues to mark Thunderbird Current, and SkyVest's live portfolio continues to list Lakefield and Shiloh IV.",
+  "attempt": 2,
+  "recheckedAt": "2026-08-15T21:50:26.037Z",
+  "reusedSourceEvidenceFrom": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-1/source-verification.json",
+  "currentUrlRecheck": {
+    "status": "PASS",
+    "checkedUrlCount": 9,
+    "allResolvedHttp200": true
+  }
+}

@@ -1,0 +1,251 @@
+Skip to content
+Chat history
+ChatGPT Pro
+New chat
+Library
+Scheduled
+Plugins
+More
+Pinned
+Health
+NEW
+Finances
+Projects
+SWR
+News Updates
+Infrastructure Companies
+Sprouts
+Chats
+Thunderbird Renewables Research
+Breast Milk Storage Tips
+Thunderbird Renewables Research
+Research and JSON review
+Infrastructure Advisory Brief
+Company record correction
+Company identity resolution
+REC Solar Ownership Research
+Pike Holdings Research
+Phoenix Renewables Research
+Qualifying transactions summary
+M&A Infrastructure Deal Research
+M&A Research Protocol
+Orca Phase 1 Research
+M&A Infrastructure Transaction Research
+M&A Infrastructure Research
+M&A Research Protocol
+M&A Research Protocol
+M&A Infrastructure Research Protocol
+M&A Infrastructure Transactions
+M&A Research Protocol
+OnPoint Energy Research
+M&A Research Protocol
+M&A Research Protocol
+M&A Infrastructure Research
+M&A Infrastructure Research
+M&A Infrastructure Transaction Research
+M&A Infrastructure Research
+mike berry
+Pro
+# North American PortCo reconciliation — Thunderbird Renewables
+
+Research one manager-level holding as of **2026-08-15**. Independently search the current web and return a list-reconciliation decision for **Thunderbird Renewables** under census manager **ArcLight Capital**.
+
+## Existing repository claim to verify
+
+- Existing canonical company: Thunderbird Renewables
+- Production ID: cmrxpj6mi00jlivhev0ljria1
+- Country: United States; region: North America
+- Existing active owner: ArcLight Capital Partners
+- Existing fund: ArcLight Infrastructure Partners Fund VIII
+- Existing investment year: 2024
+- Existing headquarters: United States
+- Existing milestones: a generic 2024 entry and a July 2024 SkyVest launch
+- Census queue action: ADD_OWNER for manager label ArcLight Capital
+
+Treat every existing field as an unverified claim. Determine whether ArcLight Capital is merely a shortened label for the existing ArcLight Capital Partners owner; do not add a duplicate owner if so.
+
+## Required research
+
+Verify identity, platform/project boundaries, Fund VIII attribution, current status, North American operating-infrastructure scope, stake, investment announcement and legal closing dates, subsequent exits or signed pending transactions, headquarters, website, founding year, and disclosed scale. Search explicitly for both acquisitions and later exits through the as-of date.
+
+Do not conflate Thunderbird with SkyVest Renewables, Phoenix Renewables, or individual projects/subsidiaries. Project-level percentages may not be treated as a manager-level Thunderbird stake.
+
+Open direct pages. These are leads, not assumed facts:
+
+- https://arclight.com/investments/
+- https://arclight.com/portfolio-services/
+- https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf
+- https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html
+- https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250303-5288
+- https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250328-5462
+- https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250313-5247
+- https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250430-5412
+- https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250708-5177
+
+Choose exactly one decision: VERIFIED_NO_CHANGE, PROPOSED_CORRECTION, SUPERSEDED_OR_DUPLICATE, EXCLUDED, or DEFERRED. Use NOT_PUBLICLY_DISCLOSED for noncritical unavailable facts. Use UNRESOLVED only for identity or active ownership uncertainty; either unresolved item requires DEFERRED.
+
+## Output contract — compact and complete
+
+Return exactly one fenced json object followed by a Markdown review of no more than five bullets. Do not output research narration before the JSON. Keep the JSON compact: every ordinary string under 300 characters, the description under 600 characters, at most three milestones, and at most ten evidence rows. Do not omit any required key.
+
+
+json
+{
+  "asOfDate": "2026-08-15",
+  "requestedCompany": "Thunderbird Renewables",
+  "requestedManager": "ArcLight Capital",
+  "decision": "",
+  "confidence": "HIGH | MEDIUM | LOW",
+  "rationale": "",
+  "identityResolution": {
+    "canonicalLegalName": "",
+    "aliases": [],
+    "officialWebsite": null,
+    "headquarters": null,
+    "country": null,
+    "platformBoundary": "",
+    "duplicateDecision": ""
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "",
+    "currentOwners": [],
+    "formerOwners": [],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "sector": null,
+    "subsector": null,
+    "region": null,
+    "countryTags": [],
+    "description": null,
+    "companyStatus": null,
+    "yearFounded": null,
+    "services": null,
+    "footprint": null,
+    "scale": []
+  },
+  "acquisitionExitCheck": {
+    "formationOrAcquisition": "",
+    "legalClosing": "",
+    "subsequentExitSearch": ""
+  },
+  "milestones": [],
+  "evidence": [
+    {
+      "label": "",
+      "url": "https://...",
+      "purpose": "",
+      "sourceTier": "PRIMARY | REGULATORY | INSTITUTIONAL | REPUTABLE_SECONDARY",
+      "workingStatus": "WORKING | REDIRECTED | BROWSER_BLOCKED_BUT_VERIFIED | DEAD",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "beforeAfterChanges": [],
+  "excludedOrDuplicateCandidates": [],
+  "unresolvedQuestions": [],
+  "recommendedListAction": ""
+}
+
+
+For ownership rows, include only supported fields from manager, fund, vehicle, stake, announcementDate, entryDate, entryYear, exitDate, exitYear, isActive, and transactionState. Verify every active owner with a current direct source and a documented exit search. A complete parseable JSON object is mandatory.
+
+Show more
+Worked for 35m 13s
+JSON
+{
+  "asOfDate": "2026-08-15",
+  "requestedCompany": "Thunderbird Renewables",
+  "requestedManager": "ArcLight Capital",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "The existing owner is correct, but the queued ArcLight Capital row would duplicate ArcLight Capital Partners. Correct the entry year from 2024 to 2025, replace SkyVest milestones with Thunderbird closings, and clear unsupported headquarters and stake.",
+  "identityResolution": {
+    "canonicalLegalName": "Thunderbird Renewables",
+    "aliases": [],
+    "officialWebsite": "NOT_PUBLICLY_DISCLOSED",
+    "headquarters": "NOT_PUBLICLY_DISCLOSED",
+    "country": "United States",
+    "platformBoundary": "Manager-level Fund VIII portfolio of operating wind assets; distinct from SkyVest, Phoenix Renewables, Lakefield and Shiloh IV project entities.",
+    "duplicateDecision": "Retain Thunderbird as a distinct company record; reject only the duplicate ArcLight owner row."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "ALIAS_MATCH: ArcLight Capital is census shorthand for ArcLight Capital Partners; do not add a second owner.",
+    "currentOwners": [
+      {
+        "manager": "ArcLight Capital Partners",
+        "fund": "ArcLight Infrastructure Partners Fund VIII",
+        "vehicle": "F8 Renewables CAMN Funding, LLC",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2024-11-19",
+        "entryDate": "2025-02-21",
+        "entryYear": 2025,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerOwners": [],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "sector": "Renewable power infrastructure",
+
+Decision: PROPOSED_CORRECTION. ArcLight Capital is shorthand for ArcLight Capital Partners and should not create a second owner; ArcLight still lists Thunderbird as a current renewable investment. 
+PR Newswire
++1
+
+Thunderbird and Phoenix are separately named initial Fund VIII portfolios, with SkyVest/ARS providing management services. The July 29, 2024 release launched SkyVest and closed a separate 160 MW Texas wind investment, not Thunderbird’s acquisition. 
+arclight
++1
+
+The supported filings occurred on November 19, 2024, December 19, 2024, and March 28, 2025; FERC consummation records support the corresponding February 21, March 12, and July 1, 2025 closings. 
+eLibrary
++5
+GovInfo
++5
+Federal Register
++5
+
+Manager-level stake, standalone website, headquarters and founding year remain NOT_PUBLICLY_DISCLOSED. The 309 MW disclosed scale reconciles to SkyVest’s 206 MW Lakefield and 103 MW Shiloh IV listings; no Thunderbird-level exit or signed pending sale surfaced. 
+SkyVest
++1
+
+Sources
+Your JSON code block was malformed because it began inside the evidence array and omitted the required top-level opening fields. Do not research again.
+
+Return a new complete response with exactly one fenced json object followed by at most three Markdown bullets. The JSON object must be under 3,500 characters and parse with JSON.parse. Use short strings, no inline citations, no extra fields, at most three milestones, and at most six evidence rows. Every required top-level key from the original schema must be present.
+
+Preserve these supported conclusions:
+
+- decision: PROPOSED_CORRECTION; confidence: HIGH.
+- Canonical company remains Thunderbird Renewables in the United States; SkyVest is the management platform, Phoenix is separate, and Lakefield/Shiloh IV are underlying assets.
+- ArcLight Capital is the existing ArcLight Capital Partners owner, not a second owner.
+- Current owner: ArcLight Capital Partners / ArcLight Infrastructure Partners Fund VIII; entry date 2025-02-21; entry year 2025; manager-level stake NOT_PUBLICLY_DISCLOSED; CLOSED_ACTIVE.
+- No former owners and no pending ownership transaction.
+- Headquarters, standalone website, founding year, and manager-level stake are not publicly disclosed.
+- Scale: 309 MW. Milestones: Lakefield 50% close on 2025-02-21; Shiloh IV 100% close on 2025-03-12; remaining Lakefield 50% close on 2025-07-01. Those percentages are project-level only.
+- No Thunderbird-level exit or signed pending sale was found through 2026-08-15.
+- Recommended action: reject the queued duplicate ADD_OWNER; correct entry year, headquarters, description, milestones, and citations in place.
+
+Use no more than these six direct evidence URLs:
+
+1. https://arclight.com/investments/
+2. https://arclight.com/portfolio-services/
+3. https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf
+4. https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250303-5288
+5. https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250313-5247
+6. https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250708-5177
+
+The response must begin with the complete JSON object at asOfDate and end that object only after recommendedListAction. Do not repeat the prior partial response.
+
+Show more
+Worked for 4m 16s
+JSON
+{"asOfDate":"2026-08-15","requestedCompany":"Thunderbird Renewables","requestedManager":"ArcLight Capital","decision":"PROPOSED_CORRECTION","confidence":"HIGH","rationale":"Reject duplicate owner and correct the record in place.","identityResolution":{"canonicalLegalName":"Thunderbird Renewables","aliases":[],"officialWebsite":"NOT_PUBLICLY_DISCLOSED","headquarters":"NOT_PUBLICLY_DISCLOSED","country":"United States","platformBoundary":"Fund VIII wind portfolio; SkyVest manages it, Phoenix is separate, and Lakefield/Shiloh IV are assets.","duplicateDecision":"Keep Thunderbird; reject duplicate owner."},"ownershipResolution":{"managerAliasDecision":"ArcLight Capital is ArcLight Capital Partners.","currentOwners":[{"manager":"ArcLight Capital Partners","fund":"ArcLight Infrastructure Partners Fund VIII","stake":"NOT_PUBLICLY_DISCLOSED","entryDate":"2025-02-21","entryYear":2025,"isActive":true,"transactionState":"CLOSED_ACTIVE"}],"formerOwners":[],"pendingOwnershipTransactions":[]},"operatingResolution":{"sector":"Renewable power","subsector":"Onshore wind","region":"North America","countryTags":["United States"],"description":"Current U.S. wind portfolio managed by SkyVest; 309 MW.","companyStatus":"CURRENT","yearFounded":"NOT_PUBLICLY_DISCLOSED","services":"Wind ownership","footprint":"U.S.","scale":["309 MW"]},"acquisitionExitCheck":{"formationOrAcquisition":"Fund VIII asset closings occurred in 2025.","legalClosing":"Entry began 2025-02-21; percentages are asset-level.","subsequentExitSearch":"No Thunderbird exit or signed sale found through 2026-08-15."},"milestones":[{"date":"2025-02-21","description":"Lakefield 50% close; project level only."},{"date":"2025-03-12","description":"Shiloh IV 100% close; project level only."},{"date":"2025-07-01","description":"Remaining Lakefield 50% close; project level only."}],"evidence":[{"label":"Investments","url":"https://arclight.com/investments/","purpose":"Current status","sourceTier":"PRIMARY","workingStatus":"WORKING","isRecommendedPrimary":true},{"label":"Services","url":"https://arclight.com/portfolio-services/","purpose":"Boundaries","sourceTier":"PRIMARY","workingStatus":"WORKING","isRecommendedPrimary":true},{"label":"ESG","url":"https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf","purpose":"Fund; 309 MW","sourceTier":"PRIMARY","workingStatus":"WORKING","isRecommendedPrimary":true},{"label":"Lakefield 1","url":"https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250303-5288","purpose":"2025-02-21","sourceTier":"REGULATORY","workingStatus":"WORKING","isRecommendedPrimary":true},{"label":"Shiloh IV","url":"https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250313-5247","purpose":"2025-03-12","sourceTier":"REGULATORY","workingStatus":"WORKING","isRecommendedPrimary":true},{"label":"Lakefield 2","url":"https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250708-5177","purpose":"2025-07-01","sourceTier":"REGULATORY","workingStatus":"WORKING","isRecommendedPrimary":true}],"beforeAfterChanges":["Reject ADD_OWNER","Entry 2024→2025","HQ→NOT_PUBLICLY_DISCLOSED","Replace SkyVest milestones"],"excludedOrDuplicateCandidates":["ArcLight Capital: alias","SkyVest: manager","Phoenix: separate","Lakefield/Shiloh IV: assets"],"unresolvedQuestions":[],"recommendedListAction":"Reject duplicate ADD_OWNER; correct entry year, HQ, description, milestones and citations."}
+
+Thunderbird remains a distinct, current 309 MW Fund VIII portfolio; SkyVest is its manager, Phoenix is separate, and Lakefield/Shiloh IV are underlying assets.
+
+The queued ADD_OWNER should be rejected, with the existing ArcLight Capital Partners owner corrected in place.
+
+ChatGPT is AI and can make mistakes. Check important info.
+
+Pro

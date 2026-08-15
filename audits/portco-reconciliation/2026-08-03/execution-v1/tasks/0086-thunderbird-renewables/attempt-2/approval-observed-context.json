@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0086:thunderbird-renewables:63a5d8e7",
+  "taskIndex": 86,
+  "companyName": "Thunderbird Renewables",
+  "generatedAt": "2026-08-15T22:32:38.317Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0086-thunderbird-renewables/attempt-2/approval-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 86,
+    "taskId": "ledger:0086:thunderbird-renewables:63a5d8e7",
+    "canonicalKey": "thunderbird-renewables|united-states",
+    "companyName": "Thunderbird Renewables",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 12,
+    "managers": [
+      "ArcLight Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "012-arclight-capital:holding:017:thunderbird-renewables"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj6mi00jlivhev0ljria1"
+    ],
+    "seedKeys": [
+      "thunderbird renewables|United States"
+    ],
+    "evidenceUrls": [
+      "https://arclight.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj6mi00jlivhev0ljria1",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "thunderbird-renewables|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6mi00jlivhev0ljria1",
+    "name": "Thunderbird Renewables",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Operating Renewables Portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Thunderbird Renewables is an operating portfolio of renewable generation assets managed within ArcLight's renewables services platform. The assets serve wholesale power markets through an asset-heavy operating model focused on commercial optimization of existing renewable infrastructure. ArcLight's portfolio-services materials identify Thunderbird Renewables as one of the initial ArcLight Fund VIII portfolio investments managed through SkyVest Renewables. The platform is therefore structured around ownership and management of operating renewable assets rather than equipment supply or greenfield development alone. ArcLight disclosed the management structure in 2024, while public sources reviewed do not disclose Thunderbird's separate founding year or detailed ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrnv01giivhe9otuuxad",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": "ArcLight Infrastructure Partners Fund VIII",
+        "vehicleName": "ArcLight Infrastructure Partners Fund VIII",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkmrc02ppivhew00brzlq",
+        "date": "2024",
+        "event": "Thunderbird Renewables became part of ArcLight's operating-focused renewables initiative.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmrt02pqivhe4pfhvy3q",
+        "date": "Jul 2024",
+        "event": "ArcLight launched SkyVest Renewables and disclosed Thunderbird Renewables as one of the initial Fund VIII portfolios it would manage.",
+        "category": "FINANCING",
+        "sortDate": "2024-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp1ka07kpivherq97rxuf",
+        "label": "Arclight — Alpha Generation (AlphaGen)",
+        "url": "https://arclight.com/portfolio-services/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Arclight operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp1kv07kqivhej12nimr3",
+        "label": "Arclight — Catalyst Old River Hydroelectric",
+        "url": "https://arclight.com/investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Arclight company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp1lc07krivhe2sklmzqv",
+        "label": "PR Newswire — Phoenix Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Thunderbird Renewables",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Operating Renewables Portfolio",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ArcLight Infrastructure Partners Fund VIII",
+    "description": "Thunderbird Renewables is an operating portfolio of renewable generation assets managed within ArcLight's renewables services platform. The assets serve wholesale power markets through an asset-heavy operating model focused on commercial optimization of existing renewable infrastructure. ArcLight's portfolio-services materials identify Thunderbird Renewables as one of the initial ArcLight Fund VIII portfolio investments managed through SkyVest Renewables. The platform is therefore structured around ownership and management of operating renewable assets rather than equipment supply or greenfield development alone. ArcLight disclosed the management structure in 2024, while public sources reviewed do not disclose Thunderbird's separate founding year or detailed ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "Thunderbird Renewables became part of ArcLight's operating-focused renewables initiative.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2024",
+        "event": "ArcLight launched SkyVest Renewables and disclosed Thunderbird Renewables as one of the initial Fund VIII portfolios it would manage.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Arclight — Thunderbird Renewables",
+        "url": "https://arclight.com/portfolio-services/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Arclight — Thunderbird Renewables",
+        "url": "https://arclight.com/investments/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "PR Newswire — Thunderbird Renewables",
+        "url": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "ArcLight Infrastructure Partners Fund VIII",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj13m00bgivhetxigjot9",
+        "fundName": "ArcLight Infrastructure Partners Fund VIII",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-07-23T16:09:55.282Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0086:thunderbird-renewables:63a5d8e7",
+    "taskIndex": 86,
+    "canonicalKey": "thunderbird-renewables|united-states",
+    "capturedAt": "2026-08-15T22:32:38.317Z",
+    "databaseRevision": "company-state:69711a830f6aeef4372b465ca56c3c461803ce9eee265f2a99bc0fc5bce81ecf",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "01c984c21818a415c134faf5b68889e9cd8f01913350fac720805c50cf0ab55e",
+    "productionSnapshotSha256": "a4d0f0a915bcdcf532fc023166172357c4ce96b71afd6d7063b46bdf19e5ac68",
+    "targetCompanySnapshotSha256": "69711a830f6aeef4372b465ca56c3c461803ce9eee265f2a99bc0fc5bce81ecf",
+    "seedEntrySha256": "d0b271bc718233f3012a6ca0b4c58f2a6914233df6b03fa2c224f22b52a440c7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "e3c003c54aa6c69bf79e422f774b8997a75df122851b418f94539066f2600fcc",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f885b79d95ab5792d558ab1c3e9fe4ab4f3bc6fee8dbd50b4074c66c3d6162dd",
+      "organizationsSha256": "9209f5f8f0a3e6878efa796110e2409571ca9d3221c63bbaccfee0e017ac4218",
+      "citationsSha256": "95e35b30d1a1369b90e336bef3c08fcba1ba8f602222f699fcbd0c5207555b23",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "d522bcfb0802a264fe04a2710dd88fbdbad1081b9d57f4c855873a6e47071439",
+    "stateSha256": "3b7e76b4159da016c29f6ea682e73a6a18dd8975502ed1c68813949f93a03359",
+    "taskSnapshotSha256": "d737c5269c178cd24c51960b227a75a2446e7d245b936ee9d19163b5bbb70f8f"
+  },
+  "contextSha256": "e955e58f5099d8ad77c3626f3a28fc69c70390cf47a64796307358f51834009c"
+}

@@ -1,0 +1,213 @@
+{
+  "generatedAt": "2026-08-15T22:31:24.733Z",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Correct the existing Thunderbird Renewables record in place rather than adding the duplicate ArcLight owner proposed by the census queue. The census manager label ArcLight Capital resolves to the existing canonical ArcLight Capital Partners ownership period and does not establish a second owner. ArcLight identifies Thunderbird as a current Fund VIII portfolio managed through SkyVest, while its 2025 ESG report presents Thunderbird as a 309 MW operating renewables portfolio. FERC notices and filings establish Fund VIII vehicle closings for 50% of Lakefield Wind Project on February 21, 2025, 100% of Shiloh IV on March 12, 2025, and the remaining 50% of Lakefield on July 1, 2025. Those closings support correcting the existing ownership entry year from 2024 to 2025 and replacing the unsupported 2024 milestones. SkyVest is the management platform, and Lakefield and Shiloh IV are underlying projects, so none is added as a separate owner or PortCo in this task. The project-level percentages are not stored as a manager-level Thunderbird stake. Public sources reviewed do not disclose a separate Thunderbird headquarters, legal suffix, website, founding year or manager-level ownership percentage. No Thunderbird-level sale, completed exit or signed pending ownership transfer was identified through August 15, 2026.",
+  "evidence": [
+    {
+      "url": "https://arclight.com/investments/",
+      "purpose": "Current portfolio status and subsequent-exit search",
+      "supports": [
+        "ArcLight's live investments table lists Thunderbird Renewables as Current",
+        "No realization date or Thunderbird-level pending sale is shown"
+      ]
+    },
+    {
+      "url": "https://arclight.com/portfolio-services/",
+      "purpose": "Fund VIII attribution and platform boundary",
+      "supports": [
+        "ArcLight identifies Thunderbird as an initial Fund VIII portfolio managed through SkyVest",
+        "The page distinguishes Thunderbird's operating-asset portfolio from SkyVest's management-services role"
+      ]
+    },
+    {
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Fund attribution, manager-level identity and disclosed scale",
+      "supports": [
+        "ArcLight identifies Thunderbird as a Fund VIII renewables investment",
+        "ArcLight reports 309 MW of operating renewable assets for Thunderbird",
+        "ArcLight states that Thunderbird was established under SkyVest Renewables"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250303-5288",
+      "purpose": "Initial Lakefield acquisition closing",
+      "supports": [
+        "F8 Renewables CAMN Funding acquired 50% of LWP Lessee",
+        "The Lakefield transaction closed on February 21, 2025"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250328-5462",
+      "purpose": "Lakefield Fund VIII linkage and ownership sequence",
+      "supports": [
+        "F8 Renewables CAMN Funding is an indirect subsidiary of ArcLight Infrastructure Partners Fund VIII vehicles",
+        "The filing confirms the February 21, 2025 initial 50% Lakefield closing and the contemplated remaining-interest acquisition"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250313-5247",
+      "purpose": "Shiloh IV acquisition closing",
+      "supports": [
+        "F8 Renewables CAMN Funding acquired 100% of Shiloh IV Lessee",
+        "The Shiloh IV transaction closed on March 12, 2025"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250430-5412",
+      "purpose": "Shiloh IV Fund VIII linkage and current ownership",
+      "supports": [
+        "F8 Renewables CAMN Funding is a wholly owned indirect subsidiary of ArcLight Fund VIII",
+        "The filing confirms the March 12, 2025 acquisition of 100% of Shiloh IV Lessee"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250708-5177",
+      "purpose": "Remaining Lakefield acquisition closing",
+      "supports": [
+        "F8 Renewables CAMN Funding acquired TAQA's remaining 50% interest in LWP Lessee",
+        "The remaining-interest transaction closed on July 1, 2025"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html",
+      "purpose": "SkyVest launch context and announcement-versus-entry distinction",
+      "supports": [
+        "ArcLight announced SkyVest Renewables in July 2024",
+        "The release does not name Thunderbird and therefore does not establish a 2024 Thunderbird acquisition or closing"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "description": "Thunderbird Renewables is an ArcLight Infrastructure Partners Fund VIII portfolio of operating U.S. wind-generation assets managed through ArcLight's SkyVest Renewables platform. Regulatory filings show Fund VIII vehicles acquired a 50% indirect interest in the Lakefield Wind Project on February 21, 2025 and a 100% indirect interest in the Shiloh IV Wind Project on March 12, 2025, then acquired the remaining 50% Lakefield interest on July 1, 2025. ArcLight's 2025 ESG report presents Thunderbird as a 309 MW operating renewables portfolio. Thunderbird is counted as the manager-level portfolio, while SkyVest is the management platform and Lakefield and Shiloh IV are underlying assets. ArcLight's live investments page lists Thunderbird as Current. Public sources reviewed do not disclose Thunderbird's legal suffix, separate website, founding year, headquarters or manager-level ownership percentage, and no Thunderbird-level exit or signed pending transaction was identified through August 15, 2026.",
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-15T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjrnv01giivhe9otuuxad",
+      "set": {
+        "investmentYear": 2025
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpkmrc02ppivhew00brzlq",
+      "set": {
+        "date": "Feb 21–Mar 12, 2025",
+        "event": "ArcLight Fund VIII's F8 Renewables vehicle acquired a 50% indirect interest in the 205.5 MW Lakefield wind facility on February 21 and a 100% indirect interest in the 102.5 MW Shiloh IV wind facility on March 12, establishing Thunderbird's initial 2025 operating portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-02-21T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250303-5288",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250328-5462",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250313-5247",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250430-5412",
+          "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkmrt02pqivhe4pfhvy3q",
+      "set": {
+        "date": "Jul 1, 2025",
+        "event": "ArcLight Fund VIII's F8 Renewables vehicle acquired TAQA's remaining 50% indirect interest in the Lakefield wind facility, taking its project-level interest to 100%.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250708-5177",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250328-5462"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpp1ka07kpivherq97rxuf",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Fund VIII attribution, manager-level Thunderbird boundary and SkyVest management-platform distinction",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpp1kv07kqivhej12nimr3",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ArcLight portfolio status and Thunderbird-level subsequent-exit search",
+        "isPrimary": true
+      }
+    },
+    {
+      "id": "cmrxpp1lc07krivhe2sklmzqv",
+      "set": {
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "July 2024 SkyVest launch context; does not establish Thunderbird's acquisition or closing date",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "ArcLight — 2025 ESG Report",
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Fund VIII attribution, 309 MW operating portfolio scale and Thunderbird-under-SkyVest boundary",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FERC — Lakefield initial acquisition notice of consummation",
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250303-5288",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "February 21, 2025 closing of F8 Renewables' initial 50% Lakefield interest",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FERC — Lakefield remaining-interest application",
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250328-5462",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Fund VIII vehicle linkage, initial Lakefield closing and contemplated remaining 50% acquisition",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FERC — Shiloh IV acquisition notice of consummation",
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250313-5247",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "March 12, 2025 closing of F8 Renewables' 100% Shiloh IV interest",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FERC — Shiloh IV change-in-status filing",
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250430-5412",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Fund VIII vehicle linkage and confirmation of the March 12, 2025 Shiloh IV closing",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FERC — Lakefield remaining-interest notice of consummation",
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250708-5177",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "July 1, 2025 closing of F8 Renewables' acquisition of TAQA's remaining 50% Lakefield interest",
+      "isPrimary": false
+    }
+  ]
+}
