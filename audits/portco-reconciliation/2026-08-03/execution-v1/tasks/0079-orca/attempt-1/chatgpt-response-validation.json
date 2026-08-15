@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CHATGPT_RESEARCH_RESPONSE_VALIDATION",
+  "taskId": "ledger:0079:orca:0d6c01b2",
+  "attempt": "REPAIR",
+  "validatedAt": "2026-08-15T03:20:07.000Z",
+  "initialAttempt": {
+    "valid": false,
+    "responseJsonSha256": "c285c6bee285ed6a30e1aa2729c3e974bffb1e25492116dfd87f3a7130439ab0",
+    "renderedTurnCaptureSha256": "68d52c3edfab9d16bec3f767dd386970f2a7ffa0d93ef3b1746628a60e80d853",
+    "errors": [
+      "The turn ended without a final response or parseable JSON after a missing-file error and container-tool hang."
+    ]
+  },
+  "renderedTurnCaptureSha256": "90fd64ddc1ab8c4bf1e42beb80925833413c3c8f44b692794540af11c558edf3",
+  "responseJsonSha256": "1a2594644169b69ffb698fbaf0b2bb35a8ee4b0359e7addce007f7906d4aed62",
+  "valid": true,
+  "errors": [],
+  "captureNote": "The repaired response was rendered inside ChatGPT's virtualized code editor. The structured JSON file is a normalized capture of the visible response fields and decision, not a byte-for-byte editor-buffer export. The rendered output contained all required top-level sections and one recommended primary source.",
+  "repairInitiatedAfterInitialFailure": true,
+  "repairsUsed": 1,
+  "repairDecisionMatchesFinalProposal": true,
+  "acceptedWithCodexCorrections": true,
+  "corrections": [
+    {
+      "modelClaim": "ArcLight and Olympus entered Orca in 2015",
+      "disposition": "REMOVED_AS_UNSUPPORTED",
+      "finalTreatment": "Use 2016 as the year-level ownership basis because the directly opened governing agreement is dated July 25, 2016; do not claim an exact investment closing date."
+    },
+    {
+      "modelClaim": "ArcLight's generic investments page is the recommended primary source",
+      "disposition": "DEMOTED",
+      "finalTreatment": "Use the June 2026 FERC filing as primary because it directly establishes the ownership chain, class interests, governance, and operating boundary."
+    },
+    {
+      "modelClaim": "The 2024 ArcLight ESG report is the fund-attribution source",
+      "disposition": "REPLACED_WITH_CURRENT_SOURCE",
+      "finalTreatment": "Use ArcLight's current 2025 ESG report, reopened and independently verified, for Fund VI attribution."
+    }
+  ],
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}
