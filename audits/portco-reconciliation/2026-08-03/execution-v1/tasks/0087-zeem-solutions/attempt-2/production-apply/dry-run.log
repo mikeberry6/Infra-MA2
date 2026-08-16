@@ -1,0 +1,290 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0087-zeem-solutions-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0087-zeem-solutions-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0087-zeem-solutions/attempt-2/locked-production-snapshot.json --proposal-sha256=1442deb7d5e6711daf05e4f05763edce4bb3c6e8734693860237e29116d1ee05 --approval-sha256=5fcc65a312bf4553d485d6bae590c668ea2609f22ce42b5bf92bd82984460b33 --snapshot-sha256=e38c9de562ead731d3c4f862040f3544c973bc736f9a53ff8576d8336d68a784
+
+(node:2995) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "1442deb7d5e6711daf05e4f05763edce4bb3c6e8734693860237e29116d1ee05",
+    "approvalSha256": "5fcc65a312bf4553d485d6bae590c668ea2609f22ce42b5bf92bd82984460b33",
+    "afterImageSha256": "215a282e8f0364cc70e1aa75ca4e432b69fa12488746656cfd809e39058a4da5",
+    "taskId": "ledger:0087:zeem-solutions:fb68d7c4",
+    "operation": "UPSERT",
+    "company": {
+      "name": "Zeem Solutions",
+      "investmentFirm": "ArcLight Capital Partners",
+      "sector": "Transportation",
+      "subsector": "EV Fleet Charging Infrastructure",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "ArcLight Energy Partners Fund VII, L.P.",
+      "description": "Zeem Solutions, Inc. designs, owns and operates commercial electric-vehicle charging infrastructure and provides fleet-management and EV-asset services for commercial fleets. Founded in 2017 and headquartered in Los Angeles, the company operates shared charging depots in Inglewood and Long Beach, California, and SeaTac, Washington, while also deploying charging at customer sites. ArcLight Energy Partners Fund VII committed $50 million in 2022, and ArcLight continues to list Zeem as a current transformative-infrastructure investment. Public sources do not disclose ArcLight's ownership percentage, security class, immediate holding vehicle or exact legal closing date. LAZ Parking Realty Investors was announced as a prospective strategic and equity partner in 2022, but no legal closing or current direct ownership evidence was identified; no Zeem-level sale or signed pending exit was found through August 15, 2026.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "website": "https://www.zeemsolutions.com/",
+      "yearFounded": 2017,
+      "investmentYear": 2022,
+      "headquarters": "Los Angeles, California",
+      "milestones": [
+        {
+          "date": "2017",
+          "event": "Zeem Solutions was founded to provide commercial electric-vehicle fleet infrastructure and services.",
+          "category": "Founding"
+        },
+        {
+          "date": "May 4, 2026",
+          "event": "Zeem reported that its LAX charging depot had surpassed 350,000 charging sessions and delivered more than 13.4 million kWh of energy.",
+          "category": "Expansion"
+        },
+        {
+          "date": "Jul 6, 2022",
+          "event": "Zeem announced a $50 million capital commitment from a fund managed by ArcLight Capital Partners; ArcLight's portfolio reporting attributes Zeem to Fund VII, while the exact legal closing date and security class were not publicly disclosed.",
+          "category": "Financing"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Zeemsolutions — Zeem Solutions",
+          "url": "https://www.zeemsolutions.com/about",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Commercial EV fleet-infrastructure operating model and company boundary"
+        },
+        {
+          "label": "Zeemsolutions — Zeem Solutions",
+          "url": "https://www.zeemsolutions.com/press",
+          "type": "ARTICLE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "2017 founding year and current company operating activity"
+        },
+        {
+          "label": "Investment date source — ArcLight Capital Partners — Zeem Solutions",
+          "url": "https://www.globenewswire.com/news-release/2022/07/06/2475140/0/en/Zeem-Solutions-EV-Fleet-as-a-Service-Provider-Secures-50-Million-Capital-Investment-from-Affiliates-of-ArcLight-Capital-Partners-Announces-Strategic-Partnership-with-LAZ-Parking-Re.html",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "July 2022 $50 million ArcLight-managed fund investment announcement and infrastructure-strategy basis"
+        },
+        {
+          "label": "ArcLight — Current investments",
+          "url": "https://arclight.com/investments",
+          "type": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current Zeem portfolio status, transformative-infrastructure classification and subsequent-exit check"
+        },
+        {
+          "label": "ArcLight — 2025 ESG Report",
+          "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "ArcLight Fund VII attribution for Zeem"
+        },
+        {
+          "label": "Zeem Solutions — Locations",
+          "url": "https://www.zeemsolutions.com/locations",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Los Angeles headquarters and U.S. charging-depot footprint"
+        },
+        {
+          "label": "Zeem Solutions — Privacy Policy",
+          "url": "https://www.zeemsolutions.com/privacy-policy",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Zeem Solutions, Inc. legal identity"
+        },
+        {
+          "label": "Zeem Solutions — 350,000 LAX charging sessions",
+          "url": "https://www.zeemsolutions.com/post/zeem-solutions-surpasses-350-000-charging-sessions-at-lax-depot-marking-a-new-phase-for-commercial-ev-charging",
+          "type": "ARTICLE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "May 2026 LAX depot charging-session and energy-delivery milestone"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "ArcLight Capital Partners",
+          "ownershipVehicle": "ArcLight Energy Partners Fund VII, L.P.",
+          "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+          "investmentYear": 2022,
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": "cmrxpj6nk00jnivhe6mtdjqda",
+      "name": "Zeem Solutions",
+      "aliases": [
+        "Zeem",
+        "Zeem Solutions, Inc."
+      ],
+      "sector": "TRANSPORTATION",
+      "subsector": "EV Fleet Charging Infrastructure",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Zeem Solutions, Inc. designs, owns and operates commercial electric-vehicle charging infrastructure and provides fleet-management and EV-asset services for commercial fleets. Founded in 2017 and headquartered in Los Angeles, the company operates shared charging depots in Inglewood and Long Beach, California, and SeaTac, Washington, while also deploying charging at customer sites. ArcLight Energy Partners Fund VII committed $50 million in 2022, and ArcLight continues to list Zeem as a current transformative-infrastructure investment. Public sources do not disclose ArcLight's ownership percentage, security class, immediate holding vehicle or exact legal closing date. LAZ Parking Realty Investors was announced as a prospective strategic and equity partner in 2022, but no legal closing or current direct ownership evidence was identified; no Zeem-level sale or signed pending exit was found through August 15, 2026.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": "https://www.zeemsolutions.com/",
+      "yearFounded": 2017,
+      "headquarters": "Los Angeles, California",
+      "lastVerifiedAt": "2026-08-15T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjrp001gkivhetkl41na9",
+          "managerName": "ArcLight Capital Partners",
+          "organizationName": "ArcLight Capital Partners",
+          "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+          "vehicleName": null,
+          "stake": null,
+          "investmentYear": 2022,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpkmua02ptivhe3tlmegue",
+          "date": "2017",
+          "event": "Zeem Solutions was founded to provide commercial electric-vehicle fleet infrastructure and services.",
+          "category": "FOUNDING",
+          "sortDate": "2017-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.zeemsolutions.com/press"
+          ]
+        },
+        {
+          "id": "cmrxpkmuo02puivheonveprjh",
+          "date": "May 4, 2026",
+          "event": "Zeem reported that its LAX charging depot had surpassed 350,000 charging sessions and delivered more than 13.4 million kWh of energy.",
+          "category": "EXPANSION",
+          "sortDate": "2026-05-04T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.zeemsolutions.com/post/zeem-solutions-surpasses-350-000-charging-sessions-at-lax-depot-marking-a-new-phase-for-commercial-ev-charging"
+          ]
+        },
+        {
+          "id": "cmrxpkmxh02pvivheh4c1pduc",
+          "date": "Jul 6, 2022",
+          "event": "Zeem announced a $50 million capital commitment from a fund managed by ArcLight Capital Partners; ArcLight's portfolio reporting attributes Zeem to Fund VII, while the exact legal closing date and security class were not publicly disclosed.",
+          "category": "FINANCING",
+          "sortDate": "2022-07-06T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.globenewswire.com/news-release/2022/07/06/2475140/0/en/Zeem-Solutions-EV-Fleet-as-a-Service-Provider-Secures-50-Million-Capital-Investment-from-Affiliates-of-ArcLight-Capital-Partners-Announces-Strategic-Partnership-with-LAZ-Parking-Re.html",
+            "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxpp1pp07kzivhedwue9gxu",
+          "label": "Zeemsolutions — Zeem Solutions",
+          "url": "https://www.zeemsolutions.com/about",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Commercial EV fleet-infrastructure operating model and company boundary",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpp1qu07l1ivhe8mjxjcg4",
+          "label": "Zeemsolutions — Zeem Solutions",
+          "url": "https://www.zeemsolutions.com/press",
+          "sourceType": "ARTICLE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "2017 founding year and current company operating activity",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpp1s307l3ivherw53lq2d",
+          "label": "Investment date source — ArcLight Capital Partners — Zeem Solutions",
+          "url": "https://www.globenewswire.com/news-release/2022/07/06/2475140/0/en/Zeem-Solutions-EV-Fleet-as-a-Service-Provider-Secures-50-Million-Capital-Investment-from-Affiliates-of-ArcLight-Capital-Partners-Announces-Strategic-Partnership-with-LAZ-Parking-Re.html",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "July 2022 $50 million ArcLight-managed fund investment announcement and infrastructure-strategy basis",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "ArcLight — Current investments",
+          "url": "https://arclight.com/investments",
+          "sourceType": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current Zeem portfolio status, transformative-infrastructure classification and subsequent-exit check",
+          "isPrimary": true
+        },
+        {
+          "id": null,
+          "label": "ArcLight — 2025 ESG Report",
+          "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "ArcLight Fund VII attribution for Zeem",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Zeem Solutions — Locations",
+          "url": "https://www.zeemsolutions.com/locations",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Los Angeles headquarters and U.S. charging-depot footprint",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Zeem Solutions — Privacy Policy",
+          "url": "https://www.zeemsolutions.com/privacy-policy",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Zeem Solutions, Inc. legal identity",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Zeem Solutions — 350,000 LAX charging sessions",
+          "url": "https://www.zeemsolutions.com/post/zeem-solutions-surpasses-350-000-charging-sessions-at-lax-depot-marking-a-new-phase-for-commercial-ev-charging",
+          "sourceType": "ARTICLE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "May 2026 LAX depot charging-session and energy-delivery milestone",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Zeem Solutions",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to aliases, description, website, yearFounded, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+      }
+    ],
+    "changedFields": [
+      "aliases",
+      "citations",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "ownershipPeriods",
+      "website",
+      "yearFounded"
+    ],
+    "retiredCompanyIds": []
+  }
+}
