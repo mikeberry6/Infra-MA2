@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0097:oneta-energy-center:feec8a7c",
+  "taskIndex": 97,
+  "companyName": "Oneta Energy Center",
+  "generatedAt": "2026-08-16T11:07:21.472Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0097-oneta-energy-center/attempt-2/pre-apply-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 97,
+    "taskId": "ledger:0097:oneta-energy-center:feec8a7c",
+    "canonicalKey": "oneta-energy-center|united-states",
+    "companyName": "Oneta Energy Center",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "015-argo-infrastructure-partners:holding:010:oneta-energy-center"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj5uv00ifivheiv841o51"
+    ],
+    "seedKeys": [
+      "oneta energy center|United States"
+    ],
+    "evidenceUrls": [
+      "https://onetapower.com/",
+      "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census POSSIBLE_DUPLICATE for 015-argo-infrastructure-partners:holding:010:oneta-energy-center: The primary repository record matches the holding, but the separate repository record named Oneta Power appears to represent the same generation asset. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census POSSIBLE_DUPLICATE for 015-argo-infrastructure-partners:holding:010:oneta-energy-center: The primary repository record matches the holding, but the separate repository record named Oneta Power appears to represent the same generation asset."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5uv00ifivheiv841o51",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "oneta-energy-center|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj5uv00ifivheiv841o51",
+    "name": "Oneta Energy Center",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-Fired Power Generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Oneta Energy Center is a natural gas-fired combined-cycle generation asset in Oklahoma that sells capacity and energy into wholesale power markets and contracted utility arrangements. The project is an asset-heavy thermal generation facility serving the Southwest Power Pool region rather than retail end users. Public materials describe the plant as a 1,127 MW facility near Broken Arrow, Oklahoma, and Missouri municipal disclosure documents reference contracted capacity from the plant beginning in 2020. LS Power announced in August 2019 that it had agreed to sell Oneta and the Carville project to Argo Infrastructure Partners. Public sources reviewed do not disclose a separate project-company founding year or the current ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Oklahoma",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqyw01faivhe634yyccq",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo Infrastructure Partners (Apollo)",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjqr02m0ivhe9f36smy0",
+        "date": "Aug 15, 2019",
+        "event": "LS Power announced the sale of Oneta Energy Center and the Carville project to Argo Infrastructure Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-08-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjrd02m1ivhewyhrirlu",
+        "date": "Jun 2020",
+        "event": "Missouri Joint Municipal Electric Utility Commission documents show contracted capacity from Oneta beginning on June 1, 2020.",
+        "category": "EXPANSION",
+        "sortDate": "2020-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpow9r07csivheuzey0zg8",
+        "label": "Announcement date source — Argo Infrastructure Partners — Oneta Energy Center",
+        "url": "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpowaq07cuivheaccykrim",
+        "label": "Onetapower — Oneta Energy Center",
+        "url": "https://onetapower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Onetapower company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowby07cwivheh0pk27a7",
+        "label": "Cdn — Oneta Energy Center",
+        "url": "https://cdn.ymaws.com/mpua.org/resource/collection/984F6EB9-DDFA-41EB-9ADE-762188D73686/2024_MEC_Annual_Disclosure_Report_-_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cdn — Oneta Energy Center",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Oneta Energy Center",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Gas-Fired Power Generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Argo Infrastructure Partners (Apollo)",
+    "description": "Oneta Energy Center is a natural gas-fired combined-cycle generation asset in Oklahoma that sells capacity and energy into wholesale power markets and contracted utility arrangements. The project is an asset-heavy thermal generation facility serving the Southwest Power Pool region rather than retail end users. Public materials describe the plant as a 1,127 MW facility near Broken Arrow, Oklahoma, and Missouri municipal disclosure documents reference contracted capacity from the plant beginning in 2020. LS Power announced in August 2019 that it had agreed to sell Oneta and the Carville project to Argo Infrastructure Partners. Public sources reviewed do not disclose a separate project-company founding year or the current ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2019,
+    "headquarters": "Oklahoma",
+    "milestones": [
+      {
+        "date": "Aug 15, 2019",
+        "event": "LS Power announced the sale of Oneta Energy Center and the Carville project to Argo Infrastructure Partners.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 2020",
+        "event": "Missouri Joint Municipal Electric Utility Commission documents show contracted capacity from Oneta beginning on June 1, 2020.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Argo Infrastructure Partners — Oneta Energy Center",
+        "url": "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Onetapower — Oneta Energy Center",
+        "url": "https://onetapower.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Cdn — Oneta Energy Center",
+        "url": "https://cdn.ymaws.com/mpua.org/resource/collection/984F6EB9-DDFA-41EB-9ADE-762188D73686/2024_MEC_Annual_Disclosure_Report_-_Final.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "Argo Infrastructure Partners (Apollo)",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0097:oneta-energy-center:feec8a7c",
+    "taskIndex": 97,
+    "canonicalKey": "oneta-energy-center|united-states",
+    "capturedAt": "2026-08-16T11:07:21.472Z",
+    "databaseRevision": "company-state:d92768c21f60ed4d1a4c496a6d23e2f1785ba24b292eabb5c907c474b7f4b840",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "a54cc82b369ffe9835fc4c0e540cd4b91b51b20467183ea76a1779eec12c6192",
+    "productionSnapshotSha256": "0b81bd3de82fdf8aa2671ae3e4030b8e51d72a5a496c397394ff6efce5fbff14",
+    "targetCompanySnapshotSha256": "d92768c21f60ed4d1a4c496a6d23e2f1785ba24b292eabb5c907c474b7f4b840",
+    "seedEntrySha256": "ce766be83da83194488474dace7311d0ed582dcde49bf5a7d3fd39dddfc0e6b9",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "a9d36eb297c2d6c3a45bfac09409fea5e330f2a4a7521d4ceaa5913dbca2cae8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "f01b3688aba53d9d19ee18e5c45b4f4ffb8870847574e566693256e8d8da17ea",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1fa747b670a82adb8e6e4360fd04450c111d8cfec8d1489862dc02d163d22066",
+    "stateSha256": "7e7a35becba0792d63e6ac6e243c59d89a9f7c803b020d5d4af20a7abda1b1e2",
+    "taskSnapshotSha256": "43141a2fcdc1860441a8511ad7b64ef70c7d98ac2576ead2cf22c415af0fa982"
+  },
+  "contextSha256": "b99bd77114796729493f198173adfd6dcc71d023a2e17d873b381fc0ac8a93f5"
+}
