@@ -1,0 +1,41 @@
+```json
+{
+  "asOfDate":"2026-08-15",
+  "requestedCompany":"DSD Renewables",
+  "requestedManager":"Ares Management / BlackRock / Global Infrastructure Partners",
+  "decision":"PROPOSED_CORRECTION",
+  "confidence":"MEDIUM",
+  "rationale":"DSD remains one platform. Ares' 2022 preferred investment is in-scope direct equity and reputable secondary sources report it became majority owner in 2025. BlackRock and Cox remain minority owners. GIP is not a separate DSD owner because BlackRock's acquisition of GIP did not transfer DSD ownership.",
+  "identityResolution":{
+    "canonicalLegalName":"Distributed Solar Development, LLC",
+    "aliases":["DSD Renewables","GE Solar"],
+    "officialWebsite":"https://dsdrenewables.com/",
+    "headquarters":"Schenectady, NY",
+    "country":"United States",
+    "platformBoundary":"U.S. distributed-energy platform; exclude projects, SPVs, lenders and tax-equity investors.",
+    "duplicateDecision":"KEEP_SINGLE_RECORD"
+  },
+  "ownershipResolution":{
+    "managerAliasDecision":"Attribute legacy investment to BlackRock GRP II, not GIP.",
+    "currentOwners":[
+      {"manager":"Ares Management","fund":"NOT_PUBLICLY_DISCLOSED","vehicle":"Infrastructure and Power strategy","stake":"Majority; exact % NOT_PUBLICLY_DISCLOSED","announcementDate":"2022-03-03","entryDate":"2022-03-03","entryYear":2022,"isActive":true,"transactionState":"CLOSED_ACTIVE"},
+      {"manager":"BlackRock","fund":"Global Renewable Power II Fund (GRP II)","vehicle":"BlackRock Real Assets","stake":"Minority; exact % NOT_PUBLICLY_DISCLOSED","announcementDate":"2019-07","entryDate":"2019-07","entryYear":2019,"isActive":true,"transactionState":"CLOSED_ACTIVE"},
+      {"manager":"Cox Enterprises","stake":"Minority; exact % NOT_PUBLICLY_DISCLOSED","announcementDate":"2023-11-14","entryDate":"2023-11-14","entryYear":2023,"isActive":true,"transactionState":"CLOSED_ACTIVE"}
+    ],
+    "formerOwners":[
+      {"manager":"GE Renewable Energy","vehicle":"GE Solar","stake":"Exited after remaining 20% sale","entryYear":2012,"exitDate":"2020-11-10","exitYear":2020,"isActive":false,"transactionState":"REALIZED"}
+    ],
+    "pendingOwnershipTransactions":[]
+  },
+  "operatingResolution":{
+    "sector":"Infrastructure",
+    "subsector":"Distributed solar, storage and EV charging",
+    "region":"United States",
+    "countryTags":["United States"],
+    "description":"Developer, owner and operator of distributed-energy assets.",
+    "companyStatus":"ACTIVE",
+    "yearFounded":2012,
+```
+
+- **Decision:** `PROPOSED_CORRECTION` with medium confidence; no signed platform sale or pending ownership transaction was verified.
+- **Key corrections:** Ares is the current majority owner (reported via reputable secondary sources), BlackRock and Cox remain minority owners, GE is former owner, and GIP should not be recorded as a DSD owner.

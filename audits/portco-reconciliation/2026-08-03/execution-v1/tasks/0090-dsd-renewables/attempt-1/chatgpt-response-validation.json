@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0090:dsd-renewables:bb4db790",
+  "taskIndex": 90,
+  "attempt": 1,
+  "validatedAt": "2026-08-16T02:48:00.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a81209c-ccdc-83ea-956d-f0bb834cd170",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "1b14ac4f3572d98e73fcc21683c8153c0f71066d960650e99b97755367acc4b8",
+    "errors": [
+      "JSON terminated in the acquisitionExitCheck key and could not be parsed.",
+      "Milestones, evidence, before/after changes, exclusions, unresolved questions and recommended action were absent from the truncated object.",
+      "Several ownership rows omitted required isActive and transactionState fields."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-16T02:44:51.560Z",
+    "completedAt": "2026-08-16T02:46:43.252Z",
+    "valid": false,
+    "responseSha256": "caa9f397aed0a6c3d423186581d453c97396df44b03678bb4c5fdde1d8cfa051",
+    "errors": [
+      "Repaired JSON terminated after operatingResolution.yearFounded and could not be parsed.",
+      "The required acquisitionExitCheck, milestones, evidence, before/after changes, exclusions, unresolved questions and recommended action were absent.",
+      "No complete evidence list or primary-source selection was returned."
+    ]
+  },
+  "finalResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "result": "FAIL_AFTER_ONE_REPAIR"
+  },
+  "valid": false,
+  "errors": [
+    "The initial response and sole permitted repair were both malformed.",
+    "No proposal may be generated and no database or seed mutation may occur."
+  ],
+  "repairsUsed": 1,
+  "independentSourceVerification": null,
+  "finalResearchDecision": null,
+  "proposalGenerated": false,
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "releaseStarted": false,
+  "terminalDisposition": "FAILED"
+}

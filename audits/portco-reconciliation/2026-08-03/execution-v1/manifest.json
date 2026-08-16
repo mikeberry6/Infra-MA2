@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T02:19:33.000Z",
-  "runStatus": "IDLE",
+  "updatedAt": "2026-08-16T02:49:22.000Z",
+  "runStatus": "BLOCKED",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -13131,20 +13131,26 @@
       "managerIndex": 14,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "b61517863cce7d123304306e97cd6c590bf2de0fe8c93f5269beffb7e3ccbb76",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "FAILED",
+      "attempts": 1,
+      "startedAt": "2026-08-16T02:25:47.000Z",
+      "updatedAt": "2026-08-16T02:49:22.000Z",
       "completedAt": null,
-      "exceptionReason": null,
+      "exceptionReason": "GPT-5.6 Sol Pro returned truncated, invalid JSON in the initial response and again in the sole permitted repair; no proposal or mutation was allowed.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0090-dsd-renewables/attempt-1/task-snapshot.json",
+          "sha256": "c4cdd637c95735d86e2b86d050f32debf3ec79b21840161004334915291fde69"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0090-dsd-renewables/attempt-1/failure.json",
+          "sha256": "dbada3b3d3dd5c8e4cf4a85032cd9703a8470c42a3d10ca18d0d89d1f8836f51"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -13158,6 +13164,29 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T02:25:47.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "FAILED",
+          "at": "2026-08-16T02:49:22.000Z",
+          "reason": "GPT-5.6 Sol Pro returned truncated, invalid JSON in the initial response and again in the sole permitted repair; no proposal or mutation was allowed.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "c4cdd637c95735d86e2b86d050f32debf3ec79b21840161004334915291fde69",
+            "dbada3b3d3dd5c8e4cf4a85032cd9703a8470c42a3d10ca18d0d89d1f8836f51"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -28660,5 +28689,5 @@
       ]
     }
   ],
-  "manifestSha256": "357abc312ab407251d62d95f2cb6a3ab15a4ff23dc251c93df4fef0b97504c6f"
+  "manifestSha256": "299c0ee0b923627eb7ebcc4a72bd2b5ddba64fbbfdefc0fe6a39ec270d6ed489"
 }
