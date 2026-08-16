@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T16:16:01.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T17:19:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0104:ugi-electric-transmission-and-distribution-utility-business:e94ef30f",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -15613,20 +15613,32 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "d5afbdf69a517c11d829ed443eb2a2d5223b7e08571ac9d83adb0e5a03c979f5",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 3,
+      "startedAt": "2026-08-16T17:15:01.000Z",
+      "updatedAt": "2026-08-16T17:19:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "8cebdce2b8c4b2bffa6846a4157ff6995ff47ea380d09e01bc460c801213ede3",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0104-ugi-electric-transmission-and-distribution-utility-business/attempt-3/locked-task-snapshot.json",
+          "sha256": "8cebdce2b8c4b2bffa6846a4157ff6995ff47ea380d09e01bc460c801213ede3"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0104-ugi-electric-transmission-and-distribution-utility-business-v3/proposal.json",
+          "sha256": "8bcabac02c03947e57cf5c81c0483fb1fa71ee42f8677d401c5753f53e39aef0"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0104-ugi-electric-transmission-and-distribution-utility-business-v3.json",
+          "sha256": "eadacb96c4c608ace73d685c2ff5234da5e1d764739d78f725cab8a001f7deed"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0104-ugi-electric-transmission-and-distribution-utility-business/attempt-1/research-decision.json",
+          "sha256": "9e3de2b06e883b3f0906528f60f8519ed5b71d4cb0fe7e71c992b6addd1571dd"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -15640,6 +15652,164 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T16:22:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T17:05:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6a303ac3d13df3e8172753a9a16310654e05584f3986e039e868239d64c92cd4",
+          "evidenceSha256": [
+            "3ec66df609d7e88447309508429f78a622d5059f628c966e49505cf4dca46f29",
+            "6a303ac3d13df3e8172753a9a16310654e05584f3986e039e868239d64c92cd4",
+            "9e3de2b06e883b3f0906528f60f8519ed5b71d4cb0fe7e71c992b6addd1571dd"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T17:05:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6a303ac3d13df3e8172753a9a16310654e05584f3986e039e868239d64c92cd4",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T17:07:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6a303ac3d13df3e8172753a9a16310654e05584f3986e039e868239d64c92cd4",
+          "evidenceSha256": [
+            "e7662b62acadd88258e7aeb9d5e418abbf00545b08fa584b6e70c568c41c0c5d"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-16T17:09:00.000Z",
+          "reason": "Attempt 1 production dry-run rejected the declared ADD_PENDING_TRANSACTION action because CREATE_COMPANY already incorporates the required pending transaction into its fail-closed mutation plan. No seed staging, release, deployment, or database write occurred. Attempt 2 will preserve the identical researched after-image and declare only CREATE_COMPANY.",
+          "taskSnapshotSha256": "6a303ac3d13df3e8172753a9a16310654e05584f3986e039e868239d64c92cd4",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T17:09:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T17:11:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "afb892e419de3cf132c19d64020d231962bc863e7a2cad5028843ec443fb7acf",
+          "evidenceSha256": [
+            "2bf78f1db483136cd55abb7a8a3dc6b122a3c3fb337ccafdb466f848597a2f98",
+            "9e3de2b06e883b3f0906528f60f8519ed5b71d4cb0fe7e71c992b6addd1571dd",
+            "afb892e419de3cf132c19d64020d231962bc863e7a2cad5028843ec443fb7acf"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T17:11:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "afb892e419de3cf132c19d64020d231962bc863e7a2cad5028843ec443fb7acf",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T17:13:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "afb892e419de3cf132c19d64020d231962bc863e7a2cad5028843ec443fb7acf",
+          "evidenceSha256": [
+            "888fca247f0198451fa41b91dece7f2112298328fd3b3f137aa6350266e095f9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-16T17:15:00.000Z",
+          "reason": "Attempt 2 production dry-run correctly accepted CREATE_COMPANY as the sole action but rejected the after-image because every created seed company must carry at least one ownership period. Production already contains the exact UGI Utilities organization; attempt 3 will represent UGI Utilities as the active current legal owner with no inferred entry year or fund, while retaining Argo only as SIGNED_PENDING_INCOMING. No seed staging, release, deployment, or database write occurred.",
+          "taskSnapshotSha256": "afb892e419de3cf132c19d64020d231962bc863e7a2cad5028843ec443fb7acf",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T17:15:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T17:17:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8cebdce2b8c4b2bffa6846a4157ff6995ff47ea380d09e01bc460c801213ede3",
+          "evidenceSha256": [
+            "8bcabac02c03947e57cf5c81c0483fb1fa71ee42f8677d401c5753f53e39aef0",
+            "8cebdce2b8c4b2bffa6846a4157ff6995ff47ea380d09e01bc460c801213ede3",
+            "9e3de2b06e883b3f0906528f60f8519ed5b71d4cb0fe7e71c992b6addd1571dd"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T17:17:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8cebdce2b8c4b2bffa6846a4157ff6995ff47ea380d09e01bc460c801213ede3",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T17:19:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8cebdce2b8c4b2bffa6846a4157ff6995ff47ea380d09e01bc460c801213ede3",
+          "evidenceSha256": [
+            "eadacb96c4c608ace73d685c2ff5234da5e1d764739d78f725cab8a001f7deed"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -30640,5 +30810,5 @@
       ]
     }
   ],
-  "manifestSha256": "62cbe0bbf384da49a34eaca9de3196962c6170b6f36ead2421b929e7d58cb54f"
+  "manifestSha256": "4514b630d537238e115baac7a0aa4c7011b086eabed2025667c299f811aefdd1"
 }

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0104:ugi-electric-transmission-and-distribution-utility-business:e94ef30f",
+  "taskIndex": 104,
+  "companyName": "UGI Electric transmission and distribution utility business",
+  "generatedAt": "2026-08-16T17:08:15.414Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0104-ugi-electric-transmission-and-distribution-utility-business/attempt-2/approval-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 104,
+    "taskId": "ledger:0104:ugi-electric-transmission-and-distribution-utility-business:e94ef30f",
+    "canonicalKey": "ugi-electric-transmission-and-distribution-utility-business|united-states",
+    "companyName": "UGI Electric transmission and distribution utility business",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "015-argo-infrastructure-partners:holding:019:ugi-electric-transmission-and-distribution-utility-business"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.businesswire.com/news/home/20260427814373/en/UGI-Utilities-and-Argo-Infrastructure-Partners-Reach-Agreement-on-Purchase-and-Sale-of-UGIs-PA-Electric-Utility"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "ugi-electric-transmission-and-distribution-utility-business|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0104:ugi-electric-transmission-and-distribution-utility-business:e94ef30f",
+    "taskIndex": 104,
+    "canonicalKey": "ugi-electric-transmission-and-distribution-utility-business|united-states",
+    "capturedAt": "2026-08-16T17:08:15.414Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d5afbdf69a517c11d829ed443eb2a2d5223b7e08571ac9d83adb0e5a03c979f5",
+    "productionSnapshotSha256": "7e801707b6f1afef4d0d8b3c4834384a9f05ebfb7f405e0fc02efe435fbd01a0",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "6aba730870ca4cbde708e30242c2f76ca4b052161115edb3954d87ba8c9a0032",
+    "stateSha256": "72b0508cc864bb4f46850eca5fa8af9c8779bd165633387edb308b069a2abaf0",
+    "taskSnapshotSha256": "c15d3f441912af617780bac45f1cf511b8ec25128a652a2e7f2ac10671bb0e3b"
+  },
+  "contextSha256": "b1b93be1af22eec2d14f04a45fc197d2af472fb4b183e1ba5bf99f2588eaf668"
+}
