@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0099:pearl-ruby-solar-portfolio:806939d6",
+  "taskIndex": 99,
+  "attempt": 3,
+  "companyName": "Pearl/Ruby Solar Portfolio",
+  "asOfDate": "2026-08-16",
+  "decision": "PROPOSED_CORRECTION",
+  "modelDecision": "PROPOSED_CORRECTION",
+  "rationale": "Keep one canonical Pearl/Ruby Solar Portfolio record, retire both duplicate seed-only identities and preserve the existing production redirect. Transaction sources establish that Onyx sold its sponsor-equity interest in the 114 MW, 134-site, 12-state portfolio to Argo-managed funds in 2019. The 2021 SEC filing lists Pearl/Ruby and Astro as separate Argo holdings. Current GRESB and Argo materials, combined with the explicit exit search, support retaining Argo as active, but do not disclose the legal portfolio suffix, headquarters, official site, named fund, acquisition vehicle, exact stake or separate closing day. Remove the unsupported 2019 founding year, generic headquarters, generic vehicle and duplicate milestones/citation.",
+  "identityResolution": {
+    "canonicalName": "Pearl/Ruby Solar Portfolio",
+    "legalName": null,
+    "aliases": [
+      "Pearl / Ruby Solar",
+      "Pearl/Ruby Solar"
+    ],
+    "website": null,
+    "country": "United States",
+    "headquarters": null,
+    "yearFounded": null,
+    "managerLevelBoundary": "Count the 114 MW Pearl/Ruby portfolio once. Its 134 sites are underlying projects. Keep Astro Solar separate because Argo's 2021 SEC presentation lists it as a distinct holding.",
+    "duplicateDecision": "Retain production company cmrxpj5xm00igivhejhjldefv, preserve the existing redirect from cmrxpj7cn00koivhe1netbo47, and retire the two reviewed seed-only duplicate identities."
+  },
+  "ownershipResolution": {
+    "currentOwner": "Argo Infrastructure Partners",
+    "seller": "Onyx Renewable Partners L.P.",
+    "entryReportingDate": "2019-02-05",
+    "entryClosingDate": null,
+    "entryYear": 2019,
+    "stake": "NOT_PUBLICLY_DISCLOSED",
+    "fund": "NOT_PUBLICLY_DISCLOSED",
+    "vehicle": "NOT_PUBLICLY_DISCLOSED",
+    "state": "CLOSED_ACTIVE",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Power & Energy Transition",
+    "subsector": "Commercial and industrial distributed solar",
+    "companyStatus": "ACTIVE",
+    "footprint": "134 commercial, industrial and institutional host sites across 12 U.S. states.",
+    "scale": "114 MW of contracted operating solar assets that entered service between 2015 and 2018."
+  },
+  "acquisitionExitCheck": {
+    "transaction": "Onyx announced the completed sponsor-equity sale to Argo-managed funds on February 5, 2019.",
+    "legalClosing": "A separate legal closing date was not publicly disclosed.",
+    "currentStatus": "Pearl/Ruby appears in Argo's 2021 SEC-filed holdings and the current GRESB asset list; Argo continues to describe an active expanded U.S. C&I solar platform in July 2026.",
+    "subsequentExitSearch": "No later Pearl/Ruby-level sale, transfer, dissolution or signed pending transaction was identified through 2026-08-16."
+  },
+  "repoDecision": {
+    "canonicalProductionCompanyId": "cmrxpj5xm00igivhejhjldefv",
+    "existingRetiredProductionCompanyId": "cmrxpj7cn00koivhe1netbo47",
+    "mutation": "CORRECT_AND_RETIRE_SEED_DUPLICATES",
+    "queueCorrectionDisposition": "PROPOSED_CORRECTION",
+    "seedRetirementTasks": [
+      "ledger:0487:pearl-ruby-solar-portfolio:bf8d81db",
+      "ledger:0489:pearl-ruby-solar-portfolio:dbe77dd8"
+    ],
+    "laterProductionQueueTask": "ledger:0488:pearl-ruby-solar-portfolio:8932587a",
+    "laterQueueDispositionAfterVerification": "SUPERSEDED"
+  },
+  "primaryEvidenceUrl": "https://crc-ib.com/cohnreznick-capital-advises-onyx-renewable-partners-on-the-sale-of-its-sponsor-equity-interest-in-a-114mw-distributed-generation-solar-portfolio/",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0099-pearl-ruby-solar-portfolio/attempt-1/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0099-pearl-ruby-solar-portfolio/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0099-pearl-ruby-solar-portfolio/attempt-1/chatgpt-response-validation.json",
+  "proposalArtifact": "audits/portco-reconciliation/2026-08-03/proposals/0099-pearl-ruby-solar-portfolio-v4/proposal.json",
+  "proposalSha256": "fce9a48e950204056ba72d6df94acaf8148c699eb9c638492f7341b23d4892ef",
+  "afterImageSha256": "796b1558c7ef5059b32be0660f40d04bc257f49b497ca79c0a624f18daac20cf",
+  "unresolvedQuestions": [
+    "The exact Argo fund, acquisition vehicle, manager-level stake, legal portfolio name, headquarters, official website and separate legal closing date are not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "0c9d995fcdeee2669a6bb21c04c78df25c4cf74938424837ff0002c06094c6d3",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}

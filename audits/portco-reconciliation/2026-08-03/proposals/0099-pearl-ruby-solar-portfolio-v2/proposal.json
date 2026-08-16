@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0099:pearl-ruby-solar-portfolio:806939d6",
+  "taskIndex": 99,
+  "asOfDate": "2026-08-16",
+  "generatedAt": "2026-08-16T11:53:00.000Z",
+  "canonicalKey": "pearl-ruby-solar-portfolio|united-states",
+  "companyName": "Pearl/Ruby Solar Portfolio",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [
+    "015-argo-infrastructure-partners:holding:007:pearl-ruby-solar-portfolio"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirements": [
+    {
+      "sourceQueueTaskId": "ledger:0487:pearl-ruby-solar-portfolio:bf8d81db",
+      "sourceQueueEntrySha256": "bd53732155a77e754fb7023c4cdce1bb52f8f0e91d58573ae98a2d21c8cda3a0",
+      "name": "Pearl / Ruby solar portfolio",
+      "country": "United States",
+      "rawSeedEntrySha256": "1bdc8cc809fc4496432562d80c9cf40105a786d3a9e64eccd1c87674e0dcca2b",
+      "evaluatedSeedEntrySha256": "1bdc8cc809fc4496432562d80c9cf40105a786d3a9e64eccd1c87674e0dcca2b"
+    },
+    {
+      "sourceQueueTaskId": "ledger:0489:pearl-ruby-solar-portfolio:dbe77dd8",
+      "sourceQueueEntrySha256": "b71ec0236361bd7cc87970fc6df5fff1555b39d3b79ddb51ae0be02d8d89b0b3",
+      "name": "Pearl/Ruby Solar Portfolio",
+      "country": "United States",
+      "rawSeedEntrySha256": "d8af206fee177743beea7fc3d3ace588230e81040cff5fb022cbbbfcc5879d85",
+      "evaluatedSeedEntrySha256": "d8af206fee177743beea7fc3d3ace588230e81040cff5fb022cbbbfcc5879d85"
+    }
+  ],
+  "rationale": "Retain the single canonical Pearl/Ruby Solar Portfolio production company, retire the two reviewed seed-only duplicates and preserve the existing production redirect. Onyx sold its sponsor-equity interest in the 114 MW, 134-site, 12-state portfolio to Argo-managed funds in 2019. A 2021 SEC filing lists Pearl/Ruby and Astro as separate Argo holdings. Current GRESB and Argo materials, together with an explicit exit search, support retaining Argo as active, but do not disclose the legal portfolio suffix, headquarters, official site, named fund, acquisition vehicle, exact stake or separate closing day. Clear the unsupported 2019 founding year, generic headquarters and generic vehicle, and remove duplicate milestones and the duplicate Ballard citation.",
+  "evidence": [
+    {
+      "url": "https://crc-ib.com/cohnreznick-capital-advises-onyx-renewable-partners-on-the-sale-of-its-sponsor-equity-interest-in-a-114mw-distributed-generation-solar-portfolio/",
+      "purpose": "Seller, transaction structure and Argo entry",
+      "supports": [
+        "Onyx sold its sponsor-equity interest in the 114 MW portfolio to funds managed by Argo",
+        "the transaction was a successfully executed structured-equity sale",
+        "the assets were fully contracted and operating"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/marathon-capital-announces-argos-investment-in-a-114-mw-distributed-solar-portfolio-300790298.html",
+      "purpose": "Portfolio scale, geography, operating dates and infrastructure basis",
+      "supports": [
+        "Argo-managed funds invested in a 114 MW C&I solar portfolio by February 5, 2019",
+        "the portfolio comprised 134 sites in 12 states under long-term PPAs",
+        "the assets entered operations between 2015 and 2018 and remained managed by Onyx"
+      ]
+    },
+    {
+      "url": "https://www.ballardspahr.com/insights/news/2019/03/ballard-spahr-represents-argo-infrastructure-partners-in-solar-energy-investment",
+      "purpose": "Transaction completion corroboration",
+      "supports": [
+        "Ballard Spahr represented the Argo-managed funds on the investment",
+        "the source corroborates the 114 MW, 134-site and 12-state portfolio",
+        "the source describes completion of Argo's solar-platform establishment without a separate closing date"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1289790/000110465921083888/tm2120341d1_defa14a.htm",
+      "purpose": "Argo holding and portfolio boundary",
+      "supports": [
+        "Argo listed Pearl/Ruby Solar among its holdings in June 2021",
+        "the filing describes Pearl/Ruby as a 114 MW C&I solar portfolio in 12 states",
+        "the filing separately lists Astro Solar and therefore prevents an identity merge"
+      ]
+    },
+    {
+      "url": "https://www.gresb.com/gresb-participant-members/",
+      "purpose": "Current exact-name asset status",
+      "supports": [
+        "the current participant list includes Pearl\\ Ruby",
+        "the asset is non-listed, Americas-based and classified as photovoltaic solar generation"
+      ]
+    },
+    {
+      "url": "https://www.argoip.com/responsible-investing",
+      "purpose": "Argo's current GRESB and asset-management context",
+      "supports": [
+        "Argo participates in GRESB as a firm and through its portfolio companies",
+        "Argo describes continuing stewardship across its managed investments"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/argo-infrastructure-partners-acquires-solar-portfolio-from-and-establishes-new-partnership-with-owner-developer-nugen-302822094.html",
+      "purpose": "Current aggregate C&I solar platform context",
+      "supports": [
+        "Argo described its existing C&I solar platform as active in July 2026",
+        "the platform expanded to 196 sites and 270 MW",
+        "the release does not individually establish Pearl/Ruby's legal title and is not used alone"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "bb5224f069a60a53ec6c616fd16c28c73d88d13da2ba2d2831806f3b7341afb4",
+  "currentCompanySnapshotSha256": "fa8258d4490f244986e995f7285912cc25ec52ca2ec4c0137bb48878ba0d4469",
+  "executionLock": {
+    "taskSnapshotSha256": "ea891aa04db7cab8464b14a540f1cfd8f7155f5873bdd554864bc1007529f1ca",
+    "taskStateSha256": "cdcbd1320f016075861d332f663e4ddac50414fe5997a21ed43ce12b775ac5fb",
+    "taskDependencySha256": "a738c6e726fb59baa0e5cddbf91021d3c7f74eca669880e26683ea4433b6fbb3",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "6b35085ffac272c90d1cdaf2e5a2c42544af6174069e77a984be02b9548bd33d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "a4d47ddcfae787fcae13d5921cac14ece3aaf5d58f6af31b64159de4c0bc5a05",
+      "redirectsSha256": "121896dc98ef82a7b5f3fb3374714f86cdc305ade30e218f1df60447cc2e4a49"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpj7cn00koivhe1netbo47",
+        "companyId": "cmrxpj5xm00igivhejhjldefv",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:45.070Z"
+      }
+    ]
+  },
+  "beforeImage": {
+    "id": "cmrxpj5xm00igivhejhjldefv",
+    "name": "Pearl/Ruby Solar Portfolio",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Commercial and industrial solar portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "The Pearl/Ruby portfolio is a distributed commercial and industrial solar portfolio in the United States. The assets serve commercial, industrial, and institutional hosts under long-term power purchase agreements and therefore operate as an asset-heavy contracted generation platform. Public transaction materials described the portfolio at approximately 114 MW across 134 sites in 12 states at the time of Argo's 2019 investment. Reviewed public disclosures tie the investment to funds managed by Argo Infrastructure Partners. Public sources do not disclose the current project-level ownership split.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqza01fbivhey6v8n7g7",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo managed funds",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjsa02m2ivhe73uc167o",
+        "date": "2019",
+        "event": "Pearl/Ruby Solar Portfolio was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjsv02m3ivheuvazm5uf",
+        "date": "Feb 5, 2019",
+        "event": "Argo invested in the 114 MW Pearl/Ruby commercial and industrial solar portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2019-02-05T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkpme02t2ivhe5qwwb840",
+        "date": "Feb 5, 2019",
+        "event": "Argo Infrastructure Partners invested in a 114 MW distributed solar portfolio later referenced as Pearl / Ruby Solar.",
+        "category": "FINANCING",
+        "sortDate": "2019-02-05T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkpn102t3ivhe0znnr3gx",
+        "date": "Feb 5, 2019",
+        "event": "The Pearl / Ruby portfolio included 134 commercial and industrial solar sites across 12 states that had entered operations between 2015 and 2018.",
+        "category": "EXPANSION",
+        "sortDate": "2019-02-05T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpowcv07cyivhelph8w7hd",
+        "label": "Investment date source — Argo Infrastructure Partners — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.prnewswire.com/news-releases/marathon-capital-announces-argos-investment-in-a-114-mw-distributed-solar-portfolio-300790298.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpowdq07d0ivhe5qo64rq2",
+        "label": "Ballardspahr — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.ballardspahr.com/insights/news/2019/03/ballard-spahr-represents-argo-infrastructure-partners-in-solar-energy-investment",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ballardspahr — Pearl/Ruby Solar Portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowev07d2ivheg5i1zz3u",
+        "label": "SEC — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289790/000110465921083888/tm2120341d1_defa14a.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp6tb07sdivhebon7gzor",
+        "label": "Ballardspahr — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.ballardspahr.com/insights/news/2019/03/ballard-spahr-represents-argo-infrastructure-partners-in-solar-energy-investment",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ballardspahr — Pearl / Ruby solar portfolio",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "fa8258d4490f244986e995f7285912cc25ec52ca2ec4c0137bb48878ba0d4469",
+  "afterImage": {
+    "id": "cmrxpj5xm00igivhejhjldefv",
+    "name": "Pearl/Ruby Solar Portfolio",
+    "aliases": [
+      "Pearl / Ruby Solar",
+      "Pearl/Ruby Solar"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Commercial and industrial distributed solar",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pearl/Ruby Solar Portfolio is a 114 MW portfolio of contracted commercial and industrial distributed-solar assets comprising 134 operating sites across 12 U.S. states. The projects entered service between 2015 and 2018 and sell power under long-term PPAs to commercial, industrial and institutional hosts. Onyx Renewable Partners constructed and financed the assets, sold its sponsor-equity interest to funds managed by Argo Infrastructure Partners in a transaction publicly reported on February 5, 2019, and continued managing the projects. A June 2021 SEC filing lists Pearl/Ruby among Argo's holdings and separately lists Astro Solar. The current GRESB participant page includes Pearl\\ Ruby as a non-listed Americas solar-PV asset, and Argo's July 2026 C&I solar release describes an active expanded platform. No later Pearl/Ruby-level sale or signed pending ownership transfer was identified through August 16, 2026. Public sources do not disclose a legal portfolio suffix, separate official website, headquarters, founding year, named Argo fund, acquisition vehicle, manager-level stake or separate legal closing date.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqza01fbivhey6v8n7g7",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjsv02m3ivheuvazm5uf",
+        "date": "Feb 5, 2019",
+        "event": "Onyx Renewable Partners publicly reported the completed sale of its sponsor-equity interest in the 114 MW, 134-site distributed-solar portfolio to funds managed by Argo Infrastructure Partners; the separate legal closing date was not disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-02-05T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://crc-ib.com/cohnreznick-capital-advises-onyx-renewable-partners-on-the-sale-of-its-sponsor-equity-interest-in-a-114mw-distributed-generation-solar-portfolio/",
+          "https://www.prnewswire.com/news-releases/marathon-capital-announces-argos-investment-in-a-114-mw-distributed-solar-portfolio-300790298.html",
+          "https://www.ballardspahr.com/insights/news/2019/03/ballard-spahr-represents-argo-infrastructure-partners-in-solar-energy-investment"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpowcv07cyivhelph8w7hd",
+        "label": "Investment date source — Argo Infrastructure Partners — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.prnewswire.com/news-releases/marathon-capital-announces-argos-investment-in-a-114-mw-distributed-solar-portfolio-300790298.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo-managed funds' 2019 investment, 114 MW scale, 134 sites, 12 states and 2015–2018 operating dates",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowdq07d0ivhe5qo64rq2",
+        "label": "Ballardspahr — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.ballardspahr.com/insights/news/2019/03/ballard-spahr-represents-argo-infrastructure-partners-in-solar-energy-investment",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo-managed investment and completion of the 114 MW solar-platform establishment",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowev07d2ivheg5i1zz3u",
+        "label": "SEC — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289790/000110465921083888/tm2120341d1_defa14a.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Pearl/Ruby as a distinct Argo holding in June 2021 and separate Astro Solar boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CohnReznick Capital — Onyx sponsor-equity sale",
+        "url": "https://crc-ib.com/cohnreznick-capital-advises-onyx-renewable-partners-on-the-sale-of-its-sponsor-equity-interest-in-a-114mw-distributed-generation-solar-portfolio/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Onyx seller, sponsor-equity transaction structure and sale to Argo-managed funds",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "GRESB — infrastructure participant members",
+        "url": "https://www.gresb.com/gresb-participant-members/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Pearl\\ Ruby participant-asset identity and Americas solar-PV classification",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Argo — responsible investing",
+        "url": "https://www.argoip.com/responsible-investing",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Current GRESB participation through Argo-managed portfolio companies and ongoing stewardship context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Argo — C&I solar platform expansion",
+        "url": "https://www.prnewswire.com/news-releases/argo-infrastructure-partners-acquires-solar-portfolio-from-and-establishes-new-partnership-with-owner-developer-nugen-302822094.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "July 2026 current aggregate C&I solar-platform activity; not sole Pearl/Ruby title evidence",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "5c77586fb6947892790d24e6cc2e75b2368865151c1154a109d4bb022f51cd24",
+  "proposalSha256": "2f40c72f75b8f6ca171060ef658fa4a7d65a28229a58b5e8a2a9f32d35a8303d"
+}
