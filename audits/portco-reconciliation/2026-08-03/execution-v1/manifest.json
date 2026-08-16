@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T20:23:00.000Z",
+  "updatedAt": "2026-08-16T20:24:30.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0106:waihonu-solar-farm:52102602",
   "source": {
@@ -16027,10 +16027,10 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "fc62e9cdd208d863bd4778dff5f4632be98c1fa1a13677abf92ca92bafc883cb",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 3,
       "startedAt": "2026-08-16T20:20:21.000Z",
-      "updatedAt": "2026-08-16T20:23:00.000Z",
+      "updatedAt": "2026-08-16T20:24:30.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -16048,7 +16048,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0106-waihonu-solar-farm-v3.json",
           "sha256": "774105db60bae87a085ac9c2d0498650deac647e804686a72b73514409638dd1"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0106-waihonu-solar-farm/attempt-3/production-apply/apply-receipt.json",
+          "sha256": "f986e6d656e7ef06861797bfe5e33d528001e08442138db1f340bee938d411b1"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0106-waihonu-solar-farm/attempt-1/research-decision.json",
           "sha256": "183cbb988c80d7c2c4aac60da20cb35a3d34fc19145afe44fbbf5e80546797a4"
@@ -16222,6 +16225,34 @@
           "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
           "evidenceSha256": [
             "774105db60bae87a085ac9c2d0498650deac647e804686a72b73514409638dd1"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 16,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-16T20:23:40.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
+          "evidenceSha256": [
+            "3b65e827137044db3623b80b9f9f60086ea6d1c15bfedca080826c4a9e3d0611",
+            "774105db60bae87a085ac9c2d0498650deac647e804686a72b73514409638dd1",
+            "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 17,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-16T20:24:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
+          "evidenceSha256": [
+            "3b65e827137044db3623b80b9f9f60086ea6d1c15bfedca080826c4a9e3d0611",
+            "774105db60bae87a085ac9c2d0498650deac647e804686a72b73514409638dd1",
+            "f986e6d656e7ef06861797bfe5e33d528001e08442138db1f340bee938d411b1"
           ],
           "kind": "TRANSITION"
         }
@@ -31148,5 +31179,5 @@
       ]
     }
   ],
-  "manifestSha256": "8f403a727b2139fa67fc91411ac2bca85e41cc374fd9642d759f3497e5f45ba8"
+  "manifestSha256": "a421962461a6404477394915217b4b566797b2d1d5588c422d043f40ab18b691"
 }
