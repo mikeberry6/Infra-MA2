@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0099:pearl-ruby-solar-portfolio:806939d6",
+  "taskIndex": 99,
+  "companyName": "Pearl/Ruby Solar Portfolio",
+  "generatedAt": "2026-08-16T12:17:49.566Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0099-pearl-ruby-solar-portfolio/attempt-3/pre-apply-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 99,
+    "taskId": "ledger:0099:pearl-ruby-solar-portfolio:806939d6",
+    "canonicalKey": "pearl-ruby-solar-portfolio|united-states",
+    "companyName": "Pearl/Ruby Solar Portfolio",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "015-argo-infrastructure-partners:holding:007:pearl-ruby-solar-portfolio"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.ballardspahr.com/insights/news/2019/03/ballard-spahr-represents-argo-infrastructure-partners-in-solar-energy-investment",
+      "https://www.prnewswire.com/news-releases/marathon-capital-announces-argos-investment-in-a-114-mw-distributed-solar-portfolio-300790298.html"
+    ],
+    "candidateCanonicalKeys": [
+      "pearl-ruby-solar-portfolio|united-states|record-1",
+      "pearl-ruby-solar-portfolio|united-states|record-2",
+      "pearl-ruby-solar-portfolio|united-states|record-3"
+    ],
+    "rationale": "Census identity matches multiple exact repository candidates: pearl-ruby-solar-portfolio|united-states|record-1, pearl-ruby-solar-portfolio|united-states|record-2, pearl-ruby-solar-portfolio|united-states|record-3. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Census identity matches multiple exact repository candidates: pearl-ruby-solar-portfolio|united-states|record-1, pearl-ruby-solar-portfolio|united-states|record-2, pearl-ruby-solar-portfolio|united-states|record-3."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpj5xm00igivhejhjldefv",
+    "linkedQueueTaskId": "ledger:0488:pearl-ruby-solar-portfolio:8932587a"
+  },
+  "resolvedCanonicalKey": "pearl-ruby-solar-portfolio|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj5xm00igivhejhjldefv",
+    "name": "Pearl/Ruby Solar Portfolio",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Commercial and industrial solar portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "The Pearl/Ruby portfolio is a distributed commercial and industrial solar portfolio in the United States. The assets serve commercial, industrial, and institutional hosts under long-term power purchase agreements and therefore operate as an asset-heavy contracted generation platform. Public transaction materials described the portfolio at approximately 114 MW across 134 sites in 12 states at the time of Argo's 2019 investment. Reviewed public disclosures tie the investment to funds managed by Argo Infrastructure Partners. Public sources do not disclose the current project-level ownership split.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqza01fbivhey6v8n7g7",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo managed funds",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjsa02m2ivhe73uc167o",
+        "date": "2019",
+        "event": "Pearl/Ruby Solar Portfolio was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjsv02m3ivheuvazm5uf",
+        "date": "Feb 5, 2019",
+        "event": "Argo invested in the 114 MW Pearl/Ruby commercial and industrial solar portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2019-02-05T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkpme02t2ivhe5qwwb840",
+        "date": "Feb 5, 2019",
+        "event": "Argo Infrastructure Partners invested in a 114 MW distributed solar portfolio later referenced as Pearl / Ruby Solar.",
+        "category": "FINANCING",
+        "sortDate": "2019-02-05T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkpn102t3ivhe0znnr3gx",
+        "date": "Feb 5, 2019",
+        "event": "The Pearl / Ruby portfolio included 134 commercial and industrial solar sites across 12 states that had entered operations between 2015 and 2018.",
+        "category": "EXPANSION",
+        "sortDate": "2019-02-05T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpowcv07cyivhelph8w7hd",
+        "label": "Investment date source — Argo Infrastructure Partners — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.prnewswire.com/news-releases/marathon-capital-announces-argos-investment-in-a-114-mw-distributed-solar-portfolio-300790298.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpowdq07d0ivhe5qo64rq2",
+        "label": "Ballardspahr — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.ballardspahr.com/insights/news/2019/03/ballard-spahr-represents-argo-infrastructure-partners-in-solar-energy-investment",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ballardspahr — Pearl/Ruby Solar Portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowev07d2ivheg5i1zz3u",
+        "label": "SEC — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289790/000110465921083888/tm2120341d1_defa14a.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp6tb07sdivhebon7gzor",
+        "label": "Ballardspahr — Pearl/Ruby Solar Portfolio",
+        "url": "https://www.ballardspahr.com/insights/news/2019/03/ballard-spahr-represents-argo-infrastructure-partners-in-solar-energy-investment",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ballardspahr — Pearl / Ruby solar portfolio",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": null,
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0487:pearl-ruby-solar-portfolio:bf8d81db",
+      "sourceQueueEntrySha256": "bd53732155a77e754fb7023c4cdce1bb52f8f0e91d58573ae98a2d21c8cda3a0",
+      "name": "Pearl / Ruby solar portfolio",
+      "country": "United States",
+      "rawSeedEntrySha256": "1bdc8cc809fc4496432562d80c9cf40105a786d3a9e64eccd1c87674e0dcca2b",
+      "evaluatedSeedEntrySha256": "1bdc8cc809fc4496432562d80c9cf40105a786d3a9e64eccd1c87674e0dcca2b"
+    },
+    {
+      "sourceQueueTaskId": "ledger:0489:pearl-ruby-solar-portfolio:dbe77dd8",
+      "sourceQueueEntrySha256": "b71ec0236361bd7cc87970fc6df5fff1555b39d3b79ddb51ae0be02d8d89b0b3",
+      "name": "Pearl/Ruby Solar Portfolio",
+      "country": "United States",
+      "rawSeedEntrySha256": "d8af206fee177743beea7fc3d3ace588230e81040cff5fb022cbbbfcc5879d85",
+      "evaluatedSeedEntrySha256": "d8af206fee177743beea7fc3d3ace588230e81040cff5fb022cbbbfcc5879d85"
+    }
+  ],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpj7cn00koivhe1netbo47",
+        "companyId": "cmrxpj5xm00igivhejhjldefv",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:45.070Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0099:pearl-ruby-solar-portfolio:806939d6",
+    "taskIndex": 99,
+    "canonicalKey": "pearl-ruby-solar-portfolio|united-states",
+    "capturedAt": "2026-08-16T12:17:49.566Z",
+    "databaseRevision": "company-state:fa8258d4490f244986e995f7285912cc25ec52ca2ec4c0137bb48878ba0d4469",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5d865735b1761bf25c218d487e92e9605ec37694600b6dcc5ba4759a504bd82c",
+    "productionSnapshotSha256": "bf9a356b4b27870a3dec3785436e1d4949d043a4b90d36dc3b6f2ac5d92fede5",
+    "targetCompanySnapshotSha256": "fa8258d4490f244986e995f7285912cc25ec52ca2ec4c0137bb48878ba0d4469",
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0487:pearl-ruby-solar-portfolio:bf8d81db",
+        "sourceQueueEntrySha256": "bd53732155a77e754fb7023c4cdce1bb52f8f0e91d58573ae98a2d21c8cda3a0",
+        "name": "Pearl / Ruby solar portfolio",
+        "country": "United States",
+        "rawSeedEntrySha256": "1bdc8cc809fc4496432562d80c9cf40105a786d3a9e64eccd1c87674e0dcca2b",
+        "evaluatedSeedEntrySha256": "1bdc8cc809fc4496432562d80c9cf40105a786d3a9e64eccd1c87674e0dcca2b"
+      },
+      {
+        "sourceQueueTaskId": "ledger:0489:pearl-ruby-solar-portfolio:dbe77dd8",
+        "sourceQueueEntrySha256": "b71ec0236361bd7cc87970fc6df5fff1555b39d3b79ddb51ae0be02d8d89b0b3",
+        "name": "Pearl/Ruby Solar Portfolio",
+        "country": "United States",
+        "rawSeedEntrySha256": "d8af206fee177743beea7fc3d3ace588230e81040cff5fb022cbbbfcc5879d85",
+        "evaluatedSeedEntrySha256": "d8af206fee177743beea7fc3d3ace588230e81040cff5fb022cbbbfcc5879d85"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "6b35085ffac272c90d1cdaf2e5a2c42544af6174069e77a984be02b9548bd33d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "a4d47ddcfae787fcae13d5921cac14ece3aaf5d58f6af31b64159de4c0bc5a05",
+      "redirectsSha256": "121896dc98ef82a7b5f3fb3374714f86cdc305ade30e218f1df60447cc2e4a49"
+    },
+    "dependencySha256": "a738c6e726fb59baa0e5cddbf91021d3c7f74eca669880e26683ea4433b6fbb3",
+    "stateSha256": "cdcbd1320f016075861d332f663e4ddac50414fe5997a21ed43ce12b775ac5fb",
+    "taskSnapshotSha256": "59b953a25e7e9acc3916f72adc7d4854550485ade8b27cfe8be35894a65dfd24"
+  },
+  "contextSha256": "2253a5953809278d7ec59eba1dbb161e1aa9bdfaaa1e27582fc795d9f65fd178"
+}
