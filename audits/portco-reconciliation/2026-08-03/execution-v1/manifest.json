@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T09:22:13.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0095:international-parking-management:0cc25ff3",
+  "updatedAt": "2026-08-16T09:28:58.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -14072,11 +14072,11 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "76e28ce5764ec6078d211820b25d4c2b0ea69acf8ee263f1ff760cd3ed89c344",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-16T09:02:58.000Z",
-      "updatedAt": "2026-08-16T09:22:13.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-16T09:28:58.000Z",
+      "completedAt": "2026-08-16T09:28:58.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "c69c4ccb61036ac6fbb7cc560cd0c1b12549f0a7bb780054b5018e2cfd43f500",
@@ -14239,6 +14239,20 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-16T09:22:13.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c69c4ccb61036ac6fbb7cc560cd0c1b12549f0a7bb780054b5018e2cfd43f500",
+          "evidenceSha256": [
+            "274c778bcf38342f8f1cfdb0bdc9487dc88654e828f10e73397e48c03d9aecc0",
+            "d4b263a790c8296ced3cc3ca84e53120f4d2e5fed4403f93b9af2a2d56090771",
+            "d5fec45802efe7b7c579ac5bfccb297b74fc0e671f2c0698d96c080ac404e859"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-16T09:28:58.000Z",
           "reason": null,
           "taskSnapshotSha256": "c69c4ccb61036ac6fbb7cc560cd0c1b12549f0a7bb780054b5018e2cfd43f500",
           "evidenceSha256": [
@@ -29559,5 +29573,5 @@
       ]
     }
   ],
-  "manifestSha256": "5c65c20f527640166b702c681aae820a94657df0a5f4e8b56f784d53f21c1fee"
+  "manifestSha256": "3ed9b30737b823d1a23b57758418c8a80f0efd75e7d2e219a5bf4b4df55b2cac"
 }
