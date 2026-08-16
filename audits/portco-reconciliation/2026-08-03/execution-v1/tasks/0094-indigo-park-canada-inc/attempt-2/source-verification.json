@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0094:indigo-park-canada-inc:92a79556",
+  "taskIndex": 94,
+  "attempt": 2,
+  "companyName": "INDIGO Park Canada Inc.",
+  "asOfDate": "2026-08-16",
+  "retrievedAt": "2026-08-16T08:00:00.000Z",
+  "methodology": "Codex independently reopened the model-cited official pages, extracted the official financial statements, checked redirects and response status, used the browser for the Cloudflare-blocked LAZ page, and searched for later sale, closing, rebrand and ownership changes after the ChatGPT Pro response completed.",
+  "sources": [
+    {
+      "evidenceUrl": "https://www.group-indigo.com/wp-content/uploads/2026/03/Financial-Results-FY25.pdf",
+      "verificationUrl": "https://www.group-indigo.com/wp-content/uploads/2026/03/Financial-Results-FY25.pdf",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.group-indigo.com/wp-content/uploads/2026/03/Financial-Results-FY25.pdf",
+      "mediaType": "application/pdf",
+      "contentSha256": "56c66bb5acaea5f2fc05e1a312aa19707dde8595389ad09c3646bc48080f09c5",
+      "verifiedClaims": [
+        "LAZ acquired 60% of INDIGO Park Canada on June 30, 2025 and INDIGO Group retained 40%.",
+        "INDIGO Park Canada and Northern Valet remained 40%-owned equity-accounted companies at December 31, 2025.",
+        "Under the sale agreement, LAZ committed to acquire INDIGO Group's remaining 40% stake in 2029.",
+        "The exact 2029 closing date and future valuation are not yet fixed publicly."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada",
+      "verificationUrl": "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "finalUrl": "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada",
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseSha256": "973555042913e88b950d4b60c545e82ca3118c2bfa335f638395a22889863644",
+      "browserVerifiedAt": "2026-08-16T07:57:00.000Z",
+      "verifiedClaims": [
+        "LAZ announced on July 1, 2025 that it had completed an acquisition giving it a 60% majority stake in INDIGO Park Canada.",
+        "INDIGO Park Canada retained its identity and continued under CEO John Laires.",
+        "Argo Infrastructure Partners' managed funds are investors in LAZ Parking, establishing indirect rather than standalone Argo exposure to INDIGO Park Canada."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.group-indigo.com/wp-content/uploads/2025/07/20250701-Press-Release-INDIGO-Group-forges-strategic-partnership-with-LAZ-Parking-in-Canada.pdf",
+      "verificationUrl": "https://www.group-indigo.com/wp-content/uploads/2025/07/20250701-Press-Release-INDIGO-Group-forges-strategic-partnership-with-LAZ-Parking-in-Canada.pdf",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.group-indigo.com/wp-content/uploads/2025/07/20250701-Press-Release-INDIGO-Group-forges-strategic-partnership-with-LAZ-Parking-in-Canada.pdf",
+      "mediaType": "application/pdf",
+      "contentLength": 125719,
+      "contentSha256": "339384be1b1a098b708025d9c866f141f48e772032a7471c46e6d80f326624ac",
+      "verifiedClaims": [
+        "INDIGO Park Canada was founded in Quebec City in 1988 and was based in Montreal at the transaction date.",
+        "LAZ became the 60% majority shareholder while INDIGO Group retained an active governance role.",
+        "INDIGO Park Canada remained a distinct operating company with more than 1,200 sites and nearly 1,700 employees at the transaction date."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://business.parkindigo.ca/about",
+      "verificationUrl": "https://business.parkindigo.ca/about",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://business.parkindigo.ca/about",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLength": 185450,
+      "contentSha256": "9a2ed81ffc4211aeae3417e4bdc6068c45f39663f05b05b699d198e2b21c4f57",
+      "verifiedClaims": [
+        "INDIGO Park Canada remained an active parking, mobility and EV operator in August 2026.",
+        "The current site identifies the Canadian head office at 1 Place Ville-Marie in Montreal, Quebec.",
+        "The current site reports a nationwide Canadian operating footprint across 95 cities."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.group-indigo.com/en/press/press-release/indigo-group-s-a-2025-annual-results/",
+      "verificationUrl": "https://www.group-indigo.com/en/press/press-release/indigo-group-s-a-2025-annual-results/",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.group-indigo.com/en/press/press-release/indigo-group-s-a-2025-annual-results/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLength": 146548,
+      "contentSha256": "32050accc0ca96cc7ea7f42a8e0cef02ff072bec6195c38d2c8272375c81f541",
+      "verifiedClaims": [
+        "INDIGO Group's March 26, 2026 annual-results release again identified the June 30, 2025 sale of 60% of INDIGO Park Canada to LAZ.",
+        "The release continued to describe the combined LAZ and INDIGO ownership rather than a later legal merger or rebrand."
+      ],
+      "isPrimary": false
+    }
+  ],
+  "currentUrlRecheck": {
+    "allInputUrlsRetained": true,
+    "redirectsObserved": 0,
+    "workingCount": 4,
+    "browserBlockedButVerifiedCount": 1,
+    "deadCount": 0
+  },
+  "exitSearchConclusion": "No later sale, completed 2029 transfer, legal merger, rebrand, or Argo exit from LAZ was identified through August 16, 2026. The definitive sale agreement instead leaves LAZ at 60% and INDIGO Group at 40% until LAZ acquires the remaining stake in 2029.",
+  "modelEvidenceCorrections": [
+    "The LAZ page is BROWSER_BLOCKED_BUT_VERIFIED rather than directly working because automated retrieval returned HTTP 403 while the exact page opened and parsed in the browser.",
+    "The June 30, 2025 date is the legal closing date; July 1, 2025 is the public announcement date.",
+    "The 2029 change is a contractual commitment under the existing sale agreement and should remain an explicit signed pending exit, not active 100% LAZ ownership.",
+    "INDIGO Park Canada and LAZ are distinct legal identities, so archival of the standalone manager-level row must not create a canonical merge or redirect.",
+    "The two active Argo rows are inaccurate as direct manager-level ownership periods and must be removed rather than retired as a fictional Argo exit."
+  ]
+}
