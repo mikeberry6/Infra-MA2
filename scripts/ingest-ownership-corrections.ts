@@ -259,25 +259,24 @@ async function buildPlan(
               types: ["FUND_MANAGER"],
             },
           });
-          // Then create the OwnershipPeriod, guarded by the unique
-          // [companyId, organizationId, vehicleName] constraint
-          await prisma.ownershipPeriod.upsert({
-            where: {
-              companyId_organizationId_vehicleName: {
-                companyId: company.id,
-                organizationId: org.id,
-                vehicleName: orgName,
-              },
-            },
-            update: {},
-            create: {
+          // Then create the undated OwnershipPeriod if an exact row does not
+          // already exist. Nullable years cannot use Prisma's compound unique
+          // selector even though the database protects dated rows.
+          const existingOwnership = await prisma.ownershipPeriod.findFirst({
+            where: { companyId: company.id, organizationId: org.id, vehicleName: orgName, investmentYear: null },
+            select: { id: true },
+          });
+          if (!existingOwnership) {
+            await prisma.ownershipPeriod.create({
+              data: {
               companyId: company.id,
               organizationId: org.id,
               vehicleName: orgName,
               isActive: true,
               stake: stakeFromProse(row.revisedOwnersRaw, orgName),
-            },
-          });
+              },
+            });
+          }
         },
       });
     } else {
@@ -285,23 +284,21 @@ async function buildPlan(
         kind: "create-op",
         description: `create OwnershipPeriod (org=${r.org.name}, isActive=true) [resolved by ${r.reason}]`,
         apply: async () => {
-          await prisma.ownershipPeriod.upsert({
-            where: {
-              companyId_organizationId_vehicleName: {
-                companyId: company.id,
-                organizationId: r.org!.id,
-                vehicleName: r.org!.name,
-              },
-            },
-            update: {},
-            create: {
+          const existingOwnership = await prisma.ownershipPeriod.findFirst({
+            where: { companyId: company.id, organizationId: r.org!.id, vehicleName: r.org!.name, investmentYear: null },
+            select: { id: true },
+          });
+          if (!existingOwnership) {
+            await prisma.ownershipPeriod.create({
+              data: {
               companyId: company.id,
               organizationId: r.org!.id,
               vehicleName: r.org!.name,
               isActive: true,
               stake: stakeFromProse(row.revisedOwnersRaw, r.org!.name),
-            },
-          });
+              },
+            });
+          }
         },
       });
     }

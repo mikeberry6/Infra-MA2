@@ -473,10 +473,11 @@ describe("portfolio import commit", () => {
     );
     expect(ownershipUpsert).toHaveBeenCalledWith({
       where: {
-        companyId_organizationId_vehicleName: {
+        companyId_organizationId_vehicleName_investmentYear: {
           companyId: "company-new",
           organizationId: "manager-new",
           vehicleName: "Infrastructure Fund I",
+          investmentYear: 2025,
         },
       },
       update: {

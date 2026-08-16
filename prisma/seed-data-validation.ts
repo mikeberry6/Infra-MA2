@@ -561,14 +561,14 @@ function validateCompanies(
       }
 
       const ownershipKey =
-        `${resolveOrgName(owner.investmentFirm)}|${owner.vehicleName || owner.ownershipVehicle || owner.investmentFirm}`;
+        `${resolveOrgName(owner.investmentFirm)}|${owner.vehicleName || owner.ownershipVehicle || owner.investmentFirm}|${owner.investmentYear ?? ""}`;
       if (ownershipKeys.has(ownershipKey)) {
         diagnostics.push({
           severity: "warning",
           entity: "company",
           key,
           message:
-            `Multiple ownership periods collapse to the current database key ${JSON.stringify(ownershipKey)}.`,
+            `Multiple ownership periods collapse to the dated database key ${JSON.stringify(ownershipKey)}.`,
         });
       }
       ownershipKeys.add(ownershipKey);
@@ -617,7 +617,7 @@ function buildPlanCounts(input: SeedDataInput): SeedPlanCounts {
       rawOrganizations.add(owner.investmentFirm);
       const vehicle = owner.vehicleName || owner.ownershipVehicle || owner.investmentFirm;
       const ownershipKey =
-        `${companyKey}|${resolveOrgName(owner.investmentFirm)}|${vehicle}`;
+        `${companyKey}|${resolveOrgName(owner.investmentFirm)}|${vehicle}|${owner.investmentYear ?? ""}`;
       ownershipKeys.add(ownershipKey);
     }
 

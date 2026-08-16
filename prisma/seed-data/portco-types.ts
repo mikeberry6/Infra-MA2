@@ -39,6 +39,14 @@ export const PORTCO_COUNTRY_TAGS: PortCoCountryTag[] = ["United States", "Canada
 
 export type PortCoStatus = "Active" | "Realized";
 
+export type OwnershipFundAttribution =
+  | "DISCLOSED"
+  | "INFERRED"
+  | "DIRECT_PROGRAM"
+  | "UNRESOLVED";
+
+export type AttributionConfidence = "HIGH" | "MEDIUM" | "LOW";
+
 export interface PortCoExecutive {
   name: string;
   title: string;
@@ -68,6 +76,13 @@ export interface PortCoOwner {
   stake?: string;
   status: PortCoStatus;
   transactionState?: "CLOSED_ACTIVE" | "SIGNED_PENDING_EXIT" | "REALIZED";
+  /** Whether the fund assignment is public fact, an estimate, or not a fund. */
+  fundAttribution?: OwnershipFundAttribution;
+  attributedFundName?: string;
+  /** Required when fundAttribution is INFERRED. */
+  attributionConfidence?: AttributionConfidence;
+  /** Concise evidence-based explanation for an inferred or non-fund classification. */
+  attributionRationale?: string;
 }
 
 export interface PortCo {

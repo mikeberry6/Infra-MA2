@@ -215,6 +215,15 @@ export const ownershipPeriodSchema = z
     exitYear: z.number().int().min(1900).max(2100).optional(),
     isActive: z.boolean().default(true),
     stake: z.string().optional(),
+    fundAttribution: z.enum([
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED",
+    ]).default("UNRESOLVED"),
+    attributedFundName: z.string().trim().optional(),
+    attributionConfidence: z.enum(["HIGH", "MEDIUM", "LOW"]).optional(),
+    attributionRationale: z.string().trim().optional(),
   })
   .refine(
     (o) => o.investmentYear == null || o.exitYear == null || o.exitYear >= o.investmentYear,
@@ -230,6 +239,49 @@ export const ownershipPeriodSchema = z
   .refine((o) => o.isActive || o.exitYear != null, {
     message: "A realized (inactive) ownership period must have an exit year",
     path: ["exitYear"],
+  })
+  .superRefine((ownership, context) => {
+    if (ownership.fundAttribution === "INFERRED" && !ownership.attributionConfidence) {
+      context.addIssue({
+        code: "custom",
+        path: ["attributionConfidence"],
+        message: "An inferred fund requires a confidence level",
+      });
+    }
+    if (
+      (ownership.fundAttribution === "DISCLOSED" || ownership.fundAttribution === "INFERRED")
+      && !ownership.attributedFundName
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["attributedFundName"],
+        message: "A disclosed or inferred attribution requires a fund name",
+      });
+    }
+    if (ownership.fundAttribution === "INFERRED" && !ownership.attributionRationale) {
+      context.addIssue({
+        code: "custom",
+        path: ["attributionRationale"],
+        message: "An inferred fund requires a rationale",
+      });
+    }
+    if (ownership.fundAttribution !== "INFERRED" && ownership.attributionConfidence) {
+      context.addIssue({
+        code: "custom",
+        path: ["attributionConfidence"],
+        message: "Only an inferred fund stores a confidence level",
+      });
+    }
+    if (
+      (ownership.fundAttribution === "DIRECT_PROGRAM" || ownership.fundAttribution === "UNRESOLVED")
+      && ownership.attributedFundName
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["attributedFundName"],
+        message: "Direct/program and unresolved ownership cannot name an attributed fund",
+      });
+    }
   });
 
 export type OwnershipPeriodInput = z.infer<typeof ownershipPeriodSchema>;

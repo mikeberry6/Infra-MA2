@@ -78,6 +78,10 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
     exitYear: p.exitYear,
     isActive: p.isActive,
     stake: p.stake,
+    fundAttribution: p.fundAttribution,
+    attributedFundName: p.attributedFundName,
+    attributionConfidence: p.attributionConfidence,
+    attributionRationale: p.attributionRationale,
   }));
 
   return (

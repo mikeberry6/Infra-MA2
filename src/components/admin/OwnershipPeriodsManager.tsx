@@ -15,6 +15,10 @@ export interface OwnershipPeriodRow {
   exitYear: number | null;
   isActive: boolean;
   stake: string | null;
+  fundAttribution: "DISCLOSED" | "INFERRED" | "DIRECT_PROGRAM" | "UNRESOLVED";
+  attributedFundName: string | null;
+  attributionConfidence: "HIGH" | "MEDIUM" | "LOW" | null;
+  attributionRationale: string | null;
 }
 
 export function OwnershipPeriodsManager({
@@ -141,6 +145,13 @@ export function OwnershipPeriodsManager({
                     {p.investmentYear ? ` · ${p.investmentYear}` : ""}
                     {p.exitYear ? `–${p.exitYear}` : p.isActive && p.investmentYear ? "–Present" : ""}
                     {p.stake ? ` · ${p.stake}` : ""}
+                    {p.fundAttribution === "INFERRED"
+                      ? ` · Estimated (${(p.attributionConfidence || "pending").toLowerCase()})`
+                      : p.fundAttribution === "DIRECT_PROGRAM"
+                        ? " · Direct / program"
+                        : p.fundAttribution === "UNRESOLVED"
+                          ? " · Attribution pending"
+                          : " · Disclosed"}
                   </div>
                 </div>
               </div>
@@ -240,6 +251,51 @@ function OwnershipForm({
             defaultChecked={initial?.isActive ?? true}
           />
           <span className="text-[#6e6e6e]">Currently owns this company</span>
+        </label>
+        <label className="text-xs space-y-1">
+          <span className="block text-[#6e6e6e]">Fund attribution</span>
+          <select
+            name="fundAttribution"
+            defaultValue={initial?.fundAttribution ?? "UNRESOLVED"}
+            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
+          >
+            <option value="DISCLOSED">Disclosed</option>
+            <option value="INFERRED">Estimated / inferred</option>
+            <option value="DIRECT_PROGRAM">Direct / program investment</option>
+            <option value="UNRESOLVED">Unresolved</option>
+          </select>
+        </label>
+        <label className="text-xs space-y-1">
+          <span className="block text-[#6e6e6e]">Attributed fund name</span>
+          <input
+            name="attributedFundName"
+            defaultValue={initial?.attributedFundName ?? ""}
+            placeholder="Disclosed or estimated fund"
+            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
+          />
+        </label>
+        <label className="text-xs space-y-1">
+          <span className="block text-[#6e6e6e]">Attribution confidence</span>
+          <select
+            name="attributionConfidence"
+            defaultValue={initial?.attributionConfidence ?? ""}
+            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
+          >
+            <option value="">Not applicable</option>
+            <option value="HIGH">High</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="LOW">Low</option>
+          </select>
+        </label>
+        <label className="text-xs space-y-1 md:col-span-2">
+          <span className="block text-[#6e6e6e]">Attribution rationale</span>
+          <textarea
+            name="attributionRationale"
+            defaultValue={initial?.attributionRationale ?? ""}
+            rows={2}
+            placeholder="Required for estimated fund assignments"
+            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
+          />
         </label>
       </div>
       <div className="flex justify-end gap-2 pt-1">
