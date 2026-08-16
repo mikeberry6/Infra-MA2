@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0089:hill-top-energy-center:fc2f684d",
+  "taskIndex": 89,
+  "companyName": "Hill Top Energy Center",
+  "generatedAt": "2026-08-16T02:03:20.637Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0089-hill-top-energy-center/attempt-2/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 89,
+    "taskId": "ledger:0089:hill-top-energy-center:fc2f684d",
+    "canonicalKey": "hill-top-energy-center|united-states",
+    "companyName": "Hill Top Energy Center",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 13,
+    "managers": [
+      "Ardian",
+      "Blackstone"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "013-ardian:holding:008:hill-top-energy-center",
+      "024-blackstone:holding:010:hill-top-energy-center"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj9a700noivhe1fv3krgh"
+    ],
+    "seedKeys": [
+      "hill top energy center|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ardian.com/news-insights/press-releases/ardian-announces-sale-hill-top-energy-center-blackstone",
+      "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-hill-top-energy-center-in-western-pennsylvania-for-nearly-1-billion/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj9a700noivhe1fv3krgh",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "hill-top-energy-center|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj9a700noivhe1fv3krgh",
+    "name": "Hill Top Energy Center",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-fired generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Hill Top Energy Center is a combined-cycle natural gas power plant in western Pennsylvania. The facility supplies electricity into the PJM market and is positioned near large commercial and data center power demand in the region. Its operating model is asset-heavy and tied to wholesale power generation, with value driven by plant efficiency, dispatch profile, and local market conditions. Public disclosures describe Hill Top as a 620 megawatt plant and one of the newer and more efficient combined-cycle facilities in Pennsylvania. Blackstone announced an agreement to acquire the asset from Ardian in September 2025, and detailed ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjui901l5ivhehdw8zmkz",
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": null,
+        "vehicleName": "Blackstone Energy Transition Partners",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkxr1032qivhesf9e4o59",
+        "date": "2021",
+        "event": "Hill Top Energy Center entered commercial operation in western Pennsylvania.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkxro032rivheo9ichqxo",
+        "date": "Sep 15, 2025",
+        "event": "Blackstone announced an agreement to acquire Hill Top Energy Center from Ardian.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-15T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppmfk08ftivhepxjlokgt",
+        "label": "Announcement date source — Blackstone — Hill Top Energy Center",
+        "url": "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-hill-top-energy-center-in-western-pennsylvania-for-nearly-1-billion/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppmgj08fvivhe9a5y4ah9",
+        "label": "Ardian — Hill Top Energy Center",
+        "url": "https://www.ardian.com/news-insights/press-releases/ardian-announces-sale-hill-top-energy-center-blackstone",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ardian transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppmjv08fxivhew44kvq2t",
+        "label": "Blackstone — Hill Top Energy Center",
+        "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-1-2-billion-investment-to-build-first-ever-natural-gas-power-generation-facility-in-west-virginia/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Blackstone — Hill Top Energy Center",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Hill Top Energy Center",
+    "investmentFirm": "Blackstone",
+    "sector": "Power & ET",
+    "subsector": "Gas-fired generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Blackstone Energy Transition Partners",
+    "description": "Hill Top Energy Center is a combined-cycle natural gas power plant in western Pennsylvania. The facility supplies electricity into the PJM market and is positioned near large commercial and data center power demand in the region. Its operating model is asset-heavy and tied to wholesale power generation, with value driven by plant efficiency, dispatch profile, and local market conditions. Public disclosures describe Hill Top as a 620 megawatt plant and one of the newer and more efficient combined-cycle facilities in Pennsylvania. Blackstone announced an agreement to acquire the asset from Ardian in September 2025, and detailed ownership percentages were not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Pennsylvania",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Hill Top Energy Center entered commercial operation in western Pennsylvania.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 15, 2025",
+        "event": "Blackstone announced an agreement to acquire Hill Top Energy Center from Ardian.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Blackstone — Hill Top Energy Center",
+        "url": "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-hill-top-energy-center-in-western-pennsylvania-for-nearly-1-billion/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ardian — Hill Top Energy Center",
+        "url": "https://www.ardian.com/news-insights/press-releases/ardian-announces-sale-hill-top-energy-center-blackstone",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Blackstone — Hill Top Energy Center",
+        "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-1-2-billion-investment-to-build-first-ever-natural-gas-power-generation-facility-in-west-virginia/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Blackstone",
+        "ownershipVehicle": "Blackstone Energy Transition Partners",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi45x000livheo86afepo",
+        "name": "Ardian",
+        "updatedAt": "2026-07-23T16:09:12.597Z"
+      },
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0089:hill-top-energy-center:fc2f684d",
+    "taskIndex": 89,
+    "canonicalKey": "hill-top-energy-center|united-states",
+    "capturedAt": "2026-08-16T02:03:20.637Z",
+    "databaseRevision": "company-state:cc1be9d70625006788661ebcb9dc7da6f5935380f6eed91ee28ec36c55737e2b",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "27730e6cc18105456f16edd972b12c46f32dda3ca7a39cb046f966d592f1a7d5",
+    "productionSnapshotSha256": "626008160c92e134899996512c9726d644edec3e820071745a79aee397e6f5b3",
+    "targetCompanySnapshotSha256": "cc1be9d70625006788661ebcb9dc7da6f5935380f6eed91ee28ec36c55737e2b",
+    "seedEntrySha256": "041853b4d454950415c2a2ab2c0d57d9dea7dade1fd79c9e1d6cb241d4ebbd21",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "788cae3fc4a3eb029f82e267ca56fdfccc224051ad8183b5f19d574bdd50ac23",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f263fcf93d030b6d244f77391dcb7038491230d4019ed51692bebcf71176416c",
+      "citationsSha256": "8cf3bf5991c7e8b8690dfb0fe1c94966ab19523df5166d97233e209390a449e2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7ff7484ad75c81090fd2999af933318564b499bba20fe5b8bedd4bcc2f188014",
+    "stateSha256": "da862f5c3a7360fe8043278fcfee774af6606bb8b62274cf756a315cfcc8c8a8",
+    "taskSnapshotSha256": "fc1948ebb90a93463900e23f7e6f710a547b03ccf6a1cac822229a19bf99163f"
+  },
+  "contextSha256": "262818aec20119f8bbcaa8f8694248b5d7d44ec9257261f6fe7491b427a83d27"
+}

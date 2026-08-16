@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0089:hill-top-energy-center:fc2f684d",
+  "taskIndex": 89,
+  "asOfDate": "2026-08-15",
+  "generatedAt": "2026-08-16T01:54:00.000Z",
+  "canonicalKey": "hill-top-energy-center|united-states",
+  "companyName": "Hill Top Energy Center",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "013-ardian:holding:008:hill-top-energy-center",
+    "024-blackstone:holding:010:hill-top-energy-center"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing Hill Top Energy Center record in place using direct manager and regulatory evidence. Ardian Americas Infrastructure Funds acquired 41.9% in July 2019 and reached 100% in April 2025. Blackstone announced a definitive acquisition agreement on September 15, 2025, FERC authorized the proposed transfer on March 19, 2026, and the direct FERC consummation notice establishes that the transaction closed on March 26, 2026. A June 2026 filing continues to identify Hill Top as an indirect wholly owned Blackstone subsidiary. Update Blackstone's entry to the legal close, add Ardian as a realized former owner, replace the obsolete pending-transaction judgment, preserve one plant-company boundary and add direct closing evidence. Public sources do not disclose Hill Top's separate corporate headquarters, founding year or standalone website, or the internal allocation of the remaining 9% among other Blackstone-affiliated vehicles. No later sale or signed pending transfer was identified through August 15, 2026.",
+  "evidence": [
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260429-5359",
+      "purpose": "Legal closing and current ownership",
+      "supports": [
+        "The acquisition was consummated on March 26, 2026",
+        "Hill Top became an indirect wholly owned subsidiary of Blackstone-affiliated funds"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260626-5289",
+      "purpose": "Post-close current ownership and vehicle interests",
+      "supports": [
+        "Hill Top remained an indirect Blackstone subsidiary in June 2026",
+        "The filing identifies 76.28% ETP IV and 14.72% BXE IV aggregator interests"
+      ]
+    },
+    {
+      "url": "https://www.ferc.gov/sites/default/files/2026-03/EC25-148-000.pdf",
+      "purpose": "Regulatory approval and buyer structure",
+      "supports": [
+        "FERC authorized the proposed transaction on March 19, 2026",
+        "The order identifies the Blackstone-affiliated acquisition structure"
+      ]
+    },
+    {
+      "url": "https://www.ardian.com/news-insights/press-releases/ardian-announces-sale-hill-top-energy-center-blackstone",
+      "purpose": "Ardian ownership history and signed sale",
+      "supports": [
+        "Ardian Americas Infrastructure Funds acquired 41.9% in July 2019 and the remaining interest in April 2025",
+        "The definitive sale to Blackstone was announced September 15, 2025",
+        "The operating plant is a 620 MW gas-fired facility in western Pennsylvania"
+      ]
+    },
+    {
+      "url": "https://www.ardian.com/news-insights/press-releases/ardian-consolidates-ownership-hill-top-energy-center",
+      "purpose": "Ardian's April 2025 consolidation and operating history",
+      "supports": [
+        "Ardian reached 100% ownership in April 2025",
+        "The plant began operations in July 2021"
+      ]
+    },
+    {
+      "url": "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-hill-top-energy-center-in-western-pennsylvania-for-nearly-1-billion/",
+      "purpose": "Buyer announcement and asset description",
+      "supports": [
+        "Blackstone announced the definitive acquisition agreement on September 15, 2025",
+        "Blackstone described the plant as a 620 MW combined-cycle facility"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "6f688bb753b3f9d6d0c9f76660425203c83ebf7f247faaecb56d75cc24499cac",
+  "currentCompanySnapshotSha256": "cc1be9d70625006788661ebcb9dc7da6f5935380f6eed91ee28ec36c55737e2b",
+  "executionLock": {
+    "taskSnapshotSha256": "1e76169c98ac40715a0916020888d5850932e70a40444f8687a2dba692c80084",
+    "taskStateSha256": "da862f5c3a7360fe8043278fcfee774af6606bb8b62274cf756a315cfcc8c8a8",
+    "taskDependencySha256": "7ff7484ad75c81090fd2999af933318564b499bba20fe5b8bedd4bcc2f188014",
+    "seedEntrySha256": "041853b4d454950415c2a2ab2c0d57d9dea7dade1fd79c9e1d6cb241d4ebbd21",
+    "dependencies": {
+      "ownershipPeriodsSha256": "788cae3fc4a3eb029f82e267ca56fdfccc224051ad8183b5f19d574bdd50ac23",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f263fcf93d030b6d244f77391dcb7038491230d4019ed51692bebcf71176416c",
+      "citationsSha256": "8cf3bf5991c7e8b8690dfb0fe1c94966ab19523df5166d97233e209390a449e2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi45x000livheo86afepo",
+        "name": "Ardian",
+        "updatedAt": "2026-07-23T16:09:12.597Z"
+      },
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj9a700noivhe1fv3krgh",
+    "name": "Hill Top Energy Center",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-fired generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Hill Top Energy Center is a combined-cycle natural gas power plant in western Pennsylvania. The facility supplies electricity into the PJM market and is positioned near large commercial and data center power demand in the region. Its operating model is asset-heavy and tied to wholesale power generation, with value driven by plant efficiency, dispatch profile, and local market conditions. Public disclosures describe Hill Top as a 620 megawatt plant and one of the newer and more efficient combined-cycle facilities in Pennsylvania. Blackstone announced an agreement to acquire the asset from Ardian in September 2025, and detailed ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjui901l5ivhehdw8zmkz",
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": null,
+        "vehicleName": "Blackstone Energy Transition Partners",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkxr1032qivhesf9e4o59",
+        "date": "2021",
+        "event": "Hill Top Energy Center entered commercial operation in western Pennsylvania.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkxro032rivheo9ichqxo",
+        "date": "Sep 15, 2025",
+        "event": "Blackstone announced an agreement to acquire Hill Top Energy Center from Ardian.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-15T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppmfk08ftivhepxjlokgt",
+        "label": "Announcement date source — Blackstone — Hill Top Energy Center",
+        "url": "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-hill-top-energy-center-in-western-pennsylvania-for-nearly-1-billion/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppmgj08fvivhe9a5y4ah9",
+        "label": "Ardian — Hill Top Energy Center",
+        "url": "https://www.ardian.com/news-insights/press-releases/ardian-announces-sale-hill-top-energy-center-blackstone",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ardian transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppmjv08fxivhew44kvq2t",
+        "label": "Blackstone — Hill Top Energy Center",
+        "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-1-2-billion-investment-to-build-first-ever-natural-gas-power-generation-facility-in-west-virginia/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Blackstone — Hill Top Energy Center",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "cc1be9d70625006788661ebcb9dc7da6f5935380f6eed91ee28ec36c55737e2b",
+  "afterImage": {
+    "id": "cmrxpj9a700noivhe1fv3krgh",
+    "name": "Hill Top Energy Center",
+    "aliases": [
+      "Hill Top Energy Center, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Gas-fired generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Hill Top Energy Center is a 620 MW natural-gas combined-cycle power plant in Carmichaels, Pennsylvania that sells energy and capacity into PJM. Ardian Americas Infrastructure Funds acquired a 41.9% co-control interest in July 2019 while the plant was under construction, and the facility entered commercial operation in July 2021. Ardian acquired the remaining interest in April 2025. Blackstone announced a definitive agreement to acquire Hill Top on September 15, 2025, and a direct FERC consummation notice establishes that the transaction closed on March 26, 2026. Hill Top is now indirectly wholly owned through affiliated Blackstone funds, including Blackstone Energy Transition Partners IV AIV L.P. and BXE IV (LUX) AIV SCSp. The FERC record identifies 76.28% and 14.72% aggregator interests for those two vehicles; the internal allocation of the remaining 9% among other affiliated vehicles is not publicly disclosed. The plant company is the canonical PortCo, while buyer and seller holding entities are not counted separately. No later sale or signed pending ownership transfer was identified through August 15, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Carmichaels, Pennsylvania",
+    "lastVerifiedAt": "2026-08-15T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjui901l5ivhehdw8zmkz",
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": null,
+        "vehicleName": "Blackstone Energy Transition Partners IV AIV L.P., BXE IV (LUX) AIV SCSp and affiliated vehicles",
+        "stake": "100% indirect ownership through affiliated Blackstone funds; aggregator interests include 76.28% ETP IV and 14.72% BXE IV",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Ardian",
+        "organizationName": "Ardian",
+        "fundName": null,
+        "vehicleName": "Ardian Americas Infrastructure Funds",
+        "stake": "41.9% at July 2019 entry; 100% from April 2025 until March 26, 2026",
+        "investmentYear": 2019,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkxr1032qivhesf9e4o59",
+        "date": "Jul 2019–Jul 2021",
+        "event": "Ardian Americas Infrastructure Funds acquired a 41.9% co-control interest in Hill Top during construction in July 2019, and the 620 MW plant entered commercial operation in July 2021.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ardian.com/news-insights/press-releases/ardian-announces-sale-hill-top-energy-center-blackstone",
+          "https://www.ardian.com/news-insights/press-releases/ardian-consolidates-ownership-hill-top-energy-center"
+        ]
+      },
+      {
+        "id": "cmrxpkxro032rivheo9ichqxo",
+        "date": "Sep 15, 2025–Mar 26, 2026",
+        "event": "Blackstone announced a definitive agreement to acquire Hill Top from Ardian on September 15, 2025; after FERC approval, the transaction closed on March 26, 2026 and Hill Top became an indirect wholly owned subsidiary of Blackstone funds.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-26T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-hill-top-energy-center-in-western-pennsylvania-for-nearly-1-billion/",
+          "https://www.ferc.gov/sites/default/files/2026-03/EC25-148-000.pdf",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260429-5359"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppmfk08ftivhepxjlokgt",
+        "label": "Announcement date source — Blackstone — Hill Top Energy Center",
+        "url": "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-hill-top-energy-center-in-western-pennsylvania-for-nearly-1-billion/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "September 2025 definitive agreement, buyer strategy and 620 MW asset description",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppmgj08fvivhe9a5y4ah9",
+        "label": "Ardian — Hill Top Energy Center",
+        "url": "https://www.ardian.com/news-insights/press-releases/ardian-announces-sale-hill-top-energy-center-blackstone",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ardian's July 2019 entry, April 2025 consolidation and signed sale to Blackstone",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppmjv08fxivhew44kvq2t",
+        "label": "Blackstone — Hill Top Energy Center",
+        "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-1-2-billion-investment-to-build-first-ever-natural-gas-power-generation-facility-in-west-virginia/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Blackstone energy-transition strategy context; unrelated West Virginia project and not Hill Top ownership evidence",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FERC — Hill Top consummation notice",
+        "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260429-5359",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 26, 2026 legal close and indirect wholly owned Blackstone subsidiary status",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "FERC — Hill Top current ownership filing",
+        "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260626-5289",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 2026 Blackstone ownership confirmation and acquisition-vehicle interests",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FERC — Hill Top transaction approval",
+        "url": "https://www.ferc.gov/sites/default/files/2026-03/EC25-148-000.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 19, 2026 regulatory authorization and Blackstone acquisition structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ardian — Hill Top ownership consolidation",
+        "url": "https://www.ardian.com/news-insights/press-releases/ardian-consolidates-ownership-hill-top-energy-center",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 2025 Ardian 100% ownership and July 2021 commercial-operation date",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "2d8d593f059ee29d4754805a4d16efb891cb707d986949233a350beb88f01356",
+  "proposalSha256": "0772999647fd318d561db36be507f597d7b49dbe9808839017134e7f6acf7e6e"
+}

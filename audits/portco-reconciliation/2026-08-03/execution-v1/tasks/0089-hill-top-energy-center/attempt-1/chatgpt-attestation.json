@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0089:hill-top-energy-center:fc2f684d",
+  "taskIndex": 89,
+  "attempt": 1,
+  "companyName": "Hill Top Energy Center",
+  "conversationUrl": "https://chatgpt.com/c/6a81128b-f22c-83ea-a890-0e43efdfd756",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-16T01:29:47.458Z",
+  "initialCompletedAt": "2026-08-16T01:48:19.901Z",
+  "repairSubmittedAt": "2026-08-16T01:48:33.680Z",
+  "repairCompletedAt": "2026-08-16T01:52:57.722Z",
+  "repairCount": 1,
+  "initialOutcome": "REPAIR_REQUIRED_FOR_PRIMARY_EVIDENCE_AND_DISCLOSURE_CLASSIFICATION",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_AFTER_ONE_REPAIR",
+  "contentHashes": {
+    "promptSha256": "ff0bf034a5a6c016de60a7a485793a642785f0bbea8ddb874db5dba5f87c47da",
+    "initialResponseSha256": "1b7593fef53791210d9d87855183d2fbc1cba170d3efc10934e3db98a045b7f5",
+    "acceptedResponseSha256": "1134ed30daacd9858bd7d6d8b6e5413491ae6e20cd481878abfb012b1ee06ccd",
+    "transcriptSha256": "984405a416d65a8a05755348100be6608d2113422d0754adf12cce8380f8f609",
+    "repairPromptSha256": "c835623db66ef2eb2f6a75f0718088251ed8af1c21c730d3bd53ef01b4615f6e",
+    "repairResponseSha256": "1134ed30daacd9858bd7d6d8b6e5413491ae6e20cd481878abfb012b1ee06ccd"
+  },
+  "captureMethod": "Signed-in ChatGPT web application controlled through the in-app browser",
+  "captureNote": "The initial response selected an indirect PJM report as primary and classified noncritical disclosure gaps as unresolved. One narrowly scoped repair replaced it with direct FERC closing evidence, corrected source health and returned application-safe structured JSON. The separate concise review is saved in research-decision.md."
+}

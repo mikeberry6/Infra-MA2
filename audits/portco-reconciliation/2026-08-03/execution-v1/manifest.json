@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T01:21:00.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T02:04:13.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0089:hill-top-energy-center:fc2f684d",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -12934,20 +12934,32 @@
       "managerIndex": 13,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "27730e6cc18105456f16edd972b12c46f32dda3ca7a39cb046f966d592f1a7d5",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-16T02:02:57.000Z",
+      "updatedAt": "2026-08-16T02:04:13.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "fc1948ebb90a93463900e23f7e6f710a547b03ccf6a1cac822229a19bf99163f",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0089-hill-top-energy-center/attempt-2/locked-task-snapshot.json",
+          "sha256": "fc1948ebb90a93463900e23f7e6f710a547b03ccf6a1cac822229a19bf99163f"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0089-hill-top-energy-center-v2/proposal.json",
+          "sha256": "235f62ec6853d3075f8ff5bb2f9f106e83220cb9d7c95a74d27ab9a34231137e"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0089-hill-top-energy-center-v2.json",
+          "sha256": "219fd7e770615f4983cb5094fbf19b4593ad2ec8d0d6d92806513ba21f483d78"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0089-hill-top-energy-center/attempt-1/research-decision.json",
+          "sha256": "cee9491d76313510cc3753ce63cc5f6a23f497e8abab6147b9a17b0ffcdf269a"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -12961,6 +12973,108 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T01:27:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T02:00:53.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1e76169c98ac40715a0916020888d5850932e70a40444f8687a2dba692c80084",
+          "evidenceSha256": [
+            "0772999647fd318d561db36be507f597d7b49dbe9808839017134e7f6acf7e6e",
+            "15ac55b4cedf82f1241ddd5330849c091c45ce0e42694fca2c6ad48389d1518d",
+            "1e76169c98ac40715a0916020888d5850932e70a40444f8687a2dba692c80084"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T02:00:54.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1e76169c98ac40715a0916020888d5850932e70a40444f8687a2dba692c80084",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T02:01:32.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "1e76169c98ac40715a0916020888d5850932e70a40444f8687a2dba692c80084",
+          "evidenceSha256": [
+            "d582ea2552d84f6c79022c0e56ab701bc6e153f8da5dedaf28524c35bda00867"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-16T02:02:55.000Z",
+          "reason": "Protected dry-run rejected proposal v1 before any write because it was bound to the initial production snapshot rather than the later locked release snapshot; production and seed remained unchanged, so retry with a freshly rebound proposal.",
+          "taskSnapshotSha256": "1e76169c98ac40715a0916020888d5850932e70a40444f8687a2dba692c80084",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T02:02:57.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T02:03:57.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "fc1948ebb90a93463900e23f7e6f710a547b03ccf6a1cac822229a19bf99163f",
+          "evidenceSha256": [
+            "235f62ec6853d3075f8ff5bb2f9f106e83220cb9d7c95a74d27ab9a34231137e",
+            "cee9491d76313510cc3753ce63cc5f6a23f497e8abab6147b9a17b0ffcdf269a",
+            "fc1948ebb90a93463900e23f7e6f710a547b03ccf6a1cac822229a19bf99163f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T02:03:58.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "fc1948ebb90a93463900e23f7e6f710a547b03ccf6a1cac822229a19bf99163f",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T02:04:13.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "fc1948ebb90a93463900e23f7e6f710a547b03ccf6a1cac822229a19bf99163f",
+          "evidenceSha256": [
+            "219fd7e770615f4983cb5094fbf19b4593ad2ec8d0d6d92806513ba21f483d78"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -28501,5 +28615,5 @@
       ]
     }
   ],
-  "manifestSha256": "c21312f76da075dd7fdf73d2dd7c53e280cff413324c689cee5d220763657b3c"
+  "manifestSha256": "c4d62e6da737c22f2d4a9bbd49ca086f458c86f405a2f8fb0999be1a1b97d5db"
 }
