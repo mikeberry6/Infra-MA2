@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0106:waihonu-solar-farm:52102602",
+  "taskIndex": 106,
+  "companyName": "Waihonu Solar Farm",
+  "generatedAt": "2026-08-16T20:14:27.159Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0106-waihonu-solar-farm/attempt-3/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 106,
+    "taskId": "ledger:0106:waihonu-solar-farm:52102602",
+    "canonicalKey": "waihonu-solar-farm|united-states",
+    "companyName": "Waihonu Solar Farm",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "015-argo-infrastructure-partners:repo-only:011:waihonu-solar-farm"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj7ea00krivhepj9wbkhp"
+    ],
+    "seedKeys": [
+      "waihonu solar farm|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.hawaiigas.com/clean-energy/diversification",
+      "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Argo Infrastructure Partners MATCHED_ELSEWHERE: Repository record is a project-level asset beneath the included Hawaiʻi Gas platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj7ea00krivhepj9wbkhp",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "waihonu-solar-farm|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj7ea00krivhepj9wbkhp",
+    "name": "Waihonu Solar Farm",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Waihonu Solar Farm is an operating solar generation asset on Oahu. The project supports Hawaii's clean energy supply and forms part of the broader energy platform associated with Hawaiʻi Gas. Its model is asset-heavy and based on ownership of an operating solar plant rather than development-stage activity. Hawaiʻi Gas describes Waihonu as one of Oahu's larger active solar farms with a combined output of 6.5 MW from 26,232 solar modules on about 12 acres in Mililani. The project was dedicated in 2016, and Argo acquired it indirectly as part of the 2022 purchase of Hawaiʻi Gas and related smaller energy businesses.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Hawaii",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjsfu01hpivhenwchhfdu",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "AMF Hawaiʻi Investment Holdings",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkpuo02taivhefyqqbq7w",
+        "date": "Aug 2016",
+        "event": "Waihonu Solar and Sheep Farm was dedicated in Mililani.",
+        "category": "EXPANSION",
+        "sortDate": "2016-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkpv802tbivhel6hrhgfn",
+        "date": "Jun 2021",
+        "event": "Public reporting on Argo's acquisition of Hawaiʻi Gas stated that the transaction also included Waihonu Solar Farm.",
+        "category": "OTHER",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkpvp02tcivhecq3r538x",
+        "date": "Jul 2022",
+        "event": "Argo completed the acquisition of Hawaiʻi Gas and related smaller energy businesses, including Waihonu.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp72e07svivhe2avt0pis",
+        "label": "Hawaiigas — Waihonu Solar Farm",
+        "url": "https://www.hawaiigas.com/clean-energy/diversification",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Hawaiigas — Waihonu Solar Farm",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp75r07sxivhex5o5pjvy",
+        "label": "Hawaiipublicradio — Waihonu Solar Farm",
+        "url": "https://www.hawaiipublicradio.org/government-politics/2016-08-25/waihonu-solar-and-sheep-farm-dedicated-in-mililani",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Hawaiipublicradio — Waihonu Solar Farm",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp76g07syivhe5joupguf",
+        "label": "Close date source — Argo Infrastructure Partners — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp77j07t0ivheijrwo1m1",
+        "label": "Mauinow — Waihonu Solar Farm",
+        "url": "https://mauinow.com/2021/06/15/argo-acquiring-hawai%CA%BBi-gas-and-its-smaller-energy-companies-for-514-million/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Mauinow — Waihonu Solar Farm",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Waihonu Solar Farm",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Solar generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "AMF Hawaiʻi Investment Holdings",
+    "description": "Waihonu Solar Farm is an operating solar generation asset on Oahu. The project supports Hawaii's clean energy supply and forms part of the broader energy platform associated with Hawaiʻi Gas. Its model is asset-heavy and based on ownership of an operating solar plant rather than development-stage activity. Hawaiʻi Gas describes Waihonu as one of Oahu's larger active solar farms with a combined output of 6.5 MW from 26,232 solar modules on about 12 acres in Mililani. The project was dedicated in 2016, and Argo acquired it indirectly as part of the 2022 purchase of Hawaiʻi Gas and related smaller energy businesses.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "Hawaii",
+    "milestones": [
+      {
+        "date": "Aug 2016",
+        "event": "Waihonu Solar and Sheep Farm was dedicated in Mililani.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jun 2021",
+        "event": "Public reporting on Argo's acquisition of Hawaiʻi Gas stated that the transaction also included Waihonu Solar Farm.",
+        "category": "Other"
+      },
+      {
+        "date": "Jul 2022",
+        "event": "Argo completed the acquisition of Hawaiʻi Gas and related smaller energy businesses, including Waihonu.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Hawaiigas — Waihonu Solar Farm",
+        "url": "https://www.hawaiigas.com/clean-energy/diversification",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Hawaiipublicradio — Waihonu Solar Farm",
+        "url": "https://www.hawaiipublicradio.org/government-politics/2016-08-25/waihonu-solar-and-sheep-farm-dedicated-in-mililani",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Close date source — Argo Infrastructure Partners — Waihonu Solar Farm",
+        "url": "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Mauinow — Waihonu Solar Farm",
+        "url": "https://mauinow.com/2021/06/15/argo-acquiring-hawai%CA%BBi-gas-and-its-smaller-energy-companies-for-514-million/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "AMF Hawaiʻi Investment Holdings",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0106:waihonu-solar-farm:52102602",
+    "taskIndex": 106,
+    "canonicalKey": "waihonu-solar-farm|united-states",
+    "capturedAt": "2026-08-16T20:14:27.159Z",
+    "databaseRevision": "company-state:74dc5880833937a27336b1ebc7350844cc913d11800dc54127611fdbe4aceaa9",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "fc62e9cdd208d863bd4778dff5f4632be98c1fa1a13677abf92ca92bafc883cb",
+    "productionSnapshotSha256": "d7641e989ef4770dcceeacfa7542ba5c0784f635fbde3d88d19f8ebeecf00529",
+    "targetCompanySnapshotSha256": "74dc5880833937a27336b1ebc7350844cc913d11800dc54127611fdbe4aceaa9",
+    "seedEntrySha256": "b9ce4d7a94936697b0368bd51e5e9c015515b8c815e090146fea638d46d2c94d",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "1e603d582ce2a713b2b23edadf40c8d32e93afd412856b910e409f515a524027",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "0bac91ec392b202f4e759895f169310cd17c6733c7c16410288ad527b19d29bd",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "345a5475f88fcb7bfe6c01b759aba3cab6a0973edcbfa567ecbeec89369f9e90",
+    "stateSha256": "028429ae5f88d953a9229dd60bdf1ef166f4eacbe25b7f9bf1faa9ee7853719a",
+    "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28"
+  },
+  "contextSha256": "9854c2583a8b9c2f77b831445db6fe1be7634d04d23ddc724f423592fad91a34"
+}

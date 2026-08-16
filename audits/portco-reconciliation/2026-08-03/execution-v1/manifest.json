@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T19:26:53.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T20:23:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0106:waihonu-solar-farm:52102602",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -16027,20 +16027,32 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "fc62e9cdd208d863bd4778dff5f4632be98c1fa1a13677abf92ca92bafc883cb",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 3,
+      "startedAt": "2026-08-16T20:20:21.000Z",
+      "updatedAt": "2026-08-16T20:23:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0106-waihonu-solar-farm/attempt-3/locked-task-snapshot.json",
+          "sha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0106-waihonu-solar-farm-v3/proposal.json",
+          "sha256": "3b65e827137044db3623b80b9f9f60086ea6d1c15bfedca080826c4a9e3d0611"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0106-waihonu-solar-farm-v3.json",
+          "sha256": "774105db60bae87a085ac9c2d0498650deac647e804686a72b73514409638dd1"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0106-waihonu-solar-farm/attempt-1/research-decision.json",
+          "sha256": "183cbb988c80d7c2c4aac60da20cb35a3d34fc19145afe44fbbf5e80546797a4"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -16054,6 +16066,164 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T19:31:16.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T20:09:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "57b75cd141850d755085da2d09f26db181ec1c938be92382c72d2b943989214c",
+          "evidenceSha256": [
+            "183cbb988c80d7c2c4aac60da20cb35a3d34fc19145afe44fbbf5e80546797a4",
+            "57b75cd141850d755085da2d09f26db181ec1c938be92382c72d2b943989214c",
+            "fa5c44307c2070a8dbdfa72f2f9e1e443b801d9006cfd73e5596f34accb83b43"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T20:09:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "57b75cd141850d755085da2d09f26db181ec1c938be92382c72d2b943989214c",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T20:13:10.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "57b75cd141850d755085da2d09f26db181ec1c938be92382c72d2b943989214c",
+          "evidenceSha256": [
+            "47b1abbcbf548961e7c9c4941d2a2c02e000c3a8c1f33aa2c33b5e13b3f538a3"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-16T20:15:20.000Z",
+          "reason": "Local production dry run rejected proposal v1 because the Form EIA-860 methodology URL already has shared production Source metadata with a different label. No seed staging, release, or database write occurred; the Waihonu disposition is unchanged and requires a metadata-compatible proposal.",
+          "taskSnapshotSha256": "57b75cd141850d755085da2d09f26db181ec1c938be92382c72d2b943989214c",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T20:15:21.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T20:17:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a0ddc3eb74173611554afe721ad5a8b46ce4ca43c0501c33f88a41f57ebd8d9d",
+          "evidenceSha256": [
+            "183cbb988c80d7c2c4aac60da20cb35a3d34fc19145afe44fbbf5e80546797a4",
+            "a0ddc3eb74173611554afe721ad5a8b46ce4ca43c0501c33f88a41f57ebd8d9d",
+            "f13718b55d8270286685bef5a5b7b7ef1449c86d90d245782c043d5fdbad18ce"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T20:17:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a0ddc3eb74173611554afe721ad5a8b46ce4ca43c0501c33f88a41f57ebd8d9d",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T20:19:10.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a0ddc3eb74173611554afe721ad5a8b46ce4ca43c0501c33f88a41f57ebd8d9d",
+          "evidenceSha256": [
+            "0e496c8009bd51274bde08a5710d48f1f71627d06013076ac688e39096d61358"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-16T20:20:20.000Z",
+          "reason": "Local production dry run rejected proposal v2 because the declared actions omitted REALIZE_COMPANY even though the approved after-image changes company status from ACTIVE to REALIZED. No seed staging, release, or database write occurred; proposal v3 will declare the exact fail-closed mutation plan.",
+          "taskSnapshotSha256": "a0ddc3eb74173611554afe721ad5a8b46ce4ca43c0501c33f88a41f57ebd8d9d",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T20:20:21.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T20:21:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
+          "evidenceSha256": [
+            "183cbb988c80d7c2c4aac60da20cb35a3d34fc19145afe44fbbf5e80546797a4",
+            "3b65e827137044db3623b80b9f9f60086ea6d1c15bfedca080826c4a9e3d0611",
+            "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T20:21:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T20:23:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
+          "evidenceSha256": [
+            "774105db60bae87a085ac9c2d0498650deac647e804686a72b73514409638dd1"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -30978,5 +31148,5 @@
       ]
     }
   ],
-  "manifestSha256": "c5c98c7b424f6659733a0676ecfa8d9c8797f77d47c662b1062207d1886f2904"
+  "manifestSha256": "8f403a727b2139fa67fc91411ac2bca85e41cc374fd9642d759f3497e5f45ba8"
 }
