@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0093:freight-ninja:b71d456e",
+  "taskIndex": 93,
+  "attempt": 1,
+  "companyName": "Freight Ninja",
+  "asOfDate": "2026-08-16",
+  "decision": "PROPOSED_CORRECTION",
+  "modelDecision": "EXCLUDED",
+  "rationale": "Archive Freight Ninja as a standalone manager-level PortCo while preserving it as an active, distinct LAZ-controlled operating company. LAZ Parking stated on May 6, 2025 that it had acquired a majority interest in Freight Ninja, while the current Freight Ninja site and separate Freight Ninja LLC terms confirm that it continues operating as its own legal identity. Freight Ninja and LAZ are not duplicate companies, so a merge or redirect would be inaccurate. Argo Infrastructure Partners' directly evidenced manager-level portfolio investment is LAZ; Freight Ninja is an acquisition beneath that platform. The protected correction will archive the Freight Ninja row, retain its single Argo audit period as indirect through LAZ, preserve its operating and acquisition history, and record no Argo exit or pending transaction.",
+  "identityResolution": {
+    "canonicalName": "Freight Ninja",
+    "legalName": "Freight Ninja LLC",
+    "aliases": [
+      "Freight Ninja LLC"
+    ],
+    "website": "https://www.freightninja.com/",
+    "country": "United States",
+    "headquarters": "Lombard, Illinois",
+    "managerLevelBoundary": "Count LAZ Parking as Argo's manager-level platform. Freight Ninja remains a distinct operating company, but it is a majority-owned acquisition beneath LAZ and is excluded from the standalone manager-level census.",
+    "duplicateDecision": "Do not merge Freight Ninja with LAZ and do not create a redirect. Archive the Freight Ninja standalone row while preserving its legal identity and history."
+  },
+  "ownershipResolution": {
+    "currentOwners": [
+      {
+        "manager": "Argo Infrastructure Partners",
+        "fund": null,
+        "vehicle": "LAZ Parking",
+        "stake": "Indirect through LAZ Parking, which acquired a majority interest; exact Freight Ninja and Argo percentages are not publicly disclosed",
+        "entryYear": 2025,
+        "state": "CLOSED_ACTIVE"
+      }
+    ],
+    "retiredDuplicateOwnershipRows": [],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Transportation",
+    "subsector": "Truck parking and industrial outdoor storage",
+    "yearFounded": 2022,
+    "reportedScale": "Freight Ninja's current site reports more than 65 facilities in 14 states; LAZ reported 50 sites, more than 300 acres and 10,000 spaces at acquisition."
+  },
+  "acquisitionExitCheck": {
+    "lazAcquisition": "LAZ said it had acquired a majority interest by May 6, 2025; the exact legal closing date and ownership percentage were not publicly disclosed.",
+    "retainedMinority": "The reviewed public sources did not disclose the seller, founder or management equity retained after LAZ's majority acquisition.",
+    "subsequentExitSearch": "No later Freight Ninja sale, legal merger, rebrand, Argo exit from LAZ or signed pending ownership transfer was identified through 2026-08-16."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj78w00khivheaaxm91l6",
+    "lazProductionCompanyId": "cmrxpj5s200iaivhegqucgc2l",
+    "retainedOwnershipPeriodId": "cmrxpjsaa01heivhengbjhb2k",
+    "mutation": "ARCHIVE_STANDALONE_RECORD",
+    "queueCorrectionDisposition": "EXCLUDE_AS_LAZ_BOLT_ON_VIA_PROTECTED_CORRECTION",
+    "duplicateMapping": "NONE",
+    "lazScorecardFollowUp": "LAZ's current production scorecard does not yet show the Freight Ninja acquisition; revalidate and add it only during LAZ's later authoritative full-company scorecard task."
+  },
+  "primaryEvidenceUrl": "https://www.lazparking.com/our-company/about/news/2025/05/06/laz-parking-acquires-majority-interest-in-freight-ninja",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0093-freight-ninja/attempt-1/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0093-freight-ninja/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0093-freight-ninja/attempt-1/chatgpt-response-validation.json",
+  "unresolvedQuestions": [
+    "The exact Freight Ninja legal closing date, LAZ ownership percentage, retained seller or management interest, Argo indirect percentage and fund vehicle are not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "dfd3b5b827bbfe26b940ce7f3155b77908eaf70f3008e85943d87e6cf525d31c",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}

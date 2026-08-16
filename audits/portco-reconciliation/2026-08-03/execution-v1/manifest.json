@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T06:01:03.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T06:33:59.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0093:freight-ninja:b71d456e",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -13631,20 +13631,32 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "64c1f95752c10775b0d74eeddefc45127fd40dbfa72ac7c8bc6794e3820dde1d",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-16T06:06:00.000Z",
+      "updatedAt": "2026-08-16T06:33:59.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "dfd3b5b827bbfe26b940ce7f3155b77908eaf70f3008e85943d87e6cf525d31c",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0093-freight-ninja/attempt-1/locked-task-snapshot.json",
+          "sha256": "dfd3b5b827bbfe26b940ce7f3155b77908eaf70f3008e85943d87e6cf525d31c"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0093-freight-ninja-v1/proposal.json",
+          "sha256": "6f73b4b752ad259fc0cbac8473da969771ad899832d25262e31fe601cbd6b86f"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0093-freight-ninja-v1.json",
+          "sha256": "71034a751daa18b9efa05e7338d1c393277b7ba371520bfede8a74b05b19a824"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0093-freight-ninja/attempt-1/research-decision.json",
+          "sha256": "c93589f058586004954d4c7bf70d156dd3a7d9392ee0e64dbcdbd612efdb1fa5"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -13658,6 +13670,55 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T06:06:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T06:33:03.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "dfd3b5b827bbfe26b940ce7f3155b77908eaf70f3008e85943d87e6cf525d31c",
+          "evidenceSha256": [
+            "6f73b4b752ad259fc0cbac8473da969771ad899832d25262e31fe601cbd6b86f",
+            "c93589f058586004954d4c7bf70d156dd3a7d9392ee0e64dbcdbd612efdb1fa5",
+            "dfd3b5b827bbfe26b940ce7f3155b77908eaf70f3008e85943d87e6cf525d31c"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T06:33:39.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "dfd3b5b827bbfe26b940ce7f3155b77908eaf70f3008e85943d87e6cf525d31c",
+          "evidenceSha256": [
+            "6f73b4b752ad259fc0cbac8473da969771ad899832d25262e31fe601cbd6b86f",
+            "dfd3b5b827bbfe26b940ce7f3155b77908eaf70f3008e85943d87e6cf525d31c"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T06:33:59.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "dfd3b5b827bbfe26b940ce7f3155b77908eaf70f3008e85943d87e6cf525d31c",
+          "evidenceSha256": [
+            "71034a751daa18b9efa05e7338d1c393277b7ba371520bfede8a74b05b19a824"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -29046,5 +29107,5 @@
       ]
     }
   ],
-  "manifestSha256": "b82ada73867383240de65bcd5df5485f60846983ce282415464db7bfccafb8df"
+  "manifestSha256": "90b6be4e5ec279bee10fa6d0e448d80ee59452e50f368e3e3e8ba096a0d007db"
 }
