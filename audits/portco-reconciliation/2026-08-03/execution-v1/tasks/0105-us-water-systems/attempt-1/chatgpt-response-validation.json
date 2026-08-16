@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+  "taskIndex": 105,
+  "attempt": 1,
+  "validatedAt": "2026-08-16T18:17:34.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a81f646-9cdc-83ea-a952-55fea8b31494",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "recordDisposition",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "34e27b9c57af60c0c8e4ed3dea814393a8b7e510f22d5866c50ea35c10c34176",
+    "errors": [
+      "The JSON was truncated mid-key after ownershipResolution.apolloTransactionTreatment and omitted ownershipResolution.duplicateOwnerAction and every later required top-level key."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-16T18:06:16.494Z",
+    "completedAt": "2026-08-16T18:14:11.974Z",
+    "valid": false,
+    "responseSha256": "b11b8c1caedb8996e74b93413bec7d6d60c018914ce3b2e12b6ea5d0cf62ab36",
+    "errors": [
+      "The repaired JSON was truncated mid-string at acquisitionExitCheck.argoEntry.",
+      "The repaired response omitted the remainder of acquisitionExitCheck and all required milestones, evidence, beforeAfterChanges, excludedOrDuplicateCandidates, unresolvedQuestions and recommendedListAction fields."
+    ]
+  },
+  "finalResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "decision": null,
+    "result": "FAIL_SECOND_MALFORMED_RESPONSE"
+  },
+  "valid": false,
+  "errors": [
+    "Both the initial response and the single allowed repair were structurally truncated and failed the required schema."
+  ],
+  "repairsUsed": 1,
+  "independentSourceVerification": {
+    "artifact": "source-verification.json",
+    "sha256": "7dcc937878806381ce6aad508069bff7e7f7dfe96cedebc8c811f388a5990b8a",
+    "status": "PASS"
+  },
+  "researchFailure": {
+    "artifact": "research-failure.json",
+    "sha256": "b24702f2b55f883a41adf94e68078ec5cc110411f6faa1194528a90321eed570",
+    "failureCode": "SECOND_MALFORMED_MODEL_RESPONSE"
+  },
+  "proposalGenerated": false,
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "releaseStarted": false,
+  "terminalDisposition": "FAILED"
+}

@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T17:31:29.000Z",
-  "runStatus": "IDLE",
+  "updatedAt": "2026-08-16T18:18:00.000Z",
+  "runStatus": "BLOCKED",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -15866,12 +15866,12 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "68f7ee03e9837000820b4bae6cdc380ae633e4b1602653c2394ab99961399d68",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "FAILED",
+      "attempts": 1,
+      "startedAt": "2026-08-16T17:37:44.000Z",
+      "updatedAt": "2026-08-16T18:18:00.000Z",
       "completedAt": null,
-      "exceptionReason": null,
+      "exceptionReason": "The required GPT-5.6 Sol Pro response was truncated mid-JSON. The one permitted same-conversation repair was also truncated mid-JSON and omitted required top-level fields. Per the one-repair limit, no proposal, seed staging, release, or database write was created. Independent evidence supports archiving the US Water Systems umbrella without a redirect while retaining Bayonne and Middletown separately, but implementation is paused pending an explicitly authorized fresh attempt.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
@@ -15879,7 +15879,10 @@
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0105-us-water-systems/attempt-1/research-failure.json",
+          "sha256": "c20231af15d08182cc2c24d346b4703bb0aad857eef8404165a9e39af0b99fd3"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -15893,6 +15896,28 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T17:37:44.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "FAILED",
+          "at": "2026-08-16T18:18:00.000Z",
+          "reason": "The required GPT-5.6 Sol Pro response was truncated mid-JSON. The one permitted same-conversation repair was also truncated mid-JSON and omitted required top-level fields. Per the one-repair limit, no proposal, seed staging, release, or database write was created. Independent evidence supports archiving the US Water Systems umbrella without a redirect while retaining Bayonne and Middletown separately, but implementation is paused pending an explicitly authorized fresh attempt.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "c20231af15d08182cc2c24d346b4703bb0aad857eef8404165a9e39af0b99fd3"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -30855,5 +30880,5 @@
       ]
     }
   ],
-  "manifestSha256": "95922e0cb0af1014230e4a23a69c1bb71d43e87e8a76b2f4e2236174ea272d58"
+  "manifestSha256": "cdf8d4f56beb217e5e77547d2d9a6172d89a05bc9d06f5b80323352a6add1e51"
 }

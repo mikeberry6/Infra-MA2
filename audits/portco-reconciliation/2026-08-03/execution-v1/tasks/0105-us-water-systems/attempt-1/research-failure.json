@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_FAILURE",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+  "taskIndex": 105,
+  "attempt": 1,
+  "companyName": "US Water Systems",
+  "recordedAt": "2026-08-16T18:17:34.000Z",
+  "terminalDisposition": "FAILED",
+  "failureCode": "SECOND_MALFORMED_MODEL_RESPONSE",
+  "reason": "The required GPT-5.6 Sol Pro response was truncated mid-JSON. The one permitted same-conversation repair was also truncated mid-JSON and omitted required top-level fields.",
+  "independentEvidenceConclusion": "The repository record is an unsupported umbrella duplicating the separately published Bayonne and Middletown concessions. The supported future action is to archive the umbrella without a redirect and retain both child records.",
+  "mutationStatus": {
+    "proposalGenerated": false,
+    "seedChanged": false,
+    "databaseChanged": false,
+    "releaseStarted": false
+  },
+  "resumeCondition": "Start a fresh GPT-5.6 Sol Pro conversation only after an explicitly authorized retry of this failed task."
+}
