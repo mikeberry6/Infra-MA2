@@ -236,6 +236,8 @@ export function assertOwnershipManagerCompatible(input: {
 const approvedOwnershipOrganizationProvisioning = {
   "BC Partners": "FUND_MANAGER",
   "Cox Enterprises": "CORPORATE",
+  "Energy Transfer LP": "CORPORATE",
+  "ePointZero": "CORPORATE",
   "Ferrovial N.V.": "CORPORATE",
   "GE Renewable Energy": "CORPORATE",
   "GFL Environmental Inc.": "CORPORATE",

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0091:rover-pipeline:32747256",
+  "taskIndex": 91,
+  "attempt": 1,
+  "companyName": "Rover Pipeline",
+  "asOfDate": "2026-08-15",
+  "decision": "PROPOSED_CORRECTION",
+  "rationale": "Correct the existing Rover Pipeline record in place. The canonical company is Rover Pipeline LLC, not ET Rover Pipeline LLC, BCP Renaissance or Traverse. The 2017 ownership bridge shows Energy Transfer retained an effective 32.6% economic interest, Blackstone acquired an effective 32.44% indirect interest and Traverse retained 35%. Ares Core Infrastructure Fund acquired Blackstone's vehicles on April 28, 2026 and publicly described the acquired Rover stake as 32.4%. ePointZero then closed its acquisition of Traverse on July 14, 2026, taking the 35% Rover interest. Add Energy Transfer and ePointZero as current owners, preserve Ares as current and Blackstone as realized, and do not create a pending transaction or a duplicate company for any holding vehicle.",
+  "identityResolution": {
+    "canonicalName": "Rover Pipeline",
+    "legalName": "Rover Pipeline LLC",
+    "aliases": ["Rover Pipeline LLC", "Rover"],
+    "website": "https://www.energytransfer.com/operations/natural-gas/rover-pipeline/",
+    "country": "United States",
+    "headquarters": "NOT_PUBLICLY_DISCLOSED",
+    "managerLevelBoundary": "Count the single Rover Pipeline LLC operating company. ET Rover Pipeline LLC and BCP Renaissance entities are ownership vehicles, Traverse is the vehicle holding the 35% interest, and pipeline segments, interconnects and the separately owned Ohio River System are not separate Rover PortCos.",
+    "duplicateDecision": "Correct the existing production company in place; no merge, redirect or new canonical company is required."
+  },
+  "ownershipResolution": {
+    "currentOwners": [
+      {
+        "manager": "Ares Management",
+        "fund": "Ares Core Infrastructure Fund (ACI)",
+        "vehicle": "BCP Renaissance Parent L.L.C. / BCP Renaissance L.L.C.",
+        "stake": "32.4% indirect interest in Rover Pipeline",
+        "entryDate": "2026-04-28",
+        "state": "CLOSED_ACTIVE"
+      },
+      {
+        "manager": "Energy Transfer LP",
+        "fund": null,
+        "vehicle": "ET Rover Pipeline LLC",
+        "stake": "32.6% economic interest in Rover Pipeline",
+        "entryDate": "NOT_PUBLICLY_DISCLOSED",
+        "state": "CLOSED_ACTIVE"
+      },
+      {
+        "manager": "ePointZero",
+        "fund": null,
+        "vehicle": "Traverse Midstream Partners, LLC",
+        "stake": "35%",
+        "entryDate": "2026-07-14",
+        "state": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerOwners": [
+      {
+        "manager": "Blackstone",
+        "fund": "NOT_LINKED_IN_REPOSITORY",
+        "vehicle": "BCP Renaissance L.L.C.",
+        "stake": "32.44% indirect interest in Rover Pipeline",
+        "entryDate": "2017-10-31",
+        "exitDate": "2026-04-28",
+        "state": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Midstream",
+    "subsector": "Natural gas transmission",
+    "yearFounded": null,
+    "reportedScale": "Approximately 700 to 713 miles of pipeline with 3.425 Bcf/d of transportation capacity across Pennsylvania, West Virginia, Ohio and Michigan."
+  },
+  "acquisitionExitCheck": {
+    "blackstoneEntry": "Energy Transfer announced the transaction on July 31, 2017 and closed Blackstone's 49.9% holding-company interest, equivalent to 32.44% of Rover, on October 31, 2017.",
+    "aresEntry": "Ares Core Infrastructure Fund legally acquired the BCP Renaissance vehicles on April 28, 2026; Ares and Blackstone announced the 32.4% Rover transaction on April 29.",
+    "traverseTransfer": "ePointZero closed its $2.25 billion acquisition of Traverse Midstream Partners, including the 35% Rover interest, on July 14, 2026.",
+    "subsequentExitSearch": "No later Rover-level sale, signed pending transfer or legal closing was identified through 2026-08-15."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj9ha00o1ivheosmpe7bo",
+    "existingOwnershipPeriodIds": ["cmrxpjurl01liivhe773ju18n", "cmrxpjus401ljivhe34mwseet"],
+    "mutation": "CORRECT_EXISTING_COMPANY_AND_ADD_TWO_CURRENT_OWNERS",
+    "queueCorrectionDisposition": "RETAIN_ALREADY_REALIZED_BLACKSTONE_PERIOD_AND_ADD_MISSING_CURRENT_ENERGY_TRANSFER_AND_EPOINTZERO_PERIODS",
+    "duplicateMapping": "NONE"
+  },
+  "primaryEvidenceUrl": "https://www.blackstone.com/news/press/ares-acquires-stake-in-rover-pipeline-from-blackstone-energy-transition-partners-to-serve-growing-energy-demand-centers-across-north-america/",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-response-validation.json",
+  "unresolvedQuestions": [
+    "Rover Pipeline LLC's separately attributable headquarters and founding date are not publicly disclosed in the reviewed sources.",
+    "Energy Transfer's precise initial Rover ownership date is not established by the reviewed sources, so its ownership period retains a null investment year."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "f3fedd9d9284fc17683caeb6bf35b606b5bcb649f18e3ccc13f75d5328bac01c",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}

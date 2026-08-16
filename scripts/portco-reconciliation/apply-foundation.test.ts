@@ -51,6 +51,8 @@ describe("approved ownership organization provisioning", () => {
   it("classifies newly approved fund managers and corporate retained owners deterministically", () => {
     expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Energy Transfer LP")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("ePointZero")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Ferrovial N.V.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("GE Renewable Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
@@ -62,6 +64,8 @@ describe("approved ownership organization provisioning", () => {
     for (const [name, type] of [
       ["BC Partners", "FUND_MANAGER"],
       ["Cox Enterprises", "CORPORATE"],
+      ["Energy Transfer LP", "CORPORATE"],
+      ["ePointZero", "CORPORATE"],
       ["Ferrovial N.V.", "CORPORATE"],
       ["GE Renewable Energy", "CORPORATE"],
       ["GFL Environmental Inc.", "CORPORATE"],
