@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+  "taskIndex": 105,
+  "asOfDate": "2026-08-16",
+  "generatedAt": "2026-08-16T18:42:01.000Z",
+  "canonicalKey": "us-water-systems|united-states",
+  "companyName": "US Water Systems",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Archive US Water Systems as an unsupported repository umbrella while retaining the separately published Bayonne water and wastewater concession and Middletown Water Joint Venture LLC records. SUEZ and New York regulatory materials describe two separate concession investments, and Water Capital Partners currently lists Bayonne and Middletown as distinct projects; no direct evidence establishes a legal US Water Systems entity or one manager-level operating platform above them. Argo acquired the KKR and SUEZ interests in the two concessions in 2017, while Veolia/SUEZ remained the operator and minority participant. The announced Apollo acquisition of Argo's manager did not close and was terminated in January 2026, so remove Apollo from the umbrella's vehicle text and create no Apollo owner or pending transaction. Preserve the umbrella's single Argo period only as audit history tied to the two underlying concession SPVs, correct the false 2012 founding and 2019 platform milestones, and archive the record without a redirect because one umbrella cannot truthfully redirect to two canonical companies. No later sale, concession termination, signed pending exit or ownership transfer of either concession was identified through August 16, 2026. The approved archive overlay removes US Water Systems from the evaluated manager-level seed list while leaving both canonical concession records unchanged.",
+  "evidence": [
+    {
+      "url": "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf",
+      "purpose": "Separate concession identities, 2017 Argo entry and ownership-transfer evidence",
+      "supports": [
+        "Bayonne and Middletown are separate long-term concession contracts",
+        "KKR and SUEZ transferred interests in the two concessions to Argo in 2017",
+        "SUEZ retained minority operating interests rather than creating a US Water Systems platform"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE2E7B10B-96D0-437D-8D48-F1B1DDCF8132%7D",
+      "purpose": "Regulatory portfolio-boundary and concession-scale evidence",
+      "supports": [
+        "Argo's water portfolio contains two concession investments, Bayonne and Middletown",
+        "the concessions have distinct customers, locations and legal structures",
+        "no common US Water Systems legal platform is identified"
+      ]
+    },
+    {
+      "url": "https://wcpartnersllc.com/projects/",
+      "purpose": "Current manager-adjacent project boundary and exit check",
+      "supports": [
+        "Water Capital Partners lists Bayonne and Middletown separately",
+        "both concessions remain presented as current projects",
+        "US Water Systems is not presented as a current platform"
+      ]
+    },
+    {
+      "url": "https://middletownborough.com/wp-content/uploads/2020/12/Executed-Concession-Agreement-A4495119.pdf",
+      "purpose": "Middletown legal identity and concession-formation evidence",
+      "supports": [
+        "Middletown Water Joint Venture LLC is the named separate concessionaire",
+        "Middletown's concession agreement was executed in September 2014"
+      ]
+    },
+    {
+      "url": "https://middletownborough.com/wp-content/uploads/2025/11/Operations-Report-July-2025.pdf",
+      "purpose": "Current Middletown operating-status evidence",
+      "supports": [
+        "Middletown remained an active operating water and wastewater concession in 2025"
+      ]
+    },
+    {
+      "url": "https://www.bayonnewater.veolianorthamerica.com/",
+      "purpose": "Current Bayonne operating-status evidence",
+      "supports": [
+        "Veolia's current Bayonne site shows the municipal water and wastewater system remains active"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "purpose": "Apollo-Argo manager transaction termination and ownership-label correction",
+      "supports": [
+        "the proposed Apollo acquisition of Argo did not close",
+        "the transaction agreement and proposed transaction were terminated in January 2026",
+        "Apollo did not become an owner of either concession"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "3bc39e8f6ed1780936ab5ccfd9b179007d2f4cba8fb3e3a77b838451774db832",
+  "currentCompanySnapshotSha256": "1a7c0eb819fb20ac654d0fe9aab88a142b679149d0cbb38da57bb5f44c12aba4",
+  "executionLock": {
+    "taskSnapshotSha256": "b9f788966d85f44941cbd4dfd00aeacb28e8c4856aeffdf8c4a334063f255e5c",
+    "taskStateSha256": "da4cb975ebfc29afb110789102afb8fec0ce54bf87b565786754aa77c30f5e1c",
+    "taskDependencySha256": "8a6857c934febd743c000e525de24b7be3d88b2b8f62e830911b59435244f732",
+    "seedEntrySha256": "7016fc2cc330815c992c4b7de69c700f1cb399d26d7efb3eec64d321ae621687",
+    "dependencies": {
+      "ownershipPeriodsSha256": "0bcc538520e1678497058242dbb55795f86d5429e3d214e7c0e2505f4b6b76b6",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "e7f8008f878798ed7371cdb5f2bc32a1d08f77725497f33149d204285fea2efa",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj62g00ipivhe4zr74wn1",
+    "name": "US Water Systems",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Water & Wastewater Concessions",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "US Water Systems is a platform of municipal water and wastewater concession assets in the northeastern United States. Its customers are municipalities and utility users, and the operating model is asset-heavy and contract-based, with revenue supported by long-duration concession arrangements rather than uncontracted merchant demand. Public materials linked to the platform identify a 40-year Bayonne, New Jersey concession awarded in 2012 and a Middletown, Pennsylvania concession awarded in 2019. The platform therefore combines essential-service utility operations with public-private partnership structures and concession obligations. Public sources reviewed do not fully disclose the ownership structure within the Argo investment chain.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2012,
+    "headquarters": "New Jersey & Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr4101fkivheddnhqrvt",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo Infrastructure Partners (Apollo)",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkkev02mwivhelwn7iuav",
+        "date": "2012",
+        "event": "Bayonne, New Jersey awarded a 40-year water and wastewater concession to the platform.",
+        "category": "EXPANSION",
+        "sortDate": "2012-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkkff02mxivhelnmv0a1w",
+        "date": "2012",
+        "event": "US Water Systems was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2012-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkki102myivheqiqyt8ce",
+        "date": "2017",
+        "event": "KKR and SUEZ sold interests in the Bayonne and Middletown water concessions to Argo Infrastructure Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkkij02mzivhelrdo4ch3",
+        "date": "2019",
+        "event": "Middletown Borough selected a private concession arrangement for water and wastewater operations.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkkiz02n0ivhefgeo1bfn",
+        "date": "2019",
+        "event": "Public reporting connected the Middletown concession to the same US Water Systems platform.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoxm907ewivhe4t47j3v0",
+        "label": "Bayonnenj — US Water Systems",
+        "url": "https://www.bayonnenj.org/content/236/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Bayonnenj — US Water Systems",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoxnh07eyivhejzdas9rs",
+        "label": "Investment date source — Argo Infrastructure Partners — US Water Systems",
+        "url": "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxog07f0ivhex4vpldhw",
+        "label": "Pennlive — US Water Systems",
+        "url": "https://www.pennlive.com/news/2019/05/middletown-picks-private-company-for-borough-water-system-operations.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Pennlive operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxpn07f2ivhetm0vpqfi",
+        "label": "Penncapital Star — US Water Systems",
+        "url": "https://www.penncapital-star.com/blog/middletown-borough-oks-water-sewer-p3-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Penncapital Star operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "1a7c0eb819fb20ac654d0fe9aab88a142b679149d0cbb38da57bb5f44c12aba4",
+  "afterImage": {
+    "id": "cmrxpj62g00ipivhe4zr74wn1",
+    "name": "US Water Systems",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Water & Wastewater Concessions",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "US Water Systems is an unsupported repository umbrella for two separate municipal water and wastewater concession investments: the Bayonne water and wastewater concession in New Jersey and Middletown Water Joint Venture LLC in Pennsylvania. SUEZ and New York regulatory materials describe the concessions separately, and Water Capital Partners' current project list does the same; no reviewed source identifies a legal US Water Systems entity or one operating platform above both investments. Argo acquired KKR and SUEZ interests in the two concession SPVs in 2017, while Veolia/SUEZ remained the operator and minority participant. Current municipal, operator and project records show both concessions remain active. Apollo's announced acquisition of the Argo manager did not close and was terminated in January 2026, so Apollo never became an owner of the assets. This umbrella record is archived from the manager-level PortCo census without a redirect to prevent double counting; the separate Bayonne and Middletown records remain published. No later sale, concession termination, signed pending exit or ownership transfer was identified through August 16, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "ARCHIVED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr4101fkivheddnhqrvt",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Bayonne and Middletown concession SPVs",
+        "stake": "99% interests reported at each underlying concession after the 2017 transfers; no umbrella-level stake exists",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkkev02mwivhelwn7iuav",
+        "date": "2012",
+        "event": "Bayonne entered a 40-year water and wastewater concession with a KKR and United Water consortium; the concession is a separate canonical investment rather than part of a legal US Water Systems platform.",
+        "category": "OTHER",
+        "sortDate": "2012-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkkff02mxivhelnmv0a1w",
+        "date": "Sep 2014",
+        "event": "Middletown Borough executed its separate long-term water and wastewater concession agreement with Middletown Water Joint Venture LLC.",
+        "category": "OTHER",
+        "sortDate": "2014-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://middletownborough.com/wp-content/uploads/2020/12/Executed-Concession-Agreement-A4495119.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkki102myivheqiqyt8ce",
+        "date": "2017",
+        "event": "KKR and SUEZ transferred their respective interests in the separate Bayonne and Middletown concession SPVs to Argo Infrastructure Partners; SUEZ retained minority operating interests.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkkij02mzivhelrdo4ch3",
+        "date": "Jul 2025",
+        "event": "Middletown Borough's operating report documented continued active water and wastewater system operations under the separate Middletown concession.",
+        "category": "OTHER",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://middletownborough.com/wp-content/uploads/2025/11/Operations-Report-July-2025.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkkiz02n0ivhefgeo1bfn",
+        "date": "Jan 15, 2026",
+        "event": "A New York regulatory filing confirmed that Apollo's proposed acquisition of the Argo manager had not closed and that the agreement and transaction were terminated, creating no concession-level ownership change.",
+        "category": "OTHER",
+        "sortDate": "2026-01-15T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoxm907ewivhe4t47j3v0",
+        "label": "Bayonnenj — US Water Systems",
+        "url": "https://www.bayonnenj.org/content/236/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Legacy Bayonne city URL now returning an application e404 page and not relied on for current claims",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxnh07eyivhejzdas9rs",
+        "label": "Investment date source — Argo Infrastructure Partners — US Water Systems",
+        "url": "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Separate Bayonne and Middletown concession identities and the 2017 interest transfers to Argo",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoxog07f0ivhex4vpldhw",
+        "label": "Pennlive — US Water Systems",
+        "url": "https://www.pennlive.com/news/2019/05/middletown-picks-private-company-for-borough-water-system-operations.html",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Legacy public reporting on Middletown operations and the separate concession boundary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxpn07f2ivhetm0vpqfi",
+        "label": "Penncapital Star — US Water Systems",
+        "url": "https://www.penncapital-star.com/blog/middletown-borough-oks-water-sewer-p3-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Legacy public reporting on Middletown's public-private concession structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Middletownborough — Middletown Water Joint Venture LLC",
+        "url": "https://middletownborough.com/wp-content/uploads/2020/12/Executed-Concession-Agreement-A4495119.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Separate Middletown concessionaire identity and September 2014 executed agreement",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Wcpartnersllc — Middletown Water Joint Venture LLC",
+        "url": "https://wcpartnersllc.com/project/middletown-concession/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current separate Middletown concession project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Water Capital Partners — Current projects",
+        "url": "https://wcpartnersllc.com/projects/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current separate listing of Bayonne and Middletown and absence of a US Water Systems platform",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Water Capital Partners — Bayonne concession",
+        "url": "https://wcpartnersllc.com/project/bayonne-concession/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current separate Bayonne concession project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Veolia — Bayonne Water",
+        "url": "https://www.bayonnewater.veolianorthamerica.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Bayonne water and wastewater operating status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Middletown Borough — July 2025 operations report",
+        "url": "https://middletownborough.com/wp-content/uploads/2025/11/Operations-Report-July-2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Middletown concession operating status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "New York DPS — Argo water-concession portfolio filing",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE2E7B10B-96D0-437D-8D48-F1B1DDCF8132%7D",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Regulatory description of two separate Argo water concessions and their operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "New York DPS — Apollo-Argo petition withdrawal",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "January 2026 termination of the unclosed Apollo-Argo manager transaction and absence of an ownership change",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "7deee3c85bc882b68d4ae4db12fa948923863793a205b3da907531da9c270319",
+  "proposalSha256": "d85ab32bbf8074742b21cb90757bf1d62baa9c190953f3fd55d51151859d0790"
+}

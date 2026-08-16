@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+  "taskIndex": 105,
+  "attempt": 2,
+  "companyName": "US Water Systems",
+  "conversationUrl": "https://chatgpt.com/c/6a82018e-6cb0-83ea-8a76-eba3a5f16a23",
+  "conversationTitle": "US Water Systems Verification",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-16T18:29:33.650Z",
+  "initialCompletedAt": "2026-08-16T18:49:00.911Z",
+  "repairSubmittedAt": "2026-08-16T18:49:43.833Z",
+  "repairCompletedAt": "2026-08-16T18:57:55.109Z",
+  "repairCount": 1,
+  "initialOutcome": "MALFORMED_TRUNCATED_JSON",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_AFTER_ONE_REPAIR",
+  "contentHashes": {
+    "promptSha256": "2f62232840406f7b97e52dc37390726e2eb56552af48d3fdeb29ab0684beb60a",
+    "initialResponseSha256": "867a099252ff918b71a054d4a82065fb7721f318afaf3c12b21bac465a2d6750",
+    "acceptedResponseSha256": "520d9d74cd797d76c224e38397217c2bb1062b2710f147445bff771a5f50e7cc",
+    "transcriptSha256": "222bd89b37d8b55527620d5d81fb1a5ac2133a289e74746bd13552b707df7905",
+    "repairPromptSha256": "b8ba68e1b564b748ca51257599ca3209e84f392195cd8cebc13ac7d9a1da6437",
+    "repairResponseSha256": "520d9d74cd797d76c224e38397217c2bb1062b2710f147445bff771a5f50e7cc"
+  },
+  "captureMethod": "Signed-in ChatGPT web application controlled through the in-app browser",
+  "captureNote": "GPT-5.6 Sol and Pro mode were visibly verified before submission in a fresh conversation. The initial nineteen-minute answer reached the supported archive/no-redirect conclusion but truncated at the beginning of operatingResolution. One narrowly scoped repair in the same conversation, without further browsing, returned a complete parseable JSON object containing every required key, exactly two direct evidence URLs, one recommended primary, no unresolved questions and the same PROPOSED_CORRECTION conclusion. Codex independently reopened the core sources and reproduced their same-day byte hashes."
+}

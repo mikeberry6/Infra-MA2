@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+  "taskIndex": 105,
+  "attempt": 2,
+  "companyName": "US Water Systems",
+  "asOfDate": "2026-08-16",
+  "decision": "PROPOSED_CORRECTION",
+  "modelDecision": "PROPOSED_CORRECTION",
+  "rationale": "Archive US Water Systems as an unsupported repository umbrella and retain the separately published Bayonne and Middletown concession records. Direct sources identify two distinct concession investments and no legal or operating US Water Systems platform. Argo acquired the KKR and SUEZ interests in the underlying concessions in 2017, and current project, operator and municipal records show both remain active. Apollo's proposed acquisition of the Argo manager did not close and was terminated in January 2026, so Apollo creates no owner period, vehicle label or pending transaction. A one-to-many redirect would be false; archive the umbrella without a redirect while preserving its audit history.",
+  "identityResolution": {
+    "productionCompanyId": "cmrxpj62g00ipivhe4zr74wn1",
+    "canonicalLegalName": null,
+    "displayName": "US Water Systems",
+    "identityType": "UNSUPPORTED_REPOSITORY_UMBRELLA",
+    "managerLevelBoundary": "Count Bayonne company cmrxpj76y00keivhellw38dtk and Middletown company cmrxpj7b200klivhel3gtzeza separately. Do not count the umbrella.",
+    "duplicateDecision": "Archive without redirect because the umbrella maps to two canonical companies."
+  },
+  "ownershipResolution": {
+    "manager": "Argo Infrastructure Partners",
+    "underlyingCurrentStake": "99% reported at each concession SPV after the 2017 transfers; no umbrella-level stake exists",
+    "minorityOperator": "Veolia/SUEZ affiliates retain 1% reported interests and operating roles at the underlying concessions",
+    "apolloTreatment": "NO_OWNER; the announced manager acquisition was terminated before closing",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Utilities",
+    "subsector": "Water and wastewater concessions",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "ARCHIVED",
+    "operatingBoundary": "The separately published Bayonne and Middletown concessions remain active; the umbrella has no independent operations."
+  },
+  "acquisitionExitCheck": {
+    "argoEntry": "2017 transfers of interests in the two separate concession SPVs",
+    "apolloTransaction": "Manager-level transaction announced in 2025 and terminated in January 2026 without closing",
+    "subsequentExitSearch": "No later sale, concession termination, signed pending exit or ownership transfer of either concession was identified through 2026-08-16."
+  },
+  "repoDecision": {
+    "mutation": "ARCHIVE_UMBRELLA_WITHOUT_REDIRECT",
+    "retiredCompanyId": "cmrxpj62g00ipivhe4zr74wn1",
+    "preservedCompanyIds": [
+      "cmrxpj76y00keivhellw38dtk",
+      "cmrxpj7b200klivhel3gtzeza"
+    ],
+    "duplicateMapping": "NONE",
+    "seedDisposition": "Remove the umbrella from the evaluated manager-level seed list through the approved archived after-image."
+  },
+  "primaryEvidenceUrl": "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0105-us-water-systems/attempt-2/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0105-us-water-systems/attempt-2/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0105-us-water-systems/attempt-2/chatgpt-response-validation.json",
+  "unresolvedQuestions": [],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "b9f788966d85f44941cbd4dfd00aeacb28e8c4856aeffdf8c4a334063f255e5c",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}
