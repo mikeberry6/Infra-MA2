@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T08:21:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0094:indigo-park-canada-inc:92a79556",
+  "updatedAt": "2026-08-16T08:30:23.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -13909,11 +13909,11 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "31aec9438cd5d08f2e79b24ce92c0abd21863b1f5afa5c12f558cbe2c0cb19ab",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-16T07:45:00.000Z",
-      "updatedAt": "2026-08-16T08:21:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-16T08:30:23.000Z",
+      "completedAt": "2026-08-16T08:30:23.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
@@ -14039,6 +14039,20 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-16T08:21:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
+          "evidenceSha256": [
+            "8547b41e07ac7968581a307baad251cc033784f9fd8792e8337652c4aa3f44cf",
+            "ba6796fea03177e97942dcd7b1201ad1e866c8e01f368ef6fa39e6a362d0edaf",
+            "d63824dde9035ffb7818ea50823a0d9910377b83f9a4792873dd1dd9d60668c3"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-16T08:30:23.000Z",
           "reason": null,
           "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
           "evidenceSha256": [
@@ -29397,5 +29411,5 @@
       ]
     }
   ],
-  "manifestSha256": "631b74efb64c6ccd50fd199e333b5d0200febd2dbab3f3e74a69a9c249b84d2c"
+  "manifestSha256": "a38f065073eaa070797d4367e2bbc4679510769e4e88030d46a9863b6b56a96c"
 }
