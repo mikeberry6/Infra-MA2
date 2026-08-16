@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0106:waihonu-solar-farm:52102602",
+  "taskIndex": 106,
+  "asOfDate": "2026-08-16",
+  "generatedAt": "2026-08-16T20:06:00.000Z",
+  "canonicalKey": "waihonu-solar-farm|united-states",
+  "companyName": "Waihonu Solar Farm",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Archive Waihonu Solar Farm from the manager-level PortCo census and retire its Argo ownership period in 2025, while preserving the separately published Hawaiʻi Gas platform. Waihonu is the collective name for the Waihonu North and Waihonu South solar project assets, not a separate operating platform. Argo acquired the assets with Hawaiʻi Gas on July 21, 2022. Hawaiʻi Gas now states that Waihonu was acquired by a solar energy provider in 2025, and Form EIA-860 reporting changed from the two Waihonu project entities in 2024 to ERCAM LLC as the reporting utility and operator for both plants in the 2025 early release. The projects remain operational, but no reviewed source identifies ERCAM as an infrastructure-fund manager or supports adding a new manager ownership period. A redirect from Waihonu to Hawaiʻi Gas would be false because the project assets and utility platform are distinct identities. The exact 2025 closing date, transaction value and ERCAM parent are not publicly disclosed; those disclosure gaps do not block the list correction. No later sale or signed pending ownership transaction was identified through August 16, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025ER.zip?download=1",
+      "purpose": "Current project operator and ownership-disposition evidence",
+      "supports": [
+        "ERCAM LLC is the 2025 reporting utility and operator for both Waihonu plants",
+        "both plants remain operable",
+        "neither plant has a separate owner-file row"
+      ]
+    },
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602024.zip?download=1",
+      "purpose": "Pre-sale project operator baseline",
+      "supports": [
+        "Waihonu North LLC and Waihonu South LLC were the respective 2024 reporting utilities and operators",
+        "the 2025 ERCAM reporting represents a change from the prior project entities"
+      ]
+    },
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860/",
+      "purpose": "EIA-860 dataset methodology and inventory context",
+      "supports": [
+        "Form EIA-860 is EIA's annual generator-level inventory",
+        "the annual and early-release files used in the comparison are official EIA datasets"
+      ]
+    },
+    {
+      "url": "https://www.hawaiigas.com/about-us-new",
+      "purpose": "2025 disposition evidence",
+      "supports": [
+        "Hawaiʻi Gas states that Waihonu was acquired by a solar energy provider in 2025",
+        "Waihonu was established in 2016"
+      ]
+    },
+    {
+      "url": "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation",
+      "purpose": "Argo acquisition closing evidence",
+      "supports": [
+        "Argo's Hawaiʻi Gas acquisition closed on July 21, 2022",
+        "Waihonu was included among the acquired assets"
+      ]
+    },
+    {
+      "url": "https://www.hawaiigas.com/clean-energy/diversification",
+      "purpose": "Project boundary, scale and customer evidence",
+      "supports": [
+        "Waihonu comprises 6.5 MW across 26,232 modules on approximately 12 acres",
+        "the projects sell electricity to Hawaiian Electric under a power purchase agreement"
+      ]
+    },
+    {
+      "url": "https://www.hawaiianelectric.com/about-us/power-facts",
+      "purpose": "Current operating-status evidence",
+      "supports": [
+        "Hawaiian Electric's current power facts link to an inventory listing both Waihonu plants in service"
+      ]
+    },
+    {
+      "url": "https://www.hawaiipublicradio.org/government-politics/2016-08-25/waihonu-solar-and-sheep-farm-dedicated-in-mililani",
+      "purpose": "2016 project dedication evidence",
+      "supports": [
+        "the 6.5 MW Waihonu solar facility was dedicated in Mililani in August 2016"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "757a18e11f4d98fef0bc94803ef23de2fa2f63ab9b4391c4bfa37abb33ebeda5",
+  "currentCompanySnapshotSha256": "74dc5880833937a27336b1ebc7350844cc913d11800dc54127611fdbe4aceaa9",
+  "executionLock": {
+    "taskSnapshotSha256": "57b75cd141850d755085da2d09f26db181ec1c938be92382c72d2b943989214c",
+    "taskStateSha256": "028429ae5f88d953a9229dd60bdf1ef166f4eacbe25b7f9bf1faa9ee7853719a",
+    "taskDependencySha256": "345a5475f88fcb7bfe6c01b759aba3cab6a0973edcbfa567ecbeec89369f9e90",
+    "seedEntrySha256": "b9ce4d7a94936697b0368bd51e5e9c015515b8c815e090146fea638d46d2c94d",
+    "dependencies": {
+      "ownershipPeriodsSha256": "1e603d582ce2a713b2b23edadf40c8d32e93afd412856b910e409f515a524027",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "0bac91ec392b202f4e759895f169310cd17c6733c7c16410288ad527b19d29bd",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj7ea00krivhepj9wbkhp",
+    "name": "Waihonu Solar Farm",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Waihonu Solar Farm is an operating solar generation asset on Oahu. The project supports Hawaii's clean energy supply and forms part of the broader energy platform associated with Hawaiʻi Gas. Its model is asset-heavy and based on ownership of an operating solar plant rather than development-stage activity. Hawaiʻi Gas describes Waihonu as one of Oahu's larger active solar farms with a combined output of 6.5 MW from 26,232 solar modules on about 12 acres in Mililani. The project was dedicated in 2016, and Argo acquired it indirectly as part of the 2022 purchase of Hawaiʻi Gas and related smaller energy businesses.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Hawaii",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjsfu01hpivhenwchhfdu",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "AMF Hawaiʻi Investment Holdings",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkpuo02taivhefyqqbq7w",
+        "date": "Aug 2016",
+        "event": "Waihonu Solar and Sheep Farm was dedicated in Mililani.",
+        "category": "EXPANSION",
+        "sortDate": "2016-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkpv802tbivhel6hrhgfn",
+        "date": "Jun 2021",
+        "event": "Public reporting on Argo's acquisition of Hawaiʻi Gas stated that the transaction also included Waihonu Solar Farm.",
+        "category": "OTHER",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkpvp02tcivhecq3r538x",
+        "date": "Jul 2022",
+        "event": "Argo completed the acquisition of Hawaiʻi Gas and related smaller energy businesses, including Waihonu.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp72e07svivhe2avt0pis",
+        "label": "Hawaiigas — Waihonu Solar Farm",
+        "url": "https://www.hawaiigas.com/clean-energy/diversification",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Hawaiigas — Waihonu Solar Farm",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp75r07sxivhex5o5pjvy",
+        "label": "Hawaiipublicradio — Waihonu Solar Farm",
+        "url": "https://www.hawaiipublicradio.org/government-politics/2016-08-25/waihonu-solar-and-sheep-farm-dedicated-in-mililani",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Hawaiipublicradio — Waihonu Solar Farm",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp76g07syivhe5joupguf",
+        "label": "Close date source — Argo Infrastructure Partners — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp77j07t0ivheijrwo1m1",
+        "label": "Mauinow — Waihonu Solar Farm",
+        "url": "https://mauinow.com/2021/06/15/argo-acquiring-hawai%CA%BBi-gas-and-its-smaller-energy-companies-for-514-million/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Mauinow — Waihonu Solar Farm",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "74dc5880833937a27336b1ebc7350844cc913d11800dc54127611fdbe4aceaa9",
+  "afterImage": {
+    "id": "cmrxpj7ea00krivhepj9wbkhp",
+    "name": "Waihonu Solar Farm",
+    "aliases": [
+      "Waihonu North Solar",
+      "Waihonu South Solar",
+      "Waihonu North LLC",
+      "Waihonu South LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Solar generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Waihonu Solar Farm is the collective name for Waihonu North Solar, a 5.0 MW photovoltaic plant, and Waihonu South Solar, a 1.5 MW photovoltaic plant, in Mililani on Oʻahu. The operating projects comprise 26,232 modules on approximately 12 acres and sell electricity to Hawaiian Electric under a power purchase agreement. Argo Infrastructure Partners acquired Waihonu as an underlying asset in its July 21, 2022 purchase of Hawaiʻi Gas and related businesses. Hawaiʻi Gas states that a solar energy provider acquired Waihonu in 2025, and the 2025 early-release Form EIA-860 data reports ERCAM LLC as the utility and operator for both plants. The projects remain operational, but no reviewed source establishes ERCAM as an infrastructure-fund manager. Waihonu is therefore realized and archived from the manager-level PortCo census without a redirect; Hawaiʻi Gas remains a distinct published platform. The exact 2025 closing date, transaction value and ERCAM parent are not publicly disclosed, and no later sale or signed pending ownership transaction was identified through August 16, 2026.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "ARCHIVED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjsfu01hpivhenwchhfdu",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "AMF Hawaiʻi Investment Holdings, LLC",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkpuo02taivhefyqqbq7w",
+        "date": "Aug 25, 2016",
+        "event": "The 6.5 MW Waihonu Solar and Sheep Farm was dedicated in Mililani, comprising the Waihonu North and Waihonu South photovoltaic projects.",
+        "category": "EXPANSION",
+        "sortDate": "2016-08-25T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.hawaiipublicradio.org/government-politics/2016-08-25/waihonu-solar-and-sheep-farm-dedicated-in-mililani",
+          "https://www.hawaiigas.com/clean-energy/diversification"
+        ]
+      },
+      {
+        "id": "cmrxpkpv802tbivhel6hrhgfn",
+        "date": "Jul 21, 2022",
+        "event": "Argo Infrastructure Partners completed its acquisition of Hawaiʻi Gas and related smaller energy businesses, including the Waihonu solar projects.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation"
+        ]
+      },
+      {
+        "id": "cmrxpkpvp02tcivhecq3r538x",
+        "date": "2025",
+        "event": "Hawaiʻi Gas reported that a solar energy provider acquired Waihonu; Form EIA-860 subsequently reported ERCAM LLC as the utility and operator for both plants. The exact closing date and transaction value were not publicly disclosed.",
+        "category": "DIVESTITURE",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.hawaiigas.com/about-us-new",
+          "https://www.eia.gov/electricity/data/eia860/xls/eia8602025ER.zip?download=1"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp72e07svivhe2avt0pis",
+        "label": "Hawaiigas — Waihonu Solar Farm",
+        "url": "https://www.hawaiigas.com/clean-energy/diversification",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Former Hawaiʻi Gas project boundary, 6.5 MW scale and Hawaiian Electric power purchase agreement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp75r07sxivhex5o5pjvy",
+        "label": "Hawaiipublicradio — Waihonu Solar Farm",
+        "url": "https://www.hawaiipublicradio.org/government-politics/2016-08-25/waihonu-solar-and-sheep-farm-dedicated-in-mililani",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "August 2016 dedication of the 6.5 MW Waihonu solar facility in Mililani",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp76g07syivhe5joupguf",
+        "label": "Close date source — Argo Infrastructure Partners — Hawaiʻi Gas",
+        "url": "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 21, 2022 Argo closing and inclusion of Waihonu among the acquired assets",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp77j07t0ivheijrwo1m1",
+        "label": "Mauinow — Waihonu Solar Farm",
+        "url": "https://mauinow.com/2021/06/15/argo-acquiring-hawai%CA%BBi-gas-and-its-smaller-energy-companies-for-514-million/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Contemporaneous announcement context for Argo's planned acquisition of Hawaiʻi Gas and Waihonu",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Hawaiʻi Gas — About us",
+        "url": "https://www.hawaiigas.com/about-us-new",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Hawaiʻi Gas statement that Waihonu was acquired by a solar energy provider in 2025",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "U.S. EIA — Form EIA-860 data",
+        "url": "https://www.eia.gov/electricity/data/eia860/",
+        "sourceType": "WEBSITE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Official Form EIA-860 generator-inventory and data-release context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "U.S. EIA — 2024 Form EIA-860 data",
+        "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602024.zip?download=1",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Pre-sale 2024 reporting utility and operator baseline for Waihonu North and Waihonu South",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "U.S. EIA — 2025 early-release Form EIA-860 data",
+        "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025ER.zip?download=1",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ERCAM LLC reporting utility and operator for both Waihonu plants and absence of separate owner-file rows",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Hawaiian Electric — Power facts",
+        "url": "https://www.hawaiianelectric.com/about-us/power-facts",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current utility inventory confirming both Waihonu plants remain in service",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "f244c486ff59108685f4b0eea4767d0bd13fe23e4789e753578c8f36ccbd83d6",
+  "proposalSha256": "fa5c44307c2070a8dbdfa72f2f9e1e443b801d9006cfd73e5596f34accb83b43"
+}
