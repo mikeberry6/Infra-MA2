@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T08:30:23.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T09:04:35.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0095:international-parking-management:0cc25ff3",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -14072,20 +14072,32 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "76e28ce5764ec6078d211820b25d4c2b0ea69acf8ee263f1ff760cd3ed89c344",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-16T09:02:58.000Z",
+      "updatedAt": "2026-08-16T09:04:35.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "c69c4ccb61036ac6fbb7cc560cd0c1b12549f0a7bb780054b5018e2cfd43f500",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0095-international-parking-management/attempt-2/locked-task-snapshot.json",
+          "sha256": "c69c4ccb61036ac6fbb7cc560cd0c1b12549f0a7bb780054b5018e2cfd43f500"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0095-international-parking-management-v2/proposal.json",
+          "sha256": "d4b263a790c8296ced3cc3ca84e53120f4d2e5fed4403f93b9af2a2d56090771"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0095-international-parking-management-v2.json",
+          "sha256": "d5fec45802efe7b7c579ac5bfccb297b74fc0e671f2c0698d96c080ac404e859"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0095-international-parking-management/attempt-1/research-decision.json",
+          "sha256": "9a2b467ed6d47654ed7924b673184ec40ba55dea1a348934a018b750faf9fd41"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -14099,6 +14111,112 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T08:35:23.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T09:01:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "840023841ea2c0ac2088de3f94711487afcd9f659beeb34165a14e1fc44b8bc1",
+          "evidenceSha256": [
+            "840023841ea2c0ac2088de3f94711487afcd9f659beeb34165a14e1fc44b8bc1",
+            "9a2b467ed6d47654ed7924b673184ec40ba55dea1a348934a018b750faf9fd41",
+            "efea639176ad230451f301d7cee05ddf8116287c97a9fd4fb6095d48db2f71d3"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T09:01:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "840023841ea2c0ac2088de3f94711487afcd9f659beeb34165a14e1fc44b8bc1",
+          "evidenceSha256": [
+            "efea639176ad230451f301d7cee05ddf8116287c97a9fd4fb6095d48db2f71d3"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T09:01:56.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "840023841ea2c0ac2088de3f94711487afcd9f659beeb34165a14e1fc44b8bc1",
+          "evidenceSha256": [
+            "da2cea4c516dbfe1503f24f0f9c8ca5cd69132cb475b5d59410ab8980c2d68cc"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-16T09:02:57.000Z",
+          "reason": "The exact production dry-run rejected the first proposal because the shared LAZ Argo source must preserve its existing global label and PRESS_RELEASE type. No seed, database, release, or production mutation occurred; the research decision remains valid.",
+          "taskSnapshotSha256": "840023841ea2c0ac2088de3f94711487afcd9f659beeb34165a14e1fc44b8bc1",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T09:02:58.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T09:04:09.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c69c4ccb61036ac6fbb7cc560cd0c1b12549f0a7bb780054b5018e2cfd43f500",
+          "evidenceSha256": [
+            "9a2b467ed6d47654ed7924b673184ec40ba55dea1a348934a018b750faf9fd41",
+            "c69c4ccb61036ac6fbb7cc560cd0c1b12549f0a7bb780054b5018e2cfd43f500",
+            "d4b263a790c8296ced3cc3ca84e53120f4d2e5fed4403f93b9af2a2d56090771"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T09:04:10.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c69c4ccb61036ac6fbb7cc560cd0c1b12549f0a7bb780054b5018e2cfd43f500",
+          "evidenceSha256": [
+            "d4b263a790c8296ced3cc3ca84e53120f4d2e5fed4403f93b9af2a2d56090771"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T09:04:35.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c69c4ccb61036ac6fbb7cc560cd0c1b12549f0a7bb780054b5018e2cfd43f500",
+          "evidenceSha256": [
+            "d5fec45802efe7b7c579ac5bfccb297b74fc0e671f2c0698d96c080ac404e859"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -29411,5 +29529,5 @@
       ]
     }
   ],
-  "manifestSha256": "a38f065073eaa070797d4367e2bbc4679510769e4e88030d46a9863b6b56a96c"
+  "manifestSha256": "767b4204a0116c7b324eee22cd1182cb6210a27ae94d53c4c8174ef0ceba2266"
 }

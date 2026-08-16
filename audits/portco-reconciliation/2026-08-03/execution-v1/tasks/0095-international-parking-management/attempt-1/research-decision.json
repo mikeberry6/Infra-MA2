@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0095:international-parking-management:0cc25ff3",
+  "taskIndex": 95,
+  "attempt": 1,
+  "companyName": "International Parking Management",
+  "asOfDate": "2026-08-16",
+  "decision": "PROPOSED_CORRECTION",
+  "modelDecision": "EXCLUDED",
+  "rationale": "Archive International Parking Management as a standalone manager-level PortCo while preserving it as an active Seattle parking-services business acquired and integrated by LAZ Parking. LAZ's April 2024 release describes an asset purchase that added IPM's operations, employees, customers and 14,000 spaces to the LAZ platform. Argo Infrastructure Partners' directly evidenced manager-level investment is LAZ, so IPM's single Argo ownership period must be described as current indirect exposure through LAZ rather than as a separate direct Argo position. The former IPM domain now redirects to LAZ, but IPM and LAZ are not proven legal duplicates; no merge or redirect is appropriate. No later IPM sale, legal merger, pending ownership transaction or Argo exit from LAZ was identified through the as-of date.",
+  "identityResolution": {
+    "canonicalName": "International Parking Management",
+    "legalName": "International Parking Management, Inc.",
+    "aliases": [
+      "IPM",
+      "Premier Parking"
+    ],
+    "website": "https://ipmseattle.com/",
+    "country": "United States",
+    "headquarters": "Seattle, Washington",
+    "yearFounded": 1985,
+    "managerLevelBoundary": "Count LAZ Parking as Argo's manager-level platform. IPM remains an acquired Seattle operating business beneath LAZ and is excluded from the standalone Argo census.",
+    "duplicateDecision": "Do not merge International Parking Management with LAZ and do not create a redirect. Archive the standalone manager-level row while preserving its distinct identity and acquisition history."
+  },
+  "ownershipResolution": {
+    "directManagerLevelOwner": "LAZ Parking is the directly evidenced manager-level Argo platform.",
+    "indirectArgoOwnershipPeriod": {
+      "manager": "Argo Infrastructure Partners",
+      "vehicle": "LAZ Parking",
+      "entryYear": 2024,
+      "stake": "Indirect through LAZ Parking; exact IPM and Argo percentages not publicly disclosed",
+      "state": "CLOSED_ACTIVE"
+    },
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Transportation",
+    "subsector": "Parking management",
+    "companyStatus": "ACTIVE",
+    "reportedScale": "LAZ reported 14,000 parking spaces, 74 employees and $40 million in managed revenue at acquisition."
+  },
+  "acquisitionExitCheck": {
+    "lazAcquisition": "LAZ's April 4 and April 5, 2024 releases describe a completed asset purchase; the exact legal closing date, ownership percentage and sellers' retained interest were not publicly disclosed.",
+    "subsequentExitSearch": "No later public sale, legal merger, formal pending transaction or Argo exit from LAZ was identified through 2026-08-16."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj79y00kjivhe9yw0rwid",
+    "lazProductionCompanyId": "cmrxpj5s200iaivhegqucgc2l",
+    "mutation": "ARCHIVE_STANDALONE_RECORD",
+    "queueCorrectionDisposition": "EXCLUDE_AS_LAZ_ACQUISITION_VIA_PROTECTED_CORRECTION",
+    "duplicateMapping": "NONE",
+    "lazPreservation": "The separately published LAZ manager-level record remains unchanged. Add the IPM acquisition to LAZ's historical milestones during LAZ's later authoritative scorecard refresh."
+  },
+  "primaryEvidenceUrl": "https://www.lazparking.com/our-company/about/news/2024/04/05/laz-parking-purchases-seattle-based-international-parking-management-inc.-%28ipm%29",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0095-international-parking-management/attempt-1/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0095-international-parking-management/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0095-international-parking-management/attempt-1/chatgpt-response-validation.json",
+  "unresolvedQuestions": [
+    "The exact legal closing date, transaction percentage and any retained seller interest in the April 2024 IPM asset purchase are not publicly disclosed.",
+    "The exact Argo fund vehicle and ownership percentage in LAZ are not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "840023841ea2c0ac2088de3f94711487afcd9f659beeb34165a14e1fc44b8bc1",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}
