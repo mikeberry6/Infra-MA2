@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T11:19:01.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T12:13:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0099:pearl-ruby-solar-portfolio:806939d6",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -14664,20 +14664,32 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "5d865735b1761bf25c218d487e92e9605ec37694600b6dcc5ba4759a504bd82c",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 3,
+      "startedAt": "2026-08-16T12:10:01.000Z",
+      "updatedAt": "2026-08-16T12:13:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "0c9d995fcdeee2669a6bb21c04c78df25c4cf74938424837ff0002c06094c6d3",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0099-pearl-ruby-solar-portfolio/attempt-3/locked-task-snapshot.json",
+          "sha256": "0c9d995fcdeee2669a6bb21c04c78df25c4cf74938424837ff0002c06094c6d3"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0099-pearl-ruby-solar-portfolio-v4/proposal.json",
+          "sha256": "fce9a48e950204056ba72d6df94acaf8148c699eb9c638492f7341b23d4892ef"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0099-pearl-ruby-solar-portfolio-v4.json",
+          "sha256": "14c82cd1838447f577c292e602447d326141c622c7ca17f0ca530fd62000f7f1"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0099-pearl-ruby-solar-portfolio/attempt-3/research-decision.json",
+          "sha256": "89a4f260ae88502cd13f454eb6a550f4630a812ee09abb0e07e7c3eb13d93531"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -14691,6 +14703,170 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T11:25:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T12:02:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ea891aa04db7cab8464b14a540f1cfd8f7155f5873bdd554864bc1007529f1ca",
+          "evidenceSha256": [
+            "2f40c72f75b8f6ca171060ef658fa4a7d65a28229a58b5e8a2a9f32d35a8303d",
+            "6c54a12dcb293e7628b23d0a92b05c60e0737329580cb76b882ef9ade90af2e2",
+            "ea891aa04db7cab8464b14a540f1cfd8f7155f5873bdd554864bc1007529f1ca"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T12:02:15.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ea891aa04db7cab8464b14a540f1cfd8f7155f5873bdd554864bc1007529f1ca",
+          "evidenceSha256": [
+            "2f40c72f75b8f6ca171060ef658fa4a7d65a28229a58b5e8a2a9f32d35a8303d"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T12:05:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ea891aa04db7cab8464b14a540f1cfd8f7155f5873bdd554864bc1007529f1ca",
+          "evidenceSha256": [
+            "6df1e4150c927329b9d4d93563188b00ac16e24c4d2538da3d36b49933a667ed"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-16T12:06:00.000Z",
+          "reason": "Protected production dry-run rejected the already-shared NuGen PR Newswire URL because the draft citation label and type differed from the existing globally unique Source metadata. No release, seed staging or database write occurred.",
+          "taskSnapshotSha256": "ea891aa04db7cab8464b14a540f1cfd8f7155f5873bdd554864bc1007529f1ca",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T12:06:01.000Z",
+          "reason": "Retry only to preserve the existing shared Source label and type; research decision and after-image facts are unchanged.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T12:08:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "adc9734c688cb7abd06ea8b093218cc6de92f21a267d097f7992365e0f0b0fd4",
+          "evidenceSha256": [
+            "380c607c4edf892e44cfbaaa50040599e934d545ec81b0cb739b7d3368d4481b",
+            "adc9734c688cb7abd06ea8b093218cc6de92f21a267d097f7992365e0f0b0fd4",
+            "ee6841ae12e22196e26837f6ff5a5dc81dc3d5f8b3b73fccc032a9aac6c016d9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T12:08:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "adc9734c688cb7abd06ea8b093218cc6de92f21a267d097f7992365e0f0b0fd4",
+          "evidenceSha256": [
+            "ee6841ae12e22196e26837f6ff5a5dc81dc3d5f8b3b73fccc032a9aac6c016d9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T12:09:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "adc9734c688cb7abd06ea8b093218cc6de92f21a267d097f7992365e0f0b0fd4",
+          "evidenceSha256": [
+            "d96a7f6151d5a871d7af78038775595248d2eeaa26f3e7ef3dd1454ccc00854b"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-16T12:10:00.000Z",
+          "reason": "Protected production dry-run rejected deletion of three legacy milestone IDs. No release, seed staging or database write occurred; the retry will preserve every historical ID while replacing unsupported or duplicate facts with distinct sourced milestones.",
+          "taskSnapshotSha256": "adc9734c688cb7abd06ea8b093218cc6de92f21a267d097f7992365e0f0b0fd4",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T12:10:01.000Z",
+          "reason": "Retry only to preserve and correct all four historical milestone IDs; identity, ownership, seed retirement and current-status conclusions are unchanged.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T12:12:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0c9d995fcdeee2669a6bb21c04c78df25c4cf74938424837ff0002c06094c6d3",
+          "evidenceSha256": [
+            "0c9d995fcdeee2669a6bb21c04c78df25c4cf74938424837ff0002c06094c6d3",
+            "89a4f260ae88502cd13f454eb6a550f4630a812ee09abb0e07e7c3eb13d93531",
+            "fce9a48e950204056ba72d6df94acaf8148c699eb9c638492f7341b23d4892ef"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 14,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T12:12:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0c9d995fcdeee2669a6bb21c04c78df25c4cf74938424837ff0002c06094c6d3",
+          "evidenceSha256": [
+            "fce9a48e950204056ba72d6df94acaf8148c699eb9c638492f7341b23d4892ef"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 15,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T12:13:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0c9d995fcdeee2669a6bb21c04c78df25c4cf74938424837ff0002c06094c6d3",
+          "evidenceSha256": [
+            "14c82cd1838447f577c292e602447d326141c622c7ca17f0ca530fd62000f7f1"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -29851,5 +30027,5 @@
       ]
     }
   ],
-  "manifestSha256": "756c687d08c16aca0488001d873be72a77d484bf80e65f9d9d8a612e86752c92"
+  "manifestSha256": "e3d34a72fed451d6ab59ee9bf34da70b488b0259eb23f80058eefe61313c4232"
 }
