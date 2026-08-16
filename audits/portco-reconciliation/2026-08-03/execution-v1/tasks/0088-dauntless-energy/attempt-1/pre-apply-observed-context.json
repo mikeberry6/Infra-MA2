@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0088:dauntless-energy:3912e87d",
+  "taskIndex": 88,
+  "companyName": "Dauntless Energy",
+  "generatedAt": "2026-08-16T01:10:12.148Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0088-dauntless-energy/attempt-1/pre-apply-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 88,
+    "taskId": "ledger:0088:dauntless-energy:3912e87d",
+    "canonicalKey": "dauntless-energy|united-states",
+    "companyName": "Dauntless Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 13,
+    "managers": [
+      "Ardian"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "013-ardian:holding:007:skyline-renewables"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj6rw00jrivhelcbdhy6b"
+    ],
+    "seedKeys": [
+      "dauntless energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ardian.com/press-releases/ardian-infrastructure-partners-tph-create-skyline-renewables-and-acquires-60mw-wind"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj6rw00jrivhelcbdhy6b",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "dauntless-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6rw00jrivhelcbdhy6b",
+    "name": "Dauntless Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable and flexible generation platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Dauntless Energy is Ardian's North American energy asset manager and independent power platform. The company develops, acquires, and manages wind, solar, storage, and efficient gas-fired generation assets serving wholesale power markets and contracted offtakers. Its operating model is asset-heavy and combines portfolio management, development, and operating oversight across multiple generation vehicles. Public materials identify Skyline Renewables, launched in 2018 through Ardian Americas Infrastructure Fund IV (AAIF IV), and 1370 Clean Energy, launched in 2025, as key portfolio vehicles managed by Dauntless in the United States. The platform traces back to Ardian's 2018 launch of Skyline Renewables with TPH and was rebranded as Dauntless Energy, while ownership percentages for the current management platform have not been publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas; multi-state United States portfolio",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrtn01goivhey3uos7p3",
+        "managerName": "Ardian",
+        "organizationName": "Ardian",
+        "fundName": "Ardian Americas Infrastructure Fund IV (AAIF IV)",
+        "vehicleName": "Ardian Americas Infrastructure Fund IV (AAIF IV)",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkn5k02q7ivhegcffo7sl",
+        "date": "Mar 5, 2018",
+        "event": "Ardian and TPH launched Skyline Renewables as a United States renewables platform tied to Ardian Americas Infrastructure Fund IV (AAIF IV).",
+        "category": "FINANCING",
+        "sortDate": "2018-03-05T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkn5y02q8ivhe1m2hb4s6",
+        "date": "Mar 5, 2018",
+        "event": "Skyline Renewables completed its first acquisition, the 60 MW Whirlwind Energy wind farm in Texas.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-03-05T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkn6f02q9ivhemqvrlcsq",
+        "date": "2024",
+        "event": "The North American energy asset manager began operating under the Dauntless Energy brand.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkn6z02qaivhewft7iei3",
+        "date": "2025",
+        "event": "Dauntless added 1370 Clean Energy as a growth vehicle for clean energy investments.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp2bo07lrivhe08vndjkk",
+        "label": "Dauntless Energy — Dauntless Energy",
+        "url": "https://www.dauntless-energy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Dauntless Energy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp2cr07ltivhe5muh9gce",
+        "label": "Dauntless Energy — Dauntless Energy",
+        "url": "https://www.dauntless-energy.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Dauntless Energy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp2e107lvivhet0k7ekoe",
+        "label": "Dauntless Energy — Dauntless Energy",
+        "url": "https://www.dauntless-energy.com/our-portfolios",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Dauntless Energy — Dauntless Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp2f707lxivhe56c8ugzt",
+        "label": "Investment date source — Ardian — Dauntless Energy",
+        "url": "https://www.ardian.com/press-releases/ardian-infrastructure-partners-tph-create-skyline-renewables-and-acquires-60mw-wind",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ardian initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Dauntless Energy",
+    "investmentFirm": "Ardian",
+    "sector": "Power & ET",
+    "subsector": "Renewable and flexible generation platform",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Ardian Americas Infrastructure Fund IV (AAIF IV)",
+    "description": "Dauntless Energy is Ardian's North American energy asset manager and independent power platform. The company develops, acquires, and manages wind, solar, storage, and efficient gas-fired generation assets serving wholesale power markets and contracted offtakers. Its operating model is asset-heavy and combines portfolio management, development, and operating oversight across multiple generation vehicles. Public materials identify Skyline Renewables, launched in 2018 through Ardian Americas Infrastructure Fund IV (AAIF IV), and 1370 Clean Energy, launched in 2025, as key portfolio vehicles managed by Dauntless in the United States. The platform traces back to Ardian's 2018 launch of Skyline Renewables with TPH and was rebranded as Dauntless Energy, while ownership percentages for the current management platform have not been publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2018,
+    "headquarters": "Texas; multi-state United States portfolio",
+    "milestones": [
+      {
+        "date": "Mar 5, 2018",
+        "event": "Ardian and TPH launched Skyline Renewables as a United States renewables platform tied to Ardian Americas Infrastructure Fund IV (AAIF IV).",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 5, 2018",
+        "event": "Skyline Renewables completed its first acquisition, the 60 MW Whirlwind Energy wind farm in Texas.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2024",
+        "event": "The North American energy asset manager began operating under the Dauntless Energy brand.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2025",
+        "event": "Dauntless added 1370 Clean Energy as a growth vehicle for clean energy investments.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Dauntless Energy — Dauntless Energy",
+        "url": "https://www.dauntless-energy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Dauntless Energy — Dauntless Energy",
+        "url": "https://www.dauntless-energy.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Dauntless Energy — Dauntless Energy",
+        "url": "https://www.dauntless-energy.com/our-portfolios",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — Ardian — Dauntless Energy",
+        "url": "https://www.ardian.com/press-releases/ardian-infrastructure-partners-tph-create-skyline-renewables-and-acquires-60mw-wind",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ardian",
+        "ownershipVehicle": "Ardian Americas Infrastructure Fund IV (AAIF IV)",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj14b00bhivhetxl1aez7",
+        "fundName": "Ardian Americas Infrastructure Fund IV (AAIF IV)",
+        "managerId": "cmrxpi45x000livheo86afepo",
+        "updatedAt": "2026-07-23T16:09:55.307Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi45x000livheo86afepo",
+        "name": "Ardian",
+        "updatedAt": "2026-07-23T16:09:12.597Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0088:dauntless-energy:3912e87d",
+    "taskIndex": 88,
+    "canonicalKey": "dauntless-energy|united-states",
+    "capturedAt": "2026-08-16T01:10:12.148Z",
+    "databaseRevision": "company-state:ee4d892d52a6f5587e788ddec6b2de3a510ccc82f8bbce030bde19c019393659",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "0fa206538d44013bc4e2965773257fd79c1fb7633810eb2c342fc3d8a6cd9bfc",
+    "productionSnapshotSha256": "e00740745015cbcd820b5fe1220310fbb0dfd4ec9cb1d7f9baf6cbea03fe041b",
+    "targetCompanySnapshotSha256": "ee4d892d52a6f5587e788ddec6b2de3a510ccc82f8bbce030bde19c019393659",
+    "seedEntrySha256": "719d0fe847887ea529fade36847b9770aa89fd090f5968849fea7e8adf25b24e",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b8edc7d8f433fca00bbe7fb4266d0ee243ca3cbb256d451f5983a5ebbb4dd912",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "55a4a36aa9da0918d746803cc6f9eaa1ee4c29707f659d1ac8dea9540dae8112",
+      "organizationsSha256": "5339cb87750667b1512efa514e2834e236f89f19ae28f3a889bcacc809503633",
+      "citationsSha256": "2f7e63cdcd8d117f05d18b264a272a3453c6f5ace97aae2e6f081c432b954c7d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "3cdecae6c25d4a4873cf591ace7c33d74a977db5ac270d824144f8f3d20b65cd",
+    "stateSha256": "6fbe4b438d8ad906427f384f2451d573c21608e0282430961a95f760ff53d8b9",
+    "taskSnapshotSha256": "7ef56010dbd052dc72c05f1d84a00bf838b339bfbcd21c57adc144610e69172f"
+  },
+  "contextSha256": "ad702185e665cf41304e18be91ff1ef52c934f8bd8a8df3859b95b4256d2c171"
+}
