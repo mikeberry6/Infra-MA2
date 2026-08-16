@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_PROPOSAL_CORRECTION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0091:rover-pipeline:32747256",
+  "taskIndex": 91,
+  "attempt": 2,
+  "companyName": "Rover Pipeline",
+  "correctedAt": "2026-08-16T04:46:00.000Z",
+  "sourceResearchDecision": {
+    "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/research-decision.json",
+    "fileSha256": "7007619afc804573a5ad59961911c04b239c594b12e36fcf48e4486bbb059257"
+  },
+  "chatgptResearchReused": true,
+  "newChatgptConversationStarted": false,
+  "reason": "Proposal v1 declared CORRECT_COMPANY and ADD_OWNER, but the production dry-run correctly derived RETIRE_OWNERSHIP as well because the approved after-image changes descriptive fields on the already-realized Blackstone ownership period. No release or production write occurred. Proposal v2 adds only the missing derived action and preserves the identical approved after-image and research conclusions.",
+  "rejectedProposal": {
+    "location": "audits/portco-reconciliation/2026-08-03/proposals/0091-rover-pipeline-v1/proposal.json",
+    "proposalSha256": "7239da5d04940a4a6fb5d9f3f9418dfaf9e3783338507111ac0fc077a2024ef0",
+    "afterImageSha256": "74200458c539a2da8c79dcf8de4d42a0d76e0f694ab86b5e3abf67afe9f4f7e9",
+    "dryRunResult": "REJECTED_ACTION_SET_MISMATCH"
+  },
+  "correctedProposal": {
+    "location": "audits/portco-reconciliation/2026-08-03/proposals/0091-rover-pipeline-v2/proposal.json",
+    "proposalSha256": "f3f118189c355f1a86200a007f656272cb9fcf29e74e3412fed08bf45cdd20da",
+    "afterImageSha256": "74200458c539a2da8c79dcf8de4d42a0d76e0f694ab86b5e3abf67afe9f4f7e9",
+    "actions": [
+      "CORRECT_COMPANY",
+      "ADD_OWNER",
+      "RETIRE_OWNERSHIP"
+    ]
+  },
+  "taskSnapshotSha256": "e23add9f175153cd81fb5fa16522535506e60d7eda6d795e83cbab6eba326741",
+  "blockingUnresolvedQuestions": [],
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false
+}
