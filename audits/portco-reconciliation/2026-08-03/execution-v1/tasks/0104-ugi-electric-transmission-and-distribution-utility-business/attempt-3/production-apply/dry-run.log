@@ -1,0 +1,216 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0104-ugi-electric-transmission-and-distribution-utility-business-v3/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0104-ugi-electric-transmission-and-distribution-utility-business-v3.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0104-ugi-electric-transmission-and-distribution-utility-business/attempt-3/locked-production-snapshot.json --proposal-sha256=8bcabac02c03947e57cf5c81c0483fb1fa71ee42f8677d401c5753f53e39aef0 --approval-sha256=eadacb96c4c608ace73d685c2ff5234da5e1d764739d78f725cab8a001f7deed --snapshot-sha256=a4824557f24606e13095823092ddcc0b45af73a64f98fb166cfc63a48a1a2a35
+
+(node:2749) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "8bcabac02c03947e57cf5c81c0483fb1fa71ee42f8677d401c5753f53e39aef0",
+    "approvalSha256": "eadacb96c4c608ace73d685c2ff5234da5e1d764739d78f725cab8a001f7deed",
+    "afterImageSha256": "693dd8b30945e3f9e3056c54fb4ed435791638d0e8793cdc48c2c79d07e00633",
+    "taskId": "ledger:0104:ugi-electric-transmission-and-distribution-utility-business:e94ef30f",
+    "operation": "UPSERT",
+    "company": {
+      "name": "UGI Utilities – Electric Division",
+      "investmentFirm": "UGI Utilities",
+      "sector": "Utilities",
+      "subsector": "Electric transmission and distribution utility",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "UGI Utilities, Inc.",
+      "description": "UGI Utilities – Electric Division is a regulated electric transmission, distribution and retail utility serving more than 63,000 customers in Luzerne and Wyoming counties in northeastern Pennsylvania. The business operates approximately 2,700 miles of transmission and distribution lines and 14 substations. UGI Utilities, Inc., a wholly owned subsidiary of UGI Corporation, remains the current legal owner. Funds managed by Argo Infrastructure Partners LP signed an approximately $470 million definitive purchase agreement on April 28, 2026, but UGI's August 2026 Form 10-Q continued to classify the business as held for sale and expected closing in UGI fiscal Q2 2027, subject to customary closing conditions and applicable regulatory approvals. The exact Argo fund, manager-level stake, standalone legal suffix, headquarters, founding year and separate website are not publicly disclosed. Wyoming Valley Electric Holdings LLC and related acquisition entities are transaction vehicles for this same target, not separate PortCos. No legal close, termination, resale or revised timetable was identified through August 16, 2026.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "milestones": [
+        {
+          "date": "Apr 28, 2026",
+          "event": "UGI Utilities announced a definitive agreement to sell its Pennsylvania Electric Division to funds managed by Argo Infrastructure Partners LP for approximately $470 million, subject to closing conditions and regulatory approvals.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Jun 26, 2026",
+          "event": "UGI Utilities, Inc. and Wyoming Valley Electric Holdings LLC filed their joint Federal Power Act section 203 application in FERC docket EC26-118-000.",
+          "category": "Other"
+        },
+        {
+          "date": "Aug 6, 2026",
+          "event": "UGI's fiscal 2026 third-quarter Form 10-Q continued to classify the electric utility as held for sale and expected closing in UGI fiscal Q2 2027, confirming the Argo acquisition remained pending.",
+          "category": "Other"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "UGI Utilities / Argo — Electric Division sale agreement",
+          "url": "https://www.businesswire.com/news/home/20260427814373/en/UGI-Utilities-and-Argo-Infrastructure-Partners-Reach-Agreement-on-Purchase-and-Sale-of-UGIs-PA-Electric-Utility",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Definitive agreement, buyer and seller, transaction value, expected timing, service territory and operating scale"
+        },
+        {
+          "label": "UGI Corporation — Fiscal 2026 third-quarter Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/884614/000088461426000052/ugi-20260630.htm",
+          "type": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Latest held-for-sale status, current legal ownership and UGI fiscal Q2 2027 expected closing"
+        },
+        {
+          "label": "Federal Register — FERC docket EC26-118-000",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-07-06/pdf/2026-13563.pdf",
+          "type": "OTHER",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "June 2026 section 203 filing by UGI Utilities and Wyoming Valley Electric Holdings"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "UGI Utilities",
+          "ownershipVehicle": "UGI Utilities, Inc.",
+          "vehicleName": "UGI Utilities, Inc.",
+          "stake": "100% current legal ownership of the Electric Division; agreed sale to Argo-managed funds remains pending",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": null,
+      "name": "UGI Utilities – Electric Division",
+      "aliases": [
+        "UGI Electric Division",
+        "UGI Utilities Electric Division",
+        "UGI Utilities, Inc. – Electric Division",
+        "UGI Electric Utility",
+        "UGI's PA Electric Utility"
+      ],
+      "sector": "UTILITIES",
+      "subsector": "Electric transmission and distribution utility",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "UGI Utilities – Electric Division is a regulated electric transmission, distribution and retail utility serving more than 63,000 customers in Luzerne and Wyoming counties in northeastern Pennsylvania. The business operates approximately 2,700 miles of transmission and distribution lines and 14 substations. UGI Utilities, Inc., a wholly owned subsidiary of UGI Corporation, remains the current legal owner. Funds managed by Argo Infrastructure Partners LP signed an approximately $470 million definitive purchase agreement on April 28, 2026, but UGI's August 2026 Form 10-Q continued to classify the business as held for sale and expected closing in UGI fiscal Q2 2027, subject to customary closing conditions and applicable regulatory approvals. The exact Argo fund, manager-level stake, standalone legal suffix, headquarters, founding year and separate website are not publicly disclosed. Wyoming Valley Electric Holdings LLC and related acquisition entities are transaction vehicles for this same target, not separate PortCos. No legal close, termination, resale or revised timetable was identified through August 16, 2026.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": null,
+      "yearFounded": null,
+      "headquarters": null,
+      "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": null,
+          "managerName": "UGI Utilities",
+          "organizationName": "UGI Utilities",
+          "fundName": null,
+          "vehicleName": "UGI Utilities, Inc.",
+          "stake": "100% current legal ownership of the Electric Division; agreed sale to Argo-managed funds remains pending",
+          "investmentYear": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [
+        {
+          "id": null,
+          "direction": "INCOMING",
+          "transactionState": "SIGNED_PENDING_INCOMING",
+          "counterpartyName": "Funds managed by Argo Infrastructure Partners LP / Wyoming Valley Electric Holdings LLC",
+          "transactionDescription": "Funds managed by Argo Infrastructure Partners LP agreed to acquire UGI Utilities' Pennsylvania Electric Division for approximately $470 million, subject to working-capital adjustments, customary closing conditions and applicable regulatory approvals. UGI Utilities remains the current legal owner until closing.",
+          "announcedAt": "2026-04-28",
+          "expectedClosing": "Q1 calendar 2027 / UGI fiscal Q2 2027",
+          "relatedOwnershipPeriodIds": [],
+          "evidenceUrls": [
+            "https://www.businesswire.com/news/home/20260427814373/en/UGI-Utilities-and-Argo-Infrastructure-Partners-Reach-Agreement-on-Purchase-and-Sale-of-UGIs-PA-Electric-Utility",
+            "https://www.sec.gov/Archives/edgar/data/884614/000088461426000052/ugi-20260630.htm",
+            "https://www.govinfo.gov/content/pkg/FR-2026-07-06/pdf/2026-13563.pdf"
+          ]
+        }
+      ],
+      "milestones": [
+        {
+          "id": null,
+          "date": "Apr 28, 2026",
+          "event": "UGI Utilities announced a definitive agreement to sell its Pennsylvania Electric Division to funds managed by Argo Infrastructure Partners LP for approximately $470 million, subject to closing conditions and regulatory approvals.",
+          "category": "ACQUISITION",
+          "sortDate": "2026-04-28T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.businesswire.com/news/home/20260427814373/en/UGI-Utilities-and-Argo-Infrastructure-Partners-Reach-Agreement-on-Purchase-and-Sale-of-UGIs-PA-Electric-Utility"
+          ]
+        },
+        {
+          "id": null,
+          "date": "Jun 26, 2026",
+          "event": "UGI Utilities, Inc. and Wyoming Valley Electric Holdings LLC filed their joint Federal Power Act section 203 application in FERC docket EC26-118-000.",
+          "category": "OTHER",
+          "sortDate": "2026-06-26T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.govinfo.gov/content/pkg/FR-2026-07-06/pdf/2026-13563.pdf"
+          ]
+        },
+        {
+          "id": null,
+          "date": "Aug 6, 2026",
+          "event": "UGI's fiscal 2026 third-quarter Form 10-Q continued to classify the electric utility as held for sale and expected closing in UGI fiscal Q2 2027, confirming the Argo acquisition remained pending.",
+          "category": "OTHER",
+          "sortDate": "2026-08-06T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/884614/000088461426000052/ugi-20260630.htm"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": null,
+          "label": "UGI Utilities / Argo — Electric Division sale agreement",
+          "url": "https://www.businesswire.com/news/home/20260427814373/en/UGI-Utilities-and-Argo-Infrastructure-Partners-Reach-Agreement-on-Purchase-and-Sale-of-UGIs-PA-Electric-Utility",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Definitive agreement, buyer and seller, transaction value, expected timing, service territory and operating scale",
+          "isPrimary": true
+        },
+        {
+          "id": null,
+          "label": "UGI Corporation — Fiscal 2026 third-quarter Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/884614/000088461426000052/ugi-20260630.htm",
+          "sourceType": "SEC_FILING",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Latest held-for-sale status, current legal ownership and UGI fiscal Q2 2027 expected closing",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Federal Register — FERC docket EC26-118-000",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-07-06/pdf/2026-13563.pdf",
+          "sourceType": "OTHER",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "June 2026 section 203 filing by UGI Utilities and Wyoming Valley Electric Holdings",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "UGI Utilities – Electric Division",
+    "mutations": [
+      {
+        "kind": "CREATE_COMPANY",
+        "relationIds": [],
+        "detail": "Create the approved canonical company and all approved relations."
+      }
+    ],
+    "changedFields": [
+      "company"
+    ],
+    "retiredCompanyIds": []
+  }
+}
