@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T07:04:00.000Z",
-  "runStatus": "IDLE",
+  "updatedAt": "2026-08-16T07:36:30.000Z",
+  "runStatus": "BLOCKED",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -13909,12 +13909,12 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "31aec9438cd5d08f2e79b24ce92c0abd21863b1f5afa5c12f558cbe2c0cb19ab",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "FAILED",
+      "attempts": 1,
+      "startedAt": "2026-08-16T07:08:00.000Z",
+      "updatedAt": "2026-08-16T07:36:30.000Z",
       "completedAt": null,
-      "exceptionReason": null,
+      "exceptionReason": "Fresh GPT-5.6 Sol Pro research emitted no initial answer; the one allowed repair returned JSON truncated mid-string. No proposal, release, seed change, or database mutation occurred.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
@@ -13936,6 +13936,26 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T07:08:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "FAILED",
+          "at": "2026-08-16T07:36:30.000Z",
+          "reason": "Fresh GPT-5.6 Sol Pro research emitted no initial answer; the one allowed repair returned JSON truncated mid-string. No proposal, release, seed change, or database mutation occurred.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -29286,5 +29306,5 @@
       ]
     }
   ],
-  "manifestSha256": "99a1406374a70ee65de283d30a5ff21778fc73ae8f4296c0540393cf5689ca8c"
+  "manifestSha256": "507057e8a5e9aaa64ffa37002ae6893ffe86e16025a3db3abc60296068ac560b"
 }
