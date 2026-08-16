@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T17:22:39.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0104:ugi-electric-transmission-and-distribution-utility-business:e94ef30f",
+  "updatedAt": "2026-08-16T17:31:29.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -15613,11 +15613,11 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "d5afbdf69a517c11d829ed443eb2a2d5223b7e08571ac9d83adb0e5a03c979f5",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 3,
       "startedAt": "2026-08-16T17:15:01.000Z",
-      "updatedAt": "2026-08-16T17:22:39.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-16T17:31:29.000Z",
+      "completedAt": "2026-08-16T17:31:29.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "8cebdce2b8c4b2bffa6846a4157ff6995ff47ea380d09e01bc460c801213ede3",
@@ -15833,6 +15833,20 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-16T17:22:39.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8cebdce2b8c4b2bffa6846a4157ff6995ff47ea380d09e01bc460c801213ede3",
+          "evidenceSha256": [
+            "2be2e641bbb58d470bdddea3f965465217a69e1e1a43a1ec4b0900fce7849ca5",
+            "8bcabac02c03947e57cf5c81c0483fb1fa71ee42f8677d401c5753f53e39aef0",
+            "eadacb96c4c608ace73d685c2ff5234da5e1d764739d78f725cab8a001f7deed"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 18,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-16T17:31:29.000Z",
           "reason": null,
           "taskSnapshotSha256": "8cebdce2b8c4b2bffa6846a4157ff6995ff47ea380d09e01bc460c801213ede3",
           "evidenceSha256": [
@@ -30841,5 +30855,5 @@
       ]
     }
   ],
-  "manifestSha256": "399732f8bbf1ad3d30bca8fc72ab38c8401bc267f19713496d44e8bf5e5de550"
+  "manifestSha256": "95922e0cb0af1014230e4a23a69c1bb71d43e87e8a76b2f4e2236174ea272d58"
 }
