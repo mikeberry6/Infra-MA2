@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T05:42:00.000Z",
+  "updatedAt": "2026-08-16T05:53:40.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0092:fleetlogix-inc:8a84c6fe",
   "source": {
@@ -13491,10 +13491,10 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "ee1e5025a4fea475ee80b92aadacbb5807cb70ddc6e9cacda94557232cff4671",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 1,
       "startedAt": "2026-08-16T05:09:00.000Z",
-      "updatedAt": "2026-08-16T05:42:00.000Z",
+      "updatedAt": "2026-08-16T05:53:40.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -13512,7 +13512,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0092-fleetlogix-inc-v2.json",
           "sha256": "0dce6389dfeb5bfddd49b42255adaa76b793c068aeb908e347cf6280464a6cf2"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0092-fleetlogix-inc/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "e4b8da60dbe765a9a426b2817fb6a9904d7aa14f1f3ca980db056cbb732480a0"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0092-fleetlogix-inc/attempt-1/research-decision.json",
           "sha256": "256c8c0c2bb381dac85e9e84ce9b8df1582b161156d2c085d92f1effbca34a71"
@@ -13574,6 +13577,33 @@
           "taskSnapshotSha256": "0540ac8cac86a964e5c7504239b5dbf9085d551c53e190c89316d0794eea854b",
           "evidenceSha256": [
             "0dce6389dfeb5bfddd49b42255adaa76b793c068aeb908e347cf6280464a6cf2"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-16T05:48:35.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0540ac8cac86a964e5c7504239b5dbf9085d551c53e190c89316d0794eea854b",
+          "evidenceSha256": [
+            "0dce6389dfeb5bfddd49b42255adaa76b793c068aeb908e347cf6280464a6cf2",
+            "94741a2a3283fb939e129700a820339f0d5f64a403854a2eca5e3c148cce9646"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-16T05:53:40.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "0540ac8cac86a964e5c7504239b5dbf9085d551c53e190c89316d0794eea854b",
+          "evidenceSha256": [
+            "0dce6389dfeb5bfddd49b42255adaa76b793c068aeb908e347cf6280464a6cf2",
+            "94741a2a3283fb939e129700a820339f0d5f64a403854a2eca5e3c148cce9646",
+            "e4b8da60dbe765a9a426b2817fb6a9904d7aa14f1f3ca980db056cbb732480a0"
           ],
           "kind": "TRANSITION"
         }
@@ -29002,5 +29032,5 @@
       ]
     }
   ],
-  "manifestSha256": "6885cffd6ff614587261122c013e347883086e710faff049ccb98ec26ab6b1e2"
+  "manifestSha256": "163d4f048a77d492d45a013f96f22798f3e64b80361bf262bfb29ef1699a3adf"
 }
