@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+  "taskIndex": 105,
+  "attempt": 2,
+  "companyName": "US Water Systems",
+  "asOfDate": "2026-08-16",
+  "retrievedAt": "2026-08-16T18:36:28.000Z",
+  "methodology": "Codex independently reopened the core official and regulatory sources during the retry, compared their downloaded byte hashes with attempt 1, reused same-day health checks for supporting operating pages, and searched the record boundary and Apollo-Argo transaction outcome separately from the model.",
+  "identityConclusion": "US Water Systems is an unsupported repository umbrella, not a demonstrated legal entity or manager-level operating platform. It duplicates the separately published Bayonne and Middletown concession investments. Because the relationship is one umbrella to two canonical assets, no single-company redirect is truthful.",
+  "ownershipConclusion": "Argo remains the infrastructure manager associated with both underlying concessions. The Apollo-Argo manager acquisition did not close and was terminated in January 2026, so Apollo must not be added as an owner or vehicle label.",
+  "exitSearchConclusion": "No later sale or signed pending exit of either concession was found through 2026-08-16. Current municipal, operator and project records show both concessions remain active.",
+  "recommendedRecordDisposition": "Archive company cmrxpj62g00ipivhe4zr74wn1 without a redirect, preserve its audit history, and retain Bayonne company cmrxpj76y00keivhellw38dtk and Middletown company cmrxpj7b200klivhel3gtzeza as separate published records.",
+  "sources": [
+    {
+      "evidenceUrl": "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf",
+      "mediaType": "application/pdf",
+      "contentLength": 3584933,
+      "contentSha256": "bca20508b50555bf99a3c8c1f2a03a8e1edbccdc40cb5d50787511c5e5a143cd",
+      "recheckedInRetry": true,
+      "verifiedClaims": [
+        "Bayonne and Middletown are separate long-term concession contracts.",
+        "KKR and SUEZ transferred interests in the two concessions to Argo in 2017."
+      ],
+      "isRecommendedPrimary": true
+    },
+    {
+      "evidenceUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE2E7B10B-96D0-437D-8D48-F1B1DDCF8132%7D",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE2E7B10B-96D0-437D-8D48-F1B1DDCF8132%7D",
+      "mediaType": "application/pdf",
+      "contentLength": 1591084,
+      "contentSha256": "78746baaf8e3fd6b4f6ba233ee881f80059f72c80822f60036702f11de112f44",
+      "recheckedInRetry": true,
+      "verifiedClaims": [
+        "Argo's portfolio contains two water utility concessions, Bayonne and Middletown.",
+        "The two concessions have separate customer bases and operating footprints."
+      ],
+      "isRecommendedPrimary": false
+    },
+    {
+      "evidenceUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "mediaType": "application/pdf",
+      "contentLength": 198398,
+      "contentSha256": "0f83f44fc98471b113d9248a20b33082e37749d64963cf95e07557709dfd141d",
+      "recheckedInRetry": true,
+      "verifiedClaims": [
+        "The Apollo-Argo manager transaction did not close by the contractual deadline.",
+        "The transaction agreement and proposed transaction were terminated."
+      ],
+      "isRecommendedPrimary": false
+    },
+    {
+      "evidenceUrl": "https://wcpartnersllc.com/projects/",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://wcpartnersllc.com/projects/",
+      "mediaType": "text/html",
+      "contentLength": 112980,
+      "contentSha256": "2d668d76cc31bf909b9d642bdf5434b0cfe8de5418bb7f02c7cb81a0769e8f6c",
+      "recheckedInRetry": true,
+      "verifiedClaims": [
+        "Water Capital Partners lists Bayonne and Middletown as separate projects, not one US Water Systems platform."
+      ],
+      "isRecommendedPrimary": false
+    },
+    {
+      "evidenceUrl": "https://middletownborough.com/wp-content/uploads/2025/11/Operations-Report-July-2025.pdf",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://middletownborough.com/wp-content/uploads/2025/11/Operations-Report-July-2025.pdf",
+      "mediaType": "application/pdf",
+      "contentLength": 6219491,
+      "contentSha256": "14e5c3c5615163c8b22e029f9ff7655ae5819d53ccca1478b0200c820387479e",
+      "recheckedInRetry": true,
+      "verifiedClaims": [
+        "Middletown remained an active operating concession in 2025."
+      ],
+      "isRecommendedPrimary": false
+    },
+    {
+      "evidenceUrl": "https://wcpartnersllc.com/project/bayonne-concession/",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://wcpartnersllc.com/project/bayonne-concession/",
+      "mediaType": "text/html",
+      "contentLength": null,
+      "contentSha256": "29770004a7c87d27ba54a81378fc33c24e5410e3bb232025c147a167654f365e",
+      "recheckedInRetry": false,
+      "verificationNote": "Same-day attempt-1 retrieval; no intervening date boundary.",
+      "verifiedClaims": ["Bayonne is presented as its own concession project."],
+      "isRecommendedPrimary": false
+    },
+    {
+      "evidenceUrl": "https://wcpartnersllc.com/project/middletown-concession/",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://wcpartnersllc.com/project/middletown-concession/",
+      "mediaType": "text/html",
+      "contentLength": null,
+      "contentSha256": "4bf330106ceb1a1c6577acf61b78d09deaeeabcd92fff730d14a122cb60c33e0",
+      "recheckedInRetry": false,
+      "verificationNote": "Same-day attempt-1 retrieval; no intervening date boundary.",
+      "verifiedClaims": ["Middletown is presented as its own concession project."],
+      "isRecommendedPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.bayonnewater.veolianorthamerica.com/",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bayonnewater.veolianorthamerica.com/",
+      "mediaType": "text/html",
+      "contentLength": null,
+      "contentSha256": "57369cbe6d12d229b191d858c0c7c957e5bc65ba227b19e60ed12d48a2259c88",
+      "recheckedInRetry": false,
+      "verificationNote": "Same-day attempt-1 retrieval; no intervening date boundary.",
+      "verifiedClaims": ["Veolia's current site shows Bayonne remains an active operating water and wastewater system."],
+      "isRecommendedPrimary": false
+    },
+    {
+      "evidenceUrl": "https://middletownborough.com/wp-content/uploads/2024/02/Operating-Minutes-12-5-23.pdf",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://middletownborough.com/wp-content/uploads/2024/02/Operating-Minutes-12-5-23.pdf",
+      "mediaType": "application/pdf",
+      "contentLength": 163416,
+      "contentSha256": "2b351ba2616828d814ec993176941fe8926292a1864d65253bcb7aaa06cfc651",
+      "recheckedInRetry": false,
+      "verificationNote": "Same-day attempt-1 retrieval; no intervening date boundary.",
+      "verifiedClaims": ["Middletown-specific governance records identify Argo participation."],
+      "isRecommendedPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.bayonnenj.org/content/236/default.aspx",
+      "status": "DEAD",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bayonnenj.org/content/236/default.aspx",
+      "mediaType": "text/html",
+      "contentLength": null,
+      "contentSha256": null,
+      "recheckedInRetry": false,
+      "verifiedClaims": [],
+      "isRecommendedPrimary": false,
+      "verificationNote": "Same-day attempt-1 check returned an application e404 page despite HTTP 200. The existing citation cannot remain primary."
+    }
+  ]
+}
