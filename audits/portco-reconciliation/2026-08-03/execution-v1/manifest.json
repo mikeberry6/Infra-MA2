@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T14:40:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0101:pueblo-airport-generating-station:d9b71a68",
+  "updatedAt": "2026-08-16T14:50:00.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -15066,11 +15066,11 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "9798ca7a2bf730eeb350364ff7e0c853f9c22e846cb5763676d78bf530e90680",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 4,
       "startedAt": "2026-08-16T14:30:01.000Z",
-      "updatedAt": "2026-08-16T14:40:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-16T14:50:00.000Z",
+      "completedAt": "2026-08-16T14:50:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "d81db7498744f5b432716e3ac75e2c662e3d3802a7629238b6d0b2cbdf60abc5",
@@ -15340,6 +15340,18 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-16T14:40:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d81db7498744f5b432716e3ac75e2c662e3d3802a7629238b6d0b2cbdf60abc5",
+          "evidenceSha256": [
+            "97d338014080e3beacbadff3b864994c01652fef03f363c1413c33a94e5361c4"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 23,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-16T14:50:00.000Z",
           "reason": null,
           "taskSnapshotSha256": "d81db7498744f5b432716e3ac75e2c662e3d3802a7629238b6d0b2cbdf60abc5",
           "evidenceSha256": [
@@ -30460,5 +30472,5 @@
       ]
     }
   ],
-  "manifestSha256": "f7b2d7067b571242243f04f000c4344297bcd474f42345d02baf3c30cba0a8e0"
+  "manifestSha256": "093a04bc20af0311e660c9e1c3a572bdf937fdea39f368978c58f5ce0257fc0d"
 }
