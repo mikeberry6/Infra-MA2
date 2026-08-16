@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0095:international-parking-management:0cc25ff3",
+  "taskIndex": 95,
+  "attempt": 1,
+  "companyName": "International Parking Management",
+  "asOfDate": "2026-08-16",
+  "retrievedAt": "2026-08-16T08:56:26.000Z",
+  "methodology": "Codex independently reopened the model-cited direct pages, checked response status and redirects, used the signed-in browser for pages blocked to direct retrieval, confirmed the IPM-domain redirect, and searched for later sale, exit, merger, rebrand and ownership changes after the ChatGPT Pro response completed.",
+  "sources": [
+    {
+      "evidenceUrl": "https://www.lazparking.com/our-company/about/news/2024/04/05/laz-parking-purchases-seattle-based-international-parking-management-inc.-%28ipm%29",
+      "verificationUrl": "https://www.lazparking.com/our-company/about/news/2024/04/05/laz-parking-purchases-seattle-based-international-parking-management-inc.-%28ipm%29",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "finalUrl": "https://www.lazparking.com/our-company/about/news/2024/04/05/laz-parking-purchases-seattle-based-international-parking-management-inc.-%28ipm%29",
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseSha256": "289a327aa713dce3b51f827184eac326104588eaea79ca38394a13354d4cc296",
+      "browserVerifiedAt": "2026-08-16T08:52:00.000Z",
+      "verifiedClaims": [
+        "LAZ described the transaction as an asset purchase of Seattle-based International Parking Management.",
+        "The purchase added 14,000 spaces to LAZ's Seattle footprint and combined the two businesses' local operations.",
+        "IPM was founded as Premier Parking in 1985, acquired by Mark and Tracy Sundberg in 2006, and had 74 employees and $40 million in managed revenue at announcement.",
+        "The source does not disclose an ownership percentage, exact legal closing date, Argo fund vehicle or retained seller interest."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://www.prnewswire.com/news-releases/laz-parking-purchases-seattle-based-international-parking-management-inc-ipm-302108467.html",
+      "verificationUrl": "https://www.prnewswire.com/news-releases/laz-parking-purchases-seattle-based-international-parking-management-inc-ipm-302108467.html",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/laz-parking-purchases-seattle-based-international-parking-management-inc-ipm-302108467.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLength": 210991,
+      "contentSha256": "010a4fa15f9b3c2142d56e56dc879ed50c5d1c4927f7ea2f046f372ee05fbae4",
+      "verifiedClaims": [
+        "LAZ's release was published April 4, 2024 and described a completed asset purchase rather than a separate direct Argo investment.",
+        "The release corroborates IPM's Seattle identity, 1985 origin, 2006 ownership change, services and acquisition scale."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.lazparking.com/our-company/about/news/2022/01/03/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners",
+      "verificationUrl": "https://www.lazparking.com/our-company/about/news/2022/01/03/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "finalUrl": "https://www.lazparking.com/our-company/about/news/2022/01/03/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners",
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseSha256": "a415cc589c3ac26f348df63ff4488ab113e16d87180262afe35d9c65a8e39f16",
+      "browserVerifiedAt": "2026-08-16T08:53:00.000Z",
+      "verifiedClaims": [
+        "Argo made a long-term preferred investment directly in LAZ, establishing the manager-level ownership basis.",
+        "The prior LAZ shareholders exited concurrently, and LAZ described parking, EV charging, logistics and mobility services as infrastructure.",
+        "The source does not disclose an Argo fund name or percentage ownership."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.argoip.com/news-and-insights",
+      "verificationUrl": "https://www.argoip.com/news-and-insights",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.argoip.com/news-and-insights",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLength": 48940,
+      "contentSha256": "611681fa0cf2196005c99621cff51593088afab99a0ed8d679f6849085abd08a",
+      "verifiedClaims": [
+        "Argo continued to call LAZ an Argo portfolio company in its current news archive.",
+        "No later Argo exit from LAZ or separate direct Argo investment in IPM was identified."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://ipmseattle.com/",
+      "verificationUrl": "https://ipmseattle.com/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "finalUrl": "https://www.lazparking.com/",
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseSha256": "c2c8af26f0eebb84359a8b7d5220bf3323a5332c88f2949aea557357092074bc",
+      "browserVerifiedAt": "2026-08-16T08:51:00.000Z",
+      "verifiedClaims": [
+        "The former IPM domain currently redirects to LAZ's official site.",
+        "The redirect supports integration into LAZ but does not establish a legal merger or identity duplicate."
+      ],
+      "isPrimary": false
+    }
+  ],
+  "currentUrlRecheck": {
+    "allInputUrlsRetained": true,
+    "redirectsObserved": 1,
+    "workingCount": 2,
+    "browserBlockedButVerifiedCount": 3,
+    "deadCount": 0
+  },
+  "exitSearchConclusion": "No later public sale, completed disposal, legal merger, separate Argo investment, formal pending ownership transaction or Argo exit from LAZ was identified through August 16, 2026. Current evidence continues to identify LAZ as Argo's manager-level platform and IPM as its acquired Seattle operation.",
+  "modelEvidenceCorrections": [
+    "The LAZ transaction and Argo-investment pages return HTTP 403 to direct retrieval but opened and parsed at their exact URLs in the browser; classify them BROWSER_BLOCKED_BUT_VERIFIED.",
+    "April 4, 2024 is the PR publication date and April 5 is the LAZ-site date. Neither source discloses the exact legal closing date, so retain investmentYear 2024 without inventing a day-level close.",
+    "The asset-purchase wording supports LAZ control and integration, but no transaction percentage or retained seller interest is publicly disclosed.",
+    "IPM and LAZ are not legal duplicates. Archive the standalone manager-level IPM row without a merge or redirect.",
+    "The existing Argo ownership period should remain active only as explicitly indirect exposure through LAZ, not as a separate direct Argo position in IPM."
+  ]
+}
