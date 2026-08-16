@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0093:freight-ninja:b71d456e",
+  "taskIndex": 93,
+  "asOfDate": "2026-08-16",
+  "generatedAt": "2026-08-16T06:27:00.000Z",
+  "canonicalKey": "freight-ninja|united-states",
+  "companyName": "Freight Ninja",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Archive Freight Ninja as a standalone manager-level PortCo while preserving it as an active, distinct LAZ-controlled operating company. LAZ Parking stated on May 6, 2025 that it had acquired a majority interest in Freight Ninja, while Freight Ninja's current site and separate LLC terms confirm that it continues operating as its own legal identity. Freight Ninja and LAZ are therefore not duplicate companies and no canonical merge or redirect is appropriate. Argo Infrastructure Partners' directly evidenced manager-level investment is LAZ; Freight Ninja is an acquisition beneath that platform. Retain the single Argo audit period as indirect through LAZ, preserve Freight Ninja's operating and acquisition history in its archived production record, and record no Argo exit or pending transaction. LAZ's current scorecard does not yet contain a Freight Ninja milestone; that scorecard-only omission will be revalidated and handled during LAZ's later authoritative full-company research task and does not alter the Phase 1 list boundary. The approved archive overlay removes Freight Ninja from the evaluated manager-level seed list while retaining its legal and audit history in production.",
+  "evidence": [
+    {
+      "url": "https://www.lazparking.com/our-company/about/news/2025/05/06/laz-parking-acquires-majority-interest-in-freight-ninja",
+      "purpose": "Official acquisition, platform boundary, headquarters, founding and transaction-date scale evidence",
+      "supports": [
+        "LAZ Parking had acquired a majority interest in Freight Ninja by May 6, 2025",
+        "Freight Ninja joined the LAZ family as a complementary operating company rather than another legal name for LAZ",
+        "Freight Ninja was established in 2022 and based in Lombard, Illinois",
+        "Freight Ninja managed 50 locations, more than 300 acres and 10,000 parking spaces at the transaction date"
+      ]
+    },
+    {
+      "url": "https://www.freightninja.com/",
+      "purpose": "Current Freight Ninja identity, operating status, services and footprint",
+      "supports": [
+        "Freight Ninja LLC remains an active operating identity in August 2026",
+        "the current site reports more than 65 facilities in 14 states",
+        "Freight Ninja continues providing IOS, truck, trailer and container parking, security and site-management services"
+      ]
+    },
+    {
+      "url": "https://www.lazparking.com/legal/terms-and-conditions",
+      "purpose": "Distinct Freight Ninja LLC legal identity evidence",
+      "supports": [
+        "LAZ publishes separate Freight Ninja LLC terms for purchases of Freight Ninja services",
+        "Freight Ninja remains a distinct legal operating identity rather than a duplicate LAZ company record"
+      ]
+    },
+    {
+      "url": "https://www.lazparking.com/our-company/about/news/2022/01/03/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners",
+      "purpose": "Direct Argo-to-LAZ ownership and infrastructure-strategy boundary",
+      "supports": [
+        "Argo closed a long-term preferred investment directly in LAZ on December 30, 2021",
+        "LAZ is the directly evidenced Argo portfolio platform above Freight Ninja",
+        "the exact Argo ownership percentage and fund vehicle were not publicly disclosed"
+      ]
+    },
+    {
+      "url": "https://www.argoip.com/news-and-insights",
+      "purpose": "Current Argo ownership and Freight Ninja exit search",
+      "supports": [
+        "Argo's current news page identifies LAZ Parking as an Argo portfolio company",
+        "Argo presents recent LAZ acquisitions at the LAZ platform level",
+        "no later Freight Ninja sale, legal merger, Argo exit from LAZ or signed pending ownership transfer was identified through August 16, 2026"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "dd488a0a9c0859e3f357601eb52306bde29a552dc34eadb466c8bef1928993a7",
+  "currentCompanySnapshotSha256": "3fc331afd5f32166091603bc3aa5466da6383046489a24d6ecc9594bb286bd5d",
+  "executionLock": {
+    "taskSnapshotSha256": "47c703bcffe4ee0aa1e948d1369036817e4e0fbf9a4468c0f959c0be07d23184",
+    "taskStateSha256": "0bd3706a3e3da5d0cdf0c3a0c2e4d50e5e9564ade148933974f98685e5f0c616",
+    "taskDependencySha256": "4b8e5d82678d5b11305f739e28ff05a0966c78c86ec8e6903ec41717007f92d9",
+    "seedEntrySha256": "05276629f2394cd4a5708e87eac1becb9a9ba3c926375608035cf43ed91afaf7",
+    "dependencies": {
+      "ownershipPeriodsSha256": "9df165a9830cba116fc0cd1d316f32416693f8476f9c6e427b01f15ca309e3ee",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "9bf2d3b6143b70233c54b29af87b509cfacf2fb9e95ca4cec1d916399a6eae3f",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj78w00khivheaaxm91l6",
+    "name": "Freight Ninja",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Truck parking and industrial outdoor storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Freight Ninja develops, leases, and operates truck parking and industrial outdoor storage locations for freight and logistics users. Its customers include trucking fleets, owner-operators, brokers, and industrial users that need secure parking and trailer or equipment storage. The business is asset-heavy because it relies on leased and managed sites that generate recurring parking and storage revenue. Public company materials describe more than 65 facilities nationwide, including over 300 acres and about 10,000 parking spaces across the portfolio. LAZ Parking announced in May 2025 that it had acquired a majority interest in Freight Ninja, and the detailed ownership split was not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjsaa01heivhengbjhb2k",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkp4r02shivheqh45dfdj",
+        "date": "Dec 2021",
+        "event": "Argo Infrastructure Partners made a long-term investment in LAZ Parking before the Freight Ninja transaction.",
+        "category": "FINANCING",
+        "sortDate": "2021-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkp5b02siivhey56yk502",
+        "date": "2025",
+        "event": "Freight Ninja operated a nationwide network of more than 65 truck parking facilities.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkp5v02sjivhek7huh50f",
+        "date": "May 6, 2025",
+        "event": "Argo Infrastructure Partners-backed LAZ Parking announced it had acquired a majority interest in Freight Ninja.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-05-06T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp5sa07qwivhesgufzb9k",
+        "label": "Freightninja — Freight Ninja",
+        "url": "https://www.freightninja.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Freightninja company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp5tg07qyivhet5hboooo",
+        "label": "Freightninja — Freight Ninja",
+        "url": "https://www.freightninja.com/fleet-parking/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Freightninja — Freight Ninja",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp5uk07r0ivhe97spsn3h",
+        "label": "Close date source — Argo Infrastructure Partners / LAZ Parking — Freight Ninja",
+        "url": "https://www.lazparking.com/our-company/about/news/2025/05/06/laz-parking-acquires-majority-interest-in-freight-ninja",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners / LAZ Parking closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp5vb07r1ivhe9pz9h26o",
+        "label": "Investment date source — Argo Infrastructure Partners — LAZ Parking",
+        "url": "https://www.prnewswire.com/news-releases/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners-301452042.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Freight Ninja",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp5yn07r3ivheh73xeog9",
+        "label": "Freightninja — Freight Ninja",
+        "url": "https://www.freightninja.com/partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Freightninja — Freight Ninja",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "3fc331afd5f32166091603bc3aa5466da6383046489a24d6ecc9594bb286bd5d",
+  "afterImage": {
+    "id": "cmrxpj78w00khivheaaxm91l6",
+    "name": "Freight Ninja",
+    "aliases": [
+      "Freight Ninja LLC"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Truck parking and industrial outdoor storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Freight Ninja LLC is a Lombard, Illinois-based provider of industrial outdoor storage and managed parking for trucks, trailers, containers and commercial fleets. Established in 2022, the company provides site management, security, technology, access and operating support across a nationwide location network. LAZ Parking stated on May 6, 2025 that it had acquired a majority interest in Freight Ninja; the exact stake, retained seller or management ownership and legal closing date were not publicly disclosed. Freight Ninja's current site reports more than 65 facilities in 14 states, compared with 50 leased or managed locations, more than 300 acres and 10,000 spaces disclosed by LAZ at acquisition. Freight Ninja continues as a distinct active LLC, while Argo Infrastructure Partners' directly evidenced manager-level investment is LAZ. Freight Ninja is therefore archived from the standalone manager-level PortCo census as an acquisition beneath LAZ, with no legal merge, Argo exit or signed pending transaction identified through August 16, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "ARCHIVED",
+    "website": "https://www.freightninja.com/",
+    "yearFounded": 2022,
+    "headquarters": "Lombard, Illinois",
+    "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjsaa01heivhengbjhb2k",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "LAZ Parking",
+        "stake": "Indirect through LAZ Parking, which acquired a majority interest; exact Freight Ninja and Argo percentages not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkp4r02shivheqh45dfdj",
+        "date": "Dec 30, 2021",
+        "event": "Argo Infrastructure Partners closed a preferred-equity investment in LAZ Parking, the manager-level platform that later acquired Freight Ninja.",
+        "category": "OTHER",
+        "sortDate": "2021-12-30T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.lazparking.com/our-company/about/news/2022/01/03/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners"
+        ]
+      },
+      {
+        "id": "cmrxpkp5b02siivhey56yk502",
+        "date": "2026 current",
+        "event": "Freight Ninja's current site reported more than 65 truck, trailer and container parking facilities across 14 states while continuing to operate as Freight Ninja LLC.",
+        "category": "EXPANSION",
+        "sortDate": null,
+        "evidenceUrls": [
+          "https://www.freightninja.com/"
+        ]
+      },
+      {
+        "id": "cmrxpkp5v02sjivhek7huh50f",
+        "date": "May 6, 2025",
+        "event": "LAZ Parking disclosed that it had acquired a majority interest in Freight Ninja; founder and CEO John Borsellino continued leading the distinct operating company.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-05-06T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.lazparking.com/our-company/about/news/2025/05/06/laz-parking-acquires-majority-interest-in-freight-ninja"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp5sa07qwivhesgufzb9k",
+        "label": "Freightninja — Freight Ninja",
+        "url": "https://www.freightninja.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Freight Ninja LLC identity, services, operating status and nationwide footprint",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp5tg07qyivhet5hboooo",
+        "label": "Freightninja — Freight Ninja",
+        "url": "https://www.freightninja.com/fleet-parking/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Freight Ninja fleet-parking services and operating model",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp5uk07r0ivhe97spsn3h",
+        "label": "Close date source — Argo Infrastructure Partners / LAZ Parking — Freight Ninja",
+        "url": "https://www.lazparking.com/our-company/about/news/2025/05/06/laz-parking-acquires-majority-interest-in-freight-ninja",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "LAZ majority acquisition, distinct-company boundary, headquarters, founding and scale",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp5vb07r1ivhe9pz9h26o",
+        "label": "Investment date source — Argo Infrastructure Partners — LAZ Parking",
+        "url": "https://www.prnewswire.com/news-releases/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners-301452042.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo's December 30, 2021 direct investment in the LAZ platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp5yn07r3ivheh73xeog9",
+        "label": "Freightninja — Freight Ninja",
+        "url": "https://www.freightninja.com/partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Freight Ninja property-partnership and managed-site context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "LAZ Parking — Freight Ninja LLC terms",
+        "url": "https://www.lazparking.com/legal/terms-and-conditions",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Separate Freight Ninja LLC terms and distinct legal identity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Argo Infrastructure Partners — News and insights",
+        "url": "https://www.argoip.com/news-and-insights",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current LAZ portfolio-company status and Freight Ninja exit search",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Announcement date source — Argo Infrastructure Partners — LAZ Parking",
+        "url": "https://www.lazparking.com/our-company/about/news/2022/01/03/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo's December 30, 2021 direct investment in the LAZ platform",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "756d31bc9c7651ab859a97808384f80e53addf13adcb27b73be566154a1f9f9f",
+  "proposalSha256": "2d4a65e7963ffb808a17e1c74e18dc0153483c038b504bb1e0142177b3996159"
+}
