@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0094:indigo-park-canada-inc:92a79556",
+  "taskIndex": 94,
+  "validatedAt": "2026-08-16T07:35:58.052Z",
+  "conversationUrl": "https://chatgpt.com/c/6a81653a-83b0-83ea-8cc0-022f70c76820",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "91fbed9ff59fe2cd1bdf913c44b6be23efa16a0a53d7b4a0312da772e0147e48",
+    "errors": [
+      "No response text was emitted after the UI reported the record finalized."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-16T07:34:10.212Z",
+    "completedAt": "2026-08-16T07:35:58.052Z",
+    "valid": false,
+    "responseSha256": "8206a411dbdfe911c2b332ccd064202385e5bb2ba04760f60858c9144803c7d4",
+    "errors": [
+      "The fenced JSON ended mid-string at `No later sale, merg`.",
+      "JSON.parse failed because the object, string, arrays and code fence were not closed.",
+      "Required top-level keys after acquisitionExitCheck were absent from the returned JSON."
+    ]
+  },
+  "finalResponse": {
+    "fencedJsonPresent": true,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "decisionTextObserved": "EXCLUDED",
+    "result": "FAIL"
+  },
+  "valid": false,
+  "errors": [
+    "No valid authoritative research response was produced within the one-repair limit."
+  ],
+  "repairsUsed": 1,
+  "independentSourceVerification": null,
+  "finalResearchDecision": null,
+  "finalProposal": null
+}

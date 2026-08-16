@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_FAILURE",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0094:indigo-park-canada-inc:92a79556",
+  "taskIndex": 94,
+  "companyName": "INDIGO Park Canada Inc.",
+  "recordedAt": "2026-08-16T07:35:58.052Z",
+  "status": "FAILED",
+  "databaseMutationOccurred": false,
+  "seedMutationOccurred": false,
+  "releaseOccurred": false,
+  "attempts": [
+    {
+      "conversationUrl": "https://chatgpt.com/c/6a816282-325c-83ea-a16e-6088e19535dc",
+      "outcome": "NO_RESPONSE_EMITTED"
+    },
+    {
+      "conversationUrl": "https://chatgpt.com/c/6a81653a-83b0-83ea-8cc0-022f70c76820",
+      "initialOutcome": "NO_RESPONSE_EMITTED",
+      "repairCount": 1,
+      "repairOutcome": "MALFORMED_TRUNCATED_JSON"
+    }
+  ],
+  "reason": "The authoritative fresh GPT-5.6 Sol Pro conversation emitted no initial response; its one allowed repair returned JSON truncated mid-string and failed parsing.",
+  "nextAction": "Pause without applying or advancing. Resume task 94 only with an explicitly authorized fresh research execution."
+}
