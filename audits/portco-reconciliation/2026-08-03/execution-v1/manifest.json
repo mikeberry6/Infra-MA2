@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T00:12:30.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0087:zeem-solutions:fb68d7c4",
+  "updatedAt": "2026-08-16T00:19:31.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -12627,11 +12627,11 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "25a3cdfc3750454774c835832efb440c946ccfd08e5b36f9ffda62065f970405",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-15T23:34:27.000Z",
-      "updatedAt": "2026-08-16T00:12:30.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-16T00:19:31.000Z",
+      "completedAt": "2026-08-16T00:19:31.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "3b841b7a8a5d0550f124192d5415b622cbd7bc446073bfbcc44144f7aaabe779",
@@ -12759,6 +12759,20 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-16T00:12:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "3b841b7a8a5d0550f124192d5415b622cbd7bc446073bfbcc44144f7aaabe779",
+          "evidenceSha256": [
+            "1442deb7d5e6711daf05e4f05763edce4bb3c6e8734693860237e29116d1ee05",
+            "5fcc65a312bf4553d485d6bae590c668ea2609f22ce42b5bf92bd82984460b33",
+            "a0e7b4f59e25f19ccc42dc3b1f079507556b86e5c9ff39ce079b8426ae789a19"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-16T00:19:31.000Z",
           "reason": null,
           "taskSnapshotSha256": "3b841b7a8a5d0550f124192d5415b622cbd7bc446073bfbcc44144f7aaabe779",
           "evidenceSha256": [
@@ -28383,5 +28397,5 @@
       ]
     }
   ],
-  "manifestSha256": "771c5d5f01fe4f0e5fd9ba918093a481dad3d57ad018255ec3dacd1bac48ac9f"
+  "manifestSha256": "c87785fa09d7af74a4f6e2fe4986b1d24a19a28e1d9757b8ac518401846af526"
 }
