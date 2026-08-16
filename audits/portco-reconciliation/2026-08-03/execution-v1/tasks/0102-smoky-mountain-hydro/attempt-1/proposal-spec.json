@@ -1,0 +1,341 @@
+{
+  "generatedAt": "2026-08-16T15:50:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "RETIRE_OWNERSHIP",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjab100pcivhe8qvszy2f",
+    "cmrxpj7db00kpivhe629ln2fc"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjset01hnivhe9uk9dhf3",
+      "canonicalRelationId": "cmrxpjr0y01feivhej2ytmv7y",
+      "rationale": "Both periods describe Argo Infrastructure Partners' same March 2023 acquisition and current 50% interest in Smoky Mountain Holdings; preserve the immutable queue target period while correcting its unsupported Apollo vehicle label."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkpon02t5ivhep7xkt3dc",
+      "canonicalRelationId": "cmrxpkjyn02mbivhejnzr1ave",
+      "rationale": "Both milestones describe Argo's March 17, 2023 acquisition of a 50% interest from Brookfield; preserve the immutable queue target milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpl2xe0395ivhe01trrl4a",
+      "canonicalRelationId": "cmrxpkjz702mcivhefni86be1",
+      "rationale": "Both milestones describe the November 2024 TVA power purchase agreement for the jointly owned Smoky Mountain facilities; preserve the immutable queue target milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkpre02t6ivhe820sxvgw",
+      "canonicalRelationId": "cmrxpkjz702mcivhefni86be1",
+      "rationale": "Both milestones describe the November 2024 TVA power purchase agreement for the jointly owned Smoky Mountain facilities; preserve the immutable queue target milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkprw02t7ivhek8hd37kg",
+      "canonicalRelationId": "cmrxpkjzr02mdivhexgk9g9ii",
+      "rationale": "Repurpose the immutable queue target's generic 2025 row as the exact August 2025 financing milestone and map the duplicate financing row into it."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Consolidate the three published records describing the same four-facility Smoky Mountain hydro platform into the immutable Smoky Mountain Hydro queue target and rename that survivor to the current legal platform identity, Smoky Mountain Holdings LLC. Federal records show Brookfield Smoky Mountain Hydropower acquired the Tapoco portfolio in 2012. FERC approved Argo affiliate AMF Kimble Holdings' acquisition of a 50% interest in February 2023, and contemporaneous reporting dates the acquisition to March 17, 2023; Brookfield retained the remaining 50%. The existing Brookfield period is therefore preserved as a former 2012-2023 period, followed by a new current Brookfield 50% period from 2023. Brookfield Infrastructure Income Fund's latest annual report identifies later fund exposure beginning in March 2023 and does not support treating that fund as the original 2012 acquisition vehicle. Official 2024 and 2025 releases continue to describe an Argo-Brookfield joint venture, a 377 MW four-dam portfolio, a 10-year TVA PPA beginning in 2025 and a $435 million financing. No later sale, signed pending exit or ownership transfer was identified through August 16, 2026. Apollo's proposed manager-level acquisition of Argo was terminated without closing, so Apollo is removed from the asset vehicle label. Alcoa's 2012 sale remains in the milestones and narrative but is not added as an infrastructure-manager ownership period. Task 103 covers the same third production duplicate and will be superseded only after this exact merge is released, applied and production-verified.",
+  "evidence": [
+    {
+      "url": "https://www.ferc.gov/sites/default/files/2024-01/E-10-EL23-43-000.pdf",
+      "purpose": "Direct regulatory ownership approval, buyer vehicle and retained Brookfield interest",
+      "supports": [
+        "AMF Kimble Holdings LLC is an Argo affiliate",
+        "FERC approved its acquisition of a 50% indirect interest in February 2023",
+        "Brookfield affiliates retained the remaining 50% after consummation"
+      ]
+    },
+    {
+      "url": "https://irei.com/news/argo-infrastructure-partners-acquires-50-of-hydroelectric-company-smoky-mountain-holdings/",
+      "purpose": "March 2023 acquisition date and 50/50 joint-venture confirmation",
+      "supports": [
+        "Argo acquired a 50% interest on March 17, 2023",
+        "Brookfield retained the remaining 50%",
+        "the transaction concerned Smoky Mountain Holdings and its hydroelectric portfolio"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20241119725256/en/TVA-Enters-10-year-Power-Purchase-Agreement-with-Argo-and-Brookfields-Smoky-Mountain-Hydro-Facilities",
+      "purpose": "Current co-ownership, asset boundary, operating scale and contracted offtake",
+      "supports": [
+        "Argo and Brookfield jointly owned the facilities in November 2024",
+        "the four facilities totaled 377 MW and averaged approximately 1.4 million MWh annually",
+        "TVA signed a 10-year PPA beginning in 2025"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20250814980122/en/Smoky-Mountain-Holdings-LLC-Closes-Landmark-%24435-Million-Financing",
+      "purpose": "Current canonical identity, joint ownership, platform boundary and financing continuity",
+      "supports": [
+        "Smoky Mountain Holdings LLC remained an Argo-Brookfield joint venture in August 2025",
+        "the company comprised the same four hydroelectric facilities",
+        "the company closed a $435 million financing"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1955857/000139834426004615/fp0097166-1_ncsrixbrl.htm",
+      "purpose": "Latest Brookfield Infrastructure Income Fund exposure and acquisition-month disclosure",
+      "supports": [
+        "the fund continued to list U.S. Hydro (Smoky Mountain)",
+        "the fund reports March 2023 as its acquisition month",
+        "Smoky Mountain Holdings II LLC is the associated issuer, showing later fund exposure rather than a 2012 buyer vehicle"
+      ]
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2012-08-09/pdf/2012-19514.pdf",
+      "purpose": "Original Brookfield acquisition vehicle and four-project transfer boundary",
+      "supports": [
+        "Brookfield Smoky Mountain Hydropower LLC sought approval to acquire the Tapoco Project",
+        "the transfer covered the four hydroelectric developments",
+        "the regulatory notice was published in August 2012"
+      ]
+    },
+    {
+      "url": "https://lowimpacthydro.org/lihi-certificate-18-smoky-mountain-project-north-carolina/",
+      "purpose": "Exact 2012 close date, Smoky Mountain rename and four-development history",
+      "supports": [
+        "Brookfield acquired the Tapoco Project on November 15, 2012",
+        "Brookfield renamed the project Smoky Mountain Hydro",
+        "the project includes Cheoah, Calderwood, Chilhowee and Santeetlah"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "purpose": "Apollo-Argo manager transaction termination and ownership-label correction",
+      "supports": [
+        "the proposed Apollo acquisition of Argo did not close",
+        "the transaction agreement was terminated in January 2026",
+        "the terminated manager transaction created no Smoky Mountain ownership change"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ownershipPeriodUpdates": [],
+  "ownershipPeriodAdditions": [],
+  "milestoneUpdates": [],
+  "citationUpdates": [],
+  "citationAdditions": [],
+  "afterImage": {
+    "id": "cmrxpj5z600ijivher3ow39vc",
+    "name": "Smoky Mountain Holdings LLC",
+    "aliases": [
+      "Smoky Mountain Hydro",
+      "Smoky Mountain Hydroelectric Facilities",
+      "Smoky Mountain hydropower portfolio",
+      "Smoky",
+      "Smoky Mountain Hydroelectric Project",
+      "Brookfield Smoky Mountain Holdings LLC",
+      "Brookfield Smoky Mountain Hydropower LLC",
+      "Brookfield Smoky Mountain Hydropower LP",
+      "Tapoco Project"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Hydroelectric generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Smoky Mountain Holdings LLC is the manager-level joint venture owning four operating hydroelectric facilities in eastern Tennessee and western North Carolina: Cheoah, Calderwood, Chilhowee and Santeetlah. The portfolio totals 377 MW and has produced approximately 1.4 million MWh in an average year. Brookfield acquired the former Alcoa Tapoco assets in 2012. Argo Infrastructure Partners affiliate AMF Kimble Holdings acquired 50% in March 2023, while Brookfield affiliates and institutional partners retained the other 50%. TVA signed a 10-year power purchase agreement beginning in 2025, and the company closed a $435 million financing in August 2025. Brookfield Infrastructure Income Fund separately reports exposure beginning in March 2023; it was not the original 2012 acquisition vehicle. No later platform sale, signed pending exit or ownership transfer was identified through August 16, 2026. The four dams are underlying assets and are not separate portfolio companies.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjvon01n1ivhes0cczatq",
+        "managerName": "Brookfield Asset Management",
+        "organizationName": "Brookfield Asset Management",
+        "fundName": null,
+        "vehicleName": "Brookfield Smoky Mountain Hydropower LLC",
+        "stake": "100% before the March 2023 sale of 50% to Argo",
+        "investmentYear": 2012,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": "cmrxpjr0y01feivhej2ytmv7y",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "AMF Kimble Holdings, LLC",
+        "stake": "50%",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Brookfield Asset Management",
+        "organizationName": "Brookfield Asset Management",
+        "fundName": null,
+        "vehicleName": "Smoky Mountain Holdings II LLC / Brookfield affiliates and institutional partners",
+        "stake": "50%",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkpo202t4ivhezvf0g41d",
+        "date": "Aug 9, 2012",
+        "event": "The Federal Register published notice of Brookfield Smoky Mountain Hydropower LLC's application to acquire the four-development Tapoco hydroelectric portfolio from Alcoa.",
+        "category": "ACQUISITION",
+        "sortDate": "2012-08-09T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.govinfo.gov/content/pkg/FR-2012-08-09/pdf/2012-19514.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpl2ww0394ivhex31ddgyv",
+        "date": "Nov 15, 2012",
+        "event": "Brookfield completed its acquisition of the Tapoco Project from Alcoa and renamed the four-facility portfolio Smoky Mountain Hydro.",
+        "category": "ACQUISITION",
+        "sortDate": "2012-11-15T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://lowimpacthydro.org/lihi-certificate-18-smoky-mountain-project-north-carolina/"
+        ]
+      },
+      {
+        "id": "cmrxpkjyn02mbivhejnzr1ave",
+        "date": "Mar 17, 2023",
+        "event": "Argo Infrastructure Partners affiliate AMF Kimble Holdings acquired a 50% interest in Smoky Mountain Holdings; Brookfield affiliates retained the remaining 50%.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-03-17T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ferc.gov/sites/default/files/2024-01/E-10-EL23-43-000.pdf",
+          "https://irei.com/news/argo-infrastructure-partners-acquires-50-of-hydroelectric-company-smoky-mountain-holdings/"
+        ]
+      },
+      {
+        "id": "cmrxpkjz702mcivhefni86be1",
+        "date": "Nov 19, 2024",
+        "event": "TVA announced a 10-year power purchase agreement beginning in 2025 with the Argo-Brookfield joint venture for the 377 MW Smoky Mountain Hydro facilities.",
+        "category": "OTHER",
+        "sortDate": "2024-11-19T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20241119725256/en/TVA-Enters-10-year-Power-Purchase-Agreement-with-Argo-and-Brookfields-Smoky-Mountain-Hydro-Facilities"
+        ]
+      },
+      {
+        "id": "cmrxpkjzr02mdivhexgk9g9ii",
+        "date": "Aug 14, 2025",
+        "event": "Smoky Mountain Holdings LLC closed a $435 million financing while continuing to identify the platform as an Argo-Brookfield joint venture owning the four hydroelectric facilities.",
+        "category": "FINANCING",
+        "sortDate": "2025-08-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20250814980122/en/Smoky-Mountain-Holdings-LLC-Closes-Landmark-%24435-Million-Financing"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpowsg07dmivhe2z1b0rg6",
+        "label": "Close date source — Argo Infrastructure Partners — Smoky Mountain Hydro",
+        "url": "https://app.mergerlinks.com/transactions/2023-03-17-brookfield-378mw-us-hydroelectric-portfolio/service-providers",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Secondary March 17, 2023 transaction-date corroboration for Argo's 50% acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowur07dqivheyu6eeiv3",
+        "label": "Business Wire — Smoky Mountain Hydro",
+        "url": "https://www.businesswire.com/news/home/20241119725256/en/TVA-Enters-10-year-Power-Purchase-Agreement-with-Argo-and-Brookfields-Smoky-Mountain-Hydro-Facilities",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 2024 current joint ownership, four-facility boundary, 377 MW scale and 10-year TVA PPA",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowwv07duivhe2v4x2sd5",
+        "label": "Renewable Energy World — Smoky Mountain Hydro",
+        "url": "https://www.renewableenergyworld.com/hydro-power/tva-enters-ppa-for-377-mw-smoky-mountain-hydro-facilities/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Secondary operating detail for the 377 MW portfolio and TVA offtake arrangement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppwvj08t7ivheh79zjgxl",
+        "label": "Close date source — Brookfield Asset Management — Smoky Mountain Hydroelectric Facilities",
+        "url": "https://lowimpacthydro.org/lihi-certificate-18-smoky-mountain-project-north-carolina/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 15, 2012 Brookfield close, Smoky Mountain rename and four-development history",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp6v807shivheublazqon",
+        "label": "Business Wire — Smoky Mountain hydropower portfolio",
+        "url": "https://www.businesswire.com/news/home/20250814980122/en/Smoky-Mountain-Holdings-LLC-Closes-Landmark-%24435-Million-Financing",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 2025 current Argo-Brookfield joint venture, canonical legal identity, four-facility boundary and $435 million financing",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "FERC — Smoky Mountain Holdings ownership order",
+        "url": "https://www.ferc.gov/sites/default/files/2024-01/E-10-EL23-43-000.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "February 2023 FERC approval, AMF Kimble buyer attribution and post-transaction 50/50 ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "IREI — Argo acquisition of Smoky Mountain Holdings",
+        "url": "https://irei.com/news/argo-infrastructure-partners-acquires-50-of-hydroelectric-company-smoky-mountain-holdings/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 17, 2023 acquisition date, Argo 50% stake and Brookfield retained 50%",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Brookfield Infrastructure Income Fund 2025 annual report",
+        "url": "https://www.sec.gov/Archives/edgar/data/1955857/000139834426004615/fp0097166-1_ncsrixbrl.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current U.S. Hydro (Smoky Mountain) exposure, March 2023 acquisition month and Smoky Mountain Holdings II issuer",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal Register — Tapoco hydropower transfer notice",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2012-08-09/pdf/2012-19514.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2012 Brookfield Smoky Mountain Hydropower acquisition vehicle and four-project transfer boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "New York DPS — Apollo-Argo petition withdrawal",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+        "sourceType": "OTHER",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "January 2026 confirmation that the proposed Apollo-Argo manager transaction did not close and was terminated",
+        "isPrimary": false
+      }
+    ]
+  }
+}

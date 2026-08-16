@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0102:smoky-mountain-hydro:c03f70e0",
+  "taskIndex": 102,
+  "companyName": "Smoky Mountain Hydro",
+  "generatedAt": "2026-08-16T15:57:04.320Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0102-smoky-mountain-hydro/attempt-2/approval-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 102,
+    "taskId": "ledger:0102:smoky-mountain-hydro:c03f70e0",
+    "canonicalKey": "smoky-mountain-hydro|united-states",
+    "companyName": "Smoky Mountain Hydro",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "015-argo-infrastructure-partners:holding:017:smoky-mountain-hydro"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj5z600ijivher3ow39vc"
+    ],
+    "seedKeys": [
+      "smoky mountain hydro|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.businesswire.com/news/home/20241119725256/en/TVA-Enters-10-year-Power-Purchase-Agreement-with-Argo-and-Brookfields-Smoky-Mountain-Hydro-Facilities",
+      "https://www.businesswire.com/news/home/20250814980122/en/Smoky-Mountain-Holdings-LLC-Closes-Landmark-%24435-Million-Financing"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census POSSIBLE_DUPLICATE for 015-argo-infrastructure-partners:holding:017:smoky-mountain-hydro: The primary repository record matches this holding, while the separate 'Smoky Mountain hydropower portfolio' record appears to represent the same Argo/Brookfield platform. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census POSSIBLE_DUPLICATE for 015-argo-infrastructure-partners:holding:017:smoky-mountain-hydro: The primary repository record matches this holding, while the separate 'Smoky Mountain hydropower portfolio' record appears to represent the same Argo/Brookfield platform."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5z600ijivher3ow39vc",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "smoky-mountain-hydro|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj5z600ijivher3ow39vc",
+    "name": "Smoky Mountain Hydro",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Hydroelectric Generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Smoky Mountain Hydro is a portfolio of four hydroelectric facilities in eastern Tennessee and western North Carolina. The assets sell wholesale renewable electricity through an asset-heavy generation model centered on long-lived hydro infrastructure and contracted offtake. Public statements around the portfolio's 2024 transaction with TVA describe 377 MW of installed capacity and average annual generation of about 1.4 million MWh. TVA announced in November 2024 that it had signed a 10-year power purchase agreement beginning in 2025 with Argo and Brookfield for the facilities. Public sources do not disclose a separate portfolio-company founding year or the ownership percentages between the sponsors.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Tennessee & North Carolina",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr0y01feivhej2ytmv7y",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo Infrastructure Partners (Apollo)",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjyn02mbivhejnzr1ave",
+        "date": "Mar 17, 2023",
+        "event": "Argo Infrastructure Partners acquired a 50% interest in Smoky Mountain Holdings, the JV with Brookfield owning the four-facility hydroelectric portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-03-17T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjz702mcivhefni86be1",
+        "date": "Nov 2024",
+        "event": "TVA announced a 10-year power purchase agreement with Argo and Brookfield for the Smoky Mountain Hydro facilities.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjzr02mdivhexgk9g9ii",
+        "date": "2025",
+        "event": "The TVA offtake agreement was scheduled to begin for the four-facility hydro portfolio.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpowsg07dmivhe2z1b0rg6",
+        "label": "Close date source — Argo Infrastructure Partners — Smoky Mountain Hydro",
+        "url": "https://app.mergerlinks.com/transactions/2023-03-17-brookfield-378mw-us-hydroelectric-portfolio/service-providers",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpowto07doivheho113rv4",
+        "label": "Regulatory approval source — Argo Infrastructure Partners — Smoky Mountain Hydro",
+        "url": "https://www.whitecase.com/insight-alert/summary-ferc-meeting-agenda-january-2024",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Regulatory approval source — Argo Infrastructure Partners — Smoky Mountain Hydro",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowur07dqivheyu6eeiv3",
+        "label": "Business Wire — Smoky Mountain Hydro",
+        "url": "https://www.businesswire.com/news/home/20241119725256/en/TVA-Enters-10-year-Power-Purchase-Agreement-with-Argo-and-Brookfields-Smoky-Mountain-Hydro-Facilities",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Business Wire operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowvs07dsivhecgtlzzih",
+        "label": "Nasdaq — Smoky Mountain Hydro",
+        "url": "https://www.nasdaq.com/press-release/tva-enters-10-year-power-purchase-agreement-argo-and-brookfields-smoky-mountain-hydro",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Nasdaq — Smoky Mountain Hydro",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowwv07duivhe2v4x2sd5",
+        "label": "Renewable Energy World — Smoky Mountain Hydro",
+        "url": "https://www.renewableenergyworld.com/hydro-power/tva-enters-ppa-for-377-mw-smoky-mountain-hydro-facilities/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Renewable Energy World operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Smoky Mountain Hydro",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Hydroelectric Generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Argo Infrastructure Partners (Apollo)",
+    "description": "Smoky Mountain Hydro is a portfolio of four hydroelectric facilities in eastern Tennessee and western North Carolina. The assets sell wholesale renewable electricity through an asset-heavy generation model centered on long-lived hydro infrastructure and contracted offtake. Public statements around the portfolio's 2024 transaction with TVA describe 377 MW of installed capacity and average annual generation of about 1.4 million MWh. TVA announced in November 2024 that it had signed a 10-year power purchase agreement beginning in 2025 with Argo and Brookfield for the facilities. Public sources do not disclose a separate portfolio-company founding year or the ownership percentages between the sponsors.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2023,
+    "headquarters": "Tennessee & North Carolina",
+    "milestones": [
+      {
+        "date": "Mar 17, 2023",
+        "event": "Argo Infrastructure Partners acquired a 50% interest in Smoky Mountain Holdings, the JV with Brookfield owning the four-facility hydroelectric portfolio.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 2024",
+        "event": "TVA announced a 10-year power purchase agreement with Argo and Brookfield for the Smoky Mountain Hydro facilities.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025",
+        "event": "The TVA offtake agreement was scheduled to begin for the four-facility hydro portfolio.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Argo Infrastructure Partners — Smoky Mountain Hydro",
+        "url": "https://app.mergerlinks.com/transactions/2023-03-17-brookfield-378mw-us-hydroelectric-portfolio/service-providers",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Regulatory approval source — Argo Infrastructure Partners — Smoky Mountain Hydro",
+        "url": "https://www.whitecase.com/insight-alert/summary-ferc-meeting-agenda-january-2024",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Business Wire — Smoky Mountain Hydro",
+        "url": "https://www.businesswire.com/news/home/20241119725256/en/TVA-Enters-10-year-Power-Purchase-Agreement-with-Argo-and-Brookfields-Smoky-Mountain-Hydro-Facilities",
+        "type": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Nasdaq — Smoky Mountain Hydro",
+        "url": "https://www.nasdaq.com/press-release/tva-enters-10-year-power-purchase-agreement-argo-and-brookfields-smoky-mountain-hydro",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Renewable Energy World — Smoky Mountain Hydro",
+        "url": "https://www.renewableenergyworld.com/hydro-power/tva-enters-ppa-for-377-mw-smoky-mountain-hydro-facilities/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "Argo Infrastructure Partners (Apollo)",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      },
+      {
+        "id": "cmrxpifpw0047ivhexsim174k",
+        "name": "Brookfield Asset Management",
+        "updatedAt": "2026-07-23T16:09:27.572Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0102:smoky-mountain-hydro:c03f70e0",
+    "taskIndex": 102,
+    "canonicalKey": "smoky-mountain-hydro|united-states",
+    "capturedAt": "2026-08-16T15:57:04.320Z",
+    "databaseRevision": "company-state:bb2e1ee9a5f803c9ccf06a42d0d6bf5914312b2f5638a6bd4377f986b670e274",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4580b33fe384bf51db37846a34f70294052c02113116653d9a7e8db16696fd93",
+    "productionSnapshotSha256": "4ee7f2cd75e17841b5d0dd07e065f510f7229658261e9e2e68a327e994aadaa9",
+    "targetCompanySnapshotSha256": "bb2e1ee9a5f803c9ccf06a42d0d6bf5914312b2f5638a6bd4377f986b670e274",
+    "seedEntrySha256": "e6cb47ad6676254bded2acc22d2c5b646e12c5d4930761157dca995e9c3fbfc5",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "9dd3120d48f7d7d295c6fe3abc805bec6cef785a4bf635f037c8c73085bdca89",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "51ea23127ec8246da09f0f15e59966fe6d4b7787379fb6efab6932f6768623c8",
+      "citationsSha256": "9112145e5fb8bad1c3cbce297e15bbbf1c2278cb542e0438a857b68da70ff139",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f34fa55f693dc7096738d893a1cc0ba83d12d034eca678f656aaa349b5cf64e5",
+    "stateSha256": "8326ea64c5546fc6208b1a77611173fcabc09bc8ecde867b0e7f4319af0a2249",
+    "taskSnapshotSha256": "382d1b05237dbd98c14272a4a3d066c9138ad6c21afe7aba2d32d78acb493320"
+  },
+  "contextSha256": "1854d1358b18b71dccecabe8601880560f8aa28e2810ab2675bf026356b6c339"
+}

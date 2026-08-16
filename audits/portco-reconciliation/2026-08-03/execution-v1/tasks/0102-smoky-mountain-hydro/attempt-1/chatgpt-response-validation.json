@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0102:smoky-mountain-hydro:c03f70e0",
+  "taskIndex": 102,
+  "attempt": 1,
+  "validatedAt": "2026-08-16T15:52:00.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a81d040-3b1c-83ea-8553-a906ac302d28",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": true,
+    "codeBlockPresent": true,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "09752cb0c17de6d6e0d8c8a6e6b864a26c4c09b7280f08cde7407861ddb27c76",
+    "errors": []
+  },
+  "repair": {
+    "count": 0,
+    "limit": 1,
+    "submittedAt": null,
+    "completedAt": null,
+    "valid": null,
+    "responseSha256": null,
+    "errors": []
+  },
+  "finalResponse": {
+    "valid": true,
+    "codeBlockPresent": true,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "implementationDecision": "PROPOSED_CORRECTION_WITH_CANONICAL_MERGE",
+    "confidence": "HIGH",
+    "canonicalName": "Smoky Mountain Holdings LLC",
+    "modelEvidenceCount": 6,
+    "verifiedEvidenceCount": 8,
+    "modelCurrentOwnerCount": 2,
+    "infrastructureManagerOwnerCount": 2,
+    "pendingOwnershipTransactionCount": 0,
+    "managerAliasResolved": true,
+    "apolloLabelRemoved": true,
+    "threeProductionDuplicatesResolved": true,
+    "argoCurrentOwnershipPresent": true,
+    "brookfieldCurrentOwnershipPresent": true,
+    "argoStakeVerified": true,
+    "brookfieldStakeVerified": true,
+    "brookfieldHistoricalPeriodPreserved": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "modelRecommendedPrimaryCount": 1,
+    "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+    "result": "PASS_WITHOUT_REPAIR"
+  },
+  "independentEvidenceCorrections": {
+    "canonicalIdentity": "Publish one manager-level Smoky Mountain Holdings LLC record and retain the three legacy portfolio labels as aliases.",
+    "immutableTarget": "The immutable Smoky Mountain Hydro queue target ID becomes the canonical record, while the two other published production identities are retired into it through an explicit protected merge.",
+    "ownership": "Preserve Brookfield's original 2012-2023 period, then represent Argo and Brookfield as separate current 50% owners from March 2023.",
+    "fundExposure": "Treat Brookfield Infrastructure Income Fund as later exposure beginning in March 2023 rather than as the original 2012 acquisition vehicle.",
+    "pendingTransactions": "Do not create an Apollo ownership period or pending transaction because the proposed Apollo-Argo manager transaction terminated without closing.",
+    "platformBoundary": "The manager-level company is the four-facility portfolio; Cheoah, Calderwood, Chilhowee and Santeetlah are underlying assets.",
+    "duplicateDependency": "Task 103 is the same canonical company and is superseded only after Task 102 completes production verification."
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 0,
+  "independentSourceVerification": {
+    "artifact": "source-verification.json",
+    "sha256": "263ae8c647081fa4f59d9bc0e3f2b5db2a11378e583b58479d7a45a87e69fa73",
+    "status": "PASS"
+  },
+  "finalResearchDecision": {
+    "artifact": "research-decision.json",
+    "sha256": "112292b804d78230c0556a7c95efe816667bb3675deb02290940f31833ef1c1b",
+    "decision": "PROPOSED_CORRECTION",
+    "canonicalName": "Smoky Mountain Holdings LLC"
+  },
+  "proposalGenerated": true,
+  "proposalSha256": "a83b58b0941e3c26156ee71d27906ea6d3a6a88bb2b32dae719ed39bd8000277",
+  "afterImageSha256": "f1c281aa34427ebf5d1bedc68662f9a3f6317a9361c2435c7bebaf81ef8904a7",
+  "finalProposal": "audits/portco-reconciliation/2026-08-03/proposals/0102-smoky-mountain-hydro-v2/proposal.json",
+  "proposalAttempts": [
+    {
+      "attempt": 1,
+      "proposalSha256": "78ca8e421f4326304d43991bd5d36ece7cfcbffcf2580f83326bca4914c85f75",
+      "result": "DRY_RUN_REJECTED_NO_WRITES",
+      "reason": "The optional 2024 PPA relation mappings used incompatible stored milestone categories."
+    },
+    {
+      "attempt": 2,
+      "proposalSha256": "a83b58b0941e3c26156ee71d27906ea6d3a6a88bb2b32dae719ed39bd8000277",
+      "result": "DRY_RUN_PASS",
+      "reason": "The retired PPA-history IDs are preserved as distinct sourced milestones instead of being mapped."
+    }
+  ],
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "releaseStarted": false,
+  "terminalDisposition": "RELEASING"
+}
