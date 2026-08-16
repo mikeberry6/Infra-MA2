@@ -529,28 +529,53 @@ export async function commitCompanyImport(
             select: { id: true },
           })
         : null;
-      await client.ownershipPeriod.upsert({
-        where: {
-          companyId_organizationId_vehicleName: {
+      if (row.investmentYear != null) {
+        await client.ownershipPeriod.upsert({
+          where: {
+            companyId_organizationId_vehicleName_investmentYear: {
+              companyId,
+              organizationId: organization.id,
+              vehicleName,
+              investmentYear: row.investmentYear,
+            },
+          },
+          update: {
+            fundId: fund?.id ?? null,
+            investmentYear: row.investmentYear,
+            isActive: row.companyStatus !== "REALIZED",
+          },
+          create: {
             companyId,
             organizationId: organization.id,
+            fundId: fund?.id ?? null,
             vehicleName,
+            investmentYear: row.investmentYear,
+            isActive: row.companyStatus !== "REALIZED",
           },
-        },
-        update: {
-          fundId: fund?.id ?? null,
-          investmentYear: row.investmentYear,
-          isActive: row.companyStatus !== "REALIZED",
-        },
-        create: {
-          companyId,
-          organizationId: organization.id,
-          fundId: fund?.id ?? null,
-          vehicleName,
-          investmentYear: row.investmentYear,
-          isActive: row.companyStatus !== "REALIZED",
-        },
-      });
+        });
+      } else {
+        const existingOwnership = await client.ownershipPeriod.findFirst({
+          where: { companyId, organizationId: organization.id, vehicleName, investmentYear: null },
+          select: { id: true },
+        });
+        if (existingOwnership) {
+          await client.ownershipPeriod.update({
+            where: { id: existingOwnership.id },
+            data: { fundId: fund?.id ?? null, isActive: row.companyStatus !== "REALIZED" },
+          });
+        } else {
+          await client.ownershipPeriod.create({
+            data: {
+              companyId,
+              organizationId: organization.id,
+              fundId: fund?.id ?? null,
+              vehicleName,
+              investmentYear: null,
+              isActive: row.companyStatus !== "REALIZED",
+            },
+          });
+        }
+      }
     }
   }
 

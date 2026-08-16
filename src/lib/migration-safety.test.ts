@@ -59,4 +59,12 @@ describe("additive migration safety", () => {
     );
     expect(auditAdditiveMigrationSql(sql)).toEqual([]);
   });
+
+  it("keeps the portfolio fund attribution migration strictly additive", () => {
+    const sql = readFileSync(
+      "prisma/migrations/20260816120000_ownership_fund_attribution/migration.sql",
+      "utf8",
+    );
+    expect(auditAdditiveMigrationSql(sql)).toEqual([]);
+  });
 });

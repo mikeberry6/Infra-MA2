@@ -41,6 +41,9 @@ type SponsorFundRow = {
   vehicle?: string | null;
   period?: string | null;
   stake?: string | null;
+  fundAttribution: OwnerView["fundAttribution"];
+  attributionConfidence?: OwnerView["attributionConfidence"];
+  attributionRationale?: string | null;
 };
 
 type MilestoneMeta = {
@@ -266,10 +269,13 @@ function buildSponsorFundRows(
     return {
       key: owner.id || `${owner.firm}-${owner.vehicle}-${owner.investmentYear}-${owner.exitYear}-${index}`,
       sponsor: owner.firm || "Unknown sponsor",
-      fundName: owner.fundName || null,
+      fundName: owner.fundName || owner.attributedFundName || null,
       vehicle: owner.vehicle || null,
       period: period === "N/A" ? null : period,
       stake: owner.stake || null,
+      fundAttribution: owner.fundAttribution,
+      attributionConfidence: owner.attributionConfidence,
+      attributionRationale: owner.attributionRationale || null,
     };
   });
 
@@ -278,13 +284,15 @@ function buildSponsorFundRows(
     key: "fallback-sponsor-fund",
     sponsor: fallbackSponsor || "Not disclosed",
     vehicle: fallbackFund !== "Not disclosed" ? fallbackFund : null,
+    fundAttribution: "UNRESOLVED",
   }];
 }
 
 function getMatchedFund(owner: OwnerView | null, funds: FundStrategyView[]): FundStrategyView | undefined {
   if (!owner) return undefined;
-  if (owner.fundName) {
-    const fund = funds.find((f) => f.fundName === owner.fundName);
+  const attributedFundName = owner.fundName || owner.attributedFundName;
+  if (attributedFundName) {
+    const fund = funds.find((f) => f.fundName === attributedFundName);
     if (fund) return fund;
   }
   return owner.vehicle ? funds.find((f) => f.fundName === owner.vehicle) : undefined;
@@ -447,12 +455,34 @@ function buildOwnershipFacts({
   );
 }
 
+function getAttributionLabel(
+  attribution: OwnerView["fundAttribution"],
+  confidence?: OwnerView["attributionConfidence"],
+): string | null {
+  if (attribution === "DISCLOSED") return null;
+  if (attribution === "INFERRED") {
+    const confidenceLabel = confidence
+      ? `${confidence.charAt(0)}${confidence.slice(1).toLowerCase()} confidence`
+      : "Confidence pending";
+    return `Estimated · ${confidenceLabel}`;
+  }
+  if (attribution === "DIRECT_PROGRAM") return "Direct / program investment";
+  return "Fund attribution pending";
+}
+
+function getAttributionColor(attribution: OwnerView["fundAttribution"]): string {
+  if (attribution === "INFERRED") return "#f59e0b";
+  if (attribution === "DIRECT_PROGRAM") return "#64748b";
+  return "#71717a";
+}
+
 function SponsorFundLine({ row }: { row: SponsorFundRow }) {
   const showFund = row.fundName && normalizeFactValue(row.fundName) !== normalizeFactValue(row.sponsor);
   const showVehicle = row.vehicle
     && normalizeFactValue(row.vehicle) !== normalizeFactValue(row.sponsor)
     && (!showFund || normalizeFactValue(row.vehicle) !== normalizeFactValue(row.fundName || ""));
-  const accessibleLabel = [row.sponsor, showFund ? row.fundName : null, showVehicle ? row.vehicle : null, row.period]
+  const attributionLabel = getAttributionLabel(row.fundAttribution, row.attributionConfidence);
+  const accessibleLabel = [row.sponsor, showFund ? row.fundName : null, showVehicle ? row.vehicle : null, attributionLabel, row.period]
     .filter(Boolean)
     .join(" — ");
 
@@ -482,6 +512,16 @@ function SponsorFundLine({ row }: { row: SponsorFundRow }) {
           <span className="font-medium text-[var(--text-secondary)]">Vehicle: </span>
           {row.vehicle}
         </div>
+      )}
+      {attributionLabel && (
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <Tag color={getAttributionColor(row.fundAttribution)}>{attributionLabel}</Tag>
+        </div>
+      )}
+      {row.attributionRationale && row.fundAttribution !== "DISCLOSED" && (
+        <p className="mt-2 type-micro leading-relaxed text-[var(--text-tertiary)]">
+          {row.attributionRationale}
+        </p>
       )}
       {row.stake && (
         <div className="mt-2 type-micro leading-relaxed">
@@ -565,15 +605,17 @@ function OwnerLine({
 }) {
   const strategies = getOwnerStrategies(owner, funds);
   const yearRange = formatCompactYearRange(owner);
-  const showFund = !!owner.fundName && normalizeFactValue(owner.fundName) !== normalizeFactValue(owner.firm);
+  const displayedFundName = owner.fundName || owner.attributedFundName;
+  const showFund = !!displayedFundName && normalizeFactValue(displayedFundName) !== normalizeFactValue(owner.firm);
   const showVehicle = !!owner.vehicle
     && normalizeFactValue(owner.vehicle) !== normalizeFactValue(owner.firm)
-    && (!showFund || normalizeFactValue(owner.vehicle) !== normalizeFactValue(owner.fundName || ""));
+    && (!showFund || normalizeFactValue(owner.vehicle) !== normalizeFactValue(displayedFundName || ""));
   const showYear = yearRange !== "N/A";
   const visibleStrategies = strategies.filter((strategy) => (
     !repeatedStrategies.some((repeated) => normalizeFactValue(repeated) === normalizeFactValue(strategy))
   ));
-  const accessibleLabel = [owner.firm, showFund ? owner.fundName : null, showVehicle ? owner.vehicle : null, yearRange]
+  const attributionLabel = getAttributionLabel(owner.fundAttribution, owner.attributionConfidence);
+  const accessibleLabel = [owner.firm, showFund ? displayedFundName : null, showVehicle ? owner.vehicle : null, attributionLabel, yearRange]
     .filter(Boolean)
     .join(" — ");
 
@@ -590,7 +632,7 @@ function OwnerLine({
           </div>
           {showFund && (
             <div className="mt-1 type-meta">
-              {owner.fundName}
+              {displayedFundName}
             </div>
           )}
           {showVehicle && (
@@ -615,6 +657,16 @@ function OwnerLine({
             <span className="type-micro">Stake: {owner.stake}</span>
           )}
         </div>
+      )}
+      {attributionLabel && (
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <Tag color={getAttributionColor(owner.fundAttribution)}>{attributionLabel}</Tag>
+        </div>
+      )}
+      {owner.attributionRationale && owner.fundAttribution !== "DISCLOSED" && (
+        <p className="mt-2 type-micro leading-relaxed text-[var(--text-tertiary)]">
+          {owner.attributionRationale}
+        </p>
       )}
     </div>
   );

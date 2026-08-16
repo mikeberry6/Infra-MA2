@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { companies } from "../prisma/seed-data/companies.ts";
 import { funds } from "../prisma/seed-data/funds.ts";
 import type { PortCo, PortCoOwner, PortCoSource } from "../prisma/seed-data/portco-types.ts";
@@ -36,13 +37,15 @@ interface ParsedOwnershipDetail {
   profile: SupplementalProfile;
 }
 
-interface ActiveOwnerRow {
+export interface ActiveOwnerRow {
   company: PortCo;
   owner: PortCoOwner;
   rowKey: string;
+  ownershipPeriodId?: string;
+  databaseVehicleName?: string | null;
 }
 
-interface AuditRow {
+export interface AuditRow {
   company_name: string;
   country: string;
   current_owner_investment_firm: string;
@@ -784,10 +787,14 @@ ${recommendations.map((item, index) => `${index + 1}. ${item}`).join("\n")}
 `;
 }
 
-function main() {
-  fs.mkdirSync(AUDIT_DIR, { recursive: true });
+export function buildCurrentOwnerFundAudit(
+  suppliedRows?: ActiveOwnerRow[],
+): {
+  auditRows: AuditRow[];
+  workingRows: ActiveOwnerRow[];
+} {
   const supplementalByCompany = loadSupplementalProfiles();
-  const workingRows = activeOwnerRows();
+  const workingRows = suppliedRows ?? activeOwnerRows();
 
   const auditRows: AuditRow[] = workingRows.map(({ company, owner }) => {
     const profiles = supplementalByCompany.get(normalizeCompanyName(company.name)) ?? [];
@@ -812,6 +819,13 @@ function main() {
     };
   });
 
+  return { auditRows, workingRows };
+}
+
+function main() {
+  fs.mkdirSync(AUDIT_DIR, { recursive: true });
+  const { auditRows, workingRows } = buildCurrentOwnerFundAudit();
+
   fs.writeFileSync(CSV_PATH, toCsv(auditRows));
   fs.writeFileSync(SUMMARY_PATH, summaryMarkdown(auditRows, workingRows));
 
@@ -821,4 +835,5 @@ function main() {
   console.log(JSON.stringify({ activeOwnerRows: workingRows.length, csvRows: auditRows.length, statusCounts }, null, 2));
 }
 
-main();
+const invokedPath = process.argv[1] ? path.resolve(process.argv[1]) : "";
+if (invokedPath === fileURLToPath(import.meta.url)) main();

@@ -30,6 +30,10 @@ function toCompanyView(company: any): CompanyView {
       exitYear: p.exitYear ?? undefined,
       isActive: !!p.isActive,
       stake: p.stake ?? undefined,
+      fundAttribution: p.fundAttribution || "UNRESOLVED",
+      attributedFundName: p.attributedFundName ?? undefined,
+      attributionConfidence: p.attributionConfidence ?? undefined,
+      attributionRationale: p.attributionRationale ?? undefined,
     }))
     .sort((a: OwnerView, b: OwnerView) => {
       if (a.isActive !== b.isActive) return a.isActive ? -1 : 1;
@@ -161,13 +165,13 @@ async function getAllCompaniesRaw(options: { detail?: boolean } = {}): Promise<C
 
 const getAllCompaniesListCached = unstable_cache(
   () => getAllCompaniesRaw({ detail: false }),
-  ["companies:all:list:canonical-v1"],
+  ["companies:all:list:fund-attribution-v2"],
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
 const getAllCompaniesDetailCached = unstable_cache(
   () => getAllCompaniesRaw({ detail: true }),
-  ["companies:all:detail:canonical-v1"],
+  ["companies:all:detail:fund-attribution-v2"],
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
@@ -199,7 +203,7 @@ async function getCompanyByFocusIdRaw(
 
 const getCompanyByFocusIdCached = unstable_cache(
   getCompanyByFocusIdRaw,
-  ["companies:by-focus:canonical-v1"],
+  ["companies:by-focus:fund-attribution-v2"],
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 

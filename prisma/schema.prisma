@@ -292,27 +292,45 @@ enum OwnershipPeriodState {
   REALIZED
 }
 
-model OwnershipPeriod {
-  id               String               @id @default(cuid())
-  fundId           String?
-  fund             Fund?                @relation(fields: [fundId], references: [id])
-  organizationId   String?
-  organization     Organization?        @relation(fields: [organizationId], references: [id])
-  companyId        String
-  company          Company              @relation(fields: [companyId], references: [id])
-  vehicleName      String?
-  stake            String?
-  investmentYear   Int?
-  exitYear         Int?
-  isActive         Boolean              @default(true)
-  transactionState OwnershipPeriodState @default(CLOSED_ACTIVE)
-  createdAt        DateTime             @default(now())
+enum OwnershipFundAttribution {
+  DISCLOSED
+  INFERRED
+  DIRECT_PROGRAM
+  UNRESOLVED
+}
 
-  @@unique([companyId, organizationId, vehicleName])
+enum AttributionConfidence {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+model OwnershipPeriod {
+  id                       String                   @id @default(cuid())
+  fundId                   String?
+  fund                     Fund?                    @relation(fields: [fundId], references: [id])
+  organizationId           String?
+  organization             Organization?            @relation(fields: [organizationId], references: [id])
+  companyId                String
+  company                  Company                  @relation(fields: [companyId], references: [id])
+  vehicleName              String?
+  stake                    String?
+  investmentYear           Int?
+  exitYear                 Int?
+  isActive                 Boolean                  @default(true)
+  transactionState         OwnershipPeriodState     @default(CLOSED_ACTIVE)
+  fundAttribution          OwnershipFundAttribution @default(UNRESOLVED)
+  attributedFundName       String?
+  attributionConfidence    AttributionConfidence?
+  attributionRationale     String?
+  createdAt                DateTime                 @default(now())
+
+  @@unique([companyId, organizationId, vehicleName, investmentYear])
   @@index([fundId])
   @@index([organizationId])
   @@index([companyId])
   @@index([companyId, transactionState])
+  @@index([fundAttribution])
 }
 
 // ── Signed, not-yet-closed ownership transactions ───────

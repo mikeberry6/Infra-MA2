@@ -86,6 +86,10 @@ export interface OwnerView {
   exitYear?: number;
   isActive: boolean;
   stake?: string;
+  fundAttribution: "DISCLOSED" | "INFERRED" | "DIRECT_PROGRAM" | "UNRESOLVED";
+  attributedFundName?: string;
+  attributionConfidence?: "HIGH" | "MEDIUM" | "LOW";
+  attributionRationale?: string;
 }
 
 export interface CompanyView {

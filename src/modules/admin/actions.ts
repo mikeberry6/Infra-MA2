@@ -661,6 +661,10 @@ function parseOwnershipFormData(formData: FormData) {
     exitYear: parseFormNumber(formData, "exitYear"),
     isActive: isActiveRaw === "true" || isActiveRaw === "on" || isActiveRaw === "1",
     stake: (formData.get("stake") as string) || undefined,
+    fundAttribution: (formData.get("fundAttribution") as string) || "UNRESOLVED",
+    attributedFundName: (formData.get("attributedFundName") as string) || undefined,
+    attributionConfidence: (formData.get("attributionConfidence") as string) || undefined,
+    attributionRationale: (formData.get("attributionRationale") as string) || undefined,
   };
 }
 
@@ -678,7 +682,11 @@ export async function addOwnershipPeriod(
     }
     const o = parsed.data;
     const orgId = await findOrCreateOrg(o.investmentFirm, ["FUND_MANAGER"]);
-    const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
+    const fundId = o.fundAttribution === "DIRECT_PROGRAM" || o.fundAttribution === "UNRESOLVED"
+      ? null
+      : o.attributedFundName || o.ownershipVehicle
+        ? await findFundByVehicleName(o.attributedFundName || o.ownershipVehicle || "")
+        : null;
     const created = await prisma.ownershipPeriod.create({
       data: {
         companyId,
@@ -689,6 +697,13 @@ export async function addOwnershipPeriod(
         exitYear: o.exitYear ?? null,
         isActive: o.isActive,
         stake: o.stake ?? null,
+        fundAttribution: o.fundAttribution,
+        attributedFundName:
+          o.fundAttribution === "DISCLOSED" || o.fundAttribution === "INFERRED"
+            ? o.attributedFundName ?? null
+            : null,
+        attributionConfidence: o.fundAttribution === "INFERRED" ? o.attributionConfidence ?? null : null,
+        attributionRationale: o.fundAttribution === "UNRESOLVED" ? null : o.attributionRationale ?? null,
       },
     });
     revalidateAll();
@@ -713,7 +728,11 @@ export async function updateOwnershipPeriod(
     }
     const o = parsed.data;
     const orgId = await findOrCreateOrg(o.investmentFirm, ["FUND_MANAGER"]);
-    const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
+    const fundId = o.fundAttribution === "DIRECT_PROGRAM" || o.fundAttribution === "UNRESOLVED"
+      ? null
+      : o.attributedFundName || o.ownershipVehicle
+        ? await findFundByVehicleName(o.attributedFundName || o.ownershipVehicle || "")
+        : null;
     await prisma.ownershipPeriod.update({
       where: { id },
       data: {
@@ -724,6 +743,13 @@ export async function updateOwnershipPeriod(
         exitYear: o.exitYear ?? null,
         isActive: o.isActive,
         stake: o.stake ?? null,
+        fundAttribution: o.fundAttribution,
+        attributedFundName:
+          o.fundAttribution === "DISCLOSED" || o.fundAttribution === "INFERRED"
+            ? o.attributedFundName ?? null
+            : null,
+        attributionConfidence: o.fundAttribution === "INFERRED" ? o.attributionConfidence ?? null : null,
+        attributionRationale: o.fundAttribution === "UNRESOLVED" ? null : o.attributionRationale ?? null,
       },
     });
     revalidateAll();

@@ -1,0 +1,97 @@
+import { beforeAll, describe, expect, it } from "vitest";
+import {
+  buildPortfolioFundAttributionLedger,
+  validateLedger,
+} from "./generate-portfolio-fund-attribution";
+
+let ledger: ReturnType<typeof buildPortfolioFundAttributionLedger>;
+
+beforeAll(() => {
+  ledger = buildPortfolioFundAttributionLedger("2026-08-16");
+}, 60_000);
+
+describe("portfolio fund attribution ledger", () => {
+  it("covers every active ownership row exactly once", () => {
+    expect(() => validateLedger(ledger)).not.toThrow();
+    expect(ledger.rows).toHaveLength(ledger.summary.activeOwnershipRows);
+    expect(new Set(ledger.rows.map((row) => row.recordId))).toHaveProperty("size", ledger.rows.length);
+  });
+
+  it("never presents an inference as disclosed or high confidence", () => {
+    const inferred = ledger.rows.filter((row) => row.attribution === "INFERRED");
+    expect(inferred.length).toBeGreaterThan(0);
+    expect(inferred.every((row) => row.confidence === "LOW" || row.confidence === "MEDIUM")).toBe(true);
+    expect(inferred.every((row) => !!row.disclosedOrEstimatedFundName && !!row.rationale)).toBe(true);
+  });
+
+  it("classifies every reviewed ownership row", () => {
+    expect(ledger.summary.attributionCounts.UNRESOLVED ?? 0).toBe(0);
+    expect(ledger.rows.every((row) => row.attribution !== "UNRESOLVED")).toBe(true);
+  });
+
+  it("keeps fund-database additions behind the separate size gate", () => {
+    const gated = ledger.rows.filter((row) => row.fundDatabaseAction !== "NONE");
+    expect(gated.length).toBeGreaterThan(0);
+    expect(gated.every((row) => row.proposedAction === "SET_DISCLOSED_UNLISTED")).toBe(true);
+    expect(gated.every((row) => !row.applyEligible)).toBe(true);
+  });
+
+  it("only admits high-confidence disclosed existing funds to the deterministic batch", () => {
+    const eligible = ledger.rows.filter((row) => row.applyEligible);
+    expect(eligible.length).toBe(ledger.summary.applyEligibleRows);
+    expect(eligible.every((row) => (
+      row.attribution === "DISCLOSED"
+      && row.confidence === "HIGH"
+      && !!row.linkedCanonicalFundName
+    ))).toBe(true);
+  });
+
+  it("normalizes ECP to the historical fund lineage without adding fund records", () => {
+    const ecpRows = ledger.rows.filter((row) => row.investmentFirm === "ECP");
+    expect(ecpRows.length).toBeGreaterThan(0);
+    expect(ecpRows.every((row) => row.attribution !== "UNRESOLVED")).toBe(true);
+    expect(ecpRows.some((row) => row.attributedFundName === "ECP Fund III")).toBe(true);
+    expect(ecpRows.some((row) => row.attributedFundName === "ECP Fund IV")).toBe(true);
+    expect(ecpRows.some((row) => row.attributedFundName === "ECP Fund V")).toBe(true);
+    expect(ledger.policy.fundAdditionThreshold).toContain("attribution never bypasses");
+  });
+
+  it("classifies known pension, sovereign, corporate, and structured-equity owners as direct programs", () => {
+    const directFirms = new Set([
+      "Wren House",
+      "Allianz Global Investors",
+      "Acadia Infrastructure Capital",
+      "ADIA Infrastructure",
+      "Allied Industrial Partners",
+      "BTG Pactual Timberland Investment Group",
+      "QIC",
+    ]);
+    const directRows = ledger.rows.filter((row) => directFirms.has(row.investmentFirm));
+    expect(directRows.length).toBeGreaterThan(0);
+    expect(directRows.every((row) => row.attribution === "DIRECT_PROGRAM")).toBe(true);
+    expect(directRows.every((row) => row.attributedFundName === null)).toBe(true);
+  });
+
+  it("does not rank funds from an unrelated manager through generic suffix overlap", () => {
+    const quinbrookRows = ledger.rows.filter((row) => row.investmentFirm === "Quinbrook");
+    expect(quinbrookRows.length).toBeGreaterThan(0);
+    expect(quinbrookRows.flatMap((row) => row.alternatives).every((candidate) => (
+      candidate.managerName === "Quinbrook Infrastructure Partners"
+    ))).toBe(true);
+  });
+
+  it("keeps reviewed lineage decisions explicit and sourced", () => {
+    const reviewed = [
+      ["Vigor Marine Group", "Lone Star Fund XI", "DISCLOSED"],
+      ["Monterey Mushrooms", "Paine Schwartz Food Chain Fund VI, L.P.", "DISCLOSED"],
+      ["Sparkfund", "Vision Ridge Sustainable Asset Fund I", "INFERRED"],
+      ["Ports America", "Oaktree Ports America Fund (HS III), L.P.", "INFERRED"],
+    ] as const;
+    for (const [companyName, fundName, attribution] of reviewed) {
+      const row = ledger.rows.find((candidate) => candidate.companyName === companyName && candidate.attributedFundName === fundName);
+      expect(row, companyName).toBeDefined();
+      expect(row?.attribution).toBe(attribution);
+      expect(row?.evidenceUrls.length).toBeGreaterThan(0);
+    }
+  });
+});

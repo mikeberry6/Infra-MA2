@@ -1,7 +1,12 @@
 import { deals } from "./seed-data/deals";
 import { funds } from "./seed-data/funds";
 import { companies as portcos } from "./seed-data/companies";
-import type { PortCoOwner } from "./seed-data/portco-types";
+import ownershipAttributionManifest from "./seed-data/ownership-attributions.manifest.json";
+import type {
+  AttributionConfidence,
+  OwnershipFundAttribution,
+  PortCoOwner,
+} from "./seed-data/portco-types";
 import { resolveOrgName, getOrgType, NON_INFRA_FUND_ENTITIES, ORG_CANONICAL } from "./entity-resolution";
 import {
   FUND_STRATEGY_MAP,
@@ -49,6 +54,52 @@ import type {
 
 function safeEnum<T>(map: Record<string, T>, value: string, fallback: T): T {
   return map[value] ?? fallback;
+}
+
+interface SeedOwnershipAttribution {
+  recordId: string;
+  companyName: string;
+  country: string;
+  investmentFirm: string;
+  currentVehicleName: string;
+  investmentYear: number | null;
+  stake: string | null;
+  targetLinkedFundName: string | null;
+  fundAttribution: OwnershipFundAttribution;
+  attributedFundName: string | null;
+  attributionConfidence: AttributionConfidence | null;
+  attributionRationale: string;
+}
+
+function ownershipAttributionKey(input: {
+  companyName: string;
+  country: string;
+  investmentFirm: string;
+  currentVehicleName: string;
+  investmentYear: number | null;
+  stake: string | null;
+}): string {
+  return [
+    input.companyName,
+    input.country,
+    input.investmentFirm,
+    input.currentVehicleName,
+    input.investmentYear ?? "",
+    input.stake ?? "",
+  ].join("\u0000");
+}
+
+const seedOwnershipAttributions = new Map<string, SeedOwnershipAttribution>();
+if (ownershipAttributionManifest.recordCount !== ownershipAttributionManifest.records.length) {
+  throw new Error("Ownership attribution seed manifest record count is invalid");
+}
+for (const raw of ownershipAttributionManifest.records) {
+  const record = raw as SeedOwnershipAttribution;
+  const key = ownershipAttributionKey(record);
+  if (seedOwnershipAttributions.has(key)) {
+    throw new Error(`Duplicate ownership attribution seed key for ${record.recordId}`);
+  }
+  seedOwnershipAttributions.set(key, record);
 }
 
 function parseDateSafe(dateStr: string | null): Date | null {
@@ -338,10 +389,13 @@ export async function seedDatabase(prisma: PrismaClient) {
 
   console.log("Step 5: Creating ownership periods...");
   let ownershipCount = 0;
-  const ownershipSeen = new Set<string>(); // track companyId|orgId|vehicle to avoid dupes
+  const ownershipSeen = new Set<string>(); // track companyId|orgId|vehicle|investmentYear to avoid dupes
+  const usedOwnershipAttributionIds = new Set<string>();
 
   async function createOwnership(
     companyId: string,
+    companyName: string,
+    country: string,
     owner: PortCoOwner,
   ) {
     const orgId = getOrgId(owner.investmentFirm);
@@ -353,13 +407,28 @@ export async function seedDatabase(prisma: PrismaClient) {
 
     const resolved = resolveSeedOwnership(owner);
     const vehicleName = resolved.vehicleName;
-    const dedupeKey = `${companyId}|${orgId}|${vehicleName}`;
+    const reviewedAttribution = seedOwnershipAttributions.get(ownershipAttributionKey({
+      companyName,
+      country,
+      investmentFirm: owner.investmentFirm,
+      currentVehicleName: vehicleName,
+      investmentYear: owner.investmentYear ?? null,
+      stake: owner.stake ?? null,
+    }));
+    if (reviewedAttribution) usedOwnershipAttributionIds.add(reviewedAttribution.recordId);
+    const dedupeKey = `${companyId}|${orgId}|${vehicleName}|${owner.investmentYear ?? ""}`;
     if (ownershipSeen.has(dedupeKey)) return;
     ownershipSeen.add(dedupeKey);
 
     // New records separate exact fund linkage from the legal holding vehicle.
     // Historical records omit both fields and retain ownershipVehicle behavior.
-    const fundId = fundIdMap.get(resolved.fundLookupName) || null;
+    const fundLookupName = reviewedAttribution
+      ? reviewedAttribution.targetLinkedFundName
+      : resolved.fundLookupName;
+    const fundId = fundLookupName ? fundIdMap.get(fundLookupName) || null : null;
+    if (reviewedAttribution?.targetLinkedFundName && !fundId) {
+      throw new Error(`Reviewed ownership attribution fund does not exist: ${reviewedAttribution.targetLinkedFundName}`);
+    }
 
     try {
       await prisma.ownershipPeriod.create({
@@ -373,6 +442,10 @@ export async function seedDatabase(prisma: PrismaClient) {
           exitYear: owner.exitYear || null,
           isActive: owner.status === "Active",
           transactionState: resolved.transactionState,
+          fundAttribution: owner.fundAttribution ?? reviewedAttribution?.fundAttribution ?? "UNRESOLVED",
+          attributedFundName: owner.attributedFundName ?? reviewedAttribution?.attributedFundName ?? null,
+          attributionConfidence: owner.attributionConfidence ?? reviewedAttribution?.attributionConfidence ?? null,
+          attributionRationale: owner.attributionRationale ?? reviewedAttribution?.attributionRationale ?? null,
         },
       });
       ownershipCount++;
@@ -389,17 +462,24 @@ export async function seedDatabase(prisma: PrismaClient) {
     // If the company has an owners array (consolidated multi-owner), process each owner
     if (pc.owners && pc.owners.length > 0) {
       for (const owner of pc.owners) {
-        await createOwnership(companyId, owner);
+        await createOwnership(companyId, pc.name, pc.country, owner);
       }
     } else {
       // Single-owner company: use the top-level fields
-      await createOwnership(companyId, {
+      await createOwnership(companyId, pc.name, pc.country, {
         investmentFirm: pc.investmentFirm,
         ownershipVehicle: pc.ownershipVehicle,
         investmentYear: pc.investmentYear,
         status: pc.status,
       });
     }
+  }
+
+  if (usedOwnershipAttributionIds.size !== ownershipAttributionManifest.records.length) {
+    const missing = ownershipAttributionManifest.records
+      .filter((record) => !usedOwnershipAttributionIds.has(record.recordId))
+      .map((record) => record.recordId);
+    throw new Error(`Ownership attribution seed records did not match seed owners: ${missing.join(", ")}`);
   }
 
   console.log(`  Created ${ownershipCount} ownership periods`);

@@ -17,6 +17,7 @@ const financeIiOwner: OwnerView = {
   investmentYear: 2019,
   isActive: true,
   stake: "Greater than 10% voting interest",
+  fundAttribution: "DISCLOSED",
 };
 
 const residualOwner: OwnerView = {
@@ -27,6 +28,7 @@ const residualOwner: OwnerView = {
   investmentYear: 2014,
   isActive: true,
   stake: "Approximately 3% interest retained",
+  fundAttribution: "DISCLOSED",
 };
 
 const formerOwner: OwnerView = {
@@ -38,6 +40,7 @@ const formerOwner: OwnerView = {
   exitYear: 2020,
   isActive: false,
   stake: "96.4% voting interest",
+  fundAttribution: "DISCLOSED",
 };
 
 function chiefPower(owners: OwnerView[]): CompanyView {
@@ -126,5 +129,27 @@ describe("PortCoDrawer ownership periods", () => {
     expect(screen.getAllByRole("group", {
       name: "ArcLight Capital Partners — ArcLight Energy Partners Fund V, L.P. — Chief Power Finance II, LLC — 2019-Present ownership period",
     })).toHaveLength(2);
+  });
+
+  it("labels inferred fund assignments as estimated with confidence and rationale", () => {
+    const inferredOwner: OwnerView = {
+      ...financeIiOwner,
+      fundName: undefined,
+      attributedFundName: "ArcLight Energy Partners Fund V, L.P.",
+      fundAttribution: "INFERRED",
+      attributionConfidence: "MEDIUM",
+      attributionRationale: "Estimated from the acquisition year and the manager's active North American fund vintage.",
+    };
+
+    render(
+      <PortCoDrawer
+        company={chiefPower([inferredOwner])}
+        funds={funds}
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByText("Estimated · Medium confidence")).toBeInTheDocument();
+    expect(screen.getByText(inferredOwner.attributionRationale!)).toBeInTheDocument();
   });
 });

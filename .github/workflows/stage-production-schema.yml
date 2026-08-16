@@ -179,6 +179,8 @@ jobs:
             --output=tmp/schema-stage/migration-baseline-before-write.json
 
       - name: Apply additive dashboard migration and cutovers
+        env:
+          OWNERSHIP_IDENTITY_CONFIRMATION: FINALIZE_REVIEWED_OWNERSHIP_IDENTITY
         shell: bash
         run: |
           set -o pipefail
@@ -188,6 +190,8 @@ jobs:
           npx tsx scripts/verify-import-preview-schema.ts \
             --output=tmp/schema-stage/import-preview-schema-preflight.json
           npx prisma migrate deploy 2>&1 | tee tmp/schema-stage/migrate-deploy.log
+          npx tsx scripts/finalize-ownership-period-identity.ts \
+            --output=tmp/schema-stage/ownership-period-identity-finalization.json
           npx tsx scripts/finalize-portco-lifecycle-schema.ts \
             --output=tmp/schema-stage/portco-lifecycle-schema-finalization.json
           npx tsx scripts/verify-import-preview-schema.ts \
