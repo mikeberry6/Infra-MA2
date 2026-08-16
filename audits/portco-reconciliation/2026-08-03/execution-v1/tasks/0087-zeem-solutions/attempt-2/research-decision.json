@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0087:zeem-solutions:fb68d7c4",
+  "taskIndex": 87,
+  "attempt": 2,
+  "companyName": "Zeem Solutions",
+  "asOfDate": "2026-08-15",
+  "decision": "PROPOSED_CORRECTION",
+  "rationale": "Retain the existing canonical Zeem Solutions company and its single ArcLight Capital Partners ownership period. ArcLight Capital is the census's shortened manager label, so the queued ADD_OWNER is rejected. Correct the existing owner to ArcLight Energy Partners Fund VII, L.P.; correct the founding year to 2017, headquarters to Los Angeles, and website to Zeem's official site; replace unsupported milestone wording with sourced events. Do not add LAZ Parking Realty Investors because the 2022 release described a prospective equity partnership but no legal closing or current direct ownership evidence was found.",
+  "identityResolution": {
+    "canonicalName": "Zeem Solutions",
+    "legalName": "Zeem Solutions, Inc.",
+    "aliases": ["Zeem", "Zeem Solutions, Inc."],
+    "website": "https://www.zeemsolutions.com/",
+    "country": "United States",
+    "headquarters": "Los Angeles, California",
+    "managerLevelBoundary": "Zeem is the manager-level commercial EV fleet-infrastructure platform. Customers, depots, projects, grantors and lenders are downstream relationships rather than separate Zeem-level owners or PortCos.",
+    "duplicateDecision": "Retain the existing Zeem Solutions record; do not create or merge another company."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Resolve ArcLight Capital to the existing ArcLight Capital Partners organization.",
+    "structuredManagerOwner": {
+      "manager": "ArcLight Capital Partners",
+      "fund": "ArcLight Energy Partners Fund VII, L.P.",
+      "vehicle": "NOT_PUBLICLY_DISCLOSED",
+      "stake": "NOT_PUBLICLY_DISCLOSED",
+      "entryDate": "NOT_PUBLICLY_DISCLOSED",
+      "investmentYear": 2022,
+      "state": "CLOSED_ACTIVE"
+    },
+    "ownerAddition": "NONE",
+    "prospectiveLpriDisposition": "Do not add; legal closing and current direct ownership were not established.",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Transportation",
+    "subsector": "EV Fleet Charging Infrastructure",
+    "services": "Commercial EVs, shared and customer-site charging depots, managed charging and fleet-management services.",
+    "yearFounded": 2017
+  },
+  "acquisitionExitCheck": {
+    "ownershipEntry": "Zeem announced a $50 million capital commitment from a fund managed by ArcLight on 2022-07-06; ArcLight identifies Zeem with Fund VII.",
+    "legalClosing": "The exact legal closing date, security class, immediate holding vehicle and ArcLight ownership percentage are not publicly disclosed.",
+    "currentOwnership": "ArcLight's live investments page lists Zeem as Current.",
+    "subsequentExitSearch": "No Zeem-level completed sale or signed pending ownership transfer was identified through 2026-08-15."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj6nk00jnivhe6mtdjqda",
+    "productionOwnershipPeriodId": "cmrxpjrp001gkivhetkl41na9",
+    "mutation": "CORRECT_EXISTING_COMPANY_AND_OWNER_PERIOD",
+    "queueAddOwnerDisposition": "SUPERSEDED_BY_EXISTING_ALIAS_RESOLVED_OWNER",
+    "duplicateMapping": "NONE"
+  },
+  "primaryEvidenceUrl": "https://arclight.com/investments",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0087-zeem-solutions/attempt-2/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0087-zeem-solutions/attempt-2/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0087-zeem-solutions/attempt-2/chatgpt-response-validation.json",
+  "unresolvedQuestions": [
+    "ArcLight's exact ownership percentage, security class, immediate holding vehicle and legal closing date are not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "3b841b7a8a5d0550f124192d5415b622cbd7bc446073bfbcc44144f7aaabe779",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}
