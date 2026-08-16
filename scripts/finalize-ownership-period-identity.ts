@@ -6,7 +6,9 @@ import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target"
 
 const MIGRATION_NAME = "20260816120000_ownership_fund_attribution";
 const OLD_INDEX = "OwnershipPeriod_companyId_organizationId_vehicleName_key";
-const NEW_INDEX = "OwnershipPeriod_companyId_organizationId_vehicleName_investmentYear_key";
+// PostgreSQL identifiers are limited to 63 bytes. Prisma's generated 71-byte
+// name is therefore represented in the catalog by this deterministic prefix.
+const NEW_INDEX = "OwnershipPeriod_companyId_organizationId_vehicleName_investment";
 const CONFIRMATION = "FINALIZE_REVIEWED_OWNERSHIP_IDENTITY";
 const ADVISORY_LOCK_ID = "70260816120000";
 

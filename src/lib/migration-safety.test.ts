@@ -73,5 +73,9 @@ describe("additive migration safety", () => {
       `"fundAttribution" <> 'DIRECT_PROGRAM'::"OwnershipFundAttribution"\n      OR "fundId" IS NULL`,
     );
     expect(nonFundConstraint).not.toContain("UNRESOLVED");
+    const schema = readFileSync("prisma/schema.prisma", "utf8");
+    expect(schema).toContain(
+      `map: "OwnershipPeriod_companyId_organizationId_vehicleName_investment"`,
+    );
   });
 });

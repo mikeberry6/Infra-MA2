@@ -21,6 +21,7 @@ const CONSTRAINTS = [
 ];
 const INDEXES = [
   "OwnershipPeriod_companyId_organizationId_vehicleName_investmentYear_key",
+  "OwnershipPeriod_companyId_organizationId_vehicleName_investment",
   "OwnershipPeriod_fundAttribution_idx",
 ];
 const TYPES = ["AttributionConfidence", "OwnershipFundAttribution"];

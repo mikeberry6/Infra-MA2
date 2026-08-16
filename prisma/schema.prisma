@@ -325,7 +325,7 @@ model OwnershipPeriod {
   attributionRationale     String?
   createdAt                DateTime                 @default(now())
 
-  @@unique([companyId, organizationId, vehicleName, investmentYear])
+  @@unique([companyId, organizationId, vehicleName, investmentYear], map: "OwnershipPeriod_companyId_organizationId_vehicleName_investment")
   @@index([fundId])
   @@index([organizationId])
   @@index([companyId])
