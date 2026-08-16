@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0092:fleetlogix-inc:8a84c6fe",
+  "taskIndex": 92,
+  "asOfDate": "2026-08-16",
+  "generatedAt": "2026-08-16T05:38:00.000Z",
+  "canonicalKey": "fleetlogix-inc|united-states",
+  "companyName": "FleetLogix, Inc.",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Archive FleetLogix as a standalone manager-level PortCo while preserving it as an active LAZ-controlled operating company. LAZ acquired a majority interest in FleetLogix in 2025, Striker Partners and management reinvested, and the current FleetLogix site remains active under the FleetLogix Powered by LAZ brand. FleetLogix and LAZ remain distinct legal identities, so no canonical merge or redirect is appropriate. Argo's directly evidenced manager-level infrastructure investment is LAZ; FleetLogix is an acquisition beneath that platform. Retain one Argo audit period as indirect through LAZ, retire the unsupported duplicate Argo ownership row without recording a false economic exit, preserve LAZ's existing FleetLogix acquisition milestone, and record no Argo exit or pending transaction. The approved archive overlay removes FleetLogix from the evaluated manager-level seed list while retaining its legal and audit history in production.",
+  "evidence": [
+    {
+      "url": "https://www.lazparking.com/our-company/about/news/2025/04/22/laz-parking-acquires-majority-interest-in-fleet-management-staffing-services-provider-fleetlogix",
+      "purpose": "Official acquisition, manager-level platform boundary, headquarters and scale evidence",
+      "supports": [
+        "LAZ had acquired a majority interest in FleetLogix by April 22, 2025",
+        "FleetLogix was brought into the LAZ family as a complementary operating company rather than merged into LAZ's legal identity",
+        "Argo was identified as an investor in LAZ through managed funds",
+        "FleetLogix was based in San Diego and operated at 50 locations, including 37 airports in more than 20 states, with approximately 2,400 employees"
+      ]
+    },
+    {
+      "url": "https://merger.com/transaction/mirus-capital-advisors-advises-fleetlogix-on-its-majority-recapitalization-by-laz-parking/",
+      "purpose": "Transaction structure and retained minority evidence",
+      "supports": [
+        "LAZ acquired a majority interest in FleetLogix",
+        "Striker Partners and FleetLogix management reinvested alongside LAZ",
+        "FleetLogix remained a distinct operating company after the recapitalization"
+      ]
+    },
+    {
+      "url": "https://www.lazparking.com/our-company/about/news/2022/01/03/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners",
+      "purpose": "Direct Argo-to-LAZ ownership and infrastructure-strategy boundary",
+      "supports": [
+        "Argo closed its preferred-equity investment in LAZ on December 30, 2021",
+        "LAZ is the directly evidenced Argo portfolio platform above FleetLogix",
+        "the exact Argo stake and fund vehicle were not publicly disclosed"
+      ]
+    },
+    {
+      "url": "https://fleetlogix.com/",
+      "purpose": "Current FleetLogix identity, brand and operating-status evidence",
+      "supports": [
+        "FleetLogix continues to operate under the FleetLogix Powered by LAZ brand",
+        "FleetLogix continues to provide fleet-management and staffing services"
+      ]
+    },
+    {
+      "url": "https://fleetlogix.com/contact-us",
+      "purpose": "Current headquarters evidence",
+      "supports": [
+        "FleetLogix lists its corporate office in San Diego, California"
+      ]
+    },
+    {
+      "url": "https://www.argoip.com/about-us",
+      "purpose": "Argo infrastructure-strategy and current LAZ platform evidence",
+      "supports": [
+        "Argo invests in essential North American infrastructure",
+        "Argo identifies its parking investment at the LAZ platform level rather than FleetLogix as a separate direct portfolio company"
+      ]
+    },
+    {
+      "url": "https://www.lazparking.com/our-company/about/news",
+      "purpose": "Current LAZ activity and FleetLogix exit search",
+      "supports": [
+        "LAZ's current news archive retains FleetLogix as an acquisition beneath the LAZ platform",
+        "no later FleetLogix sale, legal merger, Argo exit or signed pending ownership transfer was identified through August 16, 2026"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "f3cf6b68adeef51f37380dfb3c254da92c0ecd372f0184abb8e97d100c8a2a71",
+  "currentCompanySnapshotSha256": "0834eebcec75da93b6464060d41738957ffda987d36584ce6ba50f50c4f0feba",
+  "executionLock": {
+    "taskSnapshotSha256": "0540ac8cac86a964e5c7504239b5dbf9085d551c53e190c89316d0794eea854b",
+    "taskStateSha256": "f4a3248dd3d74e5f35b1a8d8dddc08f7630674ea2cf2c7b854b5c8670c660e65",
+    "taskDependencySha256": "19d2e40bd5f1239e3e5ff4812c9d603a6fc2f28de0bbbcd85283b94f6a25e25c",
+    "seedEntrySha256": "55ffdfdbf2ecf68792ac9d086fb138b8a4f31c7c820048763a32a21f6b7db980",
+    "dependencies": {
+      "ownershipPeriodsSha256": "c43c08ff1e00f1184241808237695675a57090df12f76626760ba1cac214a2e4",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "09a30aff66e89631f07df2d18901f55d8c2bbe0a4145bd1cbfda281afc47068d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj5p200i5ivhe5ady9zj7",
+    "name": "FleetLogix, Inc.",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Fleet management and transportation staffing services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "FleetLogix provides fleet management, staffing, transportation, and related operational services for mobility and transportation customers. Its customers include rental car operators, fleet owners, and transportation providers that outsource labor-intensive fleet handling and support activities. The business is primarily service-based, although it is embedded in transportation operations that require recurring, site-based staffing and process management. Public company materials describe a nationwide operating footprint and identify the corporate office in San Diego, California. LAZ Parking announced in April 2025 that it had acquired a majority interest in FleetLogix, and the detailed post-transaction ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States; Canada",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqpr01exivhe8465wx7l",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo Managed Funds",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqqa01eyivhe8p86bms9",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkixe02kzivhey9fk0lkc",
+        "date": "Dec 2021",
+        "event": "LAZ Parking was an Argo Infrastructure Partners-backed platform before the FleetLogix transaction.",
+        "category": "OTHER",
+        "sortDate": "2021-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkixz02l0ivhe0antgn4j",
+        "date": "2025",
+        "event": "FleetLogix began operating as \"FleetLogix Powered by LAZ.\"",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkiyf02l1ivhesjj5ehm1",
+        "date": "Apr 22, 2025",
+        "event": "Argo Infrastructure Partners-backed LAZ Parking acquired a majority interest in FleetLogix.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-04-22T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpougd07a7ivhem2mx28wf",
+        "label": "Fleetlogix — FleetLogix, Inc.",
+        "url": "https://fleetlogix.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Fleetlogix company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpouir07a9ivhevf97gvwn",
+        "label": "Fleetlogix — FleetLogix, Inc.",
+        "url": "https://fleetlogix.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Fleetlogix company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoumb07abivheqjo7kwn6",
+        "label": "Close date source — Argo Infrastructure Partners — FleetLogix, Inc.",
+        "url": "https://www.lazparking.com/our-company/about/news/2025/04/22/laz-parking-acquires-majority-interest-in-fleet-management-staffing-services-provider-fleetlogix",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpounh07adivhelrrdkl4t",
+        "label": "Investment date source — Argo Infrastructure Partners — LAZ Parking",
+        "url": "https://www.prnewswire.com/news-releases/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners-301452042.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpouop07afivheapsx1vwi",
+        "label": "Fleetlogix — FleetLogix",
+        "url": "https://fleetlogix.com/our-services",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Fleetlogix — FleetLogix",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoups07ahivhelrjm39af",
+        "label": "Fleetlogix — FleetLogix",
+        "url": "https://fleetlogix.com/contact-us",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Fleetlogix — FleetLogix",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "0834eebcec75da93b6464060d41738957ffda987d36584ce6ba50f50c4f0feba",
+  "afterImage": {
+    "id": "cmrxpj5p200i5ivhe5ady9zj7",
+    "name": "FleetLogix, Inc.",
+    "aliases": [
+      "FleetLogix",
+      "FleetLogix Powered by LAZ"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Fleet management and transportation staffing services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "FleetLogix, Inc. is a San Diego-based provider of managed labor, fleet services and transportation staffing for rental-car operators and other mobility customers. LAZ Parking acquired a majority interest in FleetLogix in 2025, while Striker Partners and FleetLogix management reinvested. FleetLogix continues to operate under the FleetLogix Powered by LAZ brand. LAZ reported approximately 50 FleetLogix locations, including 37 airports in more than 20 states, and about 2,400 employees at acquisition. Argo Infrastructure Partners' directly evidenced manager-level investment is LAZ; FleetLogix is an active operating-company acquisition beneath that platform and is therefore archived from the standalone manager-level PortCo census. Public sources do not disclose the exact LAZ stake, FleetLogix closing date, Argo indirect percentage, fund vehicle, or founding year, and no later FleetLogix sale, legal merger, Argo exit or signed pending transaction was identified through August 16, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "ARCHIVED",
+    "website": "https://fleetlogix.com/",
+    "yearFounded": null,
+    "headquarters": "San Diego, California",
+    "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqpr01exivhe8465wx7l",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "LAZ Parking",
+        "stake": "Indirect through LAZ Parking, which acquired a majority interest; exact FleetLogix and Argo percentages not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqqa01eyivhe8p86bms9",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Duplicate legacy Argo row; no separate second position established",
+        "stake": "No separate ownership position established; retained only as retired audit history",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkixe02kzivhey9fk0lkc",
+        "date": "Dec 30, 2021",
+        "event": "Argo Infrastructure Partners closed a preferred-equity investment in LAZ Parking, the manager-level platform that later acquired FleetLogix.",
+        "category": "OTHER",
+        "sortDate": "2021-12-30T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners-301452042.html"
+        ]
+      },
+      {
+        "id": "cmrxpkixz02l0ivhe0antgn4j",
+        "date": "2025–present",
+        "event": "FleetLogix continued operating under the FleetLogix Powered by LAZ brand as an active operating company beneath the LAZ platform.",
+        "category": "OTHER",
+        "sortDate": null,
+        "evidenceUrls": [
+          "https://fleetlogix.com/"
+        ]
+      },
+      {
+        "id": "cmrxpkiyf02l1ivhesjj5ehm1",
+        "date": "Apr 22, 2025",
+        "event": "LAZ Parking disclosed that it had acquired a majority interest in FleetLogix; Striker Partners and FleetLogix management reinvested alongside LAZ.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-04-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.lazparking.com/our-company/about/news/2025/04/22/laz-parking-acquires-majority-interest-in-fleet-management-staffing-services-provider-fleetlogix",
+          "https://merger.com/transaction/mirus-capital-advisors-advises-fleetlogix-on-its-majority-recapitalization-by-laz-parking/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpougd07a7ivhem2mx28wf",
+        "label": "Fleetlogix — FleetLogix, Inc.",
+        "url": "https://fleetlogix.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current FleetLogix Powered by LAZ identity, services and operating status",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpouir07a9ivhevf97gvwn",
+        "label": "Fleetlogix — FleetLogix, Inc.",
+        "url": "https://fleetlogix.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "FleetLogix operating-company profile and service scope",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoumb07abivheqjo7kwn6",
+        "label": "Close date source — Argo Infrastructure Partners — FleetLogix, Inc.",
+        "url": "https://www.lazparking.com/our-company/about/news/2025/04/22/laz-parking-acquires-majority-interest-in-fleet-management-staffing-services-provider-fleetlogix",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "LAZ majority acquisition, Argo-through-LAZ boundary, headquarters and scale",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpounh07adivhelrrdkl4t",
+        "label": "Investment date source — Argo Infrastructure Partners — LAZ Parking",
+        "url": "https://www.prnewswire.com/news-releases/laz-parking-announces-a-long-term-investment-from-argo-infrastructure-partners-301452042.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo's December 30, 2021 direct investment in the LAZ platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpouop07afivheapsx1vwi",
+        "label": "Fleetlogix — FleetLogix",
+        "url": "https://fleetlogix.com/our-services",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "FleetLogix fleet-management and transportation-staffing services",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoups07ahivhelrjm39af",
+        "label": "Fleetlogix — FleetLogix",
+        "url": "https://fleetlogix.com/contact-us",
+        "sourceType": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current San Diego corporate-office address",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Mirus — FleetLogix majority recapitalization",
+        "url": "https://merger.com/transaction/mirus-capital-advisors-advises-fleetlogix-on-its-majority-recapitalization-by-laz-parking/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "LAZ majority acquisition and retained Striker Partners and management investment",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "LAZ Parking — News archive",
+        "url": "https://www.lazparking.com/our-company/about/news",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Current LAZ acquisition activity and FleetLogix exit search",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "e10b651bbe5930f5eedcd196af5eb4d4db012871d4fb58f57bb1af96aa33874c",
+  "proposalSha256": "94741a2a3283fb939e129700a820339f0d5f64a403854a2eca5e3c148cce9646"
+}

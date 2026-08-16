@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0092:fleetlogix-inc:8a84c6fe",
+  "taskIndex": 92,
+  "attempt": 1,
+  "companyName": "FleetLogix, Inc.",
+  "asOfDate": "2026-08-16",
+  "decision": "PROPOSED_CORRECTION",
+  "modelDecision": "EXCLUDED",
+  "rationale": "Archive FleetLogix as a standalone manager-level PortCo while preserving it as an active LAZ-controlled operating company. LAZ acquired a majority interest in FleetLogix in 2025, Striker Partners and management reinvested, and the current FleetLogix site remains active under the FleetLogix Powered by LAZ brand. The companies are distinct legal identities, so a merge or redirect would be inaccurate. Argo's directly evidenced manager-level portfolio investment is LAZ; FleetLogix is an acquisition beneath that platform. The protected correction will archive the FleetLogix row, retain one indirect-through-LAZ Argo audit period, retire the unsupported duplicate Argo row, preserve LAZ's existing FleetLogix acquisition milestone, and record no Argo exit or pending transaction.",
+  "identityResolution": {
+    "canonicalName": "FleetLogix, Inc.",
+    "aliases": [
+      "FleetLogix",
+      "FleetLogix Powered by LAZ"
+    ],
+    "website": "https://fleetlogix.com/",
+    "country": "United States",
+    "headquarters": "San Diego, California",
+    "managerLevelBoundary": "Count LAZ Parking as Argo's manager-level platform. FleetLogix remains a distinct operating company and brand, but it is an acquisition beneath LAZ and is excluded from the standalone manager-level census.",
+    "duplicateDecision": "Do not merge FleetLogix with LAZ and do not create a redirect. Archive the FleetLogix standalone row while preserving its legal identity and history."
+  },
+  "ownershipResolution": {
+    "currentOwners": [
+      {
+        "manager": "Argo Infrastructure Partners",
+        "fund": null,
+        "vehicle": "LAZ Parking",
+        "stake": "Indirect through LAZ Parking, which acquired a majority interest; exact FleetLogix and Argo percentages are not publicly disclosed",
+        "entryYear": 2025,
+        "state": "CLOSED_ACTIVE"
+      }
+    ],
+    "retiredDuplicateOwnershipRows": [
+      "cmrxpjqqa01eyivhe8p86bms9"
+    ],
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Transportation",
+    "subsector": "Fleet management and transportation staffing services",
+    "yearFounded": null,
+    "reportedScale": "LAZ reported approximately 50 locations, 37 airports, more than 20 states and 2,400 employees at the April 2025 acquisition."
+  },
+  "acquisitionExitCheck": {
+    "lazAcquisition": "LAZ had acquired a majority interest by April 22, 2025; the exact legal closing date and stake were not publicly disclosed.",
+    "retainedMinority": "Mirus reported that Striker Partners and FleetLogix management reinvested alongside LAZ.",
+    "subsequentExitSearch": "No later FleetLogix sale, legal merger, Argo exit from LAZ or signed pending ownership transfer was identified through 2026-08-16."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj5p200i5ivhe5ady9zj7",
+    "lazProductionCompanyId": "cmrxpj5s200iaivhegqucgc2l",
+    "retainedOwnershipPeriodId": "cmrxpjqpr01exivhe8465wx7l",
+    "retiredDuplicateOwnershipPeriodId": "cmrxpjqqa01eyivhe8p86bms9",
+    "mutation": "ARCHIVE_STANDALONE_RECORD_AND_RETIRE_DUPLICATE_OWNER",
+    "queueCorrectionDisposition": "EXCLUDE_AS_LAZ_BOLT_ON_VIA_PROTECTED_CORRECTION",
+    "duplicateMapping": "NONE"
+  },
+  "primaryEvidenceUrl": "https://www.lazparking.com/our-company/about/news/2025/04/22/laz-parking-acquires-majority-interest-in-fleet-management-staffing-services-provider-fleetlogix",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0092-fleetlogix-inc/attempt-1/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0092-fleetlogix-inc/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0092-fleetlogix-inc/attempt-1/chatgpt-response-validation.json",
+  "unresolvedQuestions": [
+    "The exact FleetLogix legal closing date, LAZ ownership percentage, Argo indirect percentage, fund vehicle and founding year are not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "0540ac8cac86a964e5c7504239b5dbf9085d551c53e190c89316d0794eea854b",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}
