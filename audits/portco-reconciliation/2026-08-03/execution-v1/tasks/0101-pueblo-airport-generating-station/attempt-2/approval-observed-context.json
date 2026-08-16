@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0101:pueblo-airport-generating-station:d9b71a68",
+  "taskIndex": 101,
+  "companyName": "Pueblo Airport Generating Station",
+  "generatedAt": "2026-08-16T14:21:09.752Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0101-pueblo-airport-generating-station/attempt-2/approval-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 101,
+    "taskId": "ledger:0101:pueblo-airport-generating-station:d9b71a68",
+    "canonicalKey": "pueblo-airport-generating-station|united-states",
+    "companyName": "Pueblo Airport Generating Station",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "015-argo-infrastructure-partners:repo-only:008:pueblo-airport-generating-station"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5yn00iiivhemvos185r"
+    ],
+    "seedKeys": [
+      "pueblo airport generating station|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.sec.gov/Archives/edgar/data/1130464/000113046416000209/bkh10qq22016.htm"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Argo Infrastructure Partners MATCHED_ELSEWHERE: Repository record is an underlying generating asset within the included Black Hills Colorado IPP platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5yn00iiivhemvos185r",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pueblo-airport-generating-station|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj5yn00iiivhemvos185r",
+    "name": "Pueblo Airport Generating Station",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-Fired Power Generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pueblo Airport Generating Station is a natural gas-fired combined-cycle power plant in Pueblo County, Colorado. The asset serves wholesale and utility power demand through an asset-heavy generation model rather than through retail utility operations. Black Hills disclosures describe the station as a 440 MW facility that commenced operations on January 1, 2012 and is jointly owned by Black Hills Colorado Electric and Black Hills Colorado IPP. Publicly available project materials identify the plant as a substantial thermal generation asset in southern Colorado, but they do not clearly identify a separate project-company founding year. Public sources reviewed do not disclose the current fund-level ownership structure represented in this workbook.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Colorado",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr0f01fdivhew4dvpy28",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo Infrastructure Partners (Apollo)",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjwe02m8ivhevyt59axo",
+        "date": "Jan 1, 2012",
+        "event": "Pueblo Airport Generating Station commenced operations.",
+        "category": "EXPANSION",
+        "sortDate": "2012-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjwz02m9ivhei8xpj5xm",
+        "date": "2015",
+        "event": "The facility advanced its Phase II expansion program.",
+        "category": "EXPANSION",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjxj02maivhej4rtll3v",
+        "date": "Apr 14, 2016",
+        "event": "Black Hills closed the sale of a 49.9% member equity interest in Black Hills Colorado IPP (Pueblo Airport Generating Station) for $215 million to AIA Energy North America LLC, an Argo Infrastructure Partners platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-04-14T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpowoh07deivheon0hpbif",
+        "label": "Close date source — Argo Infrastructure Partners — Pueblo Airport Generating Station",
+        "url": "https://www.sec.gov/Archives/edgar/data/1130464/000113046416000209/bkh10qq22016.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpowph07dgivheiir3zpdt",
+        "label": "Black Hills annual report — Pueblo Airport Generating Station",
+        "url": "https://ir.blackhillscorp.com/static-files/b5529837-4c7b-46c0-b743-2a1b128db28a",
+        "sourceType": "PRESENTATION",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Black Hills Annual Report financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowqn07diivheditprypc",
+        "label": "Graycor — Pueblo Airport Generating Station",
+        "url": "https://graycor.com/project/pags-expansion-unit-6-phase-ii/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Graycor operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowri07dkivhe1eawpzxf",
+        "label": "Renewablesinfo — Pueblo Airport Generating Station",
+        "url": "https://www.renewablesinfo.org/plant/56998",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Renewablesinfo — Pueblo Airport Generating Station",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Pueblo Airport Generating Station",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Gas-Fired Power Generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Argo Infrastructure Partners (Apollo)",
+    "description": "Pueblo Airport Generating Station is a natural gas-fired combined-cycle power plant in Pueblo County, Colorado. The asset serves wholesale and utility power demand through an asset-heavy generation model rather than through retail utility operations. Black Hills disclosures describe the station as a 440 MW facility that commenced operations on January 1, 2012 and is jointly owned by Black Hills Colorado Electric and Black Hills Colorado IPP. Publicly available project materials identify the plant as a substantial thermal generation asset in southern Colorado, but they do not clearly identify a separate project-company founding year. Public sources reviewed do not disclose the current fund-level ownership structure represented in this workbook.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2016,
+    "headquarters": "Colorado",
+    "milestones": [
+      {
+        "date": "Jan 1, 2012",
+        "event": "Pueblo Airport Generating Station commenced operations.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2015",
+        "event": "The facility advanced its Phase II expansion program.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Apr 14, 2016",
+        "event": "Black Hills closed the sale of a 49.9% member equity interest in Black Hills Colorado IPP (Pueblo Airport Generating Station) for $215 million to AIA Energy North America LLC, an Argo Infrastructure Partners platform.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Argo Infrastructure Partners — Pueblo Airport Generating Station",
+        "url": "https://www.sec.gov/Archives/edgar/data/1130464/000113046416000209/bkh10qq22016.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Black Hills annual report — Pueblo Airport Generating Station",
+        "url": "https://ir.blackhillscorp.com/static-files/b5529837-4c7b-46c0-b743-2a1b128db28a",
+        "type": "PRESENTATION",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Graycor — Pueblo Airport Generating Station",
+        "url": "https://graycor.com/project/pags-expansion-unit-6-phase-ii/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Renewablesinfo — Pueblo Airport Generating Station",
+        "url": "https://www.renewablesinfo.org/plant/56998",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "Argo Infrastructure Partners (Apollo)",
+        "investmentYear": 2016,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0101:pueblo-airport-generating-station:d9b71a68",
+    "taskIndex": 101,
+    "canonicalKey": "pueblo-airport-generating-station|united-states",
+    "capturedAt": "2026-08-16T14:21:09.752Z",
+    "databaseRevision": "company-state:5130f17cdac5f9656fa1ba393a47d7b197ff4e2d5088e149331a91859b0392b0",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "9798ca7a2bf730eeb350364ff7e0c853f9c22e846cb5763676d78bf530e90680",
+    "productionSnapshotSha256": "55c06b7558c01aa13069948d028cc5fc7dd09cfa516804e061b1b5bf43c94e09",
+    "targetCompanySnapshotSha256": "5130f17cdac5f9656fa1ba393a47d7b197ff4e2d5088e149331a91859b0392b0",
+    "seedEntrySha256": "68c17d8b344e066426866c9ebe6c73251cb9427c2b3777b4eedb0e85e6889899",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "5b39e0e006a483af79c55623c9e33b0af3052680106e637cb72840b464c5b69e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "759cd7f18406e3fdea904c4370b84f15f13672d2308b1fcfb32098d527a0ec80",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "823b772369e40fb7967eb519a88b5b8a1d23864ed613e20e20012368b92b2223",
+    "stateSha256": "cc3837d3b75aa74fd13e5f4610fd4af2858a394fced7425bdf266a06df8c9252",
+    "taskSnapshotSha256": "75619658dfbc437dfe758a290a63a13a45db790b8572257c09de7c6245994a25"
+  },
+  "contextSha256": "8f7a4d5c4e346a00f482c0868519630c51df1c7e6b64c668ca46caa18482434e"
+}

@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0101:pueblo-airport-generating-station:d9b71a68",
+  "taskIndex": 101,
+  "attempt": 1,
+  "companyName": "Pueblo Airport Generating Station",
+  "asOfDate": "2026-08-16",
+  "retrievedAt": "2026-08-16T14:10:00.000Z",
+  "methodology": "Codex independently reopened the Black Hills, SEC, FERC, Argo Form ADV, New York DPS and transaction sources; verified direct URLs, redirects, media types and content hashes where the server permitted direct retrieval; and searched for a later IPP sale, exit, restructuring or signed ownership transfer through the as-of date.",
+  "sources": [
+    {
+      "evidenceUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=10451",
+      "verificationUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=10451",
+      "status": "CURL_TIMEOUT_BUT_INDEXED_VERIFIED",
+      "httpStatus": null,
+      "finalUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=10451",
+      "mediaType": "text/html",
+      "contentLength": null,
+      "contentSha256": null,
+      "verifiedClaims": [
+        "Black Hills Electric Generation, LLC holds 50.1% of Black Hills Colorado IPP, LLC.",
+        "AIA Colchis LLC holds the remaining noncontrolling 49.9% interest.",
+        "The IPP-owned units sit within Pueblo Airport Generating Station and sell output to Black Hills Colorado Electric under a PPA."
+      ],
+      "isPrimary": false,
+      "verificationNote": "Direct curl timed out after 20 seconds, but the exact FERC URL and page content were independently returned by indexed web retrieval."
+    },
+    {
+      "evidenceUrl": "https://www.docketalarm.com/cases/FERC/HC23-1-000/Holding_Company_Notification/20230216-5183/",
+      "verificationUrl": "https://www.docketalarm.com/cases/FERC/HC23-1-000/Holding_Company_Notification/20230216-5183/",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.docketalarm.com/cases/FERC/HC23-1-000/Holding_Company_Notification/20230216-5183/",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLength": 184450,
+      "contentSha256": "b0840d6f4571b126d6b8272fb3c1ddcc60e2b5460e38397831a77caa3d6cf638",
+      "verifiedClaims": [
+        "The page is a working secondary mirror of the FERC holding-company notification.",
+        "It provides corroborating AIA Colchis, IPP scale and PPA context.",
+        "It is not used as the final proposal's primary source."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000113046416000173/form8-ksgpurchasecompletion.htm",
+      "verificationUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000113046416000173/form8-ksgpurchasecompletion.htm",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000113046416000173/form8-ksgpurchasecompletion.htm",
+      "mediaType": "text/html",
+      "contentLength": 47475,
+      "contentSha256": "38910aa16e5a1c49f08e10e28cd1dcbbdbe4596659d82d5e80cb4531b7e42e39",
+      "verifiedClaims": [
+        "Black Hills signed the sale on February 12, 2016.",
+        "The sale covered a 49.9% member interest in Black Hills Colorado IPP, LLC for $215 million.",
+        "The buyer was AIA Energy North America LLC, an Argo-managed infrastructure platform."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000113046416000209/bkh10qq22016.htm",
+      "verificationUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000113046416000209/bkh10qq22016.htm",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000113046416000209/bkh10qq22016.htm",
+      "mediaType": "text/html",
+      "contentLength": 3672696,
+      "contentSha256": "65235229074f5039d7802be2226e9c2f53470c1175f3dc06e000ba9969e7a164",
+      "verifiedClaims": [
+        "The 49.9% member-interest sale closed on April 14, 2016.",
+        "Black Hills retained 50.1% and the controlling and operating role.",
+        "Black Hills reported approximately $216 million of closing proceeds."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000095017025066572/bkh-20250331.htm",
+      "verificationUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000095017025066572/bkh-20250331.htm",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000095017025066572/bkh-20250331.htm",
+      "mediaType": "text/html",
+      "contentLength": 3210867,
+      "contentSha256": "f2aa6404e96381da37722430dd205f2ab39f5975df985f31d019a8331cc4f320",
+      "verifiedClaims": [
+        "Black Hills continued to report Black Hills Colorado IPP as a separate noncontrolling-interest business in 2025.",
+        "The filing distinguishes the broader Pueblo Airport site from the IPP entity.",
+        "No IPP-level ownership disposal was reported."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000119312526046028/bkh-20251231.htm",
+      "verificationUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000119312526046028/bkh-20251231.htm",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000119312526046028/bkh-20251231.htm",
+      "mediaType": "text/html",
+      "contentLength": 7763121,
+      "contentSha256": "1d88eb9c06b5f74d8454ba9edcd6147613cf3bdcf35ee5a054c4280971d9b8ed",
+      "verifiedClaims": [
+        "The Pueblo Airport site totals 440 MW, including a separately owned 200 MW Black Hills Colorado IPP facility and 240 MW of utility-owned generation.",
+        "Black Hills holds 50.1% of the IPP and reports the remaining 49.9% as a noncontrolling interest.",
+        "The IPP entered service in 2012 and its contract runs through December 31, 2031."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000119312526337444/bkh-20260630.htm",
+      "verificationUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000119312526337444/bkh-20260630.htm",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1130464/000119312526337444/bkh-20260630.htm",
+      "mediaType": "text/html",
+      "contentLength": 4907284,
+      "contentSha256": "3faced511405a2351412227abcfe293db865a1a3d8a2b17f479a2925ff938153",
+      "verifiedClaims": [
+        "Black Hills continued to report distributions to the Black Hills Colorado IPP noncontrolling interest in August 2026.",
+        "The Black Hills-NorthWestern corporate merger remained pending and did not transfer the IPP interest.",
+        "No IPP-level sale or signed pending transfer was reported."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://reports.adviserinfo.sec.gov/reports/ADV/171246/PDF/171246.pdf",
+      "verificationUrl": "https://reports.adviserinfo.sec.gov/reports/ADV/171246/PDF/171246.pdf",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://reports.adviserinfo.sec.gov/reports/ADV/171246/PDF/171246.pdf",
+      "mediaType": "application/octet-stream",
+      "contentLength": 4787747,
+      "contentSha256": "4673bd02ea7f16d198838598a2351ab31432923f8339fa9f255f90007de0d152",
+      "verifiedClaims": [
+        "Argo remains investment manager to AIA Energy North America LLC.",
+        "The filing discloses AIA Colchis vehicles within the AIA Energy fund structure.",
+        "The current managed-fund structure does not support an Apollo ownership label."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "verificationUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "mediaType": "application/pdf",
+      "contentLength": 198398,
+      "contentSha256": "0f83f44fc98471b113d9248a20b33082e37749d64963cf95e07557709dfd141d",
+      "verifiedClaims": [
+        "The proposed Apollo manager transaction did not close by January 10, 2026.",
+        "The transaction agreement was terminated and the petition was withdrawn on January 15, 2026.",
+        "The terminated manager transaction created no IPP ownership transfer."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.huschblackwell.com/inthenews/-husch-blackwell-llp-represents-black-hills-corp-in-215-million-ipp-sale-transaction",
+      "verificationUrl": "https://www.huschblackwell.com/inthenews/-husch-blackwell-llp-represents-black-hills-corp-in-215-million-ipp-sale-transaction",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.huschblackwell.com/inthenews/-husch-blackwell-llp-represents-black-hills-corp-in-215-million-ipp-sale-transaction",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLength": 41074,
+      "contentSha256": "4a48f504df264f143f5c0bee31173ae70067b94282e13b4a2190add2328cfb77",
+      "verifiedClaims": [
+        "The page remains a working contemporaneous transaction-adviser source.",
+        "It corroborates the $215 million IPP interest transaction.",
+        "It is retained as supporting history rather than primary ownership evidence."
+      ],
+      "isPrimary": false
+    }
+  ],
+  "currentUrlRecheck": {
+    "allModelEvidenceUrlsRetained": true,
+    "redirectsObserved": 0,
+    "workingCount": 9,
+    "browserBlockedButVerifiedCount": 1,
+    "deadCount": 0
+  },
+  "exitSearchConclusion": "No later Black Hills Colorado IPP sale, Argo/AIA exit, signed pending transfer or ownership restructuring was identified through August 16, 2026. Black Hills' August 2026 Form 10-Q continued to report the IPP noncontrolling interest. The Apollo-Argo manager transaction was terminated without closing, and the pending Black Hills-NorthWestern corporate merger does not itself transfer Argo's 49.9% IPP interest.",
+  "modelEvidenceCorrections": [
+    "Implement the model's SUPERSEDED_OR_DUPLICATE decision as a canonical production merge because the immutable Pueblo queue target must become the surviving Black Hills Colorado IPP identity while the pre-existing IPP row is redirected into it.",
+    "Preserve only Argo Infrastructure Partners as the infrastructure-manager ownership period; Black Hills' 50.1% corporate majority is described and sourced but is not added as a second infrastructure-manager period.",
+    "Use AIA Energy North America LLC / AIA Colchis LLC as vehicle text because AIA Energy was the buyer and Argo-managed fund while FERC identifies AIA Colchis as the current direct 49.9% holder.",
+    "Remove the unsupported Apollo vehicle label; the proposed Apollo manager transaction was terminated without closing.",
+    "Use the 2025 Form 10-K as the sole primary citation because it directly supports the current ownership percentage, entity/site boundary, operating scale and contract term.",
+    "Treat the pending Black Hills-NorthWestern corporate merger as external corporate context rather than an IPP ownership transaction.",
+    "Retire the future 2031 contract-end row from historical milestones and retain the contract term in the company description."
+  ]
+}
