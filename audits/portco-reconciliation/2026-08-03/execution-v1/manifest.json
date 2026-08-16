@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T13:10:00.000Z",
+  "updatedAt": "2026-08-16T13:24:00.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0100:pike-county-light-and-power:66f65814",
   "source": {
@@ -14923,10 +14923,10 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a4959904b7db48ef4d9742f6de5d50d64dd1e3b6889636624fe876970f1adc73",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 1,
       "startedAt": "2026-08-16T12:39:00.000Z",
-      "updatedAt": "2026-08-16T13:10:00.000Z",
+      "updatedAt": "2026-08-16T13:24:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -14944,7 +14944,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0100-pike-county-light-and-power-v1.json",
           "sha256": "9dff4711c3fd66e053f71b2fd25ea530becd289d732624c44704221d9e8d7e43"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0100-pike-county-light-and-power/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "19696f64cc26a7d8af0b282dc33a6c5dd531dd39d5387f5667736250f12804db"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0100-pike-county-light-and-power/attempt-1/research-decision.json",
           "sha256": "fb05c50cb2d9fbafd885c39973ddac01a2ecc06d65de5e288f45c583c65209be"
@@ -15008,6 +15011,34 @@
           "taskSnapshotSha256": "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be",
           "evidenceSha256": [
             "9dff4711c3fd66e053f71b2fd25ea530becd289d732624c44704221d9e8d7e43"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-16T13:23:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be",
+          "evidenceSha256": [
+            "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be",
+            "9dff4711c3fd66e053f71b2fd25ea530becd289d732624c44704221d9e8d7e43",
+            "fec4121fa72802210d31cf4a06f6a0ff80b12767a5b7d67070370f3bf91f13d9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-16T13:24:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be",
+          "evidenceSha256": [
+            "19696f64cc26a7d8af0b282dc33a6c5dd531dd39d5387f5667736250f12804db",
+            "9dff4711c3fd66e053f71b2fd25ea530becd289d732624c44704221d9e8d7e43",
+            "fec4121fa72802210d31cf4a06f6a0ff80b12767a5b7d67070370f3bf91f13d9"
           ],
           "kind": "TRANSITION"
         }
@@ -30162,5 +30193,5 @@
       ]
     }
   ],
-  "manifestSha256": "03a023a5483b8106af48819ddfb782eb345212ef3ab3225a100857e6f6473ad5"
+  "manifestSha256": "8ef506944380aebee14c03a1390660a509e564ae13cbf7a2f39333983a714d00"
 }
