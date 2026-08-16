@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0096:leatherstocking-gas-company:040d6e21",
+  "taskIndex": 96,
+  "companyName": "Leatherstocking Gas Company",
+  "generatedAt": "2026-08-16T09:35:32.513Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0096-leatherstocking-gas-company/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 96,
+    "taskId": "ledger:0096:leatherstocking-gas-company:040d6e21",
+    "canonicalKey": "leatherstocking-gas-company|united-states",
+    "companyName": "Leatherstocking Gas Company",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "015-argo-infrastructure-partners:repo-only:005:leatherstocking-gas-company"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5sm00ibivhekmn5ibaf"
+    ],
+    "seedKeys": [
+      "leatherstocking gas company|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.corninggas.com/company-history",
+      "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Argo Infrastructure Partners MATCHED_ELSEWHERE: Repository record is an operating subsidiary beneath the included Corning Natural Gas Holding Corporation platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5sm00ibivhekmn5ibaf",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "leatherstocking-gas-company|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj5sm00ibivhekmn5ibaf",
+    "name": "Leatherstocking Gas Company",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Natural Gas Distribution Utility",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Leatherstocking Gas Company is a regulated natural gas utility that extends service into underserved areas of New York and Pennsylvania. It serves residential, commercial, and small industrial customers through an asset-heavy local distribution model built around owned pipeline infrastructure and utility franchises. Company history materials state that the business began as a 50/50 partnership in 2010 in New York and 2011 in Pennsylvania, and that it began serving its first Pennsylvania customer in 2013. Public utility materials describe Leatherstocking as the newest public utility in Pennsylvania in more than 40 years, with franchise territory in Susquehanna and Bradford counties and adjacent service territory in New York. The utility sits within the Corning and Argo ownership chain, but public sources do not disclose the current ownership percentages of the operating company.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2010,
+    "headquarters": "Pennsylvania & New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqtu01f5ivheau5f1ygg",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "ACP Crotona Corp. (via Corning Natural Gas Holding Corp.)",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjf702lmivhex1pvji8f",
+        "date": "Nov 2010",
+        "event": "Leatherstocking Gas Company was formed as a joint venture between Corning Natural Gas Holding Corporation and Mirabito Regulated Industries in New York.",
+        "category": "FOUNDING",
+        "sortDate": "2010-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjft02lnivhe3lbh5st6",
+        "date": "Jan 2020",
+        "event": "Corning Natural Gas became sole owner of the Pennsylvania Leatherstocking utility operations.",
+        "category": "OTHER",
+        "sortDate": "2020-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjgd02loivhee1p2d4a3",
+        "date": "Jul 6, 2022",
+        "event": "Argo Infrastructure Partners completed the acquisition of Corning Natural Gas Holding Corp., the parent of Leatherstocking Gas.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-06T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjgx02lpivheqnikok0f",
+        "date": "Jun 2023",
+        "event": "The Pennsylvania Public Utility Commission approved a rate settlement for Leatherstocking's Pennsylvania natural gas service territory.",
+        "category": "EXPANSION",
+        "sortDate": "2023-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpovkw07bsivhezu03nafa",
+        "label": "Leatherstockinggas — Leatherstocking Gas Company",
+        "url": "https://leatherstockinggas.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Leatherstockinggas company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpovls07buivhee0hssg4l",
+        "label": "Leatherstockinggas — Leatherstocking Gas Company",
+        "url": "https://leatherstockinggas.com/company-history",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Leatherstockinggas — Leatherstocking Gas Company",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpovn107bwivhehtaubhu4",
+        "label": "Puc — Leatherstocking Gas Company",
+        "url": "https://www.puc.pa.gov/press-release/2023/puc-approves-rate-settlement-with-leatherstocking-gas-company-llc-for-natural-gas-services-in-susquehanna-and-bradford-counties",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Puc — Leatherstocking Gas Company",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpovoe07byivhezi7l6tub",
+        "label": "SEC — Leatherstocking Gas Company",
+        "url": "https://www.sec.gov/Archives/edgar/data/24751/000002475112000025/ex10_32.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpovov07bzivhe6szekviz",
+        "label": "Corninggas — Corning Natural Gas Holding Corp.",
+        "url": "https://www.corninggas.com/company-history",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Corninggas — Leatherstocking Gas Company",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpovpw07c1ivhehubvveax",
+        "label": "SEC — Leatherstocking Gas Company",
+        "url": "https://www.sec.gov/Archives/edgar/data/1582244/000158224419000047/exh_99.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpovra07c3ivhe3ltl6ok0",
+        "label": "Close date source — Argo Infrastructure Partners — Leatherstocking Gas Company",
+        "url": "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Leatherstocking Gas Company",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Utilities",
+    "subsector": "Natural Gas Distribution Utility",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Argo Managed Funds",
+    "description": "Leatherstocking Gas Company is a regulated natural gas utility that extends service into underserved areas of New York and Pennsylvania. It serves residential, commercial, and small industrial customers through an asset-heavy local distribution model built around owned pipeline infrastructure and utility franchises. Company history materials state that the business began as a 50/50 partnership in 2010 in New York and 2011 in Pennsylvania, and that it began serving its first Pennsylvania customer in 2013. Public utility materials describe Leatherstocking as the newest public utility in Pennsylvania in more than 40 years, with franchise territory in Susquehanna and Bradford counties and adjacent service territory in New York. The utility sits within the Corning and Argo ownership chain, but public sources do not disclose the current ownership percentages of the operating company.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2010,
+    "investmentYear": 2022,
+    "headquarters": "Pennsylvania & New York",
+    "milestones": [
+      {
+        "date": "Nov 2010",
+        "event": "Leatherstocking Gas Company was formed as a joint venture between Corning Natural Gas Holding Corporation and Mirabito Regulated Industries in New York.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jan 2020",
+        "event": "Corning Natural Gas became sole owner of the Pennsylvania Leatherstocking utility operations.",
+        "category": "Other"
+      },
+      {
+        "date": "Jul 6, 2022",
+        "event": "Argo Infrastructure Partners completed the acquisition of Corning Natural Gas Holding Corp., the parent of Leatherstocking Gas.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 2023",
+        "event": "The Pennsylvania Public Utility Commission approved a rate settlement for Leatherstocking's Pennsylvania natural gas service territory.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Leatherstockinggas — Leatherstocking Gas Company",
+        "url": "https://leatherstockinggas.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Leatherstockinggas — Leatherstocking Gas Company",
+        "url": "https://leatherstockinggas.com/company-history",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Puc — Leatherstocking Gas Company",
+        "url": "https://www.puc.pa.gov/press-release/2023/puc-approves-rate-settlement-with-leatherstocking-gas-company-llc-for-natural-gas-services-in-susquehanna-and-bradford-counties",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "SEC — Leatherstocking Gas Company",
+        "url": "https://www.sec.gov/Archives/edgar/data/24751/000002475112000025/ex10_32.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Corninggas — Leatherstocking Gas Company",
+        "url": "https://www.corninggas.com/company-history",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "SEC — Leatherstocking Gas Company",
+        "url": "https://www.sec.gov/Archives/edgar/data/1582244/000158224419000047/exh_99.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Close date source — Argo Infrastructure Partners — Leatherstocking Gas Company",
+        "url": "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "ACP Crotona Corp. (via Corning Natural Gas Holding Corp.)",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0096:leatherstocking-gas-company:040d6e21",
+    "taskIndex": 96,
+    "canonicalKey": "leatherstocking-gas-company|united-states",
+    "capturedAt": "2026-08-16T09:35:32.513Z",
+    "databaseRevision": "company-state:6c8e4f3694f8918b136010b9542f096ef5461dabf670fcdccd7e98bddd73f62d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "316cec89e43f663f793136b20fb23346c697691d102f976c2f428840fc4bb0fd",
+    "productionSnapshotSha256": "b1a2affa837f395a70eb112acc908b623d93fcdc2e943cfcd2b31c56d6b5e6a5",
+    "targetCompanySnapshotSha256": "6c8e4f3694f8918b136010b9542f096ef5461dabf670fcdccd7e98bddd73f62d",
+    "seedEntrySha256": "c252f2d39fef9da8be0817b3d9a3cdee69fae3c4ec40aa943e3a396533962a16",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "57802408b81b733cf0b4fc35783b34ab8c4f7e4f5494cc52ace15c3c6a5c2457",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "2db6a7a359ec9e37c6aa781a66de1ef5a38bdecb9feafb29c743739d60c9be75",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "235be3428792d482085b805511da9260c43b2eef58c3f32b0d792c7a2c3b5391",
+    "stateSha256": "fda00e7cfb08ac65d942b181b3859584d99b49888c07a02e8880e741648e1e24",
+    "taskSnapshotSha256": "98e1397291d2ee67aa37dc08972fd268f3e7c0dfc3ff8f47c32105d57bdb4daf"
+  },
+  "contextSha256": "e6d0d5c3abb2ccb5f38e7a2e2d4d30f90b7eeb2d12f6ca503a3f50ed5183037d"
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0096:leatherstocking-gas-company:040d6e21",
+  "taskIndex": 96,
+  "attempt": 1,
+  "companyName": "Leatherstocking Gas Company",
+  "asOfDate": "2026-08-16",
+  "decision": "PROPOSED_CORRECTION",
+  "modelDecision": "EXCLUDED",
+  "rationale": "Archive Leatherstocking Gas Company as a standalone manager-level PortCo while preserving it as an active Pennsylvania regulated utility beneath Corning Energy Corporation. Direct company history and Pennsylvania PUC evidence show that the Pennsylvania LLC is wholly owned by Corning and that Argo acquired indirect control through ACP Crotona Corp. in July 2022. Leatherstocking and Corning are distinct legal identities, so no company merge or redirect is appropriate. The separate New York Leatherstocking business is Mirabito-owned and is outside this record's operating boundary. The announced Apollo-Argo manager transaction was terminated in January 2026, and no later Leatherstocking sale, dissolution, rebrand or pending ownership transfer was identified through the as-of date.",
+  "identityResolution": {
+    "canonicalName": "Leatherstocking Gas Company",
+    "legalName": "Leatherstocking Gas Company, LLC",
+    "aliases": [
+      "Leatherstocking Gas Company, LLC"
+    ],
+    "website": "https://leatherstockinggas.com/",
+    "country": "United States",
+    "headquarters": "Montrose, Pennsylvania",
+    "yearFounded": 2010,
+    "managerLevelBoundary": "Count Corning Energy Corporation, formerly Corning Natural Gas Holding Corporation, as Argo's manager-level platform. Leatherstocking Gas Company, LLC remains an active Pennsylvania utility subsidiary beneath Corning and is excluded from the standalone Argo census.",
+    "duplicateDecision": "Do not merge Leatherstocking with Corning and do not create a redirect. Archive the standalone manager-level row while preserving the utility's distinct legal identity and operating history.",
+    "separateEntityBoundary": "The Mirabito-owned New York Leatherstocking business is a separate entity and is not included in the Pennsylvania utility record."
+  },
+  "ownershipResolution": {
+    "directManagerLevelOwner": "Corning Energy Corporation is the directly evidenced manager-level Argo platform.",
+    "indirectArgoOwnershipPeriod": {
+      "manager": "Argo Infrastructure Partners",
+      "vehicle": "ACP Crotona Corp. via Corning Energy Corporation",
+      "entryYear": 2022,
+      "stake": "100% indirect through Corning Energy Corporation; ACP Crotona Corp. is jointly owned by three Argo-managed partnerships",
+      "state": "CLOSED_ACTIVE"
+    },
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Utilities",
+    "subsector": "Natural Gas Distribution Utility",
+    "companyStatus": "ACTIVE",
+    "footprint": "Regulated Pennsylvania natural gas utility serving Susquehanna and Bradford counties."
+  },
+  "acquisitionExitCheck": {
+    "corningAcquisition": "Argo completed its acquisition of the Corning parent through ACP Crotona Corp. on July 6, 2022, establishing indirect control of the Pennsylvania utility.",
+    "apolloTransaction": "The announced Apollo-Argo manager transaction was terminated in January 2026 and creates no pending Leatherstocking ownership change.",
+    "subsequentExitSearch": "No later public Leatherstocking sale, dissolution, legal merger, rebrand or signed pending ownership transfer was identified through 2026-08-16."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj5sm00ibivhekmn5ibaf",
+    "corningProductionCompanyId": "cmrxpj5nf00i2ivhew54p3fxp",
+    "mutation": "ARCHIVE_STANDALONE_RECORD",
+    "queueCorrectionDisposition": "EXCLUDE_AS_CORNING_SUBSIDIARY_VIA_PROTECTED_CORRECTION",
+    "duplicateMapping": "NONE",
+    "corningPreservation": "The separately published Corning manager-level record remains unchanged. Leatherstocking operating detail can be revalidated during Corning's later authoritative scorecard refresh."
+  },
+  "primaryEvidenceUrl": "https://www.puc.pa.gov/pcdocs/1702121.pdf",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0096-leatherstocking-gas-company/attempt-1/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0096-leatherstocking-gas-company/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0096-leatherstocking-gas-company/attempt-1/chatgpt-response-validation.json",
+  "unresolvedQuestions": [
+    "The individual ownership percentages of the three Argo-managed partnerships in ACP Crotona Corp. are not required for this subsidiary-boundary decision."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "98e1397291d2ee67aa37dc08972fd268f3e7c0dfc3ff8f47c32105d57bdb4daf",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}

@@ -1,0 +1,21 @@
+CONVERSATION URL: https://chatgpt.com/c/6a8184c5-bf9c-83ea-915d-8ff118a26219
+TITLE: Leatherstocking Gas Reconciliation
+MODEL: GPT-5.6 Sol
+MODE: Pro
+POWER: 5 of 5
+SUBMITTED: 2026-08-16T09:37:09.380Z
+COMPLETED: 2026-08-16T09:51:26.000Z
+
+USER
+
+# Leatherstocking Gas Company — compact Phase 1 reconciliation
+
+[Exact prompt preserved in research-prompt.md]
+
+ASSISTANT
+
+```json
+{"asOfDate":"2026-08-16","requestedCompany":"Leatherstocking Gas Company","requestedManager":"Argo Infrastructure Partners","decision":"EXCLUDED","confidence":"HIGH","rationale":"Active PA utility below Corning Energy; count Corning once.","identityResolution":{"canonicalLegalName":"Leatherstocking Gas Company, LLC","aliases":["Leatherstocking Gas Company"],"officialWebsite":"https://leatherstockinggas.com/","headquarters":"NOT_PUBLICLY_DISCLOSED","country":"United States","platformBoundary":"Corning Energy Corporation is the Argo platform; Leatherstocking is its PA utility.","duplicateDecision":"Distinct entities; archive without merge or redirect."},"ownershipResolution":{"managerAliasDecision":"Retain Argo; Apollo's deal terminated.","currentOwners":[{"manager":"Argo Infrastructure Partners","fund":"ACP Series 3 Partnership L.P.; Argo Capital Platform (P) 2017, L.P.; Argo Capital Platform (K) Series 3, L.P.","vehicle":"ACP Crotona Corp. via Corning Energy Corporation","stake":"100% indirect","entryDate":"2022-07-06","isActive":true,"transactionState":"CLOSED_ACTIVE","entryYear":2022}],"formerOwners":[{"manager":"Mirabito Regulated Industries, LLC","stake":"50%","exitDate":"2020-07-01","isActive":false,"transactionState":"REALIZED","fund":"NOT_PUBLICLY_DISCLOSED","vehicle":"Direct JV interest","entryYear":2010,"exitYear":2020}],"pendingOwnershipTransactions":[]},"operatingResolution":{"sector":"UTILITIES","subsector":"REGULATED_GAS_UTILITY","region":"NORTH_AMERICA","countryTags":["United States"],"description":"New York LLC regulated as a Pennsylvania gas utility.","companyStatus":"ACTIVE","yearFounded":2010,"services":"Natural-gas distribution and transport.","footprint":"Susquehanna and Bradford counties, Pennsylvania.","scale":["500 customers; 21 pipeline miles"]},"acquisitionExitCheck":{"formationOrAcquisition":"50/50 venture began in NY in 2010 and PA in 2011; Corning bought Mirabito's PA stake on 2020-07-01.","legalClosing":"Argo bought 100% of Corning via ACP Crotona on 2022-07-06; Leatherstocking is indirect.","subsequentExitSearch":"No later sale, dissolution, merger or rebrand; Apollo's Argo deal terminated in January 2026."},"milestones":["2020: Corning takes full PA ownership; 2022: Argo buys Corning; 2026: Apollo deal terminates."],"evidence":[{"label":"Company history","url":"https://leatherstockinggas.com/company-history","purpose":"Formation, state split and parent","sourceTier":"PRIMARY","workingStatus":"WORKING","isRecommendedPrimary":false},{"label":"PA PUC filing","url":"https://www.puc.pa.gov/pcdocs/1702121.pdf","purpose":"Entity, funds, vehicle and control","sourceTier":"PRIMARY","workingStatus":"WORKING","isRecommendedPrimary":true},{"label":"NY DPS withdrawal","url":"https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D","purpose":"Apollo-Argo deal terminated","sourceTier":"PRIMARY","workingStatus":"WORKING","isRecommendedPrimary":false}],"beforeAfterChanges":["Standalone -> archived subsidiary.","Direct Argo -> indirect via Corning.","NY/PA -> PA utility; NY entity separate."],"excludedOrDuplicateCandidates":["NY Inc. is separate/Mirabito-owned; Pipeline LLC is separate/unregulated."],"unresolvedQuestions":[],"recommendedListAction":"Archive standalone row; retain identity and indirect Argo history under Corning Energy."}
+```
+
+- **EXCLUDED** — Leatherstocking is not a standalone manager-level PortCo; Corning Energy remains Argo's single platform.
