@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T12:33:03.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T13:10:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0100:pike-county-light-and-power:66f65814",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -14923,20 +14923,32 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a4959904b7db48ef4d9742f6de5d50d64dd1e3b6889636624fe876970f1adc73",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-16T12:39:00.000Z",
+      "updatedAt": "2026-08-16T13:10:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0100-pike-county-light-and-power/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0100-pike-county-light-and-power-v1/proposal.json",
+          "sha256": "fec4121fa72802210d31cf4a06f6a0ff80b12767a5b7d67070370f3bf91f13d9"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0100-pike-county-light-and-power-v1.json",
+          "sha256": "9dff4711c3fd66e053f71b2fd25ea530becd289d732624c44704221d9e8d7e43"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0100-pike-county-light-and-power/attempt-1/research-decision.json",
+          "sha256": "fb05c50cb2d9fbafd885c39973ddac01a2ecc06d65de5e288f45c583c65209be"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -14950,6 +14962,54 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T12:39:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T13:03:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be",
+          "evidenceSha256": [
+            "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be",
+            "fb05c50cb2d9fbafd885c39973ddac01a2ecc06d65de5e288f45c583c65209be",
+            "fec4121fa72802210d31cf4a06f6a0ff80b12767a5b7d67070370f3bf91f13d9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T13:03:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be",
+          "evidenceSha256": [
+            "fec4121fa72802210d31cf4a06f6a0ff80b12767a5b7d67070370f3bf91f13d9"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T13:10:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "776662a1eb42efdd3b973ea7b2b8ee63e0d3184d56916f832003787eda87a3be",
+          "evidenceSha256": [
+            "9dff4711c3fd66e053f71b2fd25ea530becd289d732624c44704221d9e8d7e43"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -30102,5 +30162,5 @@
       ]
     }
   ],
-  "manifestSha256": "967bd4d88ac951c05738d2b72453b718a3e858922633ea1601bcaa65cdbfe56f"
+  "manifestSha256": "03a023a5483b8106af48819ddfb782eb345212ef3ab3225a100857e6f6473ad5"
 }

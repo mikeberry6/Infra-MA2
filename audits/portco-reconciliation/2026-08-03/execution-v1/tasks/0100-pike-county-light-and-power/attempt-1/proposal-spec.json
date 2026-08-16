@@ -1,0 +1,285 @@
+{
+  "generatedAt": "2026-08-16T13:02:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpj5nf00i2ivhew54p3fxp"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjqo901euivhedi6h79di",
+      "canonicalRelationId": "cmrxpjqzx01fcivhewff15s5x",
+      "rationale": "Both periods represent Argo's July 2022 acquisition and continuing ownership of the same Corning parent platform and its Pike subsidiary."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkioh02kqivhewy6tf0td",
+      "canonicalRelationId": "cmrxpkjue02m5ivhet3lfscal",
+      "rationale": "Both milestones describe Corning's August 2016 acquisition of Pike County Light & Power from Orange & Rockland."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkip002krivhe2gkhwu30",
+      "canonicalRelationId": "cmrxpkjuv02m6ivhe47h3zlkh",
+      "rationale": "Both milestones describe Argo and ACP Crotona's July 2022 acquisition of 100% of the Corning parent platform."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkiph02ksivheubxrut4v",
+      "canonicalRelationId": "cmrxpkjuv02m6ivhe47h3zlkh",
+      "rationale": "This duplicate milestone describes the same July 2022 Argo acquisition already preserved in the canonical history."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Remove Pike County Light & Power as a standalone manager-level PortCo and consolidate it with the existing Corning parent record. Pike's current official site identifies it as a Corning Energy Corporation subsidiary and says Argo acquired the Corning parent on July 6, 2022. The Pennsylvania PUC's 2025 indirect-control proceeding shows Pike and Leatherstocking below Corning Energy, ACP Crotona and Argo-managed entities; it does not show a separate Pike-level Argo investment. Use Corning Energy Corporation as the current canonical parent name, preserve Corning Natural Gas Holding Corporation and Pike identities as aliases and subsidiary history, and retire the existing duplicate Corning production identity into the immutable queue target. The proposed Apollo indirect-control transaction did not close and was terminated in January 2026, so Argo remains current and no pending ownership transaction is recorded.",
+  "evidence": [
+    {
+      "url": "https://pclpeg.com/about-us",
+      "purpose": "Subsidiary identity, current parent, operating boundary and scale",
+      "supports": [
+        "Pike County Light & Power is a Corning Energy Corporation subsidiary",
+        "Corning acquired Pike on August 31, 2016",
+        "Argo acquired the Corning parent on July 6, 2022"
+      ]
+    },
+    {
+      "url": "https://www.puc.pa.gov/pcdocs/1903783.pdf",
+      "purpose": "Direct ownership chain and 2025 indirect-control proceeding",
+      "supports": [
+        "Pike and Leatherstocking are operating utilities below Corning Energy Corporation",
+        "Argo-managed entities and ACP Crotona sit above the Corning parent platform",
+        "the Apollo application proposed an indirect change of control of Corning and its utilities"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "purpose": "Apollo-Argo transaction termination and current-owner confirmation",
+      "supports": [
+        "the proposed transaction did not close by January 10, 2026",
+        "the transaction agreement and proposed transaction were terminated",
+        "the termination created no ownership change for Corning or Pike"
+      ]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+      "purpose": "Argo acquisition closing and manager-level platform boundary",
+      "supports": [
+        "Argo completed the Corning parent acquisition on July 6, 2022",
+        "the transaction acquired 100% of Corning's common and preferred stock",
+        "the manager-level investment is Corning rather than each regulated subsidiary"
+      ]
+    },
+    {
+      "url": "https://www.corninggas.com/company-history",
+      "purpose": "Corning platform history and subsidiary acquisitions",
+      "supports": [
+        "Corning Natural Gas began operations in 1904",
+        "the holding company was formed in 2013",
+        "the Corning platform acquired Pike in August 2016"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ownershipPeriodUpdates": [],
+  "ownershipPeriodAdditions": [],
+  "milestoneUpdates": [],
+  "citationUpdates": [],
+  "citationAdditions": [],
+  "afterImage": {
+    "id": "cmrxpj5y300ihivhe77dx28te",
+    "name": "Corning Energy Corporation",
+    "aliases": [
+      "Corning Energy",
+      "CEC",
+      "Corning Natural Gas Holding Corp.",
+      "Corning Natural Gas Holding Corporation",
+      "CNGHC",
+      "Pike County Light & Power",
+      "Pike County Light & Power Company",
+      "PCLP",
+      "Pike"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "Regulated natural gas and electric distribution",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Corning Energy Corporation is the parent platform for regulated natural gas and electric distribution utilities in New York and Pennsylvania, including Corning Natural Gas Corporation, Pike County Light & Power Company and Leatherstocking Gas Company. Pike is an operating subsidiary rather than a separate manager-level infrastructure investment. Corning's operating history dates to 1904, its holding company was formed in 2013, and it acquired all of Pike's stock from Orange & Rockland on August 31, 2016. Argo Infrastructure Partners completed the acquisition of 100% of the Corning parent platform on July 6, 2022 through the ACP Crotona ownership chain. A 2025 application proposed replacing the Argo general partner with an Apollo-controlled general partner, but the transaction did not close and was terminated in January 2026. Argo therefore remains the current owner, and no signed pending ownership transaction was identified through August 16, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.corninggas.com/",
+    "yearFounded": 2013,
+    "headquarters": "Corning, New York",
+    "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqzx01fcivhewff15s5x",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "ACP Crotona Holdings, L.P. / ACP Crotona Corp.",
+        "stake": "100%",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkina02koivheav53s1vh",
+        "date": "1904",
+        "event": "Corning Natural Gas, the principal regulated utility operating company and predecessor of the current Corning Energy platform, was incorporated.",
+        "category": "FOUNDING",
+        "sortDate": "1904-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.corninggas.com/company-history"
+        ]
+      },
+      {
+        "id": "cmrxpkju002m4ivhee29lyrpw",
+        "date": "May 17, 1910",
+        "event": "Pike County Light & Power Company, now a regulated operating subsidiary of Corning Energy, was incorporated in Pennsylvania.",
+        "category": "FOUNDING",
+        "sortDate": "1910-05-17T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://pclpeg.com/about-us"
+        ]
+      },
+      {
+        "id": "cmrxpkinw02kpivhea55vjpaj",
+        "date": "Jul 10, 2013",
+        "event": "Corning Natural Gas Holding Corporation was formed as the public parent of Corning Natural Gas and its utility investments; it was later renamed Corning Energy Corporation.",
+        "category": "FOUNDING",
+        "sortDate": "2013-07-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.corninggas.com/company-history",
+          "https://pclpeg.com/about-us"
+        ]
+      },
+      {
+        "id": "cmrxpkjue02m5ivhet3lfscal",
+        "date": "Aug 31, 2016",
+        "event": "Corning Natural Gas Holding Corporation acquired all outstanding stock of Pike County Light & Power from Orange & Rockland Utilities, adding Pike as a regulated subsidiary.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-08-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://pclpeg.com/about-us",
+          "https://www.corninggas.com/company-history"
+        ]
+      },
+      {
+        "id": "cmrxpkjuv02m6ivhe47h3zlkh",
+        "date": "Jul 6, 2022",
+        "event": "Argo Infrastructure Partners completed the acquisition of 100% of Corning's common and preferred stock through the ACP Crotona ownership chain.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-06T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+          "https://www.puc.pa.gov/pcdocs/1903783.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkjva02m7ivhekiixniaw",
+        "date": "Nov 5, 2025",
+        "event": "The Pennsylvania PUC held a hearing on an application for an indirect change of control of Corning Energy and its Pike and Leatherstocking subsidiaries involving Apollo and Argo-affiliated entities.",
+        "category": "OTHER",
+        "sortDate": "2025-11-05T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.puc.pa.gov/pcdocs/1903783.pdf"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jan 15, 2026",
+        "event": "Argo, ACP Crotona Holdings and Apollo withdrew the New York petition after the proposed general-partner transaction failed to close and was terminated.",
+        "category": "OTHER",
+        "sortDate": "2026-01-15T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpowg207d4ivheqretwuv2",
+        "label": "Pclpeg — Pike County Light & Power",
+        "url": "https://pclpeg.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Pike subsidiary operations and service-territory context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowhb07d6ivhepu7oajll",
+        "label": "Pclpeg — Pike County Light & Power",
+        "url": "https://pclpeg.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pike subsidiary identity, Corning parent boundary, acquisition history and operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowjn07daivhewvh8xve0",
+        "label": "Puc — Pike County Light & Power",
+        "url": "https://www.puc.pa.gov/pcdocs/1903783.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Argo and ACP Crotona ownership chain and proposed 2025 indirect-control structure",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpowkg07dbivhedbjljdfo",
+        "label": "Corninggas — Corning Natural Gas Holding Corp.",
+        "url": "https://www.corninggas.com/company-history",
+        "sourceType": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Corning operating history, 2013 holding-company formation and 2016 Pike acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpown607dcivherdyxfrnd",
+        "label": "Close date source — Argo Infrastructure Partners — Leatherstocking Gas Company",
+        "url": "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 6, 2022 closing of Argo's acquisition of the Corning parent platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpotzd079iivhef5o5mskg",
+        "label": "Corninggas — Corning Natural Gas Corporation",
+        "url": "https://www.corninggas.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official Corning utility platform website",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpou2q079oivhec3htesw0",
+        "label": "SEC — Corning Natural Gas Corporation",
+        "url": "https://www.sec.gov/Archives/edgar/data/1582244/000110465922072432/tm2218804d1_8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Corning filing for the completed July 2022 change of control",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "New York DPS — Apollo-Argo petition withdrawal",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "January 2026 confirmation that the proposed Apollo indirect-control transaction did not close and was terminated",
+        "isPrimary": false
+      }
+    ]
+  }
+}
