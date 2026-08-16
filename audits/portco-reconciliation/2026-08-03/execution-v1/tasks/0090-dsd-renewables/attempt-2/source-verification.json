@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0090:dsd-renewables:bb4db790",
+  "taskIndex": 90,
+  "attempt": 2,
+  "companyName": "DSD Renewables",
+  "asOfDate": "2026-08-15",
+  "retrievedAt": "2026-08-16T03:22:00.000Z",
+  "methodology": "Codex independently reopened official company, investor, trade-reporting and institutional sources, checked both acquisitions and subsequent exits, verified the decisive July 2025 DSD ownership page inside the municipal board packet, recorded redirects and access behavior, and hashed retrieved bytes. Search results were used to locate or independently verify direct pages, not as a substitute for source review.",
+  "sources": [
+    {
+      "evidenceUrl": "https://dsdrenewables.com/overview/the-history-of-dsd/",
+      "verificationUrl": "https://dsdrenewables.com/overview/the-history-of-dsd/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://dsdrenewables.com/overview/the-history-of-dsd/",
+      "mediaType": "text/html",
+      "contentSha256": "5de959ebbb55e0ec4182ec3ab18440428941ea0e23c18aea8de65bc4ef24d733",
+      "verifiedClaims": [
+        "GE Solar was launched within GE in 2012.",
+        "The business partnered with BlackRock and rebranded as DSD Renewables in 2019.",
+        "BlackRock acquired GE's remaining interest in 2020."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://dsdrenewables.com/press-release/dsd-secures-200m-preferred-equity-investment-from-ares-management-press-release",
+      "verificationUrl": "https://dsdrenewables.com/press-release/dsd-secures-200m-preferred-equity-investment-from-ares-management-press-release/",
+      "status": "WORKING_REDIRECT_HTTP_200",
+      "httpStatus": 200,
+      "redirectStatus": 301,
+      "finalUrl": "https://dsdrenewables.com/press-release/dsd-secures-200m-preferred-equity-investment-from-ares-management-press-release/",
+      "mediaType": "text/html",
+      "contentSha256": "d7bae828cecd34d92222bbecdbee13457595896cdbebf55f6fdaa44965d3aa66",
+      "verifiedClaims": [
+        "A fund managed by Ares Management's Infrastructure and Power strategy made a $200 million preferred equity investment on March 3, 2022.",
+        "DSD continued to identify BlackRock support after the Ares investment."
+      ]
+    },
+    {
+      "evidenceUrl": "https://dsdrenewables.com/press-release/dsd-receives-250m-strategic-investment-from-cox-enterprises-press-release/",
+      "verificationUrl": "https://dsdrenewables.com/press-release/dsd-receives-250m-strategic-investment-from-cox-enterprises-press-release/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://dsdrenewables.com/press-release/dsd-receives-250m-strategic-investment-from-cox-enterprises-press-release/",
+      "mediaType": "text/html",
+      "contentSha256": "7130a5890f54e5c02bb82ff4428ec39b39dc1786d705aff41c5f0e02b804fd7c",
+      "verifiedClaims": [
+        "Cox Enterprises made a $250 million strategic investment on November 14, 2023.",
+        "BlackRock was to remain majority owner alongside Cox at that closing."
+      ]
+    },
+    {
+      "evidenceUrl": "https://newprojectmedia.com/risk-dsd-renewables-pursuing-asset-sales-amongst-layoffs-restructuring/",
+      "verificationUrl": "https://newprojectmedia.com/risk-dsd-renewables-pursuing-asset-sales-amongst-layoffs-restructuring/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://newprojectmedia.com/risk-dsd-renewables-pursuing-asset-sales-amongst-layoffs-restructuring/",
+      "mediaType": "text/html",
+      "contentSha256": "119c90a9c41fb94b47c8ec768323922a0f66985269eaa2a42e43b578da99b888",
+      "verifiedClaims": [
+        "Ares and then-majority shareholder BlackRock entered a consensual change-of-control agreement in March 2025.",
+        "Ares converted its preferred investment to common equity and invested additional capital.",
+        "Reported asset sales and restructuring did not establish a signed sale of the DSD platform."
+      ]
+    },
+    {
+      "evidenceUrl": "https://ionanalytics.com/insights/infralogic/ares-exploring-sale-of-dsd-renewables/",
+      "verificationUrl": "https://ionanalytics.com/insights/infralogic/ares-exploring-sale-of-dsd-renewables/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "finalUrl": "https://ionanalytics.com/insights/infralogic/ares-exploring-sale-of-dsd-renewables/",
+      "mediaType": "text/html",
+      "blockedResponseSha256": "d6707fab1b05dea735697df4c89026cbc4446791810ce276172a317e6435f7b1",
+      "indexedTextVerifiedAt": "2026-08-16T03:20:00.000Z",
+      "verifiedClaims": [
+        "Ares took a majority stake in May 2025.",
+        "BlackRock acquired 80% in 2019 and GE's remaining 20% in 2020, and Cox invested in 2023.",
+        "Ares was exploring a sale in November 2025, but the report did not identify a signed agreement or completed sale."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.obparks.org/sites/default/files/pdf/park-board/PUBLIC%20July%2021%2C%202025%20Board%20Packet_0.pdf",
+      "verificationUrl": "https://www.obparks.org/sites/default/files/pdf/park-board/PUBLIC%20July%2021%2C%202025%20Board%20Packet_0.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.obparks.org/sites/default/files/pdf/park-board/PUBLIC%20July%2021%2C%202025%20Board%20Packet_0.pdf",
+      "mediaType": "application/pdf",
+      "contentSha256": "04615be307da933d6b68f44bfb053dd6707afb819bfec1fa5725ad49eedb10db",
+      "page": 135,
+      "embeddedProposalPage": 12,
+      "pageStatus": "TEXT_AND_VISUAL_LAYOUT_VERIFIED",
+      "verifiedClaims": [
+        "A July 2025 DSD proposal identifies the platform as backed by Ares Management Corporation, BlackRock Real Assets and Cox Enterprises.",
+        "The same page describes DSD as developing, owning and operating distributed-energy assets long term."
+      ]
+    },
+    {
+      "evidenceUrl": "https://dsdrenewables.com/press-release/dsd-secures-238-million-in-long-term-financing-for-233-mw-of-solar-energy/",
+      "verificationUrl": "https://dsdrenewables.com/press-release/dsd-secures-238-million-in-long-term-financing-for-233-mw-of-solar-energy/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://dsdrenewables.com/press-release/dsd-secures-238-million-in-long-term-financing-for-233-mw-of-solar-energy/",
+      "mediaType": "text/html",
+      "contentSha256": "aa99dc150435896cf678b47eb39503b5613e4278c103c27458b03d4a48d9379b",
+      "verifiedClaims": [
+        "DSD closed $238 million of long-term financing in August 2025 for 233 MW across 188 operating distributed-generation projects.",
+        "The disclosure supports continued platform operations after the 2025 ownership transition."
+      ]
+    }
+  ],
+  "modelEvidenceCorrections": [
+    {
+      "claim": "The ION Analytics page was WORKING.",
+      "disposition": "CORRECTED_BY_CODEX",
+      "reason": "Direct retrieval returned HTTP 403; indexed article text independently verifies the cited claims, so the correct status is BROWSER_BLOCKED_BUT_VERIFIED."
+    },
+    {
+      "claim": "All nonpublic identity and ownership fields belonged in unresolvedQuestions.",
+      "disposition": "REPAIRED",
+      "reason": "The repaired response correctly treats unavailable exact minority percentages and named Ares fund as nonblocking public-disclosure limits and returns an empty unresolvedQuestions array."
+    }
+  ],
+  "exitSearchConclusion": "A November 2025 report described sale exploration and earlier 2025 reporting described restructuring and asset sales, but no definitive signed platform sale, legal closing, insolvency transfer or later ownership change was identified through 2026-08-15. Current evidence therefore supports Ares as majority owner with BlackRock and Cox retained as minority owners, without a pending ownership transaction.",
+  "currentUrlRecheck": {
+    "status": "PASS",
+    "workingOrVerifiedUrlCount": 7,
+    "deadFinalEvidenceUrlCount": 0
+  }
+}
