@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T08:12:00.000Z",
+  "updatedAt": "2026-08-16T08:21:00.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0094:indigo-park-canada-inc:92a79556",
   "source": {
@@ -13909,10 +13909,10 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "31aec9438cd5d08f2e79b24ce92c0abd21863b1f5afa5c12f558cbe2c0cb19ab",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 2,
       "startedAt": "2026-08-16T07:45:00.000Z",
-      "updatedAt": "2026-08-16T08:12:00.000Z",
+      "updatedAt": "2026-08-16T08:21:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -13930,7 +13930,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0094-indigo-park-canada-inc-v1.json",
           "sha256": "ba6796fea03177e97942dcd7b1201ad1e866c8e01f368ef6fa39e6a362d0edaf"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0094-indigo-park-canada-inc/attempt-2/production-apply/apply-receipt.json",
+          "sha256": "d63824dde9035ffb7818ea50823a0d9910377b83f9a4792873dd1dd9d60668c3"
+        },
         "decision": {
           "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0094-indigo-park-canada-inc/attempt-2/research-decision.json",
           "sha256": "9b33cff418781c7fcf1e47d5903f1a1be0036072ef41aeef1fd9222bfb4ac1db"
@@ -14015,6 +14018,33 @@
           "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
           "evidenceSha256": [
             "ba6796fea03177e97942dcd7b1201ad1e866c8e01f368ef6fa39e6a362d0edaf"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-16T08:17:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
+          "evidenceSha256": [
+            "8547b41e07ac7968581a307baad251cc033784f9fd8792e8337652c4aa3f44cf",
+            "ba6796fea03177e97942dcd7b1201ad1e866c8e01f368ef6fa39e6a362d0edaf"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-16T08:21:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
+          "evidenceSha256": [
+            "8547b41e07ac7968581a307baad251cc033784f9fd8792e8337652c4aa3f44cf",
+            "ba6796fea03177e97942dcd7b1201ad1e866c8e01f368ef6fa39e6a362d0edaf",
+            "d63824dde9035ffb7818ea50823a0d9910377b83f9a4792873dd1dd9d60668c3"
           ],
           "kind": "TRANSITION"
         }
@@ -29367,5 +29397,5 @@
       ]
     }
   ],
-  "manifestSha256": "d7ca8a67f00ac3b88b62b24be5261bfa9ec067ef111f159bce7604db9a6b1f81"
+  "manifestSha256": "631b74efb64c6ccd50fd199e333b5d0200febd2dbab3f3e74a69a9c249b84d2c"
 }

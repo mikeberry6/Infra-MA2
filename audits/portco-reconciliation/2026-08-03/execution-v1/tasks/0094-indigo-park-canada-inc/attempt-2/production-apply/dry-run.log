@@ -1,0 +1,356 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0094-indigo-park-canada-inc-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0094-indigo-park-canada-inc-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0094-indigo-park-canada-inc/attempt-2/locked-production-snapshot.json --proposal-sha256=8547b41e07ac7968581a307baad251cc033784f9fd8792e8337652c4aa3f44cf --approval-sha256=ba6796fea03177e97942dcd7b1201ad1e866c8e01f368ef6fa39e6a362d0edaf --snapshot-sha256=4e04ccc047235e6d90cde6f4312111df2aba51a8979918d2fa2c5c3be799bbce
+
+(node:2892) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "8547b41e07ac7968581a307baad251cc033784f9fd8792e8337652c4aa3f44cf",
+    "approvalSha256": "ba6796fea03177e97942dcd7b1201ad1e866c8e01f368ef6fa39e6a362d0edaf",
+    "afterImageSha256": "64690db00956e69ee4afbd397e9d9835556b023a4cb6bec34c2b3b12af72d2ae",
+    "taskId": "ledger:0094:indigo-park-canada-inc:92a79556",
+    "operation": "ARCHIVE",
+    "company": {
+      "name": "INDIGO Park Canada Inc.",
+      "investmentFirm": "Argo Infrastructure Partners",
+      "sector": "Transportation",
+      "subsector": "Parking management and urban mobility services",
+      "region": "North America",
+      "country": "Canada",
+      "ownershipVehicle": "Legacy direct attribution; actual exposure is indirect through LAZ Parking",
+      "description": "INDIGO Park Canada Inc. is a Montreal-based parking, mobility and EV-services operator active across Canada. Founded in Quebec City in 1988, the company remained a distinct legal and operating business after LAZ Parking completed a 60% acquisition on June 30, 2025; INDIGO Group retained 40%. INDIGO Group's FY2025 accounts state that LAZ committed under the sale agreement to acquire the remaining 40% in 2029, but the exact future closing date and valuation are not yet publicly fixed. The current company site reports more than 340,000 parking stalls across 95 cities and nearly 450,000 active app users. Argo Infrastructure Partners' directly evidenced manager-level investment is LAZ, not INDIGO Park Canada. INDIGO Park Canada is therefore archived from the standalone manager-level PortCo census as an active LAZ subsidiary, without a legal merge, redirect or Argo exit; the contractual 2029 ownership change remains pending.",
+      "status": "Active",
+      "countryTags": [
+        "Canada"
+      ],
+      "website": "https://www.park-indigo.ca/en/",
+      "yearFounded": 1988,
+      "investmentYear": 2025,
+      "headquarters": "Montreal, Quebec",
+      "milestones": [
+        {
+          "date": "1988",
+          "event": "INDIGO Park Canada was founded in Quebec City and later established its headquarters in Montreal.",
+          "category": "Founding"
+        },
+        {
+          "date": "Jun 30, 2025",
+          "event": "LAZ Parking completed the acquisition of 60% of INDIGO Park Canada; INDIGO Group retained the remaining 40%.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Jul 1, 2025",
+          "event": "LAZ and INDIGO Group publicly announced the completed 60/40 partnership, with INDIGO Park Canada retaining its separate identity and John Laires remaining CEO.",
+          "category": "Other"
+        },
+        {
+          "date": "Mar 26, 2026",
+          "event": "INDIGO Group's FY2025 accounts confirmed its retained 40% interest and disclosed LAZ's contractual commitment to acquire that remaining stake in 2029.",
+          "category": "Other"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Park Indigo — INDIGO Park Canada Inc.",
+          "url": "https://www.park-indigo.ca/en/",
+          "type": "ARTICLE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current consumer-facing INDIGO Park Canada identity and operating site"
+        },
+        {
+          "label": "Business — INDIGO Park Canada Inc.",
+          "url": "https://business.parkindigo.ca/",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "INDIGO Park Canada business-services profile"
+        },
+        {
+          "label": "Close date source — Argo Infrastructure Partners — INDIGO Park Canada Inc.",
+          "url": "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada",
+          "type": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "LAZ 60% completed acquisition, separate-company status and Argo-through-LAZ boundary"
+        },
+        {
+          "label": "Group Indigo — INDIGO Park Canada Inc.",
+          "url": "https://www.group-indigo.com/wp-content/uploads/2025/07/20250701-Press-Release-INDIGO-Group-forges-strategic-partnership-with-LAZ-Parking-in-Canada.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "INDIGO Park Canada founding, Montreal base, 60/40 ownership and distinct operating identity"
+        },
+        {
+          "label": "Indigoneo — Indigo Park Canada",
+          "url": "https://indigoneo.ca/",
+          "type": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current INDIGO Neo Canadian digital parking platform"
+        },
+        {
+          "label": "Group Indigo — Indigo Park Canada",
+          "url": "https://www.group-indigo.com/en/press/press-release/indigo-group-s-a-2025-annual-results/",
+          "type": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "March 26, 2026 confirmation of the June 30, 2025 60% sale and continuing partnership"
+        },
+        {
+          "label": "INDIGO Group — FY2025 consolidated financial statements",
+          "url": "https://www.group-indigo.com/wp-content/uploads/2026/03/Financial-Results-FY25.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "June 30, 2025 closing, current 60/40 ownership and LAZ's contractual 2029 acquisition commitment"
+        },
+        {
+          "label": "INDIGO Park Canada — About",
+          "url": "https://business.parkindigo.ca/about",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current active operations, Montreal headquarters and nationwide Canadian footprint"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "Argo Infrastructure Partners",
+          "ownershipVehicle": "Legacy direct attribution; actual exposure is indirect through LAZ Parking",
+          "vehicleName": "Legacy direct attribution; actual exposure is indirect through LAZ Parking",
+          "investmentYear": 2025,
+          "stake": "No separate direct INDIGO Park Canada position established; retained only as corrected audit history",
+          "status": "Realized",
+          "transactionState": "REALIZED"
+        },
+        {
+          "investmentFirm": "Argo Infrastructure Partners",
+          "ownershipVehicle": "Duplicate legacy attribution; no separate second position established",
+          "vehicleName": "Duplicate legacy attribution; no separate second position established",
+          "investmentYear": 2025,
+          "stake": "No separate ownership position established; retained only as corrected audit history",
+          "status": "Realized",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": "cmrxpj5r000i8ivhedcwlfku0",
+      "name": "INDIGO Park Canada Inc.",
+      "aliases": [],
+      "sector": "TRANSPORTATION",
+      "subsector": "Parking management and urban mobility services",
+      "region": "NORTH_AMERICA",
+      "country": "Canada",
+      "countryTags": [
+        "Canada"
+      ],
+      "description": "INDIGO Park Canada Inc. is a Montreal-based parking, mobility and EV-services operator active across Canada. Founded in Quebec City in 1988, the company remained a distinct legal and operating business after LAZ Parking completed a 60% acquisition on June 30, 2025; INDIGO Group retained 40%. INDIGO Group's FY2025 accounts state that LAZ committed under the sale agreement to acquire the remaining 40% in 2029, but the exact future closing date and valuation are not yet publicly fixed. The current company site reports more than 340,000 parking stalls across 95 cities and nearly 450,000 active app users. Argo Infrastructure Partners' directly evidenced manager-level investment is LAZ, not INDIGO Park Canada. INDIGO Park Canada is therefore archived from the standalone manager-level PortCo census as an active LAZ subsidiary, without a legal merge, redirect or Argo exit; the contractual 2029 ownership change remains pending.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "ARCHIVED",
+      "website": "https://www.park-indigo.ca/en/",
+      "yearFounded": 1988,
+      "headquarters": "Montreal, Quebec",
+      "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjqrq01f1ivhenadqtoup",
+          "managerName": "Argo Infrastructure Partners",
+          "organizationName": "Argo Infrastructure Partners",
+          "fundName": null,
+          "vehicleName": "Legacy direct attribution; actual exposure is indirect through LAZ Parking",
+          "stake": "No separate direct INDIGO Park Canada position established; retained only as corrected audit history",
+          "investmentYear": 2025,
+          "exitYear": null,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        },
+        {
+          "id": "cmrxpjqs601f2ivhekvjrmtgh",
+          "managerName": "Argo Infrastructure Partners",
+          "organizationName": "Argo Infrastructure Partners",
+          "fundName": null,
+          "vehicleName": "Duplicate legacy attribution; no separate second position established",
+          "stake": "No separate ownership position established; retained only as corrected audit history",
+          "investmentYear": 2025,
+          "exitYear": null,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        }
+      ],
+      "pendingOwnershipTransactions": [
+        {
+          "id": null,
+          "direction": "EXIT",
+          "transactionState": "SIGNED_PENDING_EXIT",
+          "counterpartyName": "LAZ Parking",
+          "transactionDescription": "Under the June 2025 INDIGO Park Canada sale agreement, LAZ Parking committed to acquire INDIGO Group S.A.'s remaining 40% interest in 2029. INDIGO Group remained the legal 40% owner at December 31, 2025; the exact 2029 closing date and valuation are not yet publicly fixed.",
+          "announcedAt": "2025-07-01",
+          "expectedClosing": "2029 (exact date not publicly disclosed)",
+          "relatedOwnershipPeriodIds": [],
+          "evidenceUrls": [
+            "https://www.group-indigo.com/wp-content/uploads/2026/03/Financial-Results-FY25.pdf",
+            "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada"
+          ]
+        }
+      ],
+      "milestones": [
+        {
+          "id": "cmrxpkj4902l9ivhepaf9gsfg",
+          "date": "1988",
+          "event": "INDIGO Park Canada was founded in Quebec City and later established its headquarters in Montreal.",
+          "category": "FOUNDING",
+          "sortDate": "1988-01-01T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.group-indigo.com/wp-content/uploads/2025/07/20250701-Press-Release-INDIGO-Group-forges-strategic-partnership-with-LAZ-Parking-in-Canada.pdf",
+            "https://business.parkindigo.ca/about"
+          ]
+        },
+        {
+          "id": "cmrxpkj4w02laivhe7f8etcri",
+          "date": "Jun 30, 2025",
+          "event": "LAZ Parking completed the acquisition of 60% of INDIGO Park Canada; INDIGO Group retained the remaining 40%.",
+          "category": "ACQUISITION",
+          "sortDate": "2025-06-30T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.group-indigo.com/wp-content/uploads/2026/03/Financial-Results-FY25.pdf",
+            "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada"
+          ]
+        },
+        {
+          "id": "cmrxpkj5h02lbivhe0clx4u4r",
+          "date": "Jul 1, 2025",
+          "event": "LAZ and INDIGO Group publicly announced the completed 60/40 partnership, with INDIGO Park Canada retaining its separate identity and John Laires remaining CEO.",
+          "category": "OTHER",
+          "sortDate": "2025-07-01T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada",
+            "https://www.group-indigo.com/wp-content/uploads/2025/07/20250701-Press-Release-INDIGO-Group-forges-strategic-partnership-with-LAZ-Parking-in-Canada.pdf"
+          ]
+        },
+        {
+          "id": "cmrxpkj5x02lcivheirx1jb4d",
+          "date": "Mar 26, 2026",
+          "event": "INDIGO Group's FY2025 accounts confirmed its retained 40% interest and disclosed LAZ's contractual commitment to acquire that remaining stake in 2029.",
+          "category": "OTHER",
+          "sortDate": "2026-03-26T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.group-indigo.com/wp-content/uploads/2026/03/Financial-Results-FY25.pdf",
+            "https://www.group-indigo.com/en/press/press-release/indigo-group-s-a-2025-annual-results/"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxpov1b07axivhe0wty2dgp",
+          "label": "Park Indigo — INDIGO Park Canada Inc.",
+          "url": "https://www.park-indigo.ca/en/",
+          "sourceType": "ARTICLE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current consumer-facing INDIGO Park Canada identity and operating site",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpov2a07azivheblzfj97q",
+          "label": "Business — INDIGO Park Canada Inc.",
+          "url": "https://business.parkindigo.ca/",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "INDIGO Park Canada business-services profile",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpov3h07b1ivhe4cn64xkz",
+          "label": "Close date source — Argo Infrastructure Partners — INDIGO Park Canada Inc.",
+          "url": "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada",
+          "sourceType": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "LAZ 60% completed acquisition, separate-company status and Argo-through-LAZ boundary",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpov4m07b3ivhe906fknoj",
+          "label": "Group Indigo — INDIGO Park Canada Inc.",
+          "url": "https://www.group-indigo.com/wp-content/uploads/2025/07/20250701-Press-Release-INDIGO-Group-forges-strategic-partnership-with-LAZ-Parking-in-Canada.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "INDIGO Park Canada founding, Montreal base, 60/40 ownership and distinct operating identity",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpov5r07b5ivheb1yhirlb",
+          "label": "Indigoneo — Indigo Park Canada",
+          "url": "https://indigoneo.ca/",
+          "sourceType": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current INDIGO Neo Canadian digital parking platform",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpov6v07b7ivhe6c9qq5mk",
+          "label": "Group Indigo — Indigo Park Canada",
+          "url": "https://www.group-indigo.com/en/press/press-release/indigo-group-s-a-2025-annual-results/",
+          "sourceType": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "March 26, 2026 confirmation of the June 30, 2025 60% sale and continuing partnership",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "INDIGO Group — FY2025 consolidated financial statements",
+          "url": "https://www.group-indigo.com/wp-content/uploads/2026/03/Financial-Results-FY25.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "June 30, 2025 closing, current 60/40 ownership and LAZ's contractual 2029 acquisition commitment",
+          "isPrimary": true
+        },
+        {
+          "id": null,
+          "label": "INDIGO Park Canada — About",
+          "url": "https://business.parkindigo.ca/about",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current active operations, Montreal headquarters and nationwide Canadian footprint",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "INDIGO Park Canada Inc.",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to description, recordStatus, website, yearFounded, headquarters, lastVerifiedAt, milestones, citations."
+      },
+      {
+        "kind": "RETIRE_OWNERSHIP",
+        "relationIds": [
+          "cmrxpjqrq01f1ivhenadqtoup",
+          "cmrxpjqs601f2ivhekvjrmtgh"
+        ],
+        "detail": "Retire 2 ownership period(s) without deleting history."
+      },
+      {
+        "kind": "ADD_PENDING_TRANSACTION",
+        "relationIds": [],
+        "detail": "Add 1 signed pending ownership transaction(s)."
+      }
+    ],
+    "changedFields": [
+      "citations",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "ownershipPeriods",
+      "pendingOwnershipTransactions",
+      "recordStatus",
+      "website",
+      "yearFounded"
+    ],
+    "retiredCompanyIds": []
+  }
+}
