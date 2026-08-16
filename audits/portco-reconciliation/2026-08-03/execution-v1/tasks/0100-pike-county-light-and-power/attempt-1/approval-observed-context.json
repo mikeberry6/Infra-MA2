@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0100:pike-county-light-and-power:66f65814",
+  "taskIndex": 100,
+  "companyName": "Pike County Light & Power",
+  "generatedAt": "2026-08-16T13:08:34.202Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0100-pike-county-light-and-power/attempt-1/approval-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 100,
+    "taskId": "ledger:0100:pike-county-light-and-power:66f65814",
+    "canonicalKey": "pike-county-light-and-power|united-states",
+    "companyName": "Pike County Light & Power",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "015-argo-infrastructure-partners:repo-only:007:pike-county-light-power"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5y300ihivhe77dx28te"
+    ],
+    "seedKeys": [
+      "pike county light & power|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.corninggas.com/company-history",
+      "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Argo Infrastructure Partners MATCHED_ELSEWHERE: Repository record is an operating subsidiary beneath the included Corning Natural Gas Holding Corporation platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5y300ihivhe77dx28te",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pike-county-light-and-power|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj5y300ihivhe77dx28te",
+    "name": "Pike County Light & Power",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Electric & Gas Distribution Utility",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pike County Light & Power is a regulated electric and natural gas utility serving communities in northeastern Pennsylvania. The utility provides local distribution service to residential, commercial, and other customers through an asset-heavy model based on owned and operated utility infrastructure. Company materials state that it was incorporated on May 17, 1910 and continues to operate from Milford with defined electric and gas service territories in Pike County. The business is a local franchise utility rather than a merchant power or unregulated energy-services platform. Public filings show that the utility sits alongside Leatherstocking Gas in a regional regulated-utility ownership chain associated with Argo Infrastructure Partners, while public sources do not disclose the current operating-company ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1910,
+    "headquarters": "Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqzx01fcivhewff15s5x",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "ACP Crotona Corp. (via Corning Natural Gas Holding Corp.)",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkju002m4ivhee29lyrpw",
+        "date": "May 17, 1910",
+        "event": "Pike County Light & Power Company was incorporated in Pennsylvania.",
+        "category": "FOUNDING",
+        "sortDate": "1910-05-17T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjue02m5ivhet3lfscal",
+        "date": "Aug 2016",
+        "event": "Pike County Light and Power became part of Corning Natural Gas Holding Corp.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjuv02m6ivhe47h3zlkh",
+        "date": "Jul 6, 2022",
+        "event": "Argo Infrastructure Partners completed the acquisition of Corning Natural Gas Holding Corp., the parent of Pike County Light & Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-06T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjva02m7ivhekiixniaw",
+        "date": "Nov 2025",
+        "event": "Pennsylvania PUC filings documented a change-of-control application involving Pike County Light & Power and Argo-affiliated entities.",
+        "category": "FINANCING",
+        "sortDate": "2025-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpowg207d4ivheqretwuv2",
+        "label": "Pclpeg — Pike County Light & Power",
+        "url": "https://pclpeg.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pclpeg company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpowhb07d6ivhepu7oajll",
+        "label": "Pclpeg — Pike County Light & Power",
+        "url": "https://pclpeg.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pclpeg company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowif07d8ivheia2608sh",
+        "label": "Pclpeg — Pike County Light & Power",
+        "url": "https://pclpeg.com/service-areas",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pclpeg — Pike County Light & Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowjn07daivhewvh8xve0",
+        "label": "Puc — Pike County Light & Power",
+        "url": "https://www.puc.pa.gov/pcdocs/1903783.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Puc — Pike County Light & Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowkg07dbivhedbjljdfo",
+        "label": "Corninggas — Corning Natural Gas Holding Corp.",
+        "url": "https://www.corninggas.com/company-history",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Corninggas — Pike County Light & Power Company",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpown607dcivherdyxfrnd",
+        "label": "Close date source — Argo Infrastructure Partners — Leatherstocking Gas Company",
+        "url": "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Pike County Light & Power",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Utilities",
+    "subsector": "Electric & Gas Distribution Utility",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ACP Crotona Corp. (via Corning Natural Gas Holding Corp.)",
+    "description": "Pike County Light & Power is a regulated electric and natural gas utility serving communities in northeastern Pennsylvania. The utility provides local distribution service to residential, commercial, and other customers through an asset-heavy model based on owned and operated utility infrastructure. Company materials state that it was incorporated on May 17, 1910 and continues to operate from Milford with defined electric and gas service territories in Pike County. The business is a local franchise utility rather than a merchant power or unregulated energy-services platform. Public filings show that the utility sits alongside Leatherstocking Gas in a regional regulated-utility ownership chain associated with Argo Infrastructure Partners, while public sources do not disclose the current operating-company ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1910,
+    "investmentYear": 2022,
+    "headquarters": "Pennsylvania",
+    "milestones": [
+      {
+        "date": "May 17, 1910",
+        "event": "Pike County Light & Power Company was incorporated in Pennsylvania.",
+        "category": "Founding"
+      },
+      {
+        "date": "Aug 2016",
+        "event": "Pike County Light and Power became part of Corning Natural Gas Holding Corp.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 6, 2022",
+        "event": "Argo Infrastructure Partners completed the acquisition of Corning Natural Gas Holding Corp., the parent of Pike County Light & Power.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 2025",
+        "event": "Pennsylvania PUC filings documented a change-of-control application involving Pike County Light & Power and Argo-affiliated entities.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Pclpeg — Pike County Light & Power",
+        "url": "https://pclpeg.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Pclpeg — Pike County Light & Power",
+        "url": "https://pclpeg.com/about-us",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Pclpeg — Pike County Light & Power",
+        "url": "https://pclpeg.com/service-areas",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Puc — Pike County Light & Power",
+        "url": "https://www.puc.pa.gov/pcdocs/1903783.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Corninggas — Pike County Light & Power Company",
+        "url": "https://www.corninggas.com/company-history",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Close date source — Argo Infrastructure Partners — Pike County Light & Power",
+        "url": "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "ACP Crotona Corp. (via Corning Natural Gas Holding Corp.)",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0100:pike-county-light-and-power:66f65814",
+    "taskIndex": 100,
+    "canonicalKey": "pike-county-light-and-power|united-states",
+    "capturedAt": "2026-08-16T13:08:34.202Z",
+    "databaseRevision": "company-state:5bb49656a8f729dd0c7d4e6af0083949f7703607b7f17b46fa64008ad632ee93",
+    "databaseTargetFingerprint": "2a1bc8fd92634136a3b174f79ce1a63e280b46d22d49fbf3accbfb1943bd1b34",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "a4959904b7db48ef4d9742f6de5d50d64dd1e3b6889636624fe876970f1adc73",
+    "productionSnapshotSha256": "10b105649e97c6ef81a2ea0104fd367df99dfee48a56f255647edc583468ed84",
+    "targetCompanySnapshotSha256": "5bb49656a8f729dd0c7d4e6af0083949f7703607b7f17b46fa64008ad632ee93",
+    "seedEntrySha256": "ae744e382288614cb034cebfccb2997e9bb6df77af3f1cf17a370b7927424c35",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "5e83c955219011e272959d2b2418c7c21774e3f324c5c303e4fc96969442dd54",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "4fac6457f0a76079630f167f69a5af9f35fcd10e5ca9a0711938afac06af83d6",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "017be18154a49eb730de544c4fc0a5158881be9b619eb4f5a404b3d8517bec7c",
+    "stateSha256": "4efa28f89090311b5648c100d599b44269bb1813230663b6e71e91415969b39f",
+    "taskSnapshotSha256": "3ccff0ad9433a5a1dd21a3bf742d4ab2d884d63822e9a1b01ce0a8464eca57f7"
+  },
+  "contextSha256": "0382ea171a9d9d851871324204ecf02fbcc3063a0409522e934b2131f0346b89"
+}
