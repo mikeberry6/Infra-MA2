@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T14:34:00.000Z",
+  "updatedAt": "2026-08-16T14:35:00.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0101:pueblo-airport-generating-station:d9b71a68",
   "source": {
@@ -15066,10 +15066,10 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "9798ca7a2bf730eeb350364ff7e0c853f9c22e846cb5763676d78bf530e90680",
-      "status": "RELEASING",
+      "status": "APPLYING",
       "attempts": 4,
       "startedAt": "2026-08-16T14:30:01.000Z",
-      "updatedAt": "2026-08-16T14:34:00.000Z",
+      "updatedAt": "2026-08-16T14:35:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -15317,6 +15317,18 @@
           "taskSnapshotSha256": "d81db7498744f5b432716e3ac75e2c662e3d3802a7629238b6d0b2cbdf60abc5",
           "evidenceSha256": [
             "fa851325a506b2d11bb52e618d54cafed9d5c7f318987eb03f2b3a5966897eb4"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 21,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-16T14:35:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "d81db7498744f5b432716e3ac75e2c662e3d3802a7629238b6d0b2cbdf60abc5",
+          "evidenceSha256": [
+            "d81db7498744f5b432716e3ac75e2c662e3d3802a7629238b6d0b2cbdf60abc5"
           ],
           "kind": "TRANSITION"
         }
@@ -30433,5 +30445,5 @@
       ]
     }
   ],
-  "manifestSha256": "843701ad7731964759d6fe2d72ab5eaa9ca092c6434a93e2490a743bb510b180"
+  "manifestSha256": "5d0a1b31d26c54ff8643ea1a36651af464a390af884ab6863629c209026876e8"
 }
