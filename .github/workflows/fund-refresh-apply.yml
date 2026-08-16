@@ -499,11 +499,15 @@ jobs:
           fi
 
       - name: Apply migrations to the isolated validation branch
+        env:
+          OWNERSHIP_IDENTITY_CONFIRMATION: FINALIZE_REVIEWED_OWNERSHIP_IDENTITY
         shell: bash
         run: |
           mkdir -p tmp/fund-refresh/validation
           set -o pipefail
           npx prisma migrate deploy 2>&1 | tee tmp/fund-refresh/validation/migrate-deploy.log
+          npx tsx scripts/finalize-ownership-period-identity.ts \
+            --output=tmp/fund-refresh/validation/ownership-period-identity-finalization.json
           npx tsx scripts/finalize-portco-lifecycle-schema.ts \
             --output=tmp/fund-refresh/validation/portco-lifecycle-schema-finalization.json
           npx prisma migrate status 2>&1 | tee tmp/fund-refresh/validation/migrate-status.log

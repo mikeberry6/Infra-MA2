@@ -66,5 +66,16 @@ describe("additive migration safety", () => {
       "utf8",
     );
     expect(auditAdditiveMigrationSql(sql)).toEqual([]);
+    const nonFundConstraint = sql.match(
+      /ADD CONSTRAINT "OwnershipPeriod_non_fund_attribution_check"([\s\S]*?),\n  ADD CONSTRAINT/,
+    )?.[1];
+    expect(nonFundConstraint).toContain(
+      `"fundAttribution" <> 'DIRECT_PROGRAM'::"OwnershipFundAttribution"\n      OR "fundId" IS NULL`,
+    );
+    expect(nonFundConstraint).not.toContain("UNRESOLVED");
+    const schema = readFileSync("prisma/schema.prisma", "utf8");
+    expect(schema).toContain(
+      `map: "OwnershipPeriod_companyId_organizationId_vehicleName_investment"`,
+    );
   });
 });

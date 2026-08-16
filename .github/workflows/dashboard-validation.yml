@@ -14,7 +14,9 @@ on:
       - "prisma/schema.prisma"
       - "prisma/migrations/**"
       - "scripts/assert-database-target.ts"
+      - "scripts/finalize-ownership-period-identity.ts"
       - "scripts/finalize-portco-lifecycle-schema.ts"
+      - "scripts/recover-portfolio-fund-attribution-validation.ts"
       - "scripts/verify-auth-throttle-schema.ts"
       - "scripts/backfill-dashboard-signal-approvals.ts"
       - "scripts/dashboard-*.ts"
@@ -51,6 +53,9 @@ jobs:
       EXPECTED_DATABASE_NAME: ${{ vars.DASHBOARD_MIGRATION_DATABASE_NAME }}
       FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
       FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+      TARGET_DATABASE: validation
+      OWNERSHIP_IDENTITY_CONFIRMATION: FINALIZE_REVIEWED_OWNERSHIP_IDENTITY
+      PORTFOLIO_FUND_ATTRIBUTION_VALIDATION_RECOVERY: RECOVER_FAILED_ATTRIBUTION_VALIDATION_MIGRATION
 
     steps:
       - name: Checkout candidate
@@ -88,8 +93,17 @@ jobs:
             --output=tmp/dashboard-validation/auth-throttle-schema-preflight.json
           npx tsx scripts/verify-import-preview-schema.ts \
             --output=tmp/dashboard-validation/import-preview-schema-preflight.json
+          npx tsx scripts/recover-portfolio-fund-attribution-validation.ts \
+            --output=tmp/dashboard-validation/attribution-migration-recovery.json
+          if jq -e '.recoveryRequired == true' \
+            tmp/dashboard-validation/attribution-migration-recovery.json >/dev/null; then
+            npx prisma migrate resolve \
+              --rolled-back 20260816120000_ownership_fund_attribution
+          fi
           for pass in initial repeat; do
             npx prisma migrate deploy 2>&1 | tee "tmp/dashboard-validation/migrate-deploy-${pass}.log"
+            npx tsx scripts/finalize-ownership-period-identity.ts \
+              --output="tmp/dashboard-validation/ownership-period-identity-finalization-${pass}.json"
             npx tsx scripts/finalize-portco-lifecycle-schema.ts \
               --output="tmp/dashboard-validation/portco-lifecycle-schema-finalization-${pass}.json"
             npx tsx scripts/verify-import-preview-schema.ts \

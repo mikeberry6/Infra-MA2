@@ -114,6 +114,19 @@ describe("focused dashboard operations workflows", () => {
     expect(source).toContain("auth-throttle-schema-preflight.json");
   });
 
+  it("recovers only the known failed attribution migration on the isolated validation target", () => {
+    const source = workflow("dashboard-validation.yml");
+    const recovery = source.indexOf("recover-portfolio-fund-attribution-validation.ts");
+    const resolve = source.indexOf("migrate resolve");
+    const deploy = source.indexOf("prisma migrate deploy");
+    expect(source).toContain("TARGET_DATABASE: validation");
+    expect(source).toContain("RECOVER_FAILED_ATTRIBUTION_VALIDATION_MIGRATION");
+    expect(recovery).toBeGreaterThan(source.indexOf("assert-database-target.ts"));
+    expect(recovery).toBeLessThan(resolve);
+    expect(resolve).toBeLessThan(deploy);
+    expect(source).toContain("--rolled-back 20260816120000_ownership_fund_attribution");
+  });
+
   it("proves ImportPreview before and after each validation migration pass", () => {
     const source = workflow("dashboard-validation.yml");
     const preflight = source.indexOf("verify-import-preview-schema.ts");
@@ -149,6 +162,26 @@ describe("focused dashboard operations workflows", () => {
       while (deploy >= 0) {
         const nextDeploy = source.indexOf("prisma migrate deploy", deploy + 1);
         const finalizer = source.indexOf("finalize-portco-lifecycle-schema.ts", deploy);
+        expect(finalizer, name).toBeGreaterThan(deploy);
+        if (nextDeploy >= 0) expect(finalizer, name).toBeLessThan(nextDeploy);
+        deploy = nextDeploy;
+      }
+    }
+  });
+
+  it("finalizes the ownership identity index after every migration deploy", () => {
+    for (const name of [
+      "stage-production-schema.yml",
+      "dashboard-validation.yml",
+      "fund-refresh-apply.yml",
+      "fund-refresh-rollback.yml",
+    ]) {
+      const source = workflow(name);
+      let deploy = source.indexOf("prisma migrate deploy");
+      expect(deploy, name).toBeGreaterThanOrEqual(0);
+      while (deploy >= 0) {
+        const nextDeploy = source.indexOf("prisma migrate deploy", deploy + 1);
+        const finalizer = source.indexOf("finalize-ownership-period-identity.ts", deploy);
         expect(finalizer, name).toBeGreaterThan(deploy);
         if (nextDeploy >= 0) expect(finalizer, name).toBeLessThan(nextDeploy);
         deploy = nextDeploy;

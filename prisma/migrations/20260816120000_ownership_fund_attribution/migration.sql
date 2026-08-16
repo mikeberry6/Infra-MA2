@@ -40,10 +40,7 @@ ALTER TABLE "OwnershipPeriod"
     ),
   ADD CONSTRAINT "OwnershipPeriod_non_fund_attribution_check"
     CHECK (
-      "fundAttribution" NOT IN (
-        'DIRECT_PROGRAM'::"OwnershipFundAttribution",
-        'UNRESOLVED'::"OwnershipFundAttribution"
-      )
+      "fundAttribution" <> 'DIRECT_PROGRAM'::"OwnershipFundAttribution"
       OR "fundId" IS NULL
     ),
   ADD CONSTRAINT "OwnershipPeriod_attributed_fund_name_check"
