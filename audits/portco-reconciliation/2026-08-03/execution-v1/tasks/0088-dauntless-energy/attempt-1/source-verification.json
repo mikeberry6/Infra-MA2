@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0088:dauntless-energy:3912e87d",
+  "taskIndex": 88,
+  "attempt": 1,
+  "companyName": "Dauntless Energy / Skyline Renewables",
+  "asOfDate": "2026-08-15",
+  "retrievedAt": "2026-08-16T00:54:44.000Z",
+  "methodology": "Codex independently reopened current manager and company sources, checked acquisition and exit evidence, recorded redirects and access behavior, and hashed directly retrieved bytes. Search results were used to locate sources, not as the sole support for the final after-image.",
+  "sources": [
+    {
+      "evidenceUrl": "https://www.ardian.com/expertise/real-assets/infrastructure/investments?nid=620",
+      "verificationUrl": "https://www.ardian.com/expertise/real-assets/infrastructure/investments?nid=620",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ardian.com/expertise/real-assets/infrastructure/investments?nid=620",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 79543,
+      "contentSha256": "2577fa5f1fcae91b5a6fb5f3ba6d6dca6614ab102535df532c60d0e39505729f",
+      "verifiedClaims": [
+        "Ardian's live infrastructure portfolio identifies Skyline Renewables as its United States renewables investment with a January 2018 investment date.",
+        "The page continues to present Skyline, not Dauntless, as the investment identity."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://www.ardian.com/sites/default/files/2026-06/Ardian-2025-Integrated-Report.pdf",
+      "verificationUrl": "https://www.ardian.com/sites/default/files/2026-06/Ardian-2025-Integrated-Report.pdf",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ardian.com/sites/default/files/2026-06/Ardian-2025-Integrated-Report.pdf",
+      "mediaType": "application/pdf",
+      "contentLengthBytes": 4949532,
+      "contentSha256": "6a6328f3b0a359d212a283e2c560d22b5560d4976ab96e424904c20cf4856fbf",
+      "verifiedClaims": [
+        "Ardian's 2025 integrated report includes Skyline Renewables in its selected infrastructure portfolio.",
+        "The report gives a January 2018 investment date and identifies Skyline as a United States wind-energy investment."
+      ],
+      "visualInspection": {
+        "pages": [55],
+        "status": "TEXT_AND_PAGE_POSITION_VERIFIED"
+      }
+    },
+    {
+      "evidenceUrl": "https://www.ardian.com/news-insights/press-releases/ardian-raises-more-us800-million-inaugural-american-infrastructure",
+      "verificationUrl": "https://www.ardian.com/news-insights/press-releases/ardian-raises-more-us800-million-inaugural-american-infrastructure",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ardian.com/news-insights/press-releases/ardian-raises-more-us800-million-inaugural-american-infrastructure",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 57611,
+      "contentSha256": "c421132e8648f34b28b90fd47072adc7144ae0188ceeadb2398f01d04d04b5bc",
+      "verifiedClaims": [
+        "Ardian identifies Skyline as one of the first investments made by Ardian Americas Infrastructure Fund IV.",
+        "The release supports the existing AAIF IV fund attribution and infrastructure-strategy basis."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.ardian.com/press-releases/ardian-infrastructure-partners-tph-create-skyline-renewables-and-acquires-60mw-wind",
+      "verificationUrl": "https://www.ardian.com/news-insights/press-releases/ardian-infrastructure-partners-tph-create-skyline-renewables-and",
+      "status": "REDIRECTED_WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ardian.com/news-insights/press-releases/ardian-infrastructure-partners-tph-create-skyline-renewables-and",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 62004,
+      "contentSha256": "cee6928270be91e2fdc0c749063a771d859e6c743adf4dd6ae0316061130a022",
+      "databaseSourceMetadata": {
+        "label": "Investment date source — Ardian — Dauntless Energy",
+        "type": "ARTICLE"
+      },
+      "verifiedClaims": [
+        "Ardian and TPH created Skyline Renewables in 2018 as a United States renewables platform.",
+        "Skyline completed its first acquisition, the 60 MW Whirlwind wind farm, on March 5, 2018."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.ardian.com/news-insights/press-releases/ardian-and-skyline-renewables-announce-250-mw-galloway-solar-project",
+      "verificationUrl": "https://www.ardian.com/news-insights/press-releases/ardian-and-skyline-renewables-announce-250-mw-galloway-solar-project",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ardian.com/news-insights/press-releases/ardian-and-skyline-renewables-announce-250-mw-galloway-solar-project",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 64748,
+      "contentSha256": "7e2d5d02f8b620c56407a294adf822745d61ec061e3d025c5f8c996e452ab80f",
+      "verifiedClaims": [
+        "Ardian-backed Skyline announced the 250 MW Galloway solar project in October 2020.",
+        "Ardian reported more than 1,050 MW of controlled wind and solar capacity for Skyline."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.linkedin.com/company/skyline-renewables",
+      "verificationUrl": "https://www.linkedin.com/company/skyline-renewables",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 999,
+      "finalUrl": "https://www.linkedin.com/company/skyline-renewables",
+      "mediaType": "text/html",
+      "contentLengthBytes": null,
+      "contentSha256": null,
+      "verifiedClaims": [
+        "Skyline's current public company page calls it a clean-energy portfolio managed by Dauntless Energy.",
+        "The page gives Arlington, Virginia as headquarters and identifies the business as a partnership."
+      ],
+      "notes": "Direct command-line retrieval was blocked by LinkedIn, while the current public page was independently opened and read in the research browser."
+    },
+    {
+      "evidenceUrl": "https://www.linkedin.com/company/dauntless-energy",
+      "verificationUrl": "https://www.linkedin.com/company/dauntless-energy",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 999,
+      "finalUrl": "https://www.linkedin.com/company/dauntless-energy",
+      "mediaType": "text/html",
+      "contentLengthBytes": null,
+      "contentSha256": null,
+      "verifiedClaims": [
+        "Dauntless describes itself as Ardian's North American energy investment platform and separately identifies Skyline and 1370 as the two portfolios it manages.",
+        "Dauntless reports Skyline was established in 2018 and has approximately 1 GW of managed assets."
+      ],
+      "notes": "Direct command-line retrieval was blocked by LinkedIn, while the current public page was independently opened and read in the research browser."
+    },
+    {
+      "evidenceUrl": "https://www.linkedin.com/posts/justus-getty-26a71056_dauntless-energy-activity-7333173949704441857-RSoD",
+      "verificationUrl": "https://www.linkedin.com/posts/justus-getty-26a71056_dauntless-energy-activity-7333173949704441857-RSoD",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.linkedin.com/posts/justus-getty-26a71056_dauntless-energy-activity-7333173949704441857-RSoD",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLengthBytes": 160079,
+      "contentSha256": "e0c624e5f28f437cd12199091759e7588b4a8e12b87368fb7007a2fa91bf021a",
+      "verifiedClaims": [
+        "A Dauntless principal stated on May 27, 2025 that Dauntless had been formed the prior summer to provide management services to Skyline and 1370.",
+        "The statement disproves the repository claim that Skyline was merely rebranded as Dauntless."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.dauntless-energy.com/",
+      "verificationUrl": "https://www.dauntless-energy.com/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dauntless-energy.com/",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLengthBytes": 37136,
+      "contentSha256": "ecea1341801637e90b37957714d7af375d833c3f954c39465d4a48dfbf33fd4a",
+      "databaseSourceMetadata": {
+        "label": "Dauntless Energy — Dauntless Energy",
+        "type": "WEBSITE"
+      },
+      "verifiedClaims": [
+        "Dauntless is an active independent-power and management platform headquartered in Arlington, Virginia.",
+        "The source supports Dauntless as Skyline's current manager, not as a legal rename of Skyline."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.dauntless-energy.com/about",
+      "verificationUrl": "https://www.dauntless-energy.com/about",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dauntless-energy.com/about",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLengthBytes": 46748,
+      "contentSha256": "18b372a7120f8a49354e528f977f09c308353c6d262aa90486dfc1e3dbeef981",
+      "databaseSourceMetadata": {
+        "label": "Dauntless Energy — Dauntless Energy",
+        "type": "WEBSITE"
+      },
+      "verifiedClaims": [
+        "Dauntless describes its North American operating and asset-management services and Arlington headquarters."
+      ]
+    },
+    {
+      "evidenceUrl": "https://www.dauntless-energy.com/our-portfolios",
+      "verificationUrl": "https://www.dauntless-energy.com/",
+      "status": "REDIRECTED_WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dauntless-energy.com/",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLengthBytes": 37136,
+      "contentSha256": "ecea1341801637e90b37957714d7af375d833c3f954c39465d4a48dfbf33fd4a",
+      "databaseSourceMetadata": {
+        "label": "Dauntless Energy — Dauntless Energy",
+        "type": "ARTICLE"
+      },
+      "verifiedClaims": [
+        "The former portfolio URL now redirects to the Dauntless homepage and cannot independently establish the Skyline/1370 boundary."
+      ]
+    }
+  ],
+  "modelEvidenceCorrections": [
+    {
+      "claim": "Dauntless is the canonical successor or rebrand of Skyline Renewables.",
+      "disposition": "REJECTED",
+      "reason": "Ardian continues to identify Skyline as its portfolio investment, while Dauntless and its principal describe Dauntless as a separate company formed in 2024 to manage Skyline and 1370."
+    },
+    {
+      "claim": "Skyline should be mapped beneath Dauntless and not retained as the manager-level PortCo.",
+      "disposition": "REJECTED",
+      "reason": "The census holding and Ardian's current portfolio both identify Skyline as the investee; Dauntless is the management platform."
+    },
+    {
+      "claim": "AAIF IV should be cleared and Ardian's Dauntless entry should start in 2024.",
+      "disposition": "REJECTED",
+      "reason": "The canonical record is corrected to Skyline, for which Ardian directly attributes AAIF IV and a 2018 investment."
+    },
+    {
+      "claim": "1370 is merely a subsidiary beneath the same canonical PortCo.",
+      "disposition": "NOT_ADOPTED",
+      "reason": "Dauntless describes Skyline and 1370 as distinct managed portfolios. Task 88 resolves Skyline only; 1370 remains outside this after-image and may require a later delta-sweep judgment."
+    }
+  ],
+  "exitSearchConclusion": "No Skyline-level sale, completed exit or signed pending ownership transfer was identified through 2026-08-15. Ardian's live portfolio continues to show Skyline, Ardian's 2025 integrated report lists it in the infrastructure portfolio, and Skyline's current public page identifies continuing management by Dauntless.",
+  "currentUrlRecheck": {
+    "status": "PASS",
+    "workingOrVerifiedUrlCount": 11,
+    "deadFinalEvidenceUrlCount": 0
+  }
+}
