@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T11:11:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0097:oneta-energy-center:feec8a7c",
+  "updatedAt": "2026-08-16T11:19:01.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -14414,11 +14414,11 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a54cc82b369ffe9835fc4c0e540cd4b91b51b20467183ea76a1779eec12c6192",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-16T11:00:01.000Z",
-      "updatedAt": "2026-08-16T11:11:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-16T11:19:00.000Z",
+      "completedAt": "2026-08-16T11:19:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "f51b85f24b5b419ebe3543ef9c478be7614df1e16a616022937d075306128adb",
@@ -14590,6 +14590,21 @@
             "566315867cee55aa700447d608384afc5b4ade52606443ebf520978b54b2f943"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-16T11:19:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "f51b85f24b5b419ebe3543ef9c478be7614df1e16a616022937d075306128adb",
+          "evidenceSha256": [
+            "386c65cb654569cdf18a325e7e3662b745e16d0a4cfcc078748d0983913383ac",
+            "3e1646352954f3c1e680d9347c3d094416f6ca3a2ffa9c3953fdc3b8d7b03a7d",
+            "566315867cee55aa700447d608384afc5b4ade52606443ebf520978b54b2f943",
+            "f51b85f24b5b419ebe3543ef9c478be7614df1e16a616022937d075306128adb"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -14601,13 +14616,13 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "3851994042570f1c226c77ef509726d31f507b52be91a9a83e08366659844282",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-16T11:19:01.000Z",
+      "completedAt": "2026-08-16T11:19:01.000Z",
+      "exceptionReason": "Task 97 proved Oneta Power, LLC is the operator and permittee for Oneta Energy Center, not a second manager-level portfolio company, and released the complete canonical Argo ownership, identity, milestone and citation after-image; task 98 would duplicate that identity and ownership work.",
+      "supersededByTaskId": "ledger:0097:oneta-energy-center:feec8a7c",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -14628,6 +14643,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-16T11:19:01.000Z",
+          "reason": "Task 97 proved Oneta Power, LLC is the operator and permittee for Oneta Energy Center, not a second manager-level portfolio company, and released the complete canonical Argo ownership, identity, milestone and citation after-image; task 98 would duplicate that identity and ownership work.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -29826,5 +29851,5 @@
       ]
     }
   ],
-  "manifestSha256": "158c49b4d28dc72435b2f59dc596915cd8ed79023dc76afd07f11cc32c5ed7ed"
+  "manifestSha256": "756c687d08c16aca0488001d873be72a77d484bf80e65f9d9d8a612e86752c92"
 }
