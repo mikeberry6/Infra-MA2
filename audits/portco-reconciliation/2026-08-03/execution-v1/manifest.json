@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T09:28:58.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T10:10:30.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0096:leatherstocking-gas-company:040d6e21",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -14272,20 +14272,32 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "316cec89e43f663f793136b20fb23346c697691d102f976c2f428840fc4bb0fd",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-16T09:33:58.000Z",
+      "updatedAt": "2026-08-16T10:10:30.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "98e1397291d2ee67aa37dc08972fd268f3e7c0dfc3ff8f47c32105d57bdb4daf",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0096-leatherstocking-gas-company/attempt-1/locked-task-snapshot.json",
+          "sha256": "98e1397291d2ee67aa37dc08972fd268f3e7c0dfc3ff8f47c32105d57bdb4daf"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0096-leatherstocking-gas-company-v1/proposal.json",
+          "sha256": "bd3c9e26a1a61cdfb49cf3fbab83fbbe3d00bb188d1388de54ddb368a4a0a3bd"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0096-leatherstocking-gas-company-v1.json",
+          "sha256": "dc47e0443bb3ddc6e3c19bd440d68b8d489360888c2a219ac9a7769712e8a460"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0096-leatherstocking-gas-company/attempt-1/research-decision.json",
+          "sha256": "51ec351ea1ae43d8095584d350d6eba285980c2b7b3ccc151d913c8b18ae41e7"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -14299,6 +14311,54 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T09:33:58.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T10:10:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "98e1397291d2ee67aa37dc08972fd268f3e7c0dfc3ff8f47c32105d57bdb4daf",
+          "evidenceSha256": [
+            "51ec351ea1ae43d8095584d350d6eba285980c2b7b3ccc151d913c8b18ae41e7",
+            "98e1397291d2ee67aa37dc08972fd268f3e7c0dfc3ff8f47c32105d57bdb4daf",
+            "bd3c9e26a1a61cdfb49cf3fbab83fbbe3d00bb188d1388de54ddb368a4a0a3bd"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T10:10:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "98e1397291d2ee67aa37dc08972fd268f3e7c0dfc3ff8f47c32105d57bdb4daf",
+          "evidenceSha256": [
+            "bd3c9e26a1a61cdfb49cf3fbab83fbbe3d00bb188d1388de54ddb368a4a0a3bd"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T10:10:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "98e1397291d2ee67aa37dc08972fd268f3e7c0dfc3ff8f47c32105d57bdb4daf",
+          "evidenceSha256": [
+            "dc47e0443bb3ddc6e3c19bd440d68b8d489360888c2a219ac9a7769712e8a460"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -29573,5 +29633,5 @@
       ]
     }
   ],
-  "manifestSha256": "3ed9b30737b823d1a23b57758418c8a80f0efd75e7d2e219a5bf4b4df55b2cac"
+  "manifestSha256": "0b693b4289d7d7d566822c832fbe1f1d0dca993b06b755d0d88e9626892d3e9a"
 }

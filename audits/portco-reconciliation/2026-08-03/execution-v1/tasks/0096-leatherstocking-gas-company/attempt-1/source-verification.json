@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0096:leatherstocking-gas-company:040d6e21",
+  "taskIndex": 96,
+  "attempt": 1,
+  "companyName": "Leatherstocking Gas Company",
+  "asOfDate": "2026-08-16",
+  "retrievedAt": "2026-08-16T10:00:00.000Z",
+  "methodology": "Codex independently reopened the model-cited direct company, Pennsylvania PUC and New York DPS sources, checked response status and document content, reopened the 2022 Argo closing release, and searched current Argo materials for a later sale, exit, merger, rebrand or pending ownership change after the ChatGPT Pro response completed.",
+  "sources": [
+    {
+      "evidenceUrl": "https://leatherstockinggas.com/company-history",
+      "verificationUrl": "https://leatherstockinggas.com/company-history",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://leatherstockinggas.com/company-history",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLength": 30934,
+      "contentSha256": "e24788fa0a3ae0c735a8de9f2b454709474d16aeab35ca1a08f427a09e9640a0",
+      "verifiedClaims": [
+        "Corning Natural Gas Holding Corporation and Mirabito Regulated Industries formed 50/50 Leatherstocking ventures in New York in 2010 and Pennsylvania in 2011.",
+        "Corning acquired Mirabito's 50% Pennsylvania interest on July 1, 2020 and became sole owner of the Pennsylvania utility.",
+        "The New York Leatherstocking business became wholly owned by Mirabito and is not the same operating-company boundary as the Pennsylvania utility.",
+        "Argo acquired the Corning parent on July 6, 2022 and the parent was renamed Corning Energy Corporation in August 2022.",
+        "The current company contact address is in Montrose, Pennsylvania."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.puc.pa.gov/pcdocs/1702121.pdf",
+      "verificationUrl": "https://www.puc.pa.gov/pcdocs/1702121.pdf",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.puc.pa.gov/pcdocs/1702121.pdf",
+      "mediaType": "application/pdf",
+      "contentLength": 2660800,
+      "contentSha256": "d3d8b96543219b2fede7bbff0ce8f108d1487bef9786d21a330bf180dab290ba",
+      "verifiedClaims": [
+        "Leatherstocking Gas Company, LLC is a New York-organized entity regulated as a Pennsylvania natural gas utility.",
+        "Corning Natural Gas Holding Corporation directly owned 100% of the Pennsylvania utility.",
+        "The 2022 transaction transferred indirect control through ACP Crotona Corp. to three Argo-managed partnerships.",
+        "The filing supports indirect Argo control but does not establish Leatherstocking as a separate manager-level Argo investment."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+      "verificationUrl": "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.globenewswire.com/news-release/2022/07/06/2475377/0/en/corning-natural-gas-holding-corporation-acquired-by-argo-infrastructure-partners-lp.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLength": 53701,
+      "contentSha256": "8f987873708f9f1302ccc85f207d4b6809eb387b2b31cbb7f2aecface0b7aee4",
+      "verifiedClaims": [
+        "Argo completed its acquisition of Corning Natural Gas Holding Corporation on July 6, 2022 through ACP Crotona Corp.",
+        "Leatherstocking remained an operating utility beneath the acquired Corning parent."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "verificationUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "mediaType": "application/pdf",
+      "contentLength": 198398,
+      "contentSha256": "0f83f44fc98471b113d9248a20b33082e37749d64963cf95e07557709dfd141d",
+      "verifiedClaims": [
+        "Apollo and Argo did not close their announced manager-level transaction by January 10, 2026.",
+        "The transaction was terminated and the New York petition was withdrawn on January 15, 2026.",
+        "The terminated manager transaction creates no pending Leatherstocking ownership change."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.argoip.com/news-and-insights",
+      "verificationUrl": "https://www.argoip.com/news-and-insights",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.argoip.com/news-and-insights",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLength": 48940,
+      "contentSha256": "611681fa0cf2196005c99621cff51593088afab99a0ed8d679f6849085abd08a",
+      "verifiedClaims": [
+        "Argo continues to publish current Corning portfolio stewardship materials.",
+        "No later sale or separate direct Argo investment in Leatherstocking was identified."
+      ],
+      "isPrimary": false
+    }
+  ],
+  "currentUrlRecheck": {
+    "allInputUrlsRetained": true,
+    "redirectsObserved": 0,
+    "workingCount": 5,
+    "browserBlockedButVerifiedCount": 0,
+    "deadCount": 0
+  },
+  "exitSearchConclusion": "No later public sale, dissolution, legal merger, separate direct Argo investment or signed pending ownership transaction involving Leatherstocking was identified through August 16, 2026. The announced Apollo-Argo manager transaction was terminated in January 2026. Current evidence continues to identify Corning Energy Corporation as Argo's manager-level platform and Leatherstocking Gas Company, LLC as its active Pennsylvania utility subsidiary.",
+  "modelEvidenceCorrections": [
+    "The direct company site publishes a Montrose, Pennsylvania contact address, so headquarters is not treated as NOT_PUBLICLY_DISCLOSED.",
+    "The model's 500-customer and 21-mile scale statement was not required for the Phase 1 boundary decision and is not carried into the proposal without separately attributable support.",
+    "The Pennsylvania utility and the Mirabito-owned New York Leatherstocking business are separate operating entities and must not be conflated.",
+    "The Argo period is current indirect control through Corning Energy Corporation, not a separate direct manager-level Leatherstocking position.",
+    "Leatherstocking and Corning are distinct legal identities. Archive the standalone Leatherstocking row without a company merge or redirect."
+  ]
+}
