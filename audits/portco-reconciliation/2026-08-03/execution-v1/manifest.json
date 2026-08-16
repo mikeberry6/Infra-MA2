@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T14:50:00.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T16:04:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0102:smoky-mountain-hydro:c03f70e0",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -15369,20 +15369,32 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4580b33fe384bf51db37846a34f70294052c02113116653d9a7e8db16696fd93",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-16T15:58:01.000Z",
+      "updatedAt": "2026-08-16T16:04:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "c0578e8ceab0fded71db1c3347cc2729e4e2d0fcd270c730a5b674be618312e4",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0102-smoky-mountain-hydro/attempt-2/locked-task-snapshot.json",
+          "sha256": "c0578e8ceab0fded71db1c3347cc2729e4e2d0fcd270c730a5b674be618312e4"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0102-smoky-mountain-hydro-v2/proposal.json",
+          "sha256": "a83b58b0941e3c26156ee71d27906ea6d3a6a88bb2b32dae719ed39bd8000277"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0102-smoky-mountain-hydro-v2.json",
+          "sha256": "725aad728d073ab8c3fa8d094c5247b0ee736a230d2eeda16bf8a7c141ada2a4"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0102-smoky-mountain-hydro/attempt-1/research-decision.json",
+          "sha256": "ef23a41fa977530f880ed82aac662dd5bb47af05c9ecf3de0d2c76e5a64bfa3a"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -15396,6 +15408,108 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-16T14:56:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T15:54:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8bd42c731ec6326ac4e7eff0beed556f00997c594e4d42179a9beb0ee5aeabfd",
+          "evidenceSha256": [
+            "78ca8e421f4326304d43991bd5d36ece7cfcbffcf2580f83326bca4914c85f75",
+            "8bd42c731ec6326ac4e7eff0beed556f00997c594e4d42179a9beb0ee5aeabfd",
+            "ef23a41fa977530f880ed82aac662dd5bb47af05c9ecf3de0d2c76e5a64bfa3a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T15:54:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8bd42c731ec6326ac4e7eff0beed556f00997c594e4d42179a9beb0ee5aeabfd",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T15:56:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "8bd42c731ec6326ac4e7eff0beed556f00997c594e4d42179a9beb0ee5aeabfd",
+          "evidenceSha256": [
+            "99bd6a57a0a0e66d9ccc99ba44d1ef7f062a92ca07997fb8df24329fcb17f487"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-16T15:58:00.000Z",
+          "reason": "Attempt 1 production dry-run rejected the 2024 PPA milestone relation merge because the retired stored category and the corrected surviving category are incompatible. No seed staging, release, deployment, or database write occurred. Attempt 2 preserves the two retired PPA-history IDs as distinct supported milestones instead of mapping them.",
+          "taskSnapshotSha256": "8bd42c731ec6326ac4e7eff0beed556f00997c594e4d42179a9beb0ee5aeabfd",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T15:58:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T16:02:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c0578e8ceab0fded71db1c3347cc2729e4e2d0fcd270c730a5b674be618312e4",
+          "evidenceSha256": [
+            "a83b58b0941e3c26156ee71d27906ea6d3a6a88bb2b32dae719ed39bd8000277",
+            "c0578e8ceab0fded71db1c3347cc2729e4e2d0fcd270c730a5b674be618312e4",
+            "ef23a41fa977530f880ed82aac662dd5bb47af05c9ecf3de0d2c76e5a64bfa3a"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T16:02:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c0578e8ceab0fded71db1c3347cc2729e4e2d0fcd270c730a5b674be618312e4",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T16:04:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c0578e8ceab0fded71db1c3347cc2729e4e2d0fcd270c730a5b674be618312e4",
+          "evidenceSha256": [
+            "725aad728d073ab8c3fa8d094c5247b0ee736a230d2eeda16bf8a7c141ada2a4"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -30472,5 +30586,5 @@
       ]
     }
   ],
-  "manifestSha256": "093a04bc20af0311e660c9e1c3a572bdf937fdea39f368978c58f5ce0257fc0d"
+  "manifestSha256": "bba32f415aa30ebf74aa8f498c68efe9498407dd3013a08311ed9066c2179e1c"
 }
