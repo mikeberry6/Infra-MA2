@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0097:oneta-energy-center:feec8a7c",
+  "taskIndex": 97,
+  "asOfDate": "2026-08-16",
+  "generatedAt": "2026-08-16T10:56:00.000Z",
+  "canonicalKey": "oneta-energy-center|united-states",
+  "companyName": "Oneta Energy Center",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [
+    "015-argo-infrastructure-partners:holding:010:oneta-energy-center"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpj7c400knivhe7bfekz6z"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjsdy01hlivherxh2r9cp",
+      "canonicalRelationId": "cmrxpjqyw01faivhe634yyccq",
+      "rationale": "Both ownership periods represent the same Argo-managed acquisition and current ownership of the single Oneta Energy Center asset."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkpkr02t0ivheucx8xptj",
+      "canonicalRelationId": "cmrxpkjqr02m0ivhe9f36smy0",
+      "rationale": "Both milestones describe LS Power's August 15, 2019 announcement of the same Oneta and Carville sale to an Argo-managed vehicle."
+    }
+  ],
+  "rationale": "Merge the duplicate Oneta Power production identity into the canonical Oneta Energy Center record. Oklahoma DEQ identifies Oneta Power, LLC as the permittee and operator of the Oneta Energy Center facility, so the two records represent one plant and one Argo investment. LS Power announced the sale to an Argo-managed vehicle on August 15, 2019, FERC reports a November 21, 2019 control-transfer date, and EPA's 2023 facility record identifies Argo Infrastructure Partners LP as the 100% parent. The live Oneta site continues to describe the Broken Arrow plant, and no later sale or pending ownership transfer was identified through August 16, 2026. Remove the unsupported Apollo vehicle wording because the announced Apollo-Argo manager transaction was terminated and never created an Oneta ownership change.",
+  "evidence": [
+    {
+      "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8197.pdf",
+      "purpose": "Canonical legal and operating identity",
+      "supports": [
+        "Oneta Power, LLC is the permittee and operator of the Oneta Energy Center",
+        "the facility is located in Broken Arrow, Wagoner County, Oklahoma",
+        "Oneta Power and Oneta Energy Center are company and facility labels for one operating asset"
+      ]
+    },
+    {
+      "url": "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/",
+      "purpose": "Argo acquisition announcement and infrastructure-investment basis",
+      "supports": [
+        "LS Power agreed on August 15, 2019 to sell Oneta and Carville to an investment vehicle managed by Argo Infrastructure Partners",
+        "the Oneta asset was described as a 1,127 MW gas-fired combined-cycle facility",
+        "the transaction was subject to approvals and expected to close in the fourth quarter of 2019"
+      ]
+    },
+    {
+      "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7691",
+      "purpose": "Acquisition closing date, market and attributed capacity",
+      "supports": [
+        "FERC's asset appendix lists November 21, 2019 as the Oneta Energy Center control-transfer date",
+        "the asset is in the Southwest Power Pool",
+        "the filing attributes 1,086 MW to the entity and affiliates"
+      ]
+    },
+    {
+      "url": "https://ghgdata.epa.gov/ghgp/html/2023.do?et=undefined&id=1007570",
+      "purpose": "Direct current-owner evidence and stake",
+      "supports": [
+        "EPA's 2023 Oneta Energy Center facility record identifies Argo Infrastructure Partners LP as the parent company",
+        "EPA reports Argo's ownership interest as 100%"
+      ]
+    },
+    {
+      "url": "https://onetapower.com/about/",
+      "purpose": "Current operating identity, official location and scale",
+      "supports": [
+        "Oneta Power's live official site describes one 1,150 MW combined-cycle facility in Broken Arrow",
+        "the site publishes the facility address and operating configuration"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "purpose": "Apollo-Argo termination and ownership-vehicle correction",
+      "supports": [
+        "the announced Apollo-Argo manager transaction did not close",
+        "the transaction was terminated in January 2026 and creates no Oneta ownership change"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "971c4c6c6ca4988a7ddd1a806567eace6dc6d718bd9e47294998a6ed3f473ed3",
+  "currentCompanySnapshotSha256": "d92768c21f60ed4d1a4c496a6d23e2f1785ba24b292eabb5c907c474b7f4b840",
+  "executionLock": {
+    "taskSnapshotSha256": "e6545c900d7c2099db393fc9673278f19b3789d657331761922ec571c4945431",
+    "taskStateSha256": "7e7a35becba0792d63e6ac6e243c59d89a9f7c803b020d5d4af20a7abda1b1e2",
+    "taskDependencySha256": "1fa747b670a82adb8e6e4360fd04450c111d8cfec8d1489862dc02d163d22066",
+    "seedEntrySha256": "ce766be83da83194488474dace7311d0ed582dcde49bf5a7d3fd39dddfc0e6b9",
+    "dependencies": {
+      "ownershipPeriodsSha256": "a9d36eb297c2d6c3a45bfac09409fea5e330f2a4a7521d4ceaa5913dbca2cae8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "f01b3688aba53d9d19ee18e5c45b4f4ffb8870847574e566693256e8d8da17ea",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj5uv00ifivheiv841o51",
+    "name": "Oneta Energy Center",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-Fired Power Generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Oneta Energy Center is a natural gas-fired combined-cycle generation asset in Oklahoma that sells capacity and energy into wholesale power markets and contracted utility arrangements. The project is an asset-heavy thermal generation facility serving the Southwest Power Pool region rather than retail end users. Public materials describe the plant as a 1,127 MW facility near Broken Arrow, Oklahoma, and Missouri municipal disclosure documents reference contracted capacity from the plant beginning in 2020. LS Power announced in August 2019 that it had agreed to sell Oneta and the Carville project to Argo Infrastructure Partners. Public sources reviewed do not disclose a separate project-company founding year or the current ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Oklahoma",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqyw01faivhe634yyccq",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo Infrastructure Partners (Apollo)",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjqr02m0ivhe9f36smy0",
+        "date": "Aug 15, 2019",
+        "event": "LS Power announced the sale of Oneta Energy Center and the Carville project to Argo Infrastructure Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-08-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkjrd02m1ivhewyhrirlu",
+        "date": "Jun 2020",
+        "event": "Missouri Joint Municipal Electric Utility Commission documents show contracted capacity from Oneta beginning on June 1, 2020.",
+        "category": "EXPANSION",
+        "sortDate": "2020-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpow9r07csivheuzey0zg8",
+        "label": "Announcement date source — Argo Infrastructure Partners — Oneta Energy Center",
+        "url": "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpowaq07cuivheaccykrim",
+        "label": "Onetapower — Oneta Energy Center",
+        "url": "https://onetapower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Onetapower company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowby07cwivheh0pk27a7",
+        "label": "Cdn — Oneta Energy Center",
+        "url": "https://cdn.ymaws.com/mpua.org/resource/collection/984F6EB9-DDFA-41EB-9ADE-762188D73686/2024_MEC_Annual_Disclosure_Report_-_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cdn — Oneta Energy Center",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "d92768c21f60ed4d1a4c496a6d23e2f1785ba24b292eabb5c907c474b7f4b840",
+  "afterImage": {
+    "id": "cmrxpj5uv00ifivheiv841o51",
+    "name": "Oneta Energy Center",
+    "aliases": [
+      "Oneta Power",
+      "Oneta Power, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Gas-fired combined-cycle generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Oneta Energy Center is a natural gas-fired combined-cycle power plant in Broken Arrow, Wagoner County, Oklahoma, operated by Oneta Power, LLC. The single-plant business sells electricity and capacity into wholesale markets in the Southwest Power Pool. Its official site describes approximately 1,150 MW of nominal capacity, LS Power's 2019 sale announcement described 1,127 MW, and a FERC asset appendix attributes 1,086 MW for market-based-rate reporting. LS Power announced an agreement to sell Oneta and Carville to an Argo-managed investment vehicle on August 15, 2019; FERC reports a November 21, 2019 control-transfer date. EPA's 2023 facility record identifies Argo Infrastructure Partners LP as the 100% parent. Oneta Power and Oneta Energy Center are the operator and facility identities for one Argo investment, not separate manager-level portfolio companies. No later sale or signed pending ownership transfer was identified through August 16, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://onetapower.com/",
+    "yearFounded": null,
+    "headquarters": "Broken Arrow, Oklahoma",
+    "lastVerifiedAt": "2026-08-16T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqyw01faivhe634yyccq",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "100%",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkjqr02m0ivhe9f36smy0",
+        "date": "Aug 15, 2019",
+        "event": "LS Power announced an agreement to sell Oneta Energy Center and Carville Energy Center to an investment vehicle managed by Argo Infrastructure Partners, subject to customary approvals.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-08-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Nov 21, 2019",
+        "event": "A FERC asset appendix reports November 21, 2019 as the control-transfer date for Oneta Energy Center; EPA later identified Argo Infrastructure Partners LP as its 100% parent.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-11-21T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7691",
+          "https://ghgdata.epa.gov/ghgp/html/2023.do?et=undefined&id=1007570"
+        ]
+      },
+      {
+        "id": "cmrxpkjrd02m1ivhewyhrirlu",
+        "date": "Jun 2020",
+        "event": "Missouri Joint Municipal Electric Utility Commission documents show contracted capacity from Oneta beginning on June 1, 2020.",
+        "category": "EXPANSION",
+        "sortDate": "2020-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://cdn.ymaws.com/mpua.org/resource/collection/984F6EB9-DDFA-41EB-9ADE-762188D73686/2024_MEC_Annual_Disclosure_Report_-_Final.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkplb02t1ivhecpxxxmwv",
+        "date": "2021",
+        "event": "Oneta Power launched a public website identifying its 1,150 MW combined-cycle facility in Broken Arrow, Oklahoma.",
+        "category": "OTHER",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://onetapower.com/about/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpow9r07csivheuzey0zg8",
+        "label": "Announcement date source — Argo Infrastructure Partners — Oneta Energy Center",
+        "url": "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 2019 Oneta sale agreement with an Argo-managed investment vehicle",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowaq07cuivheaccykrim",
+        "label": "Onetapower — Oneta Energy Center",
+        "url": "https://onetapower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official Oneta Power company and facility profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp6nv07s7ivhe24a33lq1",
+        "label": "Onetapower — Oneta Power",
+        "url": "https://onetapower.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Official operating configuration, location and 1,150 MW nominal capacity",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpowby07cwivheh0pk27a7",
+        "label": "Cdn — Oneta Energy Center",
+        "url": "https://cdn.ymaws.com/mpua.org/resource/collection/984F6EB9-DDFA-41EB-9ADE-762188D73686/2024_MEC_Annual_Disclosure_Report_-_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Municipal contracted-capacity evidence",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Oklahoma DEQ — Oneta Energy Center operating permit",
+        "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8197.pdf",
+        "sourceType": "OTHER",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Oneta Power, LLC permittee identity and Oneta Energy Center facility boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FERC — Oneta Energy Center asset appendix",
+        "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7691",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 21, 2019 control-transfer date, SPP market and attributed capacity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "EPA — Oneta Energy Center 2023 GHG report",
+        "url": "https://ghgdata.epa.gov/ghgp/html/2023.do?et=undefined&id=1007570",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners LP as 100% parent of Oneta Energy Center",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "New York DPS — Apollo-Argo transaction withdrawal",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+        "sourceType": "OTHER",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "January 2026 termination of the announced Apollo-Argo manager transaction",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "63380b7e77d40b585cfd8c9f5efee7e7488550ab2758ceb50b0297ed27d7c484",
+  "proposalSha256": "ddfc1092b7e9f60d49cc4ada974966afd199372f74cd53b9bfca21e91bd960cb"
+}

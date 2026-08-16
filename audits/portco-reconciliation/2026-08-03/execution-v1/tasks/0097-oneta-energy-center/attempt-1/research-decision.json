@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0097:oneta-energy-center:feec8a7c",
+  "taskIndex": 97,
+  "attempt": 1,
+  "companyName": "Oneta Energy Center",
+  "asOfDate": "2026-08-16",
+  "decision": "PROPOSED_CORRECTION",
+  "modelDecision": "PROPOSED_CORRECTION",
+  "rationale": "Keep one canonical Oneta Energy Center record and merge the duplicate Oneta Power record into it. Oklahoma DEQ identifies Oneta Power, LLC as the permittee and operator of the Oneta Energy Center, proving that the two repository rows describe one plant and one Argo investment. LS Power announced the sale to an Argo-managed vehicle in August 2019, FERC reports a November 21, 2019 control-transfer date, and EPA reports Argo Infrastructure Partners LP as the 100% parent in 2023. The official Oneta site remains live, and no later exit or pending ownership transfer was found through the as-of date. Remove the unsupported Apollo vehicle wording because that manager transaction was terminated in January 2026.",
+  "identityResolution": {
+    "canonicalName": "Oneta Energy Center",
+    "legalOperatingName": "Oneta Power, LLC",
+    "aliases": [
+      "Oneta Power",
+      "Oneta Power, LLC"
+    ],
+    "website": "https://onetapower.com/",
+    "country": "United States",
+    "headquarters": "Broken Arrow, Oklahoma",
+    "yearFounded": null,
+    "managerLevelBoundary": "Count the single Oneta Energy Center plant once. Oneta Power, LLC is its legal permittee and operator, not a separate manager-level Argo portfolio company.",
+    "duplicateDecision": "Retain production company cmrxpj5uv00ifivheiv841o51 as canonical, retire cmrxpj7c400knivhe7bfekz6z and create a redirect through the existing merge workflow."
+  },
+  "ownershipResolution": {
+    "currentOwner": "Argo Infrastructure Partners",
+    "entryAnnouncementDate": "2019-08-15",
+    "entryClosingDate": "2019-11-21",
+    "entryYear": 2019,
+    "stake": "100%",
+    "fund": "NOT_PUBLICLY_DISCLOSED",
+    "vehicle": "NOT_PUBLICLY_DISCLOSED",
+    "state": "CLOSED_ACTIVE",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Power & Energy Transition",
+    "subsector": "Gas-fired combined-cycle generation",
+    "companyStatus": "ACTIVE",
+    "footprint": "One combined-cycle power plant in Broken Arrow, Wagoner County, Oklahoma, participating in the Southwest Power Pool.",
+    "scale": "Official site: 1,150 MW nominal; LS Power sale announcement: 1,127 MW; FERC asset appendix: 1,086 MW attributed capacity."
+  },
+  "acquisitionExitCheck": {
+    "announcement": "LS Power announced the sale to an Argo-managed investment vehicle on August 15, 2019.",
+    "legalClosing": "FERC's asset appendix reports November 21, 2019 as the Oneta control-transfer date.",
+    "apolloTransaction": "The announced Apollo-Argo manager transaction was terminated in January 2026 and creates no Oneta ownership change.",
+    "subsequentExitSearch": "No later Oneta sale, ownership transfer, dissolution or signed pending transaction was identified through 2026-08-16."
+  },
+  "repoDecision": {
+    "canonicalProductionCompanyId": "cmrxpj5uv00ifivheiv841o51",
+    "retiredProductionCompanyId": "cmrxpj7c400knivhe7bfekz6z",
+    "mutation": "CORRECT_AND_MERGE_DUPLICATE",
+    "queueCorrectionDisposition": "PROPOSED_CORRECTION",
+    "duplicateMapping": "Oneta Power -> Oneta Energy Center",
+    "laterQueueTask": "ledger:0098:oneta-power:d74c3e3c",
+    "laterQueueDispositionAfterVerification": "SUPERSEDED"
+  },
+  "primaryEvidenceUrl": "https://ghgdata.epa.gov/ghgp/html/2023.do?et=undefined&id=1007570",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0097-oneta-energy-center/attempt-1/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0097-oneta-energy-center/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0097-oneta-energy-center/attempt-1/chatgpt-response-validation.json",
+  "proposalArtifact": "audits/portco-reconciliation/2026-08-03/proposals/0097-oneta-energy-center-v1/proposal.json",
+  "proposalSha256": "ddfc1092b7e9f60d49cc4ada974966afd199372f74cd53b9bfca21e91bd960cb",
+  "afterImageSha256": "63380b7e77d40b585cfd8c9f5efee7e7488550ab2758ceb50b0297ed27d7c484",
+  "unresolvedQuestions": [
+    "The exact Argo fund and acquisition vehicle are not publicly disclosed and are not required for the identity merge."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "e6545c900d7c2099db393fc9673278f19b3789d657331761922ec571c4945431",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}

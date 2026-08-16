@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0097:oneta-energy-center:feec8a7c",
+  "taskIndex": 97,
+  "attempt": 1,
+  "companyName": "Oneta Energy Center",
+  "asOfDate": "2026-08-16",
+  "retrievedAt": "2026-08-16T10:56:00.000Z",
+  "methodology": "Codex independently reopened every model-cited URL, checked status, redirects and direct page content, extracted the relevant Oklahoma DEQ permit pages, inspected the FERC and EPA records, reopened the live Oneta operating site, and replaced the New York case-index inference with the direct January 2026 withdrawal document. Codex also searched for a later Oneta sale, exit, dissolution, ownership transfer or signed pending transaction after the ChatGPT Pro response completed.",
+  "sources": [
+    {
+      "evidenceUrl": "https://applications.deq.ok.gov/permitspublic/storedpermits/8197.pdf",
+      "verificationUrl": "https://applications.deq.ok.gov/permitspublic/storedpermits/8197.pdf",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://applications.deq.ok.gov/permitspublic/storedpermits/8197.pdf",
+      "mediaType": "application/pdf",
+      "contentLength": 884447,
+      "contentSha256": "8cdc68640da41dab351af96aea91c305ca19607b5b786e093908d8244b8eb1b3",
+      "verifiedClaims": [
+        "Page 1 identifies Oneta Power, LLC as the permit applicant and Oneta Energy Center as the permitted facility.",
+        "The permit describes the facility as an electric utility plant in Broken Arrow, Wagoner County, Oklahoma.",
+        "The company/operator and facility labels refer to one operating asset rather than two manager-level investments."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/",
+      "verificationUrl": "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLength": 72718,
+      "contentSha256": "9c2ff615f55dd07aa89e828c23d541ba1d34e2795026ab06f05f36437318dafc",
+      "verifiedClaims": [
+        "LS Power announced on August 15, 2019 that it had agreed to sell Oneta and Carville to an Argo-managed investment vehicle.",
+        "The announcement describes Oneta as a 1,127 MW natural-gas-fired combined-cycle facility in Coweta, Oklahoma.",
+        "The announced sale was subject to customary approvals and expected to close in the fourth quarter of 2019."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://www.sidley.com/en/people/h/higgins-tara",
+      "verificationUrl": "https://www.sidley.com/en/people/h/higgins-tara",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sidley.com/en/people/h/higgins-tara",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLength": 4546,
+      "contentSha256": "dd77b1f56c269e98f62e41f418e98a02a04f5e6c1926caccac18a85c26979bac",
+      "verifiedClaims": [
+        "The model used counsel biography language as corroboration for a 100% equity sale.",
+        "Codex did not rely on the blocked counsel page because EPA directly reports Argo's 100% parent interest."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7691",
+      "verificationUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7691",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7691",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLength": 123862,
+      "contentSha256": "2a29667995e65718df5e1224dd238f70147d2d6f9cee17e475c0d4c2b981168c",
+      "verifiedClaims": [
+        "The asset appendix lists Oneta Energy Center with a November 21, 2019 control-transfer date.",
+        "The appendix places the asset in the Southwest Power Pool and attributes 1,086 MW for the filing."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://ghgdata.epa.gov/ghgp/html/2023.do?et=undefined&id=1007570",
+      "verificationUrl": "https://ghgdata.epa.gov/ghgp/html/2023.do?et=undefined&id=1007570",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://ghgdata.epa.gov/ghgp/html/2023.do?et=undefined&id=1007570",
+      "mediaType": "text/html",
+      "contentLength": 15263,
+      "contentSha256": "0459477e1854773e6f14397c525168f66fb315586be428d762482eb0b36205e9",
+      "verifiedClaims": [
+        "EPA's 2023 Oneta Energy Center facility report identifies Argo Infrastructure Partners LP as the parent company.",
+        "EPA reports Argo's ownership interest as 100%."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://documents.dps.ny.gov/public/MatterManagement/CaseMaster.aspx?MatterCaseNo=25-G-0198",
+      "verificationUrl": "https://documents.dps.ny.gov/public/MatterManagement/CaseMaster.aspx?MatterCaseNo=25-G-0198",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/MatterManagement/CaseMaster.aspx?MatterCaseNo=25-G-0198",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLength": 66202,
+      "contentSha256": "a0181fc082cd004a29598b8589808d756cce674a6b7db9b049b79fa967d29365",
+      "verifiedClaims": [
+        "The case index contains the withdrawn Apollo-Argo transaction proceeding.",
+        "Codex reopened the direct withdrawal document rather than relying on the index alone."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://onetapower.com/about/",
+      "verificationUrl": "https://onetapower.com/about/",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://onetapower.com/about/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLength": 134742,
+      "contentSha256": "14fccbbaf571c9529d70c128c654baf9c5e3f64ab2cef47f2be9f1f6e0fca834",
+      "verifiedClaims": [
+        "Oneta Power's live official site identifies a single 1,150 MW combined-cycle facility in Broken Arrow, Oklahoma.",
+        "The site describes four combustion turbines, two steam turbine generators and four heat-recovery steam generators.",
+        "The site supports the current operating identity and facility address."
+      ],
+      "isPrimary": false
+    },
+    {
+      "evidenceUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "verificationUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "status": "WORKING",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF082C39B-0000-C423-9296-BE68E22B02CF%7D",
+      "mediaType": "application/pdf",
+      "contentLength": 198398,
+      "contentSha256": "0f83f44fc98471b113d9248a20b33082e37749d64963cf95e07557709dfd141d",
+      "verifiedClaims": [
+        "The announced Apollo-Argo manager transaction did not close by January 10, 2026.",
+        "The transaction agreement and proposed transaction were terminated, and the petition was withdrawn on January 15, 2026.",
+        "The terminated manager-level transaction creates no Oneta ownership change."
+      ],
+      "isPrimary": false
+    }
+  ],
+  "currentUrlRecheck": {
+    "allModelEvidenceUrlsRetained": true,
+    "redirectsObserved": 0,
+    "workingCount": 7,
+    "browserBlockedButVerifiedCount": 1,
+    "deadCount": 0
+  },
+  "exitSearchConclusion": "No later public Oneta sale, ownership transfer, dissolution or signed pending transaction was identified through August 16, 2026. Oneta Power's official site remains live, FERC records show later active filings for Oneta Power, and current search results continue to identify the plant as operating. The announced Apollo-Argo manager transaction was terminated and never changed Oneta's underlying ownership.",
+  "modelEvidenceCorrections": [
+    "The Sidley biography returned HTTP 403 to direct verification and is nonessential because EPA directly reports Argo's 100% parent interest.",
+    "The New York case-master page is an index; the direct January 15, 2026 withdrawal document supplies the termination evidence.",
+    "The 1,150 MW official-site figure, 1,127 MW sale-announcement figure and 1,086 MW FERC filing figure use different measurement contexts and are retained with attribution rather than forced into one value.",
+    "Broken Arrow, Oklahoma is used as the facility and operating-company location based on the live official site and DEQ permit.",
+    "The canonical editorial name remains Oneta Energy Center while Oneta Power and Oneta Power, LLC are preserved as operating/legal aliases.",
+    "No public fund or acquisition-vehicle name was established; remove the unsupported Apollo suffix and leave the vehicle undisclosed."
+  ]
+}
