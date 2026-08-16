@@ -1,0 +1,29 @@
+Hill Top Energy Center — GPT-5.6 Sol Pro reconciliation transcript
+Conversation: https://chatgpt.com/c/6a81128b-f22c-83ea-a890-0e43efdfd756
+
+=== USER — INITIAL PROMPT ===
+
+Verbatim prompt saved in research-prompt.md.
+
+=== ASSISTANT — INITIAL RESPONSE ===
+
+Verbatim response saved in chatgpt-initial-response.txt.
+
+=== USER — REPAIR PROMPT ===
+
+Repair only the final answer; do not redo broad research. Return one complete fenced JSON object with the identical required top-level schema, then at most one Markdown bullet, under 4,000 characters. Preserve decision PROPOSED_CORRECTION and the 2026-03-26 legal close. Make these exact corrections:
+
+1. Use the direct FERC consummation notice as the sole recommended primary: https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260429-5359 . Its filed notice states the transaction was consummated March 26, 2026 and Hill Top became an indirect wholly owned subsidiary of Blackstone funds.
+2. Include direct current-owner evidence through June 2026: https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260626-5289 .
+3. Include the direct FERC approval order: https://www.ferc.gov/sites/default/files/2026-03/EC25-148-000.pdf .
+4. Keep Ardian sale evidence and Blackstone announcement evidence. Mark the Blackstone page BROWSER_BLOCKED_BUT_VERIFIED, not WORKING.
+5. Remove the indirect PJM market-monitor report; it is not the closing source.
+6. Set unresolvedQuestions to []. Treat unavailable Blackstone manager-level stake, separate official site, headquarters, founding year and named repo fund as noncritical NOT_PUBLICLY_DISCLOSED facts in the rationale/fields, not unresolved ownership.
+7. Set headquarters to "Carmichaels, Pennsylvania" as plant location, while yearFounded and officialWebsite remain null.
+8. Blackstone vehicle should reflect the regulatory evidence: "Blackstone Energy Transition Partners IV AIV L.P., BXE IV (LUX) AIV SCSp and affiliated vehicles"; do not invent a Fund record. Stake: "100% indirect ownership through affiliated Blackstone funds; aggregator interests include 76.28% ETP IV and 14.72% BXE IV."
+9. Ardian vehicle is "Ardian Americas Infrastructure Funds"; fund null. Stake: "41.9% at July 2019 entry; 100% from April 2025 until March 26, 2026."
+10. Do not report any pending transaction. Keep exactly one recommended primary.
+
+=== ASSISTANT — REPAIRED RESPONSE ===
+
+Verbatim accepted response saved in chatgpt-response.txt.

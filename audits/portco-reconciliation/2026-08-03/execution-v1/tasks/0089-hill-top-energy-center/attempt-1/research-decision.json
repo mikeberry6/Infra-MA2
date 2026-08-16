@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0089:hill-top-energy-center:fc2f684d",
+  "taskIndex": 89,
+  "attempt": 1,
+  "companyName": "Hill Top Energy Center",
+  "asOfDate": "2026-08-15",
+  "decision": "PROPOSED_CORRECTION",
+  "rationale": "Replace the queued pending-transaction treatment with the completed ownership sequence proven by regulatory filings. Ardian held 41.9% from July 2019 and reached 100% in April 2025. Blackstone announced the acquisition on September 15, 2025, FERC authorized it on March 19, 2026, and the direct consummation notice establishes a March 26, 2026 close. Blackstone is current and Ardian is former; no later exit or pending transfer was identified.",
+  "identityResolution": {
+    "canonicalName": "Hill Top Energy Center",
+    "legalName": "Hill Top Energy Center, LLC",
+    "aliases": ["Hill Top Energy Center, LLC"],
+    "website": null,
+    "country": "United States",
+    "headquarters": "Carmichaels, Pennsylvania",
+    "managerLevelBoundary": "Count the single 620 MW Hill Top plant company. Exclude seller/buyer holding entities, affiliated acquisition vehicles, service providers and counterparties as separate PortCos.",
+    "duplicateDecision": "Correct the existing production company in place; do not create a second company or pending buyer record."
+  },
+  "ownershipResolution": {
+    "currentOwner": {
+      "manager": "Blackstone",
+      "fund": "NOT_PUBLICLY_DISCLOSED_IN_REPOSITORY",
+      "vehicle": "Blackstone Energy Transition Partners IV AIV L.P., BXE IV (LUX) AIV SCSp and affiliated vehicles",
+      "stake": "100% indirect ownership through affiliated Blackstone funds; aggregator interests include 76.28% ETP IV and 14.72% BXE IV",
+      "announcementDate": "2025-09-15",
+      "entryDate": "2026-03-26",
+      "investmentYear": 2026,
+      "state": "CLOSED_ACTIVE"
+    },
+    "formerOwner": {
+      "manager": "Ardian",
+      "fund": "NOT_PUBLICLY_DISCLOSED_AS_A_SINGLE_NAMED_FUND",
+      "vehicle": "Ardian Americas Infrastructure Funds",
+      "stake": "41.9% at July 2019 entry; 100% from April 2025 until March 26, 2026",
+      "entryDate": "2019-07",
+      "exitDate": "2026-03-26",
+      "state": "REALIZED"
+    },
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Power & ET",
+    "subsector": "Gas-fired generation",
+    "yearFounded": "NOT_PUBLICLY_DISCLOSED",
+    "reportedScale": "620 MW in manager disclosures; 623 MW summer rating in the regulatory transfer table; commercial operation began in July 2021."
+  },
+  "acquisitionExitCheck": {
+    "ownershipEntry": "Ardian acquired 41.9% in July 2019 and the balance in April 2025; Blackstone's definitive agreement was announced September 15, 2025.",
+    "legalClosing": "FERC authorized the transaction on March 19, 2026 and the direct consummation notice states that it closed March 26, 2026.",
+    "currentOwnership": "A June 2026 regulatory filing continues to identify Hill Top as an indirect wholly owned Blackstone subsidiary.",
+    "subsequentExitSearch": "No later sale, signed pending exit or ownership transfer was identified through 2026-08-15."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj9a700noivhe1fv3krgh",
+    "productionOwnershipPeriodId": "cmrxpjui901l5ivhehdw8zmkz",
+    "mutation": "CORRECT_EXISTING_COMPANY_AND_ADD_FORMER_OWNER",
+    "queueCorrectionDisposition": "REJECT_PENDING_TRANSACTION_AND_RECORD_COMPLETED_TRANSFER",
+    "duplicateMapping": "NONE"
+  },
+  "primaryEvidenceUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260429-5359",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0089-hill-top-energy-center/attempt-1/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0089-hill-top-energy-center/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0089-hill-top-energy-center/attempt-1/chatgpt-response-validation.json",
+  "unresolvedQuestions": [
+    "Hill Top's separate corporate headquarters, founding year and standalone official website are not publicly disclosed.",
+    "The regulatory vehicle percentages do not disclose the internal split of the remaining 9% among other affiliated Blackstone vehicles."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "fc1948ebb90a93463900e23f7e6f710a547b03ccf6a1cac822229a19bf99163f",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}
