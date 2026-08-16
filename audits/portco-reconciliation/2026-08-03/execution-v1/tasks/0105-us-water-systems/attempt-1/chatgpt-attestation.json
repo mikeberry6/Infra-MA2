@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+  "taskIndex": 105,
+  "attempt": 1,
+  "companyName": "US Water Systems",
+  "conversationUrl": "https://chatgpt.com/c/6a81f646-9cdc-83ea-a952-55fea8b31494",
+  "conversationTitle": "US Water Systems Inquiry",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-16T17:41:26.088Z",
+  "initialCompletedAt": "2026-08-16T18:06:16.470Z",
+  "repairSubmittedAt": "2026-08-16T18:06:16.494Z",
+  "repairCompletedAt": "2026-08-16T18:14:11.974Z",
+  "repairCount": 1,
+  "initialOutcome": "MALFORMED_TRUNCATED_JSON",
+  "finalOutcome": "FAILED_SECOND_MALFORMED_RESPONSE",
+  "contentHashes": {
+    "promptSha256": "e2869b9fed990f341bebabef7c5551da94d74a37b93511df349790c8fffb3f66",
+    "initialResponseSha256": "34e27b9c57af60c0c8e4ed3dea814393a8b7e510f22d5866c50ea35c10c34176",
+    "acceptedResponseSha256": null,
+    "transcriptSha256": "c154bf4f0c30228e55c9caa89af2148ec737d18338804cda25de8cd3a4264a05",
+    "repairPromptSha256": "4cd2919e5696f49040f745604cf644a1ae7db7c12662f0650de6564d4cec9ee1",
+    "repairResponseSha256": "b11b8c1caedb8996e74b93413bec7d6d60c018914ce3b2e12b6ea5d0cf62ab36"
+  },
+  "captureMethod": "Signed-in ChatGPT web application controlled through the in-app browser",
+  "captureNote": "GPT-5.6 Sol and Pro mode were visibly verified before submission. The initial response and the one permitted same-conversation repair both stopped at the same captured response length while still inside JSON string values. Neither response was parseable or contained all required top-level keys. The one-repair limit was exhausted, so Codex created no proposal or mutation despite independently corroborating the likely archive disposition."
+}

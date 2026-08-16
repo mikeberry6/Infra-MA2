@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+  "taskIndex": 105,
+  "companyName": "US Water Systems",
+  "generatedAt": "2026-08-16T17:38:08.816Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0105-us-water-systems/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 105,
+    "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+    "canonicalKey": "us-water-systems|united-states",
+    "companyName": "US Water Systems",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "015-argo-infrastructure-partners:repo-only:010:us-water-systems"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj62g00ipivhe4zr74wn1"
+    ],
+    "seedKeys": [
+      "us water systems|United States"
+    ],
+    "evidenceUrls": [
+      "https://wcpartnersllc.com/project/middletown-concession/",
+      "https://www.globalwaterintel.com/articles/argo-deal-gives-apollo-water-infrastructure-exposure"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Argo Infrastructure Partners MATCHED_ELSEWHERE: Umbrella repository identity is represented by the separately included Bayonne and Middletown concession holdings.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj62g00ipivhe4zr74wn1",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "us-water-systems|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj62g00ipivhe4zr74wn1",
+    "name": "US Water Systems",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Water & Wastewater Concessions",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "US Water Systems is a platform of municipal water and wastewater concession assets in the northeastern United States. Its customers are municipalities and utility users, and the operating model is asset-heavy and contract-based, with revenue supported by long-duration concession arrangements rather than uncontracted merchant demand. Public materials linked to the platform identify a 40-year Bayonne, New Jersey concession awarded in 2012 and a Middletown, Pennsylvania concession awarded in 2019. The platform therefore combines essential-service utility operations with public-private partnership structures and concession obligations. Public sources reviewed do not fully disclose the ownership structure within the Argo investment chain.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2012,
+    "headquarters": "New Jersey & Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjr4101fkivheddnhqrvt",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo Infrastructure Partners (Apollo)",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkkev02mwivhelwn7iuav",
+        "date": "2012",
+        "event": "Bayonne, New Jersey awarded a 40-year water and wastewater concession to the platform.",
+        "category": "EXPANSION",
+        "sortDate": "2012-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkkff02mxivhelnmv0a1w",
+        "date": "2012",
+        "event": "US Water Systems was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2012-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkki102myivheqiqyt8ce",
+        "date": "2017",
+        "event": "KKR and SUEZ sold interests in the Bayonne and Middletown water concessions to Argo Infrastructure Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkkij02mzivhelrdo4ch3",
+        "date": "2019",
+        "event": "Middletown Borough selected a private concession arrangement for water and wastewater operations.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkkiz02n0ivhefgeo1bfn",
+        "date": "2019",
+        "event": "Public reporting connected the Middletown concession to the same US Water Systems platform.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoxm907ewivhe4t47j3v0",
+        "label": "Bayonnenj — US Water Systems",
+        "url": "https://www.bayonnenj.org/content/236/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Bayonnenj — US Water Systems",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpoxnh07eyivhejzdas9rs",
+        "label": "Investment date source — Argo Infrastructure Partners — US Water Systems",
+        "url": "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxog07f0ivhex4vpldhw",
+        "label": "Pennlive — US Water Systems",
+        "url": "https://www.pennlive.com/news/2019/05/middletown-picks-private-company-for-borough-water-system-operations.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Pennlive operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoxpn07f2ivhetm0vpqfi",
+        "label": "Penncapital Star — US Water Systems",
+        "url": "https://www.penncapital-star.com/blog/middletown-borough-oks-water-sewer-p3-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Penncapital Star operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "US Water Systems",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Utilities",
+    "subsector": "Water & Wastewater Concessions",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Argo Infrastructure Partners (Apollo)",
+    "description": "US Water Systems is a platform of municipal water and wastewater concession assets in the northeastern United States. Its customers are municipalities and utility users, and the operating model is asset-heavy and contract-based, with revenue supported by long-duration concession arrangements rather than uncontracted merchant demand. Public materials linked to the platform identify a 40-year Bayonne, New Jersey concession awarded in 2012 and a Middletown, Pennsylvania concession awarded in 2019. The platform therefore combines essential-service utility operations with public-private partnership structures and concession obligations. Public sources reviewed do not fully disclose the ownership structure within the Argo investment chain.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2012,
+    "investmentYear": 2017,
+    "headquarters": "New Jersey & Pennsylvania",
+    "milestones": [
+      {
+        "date": "2012",
+        "event": "Bayonne, New Jersey awarded a 40-year water and wastewater concession to the platform.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2012",
+        "event": "US Water Systems was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2017",
+        "event": "KKR and SUEZ sold interests in the Bayonne and Middletown water concessions to Argo Infrastructure Partners.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2019",
+        "event": "Middletown Borough selected a private concession arrangement for water and wastewater operations.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2019",
+        "event": "Public reporting connected the Middletown concession to the same US Water Systems platform.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Bayonnenj — US Water Systems",
+        "url": "https://www.bayonnenj.org/content/236/default.aspx",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — Argo Infrastructure Partners — US Water Systems",
+        "url": "https://www.suez-asia.com/-/media/suez-global/files/publication/annual-report/document-de-reference-2018-en.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Pennlive — US Water Systems",
+        "url": "https://www.pennlive.com/news/2019/05/middletown-picks-private-company-for-borough-water-system-operations.html",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Penncapital Star — US Water Systems",
+        "url": "https://www.penncapital-star.com/blog/middletown-borough-oks-water-sewer-p3-project/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "Argo Infrastructure Partners (Apollo)",
+        "investmentYear": 2017,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0105:us-water-systems:c6c3ca95",
+    "taskIndex": 105,
+    "canonicalKey": "us-water-systems|united-states",
+    "capturedAt": "2026-08-16T17:38:08.816Z",
+    "databaseRevision": "company-state:1a7c0eb819fb20ac654d0fe9aab88a142b679149d0cbb38da57bb5f44c12aba4",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "68f7ee03e9837000820b4bae6cdc380ae633e4b1602653c2394ab99961399d68",
+    "productionSnapshotSha256": "438106fb1199bbaccaa7bcf132b0e043cdc095ceec63b8a507d44487dd0e11c8",
+    "targetCompanySnapshotSha256": "1a7c0eb819fb20ac654d0fe9aab88a142b679149d0cbb38da57bb5f44c12aba4",
+    "seedEntrySha256": "7016fc2cc330815c992c4b7de69c700f1cb399d26d7efb3eec64d321ae621687",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "0bcc538520e1678497058242dbb55795f86d5429e3d214e7c0e2505f4b6b76b6",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "e7f8008f878798ed7371cdb5f2bc32a1d08f77725497f33149d204285fea2efa",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8a6857c934febd743c000e525de24b7be3d88b2b8f62e830911b59435244f732",
+    "stateSha256": "da4cb975ebfc29afb110789102afb8fec0ce54bf87b565786754aa77c30f5e1c",
+    "taskSnapshotSha256": "c501230483e9e633491901b34db7806246c87bea25f56ba4e26a96a992e68c2e"
+  },
+  "contextSha256": "d6dc09418910e4e59aadd7e4515de26eb639fbcb9a39f1400d645964a57ae68c"
+}
