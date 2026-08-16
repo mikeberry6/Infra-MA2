@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0090:dsd-renewables:bb4db790",
+  "taskIndex": 90,
+  "attempt": 2,
+  "companyName": "DSD Renewables",
+  "conversationUrl": "https://chatgpt.com/c/6a8126e5-fe9c-83ea-ba6a-a618ecc0bb0f",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-16T02:56:37.657Z",
+  "initialCompletedAt": "2026-08-16T03:13:23.742Z",
+  "repairSubmittedAt": "2026-08-16T03:14:05.071Z",
+  "repairCompletedAt": "2026-08-16T03:15:01.226Z",
+  "repairCount": 1,
+  "initialOutcome": "REPAIR_REQUIRED_FOR_ENUMS_AND_NONBLOCKING_DISCLOSURE_CLASSIFICATION",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_AFTER_ONE_REPAIR",
+  "contentHashes": {
+    "promptSha256": "8a3ef8c45b325a8630c16420dc1abd09e92e478cfe5fe4aae067057cb2c2c94a",
+    "initialResponseSha256": "4fd18b6576670c60f9d6270cb8f5d3dcfa3fccf684268dc9b96a2d310dc98bab",
+    "acceptedResponseSha256": "e92968aabbb3e735dd7641f96fb99d594fecb0c3bd6d13db172f197d40192074",
+    "transcriptSha256": "898bc23a9c9eb3efe91ebee7e06f49369ed4f0c7cb5d714710bb3dc67bfd1dff",
+    "repairPromptSha256": "a49792680afc7a1df1d570c36106e32c5834f8918bd002aa0b13b33c0fdd2f18",
+    "repairResponseSha256": "e92968aabbb3e735dd7641f96fb99d594fecb0c3bd6d13db172f197d40192074"
+  },
+  "captureMethod": "Signed-in ChatGPT web application controlled through the in-app browser",
+  "captureNote": "A transient ChatGPT rate-limit dialog appeared before generation and was dismissed without submitting another task. The complete initial response resolved identity and ownership but used unsupported evidence enums and placed nonblocking disclosure gaps in unresolvedQuestions. One narrowly scoped repair corrected the contract without changing the substantive decision. Codex independently corrected the ION URL from model-declared WORKING to BROWSER_BLOCKED_BUT_VERIFIED after direct HTTP verification."
+}

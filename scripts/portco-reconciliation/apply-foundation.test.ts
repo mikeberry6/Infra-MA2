@@ -50,7 +50,9 @@ import type {
 describe("approved ownership organization provisioning", () => {
   it("classifies newly approved fund managers and corporate retained owners deterministically", () => {
     expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Ferrovial N.V.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("GE Renewable Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("GFL Environmental Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Kinder Morgan, Inc.")).toEqual(["CORPORATE"]);
@@ -59,7 +61,9 @@ describe("approved ownership organization provisioning", () => {
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
     for (const [name, type] of [
       ["BC Partners", "FUND_MANAGER"],
+      ["Cox Enterprises", "CORPORATE"],
       ["Ferrovial N.V.", "CORPORATE"],
+      ["GE Renewable Energy", "CORPORATE"],
       ["GFL Environmental Inc.", "CORPORATE"],
       ["HPS Investment Partners", "FUND_MANAGER"],
       ["Kinder Morgan, Inc.", "CORPORATE"],
