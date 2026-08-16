@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0094:indigo-park-canada-inc:92a79556",
+  "taskIndex": 94,
+  "attempt": 2,
+  "companyName": "INDIGO Park Canada Inc.",
+  "asOfDate": "2026-08-16",
+  "decision": "PROPOSED_CORRECTION",
+  "modelDecision": "EXCLUDED",
+  "rationale": "Archive INDIGO Park Canada as a standalone manager-level PortCo while preserving it as an active, distinct Canadian operating company beneath LAZ. LAZ completed a 60% acquisition on June 30, 2025, INDIGO Group retained 40%, and the sale agreement commits LAZ to acquire that remaining interest in 2029. Argo Infrastructure Partners' directly evidenced manager-level investment is LAZ, so the two current Argo ownership rows on INDIGO Park Canada are not direct manager-level ownership periods and will be retained only as inactive corrected audit history without recording a fictional Argo exit. INDIGO Park Canada and LAZ are distinct legal companies, so no company merge or redirect is appropriate. The protected correction archives only the standalone row, preserves its operating and transaction history, and records the contractual 2029 transfer as a signed pending exit while INDIGO Group remains the current 40% legal owner until closing.",
+  "identityResolution": {
+    "canonicalName": "INDIGO Park Canada Inc.",
+    "legalName": "INDIGO Park Canada Inc.",
+    "aliases": [],
+    "website": "https://www.park-indigo.ca/en/",
+    "country": "Canada",
+    "headquarters": "Montreal, Quebec",
+    "yearFounded": 1988,
+    "managerLevelBoundary": "Count LAZ Parking as Argo's manager-level platform. INDIGO Park Canada remains a distinct operating company but is excluded from the standalone Argo manager-level census as a majority-owned LAZ subsidiary.",
+    "duplicateDecision": "Do not merge INDIGO Park Canada with LAZ and do not create a redirect. Archive the standalone manager-level row while preserving the separate legal identity and transaction history."
+  },
+  "ownershipResolution": {
+    "directLegalOwners": [
+      {
+        "owner": "LAZ Parking",
+        "stake": "60%",
+        "entryDate": "2025-06-30",
+        "state": "ACTIVE"
+      },
+      {
+        "owner": "INDIGO Group S.A.",
+        "stake": "40%",
+        "entryDate": "2025-06-30",
+        "state": "ACTIVE"
+      }
+    ],
+    "argoManagerLevelOwnershipPeriodsRetained": [],
+    "removedInaccurateOwnershipPeriodIds": [
+      "cmrxpjqrq01f1ivhenadqtoup",
+      "cmrxpjqs601f2ivhekvjrmtgh"
+    ],
+    "pendingOwnershipTransactions": [
+      {
+        "buyer": "LAZ Parking",
+        "seller": "INDIGO Group S.A.",
+        "stake": "40%",
+        "expectedClosing": "2029",
+        "state": "SIGNED_PENDING_EXIT"
+      }
+    ]
+  },
+  "operatingResolution": {
+    "country": "Canada",
+    "region": "North America",
+    "sector": "Transportation",
+    "subsector": "Parking management and urban mobility services",
+    "companyStatus": "ACTIVE",
+    "reportedScale": "The current company site reports more than 340,000 parking stalls across 95 cities and nearly 450,000 active app users."
+  },
+  "acquisitionExitCheck": {
+    "lazAcquisition": "The transaction closed on June 30, 2025 and was announced on July 1, 2025, giving LAZ 60% while INDIGO Group retained 40%.",
+    "pendingTransfer": "The sale agreement contractually commits LAZ to acquire INDIGO Group's remaining 40% in 2029; the exact closing date and valuation are not yet publicly fixed.",
+    "subsequentExitSearch": "No later completed sale, legal merger, rebrand, or Argo exit from LAZ was identified through 2026-08-16."
+  },
+  "repoDecision": {
+    "productionCompanyId": "cmrxpj5r000i8ivhedcwlfku0",
+    "lazProductionCompanyId": "cmrxpj5s200iaivhegqucgc2l",
+    "mutation": "ARCHIVE_STANDALONE_RECORD",
+    "queueCorrectionDisposition": "EXCLUDE_AS_LAZ_SUBSIDIARY_VIA_PROTECTED_CORRECTION",
+    "duplicateMapping": "NONE",
+    "lazPreservation": "The separately published LAZ manager-level record remains unchanged; the INDIGO transaction remains part of LAZ's operating history for its later authoritative scorecard refresh."
+  },
+  "primaryEvidenceUrl": "https://www.group-indigo.com/wp-content/uploads/2026/03/Financial-Results-FY25.pdf",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0094-indigo-park-canada-inc/attempt-2/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0094-indigo-park-canada-inc/attempt-2/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0094-indigo-park-canada-inc/attempt-2/chatgpt-response-validation.json",
+  "unresolvedQuestions": [
+    "The exact 2029 closing date and valuation for LAZ's committed acquisition of INDIGO Group's remaining 40% are not publicly fixed.",
+    "The exact Argo fund vehicle and ownership percentage in LAZ are not publicly disclosed."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_CORRECTION",
+  "confidence": "HIGH"
+}

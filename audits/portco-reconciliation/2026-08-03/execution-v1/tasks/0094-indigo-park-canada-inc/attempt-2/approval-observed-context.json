@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0094:indigo-park-canada-inc:92a79556",
+  "taskIndex": 94,
+  "companyName": "INDIGO Park Canada Inc.",
+  "generatedAt": "2026-08-16T08:10:58.995Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0094-indigo-park-canada-inc/attempt-2/approval-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 94,
+    "taskId": "ledger:0094:indigo-park-canada-inc:92a79556",
+    "canonicalKey": "indigo-park-canada-inc|canada",
+    "companyName": "INDIGO Park Canada Inc.",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 15,
+    "managers": [
+      "Argo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "015-argo-infrastructure-partners:repo-only:003:indigo-park-canada-inc"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj5r000i8ivhedcwlfku0"
+    ],
+    "seedKeys": [
+      "indigo park canada inc.|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Argo Infrastructure Partners MATCHED_ELSEWHERE: Repository record is a majority investment made through the included LAZ Parking platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj5r000i8ivhedcwlfku0",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "indigo-park-canada-inc|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj5r000i8ivhedcwlfku0",
+    "name": "INDIGO Park Canada Inc.",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Parking management and urban mobility services",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "INDIGO Park Canada provides parking management and urban mobility services across Canada. Its customer base includes municipalities, airports, healthcare facilities, commercial property owners, and parking users served through operating contracts and technology-enabled parking platforms. The business follows an operating-infrastructure model built around managed parking sites, digital customer interfaces, and urban mobility services rather than an ownership-only real estate model. LAZ Parking acquired a 60% stake in the company in July 2025, while INDIGO Group retained the remaining 40%, and public company materials describe more than 315,000 parking stalls across 79 cities. Reviewed public sources do not disclose whether any additional sponsor-level ownership sits above LAZ's stake beyond its own shareholder structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Canada",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqrq01f1ivhenadqtoup",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Argo Managed Funds",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqs601f2ivhekvjrmtgh",
+        "managerName": "Argo Infrastructure Partners",
+        "organizationName": "Argo Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkj4902l9ivhepaf9gsfg",
+        "date": "Jul 2025",
+        "event": "INDIGO Group announced that it retained a 40% stake following the transaction.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkj4w02laivhe7f8etcri",
+        "date": "Jul 2025",
+        "event": "Indigo Group retained a 40 percent ownership interest in the Canadian business.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkj5h02lbivhe0clx4u4r",
+        "date": "Jul 1, 2025",
+        "event": "Argo Infrastructure Partners-backed LAZ Parking acquired a 60% stake in INDIGO Park Canada.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkj5x02lcivheirx1jb4d",
+        "date": "Mar 2026",
+        "event": "Indigo Group's annual results confirmed the June 2025 disposal of the 60 percent stake.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpov1b07axivhe0wty2dgp",
+        "label": "Park Indigo — INDIGO Park Canada Inc.",
+        "url": "https://www.park-indigo.ca/en/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Park Indigo — INDIGO Park Canada Inc.",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpov2a07azivheblzfj97q",
+        "label": "Business — INDIGO Park Canada Inc.",
+        "url": "https://business.parkindigo.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Business company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpov3h07b1ivhe4cn64xkz",
+        "label": "Close date source — Argo Infrastructure Partners — INDIGO Park Canada Inc.",
+        "url": "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Argo Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpov4m07b3ivhe906fknoj",
+        "label": "Group Indigo — INDIGO Park Canada Inc.",
+        "url": "https://www.group-indigo.com/wp-content/uploads/2025/07/20250701-Press-Release-INDIGO-Group-forges-strategic-partnership-with-LAZ-Parking-in-Canada.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Group Indigo — INDIGO Park Canada Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpov5r07b5ivheb1yhirlb",
+        "label": "Indigoneo — Indigo Park Canada",
+        "url": "https://indigoneo.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Indigoneo company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpov6v07b7ivhe6c9qq5mk",
+        "label": "Group Indigo — Indigo Park Canada",
+        "url": "https://www.group-indigo.com/en/press/press-release/indigo-group-s-a-2025-annual-results/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Group Indigo — Indigo Park Canada",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "INDIGO Park Canada Inc.",
+    "investmentFirm": "Argo Infrastructure Partners",
+    "sector": "Transportation",
+    "subsector": "Parking management and urban mobility services",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Argo Managed Funds",
+    "description": "INDIGO Park Canada provides parking management and urban mobility services across Canada. Its customer base includes municipalities, airports, healthcare facilities, commercial property owners, and parking users served through operating contracts and technology-enabled parking platforms. The business follows an operating-infrastructure model built around managed parking sites, digital customer interfaces, and urban mobility services rather than an ownership-only real estate model. LAZ Parking acquired a 60% stake in the company in July 2025, while INDIGO Group retained the remaining 40%, and public company materials describe more than 315,000 parking stalls across 79 cities. Reviewed public sources do not disclose whether any additional sponsor-level ownership sits above LAZ's stake beyond its own shareholder structure.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Canada",
+    "milestones": [
+      {
+        "date": "Jul 2025",
+        "event": "INDIGO Group announced that it retained a 40% stake following the transaction.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 2025",
+        "event": "Indigo Group retained a 40 percent ownership interest in the Canadian business.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 1, 2025",
+        "event": "Argo Infrastructure Partners-backed LAZ Parking acquired a 60% stake in INDIGO Park Canada.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 2026",
+        "event": "Indigo Group's annual results confirmed the June 2025 disposal of the 60 percent stake.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Park Indigo — INDIGO Park Canada Inc.",
+        "url": "https://www.park-indigo.ca/en/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Business — INDIGO Park Canada Inc.",
+        "url": "https://business.parkindigo.ca/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Argo Infrastructure Partners — INDIGO Park Canada Inc.",
+        "url": "https://www.lazparking.com/our-company/about/news/2025/07/01/laz-parking-acquires-majority-stake-in-indigo-park-canada",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Group Indigo — INDIGO Park Canada Inc.",
+        "url": "https://www.group-indigo.com/wp-content/uploads/2025/07/20250701-Press-Release-INDIGO-Group-forges-strategic-partnership-with-LAZ-Parking-in-Canada.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Indigoneo — Indigo Park Canada",
+        "url": "https://indigoneo.ca/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Group Indigo — Indigo Park Canada",
+        "url": "https://www.group-indigo.com/en/press/press-release/indigo-group-s-a-2025-annual-results/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "Argo Managed Funds",
+        "investmentYear": 2025,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Argo Infrastructure Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4dv000nivhehrt6f94r",
+        "name": "Argo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:12.884Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0094:indigo-park-canada-inc:92a79556",
+    "taskIndex": 94,
+    "canonicalKey": "indigo-park-canada-inc|canada",
+    "capturedAt": "2026-08-16T08:10:58.995Z",
+    "databaseRevision": "company-state:5483aa92cc11426be0f6750a37808e1b475a9dbe3ef805b2ef6d00c9314fadee",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "31aec9438cd5d08f2e79b24ce92c0abd21863b1f5afa5c12f558cbe2c0cb19ab",
+    "productionSnapshotSha256": "ea1c37dc45600d3cd9d8131b22a29e1438116e6babc94cf74c9f370994c0274d",
+    "targetCompanySnapshotSha256": "5483aa92cc11426be0f6750a37808e1b475a9dbe3ef805b2ef6d00c9314fadee",
+    "seedEntrySha256": "2c48e29abee2e05f8711b51878563b718ae399d7182e9e1fbba43068eac656af",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "0d9c11eb9dbb7f8f46dc5a9163bebb4fbc3b14d681718d15b773bcd3243e7d30",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2708bbd40f56d8a125356022f202953308d8f5737bda6789ba318886d4e9e50c",
+      "citationsSha256": "5e5ec59f02d6a834774329f7c399ee65093625b1471e3545e4235fdc8395da61",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "41ae758a05f63db974c8065ab1031fbf4171df7cff7bf9e520fcf24059a8558e",
+    "stateSha256": "1dd03e8b458b859f49c197a79aaf74dea2598672e225c70073a219841444066a",
+    "taskSnapshotSha256": "7b91fb9cb139430fd89f325a538c9416da0c03babba1d3d21a85c9262a1a00ca"
+  },
+  "contextSha256": "59626810ffcf883ddda498470207cf73ab65152590d69f7c42b9179eeb638501"
+}

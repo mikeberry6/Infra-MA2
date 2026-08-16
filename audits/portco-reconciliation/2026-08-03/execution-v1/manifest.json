@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T07:36:30.000Z",
-  "runStatus": "BLOCKED",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-16T08:12:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0094:indigo-park-canada-inc:92a79556",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -13909,20 +13909,32 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "31aec9438cd5d08f2e79b24ce92c0abd21863b1f5afa5c12f558cbe2c0cb19ab",
-      "status": "FAILED",
-      "attempts": 1,
-      "startedAt": "2026-08-16T07:08:00.000Z",
-      "updatedAt": "2026-08-16T07:36:30.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-16T07:45:00.000Z",
+      "updatedAt": "2026-08-16T08:12:00.000Z",
       "completedAt": null,
-      "exceptionReason": "Fresh GPT-5.6 Sol Pro research emitted no initial answer; the one allowed repair returned JSON truncated mid-string. No proposal, release, seed change, or database mutation occurred.",
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0094-indigo-park-canada-inc/attempt-2/locked-task-snapshot.json",
+          "sha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0094-indigo-park-canada-inc-v1/proposal.json",
+          "sha256": "8547b41e07ac7968581a307baad251cc033784f9fd8792e8337652c4aa3f44cf"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0094-indigo-park-canada-inc-v1.json",
+          "sha256": "ba6796fea03177e97942dcd7b1201ad1e866c8e01f368ef6fa39e6a362d0edaf"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0094-indigo-park-canada-inc/attempt-2/research-decision.json",
+          "sha256": "9b33cff418781c7fcf1e47d5903f1a1be0036072ef41aeef1fd9222bfb4ac1db"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -13955,6 +13967,55 @@
           "reason": "Fresh GPT-5.6 Sol Pro research emitted no initial answer; the one allowed repair returned JSON truncated mid-string. No proposal, release, seed change, or database mutation occurred.",
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-16T07:45:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-16T08:11:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
+          "evidenceSha256": [
+            "8547b41e07ac7968581a307baad251cc033784f9fd8792e8337652c4aa3f44cf",
+            "9b33cff418781c7fcf1e47d5903f1a1be0036072ef41aeef1fd9222bfb4ac1db",
+            "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-16T08:11:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
+          "evidenceSha256": [
+            "8547b41e07ac7968581a307baad251cc033784f9fd8792e8337652c4aa3f44cf",
+            "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-16T08:12:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b4907e4b28c891ff110b39b8e6ba3a697dd8c40bcbb280ba0cc8f2ee8d584014",
+          "evidenceSha256": [
+            "ba6796fea03177e97942dcd7b1201ad1e866c8e01f368ef6fa39e6a362d0edaf"
+          ],
           "kind": "TRANSITION"
         }
       ]
@@ -29306,5 +29367,5 @@
       ]
     }
   ],
-  "manifestSha256": "507057e8a5e9aaa64ffa37002ae6893ffe86e16025a3db3abc60296068ac560b"
+  "manifestSha256": "d7ca8a67f00ac3b88b62b24be5261bfa9ec067ef111f159bce7604db9a6b1f81"
 }
