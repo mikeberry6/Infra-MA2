@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0090:dsd-renewables:bb4db790",
+  "taskIndex": 90,
+  "companyName": "DSD Renewables",
+  "generatedAt": "2026-08-16T02:27:03.375Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0090-dsd-renewables/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 90,
+    "taskId": "ledger:0090:dsd-renewables:bb4db790",
+    "canonicalKey": "dsd-renewables|united-states",
+    "companyName": "DSD Renewables",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 14,
+    "managers": [
+      "Ares Management",
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "014-ares-management:holding:008:dsd-renewables"
+    ],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:016:dsd-renewables",
+      "048-global-infrastructure-partners:repo-only:004:dsd-renewables"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj8vd00n1ivhe5l7psm8n"
+    ],
+    "seedKeys": [
+      "dsd renewables|United States"
+    ],
+    "evidenceUrls": [
+      "https://dsdrenewables.com/press-release/dsd-secures-200m-preferred-equity-investment-from-ares-management-press-release/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock NEEDS_REVIEW: Ownership status unclear following Ares involvement. Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment.",
+      "Resolve the accepted repo-only review issue with direct evidence before any proposal can be applied."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8vd00n1ivhe5l7psm8n",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "dsd-renewables|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8vd00n1ivhe5l7psm8n",
+    "name": "DSD Renewables",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed solar, storage, and EV charging",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "DSD Renewables develops, owns, and operates distributed-energy projects, including solar, storage, EV charging, and community-energy assets. Its counterparties include commercial, industrial, municipal, institutional, and utility customers that contract for distributed-generation output and related services. The business is asset-heavy and contracted because it combines development capability with ownership of operating projects and long-term customer agreements. Company history materials describe DSD as having roots in 2012 and a standalone launch in 2019, after which the platform expanded rapidly and raised more than $1 billion in its first three years. Its operating footprint spans multiple US states, and 2025 financing disclosures referenced 233 MW of solar assets backed by long-term financing. BlackRock has been the platform's majority institutional backer since launch, and Cox Enterprises made a strategic investment in 2023, while public sources do not disclose exact ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "New York; multi-state United States portfolio",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju3h01kgivheo2mh7h88",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpju4001khivhesh1w0xbz",
+        "managerName": "Ares Management",
+        "organizationName": "Ares Management",
+        "fundName": null,
+        "vehicleName": "Infrastructure and Power strategy",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkw18030mivhenaj7r07d",
+        "date": "2019",
+        "event": "DSD Renewables was formed from GE's distributed solar business with BlackRock Real Assets as majority investor.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw1s030nivhexiga4hrq",
+        "date": "2019",
+        "event": "DSD launched as a standalone distributed-energy platform backed by BlackRock.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw2c030oivheoujil0uw",
+        "date": "Mar 3, 2022",
+        "event": "DSD secured a $200 million preferred equity investment from a fund managed by Ares Management's Infrastructure and Power strategy.",
+        "category": "FINANCING",
+        "sortDate": "2022-03-03T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw2u030pivheuh6b2v2c",
+        "date": "Nov 2023",
+        "event": "DSD received a $250 million strategic investment from Cox Enterprises.",
+        "category": "FINANCING",
+        "sortDate": "2023-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjao08baivheuwpaggmp",
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Dsdrenewables company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppjbn08bcivhek3plbc25",
+        "label": "Investment date source — Ares Management — DSD Renewables",
+        "url": "https://dsdrenewables.com/press-release/dsd-secures-200m-preferred-equity-investment-from-ares-management-press-release/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ares Management initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjcp08beivhep9bivga6",
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/press-release/dsd-receives-250m-strategic-investment-from-cox-enterprises-press-release/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Dsdrenewables — DSD Renewables",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjdr08bgivhexzq9jx39",
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/press-release/dsd-secures-238-million-in-long-term-financing-for-233-mw-of-solar-energy/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Dsdrenewables financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjev08biivheuyajd0tp",
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/overview/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Dsdrenewables — DSD Renewables",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjfz08bkivheu2atpo5s",
+        "label": "Investment date source — BlackRock — DSD Renewables",
+        "url": "https://dsdrenewables.com/overview/the-history-of-dsd/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjh308bmivhedjvvn61j",
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/press-release/dsd-triples-solar-capacity-and-staff-raises-more-than-1b-in-3-years-since-launch/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Dsdrenewables transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "DSD Renewables",
+    "investmentFirm": "BlackRock",
+    "sector": "Power & ET",
+    "subsector": "Distributed solar, storage, and EV charging",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "DSD Renewables develops, owns, and operates distributed-energy projects, including solar, storage, EV charging, and community-energy assets. Its counterparties include commercial, industrial, municipal, institutional, and utility customers that contract for distributed-generation output and related services. The business is asset-heavy and contracted because it combines development capability with ownership of operating projects and long-term customer agreements. Company history materials describe DSD as having roots in 2012 and a standalone launch in 2019, after which the platform expanded rapidly and raised more than $1 billion in its first three years. Its operating footprint spans multiple US states, and 2025 financing disclosures referenced 233 MW of solar assets backed by long-term financing. BlackRock has been the platform's majority institutional backer since launch, and Cox Enterprises made a strategic investment in 2023, while public sources do not disclose exact ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2019,
+    "investmentYear": 2019,
+    "headquarters": "New York; multi-state United States portfolio",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "DSD Renewables was formed from GE's distributed solar business with BlackRock Real Assets as majority investor.",
+        "category": "Financing"
+      },
+      {
+        "date": "2019",
+        "event": "DSD launched as a standalone distributed-energy platform backed by BlackRock.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 3, 2022",
+        "event": "DSD secured a $200 million preferred equity investment from a fund managed by Ares Management's Infrastructure and Power strategy.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 2023",
+        "event": "DSD received a $250 million strategic investment from Cox Enterprises.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — Ares Management — DSD Renewables",
+        "url": "https://dsdrenewables.com/press-release/dsd-secures-200m-preferred-equity-investment-from-ares-management-press-release/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/press-release/dsd-receives-250m-strategic-investment-from-cox-enterprises-press-release/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/press-release/dsd-secures-238-million-in-long-term-financing-for-233-mw-of-solar-energy/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/overview/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — BlackRock — DSD Renewables",
+        "url": "https://dsdrenewables.com/overview/the-history-of-dsd/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Dsdrenewables — DSD Renewables",
+        "url": "https://dsdrenewables.com/press-release/dsd-triples-solar-capacity-and-staff-raises-more-than-1b-in-3-years-since-launch/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2019,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Ares Management",
+        "ownershipVehicle": "Infrastructure and Power strategy",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi48n000mivhewkoz0k55",
+        "name": "Ares Management",
+        "updatedAt": "2026-07-23T16:09:12.695Z"
+      },
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0090:dsd-renewables:bb4db790",
+    "taskIndex": 90,
+    "canonicalKey": "dsd-renewables|united-states",
+    "capturedAt": "2026-08-16T02:27:03.375Z",
+    "databaseRevision": "company-state:4c5d0c8a316243c42431311049d4531165111d8c864d5438b441475831a0987e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "b61517863cce7d123304306e97cd6c590bf2de0fe8c93f5269beffb7e3ccbb76",
+    "productionSnapshotSha256": "26395465ed01924bb7f9205cb6d020e7e683ad3827e324497fafb97fa9003330",
+    "targetCompanySnapshotSha256": "4c5d0c8a316243c42431311049d4531165111d8c864d5438b441475831a0987e",
+    "seedEntrySha256": "92f0e5fd7f69d35d8c06e77e25a1b146c713be820adf3fb5b49ac32b16a1a3bb",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "daf64a4cd040434b88db45039e24ea5cd6c2e9e2fbe341fca013e3153f930318",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f150f68f550d189e390e2b65b8b8529434c9800c28c4d7a67156b5d2049398a7",
+      "citationsSha256": "0ebfcefe128583e143d711fac8aca49adc61b8e4a6d5622d2187953f13eb0487",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4d259d72e2959d97add77d2888c58a31cfc41a17d11679e67cb47df6b84103d2",
+    "stateSha256": "aeabd0f8069370e789c15b1cb1fb46cde2053134b22106e6d6176f6c4f23c3f3",
+    "taskSnapshotSha256": "c4cdd637c95735d86e2b86d050f32debf3ec79b21840161004334915291fde69"
+  },
+  "contextSha256": "27a3e801c253be8bf1870e94d27823d1c071a20f00c40a0a501d1d1bf96a9fc8"
+}

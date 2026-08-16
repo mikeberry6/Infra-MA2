@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_FAILURE",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0090:dsd-renewables:bb4db790",
+  "taskIndex": 90,
+  "companyName": "DSD Renewables",
+  "recordedAt": "2026-08-16T02:48:00.000Z",
+  "stage": "CHATGPT_RESPONSE_VALIDATION",
+  "reason": "GPT-5.6 Sol Pro returned truncated, invalid JSON in the initial response and again in the sole permitted repair.",
+  "conversationUrl": "https://chatgpt.com/c/6a81209c-ccdc-83ea-956d-f0bb834cd170",
+  "attempts": {
+    "initialResponseSha256": "1b14ac4f3572d98e73fcc21683c8153c0f71066d960650e99b97755367acc4b8",
+    "repairResponseSha256": "caa9f397aed0a6c3d423186581d453c97396df44b03678bb4c5fdde1d8cfa051",
+    "repairCount": 1,
+    "repairLimit": 1
+  },
+  "safeguards": {
+    "proposalGenerated": false,
+    "releaseStarted": false,
+    "databaseMutation": false,
+    "seedMutation": false,
+    "nextCompanyStarted": false
+  }
+}
