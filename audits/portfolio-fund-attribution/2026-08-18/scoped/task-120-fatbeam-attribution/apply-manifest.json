@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-18",
+  "ledgerSha256": "169ef20c2384d156cddeb5af8f15d5261f99dd19b62b2859e14da297543c37af",
+  "sourceSnapshotSha256": "2c4a5708e0aeeb9211d6fa6171430ed116828e2e646d55a89c307fee5257d1df",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-A63F3E5375F6",
+      "ownershipPeriodId": "cmrxpjtfn01jbivhehqozsl37",
+      "companyName": "Fatbeam",
+      "country": "United States",
+      "investmentFirm": "Basalt Infrastructure Partners",
+      "currentVehicleName": "Basalt IV / Project Lighthouse AIV Feeder LP",
+      "databaseVehicleName": "Basalt IV / Project Lighthouse AIV Feeder LP",
+      "investmentYear": 2023,
+      "stake": "100% indirect at the Project Lighthouse / Fatbeam chain; Basalt-managed fund allocations not publicly disclosed",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Basalt IV",
+        "attributionConfidence": null,
+        "attributionRationale": "The Oregon regulator filing and Latham acquisition notice identify Project Lighthouse AIV Feeder LP and Basalt's fourth flagship fund, Basalt IV, as the disclosed acquisition chain. Basalt IV remains unlinked because it is not a production-curated fund; the 100% disclosure applies to the Project Lighthouse / Fatbeam chain rather than Basalt's own economic allocation."
+      },
+      "evidenceUrls": [
+        "https://edocs.puc.state.or.us/efdocs/HNA/cp1488hna133333.pdf",
+        "https://www.lw.com/en/news/2023/03/latham-advises-basalt-infrastructure-partners-in-acquisition-of-fatbeam",
+        "https://www.basaltinfra.com/portfolio/fatbeam/",
+        "https://www.fatbeamfiber.com/",
+        "https://www.fatbeamfiber.com/our-network"
+      ]
+    }
+  ],
+  "manifestSha256": "f23d656c00387424180553aab4eca386c87b9d9545c3aa6e2096f6442337f71c"
+}
