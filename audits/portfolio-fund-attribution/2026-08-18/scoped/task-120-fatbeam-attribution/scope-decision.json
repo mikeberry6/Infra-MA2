@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_SCOPED_CORRECTION_DECISION",
+  "asOfDate": "2026-08-18",
+  "taskId": "ledger:0120:fatbeam:7838747e",
+  "companyName": "Fatbeam",
+  "companyId": "cmrxpj8de00m8ivhe8aczjldv",
+  "ownershipPeriodIds": [
+    "cmrxpjtfn01jbivhehqozsl37"
+  ],
+  "recordIds": [
+    "OFA-A63F3E5375F6"
+  ],
+  "sourceProductionSnapshotSha256": "2c4a5708e0aeeb9211d6fa6171430ed116828e2e646d55a89c307fee5257d1df",
+  "sourceLedgerSha256": "169ef20c2384d156cddeb5af8f15d5261f99dd19b62b2859e14da297543c37af",
+  "generatedFullManifestSha256": "6a93caa77019a70e70957d4db98dd432d8af7f1240c32053b430231e24737459",
+  "scopedManifestSha256": "f23d656c00387424180553aab4eca386c87b9d9545c3aa6e2096f6442337f71c",
+  "reason": "Task 120 verified that Project Lighthouse AIV Feeder LP and Basalt's fourth flagship fund, Basalt IV, form the disclosed Fatbeam acquisition chain. The applied ownership period, vehicle, stake and dates are correct, but production still carries a stale Basalt III supplemental attribution. This scoped correction changes only that attribution to Basalt IV, creates or updates no fund, changes no ownership identity or company field, and leaves every other production row untouched.",
+  "expectedChangedRows": 1,
+  "expectedAlreadyAppliedRows": 0,
+  "fundCreates": 0,
+  "fundUpdates": 0,
+  "ownershipIdentityChanges": 0
+}
