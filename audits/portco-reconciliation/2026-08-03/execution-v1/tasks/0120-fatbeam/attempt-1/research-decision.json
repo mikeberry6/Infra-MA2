@@ -1,0 +1,148 @@
+{
+  "asOfDate": "2026-08-18",
+  "requestedCompany": "Fatbeam",
+  "requestedManager": "Basalt Infrastructure Partners",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "Correct the existing company in place. Basalt IV, through Project Lighthouse AIV Feeder LP, closed its acquisition on May 31, 2023. The current Basalt III vehicle label is unsupported. The Oregon regulator filing establishes the legal chain, close and Coeur d'Alene headquarters; current company and manager pages support continued ownership and operating scale. No later ownership transfer or pending exit was found.",
+  "identityResolution": {
+    "canonicalLegalName": "Fatbeam Holdings, LLC",
+    "canonicalDisplayName": "Fatbeam",
+    "aliases": [
+      "Fatbeam Holdings, LLC",
+      "Fatbeam, LLC",
+      "Fatbeam Fiber",
+      "Fatbeam Holdings"
+    ],
+    "officialWebsite": "https://www.fatbeamfiber.com/",
+    "headquartersOrOperatingLocation": "Coeur d'Alene, Idaho",
+    "country": "United States",
+    "platformBoundary": "Count Fatbeam Holdings, LLC and wholly owned operator Fatbeam, LLC as one manager-level platform. Fatbeam Fiber is the operating brand; local networks and customer assets remain within the platform.",
+    "duplicateDecision": "Correct production company cmrxpj8de00m8ivhe8aczjldv in place; create no duplicate."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Normalize Basalt Infrastructure Partners LLP and the queued Basalt manager label to Basalt Infrastructure Partners. Remove the unsupported Basalt III attribution. Because no matching Basalt IV Fund row exists in production, preserve the disclosed Basalt IV / Project Lighthouse chain in vehicleName and keep fundName null.",
+    "currentInfrastructureManagerOwners": [
+      {
+        "manager": "Basalt Infrastructure Partners",
+        "organization": "Basalt Infrastructure Partners",
+        "fund": "NOT_LINKED - no matching production-curated Basalt IV Fund row",
+        "vehicle": "Basalt IV / Project Lighthouse AIV Feeder LP",
+        "stake": "100% indirect at the Project Lighthouse / Fatbeam chain; Basalt-managed fund allocations not publicly disclosed",
+        "announcementDate": "2023-03-27",
+        "entryDate": "2023-05-31",
+        "entryYear": 2023,
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerInfrastructureManagerOwners": [],
+    "pendingOwnershipTransactions": [],
+    "duplicateOwnerAction": "Update the existing Basalt period only. Do not add a duplicate owner, SDC manager-universe ownership period or pending transaction."
+  },
+  "operatingResolution": {
+    "sector": "DIGITAL",
+    "subsector": "Fiber broadband",
+    "region": "NORTH_AMERICA",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Fatbeam is a western U.S. owner-operator of fiber networks serving business, carrier, public-sector and residential customers.",
+    "companyStatus": "ACTIVE",
+    "yearFounded": 2010,
+    "productsAndServices": "Dedicated internet access, Ethernet private line, wavelength, dark fiber, wireless backup, tower and data-center connectivity, managed Wi-Fi, cyber/cloud and residential fiber/wireless services.",
+    "customersAndEndMarkets": "Commercial, education, healthcare, government, carrier, tower, residential and multifamily customers.",
+    "footprint": "Arizona, Idaho, Montana, Nevada, New Mexico, Oregon, Washington and Wyoming.",
+    "disclosedScale": [
+      "Current Fatbeam network page: 1,600+ on-net buildings, 150,000+ total fiber miles and 150+ cities across eight states.",
+      "Current Basalt portfolio page: 1,250 route miles.",
+      "June 9, 2023 regulator filing: 1,252 route miles, 13 metro markets, 128,000+ strand miles and over 40 cities."
+    ]
+  },
+  "acquisitionExitCheck": {
+    "entry": "Basalt IV announced an agreement on March 27, 2023 under a March 24 SPA. Project Lighthouse AIV Feeder LP acquired all Fatbeam Holdings interests effective May 31, 2023.",
+    "currentStatus": "CLOSED_ACTIVE. Fatbeam remains in Basalt's live portfolio and is indirectly wholly owned through Project Lighthouse.",
+    "subsequentExitSearch": "No later sale, secondary, transfer, recapitalization changing ownership, merger, bankruptcy or signed pending exit was identified through 2026-08-18."
+  },
+  "milestones": [
+    {
+      "date": "2010",
+      "event": "Fatbeam was established as a western U.S. fiber-network operator.",
+      "category": "FOUNDING",
+      "evidenceUrls": [
+        "https://www.basaltinfra.com/portfolio/fatbeam/",
+        "https://edocs.puc.state.or.us/efdocs/HNA/cp1488hna133333.pdf"
+      ]
+    },
+    {
+      "date": "Mar 27–May 31, 2023",
+      "event": "Basalt IV announced an agreement to acquire Fatbeam on March 27; Project Lighthouse AIV Feeder LP acquired all Fatbeam Holdings interests on May 31, making Fatbeam indirectly wholly owned.",
+      "category": "ACQUISITION",
+      "evidenceUrls": [
+        "https://www.lw.com/en/news/2023/03/latham-advises-basalt-infrastructure-partners-in-acquisition-of-fatbeam",
+        "https://edocs.puc.state.or.us/efdocs/HNA/cp1488hna133333.pdf"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "label": "Oregon PUC Fatbeam transfer filing",
+      "url": "https://edocs.puc.state.or.us/efdocs/HNA/cp1488hna133333.pdf",
+      "purpose": "Legal close, seller and buyer chain, wholly owned status, headquarters and 2023 operating scale.",
+      "sourceTier": "REGULATOR_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Latham Basalt IV acquisition notice",
+      "url": "https://www.lw.com/en/news/2023/03/latham-advises-basalt-infrastructure-partners-in-acquisition-of-fatbeam",
+      "purpose": "Basalt IV attribution and agreement announcement.",
+      "sourceTier": "OFFICIAL_ADVISER",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "Basalt Fatbeam portfolio page",
+      "url": "https://www.basaltinfra.com/portfolio/fatbeam/",
+      "purpose": "Current Basalt listing, route-mile scale and Coeur d'Alene location.",
+      "sourceTier": "MANAGER_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "Fatbeam network page",
+      "url": "https://www.fatbeamfiber.com/our-network",
+      "purpose": "Current company-reported footprint and scale.",
+      "sourceTier": "COMPANY_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "Spokane Journal SDC report",
+      "url": "https://www.spokanejournal.com/articles/2046-ny-firm-acquires-majority-stake-in-fatbeam",
+      "purpose": "Secondary support for SDC's 2020 51% investment and founders' retained 49%.",
+      "sourceTier": "RELIABLE_MEDIA",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "beforeAfterChanges": [
+    "Replace the unsupported Basalt III vehicle with Basalt IV / Project Lighthouse AIV Feeder LP while keeping fundName null because Basalt IV is not production-curated.",
+    "Retain the existing Basalt owner once, preserve CLOSED_ACTIVE status from 2023 and clarify that 100% applies to the acquisition chain rather than Basalt's own economic interest.",
+    "Add Fatbeam Holdings, LLC and Fatbeam, LLC aliases, the official website and Coeur d'Alene headquarters.",
+    "Replace the announcement-only ownership milestone with a combined March 27 agreement / May 31 legal-close milestone.",
+    "Date and distinguish current total-fiber metrics from the 2023 route-mile and strand-mile disclosures.",
+    "Keep SDC and founder history as seller context without expanding this Phase 1 queue task into an additional ownership-period action."
+  ],
+  "excludedOrDuplicateCandidates": [
+    "Fatbeam, LLC, Fatbeam Fiber and Fatbeam Holdings are operator, brand or legal aliases of the same platform.",
+    "Project Lighthouse AIV Feeder LP and the Basalt IV GP are acquisition/fund vehicles, not separate PortCos.",
+    "SDC FB Holdings, SDC Capital Partners and Fatbeam's founders are historical sellers; this Phase 1 queue item does not add them as current or manager-universe owners.",
+    "Individual local networks, buildings and customer connections are underlying assets."
+  ],
+  "unresolvedQuestions": [],
+  "recommendedListAction": "Update existing company cmrxpj8de00m8ivhe8aczjldv with CORRECT_COMPANY only. Add no owner, duplicate, pending transaction or merge."
+}
+
