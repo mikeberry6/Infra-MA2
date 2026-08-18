@@ -301,6 +301,21 @@ describe("proposal patch ownership additions", () => {
     })).toBe("sequitur-renewables|united-states");
   });
 
+  it("uses the reviewed canonical survivor identity for an explicit merge", () => {
+    expect(proposalCanonicalKey({
+      resolvedCanonicalKey: "axium-extendicare-ltc-ii-lp|canada",
+      sourceQueueEntry: {
+        canonicalKey: "arbour-heights|canada",
+      } as TaskSnapshotContext["sourceQueueEntry"],
+      targetResolution: {
+        method: "REVIEWED_MERGE_CANONICAL_TARGET",
+        targetCompanyId: "company-platform",
+        linkedQueueTaskId: null,
+        immutableRetiredCompanyId: "company-arbour",
+      },
+    })).toBe("axium-extendicare-ltc-ii-lp|canada");
+  });
+
   it("rejects a canonical-null mutation without exact reviewed identity resolution", () => {
     expect(() => proposalCanonicalKey({
       resolvedCanonicalKey: "gfl-environmental-services|united-states-canada",

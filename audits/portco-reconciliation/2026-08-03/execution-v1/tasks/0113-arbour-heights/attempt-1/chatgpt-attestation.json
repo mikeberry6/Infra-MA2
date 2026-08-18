@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0113:arbour-heights:24819145",
+  "taskIndex": 113,
+  "attempt": 1,
+  "companyName": "Arbour Heights",
+  "conversationUrl": "https://chatgpt.com/c/6a8456ca-5018-83ea-b7b5-dbad6f6b161d",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-18T12:57:45.910Z",
+  "initialCompletedAt": "2026-08-18T13:22:52.290Z",
+  "repairSubmittedAt": "2026-08-18T13:23:17.706Z",
+  "repairCompletedAt": "2026-08-18T13:25:20.339Z",
+  "repairCount": 1,
+  "initialOutcome": "VALID_PROPOSED_CORRECTION_WITH_UI_INNERTEXT_WHITESPACE_ARTIFACT",
+  "finalOutcome": "VALID_PROPOSED_CORRECTION",
+  "contentHashes": {
+    "promptSha256": "8543891d8a7b9c49f4f83968ec3effb85d7c83ad73ff2d9aa2c11abeedc1fd38",
+    "initialResponseSha256": "c0ea59e64b5043915e5d009b72d9d8c4394d4ff4b3bff327872a1b75591eefca",
+    "acceptedResponseSha256": "a8589694001cfc583701b8a2192b363854e07d4713fca1175621402ab1acc6c6",
+    "transcriptSha256": "1ac5b3c8ea8ae2bf79a74c23f1eba6dbba27bfa07968fe6ad961a5c56c1606df",
+    "repairPromptSha256": "8ea681c87a17ab28ac8240380ae1a19c2bf2268df4519a3a6aa3055b3c13917b",
+    "repairResponseSha256": "a8589694001cfc583701b8a2192b363854e07d4713fca1175621402ab1acc6c6"
+  },
+  "captureMethod": "Signed-in ChatGPT web application controlled through the in-app browser",
+  "captureNote": "GPT-5.6 Sol and Pro mode at power 5 of 5 were visibly verified before submission. The initial raw DOM textContent contained complete parseable JSON, while rendered innerText inserted visual line breaks inside strings. One transport-only repair was requested; its JSON object is substantively identical to the initial object and became the accepted response."
+}

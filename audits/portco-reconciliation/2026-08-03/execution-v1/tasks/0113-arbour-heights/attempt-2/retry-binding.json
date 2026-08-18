@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RELEASE_RETRY_BINDING",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0113:arbour-heights:24819145",
+  "taskIndex": 113,
+  "attempt": 2,
+  "companyName": "Arbour Heights",
+  "reusedResearchAttempt": 1,
+  "newResearchRequired": false,
+  "researchDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/research-decision.json",
+  "chatgptAttestation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-response-validation.json",
+  "sourceVerification": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/source-verification.json",
+  "failedDryRunAnalysis": {
+    "artifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/failed-dry-run-analysis.json",
+    "fileSha256": "3f3c84805b13cdd58ec6cb4d8e00c2bb553b4050b15bd40a64c7bebb11e1ca25",
+    "databaseWrites": false,
+    "seedWrites": false
+  },
+  "lockedTaskSnapshotSha256": "a508d8370f85adbfd4cfa955481c98a6cb57806b1ed25c5bd6b23d8e7cf3c15a",
+  "proposal": {
+    "artifact": "audits/portco-reconciliation/2026-08-03/proposals/0113-arbour-heights-v2/proposal.json",
+    "fileSha256": "803210d8373013039fddcba4b7996a1d27e70824b0e7793d442dd06a2c0b0aac",
+    "proposalSha256": "edb7ee52acbfcaa9c79b8c6025d4c08637841730abc44f5c6c4621801345cbb5",
+    "afterImageSha256": "e76d83614380b32377337fdb25fa847e00656d5f59a13cd8a0d0b66e526b7340"
+  },
+  "correction": "Attempt 2 changes only the legacy relation mapping and milestone layout rejected by the attempt-1 dry run: the 2018 mapped milestone remains FINANCING, the generic 2019 EXPANSION row maps to a distinct canonical EXPANSION row, and the exact July 2019 acquisition maps to the canonical ACQUISITION row. The company identity, ownership, platform boundary, evidence, sources and proposed database outcome remain supported by the original company-specific GPT-5.6 Sol Pro research.",
+  "unresolvedQuestions": []
+}

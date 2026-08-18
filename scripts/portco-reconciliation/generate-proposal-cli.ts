@@ -257,6 +257,7 @@ function verifyContext(input: unknown): TaskSnapshotContext {
   if (
     context.sourceQueueEntry.canonicalKey !== null
     && context.resolvedCanonicalKey !== context.sourceQueueEntry.canonicalKey
+    && context.targetResolution.method !== "REVIEWED_MERGE_CANONICAL_TARGET"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
@@ -265,7 +266,8 @@ function verifyContext(input: unknown): TaskSnapshotContext {
   }
   if (
     (
-      context.targetResolution.method === "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
+      context.targetResolution.method === "REVIEWED_MERGE_CANONICAL_TARGET"
+      || context.targetResolution.method === "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
       || context.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
       || context.targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
       || context.targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
@@ -339,6 +341,7 @@ export function proposalCanonicalKey(context: Pick<
   if (
     context.sourceQueueEntry.canonicalKey !== null
     && canonicalKey !== context.sourceQueueEntry.canonicalKey
+    && context.targetResolution.method !== "REVIEWED_MERGE_CANONICAL_TARGET"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
@@ -441,6 +444,14 @@ function finalizeBoundProposal(
   production: ProductionSnapshot,
   content: BoundProposalContent,
 ): ReconciliationProposal {
+  if (context.targetResolution.method === "REVIEWED_MERGE_CANONICAL_TARGET") {
+    if (!content.actions.includes("MERGE_COMPANIES")) {
+      throw new Error("A reviewed merge target requires an explicit MERGE_COMPANIES action");
+    }
+    if (!content.retiredCompanyIds.includes(context.targetResolution.immutableRetiredCompanyId)) {
+      throw new Error("A reviewed merge target must retire the immutable queue company");
+    }
+  }
   const canonicalKey = proposalCanonicalKey(context);
   const beforeImageSha256 = content.beforeImage ? companyImageSha256(content.beforeImage) : null;
   if (beforeImageSha256 !== context.taskSnapshot.targetCompanySnapshotSha256) {
