@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0109:virginia-international-gateway:39eeee70",
+  "taskIndex": 109,
+  "asOfDate": "2026-08-18",
+  "generatedAt": "2026-08-18T04:58:00.000Z",
+  "canonicalKey": "virginia-international-gateway|united-states",
+  "companyName": "Virginia International Gateway",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "016-astatine-investment-partners:holding:009:virginia-international-gateway"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical Virginia International Gateway company. Astatine's current site lists VIG as Active and separately identifies a Fund II VIG investment as exited in 2019. The August 2025 Virginia Port Authority final official statement identifies USS and PSP as the current underlying owners, so the canonical record should preserve an active Astatine manager attribution, an active PSP direct-owner association and the realized 2014-2019 Astatine Fund II period. Exact active fund, vehicle, stakes and PSP entry date are not publicly disclosed. No later full sale or signed pending exit was identified through August 18, 2026. Count APM Terminals Virginia as the predecessor name and treat VPA, VIT, the lease, bonds, cranes and expansion projects as related parties or assets rather than separate PortCos.",
+  "evidence": [
+    {
+      "url": "https://astatineip.com/investment/virginia-international-gateway/",
+      "purpose": "Current Astatine manager attribution, active status, infrastructure classification and operating scale",
+      "supports": [
+        "Astatine labels Virginia International Gateway Active and classifies it as Transportation & Logistics Infrastructure",
+        "The terminal has approximately 2 million TEU annual throughput capacity and is operated under a long-term public-authority lease"
+      ]
+    },
+    {
+      "url": "https://astatineip.com/investment/virginia-international-gateway-2/",
+      "purpose": "Realized Fund II period and duplicate-period resolution",
+      "supports": [
+        "Astatine identifies a Fund II investment in the same VIG company as exited in 2019",
+        "The exited Fund II page and active page represent separate ownership periods rather than duplicate companies"
+      ]
+    },
+    {
+      "url": "https://astatineip.com/investments/",
+      "purpose": "Manager-level ownership methodology and active/exited profile coexistence",
+      "supports": [
+        "Astatine lists both the active and exited VIG profiles",
+        "The index states that listed businesses are currently or formerly owned by Astatine-managed funds"
+      ]
+    },
+    {
+      "url": "https://astatineip.com/2022/04/13/alinda-capital-partners-rebrands-its-mid-market-infrastructure-strategy-to-astatine-investment-partners/",
+      "purpose": "Manager identity continuity",
+      "supports": [
+        "Alinda Capital Partners renamed its mid-market infrastructure strategy Astatine Investment Partners in 2022",
+        "Alinda and Astatine are one manager lineage rather than separate owners"
+      ]
+    },
+    {
+      "url": "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website",
+      "purpose": "Canonical legal identity, current underlying owners, 2014 acquisition history, terminal boundary and lease status",
+      "supports": [
+        "Virginia International Gateway, Inc. is the private owner of the terminal and VPA is the lessee",
+        "The current underlying owners are USS and PSP",
+        "Alinda-managed fund affiliates and USS acquired the predecessor terminal in August 2014",
+        "The 2025 lease amendment did not transfer terminal title to VPA"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "382e1070f50511789fa60fdea85038d3e052434941568309cb47505c7b42bd1f",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "4fb2cbdf657e4978e73f5b74fd75f8bea463cd2c8e9801ac81bbd34ff95c755a",
+    "taskStateSha256": "558ffdf61cb9795ac3166af606d13aeef1745fb3a915a6966d73d7cef89bce08",
+    "taskDependencySha256": "4a51a756b36c2fbae8fa38cb5b5bbd18eb4e4c92e0ea2058646e6cdae1162f69",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "78549a996a12916bb38018450713343cf67be6deff43d2487f5360ba3d8ea6c7",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4gk000oivhekxk3hfbi",
+        "name": "Astatine Investment Partners",
+        "updatedAt": "2026-07-23T16:09:12.980Z"
+      },
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Virginia International Gateway",
+    "aliases": [
+      "Virginia International Gateway, Inc.",
+      "VIG",
+      "Virginia International Gateway Terminal",
+      "VIG Terminal",
+      "APM Terminals Virginia",
+      "APM Terminals Virginia, Inc."
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Marine container terminal infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Virginia International Gateway is the private owner of the highly automated VIG marine container terminal in Portsmouth, Virginia. The terminal handles containerized cargo for ocean carriers, beneficial cargo owners, railroads, motor carriers and regional supply chains; Astatine describes approximately 2 million TEU of annual throughput capacity. Virginia International Gateway, Inc. owns the terminal, the Virginia Port Authority leases it under a long-term facilities lease, and the authority's Virginia International Terminals subsidiary operates it. The facility opened in 2007 as APM Terminals Virginia. Affiliates of Alinda-managed funds and USS acquired it in August 2014 and renamed it VIG. Astatine now lists one VIG profile as Active and a separate Fund II investment as exited in 2019. The Virginia Port Authority's August 2025 final official statement identifies USS and PSP as the current underlying owners, supporting an active Astatine manager attribution and an active PSP direct-owner association while preserving the realized Fund II period. The active Astatine fund or managed-account vehicle, manager-level stake and entry date, plus PSP's entry date and percentage, are not publicly disclosed. No later full sale, signed pending exit or transfer of terminal title to the port authority was identified through August 18, 2026. APM Terminals Virginia is the predecessor name; VPA, VIT, lease interests, bonds, cranes and expansion projects are not separate PortCos.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2007,
+    "headquarters": "Portsmouth, Virginia",
+    "lastVerifiedAt": "2026-08-18T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Astatine Investment Partners",
+        "organizationName": "Astatine Investment Partners",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Active Astatine-managed interest; exact manager-level percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "PSP Investments",
+        "organizationName": "PSP Investments",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Joint underlying owner with USS; exact percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Astatine Investment Partners",
+        "organizationName": "Astatine Investment Partners",
+        "fundName": null,
+        "vehicleName": "Alinda Infrastructure Fund II",
+        "stake": null,
+        "investmentYear": 2014,
+        "exitYear": 2019,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "2007",
+        "event": "APM Terminals commissioned the privately owned Portsmouth container terminal later renamed Virginia International Gateway.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 2014",
+        "event": "Affiliates of investment funds managed by Alinda Capital Partners and Universities Superannuation Scheme acquired APM Terminals Virginia and renamed the terminal owner Virginia International Gateway.",
+        "category": "ACQUISITION",
+        "sortDate": "2014-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website"
+        ]
+      },
+      {
+        "id": null,
+        "date": "2019",
+        "event": "Astatine reports that its Alinda Infrastructure Fund II investment in Virginia International Gateway was exited in 2019; the manager separately retains an Active VIG profile.",
+        "category": "DIVESTITURE",
+        "sortDate": "2019-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://astatineip.com/investment/virginia-international-gateway/",
+          "https://astatineip.com/investment/virginia-international-gateway-2/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jul 8, 2025",
+        "event": "The amended VIG lease became effective after the Virginia Port Authority made an upfront rent payment and secured a fixed-price purchase option for 2065; the official statement continued to identify VIG as privately owned by USS and PSP.",
+        "category": "FINANCING",
+        "sortDate": "2025-07-08T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Astatine - Virginia International Gateway active portfolio",
+        "url": "https://astatineip.com/investment/virginia-international-gateway/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Astatine manager attribution, active status, infrastructure classification and operating scale",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Astatine - Virginia International Gateway Fund II exit",
+        "url": "https://astatineip.com/investment/virginia-international-gateway-2/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Alinda Infrastructure Fund II investment exited in 2019",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Astatine - Alinda manager rebrand",
+        "url": "https://astatineip.com/2022/04/13/alinda-capital-partners-rebrands-its-mid-market-infrastructure-strategy-to-astatine-investment-partners/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Manager identity continuity from Alinda Capital Partners to Astatine Investment Partners",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Virginia Port Authority - Series 2025 final official statement",
+        "url": "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Canonical legal identity, current USS and PSP ownership, 2014 acquisition history and 2025 lease status",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "0e096a356b9e65fd478fb1eb2f7f52c81300ed6c92a5507d728fc682cc76c66f",
+  "proposalSha256": "1781350d4039d09cdf5819dbbf86192de885e173e7e26da398567645ad81915c"
+}

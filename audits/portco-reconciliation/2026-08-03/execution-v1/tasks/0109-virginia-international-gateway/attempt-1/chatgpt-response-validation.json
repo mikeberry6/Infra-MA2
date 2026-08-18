@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0109:virginia-international-gateway:39eeee70",
+  "taskIndex": 109,
+  "attempt": 1,
+  "validatedAt": "2026-08-18T04:56:35.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a83db43-df18-83ea-9351-774d440d04f6",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "codeBlockPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "458ade938c109b6533ed7fb2fde1a9fb70be328188e2fd1d85dfe829d86af240",
+    "errors": [
+      "The response stopped mid-value at operatingResolution.productsAndServices and was invalid JSON."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-18T04:41:28.612Z",
+    "completedAt": "2026-08-18T04:48:27.089Z",
+    "valid": true,
+    "responseSha256": "9250c9b39abea3b51be484efd14c516bba5ac2cc6884209f3adeeaeee4732841",
+    "errors": []
+  },
+  "finalResponse": {
+    "valid": true,
+    "codeBlockPresent": true,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredNestedContractKeysPresent": true,
+    "decision": "PROPOSED_NEW",
+    "implementationDecision": "PROPOSED_NEW",
+    "confidence": "HIGH",
+    "canonicalName": "Virginia International Gateway",
+    "canonicalLegalName": "Virginia International Gateway, Inc.",
+    "modelEvidenceCount": 2,
+    "modelRecommendedPrimaryCount": 1,
+    "modelCurrentOwnerCount": 1,
+    "modelFormerOwnerCount": 1,
+    "implementationCurrentManagerAssociationCount": 2,
+    "implementationFormerManagerAssociationCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "managerAliasResolved": true,
+    "duplicateOwnerAvoided": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "modelUnresolvedQuestionCount": 0,
+    "blockingUnresolvedQuestionCount": 0,
+    "result": "PASS_AFTER_ONE_REPAIR"
+  },
+  "independentEvidenceCorrections": {
+    "identity": "Create one Virginia International Gateway company; VIG and APM Terminals Virginia are current and predecessor names, while VPA and VIT are lessee and operator rather than duplicate PortCos.",
+    "managerAttribution": "Treat Astatine's Active page as the direct current manager-attribution evidence and its Exited page as a separate realized Fund II period through 2019.",
+    "underlyingOwnership": "The August 2025 Virginia Port Authority final official statement identifies USS and PSP as current underlying owners. Add PSP as a current manager-universe association and describe USS in the company narrative.",
+    "disclosureLimits": "The active Astatine fund or vehicle, manager-level stake and entry date, plus PSP's entry date and percentage, are nonblocking NOT_PUBLICLY_DISCLOSED facts.",
+    "primarySource": "Use Astatine's live active VIG portfolio page as the sole primary citation; use the official statement as the decisive underlying-owner and company-boundary source."
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": {
+    "artifact": "source-verification.json",
+    "sha256": "0f778bebf82c913b42f0cd9918cd46632794394f0de25b377736599f57c8bc83",
+    "status": "PASS"
+  },
+  "finalResearchDecision": {
+    "artifact": "research-decision.json",
+    "sha256": "bb5c8c60ebed07799d350e06ba550a996705a10512bee06ede27f2a7ab768594",
+    "decision": "PROPOSED_NEW",
+    "canonicalName": "Virginia International Gateway"
+  },
+  "proposalGenerated": true,
+  "proposalSha256": "94081aa7fafea93b89ee7263b32a7b9875c23783ef2f634ce20fe0967a658aa8",
+  "afterImageSha256": "7d525903d69b28036bf627e04aaf305407fe1d717970635d243290b1ac52451c",
+  "finalProposal": "audits/portco-reconciliation/2026-08-03/proposals/0109-virginia-international-gateway-v2/proposal.json",
+  "proposalRetryCount": 1,
+  "supersededProposal": {
+    "proposalSha256": "1781350d4039d09cdf5819dbbf86192de885e173e7e26da398567645ad81915c",
+    "reason": "The first local dry run rejected only the shared Astatine rebrand Source label. Proposal v2 preserves the researched company facts and matches the existing global Source metadata byte-for-byte."
+  },
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "releaseStarted": false,
+  "terminalDisposition": null
+}

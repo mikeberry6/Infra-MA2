@@ -15,17 +15,18 @@
     "productionSnapshotSha256": null
   },
   "summary": {
-    "companyCount": 1143,
-    "activeOwnershipRows": 1278,
+    "companyCount": 1144,
+    "activeOwnershipRows": 1280,
     "attributionCounts": {
       "DISCLOSED": 603,
-      "DIRECT_PROGRAM": 83,
-      "INFERRED": 592
+      "DIRECT_PROGRAM": 84,
+      "INFERRED": 592,
+      "UNRESOLVED": 1
     },
     "confidenceCounts": {
-      "HIGH": 664,
+      "HIGH": 665,
       "MEDIUM": 175,
-      "LOW": 439
+      "LOW": 440
     },
     "applyEligibleRows": 187,
     "sizeGatedFundReviewRows": 409
@@ -81982,8 +81983,99 @@
       "applyEligible": true,
       "proposedAction": "SET_DISCLOSED_LINKED",
       "fundDatabaseAction": "NONE"
+    },
+    {
+      "recordId": "OFA-6C517EC7BDAE",
+      "ownershipPeriodId": null,
+      "sourceRowKey": "Virginia International Gateway|United States|Astatine Investment Partners|Astatine Investment Partners|0",
+      "companyName": "Virginia International Gateway",
+      "country": "United States",
+      "investmentFirm": "Astatine Investment Partners",
+      "currentVehicleName": "Astatine Investment Partners",
+      "databaseVehicleName": "Astatine Investment Partners",
+      "investmentYear": null,
+      "stake": "Active Astatine-managed interest; exact manager-level percentage not publicly disclosed",
+      "attribution": "UNRESOLVED",
+      "confidence": "HIGH",
+      "attributedFundName": null,
+      "disclosedOrEstimatedFundName": null,
+      "currentLinkedFundName": null,
+      "linkedCanonicalFundName": null,
+      "targetLinkedFundName": null,
+      "alternatives": [
+        {
+          "fundName": "Alinda Infrastructure Fund III",
+          "managerName": "Astatine Investment Partners",
+          "vintage": "2018",
+          "score": 53,
+          "reasons": [
+            "manager match 1.00",
+            "North America-relevant mandate"
+          ],
+          "attributionOnly": false,
+          "sourceUrls": [
+            "https://astatineip.com/2020/06/10/alinda-fund-iii-has-strong-gain-on-first-exit/"
+          ]
+        },
+        {
+          "fundName": "Alinda Infrastructure Fund IV",
+          "managerName": "Astatine Investment Partners",
+          "vintage": "2021",
+          "score": 53,
+          "reasons": [
+            "manager match 1.00",
+            "North America-relevant mandate"
+          ],
+          "attributionOnly": false,
+          "sourceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/1831477/000183147720000001/xslFormDX01/primary_doc.xml"
+          ]
+        }
+      ],
+      "rationale": "Astatine identifies Virginia International Gateway as a current managed investment, but the reviewed public evidence does not disclose the active fund, managed account, or holding vehicle. The separate Alinda Infrastructure Fund II investment was exited in 2019, so the current period is intentionally left unlinked rather than inferred to a later Astatine fund.",
+      "evidenceUrls": [
+        "https://astatineip.com/investment/virginia-international-gateway/",
+        "https://astatineip.com/investment/virginia-international-gateway-2/",
+        "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website"
+      ],
+      "sourceAuditStatus": "Needs user review",
+      "sourceAuditConfidence": "Low",
+      "applyEligible": false,
+      "proposedAction": "RESEARCH_REQUIRED",
+      "fundDatabaseAction": "NONE"
+    },
+    {
+      "recordId": "OFA-D7AB4D5F917C",
+      "ownershipPeriodId": null,
+      "sourceRowKey": "Virginia International Gateway|United States|PSP Investments|PSP Investments|1",
+      "companyName": "Virginia International Gateway",
+      "country": "United States",
+      "investmentFirm": "PSP Investments",
+      "currentVehicleName": "PSP Investments",
+      "databaseVehicleName": "PSP Investments",
+      "investmentYear": null,
+      "stake": "Joint underlying owner with USS; exact percentage not publicly disclosed",
+      "attribution": "DIRECT_PROGRAM",
+      "confidence": "LOW",
+      "attributedFundName": null,
+      "disclosedOrEstimatedFundName": null,
+      "currentLinkedFundName": null,
+      "linkedCanonicalFundName": null,
+      "targetLinkedFundName": null,
+      "alternatives": [],
+      "rationale": "No exact fund disclosure could be classified safely by the audit rules.",
+      "evidenceUrls": [
+        "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website",
+        "https://astatineip.com/investment/virginia-international-gateway/",
+        "https://astatineip.com/investment/virginia-international-gateway-2/"
+      ],
+      "sourceAuditStatus": "Needs user review",
+      "sourceAuditConfidence": "Low",
+      "applyEligible": false,
+      "proposedAction": "SET_DIRECT_PROGRAM",
+      "fundDatabaseAction": "NONE"
     }
   ],
-  "generatedAt": "2026-08-18T02:08:28.035Z",
-  "ledgerSha256": "06effcf302a3a1c0c5c3be84d3999e1cb155bec3ee5cf817ef6dffdbafff07d9"
+  "generatedAt": "2026-08-18T05:14:15.148Z",
+  "ledgerSha256": "3f42b0ebdc4f941c88a60499fc29fd0638c0abba3f9410fe5b69cc2aeef61936"
 }

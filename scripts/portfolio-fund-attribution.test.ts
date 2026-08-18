@@ -24,9 +24,16 @@ describe("portfolio fund attribution ledger", () => {
     expect(inferred.every((row) => !!row.disclosedOrEstimatedFundName && !!row.rationale)).toBe(true);
   });
 
-  it("classifies every reviewed ownership row", () => {
-    expect(ledger.summary.attributionCounts.UNRESOLVED ?? 0).toBe(0);
-    expect(ledger.rows.every((row) => row.attribution !== "UNRESOLVED")).toBe(true);
+  it("leaves a reviewed owner unresolved when the current vehicle is not public", () => {
+    const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
+    expect(unresolved).toHaveLength(1);
+    expect(unresolved[0]).toMatchObject({
+      companyName: "Virginia International Gateway",
+      investmentFirm: "Astatine Investment Partners",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    });
   });
 
   it("keeps fund-database additions behind the separate size gate", () => {
