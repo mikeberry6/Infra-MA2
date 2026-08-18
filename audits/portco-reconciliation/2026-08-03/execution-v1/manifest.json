@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T19:34:05.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0117:etobicoke-general-hospital-phase-1-patient-tower:95d7434e",
+  "updatedAt": "2026-08-18T19:42:52.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -17668,11 +17668,11 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "89621d53479ef749ac2b66587268c324f444e979e87736ac3bb9de49ec044199",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 2,
       "startedAt": "2026-08-18T19:12:19.000Z",
-      "updatedAt": "2026-08-18T19:34:05.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-18T19:42:50.000Z",
+      "completedAt": "2026-08-18T19:42:50.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
@@ -17825,6 +17825,18 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-18T19:34:05.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
+          "evidenceSha256": [
+            "3378304505089234a8f313cc70eecf7aa31016a26b91fd8efe58cf49600be450"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 13,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-18T19:42:50.000Z",
           "reason": null,
           "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
           "evidenceSha256": [
@@ -21072,13 +21084,13 @@
       "managerIndex": 34,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "18e00c2f6e882e6da471a9935cda481bb1f8a250d5354841b914af4a569fc41e",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-18T19:42:52.000Z",
+      "completedAt": "2026-08-18T19:42:52.000Z",
+      "exceptionReason": "Task 117 proved Etobicoke General Hospital Phase 1 Patient Tower is the underlying project of the existing Etobicoke Healthcare Partnership LP DBFM concessionaire (cmrxpjcxf00tcivhevo1ton8u), merged the duplicate project record, and released the complete Axium Infrastructure Canada II L.P. and CVC DIF / DIF Infrastructure IV ownership after-image; task 203 would duplicate that canonical identity and ownership work.",
+      "supersededByTaskId": "ledger:0117:etobicoke-general-hospital-phase-1-patient-tower:95d7434e",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -21099,6 +21111,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-18T19:42:52.000Z",
+          "reason": "Task 117 proved Etobicoke General Hospital Phase 1 Patient Tower is the underlying project of the existing Etobicoke Healthcare Partnership LP DBFM concessionaire (cmrxpjcxf00tcivhevo1ton8u), merged the duplicate project record, and released the complete Axium Infrastructure Canada II L.P. and CVC DIF / DIF Infrastructure IV ownership after-image; task 203 would duplicate that canonical identity and ownership work.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -32347,5 +32369,5 @@
       ]
     }
   ],
-  "manifestSha256": "c6359dcdcf43a85b646570ba50808f0562e0341529fe28179b683e57727abcf8"
+  "manifestSha256": "34dad986244e146c829d39df46520a965bc73e1d933f7cafe63c7805dad3fd23"
 }
