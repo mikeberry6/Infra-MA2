@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_FAILURE",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0108:commerce-logic:ec1c3303",
+  "taskIndex": 108,
+  "attempt": 1,
+  "companyName": "Commerce Logic",
+  "recordedAt": "2026-08-18T03:11:00.000Z",
+  "failureCode": "SECOND_MALFORMED_RESPONSE",
+  "summary": "GPT-5.6 Sol Pro returned truncated invalid JSON initially and again after the single permitted repair; no proposal was generated and no production or seed data changed.",
+  "conversationUrl": "https://chatgpt.com/c/6a83c7f9-5e48-83ea-a46f-6281539bc6fe",
+  "researchFindingNotApplied": {
+    "decision": "EXCLUDED",
+    "reason": "Both incomplete responses indicate that Commerce Logic became realized when Fleetworthy acquired its operating assets on 2025-07-15, but this finding is not accepted until a future fresh task attempt produces a complete validated contract."
+  },
+  "taskSnapshotSha256": "b6148d278794c655eee20867a555343e58706ce80be02c2c70d6b7695a68bf53",
+  "contextSha256": "1b6bfda2814b8be60e886991130364643658c42eddb458b2eaf5f951a8da9c41",
+  "responseValidation": "chatgpt-response-validation.json",
+  "proposalGenerated": false,
+  "databaseMutation": false,
+  "seedMutation": false
+}
