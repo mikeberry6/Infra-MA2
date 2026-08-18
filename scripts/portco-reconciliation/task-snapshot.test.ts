@@ -96,6 +96,85 @@ describe("task snapshot target resolution", () => {
     });
   });
 
+  it("pins a mixed holding/repo-only project duplicate to one later manager-level survivor", () => {
+    const active = entry({
+      taskIndex: 117,
+      taskId: "task-etobicoke-project",
+      canonicalKey: "etobicoke-project|canada",
+      companyName: "Etobicoke General Hospital Patient Tower",
+      country: "Canada",
+      managers: ["Axium Infrastructure", "CVC", "DIF"],
+      productionCompanyIds: ["company-etobicoke-project"],
+      seedKeys: ["etobicoke general hospital patient tower|Canada"],
+      sourceHoldingIds: ["holding-axium-etobicoke"],
+      sourceRepoOnlyIds: ["repo-only-cvc-etobicoke", "repo-only-dif-etobicoke"],
+      actionScopes: { company: ["MERGE_COMPANIES"], ownership: [], verification: [] },
+      rationale: "CVC and DIF identify the patient tower as the project beneath Etobicoke Healthcare Partnership.",
+    });
+    const survivor = entry({
+      taskIndex: 203,
+      taskId: "task-etobicoke-partnership",
+      canonicalKey: "etobicoke-healthcare-partnership|canada",
+      companyName: "Etobicoke Healthcare Partnership",
+      country: "Canada",
+      managers: ["CVC", "DIF"],
+      productionCompanyIds: ["company-etobicoke-partnership"],
+      seedKeys: ["etobicoke healthcare partnership|Canada"],
+    });
+
+    expect(resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active, survivor],
+      reviewedTargetCompanyId: "company-etobicoke-partnership",
+    })).toEqual({
+      method: "REVIEWED_MERGE_CANONICAL_TARGET",
+      targetCompanyId: "company-etobicoke-partnership",
+      linkedQueueTaskId: null,
+      immutableRetiredCompanyId: "company-etobicoke-project",
+    });
+  });
+
+  it.each([
+    { label: "survivor is earlier", survivor: { taskIndex: 100 } },
+    { label: "survivor country differs", survivor: { country: "United States" } },
+    { label: "survivor manager is outside the active task", survivor: { managers: ["Unrelated Manager"] } },
+    { label: "rationale does not name the survivor", active: { rationale: "Consolidation review required." } },
+    { label: "more than one source holding", active: { sourceHoldingIds: ["holding-one", "holding-two"] } },
+  ])("rejects an unsafe mixed holding merge when $label", ({ active: activeOverride = {}, survivor: survivorOverride = {} }) => {
+    const active = entry({
+      taskIndex: 117,
+      taskId: "task-etobicoke-project",
+      canonicalKey: "etobicoke-project|canada",
+      companyName: "Etobicoke General Hospital Patient Tower",
+      country: "Canada",
+      managers: ["Axium Infrastructure", "CVC", "DIF"],
+      productionCompanyIds: ["company-etobicoke-project"],
+      seedKeys: ["etobicoke general hospital patient tower|Canada"],
+      sourceHoldingIds: ["holding-axium-etobicoke"],
+      sourceRepoOnlyIds: ["repo-only-cvc-etobicoke"],
+      actionScopes: { company: ["MERGE_COMPANIES"], ownership: [], verification: [] },
+      rationale: "The patient tower is beneath Etobicoke Healthcare Partnership.",
+      ...activeOverride,
+    });
+    const survivor = entry({
+      taskIndex: 203,
+      taskId: "task-etobicoke-partnership",
+      canonicalKey: "etobicoke-healthcare-partnership|canada",
+      companyName: "Etobicoke Healthcare Partnership",
+      country: "Canada",
+      managers: ["CVC", "DIF"],
+      productionCompanyIds: ["company-etobicoke-partnership"],
+      seedKeys: ["etobicoke healthcare partnership|Canada"],
+      ...survivorOverride,
+    });
+
+    expect(() => resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active, survivor],
+      reviewedTargetCompanyId: "company-etobicoke-partnership",
+    })).toThrow("cannot replace the immutable queue target");
+  });
+
   it.each([
     { decisionStatus: "READY_FOR_PROPOSAL" as const },
     { sourceRepoOnlyIds: [] },
