@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_DISPATCH_HISTORY",
+  "manifestSha256": "4a7bc288058c40ebe40402cbd8d8556e404a584f3ebbf4c652f5973f60737fb3",
+  "releaseSha": "660e001fc7650b245c2c631b4437b78f4e2875e2",
+  "attempts": [
+    {
+      "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32170046078",
+      "outcome": "FAILED_PRE_WRITE",
+      "reason": "The exact protected-main CI build was still running when release provenance was first checked.",
+      "databaseAccessReached": false,
+      "databaseWriteOccurred": false
+    },
+    {
+      "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32170183675",
+      "outcome": "SUCCESS",
+      "reason": "Retried unchanged after the exact protected-main CI build completed successfully.",
+      "databaseAccessReached": true,
+      "databaseWriteOccurred": true,
+      "receiptSha256": "4a1b98e2672950a164cab35b7d3c72885a9f7b2140ff6b3939d8d99118ff5548"
+    }
+  ]
+}
