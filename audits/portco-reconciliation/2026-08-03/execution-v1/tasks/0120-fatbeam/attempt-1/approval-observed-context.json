@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0120:fatbeam:7838747e",
+  "taskIndex": 120,
+  "companyName": "Fatbeam",
+  "generatedAt": "2026-08-18T23:19:49.472Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0120-fatbeam/attempt-1/approval-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 120,
+    "taskId": "ledger:0120:fatbeam:7838747e",
+    "canonicalKey": "fatbeam|united-states",
+    "companyName": "Fatbeam",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 20,
+    "managers": [
+      "Basalt Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "020-basalt-infrastructure-partners:holding:002:fatbeam"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj8de00m8ivhe8aczjldv"
+    ],
+    "seedKeys": [
+      "fatbeam|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.basaltinfra.com/2023/03/27/basalt-infrastructure-partners-enters-into-agreement-to-acquire-fatbeam/",
+      "https://www.basaltinfra.com/portfolio/fatbeam/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8de00m8ivhe8aczjldv",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "fatbeam|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8de00m8ivhe8aczjldv",
+    "name": "Fatbeam",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Fiber broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Fatbeam is a fiber-network operator providing connectivity, transport, and related services to commercial, education, government, carrier, and residential customers. The business is infrastructure-led and asset-heavy because it owns and operates the underlying fiber network rather than acting solely as a reseller. Company materials describe a network footprint across eight western states and more than 150 cities, while sponsor materials previously referenced 1,250 route miles at the time of Basalt's acquisition. Its operating geography includes Washington, Oregon, Montana, Arizona, New Mexico, Idaho, Wyoming, and Nevada. The company was established in 2010 and has expanded its network reach through organic buildout and acquisitions. Basalt acquired Fatbeam from SDC Capital Partners and the company's founders in 2023, and public sources do not disclose the resulting ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2010,
+    "headquarters": "Washington, Oregon, Montana, Arizona, New Mexico, Idaho, Wyoming, and Nevada",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtfn01jbivhehqozsl37",
+        "managerName": "Basalt Infrastructure Partners",
+        "organizationName": "Basalt Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Basalt III",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpktya02y2ivheky5bxhay",
+        "date": "2010",
+        "event": "Basalt portfolio materials identify Fatbeam's founding year as 2010.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpktyw02y3ivhe1idgr24a",
+        "date": "Mar 27, 2023",
+        "event": "Basalt Infrastructure Partners announced an agreement to acquire Fatbeam from SDC Capital Partners and the company's founders.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-03-27T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppejb0846ivhe9l09fd6w",
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Fatbeamfiber company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppekb0848ivheynjgme6j",
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/our-network",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Fatbeamfiber operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppel6084aivhehtgsovgy",
+        "label": "Basaltinfra — Fatbeam",
+        "url": "https://www.basaltinfra.com/portfolio/fatbeam/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Basaltinfra operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppema084civhejugvmqx2",
+        "label": "Announcement date source — Basalt Infrastructure Partners — Fatbeam",
+        "url": "https://www.basaltinfra.com/2023/03/27/basalt-infrastructure-partners-enters-into-agreement-to-acquire-fatbeam/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Basalt Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppenb084eivhe1234irh6",
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/media-news/fatbeam-is-growing",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Fatbeamfiber — Fatbeam",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Fatbeam",
+    "investmentFirm": "Basalt Infrastructure Partners",
+    "sector": "Digital",
+    "subsector": "Fiber broadband",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Basalt III",
+    "description": "Fatbeam is a fiber-network operator providing connectivity, transport, and related services to commercial, education, government, carrier, and residential customers. The business is infrastructure-led and asset-heavy because it owns and operates the underlying fiber network rather than acting solely as a reseller. Company materials describe a network footprint across eight western states and more than 150 cities, while sponsor materials previously referenced 1,250 route miles at the time of Basalt's acquisition. Its operating geography includes Washington, Oregon, Montana, Arizona, New Mexico, Idaho, Wyoming, and Nevada. The company was established in 2010 and has expanded its network reach through organic buildout and acquisitions. Basalt acquired Fatbeam from SDC Capital Partners and the company's founders in 2023, and public sources do not disclose the resulting ownership percentage.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2010,
+    "investmentYear": 2023,
+    "headquarters": "Washington, Oregon, Montana, Arizona, New Mexico, Idaho, Wyoming, and Nevada",
+    "milestones": [
+      {
+        "date": "2010",
+        "event": "Basalt portfolio materials identify Fatbeam's founding year as 2010.",
+        "category": "Founding"
+      },
+      {
+        "date": "Mar 27, 2023",
+        "event": "Basalt Infrastructure Partners announced an agreement to acquire Fatbeam from SDC Capital Partners and the company's founders.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/our-network",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Basaltinfra — Fatbeam",
+        "url": "https://www.basaltinfra.com/portfolio/fatbeam/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — Basalt Infrastructure Partners — Fatbeam",
+        "url": "https://www.basaltinfra.com/2023/03/27/basalt-infrastructure-partners-enters-into-agreement-to-acquire-fatbeam/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/media-news/fatbeam-is-growing",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Basalt Infrastructure Partners",
+        "ownershipVehicle": "Basalt III",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4ra000rivhecbryfswu",
+        "name": "Basalt Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:13.366Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0120:fatbeam:7838747e",
+    "taskIndex": 120,
+    "canonicalKey": "fatbeam|united-states",
+    "capturedAt": "2026-08-18T23:19:49.472Z",
+    "databaseRevision": "revision:64042a49db4af125ed70bd5e227b310529a979310f3a6a74c0633a36036f9602",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "0b50f5be381bc89e04c78cc7dec4179c978df598472cefc1fb895012a5fe62cb",
+    "productionSnapshotSha256": "087de90f1b2b7e3f6bc3aaaacf4814f650443452d1d7b0f11b7645094bf96dd3",
+    "targetCompanySnapshotSha256": "d229f1e7292f2719f98d6551c3b26b52eac6ebe47f55e5aadf58f5bde2b569ca",
+    "seedEntrySha256": "bdb6a9862799bc57564a8aa384372cbedcd243215205e866a2e138f9bdcede39",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "18a561a3b426cdf0e87a55bc3606a1ece2079213a7389d109c52b283ccbe233f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "9154547a30d880ba6477066dfe91047f2433b26dec3938ca4e86a5614c217da7",
+      "citationsSha256": "abe1ae1490939e4ec502d2a5819fd3347dbc729f540bac44bbd8caf895555626",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "2a7612bfa5b672945276ae0930c6bffe84934db6f0213d66c6d42bdcecd6bad2",
+    "stateSha256": "767124601bfe754c75b42cc9c0827849aa24e0b4bc816459d4debb5f3b380ccc",
+    "taskSnapshotSha256": "417cdcab174395cb0b8609cba28182f9be7d44dfaee348c757cff71314e49c83"
+  },
+  "contextSha256": "c80b6f5c6e97c4d33547acf138e11330a03a8093a9cf77cd933ba2ba5a55f78b"
+}

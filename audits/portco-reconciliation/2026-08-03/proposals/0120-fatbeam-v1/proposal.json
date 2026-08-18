@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0120:fatbeam:7838747e",
+  "taskIndex": 120,
+  "asOfDate": "2026-08-18",
+  "generatedAt": "2026-08-18T23:18:30.000Z",
+  "canonicalKey": "fatbeam|united-states",
+  "companyName": "Fatbeam",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "020-basalt-infrastructure-partners:holding:002:fatbeam"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct Fatbeam in place. Basalt's fourth flagship fund, Basalt IV, announced the acquisition on March 27, 2023, and the Oregon regulator filing shows Project Lighthouse AIV Feeder LP acquired all Fatbeam Holdings interests effective May 31, 2023. The current Basalt III vehicle label is unsupported. Preserve one active Basalt owner and describe the disclosed chain without inferring Basalt's own economic percentage. Add the verified Fatbeam Holdings / Fatbeam, LLC aliases, official website and Coeur d'Alene headquarters; date current and 2023 scale separately; and replace the announcement-only milestone with a combined signing/closing milestone. SDC and founder ownership remain historical seller context rather than an additional manager-universe OwnershipPeriod. No later sale, ownership transfer or signed pending exit was identified through August 18, 2026.",
+  "evidence": [
+    {
+      "url": "https://edocs.puc.state.or.us/efdocs/HNA/cp1488hna133333.pdf",
+      "purpose": "Legal close, seller and buyer chain, wholly owned status, headquarters and 2023 operating scale.",
+      "supports": [
+        "Project Lighthouse AIV Feeder LP acquired all Fatbeam Holdings interests effective May 31, 2023",
+        "Fatbeam, LLC is wholly owned by Fatbeam Holdings and became indirectly wholly owned after closing",
+        "The filing identifies the Basalt IV GP, SDC seller chain, Coeur d'Alene headquarters and dated 2023 scale"
+      ]
+    },
+    {
+      "url": "https://www.lw.com/en/news/2023/03/latham-advises-basalt-infrastructure-partners-in-acquisition-of-fatbeam",
+      "purpose": "Basalt IV attribution and acquisition agreement.",
+      "supports": [
+        "Basalt's fourth flagship fund agreed to acquire Fatbeam",
+        "The transaction was announced March 27, 2023 as Basalt IV's first investment"
+      ]
+    },
+    {
+      "url": "https://www.basaltinfra.com/portfolio/fatbeam/",
+      "purpose": "Current manager portfolio status, headquarters and route-mile scale.",
+      "supports": [
+        "Basalt continues to list Fatbeam in its portfolio",
+        "The page reports 1,250 route miles and Coeur d'Alene headquarters"
+      ]
+    },
+    {
+      "url": "https://www.fatbeamfiber.com/our-network",
+      "purpose": "Current footprint and operating scale.",
+      "supports": [
+        "Fatbeam reports 1,600+ on-net buildings, 150,000+ total fiber miles and 150+ cities across eight western states"
+      ]
+    },
+    {
+      "url": "https://www.fatbeamfiber.com/media-news/fatbeam-is-growing",
+      "purpose": "Founding year and company expansion context.",
+      "supports": [
+        "Fatbeam's company article states it was established in 2010"
+      ]
+    },
+    {
+      "url": "https://www.spokanejournal.com/articles/2046-ny-firm-acquires-majority-stake-in-fatbeam",
+      "purpose": "Historical seller context.",
+      "supports": [
+        "The secondary report states SDC acquired 51% in January 2020 and the founders retained 49% collectively before the 2023 sale"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "10bb3b25746cf7f59b8599d64e71f0aa40874eeb6e98623e64342151f1cb17cd",
+  "currentCompanySnapshotSha256": "d229f1e7292f2719f98d6551c3b26b52eac6ebe47f55e5aadf58f5bde2b569ca",
+  "executionLock": {
+    "taskSnapshotSha256": "f3520c5da3f6b24b867073a761e8324b82d9908d5e433946770f2faac0927744",
+    "taskStateSha256": "767124601bfe754c75b42cc9c0827849aa24e0b4bc816459d4debb5f3b380ccc",
+    "taskDependencySha256": "2a7612bfa5b672945276ae0930c6bffe84934db6f0213d66c6d42bdcecd6bad2",
+    "seedEntrySha256": "bdb6a9862799bc57564a8aa384372cbedcd243215205e866a2e138f9bdcede39",
+    "dependencies": {
+      "ownershipPeriodsSha256": "18a561a3b426cdf0e87a55bc3606a1ece2079213a7389d109c52b283ccbe233f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "9154547a30d880ba6477066dfe91047f2433b26dec3938ca4e86a5614c217da7",
+      "citationsSha256": "abe1ae1490939e4ec502d2a5819fd3347dbc729f540bac44bbd8caf895555626",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4ra000rivhecbryfswu",
+        "name": "Basalt Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:13.366Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj8de00m8ivhe8aczjldv",
+    "name": "Fatbeam",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Fiber broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Fatbeam is a fiber-network operator providing connectivity, transport, and related services to commercial, education, government, carrier, and residential customers. The business is infrastructure-led and asset-heavy because it owns and operates the underlying fiber network rather than acting solely as a reseller. Company materials describe a network footprint across eight western states and more than 150 cities, while sponsor materials previously referenced 1,250 route miles at the time of Basalt's acquisition. Its operating geography includes Washington, Oregon, Montana, Arizona, New Mexico, Idaho, Wyoming, and Nevada. The company was established in 2010 and has expanded its network reach through organic buildout and acquisitions. Basalt acquired Fatbeam from SDC Capital Partners and the company's founders in 2023, and public sources do not disclose the resulting ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2010,
+    "headquarters": "Washington, Oregon, Montana, Arizona, New Mexico, Idaho, Wyoming, and Nevada",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtfn01jbivhehqozsl37",
+        "managerName": "Basalt Infrastructure Partners",
+        "organizationName": "Basalt Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Basalt III",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpktya02y2ivheky5bxhay",
+        "date": "2010",
+        "event": "Basalt portfolio materials identify Fatbeam's founding year as 2010.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpktyw02y3ivhe1idgr24a",
+        "date": "Mar 27, 2023",
+        "event": "Basalt Infrastructure Partners announced an agreement to acquire Fatbeam from SDC Capital Partners and the company's founders.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-03-27T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppejb0846ivhe9l09fd6w",
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Fatbeamfiber company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppekb0848ivheynjgme6j",
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/our-network",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Fatbeamfiber operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppel6084aivhehtgsovgy",
+        "label": "Basaltinfra — Fatbeam",
+        "url": "https://www.basaltinfra.com/portfolio/fatbeam/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Basaltinfra operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppema084civhejugvmqx2",
+        "label": "Announcement date source — Basalt Infrastructure Partners — Fatbeam",
+        "url": "https://www.basaltinfra.com/2023/03/27/basalt-infrastructure-partners-enters-into-agreement-to-acquire-fatbeam/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Basalt Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppenb084eivhe1234irh6",
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/media-news/fatbeam-is-growing",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Fatbeamfiber — Fatbeam",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "d229f1e7292f2719f98d6551c3b26b52eac6ebe47f55e5aadf58f5bde2b569ca",
+  "afterImage": {
+    "id": "cmrxpj8de00m8ivhe8aczjldv",
+    "name": "Fatbeam",
+    "aliases": [
+      "Fatbeam Holdings, LLC",
+      "Fatbeam, LLC",
+      "Fatbeam Fiber",
+      "Fatbeam Holdings"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Fiber broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Fatbeam is a Coeur d'Alene, Idaho-based owner-operator of fiber networks serving commercial, education, healthcare, government, carrier, tower, residential and multifamily customers across Arizona, Idaho, Montana, Nevada, New Mexico, Oregon, Washington and Wyoming. Its services include dedicated internet access, Ethernet private line, wavelength, dark fiber, wireless backup, tower and data-center connectivity, managed Wi-Fi, cyber/cloud and residential fiber/wireless. Fatbeam's current network page reports 1,600+ on-net buildings, 150,000+ total fiber miles and 150+ cities across eight states; Basalt's current portfolio page reports 1,250 route miles. A June 2023 regulator filing separately reported 1,252 route miles, 13 metro markets, 128,000+ strand miles and over 40 cities. Basalt IV announced an agreement to acquire Fatbeam on March 27, 2023, and Project Lighthouse AIV Feeder LP acquired all Fatbeam Holdings interests effective May 31, 2023. Fatbeam remains in Basalt's current portfolio, and no later ownership transfer or signed pending exit was identified through August 18, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.fatbeamfiber.com/",
+    "yearFounded": 2010,
+    "headquarters": "Coeur d'Alene, Idaho",
+    "lastVerifiedAt": "2026-08-18T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtfn01jbivhehqozsl37",
+        "managerName": "Basalt Infrastructure Partners",
+        "organizationName": "Basalt Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Basalt IV / Project Lighthouse AIV Feeder LP",
+        "stake": "100% indirect at the Project Lighthouse / Fatbeam chain; Basalt-managed fund allocations not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpktya02y2ivheky5bxhay",
+        "date": "2010",
+        "event": "Fatbeam was established as a western U.S. fiber-network operator.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.fatbeamfiber.com/media-news/fatbeam-is-growing"
+        ]
+      },
+      {
+        "id": "cmrxpktyw02y3ivhe1idgr24a",
+        "date": "Mar 27–May 31, 2023",
+        "event": "Basalt IV announced an agreement to acquire Fatbeam on March 27; Project Lighthouse AIV Feeder LP acquired all Fatbeam Holdings interests on May 31, making Fatbeam indirectly wholly owned.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-05-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.lw.com/en/news/2023/03/latham-advises-basalt-infrastructure-partners-in-acquisition-of-fatbeam",
+          "https://edocs.puc.state.or.us/efdocs/HNA/cp1488hna133333.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppejb0846ivhe9l09fd6w",
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official Fatbeam website and current operating brand",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppekb0848ivheynjgme6j",
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/our-network",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current eight-state footprint, 1,600+ on-net buildings, 150,000+ total fiber miles and 150+ cities",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppel6084aivhehtgsovgy",
+        "label": "Basaltinfra — Fatbeam",
+        "url": "https://www.basaltinfra.com/portfolio/fatbeam/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Basalt portfolio status, Coeur d'Alene headquarters and 1,250 route miles",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppema084civhejugvmqx2",
+        "label": "Latham & Watkins — Basalt IV acquisition of Fatbeam",
+        "url": "https://www.lw.com/en/news/2023/03/latham-advises-basalt-infrastructure-partners-in-acquisition-of-fatbeam",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Basalt IV fund attribution and March 2023 acquisition agreement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppenb084eivhe1234irh6",
+        "label": "Fatbeamfiber — Fatbeam",
+        "url": "https://www.fatbeamfiber.com/media-news/fatbeam-is-growing",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Fatbeam's 2010 establishment and expansion context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Oregon Public Utility Commission — Fatbeam ownership transfer filing",
+        "url": "https://edocs.puc.state.or.us/efdocs/HNA/cp1488hna133333.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 31, 2023 legal close, buyer and seller chain, indirect wholly owned status, headquarters and dated operating scale",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Spokane Journal — SDC majority investment in Fatbeam",
+        "url": "https://www.spokanejournal.com/articles/2046-ny-firm-acquires-majority-stake-in-fatbeam",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Historical SDC 51% investment and founders' retained 49% before the 2023 sale",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "f271d4573444d13183839d2a129d5d39fe2152d2680b194d469319401cf6d3cf",
+  "proposalSha256": "5d5b6716406bfcdae603e1ed2f6ad2eedbc8deb578e5ff0740ad0b0ca8f6d2f2"
+}
