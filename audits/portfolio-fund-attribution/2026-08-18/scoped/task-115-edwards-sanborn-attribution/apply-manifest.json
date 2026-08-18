@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-18",
+  "ledgerSha256": "72b341e9784484ee64233fd81da67e0e64f611e8e82914a41387f20852fbddf2",
+  "sourceSnapshotSha256": "31735aceb300fc192907dc6a7607ebe8c6e6cad8a603bb14cc5ee2a00a7bf61b",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-2F46F2CA573C",
+      "ownershipPeriodId": "cmrxpjt0801ilivhe3or1eica",
+      "companyName": "Edwards Sanborn Solar + Storage",
+      "country": "United States",
+      "investmentFirm": "Axium Infrastructure",
+      "currentVehicleName": "Axium ES Holdings LLC / AxInfra US LP",
+      "databaseVehicleName": "Axium ES Holdings LLC / AxInfra US LP",
+      "investmentYear": 2022,
+      "stake": "Phase 1A: 80% (Terra-Gen 20%); Phase 1B: Axium ES Holdings LLC 50% / Terra-Gen 50%, with AxInfra US LP owning 92.26% of the upstream co-invest holding company",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Reviewed evidence identifies Axium ES Holdings LLC, Axium Co-Invest Holdings, and AxInfra US LP in the ownership chain, but does not disclose a production-curated matching fund. The active period remains unlinked rather than being inferred to the generic AxInfra Fund I-IV record."
+      },
+      "evidenceUrls": [
+        "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+        "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240130-5233",
+        "https://terra-gen.com/axium-infrastructure-invests-in-phase-1-of-edwards-sanborn-solar-storage-facility/"
+      ]
+    }
+  ],
+  "manifestSha256": "4a7bc288058c40ebe40402cbd8d8556e404a584f3ebbf4c652f5973f60737fb3"
+}
