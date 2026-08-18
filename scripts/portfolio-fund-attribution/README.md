@@ -69,6 +69,8 @@ npm run portfolio:fund-attribution:apply -- \
 
 The protected GitHub workflow `.github/workflows/portfolio-fund-attribution-apply.yml` is the production path. The schema workflow first applies the additive columns, checks, and replacement identity index, then the guarded `finalize-ownership-period-identity.ts` cutover verifies both index definitions before removing the superseded three-field index. After that schema stage, the attribution workflow binds protected `main`, the merged PR, required build, Vercel production deployment, database target, exact artifacts, and cache endpoint; then it dry-runs before one transactional apply and verifies public API samples after revalidation.
 
+When more than one independently reviewed correction is released on the same date, preserve earlier immutable evidence under the date root and place each later package at `audits/portfolio-fund-attribution/YYYY-MM-DD/scoped/<correction-key>/`. The protected workflow accepts only that constrained nested layout and still requires the snapshot, manifest, and approval to be colocated.
+
 ## Rollback
 
 The apply receipt contains the exact before/after state for every ownership row. Create a receipt-bound rollback approval and use the rollback command only if the public verification or a post-release integrity check fails:

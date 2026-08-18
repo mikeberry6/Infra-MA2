@@ -55,6 +55,7 @@ describe("portfolio fund attribution production workflow", () => {
 
   it("requires immutable full-ledger artifacts and a clean staged schema", () => {
     expect(workflow).toContain("^audits/portfolio-fund-attribution/");
+    expect(workflow).toContain("(/scoped/[a-z0-9][a-z0-9-]*)?");
     expect(workflow).toContain("SEED_MANIFEST_PATH: prisma/seed-data/ownership-attributions.manifest.json");
     expect(workflow).toContain('git ls-files --error-unmatch -- "$artifact"');
     expect(workflow).toContain("--validate-only=true");

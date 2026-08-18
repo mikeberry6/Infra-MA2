@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_SCOPED_CORRECTION_DECISION",
+  "asOfDate": "2026-08-18",
+  "taskId": "ledger:0113:arbour-heights:24819145",
+  "companyName": "Axium Extendicare LTC II LP",
+  "companyId": "cmrxpj86h00lzivhe009kcwjc",
+  "ownershipPeriodId": "cmrxpjt8o01j2ivhey92f3vsx",
+  "recordId": "OFA-F89FA1BDEBD4",
+  "sourceProductionSnapshotSha256": "97a4dda5a2b37207769e65edf60f9f0336ecce024eb64847da590ddac963521a",
+  "sourceLedgerSha256": "4a0ce8296b19918dcd099c412903d3e2f5e5632e50242d5b62d7537e5bad5210",
+  "generatedFullManifestSha256": "c5f0dbc0434fa2e69596865c5be2bf14117804c85ffb77792e314ba4cdffb58e",
+  "scopedManifestSha256": "69e0f72daa580ea7f41563c7f49543e519c80e7e0e25d859df9fc91ff3878d0c",
+  "reason": "Task 113 proved that Axium LTC Limited Partnership is the disclosed 85% ownership vehicle but found no public evidence naming a commingled Axium fund. The generic attribution heuristic nevertheless classified the owner as AxInfra Fund I-IV, causing an unsupported estimate to appear on the rendered card. This correction changes only the exact Axium ownership-period attribution from INFERRED to UNRESOLVED, preserves the ownership vehicle and every ownership fact, creates or updates no fund, and leaves all other production rows untouched.",
+  "expectedChangedRows": 1,
+  "expectedAlreadyAppliedRows": 0,
+  "fundCreates": 0,
+  "fundUpdates": 0,
+  "ownershipIdentityChanges": 0
+}

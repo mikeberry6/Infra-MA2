@@ -30,6 +30,7 @@ interface ObservedRow {
   fundName: string | null;
   currentFundId: string | null;
   targetFundId: string | null;
+  expectedFundAttribution: "DISCLOSED" | "INFERRED" | "DIRECT_PROGRAM" | "UNRESOLVED";
   before: {
     linkedFundName: string | null;
     fundAttribution: string;
@@ -160,6 +161,7 @@ export async function observeManifest(
       fundName: period.fund?.fundName ?? null,
       currentFundId: period.fundId,
       targetFundId: targetFund?.id ?? null,
+      expectedFundAttribution: mutation.expected.fundAttribution,
       before: {
         linkedFundName: period.fund?.fundName ?? null,
         fundAttribution: period.fundAttribution,
@@ -186,6 +188,7 @@ export async function applyPendingOwnershipUpdates(
     ${row.ownershipPeriodId}::text,
     ${row.currentFundId}::text,
     ${row.targetFundId}::text,
+    ${row.expectedFundAttribution}::"OwnershipFundAttribution",
     ${row.desired.fundAttribution}::"OwnershipFundAttribution",
     ${row.desired.attributedFundName}::text,
     ${row.desired.attributionConfidence}::"AttributionConfidence",
@@ -203,13 +206,14 @@ export async function applyPendingOwnershipUpdates(
       "id",
       "expectedFundId",
       "targetFundId",
+      "expectedFundAttribution",
       "fundAttribution",
       "attributedFundName",
       "attributionConfidence",
       "attributionRationale"
     )
     WHERE ownership."id" = desired."id"
-      AND ownership."fundAttribution" = 'UNRESOLVED'::"OwnershipFundAttribution"
+      AND ownership."fundAttribution" = desired."expectedFundAttribution"
       AND ownership."fundId" IS NOT DISTINCT FROM desired."expectedFundId"
   `);
   if (updated !== pending.length) {

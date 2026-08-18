@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-18",
+  "ledgerSha256": "4a0ce8296b19918dcd099c412903d3e2f5e5632e50242d5b62d7537e5bad5210",
+  "sourceSnapshotSha256": "97a4dda5a2b37207769e65edf60f9f0336ecce024eb64847da590ddac963521a",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-F89FA1BDEBD4",
+      "ownershipPeriodId": "cmrxpjt8o01j2ivhey92f3vsx",
+      "companyName": "Axium Extendicare LTC II LP",
+      "country": "Canada",
+      "investmentFirm": "Axium Infrastructure",
+      "currentVehicleName": "Axium LTC Limited Partnership",
+      "databaseVehicleName": "Axium LTC Limited Partnership",
+      "investmentYear": 2017,
+      "stake": "85% current (75% at formation)",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Reviewed current ownership evidence identifies Axium LTC Limited Partnership as the holding vehicle and Axium Infrastructure as the 85% owner, but does not disclose a commingled fund. The vehicle is intentionally left unlinked rather than inferred to AxInfra Fund I-IV."
+      },
+      "evidenceUrls": [
+        "https://www.axiuminfra.com/2018/04/30/april-30-2018-revera-and-axium-infrastructure-form-a-joint-venture-to-share-ownership-of-32-long-term-care-homes/?lang=en",
+        "https://extendicare-1c124.kxcdn.com/app/uploads/2026/08/EXE-Q2-2026-Interim-MDA-vSedar2.pdf?x89279=",
+        "https://www.extendicare.com/app/uploads/2025/06/997.pdf"
+      ]
+    }
+  ],
+  "manifestSha256": "69e0f72daa580ea7f41563c7f49543e519c80e7e0e25d859df9fc91ff3878d0c"
+}
