@@ -1,0 +1,15 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0112-transurban-chesapeake-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0112-transurban-chesapeake-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/locked-production-snapshot.json --proposal-sha256=4e3e25913c076724c60bfd127c51b360c5a49d4723f3b6d5a01614290098680a --approval-sha256=3dfe9b0a8f07eece8aed45cde569e2a78345ff71a297069676f32492bbd56b7b --snapshot-sha256=94288b28a97f61207090ddb57fad077ea46f325733f5f15e93a90686f734f27c --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_CHANGE --receipt=tmp/portco-reconciliation/production/apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3101) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Invalid `"companyRevision").updateMany()` invocation in
+/home/runner/work/Infra-MA2/Infra-MA2/scripts/portco-reconciliation/prisma-apply-store.ts:701:50
+
+  698     await news.update({ where: { id: item.id }, data: { companyId: canonicalId } });
+  699   }
+  700 }
+→ 701 await delegate(transaction, "companyRevision").updateMany(
+Unique constraint failed on the fields: (`"companyId"`, `"proposalHash"`)

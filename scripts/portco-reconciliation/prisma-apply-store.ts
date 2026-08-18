@@ -18,7 +18,7 @@ import type {
   ProductionSnapshot,
   ReconciliationProposal,
 } from "./schema";
-import { digestsEqual, sha256Canonical } from "./hash";
+import { canonicalJson, digestsEqual, sha256Canonical } from "./hash";
 
 interface CrudDelegate {
   findUnique(args: unknown): Promise<unknown>;
@@ -655,6 +655,129 @@ async function syncManagement(
   }
 }
 
+export interface CompanyRevisionHistoryRow {
+  id: string;
+  companyId: string;
+  proposalHash: string;
+  beforeJson: unknown | null;
+  afterJson: unknown;
+  changedFields: string[];
+  approver: string;
+  appliedAt: string | Date;
+  pipelineRunId: string | null;
+}
+
+function revisionTimestamp(value: string | Date): string {
+  const parsed = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(parsed.valueOf())) {
+    throw new Error("CompanyRevision collision contains an invalid appliedAt timestamp");
+  }
+  return parsed.toISOString();
+}
+
+function mergeRevisionJson(
+  canonicalValue: unknown,
+  retiredValue: unknown,
+  proposalHash: string,
+  field: "beforeJson" | "afterJson",
+): unknown {
+  if (canonicalJson(canonicalValue) === canonicalJson(retiredValue)) return canonicalValue;
+  if (!Array.isArray(canonicalValue) || !Array.isArray(retiredValue)) {
+    throw new Error(
+      `CompanyRevision collision ${proposalHash} has incompatible ${field} history`,
+    );
+  }
+  const seen = new Set<string>();
+  return [...canonicalValue, ...retiredValue].filter((value) => {
+    const fingerprint = canonicalJson(value);
+    if (seen.has(fingerprint)) return false;
+    seen.add(fingerprint);
+    return true;
+  });
+}
+
+export function mergeCompanyRevisionHistory(
+  canonicalRevision: CompanyRevisionHistoryRow,
+  retiredRevision: CompanyRevisionHistoryRow,
+): CompanyRevisionHistoryRow {
+  if (canonicalRevision.proposalHash !== retiredRevision.proposalHash) {
+    throw new Error("CompanyRevision history merge requires the same proposal hash");
+  }
+  const proposalHash = canonicalRevision.proposalHash;
+  if (
+    canonicalRevision.approver !== retiredRevision.approver
+    || canonicalRevision.pipelineRunId !== retiredRevision.pipelineRunId
+    || revisionTimestamp(canonicalRevision.appliedAt) !== revisionTimestamp(retiredRevision.appliedAt)
+  ) {
+    throw new Error(`CompanyRevision collision ${proposalHash} has incompatible audit metadata`);
+  }
+  return {
+    ...canonicalRevision,
+    beforeJson: mergeRevisionJson(
+      canonicalRevision.beforeJson,
+      retiredRevision.beforeJson,
+      proposalHash,
+      "beforeJson",
+    ),
+    afterJson: mergeRevisionJson(
+      canonicalRevision.afterJson,
+      retiredRevision.afterJson,
+      proposalHash,
+      "afterJson",
+    ),
+    changedFields: [...new Set([
+      ...canonicalRevision.changedFields,
+      ...retiredRevision.changedFields,
+    ])].sort(),
+  };
+}
+
+async function rehomeCompanyRevisionHistory(
+  transaction: unknown,
+  canonicalId: string,
+  retiredIds: string[],
+): Promise<void> {
+  if (retiredIds.length === 0) return;
+  const revisions = delegate(transaction, "companyRevision");
+  const rows = await revisions.findMany({
+    where: { companyId: { in: [canonicalId, ...retiredIds] } },
+    orderBy: [{ appliedAt: "asc" }, { id: "asc" }],
+  }) as CompanyRevisionHistoryRow[];
+  const canonicalByProposalHash = new Map(
+    rows
+      .filter((row) => row.companyId === canonicalId)
+      .map((row) => [row.proposalHash, row] as const),
+  );
+  for (const retired of rows.filter((row) => retiredIds.includes(row.companyId))) {
+    const canonical = canonicalByProposalHash.get(retired.proposalHash);
+    if (!canonical) {
+      const moved = await revisions.updateMany({
+        where: { id: retired.id, companyId: retired.companyId },
+        data: { companyId: canonicalId },
+      });
+      if (moved.count !== 1) {
+        throw new Error(`CompanyRevision ${retired.id} changed ownership or disappeared inside the transaction`);
+      }
+      canonicalByProposalHash.set(retired.proposalHash, {
+        ...retired,
+        companyId: canonicalId,
+      });
+      continue;
+    }
+    const merged = mergeCompanyRevisionHistory(canonical, retired);
+    await revisions.update({
+      where: { id: canonical.id },
+      data: {
+        beforeJson: merged.beforeJson,
+        afterJson: merged.afterJson,
+        changedFields: merged.changedFields,
+      },
+    });
+    await revisions.delete({ where: { id: retired.id } });
+    canonicalByProposalHash.set(retired.proposalHash, merged);
+  }
+}
+
 async function mergeUnmodeledHistory(
   transaction: unknown,
   canonicalId: string,
@@ -698,10 +821,7 @@ async function mergeUnmodeledHistory(
       await news.update({ where: { id: item.id }, data: { companyId: canonicalId } });
     }
   }
-  await delegate(transaction, "companyRevision").updateMany({
-    where: { companyId: { in: retiredIds } },
-    data: { companyId: canonicalId },
-  });
+  await rehomeCompanyRevisionHistory(transaction, canonicalId, retiredIds);
   for (const retiredId of retiredIds) {
     await rehomeCompanyRedirects(transaction as never, retiredId, canonicalId);
   }

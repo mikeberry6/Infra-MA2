@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_FAILED_APPLY_ANALYSIS",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0112:transurban-chesapeake:f0caf605",
+  "taskIndex": 112,
+  "attempt": 1,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32136137871",
+  "workflowRunId": 32136137871,
+  "releaseSha": "47ad165648672d4605f1ce5e19bc1cb876f14773",
+  "pullRequestNumber": 616,
+  "proposalSha256": "4e3e25913c076724c60bfd127c51b360c5a49d4723f3b6d5a01614290098680a",
+  "approvalSha256": "3dfe9b0a8f07eece8aed45cde569e2a78345ff71a297069676f32492bbd56b7b",
+  "failureStage": "TRANSACTIONAL_APPLY",
+  "failure": "Re-homing CompanyRevision rows from the retired duplicate to the canonical company violated the unique (companyId, proposalHash) constraint because both companies had distinct ownership-attribution revision payloads from the same bulk proposal.",
+  "transactionRolledBack": true,
+  "rollbackEvidence": {
+    "lockedTargetCompanySnapshotSha256": "9a2a05a0dda86e1a91a729f5c2fdc2b738d9948423acd841bc0f4be51b91790e",
+    "postFailureTargetCompanySnapshotSha256": "9a2a05a0dda86e1a91a729f5c2fdc2b738d9948423acd841bc0f4be51b91790e",
+    "lockedTaskStateSha256": "327f691794acc5b6ff1d331019045c60c6960bd0800ea58444748c013038d479",
+    "postFailureTaskStateSha256": "327f691794acc5b6ff1d331019045c60c6960bd0800ea58444748c013038d479",
+    "canonicalCompanyStillExists": true,
+    "retiredDuplicateStillExists": true,
+    "proposalAuditEventCreated": false
+  },
+  "correctiveControl": "When colliding revisions share a proposal hash and identical audit metadata, preserve both array-based before/after histories in one canonical revision and union changedFields. Identical payloads are deduplicated. Incompatible JSON shapes or audit metadata remain fail-closed.",
+  "recordedAt": "2026-08-18T12:24:00.000Z"
+}
