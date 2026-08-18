@@ -1,5 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
-import { observeManifest } from "../apply-portfolio-fund-attribution";
+import {
+  applyPendingOwnershipUpdates,
+  observeManifest,
+} from "../apply-portfolio-fund-attribution";
 import { canonicalSha256, verifyManifest } from "./schema";
 
 function reviewedManifest(mutation: {
@@ -89,11 +92,13 @@ describe("portfolio fund attribution observation", () => {
       evidenceUrls: ["https://example.com/evidence"],
     });
     const tx = {
-      ownershipPeriod: { findUnique: vi.fn().mockResolvedValue(period()) },
-      fund: { findUnique: vi.fn().mockResolvedValue({ id: "fund-3", fundName: "DigitalBridge Fund III" }) },
+      ownershipPeriod: { findMany: vi.fn().mockResolvedValue([period()]) },
+      fund: { findMany: vi.fn().mockResolvedValue([{ id: "fund-3", fundName: "DigitalBridge Fund III" }]) },
     };
 
     const observed = await observeManifest(tx as never, manifest);
+    expect(tx.ownershipPeriod.findMany).toHaveBeenCalledOnce();
+    expect(tx.fund.findMany).toHaveBeenCalledOnce();
     expect(observed).toHaveLength(1);
     expect(observed[0]).toMatchObject({
       ownershipPeriodId: "owner-1",
@@ -130,19 +135,58 @@ describe("portfolio fund attribution observation", () => {
       evidenceUrls: ["https://example.com/disclosure"],
     });
     const tx = {
-      ownershipPeriod: { findUnique: vi.fn().mockResolvedValue(period({
+      ownershipPeriod: { findMany: vi.fn().mockResolvedValue([period({
           id: "owner-2",
           vehicleName: "Example Sidecar",
           investmentYear: 2022,
           stake: null,
           organization: { name: "Example Manager" },
           company: { id: "company-2", name: "Example PortCo", country: "United States" },
-        })) },
-      fund: { findUnique: vi.fn() },
+        })]) },
+      fund: { findMany: vi.fn() },
     };
 
     const observed = await observeManifest(tx as never, manifest);
-    expect(tx.fund.findUnique).not.toHaveBeenCalled();
+    expect(tx.fund.findMany).not.toHaveBeenCalled();
     expect(observed[0]).toMatchObject({ targetFundId: null, state: "PENDING" });
+  });
+
+  it("applies pending rows with one guarded bulk update", async () => {
+    const executeRaw = vi.fn().mockResolvedValue(1);
+    await applyPendingOwnershipUpdates({ $executeRaw: executeRaw } as never, [{
+      ownershipPeriodId: "owner-1",
+      currentFundId: null,
+      targetFundId: "fund-3",
+      desired: {
+        linkedFundName: "DigitalBridge Fund III",
+        fundAttribution: "INFERRED",
+        attributedFundName: "DigitalBridge Fund III",
+        attributionConfidence: "LOW",
+        attributionRationale: "Estimated from manager and vintage evidence.",
+      },
+    }] as never);
+
+    expect(executeRaw).toHaveBeenCalledOnce();
+    const query = executeRaw.mock.calls[0][0] as { strings: string[]; values: unknown[] };
+    expect(query.strings.join("?")).toContain('UPDATE "OwnershipPeriod"');
+    expect(query.strings.join("?")).toContain('IS NOT DISTINCT FROM desired."expectedFundId"');
+    expect(query.values).toContain("owner-1");
+    expect(query.values).toContain("fund-3");
+  });
+
+  it("rejects a guarded bulk update count mismatch", async () => {
+    const executeRaw = vi.fn().mockResolvedValue(0);
+    await expect(applyPendingOwnershipUpdates({ $executeRaw: executeRaw } as never, [{
+      ownershipPeriodId: "owner-1",
+      currentFundId: null,
+      targetFundId: "fund-3",
+      desired: {
+        linkedFundName: "DigitalBridge Fund III",
+        fundAttribution: "INFERRED",
+        attributedFundName: "DigitalBridge Fund III",
+        attributionConfidence: "LOW",
+        attributionRationale: "Estimated from manager and vintage evidence.",
+      },
+    }] as never)).rejects.toThrow(/expected 1 guarded updates, received 0/);
   });
 });
