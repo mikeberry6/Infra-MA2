@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0107:acl-airshop:e8d180fb",
+  "taskIndex": 107,
+  "companyName": "ACL Airshop",
+  "generatedAt": "2026-08-18T01:48:45.253Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0107-acl-airshop/attempt-2/pre-apply-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 107,
+    "taskId": "ledger:0107:acl-airshop:e8d180fb",
+    "canonicalKey": "acl-airshop|united-states",
+    "companyName": "ACL Airshop",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 16,
+    "managers": [
+      "Astatine Investment Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "016-astatine-investment-partners:holding:007:acl-airshop"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://astatineip.com/investment/acl-airshop/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "acl-airshop|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj18200boivhenz8wf9k2",
+        "fundName": "Alinda Infrastructure Fund IV",
+        "managerId": "cmrxpi4gk000oivhekxk3hfbi",
+        "updatedAt": "2026-07-23T16:09:55.442Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4gk000oivhekxk3hfbi",
+        "name": "Astatine Investment Partners",
+        "updatedAt": "2026-07-23T16:09:12.980Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0107:acl-airshop:e8d180fb",
+    "taskIndex": 107,
+    "canonicalKey": "acl-airshop|united-states",
+    "capturedAt": "2026-08-18T01:48:45.253Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "722da3f3b93bf5d246d81046d346b545e7c6ffa9aee80f69a38ef7201ca107b4",
+    "productionSnapshotSha256": "9727da6a281d5cda7248f98f74e369de69304f5ae050aa33787d9cbd3970deae",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "c99aa991e1c399b26147d3ce084e1797ea4e4a637e15ac191d763af09b95b5d1",
+      "organizationsSha256": "f06c7ffa56087f89a94da2659d8dcadcb5452807ebb22d40d0489a0f36288ac1",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e786e481c277e901b00b6f5023b58978f1dff564022a0fc89232f649965457d8",
+    "stateSha256": "3b80ca84226921f987113bfaad03f634c7bb7eebcfd2ca679f74eedb69924978",
+    "taskSnapshotSha256": "0b2e1acc6e065d30e599440295d9552eb52180869ecac0f1e285d1e3e748c66b"
+  },
+  "contextSha256": "9a89bf2a48521d16900046b7df012e03176610b55cc4768a7757b6a71c49334c"
+}

@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T01:39:00.000Z",
+  "updatedAt": "2026-08-18T01:49:11.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0107:acl-airshop:e8d180fb",
   "source": {
@@ -16280,10 +16280,10 @@
       "managerIndex": 16,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "722da3f3b93bf5d246d81046d346b545e7c6ffa9aee80f69a38ef7201ca107b4",
-      "status": "RELEASING",
+      "status": "APPLYING",
       "attempts": 2,
       "startedAt": "2026-08-18T01:36:01.000Z",
-      "updatedAt": "2026-08-18T01:39:00.000Z",
+      "updatedAt": "2026-08-18T01:49:11.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -16419,6 +16419,20 @@
           "taskSnapshotSha256": "ef2bbd755aefffbbe58e27b4b94283d1971dbfbb9b5782bb8c21503360217f29",
           "evidenceSha256": [
             "590cbaa55c69e7a94c98c1809a61edc11ef9c30caf543e71cc5367088cccecf7"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-18T01:49:11.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ef2bbd755aefffbbe58e27b4b94283d1971dbfbb9b5782bb8c21503360217f29",
+          "evidenceSha256": [
+            "590cbaa55c69e7a94c98c1809a61edc11ef9c30caf543e71cc5367088cccecf7",
+            "89fd64af9222f15e6e6fcb4ebe2f5eed0f8ff66c0dcb21b5cde2436996b04035",
+            "ef2bbd755aefffbbe58e27b4b94283d1971dbfbb9b5782bb8c21503360217f29"
           ],
           "kind": "TRANSITION"
         }
@@ -31307,5 +31321,5 @@
       ]
     }
   ],
-  "manifestSha256": "8574ff31c4f5848ef9c1f204dda2fddf29597748be9eb2f3bf7a4464ca6e7d19"
+  "manifestSha256": "43a1e44100ec477019ffcc2e588e21522692df3de065a0004bf4fddd4c714c8b"
 }
