@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T12:37:48.076Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0112:transurban-chesapeake:f0caf605",
+  "updatedAt": "2026-08-18T12:48:27.458Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -17017,11 +17017,11 @@
       "managerIndex": 18,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "19b83d79b67ba6bb41618776f08d10cd3b4f0790092039d2f001b3adf25a37a0",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-18T11:18:44.000Z",
-      "updatedAt": "2026-08-18T12:37:48.076Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-18T12:48:27.458Z",
+      "completedAt": "2026-08-18T12:48:27.458Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb",
@@ -17125,6 +17125,21 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-18T12:37:48.076Z",
+          "reason": null,
+          "taskSnapshotSha256": "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb",
+          "evidenceSha256": [
+            "3dfe9b0a8f07eece8aed45cde569e2a78345ff71a297069676f32492bbd56b7b",
+            "4e3e25913c076724c60bfd127c51b360c5a49d4723f3b6d5a01614290098680a",
+            "a5eb0116ffe7cea43d08ae3c9971e67d05e8c0fc60b77fa743e85bfcc1b6f231",
+            "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-18T12:48:27.458Z",
           "reason": null,
           "taskSnapshotSha256": "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb",
           "evidenceSha256": [
@@ -31840,5 +31855,5 @@
       ]
     }
   ],
-  "manifestSha256": "6bd3c7625c756bef8153fd0c91185ed63763fd91d53c75f4bbb66b80957d02d9"
+  "manifestSha256": "a35b1b17dc4a541ed730a3b8296ca947c5485271f342789bc841b3be0d53c5db"
 }
