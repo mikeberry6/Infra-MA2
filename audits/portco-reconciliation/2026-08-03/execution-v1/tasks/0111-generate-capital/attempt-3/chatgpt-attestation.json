@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0111:generate-capital:f6794437",
+  "taskIndex": 111,
+  "attempt": 3,
+  "companyName": "Generate Capital",
+  "conversationUrl": "https://chatgpt.com/c/6a8434ce-c654-83ea-b4af-94afb36362c7",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-18T10:32:46.334Z",
+  "initialCompletedAt": "2026-08-18T10:58:10.000Z",
+  "repairSubmittedAt": "2026-08-18T10:58:36.821Z",
+  "repairCompletedAt": "2026-08-18T11:05:19.000Z",
+  "repairCount": 1,
+  "initialOutcome": "COMPLETE_JSON_EVIDENCE_CONTRACT_VIOLATION",
+  "finalOutcome": "VALID_DEFERRED_CURRENT_OWNERSHIP_UNRESOLVED",
+  "contentHashes": {
+    "promptSha256": "4ac0063cd6d9e93ac562eaf436b4030d5e92ab7340672157e7825c17b6e9cd96",
+    "initialResponseSha256": "82f87e701ab17d2dc01b340734996b93c09164dfd7dd0c0b31492afb084a5f28",
+    "acceptedResponseSha256": "4da231d49bd04c5cfce808451276410693c424f18d893894d03ab2cc0bcc7ee2",
+    "transcriptSha256": "6f3a2f02c9c8f50269ee707f241438a48adcbfbe358bf500281d3d092d034c51",
+    "repairPromptSha256": "10a8618aaccab1cdac6fbe781a098352f491496ada860aaba0cb3b1dcca12c93",
+    "repairResponseSha256": "4da231d49bd04c5cfce808451276410693c424f18d893894d03ab2cc0bcc7ee2"
+  },
+  "captureMethod": "Signed-in ChatGPT web application controlled through the in-app browser",
+  "captureNote": "GPT-5.6 Sol and Pro mode at power 5 of 5 were visibly verified before submission. Plain-text JSON markers avoided the previously verified code-block truncation. The initial complete response failed the direct-current-evidence rule for Harbert and CBRE; the single repair correctly deferred both ownership questions."
+}
