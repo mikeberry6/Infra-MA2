@@ -414,6 +414,18 @@ const ATTRIBUTION_ONLY_FUNDS: CandidateFund[] = [
 
 const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
   {
+    companyName: "Etobicoke Healthcare Partnership",
+    investmentFirm: "Axium Infrastructure",
+    attribution: "DISCLOSED",
+    confidence: "HIGH",
+    attributedFundName: "Axium Infrastructure Canada II L.P.",
+    rationale: "Axium's financial-close release and current portfolio evidence identify Axium Infrastructure Canada II L.P. as the investment vehicle. The disclosed vehicle remains unlinked because it is not a production-curated fund, rather than being inferred to the generic AxInfra Fund I-IV record.",
+    sourceUrls: [
+      "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2016-06-13-Press-Release-Etobicoke_May-2016_website-only_en.pdf",
+      "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+    ],
+  },
+  {
     companyName: "Edwards Sanborn Solar + Storage",
     investmentFirm: "Axium Infrastructure",
     attribution: "UNRESOLVED",
