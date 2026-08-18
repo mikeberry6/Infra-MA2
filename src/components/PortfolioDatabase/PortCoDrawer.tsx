@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
-import { X, ExternalLink } from "lucide-react";
+import { useState, useEffect, useId, useMemo, useRef, type ReactNode } from "react";
+import { X, ExternalLink, Info } from "lucide-react";
 import {
   getPortCoSectorColor,
   getPortCoStatusColor,
@@ -476,6 +476,116 @@ function getAttributionColor(attribution: OwnerView["fundAttribution"]): string 
   return "#71717a";
 }
 
+function EstimateDisclosure({
+  label,
+  rationale,
+}: {
+  label: string;
+  rationale: string;
+}) {
+  const tooltipId = useId();
+  const rootRef = useRef<HTMLSpanElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [isPinned, setIsPinned] = useState(false);
+  const isOpen = isHovered || isFocused || isPinned;
+
+  useEffect(() => {
+    if (!isPinned) return;
+
+    const dismissOnOutsidePointer = (event: PointerEvent) => {
+      const target = event.target;
+      if (target instanceof Node && rootRef.current?.contains(target)) return;
+      setIsPinned(false);
+      setIsFocused(false);
+      triggerRef.current?.blur();
+    };
+
+    document.addEventListener("pointerdown", dismissOnOutsidePointer);
+    return () => document.removeEventListener("pointerdown", dismissOnOutsidePointer);
+  }, [isPinned]);
+
+  const dismiss = () => {
+    setIsHovered(false);
+    setIsFocused(false);
+    setIsPinned(false);
+    triggerRef.current?.blur();
+  };
+
+  return (
+    <span
+      ref={rootRef}
+      className="relative inline-flex"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <button
+        ref={triggerRef}
+        type="button"
+        aria-label={`${label}. Show estimate rationale`}
+        aria-expanded={isOpen}
+        aria-controls={isOpen ? tooltipId : undefined}
+        aria-describedby={isOpen ? tooltipId : undefined}
+        className="inline-flex cursor-help items-center gap-1 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => {
+          setIsFocused(false);
+          setIsPinned(false);
+        }}
+        onClick={(event) => {
+          if (isPinned) {
+            dismiss();
+            event.currentTarget.blur();
+            return;
+          }
+          setIsPinned(true);
+        }}
+        onKeyDown={(event) => {
+          if (event.key !== "Escape") return;
+          event.preventDefault();
+          event.stopPropagation();
+          dismiss();
+        }}
+      >
+        <Tag color={getAttributionColor("INFERRED")}>{label}</Tag>
+        <Info aria-hidden className="h-3 w-3 shrink-0 text-[var(--text-tertiary)]" />
+      </button>
+      {isOpen && (
+        <span
+          id={tooltipId}
+          role="tooltip"
+          className="absolute left-0 top-full z-50 mt-2 w-[min(18rem,calc(100vw-3rem))] rounded-md border border-[var(--border)] bg-[var(--bg-surface)] p-3 text-left shadow-overlay sm:left-auto sm:right-0"
+        >
+          <span className="block type-label text-[var(--text-primary)]">Why this estimate</span>
+          <span className="mt-1.5 block type-micro whitespace-normal leading-relaxed text-[var(--text-secondary)]">
+            {rationale}
+          </span>
+        </span>
+      )}
+    </span>
+  );
+}
+
+function AttributionDisclosure({
+  attribution,
+  confidence,
+  rationale,
+}: {
+  attribution: OwnerView["fundAttribution"];
+  confidence?: OwnerView["attributionConfidence"];
+  rationale?: string | null;
+}) {
+  const label = getAttributionLabel(attribution, confidence);
+  if (!label) return null;
+
+  if (attribution === "INFERRED" && rationale) {
+    return <EstimateDisclosure label={label} rationale={rationale} />;
+  }
+
+  return <Tag color={getAttributionColor(attribution)}>{label}</Tag>;
+}
+
 function SponsorFundLine({ row }: { row: SponsorFundRow }) {
   const showFund = row.fundName && normalizeFactValue(row.fundName) !== normalizeFactValue(row.sponsor);
   const showVehicle = row.vehicle
@@ -515,10 +625,16 @@ function SponsorFundLine({ row }: { row: SponsorFundRow }) {
       )}
       {attributionLabel && (
         <div className="mt-2 flex flex-wrap items-center gap-2">
-          <Tag color={getAttributionColor(row.fundAttribution)}>{attributionLabel}</Tag>
+          <AttributionDisclosure
+            attribution={row.fundAttribution}
+            confidence={row.attributionConfidence}
+            rationale={row.attributionRationale}
+          />
         </div>
       )}
-      {row.attributionRationale && row.fundAttribution !== "DISCLOSED" && (
+      {row.attributionRationale
+        && row.fundAttribution !== "DISCLOSED"
+        && row.fundAttribution !== "INFERRED" && (
         <p className="mt-2 type-micro leading-relaxed text-[var(--text-tertiary)]">
           {row.attributionRationale}
         </p>
@@ -537,13 +653,15 @@ function DetailSection({
   title,
   children,
   className = "",
+  allowOverflow = false,
 }: {
   title: string;
   children: ReactNode;
   className?: string;
+  allowOverflow?: boolean;
 }) {
   return (
-    <section className={`surface-elevated overflow-hidden ${className}`}>
+    <section className={`surface-elevated ${allowOverflow ? "overflow-visible" : "overflow-hidden"} ${className}`}>
       <div className="border-b border-[var(--border)] px-4 py-3.5">
         <div className="type-section-title">
           {title}
@@ -660,10 +778,16 @@ function OwnerLine({
       )}
       {attributionLabel && (
         <div className="mt-2 flex flex-wrap items-center gap-2">
-          <Tag color={getAttributionColor(owner.fundAttribution)}>{attributionLabel}</Tag>
+          <AttributionDisclosure
+            attribution={owner.fundAttribution}
+            confidence={owner.attributionConfidence}
+            rationale={owner.attributionRationale}
+          />
         </div>
       )}
-      {owner.attributionRationale && owner.fundAttribution !== "DISCLOSED" && (
+      {owner.attributionRationale
+        && owner.fundAttribution !== "DISCLOSED"
+        && owner.fundAttribution !== "INFERRED" && (
         <p className="mt-2 type-micro leading-relaxed text-[var(--text-tertiary)]">
           {owner.attributionRationale}
         </p>
@@ -848,7 +972,7 @@ export function PortCoDrawer({
         <div className="grid grid-cols-1 gap-8 px-6 py-8 sm:grid-cols-[minmax(0,1fr)_240px] sm:px-8 lg:grid-cols-[minmax(0,1fr)_250px] lg:px-10 lg:py-10">
           <aside className="order-1 sm:order-2">
             <div className="space-y-4 sm:sticky sm:top-32">
-              <DetailSection title="Ownership">
+              <DetailSection title="Ownership" allowOverflow>
                 <div>
                   <div className="type-label">
                     Sponsor / fund / vehicle

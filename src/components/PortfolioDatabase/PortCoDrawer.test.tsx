@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import type { CompanyView, FundStrategyView, OwnerView } from "@/modules/shared/types";
@@ -131,7 +131,8 @@ describe("PortCoDrawer ownership periods", () => {
     })).toHaveLength(2);
   });
 
-  it("labels inferred fund assignments as estimated with confidence and rationale", () => {
+  it("reveals inferred-fund rationale on hover, focus, and tap", async () => {
+    const user = userEvent.setup();
     const inferredOwner: OwnerView = {
       ...financeIiOwner,
       fundName: undefined,
@@ -150,6 +151,97 @@ describe("PortCoDrawer ownership periods", () => {
     );
 
     expect(screen.getByText("Estimated · Medium confidence")).toBeInTheDocument();
-    expect(screen.getByText(inferredOwner.attributionRationale!)).toBeInTheDocument();
+    expect(screen.queryByText(inferredOwner.attributionRationale!)).not.toBeInTheDocument();
+
+    const trigger = screen.getByRole("button", {
+      name: "Estimated · Medium confidence. Show estimate rationale",
+    });
+
+    await user.hover(trigger);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredOwner.attributionRationale!);
+    await user.unhover(trigger);
+    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+
+    fireEvent.focus(trigger);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredOwner.attributionRationale!);
+    fireEvent.blur(trigger);
+    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+
+    fireEvent.focus(trigger);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredOwner.attributionRationale!);
+    fireEvent.keyDown(trigger, { key: "Escape" });
+    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+    expect(screen.getByRole("dialog", { name: "Chief Power" })).toBeInTheDocument();
+
+    await user.click(trigger);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredOwner.attributionRationale!);
+    await user.click(screen.getByRole("heading", { name: "Chief Power" }));
+    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+  });
+
+  it("uses the estimate disclosure for inferred prior owners", async () => {
+    const user = userEvent.setup();
+    const inferredFormerOwner: OwnerView = {
+      ...formerOwner,
+      fundName: undefined,
+      attributedFundName: "ArcLight Energy Partners Fund V, L.P.",
+      fundAttribution: "INFERRED",
+      attributionConfidence: "LOW",
+      attributionRationale: "Estimated from the former owner's acquisition timing and fund sequence.",
+    };
+
+    render(
+      <PortCoDrawer
+        company={chiefPower([financeIiOwner, inferredFormerOwner])}
+        funds={funds}
+        onClose={vi.fn()}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: "Show 1 prior owner" }));
+    const former = screen.getByRole("group", {
+      name: "ArcLight Capital Partners — ArcLight Energy Partners Fund V, L.P. — Chief Power Finance, LLC (pre-restructuring controlling tranche) — Estimated · Low confidence — 2014-2020 ownership period",
+    });
+    const trigger = within(former).getByRole("button", {
+      name: "Estimated · Low confidence. Show estimate rationale",
+    });
+
+    expect(screen.queryByText(inferredFormerOwner.attributionRationale!)).not.toBeInTheDocument();
+    await user.hover(trigger);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredFormerOwner.attributionRationale!);
+  });
+
+  it("leaves disclosed and direct-program ownership presentation unchanged", () => {
+    const directProgramOwner: OwnerView = {
+      ...financeIiOwner,
+      id: "direct-program",
+      fundName: undefined,
+      attributedFundName: undefined,
+      fundAttribution: "DIRECT_PROGRAM",
+      attributionRationale: "Held through the manager's documented direct-investment program.",
+    };
+
+    const { rerender } = render(
+      <PortCoDrawer
+        company={chiefPower([financeIiOwner])}
+        funds={funds}
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(screen.queryByText(/Estimated ·/)).not.toBeInTheDocument();
+    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+
+    rerender(
+      <PortCoDrawer
+        company={chiefPower([directProgramOwner])}
+        funds={funds}
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByText("Direct / program investment")).toBeInTheDocument();
+    expect(screen.getByText(directProgramOwner.attributionRationale!)).toBeInTheDocument();
+    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
   });
 });
