@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_SCOPED_CORRECTION_DECISION",
+  "asOfDate": "2026-08-18",
+  "taskId": "ledger:0113:arbour-heights:24819145",
+  "companyName": "Axium Extendicare LTC II LP",
+  "companyId": "cmrxpj86h00lzivhe009kcwjc",
+  "ownershipPeriodId": "cmrxpjt8o01j2ivhey92f3vsx",
+  "recordId": "OFA-F89FA1BDEBD4",
+  "sourceProductionSnapshotSha256": "2e7387908749ab7b50d60528bd83607b34bfe3bc30c559ebae5c84dcb5fd66ed",
+  "sourceLedgerSha256": "c325417808611ec4ba34cdfaf86391ad1bc4a5d6f0a811e7c7fabd8b5b25fc72",
+  "generatedFullManifestSha256": "0bd91dc8eadb7cc6dc626308bd0741694fd5976f3d028abb47c754de691176e2",
+  "scopedManifestSha256": "23135fa28f79d716aac24ed1f11793464f54d17c761e7ac0d1feaed6d566e54a",
+  "predecessorReceiptSha256": "f5dc2ae7616e1badc3ba35dbcfca7dc562b2055d8494c7b17442724b28acbb52",
+  "reason": "The first Task 113 attribution correction removed the unsupported estimate and low-confidence label, but its public rationale still named the unsupported candidate fund while explaining why it was rejected. This copy-only correction preserves the now-unresolved fund state and every ownership fact while shortening the rationale to the supported vehicle, owner, stake, and disclosure limitation. It creates or updates no fund and leaves all other production rows untouched.",
+  "expectedChangedRows": 1,
+  "expectedAlreadyAppliedRows": 0,
+  "fundCreates": 0,
+  "fundUpdates": 0,
+  "ownershipIdentityChanges": 0
+}
