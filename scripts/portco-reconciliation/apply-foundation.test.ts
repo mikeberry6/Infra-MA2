@@ -49,6 +49,7 @@ import type {
 
 describe("approved ownership organization provisioning", () => {
   it("classifies newly approved fund managers and corporate retained owners deterministically", () => {
+    expect(ownershipOrganizationTypes("AgeCare")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Energy Transfer LP")).toEqual(["CORPORATE"]);
@@ -64,6 +65,7 @@ describe("approved ownership organization provisioning", () => {
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
     for (const [name, type] of [
+      ["AgeCare", "CORPORATE"],
       ["BC Partners", "FUND_MANAGER"],
       ["Cox Enterprises", "CORPORATE"],
       ["Energy Transfer LP", "CORPORATE"],

@@ -234,6 +234,7 @@ export function assertOwnershipManagerCompatible(input: {
 }
 
 const approvedOwnershipOrganizationProvisioning = {
+  "AgeCare": "CORPORATE",
   "BC Partners": "FUND_MANAGER",
   "Cox Enterprises": "CORPORATE",
   "Energy Transfer LP": "CORPORATE",
