@@ -1,0 +1,286 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0107-acl-airshop-v2/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0107-acl-airshop-v2.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0107-acl-airshop/attempt-2/locked-production-snapshot.json --proposal-sha256=89fd64af9222f15e6e6fcb4ebe2f5eed0f8ff66c0dcb21b5cde2436996b04035 --approval-sha256=590cbaa55c69e7a94c98c1809a61edc11ef9c30caf543e71cc5367088cccecf7 --snapshot-sha256=88f4858546a573a387f7c67e6c41020b07ad76d0ac18f3125c13a2fce20bde2b
+
+(node:2765) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "89fd64af9222f15e6e6fcb4ebe2f5eed0f8ff66c0dcb21b5cde2436996b04035",
+    "approvalSha256": "590cbaa55c69e7a94c98c1809a61edc11ef9c30caf543e71cc5367088cccecf7",
+    "afterImageSha256": "403d0e6348920629e4c80f15754a02cb3a9a49cd5e1dd2f925dfaf8caa40eb8e",
+    "taskId": "ledger:0107:acl-airshop:e8d180fb",
+    "operation": "UPSERT",
+    "company": {
+      "name": "ACL Airshop",
+      "investmentFirm": "Astatine Investment Partners",
+      "sector": "Transportation",
+      "subsector": "Air cargo ULD leasing and logistics infrastructure",
+      "region": "North America",
+      "country": "United States",
+      "ownershipVehicle": "Alinda Infrastructure Fund IV",
+      "description": "ACL Airshop is a global air-cargo unit load device platform that leases, pools, sells, repairs, tracks and manages ULDs and supplies pallets, containers, nets, straps and related cargo-control equipment. Headquartered in Greenville, South Carolina, the company served more than 200 airlines, air-cargo carriers and other transportation clients and owned, maintained or managed more than 100,000 ULDs across 55 airport hubs as of March 2026. The business was founded as Airline Container Leasing in 1983 and its successor operations merged with AirShop Holdings in 2007. Alinda-managed funds completed the acquisition in April 2021; the manager renamed its mid-market infrastructure strategy Astatine Investment Partners in 2022. A January 2023 prospectus states that Alinda Infrastructure Fund IV held a 100% equity interest, while current Astatine sources reaffirm ownership without restating the percentage. No later sale, recapitalization, merger, sponsor change or signed pending ownership transaction was identified through August 17, 2026. Airport stations, ULD fleets, repair sites, software and products are operations or assets within ACL Airshop, not separate PortCos.",
+      "status": "Active",
+      "countryTags": [
+        "United States"
+      ],
+      "website": "https://www.aclairshop.com/",
+      "yearFounded": 1983,
+      "investmentYear": 2021,
+      "headquarters": "Greenville, South Carolina",
+      "milestones": [
+        {
+          "date": "1983",
+          "event": "The business was founded as Airline Container Leasing, the predecessor of ACL Airshop.",
+          "category": "Founding"
+        },
+        {
+          "date": "2007",
+          "event": "Airline Container Leasing's successor operations merged with AirShop Holdings, forming the continuing ACL Airshop platform.",
+          "category": "Other"
+        },
+        {
+          "date": "Apr 2021",
+          "event": "Funds managed by Alinda Capital Partners, now Astatine Investment Partners, completed the acquisition of ACL Airshop; later fund disclosures attribute the investment to Alinda Infrastructure Fund IV.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Mar 4, 2026",
+          "event": "Astatine reaffirmed ACL Airshop as a current portfolio company and reported more than 100,000 ULDs across 55 airport hubs serving more than 200 customers.",
+          "category": "Expansion"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Astatine — ACL Airshop portfolio",
+          "url": "https://astatineip.com/investment/acl-airshop/",
+          "type": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current active portfolio status, infrastructure classification and operating profile"
+        },
+        {
+          "label": "Astatine — ACL Airshop March 2026 update",
+          "url": "https://astatineip.com/2026/03/04/acl-airshop-announces-the-promotion-of-james-harris-to-chief-executive-officer/",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current Astatine ownership and March 2026 operating scale"
+        },
+        {
+          "label": "Alinda — ACL Airshop acquisition",
+          "url": "https://astatineip.com/2021/04/22/alinda-acquires-acl-airshop/",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Infrastructure-strategy acquisition and Greenville headquarters"
+        },
+        {
+          "label": "ACL Airshop — Alinda acquisition closing",
+          "url": "https://www.prnewswire.com/news-releases/acl-airshop-and-alinda-partner-for-growth-301275577.html",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Closed acquisition in April 2021 and undisclosed transaction details"
+        },
+        {
+          "label": "Astatine — Alinda manager rebrand",
+          "url": "https://astatineip.com/2022/04/13/alinda-capital-partners-rebrands-its-mid-market-infrastructure-strategy-to-astatine-investment-partners/",
+          "type": "PRESS_RELEASE",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "Manager identity continuity from Alinda Capital Partners to Astatine Investment Partners"
+        },
+        {
+          "label": "Astatine 85 — January 2023 prospectus",
+          "url": "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "AF4 attribution, April 2021 entry and 100% disclosed equity interest"
+        },
+        {
+          "label": "ACL Airshop — company history",
+          "url": "https://www.prnewswire.com/news-releases/acl-airshop-over-30-successful-years-in-air-cargo-products-and-services-300211137.html",
+          "type": "PRESS_RELEASE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "1983 founding and 2007 predecessor merger history"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "Astatine Investment Partners",
+          "ownershipVehicle": "Alinda Infrastructure Fund IV",
+          "fundName": "Alinda Infrastructure Fund IV",
+          "investmentYear": 2021,
+          "stake": "100% disclosed in January 2023; current percentage not subsequently restated",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": null,
+      "name": "ACL Airshop",
+      "aliases": [
+        "ACL Airshop, LLC",
+        "ACL Airshop LLC",
+        "Airline Container Leasing",
+        "AirShop Holdings",
+        "Airshop"
+      ],
+      "sector": "TRANSPORTATION",
+      "subsector": "Air cargo ULD leasing and logistics infrastructure",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "ACL Airshop is a global air-cargo unit load device platform that leases, pools, sells, repairs, tracks and manages ULDs and supplies pallets, containers, nets, straps and related cargo-control equipment. Headquartered in Greenville, South Carolina, the company served more than 200 airlines, air-cargo carriers and other transportation clients and owned, maintained or managed more than 100,000 ULDs across 55 airport hubs as of March 2026. The business was founded as Airline Container Leasing in 1983 and its successor operations merged with AirShop Holdings in 2007. Alinda-managed funds completed the acquisition in April 2021; the manager renamed its mid-market infrastructure strategy Astatine Investment Partners in 2022. A January 2023 prospectus states that Alinda Infrastructure Fund IV held a 100% equity interest, while current Astatine sources reaffirm ownership without restating the percentage. No later sale, recapitalization, merger, sponsor change or signed pending ownership transaction was identified through August 17, 2026. Airport stations, ULD fleets, repair sites, software and products are operations or assets within ACL Airshop, not separate PortCos.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": "https://www.aclairshop.com/",
+      "yearFounded": 1983,
+      "headquarters": "Greenville, South Carolina",
+      "lastVerifiedAt": "2026-08-17T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": null,
+          "managerName": "Astatine Investment Partners",
+          "organizationName": "Astatine Investment Partners",
+          "fundName": "Alinda Infrastructure Fund IV",
+          "vehicleName": null,
+          "stake": "100% disclosed in January 2023; current percentage not subsequently restated",
+          "investmentYear": 2021,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": null,
+          "date": "1983",
+          "event": "The business was founded as Airline Container Leasing, the predecessor of ACL Airshop.",
+          "category": "FOUNDING",
+          "sortDate": "1983-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.prnewswire.com/news-releases/acl-airshop-over-30-successful-years-in-air-cargo-products-and-services-300211137.html"
+          ]
+        },
+        {
+          "id": null,
+          "date": "2007",
+          "event": "Airline Container Leasing's successor operations merged with AirShop Holdings, forming the continuing ACL Airshop platform.",
+          "category": "OTHER",
+          "sortDate": "2007-01-01T00:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.prnewswire.com/news-releases/acl-airshop-over-30-successful-years-in-air-cargo-products-and-services-300211137.html"
+          ]
+        },
+        {
+          "id": null,
+          "date": "Apr 2021",
+          "event": "Funds managed by Alinda Capital Partners, now Astatine Investment Partners, completed the acquisition of ACL Airshop; later fund disclosures attribute the investment to Alinda Infrastructure Fund IV.",
+          "category": "ACQUISITION",
+          "sortDate": "2021-04-22T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://astatineip.com/2021/04/22/alinda-acquires-acl-airshop/",
+            "https://www.prnewswire.com/news-releases/acl-airshop-and-alinda-partner-for-growth-301275577.html",
+            "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf"
+          ]
+        },
+        {
+          "id": null,
+          "date": "Mar 4, 2026",
+          "event": "Astatine reaffirmed ACL Airshop as a current portfolio company and reported more than 100,000 ULDs across 55 airport hubs serving more than 200 customers.",
+          "category": "EXPANSION",
+          "sortDate": "2026-03-04T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://astatineip.com/2026/03/04/acl-airshop-announces-the-promotion-of-james-harris-to-chief-executive-officer/"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": null,
+          "label": "Astatine — ACL Airshop portfolio",
+          "url": "https://astatineip.com/investment/acl-airshop/",
+          "sourceType": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current active portfolio status, infrastructure classification and operating profile",
+          "isPrimary": true
+        },
+        {
+          "id": null,
+          "label": "Astatine — ACL Airshop March 2026 update",
+          "url": "https://astatineip.com/2026/03/04/acl-airshop-announces-the-promotion-of-james-harris-to-chief-executive-officer/",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current Astatine ownership and March 2026 operating scale",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Alinda — ACL Airshop acquisition",
+          "url": "https://astatineip.com/2021/04/22/alinda-acquires-acl-airshop/",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Infrastructure-strategy acquisition and Greenville headquarters",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "ACL Airshop — Alinda acquisition closing",
+          "url": "https://www.prnewswire.com/news-releases/acl-airshop-and-alinda-partner-for-growth-301275577.html",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Closed acquisition in April 2021 and undisclosed transaction details",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Astatine — Alinda manager rebrand",
+          "url": "https://astatineip.com/2022/04/13/alinda-capital-partners-rebrands-its-mid-market-infrastructure-strategy-to-astatine-investment-partners/",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "Manager identity continuity from Alinda Capital Partners to Astatine Investment Partners",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Astatine 85 — January 2023 prospectus",
+          "url": "https://quoteddata.com/wp-content/uploads/2023/01/230110-AT85-Prospectus-FINAL.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "AF4 attribution, April 2021 entry and 100% disclosed equity interest",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "ACL Airshop — company history",
+          "url": "https://www.prnewswire.com/news-releases/acl-airshop-over-30-successful-years-in-air-cargo-products-and-services-300211137.html",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "1983 founding and 2007 predecessor merger history",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "ACL Airshop",
+    "mutations": [
+      {
+        "kind": "CREATE_COMPANY",
+        "relationIds": [],
+        "detail": "Create the approved canonical company and all approved relations."
+      }
+    ],
+    "changedFields": [
+      "company"
+    ],
+    "retiredCompanyIds": []
+  }
+}
