@@ -3,7 +3,7 @@ import "dotenv/config";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import type { Prisma } from "../src/generated/prisma/client";
+import { Prisma } from "../src/generated/prisma/client";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 import { withImportTransaction } from "../src/lib/prisma-transaction";
 import {
@@ -75,34 +75,49 @@ export async function observeManifest(
   tx: Prisma.TransactionClient,
   manifest: AttributionApplyManifest,
 ): Promise<ObservedRow[]> {
-  const observed: ObservedRow[] = [];
-  for (const mutation of manifest.mutations) {
+  const ownershipPeriodIds = manifest.mutations.map((mutation) => {
     if (!mutation.ownershipPeriodId) {
       throw new Error(`${mutation.recordId}: production apply requires a snapshot-bound ownershipPeriodId`);
     }
-    const period = await tx.ownershipPeriod.findUnique({
-      where: { id: mutation.ownershipPeriodId },
-      select: {
-        id: true,
-        fundId: true,
-        vehicleName: true,
-        investmentYear: true,
-        stake: true,
-        isActive: true,
-        fundAttribution: true,
-        attributedFundName: true,
-        attributionConfidence: true,
-        attributionRationale: true,
-        company: { select: { id: true, name: true, country: true } },
-        organization: { select: { name: true } },
-        fund: {
-          select: {
-            fundName: true,
-            manager: { select: { name: true } },
-          },
+    return mutation.ownershipPeriodId;
+  });
+  const periods = await tx.ownershipPeriod.findMany({
+    where: { id: { in: ownershipPeriodIds } },
+    select: {
+      id: true,
+      fundId: true,
+      vehicleName: true,
+      investmentYear: true,
+      stake: true,
+      isActive: true,
+      fundAttribution: true,
+      attributedFundName: true,
+      attributionConfidence: true,
+      attributionRationale: true,
+      company: { select: { id: true, name: true, country: true } },
+      organization: { select: { name: true } },
+      fund: {
+        select: {
+          fundName: true,
+          manager: { select: { name: true } },
         },
       },
-    });
+    },
+  });
+  const periodsById = new Map(periods.map((period) => [period.id, period]));
+  const targetFundNames = [...new Set(manifest.mutations.flatMap((mutation) => (
+    mutation.targetLinkedFundName ? [mutation.targetLinkedFundName] : []
+  )))];
+  const targetFunds = targetFundNames.length > 0
+    ? await tx.fund.findMany({
+        where: { fundName: { in: targetFundNames } },
+        select: { id: true, fundName: true },
+      })
+    : [];
+  const targetFundsByName = new Map(targetFunds.map((fund) => [fund.fundName, fund]));
+  const observed: ObservedRow[] = [];
+  for (const mutation of manifest.mutations) {
+    const period = periodsById.get(mutation.ownershipPeriodId!);
     if (!period || !period.isActive) throw new Error(`${mutation.recordId}: active ownership period does not exist`);
     if (
       period.company.name !== mutation.companyName
@@ -114,10 +129,7 @@ export async function observeManifest(
       throw new Error(`${mutation.recordId}: snapshot-bound ownership identity changed after review`);
     }
     const targetFund = mutation.targetLinkedFundName
-      ? await tx.fund.findUnique({
-          where: { fundName: mutation.targetLinkedFundName },
-          select: { id: true, fundName: true },
-        })
+      ? targetFundsByName.get(mutation.targetLinkedFundName) ?? null
       : null;
     if (mutation.targetLinkedFundName && !targetFund) {
       throw new Error(`${mutation.recordId}: canonical target fund does not exist`);
@@ -163,6 +175,46 @@ export async function observeManifest(
     throw new Error("Observed ownership count does not match the immutable manifest");
   }
   return observed;
+}
+
+export async function applyPendingOwnershipUpdates(
+  tx: Prisma.TransactionClient,
+  pending: ObservedRow[],
+): Promise<void> {
+  if (pending.length === 0) return;
+  const desiredRows = pending.map((row) => Prisma.sql`(
+    ${row.ownershipPeriodId}::text,
+    ${row.currentFundId}::text,
+    ${row.targetFundId}::text,
+    ${row.desired.fundAttribution}::"OwnershipFundAttribution",
+    ${row.desired.attributedFundName}::text,
+    ${row.desired.attributionConfidence}::"AttributionConfidence",
+    ${row.desired.attributionRationale}::text
+  )`);
+  const updated = await tx.$executeRaw(Prisma.sql`
+    UPDATE "OwnershipPeriod" AS ownership
+    SET
+      "fundId" = desired."targetFundId",
+      "fundAttribution" = desired."fundAttribution",
+      "attributedFundName" = desired."attributedFundName",
+      "attributionConfidence" = desired."attributionConfidence",
+      "attributionRationale" = desired."attributionRationale"
+    FROM (VALUES ${Prisma.join(desiredRows)}) AS desired(
+      "id",
+      "expectedFundId",
+      "targetFundId",
+      "fundAttribution",
+      "attributedFundName",
+      "attributionConfidence",
+      "attributionRationale"
+    )
+    WHERE ownership."id" = desired."id"
+      AND ownership."fundAttribution" = 'UNRESOLVED'::"OwnershipFundAttribution"
+      AND ownership."fundId" IS NOT DISTINCT FROM desired."expectedFundId"
+  `);
+  if (updated !== pending.length) {
+    throw new Error(`Ownership state changed during apply: expected ${pending.length} guarded updates, received ${updated}`);
+  }
 }
 
 export function receiptContent(input: {
@@ -272,24 +324,12 @@ async function main(): Promise<void> {
       },
       select: { id: true },
     });
-    for (const row of pending) {
-      const updated = await tx.ownershipPeriod.updateMany({
-        where: { id: row.ownershipPeriodId, fundAttribution: "UNRESOLVED", fundId: row.currentFundId },
-        data: {
-          fundId: row.targetFundId,
-          fundAttribution: row.desired.fundAttribution,
-          attributedFundName: row.desired.attributedFundName,
-          attributionConfidence: row.desired.attributionConfidence,
-          attributionRationale: row.desired.attributionRationale,
-        },
-      });
-      if (updated.count !== 1) throw new Error(`${row.recordId}: ownership state changed during apply`);
-    }
+    await applyPendingOwnershipUpdates(tx, pending);
     const byCompany = new Map<string, ObservedRow[]>();
     for (const row of pending) byCompany.set(row.companyId, [...(byCompany.get(row.companyId) ?? []), row]);
-    for (const [companyId, rows] of byCompany) {
-      await tx.companyRevision.create({
-        data: {
+    if (byCompany.size > 0) {
+      await tx.companyRevision.createMany({
+        data: [...byCompany].map(([companyId, rows]) => ({
           companyId,
           proposalHash: manifest.manifestSha256,
           beforeJson: json(rows.map((row) => ({ ownershipPeriodId: row.ownershipPeriodId, ...row.before }))),
@@ -299,7 +339,7 @@ async function main(): Promise<void> {
             : ["ownershipPeriods.fundAttribution"],
           approver: approval!.approver,
           pipelineRunId: pipeline.id,
-        },
+        })),
       });
     }
     await tx.pipelineRun.update({
