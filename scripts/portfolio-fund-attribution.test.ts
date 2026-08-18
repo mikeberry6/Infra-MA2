@@ -26,7 +26,7 @@ describe("portfolio fund attribution ledger", () => {
 
   it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(2);
+    expect(unresolved).toHaveLength(6);
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Virginia International Gateway",
       investmentFirm: "Astatine Investment Partners",
@@ -37,6 +37,38 @@ describe("portfolio fund attribution ledger", () => {
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Axium Extendicare LTC II LP",
       investmentFirm: "Axium Infrastructure",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Axium Aster & Axium Bloom",
+      investmentFirm: "Axium Infrastructure",
+      currentVehicleName: "Aster Joint Venture Limited Partnership",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Axium Aster & Axium Bloom",
+      investmentFirm: "Axium Infrastructure",
+      currentVehicleName: "Bloom Limited Partnership",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Axium Aster & Axium Bloom",
+      investmentFirm: "AgeCare",
+      currentVehicleName: "Aster Joint Venture Limited Partnership",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Axium Aster & Axium Bloom",
+      investmentFirm: "AgeCare",
+      currentVehicleName: "Bloom Limited Partnership",
       attributedFundName: null,
       targetLinkedFundName: null,
       proposedAction: "RESEARCH_REQUIRED",
