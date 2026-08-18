@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_SCOPED_CORRECTION_DECISION",
+  "asOfDate": "2026-08-18",
+  "taskId": "ledger:0119:puc-transmission-lp:5441ac76",
+  "companyName": "PUC Transmission LP",
+  "companyId": "cmrxpj84w00lwivhepnoou4ov",
+  "ownershipPeriodIds": [
+    "cmrxpjt7801izivhe9wzms4b0",
+    "cmsz7mzu1000deyyyaftkuzvx"
+  ],
+  "recordIds": [
+    "OFA-0E0CC3AD5D4F",
+    "OFA-66AA4956CB3E"
+  ],
+  "sourceProductionSnapshotSha256": "47f74f4ab3ae28dfadb7ed68c5f1cbfc4539481f7ed4215fc316918ee752e63c",
+  "sourceLedgerSha256": "82f956bf558147580ab8bb968f28c13988f49ce4eed2775de23579bf7274de70",
+  "generatedFullManifestSha256": "9c0e1ecb761668fb94f3a8d046e0211d76d0011f8e1df1996d19e7ef9ff75424",
+  "scopedManifestSha256": "c5ee2c13189897a8070b9505b682ad716b90b4d3726c1eaf1bad9b87d474b658",
+  "reason": "Task 119 verified a closed 80% Axium Infrastructure / 20% PUC Inc. ownership structure. The applied ownership periods and vehicles are correct, but production still carries a heuristic AxInfra Fund I-IV estimate for Axium and an unresolved attribution for PUC Inc. This scoped correction marks the disclosed Axium Infrastructure Canada II vehicle as DISCLOSED and the retained PUC Inc. stake as DIRECT_PROGRAM, changes no owner, vehicle, stake, date or company field, creates or updates no fund, and leaves every other production row untouched.",
+  "expectedChangedRows": 2,
+  "expectedAlreadyAppliedRows": 0,
+  "fundCreates": 0,
+  "fundUpdates": 0,
+  "ownershipIdentityChanges": 0
+}
