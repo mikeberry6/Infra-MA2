@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0111:generate-capital:f6794437",
+  "taskIndex": 111,
+  "companyName": "Generate Capital",
+  "generatedAt": "2026-08-18T10:26:25.989Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-3/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 111,
+    "taskId": "ledger:0111:generate-capital:f6794437",
+    "canonicalKey": "generate-capital|united-states",
+    "companyName": "Generate Capital",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 18,
+    "managers": [
+      "Australian Super",
+      "CBRE Investment Management",
+      "Harbert Management Corp",
+      "QIC Global Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "018-australian-super:holding:002:generate-capital",
+      "027-cbre-investment-management:holding:007:generate-capital",
+      "050-harbert-management-corp:holding:001:generate-capital",
+      "082-qic-global-infrastructure:holding:002:generate-capital"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjha100zwivhes4yyec81"
+    ],
+    "seedKeys": [
+      "generate capital|United States"
+    ],
+    "evidenceUrls": [
+      "https://generatecapital.com/",
+      "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv",
+      "https://www.businesswire.com/news/home/20210719005233/en/Generate-Closes-%242-Billion-Equity-Raise-from-Global-Institutional-Investors-to-Accelerate-and-Scale-Sustainable-Infrastructure-and-Climate-Solutions",
+      "https://www.generatecapital.com/about",
+      "https://www.harbert.net/news/harbert-management-corporation-announces-agreement-to-acquire-generate-capital/",
+      "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Generate",
+      "https://www.qic.com/what-we-do/infrastructure/global-portfolio/generate-capital/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjha100zwivhes4yyec81",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "generate-capital|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjha100zwivhes4yyec81",
+    "name": "Generate Capital",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Sustainable infrastructure investment and operations",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Generate Capital is an investment and operating platform focused on distributed and sustainable infrastructure assets. Its end markets include clean energy, water, waste, mobility, digital infrastructure, agriculture, and industrial decarbonization customers and partners. The platform uses an asset-heavy model that combines project development, financing, ownership, and operations across thousands of infrastructure assets. Public company materials state that Generate was founded in 2014 and has invested in and operated assets across multiple infrastructure sectors in the United States and other markets. In July 2021, Harbert Infrastructure agreed to acquire an interest in Generate as part of a $2 billion equity raise alongside other institutional investors including AustralianSuper and QIC. Generate continues to operate as a multi-sector sustainable infrastructure platform with institutional backing from those investors and other partners.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2014,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk34s01ykivhe9ebrs0f2",
+        "managerName": "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
+        "organizationName": "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
+        "fundName": null,
+        "vehicleName": "Harbert Infrastructure",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk35a01ylivhev7raodlo",
+        "managerName": "QIC",
+        "organizationName": "QIC",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk35t01ymivhefzdzdiz8",
+        "managerName": "AustralianSuper",
+        "organizationName": "AustralianSuper",
+        "fundName": "AustralianSuper Infrastructure Portfolio",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk36g01ynivhey4te760t",
+        "managerName": "CBRE Investment Management",
+        "organizationName": "CBRE Investment Management",
+        "fundName": null,
+        "vehicleName": "CBRE Caledon",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplwo7048givhev7uo2p34",
+        "date": "2014",
+        "event": "Generate Capital was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2014-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplwoo048hivheekck8svg",
+        "date": "2019",
+        "event": "QIC's portfolio page records the acquisition date for its Generate investment.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplwp8048iivheil13zth7",
+        "date": "Jul 19, 2021",
+        "event": "Generate closed a $2 billion equity raise led by existing investors AustralianSuper and QIC, with new investment from Harbert Management Corporation and CBRE Caledon.",
+        "category": "FINANCING",
+        "sortDate": "2021-07-19T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplwps048jivhe1v8k2r5u",
+        "date": "Nov 16, 2021",
+        "event": "Generate converted to a public benefit corporation.",
+        "category": "OTHER",
+        "sortDate": "2021-11-16T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplwqb048kivhesz7kekjv",
+        "date": "Jan 31, 2024",
+        "event": "Generate announced a $1.5 billion capital raise with new and returning institutional investors including QIC.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-31T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplwqv048livhe6qgf4eak",
+        "date": "Mar 24, 2026",
+        "event": "Generate Capital announced the sale of Equinox Growers Greenhouse Facility to Taylor Farms.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-03-24T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprepe0b17ivhev7m999lr",
+        "label": "Investment date source — QIC — Generate Capital",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Generate",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "QIC initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpreqq0b19ivhehi2q8nmn",
+        "label": "Generatecapital — Generate Capital",
+        "url": "https://www.generatecapital.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Generatecapital company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpreuq0b1bivhemzkxodgt",
+        "label": "Generatecapital — Generate Capital",
+        "url": "https://generatecapital.com/renewable-energy-industry-veterans-launch-generate-capital-first-dedicated-resource-efficiency-finance-company/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Generatecapital transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprewg0b1divhe6s77t9mm",
+        "label": "Close date source — AustralianSuper — Generate Capital",
+        "url": "https://www.businesswire.com/news/home/20210719005233/en/Generate-Closes-%242-Billion-Equity-Raise-from-Global-Institutional-Investors-to-Accelerate-and-Scale-Sustainable-Infrastructure-and-Climate-Solutions",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "AustralianSuper closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpreww0b1eivhez5naupp9",
+        "label": "Close date source — AustralianSuper — Generate Capital",
+        "url": "https://www.businesswire.com/news/home/20210719005233/en/Generate-Closes-%242-Billion-Equity-Raise-from-Global-Institutional-Investors-to-Accelerate-and-Scale-Sustainable-Infrastructure-and-Climate-Solutions",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CBRE Investment Management closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprexw0b1givhejjyrc7g3",
+        "label": "Close date source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Generate Capital",
+        "url": "https://www.harbert.net/assets/press-releases/harbert-infrastructure-generate-press-release-july-19-2021.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harbert Management Corp (Harbert Infra / Gulf Pacific) closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Generate Capital",
+    "investmentFirm": "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
+    "sector": "Power & ET",
+    "subsector": "Sustainable infrastructure investment and operations",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Harbert Infrastructure",
+    "description": "Generate Capital is an investment and operating platform focused on distributed and sustainable infrastructure assets. Its end markets include clean energy, water, waste, mobility, digital infrastructure, agriculture, and industrial decarbonization customers and partners. The platform uses an asset-heavy model that combines project development, financing, ownership, and operations across thousands of infrastructure assets. Public company materials state that Generate was founded in 2014 and has invested in and operated assets across multiple infrastructure sectors in the United States and other markets. In July 2021, Harbert Infrastructure agreed to acquire an interest in Generate as part of a $2 billion equity raise alongside other institutional investors including AustralianSuper and QIC. Generate continues to operate as a multi-sector sustainable infrastructure platform with institutional backing from those investors and other partners.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2014,
+    "investmentYear": 2021,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2014",
+        "event": "Generate Capital was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2019",
+        "event": "QIC's portfolio page records the acquisition date for its Generate investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 19, 2021",
+        "event": "Generate closed a $2 billion equity raise led by existing investors AustralianSuper and QIC, with new investment from Harbert Management Corporation and CBRE Caledon.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 16, 2021",
+        "event": "Generate converted to a public benefit corporation.",
+        "category": "Other"
+      },
+      {
+        "date": "Jan 31, 2024",
+        "event": "Generate announced a $1.5 billion capital raise with new and returning institutional investors including QIC.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 24, 2026",
+        "event": "Generate Capital announced the sale of Equinox Growers Greenhouse Facility to Taylor Farms.",
+        "category": "Divestiture"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — QIC — Generate Capital",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Generate",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Generatecapital — Generate Capital",
+        "url": "https://www.generatecapital.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Generatecapital — Generate Capital",
+        "url": "https://generatecapital.com/renewable-energy-industry-veterans-launch-generate-capital-first-dedicated-resource-efficiency-finance-company/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Close date source — AustralianSuper — Generate Capital",
+        "url": "https://www.businesswire.com/news/home/20210719005233/en/Generate-Closes-%242-Billion-Equity-Raise-from-Global-Institutional-Investors-to-Accelerate-and-Scale-Sustainable-Infrastructure-and-Climate-Solutions",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — CBRE Investment Management — Generate Capital",
+        "url": "https://www.businesswire.com/news/home/20210719005233/en/Generate-Closes-%242-Billion-Equity-Raise-from-Global-Institutional-Investors-to-Accelerate-and-Scale-Sustainable-Infrastructure-and-Climate-Solutions",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Generate Capital",
+        "url": "https://www.harbert.net/assets/press-releases/harbert-infrastructure-generate-press-release-july-19-2021.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
+        "ownershipVehicle": "Harbert Infrastructure",
+        "investmentYear": 2021,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "QIC",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2019,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "AustralianSuper",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "CBRE Investment Management",
+        "ownershipVehicle": "CBRE Caledon",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj18k00bpivheqkog9qdz",
+        "fundName": "AustralianSuper Infrastructure Portfolio",
+        "managerId": "cmrxpi4ja000pivhe73k4hyez",
+        "updatedAt": "2026-07-23T16:09:55.460Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4ja000pivhe73k4hyez",
+        "name": "AustralianSuper",
+        "updatedAt": "2026-07-23T16:09:13.078Z"
+      },
+      {
+        "id": "cmrxpi5yr0014ivheox7bkitj",
+        "name": "CBRE Investment Management",
+        "updatedAt": "2026-07-23T16:09:14.931Z"
+      },
+      {
+        "id": "cmrxpiclq0038ivhe8d6qcg7j",
+        "name": "QIC",
+        "updatedAt": "2026-07-23T16:09:23.534Z"
+      },
+      {
+        "id": "cmrxpijlm005fivheozsm6qzp",
+        "name": "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
+        "updatedAt": "2026-07-23T16:09:32.602Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0111:generate-capital:f6794437",
+    "taskIndex": 111,
+    "canonicalKey": "generate-capital|united-states",
+    "capturedAt": "2026-08-18T10:26:25.989Z",
+    "databaseRevision": "revision:46d7f02e64211fd25f93ee0a22cc7b957d78340bd95666eb00bddec3db942f33",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "eb2097f49a5ba40bc6f783360c0710ab2ae5c9163c6bf78f408888c6ce82b5bf",
+    "productionSnapshotSha256": "b937bad75c80826d70c808839f716dd044918d5fd414aa3287b1374774e4f00b",
+    "targetCompanySnapshotSha256": "03171e39cc691d26ee849d380fb3503f7513fc4f95efdc867eaf56d75f71c042",
+    "seedEntrySha256": "d2761b644b021ba410001451548a42d14d4924909bf561971ae3955c6b3c9c8b",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b701217ed664568a8f03f1b2ff1bd54dcfd68b8dfb3dbed3e894153ee60db8e9",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "99ecc35de61b490154f56fbc511a56cd216b16018963aa419c7d78ce09a6fd72",
+      "organizationsSha256": "82bb589980b455646d52c7b0337b5a7a00f39473c4dd7ce0bf815cf2859919cf",
+      "citationsSha256": "c49caea3778c3212a8e8352caa172a8465bec41595aaacc51d5872c9d895fc20",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "730b7b64a107e8789a2fc3977a27901809e70e29e851779302bacabc69691a4d",
+    "stateSha256": "a31f4b27faeb17505093c017bee393bcc31512df0b72ee73008a0cd8e8713ebb",
+    "taskSnapshotSha256": "3ce1bb45c541dcaac586fe265a43efcd5a0f2b1504f4153965a5da08d065fd2e"
+  },
+  "contextSha256": "4f95998ceb13e9b57612cea7eff9df0779b3a25fd7da0a1b4ced505981890cc1"
+}
