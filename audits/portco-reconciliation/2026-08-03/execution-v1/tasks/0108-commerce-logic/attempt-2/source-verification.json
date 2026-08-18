@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0108:commerce-logic:ec1c3303",
+  "taskIndex": 108,
+  "companyName": "Commerce Logic",
+  "asOfDate": "2026-08-18",
+  "retrievedAt": "2026-08-18T03:49:35.000Z",
+  "methodology": "Codex independently reopened each direct page, confirmed the cited claim in the page content, recorded effective URL and HTTP behavior, and hashed the retrieved bytes. Search-result snippets were not treated as evidence.",
+  "sources": [
+    {
+      "evidenceUrl": "https://astatineip.com/investment/cvo-holding-company-llc/",
+      "verificationUrl": "https://astatineip.com/investment/cvo-holding-company-llc/",
+      "status": "WORKING_STALE_CONTENT_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://astatineip.com/investment/cvo-holding-company-llc/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 24317,
+      "contentSha256": "51823d5f6bf15b4380cff9e556b67bcf13662ff76c4c1f9279c07124043e7ae1",
+      "verifiedClaims": [
+        "Astatine labels CVO Holding Company exited and says Fund III retained an interest in the Commerce Logic add-on.",
+        "The page still calls Commerce Logic active, but it predates the later Fleetworthy transaction and cannot establish current status alone."
+      ]
+    },
+    {
+      "evidenceUrl": "https://astatineip.com/investment/cvo-commerce-logic/",
+      "verificationUrl": "https://astatineip.com/investment/cvo-commerce-logic/",
+      "status": "WORKING_STALE_CONTENT_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://astatineip.com/investment/cvo-commerce-logic/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 24019,
+      "contentSha256": "37ce7cf5e619fe905bbb14457bbcf02e9b831904f3cc36f8bd4c8ab6308346ac",
+      "verifiedClaims": [
+        "Astatine identifies Commerce Logic as a Fund III add-on retained after the majority of CVO operations were divested in 2022.",
+        "The page labels the investment Active but does not mention the subsequent 2025 asset acquisition."
+      ]
+    },
+    {
+      "evidenceUrl": "https://fleetworthy.com/resources/news/fleetworthy-commercelogic-acquisition/",
+      "verificationUrl": "https://fleetworthy.com/resources/news/fleetworthy-commercelogic-acquisition/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://fleetworthy.com/resources/news/fleetworthy-commercelogic-acquisition/",
+      "mediaType": "text/html; charset=UTF-8",
+      "contentLengthBytes": 233843,
+      "contentSha256": "1e2113528650a5f150075cf839c45ccef59b7086302d3cf8501558c40b762334",
+      "verifiedClaims": [
+        "Fleetworthy announced on 2025-07-15 that it acquired Commerce Logic's assets.",
+        "The acquired predictive-tolling technology was integrated into Bestpass by Fleetworthy.",
+        "The page was updated in April 2026 and continues to describe Commerce Logic as acquired and integrated."
+      ],
+      "isPrimary": true
+    },
+    {
+      "evidenceUrl": "https://www.geotab.com/legal/third-party-terms/",
+      "verificationUrl": "https://www.geotab.com/legal/third-party-terms/",
+      "status": "WORKING_HTTP_200",
+      "httpStatus": 200,
+      "finalUrl": "https://www.geotab.com/legal/third-party-terms/",
+      "mediaType": "text/html; charset=utf-8",
+      "contentLengthBytes": 264255,
+      "contentSha256": "8704d8d3546295a7c86f556269ca965c74b4e10c40742bc1725513748fdb28b4",
+      "verifiedClaims": [
+        "Geotab identifies Commerce Logic, LLC as the provider of Tollogic, confirming the legal-name and product boundary."
+      ]
+    }
+  ],
+  "sourceConflictResolution": {
+    "conflict": "Astatine's manager page still labels Commerce Logic Active, while Fleetworthy later states that it acquired Commerce Logic's assets.",
+    "resolution": "The dated 2025 acquirer announcement and 2026-updated integration description supersede the stale manager status for current-ownership purposes."
+  },
+  "exitSearchConclusion": "No later Astatine reacquisition, continuing Commerce Logic operating-company ownership, or signed pending transaction was identified through 2026-08-18.",
+  "primarySourceCount": 1,
+  "allIncludedSourcesVerified": true
+}

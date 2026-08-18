@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T03:19:39.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0108:commerce-logic:ec1c3303",
+  "updatedAt": "2026-08-18T03:52:49.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -16477,20 +16477,26 @@
       "managerIndex": 16,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "1a57a614e608946e49d6795fecc427d74b33434956ec816c7cacb976234f1a4a",
-      "status": "ACTIVE",
+      "status": "EXCLUDED",
       "attempts": 2,
       "startedAt": "2026-08-18T03:19:39.000Z",
-      "updatedAt": "2026-08-18T03:19:39.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-18T03:52:49.000Z",
+      "completedAt": "2026-08-18T03:52:49.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "1ee96f960ede8a31834e895c21c24c1477e1c348e9fd98769fb14a84f1d35a18",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0108-commerce-logic/attempt-2/task-snapshot.json",
+          "sha256": "1ee96f960ede8a31834e895c21c24c1477e1c348e9fd98769fb14a84f1d35a18"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0108-commerce-logic/attempt-2/research-decision.json",
+          "sha256": "ca64ef514be4ca77e5055c9b2fe65dbee4ffc3970bc2d98d1a7f9ac7e9073a4f"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -16536,6 +16542,19 @@
           "reason": null,
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "ACTIVE",
+          "to": "EXCLUDED",
+          "at": "2026-08-18T03:52:49.000Z",
+          "reason": "Astatine's stale Active page is superseded by Fleetworthy's 2025-07-15 asset acquisition; Commerce Logic is no longer a current Astatine holding, and no production or seed record exists to mutate.",
+          "taskSnapshotSha256": "1ee96f960ede8a31834e895c21c24c1477e1c348e9fd98769fb14a84f1d35a18",
+          "evidenceSha256": [
+            "1ee96f960ede8a31834e895c21c24c1477e1c348e9fd98769fb14a84f1d35a18",
+            "ca64ef514be4ca77e5055c9b2fe65dbee4ffc3970bc2d98d1a7f9ac7e9073a4f"
+          ],
           "kind": "TRANSITION"
         }
       ]
@@ -31385,5 +31404,5 @@
       ]
     }
   ],
-  "manifestSha256": "aac24772fc172f90b61ef12f1374f11aaf39c6ffe06e96eff18f83cd88d02ff9"
+  "manifestSha256": "d4fe2f648c476fab8a7596163ed6a734be28058d9abf1aab0c6f2ca83d1da6a7"
 }
