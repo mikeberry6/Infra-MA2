@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0111:generate-capital:f6794437",
+  "taskIndex": 111,
+  "attempt": 2,
+  "validatedAt": "2026-08-18T10:13:53.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a842837-0f80-83ea-bd40-7c31165cf51c",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "terminalMarkerPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "3204792adf8d3e75812a8988db40b992fc3a787476fa94ae6374276c8da55674",
+    "errors": [
+      "The response stopped inside the fourth current-owner record and was invalid JSON."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-18T10:07:33.276Z",
+    "completedAt": "2026-08-18T10:13:38.000Z",
+    "valid": false,
+    "responseSha256": "7d68c64a6b33129dec562225f60f60179fa1f8750533153c7f95bf8b13cabee1",
+    "errors": [
+      "The single permitted repair again stopped inside the fourth current-owner record and was invalid JSON."
+    ]
+  },
+  "finalResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "terminalMarkerPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "result": "FAIL_SECOND_MALFORMED_RESPONSE"
+  },
+  "valid": false,
+  "errors": [
+    "Both the initial response and the one permitted repair were malformed; the workflow must stop on Generate Capital without generating a proposal or advancing the queue."
+  ],
+  "repairsUsed": 1,
+  "independentSourceVerification": null,
+  "finalResearchDecision": {
+    "artifact": "research-decision.json",
+    "decision": "FAILED",
+    "canonicalName": "Generate Capital"
+  },
+  "proposalGenerated": false,
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "releaseStarted": false,
+  "terminalDisposition": "FAILED"
+}
