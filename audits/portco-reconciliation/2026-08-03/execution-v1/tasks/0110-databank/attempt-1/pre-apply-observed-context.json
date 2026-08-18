@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0110:databank:4928f3e2",
+  "taskIndex": 110,
+  "companyName": "DataBank",
+  "generatedAt": "2026-08-18T07:56:27.780Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/pre-apply-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 110,
+    "taskId": "ledger:0110:databank:4928f3e2",
+    "canonicalKey": "databank|united-states",
+    "companyName": "DataBank",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 18,
+    "managers": [
+      "Australian Super",
+      "DigitalBridge",
+      "IMCO",
+      "InfraBridge",
+      "Swiss Life Asset Managers"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "018-australian-super:holding:001:databank",
+      "036-digitalbridge:holding:005:databank",
+      "057-imco:holding:003:databank",
+      "091-swiss-life-asset-managers:holding:002:databank"
+    ],
+    "sourceRepoOnlyIds": [
+      "058-infrabridge:repo-only:004:databank"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj7kw00kzivhenjb9mu5y"
+    ],
+    "seedKeys": [
+      "databank|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.australiansuper.com/-/media/australian-super/files/investments/phd/superannuation/balanced-phd.csv",
+      "https://www.databank.com/company/investors/",
+      "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+      "https://www.databank.com/resources/press-releases/digital-bridge-acquires-databank-launches-data-center-platform/",
+      "https://www.digitalbridge.com/news-and-events/news/2022/10-03-2022-140546216",
+      "https://www.digitalbridge.com/portfolio/databank",
+      "https://www.imcoinvest.com/articles/strategic-approach-to-digitalization-and-connectivity.html"
+    ],
+    "candidateCanonicalKeys": [
+      "databank-databank-holdings-ltd|united-states"
+    ],
+    "rationale": "Census candidate databank-databank-holdings-ltd|united-states overlaps this record without an exact approved identity decision. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Census candidate databank-databank-holdings-ltd|united-states overlaps this record without an exact approved identity decision.",
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj7kw00kzivhenjb9mu5y",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "databank|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj7kw00kzivhenjb9mu5y",
+    "name": "DataBank",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Data Centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "DataBank provides colocation, interconnection, and managed infrastructure services for enterprise, cloud, and artificial-intelligence workloads. Its customers include enterprises, hyperscale users, and network counterparties that require data-center capacity, connectivity, and related managed services across multiple U.S. markets. The operating model is asset-heavy because the business owns and operates data-center facilities and critical power and cooling infrastructure, with revenues generated through long-term capacity, colocation, and service contracts. AustralianSuper describes the platform as one of the larger North American data-center operators, and public disclosures in 2024 referenced more than 65 data centers across 27 key markets and a build-out plan exceeding 850 MW of additional capacity. DataBank was founded in 2005, DigitalBridge has been a long-term sponsor since 2016, and AustralianSuper became a significant minority owner through the 2024 equity raise.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2005,
+    "headquarters": "Texas and nationwide United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjslx01hxivhery0xa53f",
+        "managerName": "AustralianSuper",
+        "organizationName": "AustralianSuper",
+        "fundName": "AustralianSuper Infrastructure Portfolio",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjsmg01hyivheczn6hwqa",
+        "managerName": "Swiss Life",
+        "organizationName": "Swiss Life",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjsmy01hzivhez2e7jdnj",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners, LP",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjsnf01i0ivhebiyk4oiw",
+        "managerName": "IMCO",
+        "organizationName": "IMCO",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkqhi02u0ivhe6mt906id",
+        "date": "2005",
+        "event": "DataBank was founded in Dallas, Texas.",
+        "category": "FOUNDING",
+        "sortDate": "2005-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkqkk02u1ivhen8vkys3t",
+        "date": "Jul 13, 2016",
+        "event": "Digital Bridge acquired DataBank from Avista Capital Partners and launched the platform as its inaugural data-center investment.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-07-13T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkql402u2ivhe80rtjjuz",
+        "date": "Jun 2022",
+        "event": "Swiss Life Asset Managers and EDF Invest agreed to acquire a minority stake in DataBank.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkqln02u3ivhe1fuok7th",
+        "date": "Aug 30, 2022",
+        "event": "DataBank completed the first phase of its recapitalization, with the Swiss Life-led investor consortium and IMCO investing in the platform.",
+        "category": "FINANCING",
+        "sortDate": "2022-08-30T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkqm802u4ivhewup1vpj3",
+        "date": "Oct 15, 2024",
+        "event": "DataBank announced an approximately $2.0 billion equity raise led by AustralianSuper, including a $1.5 billion commitment from the fund.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkqn902u5ivhe41mtqzok",
+        "date": "Jan 30, 2025",
+        "event": "DigitalBridge announced participation in a new DataBank financing and disclosed that it would retain an ownership stake.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-30T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp8dh07uqivheq5ut06k8",
+        "label": "Databank — DataBank",
+        "url": "https://www.databank.com/about-databank/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Databank company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp8eg07usivhe4wcalt13",
+        "label": "Close date source — Swiss Life — DataBank",
+        "url": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Swiss Life closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp8fj07uuivhe9ucf4jvk",
+        "label": "Announcement date source — AustralianSuper — DataBank",
+        "url": "https://www.databank.com/resources/press-releases/databank-announces-2-0-billion-equity-raise-led-by-1-5-billion-investment-from-australiansuper/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "AustralianSuper transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp8go07uwivhef2n0q8ut",
+        "label": "Investment date source — IMCO — DataBank",
+        "url": "https://www.imcoinvest.com/articles/strategic-approach-to-digitalization-and-connectivity.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "IMCO initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp8hr07uyivhee2hzwcs1",
+        "label": "Digitalbridge — DataBank",
+        "url": "https://www.digitalbridge.com/portfolio/databank",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Digitalbridge operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp8iv07v0ivhe4hhdt8oi",
+        "label": "Close date source — DigitalBridge — DataBank",
+        "url": "https://www.databank.com/resources/press-releases/digital-bridge-acquires-databank-launches-data-center-platform/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "DataBank",
+    "investmentFirm": "AustralianSuper",
+    "sector": "Digital",
+    "subsector": "Data Centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "DataBank provides colocation, interconnection, and managed infrastructure services for enterprise, cloud, and artificial-intelligence workloads. Its customers include enterprises, hyperscale users, and network counterparties that require data-center capacity, connectivity, and related managed services across multiple U.S. markets. The operating model is asset-heavy because the business owns and operates data-center facilities and critical power and cooling infrastructure, with revenues generated through long-term capacity, colocation, and service contracts. AustralianSuper describes the platform as one of the larger North American data-center operators, and public disclosures in 2024 referenced more than 65 data centers across 27 key markets and a build-out plan exceeding 850 MW of additional capacity. DataBank was founded in 2005, DigitalBridge has been a long-term sponsor since 2016, and AustralianSuper became a significant minority owner through the 2024 equity raise.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2005,
+    "investmentYear": 2024,
+    "headquarters": "Texas and nationwide United States",
+    "milestones": [
+      {
+        "date": "2005",
+        "event": "DataBank was founded in Dallas, Texas.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jul 13, 2016",
+        "event": "Digital Bridge acquired DataBank from Avista Capital Partners and launched the platform as its inaugural data-center investment.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 2022",
+        "event": "Swiss Life Asset Managers and EDF Invest agreed to acquire a minority stake in DataBank.",
+        "category": "Financing"
+      },
+      {
+        "date": "Aug 30, 2022",
+        "event": "DataBank completed the first phase of its recapitalization, with the Swiss Life-led investor consortium and IMCO investing in the platform.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 15, 2024",
+        "event": "DataBank announced an approximately $2.0 billion equity raise led by AustralianSuper, including a $1.5 billion commitment from the fund.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jan 30, 2025",
+        "event": "DigitalBridge announced participation in a new DataBank financing and disclosed that it would retain an ownership stake.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Databank — DataBank",
+        "url": "https://www.databank.com/about-databank/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Swiss Life — DataBank",
+        "url": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Announcement date source — AustralianSuper — DataBank",
+        "url": "https://www.databank.com/resources/press-releases/databank-announces-2-0-billion-equity-raise-led-by-1-5-billion-investment-from-australiansuper/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — IMCO — DataBank",
+        "url": "https://www.imcoinvest.com/articles/strategic-approach-to-digitalization-and-connectivity.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Digitalbridge — DataBank",
+        "url": "https://www.digitalbridge.com/portfolio/databank",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — DigitalBridge — DataBank",
+        "url": "https://www.databank.com/resources/press-releases/digital-bridge-acquires-databank-launches-data-center-platform/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "AustralianSuper",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Swiss Life",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2016,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "IMCO",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj18k00bpivheqkog9qdz",
+        "fundName": "AustralianSuper Infrastructure Portfolio",
+        "managerId": "cmrxpi4ja000pivhe73k4hyez",
+        "updatedAt": "2026-07-23T16:09:55.460Z"
+      },
+      {
+        "id": "cmsdi3ze7004n7h4sajm63o16",
+        "fundName": "DigitalBridge Partners, LP",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-08-03T17:26:34.735Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi45x000livheo86afepo",
+        "name": "Ardian",
+        "updatedAt": "2026-07-23T16:09:12.597Z"
+      },
+      {
+        "id": "cmrxpi4ja000pivhe73k4hyez",
+        "name": "AustralianSuper",
+        "updatedAt": "2026-07-23T16:09:13.078Z"
+      },
+      {
+        "id": "cmrxpi5yr0014ivheox7bkitj",
+        "name": "CBRE Investment Management",
+        "updatedAt": "2026-07-23T16:09:14.931Z"
+      },
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      },
+      {
+        "id": "cmrxpic3o0032ivhe1bvmxxsl",
+        "name": "Northleaf Capital Partners",
+        "updatedAt": "2026-07-23T16:09:22.884Z"
+      },
+      {
+        "id": "cmrxpidr1003livhe5encc8al",
+        "name": "Swiss Life Asset Managers",
+        "updatedAt": "2026-07-23T16:09:25.021Z"
+      },
+      {
+        "id": "cmrxpigqi004jivheokoqn6ry",
+        "name": "Swiss Life",
+        "updatedAt": "2026-07-23T16:09:28.890Z"
+      },
+      {
+        "id": "cmrxpigvp004kivhexrl7azkc",
+        "name": "IMCO",
+        "updatedAt": "2026-07-23T16:09:29.077Z"
+      },
+      {
+        "id": "cmrxpirz10081ivheut9hcdsg",
+        "name": "Nuveen Infrastructure",
+        "updatedAt": "2026-07-23T16:09:43.453Z"
+      },
+      {
+        "id": "cmrxpisf60086ivhe0dkd1w0c",
+        "name": "InfraBridge (DigitalBridge)",
+        "updatedAt": "2026-07-23T16:09:44.034Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0110:databank:4928f3e2",
+    "taskIndex": 110,
+    "canonicalKey": "databank|united-states",
+    "capturedAt": "2026-08-18T07:56:27.780Z",
+    "databaseRevision": "revision:fa0bfd39329e6f58ea9149d8785bba49cadd9ab2ffa3663c1a72405e7fd6c4b4",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e640a6f305c6e645a460be281a0b6716c2a98926eb3b2392ec27ba40883ad4eb",
+    "productionSnapshotSha256": "b2040525052a254a5ba6c1ca71fe8957b86e420a58fbb6325c7460cd7e62b23d",
+    "targetCompanySnapshotSha256": "0f7651728803ed929b34a92aa43eecf6c44c717c91ab37db25e4bbe6f173ea5c",
+    "seedEntrySha256": "d81c3ee55265d9976dbab8ffba445bd77e0e2c0f678b55722c46591e58e5e62e",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8263e08e509b3d6ba128fccf3b4f06239a468499454bc0663c53c053bab37e07",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "ed2cc3e5047ef8b0e4872379e2941accd2bc90d43ca781d11152dc4acabd0fe3",
+      "organizationsSha256": "3bbbaa3b62a41915de54a32bd255e833c13623e0e655562b7cc5c7c1d8b13a88",
+      "citationsSha256": "c947b0f47577ef169b152ee60a3f0eedc54ce12ee898e321905ca052a2fc0e95",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "2a09f0bc866cd479a8d1d24b34f3f93332d6fdb871b183334f4b555247f8e3ae",
+    "stateSha256": "d3188211c0efd6ee9336a3683dbfe991b39b8180dbd6640e2094894c5b8c48d0",
+    "taskSnapshotSha256": "2b6a075be6666e8b99fa485a9f1ebe2b92c3f4d0885a9509240369b78619edf2"
+  },
+  "contextSha256": "f1be1d6e941251af9bd8d0eaba78f45b18085610a2e6fe327e34b0b8759c2761"
+}
