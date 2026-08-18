@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T21:02:30.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-18T21:43:45.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0119:puc-transmission-lp:5441ac76",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -18042,18 +18042,27 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "7526835e8e10589d1e78ed472d44df33bfdfb5b5fe192be85cdde3d361c0f6bd",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-18T21:07:12.000Z",
+      "updatedAt": "2026-08-18T21:43:45.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ac3f273a04e72ec5c32c91ddf9e0edda6b7f154ceae003e1044e678df13b6f89",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0119-puc-transmission-lp/attempt-1/locked-task-snapshot.json",
+          "sha256": "ac3f273a04e72ec5c32c91ddf9e0edda6b7f154ceae003e1044e678df13b6f89"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0119-puc-transmission-lp-v1/proposal.json",
+          "sha256": "6c1c7770b52e182e79e6441c631751f620dae3a37494d884ff94484ea395c320"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0119-puc-transmission-lp-v1.json",
+          "sha256": "158bc922c9843aeb3f47ce9654306d41a2eb79a88553e9b6de5179249bacf15e"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -18069,6 +18078,51 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-18T21:07:12.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-18T21:43:06.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ac3f273a04e72ec5c32c91ddf9e0edda6b7f154ceae003e1044e678df13b6f89",
+          "evidenceSha256": [
+            "6c1c7770b52e182e79e6441c631751f620dae3a37494d884ff94484ea395c320",
+            "ac3f273a04e72ec5c32c91ddf9e0edda6b7f154ceae003e1044e678df13b6f89"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-18T21:43:13.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ac3f273a04e72ec5c32c91ddf9e0edda6b7f154ceae003e1044e678df13b6f89",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-18T21:43:45.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "ac3f273a04e72ec5c32c91ddf9e0edda6b7f154ceae003e1044e678df13b6f89",
+          "evidenceSha256": [
+            "158bc922c9843aeb3f47ce9654306d41a2eb79a88553e9b6de5179249bacf15e"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -32519,5 +32573,5 @@
       ]
     }
   ],
-  "manifestSha256": "15970a1184badfbe9927bf211d16e7985fc3ae0a206f6673e07006a5a89b6ace"
+  "manifestSha256": "66c5c25bd022009cf84e8d65cad1a6b6b158503aa7598d48124dc53e26719814"
 }

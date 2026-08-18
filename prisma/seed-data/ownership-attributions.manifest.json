@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_SEED_MANIFEST",
-  "sourceApplyManifestSha256": "7c10ed5f1a5d1ea3059208a02bbe718729a5a9bdf3ac72d68f2e926b15b126e1",
-  "sourceLedgerSha256": "6f9bb7495afd36f1aca6a8423c3e999b118b87e3f72e2a5f9ce11b5e1d2ad24f",
+  "sourceApplyManifestSha256": "0ea556bc16501245e6f465b99aa0eb482544fe9c85cdfd72edb1fbd32dbbc10d",
+  "sourceLedgerSha256": "f044621aafaefe8d0a22381e41456bc8df32c6aaaa50aed14ded9b9f544d0838",
   "policy": {
     "fundCreates": 0,
     "fundUpdates": 0,
-    "inferredAssignments": 589
+    "inferredAssignments": 588
   },
-  "recordCount": 1285,
+  "recordCount": 1286,
   "records": [
     {
       "recordId": "OFA-674978762296",
@@ -3924,23 +3924,43 @@
       ]
     },
     {
-      "recordId": "OFA-4335DDCC5C1A",
+      "recordId": "OFA-F9763A6201F4",
       "companyName": "PUC Transmission LP",
       "country": "Canada",
       "investmentFirm": "Axium Infrastructure",
-      "currentVehicleName": "Axium Managed Funds",
+      "currentVehicleName": "Axium Infrastructure Canada II Limited Partnership / Axium TransCo LP",
       "investmentYear": 2024,
-      "stake": null,
-      "targetLinkedFundName": "AxInfra Fund I-IV",
-      "fundAttribution": "INFERRED",
-      "attributedFundName": "AxInfra Fund I-IV",
-      "attributionConfidence": "LOW",
-      "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+      "stake": "80%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Axium Infrastructure Canada II Limited Partnership",
+      "attributionConfidence": null,
+      "attributionRationale": "Axium's acquisition release and the Ontario Energy Board ownership schedule identify the disclosed Axium Infrastructure Canada II / Axium TransCo ownership chain. The vehicle remains unlinked because it is not a production-curated fund, rather than being inferred to the generic AxInfra Fund I-IV record.",
       "evidenceUrls": [
         "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+        "https://www.rds.oeb.ca/CMWebDrawer/Record/882184/File/document",
+        "https://saultstemarie.ca/wp-content/uploads/2025/07/2024_05_13-Minutes.pdf",
         "https://puctransmissionlp.com/",
-        "https://www.puc.ca/about-puc/",
-        "https://oeb.ca/sites/default/files/PUC%20HOSSM%20Backgrounder-27-08-24-FINAL.pdf"
+        "https://www.puc.ca/about-puc/"
+      ]
+    },
+    {
+      "recordId": "OFA-EB10275538E6",
+      "companyName": "PUC Transmission LP",
+      "country": "Canada",
+      "investmentFirm": "PUC Inc.",
+      "currentVehicleName": "PUC (Transmission) LP Inc. / PUC (Transmission) GP Inc.",
+      "investmentYear": 2021,
+      "stake": "20%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "PUC Inc.'s retained 20% interest is a direct corporate ownership position documented by the municipal authorization and the Ontario Energy Board ownership schedule, not an investment-fund attribution.",
+      "evidenceUrls": [
+        "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+        "https://www.rds.oeb.ca/CMWebDrawer/Record/882184/File/document",
+        "https://saultstemarie.ca/wp-content/uploads/2025/07/2024_05_13-Minutes.pdf"
       ]
     },
     {
@@ -25823,5 +25843,5 @@
       ]
     }
   ],
-  "manifestSha256": "65aa4688eea632083087f14ca0ea03a2b8f0dfaec11df81c33494928fa597361"
+  "manifestSha256": "c9948fa2d876da65ff98823a068b61e7dd7d5d123f8f4ee1a69246cf5997ed98"
 }

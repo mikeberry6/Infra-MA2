@@ -1,0 +1,203 @@
+{
+  "asOfDate": "2026-08-18",
+  "requestedCompany": "PUC Transmission LP",
+  "requestedManager": "Axium Infrastructure",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "Reject the queued ADD_PENDING_TRANSACTION action. Axium's September 25, 2024 release states that a managed fund had acquired 80%, and the OEB's December 31, 2024 ownership schedule places that interest beneath Axium Infrastructure Canada II Limited Partnership through Axium TransCo. PUC Inc. retains the 20% balance. No later ownership change or pending exit was found.",
+  "identityResolution": {
+    "canonicalLegalName": "PUC (Transmission) LP",
+    "canonicalDisplayName": "PUC Transmission LP",
+    "aliases": [
+      "PUC (Transmission) LP",
+      "PUC TransCo",
+      "PUC Transmission",
+      "PUCT"
+    ],
+    "officialWebsite": "https://puctransmissionlp.com/",
+    "headquartersOrOperatingLocation": "Sault Ste. Marie, Ontario",
+    "country": "Canada",
+    "platformBoundary": "Count one regulated transmission project company for Tagona West TS and the approximately 10 route-km dual-circuit 230 kV line. PUC Inc., PUC Services, PUC holding/GP entities, Hydro One Sault Ste. Marie LP, Algoma Steel, the OEB, contractors and individual facilities are not separate PortCos within this record.",
+    "duplicateDecision": "Correct the existing production company in place; create no duplicate."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Normalize Axium and Axium Infrastructure Inc. to Axium Infrastructure. Remove the unsupported generic AxInfra Fund I-IV / Axium Managed Funds attribution. Preserve Axium Infrastructure Canada II Limited Partnership and Axium TransCo LP as the disclosed vehicle chain because the matching fund is not production-curated.",
+    "currentInfrastructureManagerOwners": [
+      {
+        "manager": "Axium Infrastructure",
+        "organization": "Axium Infrastructure",
+        "fund": "NOT_LINKED - no matching production-curated Fund row",
+        "vehicle": "Axium Infrastructure Canada II Limited Partnership / Axium TransCo LP",
+        "stake": "80%",
+        "announcementDate": "2024-09-25",
+        "entryDate": "No later than 2024-09-25; exact legal close date not publicly disclosed",
+        "entryYear": 2024,
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "manager": "PUC Inc.",
+        "organization": null,
+        "fund": null,
+        "vehicle": "PUC (Transmission) LP Inc. / PUC (Transmission) GP Inc.",
+        "stake": "20%",
+        "announcementDate": null,
+        "entryDate": "NOT_PUBLICLY_DISCLOSED",
+        "entryYear": 2021,
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerInfrastructureManagerOwners": [],
+    "pendingOwnershipTransactions": [],
+    "duplicateOwnerAction": "Update the existing Axium period and add one unlinked PUC Inc. co-owner period. Do not add a pending transaction or duplicate Axium row."
+  },
+  "operatingResolution": {
+    "sector": "UTILITIES",
+    "subsector": "Transmission",
+    "region": "NORTH_AMERICA",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "PUC Transmission LP is an Ontario regulated transmitter developing, financing, constructing and operating Tagona West Transformer Station and an approximately 10 route-km dual-circuit 230 kV line in Sault Ste. Marie.",
+    "companyStatus": "ACTIVE",
+    "yearFounded": 2021,
+    "productsAndServices": "Regulated development, financing, ownership and operation of high-voltage transmission facilities.",
+    "customersAndEndMarkets": "Algoma Steel is the primary approximately 300 MW customer; the project also supports industrial growth, system reliability and regional energy security.",
+    "footprint": "Tagona West TS to Hydro One's Third Line TS in Sault Ste. Marie; approximately 20 circuit-km.",
+    "disclosedScale": [
+      "Approximately C$230 million",
+      "Two 400 MVA circuits",
+      "Q1 2028 construction completion; January 2028 energization"
+    ]
+  },
+  "acquisitionExitCheck": {
+    "entry": "Axium announced on September 25, 2024 that one of its managed funds had acquired 80%. The exact legal close date is not publicly disclosed, but closing occurred no later than the announcement date.",
+    "currentStatus": "CLOSED_ACTIVE. The OEB's December 31, 2024 schedule shows AIC II / Axium TransCo holding 80%, PUC Inc. retains 20%, and 2025-2026 regulatory and construction evidence shows continued activity.",
+    "subsequentExitSearch": "No later sale, divestiture, secondary, transfer, recapitalization changing ownership, pending exit, cancellation, abandonment or licence revocation was identified through 2026-08-18."
+  },
+  "milestones": [
+    {
+      "date": "Early 2021",
+      "event": "PUC Transmission was incorporated to develop and operate transmission infrastructure in Sault Ste. Marie.",
+      "category": "FOUNDING",
+      "evidenceUrls": [
+        "https://www.puc.ca/about-puc/",
+        "https://puctransmissionlp.com/faqs/faqs/"
+      ]
+    },
+    {
+      "date": "Aug 27, 2024",
+      "event": "The Ontario Energy Board granted PUC (Transmission) LP leave to construct Tagona West TS and its 230 kV transmission line.",
+      "category": "EXPANSION",
+      "evidenceUrls": [
+        "https://www.rds.oeb.ca/CMWebDrawer/Record/863301/File/document"
+      ]
+    },
+    {
+      "date": "Sep 25, 2024",
+      "event": "Axium announced that a managed fund had acquired an 80% equity interest; PUC Inc. retained the 20% balance.",
+      "category": "ACQUISITION",
+      "evidenceUrls": [
+        "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+        "https://www.rds.oeb.ca/CMWebDrawer/Record/882184/File/document",
+        "https://saultstemarie.ca/wp-content/uploads/2025/07/2024_05_13-Minutes.pdf"
+      ]
+    },
+    {
+      "date": "Apr 10, 2025",
+      "event": "The OEB issued electricity transmission licence ET-2021-0088 after the 2021 conditional approval and 2024 leave-to-construct decision.",
+      "category": "OTHER",
+      "evidenceUrls": [
+        "https://www.rds.oeb.ca/CMWebDrawer/Record/894912/File/document"
+      ]
+    },
+    {
+      "date": "May 19, 2026",
+      "event": "PUC selected S.&T. Electrical to build the line and station and reported a Q1 2028 completion target.",
+      "category": "EXPANSION",
+      "evidenceUrls": [
+        "https://puctransmissionlp.com/news/ViewOneBooking/?id=8",
+        "https://puctransmissionlp.com/faqs/faqs/"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "label": "Axium PUC TransCo acquisition release",
+      "url": "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+      "purpose": "Completed acquisition, 80% stake, PUC partnership and infrastructure-strategy basis.",
+      "sourceTier": "MANAGER_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "OEB Axium affiliate ownership schedule",
+      "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/882184/File/document",
+      "purpose": "AIC II / Axium TransCo chain and current 80% ownership.",
+      "sourceTier": "REGULATOR_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "City of Sault Ste. Marie council minutes",
+      "url": "https://saultstemarie.ca/wp-content/uploads/2025/07/2024_05_13-Minutes.pdf",
+      "purpose": "PUC Inc. 20% equity contribution and project-funding context.",
+      "sourceTier": "MUNICIPAL_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "PUC Transmission FAQ",
+      "url": "https://puctransmissionlp.com/faqs/faqs/",
+      "purpose": "Current project scope, cost, customer, scale and Q1 2028 schedule.",
+      "sourceTier": "COMPANY_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "OEB leave-to-construct decision",
+      "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/863301/File/document",
+      "purpose": "August 27, 2024 regulatory approval and entity boundary.",
+      "sourceTier": "REGULATOR_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "OEB licence issuance decision",
+      "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/894912/File/document",
+      "purpose": "2021 conditional approval and April 10, 2025 licence issuance.",
+      "sourceTier": "REGULATOR_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "PUC May 2026 construction update",
+      "url": "https://puctransmissionlp.com/news/ViewOneBooking/?id=8",
+      "purpose": "Current development activity, contractor and completion schedule.",
+      "sourceTier": "COMPANY_OFFICIAL",
+      "workingStatus": "WORKING",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "beforeAfterChanges": [
+    "Reject ADD_PENDING_TRANSACTION and keep the pending array empty.",
+    "Keep Axium CLOSED_ACTIVE from 2024, set stake to 80%, remove the unsupported generic fund link and record the disclosed AIC II / Axium TransCo vehicle chain.",
+    "Add PUC Inc. as the active 20% co-owner without inventing an infrastructure-fund relationship.",
+    "Add the verified legal-name aliases, official website and Sault Ste. Marie operating location.",
+    "Correct the 2021 licence milestone to the April 10, 2025 issuance and the leave-to-construct date to August 27, 2024.",
+    "Replace the stale end-2027 expectation with the current Q1 2028 schedule and current C$230 million / two-400-MVA-circuit scale."
+  ],
+  "excludedOrDuplicateCandidates": [
+    "PUC Inc., PUC Services Inc. and the Public Utilities Commission: parent, service or municipal bodies, not separate manager-level PortCos.",
+    "PUC (Transmission) LP Inc. and PUC (Transmission) GP Inc.: holding/general-partner vehicles.",
+    "Hydro One Sault Ste. Marie LP, Hydro One, Algoma Steel, the OEB and S.&T. Electrical: separate infrastructure, customer, regulator or contractor parties.",
+    "Tagona West TS and the individual line: underlying facilities."
+  ],
+  "unresolvedQuestions": [],
+  "recommendedListAction": "Update existing company cmrxpj84w00lwivhepnoou4ov with CORRECT_COMPANY and ADD_OWNER. Add no pending transaction."
+}

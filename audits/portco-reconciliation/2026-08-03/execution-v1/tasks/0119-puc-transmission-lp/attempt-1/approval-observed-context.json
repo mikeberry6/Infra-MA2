@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0119:puc-transmission-lp:5441ac76",
+  "taskIndex": 119,
+  "companyName": "PUC Transmission LP",
+  "generatedAt": "2026-08-18T21:43:35.797Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0119-puc-transmission-lp/attempt-1/approval-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 119,
+    "taskId": "ledger:0119:puc-transmission-lp:5441ac76",
+    "canonicalKey": "puc-transmission-lp|canada",
+    "companyName": "PUC Transmission LP",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 19,
+    "managers": [
+      "Axium Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "019-axium-infrastructure:holding:031:puc-transmission-lp"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj84w00lwivhepnoou4ov"
+    ],
+    "seedKeys": [
+      "puc transmission lp|Canada"
+    ],
+    "evidenceUrls": [
+      "https://puctransmissionlp.com/",
+      "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj84w00lwivhepnoou4ov",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "puc-transmission-lp|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj84w00lwivhepnoou4ov",
+    "name": "PUC Transmission LP",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Transmission",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "PUC Transmission LP is a regulated transmission development platform in Sault Ste. Marie, Ontario. The company is developing a 230 kV transmission line and transformer station intended to connect new industrial and regional loads, including Algoma Steel’s electric arc furnace project. Its operating model is asset-heavy and regulated, with cost recovery and allowed returns governed by Ontario’s utility regulatory framework rather than merchant power exposure. Public materials describe the project as approximately 10 kilometers of double-circuit line and a new 230 kV station, with commercial operation expected by the end of 2027. PUC Transmission was incorporated in 2021, and Axium acquired an 80% equity interest in 2024 while the Public Utility Commission of Sault Ste. Marie retained 20%.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2021,
+    "headquarters": "Ontario",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjt7801izivhe9wzms4b0",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": "AxInfra Fund I-IV",
+        "vehicleName": "Axium Managed Funds",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpksw202wsivhebobtp8bc",
+        "date": "2021",
+        "event": "PUC Transmission LP was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkswm02wtivhe1gnpbucx",
+        "date": "Oct 2021",
+        "event": "PUC Transmission received its Ontario transmission licence.",
+        "category": "OTHER",
+        "sortDate": "2021-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpksx702wuivheb8u4torf",
+        "date": "Sep 25, 2024",
+        "event": "Axium Infrastructure announced the acquisition of an 80% equity interest in PUC Transmission LP.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-09-25T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkszx02wvivheud4qlhgu",
+        "date": "Aug 28, 2024",
+        "event": "The Ontario Energy Board approved the leave-to-construct application for the transmission line and station.",
+        "category": "EXPANSION",
+        "sortDate": "2024-08-28T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkt0f02wwivheoegw9ite",
+        "date": "2027",
+        "event": "Commercial operation is expected by the end of 2027 according to public project materials.",
+        "category": "EXPANSION",
+        "sortDate": "2027-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppd34081xivhe4t445uhj",
+        "label": "Announcement date source — Axium Infrastructure — PUC Transmission LP",
+        "url": "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Axium Infrastructure transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppd4b081zivhemlg0xs06",
+        "label": "Puctransmissionlp — PUC Transmission LP",
+        "url": "https://puctransmissionlp.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Puctransmissionlp company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppd5f0821ivhe3qg2hgj8",
+        "label": "Puc — PUC Transmission LP",
+        "url": "https://www.puc.ca/about-puc/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Puc company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppd8q0823ivhejs2gjjj6",
+        "label": "Oeb — PUC Transmission LP",
+        "url": "https://oeb.ca/sites/default/files/PUC%20HOSSM%20Backgrounder-27-08-24-FINAL.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Oeb — PUC Transmission LP",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "PUC Transmission LP",
+    "investmentFirm": "Axium Infrastructure",
+    "sector": "Utilities",
+    "subsector": "Transmission",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Axium Managed Funds",
+    "description": "PUC Transmission LP is a regulated transmission development platform in Sault Ste. Marie, Ontario. The company is developing a 230 kV transmission line and transformer station intended to connect new industrial and regional loads, including Algoma Steel’s electric arc furnace project. Its operating model is asset-heavy and regulated, with cost recovery and allowed returns governed by Ontario’s utility regulatory framework rather than merchant power exposure. Public materials describe the project as approximately 10 kilometers of double-circuit line and a new 230 kV station, with commercial operation expected by the end of 2027. PUC Transmission was incorporated in 2021, and Axium acquired an 80% equity interest in 2024 while the Public Utility Commission of Sault Ste. Marie retained 20%.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 2021,
+    "investmentYear": 2024,
+    "headquarters": "Ontario",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "PUC Transmission LP was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Oct 2021",
+        "event": "PUC Transmission received its Ontario transmission licence.",
+        "category": "Other"
+      },
+      {
+        "date": "Sep 25, 2024",
+        "event": "Axium Infrastructure announced the acquisition of an 80% equity interest in PUC Transmission LP.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 28, 2024",
+        "event": "The Ontario Energy Board approved the leave-to-construct application for the transmission line and station.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2027",
+        "event": "Commercial operation is expected by the end of 2027 according to public project materials.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Axium Infrastructure — PUC Transmission LP",
+        "url": "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Puctransmissionlp — PUC Transmission LP",
+        "url": "https://puctransmissionlp.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Puc — PUC Transmission LP",
+        "url": "https://www.puc.ca/about-puc/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Oeb — PUC Transmission LP",
+        "url": "https://oeb.ca/sites/default/files/PUC%20HOSSM%20Backgrounder-27-08-24-FINAL.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Axium Infrastructure",
+        "ownershipVehicle": "Axium Managed Funds",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj19600bqivhe63qqb0hm",
+        "fundName": "AxInfra Fund I-IV",
+        "managerId": "cmrxpi4m0000qivheeg0vfmvn",
+        "updatedAt": "2026-07-23T16:09:55.482Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4m0000qivheeg0vfmvn",
+        "name": "Axium Infrastructure",
+        "updatedAt": "2026-07-23T16:09:13.176Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0119:puc-transmission-lp:5441ac76",
+    "taskIndex": 119,
+    "canonicalKey": "puc-transmission-lp|canada",
+    "capturedAt": "2026-08-18T21:43:35.797Z",
+    "databaseRevision": "revision:74b63ce950b4b7a588cc8b45a1d1ba63a9735e8aec3c0d855ece33285dd78691",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "7526835e8e10589d1e78ed472d44df33bfdfb5b5fe192be85cdde3d361c0f6bd",
+    "productionSnapshotSha256": "d50760358565eeed958eb0c27fec9dca2d789b1dbb3fd5d887493d4925bf615c",
+    "targetCompanySnapshotSha256": "f9ba89ffd7fe8d126275bde677cb7bc056cebc34b5e9b9a32e926d0b66c8307f",
+    "seedEntrySha256": "a4c990225c140ae40d6ac213f7b211664de50afb1520640172f5af58d377bc55",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "a10d8b15b8ec2be6de402f973695acfd1326006b4bfebf395f42c57cacc1f12d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "9006b36c9c95fa66723514d5416ff2c0a0065565a6ef9f82f75005182bec322c",
+      "organizationsSha256": "4232d4dc8383fded1a17b033133ecf7709e8286593de3a960758bbf61cc086bc",
+      "citationsSha256": "8f81f9cdaef44c7ca01967f3c141808440f65e5f22fa17d519c59491708091d9",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "5605b7380f398571a1fba24518cc3925bcad1bb54581c4f06fa591944cefb97a",
+    "stateSha256": "1525c0f9955d43893781c53f0b88382a20087b029c5c3b88a5aa4ba9e1cfe18a",
+    "taskSnapshotSha256": "1f55f14dbd188482a2c7df2a32cdd7a76d076bd1462826434791c8f5de779b0d"
+  },
+  "contextSha256": "a8a517f8d08f0fb3b5e077a21a8e9c51a93bb415c54d98980a1897014fca8002"
+}

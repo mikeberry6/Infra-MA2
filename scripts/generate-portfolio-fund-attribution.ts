@@ -414,6 +414,30 @@ const ATTRIBUTION_ONLY_FUNDS: CandidateFund[] = [
 
 const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
   {
+    companyName: "PUC Transmission LP",
+    investmentFirm: "Axium Infrastructure",
+    attribution: "DISCLOSED",
+    confidence: "HIGH",
+    attributedFundName: "Axium Infrastructure Canada II Limited Partnership",
+    rationale: "Axium's acquisition release and the Ontario Energy Board ownership schedule identify the disclosed Axium Infrastructure Canada II / Axium TransCo ownership chain. The vehicle remains unlinked because it is not a production-curated fund, rather than being inferred to the generic AxInfra Fund I-IV record.",
+    sourceUrls: [
+      "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+      "https://www.rds.oeb.ca/CMWebDrawer/Record/882184/File/document",
+    ],
+  },
+  {
+    companyName: "PUC Transmission LP",
+    investmentFirm: "PUC Inc.",
+    attribution: "DIRECT_PROGRAM",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "PUC Inc.'s retained 20% interest is a direct corporate ownership position documented by the municipal authorization and the Ontario Energy Board ownership schedule, not an investment-fund attribution.",
+    sourceUrls: [
+      "https://saultstemarie.ca/wp-content/uploads/2025/07/2024_05_13-Minutes.pdf",
+      "https://www.rds.oeb.ca/CMWebDrawer/Record/882184/File/document",
+    ],
+  },
+  {
     companyName: "Montreal Gateway Terminals Partnership",
     investmentFirm: "Axium Infrastructure",
     attribution: "DISCLOSED",
