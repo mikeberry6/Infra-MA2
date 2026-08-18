@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
   "asOfDate": "2026-08-18",
-  "ledgerSha256": "954ab208ad5e8c2296a27aaa1fed6a3bcf10e7d8b04c0ce27f93aa7e306add0e",
+  "ledgerSha256": "66ce720d7ddbc862cb563d5bb3d1ce6b9be7bd62c19d0bf3144d266595367141",
   "sourceSnapshotSha256": null,
   "policy": {
     "sourceScope": "EVALUATED_SEED",
@@ -18,12 +18,12 @@
     "ownershipIdentityChanges": 0,
     "attributionCounts": {
       "DISCLOSED": 605,
-      "INFERRED": 593,
+      "INFERRED": 592,
       "DIRECT_PROGRAM": 84,
-      "UNRESOLVED": 1
+      "UNRESOLVED": 2
     },
-    "inferredWrites": 593,
-    "fundLinkChanges": 664
+    "inferredWrites": 592,
+    "fundLinkChanges": 663
   },
   "expectedMutationCount": 1283,
   "mutations": [
@@ -36022,16 +36022,16 @@
       "databaseVehicleName": "Axium LTC Limited Partnership",
       "investmentYear": 2017,
       "stake": "85% current (75% at formation)",
-      "targetLinkedFundName": "AxInfra Fund I-IV",
+      "targetLinkedFundName": null,
       "expected": {
         "fundAttribution": "UNRESOLVED",
         "currentLinkedFundName": null
       },
       "set": {
-        "fundAttribution": "INFERRED",
-        "attributedFundName": "AxInfra Fund I-IV",
-        "attributionConfidence": "LOW",
-        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Reviewed current ownership evidence identifies Axium LTC Limited Partnership as the holding vehicle and Axium Infrastructure as the 85% owner, but does not disclose a commingled fund. The vehicle is intentionally left unlinked rather than inferred to AxInfra Fund I-IV."
       },
       "evidenceUrls": [
         "https://extendicare-1c124.kxcdn.com/app/uploads/2026/08/EXE-Q2-2026-Interim-MDA-vSedar2.pdf?x89279=",
@@ -36067,5 +36067,5 @@
       ]
     }
   ],
-  "manifestSha256": "919b1bcab2be2d7d65866f00cf297fc4f9007bb19e86bb49323590d60c909f91"
+  "manifestSha256": "f87adc1e85fd435d5749f1952cc3fcd940a8a34d93ecb0f7674f48614c224747"
 }

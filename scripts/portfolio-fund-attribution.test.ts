@@ -24,16 +24,23 @@ describe("portfolio fund attribution ledger", () => {
     expect(inferred.every((row) => !!row.disclosedOrEstimatedFundName && !!row.rationale)).toBe(true);
   });
 
-  it("leaves a reviewed owner unresolved when the current vehicle is not public", () => {
+  it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(1);
-    expect(unresolved[0]).toMatchObject({
+    expect(unresolved).toHaveLength(2);
+    expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Virginia International Gateway",
       investmentFirm: "Astatine Investment Partners",
       attributedFundName: null,
       targetLinkedFundName: null,
       proposedAction: "RESEARCH_REQUIRED",
-    });
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Axium Extendicare LTC II LP",
+      investmentFirm: "Axium Infrastructure",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
   });
 
   it("keeps fund-database additions behind the separate size gate", () => {
