@@ -488,6 +488,15 @@ const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
     sourceUrls: ["https://swisslife.tools.factsheetslive.com/portfolioplaner/product/LU2781073882/documents/jb/"],
   },
   {
+    companyName: "DataBank",
+    investmentFirm: "Swiss Life Asset Managers",
+    attribution: "DISCLOSED",
+    confidence: "HIGH",
+    attributedFundName: "Swiss Life Funds (LUX) ESG Global Infrastructure Opportunities III",
+    rationale: "Swiss Life reporting identifies Global Infrastructure Opportunities III (GIO III) as the lead fund for the DataBank co-investment.",
+    sourceUrls: ["https://swisslife.tools.factsheetslive.com/portfolioplaner/product/LU2781073882/documents/jb/"],
+  },
+  {
     companyName: "Flamingo Crossings Village",
     investmentFirm: "Swiss Life",
     attribution: "INFERRED",

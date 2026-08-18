@@ -52,8 +52,8 @@ describe("portfolio fund attribution seed manifest", () => {
     const ownerKeys = owners.map(ownerKey);
     const manifestKeys = manifest.records.map(ownerKey);
 
-    expect(manifest.records).toHaveLength(1_280);
-    expect(owners).toHaveLength(1_280);
+    expect(manifest.records).toHaveLength(1_283);
+    expect(owners).toHaveLength(1_283);
     expect(new Set(ownerKeys)).toHaveProperty("size", ownerKeys.length);
     expect(new Set(manifestKeys)).toHaveProperty("size", manifestKeys.length);
     expect([...manifestKeys].sort()).toEqual([...ownerKeys].sort());
@@ -64,8 +64,8 @@ describe("portfolio fund attribution seed manifest", () => {
     const inferred = manifest.records.filter((record) => record.fundAttribution === "INFERRED");
     expect(manifest.policy.fundCreates).toBe(0);
     expect(manifest.policy.fundUpdates).toBe(0);
-    expect(manifest.policy.inferredAssignments).toBe(592);
-    expect(inferred).toHaveLength(592);
+    expect(manifest.policy.inferredAssignments).toBe(594);
+    expect(inferred).toHaveLength(594);
     expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(1);
     expect(manifest.records.every((record) => (
       record.fundAttribution !== "INFERRED"
