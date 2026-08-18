@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0108:commerce-logic:ec1c3303",
+  "taskIndex": 108,
+  "attempt": 1,
+  "validatedAt": "2026-08-18T03:11:00.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a83c7f9-5e48-83ea-a46f-6281539bc6fe",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManager",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "8aaefc69347084ea076152e75a837e8403a9be5d571465ada8b1d888e9660053",
+    "errors": [
+      "JSON truncated inside operatingResolution.footprint",
+      "Mandatory schema remainder omitted",
+      "asOfDate was 2026-08-17 instead of 2026-08-18"
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-18T03:05:41.417Z",
+    "completedAt": "2026-08-18T03:10:48.195Z",
+    "valid": false,
+    "responseSha256": "dc91ca504e24708e755ad8a2a2f50636dcf668c1bba3c7c2c8ab7668db64ddb5",
+    "errors": [
+      "JSON truncated inside acquisitionExitCheck.entry",
+      "Mandatory schema remainder omitted"
+    ]
+  },
+  "finalResponse": {
+    "valid": false,
+    "codeBlockPresent": true,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": false,
+    "result": "FAIL_SECOND_MALFORMED_RESPONSE"
+  },
+  "valid": false,
+  "errors": [
+    "The single permitted repair did not produce complete valid JSON",
+    "No accepted response exists and no proposal may be generated"
+  ],
+  "repairsUsed": 1,
+  "proposalGenerated": false,
+  "databaseMutation": false,
+  "seedMutation": false,
+  "dealDatabaseMutation": false,
+  "terminalDisposition": "FAILED"
+}
