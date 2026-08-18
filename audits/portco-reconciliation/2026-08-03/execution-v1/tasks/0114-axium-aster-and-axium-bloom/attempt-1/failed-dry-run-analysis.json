@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_DRY_RUN_FAILURE_ANALYSIS",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
+  "taskIndex": 114,
+  "attempt": 1,
+  "failedAt": "2026-08-18T16:09:20.000Z",
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32158495453",
+  "phase": "PRODUCTION_DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "proposalSha256": "1ebf20ecb246b0083b8b1374b915c9b06ba7e78d2b3e0fe9c499af5fc3dd238a",
+  "approvalSha256": "5b25a82d85a63652e716460cc5a9e3d61f7614f340e8b9c900e9c2b0b194e442",
+  "snapshotSha256": "75edbe5758fd9dcad8777ac522ef4f569191c7d7ad8bc80448db6db53590107d",
+  "error": "Approved ownership organization does not exist: AgeCare",
+  "rootCause": "AgeCare is a directly evidenced current co-owner in both approved ownership periods, but the exact corporate owner was not yet included in the protected apply workflow's deterministic organization-provisioning allowlist.",
+  "correction": "Add AgeCare as a CORPORATE organization that the protected apply may provision only when it appears in an exact approved new ownership period, test validation and apply behavior, release the guard change through protected main, and retry the unchanged hash-bound proposal after a fresh target snapshot.",
+  "requiresNewProposalAndApproval": false
+}
