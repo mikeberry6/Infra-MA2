@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T08:00:21.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0110:databank:4928f3e2",
+  "updatedAt": "2026-08-18T08:08:30.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -16761,11 +16761,11 @@
       "managerIndex": 18,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e640a6f305c6e645a460be281a0b6716c2a98926eb3b2392ec27ba40883ad4eb",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-18T05:40:33.000Z",
-      "updatedAt": "2026-08-18T08:00:21.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-18T08:08:29.000Z",
+      "completedAt": "2026-08-18T08:08:29.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "4d16a6a2fabafed57be53a42bb55642008d9ecb9ab692e6e13703843bd591565",
@@ -16869,6 +16869,21 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-18T08:00:21.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4d16a6a2fabafed57be53a42bb55642008d9ecb9ab692e6e13703843bd591565",
+          "evidenceSha256": [
+            "4d16a6a2fabafed57be53a42bb55642008d9ecb9ab692e6e13703843bd591565",
+            "620469277d740d5970323532ca551d5f88e00b4b7cc27755fc41f86cc5f664f5",
+            "8eb8471d6d5f2f63ba925233d256fc8ed701f14d3e20f55d9ed3b45aaa155aa2",
+            "ab17a84bafdd73520dc3562857a1dc361af4a3d82048553a07b71282d6aab128"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-18T08:08:29.000Z",
           "reason": null,
           "taskSnapshotSha256": "4d16a6a2fabafed57be53a42bb55642008d9ecb9ab692e6e13703843bd591565",
           "evidenceSha256": [
@@ -26599,13 +26614,13 @@
       "managerIndex": 73,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "d21ef47b3388b9182b4f99b792654e0ce336fab355e71c148adafac671ca67b9",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-18T08:08:30.000Z",
+      "completedAt": "2026-08-18T08:08:30.000Z",
+      "exceptionReason": "Task 110 proved DataBank and DataBank Holdings, Ltd. are one canonical company (cmrxpj7kw00kzivhenjb9mu5y), released the complete manager-universe ownership roster, and resolved the Nuveen/TIAA evidence as a TIAA Real Estate Account position rather than a Nuveen Infrastructure holding; task 366 would duplicate that identity and ownership review.",
+      "supersededByTaskId": "ledger:0110:databank:4928f3e2",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -26626,6 +26641,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-18T08:08:30.000Z",
+          "reason": "Task 110 proved DataBank and DataBank Holdings, Ltd. are one canonical company (cmrxpj7kw00kzivhenjb9mu5y), released the complete manager-universe ownership roster, and resolved the Nuveen/TIAA evidence as a TIAA Real Estate Account position rather than a Nuveen Infrastructure holding; task 366 would duplicate that identity and ownership review.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -31650,5 +31675,5 @@
       ]
     }
   ],
-  "manifestSha256": "bba7c26c9dc5dbbc2069f4e2b6369ba0d65e84f16ee64eebc27b0c6f7cf8ea63"
+  "manifestSha256": "24cdf63f0ab1657be535e28434a7840495f34a4c112bcad78e3b2cc10b2d4ed2"
 }
