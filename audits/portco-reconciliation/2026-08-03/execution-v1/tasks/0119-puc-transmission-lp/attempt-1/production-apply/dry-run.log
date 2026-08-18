@@ -1,0 +1,383 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0119-puc-transmission-lp-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0119-puc-transmission-lp-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0119-puc-transmission-lp/attempt-1/locked-production-snapshot.json --proposal-sha256=6c1c7770b52e182e79e6441c631751f620dae3a37494d884ff94484ea395c320 --approval-sha256=158bc922c9843aeb3f47ce9654306d41a2eb79a88553e9b6de5179249bacf15e --snapshot-sha256=611533ecc9cf66d6be4eb78dc82458fc27828f66d0c931fe9b5890d2961b4ded
+
+(node:2876) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "6c1c7770b52e182e79e6441c631751f620dae3a37494d884ff94484ea395c320",
+    "approvalSha256": "158bc922c9843aeb3f47ce9654306d41a2eb79a88553e9b6de5179249bacf15e",
+    "afterImageSha256": "187ed29245db53534e016529f114f490d77153b68300560d2fc91d832a151c71",
+    "taskId": "ledger:0119:puc-transmission-lp:5441ac76",
+    "operation": "UPSERT",
+    "company": {
+      "name": "PUC Transmission LP",
+      "investmentFirm": "Axium Infrastructure",
+      "sector": "Utilities",
+      "subsector": "Transmission",
+      "region": "North America",
+      "country": "Canada",
+      "ownershipVehicle": "Axium Infrastructure Canada II Limited Partnership / Axium TransCo LP",
+      "description": "PUC Transmission LP is an Ontario regulated transmitter developing, financing, constructing and operating Tagona West Transformer Station and an approximately 10 route-kilometre, dual-circuit 230 kV transmission line in Sault Ste. Marie. The approximately C$230 million project will provide about 300 MW of new load to Algoma Steel's electric-arc-furnace operations while strengthening regional reliability and capacity. The line comprises approximately 20 circuit-kilometres across two 400 MVA circuits. Axium Infrastructure holds 80% through the disclosed Axium Infrastructure Canada II Limited Partnership / Axium TransCo chain, while PUC Inc. retains 20%. The OEB granted leave to construct on August 27, 2024 and issued electricity transmission licence ET-2021-0088 on April 10, 2025. Current company materials target construction completion in Q1 2028 and energization in January 2028. No later ownership transfer or signed pending exit was identified through August 18, 2026.",
+      "status": "Active",
+      "countryTags": [
+        "Canada"
+      ],
+      "website": "https://puctransmissionlp.com/",
+      "yearFounded": 2021,
+      "investmentYear": 2024,
+      "headquarters": "Sault Ste. Marie, Ontario",
+      "milestones": [
+        {
+          "date": "Early 2021",
+          "event": "PUC Transmission was incorporated to develop and operate transmission infrastructure in Sault Ste. Marie.",
+          "category": "Founding"
+        },
+        {
+          "date": "Apr 10, 2025",
+          "event": "The Ontario Energy Board issued electricity transmission licence ET-2021-0088 after the October 2021 conditional approval and August 2024 leave-to-construct decision.",
+          "category": "Other"
+        },
+        {
+          "date": "Sep 25, 2024",
+          "event": "Axium Infrastructure announced that a managed fund had acquired an 80% equity interest in PUC Transmission LP; PUC Inc. retained the 20% balance.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Aug 27, 2024",
+          "event": "The Ontario Energy Board granted PUC (Transmission) LP leave to construct Tagona West Transformer Station and its 230 kV transmission line.",
+          "category": "Expansion"
+        },
+        {
+          "date": "May 19, 2026",
+          "event": "PUC selected S.&T. Electrical to build the transmission line and station and reported a Q1 2028 completion target.",
+          "category": "Expansion"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Announcement date source — Axium Infrastructure — PUC Transmission LP",
+          "url": "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Completed Axium acquisition, 80% stake and PUC partnership"
+        },
+        {
+          "label": "Puctransmissionlp — PUC Transmission LP",
+          "url": "https://puctransmissionlp.com/",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Official PUC Transmission identity and active project website"
+        },
+        {
+          "label": "Puc — PUC Transmission LP",
+          "url": "https://www.puc.ca/about-puc/",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "PUC corporate boundary, 2021 formation and Sault Ste. Marie mandate"
+        },
+        {
+          "label": "Oeb — PUC Transmission LP",
+          "url": "https://oeb.ca/sites/default/files/PUC%20HOSSM%20Backgrounder-27-08-24-FINAL.pdf",
+          "type": "PRESENTATION",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "OEB project background and transmission infrastructure context"
+        },
+        {
+          "label": "Ontario Energy Board — Axium ownership schedule",
+          "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/882184/File/document",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "AIC II / Axium TransCo ownership chain and 80% PUC Transmission interest as of December 31, 2024"
+        },
+        {
+          "label": "City of Sault Ste. Marie — May 13, 2024 Council Minutes",
+          "url": "https://saultstemarie.ca/wp-content/uploads/2025/07/2024_05_13-Minutes.pdf",
+          "type": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "PUC Inc. 20% equity contribution and Axium partnership authorization"
+        },
+        {
+          "label": "PUC Transmission LP — Project FAQs",
+          "url": "https://puctransmissionlp.com/faqs/faqs/",
+          "type": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current project scope, C$230 million scale, two 400 MVA circuits, 300 MW load and Q1 2028 schedule"
+        },
+        {
+          "label": "Ontario Energy Board — PUC and HOSSM leave-to-construct decision",
+          "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/863301/File/document",
+          "type": "OTHER",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "August 27, 2024 leave-to-construct approval and project boundary"
+        },
+        {
+          "label": "Ontario Energy Board — PUC Transmission licence issuance",
+          "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/894912/File/document",
+          "type": "OTHER",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "2021 conditional approval and April 10, 2025 issuance of ET-2021-0088"
+        },
+        {
+          "label": "PUC Transmission LP — May 2026 construction update",
+          "url": "https://puctransmissionlp.com/news/ViewOneBooking/?id=8",
+          "type": "ARTICLE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current construction activity, selected contractor and Q1 2028 completion target"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "Axium Infrastructure",
+          "ownershipVehicle": "Axium Infrastructure Canada II Limited Partnership / Axium TransCo LP",
+          "vehicleName": "Axium Infrastructure Canada II Limited Partnership / Axium TransCo LP",
+          "investmentYear": 2024,
+          "stake": "80%",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "investmentFirm": "PUC Inc.",
+          "ownershipVehicle": "PUC (Transmission) LP Inc. / PUC (Transmission) GP Inc.",
+          "vehicleName": "PUC (Transmission) LP Inc. / PUC (Transmission) GP Inc.",
+          "investmentYear": 2021,
+          "stake": "20%",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    "retiredCompanies": [],
+    "canonicalAfterImage": {
+      "id": "cmrxpj84w00lwivhepnoou4ov",
+      "name": "PUC Transmission LP",
+      "aliases": [
+        "PUC (Transmission) LP",
+        "PUC TransCo",
+        "PUC Transmission",
+        "PUCT"
+      ],
+      "sector": "UTILITIES",
+      "subsector": "Transmission",
+      "region": "NORTH_AMERICA",
+      "country": "Canada",
+      "countryTags": [
+        "Canada"
+      ],
+      "description": "PUC Transmission LP is an Ontario regulated transmitter developing, financing, constructing and operating Tagona West Transformer Station and an approximately 10 route-kilometre, dual-circuit 230 kV transmission line in Sault Ste. Marie. The approximately C$230 million project will provide about 300 MW of new load to Algoma Steel's electric-arc-furnace operations while strengthening regional reliability and capacity. The line comprises approximately 20 circuit-kilometres across two 400 MVA circuits. Axium Infrastructure holds 80% through the disclosed Axium Infrastructure Canada II Limited Partnership / Axium TransCo chain, while PUC Inc. retains 20%. The OEB granted leave to construct on August 27, 2024 and issued electricity transmission licence ET-2021-0088 on April 10, 2025. Current company materials target construction completion in Q1 2028 and energization in January 2028. No later ownership transfer or signed pending exit was identified through August 18, 2026.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": "https://puctransmissionlp.com/",
+      "yearFounded": 2021,
+      "headquarters": "Sault Ste. Marie, Ontario",
+      "lastVerifiedAt": "2026-08-18T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjt7801izivhe9wzms4b0",
+          "managerName": "Axium Infrastructure",
+          "organizationName": "Axium Infrastructure",
+          "fundName": null,
+          "vehicleName": "Axium Infrastructure Canada II Limited Partnership / Axium TransCo LP",
+          "stake": "80%",
+          "investmentYear": 2024,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "id": null,
+          "managerName": "PUC Inc.",
+          "organizationName": null,
+          "fundName": null,
+          "vehicleName": "PUC (Transmission) LP Inc. / PUC (Transmission) GP Inc.",
+          "stake": "20%",
+          "investmentYear": 2021,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpksw202wsivhebobtp8bc",
+          "date": "Early 2021",
+          "event": "PUC Transmission was incorporated to develop and operate transmission infrastructure in Sault Ste. Marie.",
+          "category": "FOUNDING",
+          "sortDate": "2021-03-01T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.puc.ca/about-puc/",
+            "https://puctransmissionlp.com/faqs/faqs/"
+          ]
+        },
+        {
+          "id": "cmrxpkswm02wtivhe1gnpbucx",
+          "date": "Apr 10, 2025",
+          "event": "The Ontario Energy Board issued electricity transmission licence ET-2021-0088 after the October 2021 conditional approval and August 2024 leave-to-construct decision.",
+          "category": "OTHER",
+          "sortDate": "2025-04-10T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.rds.oeb.ca/CMWebDrawer/Record/894912/File/document"
+          ]
+        },
+        {
+          "id": "cmrxpksx702wuivheb8u4torf",
+          "date": "Sep 25, 2024",
+          "event": "Axium Infrastructure announced that a managed fund had acquired an 80% equity interest in PUC Transmission LP; PUC Inc. retained the 20% balance.",
+          "category": "ACQUISITION",
+          "sortDate": "2024-09-25T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+            "https://www.rds.oeb.ca/CMWebDrawer/Record/882184/File/document",
+            "https://saultstemarie.ca/wp-content/uploads/2025/07/2024_05_13-Minutes.pdf"
+          ]
+        },
+        {
+          "id": "cmrxpkszx02wvivheud4qlhgu",
+          "date": "Aug 27, 2024",
+          "event": "The Ontario Energy Board granted PUC (Transmission) LP leave to construct Tagona West Transformer Station and its 230 kV transmission line.",
+          "category": "EXPANSION",
+          "sortDate": "2024-08-27T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.rds.oeb.ca/CMWebDrawer/Record/863301/File/document"
+          ]
+        },
+        {
+          "id": "cmrxpkt0f02wwivheoegw9ite",
+          "date": "May 19, 2026",
+          "event": "PUC selected S.&T. Electrical to build the transmission line and station and reported a Q1 2028 completion target.",
+          "category": "EXPANSION",
+          "sortDate": "2026-05-19T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://puctransmissionlp.com/news/ViewOneBooking/?id=8",
+            "https://puctransmissionlp.com/faqs/faqs/"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxppd34081xivhe4t445uhj",
+          "label": "Announcement date source — Axium Infrastructure — PUC Transmission LP",
+          "url": "https://www.axiuminfra.com/2024/09/25/september-25-2024-axium-infrastructure-acquires-80-equity-interest-in-regulated-transmission-facilities-to-be-built-in-ontario/?lang=en",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Completed Axium acquisition, 80% stake and PUC partnership",
+          "isPrimary": true
+        },
+        {
+          "id": "cmrxppd4b081zivhemlg0xs06",
+          "label": "Puctransmissionlp — PUC Transmission LP",
+          "url": "https://puctransmissionlp.com/",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Official PUC Transmission identity and active project website",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxppd5f0821ivhe3qg2hgj8",
+          "label": "Puc — PUC Transmission LP",
+          "url": "https://www.puc.ca/about-puc/",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "PUC corporate boundary, 2021 formation and Sault Ste. Marie mandate",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxppd8q0823ivhejs2gjjj6",
+          "label": "Oeb — PUC Transmission LP",
+          "url": "https://oeb.ca/sites/default/files/PUC%20HOSSM%20Backgrounder-27-08-24-FINAL.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "OEB project background and transmission infrastructure context",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Ontario Energy Board — Axium ownership schedule",
+          "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/882184/File/document",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "AIC II / Axium TransCo ownership chain and 80% PUC Transmission interest as of December 31, 2024",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "City of Sault Ste. Marie — May 13, 2024 Council Minutes",
+          "url": "https://saultstemarie.ca/wp-content/uploads/2025/07/2024_05_13-Minutes.pdf",
+          "sourceType": "OTHER",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "PUC Inc. 20% equity contribution and Axium partnership authorization",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "PUC Transmission LP — Project FAQs",
+          "url": "https://puctransmissionlp.com/faqs/faqs/",
+          "sourceType": "WEBSITE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current project scope, C$230 million scale, two 400 MVA circuits, 300 MW load and Q1 2028 schedule",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Ontario Energy Board — PUC and HOSSM leave-to-construct decision",
+          "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/863301/File/document",
+          "sourceType": "OTHER",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "August 27, 2024 leave-to-construct approval and project boundary",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Ontario Energy Board — PUC Transmission licence issuance",
+          "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/894912/File/document",
+          "sourceType": "OTHER",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "2021 conditional approval and April 10, 2025 issuance of ET-2021-0088",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "PUC Transmission LP — May 2026 construction update",
+          "url": "https://puctransmissionlp.com/news/ViewOneBooking/?id=8",
+          "sourceType": "ARTICLE",
+          "purpose": "OPERATIONS_ASSETS",
+          "evidenceLabel": "Current construction activity, selected contractor and Q1 2028 completion target",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "PUC Transmission LP",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+      },
+      {
+        "kind": "ADD_OWNER",
+        "relationIds": [],
+        "detail": "Add 1 approved ownership period(s)."
+      }
+    ],
+    "changedFields": [
+      "aliases",
+      "citations",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "ownershipPeriods",
+      "website"
+    ],
+    "retiredCompanyIds": []
+  }
+}
