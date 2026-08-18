@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0109:virginia-international-gateway:39eeee70",
+  "taskIndex": 109,
+  "attempt": 1,
+  "companyName": "Virginia International Gateway",
+  "asOfDate": "2026-08-18",
+  "decision": "PROPOSED_NEW",
+  "modelDecision": "PROPOSED_NEW",
+  "rationale": "Create one canonical Virginia International Gateway company. Astatine's current site lists VIG as Active and separately identifies a Fund II VIG investment as exited in 2019. The August 2025 Virginia Port Authority official statement identifies USS and PSP as the current underlying owners, so the canonical record should preserve an active Astatine manager attribution, an active PSP direct-owner association and the realized 2014-2019 Astatine Fund II period. Exact active fund, vehicle, stakes and PSP entry date are not publicly disclosed. No later full sale or signed pending exit was identified through August 18, 2026.",
+  "identityResolution": {
+    "displayName": "Virginia International Gateway",
+    "legalName": "Virginia International Gateway, Inc.",
+    "aliases": [
+      "VIG",
+      "Virginia International Gateway Terminal",
+      "VIG Terminal",
+      "APM Terminals Virginia",
+      "APM Terminals Virginia, Inc."
+    ],
+    "managerLevelBoundary": "Count the private terminal-owner company once. The Virginia Port Authority is lessee, Virginia International Terminals is operator, APM Terminals Virginia is the predecessor name, and lease interests, bonds, cranes and expansion projects are not separate PortCos.",
+    "duplicateDecision": "No existing production or evaluated-seed company matches VIG. The active and exited Astatine pages describe separate investment periods in the same canonical company."
+  },
+  "ownershipResolution": {
+    "currentManagerAttributions": [
+      {
+        "manager": "Astatine Investment Partners",
+        "fund": null,
+        "vehicle": null,
+        "entryYear": null,
+        "stake": "Active Astatine-managed interest; exact manager-level percentage not publicly disclosed",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "manager": "PSP Investments",
+        "fund": null,
+        "vehicle": null,
+        "entryYear": null,
+        "stake": "Joint underlying owner with USS; exact percentage not publicly disclosed",
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerManagerAttributions": [
+      {
+        "manager": "Astatine Investment Partners",
+        "fund": null,
+        "vehicle": "Alinda Infrastructure Fund II",
+        "entryYear": 2014,
+        "exitYear": 2019,
+        "stake": null,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "managerPredecessorName": "Alinda Capital Partners",
+    "unmodeledCurrentCoOwner": "Universities Superannuation Scheme Ltd. is a directly evidenced current co-owner but is outside the supplied 100-manager task universe.",
+    "pendingOwnershipTransactions": []
+  },
+  "operatingResolution": {
+    "country": "United States",
+    "region": "North America",
+    "sector": "Transportation",
+    "subsector": "Marine container terminal infrastructure",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "headquarters": "Portsmouth, Virginia",
+    "yearFounded": 2007,
+    "website": null,
+    "disclosedScale": "Approximately 2 million TEU annual throughput capacity under the current Astatine profile."
+  },
+  "acquisitionExitCheck": {
+    "entry": "Affiliates of Alinda-managed funds and USS acquired APM Terminals Virginia in August 2014 and renamed it Virginia International Gateway.",
+    "currentStatus": "Astatine lists an active managed interest; the 2025 official statement identifies USS and PSP as current underlying owners.",
+    "subsequentExitSearch": "Fund II exited in 2019. No later full VIG sale, signed pending exit or transfer of terminal title to the Virginia Port Authority was identified through 2026-08-18."
+  },
+  "repoDecision": {
+    "mutation": "CREATE_COMPANY_WITH_TWO_ACTIVE_AND_ONE_REALIZED_MANAGER_PERIODS",
+    "productionCompanyId": null,
+    "seedKey": "virginia international gateway|United States",
+    "duplicateMapping": "NONE"
+  },
+  "primaryEvidenceUrl": "https://astatineip.com/investment/virginia-international-gateway/",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/source-verification.json",
+  "chatgptAttestationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-response-validation.json",
+  "disclosureLimitations": [
+    "The active Astatine fund or managed-account vehicle, entry date and manager-level percentage are not publicly disclosed.",
+    "PSP's acquisition date and percentage are not publicly disclosed in the reviewed sources.",
+    "USS is a directly evidenced current underlying co-owner but is outside the supplied manager universe and is therefore recorded in the narrative rather than as a manager task attribution."
+  ],
+  "unresolvedQuestions": [],
+  "blockingUnresolvedQuestions": [],
+  "taskSnapshotSha256": "4fb2cbdf657e4978e73f5b74fd75f8bea463cd2c8e9801ac81bbd34ff95c755a",
+  "databaseMutation": true,
+  "seedMutation": true,
+  "dealDatabaseMutation": false,
+  "terminalOutcome": "PROPOSED_NEW",
+  "confidence": "HIGH"
+}

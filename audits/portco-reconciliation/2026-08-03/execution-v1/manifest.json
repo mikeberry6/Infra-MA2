@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T04:00:35.000Z",
+  "updatedAt": "2026-08-18T05:06:41.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0109:virginia-international-gateway:39eeee70",
   "source": {
@@ -16567,20 +16567,32 @@
       "managerIndex": 16,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ff53c507f9958638cdd172f371c13cd0a4c376e9839ceee99d9f66b831e619db",
-      "status": "ACTIVE",
-      "attempts": 1,
-      "startedAt": "2026-08-18T04:00:35.000Z",
-      "updatedAt": "2026-08-18T04:00:35.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-18T05:05:06.000Z",
+      "updatedAt": "2026-08-18T05:06:41.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "021df4890087d007f7eadcfcd612e1f87e83367e495dd0330987b4d5076292d1",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-2/locked-task-snapshot.json",
+          "sha256": "021df4890087d007f7eadcfcd612e1f87e83367e495dd0330987b4d5076292d1"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0109-virginia-international-gateway-v2/proposal.json",
+          "sha256": "94081aa7fafea93b89ee7263b32a7b9875c23783ef2f634ce20fe0967a658aa8"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0109-virginia-international-gateway-v2.json",
+          "sha256": "84727152467f773dfbfb0b59620fde0c5007ec7a464779f46dee0b72e6c611a5"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-2/research-binding.json",
+          "sha256": "8290a41fbdbcc28727c3b690a0405c7307b8fe46945f1714e20f0eae9a6c8efa"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -16603,6 +16615,98 @@
           "reason": null,
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-18T05:04:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4fb2cbdf657e4978e73f5b74fd75f8bea463cd2c8e9801ac81bbd34ff95c755a",
+          "evidenceSha256": [
+            "1781350d4039d09cdf5819dbbf86192de885e173e7e26da398567645ad81915c",
+            "4fb2cbdf657e4978e73f5b74fd75f8bea463cd2c8e9801ac81bbd34ff95c755a",
+            "9dc661a8ec1c38f72d3a0a67482287249ce747df01f68e1646ce8277b676bb64"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-18T05:04:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4fb2cbdf657e4978e73f5b74fd75f8bea463cd2c8e9801ac81bbd34ff95c755a",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-18T05:04:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "4fb2cbdf657e4978e73f5b74fd75f8bea463cd2c8e9801ac81bbd34ff95c755a",
+          "evidenceSha256": [
+            "72a33fddeab5b44d638d7cea6dbd4f88442d1fd15edcb4dda63ccc31edaf6e11"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-18T05:05:05.000Z",
+          "reason": "Local production dry run rejected proposal v1 only because the already-shared Astatine manager-rebrand Source uses the exact label “Astatine — Alinda manager rebrand” while v1 used an ASCII hyphen. No seed staging, release, database write or API change occurred. Proposal v2 will preserve the exact company after-image and evidence while matching the existing shared Source metadata byte-for-byte.",
+          "taskSnapshotSha256": "4fb2cbdf657e4978e73f5b74fd75f8bea463cd2c8e9801ac81bbd34ff95c755a",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-18T05:05:06.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-18T05:06:17.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "021df4890087d007f7eadcfcd612e1f87e83367e495dd0330987b4d5076292d1",
+          "evidenceSha256": [
+            "021df4890087d007f7eadcfcd612e1f87e83367e495dd0330987b4d5076292d1",
+            "8290a41fbdbcc28727c3b690a0405c7307b8fe46945f1714e20f0eae9a6c8efa",
+            "94081aa7fafea93b89ee7263b32a7b9875c23783ef2f634ce20fe0967a658aa8"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-18T05:06:18.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "021df4890087d007f7eadcfcd612e1f87e83367e495dd0330987b4d5076292d1",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-18T05:06:41.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "021df4890087d007f7eadcfcd612e1f87e83367e495dd0330987b4d5076292d1",
+          "evidenceSha256": [
+            "84727152467f773dfbfb0b59620fde0c5007ec7a464779f46dee0b72e6c611a5"
+          ],
           "kind": "TRANSITION"
         }
       ]
@@ -31414,5 +31518,5 @@
       ]
     }
   ],
-  "manifestSha256": "c4a1e437e0bd7d2b2437f2f0e17753c15cc83a2a5c2331c774fe8ce891399881"
+  "manifestSha256": "ae3253dbd566c7e1d86ce96cbe27808493998726f0ad44b4f09fbd749f31c8a9"
 }

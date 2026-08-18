@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0109:virginia-international-gateway:39eeee70",
+  "taskIndex": 109,
+  "companyName": "Virginia International Gateway",
+  "generatedAt": "2026-08-18T05:05:32.658Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-2/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 109,
+    "taskId": "ledger:0109:virginia-international-gateway:39eeee70",
+    "canonicalKey": "virginia-international-gateway|united-states",
+    "companyName": "Virginia International Gateway",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 16,
+    "managers": [
+      "Astatine Investment Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "016-astatine-investment-partners:holding:009:virginia-international-gateway"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://astatineip.com/investment/virginia-international-gateway/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "virginia-international-gateway|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4gk000oivhekxk3hfbi",
+        "name": "Astatine Investment Partners",
+        "updatedAt": "2026-07-23T16:09:12.980Z"
+      },
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0109:virginia-international-gateway:39eeee70",
+    "taskIndex": 109,
+    "canonicalKey": "virginia-international-gateway|united-states",
+    "capturedAt": "2026-08-18T05:05:32.658Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "ff53c507f9958638cdd172f371c13cd0a4c376e9839ceee99d9f66b831e619db",
+    "productionSnapshotSha256": "c880fa70e9d7e47531a33ce7dc20fb22f51149568a49a73df3dcc8fb09e064fd",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "78549a996a12916bb38018450713343cf67be6deff43d2487f5360ba3d8ea6c7",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4a51a756b36c2fbae8fa38cb5b5bbd18eb4e4c92e0ea2058646e6cdae1162f69",
+    "stateSha256": "558ffdf61cb9795ac3166af606d13aeef1745fb3a915a6966d73d7cef89bce08",
+    "taskSnapshotSha256": "021df4890087d007f7eadcfcd612e1f87e83367e495dd0330987b4d5076292d1"
+  },
+  "contextSha256": "81e3cd2175406c9aa4155a62a05c41c4b0451e8797f44767aa66421d993512be"
+}
