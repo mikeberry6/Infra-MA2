@@ -178,4 +178,32 @@ describe("portfolio fund attribution ledger", () => {
     });
     expect(row?.evidenceUrls.length).toBeGreaterThan(0);
   });
+
+  it("preserves PUC Transmission's disclosed Axium vehicle and direct retained owner", () => {
+    const axium = ledger.rows.find((candidate) => (
+      candidate.companyName === "PUC Transmission LP"
+      && candidate.investmentFirm === "Axium Infrastructure"
+    ));
+    expect(axium).toMatchObject({
+      attribution: "DISCLOSED",
+      confidence: "HIGH",
+      attributedFundName: "Axium Infrastructure Canada II Limited Partnership",
+      targetLinkedFundName: null,
+      proposedAction: "SET_DISCLOSED_UNLISTED",
+    });
+    expect(axium?.evidenceUrls.length).toBeGreaterThan(0);
+
+    const puc = ledger.rows.find((candidate) => (
+      candidate.companyName === "PUC Transmission LP"
+      && candidate.investmentFirm === "PUC Inc."
+    ));
+    expect(puc).toMatchObject({
+      attribution: "DIRECT_PROGRAM",
+      confidence: "HIGH",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "SET_DIRECT_PROGRAM",
+    });
+    expect(puc?.evidenceUrls.length).toBeGreaterThan(0);
+  });
 });
