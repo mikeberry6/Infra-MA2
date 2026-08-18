@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "c5ee2c13189897a8070b9505b682ad716b90b4d3726c1eaf1bad9b87d474b658",
+  "approvalSha256": "390a5df0a48d0168cf5fb0f1145be82fcc306ffccf8536cebd72b74ebc67cfd8",
+  "environment": "production",
+  "pipelineRunId": "cmsz8d1ql0000g66hhr8hpxxk",
+  "mutationCount": 2,
+  "changed": 2,
+  "idempotent": false,
+  "beforeFingerprint": "a491bea62a91913ba3237e9355f8cbd41551bead42068b583ee08c914812a4cf",
+  "afterFingerprint": "d6abe5d20f640db225548365961bc0a0fcb831295e09a104b952845fca684416",
+  "rows": [
+    {
+      "recordId": "OFA-0E0CC3AD5D4F",
+      "ownershipPeriodId": "cmrxpjt7801izivhe9wzms4b0",
+      "companyId": "cmrxpj84w00lwivhepnoou4ov",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AxInfra Fund I-IV",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Axium Infrastructure Canada II Limited Partnership",
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's acquisition release and the Ontario Energy Board ownership schedule identify the disclosed Axium Infrastructure Canada II / Axium TransCo ownership chain. The vehicle remains unlinked because it is not a production-curated fund, rather than being inferred to the generic AxInfra Fund I-IV record."
+      }
+    },
+    {
+      "recordId": "OFA-66AA4956CB3E",
+      "ownershipPeriodId": "cmsz7mzu1000deyyyaftkuzvx",
+      "companyId": "cmrxpj84w00lwivhepnoou4ov",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "PUC Inc.'s retained 20% interest is a direct corporate ownership position documented by the municipal authorization and the Ontario Energy Board ownership schedule, not an investment-fund attribution."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-18T22:24:37.760Z",
+  "receiptSha256": "64ac978f321a36de2375ad330c284ac5d88edefb778e9be7081f8c6ab09a74ae"
+}
