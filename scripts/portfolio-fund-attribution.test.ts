@@ -26,7 +26,15 @@ describe("portfolio fund attribution ledger", () => {
 
   it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(6);
+    expect(unresolved).toHaveLength(7);
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Edwards Sanborn Solar + Storage",
+      investmentFirm: "Axium Infrastructure",
+      currentVehicleName: "Axium ES Holdings LLC / AxInfra US LP",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Virginia International Gateway",
       investmentFirm: "Astatine Investment Partners",
