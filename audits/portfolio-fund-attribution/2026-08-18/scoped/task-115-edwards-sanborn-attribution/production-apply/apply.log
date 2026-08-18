@@ -1,0 +1,43 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-18/scoped/task-115-edwards-sanborn-attribution/apply-manifest.json --manifest-sha256=4a7bc288058c40ebe40402cbd8d8556e404a584f3ebbf4c652f5973f60737fb3 --production-snapshot=audits/portfolio-fund-attribution/2026-08-18/scoped/task-115-edwards-sanborn-attribution/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-18/scoped/task-115-edwards-sanborn-attribution/approval.json --approval-sha256=ccff16f2187f76ffa8ecd8b100f7c485855fc8e32372d38ec8fba0b666bec57e --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3059) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "4a7bc288058c40ebe40402cbd8d8556e404a584f3ebbf4c652f5973f60737fb3",
+  "approvalSha256": "ccff16f2187f76ffa8ecd8b100f7c485855fc8e32372d38ec8fba0b666bec57e",
+  "environment": "production",
+  "pipelineRunId": "cmsyzkz4a0000cz6hcwjubmw6",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "cc2f7852b3a4ab7b71af7d31d3dbb2c2532d70417ecd45803857340501ffddc6",
+  "afterFingerprint": "7df4893ec72f832abcf8ec034256fbb367729774db7c3b443b1793666d1155c5",
+  "rows": [
+    {
+      "recordId": "OFA-2F46F2CA573C",
+      "ownershipPeriodId": "cmrxpjt0801ilivhe3or1eica",
+      "companyId": "cmrxpj7vt00ljivheoq991z94",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AxInfra Fund I-IV",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Reviewed evidence identifies Axium ES Holdings LLC, Axium Co-Invest Holdings, and AxInfra US LP in the ownership chain, but does not disclose a production-curated matching fund. The active period remains unlinked rather than being inferred to the generic AxInfra Fund I-IV record."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-18T18:18:51.131Z",
+  "receiptSha256": "4a1b98e2672950a164cab35b7d3c72885a9f7b2140ff6b3939d8d99118ff5548"
+}
