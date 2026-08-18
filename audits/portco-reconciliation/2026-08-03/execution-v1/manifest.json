@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T20:31:10.000Z",
+  "updatedAt": "2026-08-18T20:42:53.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0118:montreal-gateway-terminals:bc474932",
   "source": {
@@ -17854,10 +17854,10 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "4b1b61f99364b6c7f22260e6d660e748af479965e18099010a784993ecca6909",
-      "status": "RELEASING",
+      "status": "APPLYING",
       "attempts": 2,
       "startedAt": "2026-08-18T20:29:59.000Z",
-      "updatedAt": "2026-08-18T20:31:10.000Z",
+      "updatedAt": "2026-08-18T20:42:53.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -17987,6 +17987,20 @@
           "reason": null,
           "taskSnapshotSha256": "b30ea14a2994c60808dec47c13ada18ef3d1a62a25417978618038ecb812a7a2",
           "evidenceSha256": [
+            "c293eefcb923d6c744531aa911e41011ed1448689f8097352ae97d27b319f2be"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-18T20:42:53.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b30ea14a2994c60808dec47c13ada18ef3d1a62a25417978618038ecb812a7a2",
+          "evidenceSha256": [
+            "6ef574ec19376948604617b46d84e157a2f523b81fbd9a1121c023d86faf0c17",
+            "b30ea14a2994c60808dec47c13ada18ef3d1a62a25417978618038ecb812a7a2",
             "c293eefcb923d6c744531aa911e41011ed1448689f8097352ae97d27b319f2be"
           ],
           "kind": "TRANSITION"
@@ -32478,5 +32492,5 @@
       ]
     }
   ],
-  "manifestSha256": "de83f49122ee3d201d2092be23b364a8fb01339593d6e735e06691f416c7fb73"
+  "manifestSha256": "9a1e171adfa1d13f533535b2cb49e3141d2b7258677089dc3a6147f9e6e1ec4d"
 }
