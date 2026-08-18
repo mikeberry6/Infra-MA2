@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-18",
+  "ledgerSha256": "1b56c00df9966c982d2a68af40b2af97aca991c597c0076f924bc05c741ce141",
+  "sourceSnapshotSha256": "f08f35181f5ef0c8a02665d389b30e5acb5f87816f7e97d5c8c9f1fc3b3ec9c1",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-240C8AB30E8E",
+      "ownershipPeriodId": "cmsy0inue000fbv6hkwmd4l24",
+      "companyName": "ACL Airshop",
+      "country": "United States",
+      "investmentFirm": "Astatine Investment Partners",
+      "currentVehicleName": "Alinda Infrastructure Fund IV",
+      "databaseVehicleName": null,
+      "investmentYear": 2021,
+      "stake": "100% disclosed in January 2023; current percentage not subsequently restated",
+      "targetLinkedFundName": "Alinda Infrastructure Fund IV",
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": "Alinda Infrastructure Fund IV"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Alinda Infrastructure Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "Seed milestones or source evidence explicitly name the current fund vehicle."
+      },
+      "evidenceUrls": [
+        "https://astatineip.com/2026/03/04/acl-airshop-announces-the-promotion-of-james-harris-to-chief-executive-officer/",
+        "https://astatineip.com/2021/04/22/alinda-acquires-acl-airshop/",
+        "https://www.prnewswire.com/news-releases/acl-airshop-and-alinda-partner-for-growth-301275577.html"
+      ]
+    }
+  ],
+  "manifestSha256": "fdf17eb7cd1c817865903efd252871024f25fe1b020c632e05d50e7981b3304a"
+}

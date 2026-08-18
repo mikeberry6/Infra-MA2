@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_SCOPED_CORRECTION_DECISION",
+  "asOfDate": "2026-08-18",
+  "companyName": "ACL Airshop",
+  "companyId": "cmsy0inql0000bv6h87ieyi4h",
+  "ownershipPeriodId": "cmsy0inue000fbv6hkwmd4l24",
+  "recordId": "OFA-240C8AB30E8E",
+  "sourceProductionSnapshotSha256": "f08f35181f5ef0c8a02665d389b30e5acb5f87816f7e97d5c8c9f1fc3b3ec9c1",
+  "sourceLedgerSha256": "1b56c00df9966c982d2a68af40b2af97aca991c597c0076f924bc05c741ce141",
+  "generatedFullManifestSha256": "988d7e04ecf64292b5bd99607f71d031c25247a44085b36cbf3b7a693501d906",
+  "scopedManifestSha256": "fdf17eb7cd1c817865903efd252871024f25fe1b020c632e05d50e7981b3304a",
+  "reason": "The ACL Airshop PortCo proposal created the approved Astatine / Alinda Infrastructure Fund IV ownership period, but the generic PortCo after-image contract did not carry the separate ownership fund-attribution metadata. Production therefore defaulted the new row to UNRESOLVED while the evaluated seed manifest already classified the same fund link as DISCLOSED. The scoped correction applies only the reviewed attribution metadata to this exact ownership-period ID; it creates or updates no fund, changes no ownership identity, and leaves all other production ownership rows untouched.",
+  "expectedChangedRows": 1,
+  "expectedAlreadyAppliedRows": 0,
+  "fundCreates": 0,
+  "fundUpdates": 0,
+  "ownershipIdentityChanges": 0
+}
