@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_LIST_RESEARCH_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0108:commerce-logic:ec1c3303",
+  "taskIndex": 108,
+  "attempt": 2,
+  "generatedAt": "2026-08-18T03:49:35.000Z",
+  "asOfDate": "2026-08-18",
+  "decision": "EXCLUDED",
+  "canonicalName": "Commerce Logic",
+  "canonicalLegalName": "Commerce Logic, LLC",
+  "identityDecision": "Commerce Logic, LLC was the manager-level Fund III add-on retained after CVO's 2022 divestiture. Tollogic is its product; CVO is the former parent; Fleetworthy and Bestpass are the acquirer and integration platform, not duplicate Commerce Logic PortCos.",
+  "ownershipDecision": {
+    "manager": "Astatine Investment Partners",
+    "historicalManagerName": "Alinda Capital Partners",
+    "fund": "Fund III",
+    "stake": "NOT_PUBLICLY_DISCLOSED",
+    "entryDate": "NOT_PUBLICLY_DISCLOSED",
+    "exitDate": "2025-07-15",
+    "currentOwnerCount": 0,
+    "transactionState": "REALIZED",
+    "rationale": "Astatine confirms the retained Fund III interest; Fleetworthy's later acquisition of Commerce Logic's operating assets and integration into Bestpass ended the relevant manager-level operating-company ownership."
+  },
+  "operatingDecision": {
+    "sector": "TRANSPORTATION",
+    "subsector": "Fleet toll analytics",
+    "country": "United States",
+    "historicalLocation": "Lehi, Utah",
+    "business": "Predictive tolling, GPS and telematics analytics, automated reconciliation, discrepancy detection and route optimization for commercial fleets.",
+    "boundary": "Do not create separate PortCos for CVO, Tollogic, Fleetworthy or Bestpass."
+  },
+  "listDecision": {
+    "terminalOutcome": "EXCLUDED",
+    "reasonCode": "STALE_MANAGER_PAGE_SUPERSEDED_BY_2025_ASSET_ACQUISITION",
+    "rationale": "The census sought companies currently owned by Astatine. Commerce Logic was acquired and integrated by Fleetworthy on 2025-07-15, so the stale manager-page status does not support a current Astatine holding.",
+    "historicalRecordPolicy": "Retain the immutable census holding, prior failed attempt and this exclusion lineage. Do not create a production or seed PortCo, active owner, pending transaction or redirect.",
+    "databaseMutation": false,
+    "seedMutation": false,
+    "dealDatabaseMutation": false
+  },
+  "acquisitionAndExitCheck": {
+    "historicalEntry": "Astatine's page confirms Fund III retained Commerce Logic as a CVO add-on after 2022; exact original entry date, vehicle and stake are not publicly disclosed.",
+    "exit": "Fleetworthy announced the Commerce Logic asset acquisition on 2025-07-15 and integrated the technology with Bestpass.",
+    "laterSearch": "No later Astatine reacquisition, continuing manager ownership or signed pending transaction was identified through 2026-08-18."
+  },
+  "repoDecision": {
+    "productionCompanyCount": 0,
+    "seedCompanyCount": 0,
+    "canonicalRedirectCount": 0,
+    "mutation": "NONE",
+    "queueAction": "SUPERSEDE_CREATE_COMPANY_AND_ADD_OWNER_WITH_EXCLUSION"
+  },
+  "evidenceUrls": [
+    "https://astatineip.com/investment/cvo-holding-company-llc/",
+    "https://astatineip.com/investment/cvo-commerce-logic/",
+    "https://fleetworthy.com/resources/news/fleetworthy-commercelogic-acquisition/",
+    "https://www.geotab.com/legal/third-party-terms/"
+  ],
+  "primaryEvidenceUrl": "https://fleetworthy.com/resources/news/fleetworthy-commercelogic-acquisition/",
+  "sourceVerificationArtifact": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0108-commerce-logic/attempt-2/source-verification.json",
+  "chatgptResearchArtifacts": {
+    "conversationUrl": "https://chatgpt.com/c/6a83d106-7c0c-83ea-b42d-b3ee6878ee88",
+    "response": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0108-commerce-logic/attempt-2/chatgpt-response.txt",
+    "repairsUsed": 0,
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "power": "5 of 5"
+  },
+  "disclosureLimits": [
+    "The original Fund III add-on date, legal holding vehicle and ownership percentage are not publicly disclosed.",
+    "Fleetworthy disclosed an asset acquisition rather than a surviving Commerce Logic equity capitalization."
+  ],
+  "blockingUnresolvedQuestions": [],
+  "confidence": "HIGH"
+}
