@@ -1,0 +1,3 @@
+# Axium Aster & Axium Bloom — list decision
+
+Correct the existing **AgeCare Facilities Portfolio** record in place to **Axium Aster & Axium Bloom**. Axium's current portfolio page groups Aster and Bloom together as one manager-level investment card but identifies two legal portfolios; the database should therefore keep one company with separate Aster and Bloom ownership periods. Axium owns 92.5% and AgeCare owns the 7.5% balance and operates the facilities. Remove the unrelated Ontario scale, which belongs to separately presented **Axium Iris**, and carry Iris into the final delta sweep. No Axium exit or signed pending sale was found through August 18, 2026.

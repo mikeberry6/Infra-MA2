@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
+  "taskIndex": 114,
+  "verifiedAt": "2026-08-18T15:37:00.000Z",
+  "method": "Direct HTTPS retrieval with redirects enabled; HTTP status, final URL, media type and SHA-256 independently captured. Key claims were also checked against opened source text.",
+  "sources": [
+    {
+      "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+      "finalUrl": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "workingStatus": "WORKING",
+      "contentSha256": "748476e6f9377a8f45f5628d821d747c070ccd51a1e107a7ed0f9f8fd0a8a224",
+      "verifiedClaims": [
+        "Axium presents Axium Aster & Axium Bloom together as one current manager-level portfolio card",
+        "the card covers two portfolios, 26 facilities and 4,114 beds in Alberta and British Columbia",
+        "Axium owns 92.5%, AgeCare owns the balance and operates the facilities",
+        "Axium Iris is a separate Ontario portfolio of 16 homes and 2,418 beds"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/2020/01/08/agecare-and-axium-infrastructure-form-a-partnership-to-share-ownership-of-five-continuing-care-facilities-in-alberta/?lang=en",
+      "finalUrl": "https://www.axiuminfra.com/2020/01/08/agecare-and-axium-infrastructure-form-a-partnership-to-share-ownership-of-five-continuing-care-facilities-in-alberta/?lang=en",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "workingStatus": "WORKING",
+      "contentSha256": "61a82de778aeb3421ae5155ad94351bf1a6b562b8b45cae42b1289a1900dd513",
+      "verifiedClaims": [
+        "Aster was announced on January 8, 2020 as five Alberta facilities with 1,402 beds"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/wp-content/uploads/2020/01/Website-Release_Project-Aster_Axium_en_Final.pdf",
+      "finalUrl": "https://www.axiuminfra.com/wp-content/uploads/2020/01/Website-Release_Project-Aster_Axium_en_Final.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "workingStatus": "WORKING",
+      "contentSha256": "5b9cb25dca5ec58bb5f276bff8202cc7098a5ce4564c6fcb80197360fe70da0f",
+      "verifiedClaims": [
+        "Axium held 80% at Aster formation and AgeCare held 20% and remained operator"
+      ]
+    },
+    {
+      "url": "https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes",
+      "finalUrl": "https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "workingStatus": "WORKING",
+      "contentSha256": "5aea28f4add6f847df39845ce12f99c0c465b9879bcc25e51a605a5b7d2e7a05",
+      "verifiedClaims": [
+        "the predecessor western tranche first closed December 21, 2017",
+        "Axium held 75% and Revera 25% at formation"
+      ]
+    },
+    {
+      "url": "https://www.goodmans.ca/expertise/case/revera-inc.-sells-interest-in-certain-long-term-care-homes-to-agecare",
+      "finalUrl": "https://www.goodmans.ca/expertise/case/revera-inc.-sells-interest-in-certain-long-term-care-homes-to-agecare",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "workingStatus": "WORKING",
+      "contentSha256": "b5b939abf098294bf008ecd4971530a046f6425a378dc1abc8dd22661244d8c9",
+      "verifiedClaims": [
+        "Revera sold its 15% interest in certain Alberta and British Columbia homes to AgeCare on August 22, 2022",
+        "AgeCare would own those homes in joint venture with Axium"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/wp-content/uploads/2023/08/Annual-ESG-Report-_Q4-2022_vSummary_FINAL.pdf",
+      "finalUrl": "https://www.axiuminfra.com/wp-content/uploads/2023/08/Annual-ESG-Report-_Q4-2022_vSummary_FINAL.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "workingStatus": "WORKING",
+      "contentSha256": "a8e27ca34531427dc625d65086ea7e9c4d84a0ab9792fa4af000e7f878367949",
+      "verifiedClaims": [
+        "Axium's 2022 ESG report identifies AgeCare / Axium Aster with AIC II and continued operation"
+      ]
+    },
+    {
+      "url": "https://www.alrb.gov.ab.ca/umpireregistry.html",
+      "finalUrl": "https://www.alrb.gov.ab.ca/umpireregistry.html",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "workingStatus": "WORKING",
+      "contentSha256": "3680274def959a64ceb1ce573762f6b6ce58e091dc040de4f16493bc3d6bed7d",
+      "verifiedClaims": [
+        "the current registry contains Aster JVLP operating as Age Care and a Bloom Limited Partnership entry accepted July 7, 2026"
+      ]
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "The model recommended splitting Aster and Bloom into two companies, but Axium's own current portfolio page intentionally groups the two legal portfolios in one manager-level investment card. The canonical PortCo remains combined while its two vehicles receive separate ownership periods.",
+    "The Alberta Assisted Living Navigation Portal URL identifies AgeCare Seton but does not directly prove Aster LP ownership; it is excluded from the proposal.",
+    "The model called the fund not publicly disclosed, but Axium's 2022 ESG report directly identifies Axium Aster with AIC II. No matching production Fund row exists, so the proposal does not create or infer a fund relationship and records the evidence for a later fund-data review.",
+    "The existing record's Ontario scale belongs to separately presented Axium Iris and is removed from Aster/Bloom; Iris is recorded as a delta-sweep follow-up."
+  ],
+  "exitSearchConclusion": "No Axium sale or signed pending exit of Aster or Bloom was found through 2026-08-18. Revera's 2022 sale was a former co-owner exit, not an Axium exit.",
+  "result": "PASS"
+}

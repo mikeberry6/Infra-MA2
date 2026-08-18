@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
+  "taskIndex": 114,
+  "companyName": "Axium Aster & Axium Bloom",
+  "generatedAt": "2026-08-18T15:51:12.100Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/approval-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 114,
+    "taskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
+    "canonicalKey": "axium-aster-and-axium-bloom|canada",
+    "companyName": "Axium Aster & Axium Bloom",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 19,
+    "managers": [
+      "Axium Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "019-axium-infrastructure:holding:043:axium-aster-and-axium-bloom"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.axiuminfra.com/portfolio-assets/?lang=en"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY",
+    "targetCompanyId": "cmrxpj7m000l1ivhezpjsd4h1",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "axium-aster-and-axium-bloom|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj7m000l1ivhezpjsd4h1",
+    "name": "AgeCare Facilities Portfolio",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Long-Term Care",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "AgeCare Facilities Portfolio is a Canadian long-term-care platform comprising facilities in Ontario, Alberta, and British Columbia. The homes serve senior residents and their families, with revenues supported by provincially regulated and funded long-term-care and continuing-care frameworks plus resident co-payments. The operating model is asset-heavy and regulated because the portfolio owns physical facilities while AgeCare operates the homes under provincial licensing, funding, and care standards. Axium's portfolio materials describe a 92.5% interest in an Ontario portfolio of 16 facilities and 2,418 beds and a separate 92.5% interest in the Aster and Bloom portfolios in Alberta and British Columbia totaling 26 facilities and 4,114 beds. Axium partnered with AgeCare in 2020 in Alberta and currently owns the majority interest in the disclosed portfolios, with AgeCare retaining the balance and operating the assets.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Ontario; Alberta; British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjsok01i2ivhex4m45yih",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": "AxInfra Fund I-IV",
+        "vehicleName": "Axium Managed Funds",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkqqc02u9ivhe028iqvgz",
+        "date": "1998",
+        "event": "AgeCare was founded as a Canadian seniors housing and care operator.",
+        "category": "FOUNDING",
+        "sortDate": "1998-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkqqv02uaivhehwcb74qa",
+        "date": "Jan 8, 2020",
+        "event": "Axium and AgeCare announced a partnership covering five continuing-care facilities in Alberta totaling 1,402 beds.",
+        "category": "FINANCING",
+        "sortDate": "2020-01-08T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp8nq07v9ivheksz9cf0j",
+        "label": "Axiuminfra — 527 Renewables Holdings LLC",
+        "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Axiuminfra operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp8ox07vbivhe64wp3lfs",
+        "label": "Announcement date source — Axium Infrastructure — AgeCare Facilities Portfolio",
+        "url": "https://www.axiuminfra.com/2020/01/08/agecare-and-axium-infrastructure-form-a-partnership-to-share-ownership-of-five-continuing-care-facilities-in-alberta/?lang=en",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Axium Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp8s107vdivheynaocter",
+        "label": "Agecare — AgeCare Facilities Portfolio",
+        "url": "https://www.agecare.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Agecare company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp8t507vfivhepiw4dey7",
+        "label": "Axiuminfra — AgeCare Facilities Portfolio",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2020/01/Website-Release_Project-Aster_Axium_en_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Axiuminfra transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "AgeCare Facilities Portfolio",
+    "investmentFirm": "Axium Infrastructure",
+    "sector": "Social Infra",
+    "subsector": "Long-Term Care",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Axium Managed Funds",
+    "description": "AgeCare Facilities Portfolio is a Canadian long-term-care platform comprising facilities in Ontario, Alberta, and British Columbia. The homes serve senior residents and their families, with revenues supported by provincially regulated and funded long-term-care and continuing-care frameworks plus resident co-payments. The operating model is asset-heavy and regulated because the portfolio owns physical facilities while AgeCare operates the homes under provincial licensing, funding, and care standards. Axium's portfolio materials describe a 92.5% interest in an Ontario portfolio of 16 facilities and 2,418 beds and a separate 92.5% interest in the Aster and Bloom portfolios in Alberta and British Columbia totaling 26 facilities and 4,114 beds. Axium partnered with AgeCare in 2020 in Alberta and currently owns the majority interest in the disclosed portfolios, with AgeCare retaining the balance and operating the assets.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2020,
+    "headquarters": "Ontario; Alberta; British Columbia",
+    "milestones": [
+      {
+        "date": "1998",
+        "event": "AgeCare was founded as a Canadian seniors housing and care operator.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jan 8, 2020",
+        "event": "Axium and AgeCare announced a partnership covering five continuing-care facilities in Alberta totaling 1,402 beds.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Axiuminfra — AgeCare Facilities Portfolio",
+        "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — Axium Infrastructure — AgeCare Facilities Portfolio",
+        "url": "https://www.axiuminfra.com/2020/01/08/agecare-and-axium-infrastructure-form-a-partnership-to-share-ownership-of-five-continuing-care-facilities-in-alberta/?lang=en",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Agecare — AgeCare Facilities Portfolio",
+        "url": "https://www.agecare.ca/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Axiuminfra — AgeCare Facilities Portfolio",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2020/01/Website-Release_Project-Aster_Axium_en_Final.pdf",
+        "type": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Axium Infrastructure",
+        "ownershipVehicle": "Axium Managed Funds",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj19600bqivhe63qqb0hm",
+        "fundName": "AxInfra Fund I-IV",
+        "managerId": "cmrxpi4m0000qivheeg0vfmvn",
+        "updatedAt": "2026-07-23T16:09:55.482Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4m0000qivheeg0vfmvn",
+        "name": "Axium Infrastructure",
+        "updatedAt": "2026-07-23T16:09:13.176Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
+    "taskIndex": 114,
+    "canonicalKey": "axium-aster-and-axium-bloom|canada",
+    "capturedAt": "2026-08-18T15:51:12.100Z",
+    "databaseRevision": "revision:ef214d8d8f9c417d9742467ca5a03bfd2c1bb731049e8a02e00cbb9cd5d08385",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "ddb91e5a3e36d84d95bacf04f014dc7ddbd689d2614b55e3af46ed4558631476",
+    "productionSnapshotSha256": "d664d393a5a39dd0178ceeae20b55e0ff54abf544998848276e1c3bd11e89f59",
+    "targetCompanySnapshotSha256": "d28046a003d316aa5060b4d7b221a9bfc7023e677fdab30ef7a1f98d9f31b602",
+    "seedEntrySha256": "94cdf7afa3a5f8bee8aa369459a934d2a9ed71f32820f65a88c475f1364c1d4b",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d26e3b7064a6407f32ba821fc159635d6fe2421098c183bbe9349c32e5266a91",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "9006b36c9c95fa66723514d5416ff2c0a0065565a6ef9f82f75005182bec322c",
+      "organizationsSha256": "4232d4dc8383fded1a17b033133ecf7709e8286593de3a960758bbf61cc086bc",
+      "citationsSha256": "4f52811e606e681ec01a1fcdf1c9aec657c8efd83a8224ec2961eb1b55c0eec4",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "3cd45620824fd8c48598fe7d86d45b9caadef6319acaef33af3098da6f01cc79",
+    "stateSha256": "9c8662490f5f13bc275d8401dbd3f86c0c959064e963992dc2d5ff537de9e497",
+    "taskSnapshotSha256": "33bb113b380c2d1035d2aab39612b9914fc0dd014148c7e33c3131a369e12e28"
+  },
+  "contextSha256": "3082d526683add757bad1da75339a57e2cf870d7d10aa6061908e1c30eda87b0"
+}
