@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T10:26:00.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0111:generate-capital:f6794437",
+  "updatedAt": "2026-08-18T11:11:08.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -16904,20 +16904,26 @@
       "managerIndex": 18,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "eb2097f49a5ba40bc6f783360c0710ab2ae5c9163c6bf78f408888c6ce82b5bf",
-      "status": "ACTIVE",
+      "status": "DEFERRED",
       "attempts": 3,
       "startedAt": "2026-08-18T10:26:00.000Z",
-      "updatedAt": "2026-08-18T10:26:00.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "updatedAt": "2026-08-18T11:11:08.000Z",
+      "completedAt": "2026-08-18T11:11:08.000Z",
+      "exceptionReason": "AustralianSuper and QIC have direct current evidence; Harbert and CBRE have direct 2021 entry evidence but neither direct current ownership evidence nor a proven exit. No mutation was made.",
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-3/locked-task-snapshot.json",
+          "sha256": "3ce1bb45c541dcaac586fe265a43efcd5a0f2b1504f4153965a5da08d065fd2e"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-3/research-decision.json",
+          "sha256": "b5b090abfee21591b1a02e426968f634a029910a9e73c3b91fec6b8968a043d0"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -16986,6 +16992,19 @@
           "reason": null,
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "ACTIVE",
+          "to": "DEFERRED",
+          "at": "2026-08-18T11:11:08.000Z",
+          "reason": "AustralianSuper and QIC have direct current evidence; Harbert and CBRE have direct 2021 entry evidence but neither direct current ownership evidence nor a proven exit. No mutation was made.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "3ce1bb45c541dcaac586fe265a43efcd5a0f2b1504f4153965a5da08d065fd2e",
+            "b5b090abfee21591b1a02e426968f634a029910a9e73c3b91fec6b8968a043d0"
+          ],
           "kind": "TRANSITION"
         }
       ]
@@ -31731,5 +31750,5 @@
       ]
     }
   ],
-  "manifestSha256": "26580bc2bbf90971dd7193144701866a9ddde3fc2154afd1ab84c97e0a46cf9c"
+  "manifestSha256": "b0620533d4d3830d48b59c76dadf9c3f76c40619f633871b004c13f218a4ccf9"
 }

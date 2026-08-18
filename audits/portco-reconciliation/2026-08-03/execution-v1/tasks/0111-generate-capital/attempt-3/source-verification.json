@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0111:generate-capital:f6794437",
+  "taskIndex": 111,
+  "attempt": 3,
+  "companyName": "Generate Capital",
+  "verifiedAt": "2026-08-18T11:06:30.000Z",
+  "verificationMethod": "DIRECT_HTTP_STATUS_AND_HASH_WITH_INDEPENDENT_INDEXED_CONTENT_REOPEN",
+  "sources": [
+    {
+      "url": "https://generatecapital.com/",
+      "httpStatus": 200,
+      "finalUrl": "https://generatecapital.com/",
+      "mediaType": "text/html; charset=UTF-8",
+      "httpResponseBytes": 167134,
+      "httpResponseSha256": "4d08c8b5c64ec6ec9efe295a74f2d5193b64de98d02fb8ad776aafd3b6e08096",
+      "workingStatus": "WORKING",
+      "contentVerified": true,
+      "purpose": "Current company identity, North American platform scope, products, customers, current board and operating activity"
+    },
+    {
+      "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Generate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Generate",
+      "mediaType": "text/html",
+      "httpResponseBytes": 212,
+      "httpResponseSha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "workingStatus": "WORKING_INDEXED_CONTENT_VERIFIED",
+      "contentVerified": true,
+      "purpose": "Current QIC portfolio status, 2019 entry, exact 23.5% stake, geography, infrastructure basis and disclosed scale"
+    },
+    {
+      "url": "https://www.australiansuper.com/-/media/australian-super/files/about-us/annual-reports/2021-annual-report.pdf",
+      "httpStatus": 403,
+      "finalUrl": "https://www.australiansuper.com/-/media/australian-super/files/about-us/annual-reports/2021-annual-report.pdf",
+      "mediaType": "text/html",
+      "httpResponseBytes": 506,
+      "httpResponseSha256": "c1289a5bd5ef97c98c67c435450fdee6c6a3271b30519c0bf45866c8f4bbb33f",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "contentVerified": true,
+      "purpose": "AustralianSuper December 2019 Generate entry and July 2021 follow-on investment"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20210719005233/en/",
+      "canonicalContentUrl": "https://www.businesswire.com/news/home/20210719005233/en/Generate-Closes-%242-Billion-Equity-Raise-from-Global-Institutional-Investors-to-Accelerate-and-Scale-Sustainable-Infrastructure-and-Climate-Solutions",
+      "httpStatus": 403,
+      "finalUrl": "https://www.businesswire.com/news/home/20210719005233/en/",
+      "mediaType": "text/html",
+      "httpResponseBytes": 416,
+      "httpResponseSha256": "1ce5aea9a2fcff8d210533671cfe17f07ba0e4d4a96558a109900719b46ea026",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "contentVerified": true,
+      "purpose": "Closed July 2021 equity raise; Harbert Management Corporation and CBRE Caledon entry evidence"
+    },
+    {
+      "url": "https://www.harbert.net/assets/press-releases/harbert-infrastructure-generate-press-release-july-19-2021.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.harbert.net/assets/press-releases/harbert-infrastructure-generate-press-release-july-19-2021.pdf",
+      "mediaType": "application/pdf",
+      "httpResponseBytes": 97088,
+      "httpResponseSha256": "1366dd7450c0cc084c557688ed980314b36c711c4953ad0470bca99998a3bf77",
+      "workingStatus": "WORKING",
+      "contentVerified": true,
+      "purpose": "Direct Harbert Infrastructure 2021 Generate entry evidence; not current-status evidence"
+    },
+    {
+      "url": "https://www.cbreim.com/about-us/our-story-and-values/cbre-investment-management-history",
+      "httpStatus": 403,
+      "finalUrl": "https://www.cbreim.com/about-us/our-story-and-values/cbre-investment-management-history",
+      "mediaType": "text/html; charset=UTF-8",
+      "httpResponseBytes": 5665,
+      "httpResponseSha256": "b856f1114f2e686b000ecc4e782c3d6872a3c72e13647373622c392f839f2d19",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "contentVerified": true,
+      "purpose": "Official CBRE Caledon to CBRE Investment Management brand succession; not current Generate ownership evidence"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20240130298422/en/",
+      "canonicalContentUrl": "https://www.businesswire.com/news/home/20240130298422/en/Leading-Global-Institutions-Invest-in-a-Clean-Energy-Future-With-Generate-Capital",
+      "httpStatus": 403,
+      "finalUrl": "https://www.businesswire.com/news/home/20240130298422/en/",
+      "mediaType": "text/html",
+      "httpResponseBytes": 416,
+      "httpResponseSha256": "c0603768c27f63ac4008ee600b0a75fd16fe24d52c1ba66856d6b52b0b899445",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "contentVerified": true,
+      "purpose": "Closed 2024 equity raise, Generate Capital PBC identity, current AustralianSuper and QIC support, and scale"
+    }
+  ],
+  "ownershipEvidenceAssessment": {
+    "AustralianSuper": "CURRENT_DIRECT_EVIDENCE",
+    "QIC": "CURRENT_DIRECT_EVIDENCE",
+    "Harbert Management Corp": "ENTRY_DIRECT_CURRENT_UNRESOLVED",
+    "CBRE Investment Management": "ENTRY_DIRECT_CURRENT_UNRESOLVED"
+  },
+  "subsequentExitSearchConclusion": "No Generate parent-level sale, secondary transfer, signed pending sale or disclosed Harbert/CBRE exit was found through 2026-08-18. A negative exit search does not prove continuing ownership.",
+  "modelEvidenceCorrection": "The initial response incorrectly retained Harbert and CBRE as current from 2021 entry evidence plus a negative exit search. The one repair correctly deferred both ownership questions.",
+  "allUrlsHttps": true,
+  "allSourcesReopened": true,
+  "recommendedPrimaryCount": 1,
+  "result": "PASS_DEFERRED"
+}
