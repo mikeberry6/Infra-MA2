@@ -54,6 +54,7 @@ interface LedgerRow {
   attributedFundName: string | null;
   disclosedOrEstimatedFundName: string | null;
   currentLinkedFundName: string | null;
+  currentFundAttribution: Attribution;
   linkedCanonicalFundName: string | null;
   targetLinkedFundName: string | null;
   alternatives: Candidate[];
@@ -665,6 +666,7 @@ interface ProductionSnapshot {
     vehicleName: string | null;
     displayVehicleName: string;
     currentLinkedFundName: string | null;
+    currentFundAttribution: Attribution;
     investmentYear: number | null;
     stake: string | null;
     milestones: Array<{ date: string; event: string; category: string }>;
@@ -727,6 +729,7 @@ function loadProductionRows(snapshotPath: string, asOfDate: string): {
       rowKey: record.ownershipPeriodId,
       ownershipPeriodId: record.ownershipPeriodId,
       databaseVehicleName: record.vehicleName,
+      currentFundAttribution: record.currentFundAttribution,
     };
   });
   return { snapshotSha256, availableFundNames: new Set(snapshot.availableFundNames), rows };
@@ -1019,6 +1022,7 @@ function classify(
     attributedFundName,
     disclosedOrEstimatedFundName: fundName,
     currentLinkedFundName: currentLinkedFund?.fundName ?? null,
+    currentFundAttribution: source.currentFundAttribution ?? "UNRESOLVED",
     linkedCanonicalFundName: linkedFund?.fundName ?? (attribution === "INFERRED" ? fundName : null),
     targetLinkedFundName,
     alternatives: rankedCandidates.slice(0, 3),
@@ -1215,7 +1219,7 @@ function buildApplyManifest(ledger: ReturnType<typeof buildPortfolioFundAttribut
       stake: row.stake,
       targetLinkedFundName: row.targetLinkedFundName,
       expected: {
-        fundAttribution: "UNRESOLVED" as const,
+        fundAttribution: row.currentFundAttribution ?? "UNRESOLVED",
         currentLinkedFundName: row.currentLinkedFundName,
       },
       set: {

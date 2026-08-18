@@ -18,7 +18,7 @@ export const attributionMutationSchema = z.strictObject({
   stake: nonEmpty.nullable(),
   targetLinkedFundName: nonEmpty.nullable(),
   expected: z.strictObject({
-    fundAttribution: z.literal("UNRESOLVED"),
+    fundAttribution: attribution,
     currentLinkedFundName: nonEmpty.nullable(),
   }),
   set: z.strictObject({

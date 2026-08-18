@@ -43,6 +43,7 @@ export interface ActiveOwnerRow {
   rowKey: string;
   ownershipPeriodId?: string;
   databaseVehicleName?: string | null;
+  currentFundAttribution?: "DISCLOSED" | "INFERRED" | "DIRECT_PROGRAM" | "UNRESOLVED";
 }
 
 export interface AuditRow {

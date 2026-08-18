@@ -16,7 +16,10 @@ function reviewedManifest(mutation: {
   investmentYear: number | null;
   stake: string | null;
   targetLinkedFundName: string | null;
-  expected: { fundAttribution: "UNRESOLVED"; currentLinkedFundName: string | null };
+  expected: {
+    fundAttribution: "DISCLOSED" | "INFERRED" | "DIRECT_PROGRAM" | "UNRESOLVED";
+    currentLinkedFundName: string | null;
+  };
   set: {
     fundAttribution: "DISCLOSED" | "INFERRED" | "DIRECT_PROGRAM" | "UNRESOLVED";
     attributedFundName: string | null;
@@ -157,6 +160,7 @@ describe("portfolio fund attribution observation", () => {
       ownershipPeriodId: "owner-1",
       currentFundId: null,
       targetFundId: "fund-3",
+      expectedFundAttribution: "UNRESOLVED",
       desired: {
         linkedFundName: "DigitalBridge Fund III",
         fundAttribution: "INFERRED",
@@ -170,6 +174,7 @@ describe("portfolio fund attribution observation", () => {
     const query = executeRaw.mock.calls[0][0] as { strings: string[]; values: unknown[] };
     expect(query.strings.join("?")).toContain('UPDATE "OwnershipPeriod"');
     expect(query.strings.join("?")).toContain('IS NOT DISTINCT FROM desired."expectedFundId"');
+    expect(query.strings.join("?")).toContain('ownership."fundAttribution" = desired."expectedFundAttribution"');
     expect(query.values).toContain("owner-1");
     expect(query.values).toContain("fund-3");
   });
@@ -180,6 +185,7 @@ describe("portfolio fund attribution observation", () => {
       ownershipPeriodId: "owner-1",
       currentFundId: null,
       targetFundId: "fund-3",
+      expectedFundAttribution: "UNRESOLVED",
       desired: {
         linkedFundName: "DigitalBridge Fund III",
         fundAttribution: "INFERRED",
@@ -188,5 +194,50 @@ describe("portfolio fund attribution observation", () => {
         attributionRationale: "Estimated from manager and vintage evidence.",
       },
     }] as never)).rejects.toThrow(/expected 1 guarded updates, received 0/);
+  });
+
+  it("supports a reviewed correction from inferred to unresolved", async () => {
+    const manifest = reviewedManifest({
+      recordId: "OFA-CORRECTION",
+      ownershipPeriodId: "owner-3",
+      companyName: "Example PortCo",
+      country: "Canada",
+      investmentFirm: "Example Manager",
+      currentVehicleName: "Example LP",
+      databaseVehicleName: "Example LP",
+      investmentYear: 2017,
+      stake: "85%",
+      targetLinkedFundName: null,
+      expected: { fundAttribution: "INFERRED", currentLinkedFundName: null },
+      set: {
+        fundAttribution: "UNRESOLVED",
+        attributedFundName: null,
+        attributionConfidence: null,
+        attributionRationale: "Reviewed evidence does not identify a commingled fund.",
+      },
+      evidenceUrls: ["https://example.com/evidence"],
+    });
+    const tx = {
+      ownershipPeriod: { findMany: vi.fn().mockResolvedValue([period({
+        id: "owner-3",
+        vehicleName: "Example LP",
+        investmentYear: 2017,
+        stake: "85%",
+        fundAttribution: "INFERRED",
+        attributedFundName: "Example Fund IV",
+        attributionConfidence: "LOW",
+        attributionRationale: "Old estimate.",
+        organization: { name: "Example Manager" },
+        company: { id: "company-3", name: "Example PortCo", country: "Canada" },
+      })]) },
+      fund: { findMany: vi.fn() },
+    };
+
+    const observed = await observeManifest(tx as never, manifest);
+    expect(observed[0]).toMatchObject({
+      expectedFundAttribution: "INFERRED",
+      state: "PENDING",
+      desired: { fundAttribution: "UNRESOLVED", attributedFundName: null },
+    });
   });
 });

@@ -49,6 +49,7 @@ async function main(): Promise<void> {
           vehicleName: true,
           stake: true,
           investmentYear: true,
+          fundAttribution: true,
           fund: { select: { fundName: true, manager: { select: { name: true } } } },
           organization: { select: { name: true } },
         },
@@ -85,6 +86,7 @@ async function main(): Promise<void> {
     vehicleName: owner.vehicleName,
     displayVehicleName: owner.vehicleName || owner.fund?.fundName || owner.organization?.name || "n.a.",
     currentLinkedFundName: owner.fund?.fundName ?? null,
+    currentFundAttribution: owner.fundAttribution,
     investmentYear: owner.investmentYear,
     stake: owner.stake,
     milestones: company.milestones.map((milestone) => ({
