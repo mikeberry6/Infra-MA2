@@ -15,7 +15,7 @@
     "productionSnapshotSha256": null
   },
   "summary": {
-    "companyCount": 1144,
+    "companyCount": 1143,
     "activeOwnershipRows": 1283,
     "attributionCounts": {
       "DISCLOSED": 604,
@@ -25,8 +25,8 @@
     },
     "confidenceCounts": {
       "HIGH": 666,
-      "MEDIUM": 178,
-      "LOW": 439
+      "MEDIUM": 179,
+      "LOW": 438
     },
     "applyEligibleRows": 187,
     "sizeGatedFundReviewRows": 409
@@ -10075,55 +10075,6 @@
       ],
       "sourceAuditStatus": "Disclosed but generic",
       "sourceAuditConfidence": "Medium",
-      "applyEligible": false,
-      "proposedAction": "SET_INFERRED",
-      "fundDatabaseAction": "NONE"
-    },
-    {
-      "recordId": "OFA-E126BF698E59",
-      "ownershipPeriodId": null,
-      "sourceRowKey": "Chesapeake toll road network|United States|AustralianSuper|n.a.|0",
-      "companyName": "Chesapeake toll road network",
-      "country": "United States",
-      "investmentFirm": "AustralianSuper",
-      "currentVehicleName": "n.a.",
-      "databaseVehicleName": "n.a.",
-      "investmentYear": 2021,
-      "stake": null,
-      "attribution": "INFERRED",
-      "confidence": "LOW",
-      "attributedFundName": "AustralianSuper Infrastructure Portfolio",
-      "disclosedOrEstimatedFundName": "AustralianSuper Infrastructure Portfolio",
-      "currentLinkedFundName": null,
-      "linkedCanonicalFundName": "AustralianSuper Infrastructure Portfolio",
-      "targetLinkedFundName": "AustralianSuper Infrastructure Portfolio",
-      "alternatives": [
-        {
-          "fundName": "AustralianSuper Infrastructure Portfolio",
-          "managerName": "AustralianSuper",
-          "vintage": "Evergreen",
-          "score": 63,
-          "reasons": [
-            "manager match 1.00",
-            "evergreen/permanent-capital vehicle",
-            "North America-relevant mandate"
-          ],
-          "attributionOnly": false,
-          "sourceUrls": [
-            "https://www.australiansuper.com/global-investors/capabilities/portfolio-asset-class-capabilities"
-          ]
-        }
-      ],
-      "rationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
-      "evidenceUrls": [
-        "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf",
-        "https://www.transurban.com/content/dam/investor-centre/01/FY22-Appendix4E.pdf",
-        "https://www.australiansuper.com/global-investors/who-we-are/north-america",
-        "https://www.transurban.com/roads-and-projects/north-america",
-        "https://www.transurban.com/content/dam/transurban-pdfs/02/news/20201216-North-America-Press-Release.pdf"
-      ],
-      "sourceAuditStatus": "n.a.",
-      "sourceAuditConfidence": "High",
       "applyEligible": false,
       "proposedAction": "SET_INFERRED",
       "fundDatabaseAction": "NONE"
@@ -30880,16 +30831,66 @@
       "fundDatabaseAction": "REVIEW_ALIAS_OR_SIZE_GATED_ADDITION"
     },
     {
-      "recordId": "OFA-5EFCFB3F6EB1",
+      "recordId": "OFA-03A4A9DE1EAA",
       "ownershipPeriodId": null,
-      "sourceRowKey": "Transurban Chesapeake|United States|CPP Investments|Real Assets (Infrastructure)|0",
+      "sourceRowKey": "Transurban Chesapeake|United States|AustralianSuper|AustralianSuper Infrastructure Portfolio|0",
+      "companyName": "Transurban Chesapeake",
+      "country": "United States",
+      "investmentFirm": "AustralianSuper",
+      "currentVehicleName": "AustralianSuper Infrastructure Portfolio",
+      "databaseVehicleName": "AustralianSuper Infrastructure Portfolio",
+      "investmentYear": 2021,
+      "stake": "25%",
+      "attribution": "INFERRED",
+      "confidence": "MEDIUM",
+      "attributedFundName": "AustralianSuper Infrastructure Portfolio",
+      "disclosedOrEstimatedFundName": "AustralianSuper Infrastructure Portfolio",
+      "currentLinkedFundName": "AustralianSuper Infrastructure Portfolio",
+      "linkedCanonicalFundName": "AustralianSuper Infrastructure Portfolio",
+      "targetLinkedFundName": "AustralianSuper Infrastructure Portfolio",
+      "alternatives": [
+        {
+          "fundName": "AustralianSuper Infrastructure Portfolio",
+          "managerName": "AustralianSuper",
+          "vintage": "Evergreen",
+          "score": 93,
+          "reasons": [
+            "manager match 1.00",
+            "vehicle-name overlap 1.00",
+            "evergreen/permanent-capital vehicle",
+            "North America-relevant mandate"
+          ],
+          "attributionOnly": false,
+          "sourceUrls": [
+            "https://www.australiansuper.com/global-investors/capabilities/portfolio-asset-class-capabilities"
+          ]
+        }
+      ],
+      "rationale": "Estimated by preserving the existing curated link to AustralianSuper Infrastructure Portfolio; public disclosure does not identify a distinct fund. Ranked evidence considered manager match 1.00, vehicle-name overlap 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate.",
+      "evidenceUrls": [
+        "https://www.cppinvestments.com/wp-content/uploads/2020/12/cpp-investments-transurban-chesapeake-december-16-2020-v2.pdf",
+        "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf",
+        "https://www.australiansuper.com/global-investors/who-we-are/north-america",
+        "https://www.cppinvestments.com/newsroom/cpp-investments-to-acquire-stake-in-toll-road-business-transurban-chesapeake/",
+        "https://www.transurban.com/content/dam/investor-centre/06/Chesapeake-Partnership-and-Traffic-Update-presentation.pdf"
+      ],
+      "sourceAuditStatus": "n.a.",
+      "sourceAuditConfidence": "High",
+      "applyEligible": false,
+      "proposedAction": "SET_INFERRED",
+      "fundDatabaseAction": "NONE"
+    },
+    {
+      "recordId": "OFA-51C1667D08B1",
+      "ownershipPeriodId": null,
+      "sourceRowKey": "Transurban Chesapeake|United States|CPP Investments|Real Assets (Infrastructure)|1",
       "companyName": "Transurban Chesapeake",
       "country": "United States",
       "investmentFirm": "CPP Investments",
       "currentVehicleName": "Real Assets (Infrastructure)",
       "databaseVehicleName": "Real Assets (Infrastructure)",
       "investmentYear": 2021,
-      "stake": null,
+      "stake": "15%",
       "attribution": "DISCLOSED",
       "confidence": "HIGH",
       "attributedFundName": "Real Assets (Infrastructure)",
@@ -30916,10 +30917,11 @@
       ],
       "rationale": "Matched supplemental ownership detail: Firm: CPP Investments | Fund: Real Assets (Infrastructure) | Ownership Interest: 15% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
       "evidenceUrls": [
-        "https://yourir.info/resources/a50955429d255a58/announcements/tcl.asx/3A564654/TCL_Transurban_reaches_financial_close_on_Chesapeake_partnership.pdf",
+        "https://www.cppinvestments.com/wp-content/uploads/2020/12/cpp-investments-transurban-chesapeake-december-16-2020-v2.pdf",
+        "https://www.transurban.com/content/dam/investor-centre/01/FY26-ResultsPresentation.pdf",
+        "https://www.transurban.com/content/dam/investor-centre/01/FY21-ResultsPresentation.pdf",
         "https://www.cppinvestments.com/newsroom/cpp-investments-to-acquire-stake-in-toll-road-business-transurban-chesapeake/",
-        "https://www.transurban.com/content/dam/investor-centre/06/Chesapeake-Partnership-and-Traffic-Update-presentation.pdf",
-        "https://www.transurban.com/content/dam/investor-centre/01/1H26-ResultsPresentation.pdf"
+        "https://www.transurban.com/content/dam/investor-centre/06/Chesapeake-Partnership-and-Traffic-Update-presentation.pdf"
       ],
       "sourceAuditStatus": "Verified fund - missing from funds list",
       "sourceAuditConfidence": "High",
@@ -82272,6 +82274,6 @@
       "fundDatabaseAction": "NONE"
     }
   ],
-  "generatedAt": "2026-08-18T07:48:54.953Z",
-  "ledgerSha256": "4052ae75333dc10b67089cc2bf00465721dc3877099933f80db8f89da2405753"
+  "generatedAt": "2026-08-18T12:09:31.955Z",
+  "ledgerSha256": "647f0211db7ca7bca46066899c4e6e67c4c564ee9b34a35fb0a5637c6331803d"
 }
