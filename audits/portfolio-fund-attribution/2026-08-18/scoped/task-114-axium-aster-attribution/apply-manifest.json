@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-18",
+  "ledgerSha256": "0f3a7b8f598b787178e70526e991140c90d737c3ad1b58c180a76586b298d888",
+  "sourceSnapshotSha256": "fd6b3db1119fab7c5d1f766e288353378f2a53b8798d8bc972dcaaee04c422e4",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-789E2CAE2551",
+      "ownershipPeriodId": "cmrxpjsok01i2ivhex4m45yih",
+      "companyName": "Axium Aster & Axium Bloom",
+      "country": "Canada",
+      "investmentFirm": "Axium Infrastructure",
+      "currentVehicleName": "Aster Joint Venture Limited Partnership",
+      "databaseVehicleName": "Aster Joint Venture Limited Partnership",
+      "investmentYear": 2020,
+      "stake": "92.5% current (80% at 2020 entry)",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Reviewed evidence identifies AIC II as the disclosed fund for the Aster vehicle, but that fund is not yet present in the curated fund database. The ownership period remains unlinked pending separate fund review."
+      },
+      "evidenceUrls": [
+        "https://www.axiuminfra.com/2020/01/08/agecare-and-axium-infrastructure-form-a-partnership-to-share-ownership-of-five-continuing-care-facilities-in-alberta/?lang=en",
+        "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+        "https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes",
+        "https://www.axiuminfra.com/wp-content/uploads/2022/06/Axium_2022_ESG_Report.pdf"
+      ]
+    }
+  ],
+  "manifestSha256": "d24fdc2f30fd1dfddb48221b78fbd2b002f9595d91fa97e94c313ada563efa59"
+}
