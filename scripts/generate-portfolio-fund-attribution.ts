@@ -413,6 +413,18 @@ const ATTRIBUTION_ONLY_FUNDS: CandidateFund[] = [
 
 const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
   {
+    companyName: "Axium Extendicare LTC II LP",
+    investmentFirm: "Axium Infrastructure",
+    attribution: "UNRESOLVED",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "Reviewed current ownership evidence identifies Axium LTC Limited Partnership as the holding vehicle and Axium Infrastructure as the 85% owner, but does not disclose a commingled fund. The vehicle is intentionally left unlinked rather than inferred to AxInfra Fund I-IV.",
+    sourceUrls: [
+      "https://extendicare-1c124.kxcdn.com/app/uploads/2026/08/EXE-Q2-2026-Interim-MDA-vSedar2.pdf?x89279=",
+      "https://www.extendicare.com/app/uploads/2025/06/997.pdf",
+    ],
+  },
+  {
     companyName: "Virginia International Gateway",
     investmentFirm: "Astatine Investment Partners",
     attribution: "UNRESOLVED",
