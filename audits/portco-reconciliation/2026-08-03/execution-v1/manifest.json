@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T15:52:00.000Z",
+  "updatedAt": "2026-08-18T16:17:45.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
   "source": {
@@ -17358,10 +17358,10 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ddb91e5a3e36d84d95bacf04f014dc7ddbd689d2614b55e3af46ed4558631476",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 1,
       "startedAt": "2026-08-18T14:52:00.000Z",
-      "updatedAt": "2026-08-18T15:52:00.000Z",
+      "updatedAt": "2026-08-18T16:17:45.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -17379,7 +17379,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0114-axium-aster-and-axium-bloom-v1.json",
           "sha256": "5b25a82d85a63652e716460cc5a9e3d61f7614f340e8b9c900e9c2b0b194e442"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/production-apply/apply-receipt.json",
+          "sha256": "f68de1961caa67c7aeadb12527bc9ae0b7d39c956cb13544c147dba721467290"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -17437,6 +17440,30 @@
           "taskSnapshotSha256": "6f5dde9733666a0fd627f060e7ba379dbef082cb8ecd59229c9bc899c1ca8831",
           "evidenceSha256": [
             "5b25a82d85a63652e716460cc5a9e3d61f7614f340e8b9c900e9c2b0b194e442"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-18T16:06:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6f5dde9733666a0fd627f060e7ba379dbef082cb8ecd59229c9bc899c1ca8831",
+          "evidenceSha256": [
+            "6f5dde9733666a0fd627f060e7ba379dbef082cb8ecd59229c9bc899c1ca8831"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-18T16:17:45.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6f5dde9733666a0fd627f060e7ba379dbef082cb8ecd59229c9bc899c1ca8831",
+          "evidenceSha256": [
+            "f68de1961caa67c7aeadb12527bc9ae0b7d39c956cb13544c147dba721467290"
           ],
           "kind": "TRANSITION"
         }
@@ -32069,5 +32096,5 @@
       ]
     }
   ],
-  "manifestSha256": "a0341ca86cadbcb54d47b694d4ed1f13081455d73cba31ef16b738743a69ee2d"
+  "manifestSha256": "0ebdfa80d6e8622437fbf48159c7423216eebda2778ca9d03dae1179bd35700a"
 }

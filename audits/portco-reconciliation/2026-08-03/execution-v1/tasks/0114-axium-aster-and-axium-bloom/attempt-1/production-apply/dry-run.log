@@ -1,0 +1,390 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:apply
+> npx tsx scripts/portco-reconciliation/apply-cli.ts --proposal=audits/portco-reconciliation/2026-08-03/proposals/0114-axium-aster-and-axium-bloom-v1/proposal.json --approval=audits/portco-reconciliation/2026-08-03/approvals/0114-axium-aster-and-axium-bloom-v1.json --production-snapshot=audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/locked-production-snapshot.json --proposal-sha256=1ebf20ecb246b0083b8b1374b915c9b06ba7e78d2b3e0fe9c499af5fc3dd238a --approval-sha256=5b25a82d85a63652e716460cc5a9e3d61f7614f340e8b9c900e9c2b0b194e442 --snapshot-sha256=75edbe5758fd9dcad8777ac522ef4f569191c7d7ad8bc80448db6db53590107d
+
+(node:2843) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "seedEntry": {
+    "proposalSha256": "1ebf20ecb246b0083b8b1374b915c9b06ba7e78d2b3e0fe9c499af5fc3dd238a",
+    "approvalSha256": "5b25a82d85a63652e716460cc5a9e3d61f7614f340e8b9c900e9c2b0b194e442",
+    "afterImageSha256": "3914dd64528835a18801fa46c10095b2771db6a32b8a5a5a7f0ab986b404262f",
+    "taskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
+    "operation": "UPSERT",
+    "company": {
+      "name": "Axium Aster & Axium Bloom",
+      "investmentFirm": "Axium Infrastructure",
+      "sector": "Social Infra",
+      "subsector": "Long-Term Care",
+      "region": "North America",
+      "country": "Canada",
+      "ownershipVehicle": "Aster Joint Venture Limited Partnership",
+      "description": "Axium Aster & Axium Bloom is Axium Infrastructure's combined manager-level investment in two Canadian long-term-care property portfolios. Axium's current portfolio materials report 26 operating facilities and 4,114 beds across Alberta and British Columbia, with cash flows supported by provincially licensed, regulated and funded long-term-care and continuing-care frameworks plus resident co-payments. Axium owns 92.5% of each portfolio; AgeCare owns the 7.5% balance and operates the facilities. Aster began in 2020 as a five-facility, 1,402-bed Alberta partnership at 80% Axium and 20% AgeCare. Bloom traces to the western tranche of the Revera-Axium joint venture that first closed in 2017; Revera sold its remaining 15% interest in certain Alberta and British Columbia homes to AgeCare in 2022. Individual homes are underlying assets, and the separately presented 16-home Ontario Axium Iris portfolio is outside this company boundary. No Axium exit or signed pending sale was identified through August 18, 2026.",
+      "status": "Active",
+      "countryTags": [
+        "Canada"
+      ],
+      "yearFounded": 2017,
+      "investmentYear": 2020,
+      "milestones": [
+        {
+          "date": "Dec 21, 2017",
+          "event": "The predecessor Revera-Axium joint venture completed its first acquisition of 16 homes in Manitoba, Alberta and British Columbia; Axium held 75% and Revera 25%, establishing the western portfolio from which Bloom developed.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Jan 8, 2020",
+          "event": "Axium and AgeCare formed Aster around five Alberta continuing-care facilities with 1,402 beds; Axium held 80%, AgeCare held 20% and AgeCare continued as operator.",
+          "category": "Acquisition"
+        },
+        {
+          "date": "Aug 22, 2022",
+          "event": "Revera sold its remaining 15% interest in certain Alberta and British Columbia homes to AgeCare, which continued owning the homes in joint venture with Axium and operating the facilities.",
+          "category": "Divestiture"
+        }
+      ],
+      "management": [],
+      "sources": [
+        {
+          "label": "Axiuminfra — 527 Renewables Holdings LLC",
+          "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+          "type": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current Aster/Bloom identity, 92.5% Axium ownership, 7.5% AgeCare balance, 26-facility / 4,114-bed scale and active operating status"
+        },
+        {
+          "label": "Announcement date source — Axium Infrastructure — AgeCare Facilities Portfolio",
+          "url": "https://www.axiuminfra.com/2020/01/08/agecare-and-axium-infrastructure-form-a-partnership-to-share-ownership-of-five-continuing-care-facilities-in-alberta/?lang=en",
+          "type": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "January 8, 2020 Aster formation, five Alberta facilities and 1,402 beds"
+        },
+        {
+          "label": "Axiuminfra — AgeCare Facilities Portfolio",
+          "url": "https://www.axiuminfra.com/wp-content/uploads/2020/01/Website-Release_Project-Aster_Axium_en_Final.pdf",
+          "type": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Aster's original 80% Axium / 20% AgeCare ownership split and AgeCare operator role"
+        },
+        {
+          "label": "Agecare — AgeCare Facilities Portfolio",
+          "url": "https://www.agecare.ca/",
+          "type": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current AgeCare operating platform and Canadian care-service profile"
+        },
+        {
+          "label": "Goodmans — Revera-Axium joint venture",
+          "url": "https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes",
+          "type": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "December 2017 first close and original 75% Axium / 25% Revera western-portfolio ownership"
+        },
+        {
+          "label": "Goodmans — Revera western LTC sale to AgeCare",
+          "url": "https://www.goodmans.ca/expertise/case/revera-inc.-sells-interest-in-certain-long-term-care-homes-to-agecare",
+          "type": "ARTICLE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "August 22, 2022 Revera sale of its 15% Alberta and British Columbia interest to AgeCare"
+        },
+        {
+          "label": "Axium Infrastructure — 2022 ESG Report",
+          "url": "https://www.axiuminfra.com/wp-content/uploads/2023/08/Annual-ESG-Report-_Q4-2022_vSummary_FINAL.pdf",
+          "type": "PRESENTATION",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "AIC II attribution for Axium Aster and continued AgeCare operation in 2022"
+        },
+        {
+          "label": "Alberta Labour Relations Board — Umpire Registry",
+          "url": "https://www.alrb.gov.ab.ca/umpireregistry.html",
+          "type": "WEBSITE",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "Current Aster JVLP and Bloom Limited Partnership legal-vehicle names and 2026 operating corroboration"
+        }
+      ],
+      "owners": [
+        {
+          "investmentFirm": "Axium Infrastructure",
+          "ownershipVehicle": "Aster Joint Venture Limited Partnership",
+          "vehicleName": "Aster Joint Venture Limited Partnership",
+          "investmentYear": 2020,
+          "stake": "92.5% current (80% at 2020 entry)",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "investmentFirm": "Axium Infrastructure",
+          "ownershipVehicle": "Bloom Limited Partnership",
+          "vehicleName": "Bloom Limited Partnership",
+          "investmentYear": 2017,
+          "stake": "92.5% current (75% at 2017 entry)",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "investmentFirm": "AgeCare",
+          "ownershipVehicle": "Aster Joint Venture Limited Partnership",
+          "vehicleName": "Aster Joint Venture Limited Partnership",
+          "investmentYear": 2020,
+          "stake": "7.5% current (20% at 2020 entry)",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "investmentFirm": "AgeCare",
+          "ownershipVehicle": "Bloom Limited Partnership",
+          "vehicleName": "Bloom Limited Partnership",
+          "investmentYear": 2022,
+          "stake": "7.5% current; AgeCare acquired Revera's 15% interest in certain Alberta and British Columbia homes in 2022",
+          "status": "Active",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "investmentFirm": "Revera Inc.",
+          "ownershipVehicle": "Western Revera-Axium joint venture",
+          "vehicleName": "Western Revera-Axium joint venture",
+          "investmentYear": 2017,
+          "exitYear": 2022,
+          "stake": "25% at 2017 entry; sold a 15% interest in certain Alberta and British Columbia homes in 2022",
+          "status": "Realized",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    "retiredCompanies": [
+      {
+        "name": "AgeCare Facilities Portfolio",
+        "country": "Canada"
+      }
+    ],
+    "canonicalAfterImage": {
+      "id": "cmrxpj7m000l1ivhezpjsd4h1",
+      "name": "Axium Aster & Axium Bloom",
+      "aliases": [
+        "AgeCare Facilities Portfolio",
+        "Aster Joint Venture Limited Partnership",
+        "Aster JVLP",
+        "Axium Aster",
+        "Axium Bloom",
+        "Bloom Limited Partnership",
+        "Project Aster",
+        "Project Bloom"
+      ],
+      "sector": "SOCIAL_INFRA",
+      "subsector": "Long-Term Care",
+      "region": "NORTH_AMERICA",
+      "country": "Canada",
+      "countryTags": [
+        "Canada"
+      ],
+      "description": "Axium Aster & Axium Bloom is Axium Infrastructure's combined manager-level investment in two Canadian long-term-care property portfolios. Axium's current portfolio materials report 26 operating facilities and 4,114 beds across Alberta and British Columbia, with cash flows supported by provincially licensed, regulated and funded long-term-care and continuing-care frameworks plus resident co-payments. Axium owns 92.5% of each portfolio; AgeCare owns the 7.5% balance and operates the facilities. Aster began in 2020 as a five-facility, 1,402-bed Alberta partnership at 80% Axium and 20% AgeCare. Bloom traces to the western tranche of the Revera-Axium joint venture that first closed in 2017; Revera sold its remaining 15% interest in certain Alberta and British Columbia homes to AgeCare in 2022. Individual homes are underlying assets, and the separately presented 16-home Ontario Axium Iris portfolio is outside this company boundary. No Axium exit or signed pending sale was identified through August 18, 2026.",
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "website": null,
+      "yearFounded": 2017,
+      "headquarters": null,
+      "lastVerifiedAt": "2026-08-18T00:00:00.000Z",
+      "ownershipPeriods": [
+        {
+          "id": "cmrxpjsok01i2ivhex4m45yih",
+          "managerName": "Axium Infrastructure",
+          "organizationName": "Axium Infrastructure",
+          "fundName": null,
+          "vehicleName": "Aster Joint Venture Limited Partnership",
+          "stake": "92.5% current (80% at 2020 entry)",
+          "investmentYear": 2020,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "id": null,
+          "managerName": "Axium Infrastructure",
+          "organizationName": "Axium Infrastructure",
+          "fundName": null,
+          "vehicleName": "Bloom Limited Partnership",
+          "stake": "92.5% current (75% at 2017 entry)",
+          "investmentYear": 2017,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "id": null,
+          "managerName": "AgeCare",
+          "organizationName": null,
+          "fundName": null,
+          "vehicleName": "Aster Joint Venture Limited Partnership",
+          "stake": "7.5% current (20% at 2020 entry)",
+          "investmentYear": 2020,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "id": null,
+          "managerName": "AgeCare",
+          "organizationName": null,
+          "fundName": null,
+          "vehicleName": "Bloom Limited Partnership",
+          "stake": "7.5% current; AgeCare acquired Revera's 15% interest in certain Alberta and British Columbia homes in 2022",
+          "investmentYear": 2022,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "id": null,
+          "managerName": "Revera Inc.",
+          "organizationName": null,
+          "fundName": null,
+          "vehicleName": "Western Revera-Axium joint venture",
+          "stake": "25% at 2017 entry; sold a 15% interest in certain Alberta and British Columbia homes in 2022",
+          "investmentYear": 2017,
+          "exitYear": 2022,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        }
+      ],
+      "pendingOwnershipTransactions": [],
+      "milestones": [
+        {
+          "id": "cmrxpkqqc02u9ivhe028iqvgz",
+          "date": "Dec 21, 2017",
+          "event": "The predecessor Revera-Axium joint venture completed its first acquisition of 16 homes in Manitoba, Alberta and British Columbia; Axium held 75% and Revera 25%, establishing the western portfolio from which Bloom developed.",
+          "category": "ACQUISITION",
+          "sortDate": "2017-12-21T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes"
+          ]
+        },
+        {
+          "id": "cmrxpkqqv02uaivhehwcb74qa",
+          "date": "Jan 8, 2020",
+          "event": "Axium and AgeCare formed Aster around five Alberta continuing-care facilities with 1,402 beds; Axium held 80%, AgeCare held 20% and AgeCare continued as operator.",
+          "category": "ACQUISITION",
+          "sortDate": "2020-01-08T05:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.axiuminfra.com/2020/01/08/agecare-and-axium-infrastructure-form-a-partnership-to-share-ownership-of-five-continuing-care-facilities-in-alberta/?lang=en",
+            "https://www.axiuminfra.com/wp-content/uploads/2020/01/Website-Release_Project-Aster_Axium_en_Final.pdf"
+          ]
+        },
+        {
+          "id": null,
+          "date": "Aug 22, 2022",
+          "event": "Revera sold its remaining 15% interest in certain Alberta and British Columbia homes to AgeCare, which continued owning the homes in joint venture with Axium and operating the facilities.",
+          "category": "DIVESTITURE",
+          "sortDate": "2022-08-22T04:00:00.000Z",
+          "evidenceUrls": [
+            "https://www.goodmans.ca/expertise/case/revera-inc.-sells-interest-in-certain-long-term-care-homes-to-agecare"
+          ]
+        }
+      ],
+      "managementRoles": [],
+      "citations": [
+        {
+          "id": "cmrxpp8nq07v9ivheksz9cf0j",
+          "label": "Axiuminfra — 527 Renewables Holdings LLC",
+          "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+          "sourceType": "WEBSITE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Current Aster/Bloom identity, 92.5% Axium ownership, 7.5% AgeCare balance, 26-facility / 4,114-bed scale and active operating status",
+          "isPrimary": true
+        },
+        {
+          "id": "cmrxpp8ox07vbivhe64wp3lfs",
+          "label": "Announcement date source — Axium Infrastructure — AgeCare Facilities Portfolio",
+          "url": "https://www.axiuminfra.com/2020/01/08/agecare-and-axium-infrastructure-form-a-partnership-to-share-ownership-of-five-continuing-care-facilities-in-alberta/?lang=en",
+          "sourceType": "PRESS_RELEASE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "January 8, 2020 Aster formation, five Alberta facilities and 1,402 beds",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpp8t507vfivhepiw4dey7",
+          "label": "Axiuminfra — AgeCare Facilities Portfolio",
+          "url": "https://www.axiuminfra.com/wp-content/uploads/2020/01/Website-Release_Project-Aster_Axium_en_Final.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "Aster's original 80% Axium / 20% AgeCare ownership split and AgeCare operator role",
+          "isPrimary": false
+        },
+        {
+          "id": "cmrxpp8s107vdivheynaocter",
+          "label": "Agecare — AgeCare Facilities Portfolio",
+          "url": "https://www.agecare.ca/",
+          "sourceType": "WEBSITE",
+          "purpose": "COMPANY_PROFILE",
+          "evidenceLabel": "Current AgeCare operating platform and Canadian care-service profile",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Goodmans — Revera-Axium joint venture",
+          "url": "https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes",
+          "sourceType": "ARTICLE",
+          "purpose": "OWNERSHIP_INVESTMENT",
+          "evidenceLabel": "December 2017 first close and original 75% Axium / 25% Revera western-portfolio ownership",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Goodmans — Revera western LTC sale to AgeCare",
+          "url": "https://www.goodmans.ca/expertise/case/revera-inc.-sells-interest-in-certain-long-term-care-homes-to-agecare",
+          "sourceType": "ARTICLE",
+          "purpose": "MILESTONE_EVENT",
+          "evidenceLabel": "August 22, 2022 Revera sale of its 15% Alberta and British Columbia interest to AgeCare",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Axium Infrastructure — 2022 ESG Report",
+          "url": "https://www.axiuminfra.com/wp-content/uploads/2023/08/Annual-ESG-Report-_Q4-2022_vSummary_FINAL.pdf",
+          "sourceType": "PRESENTATION",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "AIC II attribution for Axium Aster and continued AgeCare operation in 2022",
+          "isPrimary": false
+        },
+        {
+          "id": null,
+          "label": "Alberta Labour Relations Board — Umpire Registry",
+          "url": "https://www.alrb.gov.ab.ca/umpireregistry.html",
+          "sourceType": "WEBSITE",
+          "purpose": "SUPPORTING_CONTEXT",
+          "evidenceLabel": "Current Aster JVLP and Bloom Limited Partnership legal-vehicle names and 2026 operating corroboration",
+          "isPrimary": false
+        }
+      ]
+    }
+  },
+  "plan": {
+    "companyName": "Axium Aster & Axium Bloom",
+    "mutations": [
+      {
+        "kind": "CORRECT_COMPANY",
+        "relationIds": [],
+        "detail": "Apply approved changes to name, aliases, description, yearFounded, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+      },
+      {
+        "kind": "ADD_OWNER",
+        "relationIds": [],
+        "detail": "Add 4 approved ownership period(s)."
+      }
+    ],
+    "changedFields": [
+      "aliases",
+      "citations",
+      "description",
+      "headquarters",
+      "lastVerifiedAt",
+      "milestones",
+      "name",
+      "ownershipPeriods",
+      "yearFounded"
+    ],
+    "retiredCompanyIds": []
+  }
+}
