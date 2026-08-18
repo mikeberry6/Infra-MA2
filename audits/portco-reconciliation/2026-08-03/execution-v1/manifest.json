@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T19:14:17.000Z",
+  "updatedAt": "2026-08-18T19:34:05.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0117:etobicoke-general-hospital-phase-1-patient-tower:95d7434e",
   "source": {
@@ -17668,10 +17668,10 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "89621d53479ef749ac2b66587268c324f444e979e87736ac3bb9de49ec044199",
-      "status": "RELEASING",
+      "status": "VERIFYING",
       "attempts": 2,
       "startedAt": "2026-08-18T19:12:19.000Z",
-      "updatedAt": "2026-08-18T19:14:17.000Z",
+      "updatedAt": "2026-08-18T19:34:05.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -17689,7 +17689,10 @@
           "location": "audits/portco-reconciliation/2026-08-03/approvals/0117-etobicoke-general-hospital-phase-1-patient-tower-v2.json",
           "sha256": "3661cc5acaa806a8631169084205cf3fd96a52850b974c80d691d8598b6a8237"
         },
-        "applyReceipt": null,
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/production-apply/apply-receipt.json",
+          "sha256": "3378304505089234a8f313cc70eecf7aa31016a26b91fd8efe58cf49600be450"
+        },
         "decision": null,
         "companySnapshot": null
       },
@@ -17802,6 +17805,30 @@
           "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
           "evidenceSha256": [
             "3661cc5acaa806a8631169084205cf3fd96a52850b974c80d691d8598b6a8237"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 11,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-18T19:29:37.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
+          "evidenceSha256": [
+            "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 12,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-18T19:34:05.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
+          "evidenceSha256": [
+            "3378304505089234a8f313cc70eecf7aa31016a26b91fd8efe58cf49600be450"
           ],
           "kind": "TRANSITION"
         }
@@ -32320,5 +32347,5 @@
       ]
     }
   ],
-  "manifestSha256": "570e6e3ff9d783e3ad4a80beb0e24d4176691fe784ed9710e2240eb4a41c1fae"
+  "manifestSha256": "c6359dcdcf43a85b646570ba50808f0562e0341529fe28179b683e57727abcf8"
 }
