@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-16T20:24:30.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0106:waihonu-solar-farm:52102602",
+  "updatedAt": "2026-08-18T00:48:00.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -16027,11 +16027,11 @@
       "managerIndex": 15,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "fc62e9cdd208d863bd4778dff5f4632be98c1fa1a13677abf92ca92bafc883cb",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 3,
       "startedAt": "2026-08-16T20:20:21.000Z",
-      "updatedAt": "2026-08-16T20:24:30.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-18T00:48:00.000Z",
+      "completedAt": "2026-08-18T00:48:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
@@ -16247,6 +16247,20 @@
           "from": "APPLYING",
           "to": "VERIFYING",
           "at": "2026-08-16T20:24:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
+          "evidenceSha256": [
+            "3b65e827137044db3623b80b9f9f60086ea6d1c15bfedca080826c4a9e3d0611",
+            "774105db60bae87a085ac9c2d0498650deac647e804686a72b73514409638dd1",
+            "f986e6d656e7ef06861797bfe5e33d528001e08442138db1f340bee938d411b1"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 18,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-18T00:48:00.000Z",
           "reason": null,
           "taskSnapshotSha256": "b23f3d98b7ba5073f6f79e006554e2ba7f6f5d0ad0dfe686f8982ed951dc4c28",
           "evidenceSha256": [
@@ -31179,5 +31193,5 @@
       ]
     }
   ],
-  "manifestSha256": "a421962461a6404477394915217b4b566797b2d1d5588c422d043f40ab18b691"
+  "manifestSha256": "6b5a751364896c3e862f1c73f372c8f01de97fb33bd4458f2f5baf678fd8e8e5"
 }
