@@ -4,8 +4,8 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import type { Prisma } from "../src/generated/prisma/client";
-import { prisma } from "../src/lib/prisma";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
+import { withImportTransaction } from "../src/lib/prisma-transaction";
 import {
   PORTFOLIO_FUND_ATTRIBUTION_WRITE_TOKEN,
   canonicalSha256,
@@ -235,7 +235,7 @@ async function main(): Promise<void> {
   }
 
   if (!apply) {
-    const observed = await prisma.$transaction((tx) => observeManifest(tx, manifest), { timeout: 60_000 });
+    const observed = await withImportTransaction((tx) => observeManifest(tx, manifest));
     console.log(JSON.stringify({
       mode: "DRY_RUN",
       databaseWrites: false,
@@ -261,7 +261,7 @@ async function main(): Promise<void> {
     throw new Error("Protected production write approval is missing or does not match the reviewed approval");
   }
 
-  const result = await prisma.$transaction(async (tx) => {
+  const result = await withImportTransaction(async (tx) => {
     const observed = await observeManifest(tx, manifest);
     const pending = observed.filter((row) => row.state === "PENDING");
     const pipeline = await tx.pipelineRun.create({
@@ -312,7 +312,7 @@ async function main(): Promise<void> {
       },
     });
     return { observed, pipelineRunId: pipeline.id };
-  }, { timeout: 120_000 });
+  });
 
   const receipt = verifyApplyReceipt(receiptContent({
     manifest,
@@ -330,7 +330,6 @@ async function main(): Promise<void> {
 const invokedPath = process.argv[1] ? path.resolve(process.argv[1]) : "";
 if (invokedPath === fileURLToPath(import.meta.url)) {
   main()
-    .finally(() => process.env.DATABASE_URL ? prisma.$disconnect() : undefined)
     .catch((error) => {
       console.error(error instanceof Error ? error.message : error);
       process.exitCode = 1;
