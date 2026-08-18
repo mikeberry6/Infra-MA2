@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0115:edwards-sanborn-1a:6fff6c99",
+  "taskIndex": 115,
+  "verifiedAt": "2026-08-18T17:36:29.000Z",
+  "method": "Direct HTTPS retrieval with redirects enabled; HTTP status, final URL, media type and SHA-256 independently captured. The FERC PDF component was downloaded from the eLibrary component API, text-extracted across all 16 pages and visually checked on the controlling ownership page.",
+  "sources": [
+    {
+      "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+      "finalUrl": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "workingStatus": "WORKING",
+      "contentSha256": "6e12eeae5a4d39991d1c379f964a85283a42d96f4fa35c7fc83e1077688cdc96",
+      "verifiedClaims": [
+        "Axium currently presents Axium ES Holdings LLC as one EdSan1A and EdSan1B portfolio holding",
+        "both phases are operating",
+        "the current card reports 346 MW solar and 1,339 MWh storage for 1A and 358 MW solar and 1,497 MWh storage for 1B"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240130-5233",
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240130-5233",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "workingStatus": "WORKING",
+      "contentSha256": "8c3f13cbed2e87f0a8fcedfee925fe6ffe29652dd60943bf1171e01706ce0d50",
+      "componentDownload": {
+        "componentId": "B04FF541-E897-CBD6-8106-8D5C50B00001",
+        "fileName": "2024-01-30 MBR Notice re Dune FINAL.pdf",
+        "mediaType": "application/pdf",
+        "httpStatus": 200,
+        "contentSha256": "26fbd11e35e72a1ac1d66fa29d1177f71c5b8a0f6f0d6a3ae37e192284d68069",
+        "pageCount": 16
+      },
+      "verifiedClaims": [
+        "page 1 states that Axium ES Holdings indirectly acquired 50% of the Phase 1B sellers on December 22, 2023",
+        "page 4 states that Terra-Gen and Axium ES Holdings each indirectly own 50% of the Phase 1B voting securities",
+        "page 4 identifies Axium ES Holdings beneath Axium Co-Invest Holdings and AxInfra US LP and states that AxInfra owns 92.26% of Axium Co-Invest Holdings",
+        "page 5 states that Axium completed the Phase 1A transaction on October 20, 2022 and acquired 80% of its managing membership interests"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf",
+      "finalUrl": "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "workingStatus": "WORKING",
+      "contentSha256": "b842b89c7760b0cbcce068163b543506592fa3f534fef9a6f435d1f8a43aa159",
+      "verifiedClaims": [
+        "Axium announced completion of its 80% Phase 1A acquisition from Terra-Gen",
+        "Terra-Gen retained 20%",
+        "the release reports 397 MWac of solar and 1,505 MWh of storage"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/wp-content/uploads/2024/01/Axium_News-Release_EdSan-1B.pdf",
+      "finalUrl": "https://www.axiuminfra.com/wp-content/uploads/2024/01/Axium_News-Release_EdSan-1B.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "workingStatus": "WORKING",
+      "contentSha256": "97f34d8165c2267f85368d819c761d70de8a3a623a1329a45908d251de53de8c",
+      "verifiedClaims": [
+        "Axium announced that one managed fund and an undisclosed limited-partner co-investor were acquiring 50% of Phase 1B",
+        "the release reports 410 MWac solar and 1,497 MWh storage for Phase 1B",
+        "the release reports 807 MWac solar and 3,002 MWh storage for Phases 1A and 1B combined"
+      ]
+    },
+    {
+      "url": "https://terra-gen.com/edwards-sanborn/",
+      "finalUrl": "https://terra-gen.com/edwards-sanborn/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "workingStatus": "WORKING",
+      "contentSha256": "a9b273885dc00a2a7dd843c53aa3d994d91c825d2107dfdf16ac6f714789581a",
+      "verifiedClaims": [
+        "Terra-Gen presents Phase 1A and Phase 1B together as one operating project page",
+        "the complex is in Kern County and spans approximately 4,600 acres",
+        "the page reports 807 MW of solar and more than 3 GWh of battery storage"
+      ]
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2022-07-18/html/2022-15257.htm",
+      "finalUrl": "https://www.govinfo.gov/content/pkg/FR-2022-07-18/html/2022-15257.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "workingStatus": "WORKING",
+      "contentSha256": "230420e9840073d712951922b5d71ee6bea9b7890ba3a767d25d72a79a5fcb0f",
+      "verifiedClaims": [
+        "the FERC notice identifies the Phase 1A project companies and Axium ES Holdings LLC in the Section 203 proceeding"
+      ]
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "The model treated the exact Phase 1B close as not publicly disclosed. The January 30, 2024 FERC notice states that the transaction closed on December 22, 2023.",
+    "The model used October 26, 2022 as the Phase 1A entry date because that is the public release date. The FERC filing states that the legal close occurred on October 20, 2022.",
+    "The model said Axium's Phase 1B share within the joint 50% acquisition was not publicly disclosed. FERC identifies Axium ES Holdings as the direct holder of the 50% voting interest and AxInfra US LP as owning 92.26% of its upstream co-invest holding company. The proposal preserves these disclosed layers without calculating a synthetic combined-company percentage.",
+    "The FederalRegister model URL redirects to a generic unblock page under direct HTTP verification and is excluded from the proposal; the FERC eLibrary landing page and downloaded filing are used instead.",
+    "The manager's transaction-era nameplate figures differ from its current portfolio's operating figures. Both are date-qualified rather than overwritten or conflated."
+  ],
+  "exitSearchConclusion": "No Axium sale, signed pending exit, ownership transfer or later divestiture of either phase or the combined holding was identified through 2026-08-18. Axium's live portfolio page continues to list the combined holding as operating.",
+  "result": "PASS_WITH_CODEX_EVIDENCE_CORRECTIONS"
+}

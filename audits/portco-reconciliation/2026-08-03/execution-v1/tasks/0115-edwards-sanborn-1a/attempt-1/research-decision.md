@@ -1,0 +1,5 @@
+# Task 115 research decision
+
+**PROPOSED_CORRECTION — high confidence.** Keep the existing combined record and rename it **Edwards Sanborn Solar + Storage**. Axium's current portfolio treats EdSan1A and EdSan1B as one holding under Axium ES Holdings LLC, while direct FERC evidence proves distinct phase ownership and exact legal closes: Phase 1A closed on October 20, 2022 at 80% Axium / 20% Terra-Gen, and Phase 1B closed on December 22, 2023 at 50% Axium ES Holdings / 50% Terra-Gen. AxInfra US LP owns 92.26% of the upstream co-invest holding company, so no combined-company ownership percentage is inferred.
+
+Redirect and retire the standalone 1A record, consolidate its history into the canonical record, remove both unsupported `AxInfra Fund I-IV` relationships, and use the disclosed Axium ES Holdings LLC / AxInfra US LP vehicle chain. No later Axium sale, signed pending exit or ownership transfer was found through August 18, 2026. Task 116 should be superseded only after this exact correction is released, applied and verified in production.

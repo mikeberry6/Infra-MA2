@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0115:edwards-sanborn-1a:6fff6c99",
+  "taskIndex": 115,
+  "companyName": "Edwards Sanborn 1A",
+  "generatedAt": "2026-08-18T16:54:45.627Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0115-edwards-sanborn-1a/attempt-1/initial-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 115,
+    "taskId": "ledger:0115:edwards-sanborn-1a:6fff6c99",
+    "canonicalKey": "edwards-sanborn-1a|united-states",
+    "companyName": "Edwards Sanborn 1A",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 19,
+    "managers": [
+      "Axium Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "019-axium-infrastructure:repo-only:002:edwards-sanborn-1a"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj7v900liivhelzpabyae"
+    ],
+    "seedKeys": [
+      "edwards sanborn 1a|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.axiuminfra.com/2022/10/26/october-26-2022-axium-infrastructure-invests-in-phase-1-of-edwards-sanborn-solar-storage-facility/?lang=en",
+      "https://www.axiuminfra.com/2024/01/12/january-11-2024-axium-infrastructure-invests-in-phase-1b-of-the-edwards-sanborn-solar-storage-facility/?lang=en"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Axium Infrastructure MATCHED_ELSEWHERE: This phase-level record is consolidated with the primary Edwards Sanborn 1A & 1B snapshot record beneath holding 18, Edwards Sanborn Solar + Storage, to preserve one manager-level identity.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpj7vt00ljivheoq991z94",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpj7v900liivhelzpabyae"
+  },
+  "resolvedCanonicalKey": "edwards-sanborn-1a-and-1b|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj7vt00ljivheoq991z94",
+    "name": "Edwards Sanborn 1A & 1B",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar + Battery Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Edwards Sanborn 1A & 1B is a utility-scale solar and battery storage platform within the Edwards Sanborn complex in Kern County, California. Public disclosures describe Phase 1A at 397 MWac of solar capacity and 1,505 MWh of battery storage, and Phase 1B at 410 MWac of solar capacity and 1,497 MWh of battery storage. The platform is asset-heavy and contracted, with long-term offtake arrangements supporting revenue rather than merchant power exposure for the entire output. Its operating footprint is concentrated in California as part of one of the larger integrated solar and storage developments in the U.S. market. Axium acquired an 80% interest in Phase 1A in 2022 and later invested in Phase 1B in 2024, but the current combined ownership structure for the 1A and 1B platform is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjt0801ilivhe3or1eica",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": "AxInfra Fund I-IV",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkryn02voivheznai3lvy",
+        "date": "Oct 26, 2022",
+        "event": "Axium completed the acquisition of an 80% interest in Edwards Sanborn Phase 1A.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-10-26T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkrz802vpivhee2081z1d",
+        "date": "Jan 11, 2024",
+        "event": "Axium announced an additional investment to acquire a 50% interest in Edwards Sanborn Phase 1B.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-11T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppb4q07z1ivhe36x320q6",
+        "label": "Close date source — Axium Infrastructure — Edwards Sanborn 1A",
+        "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1-of-edwards-sanborn-solar-storage-facility/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Axium Infrastructure closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppb7v07z3ivhe2p2bqceh",
+        "label": "Investment date source — Axium Infrastructure — Edwards Sanborn 1A & 1B",
+        "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1b-of-the-edwards-sanborn-solar-storage-facility/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Axium Infrastructure initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppb9007z5ivhehvqskmlq",
+        "label": "Axiuminfra — Edwards Sanborn 1A & 1B",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2024/01/Axium_News-Release_EdSan-1B.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Axiuminfra — Edwards Sanborn 1A & 1B",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppb9j07z6ivhe3ernyex3",
+        "label": "Axiuminfra — Edwards Sanborn 1A",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Axiuminfra — Edwards Sanborn 1A & 1B",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Edwards Sanborn 1A & 1B",
+    "investmentFirm": "Axium Infrastructure",
+    "sector": "Power & ET",
+    "subsector": "Solar + Battery Storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Edwards Sanborn 1A & 1B is a utility-scale solar and battery storage platform within the Edwards Sanborn complex in Kern County, California. Public disclosures describe Phase 1A at 397 MWac of solar capacity and 1,505 MWh of battery storage, and Phase 1B at 410 MWac of solar capacity and 1,497 MWh of battery storage. The platform is asset-heavy and contracted, with long-term offtake arrangements supporting revenue rather than merchant power exposure for the entire output. Its operating footprint is concentrated in California as part of one of the larger integrated solar and storage developments in the U.S. market. Axium acquired an 80% interest in Phase 1A in 2022 and later invested in Phase 1B in 2024, but the current combined ownership structure for the 1A and 1B platform is not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "Oct 26, 2022",
+        "event": "Axium completed the acquisition of an 80% interest in Edwards Sanborn Phase 1A.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 11, 2024",
+        "event": "Axium announced an additional investment to acquire a 50% interest in Edwards Sanborn Phase 1B.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Axium Infrastructure — Edwards Sanborn 1A & 1B",
+        "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1-of-edwards-sanborn-solar-storage-facility/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Axium Infrastructure — Edwards Sanborn 1A & 1B",
+        "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1b-of-the-edwards-sanborn-solar-storage-facility/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Axiuminfra — Edwards Sanborn 1A & 1B",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2024/01/Axium_News-Release_EdSan-1B.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Axiuminfra — Edwards Sanborn 1A & 1B",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Axium Infrastructure",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj19600bqivhe63qqb0hm",
+        "fundName": "AxInfra Fund I-IV",
+        "managerId": "cmrxpi4m0000qivheeg0vfmvn",
+        "updatedAt": "2026-07-23T16:09:55.482Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4m0000qivheeg0vfmvn",
+        "name": "Axium Infrastructure",
+        "updatedAt": "2026-07-23T16:09:13.176Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0115:edwards-sanborn-1a:6fff6c99",
+    "taskIndex": 115,
+    "canonicalKey": "edwards-sanborn-1a|united-states",
+    "capturedAt": "2026-08-18T16:54:45.627Z",
+    "databaseRevision": "revision:38def66f8c4ec82ab22d5a9bd0eb6666abdc6c9a8941217e57454929e586c99d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8ba4d2f288ed20266debe37545ffe05b67e2bc5b3b2031f5118bc907007ce6c4",
+    "productionSnapshotSha256": "ddfc906e4efb1ca186b0e9097e86bb6a38ab8538fe7dc365972c10b694330c3f",
+    "targetCompanySnapshotSha256": "498e2da42bfd2a2ebc9b4f913d415c9c500a9d08809ba953e3983e4cb5e102c3",
+    "seedEntrySha256": "5156b06b16e5c630891df810b8ecf219c503931c66b0b7cf8abc25cb56f8594e",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8864bbc0f96f0724284c9ab567e460a8d6c80dd6bb337654ad68a271cbba811b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "9006b36c9c95fa66723514d5416ff2c0a0065565a6ef9f82f75005182bec322c",
+      "organizationsSha256": "4232d4dc8383fded1a17b033133ecf7709e8286593de3a960758bbf61cc086bc",
+      "citationsSha256": "e5dd433c09b9709facd8b8715ac47bc8d5dc1fac42ffde5cc4e8c3b69f70b7c8",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "167b3cb0c6b471047e644ce5bed512be4e4179314f2fb7a550fad1702eea881b",
+    "stateSha256": "054216b2c837c2b0c31a4e191bb7876a3a713c8e191bcbf65e8d67ac4aaad200",
+    "taskSnapshotSha256": "13410eaf5536e5ee1e1643750638e235e5beec31379e0d4057c6b76c79478b8e"
+  },
+  "contextSha256": "23db3575cafb909f381c1efd798a01a3953d619cf9c773abbdaa41308eb1df17"
+}
