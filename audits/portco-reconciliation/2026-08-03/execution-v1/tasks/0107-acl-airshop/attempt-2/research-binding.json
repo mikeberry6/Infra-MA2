@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_BINDING",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0107:acl-airshop:e8d180fb",
+  "taskIndex": 107,
+  "attempt": 2,
+  "companyName": "ACL Airshop",
+  "researchDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0107-acl-airshop/attempt-1/research-decision.json",
+  "chatgptAttestation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0107-acl-airshop/attempt-1/chatgpt-attestation.json",
+  "chatgptResponseValidation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0107-acl-airshop/attempt-1/chatgpt-response-validation.json",
+  "sourceVerification": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0107-acl-airshop/attempt-1/source-verification.json",
+  "lockedTaskSnapshotSha256": "ef2bbd755aefffbbe58e27b4b94283d1971dbfbb9b5782bb8c21503360217f29",
+  "proposalSha256": "89fd64af9222f15e6e6fcb4ebe2f5eed0f8ff66c0dcb21b5cde2436996b04035",
+  "afterImageSha256": "403d0e6348920629e4c80f15754a02cb3a9a49cd5e1dd2f925dfaf8caa40eb8e",
+  "correction": "Proposal v2 preserves the exact researched after-image and evidence. It removes only the redundant ADD_OWNER action because the fail-closed apply planner treats the initial owner row as part of CREATE_COMPANY.",
+  "unresolvedQuestions": []
+}
