@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T10:14:30.000Z",
-  "runStatus": "BLOCKED",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-18T10:26:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0111:generate-capital:f6794437",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -16904,26 +16904,20 @@
       "managerIndex": 18,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "eb2097f49a5ba40bc6f783360c0710ab2ae5c9163c6bf78f408888c6ce82b5bf",
-      "status": "FAILED",
-      "attempts": 2,
-      "startedAt": "2026-08-18T09:30:42.000Z",
-      "updatedAt": "2026-08-18T10:14:30.000Z",
+      "status": "ACTIVE",
+      "attempts": 3,
+      "startedAt": "2026-08-18T10:26:00.000Z",
+      "updatedAt": "2026-08-18T10:26:00.000Z",
       "completedAt": null,
-      "exceptionReason": "A fresh GPT-5.6 Sol Pro retry returned truncated invalid JSON, and the single permitted repair in the same conversation also truncated inside the fourth current-owner record. The complete rendered preformatted contents were inspected. No response was accepted, no proposal was generated, and no database, seed, release, or publication change occurred.",
+      "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-2/locked-task-snapshot.json",
-          "sha256": "3ae432291527a49794605fb9b0a6179b9d2addd7c62a7646f17611ec80f3e3af"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-2/research-decision.json",
-          "sha256": "0e665fd66aeef5588da525e141f3aa3fd20eb9ddd498d6698da67871f337fe26"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
@@ -16982,6 +16976,16 @@
             "0e665fd66aeef5588da525e141f3aa3fd20eb9ddd498d6698da67871f337fe26",
             "3ae432291527a49794605fb9b0a6179b9d2addd7c62a7646f17611ec80f3e3af"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-18T10:26:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -31727,5 +31731,5 @@
       ]
     }
   ],
-  "manifestSha256": "c7ade3350a8ea3f455ded233bed1965bb331db5d504d69efce028960b8f37578"
+  "manifestSha256": "26580bc2bbf90971dd7193144701866a9ddde3fc2154afd1ab84c97e0a46cf9c"
 }
