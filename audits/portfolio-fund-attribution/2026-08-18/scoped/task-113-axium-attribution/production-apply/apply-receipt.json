@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "69e0f72daa580ea7f41563c7f49543e519c80e7e0e25d859df9fc91ff3878d0c",
+  "approvalSha256": "9a65e6e887f96debdc3e2f133dfcd06165df49bdd6b4e290da677828bef31952",
+  "environment": "production",
+  "pipelineRunId": "cmsyrf7av0000gb6hm9m9v256",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "6c2d023fc2746fe9f5655bc97e492ae56a235dc206d6afb3a885d97075d5f9c7",
+  "afterFingerprint": "19edd7326f39424fa9e28cbc6bb751004a9be81a4abfc75b5a94ada9ba462b7a",
+  "rows": [
+    {
+      "recordId": "OFA-F89FA1BDEBD4",
+      "ownershipPeriodId": "cmrxpjt8o01j2ivhey92f3vsx",
+      "companyId": "cmrxpj86h00lzivhe009kcwjc",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AxInfra Fund I-IV",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Reviewed current ownership evidence identifies Axium LTC Limited Partnership as the holding vehicle and Axium Infrastructure as the 85% owner, but does not disclose a commingled fund. The vehicle is intentionally left unlinked rather than inferred to AxInfra Fund I-IV."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-18T14:30:24.763Z",
+  "receiptSha256": "f5dc2ae7616e1badc3ba35dbcfca7dc562b2055d8494c7b17442724b28acbb52"
+}

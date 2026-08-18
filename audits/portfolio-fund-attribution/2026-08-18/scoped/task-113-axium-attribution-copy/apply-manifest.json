@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-18",
+  "ledgerSha256": "c325417808611ec4ba34cdfaf86391ad1bc4a5d6f0a811e7c7fabd8b5b25fc72",
+  "sourceSnapshotSha256": "2e7387908749ab7b50d60528bd83607b34bfe3bc30c559ebae5c84dcb5fd66ed",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-F89FA1BDEBD4",
+      "ownershipPeriodId": "cmrxpjt8o01j2ivhey92f3vsx",
+      "companyName": "Axium Extendicare LTC II LP",
+      "country": "Canada",
+      "investmentFirm": "Axium Infrastructure",
+      "currentVehicleName": "Axium LTC Limited Partnership",
+      "databaseVehicleName": "Axium LTC Limited Partnership",
+      "investmentYear": 2017,
+      "stake": "85% current (75% at formation)",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Reviewed current ownership evidence identifies Axium LTC Limited Partnership as the holding vehicle and Axium Infrastructure as the 85% owner, but does not disclose a commingled fund."
+      },
+      "evidenceUrls": [
+        "https://www.axiuminfra.com/2018/04/30/april-30-2018-revera-and-axium-infrastructure-form-a-joint-venture-to-share-ownership-of-32-long-term-care-homes/?lang=en",
+        "https://extendicare-1c124.kxcdn.com/app/uploads/2026/08/EXE-Q2-2026-Interim-MDA-vSedar2.pdf?x89279=",
+        "https://www.extendicare.com/app/uploads/2025/06/997.pdf"
+      ]
+    }
+  ],
+  "manifestSha256": "23135fa28f79d716aac24ed1f11793464f54d17c761e7ac0d1feaed6d566e54a"
+}
