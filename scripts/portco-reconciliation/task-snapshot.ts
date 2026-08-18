@@ -229,13 +229,35 @@ export function resolveTaskSnapshotTarget(input: {
   const immutableTargetCompanyId = productionIds[0] ?? null;
   if (immutableTargetCompanyId) {
     if (reviewedTargetCompanyId && reviewedTargetCompanyId !== immutableTargetCompanyId) {
-      const reviewedMergeTarget = input.queueEntry.queueKind === "CANONICAL_COMPANY"
+      const reviewedRepoOnlyMergeTarget = input.queueEntry.queueKind === "CANONICAL_COMPANY"
         && input.queueEntry.decisionStatus === "NEEDS_REVIEW"
         && input.queueEntry.actionScopes.company.includes("MERGE_COMPANIES")
         && input.queueEntry.sourceRepoOnlyIds.length > 0
         && input.queueEntry.sourceHoldingIds.length === 0
         && input.queueEntry.seedKeys.length === 1
         && input.queueEntry.candidateCanonicalKeys.length === 0;
+      const reviewedMixedMergeCandidates = input.queueEntries.filter((candidate) =>
+        candidate.taskId !== input.queueEntry.taskId
+        && candidate.taskIndex > input.queueEntry.taskIndex
+        && candidate.queueKind === "CANONICAL_COMPANY"
+        && candidate.canonicalKey !== null
+        && candidate.productionCompanyIds.length === 1
+        && candidate.productionCompanyIds[0] === reviewedTargetCompanyId
+        && candidate.seedKeys.length === 1
+        && normalizedIdentity(candidate.country) === normalizedIdentity(input.queueEntry.country)
+        && candidate.managers.length > 0
+        && candidate.managers.every((manager) => input.queueEntry.managers.includes(manager))
+        && normalizedIdentity(input.queueEntry.rationale).includes(normalizedIdentity(candidate.companyName)),
+      );
+      const reviewedMixedHoldingMergeTarget = input.queueEntry.queueKind === "CANONICAL_COMPANY"
+        && input.queueEntry.decisionStatus === "NEEDS_REVIEW"
+        && input.queueEntry.actionScopes.company.includes("MERGE_COMPANIES")
+        && input.queueEntry.sourceRepoOnlyIds.length > 0
+        && input.queueEntry.sourceHoldingIds.length === 1
+        && input.queueEntry.seedKeys.length === 1
+        && input.queueEntry.candidateCanonicalKeys.length === 0
+        && reviewedMixedMergeCandidates.length === 1;
+      const reviewedMergeTarget = reviewedRepoOnlyMergeTarget || reviewedMixedHoldingMergeTarget;
       if (!reviewedMergeTarget) {
         throw new Error("Reviewed target company cannot replace the immutable queue target");
       }
