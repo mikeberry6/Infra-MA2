@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
   "asOfDate": "2026-08-18",
-  "ledgerSha256": "06effcf302a3a1c0c5c3be84d3999e1cb155bec3ee5cf817ef6dffdbafff07d9",
+  "ledgerSha256": "3f42b0ebdc4f941c88a60499fc29fd0638c0abba3f9410fe5b69cc2aeef61936",
   "sourceSnapshotSha256": null,
   "policy": {
     "sourceScope": "EVALUATED_SEED",
@@ -19,13 +19,13 @@
     "attributionCounts": {
       "DISCLOSED": 603,
       "INFERRED": 592,
-      "DIRECT_PROGRAM": 83,
-      "UNRESOLVED": 0
+      "DIRECT_PROGRAM": 84,
+      "UNRESOLVED": 1
     },
     "inferredWrites": 592,
     "fundLinkChanges": 665
   },
-  "expectedMutationCount": 1278,
+  "expectedMutationCount": 1280,
   "mutations": [
     {
       "recordId": "OFA-674978762296",
@@ -35931,7 +35931,61 @@
         "https://astatineip.com/2021/04/22/alinda-acquires-acl-airshop/",
         "https://www.prnewswire.com/news-releases/acl-airshop-and-alinda-partner-for-growth-301275577.html"
       ]
+    },
+    {
+      "recordId": "OFA-6C517EC7BDAE",
+      "ownershipPeriodId": null,
+      "companyName": "Virginia International Gateway",
+      "country": "United States",
+      "investmentFirm": "Astatine Investment Partners",
+      "currentVehicleName": "Astatine Investment Partners",
+      "databaseVehicleName": "Astatine Investment Partners",
+      "investmentYear": null,
+      "stake": "Active Astatine-managed interest; exact manager-level percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Astatine identifies Virginia International Gateway as a current managed investment, but the reviewed public evidence does not disclose the active fund, managed account, or holding vehicle. The separate Alinda Infrastructure Fund II investment was exited in 2019, so the current period is intentionally left unlinked rather than inferred to a later Astatine fund."
+      },
+      "evidenceUrls": [
+        "https://astatineip.com/investment/virginia-international-gateway/",
+        "https://astatineip.com/investment/virginia-international-gateway-2/",
+        "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website"
+      ]
+    },
+    {
+      "recordId": "OFA-D7AB4D5F917C",
+      "ownershipPeriodId": null,
+      "companyName": "Virginia International Gateway",
+      "country": "United States",
+      "investmentFirm": "PSP Investments",
+      "currentVehicleName": "PSP Investments",
+      "databaseVehicleName": "PSP Investments",
+      "investmentYear": null,
+      "stake": "Joint underlying owner with USS; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "No exact fund disclosure could be classified safely by the audit rules."
+      },
+      "evidenceUrls": [
+        "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website",
+        "https://astatineip.com/investment/virginia-international-gateway/",
+        "https://astatineip.com/investment/virginia-international-gateway-2/"
+      ]
     }
   ],
-  "manifestSha256": "a91631cc6dcffb6d4edb316279f3a5c2caafc5ccd53d6699e9f3dab562746d13"
+  "manifestSha256": "1689dda461cf3d8cd9c065e29fae5206a152440028fcf161d759b6975eaea2d5"
 }

@@ -31,7 +31,7 @@ type CandidateFund = Pick<
 interface ReviewedAttributionOverride {
   companyName: string;
   investmentFirm: string;
-  attribution: Exclude<Attribution, "UNRESOLVED">;
+  attribution: Attribution;
   confidence: Confidence;
   attributedFundName: string | null;
   rationale: string;
@@ -412,6 +412,18 @@ const ATTRIBUTION_ONLY_FUNDS: CandidateFund[] = [
 ];
 
 const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
+  {
+    companyName: "Virginia International Gateway",
+    investmentFirm: "Astatine Investment Partners",
+    attribution: "UNRESOLVED",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "Astatine identifies Virginia International Gateway as a current managed investment, but the reviewed public evidence does not disclose the active fund, managed account, or holding vehicle. The separate Alinda Infrastructure Fund II investment was exited in 2019, so the current period is intentionally left unlinked rather than inferred to a later Astatine fund.",
+    sourceUrls: [
+      "https://astatineip.com/investment/virginia-international-gateway/",
+      "https://astatineip.com/investment/virginia-international-gateway-2/",
+    ],
+  },
   {
     companyName: "Ports America",
     investmentFirm: "Oaktree / Duration",
@@ -910,8 +922,10 @@ function classify(
       applyEligible = !!linkedFund && confidence === "HIGH" && chronologyIsPlausible;
     } else if (attribution === "INFERRED") {
       proposedAction = "SET_INFERRED";
-    } else {
+    } else if (attribution === "DIRECT_PROGRAM") {
       proposedAction = "SET_DIRECT_PROGRAM";
+    } else {
+      proposedAction = "RESEARCH_REQUIRED";
     }
   } else if (audit.result_status === "Verified fund" || audit.result_status === "Verified fund - missing from funds list") {
     attribution = "DISCLOSED";
