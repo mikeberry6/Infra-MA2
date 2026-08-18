@@ -414,6 +414,18 @@ const ATTRIBUTION_ONLY_FUNDS: CandidateFund[] = [
 
 const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
   {
+    companyName: "Montreal Gateway Terminals Partnership",
+    investmentFirm: "Axium Infrastructure",
+    attribution: "DISCLOSED",
+    confidence: "HIGH",
+    attributedFundName: "Fiera Axium Infrastructure Canada II L.P.",
+    rationale: "Axium's acquisition release identifies Fiera Axium Infrastructure Canada II L.P. as the disclosed acquisition vehicle. The vehicle remains unlinked because it is not a production-curated fund, rather than being inferred to the generic AxInfra Fund I-IV record.",
+    sourceUrls: [
+      "https://www.axiuminfra.com/2015/03/06/march-6-2015-consortium-led-by-fiera-axium-infrastructure-acquires-montreal-gateway-terminals-from-morgan-stanley-infrastructure-partners/?lang=en",
+      "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+    ],
+  },
+  {
     companyName: "Etobicoke Healthcare Partnership",
     investmentFirm: "Axium Infrastructure",
     attribution: "DISCLOSED",

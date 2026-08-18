@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0118:montreal-gateway-terminals:bc474932",
+  "taskIndex": 118,
+  "companyName": "Montreal Gateway Terminals",
+  "generatedAt": "2026-08-18T20:30:35.957Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 118,
+    "taskId": "ledger:0118:montreal-gateway-terminals:bc474932",
+    "canonicalKey": "montreal-gateway-terminals|canada",
+    "companyName": "Montreal Gateway Terminals",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 19,
+    "managers": [
+      "Axium Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "019-axium-infrastructure:holding:027:montreal-gateway-terminals"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.axiuminfra.com/portfolio-assets/?lang=en"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "montreal-gateway-terminals|canada",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4m0000qivheeg0vfmvn",
+        "name": "Axium Infrastructure",
+        "updatedAt": "2026-07-23T16:09:13.176Z"
+      },
+      {
+        "id": "cmrxpibqa002yivhe44v34tdd",
+        "name": "Morgan Stanley Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:22.402Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0118:montreal-gateway-terminals:bc474932",
+    "taskIndex": 118,
+    "canonicalKey": "montreal-gateway-terminals|canada",
+    "capturedAt": "2026-08-18T20:30:35.957Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4b1b61f99364b6c7f22260e6d660e748af479965e18099010a784993ecca6909",
+    "productionSnapshotSha256": "ed1178a223ee47f3a44043fe920840bb900970ad906e4239967a009183c38016",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f82dd9ad89702043d1db797b359dc2fee07b34afbeae7de340dbbcabfa217f84",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8bad636c9200837b1aa34df91c64756a2ea50cef27cce689ba86d30ed34366c9",
+    "stateSha256": "a2e6543e8a7f88c27e02d95d09ec541ff3ffd8db5ed16cdd5875d01cf7afb8ad",
+    "taskSnapshotSha256": "b30ea14a2994c60808dec47c13ada18ef3d1a62a25417978618038ecb812a7a2"
+  },
+  "contextSha256": "9cdb538233be1d7d13dc89223588ee27be657c14c484441073a4320e865f372e"
+}
