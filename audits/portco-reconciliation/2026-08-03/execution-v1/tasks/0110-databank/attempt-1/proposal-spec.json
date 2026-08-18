@@ -1,0 +1,395 @@
+{
+  "generatedAt": "2026-08-18T07:40:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Correct the existing DataBank record in place and resolve the reciprocal DataBank Holdings candidate to the same canonical company. DataBank's live investor page, transaction releases and current filings support seven current manager-universe associations: DigitalBridge, Swiss Life Asset Managers, IMCO, AustralianSuper, Northleaf Capital Partners, Ardian and CBRE Investment Management. Northleaf, Ardian and CBRE Investment Management are omitted from the current record and must be added; the existing Swiss Life period must be corrected to Swiss Life Asset Managers. DigitalBridge directly disclosed a continuing 7.8% stake after the January 2025 secondary. The 2022 consortium acquired a collective 35% interest, but individual percentages were not disclosed, so that aggregate is not allocated among Swiss Life, Northleaf or Ardian. DataBank brands TIAA's investment manager as Nuveen, while the TIAA Real Estate Account directly reports a 14.8% beneficial stake through DigitalBridge Zeus vehicles. That evidence does not support a separate Nuveen Infrastructure period, and InfraBridge has no separate DataBank equity evidence. TIAA, EDF Invest and TJC are current co-owner context outside the supplied manager universe and are retained in the narrative rather than added as manager-task ownership rows. The January 2025 secondary did not identify every seller, so no other period is retired by inference. No later full sale or signed pending exit was identified through August 18, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.databank.com/about-databank/our-investors/",
+      "purpose": "Current investor roster, manager identities and Nuveen-TIAA branding context",
+      "supports": [
+        "DataBank's live page lists DigitalBridge, Swiss Life Asset Managers, AustralianSuper, EDF Invest, Nuveen, TJC, Northleaf, IMCO, CBRE Caledon and Ardian as investors",
+        "The page describes Nuveen as TIAA's investment manager and does not identify a Nuveen Infrastructure vehicle"
+      ]
+    },
+    {
+      "url": "https://www.databank.com/about-databank/databanks-history/",
+      "purpose": "Founding, canonical history and platform boundary",
+      "supports": [
+        "DataBank Ltd. was founded in Dallas in 2005",
+        "The company identifies the July 2016 DigitalBridge-led acquisition as a key platform transition"
+      ]
+    },
+    {
+      "url": "https://www.databank.com/resources/press-releases/digital-bridge-acquires-databank-launches-data-center-platform/",
+      "purpose": "DigitalBridge acquisition date, predecessor seller and 2016 investor group",
+      "supports": [
+        "Digital Bridge acquired DataBank from Avista Capital Partners on July 13, 2016",
+        "TIAA, Allstate Investments and The Edgewater Funds participated in the acquisition"
+      ]
+    },
+    {
+      "url": "https://www.databank.com/resources/press-releases/wall-street-journal-databank-announces-185-million-equity-investment-from-colony-capital/",
+      "purpose": "January 2020 secondary, Edgewater exit and Nuveen-branded TIAA continuation",
+      "supports": [
+        "Colony bought secondary interests from Edgewater and Allstate in January 2020",
+        "Edgewater fully exited, Allstate retained half of its prior interest and Nuveen continued its original stake"
+      ]
+    },
+    {
+      "url": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+      "purpose": "2022 consortium close, infrastructure-strategy basis and collective stake",
+      "supports": [
+        "Swiss Life Asset Management, EDF Invest, Northleaf and Ardian closed a collective 35% fully diluted interest on August 30, 2022",
+        "The source does not disclose individual consortium-member percentages"
+      ]
+    },
+    {
+      "url": "https://www.imcoinvest.com/imco-announces-IMCO-signs-agreement-to-acquire-equity-interest-in-databank/index.html",
+      "purpose": "IMCO entry timing and infrastructure-strategy basis",
+      "supports": [
+        "IMCO signed an agreement on October 3, 2022 to invest up to $450 million in DataBank",
+        "DataBank's live investor page and the completed recapitalization evidence support continuing ownership"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1679688/000167968823000099/draftdbrgdatabankrecapcomp.htm",
+      "purpose": "Completed 2023 recapitalization and continuing DigitalBridge, Swiss Life, EDF and IMCO exposure",
+      "supports": [
+        "DigitalBridge completed the recapitalization on September 14, 2023 and reduced its stake to 9.87% at that time",
+        "The filing identifies Swiss Life Asset Management, EDF Invest and IMCO as continuing investors"
+      ]
+    },
+    {
+      "url": "https://www.databank.com/resources/press-releases/databank-announces-2-0-billion-equity-raise-led-by-1-5-billion-investment-from-australiansuper/",
+      "purpose": "AustralianSuper investment announcement, minority status and growth scale",
+      "supports": [
+        "AustralianSuper committed $1.5 billion in the October 15, 2024 equity raise and was described as becoming a significant minority owner upon closing",
+        "The current investor page confirms AustralianSuper is now an investor"
+      ]
+    },
+    {
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-participation-databank-financing",
+      "purpose": "DigitalBridge continuing stake and January 2025 secondary",
+      "supports": [
+        "DigitalBridge disclosed that the secondary adjusted its DataBank ownership to 7.8%",
+        "DigitalBridge stated that it planned to continue holding the 7.8% interest"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/946155/000094615526000069/tiaareal-20260331.htm",
+      "purpose": "TIAA beneficial ownership, vehicle and Nuveen Infrastructure exclusion",
+      "supports": [
+        "The TIAA Real Estate Account held 14.8% of DataBank as of March 31, 2026",
+        "The investment is held through DigitalBridge Zeus Partners vehicles and is not identified as a Nuveen Infrastructure investment"
+      ]
+    },
+    {
+      "url": "https://www.databank.com/resources/press-releases/databank-announces-ceo-succession-as-company-enters-next-phase-of-scale-and-expansion/",
+      "purpose": "Current sponsor continuity, operating profile and disclosed scale",
+      "supports": [
+        "DataBank identified DigitalBridge as lead investor and cited continuing support from DigitalBridge, Swiss Life Asset Management and AustralianSuper in May 2026",
+        "DataBank reported more than 70 sites, more than 25 markets, more than 2,200 customers and more than $1 billion of revenue"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "DataBank Holdings, Ltd.",
+      "DataBank Holdings Ltd.",
+      "DataBank, Ltd."
+    ],
+    "description": "DataBank Holdings, Ltd. operates a nationwide digital-infrastructure platform providing colocation, interconnection, cloud, storage, managed security and compliance services to enterprise, cloud, content and technology customers. Founded in Dallas in 2005, DataBank was acquired from Avista by a DigitalBridge-led group in July 2016 and has since expanded through acquisitions, development and multiple recapitalizations. DataBank reported more than 70 data centers in more than 25 markets, 20 interconnection hubs, more than 2,200 customers and more than $1 billion of revenue in May 2026. The current manager-universe ownership roster is DigitalBridge, Swiss Life Asset Managers, IMCO, AustralianSuper, Northleaf Capital Partners, Ardian and CBRE Investment Management. DigitalBridge disclosed a 7.8% continuing stake after the January 2025 secondary. TIAA's Real Estate Account separately disclosed a 14.8% beneficial stake through DigitalBridge Zeus vehicles; DataBank brands that relationship as Nuveen, but it is not evidenced as a Nuveen Infrastructure investment. EDF Invest and TJC are also current investors outside the supplied manager universe. Individual data centers, campuses, interconnection hubs and acquired operating assets remain within the single DataBank platform boundary. No later full sale or signed pending exit was identified through August 18, 2026.",
+    "website": "https://www.databank.com/",
+    "headquarters": "Dallas, Texas",
+    "lastVerifiedAt": "2026-08-18T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjslx01hxivhery0xa53f",
+      "set": {
+        "vehicleName": null,
+        "stake": "Significant minority interest; exact percentage not publicly disclosed"
+      }
+    },
+    {
+      "id": "cmrxpjsmg01hyivheczn6hwqa",
+      "set": {
+        "managerName": "Swiss Life Asset Managers",
+        "organizationName": "Swiss Life Asset Managers",
+        "vehicleName": null,
+        "stake": "Member of the 35% 2022 consortium; individual percentage not publicly disclosed"
+      }
+    },
+    {
+      "id": "cmrxpjsmy01hzivhez2e7jdnj",
+      "set": {
+        "vehicleName": null,
+        "stake": "7.8% after the January 2025 secondary"
+      }
+    },
+    {
+      "id": "cmrxpjsnf01i0ivhebiyk4oiw",
+      "set": {
+        "vehicleName": null,
+        "stake": "Exact percentage not publicly disclosed"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Northleaf Capital Partners",
+      "organizationName": "Northleaf Capital Partners",
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "Member of the 35% 2022 consortium; individual percentage not publicly disclosed",
+      "investmentYear": 2022,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "id": null,
+      "managerName": "Ardian",
+      "organizationName": "Ardian",
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "Member of the 35% 2022 consortium; individual percentage not publicly disclosed",
+      "investmentYear": 2022,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "id": null,
+      "managerName": "CBRE Investment Management",
+      "organizationName": "CBRE Investment Management",
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "Exact entry date, vehicle and percentage not publicly disclosed",
+      "investmentYear": null,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpkqhi02u0ivhe6mt906id",
+      "set": {
+        "date": "2005",
+        "event": "DataBank Ltd. was founded in the former Federal Reserve Bank Building in downtown Dallas, Texas.",
+        "category": "FOUNDING",
+        "sortDate": "2005-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.databank.com/about-databank/databanks-history/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkqkk02u1ivhen8vkys3t",
+      "set": {
+        "date": "Jul 13, 2016",
+        "event": "Digital Bridge acquired DataBank from Avista Capital Partners with TIAA, Allstate Investments and The Edgewater Funds, launching its first data-center platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-07-13T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.databank.com/resources/press-releases/digital-bridge-acquires-databank-launches-data-center-platform/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkql402u2ivhe80rtjjuz",
+      "set": {
+        "date": "Jan 6, 2020",
+        "event": "Colony Capital purchased $185 million of secondary DataBank interests from Edgewater and Allstate; Edgewater exited, Allstate retained half of its prior interest and the Nuveen-branded TIAA investment continued.",
+        "category": "FINANCING",
+        "sortDate": "2020-01-06T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.databank.com/resources/press-releases/wall-street-journal-databank-announces-185-million-equity-investment-from-colony-capital/",
+          "https://www.sec.gov/Archives/edgar/data/946155/000094615526000069/tiaareal-20260331.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkqln02u3ivhe1fuok7th",
+      "set": {
+        "date": "Aug 30–Oct 3, 2022",
+        "event": "A Swiss Life-led consortium with EDF Invest, Northleaf and Ardian closed a collective 35% DataBank interest for approximately $1.5 billion; IMCO then agreed to invest up to $450 million in the continuing recapitalization.",
+        "category": "FINANCING",
+        "sortDate": "2022-08-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "https://www.imcoinvest.com/imco-announces-IMCO-signs-agreement-to-acquire-equity-interest-in-databank/index.html",
+          "https://www.sec.gov/Archives/edgar/data/1679688/000167968823000099/draftdbrgdatabankrecapcomp.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkqm802u4ivhewup1vpj3",
+      "set": {
+        "date": "Oct 15, 2024",
+        "event": "DataBank announced an approximately $2.0 billion equity raise led by AustralianSuper's $1.5 billion commitment, which would make AustralianSuper a significant minority owner; DataBank now lists it as a current investor.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.databank.com/resources/press-releases/databank-announces-2-0-billion-equity-raise-led-by-1-5-billion-investment-from-australiansuper/",
+          "https://www.databank.com/about-databank/our-investors/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkqn902u5ivhe41mtqzok",
+      "set": {
+        "date": "Jan 30, 2025",
+        "event": "DataBank announced a $250 million TJC investment and an approximately $600 million secondary share sale; DigitalBridge disclosed that the transaction would adjust its continuing DataBank stake to 7.8%.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-30T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.databank.com/resources/press-releases/databank-announces-250m-equity-investment-from-tjc-and-a-600m-secondary-share-sale/",
+          "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-participation-databank-financing"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpp8dh07uqivheq5ut06k8",
+      "set": {
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current company identity, platform boundary, products and services",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpp8eg07usivhe4wcalt13",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 30, 2022 close of the collective 35% Swiss Life, EDF, Northleaf and Ardian consortium interest",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpp8fj07uuivhe9ucf4jvk",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "AustralianSuper-led October 2024 equity raise and significant-minority ownership announcement",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpp8go07uwivhef2n0q8ut",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "IMCO investment and continuing DataBank digital-infrastructure exposure",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpp8hr07uyivhee2hzwcs1",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge platform attribution and operating context",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpp8iv07v0ivhe4hhdt8oi",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 13, 2016 DigitalBridge-led acquisition from Avista and original investor group",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "DataBank — Current investors",
+      "url": "https://www.databank.com/about-databank/our-investors/",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current investor roster, manager identities and Nuveen-TIAA branding context",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "DataBank — Company history",
+      "url": "https://www.databank.com/about-databank/databanks-history/",
+      "sourceType": "WEBSITE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "2005 founding, Dallas origin, canonical history and platform boundary",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "DataBank — 2020 secondary investment",
+      "url": "https://www.databank.com/resources/press-releases/wall-street-journal-databank-announces-185-million-equity-investment-from-colony-capital/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "January 2020 secondary, Edgewater exit, Allstate reduction and Nuveen-branded TIAA continuation",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "IMCO — DataBank investment agreement",
+      "url": "https://www.imcoinvest.com/imco-announces-IMCO-signs-agreement-to-acquire-equity-interest-in-databank/index.html",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "October 3, 2022 IMCO agreement to invest up to $450 million in DataBank",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "SEC — DigitalBridge DataBank recapitalization completion",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679688/000167968823000099/draftdbrgdatabankrecapcomp.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "September 2023 recapitalization completion and continuing DigitalBridge, Swiss Life, EDF and IMCO exposure",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "DataBank — TJC investment and secondary share sale",
+      "url": "https://www.databank.com/resources/press-releases/databank-announces-250m-equity-investment-from-tjc-and-a-600m-secondary-share-sale/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "January 2025 TJC investment, secondary sale and unidentified-seller limitation",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "DigitalBridge — DataBank financing participation",
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-participation-databank-financing",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "January 2025 secondary and DigitalBridge's disclosed continuing 7.8% stake",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "SEC — TIAA Real Estate Account March 2026 report",
+      "url": "https://www.sec.gov/Archives/edgar/data/946155/000094615526000069/tiaareal-20260331.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "TIAA Real Estate Account's 14.8% beneficial stake and DigitalBridge Zeus investment vehicles",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "DataBank — May 2026 company update",
+      "url": "https://www.databank.com/resources/press-releases/databank-announces-ceo-succession-as-company-enters-next-phase-of-scale-and-expansion/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current sponsor continuity, more than 70 sites, more than 25 markets, customer count and revenue scale",
+      "isPrimary": false
+    }
+  ]
+}
