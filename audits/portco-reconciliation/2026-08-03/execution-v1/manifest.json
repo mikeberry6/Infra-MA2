@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T05:35:05.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-18T05:40:33.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0110:databank:4928f3e2",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -16761,10 +16761,10 @@
       "managerIndex": 18,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e640a6f305c6e645a460be281a0b6716c2a98926eb3b2392ec27ba40883ad4eb",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "ACTIVE",
+      "attempts": 1,
+      "startedAt": "2026-08-18T05:40:33.000Z",
+      "updatedAt": "2026-08-18T05:40:33.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
@@ -16788,6 +16788,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-18T05:40:33.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -31560,5 +31570,5 @@
       ]
     }
   ],
-  "manifestSha256": "6bc7733f1f77537b7bc50e44f03d1c6940419f1a7fa9636ad1e6e0e6cd4b6ccd"
+  "manifestSha256": "32ef12c24d0eec1322a7900ea361f1b72c3ddc8c5d854903e70dc3f53c9ae11e"
 }
