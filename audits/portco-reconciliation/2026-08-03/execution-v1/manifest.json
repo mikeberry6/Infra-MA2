@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T09:25:04.000Z",
-  "runStatus": "BLOCKED",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-18T09:30:42.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0111:generate-capital:f6794437",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -16904,26 +16904,20 @@
       "managerIndex": 18,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "eb2097f49a5ba40bc6f783360c0710ab2ae5c9163c6bf78f408888c6ce82b5bf",
-      "status": "FAILED",
-      "attempts": 1,
-      "startedAt": "2026-08-18T08:13:50.000Z",
-      "updatedAt": "2026-08-18T09:25:04.000Z",
+      "status": "ACTIVE",
+      "attempts": 2,
+      "startedAt": "2026-08-18T09:30:42.000Z",
+      "updatedAt": "2026-08-18T09:30:42.000Z",
       "completedAt": null,
-      "exceptionReason": "GPT-5.6 Sol Pro returned truncated invalid JSON, and the single permitted repair in the same conversation also truncated inside the Harbert owner record. No response was accepted, no proposal was generated, and no database, seed, release, or publication change occurred.",
+      "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-1/locked-task-snapshot.json",
-          "sha256": "04d682b72478778f91d1b14be166aeb90b751ac8fa469fbda532a408f6b0d363"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-1/research-decision.json",
-          "sha256": "331cf76bc340a234b1411714b19c0327d20145a1f04987e433a5868dc90bc566"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
@@ -16959,6 +16953,16 @@
             "04d682b72478778f91d1b14be166aeb90b751ac8fa469fbda532a408f6b0d363",
             "331cf76bc340a234b1411714b19c0327d20145a1f04987e433a5868dc90bc566"
           ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-18T09:30:42.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
           "kind": "TRANSITION"
         }
       ]
@@ -31704,5 +31708,5 @@
       ]
     }
   ],
-  "manifestSha256": "6b0ecdd6ac33667270f74da0e6eb10eaf478ffa20e5af871f184d680ec360e2f"
+  "manifestSha256": "939f5b00d28880cec68c89378e1872bb5242cf80d30fdcfc6f049d7f86d7d2dc"
 }
