@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T11:18:44.000Z",
+  "updatedAt": "2026-08-18T12:09:00.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0112:transurban-chesapeake:f0caf605",
   "source": {
@@ -17017,20 +17017,32 @@
       "managerIndex": 18,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "19b83d79b67ba6bb41618776f08d10cd3b4f0790092039d2f001b3adf25a37a0",
-      "status": "ACTIVE",
+      "status": "RELEASING",
       "attempts": 1,
       "startedAt": "2026-08-18T11:18:44.000Z",
-      "updatedAt": "2026-08-18T11:18:44.000Z",
+      "updatedAt": "2026-08-18T12:09:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/locked-task-snapshot.json",
+          "sha256": "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0112-transurban-chesapeake-v1/proposal.json",
+          "sha256": "4e3e25913c076724c60bfd127c51b360c5a49d4723f3b6d5a01614290098680a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0112-transurban-chesapeake-v1.json",
+          "sha256": "3dfe9b0a8f07eece8aed45cde569e2a78345ff71a297069676f32492bbd56b7b"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/research-binding.json",
+          "sha256": "2fa86ffee6d4a394b06aceddd3cadbb85cd33abd90f02181fd04820eb0fc4cd2"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -17053,6 +17065,42 @@
           "reason": null,
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-18T12:07:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb",
+          "evidenceSha256": [
+            "2fa86ffee6d4a394b06aceddd3cadbb85cd33abd90f02181fd04820eb0fc4cd2",
+            "4e3e25913c076724c60bfd127c51b360c5a49d4723f3b6d5a01614290098680a",
+            "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-18T12:07:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-18T12:09:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb",
+          "evidenceSha256": [
+            "3dfe9b0a8f07eece8aed45cde569e2a78345ff71a297069676f32492bbd56b7b"
+          ],
           "kind": "TRANSITION"
         }
       ]
@@ -31760,5 +31808,5 @@
       ]
     }
   ],
-  "manifestSha256": "626a5dcc1ff7903d75e30c26518355c6921b5c79cf7ade9d5b3f9594f9de0364"
+  "manifestSha256": "eaa2bcb2b5a6e3d574d13b5cadf252995ed37be0a69da9cccbb17e5cb34c1130"
 }

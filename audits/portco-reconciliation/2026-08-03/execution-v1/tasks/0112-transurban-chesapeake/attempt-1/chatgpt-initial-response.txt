@@ -1,0 +1,188 @@
+BEGIN_JSON
+{
+  "asOfDate": "2026-08-18",
+  "requestedCompany": "Transurban Chesapeake",
+  "requestedManager": "AustralianSuper / CPP Investments",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "rationale": "Direct sources show both names cover one 495/95/395 platform. Current cap table is Transurban 50%, AustralianSuper 25%, CPP Investments 15% and UniSuper 10%. Merge the duplicate, add AustralianSuper and correct CPP; no later transfer was found.",
+  "identityResolution": {
+    "canonicalLegalName": "Transurban Chesapeake LLC",
+    "canonicalDisplayName": "Transurban Chesapeake",
+    "aliases": [
+      "Chesapeake",
+      "Chesapeake Partnership",
+      "Chesapeake toll road network",
+      "Chesapeake toll roads"
+    ],
+    "officialWebsite": "https://www.expresslanes.com/",
+    "headquartersOrOperatingLocation": "HQ NOT_PUBLICLY_DISCLOSED; operations: Northern Virginia/Greater Washington.",
+    "country": "United States",
+    "platformBoundary": "Owner of entities behind the 495, 95 and 395 Express Lanes, including FredEx and 495 NEXT; components are not PortCos.",
+    "duplicateDecision": "Merge/redirect cmrxpj7kc00kyivhewp6psi4d into cmrxpjcnm00syivhep9wizt9q."
+  },
+  "ownershipResolution": {
+    "managerAliasDecision": "Australian Super -> AustralianSuper.",
+    "currentInfrastructureManagerOwners": [
+      {
+        "manager": "AustralianSuper",
+        "organization": "AustralianSuper Pty Ltd",
+        "fund": "AustralianSuper",
+        "vehicle": "Direct Real Assets; SPV NOT_PUBLICLY_DISCLOSED",
+        "stake": "25%",
+        "announcementDate": "2020-12-17",
+        "entryDate": "2021-03-31",
+        "entryYear": 2021,
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "manager": "CPP Investments",
+        "organization": "Canada Pension Plan Investment Board",
+        "fund": "CPP Fund",
+        "vehicle": "Real Assets—Infrastructure; SPV NOT_PUBLICLY_DISCLOSED",
+        "stake": "15%",
+        "announcementDate": "2020-12-16",
+        "entryDate": "2021-03-31",
+        "entryYear": 2021,
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "formerInfrastructureManagerOwners": [],
+    "pendingOwnershipTransactions": [],
+    "duplicateOwnerAction": "Move AustralianSuper to canonical; keep CPP once; retire duplicate after redirect."
+  },
+  "operatingResolution": {
+    "sector": "TRANSPORTATION",
+    "subsector": "Managed lanes and toll roads",
+    "region": "NORTH_AMERICA",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Virginia express-lane concession platform serving Greater Washington.",
+    "companyStatus": "ACTIVE",
+    "yearFounded": null,
+    "productsAndServices": "Develops, finances, operates and maintains dynamically priced express/HOT lanes.",
+    "customersAndEndMarkets": "Motorists, HOV users, buses and permitted commercial traffic; VDOT is public partner.",
+    "footprint": "495, 95 and 395 Express Lanes in Northern Virginia, including FredEx and 495 NEXT.",
+    "disclosedScale": [
+      "495: 26.5 km",
+      "95 including 395/FredEx: 79 km",
+      "Both concessions end Dec-2087"
+    ]
+  },
+  "acquisitionExitCheck": {
+    "entry": "CPP announced 2020-12-16; AustralianSuper 2020-12-17; legal close 2021-03-31; reporting effective 2021-04-01.",
+    "currentStatus": "AustralianSuper 25% and CPP 15% are CLOSED_ACTIVE; broader cap table is 50%/25%/15%/10%.",
+    "subsequentExitSearch": "No platform sale, secondary, signed transfer or concession ownership change found through 2026-08-18. Mar-2025 debt financing and separate road/A25 events were not exits."
+  },
+  "milestones": [
+    {
+      "date": "2020-12-16",
+      "event": "CPP announces 15%; AustralianSuper announces 25% on 2020-12-17.",
+      "category": "OWNERSHIP_ANNOUNCEMENT",
+      "evidenceUrls": [
+        "https://www.cppinvestments.com/wp-content/uploads/2020/12/cpp-investments-transurban-chesapeake-december-16-2020-v2.pdf",
+        "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf"
+      ]
+    },
+    {
+      "date": "2021-03-31",
+      "event": "The 50% partner sale legally closes; reporting is effective 2021-04-01.",
+      "category": "OWNERSHIP_CLOSE",
+      "evidenceUrls": [
+        "https://www.transurban.com/content/dam/investor-centre/01/FY21-ResultsPresentation.pdf"
+      ]
+    },
+    {
+      "date": "2023-08-17",
+      "event": "FredEx opens within the 95 concession.",
+      "category": "OPERATING_EXPANSION",
+      "evidenceUrls": [
+        "https://vdot.virginia.gov/news-events/news/statewide/governor-glenn-youngkin-celebrates-opening-of-95-express-lanes-fredericksburg-extension.php"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "label": "Transurban FY26 results",
+      "url": "https://www.transurban.com/content/dam/investor-centre/01/FY26-ResultsPresentation.pdf",
+      "purpose": "Current cap table, boundary and scale at 2026-06-30.",
+      "sourceTier": "OFFICIAL_FILING",
+      "workingStatus": "OPENED",
+      "isRecommendedPrimary": true
+    },
+    {
+      "label": "Transurban FY21 results",
+      "url": "https://www.transurban.com/content/dam/investor-centre/01/FY21-ResultsPresentation.pdf",
+      "purpose": "Legal name, 2021-03-31 close and 2021-04-01 effect.",
+      "sourceTier": "OFFICIAL_FILING",
+      "workingStatus": "OPENED",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "AustralianSuper acquisition release",
+      "url": "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf",
+      "purpose": "25% announcement and 50/25/15/10 cap table.",
+      "sourceTier": "OFFICIAL_MANAGER",
+      "workingStatus": "OPENED",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "AustralianSuper North America portfolio",
+      "url": "https://www.australiansuper.com/global-investors/who-we-are/north-america",
+      "purpose": "Current 25% holding and duplicate alias.",
+      "sourceTier": "OFFICIAL_MANAGER",
+      "workingStatus": "OPENED",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "CPP acquisition release",
+      "url": "https://www.cppinvestments.com/wp-content/uploads/2020/12/cpp-investments-transurban-chesapeake-december-16-2020-v2.pdf",
+      "purpose": "15% announcement, scope and infrastructure basis.",
+      "sourceTier": "OFFICIAL_MANAGER",
+      "workingStatus": "OPENED",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "Transurban FY25 results",
+      "url": "https://www.transurban.com/content/dam/investor-centre/01/FY25-ResultsPresentation.pdf",
+      "purpose": "Mar-2025 bank debt facility; no equity transfer.",
+      "sourceTier": "OFFICIAL_FILING",
+      "workingStatus": "OPENED",
+      "isRecommendedPrimary": false
+    },
+    {
+      "label": "Express Lanes About",
+      "url": "https://www.expresslanes.com/about",
+      "purpose": "Operating site and VDOT/Transurban model.",
+      "sourceTier": "OFFICIAL_SITE",
+      "workingStatus": "OPENED",
+      "isRecommendedPrimary": false
+    }
+  ],
+  "beforeAfterChanges": [
+    "Two company records -> one platform.",
+    "CPP-only canonical list -> add AustralianSuper 25%; set CPP 15%.",
+    "CPP entry -> announced 2020-12-16; closed 2021-03-31.",
+    "Founded 2020 -> null; legal formation NOT_PUBLICLY_DISCLOSED.",
+    "Website/HQ -> ExpressLanes.com; HQ NPD; Northern Virginia is footprint."
+  ],
+  "excludedOrDuplicateCandidates": [
+    "cmrxpj7kc00kyivhewp6psi4d: merge/redirect duplicate.",
+    "495, 95, 395, FredEx, 495 NEXT and Capital Beltway Accord: components, not PortCos.",
+    "A25: separate Canadian asset, not a Chesapeake exit."
+  ],
+  "unresolvedQuestions": [],
+  "recommendedListAction": "Merge/redirect duplicate; add AustralianSuper; retain CPP; correct stakes, dates, site, location and yearFounded; exclude components."
+}
+END_JSON
+
+BEGIN_REVIEW
+PROPOSED_CORRECTION: direct sources resolve both records as one Transurban Chesapeake LLC platform. Merge and redirect the duplicate, place AustralianSuper's 25% CLOSED_ACTIVE interest beside CPP Investments' 15% on the canonical record, and keep the roads and extensions as platform components. No blocker remains, and the later-transfer search found no platform sale or pending exit through 2026-08-18.
+END_REVIEW

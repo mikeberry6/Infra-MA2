@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0112:transurban-chesapeake:f0caf605",
+  "taskIndex": 112,
+  "attempt": 1,
+  "companyName": "Transurban Chesapeake",
+  "verifiedAt": "2026-08-18T12:02:00.000Z",
+  "verificationMethod": "DIRECT_HTTP_STATUS_AND_HASH_WITH_LOCAL_PDF_TEXT_EXTRACTION_AND_INDEPENDENT_BROWSER_REOPEN",
+  "sources": [
+    {
+      "url": "https://www.transurban.com/content/dam/investor-centre/01/FY26-ResultsPresentation.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.transurban.com/content/dam/investor-centre/01/FY26-ResultsPresentation.pdf",
+      "mediaType": "application/pdf",
+      "httpResponseBytes": 8871328,
+      "httpResponseSha256": "d7740e72200d26df940b676c3c23d6f3dd65ee9e182db91d1a4e8c30750a7793",
+      "workingStatus": "WORKING",
+      "contentVerified": true,
+      "purpose": "Current June 30, 2026 cap table, Transurban Chesapeake company boundary, express-lane scale and December 2087 concession expiries"
+    },
+    {
+      "url": "https://www.transurban.com/content/dam/investor-centre/01/FY21-ResultsPresentation.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.transurban.com/content/dam/investor-centre/01/FY21-ResultsPresentation.pdf",
+      "mediaType": "application/pdf",
+      "httpResponseBytes": 7446511,
+      "httpResponseSha256": "62e03a6da31f1682ae907dc8c17c7eba58eae9470c0e94c551e6357e80789afc",
+      "workingStatus": "WORKING",
+      "contentVerified": true,
+      "purpose": "Transurban Chesapeake LLC identity, March 31, 2021 legal close, April 1 reporting effective date and original 50/25/15/10 cap table"
+    },
+    {
+      "url": "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf",
+      "httpStatus": 403,
+      "finalUrl": "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf",
+      "mediaType": "text/html",
+      "httpResponseBytes": 569,
+      "httpResponseSha256": "41033c5bd5863b98ced6028acb285c4b80079e9007d233821e7aaf1155f07d20",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "contentVerified": true,
+      "purpose": "AustralianSuper's December 17, 2020 25% acquisition announcement and disclosed partnership cap table"
+    },
+    {
+      "url": "https://www.australiansuper.com/global-investors/who-we-are/north-america",
+      "httpStatus": 403,
+      "finalUrl": "https://www.australiansuper.com/global-investors/who-we-are/north-america",
+      "mediaType": "text/html",
+      "httpResponseBytes": 442,
+      "httpResponseSha256": "8ba1a51c7a2ada830b960c9aa9f2d59f14d3088048d6e17f56c4412cadcaa3c1",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "contentVerified": true,
+      "purpose": "AustralianSuper's current 25% Chesapeake toll road network holding at December 31, 2025 and duplicate-name resolution"
+    },
+    {
+      "url": "https://www.cppinvestments.com/wp-content/uploads/2020/12/cpp-investments-transurban-chesapeake-december-16-2020-v2.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cppinvestments.com/wp-content/uploads/2020/12/cpp-investments-transurban-chesapeake-december-16-2020-v2.pdf",
+      "mediaType": "application/pdf",
+      "httpResponseBytes": 163829,
+      "httpResponseSha256": "6614867c4e65fa3522752436eac20dc715e88c2b264581972ccfb8a2af32377e",
+      "workingStatus": "WORKING",
+      "contentVerified": true,
+      "purpose": "CPP Investments' December 16, 2020 15% acquisition announcement, infrastructure mandate and 495/95/395 scope"
+    },
+    {
+      "url": "https://www.transurban.com/content/dam/investor-centre/01/FY25-ResultsPresentation.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.transurban.com/content/dam/investor-centre/01/FY25-ResultsPresentation.pdf",
+      "mediaType": "application/pdf",
+      "httpResponseBytes": 8674361,
+      "httpResponseSha256": "0502645cf81371460b5c915f799f7f260b5ceaf8b466724c520af605f1732605",
+      "workingStatus": "WORKING",
+      "contentVerified": true,
+      "purpose": "Current platform boundary, unchanged cap table and confirmation that the March 2025 transaction was bank debt rather than an equity transfer"
+    },
+    {
+      "url": "https://www.expresslanes.com/about",
+      "httpStatus": 200,
+      "finalUrl": "https://www.expresslanes.com/about",
+      "mediaType": "text/html; charset=UTF-8",
+      "httpResponseBytes": 128946,
+      "httpResponseSha256": "87a23f543e00b020462634d64af3707b7cbe72e5ce4a26112ae95bd0a07d8bed",
+      "workingStatus": "WORKING",
+      "contentVerified": true,
+      "purpose": "Official operating site, VDOT partnership model, dynamically priced express-lane service and 2019 opening of the 395 Express Lanes"
+    },
+    {
+      "url": "https://www.vdot.virginia.gov/news-events/news/statewide/governor-glenn-youngkin-celebrates-opening-of-95-express-lanes-fredericksburg-extension.php",
+      "originalUrl": "https://vdot.virginia.gov/news-events/news/statewide/governor-glenn-youngkin-celebrates-opening-of-95-express-lanes-fredericksburg-extension.php",
+      "httpStatus": 200,
+      "initialHttpStatus": 301,
+      "finalUrl": "https://www.vdot.virginia.gov/news-events/news/statewide/governor-glenn-youngkin-celebrates-opening-of-95-express-lanes-fredericksburg-extension.php",
+      "mediaType": "text/html",
+      "httpResponseBytes": 50645,
+      "httpResponseSha256": "0678f243c0caa5da017db89bbdea27cfd9ee99da2c15f43eff7bad6368b73ca3",
+      "workingStatus": "REDIRECTED_WORKING",
+      "contentVerified": true,
+      "purpose": "August 17, 2023 opening of the 10-mile Fredericksburg Extension"
+    }
+  ],
+  "ownershipEvidenceAssessment": {
+    "AustralianSuper": "CURRENT_DIRECT_25_PERCENT",
+    "CPP Investments": "CURRENT_DIRECT_15_PERCENT"
+  },
+  "platformBoundaryConclusion": "Transurban Chesapeake LLC is the manager-level company. The 495, 95 and 395 Express Lanes, the Fredericksburg Extension and 495 NEXT are component concessions, roads or developments rather than separate PortCos.",
+  "duplicateConclusion": "Transurban Chesapeake and Chesapeake toll road network are the same platform and must be represented by one canonical company with a redirect from cmrxpj7kc00kyivhewp6psi4d.",
+  "subsequentExitSearchConclusion": "No platform sale, secondary transfer, signed ownership transfer or concession ownership change was found through 2026-08-18. The March 2025 Chesapeake transaction was debt financing, not an ownership exit.",
+  "modelEvidenceCorrections": [
+    "The model's generic AustralianSuper fund and vehicle labels were not copied; the existing production Fund dependency AustralianSuper Infrastructure Portfolio was preserved and the undisclosed SPV was left null.",
+    "The model's nonexistent CPP Fund label was not copied; the existing Real Assets (Infrastructure) vehicle attribution was preserved with fundName null.",
+    "Northern Virginia and Greater Washington were recorded as operating footprint rather than headquarters."
+  ],
+  "allUrlsHttps": true,
+  "allSourcesReopened": true,
+  "recommendedPrimaryCount": 1,
+  "result": "PASS_PROPOSED_CORRECTION"
+}

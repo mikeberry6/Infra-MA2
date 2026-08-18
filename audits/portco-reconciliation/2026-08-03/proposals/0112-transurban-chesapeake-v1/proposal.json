@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0112:transurban-chesapeake:f0caf605",
+  "taskIndex": 112,
+  "asOfDate": "2026-08-18",
+  "generatedAt": "2026-08-18T12:04:00.000Z",
+  "canonicalKey": "transurban-chesapeake|united-states",
+  "companyName": "Transurban Chesapeake",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [
+    "018-australian-super:holding:003:transurban-chesapeake",
+    "032-cpp-investments:holding:018:transurban-chesapeake"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpj7kc00kyivhewp6psi4d"
+  ],
+  "relationMerges": [
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkqfv02tyivhea6amsc1n",
+      "canonicalRelationId": "cmrxpldhb03luivheapdz2z4s",
+      "rationale": "Both rows record the December 2020 Chesapeake partner-sale announcements; the canonical milestone preserves the separate CPP Investments and AustralianSuper announcement dates and stakes."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkqgf02tzivhe824zz489",
+      "canonicalRelationId": "cmrxpldhv03lvivhemokuvy7r",
+      "rationale": "Both rows record the March 31, 2021 legal close of the same 50% Chesapeake partner sale; retain one canonical close milestone and distinguish its April 1 reporting effective date."
+    }
+  ],
+  "rationale": "Transurban Chesapeake and Chesapeake toll road network are duplicate records for the same Transurban Chesapeake LLC manager-level concession platform. Direct Transurban, AustralianSuper and CPP Investments evidence establishes a current cap table of Transurban 50%, AustralianSuper 25%, CPP Investments 15% and UniSuper 10%. This proposal preserves the existing AustralianSuper and CPP ownership-period identities, moves the AustralianSuper period onto the canonical company through the reviewed production merge, corrects both disclosed stakes, replaces the unsupported 2020 founding year and geographic headquarters with unavailable values, and records Northern Virginia as the operating footprint in the description. The 495, 95 and 395 Express Lanes, FredEx and 495 NEXT remain components rather than separate PortCos. No platform sale, secondary transfer or signed pending exit was found through August 18, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.transurban.com/content/dam/investor-centre/01/FY26-ResultsPresentation.pdf",
+      "purpose": "Current cap table, canonical platform boundary, operating scale and concession terms",
+      "supports": [
+        "AustralianSuper owns 25% and CPP Investments owns 15% of Transurban Chesapeake at June 30, 2026",
+        "Transurban Chesapeake owns the entities operating the 495, 95 and 395 Express Lanes, including the Fredericksburg Extension",
+        "the 495 concession covers 26.5 kilometres and the 95/395/FredEx concession covers 79 kilometres, both through December 2087"
+      ]
+    },
+    {
+      "url": "https://www.transurban.com/content/dam/investor-centre/01/FY21-ResultsPresentation.pdf",
+      "purpose": "Legal identity, partner-sale closing date and original ownership structure",
+      "supports": [
+        "the legal platform name is Transurban Chesapeake LLC",
+        "the 50% partner sale closed on March 31, 2021 and became effective for reporting on April 1, 2021",
+        "the post-close cap table was Transurban 50%, AustralianSuper 25%, CPP Investments 15% and UniSuper 10%"
+      ]
+    },
+    {
+      "url": "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf",
+      "purpose": "AustralianSuper ownership announcement and disclosed stake",
+      "supports": [
+        "AustralianSuper announced its agreement to acquire a 25% interest on December 17, 2020",
+        "the announcement identified CPP Investments at 15%, UniSuper at 10% and Transurban at 50%"
+      ]
+    },
+    {
+      "url": "https://www.australiansuper.com/global-investors/who-we-are/north-america",
+      "purpose": "Current AustralianSuper portfolio evidence and duplicate-name resolution",
+      "supports": [
+        "AustralianSuper continued to list the Chesapeake toll road network as a 25% North American holding at December 31, 2025",
+        "Chesapeake toll road network is an alias for the same Greater Washington platform"
+      ]
+    },
+    {
+      "url": "https://www.cppinvestments.com/wp-content/uploads/2020/12/cpp-investments-transurban-chesapeake-december-16-2020-v2.pdf",
+      "purpose": "CPP Investments ownership announcement and infrastructure-strategy basis",
+      "supports": [
+        "CPP Investments announced a 15% interest on December 16, 2020",
+        "the investment covered the 495, 95 and 395 Express Lanes platform",
+        "CPP Investments made the investment through its infrastructure mandate"
+      ]
+    },
+    {
+      "url": "https://www.transurban.com/content/dam/investor-centre/01/FY25-ResultsPresentation.pdf",
+      "purpose": "Subsequent financing and exit check",
+      "supports": [
+        "the March 2025 Chesapeake bank debt facility was financing rather than an equity transfer",
+        "the reported platform boundary and cap table remained unchanged"
+      ]
+    },
+    {
+      "url": "https://www.expresslanes.com/about",
+      "purpose": "Official operating website, services model and 395 Express Lanes history",
+      "supports": [
+        "the official operating site describes the Transurban and VDOT express-lanes model",
+        "the 395 Express Lanes opened in 2019"
+      ]
+    },
+    {
+      "url": "https://www.vdot.virginia.gov/news-events/news/statewide/governor-glenn-youngkin-celebrates-opening-of-95-express-lanes-fredericksburg-extension.php",
+      "purpose": "Fredericksburg Extension opening",
+      "supports": [
+        "the 10-mile 95 Express Lanes Fredericksburg Extension opened to mainline traffic on August 17, 2023"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "94288b28a97f61207090ddb57fad077ea46f325733f5f15e93a90686f734f27c",
+  "currentCompanySnapshotSha256": "9a2a05a0dda86e1a91a729f5c2fdc2b738d9948423acd841bc0f4be51b91790e",
+  "executionLock": {
+    "taskSnapshotSha256": "f472f85539a78034dbea8b2dc371508c9a507c4dd3366e7152086aa343dd74cb",
+    "taskStateSha256": "327f691794acc5b6ff1d331019045c60c6960bd0800ea58444748c013038d479",
+    "taskDependencySha256": "db6ab134550c176cac5bbdf2fa876911fe8cef9832a085e468cf752fea79b682",
+    "seedEntrySha256": "6ef701be58347f3c53d226968adfc0eb8cd760ad9b4bab408b144efc36f88c83",
+    "dependencies": {
+      "ownershipPeriodsSha256": "3e13aaaf693f8386398b7425321e32ea40d0e856efe9dbe4dfb8a7f6cd5d3ad7",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "99ecc35de61b490154f56fbc511a56cd216b16018963aa419c7d78ce09a6fd72",
+      "organizationsSha256": "f0f04418026db02d21f0fd5c196649689c49576b690d02dfcbcacb9ed8050ae5",
+      "citationsSha256": "60ff73750843abb92b4e5071fd16ad48988846d7814d3fd0c4124929053ac2d2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj18k00bpivheqkog9qdz",
+        "fundName": "AustralianSuper Infrastructure Portfolio",
+        "managerId": "cmrxpi4ja000pivhe73k4hyez",
+        "updatedAt": "2026-07-23T16:09:55.460Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4ja000pivhe73k4hyez",
+        "name": "AustralianSuper",
+        "updatedAt": "2026-07-23T16:09:13.078Z"
+      },
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjcnm00syivhep9wizt9q",
+    "name": "Transurban Chesapeake",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Managed lanes and toll roads",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Transurban Chesapeake owns the 495, 95, and 395 Express Lanes system serving the greater Washington, D.C. region. Its customers are passenger and commercial motorists that pay variable tolls for managed-lane access and travel-time reliability. The platform is asset-heavy and concession-based because value depends on long-dated toll-road rights, lane assets, traffic demand, and ongoing operations. CPP Investments disclosed in 2020 that it acquired a 15% interest, and subsequent Transurban investor materials show a current ownership split of 50% Transurban, 25% AustralianSuper, 15% CPP Investments, and 10% UniSuper. The asset base remains a core managed-lanes platform in Virginia, Maryland, and the District of Columbia.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Virginia; Maryland; District of Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjy4z01qwivhe6vb1btix",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "Real Assets (Infrastructure)",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpldgx03ltivhe55j5sn3o",
+        "date": "2020",
+        "event": "Transurban Chesapeake was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpldhb03luivheapdz2z4s",
+        "date": "Dec 16, 2020",
+        "event": "CPP Investments announced an agreement to acquire a 15% interest in Transurban Chesapeake.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-16T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpldhv03lvivhemokuvy7r",
+        "date": "Apr 1, 2021",
+        "event": "Transurban reached financial close on the sale of a 50% interest in Transurban Chesapeake to CPP Investments, AustralianSuper, and UniSuper.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpldig03lwivhejcloqcjd",
+        "date": "2023",
+        "event": "The Fredericksburg Extension opened within the broader Chesapeake express-lanes system.",
+        "category": "EXPANSION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqemb09jbivhegrsygebc",
+        "label": "Cppinvestments — Transurban Chesapeake",
+        "url": "https://www.cppinvestments.com/newsroom/cpp-investments-to-acquire-stake-in-toll-road-business-transurban-chesapeake/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cppinvestments — Transurban Chesapeake",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqena09jdivhe9hodef9k",
+        "label": "Close date source — CPP Investments — Transurban Chesapeake",
+        "url": "https://yourir.info/resources/a50955429d255a58/announcements/tcl.asx/3A564654/TCL_Transurban_reaches_financial_close_on_Chesapeake_partnership.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqeoi09jfivhe3qmzuwu8",
+        "label": "Transurban — Transurban Chesapeake",
+        "url": "https://www.transurban.com/content/dam/investor-centre/06/Chesapeake-Partnership-and-Traffic-Update-presentation.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Transurban — Transurban Chesapeake",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqepe09jhivhee26ya3n3",
+        "label": "Transurban — Transurban Chesapeake",
+        "url": "https://www.transurban.com/content/dam/investor-centre/01/1H26-ResultsPresentation.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Transurban — Transurban Chesapeake",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "9a2a05a0dda86e1a91a729f5c2fdc2b738d9948423acd841bc0f4be51b91790e",
+  "afterImage": {
+    "id": "cmrxpjcnm00syivhep9wizt9q",
+    "name": "Transurban Chesapeake",
+    "aliases": [
+      "Chesapeake",
+      "Chesapeake Partnership",
+      "Chesapeake toll road network",
+      "Chesapeake toll roads",
+      "Transurban Chesapeake LLC"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Managed lanes and toll roads",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Transurban Chesapeake LLC is the concession platform that owns the entities operating the 495, 95 and 395 Express Lanes in Northern Virginia, including the Fredericksburg Extension and 495 NEXT. It develops, finances, operates and maintains dynamically priced express lanes serving motorists, high-occupancy vehicles, buses and permitted commercial traffic in partnership with VDOT. At June 30, 2026, Transurban reported 50% ownership, AustralianSuper 25%, CPP Investments 15% and UniSuper 10%; only AustralianSuper and CPP Investments are tracked infrastructure-manager owners here. The 495 concession covered 26.5 kilometres and the 95/395/FredEx concession 79 kilometres, each running through December 2087. No platform sale, secondary transfer or signed pending exit was identified through August 18, 2026. Chesapeake Partnership and Chesapeake toll road network are aliases for the same manager-level platform; individual roads and extensions are components, not separate PortCos.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.expresslanes.com/",
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-18T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjsli01hwivhe5k0u55ih",
+        "managerName": "AustralianSuper",
+        "organizationName": "AustralianSuper",
+        "fundName": "AustralianSuper Infrastructure Portfolio",
+        "vehicleName": null,
+        "stake": "25%",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjy4z01qwivhe6vb1btix",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "Real Assets (Infrastructure)",
+        "stake": "15%",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkqfb02txivhex6aqbqpx",
+        "date": "2019",
+        "event": "The 395 Express Lanes opened to traffic as part of the Chesapeake managed-lanes platform.",
+        "category": "OTHER",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.expresslanes.com/about"
+        ]
+      },
+      {
+        "id": "cmrxpldgx03ltivhe55j5sn3o",
+        "date": "Dec 2020",
+        "event": "Transurban established the Chesapeake partnership structure around its 495, 95 and 395 Express Lanes assets in connection with the announced 50% institutional partner sale.",
+        "category": "OTHER",
+        "sortDate": "2020-12-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.transurban.com/content/dam/investor-centre/01/FY21-ResultsPresentation.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpldhb03luivheapdz2z4s",
+        "date": "Dec 16–17, 2020",
+        "event": "CPP Investments announced a 15% Chesapeake interest on December 16 and AustralianSuper announced a 25% interest on December 17; UniSuper agreed to acquire 10% and Transurban would retain 50%.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-17T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cppinvestments.com/wp-content/uploads/2020/12/cpp-investments-transurban-chesapeake-december-16-2020-v2.pdf",
+          "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpldhv03lvivhemokuvy7r",
+        "date": "Mar 31, 2021",
+        "event": "Transurban completed the sale of a 50% interest in Transurban Chesapeake to AustralianSuper, CPP Investments and UniSuper on March 31, 2021; reporting became effective April 1.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-03-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.transurban.com/content/dam/investor-centre/01/FY21-ResultsPresentation.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpldig03lwivhejcloqcjd",
+        "date": "Aug 17, 2023",
+        "event": "VDOT and Transurban opened the 10-mile 95 Express Lanes Fredericksburg Extension to mainline traffic.",
+        "category": "EXPANSION",
+        "sortDate": "2023-08-17T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.vdot.virginia.gov/news-events/news/statewide/governor-glenn-youngkin-celebrates-opening-of-95-express-lanes-fredericksburg-extension.php"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Transurban — FY26 Results Presentation",
+        "url": "https://www.transurban.com/content/dam/investor-centre/01/FY26-ResultsPresentation.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ownership, canonical platform boundary, operating scale and concession terms at June 30, 2026",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Transurban — FY21 Results Presentation",
+        "url": "https://www.transurban.com/content/dam/investor-centre/01/FY21-ResultsPresentation.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Transurban Chesapeake LLC identity, March 31, 2021 legal close, April 1 reporting effect and original cap table",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp86j07uiivhe7q27oi8t",
+        "label": "Announcement date source — AustralianSuper — Chesapeake toll road network",
+        "url": "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/australiansuper-acquisition-of-stake-in-chesapeake-toll-roads.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "AustralianSuper's December 17, 2020 announcement, 25% stake and disclosed partnership cap table",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp85a07ugivhehvh005jy",
+        "label": "Australiansuper — Chesapeake toll road network",
+        "url": "https://www.australiansuper.com/global-investors/who-we-are/north-america",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current AustralianSuper 25% North American holding and Chesapeake duplicate-name resolution",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CPP Investments — Transurban Chesapeake acquisition",
+        "url": "https://www.cppinvestments.com/wp-content/uploads/2020/12/cpp-investments-transurban-chesapeake-december-16-2020-v2.pdf",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments' December 16, 2020 announcement, 15% stake, infrastructure mandate and 495/95/395 platform scope",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Transurban — FY25 Results Presentation",
+        "url": "https://www.transurban.com/content/dam/investor-centre/01/FY25-ResultsPresentation.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Current platform boundary and evidence that the March 2025 transaction was debt financing rather than an ownership transfer",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Express Lanes — About the lanes",
+        "url": "https://www.expresslanes.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official operating website, VDOT partnership model, services and 395 Express Lanes opening history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "VDOT — Fredericksburg Extension opening",
+        "url": "https://www.vdot.virginia.gov/news-events/news/statewide/governor-glenn-youngkin-celebrates-opening-of-95-express-lanes-fredericksburg-extension.php",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "August 17, 2023 opening of the 10-mile 95 Express Lanes Fredericksburg Extension",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "93c2c1e23c9e785cfa65e848183bf1f841d4259ce99c0036c55bfce414123423",
+  "proposalSha256": "4e3e25913c076724c60bfd127c51b360c5a49d4723f3b6d5a01614290098680a"
+}
