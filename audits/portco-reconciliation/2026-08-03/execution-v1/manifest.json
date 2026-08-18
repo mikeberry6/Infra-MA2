@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T16:47:46.000Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-18T17:48:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0115:edwards-sanborn-1a:6fff6c99",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -17491,18 +17491,27 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "8ba4d2f288ed20266debe37545ffe05b67e2bc5b3b2031f5118bc907007ce6c4",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 1,
+      "startedAt": "2026-08-18T16:53:02.000Z",
+      "updatedAt": "2026-08-18T17:48:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2284f55f341baf55dfb2d7101a290c2d5d84ea674b69032d06d4c2c01726a525",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0115-edwards-sanborn-1a/attempt-1/locked-task-snapshot.json",
+          "sha256": "2284f55f341baf55dfb2d7101a290c2d5d84ea674b69032d06d4c2c01726a525"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0115-edwards-sanborn-1a-v1/proposal.json",
+          "sha256": "dc05a16402bdc36427148bf62dfff86c4b70952dd6fd302710dbbc73a58d7d19"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0115-edwards-sanborn-1a-v1.json",
+          "sha256": "2ebe3e8690fb6abcb43bb3e450d7d43a9681a29bd2a686dc5c47d2645a96d27e"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -17518,6 +17527,51 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-18T16:53:02.000Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-18T17:45:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "2284f55f341baf55dfb2d7101a290c2d5d84ea674b69032d06d4c2c01726a525",
+          "evidenceSha256": [
+            "2284f55f341baf55dfb2d7101a290c2d5d84ea674b69032d06d4c2c01726a525",
+            "dc05a16402bdc36427148bf62dfff86c4b70952dd6fd302710dbbc73a58d7d19"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-18T17:45:31.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "2284f55f341baf55dfb2d7101a290c2d5d84ea674b69032d06d4c2c01726a525",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-18T17:48:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "2284f55f341baf55dfb2d7101a290c2d5d84ea674b69032d06d4c2c01726a525",
+          "evidenceSha256": [
+            "2ebe3e8690fb6abcb43bb3e450d7d43a9681a29bd2a686dc5c47d2645a96d27e"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -32110,5 +32164,5 @@
       ]
     }
   ],
-  "manifestSha256": "fe02ac30273a044c3fc5a3fb3f28ed4c0410fb0fd6721380a69cbb5fd1a804be"
+  "manifestSha256": "c850ebc7aadbba3b91894a22dadb92e1f18c30c89824ee2a245800f997c49549"
 }

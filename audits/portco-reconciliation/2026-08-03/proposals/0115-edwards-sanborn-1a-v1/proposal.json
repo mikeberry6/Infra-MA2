@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0115:edwards-sanborn-1a:6fff6c99",
+  "taskIndex": 115,
+  "asOfDate": "2026-08-18",
+  "generatedAt": "2026-08-18T17:45:00.000Z",
+  "canonicalKey": "edwards-sanborn-1a-and-1b|united-states",
+  "companyName": "Edwards Sanborn 1A",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [
+    "cmrxpj7v900liivhelzpabyae"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjszp01ikivhe4x8l4n76",
+      "canonicalRelationId": "cmrxpjt0801ilivhe3or1eica",
+      "rationale": "Both periods describe the same active Axium manager-level investment. Preserve the immutable combined-record period while replacing its unsupported generic fund link and adding the verified phase-specific ownership disclosure."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkrwj02vlivhe7km1lrwh",
+      "canonicalRelationId": "cmrxpkryn02voivheznai3lvy",
+      "rationale": "Both 2022 acquisition milestones describe Axium's Phase 1A entry. Preserve the canonical milestone and correct it to the exact October 20, 2022 legal close established by FERC."
+    }
+  ],
+  "rationale": "Consolidate the standalone Edwards Sanborn 1A record into the existing combined record and rename the survivor Edwards Sanborn Solar + Storage. Axium's live portfolio presents EdSan1A and EdSan1B together under Axium ES Holdings LLC. FERC records establish that Axium completed the Phase 1A transaction on October 20, 2022 and acquired 80%, while Terra-Gen retained 20%. A January 2024 FERC filing establishes that Axium ES Holdings completed the Phase 1B transaction on December 22, 2023 and acquired 50% of the voting interests, while Terra-Gen retained 50%. The same filing identifies Axium ES Holdings beneath Axium Co-Invest Holdings and AxInfra US LP and states that AxInfra owns 92.26% of the co-invest holding company. These phase-level facts do not support one synthetic percentage for the combined PortCo. No direct source identifies AxInfra Fund I-IV as the owning fund, so both generic fund links are removed and the disclosed Axium ES Holdings LLC / AxInfra US LP vehicle chain is retained. Current Axium and Terra-Gen pages continue to show the combined operating project, and no later Axium sale, signed pending exit or ownership transfer was identified through August 18, 2026. Task 116 covers the same canonical holding and may be superseded only after this exact merge is released, applied and production-verified.",
+  "evidence": [
+    {
+      "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+      "purpose": "Current manager-level identity, operating status and phase scale",
+      "supports": [
+        "Axium currently presents one Axium ES Holdings LLC card covering EdSan1A and EdSan1B",
+        "both phases are operating",
+        "the current portfolio reports phase-specific operating scale"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240130-5233",
+      "purpose": "Exact Phase 1A and Phase 1B closing dates, voting stakes and Axium vehicle chain",
+      "supports": [
+        "Phase 1A closed on October 20, 2022 and Axium acquired 80%",
+        "Phase 1B closed on December 22, 2023 and Axium ES Holdings acquired 50% while Terra-Gen retained 50%",
+        "Axium ES Holdings is held beneath Axium Co-Invest Holdings and AxInfra US LP, and AxInfra owns 92.26% of Axium Co-Invest Holdings"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf",
+      "purpose": "Phase 1A ownership and transaction-era scale",
+      "supports": [
+        "Axium announced completion of an 80% Phase 1A acquisition",
+        "Terra-Gen retained 20%",
+        "the release reports 397 MWac of solar and 1,505 MWh of storage"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/wp-content/uploads/2024/01/Axium_News-Release_EdSan-1B.pdf",
+      "purpose": "Phase 1B co-invest structure, combined boundary and transaction-era scale",
+      "supports": [
+        "an Axium-managed fund and an undisclosed limited-partner co-investor jointly acquired 50% of Phase 1B",
+        "the combined phases total 807 MWac of solar and 3,002 MWh of storage",
+        "the assets serve utilities, municipal utilities and corporate counterparties under long-term contracts"
+      ]
+    },
+    {
+      "url": "https://terra-gen.com/edwards-sanborn/",
+      "purpose": "Combined project boundary, operating footprint and current scale",
+      "supports": [
+        "Terra-Gen presents Phase 1A and Phase 1B together",
+        "the project spans approximately 4,600 acres in Kern County",
+        "the project is operating and interconnected to CAISO"
+      ]
+    },
+    {
+      "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1-of-edwards-sanborn-solar-storage-facility/",
+      "purpose": "Company-side Phase 1A ownership confirmation",
+      "supports": [
+        "the Phase 1A transaction completed",
+        "Axium acquired 80% and Terra-Gen retained 20%"
+      ]
+    },
+    {
+      "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1b-of-the-edwards-sanborn-solar-storage-facility/",
+      "purpose": "Company-side Phase 1B transaction and boundary confirmation",
+      "supports": [
+        "the Phase 1B acquisition involved an Axium-managed fund and limited-partner co-investor",
+        "the acquired Phase 1B interest was 50%",
+        "the release describes Phases 1A and 1B as one combined Edwards Sanborn investment"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "59d3b2e87030568ee581d5c76f337ad81c30e6b5104265c7d47b43112e819f93",
+  "currentCompanySnapshotSha256": "498e2da42bfd2a2ebc9b4f913d415c9c500a9d08809ba953e3983e4cb5e102c3",
+  "executionLock": {
+    "taskSnapshotSha256": "2284f55f341baf55dfb2d7101a290c2d5d84ea674b69032d06d4c2c01726a525",
+    "taskStateSha256": "054216b2c837c2b0c31a4e191bb7876a3a713c8e191bcbf65e8d67ac4aaad200",
+    "taskDependencySha256": "167b3cb0c6b471047e644ce5bed512be4e4179314f2fb7a550fad1702eea881b",
+    "seedEntrySha256": "5156b06b16e5c630891df810b8ecf219c503931c66b0b7cf8abc25cb56f8594e",
+    "dependencies": {
+      "ownershipPeriodsSha256": "8864bbc0f96f0724284c9ab567e460a8d6c80dd6bb337654ad68a271cbba811b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "9006b36c9c95fa66723514d5416ff2c0a0065565a6ef9f82f75005182bec322c",
+      "organizationsSha256": "4232d4dc8383fded1a17b033133ecf7709e8286593de3a960758bbf61cc086bc",
+      "citationsSha256": "e5dd433c09b9709facd8b8715ac47bc8d5dc1fac42ffde5cc4e8c3b69f70b7c8",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj19600bqivhe63qqb0hm",
+        "fundName": "AxInfra Fund I-IV",
+        "managerId": "cmrxpi4m0000qivheeg0vfmvn",
+        "updatedAt": "2026-07-23T16:09:55.482Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4m0000qivheeg0vfmvn",
+        "name": "Axium Infrastructure",
+        "updatedAt": "2026-07-23T16:09:13.176Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj7vt00ljivheoq991z94",
+    "name": "Edwards Sanborn 1A & 1B",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar + Battery Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Edwards Sanborn 1A & 1B is a utility-scale solar and battery storage platform within the Edwards Sanborn complex in Kern County, California. Public disclosures describe Phase 1A at 397 MWac of solar capacity and 1,505 MWh of battery storage, and Phase 1B at 410 MWac of solar capacity and 1,497 MWh of battery storage. The platform is asset-heavy and contracted, with long-term offtake arrangements supporting revenue rather than merchant power exposure for the entire output. Its operating footprint is concentrated in California as part of one of the larger integrated solar and storage developments in the U.S. market. Axium acquired an 80% interest in Phase 1A in 2022 and later invested in Phase 1B in 2024, but the current combined ownership structure for the 1A and 1B platform is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjt0801ilivhe3or1eica",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": "AxInfra Fund I-IV",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkryn02voivheznai3lvy",
+        "date": "Oct 26, 2022",
+        "event": "Axium completed the acquisition of an 80% interest in Edwards Sanborn Phase 1A.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-10-26T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkrz802vpivhee2081z1d",
+        "date": "Jan 11, 2024",
+        "event": "Axium announced an additional investment to acquire a 50% interest in Edwards Sanborn Phase 1B.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-11T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppb4q07z1ivhe36x320q6",
+        "label": "Close date source — Axium Infrastructure — Edwards Sanborn 1A",
+        "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1-of-edwards-sanborn-solar-storage-facility/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Axium Infrastructure closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppb7v07z3ivhe2p2bqceh",
+        "label": "Investment date source — Axium Infrastructure — Edwards Sanborn 1A & 1B",
+        "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1b-of-the-edwards-sanborn-solar-storage-facility/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Axium Infrastructure initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppb9007z5ivhehvqskmlq",
+        "label": "Axiuminfra — Edwards Sanborn 1A & 1B",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2024/01/Axium_News-Release_EdSan-1B.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Axiuminfra — Edwards Sanborn 1A & 1B",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppb9j07z6ivhe3ernyex3",
+        "label": "Axiuminfra — Edwards Sanborn 1A",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Axiuminfra — Edwards Sanborn 1A & 1B",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "498e2da42bfd2a2ebc9b4f913d415c9c500a9d08809ba953e3983e4cb5e102c3",
+  "afterImage": {
+    "id": "cmrxpj7vt00ljivheoq991z94",
+    "name": "Edwards Sanborn Solar + Storage",
+    "aliases": [
+      "Edwards Sanborn 1A & 1B",
+      "Edwards Sanborn 1A",
+      "Edwards Sanborn 1B",
+      "Edwards Sanborn",
+      "Edwards & Sanborn",
+      "EdSan 1A",
+      "ES1A",
+      "EdSan 1B",
+      "ES1B",
+      "Axium ES Holdings LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Solar + Battery Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Edwards Sanborn Solar + Storage is Axium Infrastructure's manager-level holding across the operating EdSan 1A and EdSan 1B utility-scale solar and battery-storage phases in Kern County, California. Axium's current portfolio reports 346 MW of solar and 1,339 MWh of storage for 1A and 358 MW of solar and 1,497 MWh of storage for 1B, while the transaction releases disclose 397 MWac / 1,505 MWh and 410 MWac / 1,497 MWh nameplate figures respectively. The projects serve utility, municipal-utility and corporate counterparties under long-term revenue contracts. Phase 1A closed with Axium at 80% and Terra-Gen at 20%; Phase 1B closed with Axium ES Holdings at 50% and Terra-Gen at 50%. AxInfra US LP owns 92.26% of Axium Co-Invest Holdings, the upstream co-invest holding company. No synthetic combined-company ownership percentage is inferred, no direct source identifies AxInfra Fund I-IV as the owning fund, and no later Axium sale or signed pending exit was identified through August 18, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://terra-gen.com/edwards-sanborn/",
+    "yearFounded": null,
+    "headquarters": "Kern County, California",
+    "lastVerifiedAt": "2026-08-18T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjt0801ilivhe3or1eica",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": null,
+        "vehicleName": "Axium ES Holdings LLC / AxInfra US LP",
+        "stake": "Phase 1A: 80% (Terra-Gen 20%); Phase 1B: Axium ES Holdings LLC 50% / Terra-Gen 50%, with AxInfra US LP owning 92.26% of the upstream co-invest holding company",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkrvy02vkivhevch0qqbd",
+        "date": "2022",
+        "event": "Axium disclosed Phase 1A transaction-era scale of 397 MWac of solar capacity and 1,505 MWh of battery storage, with 346 MWac at the point of interconnection.",
+        "category": "EXPANSION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkryn02voivheznai3lvy",
+        "date": "Oct 20, 2022",
+        "event": "Axium ES Holdings completed its acquisition of 80% of the Phase 1A project companies from Terra-Gen; Terra-Gen retained 20%.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-10-20T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240130-5233",
+          "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkrz802vpivhee2081z1d",
+        "date": "Dec 22, 2023",
+        "event": "Axium ES Holdings completed its acquisition of 50% of the voting interests in the Phase 1B sellers; Terra-Gen retained the other 50%.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-12-22T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240130-5233"
+        ]
+      },
+      {
+        "id": "cmrxpkrxo02vnivhek6reai53",
+        "date": "Jan 11, 2024",
+        "event": "Axium publicly announced its Phase 1B investment and described Phases 1A and 1B as a combined 807 MWac solar and 3,002 MWh storage complex.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-11T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.axiuminfra.com/wp-content/uploads/2024/01/Axium_News-Release_EdSan-1B.pdf",
+          "https://terra-gen.com/axium-infrastructure-invests-in-phase-1b-of-the-edwards-sanborn-solar-storage-facility/"
+        ]
+      },
+      {
+        "id": "cmrxpkrx202vmivhepe2ylsay",
+        "date": "Aug 18, 2026",
+        "event": "Axium's live portfolio continued to list Axium ES Holdings LLC as one current operating holding covering EdSan1A and EdSan1B.",
+        "category": "OTHER",
+        "sortDate": "2026-08-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.axiuminfra.com/portfolio-assets/?lang=en"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppb4q07z1ivhe36x320q6",
+        "label": "Close date source — Axium Infrastructure — Edwards Sanborn 1A",
+        "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1-of-edwards-sanborn-solar-storage-facility/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Company-side confirmation of the completed Phase 1A 80% acquisition and Terra-Gen's retained 20%",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppb7v07z3ivhe2p2bqceh",
+        "label": "Investment date source — Axium Infrastructure — Edwards Sanborn 1A & 1B",
+        "url": "https://terra-gen.com/axium-infrastructure-invests-in-phase-1b-of-the-edwards-sanborn-solar-storage-facility/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Company-side Phase 1B transaction, co-investor limitation, combined boundary and transaction-era scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppb9007z5ivhehvqskmlq",
+        "label": "Axiuminfra — Edwards Sanborn 1A & 1B",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2024/01/Axium_News-Release_EdSan-1B.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Manager disclosure of the Phase 1B joint 50% acquisition, combined phase scale and offtake",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppb9j07z6ivhe3ernyex3",
+        "label": "Axiuminfra — Edwards Sanborn 1A",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Manager disclosure of the completed Phase 1A 80% acquisition, retained Terra-Gen 20% and transaction-era scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Axiuminfra — 527 Renewables Holdings LLC",
+        "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Axium ES Holdings LLC identity, combined EdSan1A and EdSan1B boundary, operating status and current phase scale",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Terra-Gen — Edwards Sanborn Solar + Storage",
+        "url": "https://terra-gen.com/edwards-sanborn/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Combined project boundary, Kern County footprint and current operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FERC — Edwards Sanborn ownership filing",
+        "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240130-5233",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Exact Phase 1A and Phase 1B legal closes, phase voting stakes and Axium ES / AxInfra US ownership chain",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "6788df6404b917c3c108175275b0c08223e85f93da089ea3c10f50a99091c9a5",
+  "proposalSha256": "dc05a16402bdc36427148bf62dfff86c4b70952dd6fd302710dbbc73a58d7d19"
+}

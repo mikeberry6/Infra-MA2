@@ -414,6 +414,18 @@ const ATTRIBUTION_ONLY_FUNDS: CandidateFund[] = [
 
 const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
   {
+    companyName: "Edwards Sanborn Solar + Storage",
+    investmentFirm: "Axium Infrastructure",
+    attribution: "UNRESOLVED",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "Reviewed evidence identifies Axium ES Holdings LLC, Axium Co-Invest Holdings, and AxInfra US LP in the ownership chain, but does not disclose a production-curated matching fund. The active period remains unlinked rather than being inferred to the generic AxInfra Fund I-IV record.",
+    sourceUrls: [
+      "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+      "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240130-5233",
+    ],
+  },
+  {
     companyName: "Axium Aster & Axium Bloom",
     investmentFirm: "Axium Infrastructure",
     attribution: "UNRESOLVED",
