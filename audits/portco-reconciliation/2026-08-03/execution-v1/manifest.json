@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T18:03:01.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0115:edwards-sanborn-1a:6fff6c99",
+  "updatedAt": "2026-08-18T18:29:10.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -17491,11 +17491,11 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "8ba4d2f288ed20266debe37545ffe05b67e2bc5b3b2031f5118bc907007ce6c4",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-18T16:53:02.000Z",
-      "updatedAt": "2026-08-18T18:03:01.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-18T18:29:09.000Z",
+      "completedAt": "2026-08-18T18:29:09.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "2284f55f341baf55dfb2d7101a290c2d5d84ea674b69032d06d4c2c01726a525",
@@ -17597,6 +17597,18 @@
             "f8de3152700d058708f877e7ea2b08669ae7a261a3ece13e5824e396de8cbd15"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-18T18:29:09.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "2284f55f341baf55dfb2d7101a290c2d5d84ea674b69032d06d4c2c01726a525",
+          "evidenceSha256": [
+            "f8de3152700d058708f877e7ea2b08669ae7a261a3ece13e5824e396de8cbd15"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -17608,13 +17620,13 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "0edf6911c8978b91a5482eb070a9cdd00d8f2fd7b24254fbed3631aec83638b0",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-18T18:29:10.000Z",
+      "completedAt": "2026-08-18T18:29:10.000Z",
+      "exceptionReason": "Task 115 proved Edwards Sanborn 1A, Edwards Sanborn 1A & 1B, EdSan1A/1B and Axium ES Holdings LLC are one canonical manager-level portfolio company (cmrxpj7vt00ljivheoq991z94) and released the complete Axium ownership, exact closing-date, phase-boundary and redirect after-image; task 116 would duplicate that identity and ownership work.",
+      "supersededByTaskId": "ledger:0115:edwards-sanborn-1a:6fff6c99",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -17635,6 +17647,16 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-18T18:29:10.000Z",
+          "reason": "Task 115 proved Edwards Sanborn 1A, Edwards Sanborn 1A & 1B, EdSan1A/1B and Axium ES Holdings LLC are one canonical manager-level portfolio company (cmrxpj7vt00ljivheoq991z94) and released the complete Axium ownership, exact closing-date, phase-boundary and redirect after-image; task 116 would duplicate that identity and ownership work.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -32189,5 +32211,5 @@
       ]
     }
   ],
-  "manifestSha256": "f33181c45b6995eaac22b6b4c7cec6367d65aed04275fb612fb964952dc71a03"
+  "manifestSha256": "d4a12befb9b5beb29d8198bdb9fe81ed65d24392fc5d57bc16da9d6fa537ae40"
 }
