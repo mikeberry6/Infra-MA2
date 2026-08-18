@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_DRY_RUN_FAILURE_ANALYSIS",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0113:arbour-heights:24819145",
+  "taskIndex": 113,
+  "attempt": 1,
+  "failedAt": "2026-08-18T13:43:00.000Z",
+  "phase": "PRODUCTION_DRY_RUN",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "proposalSha256": "4b43d7de87d12fc1b0cc0d966caca76a39e83e544486788aae83fb1080e58576",
+  "approvalSha256": "c9de3db021b218e16fefc87282544e86a68b92a0e2ec3f9fd1e082cc78d79cc6",
+  "snapshotSha256": "46007e5e216ee4876ff835593ba819c08883aa1558c18c82f0a42a842db60868",
+  "error": "Retired milestone cmrxpkquh02ufivhes8nido9k maps to an incompatible category",
+  "rootCause": "The approved v1 after-image changed the 2018 canonical milestone to EXPANSION while the retired Arbour milestone being merged retained FINANCING. Merge validation requires category, year and semantic identity compatibility.",
+  "correction": "Create a hash-distinct v2 proposal that preserves the 2018 FINANCING category for the mapped platform-formation milestone and preserves separate compatible 2019 EXPANSION and ACQUISITION rows before adding the 2022 and 2023 ownership transitions.",
+  "requiresNewProposalAndApproval": true
+}

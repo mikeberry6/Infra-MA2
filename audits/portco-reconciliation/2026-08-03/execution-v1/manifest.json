@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T12:48:27.458Z",
-  "runStatus": "IDLE",
-  "activeTaskId": null,
+  "updatedAt": "2026-08-18T13:47:00.000Z",
+  "runStatus": "RUNNING",
+  "activeTaskId": "ledger:0113:arbour-heights:24819145",
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -17160,20 +17160,32 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "1e67404ea6cb6404ff924c4895939e0eda3c52991114a475bb1eeabb60913f7a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-18T13:44:01.000Z",
+      "updatedAt": "2026-08-18T13:47:00.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "a508d8370f85adbfd4cfa955481c98a6cb57806b1ed25c5bd6b23d8e7cf3c15a",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-2/locked-task-snapshot.json",
+          "sha256": "a508d8370f85adbfd4cfa955481c98a6cb57806b1ed25c5bd6b23d8e7cf3c15a"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0113-arbour-heights-v2/proposal.json",
+          "sha256": "edb7ee52acbfcaa9c79b8c6025d4c08637841730abc44f5c6c4621801345cbb5"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0113-arbour-heights-v2.json",
+          "sha256": "372218bd4eb88f1e64b759b193ee0dc4124217aad9ab1094e139d4f007837090"
+        },
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-2/retry-binding.json",
+          "sha256": "0ed335f43612e203634e16be4af5aae91c1d10e3ea35ef464fa87b4a12d5ea63"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -17187,6 +17199,111 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "ACTIVE",
+          "at": "2026-08-18T12:54:43.210Z",
+          "reason": null,
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-18T13:40:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c5f7a067d2a5ce6240aaac98fdbdc93d58e7609ea6993af0b0a35215cb05371c",
+          "evidenceSha256": [
+            "45512779060a6425208bf3004fcc67b3475245b9f7ad17e49b035e67f1e3d515",
+            "4b43d7de87d12fc1b0cc0d966caca76a39e83e544486788aae83fb1080e58576",
+            "c5f7a067d2a5ce6240aaac98fdbdc93d58e7609ea6993af0b0a35215cb05371c"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-18T13:40:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c5f7a067d2a5ce6240aaac98fdbdc93d58e7609ea6993af0b0a35215cb05371c",
+          "evidenceSha256": [
+            "4b43d7de87d12fc1b0cc0d966caca76a39e83e544486788aae83fb1080e58576",
+            "c5f7a067d2a5ce6240aaac98fdbdc93d58e7609ea6993af0b0a35215cb05371c"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-18T13:42:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "c5f7a067d2a5ce6240aaac98fdbdc93d58e7609ea6993af0b0a35215cb05371c",
+          "evidenceSha256": [
+            "c9de3db021b218e16fefc87282544e86a68b92a0e2ec3f9fd1e082cc78d79cc6"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-18T13:44:00.000Z",
+          "reason": "Attempt 1 production dry run rejected an incompatible legacy milestone relation mapping; the dry run made no database or seed writes, and a hash-distinct corrected v2 proposal is required.",
+          "taskSnapshotSha256": "c5f7a067d2a5ce6240aaac98fdbdc93d58e7609ea6993af0b0a35215cb05371c",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-18T13:44:01.000Z",
+          "reason": "Retrying with a hash-distinct v2 proposal that corrects the milestone merge mappings identified by the immutable attempt-1 dry-run failure.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-18T13:46:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a508d8370f85adbfd4cfa955481c98a6cb57806b1ed25c5bd6b23d8e7cf3c15a",
+          "evidenceSha256": [
+            "0ed335f43612e203634e16be4af5aae91c1d10e3ea35ef464fa87b4a12d5ea63",
+            "a508d8370f85adbfd4cfa955481c98a6cb57806b1ed25c5bd6b23d8e7cf3c15a",
+            "edb7ee52acbfcaa9c79b8c6025d4c08637841730abc44f5c6c4621801345cbb5"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-18T13:46:01.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a508d8370f85adbfd4cfa955481c98a6cb57806b1ed25c5bd6b23d8e7cf3c15a",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-18T13:47:00.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "a508d8370f85adbfd4cfa955481c98a6cb57806b1ed25c5bd6b23d8e7cf3c15a",
+          "evidenceSha256": [
+            "372218bd4eb88f1e64b759b193ee0dc4124217aad9ab1094e139d4f007837090"
+          ],
+          "kind": "TRANSITION"
         }
       ]
     },
@@ -31855,5 +31972,5 @@
       ]
     }
   ],
-  "manifestSha256": "a35b1b17dc4a541ed730a3b8296ca947c5485271f342789bc841b3be0d53c5db"
+  "manifestSha256": "263978f62673138e7ccb95c09e8d40283cd77f02696614198d15f5d2cac319fb"
 }

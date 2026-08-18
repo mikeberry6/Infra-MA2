@@ -53,11 +53,13 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Energy Transfer LP")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("ePointZero")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Extendicare Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Ferrovial N.V.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("GE Renewable Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("GFL Environmental Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Kinder Morgan, Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Revera Inc.")).toEqual(["CORPORATE"]);
   });
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
@@ -66,11 +68,13 @@ describe("approved ownership organization provisioning", () => {
       ["Cox Enterprises", "CORPORATE"],
       ["Energy Transfer LP", "CORPORATE"],
       ["ePointZero", "CORPORATE"],
+      ["Extendicare Inc.", "CORPORATE"],
       ["Ferrovial N.V.", "CORPORATE"],
       ["GE Renewable Energy", "CORPORATE"],
       ["GFL Environmental Inc.", "CORPORATE"],
       ["HPS Investment Partners", "FUND_MANAGER"],
       ["Kinder Morgan, Inc.", "CORPORATE"],
+      ["Revera Inc.", "CORPORATE"],
     ] as const) {
       const create = vi.fn().mockResolvedValue({
         id: `org-${name}`,

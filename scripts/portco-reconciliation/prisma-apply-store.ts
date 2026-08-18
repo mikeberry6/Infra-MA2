@@ -238,11 +238,13 @@ const approvedOwnershipOrganizationProvisioning = {
   "Cox Enterprises": "CORPORATE",
   "Energy Transfer LP": "CORPORATE",
   "ePointZero": "CORPORATE",
+  "Extendicare Inc.": "CORPORATE",
   "Ferrovial N.V.": "CORPORATE",
   "GE Renewable Energy": "CORPORATE",
   "GFL Environmental Inc.": "CORPORATE",
   "HPS Investment Partners": "FUND_MANAGER",
   "Kinder Morgan, Inc.": "CORPORATE",
+  "Revera Inc.": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(name: string): ["CORPORATE"] | ["FUND_MANAGER"] {

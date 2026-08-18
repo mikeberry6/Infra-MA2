@@ -152,6 +152,12 @@ export type TaskSnapshotTargetResolution =
     linkedQueueTaskId: null;
   }
   | {
+    method: "REVIEWED_MERGE_CANONICAL_TARGET";
+    targetCompanyId: string;
+    linkedQueueTaskId: null;
+    immutableRetiredCompanyId: string;
+  }
+  | {
     method: "REVIEWED_SYMMETRIC_CANDIDATE";
     targetCompanyId: string;
     linkedQueueTaskId: string;
@@ -218,7 +224,22 @@ export function resolveTaskSnapshotTarget(input: {
   const immutableTargetCompanyId = productionIds[0] ?? null;
   if (immutableTargetCompanyId) {
     if (reviewedTargetCompanyId && reviewedTargetCompanyId !== immutableTargetCompanyId) {
-      throw new Error("Reviewed target company cannot replace the immutable queue target");
+      const reviewedMergeTarget = input.queueEntry.queueKind === "CANONICAL_COMPANY"
+        && input.queueEntry.decisionStatus === "NEEDS_REVIEW"
+        && input.queueEntry.actionScopes.company.includes("MERGE_COMPANIES")
+        && input.queueEntry.sourceRepoOnlyIds.length > 0
+        && input.queueEntry.sourceHoldingIds.length === 0
+        && input.queueEntry.seedKeys.length === 1
+        && input.queueEntry.candidateCanonicalKeys.length === 0;
+      if (!reviewedMergeTarget) {
+        throw new Error("Reviewed target company cannot replace the immutable queue target");
+      }
+      return {
+        method: "REVIEWED_MERGE_CANONICAL_TARGET",
+        targetCompanyId: reviewedTargetCompanyId,
+        linkedQueueTaskId: null,
+        immutableRetiredCompanyId: immutableTargetCompanyId,
+      };
     }
     return {
       method: "IMMUTABLE_QUEUE_TARGET",
@@ -408,6 +429,8 @@ export function resolvedTaskCanonicalKey(input: {
   targetCompanyImage: CompanyImage | null;
 }): string | null {
   if (
+    input.targetResolution.method === "REVIEWED_MERGE_CANONICAL_TARGET"
+    ||
     input.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     || input.targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     || input.targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
@@ -439,6 +462,34 @@ export function assertReviewedPostQueueExactIdentity(input: {
   targetCompanyImage: CompanyImage | null;
   productionCompanies: readonly Pick<SnapshotCompany, "id" | "name" | "country">[];
 }): void {
+  if (input.targetResolution.method === "REVIEWED_MERGE_CANONICAL_TARGET") {
+    if (!input.targetCompanyImage) throw new Error("Reviewed merge target no longer exists");
+    if (input.targetCompanyImage.id !== input.targetResolution.targetCompanyId) {
+      throw new Error("Reviewed merge target id does not match the captured company");
+    }
+    if (input.targetResolution.targetCompanyId === input.targetResolution.immutableRetiredCompanyId) {
+      throw new Error("Reviewed merge target must differ from the immutable retired company");
+    }
+    if (
+      input.queueEntry.productionCompanyIds.length !== 1
+      || input.queueEntry.productionCompanyIds[0] !== input.targetResolution.immutableRetiredCompanyId
+    ) {
+      throw new Error("Reviewed merge source no longer matches the immutable queue target");
+    }
+    if (normalizedIdentity(input.targetCompanyImage.country) !== normalizedIdentity(input.queueEntry.country)) {
+      throw new Error("Reviewed merge target country differs from the immutable queue country");
+    }
+    const targetMatches = input.productionCompanies.filter(
+      (company) => company.id === input.targetResolution.targetCompanyId,
+    );
+    const retiredMatches = input.productionCompanies.filter(
+      (company) => company.id === input.targetResolution.immutableRetiredCompanyId,
+    );
+    if (targetMatches.length !== 1 || retiredMatches.length !== 1) {
+      throw new Error("Reviewed merge requires exactly one canonical target and one immutable retired company");
+    }
+    return;
+  }
   if (
     input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
@@ -506,6 +557,12 @@ export function resolvedTaskSeedKeys(input: {
   targetResolution: TaskSnapshotTargetResolution;
   targetCompanyImage: CompanyImage | null;
 }): string[] {
+  if (input.targetResolution.method === "REVIEWED_MERGE_CANONICAL_TARGET") {
+    if (!input.targetCompanyImage) {
+      throw new Error("Reviewed merge target cannot bind an absent evaluated seed identity");
+    }
+    return [seedKey(input.targetCompanyImage.name, input.targetCompanyImage.country)];
+  }
   if (input.queueEntry.seedKeys.length > 0) return input.queueEntry.seedKeys;
   if (input.targetResolution.method === "REVIEWED_SYMMETRIC_CANDIDATE") {
     const linked = input.queueEntries.filter((entry) =>
@@ -756,6 +813,7 @@ export async function buildTaskSnapshotContext(input: {
     seedEntryPresent: seedEntry !== null,
     targetRecordStatus: targetCompanyImage?.recordStatus ?? null,
     requireEvaluatedSeedEntry: targetResolution.method === "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
+      || targetResolution.method === "REVIEWED_MERGE_CANONICAL_TARGET"
       || targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
       || targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
       || targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY",

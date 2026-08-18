@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0113:arbour-heights:24819145",
+  "taskIndex": 113,
+  "companyName": "Arbour Heights",
+  "generatedAt": "2026-08-18T12:56:03.114Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 113,
+    "taskId": "ledger:0113:arbour-heights:24819145",
+    "canonicalKey": "arbour-heights|canada",
+    "companyName": "Arbour Heights",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 19,
+    "managers": [
+      "Axium Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "019-axium-infrastructure:repo-only:001:arbour-heights"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj7n300l3ivheede9bqxw"
+    ],
+    "seedKeys": [
+      "arbour heights|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.axiuminfra.com/2018/04/30/april-30-2018-revera-and-axium-infrastructure-form-a-joint-venture-to-share-ownership-of-32-long-term-care-homes/?lang=en",
+      "https://www.axiuminfra.com/2019/07/03/july-3-2019-joint-venture-of-revera-inc-and-axium-infrastructure-expands-with-acquisition-of-arbour-heights-long-term-care-home-in-kingston-ontario/?lang=en"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Axium Infrastructure MATCHED_ELSEWHERE: Arbour Heights is an underlying long-term-care property acquired by the Revera joint venture and is consolidated beneath holding 35, Revera Joint Venture, rather than counted as a separate manager-level holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj7n300l3ivheede9bqxw",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "arbour-heights|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj7n300l3ivheede9bqxw",
+    "name": "Arbour Heights",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Long-Term Care",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Arbour Heights is a long-term-care home in Kingston, Ontario. The facility serves senior residents and families and operates within Ontario's regulated long-term-care funding and licensing framework. Its model is asset-heavy and regulated because it derives cash flows from a physical care facility operated under provincial standards rather than from a variable market-pricing model. Axium and Revera described the home as a 174-bed, A-class long-term-care property and the first external acquisition completed by their broader Canadian long-term-care joint venture. The home was added to the Revera-Axium joint venture in 2019, and the venture's disclosed ownership split is 75% Axium and 25% Revera.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Ontario",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjspf01i4ivhep91o028z",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": "AxInfra Fund I-IV",
+        "vehicleName": "Axium Managed Funds",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkquh02ufivhes8nido9k",
+        "date": "2018",
+        "event": "Axium and Revera formed their broader Canadian long-term-care platform before Arbour Heights was added.",
+        "category": "FINANCING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkquw02ugivhe6bcvh8xc",
+        "date": "2019",
+        "event": "Arbour Heights became the first external acquisition for the Axium-Revera joint venture.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkqvh02uhivheg62cnyw2",
+        "date": "Jul 3, 2019",
+        "event": "The Axium-Revera joint venture acquired Arbour Heights, a 174-bed long-term-care home in Kingston.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-07-03T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp8y207voivhetixpe1rw",
+        "label": "Close date source — Axium Infrastructure — Arbour Heights",
+        "url": "https://www.axiuminfra.com/2019/07/03/july-3-2019-joint-venture-of-revera-inc-and-axium-infrastructure-expands-with-acquisition-of-arbour-heights-long-term-care-home-in-kingston-ontario/?lang=en",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Axium Infrastructure closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp8yz07vqivhea7hrjwas",
+        "label": "Axiuminfra — Arbour Heights",
+        "url": "https://www.axiuminfra.com/2018/04/30/april-30-2018-revera-and-axium-infrastructure-form-a-joint-venture-to-share-ownership-of-32-long-term-care-homes/?lang=en",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Axiuminfra — Arbour Heights",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp90107vsivheoio4veiw",
+        "label": "Reveraliving — Arbour Heights",
+        "url": "https://reveraliving.com/en/live-with-us/ontario/kingston/arbour-heights",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Reveraliving — Arbour Heights",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp91707vuivhecvuo04wm",
+        "label": "Axiuminfra — Arbour Heights",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2019/07/Press-Release_Revera-Axium-consortium-acquires-Arbour-Heights_July-3-2019-1.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Axiuminfra transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Arbour Heights",
+    "investmentFirm": "Axium Infrastructure",
+    "sector": "Social Infra",
+    "subsector": "Long-Term Care",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Axium Managed Funds",
+    "description": "Arbour Heights is a long-term-care home in Kingston, Ontario. The facility serves senior residents and families and operates within Ontario's regulated long-term-care funding and licensing framework. Its model is asset-heavy and regulated because it derives cash flows from a physical care facility operated under provincial standards rather than from a variable market-pricing model. Axium and Revera described the home as a 174-bed, A-class long-term-care property and the first external acquisition completed by their broader Canadian long-term-care joint venture. The home was added to the Revera-Axium joint venture in 2019, and the venture's disclosed ownership split is 75% Axium and 25% Revera.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2019,
+    "headquarters": "Ontario",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Axium and Revera formed their broader Canadian long-term-care platform before Arbour Heights was added.",
+        "category": "Financing"
+      },
+      {
+        "date": "2019",
+        "event": "Arbour Heights became the first external acquisition for the Axium-Revera joint venture.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jul 3, 2019",
+        "event": "The Axium-Revera joint venture acquired Arbour Heights, a 174-bed long-term-care home in Kingston.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Axium Infrastructure — Arbour Heights",
+        "url": "https://www.axiuminfra.com/2019/07/03/july-3-2019-joint-venture-of-revera-inc-and-axium-infrastructure-expands-with-acquisition-of-arbour-heights-long-term-care-home-in-kingston-ontario/?lang=en",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Axiuminfra — Arbour Heights",
+        "url": "https://www.axiuminfra.com/2018/04/30/april-30-2018-revera-and-axium-infrastructure-form-a-joint-venture-to-share-ownership-of-32-long-term-care-homes/?lang=en",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Reveraliving — Arbour Heights",
+        "url": "https://reveraliving.com/en/live-with-us/ontario/kingston/arbour-heights",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Axiuminfra — Arbour Heights",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2019/07/Press-Release_Revera-Axium-consortium-acquires-Arbour-Heights_July-3-2019-1.pdf",
+        "type": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Axium Infrastructure",
+        "ownershipVehicle": "Axium Managed Funds",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj19600bqivhe63qqb0hm",
+        "fundName": "AxInfra Fund I-IV",
+        "managerId": "cmrxpi4m0000qivheeg0vfmvn",
+        "updatedAt": "2026-07-23T16:09:55.482Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4m0000qivheeg0vfmvn",
+        "name": "Axium Infrastructure",
+        "updatedAt": "2026-07-23T16:09:13.176Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0113:arbour-heights:24819145",
+    "taskIndex": 113,
+    "canonicalKey": "arbour-heights|canada",
+    "capturedAt": "2026-08-18T12:56:03.114Z",
+    "databaseRevision": "revision:d3874de7c8637c797f0f79b3e9bea10e035dc1d056735ddfc0cd520ba52c2547",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1e67404ea6cb6404ff924c4895939e0eda3c52991114a475bb1eeabb60913f7a",
+    "productionSnapshotSha256": "5a2d9f2a4d6de8f8fdd631b4a382559990bfb52a40530741ac86513a072d5f09",
+    "targetCompanySnapshotSha256": "b14b95a0859c6142b7a826c9e4c159567cd21335de367a732252c377af9c0e4e",
+    "seedEntrySha256": "c4c38e82bf2783ae723e59b59e9c6a5baaabd8a9b94ccf8574ad1b1fd01b8934",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d3b7c22d220071be766d3684acd2e6059283fdc2742d0ee37f004c1b3888397b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "9006b36c9c95fa66723514d5416ff2c0a0065565a6ef9f82f75005182bec322c",
+      "organizationsSha256": "4232d4dc8383fded1a17b033133ecf7709e8286593de3a960758bbf61cc086bc",
+      "citationsSha256": "0c93cfcbfbd7736648f79c6fc54c1a152596c020946e48a308d3359a442dc86b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "bdccfa4ea972b2b97f0256bcfa88e9a35f0c949839e24e80c8b11516205ed870",
+    "stateSha256": "03f52f9a4e540b3e4b764c9021fa7e68680359c9eb41e4ed41b7fc81e56b9fc7",
+    "taskSnapshotSha256": "c20b8ebe7fe46a5e547d0074b7020104d05fe28a1b4269ec8f5f6fff1e49c4ab"
+  },
+  "contextSha256": "6f175ac6fdca1c6b943d168e88fd2e0a14d20cbab633088096e40b4a80bfc306"
+}

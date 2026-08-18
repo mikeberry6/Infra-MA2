@@ -72,6 +72,56 @@ describe("task snapshot target resolution", () => {
     })).toThrow("cannot replace the immutable queue target");
   });
 
+  it("pins a reviewed repo-only merge to the existing canonical survivor", () => {
+    const active = entry({
+      taskId: "task-arbour",
+      canonicalKey: "arbour-heights|canada",
+      companyName: "Arbour Heights",
+      country: "Canada",
+      productionCompanyIds: ["company-arbour"],
+      seedKeys: ["arbour heights|Canada"],
+      sourceRepoOnlyIds: ["repo-only-arbour"],
+      actionScopes: { company: ["MERGE_COMPANIES"], ownership: [], verification: [] },
+    });
+
+    expect(resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-platform",
+    })).toEqual({
+      method: "REVIEWED_MERGE_CANONICAL_TARGET",
+      targetCompanyId: "company-platform",
+      linkedQueueTaskId: null,
+      immutableRetiredCompanyId: "company-arbour",
+    });
+  });
+
+  it.each([
+    { decisionStatus: "READY_FOR_PROPOSAL" as const },
+    { sourceRepoOnlyIds: [] },
+    { sourceHoldingIds: ["holding-arbour"] },
+    { seedKeys: [] },
+    { candidateCanonicalKeys: ["platform|canada"] },
+    { actionScopes: { company: [], ownership: [], verification: [] } },
+  ])("rejects a reviewed merge target when the immutable task shape is not exact: %o", (override) => {
+    const active = entry({
+      taskId: "task-arbour",
+      canonicalKey: "arbour-heights|canada",
+      companyName: "Arbour Heights",
+      country: "Canada",
+      productionCompanyIds: ["company-arbour"],
+      seedKeys: ["arbour heights|Canada"],
+      sourceRepoOnlyIds: ["repo-only-arbour"],
+      actionScopes: { company: ["MERGE_COMPANIES"], ownership: [], verification: [] },
+      ...override,
+    });
+    expect(() => resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-platform",
+    })).toThrow("cannot replace the immutable queue target");
+  });
+
   it("accepts an explicit target only through one symmetric immutable candidate link", () => {
     const active = entry({
       taskId: "task-41",
@@ -349,6 +399,69 @@ describe("task snapshot target resolution", () => {
       name: "gfl environmental services",
       country: "UNITED STATES / CANADA",
     })).toBe(true);
+  });
+});
+
+describe("reviewed merge canonical binding", () => {
+  const queueEntry = entry({
+    taskId: "task-arbour",
+    canonicalKey: "arbour-heights|canada",
+    companyName: "Arbour Heights",
+    country: "Canada",
+    productionCompanyIds: ["company-arbour"],
+    seedKeys: ["arbour heights|Canada"],
+    sourceRepoOnlyIds: ["repo-only-arbour"],
+    actionScopes: { company: ["MERGE_COMPANIES"], ownership: [], verification: [] },
+  });
+  const targetResolution = {
+    method: "REVIEWED_MERGE_CANONICAL_TARGET" as const,
+    targetCompanyId: "company-platform",
+    linkedQueueTaskId: null,
+    immutableRetiredCompanyId: "company-arbour",
+  };
+  const company = {
+    id: "company-platform",
+    name: "Axium Extendicare LTC II LP",
+    country: "Canada",
+  } as CompanyImage;
+  const productionCompanies = [
+    { id: "company-platform", name: "Revera Joint Venture", country: "Canada" },
+    { id: "company-arbour", name: "Arbour Heights", country: "Canada" },
+  ];
+
+  it("requires both exact production ids and the immutable country", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies,
+    })).not.toThrow();
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, country: "United States" },
+      productionCompanies,
+    })).toThrow("country differs");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: productionCompanies.slice(0, 1),
+    })).toThrow("exactly one canonical target and one immutable retired company");
+  });
+
+  it("binds the survivor's seed identity and canonical key", () => {
+    expect(resolvedTaskSeedKeys({
+      queueEntry,
+      queueEntries: [queueEntry],
+      targetResolution,
+      targetCompanyImage: company,
+    })).toEqual(["axium extendicare ltc ii lp|Canada"]);
+    expect(resolvedTaskCanonicalKey({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+    })).toBe("axium-extendicare-ltc-ii-lp|canada");
   });
 });
 

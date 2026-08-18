@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0113:arbour-heights:24819145",
+  "taskIndex": 113,
+  "companyName": "Arbour Heights",
+  "generatedAt": "2026-08-18T13:44:08.796Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-2/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 113,
+    "taskId": "ledger:0113:arbour-heights:24819145",
+    "canonicalKey": "arbour-heights|canada",
+    "companyName": "Arbour Heights",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 19,
+    "managers": [
+      "Axium Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "019-axium-infrastructure:repo-only:001:arbour-heights"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj7n300l3ivheede9bqxw"
+    ],
+    "seedKeys": [
+      "arbour heights|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.axiuminfra.com/2018/04/30/april-30-2018-revera-and-axium-infrastructure-form-a-joint-venture-to-share-ownership-of-32-long-term-care-homes/?lang=en",
+      "https://www.axiuminfra.com/2019/07/03/july-3-2019-joint-venture-of-revera-inc-and-axium-infrastructure-expands-with-acquisition-of-arbour-heights-long-term-care-home-in-kingston-ontario/?lang=en"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Axium Infrastructure MATCHED_ELSEWHERE: Arbour Heights is an underlying long-term-care property acquired by the Revera joint venture and is consolidated beneath holding 35, Revera Joint Venture, rather than counted as a separate manager-level holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpj86h00lzivhe009kcwjc",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpj7n300l3ivheede9bqxw"
+  },
+  "resolvedCanonicalKey": "revera-joint-venture|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj86h00lzivhe009kcwjc",
+    "name": "Revera Joint Venture",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Long-Term Care",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Revera Joint Venture is a long-term care ownership platform covering facilities in Ontario, Alberta, Manitoba, and British Columbia. The venture owns seniors care and long-term care real estate operated by Revera, serving residents who require continuing and higher-acuity care services. Its operating model is asset-heavy, with revenues supported by facility ownership and long-duration demand in regulated care markets rather than commodity or merchant exposure. At formation, the joint venture covered 32 long-term care homes, and later acquisitions expanded the platform with additional Ontario homes including Arbour Heights. Axium-managed funds acquired a 75% interest in the venture in 2018 while Revera retained 25%.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Ontario; Alberta; Manitoba; British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjt8o01j2ivhey92f3vsx",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": "AxInfra Fund I-IV",
+        "vehicleName": "Axium Managed Funds",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkt6h02x4ivhe9cfx0p5q",
+        "date": "2018",
+        "event": "Axium acquired a 75% interest in the portfolio and Revera retained 25%.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkt7002x5ivhe68yi8fh7",
+        "date": "Apr 30, 2018",
+        "event": "Revera and Axium completed a joint venture transaction to share ownership of 32 long-term care homes.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-04-30T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkt7k02x6ivhed1xotqn5",
+        "date": "2019",
+        "event": "The transaction expanded the Revera-Axium platform beyond the original 32-home portfolio.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkt8602x7ivheeughxt6o",
+        "date": "Jul 3, 2019",
+        "event": "The joint venture expanded through the acquisition of Arbour Heights in Kingston, Ontario.",
+        "category": "EXPANSION",
+        "sortDate": "2019-07-03T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppdfj082givhetfdwsokf",
+        "label": "Axiuminfra — Arbour Heights",
+        "url": "https://www.axiuminfra.com/2018/04/30/april-30-2018-revera-and-axium-infrastructure-form-a-joint-venture-to-share-ownership-of-32-long-term-care-homes/?lang=en",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Axium Infrastructure closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppdgz082hivhe1ga3vkmt",
+        "label": "Close date source — Axium Infrastructure — Arbour Heights",
+        "url": "https://www.axiuminfra.com/2019/07/03/july-3-2019-joint-venture-of-revera-inc-and-axium-infrastructure-expands-with-acquisition-of-arbour-heights-long-term-care-home-in-kingston-ontario/?lang=en",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Axiuminfra transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppdhg082iivhe1uwjyzkk",
+        "label": "Axiuminfra — Arbour Heights",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2019/07/Press-Release_Revera-Axium-consortium-acquires-Arbour-Heights_July-3-2019-1.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Axiuminfra transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppdi0082jivheazhm80lm",
+        "label": "Axiuminfra — 527 Renewables Holdings LLC",
+        "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Axiuminfra transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Revera Joint Venture",
+    "investmentFirm": "Axium Infrastructure",
+    "sector": "Social Infra",
+    "subsector": "Long-Term Care",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Axium Managed Funds",
+    "description": "Revera Joint Venture is a long-term care ownership platform covering facilities in Ontario, Alberta, Manitoba, and British Columbia. The venture owns seniors care and long-term care real estate operated by Revera, serving residents who require continuing and higher-acuity care services. Its operating model is asset-heavy, with revenues supported by facility ownership and long-duration demand in regulated care markets rather than commodity or merchant exposure. At formation, the joint venture covered 32 long-term care homes, and later acquisitions expanded the platform with additional Ontario homes including Arbour Heights. Axium-managed funds acquired a 75% interest in the venture in 2018 while Revera retained 25%.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2018,
+    "headquarters": "Ontario; Alberta; Manitoba; British Columbia",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Axium acquired a 75% interest in the portfolio and Revera retained 25%.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Apr 30, 2018",
+        "event": "Revera and Axium completed a joint venture transaction to share ownership of 32 long-term care homes.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2019",
+        "event": "The transaction expanded the Revera-Axium platform beyond the original 32-home portfolio.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jul 3, 2019",
+        "event": "The joint venture expanded through the acquisition of Arbour Heights in Kingston, Ontario.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Axium Infrastructure — Revera Joint Venture",
+        "url": "https://www.axiuminfra.com/2018/04/30/april-30-2018-revera-and-axium-infrastructure-form-a-joint-venture-to-share-ownership-of-32-long-term-care-homes/?lang=en",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Axiuminfra — Revera Joint Venture",
+        "url": "https://www.axiuminfra.com/2019/07/03/july-3-2019-joint-venture-of-revera-inc-and-axium-infrastructure-expands-with-acquisition-of-arbour-heights-long-term-care-home-in-kingston-ontario/?lang=en",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Axiuminfra — Revera Joint Venture",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2019/07/Press-Release_Revera-Axium-consortium-acquires-Arbour-Heights_July-3-2019-1.pdf",
+        "type": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Axiuminfra — Revera Joint Venture",
+        "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+        "type": "WEBSITE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Axium Infrastructure",
+        "ownershipVehicle": "Axium Managed Funds",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj19600bqivhe63qqb0hm",
+        "fundName": "AxInfra Fund I-IV",
+        "managerId": "cmrxpi4m0000qivheeg0vfmvn",
+        "updatedAt": "2026-07-23T16:09:55.482Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4m0000qivheeg0vfmvn",
+        "name": "Axium Infrastructure",
+        "updatedAt": "2026-07-23T16:09:13.176Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0113:arbour-heights:24819145",
+    "taskIndex": 113,
+    "canonicalKey": "arbour-heights|canada",
+    "capturedAt": "2026-08-18T13:44:08.796Z",
+    "databaseRevision": "revision:aa802361bdcafb722c026cff0820bca24aed24bbd82f9c994f81d28ba275cb8f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1e67404ea6cb6404ff924c4895939e0eda3c52991114a475bb1eeabb60913f7a",
+    "productionSnapshotSha256": "d1db7c003e2b2d16288258bf8811f8d66408368ec19c0f9c3f9f18e290928953",
+    "targetCompanySnapshotSha256": "c7704f083207c1fa53bbce4d420eef21fe66a689b38dc5d0a4fdf3764c4a5e31",
+    "seedEntrySha256": "4b3cbf82cec4feb24c6c868ea89d924c685429d9685e485cf7989b7c36f5c5a0",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "103e214c76e87298d68fcecbe4222e18cbe4b9032d055cd3c45ea59a82f16d2d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "9006b36c9c95fa66723514d5416ff2c0a0065565a6ef9f82f75005182bec322c",
+      "organizationsSha256": "4232d4dc8383fded1a17b033133ecf7709e8286593de3a960758bbf61cc086bc",
+      "citationsSha256": "43c2d2267592600a61ff0efaaa6bb0dc0cbeecc68698a32a2f58e8d48bc81b55",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e366b6c5521c35df22c481870191e9ea848205ec28ec8ef04d2f93e60fbfce88",
+    "stateSha256": "156b9ef23c49f47d2a3830c853a0680b085604ce295bf04291591975b1eebed2",
+    "taskSnapshotSha256": "a508d8370f85adbfd4cfa955481c98a6cb57806b1ed25c5bd6b23d8e7cf3c15a"
+  },
+  "contextSha256": "eebe3375a82cf6887e13853979a99843700c1f519f718ae5d18343cd32c1f062"
+}
