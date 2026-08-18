@@ -5,9 +5,9 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T16:17:45.000Z",
-  "runStatus": "RUNNING",
-  "activeTaskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
+  "updatedAt": "2026-08-18T16:47:46.000Z",
+  "runStatus": "IDLE",
+  "activeTaskId": null,
   "source": {
     "manifest": {
       "location": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/manifest.json",
@@ -17358,11 +17358,11 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ddb91e5a3e36d84d95bacf04f014dc7ddbd689d2614b55e3af46ed4558631476",
-      "status": "VERIFYING",
+      "status": "COMPLETED",
       "attempts": 1,
       "startedAt": "2026-08-18T14:52:00.000Z",
-      "updatedAt": "2026-08-18T16:17:45.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-18T16:47:46.000Z",
+      "completedAt": "2026-08-18T16:47:46.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": "6f5dde9733666a0fd627f060e7ba379dbef082cb8ecd59229c9bc899c1ca8831",
@@ -17463,6 +17463,20 @@
           "reason": null,
           "taskSnapshotSha256": "6f5dde9733666a0fd627f060e7ba379dbef082cb8ecd59229c9bc899c1ca8831",
           "evidenceSha256": [
+            "f68de1961caa67c7aeadb12527bc9ae0b7d39c956cb13544c147dba721467290"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-18T16:47:46.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "6f5dde9733666a0fd627f060e7ba379dbef082cb8ecd59229c9bc899c1ca8831",
+          "evidenceSha256": [
+            "1ebf20ecb246b0083b8b1374b915c9b06ba7e78d2b3e0fe9c499af5fc3dd238a",
+            "5b25a82d85a63652e716460cc5a9e3d61f7614f340e8b9c900e9c2b0b194e442",
             "f68de1961caa67c7aeadb12527bc9ae0b7d39c956cb13544c147dba721467290"
           ],
           "kind": "TRANSITION"
@@ -32096,5 +32110,5 @@
       ]
     }
   ],
-  "manifestSha256": "0ebdfa80d6e8622437fbf48159c7423216eebda2778ca9d03dae1179bd35700a"
+  "manifestSha256": "fe02ac30273a044c3fc5a3fb3f28ed4c0410fb0fd6721380a69cbb5fd1a804be"
 }
