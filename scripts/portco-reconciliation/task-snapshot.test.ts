@@ -710,6 +710,100 @@ describe("post-queue manager short-name alias identity binding", () => {
   });
 });
 
+describe("post-queue embedded portfolio identity binding", () => {
+  const queueEntry = entry({
+    taskId: "task-aster-bloom",
+    canonicalKey: "axium-aster-and-axium-bloom|canada",
+    companyName: "Axium Aster & Axium Bloom",
+    country: "Canada",
+    decisionStatus: "READY_FOR_PROPOSAL",
+    managers: ["Axium Infrastructure"],
+    sourceHoldingIds: ["holding-aster-bloom"],
+    evidenceUrls: ["https://manager.example/portfolio"],
+    actionScopes: { company: ["CREATE_COMPANY"], ownership: ["ADD_OWNER"], verification: [] },
+  });
+  const targetResolution = {
+    method: "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY" as const,
+    targetCompanyId: "company-agecare",
+    linkedQueueTaskId: null,
+  };
+  const company = {
+    id: "company-agecare",
+    name: "AgeCare Facilities Portfolio",
+    country: "Canada",
+    aliases: [],
+    description: "The record includes the Axium Aster and Axium Bloom portfolios.",
+    citations: [{ url: "https://manager.example/portfolio" }],
+  } as CompanyImage;
+  const productionCompanies = [{
+    id: "company-agecare",
+    name: "AgeCare Facilities Portfolio",
+    country: "Canada",
+  }];
+
+  it("allows the exact reviewed target only for the narrow create-and-add queue shape", () => {
+    expect(resolveTaskSnapshotTarget({
+      queueEntry,
+      queueEntries: [queueEntry],
+      reviewedTargetCompanyId: "company-agecare",
+    })).toEqual(targetResolution);
+    for (const override of [
+      { sourceHoldingIds: [] },
+      { sourceHoldingIds: ["one", "two"] },
+      { evidenceUrls: [] },
+      { actionScopes: { company: [], ownership: ["ADD_OWNER"], verification: [] } },
+      { actionScopes: { company: ["CREATE_COMPANY"], ownership: [], verification: [] } },
+    ]) {
+      expect(() => resolveTaskSnapshotTarget({
+        queueEntry: { ...queueEntry, ...override },
+        queueEntries: [{ ...queueEntry, ...override }],
+        reviewedTargetCompanyId: "company-agecare",
+      })).toThrow("not supported by one symmetric immutable queue candidate");
+    }
+  });
+
+  it("requires target-country, embedded discriminating tokens, and shared immutable evidence", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies,
+    })).not.toThrow();
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, country: "United States" },
+      productionCompanies,
+    })).toThrow("target id or country does not match");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, description: "AgeCare facilities." },
+      productionCompanies,
+    })).toThrow("missing immutable queue-name tokens: aster, bloom");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, citations: [{ url: "https://other.example/source" }] },
+      productionCompanies,
+    })).toThrow("does not share immutable queue evidence");
+  });
+
+  it("binds the existing seed entry while retaining the immutable queue canonical identity", () => {
+    expect(resolvedTaskSeedKeys({
+      queueEntry,
+      queueEntries: [queueEntry],
+      targetResolution,
+      targetCompanyImage: company,
+    })).toEqual(["agecare facilities portfolio|Canada"]);
+    expect(resolvedTaskCanonicalKey({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+    })).toBe("axium-aster-and-axium-bloom|canada");
+  });
+});
+
 describe("post-queue exact identity binding", () => {
   const queueEntry = entry({
     taskId: "task-repo-only",

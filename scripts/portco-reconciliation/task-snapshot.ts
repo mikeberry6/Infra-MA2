@@ -183,6 +183,11 @@ export type TaskSnapshotTargetResolution =
     linkedQueueTaskId: null;
   }
   | {
+    method: "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY";
+    targetCompanyId: string;
+    linkedQueueTaskId: null;
+  }
+  | {
     method: "NO_EXISTING_TARGET";
     targetCompanyId: null;
     linkedQueueTaskId: null;
@@ -295,6 +300,27 @@ export function resolveTaskSnapshotTarget(input: {
   ) {
     return {
       method: "REVIEWED_POST_QUEUE_DBA_IDENTITY",
+      targetCompanyId: reviewedTargetCompanyId,
+      linkedQueueTaskId: null,
+    };
+  }
+  if (
+    symmetricLinks.length === 0
+    && input.queueEntry.queueKind === "CANONICAL_COMPANY"
+    && input.queueEntry.decisionStatus === "READY_FOR_PROPOSAL"
+    && input.queueEntry.sourceHoldingIds.length === 1
+    && input.queueEntry.sourceRepoOnlyIds.length === 0
+    && input.queueEntry.productionCompanyIds.length === 0
+    && input.queueEntry.seedKeys.length === 0
+    && input.queueEntry.candidateCanonicalKeys.length === 0
+    && dbaAlias(input.queueEntry.companyName) === null
+    && parentheticalAcronymBase(input.queueEntry.companyName) === null
+    && input.queueEntry.actionScopes.company.includes("CREATE_COMPANY")
+    && input.queueEntry.actionScopes.ownership.includes("ADD_OWNER")
+    && input.queueEntry.evidenceUrls.length > 0
+  ) {
+    return {
+      method: "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY",
       targetCompanyId: reviewedTargetCompanyId,
       linkedQueueTaskId: null,
     };
@@ -495,6 +521,7 @@ export function assertReviewedPostQueueExactIdentity(input: {
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+    && input.targetResolution.method !== "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY"
   ) return;
   if (!input.targetCompanyImage) {
     throw new Error("Reviewed post-queue target no longer exists");
@@ -504,11 +531,17 @@ export function assertReviewedPostQueueExactIdentity(input: {
     === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY";
   const isManagerShortNameAlias = input.targetResolution.method
     === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY";
+  const isEmbeddedPortfolioIdentity = input.targetResolution.method
+    === "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY";
   const reviewedDbaAlias = isDba ? dbaAlias(input.queueEntry.companyName) : null;
   const reviewedParentheticalAliasBase = isParentheticalAlias
     ? parentheticalAcronymBase(input.queueEntry.companyName)
     : null;
   const matchesTargetIdentity = (company: Pick<SnapshotCompany, "name" | "country">): boolean => {
+    if (isEmbeddedPortfolioIdentity) {
+      return company.id === input.targetResolution.targetCompanyId
+        && normalizedIdentity(company.country) === normalizedIdentity(input.queueEntry.country);
+    }
     if (isDba) {
       return reviewedDbaAlias !== null
         && normalizedCompanyBaseName(company.name) === normalizedCompanyBaseName(reviewedDbaAlias)
@@ -526,10 +559,37 @@ export function assertReviewedPostQueueExactIdentity(input: {
     }
     return matchesImmutableTaskIdentity(input.queueEntry, company);
   };
+  if (isEmbeddedPortfolioIdentity) {
+    const queueManagerTokens = new Set(
+      input.queueEntry.managers.flatMap((manager) => normalizedCompanyBaseTokens(manager)),
+    );
+    const queueTokens = normalizedCompanyBaseTokens(input.queueEntry.companyName)
+      .filter((token) => token !== "and" && !queueManagerTokens.has(token));
+    if (queueTokens.length < 2) {
+      throw new Error("Reviewed embedded-portfolio identity requires at least two discriminating queue-name tokens");
+    }
+    const targetCorpus = canonicalIdentityPart([
+      input.targetCompanyImage.name,
+      ...input.targetCompanyImage.aliases,
+      input.targetCompanyImage.description,
+    ].join(" "));
+    const missingTokens = queueTokens.filter((token) => !targetCorpus.split("-").includes(token));
+    if (missingTokens.length > 0) {
+      throw new Error(
+        `Reviewed embedded-portfolio target is missing immutable queue-name tokens: ${missingTokens.join(", ")}`,
+      );
+    }
+    const targetUrls = new Set(input.targetCompanyImage.citations.map((citation) => citation.url));
+    if (!input.queueEntry.evidenceUrls.some((url) => targetUrls.has(url))) {
+      throw new Error("Reviewed embedded-portfolio target does not share immutable queue evidence");
+    }
+  }
   if (!matchesTargetIdentity(input.targetCompanyImage)) {
     throw new Error(
       isDba
         ? "Reviewed post-queue target does not exactly match the immutable DBA alias and country"
+        : isEmbeddedPortfolioIdentity
+          ? "Reviewed embedded-portfolio target id or country does not match the reviewed target"
         : isParentheticalAlias
           ? "Reviewed post-queue target does not exactly match the immutable parenthetical-alias base and country"
           : isManagerShortNameAlias
@@ -583,6 +643,7 @@ export function resolvedTaskSeedKeys(input: {
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+    && input.targetResolution.method !== "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY"
   ) return [];
   if (!input.targetCompanyImage) {
     throw new Error("Reviewed post-queue target cannot bind an absent evaluated seed identity");
@@ -816,7 +877,8 @@ export async function buildTaskSnapshotContext(input: {
       || targetResolution.method === "REVIEWED_MERGE_CANONICAL_TARGET"
       || targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
       || targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
-      || targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY",
+      || targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+      || targetResolution.method === "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY",
   });
   const resolvedCanonicalKey = resolvedTaskCanonicalKey({
     queueEntry,

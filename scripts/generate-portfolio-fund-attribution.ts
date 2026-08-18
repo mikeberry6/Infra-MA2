@@ -414,6 +414,18 @@ const ATTRIBUTION_ONLY_FUNDS: CandidateFund[] = [
 
 const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
   {
+    companyName: "Axium Aster & Axium Bloom",
+    investmentFirm: "Axium Infrastructure",
+    attribution: "UNRESOLVED",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "Reviewed evidence identifies separate Aster and Bloom holding vehicles and names AIC II for Aster, but it does not support one exact current fund assignment across both ownership periods. Both periods remain unlinked pending the separate fund review rather than being inferred to the generic AxInfra Fund I-IV record.",
+    sourceUrls: [
+      "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+      "https://www.axiuminfra.com/wp-content/uploads/2022/06/Axium_2022_ESG_Report.pdf",
+    ],
+  },
+  {
     companyName: "Axium Extendicare LTC II LP",
     investmentFirm: "Axium Infrastructure",
     attribution: "UNRESOLVED",

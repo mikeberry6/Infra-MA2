@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
+  "taskIndex": 114,
+  "asOfDate": "2026-08-18",
+  "requestedCompany": "Axium Aster & Axium Bloom",
+  "requestedManager": "Axium Infrastructure",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "canonicalTarget": {
+    "companyId": "cmrxpj7m000l1ivhezpjsd4h1",
+    "beforeName": "AgeCare Facilities Portfolio",
+    "afterName": "Axium Aster & Axium Bloom",
+    "targetResolution": "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY"
+  },
+  "identityDecision": "Use the existing AgeCare Facilities Portfolio record for Axium's combined Aster/Bloom manager-level investment. Axium presents the two legal portfolios together in one current portfolio card, so do not create a second combined company and do not split individual facilities.",
+  "ownershipDecision": "Preserve separate Aster and Bloom ownership periods. Axium currently holds 92.5% and AgeCare the 7.5% balance in each portfolio. Aster began in 2020 at 80%/20%; Bloom traces to the 2017 western Revera-Axium tranche, and Revera sold its remaining 15% interest in certain Alberta and British Columbia homes to AgeCare in 2022.",
+  "statusDecision": "ACTIVE / CLOSED_ACTIVE; no Axium exit or signed pending sale found through 2026-08-18.",
+  "boundaryDecision": "Aster Joint Venture Limited Partnership and Bloom Limited Partnership are the two legal vehicles beneath one manager-level Axium portfolio card. AgeCare is operator and minority co-owner; individual homes are underlying assets.",
+  "repoCorrections": [
+    "Rename the existing record from AgeCare Facilities Portfolio to Axium Aster & Axium Bloom.",
+    "Remove Ontario from the footprint and remove the 16-home / 2,418-bed Axium Iris scale.",
+    "Replace the generic Axium Managed Funds period and heuristic fund link with separate Aster and Bloom vehicle periods.",
+    "Add AgeCare minority periods and historical Revera ownership.",
+    "Replace the operator founding milestone with portfolio investment history and direct evidence."
+  ],
+  "followUpListFinding": {
+    "company": "Axium Iris",
+    "reason": "Axium's current page presents Iris separately as a 92.5%-owned Ontario portfolio of 16 facilities and 2,418 beds. It was incorrectly embedded in the current AgeCare record and was missed by the original census.",
+    "disposition": "ADD_TO_FINAL_DELTA_SWEEP"
+  },
+  "unresolvedQuestions": [],
+  "recommendedListAction": "Correct the existing canonical company in place; do not create a duplicate Axium Aster & Axium Bloom company."
+}

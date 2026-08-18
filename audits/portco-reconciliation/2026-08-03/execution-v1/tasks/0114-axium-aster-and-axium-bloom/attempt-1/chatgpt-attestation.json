@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0114:axium-aster-and-axium-bloom:b9357b8d",
+  "taskIndex": 114,
+  "companyName": "Axium Aster & Axium Bloom",
+  "conversationUrl": "https://chatgpt.com/c/6a8472c8-7850-83ea-a5c4-636610502c07",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-18T14:57:11.753Z",
+  "initialCompletedAt": "2026-08-18T15:31:06.846Z",
+  "repairSubmittedAt": "2026-08-18T15:31:32.528Z",
+  "repairCompletedAt": "2026-08-18T15:33:54.929Z",
+  "repairCount": 1,
+  "initialOutcome": "VALID_AFTER_TEXT_CONTENT_CAPTURE; repair was triggered by an innerText layout-artifact false negative",
+  "finalOutcome": "VALID",
+  "contentHashes": {
+    "promptSha256": "774777d8e4983d91d7b9fe820b2d26ff26b421d614f54733494823e9c9c05cdb",
+    "initialResponseSha256": "ef2b5cc9a9b4f49fde0cf059884e01b858dc839eaef93a7245d7826533043edc",
+    "acceptedResponseSha256": "847d1488c79c954a261992909e385177a12007e82a93b25510289ea0162fc311",
+    "transcriptSha256": "50826f2cb1c477a885972e0f34dda7d1a4d36b0a7cf8a46294da7851b27f0a5f",
+    "repairPromptSha256": "207b051d78ca75d01204b64cadf94f6f3adff47bd2beeea2b5db745fbb8ef914",
+    "repairResponseSha256": "847d1488c79c954a261992909e385177a12007e82a93b25510289ea0162fc311"
+  },
+  "captureMethod": "Signed-in ChatGPT web application controlled through the in-app browser; response text captured from DOM textContent to avoid layout-only line breaks.",
+  "captureNote": "The first innerText capture inserted visual line breaks inside inline citation wrappers. Direct DOM textContent proved the initial JSON parsed; the already-sent single repair returned the same factual answer in valid strict JSON."
+}
