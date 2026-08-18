@@ -148,4 +148,19 @@ describe("portfolio fund attribution ledger", () => {
       expect(row?.evidenceUrls.length).toBeGreaterThan(0);
     }
   });
+
+  it("preserves Etobicoke's disclosed Axium vehicle without linking a generic fund", () => {
+    const row = ledger.rows.find((candidate) => (
+      candidate.companyName === "Etobicoke Healthcare Partnership"
+      && candidate.investmentFirm === "Axium Infrastructure"
+    ));
+    expect(row).toMatchObject({
+      attribution: "DISCLOSED",
+      confidence: "HIGH",
+      attributedFundName: "Axium Infrastructure Canada II L.P.",
+      targetLinkedFundName: null,
+      proposedAction: "SET_DISCLOSED_UNLISTED",
+    });
+    expect(row?.evidenceUrls.length).toBeGreaterThan(0);
+  });
 });

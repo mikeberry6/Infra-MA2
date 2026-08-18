@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-18T18:36:20.000Z",
+  "updatedAt": "2026-08-18T19:14:17.000Z",
   "runStatus": "RUNNING",
   "activeTaskId": "ledger:0117:etobicoke-general-hospital-phase-1-patient-tower:95d7434e",
   "source": {
@@ -17668,18 +17668,27 @@
       "managerIndex": 19,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "89621d53479ef749ac2b66587268c324f444e979e87736ac3bb9de49ec044199",
-      "status": "ACTIVE",
-      "attempts": 1,
-      "startedAt": "2026-08-18T18:36:20.000Z",
-      "updatedAt": "2026-08-18T18:36:20.000Z",
+      "status": "RELEASING",
+      "attempts": 2,
+      "startedAt": "2026-08-18T19:12:19.000Z",
+      "updatedAt": "2026-08-18T19:14:17.000Z",
       "completedAt": null,
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/locked-task-snapshot.json",
+          "sha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0117-etobicoke-general-hospital-phase-1-patient-tower-v2/proposal.json",
+          "sha256": "8cb9daeb6b6c4fae2b559364c81ff4e26f89e4f0aad731a94cb42121a7d78f4f"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0117-etobicoke-general-hospital-phase-1-patient-tower-v2.json",
+          "sha256": "3661cc5acaa806a8631169084205cf3fd96a52850b974c80d691d8598b6a8237"
+        },
         "applyReceipt": null,
         "decision": null,
         "companySnapshot": null
@@ -17704,6 +17713,96 @@
           "reason": null,
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 3,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-18T19:10:30.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "49caa08384172c2284d47595736b9af28f31f593d6651d0fd2c537e3e8dd1c8c",
+          "evidenceSha256": [
+            "0211cccf1a9be1eb25877faf09ce14ef6c5b062f6181c3d45c75c7881f435183",
+            "49caa08384172c2284d47595736b9af28f31f593d6651d0fd2c537e3e8dd1c8c"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-18T19:10:38.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "49caa08384172c2284d47595736b9af28f31f593d6651d0fd2c537e3e8dd1c8c",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 5,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-18T19:11:11.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "49caa08384172c2284d47595736b9af28f31f593d6651d0fd2c537e3e8dd1c8c",
+          "evidenceSha256": [
+            "8782c6849be2a705227eec3d065aae7b1cf8fc20b175bb2aa20a379e1c7a9746"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 6,
+          "from": "RELEASING",
+          "to": "FAILED",
+          "at": "2026-08-18T19:12:17.000Z",
+          "reason": "Production dry-run correctly rejected proposal v1 because retired milestone cmrxpks1g02vsivhe2e54e16s was not preserved or mapped. No seed or database write occurred; rebuild the exact after-image with the milestone and official Ontario evidence.",
+          "taskSnapshotSha256": "49caa08384172c2284d47595736b9af28f31f593d6651d0fd2c537e3e8dd1c8c",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 7,
+          "from": "FAILED",
+          "to": "ACTIVE",
+          "at": "2026-08-18T19:12:19.000Z",
+          "reason": "Retry with preservation-complete after-image; identity, ownership and source conclusions remain unchanged.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "ACTIVE",
+          "to": "PROPOSED",
+          "at": "2026-08-18T19:13:55.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
+          "evidenceSha256": [
+            "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
+            "8cb9daeb6b6c4fae2b559364c81ff4e26f89e4f0aad731a94cb42121a7d78f4f"
+          ],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 9,
+          "from": "PROPOSED",
+          "to": "AWAITING_APPROVAL",
+          "at": "2026-08-18T19:13:56.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
+          "evidenceSha256": [],
+          "kind": "TRANSITION"
+        },
+        {
+          "sequence": 10,
+          "from": "AWAITING_APPROVAL",
+          "to": "RELEASING",
+          "at": "2026-08-18T19:14:17.000Z",
+          "reason": null,
+          "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
+          "evidenceSha256": [
+            "3661cc5acaa806a8631169084205cf3fd96a52850b974c80d691d8598b6a8237"
+          ],
           "kind": "TRANSITION"
         }
       ]
@@ -32221,5 +32320,5 @@
       ]
     }
   ],
-  "manifestSha256": "75e03d55e5f21d5e90aa4f5e7be163af45f3406c707d1ccec728735f4bf25a91"
+  "manifestSha256": "570e6e3ff9d783e3ad4a80beb0e24d4176691fe784ed9710e2240eb4a41c1fae"
 }
