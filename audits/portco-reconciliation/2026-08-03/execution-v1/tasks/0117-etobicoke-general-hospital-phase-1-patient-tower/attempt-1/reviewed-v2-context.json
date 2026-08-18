@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0117:etobicoke-general-hospital-phase-1-patient-tower:95d7434e",
+  "taskIndex": 117,
+  "companyName": "Etobicoke General Hospital (Phase 1 Patient Tower)",
+  "generatedAt": "2026-08-18T18:41:33.728Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/reviewed-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 117,
+    "taskId": "ledger:0117:etobicoke-general-hospital-phase-1-patient-tower:95d7434e",
+    "canonicalKey": "etobicoke-general-hospital-phase-1-patient-tower|canada",
+    "companyName": "Etobicoke General Hospital (Phase 1 Patient Tower)",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 19,
+    "managers": [
+      "Axium Infrastructure",
+      "CVC",
+      "DIF"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "019-axium-infrastructure:holding:019:etobicoke-general-hospital-ppp"
+    ],
+    "sourceRepoOnlyIds": [
+      "034-cvc:repo-only:002:etobicoke-general-hospital-phase-1-patient-tower",
+      "035-dif:repo-only:002:etobicoke-general-hospital-phase-1-patient-tower"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj7yf00lkivhen7juixyw"
+    ],
+    "seedKeys": [
+      "etobicoke general hospital (phase 1 patient tower)|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.axiuminfra.com/2016/05/13/may-13-2016-axium-infrastructure-achieves-financial-close-on-hospital-ppp-in-ontario/?lang=en",
+      "https://www.axiuminfra.com/portfolio-assets/?lang=en",
+      "https://www.infrastructureontario.ca/en/what-we-do/projectssearch/etobicoke-general-hospital-phase-1-patient-tower-project/",
+      "https://www.infrastructureontario.ca/en/what-we-do/projectssearch/etobicoke-general-hospital-redevelopment/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: CVC MATCHED_ELSEWHERE: Project-level asset beneath Etobicoke Healthcare Partnership DIF MATCHED_ELSEWHERE: Project-level asset beneath Etobicoke Healthcare Partnership PPP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjcxf00tcivhevo1ton8u",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpj7yf00lkivhen7juixyw"
+  },
+  "resolvedCanonicalKey": "etobicoke-healthcare-partnership|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjcxf00tcivhevo1ton8u",
+    "name": "Etobicoke Healthcare Partnership",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Hospital public-private partnership",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Etobicoke General Hospital Phase 1 Patient Tower is a healthcare public-private partnership project in Ontario. The asset serves the William Osler Health System and the surrounding community through availability-based hospital infrastructure rather than commercial user-pay revenue. Its model is asset-heavy and contract-based because value depends on the construction, financing, and long-term delivery of a major clinical facility. Public project materials describe a new four-storey tower adding about 250,000 square feet to the hospital and housing critical emergency, intensive care, neonatal, and ambulatory services. Financial-close materials in 2016 identified DIF Infrastructure IV and Axium Infrastructure Canada II as equity sponsors, while public sources reviewed do not disclose their exact ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "Ontario",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyf201raivhex8v9q5uj",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure IV",
+        "vehicleName": "DIF Infrastructure IV",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplepl03n9ivhe33bwydf6",
+        "date": "May 6, 2016",
+        "event": "William Osler Health System and Infrastructure Ontario reached financial close with Etobicoke Healthcare Partnership, whose equity sponsors included DIF Infra 4 Canada Ltd.",
+        "category": "FINANCING",
+        "sortDate": "2016-05-06T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpleq703naivheav9v7vua",
+        "date": "Jun 28, 2016",
+        "event": "Ontario announced up to C$358 million of provincial investment in the project.",
+        "category": "FINANCING",
+        "sortDate": "2016-06-28T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpleqm03nbivhe4jiqu1ru",
+        "date": "2019",
+        "event": "Walsh announced completion of the new patient tower at Etobicoke General Hospital.",
+        "category": "OTHER",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqgjm09m8ivhe1dsqbh8e",
+        "label": "Close date source — CVC DIF — Etobicoke Healthcare Partnership",
+        "url": "https://www.infrastructureontario.ca/en/news-and-media/news/etobicoke-general-hospital-redevelopment---phase-1/contract-awarded-for-etobicoke-general-hospital-redevelopment/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqgk809m9ivhe7vdovxjf",
+        "label": "Axiuminfra — Etobicoke General Hospital Phase 1 Patient Tower",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2016-06-13-Press-Release-Etobicoke_May-2016_website-only_en.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Axiuminfra — Etobicoke Healthcare Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqgkn09maivheuh5njgk9",
+        "label": "Walshgroup — Etobicoke General Hospital (Phase 1 Patient Tower)",
+        "url": "https://www.walshgroup.com/news/2019/walshcanadacompletesnewpatienttoweratetobicokegeneralhospital.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Walshgroup — Etobicoke Healthcare Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqgl309mbivhe2hvmgi0j",
+        "label": "Williamoslerhs — Etobicoke General Hospital (Phase 1 Patient Tower)",
+        "url": "https://www.williamoslerhs.ca/en/visiting-us/etobicoke-general-hospital.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Williamoslerhs — Etobicoke Healthcare Partnership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Etobicoke Healthcare Partnership",
+    "investmentFirm": "CVC DIF",
+    "sector": "Social Infra",
+    "subsector": "Hospital public-private partnership",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "DIF Infrastructure IV",
+    "description": "Etobicoke General Hospital Phase 1 Patient Tower is a healthcare public-private partnership project in Ontario. The asset serves the William Osler Health System and the surrounding community through availability-based hospital infrastructure rather than commercial user-pay revenue. Its model is asset-heavy and contract-based because value depends on the construction, financing, and long-term delivery of a major clinical facility. Public project materials describe a new four-storey tower adding about 250,000 square feet to the hospital and housing critical emergency, intensive care, neonatal, and ambulatory services. Financial-close materials in 2016 identified DIF Infrastructure IV and Axium Infrastructure Canada II as equity sponsors, while public sources reviewed do not disclose their exact ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 2016,
+    "investmentYear": 2016,
+    "headquarters": "Ontario",
+    "milestones": [
+      {
+        "date": "May 6, 2016",
+        "event": "William Osler Health System and Infrastructure Ontario reached financial close with Etobicoke Healthcare Partnership, whose equity sponsors included DIF Infra 4 Canada Ltd.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 28, 2016",
+        "event": "Ontario announced up to C$358 million of provincial investment in the project.",
+        "category": "Financing"
+      },
+      {
+        "date": "2019",
+        "event": "Walsh announced completion of the new patient tower at Etobicoke General Hospital.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — CVC DIF — Etobicoke Healthcare Partnership",
+        "url": "https://www.infrastructureontario.ca/en/news-and-media/news/etobicoke-general-hospital-redevelopment---phase-1/contract-awarded-for-etobicoke-general-hospital-redevelopment/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Axiuminfra — Etobicoke Healthcare Partnership",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2016-06-13-Press-Release-Etobicoke_May-2016_website-only_en.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Walshgroup — Etobicoke Healthcare Partnership",
+        "url": "https://www.walshgroup.com/news/2019/walshcanadacompletesnewpatienttoweratetobicokegeneralhospital.html",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Williamoslerhs — Etobicoke Healthcare Partnership",
+        "url": "https://www.williamoslerhs.ca/en/visiting-us/etobicoke-general-hospital.aspx",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CVC DIF",
+        "ownershipVehicle": "DIF Infrastructure IV",
+        "investmentYear": 2016,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1yx00csivhe2n38gges",
+        "fundName": "DIF Infrastructure IV",
+        "managerId": "cmrxpi6qi001divhesbtqsco2",
+        "updatedAt": "2026-07-23T16:09:56.409Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6qi001divhesbtqsco2",
+        "name": "CVC DIF",
+        "updatedAt": "2026-07-23T16:09:15.930Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0117:etobicoke-general-hospital-phase-1-patient-tower:95d7434e",
+    "taskIndex": 117,
+    "canonicalKey": "etobicoke-general-hospital-phase-1-patient-tower|canada",
+    "capturedAt": "2026-08-18T18:41:33.728Z",
+    "databaseRevision": "revision:e6c1a2a0edc0cd7bad7cec51d129201b423b8dcd1f0c70a1318043659accba9d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "89621d53479ef749ac2b66587268c324f444e979e87736ac3bb9de49ec044199",
+    "productionSnapshotSha256": "423ee5ea203511a504d7c104df0453da67e99db177dc34398bc5fee54a1296a7",
+    "targetCompanySnapshotSha256": "382335b362c205ae6774057f5e8f850fa6671eeaeec3a681a5d046a62b0eb8eb",
+    "seedEntrySha256": "512d49bcbafa785f0b257a6603028c9e4a0deae3e3abe80550b6b8c6bea1863c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b48ab717e4d8c6ec9a93a48d4a51099186a3683593060766bb2752dabd2aeb34",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "27c6e7c055e972be833ad86187c4d9ed30c7e1fa14e3ccb3d6de7e3b0d7ef7eb",
+      "organizationsSha256": "7a6d6eb8c91275eb133966b74b94196b45a1b8bf9f563ec95b85cdc78132c4f4",
+      "citationsSha256": "d07ea12d54eb5db398794c7b0d16c747d97ebd79be0fef3014cc7e8354862655",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c6f71886ea7c791f0f467a3e9a7b240da2dbf9ccde4823ab70f999eb1639f2b4",
+    "stateSha256": "26b658f1f9190d1bd04577d18f9e347f9badc6e892898a3f6714611329ea94a7",
+    "taskSnapshotSha256": "4b98a32844713e2c28d39c5d04500d7d8b43f67602592351ac21dc3f1e0d3fc5"
+  },
+  "contextSha256": "d2426580d880948130bd3a43732b11d357aa1ad86f33ee7c4430cd75fa95361a"
+}

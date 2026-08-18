@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0117:etobicoke-general-hospital-phase-1-patient-tower:95d7434e",
+  "taskIndex": 117,
+  "asOfDate": "2026-08-18",
+  "generatedAt": "2026-08-18T19:14:00.000Z",
+  "canonicalKey": "etobicoke-healthcare-partnership|canada",
+  "companyName": "Etobicoke General Hospital (Phase 1 Patient Tower)",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [
+    "019-axium-infrastructure:holding:019:etobicoke-general-hospital-ppp"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpj7yf00lkivhen7juixyw"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjt1401inivhebczspbl2",
+      "canonicalRelationId": "cmrxpjyf201raivhex8v9q5uj",
+      "rationale": "Both periods describe the same current DIF Infrastructure IV investment. Preserve the canonical CVC DIF period, correct its disclosed vehicle to DIF Infra 4 Canada Ltd., and remove the duplicate period from the retired project-name record."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpks0e02vqivhe4afmjp54",
+      "canonicalRelationId": "cmrxplepl03n9ivhe33bwydf6",
+      "rationale": "The generic 2016 sponsor milestone and canonical May 6 financial-close milestone describe the same entry event. Preserve the canonical milestone with the exact close date and both verified equity sponsors."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpks0w02vrivheeuwvxd5v",
+      "canonicalRelationId": "cmrxplepl03n9ivhe33bwydf6",
+      "rationale": "The May 13 manager announcement describes the same May 6 legal financial close. Consolidate it into the exact canonical close milestone rather than retaining a duplicate announcement event."
+    }
+  ],
+  "rationale": "Etobicoke Healthcare Partnership LP is the DBFM project company and concessionaire for the Etobicoke General Hospital Phase 1 Patient Tower; the tower and redevelopment names describe the physical project and are not a second manager-level PortCo. Infrastructure Ontario's current project page identifies Etobicoke Healthcare Partnership as the winning bidder and Axium Infrastructure Canada and DIF Infra 4 Canada Ltd. as developers. The May 2016 Axium release directly identifies Axium Infrastructure Canada II L.P. and DIF Infrastructure IV as the equity sponsors. Lexpert records May 6, 2016 financial close with Etobicoke Healthcare Partnership LP and names DIF Infra 4 Canada Ltd. Exact sponsor percentages are not publicly disclosed. Ontario's official June 28, 2016 release records up to C$358 million of provincial investment in the hospital expansion, so the existing supported milestone is preserved rather than dropped during the merge. William Osler Health System's audited statements for the year ended March 31, 2026 continue to identify Etobicoke Healthcare Partnership as responsible for operating and maintaining the building and state that the project assets transfer to Osler in July 2048. Axium's 2024 PAI statement includes Etobicoke General Hospital among its investee assets. No later project-level sponsor sale, equity transfer, signed pending exit or concession termination was identified through August 18, 2026. CVC's July 2024 acquisition and rebrand of DIF Capital Partners was a manager-level transaction, with individual infrastructure strategies and fund names unchanged. Accordingly, keep the existing Etobicoke Healthcare Partnership company, retire and redirect the phase/project-name duplicate, preserve Axium and CVC DIF once as active 2016 owners with their verified vehicles, preserve the supported Ontario funding milestone, and supersede Task 203 only after release, application and production verification.",
+  "evidence": [
+    {
+      "url": "https://www.infrastructureontario.ca/en/what-we-do/projectssearch/etobicoke-general-hospital-redevelopment/",
+      "purpose": "Current canonical project-company boundary, DBFM structure, developer identities, scale and completion date",
+      "supports": [
+        "Etobicoke Healthcare Partnership is the winning bidder/project company",
+        "Axium Infrastructure Canada and DIF Infra 4 Canada Ltd. are the developers",
+        "the project is a C$330 million, approximately 250,000-square-foot, four-storey patient tower",
+        "construction ended on February 19, 2019"
+      ]
+    },
+    {
+      "url": "https://www.infrastructureontario.ca/en/news-and-media/news/etobicoke-general-hospital-redevelopment---phase-1/contract-awarded-for-etobicoke-general-hospital-redevelopment/",
+      "purpose": "Exact May 6, 2016 contract award and financial-close event",
+      "supports": [
+        "Infrastructure Ontario and William Osler awarded the DBFM contract to Etobicoke Healthcare Partnership on May 6, 2016",
+        "the contract value was C$330 million"
+      ]
+    },
+    {
+      "url": "https://news.ontario.ca/en/release/40938/ontario-investing-358-million-in-new-infrastructure-at-etobicoke-general-hospital",
+      "purpose": "Preserved June 28, 2016 provincial funding milestone",
+      "supports": [
+        "Ontario announced up to C$358 million of investment in the hospital expansion on June 28, 2016",
+        "the release identifies the four-storey, approximately 250,000-square-foot project and Etobicoke Healthcare Partnership as the preferred proponent"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2016-06-13-Press-Release-Etobicoke_May-2016_website-only_en.pdf",
+      "purpose": "Direct manager evidence for both equity sponsors and the PPP boundary",
+      "supports": [
+        "Axium Infrastructure Canada II L.P. and DIF Infrastructure IV are the equity sponsors",
+        "Etobicoke Healthcare Partnership is the project consortium",
+        "Walsh and ENGIE/Equans are service providers rather than owners"
+      ]
+    },
+    {
+      "url": "https://www.lexpert.ca/big-deals/etobicoke-general-hospital-phase-1-patient-tower-project-reaches-financial-close/350715",
+      "purpose": "Legal project-company name, exact close date and DIF vehicle",
+      "supports": [
+        "Etobicoke Healthcare Partnership LP reached financial close on May 6, 2016",
+        "equity was provided by Axium Infrastructure Canada II Limited Partnership and DIF Infra 4 Canada Ltd.",
+        "the project company receives availability payments over a 30-year period"
+      ]
+    },
+    {
+      "url": "https://www.williamoslerhs.ca/media/erle1yzb/2025-26-financial-statements_aoda.pdf",
+      "purpose": "Current audited operating and concession evidence",
+      "supports": [
+        "as of March 31, 2026 Etobicoke Healthcare Partnership remained responsible for operating and maintaining the building",
+        "substantial completion occurred in February 2019",
+        "the project assets transfer to William Osler Health System in July 2048"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/wp-content/uploads/2025/06/Principal-Adverse-Impacts-%E2%80%93-AIC-II-vF.pdf",
+      "purpose": "Current Axium investment-universe evidence",
+      "supports": [
+        "Axium's 2024 Principal Adverse Impact Statement includes Etobicoke General Hospital among investee assets"
+      ]
+    },
+    {
+      "url": "https://www.cvc.com/media/news/2024/2024-07-03-completion-of-cvc-dif-and-acquisition-of-final-stake-in-cvc-secondary-partners/",
+      "purpose": "Current manager alias and non-project-level transaction treatment",
+      "supports": [
+        "DIF Capital Partners was rebranded CVC DIF in July 2024",
+        "individual strategies and fund names remained unchanged",
+        "the manager transaction does not establish an EHP equity sale"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "f90c96047bfeeac8701499cc95a4f4f67a74b2dbec15a3c095d32c075a63c2ae",
+  "currentCompanySnapshotSha256": "382335b362c205ae6774057f5e8f850fa6671eeaeec3a681a5d046a62b0eb8eb",
+  "executionLock": {
+    "taskSnapshotSha256": "31703d4ca370777ec3df2f9ea7ec5c45ab41a8ea1b15a2633083cc9e024cdfa3",
+    "taskStateSha256": "a1c93c9d30f4a1538cfb90c473bdb74364ebe2211c20498944d230b6c5575bfb",
+    "taskDependencySha256": "e721409fda658512f3aed370d112067a3e57f7a04a2162edd1880663584cd042",
+    "seedEntrySha256": "512d49bcbafa785f0b257a6603028c9e4a0deae3e3abe80550b6b8c6bea1863c",
+    "dependencies": {
+      "ownershipPeriodsSha256": "b48ab717e4d8c6ec9a93a48d4a51099186a3683593060766bb2752dabd2aeb34",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "27c6e7c055e972be833ad86187c4d9ed30c7e1fa14e3ccb3d6de7e3b0d7ef7eb",
+      "organizationsSha256": "ac97490d3e0799d07276e7dcec2be983e22871d60424d450df147cd4d4b6be11",
+      "citationsSha256": "d07ea12d54eb5db398794c7b0d16c747d97ebd79be0fef3014cc7e8354862655",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1yx00csivhe2n38gges",
+        "fundName": "DIF Infrastructure IV",
+        "managerId": "cmrxpi6qi001divhesbtqsco2",
+        "updatedAt": "2026-07-23T16:09:56.409Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4m0000qivheeg0vfmvn",
+        "name": "Axium Infrastructure",
+        "updatedAt": "2026-07-23T16:09:13.176Z"
+      },
+      {
+        "id": "cmrxpi6qi001divhesbtqsco2",
+        "name": "CVC DIF",
+        "updatedAt": "2026-07-23T16:09:15.930Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjcxf00tcivhevo1ton8u",
+    "name": "Etobicoke Healthcare Partnership",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Hospital public-private partnership",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Etobicoke General Hospital Phase 1 Patient Tower is a healthcare public-private partnership project in Ontario. The asset serves the William Osler Health System and the surrounding community through availability-based hospital infrastructure rather than commercial user-pay revenue. Its model is asset-heavy and contract-based because value depends on the construction, financing, and long-term delivery of a major clinical facility. Public project materials describe a new four-storey tower adding about 250,000 square feet to the hospital and housing critical emergency, intensive care, neonatal, and ambulatory services. Financial-close materials in 2016 identified DIF Infrastructure IV and Axium Infrastructure Canada II as equity sponsors, while public sources reviewed do not disclose their exact ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "Ontario",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyf201raivhex8v9q5uj",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure IV",
+        "vehicleName": "DIF Infrastructure IV",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplepl03n9ivhe33bwydf6",
+        "date": "May 6, 2016",
+        "event": "William Osler Health System and Infrastructure Ontario reached financial close with Etobicoke Healthcare Partnership, whose equity sponsors included DIF Infra 4 Canada Ltd.",
+        "category": "FINANCING",
+        "sortDate": "2016-05-06T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpleq703naivheav9v7vua",
+        "date": "Jun 28, 2016",
+        "event": "Ontario announced up to C$358 million of provincial investment in the project.",
+        "category": "FINANCING",
+        "sortDate": "2016-06-28T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpleqm03nbivhe4jiqu1ru",
+        "date": "2019",
+        "event": "Walsh announced completion of the new patient tower at Etobicoke General Hospital.",
+        "category": "OTHER",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqgjm09m8ivhe1dsqbh8e",
+        "label": "Close date source — CVC DIF — Etobicoke Healthcare Partnership",
+        "url": "https://www.infrastructureontario.ca/en/news-and-media/news/etobicoke-general-hospital-redevelopment---phase-1/contract-awarded-for-etobicoke-general-hospital-redevelopment/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqgk809m9ivhe7vdovxjf",
+        "label": "Axiuminfra — Etobicoke General Hospital Phase 1 Patient Tower",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2016-06-13-Press-Release-Etobicoke_May-2016_website-only_en.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Axiuminfra — Etobicoke Healthcare Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqgkn09maivheuh5njgk9",
+        "label": "Walshgroup — Etobicoke General Hospital (Phase 1 Patient Tower)",
+        "url": "https://www.walshgroup.com/news/2019/walshcanadacompletesnewpatienttoweratetobicokegeneralhospital.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Walshgroup — Etobicoke Healthcare Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqgl309mbivhe2hvmgi0j",
+        "label": "Williamoslerhs — Etobicoke General Hospital (Phase 1 Patient Tower)",
+        "url": "https://www.williamoslerhs.ca/en/visiting-us/etobicoke-general-hospital.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Williamoslerhs — Etobicoke Healthcare Partnership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "382335b362c205ae6774057f5e8f850fa6671eeaeec3a681a5d046a62b0eb8eb",
+  "afterImage": {
+    "id": "cmrxpjcxf00tcivhevo1ton8u",
+    "name": "Etobicoke Healthcare Partnership",
+    "aliases": [
+      "Etobicoke Healthcare Partnership LP",
+      "Etobicoke General Hospital (Phase 1 Patient Tower)",
+      "Etobicoke General Hospital Phase 1 Patient Tower",
+      "Etobicoke General Hospital Redevelopment - Phase 1",
+      "Etobicoke General Hospital PPP",
+      "Etobicoke General Hospital Step 1 Patient Tower"
+    ],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Hospital public-private partnership",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Etobicoke Healthcare Partnership LP is the availability-based design-build-finance-maintain project company for the Etobicoke General Hospital Phase 1 Patient Tower in Toronto, Ontario. The C$330 million project added an approximately 250,000-square-foot, four-storey clinical tower. Axium Infrastructure Canada II L.P. and DIF Infrastructure IV through DIF Infra 4 Canada Ltd. were the equity sponsors at the May 2016 financial close. Construction reached substantial completion on February 19, 2019. William Osler Health System's audited statements for the year ended March 31, 2026 continue to identify Etobicoke Healthcare Partnership as responsible for operating and maintaining the building, with project assets transferring to Osler in July 2048. Exact sponsor percentages are not publicly disclosed, and no later project-level sponsor sale or signed pending exit was identified through August 18, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "Etobicoke, Toronto, Ontario",
+    "lastVerifiedAt": "2026-08-18T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjt0n01imivheii10kfbf",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": null,
+        "vehicleName": "Axium Infrastructure Canada II L.P.",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyf201raivhex8v9q5uj",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure IV",
+        "vehicleName": "DIF Infra 4 Canada Ltd.",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplepl03n9ivhe33bwydf6",
+        "date": "May 6, 2016",
+        "event": "Infrastructure Ontario and William Osler Health System awarded and financially closed the C$330 million DBFM contract with Etobicoke Healthcare Partnership; Axium Infrastructure Canada II L.P. and DIF Infrastructure IV were the equity sponsors.",
+        "category": "FINANCING",
+        "sortDate": "2016-05-06T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.infrastructureontario.ca/en/news-and-media/news/etobicoke-general-hospital-redevelopment---phase-1/contract-awarded-for-etobicoke-general-hospital-redevelopment/",
+          "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2016-06-13-Press-Release-Etobicoke_May-2016_website-only_en.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpks1g02vsivhe2e54e16s",
+        "date": "Jun 28, 2016",
+        "event": "Ontario announced up to C$358 million of provincial investment in the Etobicoke General Hospital expansion.",
+        "category": "FINANCING",
+        "sortDate": "2016-06-28T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://news.ontario.ca/en/release/40938/ontario-investing-358-million-in-new-infrastructure-at-etobicoke-general-hospital"
+        ]
+      },
+      {
+        "id": "cmrxpleqm03nbivhe4jiqu1ru",
+        "date": "Feb 19, 2019",
+        "event": "The Phase 1 Patient Tower reached substantial completion and entered its operating phase.",
+        "category": "OTHER",
+        "sortDate": "2019-02-19T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.infrastructureontario.ca/en/what-we-do/projectssearch/etobicoke-general-hospital-redevelopment/",
+          "https://www.walshgroup.com/news/2019/walshcanadacompletesnewpatienttoweratetobicokegeneralhospital.html"
+        ]
+      },
+      {
+        "id": "cmrxpleq703naivheav9v7vua",
+        "date": "Mar 31, 2026",
+        "event": "William Osler Health System's audited statements continued to identify Etobicoke Healthcare Partnership as responsible for operating and maintaining the building, with project assets transferring to Osler in July 2048.",
+        "category": "OTHER",
+        "sortDate": "2026-03-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.williamoslerhs.ca/media/erle1yzb/2025-26-financial-statements_aoda.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppbf007zgivhe4ona3i0c",
+        "label": "Infrastructureontario — Etobicoke General Hospital (Phase 1 Patient Tower)",
+        "url": "https://www.infrastructureontario.ca/en/what-we-do/projectssearch/etobicoke-general-hospital-redevelopment/",
+        "sourceType": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current project-company boundary, DBFM structure, developer identities, operating status, scale and completion date",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqgjm09m8ivhe1dsqbh8e",
+        "label": "Close date source — CVC DIF — Etobicoke Healthcare Partnership",
+        "url": "https://www.infrastructureontario.ca/en/news-and-media/news/etobicoke-general-hospital-redevelopment---phase-1/contract-awarded-for-etobicoke-general-hospital-redevelopment/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Official May 6, 2016 contract award and financial-close event with the C$330 million project value",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ontario — Etobicoke General Hospital infrastructure investment",
+        "url": "https://news.ontario.ca/en/release/40938/ontario-investing-358-million-in-new-infrastructure-at-etobicoke-general-hospital",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "June 28, 2016 announcement of up to C$358 million of provincial investment in the hospital expansion",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqgk809m9ivhe7vdovxjf",
+        "label": "Axiuminfra — Etobicoke General Hospital Phase 1 Patient Tower",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2016-06-13-Press-Release-Etobicoke_May-2016_website-only_en.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Direct manager evidence naming Axium Infrastructure Canada II L.P. and DIF Infrastructure IV as equity sponsors",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Lexpert — Etobicoke Healthcare Partnership financial close",
+        "url": "https://www.lexpert.ca/big-deals/etobicoke-general-hospital-phase-1-patient-tower-project-reaches-financial-close/350715",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal project-company name, exact May 6, 2016 close and DIF Infra 4 Canada Ltd. vehicle attribution",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqgkn09maivheuh5njgk9",
+        "label": "Walshgroup — Etobicoke General Hospital (Phase 1 Patient Tower)",
+        "url": "https://www.walshgroup.com/news/2019/walshcanadacompletesnewpatienttoweratetobicokegeneralhospital.html",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2019 patient-tower completion and approximately 250,000-square-foot scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "William Osler Health System — 2025-26 audited financial statements",
+        "url": "https://www.williamoslerhs.ca/media/erle1yzb/2025-26-financial-statements_aoda.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current EHP operating and maintenance responsibility, February 2019 substantial completion and July 2048 asset transfer",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Axium — 2024 Principal Adverse Impact Statement",
+        "url": "https://www.axiuminfra.com/wp-content/uploads/2025/06/Principal-Adverse-Impacts-%E2%80%93-AIC-II-vF.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Axium investment-universe inclusion for Etobicoke General Hospital",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CVC — CVC DIF completion",
+        "url": "https://www.cvc.com/media/news/2024/2024-07-03-completion-of-cvc-dif-and-acquisition-of-final-stake-in-cvc-secondary-partners/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "DIF Capital Partners to CVC DIF manager rebrand with infrastructure strategies and fund names unchanged",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "8f864492bf3c5f58c39d07a540afbe868e7ed62c75e527f501efa3f73dcdb1b4",
+  "proposalSha256": "8cb9daeb6b6c4fae2b559364c81ff4e26f89e4f0aad731a94cb42121a7d78f4f"
+}
