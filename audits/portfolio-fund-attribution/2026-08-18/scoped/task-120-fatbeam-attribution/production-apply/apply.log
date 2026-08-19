@@ -1,0 +1,43 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-18/scoped/task-120-fatbeam-attribution/apply-manifest.json --manifest-sha256=f23d656c00387424180553aab4eca386c87b9d9545c3aa6e2096f6442337f71c --production-snapshot=audits/portfolio-fund-attribution/2026-08-18/scoped/task-120-fatbeam-attribution/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-18/scoped/task-120-fatbeam-attribution/approval.json --approval-sha256=084d380ba3bfc6bb5b768cc11a89e97203492f23caa44e8f363c9dded9acff1d --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3057) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "f23d656c00387424180553aab4eca386c87b9d9545c3aa6e2096f6442337f71c",
+  "approvalSha256": "084d380ba3bfc6bb5b768cc11a89e97203492f23caa44e8f363c9dded9acff1d",
+  "environment": "production",
+  "pipelineRunId": "cmszde0vc0000cx6hs7juormu",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "ce178671e3d204ca71f7c76802420b647a0042cb7658e979e17c5efee0d34d4f",
+  "afterFingerprint": "44a74dc0aadbd76f4ce13b7f2a9205a4f0eebfac42143c7fba2a599c4cea4170",
+  "rows": [
+    {
+      "recordId": "OFA-A63F3E5375F6",
+      "ownershipPeriodId": "cmrxpjtfn01jbivhehqozsl37",
+      "companyId": "cmrxpj8de00m8ivhe8aczjldv",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Basalt III",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Basalt Infrastructure Partners | Fund: Basalt III | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Basalt IV",
+        "attributionConfidence": null,
+        "attributionRationale": "The Oregon regulator filing and Latham acquisition notice identify Project Lighthouse AIV Feeder LP and Basalt's fourth flagship fund, Basalt IV, as the disclosed acquisition chain. Basalt IV remains unlinked because it is not a production-curated fund; the 100% disclosure applies to the Project Lighthouse / Fatbeam chain rather than Basalt's own economic allocation."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-19T00:45:21.190Z",
+  "receiptSha256": "8ffcff26cf0f17d97fe3938bf338bc7a52d33a97f848bbc9821bb75264785c0b"
+}
