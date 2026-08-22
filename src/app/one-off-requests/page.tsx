@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Weekly process update — agenda and process calendar",
+    description:
+      "Editable two-slide PowerPoint with an agenda, milestone calendars, process windows, workstream shading, key dates, and holiday markers.",
+    href: "/one-off-requests/weekly-process-update-aug-sep-2026.pptx",
+    format: "PowerPoint",
+    date: "Aug 2026",
+    download: true,
+  },
+  {
     title: "Word format",
     description:
       "Editable one-page Word agenda with initials-only text treatment and CRA branding removed.",
