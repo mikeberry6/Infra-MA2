@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0492:skyservice-us:444ae080",
+  "taskIndex": 492,
+  "companyName": "Skyservice US",
+  "verifiedAt": "2026-08-22T19:59:06.000Z",
+  "summary": {
+    "modelCitationUrls": 8,
+    "working": 7,
+    "browserBlockedButVerified": 1,
+    "dead": 0,
+    "replacementWorkingUrls": 0,
+    "materialModelCorrections": 3,
+    "sourceUrlOverrides": 0
+  },
+  "sources": [
+    {
+      "label": "Instar Q3 2025 fact sheet",
+      "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct PDF download and independent text extraction",
+      "note": "The fact sheet lists Skyservice and Skyservice US together with 2017/2019 dates and states that Skyservice integrated in 2019 with Skyservice US, an Instar portfolio company formerly known as Leading Edge Jet Center."
+    },
+    {
+      "label": "Instar team page",
+      "url": "https://instarinvest.com/kingston-fyffe-white/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct current first-party page",
+      "note": "The page separately names Skyservice Business Aviation and Skyservice US among current portfolio-company responsibilities and describes a later Skyservice US investment in Fontainebleau Aviation."
+    },
+    {
+      "label": "2017 InstarAGF release",
+      "url": "https://www.globenewswire.com/news-release/2017/09/18/1124082/0/en/instaragf-essential-infrastructure-fund-partners-with-skyservice.html",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct transaction release",
+      "note": "Confirms the InstarAGF Essential Infrastructure Fund acquired a majority equity ownership interest in Canadian Skyservice Investments Inc. on September 18, 2017."
+    },
+    {
+      "label": "2019 Fund II report",
+      "url": "https://www.infrastructureinvestor.com/instaragf-announces-fund-iis-second-investment-final-close-nears/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_SECONDARY",
+      "verificationMethod": "direct secondary article and structured page metadata",
+      "note": "Reports that InstarAGF's second infrastructure fund acquired a business aviation provider in 2019; use as secondary Fund II attribution because no reviewed primary acquisition release states the fund."
+    },
+    {
+      "label": "Kenmore release",
+      "url": "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct company transaction release",
+      "note": "Confirms Leading Edge Jet Center's Kenmore Aero Services acquisition and states that LEJC was founded in 2005 and established as a standalone company in August 2019."
+    },
+    {
+      "label": "Exec Air Montana release",
+      "url": "https://www.globenewswire.com/news-release/2020/12/30/2151751/0/en/leading-edge-jet-center-enters-the-mountain-west-region.html",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct company transaction release",
+      "note": "Confirms the December 30, 2020 acquisition of Exec Air Montana, including Montana Medical Transport; this corrects the repo's Helena Aviation Services and January 2021 claim."
+    },
+    {
+      "label": "Skyservice rebrand",
+      "url": "https://www.skyservice.com/news/skyservice-business-aviation-expands-to-the-united-states/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct first-party page reopened during the signed-in research chat",
+      "note": "Supports the November 9, 2021 rebrand of four Leading Edge Jet Center locations under Skyservice; a rebrand alone does not prove an equity transfer into the Canadian entity."
+    },
+    {
+      "label": "Napa County record",
+      "url": "https://napa.legistar.com/LegislationDetail.aspx?From=RSS&FullText=1&GUID=63B77815-9C59-47EF-B86A-833B5F635248&ID=7700175",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct official county record",
+      "note": "Names Leading Edge Jet Midco LLC as parent borrower for SkyserviceUS California LLC and related U.S. FBO interests, supporting a continuing U.S. legal group distinct from merely a brand label."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "The Skyservice rebrand page returns HTTP 403 to direct checks and is classified BROWSER_BLOCKED_BUT_VERIFIED rather than WORKING.",
+    "The Canadian Skyservice owner row is contextual boundary evidence and must not be copied as a second owner of the canonical U.S. PortCo.",
+    "Fund II attribution for the August 2019 U.S. investment relies on reliable secondary reporting; the reviewed Instar fact sheet confirms the 2019 portfolio relationship and integration but does not name Fund II."
+  ],
+  "conclusion": "The two U.S. records are the same Leading Edge Jet Center / Skyservice US platform and should be merged. Direct current evidence supports keeping that U.S. platform distinct from the separately sponsored Canadian Skyservice record, with all FBO sites and acquisitions beneath the U.S. company. No later announced sponsor exit or pending ownership transfer was identified through the cutoff."
+}

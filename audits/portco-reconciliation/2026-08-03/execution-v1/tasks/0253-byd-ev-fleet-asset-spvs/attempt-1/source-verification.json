@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+  "taskIndex": 253,
+  "companyName": "BYD EV Fleet Asset SPVs",
+  "verifiedAt": "2026-08-20T07:41:02.516Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://generatecapital.com/technology-companies/",
+      "finalUrl": "https://generatecapital.com/technology-companies/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 55545,
+      "contentSha256": "09583eefe92fb09c74396a892542b5e7c762fc2c7a48fc6012eeb15e59d0c0f5",
+      "browserVerified": true,
+      "note": "Generate's live technology-company archive describes the Generate/BYD program, a $200 million Generate commitment, Generate financing and BYD marketing/supply/maintenance roles, and a projection of more than 500 EV deployments. The page misspells the platform as Green Transportation Leading and does not disclose current ownership or current deployed assets."
+    },
+    {
+      "url": "https://www.bizprofile.net/ca/san-francisco/green-transportation-leasing-llc",
+      "finalUrl": "https://www.bizprofile.net/ca/san-francisco/green-transportation-leasing-llc",
+      "status": "BROWSER_BLOCKED_SECONDARY_REGISTRY_EXTRACT",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5534,
+      "contentSha256": "12755f0197884e12f76cb5ce317eab4bf87c519d909f287b6a9681a6b9a78839",
+      "browserVerified": true,
+      "note": "Direct curl is blocked, but the secondary registry extract loaded in the in-app browser. It reports Green Transportation Leasing, LLC active as of March 25, 2026, California entity 201735510046, formed December 20, 2017, and Generate GTL Member, LLC as manager. It does not disclose members or equity percentages and is not a substitute for the official filing."
+    },
+    {
+      "url": "https://www.metro-magazine.com/news/byd-partners-to-launch-first-ever-electric-bus-leasing-program",
+      "finalUrl": "https://www.metro-magazine.com/news/byd-partners-to-launch-first-ever-electric-bus-leasing-program",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 243825,
+      "contentSha256": "5b15b6490a99b40ff2583980745ea39a6e46bc31758f8f863fda16a617b1ce4f",
+      "browserVerified": true,
+      "note": "The contemporary July 2018 report verifies a Generate/BYD joint venture and $200 million allocation for U.S. electric-bus leasing, but does not identify percentages or legal closing mechanics."
+    },
+    {
+      "url": "https://dukespace.lib.duke.edu/server/api/core/bitstreams/104f48b1-d523-4076-8874-c91cf6f1f4fe/content",
+      "finalUrl": "https://dukespace.lib.duke.edu/server/api/core/bitstreams/104f48b1-d523-4076-8874-c91cf6f1f4fe/content",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf;charset=UTF-8",
+      "bytes": 1147272,
+      "contentSha256": "9e9c397edab36821104161a22f643a2d57fb6826667c40702ff110acd9fb9fc0",
+      "pageCount": 46,
+      "verifiedPages": [
+        15,
+        25,
+        26,
+        29
+      ],
+      "note": "The Duke report's page 25 case study says Generate and BYD formed Green Transportation Leasing and jointly owned it; pages 25-26 explain multiple lease/title structures. It is historical academic/interview evidence, not proof of the 2026 cap table."
+    },
+    {
+      "url": "https://www.metro-magazine.com/articles/new-financing-tools-make-electric-bus-buying-easier",
+      "finalUrl": "https://www.metro-magazine.com/articles/new-financing-tools-make-electric-bus-buying-easier",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 269773,
+      "contentSha256": "b6c5bd99fdd72fef2a8ae24b9241d9db372de8a09f4adfac03267e5cbff6eaf5",
+      "browserVerified": true,
+      "note": "The March 2019 trade interview confirms the Generate/BYD joint venture and financing of buses, charging infrastructure and batteries. It supports historical operations, not current fleet scale or ownership."
+    },
+    {
+      "url": "https://en.byd.com/news/press-release-byd-produces-300th-bus-in-lancaster-avta-nears-1-million-emission-free-miles/",
+      "finalUrl": "https://en.byd.com/news/press-release-byd-produces-300th-bus-in-lancaster-avta-nears-1-million-emission-free-miles/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 211170,
+      "contentSha256": "7ba6af03840e6ca5835c028e65b117d0dc95918bfebfccc1a791129d47cf5956",
+      "browserVerified": true,
+      "note": "BYD identifies Generate as a leasing partner, while its broader customer list cannot be treated as a GTL lease portfolio."
+    },
+    {
+      "url": "https://www.blue-bird.com/blue-bird-and-generate-capital-appoint-general-manager-for-clean-bus-solutions-joint-venture/",
+      "finalUrl": "https://www.blue-bird.com/blue-bird-and-generate-capital-appoint-general-manager-for-clean-bus-solutions-joint-venture/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 191344,
+      "contentSha256": "19ebeb6696fb0e09c0a51fb2a4e7f103d6f3170c72600a58e94c319e0278b00b",
+      "browserVerified": true,
+      "note": "Blue Bird's July 2024 release verifies Clean Bus Solutions, LLC as a separate 50/50 Blue Bird/Generate joint venture and not a proven GTL successor."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 1,
+    "primarySourceWorking": true,
+    "pdfPageLevelVerificationCompleted": true,
+    "namedLegalPlatformVerified": true,
+    "historicalGenerateBydJointOwnershipVerified": true,
+    "activeRegistrationIndicated": true,
+    "generateLinkedManagerOfRecordIndicated": true,
+    "officialCurrentCapTableVerified": false,
+    "currentGenerateEquityVerified": false,
+    "currentBydEquityVerified": false,
+    "currentQualifyingAssetBookVerified": false,
+    "currentFleetScaleVerified": false,
+    "cleanBusSolutionsSeparated": true,
+    "laterExitOrPendingTransactionNotFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": false,
+    "applicationBlocked": true
+  },
+  "modelEvidenceCorrections": [
+    "Rename the record to Green Transportation Leasing, LLC and treat the generic BYD EV Fleet Asset SPVs label as a legacy description, not the canonical identity.",
+    "Do not infer current Generate equity merely from Generate GTL Member, LLC's manager role or current legal registration.",
+    "Record BYD as a verified historical joint owner, but do not mark it current until a current member schedule or direct party evidence is obtained.",
+    "Do not treat Generate's projection of more than 500 EV deployments as a verified delivered/current fleet census.",
+    "Keep Clean Bus Solutions and customer fleets outside the GTL boundary."
+  ],
+  "releaseRequirement": "Pause list application pending official current ownership and operating-asset evidence. The research supports preserving one GTL identity and historical Generate/BYD joint ownership, but not yet encoding a current equity owner or active qualifying asset book."
+}

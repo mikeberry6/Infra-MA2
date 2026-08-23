@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0355:millennium-parking-garages-llc:9385654a",
+  "taskIndex": 355,
+  "verifiedAt": "2026-08-21T14:38:46.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 8,
+    "working": 6,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The DigitalBridge stockholder-approval release failed direct curl over HTTP/2 and timed out over HTTP/1.1, but the exact URL rendered in the browser with the April 23, 2026 release and is classified BROWSER_BLOCKED_BUT_VERIFIED.",
+    "The Business Wire Ares release timed out in direct curl, but the exact URL rendered in the browser with the February 10, 2022 infrastructure-debt acquisition release and is classified BROWSER_BLOCKED_BUT_VERIFIED.",
+    "The official Millennium Garages website and the DigitalBridge pending manager-parent transaction URL appeared outside the six-row evidence array and were independently checked as part of the complete returned-URL set."
+  ],
+  "sources": [
+    {
+      "url": "https://www.millenniumgarages.com/",
+      "finalUrl": "https://www.millenniumgarages.com/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 212,
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-stockholders-approve-acquisition-softbank-group/",
+      "finalUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-stockholders-approve-acquisition-softbank-group/",
+      "httpStatus": null,
+      "mediaType": null,
+      "bytes": 0,
+      "sha256": null,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "HTTP/2 stream closed with INTERNAL_ERROR; HTTP/1.1 retry timed out after 30 seconds with zero bytes received.",
+      "browserVerification": {
+        "title": "DigitalBridge Stockholders Approve Acquisition by SoftBank Group Corp. | DigitalBridge Group, Inc.",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "5ee31c5c16266ed238eec0905687e3c7e41205a8782e3d498cf61c3798323b28"
+      }
+    },
+    {
+      "url": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+      "finalUrl": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 159967,
+      "sha256": "686b6f68cc701863bfc1db2f165b1c11b4990d95c06238eca51502366b74d635",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.infrabridge.com/our-portfolio",
+      "finalUrl": "https://www.infrabridge.com/our-portfolio",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 53199,
+      "sha256": "d2789a934c4053263a36f63dda2e2f947ef160c4e0b029e91d4640121b204034",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_millennium_parking_garages_concession.aspx",
+      "finalUrl": "https://www.fhwa.dot.gov/ipd/project_profiles/il_millennium_parking_garages_concession.aspx",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 23018,
+      "sha256": "dec5a299b374d87d1e59477bddea27f7749643b6822e0061c2e895d41e6e942c",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.scribd.com/document/632026769/22-Asset-Performance-comments-xlsx",
+      "finalUrl": "https://www.scribd.com/document/632026769/22-Asset-Performance-comments-xlsx",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 3038,
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.infrabridge.com/news/2023-02-03-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+      "finalUrl": "https://www.infrabridge.com/news/2023-02-03-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 22238,
+      "sha256": "e7aa1d3b5c9c82ba1cfc63d48ac958e195b86fd10527306c09caaf49add42d5b",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20220210005893/en/Ares-Management-Corporation-Completes-Acquisition-of-AMP-Capitals-Infrastructure-Debt-Platform",
+      "finalUrl": "https://www.businesswire.com/news/home/20220210005893/en/Ares-Management-Corporation-Completes-Acquisition-of-AMP-Capitals-Infrastructure-Debt-Platform",
+      "httpStatus": null,
+      "mediaType": null,
+      "bytes": 0,
+      "sha256": null,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "HTTP/2 stream closed with INTERNAL_ERROR; HTTP/1.1 retry timed out before returning a response body.",
+      "browserVerification": {
+        "title": "Ares Management Corporation Completes Acquisition of AMP Capital’s Infrastructure Debt Platform",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "f836f8246f7620ecea86170e06ca9e207825d85fe62684e24a27ecd3554082e1"
+      }
+    }
+  ]
+}

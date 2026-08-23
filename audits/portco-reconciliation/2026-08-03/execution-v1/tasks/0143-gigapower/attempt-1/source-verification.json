@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_SOURCE_VERIFICATION",
+  "taskId": "ledger:0143:gigapower:91c4149b",
+  "taskIndex": 143,
+  "companyName": "Gigapower",
+  "verifiedAt": "2026-08-19T04:19:20.000Z",
+  "verifier": "Codex independent URL retrieval, redirect and content-hash check",
+  "summary": {
+    "evidenceRows": 7,
+    "open": 2,
+    "browserBlockedPendingReleaseReopen": 2,
+    "unavailablePendingReleaseReopen": 3,
+    "dead": 0,
+    "researchPacketAccepted": true
+  },
+  "sources": [
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "1f9583b6304e75a83bcb59e1b7fc11116ce8232952c063f79e57833649dabbee",
+      "mediaType": "application/pdf",
+      "url": "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284",
+      "label": "South Carolina PSC application",
+      "purpose": "IDENTITY_OWNERSHIP_STAKE_VEHICLE",
+      "isRecommendedPrimary": true,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": null,
+      "finalUrl": "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider",
+      "workingStatus": "UNAVAILABLE_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": null,
+      "mediaType": null,
+      "url": "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider",
+      "label": "Definitive JV announcement",
+      "purpose": "ANNOUNCEMENT",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://about.att.com/story/2023/gigapower.html",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "d958dac96195d1b2d91ff418d12b4f3532c176a70a313753191f0b8155d3e7c8",
+      "mediaType": "text/html",
+      "url": "https://about.att.com/story/2023/gigapower.html",
+      "label": "AT&T close release",
+      "purpose": "CLOSING_ENTRY",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "be5f4cdb39507645482c9e0bdeea1208f410a23bf57d6845d962c6a07a6b1ebc",
+      "mediaType": "text/html",
+      "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm",
+      "label": "AT&T 2025 Form 10-K",
+      "purpose": "CURRENT_AT&T_STAKE",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "d6a763f3df142d947a6de7b0b205225642704fc364c01d6c7e24067bc8bc7bf3",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "label": "BlackRock GIP acquisition close",
+      "purpose": "MANAGER_CONTEXT",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": null,
+      "finalUrl": "https://www.businesswire.com/news/home/20260602690771/en/Gigapower-Appoints-Jonathan-Mullen-as-Chief-Administrative-Officer-and-General-Counsel",
+      "workingStatus": "UNAVAILABLE_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": null,
+      "mediaType": null,
+      "url": "https://www.businesswire.com/news/home/20260602690771/en/Gigapower-Appoints-Jonathan-Mullen-as-Chief-Administrative-Officer-and-General-Counsel",
+      "label": "Gigapower June 2026 profile",
+      "purpose": "CURRENT_GIP_CONTEXT_OPERATIONS",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": null,
+      "finalUrl": "https://www.businesswire.com/news/home/20250828592914/en/Gigapower-Accelerates-High-Speed-Broadband-Fiber-Network-Deployment-with-Expansion-Across-Six-States",
+      "workingStatus": "UNAVAILABLE_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": null,
+      "mediaType": null,
+      "url": "https://www.businesswire.com/news/home/20250828592914/en/Gigapower-Accelerates-High-Speed-Broadband-Fiber-Network-Deployment-with-Expansion-Across-Six-States",
+      "label": "Gigapower six-state expansion",
+      "purpose": "FOOTPRINT_SCALE",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    }
+  ],
+  "note": "Staging verification only; reopen and claim-check every source against a fresh production snapshot before proposal or release."
+}
+

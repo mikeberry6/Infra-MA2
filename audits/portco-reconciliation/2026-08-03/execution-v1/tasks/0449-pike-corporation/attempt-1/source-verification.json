@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0449:pike-corporation:5a43238f",
+  "taskIndex": 449,
+  "verifiedAt": "2026-08-22T13:39:05.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 7,
+    "working": 6,
+    "browserBlockedButVerified": 1,
+    "dead": 0,
+    "note": "All seven returned evidence URLs were independently checked. The TPG transcript opened at the exact URL in the browser's native PDF viewer after command-line HTTP/2 transport failed."
+  },
+  "sources": [
+    {
+      "url": "https://www.tpg.com/news-and-insights/pike-corporation-to-accelerate-growth-through-partnership-with-tpg-la-caisse-and-management",
+      "finalUrl": "https://www.tpg.com/news-and-insights/pike-corporation-to-accelerate-growth-through-partnership-with-tpg-la-caisse-and-management",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 113707,
+      "sha256": "8642f5f2d6eb93192727b4ce12f1453d5b385587da98b1861b3a42708c4b7024",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://shareholders.tpg.com/static-files/f52ae0ce-34e2-428b-83c8-5d450796ea45",
+      "finalUrl": "https://shareholders.tpg.com/static-files/f52ae0ce-34e2-428b-83c8-5d450796ea45",
+      "httpStatus": null,
+      "mediaType": "application/pdf",
+      "bytes": null,
+      "sha256": null,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserEvidence": "The exact URL opened without redirect in the browser's native PDF viewer; command-line transport failed before returning bytes."
+    },
+    {
+      "url": "https://www.lindsaygoldbergllc.com/news/lindsay-goldberg-completes-sale-of-its-interest-in-pike-corporation-following-highly-successful-25-year-relationship-with-the-pike-family",
+      "finalUrl": "https://www.lindsaygoldbergllc.com/news/lindsay-goldberg-completes-sale-of-its-interest-in-pike-corporation-following-highly-successful-25-year-relationship-with-the-pike-family",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 73216,
+      "sha256": "d77957f4ee0f1659fa80ce5d6f08af263c40a7a1ad9c60268a22c1fb5cf985f9",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.lacaisse.com/en/performance/annual-reports/2025",
+      "finalUrl": "https://www.lacaisse.com/en/performance/annual-reports/2025",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 135083,
+      "sha256": "c049890f8ff127dd2dd7c599cbac28b9e38383c91a3e9b26d81897ef5fe86e67",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2025_lacaisse_add_information.pdf",
+      "finalUrl": "https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2025_lacaisse_add_information.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 3632049,
+      "sha256": "cb370295c1c5822b08e601cfdc7978c3702801fa838c724044114cddc2e4d005",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.pike.com/companies/",
+      "finalUrl": "https://www.pike.com/companies/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 505144,
+      "sha256": "06ff194c4d6fb075d8c213e9985b7af1a87ec98117ac31c0585463987d50e9f4",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465921141709/tm2133423d1_ex10-1.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1319229/000110465921141709/tm2133423d1_ex10-1.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 206579,
+      "sha256": "6bc66bf0dee9b1b7bf07d3d2390ce0dd8f74422d3fb6e4111f724558c97744c9",
+      "health": "WORKING"
+    }
+  ]
+}

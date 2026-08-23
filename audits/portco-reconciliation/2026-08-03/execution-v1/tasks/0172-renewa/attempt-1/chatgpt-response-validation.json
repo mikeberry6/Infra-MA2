@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "taskId": "ledger:0172:renewa:4e75f8f4",
+  "taskIndex": 172,
+  "validatedAt": "2026-08-19T07:08:08.983Z",
+  "conversationUrl": "https://chatgpt.com/c/6a854ff3-3d44-83ea-bce1-25c75d01b10a",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "3a01ffb7890c425dde7a00925a9c7e3eab1c345350dfdc9d38b97305b44062c0",
+    "errors": [
+      "No assistant response rendered because ChatGPT temporarily rate-limited the conversation after research completed."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-19T07:04:24.908Z",
+    "completedAt": "2026-08-19T07:08:08.983Z",
+    "valid": true,
+    "responseSha256": "f4baedb497efb4dbf0d0bf5bad05cf3c45e5f1cc764c1b4c7bcd718fa4400928",
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "canonicalName": "Renewa",
+    "evidenceCount": 7,
+    "currentOwnerCount": 2,
+    "formerOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "exactlyOneRecommendedPrimary": true,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

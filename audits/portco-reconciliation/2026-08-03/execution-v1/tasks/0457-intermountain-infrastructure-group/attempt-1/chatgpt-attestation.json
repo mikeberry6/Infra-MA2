@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0457:intermountain-infrastructure-group:66d1e5b0",
+  "taskIndex": 457,
+  "companyName": "Intermountain Infrastructure Group",
+  "conversationUrl": "https://chatgpt.com/c/6a89d230-d374-83ea-9cb9-41edb6c8bc76",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5.",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": true
+  },
+  "initialSubmittedAt": "2026-08-22T16:45:36.418Z",
+  "initialCompletedAt": "2026-08-22T17:00:45.000Z",
+  "repairSubmittedAt": "2026-08-22T17:01:01.564Z",
+  "repairCompletedAt": "2026-08-22T17:02:10.000Z",
+  "repairCount": 1,
+  "initialOutcome": "RESEARCH_COMPLETE_OUTPUT_STALLED",
+  "finalOutcome": "VALID_CONTRACT_PACKET",
+  "transientRateLimit": {
+    "observed": true,
+    "uiMessage": "Too many requests — temporarily limited access to conversations",
+    "observedAfterSubmission": true,
+    "newConversationStarted": false
+  },
+  "contentHashes": {
+    "promptSha256": "d02e1d5e164ca32aa2b9a96c449876225f33e4c6c81660e5239d0a0901279be5",
+    "initialResponseSha256": "4dfc4c3d5545269af7d5f5ed1b5745269c8dd4019929ef2b1fbfeb9ff7d9b31b",
+    "acceptedResponseSha256": "10755373fa8d94631dc7737d2e4fc7a12b6a9551ac89f0a9da5e9d7b543f884a",
+    "transcriptSha256": "b2c01021b2ed3f7286e40b9d674462f3f1238f5133c6323634be46dd0c06d58a",
+    "repairPromptSha256": "3ea9cab7bcf8f13a98f4aa0e24a922518f1696716546dfc7925acf54bc8140a0",
+    "repairResponseSha256": "10755373fa8d94631dc7737d2e4fc7a12b6a9551ac89f0a9da5e9d7b543f884a"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM",
+  "captureNote": "The initial Pro turn completed current web research but stalled before rendering the requested packet. The same conversation was reloaded, GPT-5.6 Sol Pro 5/5 was reverified, and the single permitted repair emitted the accepted contract packet."
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0395:prairie-mist-solar:44443a02",
+  "checkedAt": "2026-08-21T22:40:00.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; official Federal Register public-inspection PDF extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/primergy/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/portfolio/primergy/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 50272,
+      "sha256": "e1b02bba498c046aa03f3112d2f2b5fb78cc205bb593a1fa7c09860277c382c5",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook defines Primergy as its 100%-owned manager-level solar-and-storage portfolio company",
+        "Quinbrook lists Prairie Mist as a project beneath Primergy"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/prairie-mist/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/projects/prairie-mist/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 48300,
+      "sha256": "454825da1deef15fe7a77d82392a64713b08b294d3d8d61682fec629a1d6bc67",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Prairie Mist is an operational 100 MW solar project in Ashley County, Arkansas",
+        "The manager page reports a 2021 acquisition year and November 2024 commercial operation"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/projects/amazon-solar-farm-arkansas---prairie-mist",
+      "httpStatus": 200,
+      "finalUrl": "https://www.primergypower.com/projects/amazon-solar-farm-arkansas---prairie-mist",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 49799,
+      "sha256": "03fa66a59d60b245ff1cb0eac4faabf6a030d69e9c2d17ac1f7a3898ea3df6a7",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Primergy presents Amazon Solar Farm Arkansas - Prairie Mist as its operating 100 MWac solar project"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/news/primergys-prairie-mist-solar-project-reaches-commercial-operation",
+      "httpStatus": 200,
+      "finalUrl": "https://www.primergypower.com/news/primergys-prairie-mist-solar-project-reaches-commercial-operation",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 42834,
+      "sha256": "f23a9a70694106ceac8fe9910578dbf45b8ab3e5cb082ec5afb7464b2245cf94",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Primergy announced the 100 MWac project fully operational on December 18, 2024",
+        "The release supports the Amazon PPA, North Little Rock capacity contract, Entergy/MISO connection and Primoris EPC role"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/news/primergy-secures-300m-debt-and-tax-equity-investment-for-prairie-mist-solar-project",
+      "httpStatus": 200,
+      "finalUrl": "https://www.primergypower.com/news/primergy-secures-300m-debt-and-tax-equity-investment-for-prairie-mist-solar-project",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 42340,
+      "sha256": "3b396adbf5743f88efe89965f823613d24f4276cd9cc00e5317004fb02e53dbe",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Primergy closed $300 million of debt and tax-equity commitments in November 2023",
+        "The release identifies the lenders and a PNC affiliate as tax-equity provider but does not establish a separate infrastructure-manager PortCo owner"
+      ]
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2024/08/26/2024-19030/combined-notice-of-filings-1",
+      "httpStatus": 200,
+      "finalUrl": "https://www.federalregister.gov/documents/2024/08/26/2024-19030/combined-notice-of-filings-1",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 10596,
+      "sha256": "93d36f262b9cf3f6db07a3f4ec713f808d8817f528db43d4c2280edd2adcdacd",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "accessNote": "The direct article URL returned an anti-bot access page despite HTTP 200.",
+      "verificationUrl": "https://public-inspection.federalregister.gov/2024-19030.pdf?1724417120=",
+      "verificationHttpStatus": 200,
+      "verificationMediaType": "application/pdf",
+      "verificationBytes": 162856,
+      "verificationSha256": "50855a51be5b0739dba67537dd21799ccedb6ded347e622c9c1b5d7aea325297",
+      "pdfVerification": {
+        "pageCount": 6,
+        "relevantPdfPages": [5],
+        "verifiedClaims": [
+          "The official notice identifies Prairie Mist Solar Project, LLC as the applicant in FERC docket ER24-2807-000"
+        ],
+        "renderedPagesInspected": true
+      }
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

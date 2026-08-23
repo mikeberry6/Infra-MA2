@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_SOURCE_VERIFICATION",
+  "taskId": "ledger:0138:conexon:5a11e528",
+  "taskIndex": 138,
+  "companyName": "Conexon",
+  "verifiedAt": "2026-08-19T03:33:28.170Z",
+  "verifier": "Codex independent URL retrieval, redirect and content-hash check",
+  "summary": {
+    "evidenceRows": 5,
+    "open": 4,
+    "browserBlockedPendingReleaseReopen": 1,
+    "unavailablePendingReleaseReopen": 0,
+    "dead": 0,
+    "researchPacketAccepted": true
+  },
+  "sources": [
+    {
+      "url": "https://conexon.us/about/about-conexon/",
+      "httpStatus": 200,
+      "finalUrl": "https://conexon.us/about/about-conexon/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "5ced637127d71f9cb08c2940da278872ff59105ce249c07883f5b0b8c4c1b817",
+      "mediaType": "text/html; charset=utf-8",
+      "label": "Conexon — About",
+      "purpose": "IDENTITY_BOUNDARY_OPERATIONS_AND_FOOTPRINT",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "url": "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2024/BlackRock-Completes-Acquisition-of-Global-Infrastructure-Partners/default.aspx",
+      "httpStatus": 403,
+      "finalUrl": "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2024/BlackRock-Completes-Acquisition-of-Global-Infrastructure-Partners/default.aspx",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "1d5b00fbc54f8212011e8a1f939eb2cd01931830b6b8fda4b4d12b9c32eff16e",
+      "mediaType": "text/html; charset=UTF-8",
+      "label": "BlackRock — GIP acquisition closing",
+      "purpose": "MANAGER_COMBINATION_NOT_PORTCO_TRANSFER",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "url": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+      "httpStatus": 200,
+      "finalUrl": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "dcef2cb706c7086af1f53cbd64ce288182027534dde7ff5eddfd4683641bdb3d",
+      "mediaType": "text/html;charset=UTF-8",
+      "label": "BlackRock Impact Opportunities — portfolio",
+      "purpose": "OWNER_STRATEGY_AND_INVESTMENT_YEAR",
+      "isRecommendedPrimary": true,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "url": "https://www.linkedin.com/posts/infrastructure-journal_blackrock-backed-rural-fiber-broadband-network-activity-7439746340701540353-QawN",
+      "httpStatus": 200,
+      "finalUrl": "https://www.linkedin.com/posts/infrastructure-journal_blackrock-backed-rural-fiber-broadband-network-activity-7439746340701540353-QawN",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "981e7935ef540a0fc9de4af2e4c65bc990aed7996d5361bce129bfb601263118",
+      "mediaType": "text/html; charset=utf-8",
+      "label": "Green Street/IJGlobal — capital-raise report",
+      "purpose": "LATER_TRANSACTION_CHECK",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "url": "https://www.tapadvisors.com/selected-tap-advisors-transactions",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tapadvisors.com/selected-tap-advisors-transactions",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "0a7dfe8955a63c2c448646409cf80072dfa3eb6fa99e0bb7fa68806908d4d9eb",
+      "mediaType": "text/html; charset=utf-8",
+      "label": "TAP Advisors — selected transactions",
+      "purpose": "2023_INVESTMENT_ANNOUNCEMENT",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    }
+  ],
+  "note": "Staging verification only; reopen and claim-check against a fresh production snapshot before proposal or release."
+}
+

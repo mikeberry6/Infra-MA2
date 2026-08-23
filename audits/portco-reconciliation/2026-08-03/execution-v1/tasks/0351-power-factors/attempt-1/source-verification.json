@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0351:power-factors:44709f47",
+  "taskIndex": 351,
+  "verifiedAt": "2026-08-21T12:40:30.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 7,
+    "working": 6,
+    "browserBlockedButVerified": 1,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The SEC filing returned HTTP 403 to direct curl but opened at its exact URL in the signed-in browser and is classified BROWSER_BLOCKED_BUT_VERIFIED."
+  ],
+  "sources": [
+    {"url":"https://www.powerfactors.com/news/power-factors-welcomes-mubadala-as-strategic-investor-to-support-next-phase-of-growth","finalUrl":"https://www.powerfactors.com/news/power-factors-welcomes-mubadala-as-strategic-investor-to-support-next-phase-of-growth","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":82556,"sha256":"48471769ff475c1efed6d5ec5d568a479537ef0325c97a7a8674d1991f647023","health":"WORKING"},
+    {"url":"https://www.mubadala.com/en/what-we-do/private-equity","finalUrl":"https://www.mubadala.com/en/what-we-do/private-equity","httpStatus":200,"mediaType":"text/html; charset=utf-8","bytes":94934,"sha256":"8d39cc8f430b091d11e1679167af355a64e7b85a3e01c51ded9512c761ca03af","health":"WORKING"},
+    {"url":"https://www.powerfactors.com/about","finalUrl":"https://www.powerfactors.com/about","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":159112,"sha256":"53bff95a3fb39425497bc01ff0c304553acda4eb9130e97b822f49d0b24df41d","health":"WORKING"},
+    {"url":"https://www.powerfactors.com/news/power-factors-to-be-acquired-by-vista-equity-partners","finalUrl":"https://www.powerfactors.com/news/power-factors-to-be-acquired-by-vista-equity-partners","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":82422,"sha256":"79dd283364a980cee51e061dd36e5e8fb1a09875f124c57e03059b8c36faa86d","health":"WORKING"},
+    {"url":"https://www.oaktreecapital.com/strategies/power-opportunities","finalUrl":"https://www.oaktreecapital.com/strategies/power-opportunities","httpStatus":200,"mediaType":"text/html; charset=utf-8","bytes":120600,"sha256":"2adb8c95fa70cdd6666baaae07fcd417562ff0ddacbf43df0678adb505b50c66","health":"WORKING"},
+    {"url":"https://www.sec.gov/Archives/edgar/data/1572694/000119312526338331/gsbd-20260630.htm","finalUrl":"https://www.sec.gov/Archives/edgar/data/1572694/000119312526338331/gsbd-20260630.htm","httpStatus":403,"mediaType":"text/html","bytes":4819,"sha256":"8bb9e8f519c0ca79dca7c6e880ae126aecdc725a13c8908dfcc253673c64d98d","health":"BROWSER_BLOCKED_BUT_VERIFIED","browserVerification":{"title":"10-Q","exactUrlOpened":true,"browserSnapshotSha256":"33106743b24cee4614399fc1ca5786f59cddb7fb5afe7013c49e4ca3d0ea2f2a"}},
+    {"url":"https://lazard.com/api/TransactionSearch/DownloadTransactions?transactionTypeIds=1","finalUrl":"https://lazard.com/api/TransactionSearch/DownloadTransactions?transactionTypeIds=1","httpStatus":200,"mediaType":"application/json","bytes":594347,"sha256":"ccbc53623558d8d7c758bc5415a8edaddd26d78bcb3f098850acc8b4f22f524f","health":"WORKING"}
+  ]
+}

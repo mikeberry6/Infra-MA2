@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0128:puget-energy:f96cd6be",
+  "taskIndex": 128,
+  "companyName": "Puget Energy",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T02:57:30.587Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Puget Energy",
+    "requestedManagers": [
+      "BCI",
+      "Macquarie Asset Management",
+      "OMERS Infrastructure",
+      "Ontario Teachers' Pension Plan",
+      "AIMCo",
+      "PGGM"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Puget Holdings owns Puget Energy, which owns regulated PSE and nonregulated Puget LNG. PSE is the operating subsidiary/brand, not a second PortCo.",
+    "identityResolution": {
+      "canonicalName": "Puget Energy, Inc.",
+      "canonicalId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "chain": "Puget Holdings LLC > Puget Intermediate Holdings Inc. > Puget Equico LLC > Puget Energy, Inc. > PSE; Puget LNG, LLC is a sibling.",
+      "aliases": [
+        "Puget Energy",
+        "PE",
+        "Puget Sound Energy",
+        "PSE",
+        "Puget Energy / Puget Sound Energy"
+      ],
+      "treatment": "Keep Puget Energy; merge/redirect PSE ID cmrxpjkcr014rivhero16klvt and the seed composite, preserving PSE as subsidiary/alias."
+    },
+    "ownershipResolution": {
+      "note": "Stakes sit in Puget Holdings and map once to Puget Energy; current table is 2026-02-19; no normalization.",
+      "owners": [
+        {
+          "manager": "BCI",
+          "organization": "British Columbia Investment Management Corporation",
+          "fund": "Infrastructure & Renewable Resources Program",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "20.9%; 16.9% pre-2019",
+          "announcementDate": "2007-10-26",
+          "entryDate": "2009-02-06",
+          "entryYear": 2009,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE; +4pp 2019-04-17"
+        },
+        {
+          "manager": "Macquarie Asset Management",
+          "organization": "Macquarie Asset Management",
+          "fund": "Macquarie Global Infrastructure Fund",
+          "vehicle": "Macquarie Washington Clean Energy Investment, L.P.",
+          "stake": "15.8%",
+          "announcementDate": "2021-07-07",
+          "entryDate": "2022-02-22",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "OMERS Infrastructure",
+          "organization": "Ontario Municipal Employees Retirement System",
+          "fund": "OMERS Infrastructure",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "23.9%",
+          "announcementDate": "2018-08-08",
+          "entryDate": "2019-04-17",
+          "entryYear": 2019,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "Ontario Teachers' Pension Plan",
+          "organization": "Ontario Teachers' Pension Plan Board",
+          "fund": "Infrastructure & Natural Resources",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "15.8%",
+          "announcementDate": "2021-07-07",
+          "entryDate": "2022-02-22",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "AIMCo",
+          "organization": "Alberta Investment Management Corporation",
+          "fund": "Infrastructure",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "13.6%; 7.6% pre-2019",
+          "announcementDate": "2007-10-26",
+          "entryDate": "2009-02-06",
+          "entryYear": 2009,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE; +6pp 2019-04-17"
+        },
+        {
+          "manager": "PGGM",
+          "organization": "PGGM Vermogensbeheer B.V.",
+          "fund": "Infrastructure",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "10.0%",
+          "announcementDate": "2018-08-08",
+          "entryDate": "2019-04-17",
+          "entryYear": 2019,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "Macquarie Asset Management",
+          "organization": "Macquarie Group",
+          "fund": "Macquarie Infrastructure Partners I and II; Macquarie-FSS Infrastructure Trust",
+          "vehicle": "Multiple consortium SPVs",
+          "stake": "44.0% rounded",
+          "announcementDate": "2007-10-26",
+          "entryDate": "2009-02-06",
+          "entryYear": 2009,
+          "exitDate": "2019-04-17",
+          "exitYear": 2019,
+          "isActive": false,
+          "transactionState": "EXITED to OMERS/PGGM/BCI/AIMCo"
+        },
+        {
+          "manager": "CPP Investments",
+          "organization": "Canada Pension Plan Investment Board",
+          "fund": "Infrastructure",
+          "vehicle": "CPP Investment Board (USRE II) Inc.",
+          "stake": "31.6%",
+          "announcementDate": "2007-10-26",
+          "entryDate": "2009-02-06",
+          "entryYear": 2009,
+          "exitDate": "2022-02-22",
+          "exitYear": 2022,
+          "isActive": false,
+          "transactionState": "EXITED to MAM/OTPP"
+        }
+      ]
+    },
+    "operatingResolution": {
+      "status": "ACTIVE",
+      "basis": "Regulated vertically integrated electric/gas utility; PSE supplies about 99% of Puget Energy revenue.",
+      "website": "https://www.pugetenergy.com/",
+      "operatingWebsite": "https://www.pse.com/",
+      "headquarters": "Bellevue, WA",
+      "founding": "Puget Energy: 1999 incorporation, holding company from 2001-01-01. PSE: 1960 incorporation.",
+      "footprint": "About 6,000 square miles in 10 western Washington counties.",
+      "customers": "1.26m electric; 883,000 gas."
+    },
+    "acquisitionExitCheck": {
+      "result": "NO_LATER_EQUITY_EVENT_FOUND",
+      "through": "Search executed 2026-08-18; requested cutoff 2026-08-19 is one day later.",
+      "notes": [
+        "No public post-2022 owner transfer, pending sale or rebrand found; 2026 disclosures retain six owners.",
+        "2026 debt activity was not equity.",
+        "Colstrip Units 3/4 transferred 2026-01-01; asset sale."
+      ]
+    },
+    "milestones": [
+      {
+        "date": "2009-02-06",
+        "event": "Take-private closed under Puget Holdings."
+      },
+      {
+        "date": "2019-04-17",
+        "event": "Original Macquarie 44% exited; OMERS/PGGM entered; BCI/AIMCo increased."
+      },
+      {
+        "date": "2022-02-22",
+        "event": "CPP sold 31.6%; MAM/OTPP acquired 15.8% each."
+      },
+      {
+        "date": "2026-02-19",
+        "event": "Company disclosed current six-owner table."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Spring 2026 presentation",
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312526084011/d109936dex991.htm",
+        "purpose": "Current owners, dates, boundary, metrics",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "2026-Q1 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1085392/000108539226000013/psd-20260331.htm",
+        "purpose": "Legal chain, names, MAM vehicle, Puget LNG",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2009 closing 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/d8k.htm",
+        "purpose": "Take-private and chain",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2018 PGGM release",
+        "url": "https://pggm.nl/en/press/puget-sound-energy-welcomes-new-investment",
+        "purpose": "44% sale and stakes",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2019 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312519110918/d696857d8k.htm",
+        "purpose": "2019-04-17 transition",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2022 MAM/OTPP close",
+        "url": "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+        "purpose": "CPP exit, close, stakes, MAM fund",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": [
+        "Puget Energy ID cmrxpj4fp00ghivhebe9bfh5k",
+        "PSE ID cmrxpjkcr014rivhero16klvt",
+        "Seed composite"
+      ],
+      "after": "One Puget Energy record; PSE subsidiary/alias; owners once.",
+      "queueImpact": "Later PSE task covered; no separate count.",
+      "packetState": "NO_MUTATION"
+    },
+    "excludedOrDuplicateCandidates": [
+      "PSE: merge/redirect but preserve legal subsidiary",
+      "Seed composite: merge",
+      "Puget Holdings/Intermediate/Equico: exclude as ownership SPVs",
+      "Puget LNG: distinct nonregulated subsidiary"
+    ],
+    "unresolvedQuestions": [],
+    "recommendedListAction": "Merge PSE and the seed composite into Puget Energy ID cmrxpj4fp00ghivhebe9bfh5k; redirect duplicates, preserve PSE as regulated subsidiary, record six current owners once, and close its later queue task."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 6,
+    "openSourceCount": 6,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

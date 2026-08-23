@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0246:clearway-operating-solar-portfolio-12-u-s-projects-50-interest:1c6f7831",
+  "taskIndex": 246,
+  "companyName": "Clearway Operating Solar Portfolio (12 U.S. projects, 50% interest)",
+  "verifiedAt": "2026-08-20T06:10:31Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1567683/000162828026053421/cwen-20260630.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1567683/000162828026053421/cwen-20260630.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 2360674,
+      "contentSha256": "152767c907a19f12bb2b66608e2bde4b991b7bfb5733f22855133d604bcb623f",
+      "note": "Clearway's June 30, 2026 Form 10-Q names Cardinal Portfolio JV, states the March 30, 2026 close, reports Clearway's 50% interest, identifies 12 western facilities at 225 MW, and distinguishes the JV from the full 610 MW Cardinal acquisition."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1637757/000110465925097101/tm2528052d1_ex10-2.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1637757/000110465925097101/tm2528052d1_ex10-2.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 515624,
+      "contentSha256": "dd2bce2b289835dd1b7648463b7b9e2dfbb09f7bad8780b0f5ed79de87a7a2de",
+      "note": "The October 3, 2025 purchase agreement identifies Clearway and the two Fengate blocker purchasers, Deriva/Symphony sellers, three top-level targets, a cash membership-interest purchase and 50% Clearway versus 50% Fengate collective pro-rata portions."
+    },
+    {
+      "url": "https://www.ferc.gov/sites/default/files/2026-03/EC26-13-000.pdf",
+      "finalUrl": "https://www.ferc.gov/sites/default/files/2026-03/EC26-13-000.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 356739,
+      "contentSha256": "3f02992886b9d5d0910a227ca142aed483dd7e9ed1bf8a66de30732ddde98962",
+      "pdfPages": 23,
+      "visuallyInspectedPages": [
+        1,
+        2,
+        7,
+        22
+      ],
+      "note": "FERC's March 19, 2026 order identifies the Clearway/Fengate JV buyers, the relevant project applicants, the Brookfield-controlled seller chain, the proposed ownership transfers and formal authorization."
+    },
+    {
+      "url": "https://fengate.com/article/fengate-acquires-interest-operational-us-solar-portfolio",
+      "finalUrl": "https://fengate.com/article/fengate-acquires-interest-operational-us-solar-portfolio",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 58173,
+      "contentSha256": "7ecb2e40a93f291092df55485c15676545bde096ec3070a8c82125c40c865309",
+      "note": "Fengate's March 31, 2026 release verifies its 50% interest, the 50/50 Clearway JV, 12 operating western U.S. solar projects, 227 MWac scale and Fengate Infrastructure Yield Fund/LiUNA attribution."
+    },
+    {
+      "url": "https://derivaenergy.com/deriva-energy-agrees-to-sell-833mwdc-of-operating-solar-assets-to-clearway-energy/",
+      "finalUrl": "https://derivaenergy.com/deriva-energy-agrees-to-sell-833mwdc-of-operating-solar-assets-to-clearway-energy/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 79325,
+      "contentSha256": "cbe94fbf2667dcba50a4024ea5b506dd5d8730ba6fcb1d9b8778bc14760b9534",
+      "note": "Deriva's October 6, 2025 release identifies Deriva and Manulife as sellers of the broader 833 MWdc/613 MWac operating portfolio to Clearway and identifies Deriva as a Brookfield portfolio company."
+    },
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860m/xls/june_generator2026.xlsx",
+      "finalUrl": "https://www.eia.gov/electricity/data/eia860m/xls/june_generator2026.xlsx",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 13860880,
+      "contentSha256": "47d28a1e5599135b619d249971f35f03fef8a5b3062c2d66c436b55e8f8c3072",
+      "workbookSheet": "Operating",
+      "headerRow": 3,
+      "matchedPlantRecordCount": 13,
+      "nameplateMw": 227.8,
+      "netSummerMw": 225.2,
+      "note": "Independent exact-name filtering verifies 13 operating Deriva plant records across California, New Mexico and Colorado, totaling 227.8 MW nameplate and 225.2 MW net-summer. The confidential grouping of those plant records into the 12 publicly reported assets remains unavailable."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 0,
+    "primarySourceWorking": true,
+    "canonicalIdentityVerified": true,
+    "legalCloseVerified": true,
+    "fiftyFiftyOwnershipVerified": true,
+    "sponsorEquityVerified": true,
+    "currentStatusVerified": true,
+    "broaderPortfolioBoundaryVerified": true,
+    "fercAuthorizationVerified": true,
+    "eiaWorkbookReconciled": true,
+    "eiaPlantRecordCount": 13,
+    "eiaNameplateMw": 227.8,
+    "eiaNetSummerMw": 225.2,
+    "laterExitOrPendingTransactionNotFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Use Cardinal Portfolio JV as the canonical public name rather than the census's descriptive Clearway portfolio label.",
+    "Do not force 13 EIA plant records into an invented 12-project mapping; record the aggregation gap as a noncritical disclosure limitation.",
+    "Clearway and Fengate were co-buyers. Do not portray Clearway as Fengate's seller or count the broader Clearway/Deriva Cardinal portfolio as the same PortCo.",
+    "Keep the overall JV at 50/50; do not infer the undisclosed split between Fengate's two blocker vehicles."
+  ],
+  "releaseRequirement": "Add one Cardinal Portfolio JV record with Clearway Energy, Inc. and Fengate-managed vehicles each at 50% from March 30, 2026. Preserve Deriva/Symphony as former ownership, keep the 12-asset versus 13-plant aggregation caveat visible, and do not duplicate the broader Cardinal Portfolio, Clearway platform or Lighthouse partnership."
+}

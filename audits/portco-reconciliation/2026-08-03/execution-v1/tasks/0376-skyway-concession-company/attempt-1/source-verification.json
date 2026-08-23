@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0376:skyway-concession-company:7c24f455",
+  "checkedAt": "2026-08-21T20:32:10.000Z",
+  "method": "Independent direct curl, indexed-page verification, PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.atlasarteria.com/portfolio/chicago-skyway",
+      "httpStatus": 200,
+      "finalUrl": "https://www.atlasarteria.com/portfolio/chicago-skyway",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 367724,
+      "sha256": "269fe15668e5121068220937425370c94117767b895e880452c736824fea06e0",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_chicago_skyway.aspx",
+      "httpStatus": 200,
+      "finalUrl": "https://www.fhwa.dot.gov/ipd/project_profiles/il_chicago_skyway.aspx",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 24910,
+      "sha256": "c027344bb42dc816ac713008015ef758d945530b582caec093ab8d534a0b55d0",
+      "healthStatus": "WORKING_STALE_OWNER",
+      "verificationNote": "Usable for concession and route facts; owner display is stale and was not used for current ownership."
+    },
+    {
+      "url": "https://d3ar6irj6sybdw.cloudfront.net/stores/_sharedfiles/Investor_Resources/Prospectus_and_Analyst_Pack_archive/mqa-prospectus.pdf?v=6",
+      "httpStatus": 200,
+      "finalUrl": "https://d3ar6irj6sybdw.cloudfront.net/stores/_sharedfiles/Investor_Resources/Prospectus_and_Analyst_Pack_archive/mqa-prospectus.pdf?v=6",
+      "mediaType": "application/pdf",
+      "bytes": 4239738,
+      "sha256": "adf37fc109e7a164300cc5b4275fb77d5e239d605ac4889e6e4df932abc6a520",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 140,
+        "relevantPdfPage": 40,
+        "verifiedClaims": [
+          "MQA 22.5% interest",
+          "Chicago Skyway Partnership/MIP/Cintra ownership chain",
+          "Cintra remaining 55%"
+        ],
+        "renderedPageInspected": true
+      }
+    },
+    {
+      "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2015/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan-to-acquire-chicago-skyway-toll-road/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.otpp.com/en-ca/about-us/news-and-insights/2015/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan-to-acquire-chicago-skyway-toll-road/",
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 707077,
+      "sha256": "d72ddcad5e18aabfbb70b7e727337b5acbc49950b5eb7966c9485899d9164b79",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.cppinvestments.com/newsroom/cpp-investments-omers-infrastructure-announce-sale-of-their-stakes-in-skyway-concession-company-llc-to-atlas-arteria/",
+      "httpStatus": 202,
+      "finalUrl": "https://www.cppinvestments.com/newsroom/cpp-investments-omers-infrastructure-announce-sale-of-their-stakes-in-skyway-concession-company-llc-to-atlas-arteria/",
+      "bytes": 0,
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct endpoint required JavaScript, but the exact official page was independently indexed and exposed each seller's 33.33% stake and the signed 66.67% sale."
+    },
+    {
+      "url": "https://clients3.weblink.com.au/Clients/atlasArteria/headline.aspx?headlineid=21680017",
+      "httpStatus": 200,
+      "finalUrl": "https://clients3.weblink.com.au/pdf/ALX/03104864.pdf",
+      "redirected": true,
+      "mediaType": "application/pdf",
+      "bytes": 220936,
+      "sha256": "d76ac707a2055f349dca5e7403ea9715f96b1b6a580ee650ffd35a2d66eadd63",
+      "healthStatus": "REDIRECTED_WORKING",
+      "pdfVerification": {
+        "pageCount": 3,
+        "relevantPdfPage": 1,
+        "verifiedClaims": [
+          "OTPP retained 33.33% stake",
+          "put option extinguished for US$100m",
+          "potential sale process paused"
+        ],
+        "renderedPageInspected": true
+      }
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}
+

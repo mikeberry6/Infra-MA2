@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0121:r-e-l-a-m:186bc13d",
+  "taskIndex": 121,
+  "companyName": "R.E.L.A.M.",
+  "generatedAt": "2026-08-23T04:33:04.167Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 121,
+    "taskId": "ledger:0121:r-e-l-a-m:186bc13d",
+    "canonicalKey": "r-e-l-a-m|canada",
+    "companyName": "R.E.L.A.M.",
+    "country": "Canada / United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 20,
+    "managers": [
+      "Basalt Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "020-basalt-infrastructure-partners:holding:008:r-e-l-a-m"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://pacelineequity.com/paceline-equity-partners-agrees-to-sell-r-e-l-a-m/",
+      "https://www.basaltinfra.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "r-e-l-a-m|canada",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1a800bsivhe8wvkb0n1",
+        "fundName": "Basalt BIP V",
+        "managerId": "cmrxpi4ra000rivhecbryfswu",
+        "updatedAt": "2026-08-03T17:25:22.839Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4ra000rivhecbryfswu",
+        "name": "Basalt Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:13.366Z"
+      },
+      {
+        "id": "cmrxpiz2c00abivhed7qbsouk",
+        "name": "Paceline Equity Partners",
+        "updatedAt": "2026-07-23T16:09:52.644Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0121:r-e-l-a-m:186bc13d",
+    "taskIndex": 121,
+    "canonicalKey": "r-e-l-a-m|canada",
+    "capturedAt": "2026-08-23T04:33:04.167Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "9bbed714f853886e5242cfcca50b52b0f362da533c78a8f89dea49d30e77b3ab",
+    "productionSnapshotSha256": "54fe8b3fe845451519d1d273d22a3256dec89dd7d0e5f93f7b927a0db819b473",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "09abd32eb788c981eb573417f8589440688a88b939966dd5e2045b1af6cb0feb",
+      "organizationsSha256": "45feda6f39b6d3d947d0069c0ae39c1e14e1155a87f363ba49e4e831ad986efa",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "2010b2e00170d74f1601336b836de93270faade5c159d39999d2dc45c9efc237",
+    "stateSha256": "1a0f291d8e2687dddb5ce2fd66a76aad6d867b77125417d8934718726c5dd770",
+    "taskSnapshotSha256": "6f2b023e18f363ea2e33f44bf37b0b3cb403d186f79d6ea6f737ca5c38773336"
+  },
+  "contextSha256": "9e83dca3b20cf1442bfbe091633357be056e729ba0a58218960d3ef767bc09d0"
+}

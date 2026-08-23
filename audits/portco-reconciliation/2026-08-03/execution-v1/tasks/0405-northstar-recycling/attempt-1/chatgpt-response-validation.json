@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+  "taskIndex": 405,
+  "validatedAt": "2026-08-21T23:30:03.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a88d97f-dc68-83ea-9083-09c580320cce",
+  "requiredTopLevelKeys": ["asOfDate", "requestedCompany", "requestedManagers", "decision", "confidence", "rationale", "identityResolution", "ownershipResolution", "operatingResolution", "acquisitionExitCheck", "milestones", "evidence", "beforeAfterChanges", "excludedOrDuplicateCandidates", "unresolvedQuestions", "recommendedListAction"],
+  "initialResponse": {
+    "valid": true,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "865f5f864846bd6a3f8c82e8c9e32089b815ca61deef7d75a94fae3e8d8eebe8",
+    "errors": []
+  },
+  "repair": {"count": 0, "limit": 1, "submittedAt": null, "completedAt": null, "valid": null, "responseSha256": null, "errors": []},
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_NEW",
+    "confidence": "HIGH",
+    "canonicalName": "Northstar Recycling Company, LLC",
+    "evidenceCount": 5,
+    "ownerRows": 3,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeInstitutionalOwnerResolved": true,
+    "activeManagementOwnershipSupported": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "platformBoundaryResolved": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "exactlyOneRecommendedPrimary": true,
+    "unresolvedCurrentMinorityTable": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "applicationBlocked": true,
+  "blockingReasons": [
+    "Sonoco sold its 2.7% Northstar interest on December 23, 2024, but the buyer or repurchaser is not disclosed, leaving the current minority-owner table unresolved.",
+    "The response's precise Inc.-to-LLC continuity, direct-parent and same-EIN claims are not tied to a direct evidence URL in the returned evidence set and require target-specific state-record verification before creation."
+  ],
+  "errors": [],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

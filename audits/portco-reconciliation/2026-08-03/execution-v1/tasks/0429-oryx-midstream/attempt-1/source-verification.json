@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0429:oryx-midstream:eee190fa",
+  "checkedAt": "2026-08-22T04:32:50.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks plus Oryx, Stonepeak, FTC, SEC, Fitch and Plains filing inspection; identity, ownership, closing, current-interest and exit search",
+  "sources": [
+    {
+      "url": "https://www.oryxmidstream.com/news/stonepeak-infrastructure-partners-acquire-oryx-midstream",
+      "httpStatus": 200,
+      "finalUrl": "https://www.oryxmidstream.com/news/stonepeak-infrastructure-partners-acquire-oryx-midstream",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 21493,
+      "sha256": "cadf7f3758b8f6da8effe234ab95b0153b838bb2eed0bf33db1cdd058edf3466",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak announced the approximately $3.6 billion acquisition on April 2, 2019",
+        "The seller perimeter and Oryx/Oryx Midstream Services naming refer to the same Permian platform",
+        "The disclosed 2019 footprint was more than 1,200 miles and approximately 2.1 million barrels of storage"
+      ]
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20191122",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20191122",
+      "mediaType": "text/html",
+      "bytes": 479,
+      "sha256": "5634b7603b71b5b69164f060bfb0508ce6714e53717e616d00808ac9424312ee",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verifiedClaims": [
+        "The HSR record identifies Stonepeak Infrastructure Fund III (AIV I), Oryx Midstream Services II and Middle Cadence in the acquisition chain"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1581990/000158199021000031/oryxmidstreamholdings30j.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1581990/000158199021000031/oryxmidstreamholdings30j.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "b538a237c3366f73bcd75e2eab97a9818e21fd3b3975c83d195e5010c0e0b75e",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verifiedClaims": [
+        "The Stonepeak acquisition was funded on May 22, 2019",
+        "Oryx Midstream Holdings was wholly owned through Middle Cadence and controlled by Stonepeak",
+        "OMSPB received the 35% POPB interest when all Oryx Permian assets were contributed"
+      ]
+    },
+    {
+      "url": "https://www.oryxmidstream.com/news/leading-us-midstream-crude-system-oryx-announces-550-million-investment-qia",
+      "httpStatus": 200,
+      "finalUrl": "https://www.oryxmidstream.com/news/leading-us-midstream-crude-system-oryx-announces-550-million-investment-qia",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 19106,
+      "sha256": "7a9a28618c237c1dfb9c3ecc0442387c0a1cdc6943ab868e244d8756e512c229",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "QIA announced a completed significant minority investment on August 7, 2019",
+        "The approximately $550 million disclosure combined a stake purchase and development capital and did not disclose QIA's percentage",
+        "This source proves entry but not ownership continuity through the cutoff"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "ac12f47842e0ee44671988d412f352aca21ad56ccd876d37cbf3298476a23ff9",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verifiedClaims": [
+        "The POPB transaction closed October 5, 2021",
+        "All Oryx Permian assets entered the joint venture",
+        "Plains owns and operates 65% while Oryx owns 35%",
+        "The five-member board has three Plains and two Oryx representatives"
+      ]
+    },
+    {
+      "url": "https://www.fitchratings.com/research/structured-finance/fitch-assigns-final-ratings-to-oryx-funding-llc-series-2026-1-2-notes-29-06-2026",
+      "httpStatus": 200,
+      "finalUrl": "https://www.fitchratings.com/research/structured-finance/fitch-assigns-final-ratings-to-oryx-funding-llc-series-2026-1-2-notes-29-06-2026",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 1171865,
+      "sha256": "024599421df01110860648788385c09ff2549adbe6eaee217f6cb62dec0ed29d",
+      "healthStatus": "WORKING_INDEXED_CONTENT_VERIFIED",
+      "verifiedClaims": [
+        "Fitch assigned final ratings to the Oryx Funding series 2026-1/2 notes on June 29, 2026",
+        "The transaction securitized OMSPB's 35% joint-venture interest in POPB"
+      ]
+    },
+    {
+      "url": "https://ir.pagp.com/static-files/f0eb59a8-05e8-4f08-bcee-b7ae9993e09f",
+      "httpStatus": 403,
+      "finalUrl": "https://ir.pagp.com/static-files/f0eb59a8-05e8-4f08-bcee-b7ae9993e09f",
+      "mediaType": "text/html",
+      "bytes": 436,
+      "sha256": "129563216296b082513c0e9f8c1d8f66ffb06f066108855b213dd50e4ced2117",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verifiedMediaType": "application/pdf",
+      "verificationUrls": [
+        "https://ir.plains.com/sec-filings/sec-filing/10-q/0001581990-26-000025",
+        "https://www.sec.gov/Archives/edgar/data/1070423/000107042326000019/paa-20260331.htm"
+      ],
+      "verifiedClaims": [
+        "The official filing detail identifies a PAGP Form 10-Q for the quarter ended June 30, 2026",
+        "The filing reports the continuing 35% noncontrolling interest in POPB at June 30, 2026",
+        "The immediately preceding March 31, 2026 SEC filing independently reports the same 35% noncontrolling interest"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 303186,
+      "sha256": "4f0a72952bb2b8608989bf7b9830cb25487feb19eedc5bf3fd053b964cfd9224",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak's current portfolio page identifies Oryx Midstream as a Stonepeak investment",
+        "The page describes Oryx's POPB board and joint-operating-committee role and does not state a realization",
+        "Stonepeak dates its investment to April 2019 and identifies Midland, Texas"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T04:32:50.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No later sale, Plains buyout, signed pending transfer or disposition of OMSPB's 35% POPB interest was found. Stonepeak remains attributable through its current portfolio page and the Oryx-side interest is active in the June 2026 evidence. QIA's 2019 entry is proven, but no direct source resolved whether QIA still owned an indirect interest at the cutoff."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButWebVerifiedCount": 4,
+  "responseSourceHealthCorrections": [
+    "The FTC, SEC and PAGP PDF URLs blocked direct automated retrieval but were independently verified through indexed official content; hashes for those rows are hashes of the block responses.",
+    "The initial response's QIA-continuity source established only affiliation, not continuing ownership, and was removed from the accepted response.",
+    "The Fitch page is directly reachable and its transaction details were independently corroborated in indexed coverage; the PAGP quarterly filing is the recommended primary for the cutoff 35% interest."
+  ],
+  "deadSourceCount": 0
+}
+

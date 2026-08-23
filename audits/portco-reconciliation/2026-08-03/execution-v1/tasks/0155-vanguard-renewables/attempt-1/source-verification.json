@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0155:vanguard-renewables:39c75d98",
+  "taskIndex": 155,
+  "companyName": "Vanguard Renewables",
+  "verifiedAt": "2026-08-19T05:15:05.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.businesswire.com/news/home/20220720005157/en/Vanguard-Renewables-Announces-Acquisition-by-BlackRock-Real-Assets",
+      "finalUrl": "https://www.businesswire.com/news/home/20220720005157/en/Vanguard-Renewables-Announces-Acquisition-by-BlackRock-Real-Assets",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 510,
+      "contentSha256": "73af28934741a169822be365ac362b24f2c5c8335aba372aa70f067630b8e49d",
+      "note": "Business Wire blocked curl, but independent browser retrieval opened the exact acquisition release."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close",
+      "finalUrl": "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 542,
+      "contentSha256": "981b7ca409b4b6d1b9d63308a6c3b768f77637d36b56e63bd6899aaa73c733d9",
+      "note": "Business Wire blocked curl, but independent browser retrieval opened the exact fund release and verified GEPIF III attribution."
+    },
+    {
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 200248,
+      "contentSha256": "d6a763f3df142d947a6de7b0b205225642704fc364c01d6c7e24067bc8bc7bf3",
+      "note": "BlackRock-GIP manager acquisition page opened."
+    },
+    {
+      "url": "https://www.vanguardrenewables.com/latest/joint-venture-announcement",
+      "finalUrl": "https://www.vanguardrenewables.com/latest/joint-venture-announcement",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 90268,
+      "contentSha256": "110231ba13fbda26949ed76a41bf6986828cd2af5613a90974cc79b610155550",
+      "note": "Official TotalEnergies JV page opened."
+    },
+    {
+      "url": "https://www.vanguardrenewables.com/latest/vanguard-renewables-celebrates-milestone-completion-of-three-rng-projects",
+      "finalUrl": "https://www.vanguardrenewables.com/latest/vanguard-renewables-celebrates-milestone-completion-of-three-rng-projects",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 76302,
+      "contentSha256": "1a34ca020339cca90ca352a97a7f9e0f226a04f04b72d5a3b4c4238aa6a7cc33",
+      "note": "Official 2026 operating update opened."
+    },
+    {
+      "url": "https://www.vanguardrenewables.com/latest/vanguard-renewables-cma-cgm",
+      "finalUrl": "https://www.vanguardrenewables.com/latest/vanguard-renewables-cma-cgm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 70466,
+      "contentSha256": "12244762e8927de2ed2f36eff4718c2de0849dc4e8ccadd87225f07ef3b712c1",
+      "note": "Official CMA CGM/PULSE announcement opened."
+    },
+    {
+      "url": "https://www.ingka.com/newsroom/turning-meatball-scraps-into-renewable-gas-ikea-u-s-and-vanguard-renewables-tackle-food-waste/",
+      "finalUrl": "https://www.ingka.com/newsroom/turning-meatball-scraps-into-renewable-gas-ikea-u-s-and-vanguard-renewables-tackle-food-waste/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 254611,
+      "contentSha256": "784708923ded70c007eb513128c1d7b804a0c1548265145a6be249082e7dd93e",
+      "note": "Ingka transaction page opened."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Reopen every selected source against a fresh production snapshot before any proposal or mutation."
+}

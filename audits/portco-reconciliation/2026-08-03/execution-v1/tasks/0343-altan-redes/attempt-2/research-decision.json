@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0343:altan-redes:8c5ff493",
+  "taskIndex": 343,
+  "companyName": "Altán Redes",
+  "asOfDate": "2026-08-22",
+  "recordedAt": "2026-08-22T21:46:49.000Z",
+  "modelDecision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Altán remains one qualifying Mexico wholesale mobile-network platform. Current IFT evidence shows MSIP's Marapendi chain remains the 51.37% majority owner, while CFE through F/1320 owns 48.63%. The development banks' majority trust and board rights arise from the restructuring debt and must not be misclassified as equity; the CFE transaction acquired the non-Marapendi block rather than MSIP's interest.",
+  "repoReconciliation": {
+    "canonicalKey": "altan-redes|mexico",
+    "recommendedTreatment": "CORRECT_EXISTING_BRANCH_AFTER_IMAGE_AND_OWNERSHIP_HISTORY",
+    "preserveBoundary": "one Altán Redes operating/concessionaire company; Red Compartida is the network name, and trusts, lenders, rights and network assets are not separate PortCos"
+  },
+  "proposalGuardrails": [
+    "Preserve MSIP/Marapendi as current 51.37% majority owner; do not retire it based on CFE's 2025 purchase.",
+    "Add CFE/F-1320 as current 48.63% owner and keep the exact legal close date and price unavailable because the regulator redacted them.",
+    "Represent Banobras, Nafin and Bancomext as creditor-governance context, not as equity owners.",
+    "Expand the grouped former-owner history into separate attributable ownership periods during proposal construction using the IFT tables; do not store the compressed research row as one synthetic owner.",
+    "Do not create Red Compartida, the 700 MHz spectrum, Red Troncal, guarantee trusts or financing trusts as PortCos.",
+    "Preserve one canonical Altán identity and correct the sole-MSIP ownership view rather than creating a duplicate."
+  ],
+  "nonblockingDisclosureGaps": [
+    "CFE transaction legal closing date and price",
+    "Jumbo DIP Tramo B outstanding balance and rights-reversion date"
+  ],
+  "recommendedNextAction": "Prepare one later protected correction proposal for the existing Altán branch after-image, with separate current MSIP and CFE ownership periods and separately reconstructed former-owner history.",
+  "databaseMutationAuthorized": false
+}

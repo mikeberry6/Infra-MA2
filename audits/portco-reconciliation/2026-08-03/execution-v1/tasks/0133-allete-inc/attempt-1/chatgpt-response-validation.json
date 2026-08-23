@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0133:allete-inc:3a7edb92",
+  "taskIndex": 133,
+  "companyName": "ALLETE, Inc.",
+  "validatedAt": "2026-08-19T03:40:30.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a851be2-caa0-83ea-95cb-9e248b03cacc",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "470b08fa3b561c0ac8d339cbdab276c6d0ac97d89ac0c3578dc114b1cf476e45",
+    "errors": [
+      "confidence enum HIGH_WITH_DATE_CAVEAT was not permitted"
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-19T03:32:06.364Z",
+    "completedAt": "2026-08-19T03:35:30.000Z",
+    "valid": true,
+    "responseSha256": "0e2112a47105562af203f77f1b91cf954f415441567452a09248ab826812f3b0",
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "canonicalName": "ALLETE, Inc.",
+    "evidenceCount": 7,
+    "currentOwnerCount": 2,
+    "formerOwnerCount": 0,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "recommendedPrimaryCount": 1,
+    "unresolvedQuestionCount": 2,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}
+
+

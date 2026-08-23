@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0229:new-leaf-energy:321d604d",
+  "taskIndex": 229,
+  "companyName": "New Leaf Energy",
+  "verifiedAt": "2026-08-20T01:26:26Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/new-leaf-energy",
+      "finalUrl": "https://www.ecpgp.com/equity/portfolio/new-leaf-energy",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 38333,
+      "contentSha256": "32d8aa0f7e4867f8873df3e0d119bf41effae459b54b23ca95983d82211fb012",
+      "note": "ECP's live company page lists New Leaf as Current and supports the active ECP platform ownership and disclosed scale."
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=8059b991-0000-c9a4-91d5-1de81d715cc8",
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=8059b991-0000-c9a4-91d5-1de81d715cc8",
+      "status": "OPEN_PDF_VISUALLY_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 470983,
+      "contentSha256": "7327e9391a65ed0c6061126adf65b4cb8f226bf19050d9cae37dcf92ab257aca",
+      "visualPages": [
+        9,
+        10,
+        17,
+        18
+      ],
+      "note": "Extracted text and visual inspection confirm the July 27, 2022 merger of Zorro DevCo Merger Sub into New Leaf Energy, Inc. and the April 8, 2022 formation under the former name 2022 Solar Development, Inc."
+    },
+    {
+      "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/borrego-completes-spin-off-and-sale-of-solar-and-energy-storage-development-business-to-ecp",
+      "finalUrl": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/borrego-completes-spin-off-and-sale-of-solar-and-energy-storage-development-business-to-ecp",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 39752,
+      "contentSha256": "d694ea0456370b41a7c0115945711a340633f856609d11e5cb44b7d478096098",
+      "note": "The manager announcement supports the completed carve-out, ECP control and the development-business boundary versus Borrego's retained EPC and O&M businesses."
+    },
+    {
+      "url": "https://www.walsin.com/en/walsin-lihwa-corporation-announced-the-sale-of-its-u-s-solar-development-business-to-ecp-for-restructuring-its-business-strategy-of-green-energy/",
+      "finalUrl": "https://www.walsin.com/en/walsin-lihwa-corporation-announced-the-sale-of-its-u-s-solar-development-business-to-ecp-for-restructuring-its-business-strategy-of-green-energy/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 94389,
+      "contentSha256": "3c9c0642dd8acba025c6372bf3fafa15d88b63021d67531fba4a7d0a9594817c",
+      "note": "Walsin's announcement supports the May 2022 agreement and sale of the U.S. development business to ECP."
+    },
+    {
+      "url": "https://www.walsin.com/wp-content/uploads/2023/02/2022-Annual-Report_EN.pdf",
+      "finalUrl": "https://www.walsin.com/wp-content/uploads/2023/02/2022-Annual-Report_EN.pdf",
+      "status": "OPEN_PDF_VISUALLY_VERIFIED_WITH_CONFLICT",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 3840687,
+      "contentSha256": "733f01adcfc91036fc5b8f3e8acad0e2a4933e1280315b930bc9b48e2ea6efed",
+      "visualPages": [
+        207,
+        274
+      ],
+      "note": "Page 207 confirms the July 27 U.S. legal close. Page 274 shows 1,371,729 New Leaf shares disposed to ECP and 88,729 shares transferred to Walsin America, so the accepted response's statement that the Walsin block was sold in full cannot be applied without resolving whether the smaller block was temporary or remains a current minority interest."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260721965988/en/Altus-Power-Partners-with-New-Leaf-Energy-on-Development-of-Five-Community-Solar-Projects-in-Virginia",
+      "finalUrl": "https://www.businesswire.com/news/home/20260721965988/en/Altus-Power-Partners-with-New-Leaf-Energy-on-Development-of-Five-Community-Solar-Projects-in-Virginia",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 577,
+      "contentSha256": "68a0855177c2e8783ecc2b63edd9be674a9c46f5dc9e8223076587281ef14ff6",
+      "browserTextBytes": 13094,
+      "browserTextSha256": "0991eb08b2600c9eea07fbd7cc458e915351dad40b037f150939104913781633",
+      "note": "The browser-rendered release identifies five Virginia community-solar projects totaling 32 MW, supporting treatment as a project disposition rather than a sale of New Leaf itself."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 1,
+    "pdfVisualVerificationCount": 2,
+    "ecpCurrentStatusVerified": true,
+    "legalIdentityAndCloseVerified": true,
+    "borregoBoundaryVerified": true,
+    "projectSaleBoundaryVerified": true,
+    "laterDirectExitNotFound": true,
+    "acceptedResponseSellerExitClaimFullySupported": false,
+    "possibleWalsinMinorityRolloverRequiresReview": true,
+    "allCoreNoDuplicateEcpClaimsHaveDirectEvidence": true,
+    "applicationBlocked": true
+  },
+  "releaseRequirement": "Before any mutation, resolve the Walsin America 88,729-share disposition/current-status question, then recapture the task-specific production and dependency snapshot and convert the accepted facts into a hash-bound proposal."
+}

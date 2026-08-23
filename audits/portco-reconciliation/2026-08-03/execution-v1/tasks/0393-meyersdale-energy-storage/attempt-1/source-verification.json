@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0393:meyersdale-energy-storage:efa8f53e",
+  "checkedAt": "2026-08-21T22:19:19.023Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/glidepath/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/portfolio/glidepath/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 51073,
+      "sha256": "283da1a0f702fa4ab888faa947110f4bdd8128d9d98288a140a28b54e7efbb8a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook defines GlidePath as the portfolio company and Meyersdale as one of its operating projects"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/meyersdale-battery/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/projects/meyersdale-battery/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 47483,
+      "sha256": "47c49300959b63e9c99f6f41ff581b50660f70b633b38ff2037c8c86376e9ea0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Meyersdale is an operational 18 MW/12 MWh battery project in Somerset, Pennsylvania acquired by GlidePath in 2019 and repowered in late 2024"
+      ]
+    },
+    {
+      "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "httpStatus": 200,
+      "finalUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 69499,
+      "sha256": "88de7c07888ceb6cc76d4c1f0d583c2bb1db63a2925bd4ed9278f19ff2ed0d5d",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Meyersdale Storage, LLC is an 18 MW PJM asset with service dating to November 2015",
+        "The asset is an indirect subsidiary of the two Quinbrook Low Carbon Power funds and US Wind Co-Investment Partners under a common Quinbrook general partner",
+        "The separate Meyersdale Windpower interest was later sold without transferring the battery"
+      ]
+    },
+    {
+      "url": "https://www.psc.state.fl.us/library/filings/2021/02800-2021/02800-2021.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.psc.state.fl.us/library/filings/2021/02800-2021/02800-2021.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 3309130,
+      "sha256": "dfde755ced859fd7ee3b02e2b433fea4ab5f7bd6a861fa7d5e620aba4a9d0477",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 369,
+        "relevantPdfPages": [
+          118
+        ],
+        "verifiedClaims": [
+          "Florida Power & Light's schedule records Meyersdale Storage, LLC sold to GlidePath Storage Operations LLC on March 19, 2019"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2019-01-31/html/2019-00522.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.govinfo.gov/content/pkg/FR-2019-01-31/html/2019-00522.htm",
+      "mediaType": "text/html",
+      "bytes": 7701,
+      "sha256": "9721f88ad65506b239276b63ec8d7623b5d35282eed2c344a17a41108dd97a42",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Federal Register identifies Meyersdale Storage, LLC's Section 203 filing in EC19-47 as filed January 18, 2019"
+      ]
+    },
+    {
+      "url": "https://energystorageassociationarchive.org/wp-content/uploads/2019/08/2019.4.23_er19-1640_settlement_with_pjm_on_regulation_market_issues.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://energystorageassociationarchive.org/wp-content/uploads/2019/08/2019.4.23_er19-1640_settlement_with_pjm_on_regulation_market_issues.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 3806164,
+      "sha256": "9c77924770d0c716bdecce4220876ea75bcb92b954b1b7146b314a72e2335188",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 57,
+        "relevantPdfPages": [
+          25,
+          49
+        ],
+        "verifiedClaims": [
+          "The filing identifies Meyersdale Storage, LLC's upstream owner as GlidePath Power Solutions/GlidePath Power and its capacity as 18 MW",
+          "Signature page shows the entity chain through GlidePath Storage Operations and GlidePath Power Operations to GlidePath Power Solutions"
+        ],
+        "renderedPagesInspected": true
+      }
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

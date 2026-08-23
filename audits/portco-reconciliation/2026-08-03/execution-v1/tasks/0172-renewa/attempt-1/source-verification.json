@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0172:renewa:4e75f8f4",
+  "taskIndex": 172,
+  "companyName": "Renewa",
+  "verifiedAt": "2026-08-19T07:08:08.983Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.qic.com/News-and-Insights/La-Caisse-invests-US%24200-million-in-QIC-backed-Renewa",
+      "finalUrl": "https://www.qic.com/News-and-Insights/La-Caisse-invests-US%24200-million-in-QIC-backed-Renewa",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 212,
+      "contentSha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "note": "QIC page returned only a minimal curl shell but independently rendered in the browser with the July 2025 investment announcement."
+    },
+    {
+      "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+      "finalUrl": "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 84310,
+      "contentSha256": "e3cf9c216af100e8d78d6c36f5f3152f06dd17b7a4ca5ffa51cd551c5006ede7",
+      "note": "La Caisse investment announcement opened directly."
+    },
+    {
+      "url": "https://www.qic.com/News-and-Insights/US-land-under-infrastructure-company-Renewa",
+      "finalUrl": "https://www.qic.com/News-and-Insights/US-land-under-infrastructure-company-Renewa",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 212,
+      "contentSha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "note": "QIC page returned a minimal curl shell but independently rendered in the browser and supported company history."
+    },
+    {
+      "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Renewa",
+      "finalUrl": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Renewa",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 212,
+      "contentSha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "note": "QIC portfolio page returned a minimal curl shell but independently rendered in the browser with current portfolio identity."
+    },
+    {
+      "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/realized/paloma-solar-wind",
+      "finalUrl": "https://www.encapinvestments.com/about/energy-transition/portfolio/realized/paloma-solar-wind",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 18707,
+      "contentSha256": "d0fbb1f26353b45d56b467587c2eea4baa71aa9a66a3e198f1ce785626bd55e2",
+      "note": "EnCap predecessor portfolio page opened directly."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20220920005334/en/Paloma-Solar-Wind-Announces-Company-Name-Change-to-Renewa-Reflecting-the-Companys-Evolution-and-Expansion",
+      "finalUrl": "https://www.businesswire.com/news/home/20220920005334/en/Paloma-Solar-Wind-Announces-Company-Name-Change-to-Renewa-Reflecting-the-Companys-Evolution-and-Expansion",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 577,
+      "contentSha256": "416b3072648a2f1c4efbffba5fe583982d9fd82e461f1cd4f737afc14a7d3080",
+      "note": "Business Wire blocked curl but independently rendered the Renewa name-change announcement in the browser."
+    },
+    {
+      "url": "https://www.renewa.com/renewa-secures-us502million-in-financing-to-support-clean-energy-land-investments/",
+      "finalUrl": "https://www.renewa.com/renewa-secures-us502million-in-financing-to-support-clean-energy-land-investments/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 77455,
+      "contentSha256": "38a7b16caef23fbd86f737a28f0d329133d1cbb9cb4a48746c060012bf52b365",
+      "note": "Renewa 2026 financing page opened directly and corroborated current sponsor backing without an ownership transfer."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Preserve one Renewa record, add La Caisse/CDPQ as direct equity owner, keep QIC as manager for undisclosed client capital, and do not infer percentages or treat the 2026 financing as an ownership transaction."
+}

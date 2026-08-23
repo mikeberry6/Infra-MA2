@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_SOURCE_VERIFICATION",
+  "taskId": "ledger:0150:revolution-wind-and-south-fork-wind:141c088f",
+  "taskIndex": 150,
+  "companyName": "Revolution Wind & South Fork Wind",
+  "verifiedAt": "2026-08-19T04:50:05.000Z",
+  "verifier": "Codex independent URL retrieval, redirect and content-hash check",
+  "summary": {
+    "evidenceRows": 8,
+    "open": 5,
+    "browserBlockedPendingReleaseReopen": 2,
+    "unavailablePendingReleaseReopen": 1,
+    "dead": 0,
+    "researchPacketAccepted": true
+  },
+  "sources": [
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC09E878F-0000-CA75-B0A2-F8C5D3DB3507%7D",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "b79572fd8547b92429160b000fb615b03d4b88479c95337cab897ea045e4681c",
+      "mediaType": "application/pdf",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC09E878F-0000-CA75-B0A2-F8C5D3DB3507%7D",
+      "label": "NYPSC ruling",
+      "purpose": "OWNERSHIP",
+      "isRecommendedPrimary": true,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": null,
+      "finalUrl": "https://investors.eversource.com/static-files/3574707c-f0cd-4018-b560-0b5379960b20",
+      "workingStatus": "UNAVAILABLE_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": null,
+      "mediaType": null,
+      "url": "https://investors.eversource.com/static-files/3574707c-f0cd-4018-b560-0b5379960b20",
+      "label": "2019 Eversource filing",
+      "purpose": "HISTORY",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/72741/000110465924104387/tm2425236d1_ex99-1.htm",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "183cfa620eb4d13eb9b7d86441ae953ac5c425ea2dd19a7e1b53214c6a6d9618",
+      "mediaType": "text/html",
+      "url": "https://www.sec.gov/Archives/edgar/data/72741/000110465924104387/tm2425236d1_ex99-1.htm",
+      "label": "2024 Eversource close",
+      "purpose": "CLOSING",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.skybornrenewables.com/articles/newsroom/skyborn_enters_us_joint_venture",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "7e7d8c41a913f34488bec940e23fef492cb46a078eaee7fe62f462e802f83edc",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.skybornrenewables.com/articles/newsroom/skyborn_enters_us_joint_venture",
+      "label": "Skyborn close",
+      "purpose": "OWNERSHIP",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "d6a763f3df142d947a6de7b0b205225642704fc364c01d6c7e24067bc8bc7bf3",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "label": "BlackRock-GIP close",
+      "purpose": "PARENT",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.boem.gov/renewable-energy/lease-and-grant-information",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "b8497a6117c6b7c907ec956a194f856008253fc7d2599492307c1f3e0e7fe2fc",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.boem.gov/renewable-energy/lease-and-grant-information",
+      "label": "BOEM leases",
+      "purpose": "IDENTITY",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://us.orsted.com/news-archive/2024/03/south-fork-wind-powers-up-new-era-for-american-clean-energy",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "f0700ad3c4b22c3cca1f970223b5c11d56e4a9444c7f217ad9fbad774b6999fa",
+      "mediaType": "text/html",
+      "url": "https://us.orsted.com/news-archive/2024/03/south-fork-wind-powers-up-new-era-for-american-clean-energy",
+      "label": "South Fork COD",
+      "purpose": "STATUS",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://ctmirror.org/2026/08/13/revolution-wind-completed-2026-orsted/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "0dd3e38eb4f935ddff680dc455d4961c5151318dce4be5ee936b8653a31381be",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://ctmirror.org/2026/08/13/revolution-wind-completed-2026-orsted/",
+      "label": "Revolution update",
+      "purpose": "STATUS",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    }
+  ],
+  "note": "Staging verification only; reopen and claim-check every source against a fresh production snapshot before proposal or release."
+}
+

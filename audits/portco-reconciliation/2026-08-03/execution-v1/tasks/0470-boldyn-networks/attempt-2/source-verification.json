@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0470:boldyn-networks:3ce154eb",
+  "taskIndex": 470,
+  "companyName": "Boldyn Networks",
+  "verifiedAt": "2026-08-22T23:02:00.000Z",
+  "summary": {
+    "modelCitationUrls": 6,
+    "working": 5,
+    "browserBlockedButVerified": 1,
+    "dead": 0,
+    "materialModelCorrections": 0
+  },
+  "sources": [
+    {
+      "label": "2024 investor release",
+      "url": "https://www.aimco.ca/insights/boldyn-networks-investment",
+      "finalUrl": "https://www.aimco.ca/insights/boldyn-networks-investment",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 696894,
+      "contentSha256": "d4778505c770035a0033de8998b3287e13d435fc787c0091c4eb6e56411029ad",
+      "observedStatus": "WORKING",
+      "note": "Direct AIMCo release states CPP's 86% parent position, AIMCo's 10% parent position, Manulife's minority interest in U.S. digital-infrastructure assets, and the 2024 follow-on commitment."
+    },
+    {
+      "label": "2023 rebrand",
+      "url": "https://www.boldyn.com/news/bai-communications-transforms-into-boldyn-networks-powerhouse-brand-outlines-growth-ambitions",
+      "finalUrl": "https://www.boldyn.com/news/bai-communications-transforms-into-boldyn-networks-powerhouse-brand-outlines-growth-ambitions",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 170070,
+      "contentSha256": "dd3e8de9d0cfdb62a152cd079f9a7cd6ba28aafe67ba6b5bf206f6c68add2f35",
+      "observedStatus": "WORKING",
+      "note": "Direct company release supports one Northern Hemisphere Boldyn group and one integrated U.S. leadership perimeter following the BAI rebrand."
+    },
+    {
+      "label": "Current U.S. profile",
+      "url": "https://www.boldyn.com/us/about-us",
+      "finalUrl": "https://www.boldyn.com/us/about-us",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 200482,
+      "contentSha256": "4e015fe48e31dc56dab011ab700824ec809e92f8802bf6d041ae3a1e44ab4166",
+      "observedStatus": "WORKING_CURRENT",
+      "note": "Current company page presents the U.S. business within the global Boldyn platform, identifies CPP as majority shareholder, and identifies Apogee as a Boldyn company."
+    },
+    {
+      "label": "UK registry",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/14178038/filing-history",
+      "finalUrl": "https://find-and-update.company-information.service.gov.uk/company/14178038/filing-history",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 65845,
+      "contentSha256": "a8c85e753892417c3ca942bb4fba0d89ab4c5992a75b6d8cef9d4820a66c84c4",
+      "observedStatus": "WORKING_CURRENT",
+      "note": "Current Companies House filing history provides direct registry evidence for Boldyn Networks Global Limited through 2026."
+    },
+    {
+      "label": "Manulife team",
+      "url": "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/infrastructure-team",
+      "finalUrl": "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/infrastructure-team",
+      "httpStatus": 403,
+      "mediaType": "browser-rendered text/html",
+      "byteLength": 563338,
+      "contentSha256": "08ad4934614e60ca6c583b29a454dee1ad4d3ded7d2d8c2ddd7f9eac241f0646",
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "note": "Direct curl was denied, but the signed-in browser rendered current Manulife biographies assigning Boldyn Networks to Infrastructure Fund II personnel."
+    },
+    {
+      "label": "2025 financing",
+      "url": "https://www.boldyn.com/news/boldyn-networks-us-secures-1-2-billion-debt-financing-to-fuel-future-growth-and-innovation",
+      "finalUrl": "https://www.boldyn.com/news/boldyn-networks-us-secures-1-2-billion-debt-financing-to-fuel-future-growth-and-innovation",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 166161,
+      "contentSha256": "3a59e09a48833a9133e87e25a78c45857537c3f3c2ce27487470474d4703d4fc",
+      "observedStatus": "WORKING",
+      "note": "Direct company release describes the US$1.2bn package as senior secured credit facilities and fixed-rate notes, confirming debt rather than equity ownership."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "The Manulife page is browser-blocked to direct curl but rendered and was independently verified in the signed-in browser."
+  ],
+  "conclusion": "Direct investor, company and registry evidence supports one canonical Boldyn platform, parent-level CPP/AIMCo stakes, a separate asset-specific Manulife interest in U.S. infrastructure, and classification of the 2025 financing as debt."
+}

@@ -1,0 +1,59 @@
+{
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0121-0125-v1",
+  "createdAt": "2026-08-23T04:53:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "c9cee767a6166fbbeef4f26327d80b1029ec1882cb85dc05af6330675cfd8007"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "proposalPath": "audits/portco-reconciliation/2026-08-03/proposals/0121-r-e-l-a-m-v1/proposal.json",
+      "authorizationPath": "audits/portco-reconciliation/2026-08-03/approvals/0121-r-e-l-a-m-v1.json",
+      "productionSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/locked-production-snapshot.json",
+      "taskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/locked-task-snapshot.json",
+      "observedTaskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/authorization-observed-task-snapshot.json",
+      "researchDecisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/research-decision.json",
+      "sourceVerificationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/source-verification.json",
+      "supersededTaskIds": []
+    },
+    {
+      "kind": "MUTATION",
+      "proposalPath": "audits/portco-reconciliation/2026-08-03/proposals/0122-cleco-corporate-holdings-llc-v1/proposal.json",
+      "authorizationPath": "audits/portco-reconciliation/2026-08-03/approvals/0122-cleco-corporate-holdings-llc-v1.json",
+      "productionSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/locked-production-snapshot.json",
+      "taskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/locked-task-snapshot.json",
+      "observedTaskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/authorization-observed-task-snapshot.json",
+      "researchDecisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/research-decision.json",
+      "sourceVerificationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/source-verification.json",
+      "supersededTaskIds": []
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/decisions/0123-connaught-oil-and-gas.json"
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/decisions/0124-corex-resources-ltd.json"
+    },
+    {
+      "kind": "MUTATION",
+      "proposalPath": "audits/portco-reconciliation/2026-08-03/proposals/0125-gct-global-container-terminals-inc-v1/proposal.json",
+      "authorizationPath": "audits/portco-reconciliation/2026-08-03/approvals/0125-gct-global-container-terminals-inc-v1.json",
+      "productionSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/locked-production-snapshot.json",
+      "taskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/locked-task-snapshot.json",
+      "observedTaskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/authorization-observed-task-snapshot.json",
+      "researchDecisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/research-decision.json",
+      "sourceVerificationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/source-verification.json",
+      "supersededTaskIds": [
+        "ledger:0304:gct-global-container-terminals-inc:7bd15d5c",
+        "ledger:0477:gct-global-container-terminals:6046b469"
+      ]
+    }
+  ]
+}

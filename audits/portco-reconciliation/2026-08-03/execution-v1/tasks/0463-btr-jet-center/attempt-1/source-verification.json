@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0463:btr-jet-center:402b91d4",
+  "taskIndex": 463,
+  "companyName": "BTR Jet Center",
+  "verifiedAt": "2026-08-22T18:31:20.000Z",
+  "summary": {
+    "modelCitationUrls": 7,
+    "working": 3,
+    "browserBlockedButVerified": 4,
+    "dead": 0,
+    "replacementWorkingUrls": 0,
+    "materialModelCorrections": 0,
+    "sourceUrlOverrides": 0
+  },
+  "sources": [
+    {
+      "label": "Velocity BTR acquisition release",
+      "url": "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "The February 13, 2026 company release describes Velocity's acquisition of BTR, welcomes BTR into the Velocity network and lists Baton Rouge as Velocity's fifth location."
+    },
+    {
+      "label": "Baton Rouge Metropolitan Council minutes",
+      "url": "https://www.brla.gov/AgendaCenter/ViewFile/Minutes/_02112026-2316",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct official PDF",
+      "note": "The February 11, 2026 minutes document adopted resolutions authorizing lease assignments from Baton Rouge Jet Center, LLC and BTR Hangar Properties, LLC to Velocity BTR Holdings, LLC."
+    },
+    {
+      "label": "Velocity Baton Rouge location",
+      "url": "https://velocityfbo.com/locations/baton-rouge-kbtr/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct current operating page",
+      "note": "Confirms the customer-facing Velocity Baton Rouge identity, Ryan Field location and current FBO services."
+    },
+    {
+      "label": "Tallvine platform launch",
+      "url": "https://www.businesswire.com/news/home/20250129452773/en/Tallvine-Launches-North-America-Fixed-Based-Operator-Platform-with-Odyssey-Aviations-U.S.-Assets-as-Inaugural-Acquisition",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "Confirms Tallvine launched and owns the manager-level North American FBO platform after closing the Odyssey U.S. acquisition in January 2025."
+    },
+    {
+      "label": "Velocity rebrand release",
+      "url": "https://www.businesswire.com/news/home/20250612894793/en/Tallvine-Backed-Odyssey-Aviation-North-America-Unveils-Rebrand-to-Velocity-FBO-Network",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "Confirms Odyssey Aviation North America rebranded to Velocity FBO Network under Tallvine ownership on June 12, 2025."
+    },
+    {
+      "label": "Velocity SkyPlace acquisition update",
+      "url": "https://www.businesswire.com/news/home/20260810856121/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-SkyPlace-FBO",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "The August 10, 2026 release still lists Baton Rouge among the six Tallvine-backed Velocity locations, supporting current integration and no later exit."
+    },
+    {
+      "label": "Legacy BTR Jet Center site",
+      "url": "https://btrjet.com/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_LEGACY",
+      "verificationMethod": "direct legacy company page",
+      "note": "Supports the historic brand/address and distinguishes BTR Air Charter as a sister company. It does not establish that the air-charter company was acquired."
+    }
+  ],
+  "conclusion": "The PROPOSED_MERGE decision is supported without source substitutions. BTR Jet Center is a closed add-on and current Baton Rouge operating location beneath Tallvine-owned Velocity FBO Network. The official lease assignments identify the local assignee, current Velocity materials establish integration, and no subsequent ownership change was found through the cutoff. BTR Air Charter remains outside the merge absent direct acquisition evidence."
+}

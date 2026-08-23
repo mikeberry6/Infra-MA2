@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0437:psa-international-pte-ltd:b5676593",
+  "sequence": 437,
+  "asOfDate": "2026-08-19",
+  "companyName": "PSA International Pte Ltd",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "PSA International is a Singapore-headquartered global ports and logistics holding company, not a manager-level company primarily based in or dedicated to the United States, Canada or Mexico. It handled 105 million TEU in 2025 across more than 70 terminals, more than 180 locations and 45 countries. Its current North American port footprint comprises only Ashcroft Terminal, two PSA Halifax terminals and PSA Penn Terminals, while no Mexico port is listed. Temasek reports 100% ownership as at March 31, 2026. The factual ownership and operating history should be preserved, but PSA International should be excluded from the North American PortCo census.",
+  "recommendedChanges": [
+    "Exclude PSA International from the North American infrastructure PortCo list and keep its canonical North American key null.",
+    "Preserve Temasek's 100% ownership and the 1997 PSA Corporation and December 2003 PSA International legal history in the research lineage.",
+    "Keep PSA Halifax, PSA Penn Terminals, Ashcroft Terminal and PSA BDP beneath the PSA International company boundary unless a separate manager-level task independently proves standalone ownership.",
+    "Treat the April 2026 Temasek Singapore portfolio-management change as an oversight reorganization, not a PSA International ownership transfer."
+  ],
+  "unresolvedQuestions": [
+    "North America-only throughput, revenue and EBITDA are not publicly disclosed.",
+    "The exact day of the December 2003 PSA International holding-company reorganization and any immediate registered-shareholder consequence of the April 2026 Temasek reorganization are not publicly disclosed."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "linkedFollowUpRequired": false,
+  "linkedFollowUpSubjects": [],
+  "acceptedResponseSha256": "588c15890c4bd904dba83f5b438c1345931c713ce06b7e0f652346a3c181a584"
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+  "taskIndex": 178,
+  "companyName": "Kelso Valley Wind, Solar & Water",
+  "verifiedAt": "2026-08-19T08:43:58.356Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1767074/000176707421000009/cimintervalfund486bposjan2.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1767074/000176707421000009/cimintervalfund486bposjan2.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "7cce1e737003e5a952e92e48f9bbb1e717e53dd562f4daa8284201f7ffbda773",
+      "note": "SEC blocked curl but rendered fully in the signed-in browser; Kelso Valley text was present. Model purpose: Fund attribution and 2021 oversight."
+    },
+    {
+      "url": "https://www.latimes.com/archives/la-xpm-2009-sep-15-me-wind15-story.html",
+      "finalUrl": "https://www.latimes.com/archives/la-xpm-2009-sep-15-me-wind15-story.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 494673,
+      "contentSha256": "01ee99fbe34b0f7f816350d3e7a4201070c9715bc7997943cfdebe7619b12682",
+      "note": "Opened directly. Model purpose: ReNu joint venture and 2008 purchase/partial sale."
+    },
+    {
+      "url": "https://labusinessjournal.com/infrastructure/first-phase-cim-groups-massive-solar-park-central/",
+      "finalUrl": "https://labusinessjournal.com/infrastructure/first-phase-cim-groups-massive-solar-park-central/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 531051,
+      "contentSha256": "f51facb1fbddf9e631927b5ef15d94bb4c930830af7a1a295a42cf99b5edeb70",
+      "note": "Opened directly. Model purpose: CIM label and land/water scope."
+    },
+    {
+      "url": "https://ceqanet.lci.ca.gov/2010031032",
+      "finalUrl": "https://ceqanet.lci.ca.gov/2010031032",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 26084,
+      "contentSha256": "2cbb4a5f4499a0a062cc9be96e36561de54601c781c74f0d50e639ef3acfd4a7",
+      "note": "Opened directly. Model purpose: 60 MW Weldon Solar proposal and parcels."
+    },
+    {
+      "url": "https://www.rrbwsd.com/onyx-ranch/",
+      "finalUrl": "https://www.rrbwsd.com/onyx-ranch/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 93372,
+      "contentSha256": "f1bcc7fba14cf834b6937a4d1356c0971849e4d65f9e3e4e9553ce45e9e08118",
+      "note": "Opened directly. Model purpose: current water owner and 2026 operating context."
+    },
+    {
+      "url": "https://sjvwater.org/water-moves-bakersfield-water-chief-to-retire-and-private-water-company-gets-new-leader/",
+      "finalUrl": "https://sjvwater.org/water-moves-bakersfield-water-chief-to-retire-and-private-water-company-gets-new-leader/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 177682,
+      "contentSha256": "fc51fbf48b1d35da7a5cd28474b86d94ea12966433cf32b47610d72f43974a4a",
+      "note": "Opened directly. Model purpose: 2013 water-property sale and reported value."
+    },
+    {
+      "url": "https://ohv.parks.ca.gov/pages/1140/files/OHMVR-Commission-2017-Program_Report-FINAL-Mar2017_web.pdf",
+      "finalUrl": "https://ohv.parks.ca.gov/pages/1140/files/OHMVR-Commission-2017-Program_Report-FINAL-Mar2017_web.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 13316914,
+      "contentSha256": "69d8be2d3a40c61bfa99fa692a4bcf5e077cb0079c925e1c0d5e3217933a89c1",
+      "note": "Opened directly as PDF. Model purpose: 2014 ReNu parcel sale."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-groups-permanent-power-company-appoints-steve-vavrik-as-chief-executive-officer",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-groups-permanent-power-company-appoints-steve-vavrik-as-chief-executive-officer",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 109812,
+      "contentSha256": "2948e91a19372fcd0192bbe6b0ada5e241dfcda6a3ddcacc5b7034b80960b16a",
+      "note": "Opened directly. Model purpose: Permanent Power identity boundary."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserBlockedButVerifiedCount": 1,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Keep Kelso Valley distinct from Permanent Power. Treat it as the ReNu/Onyx Ranch land-water-development joint venture, preserve partial exits, and block any active-owner mutation until current ReNu/CIM/RRG ownership is resolved."
+}

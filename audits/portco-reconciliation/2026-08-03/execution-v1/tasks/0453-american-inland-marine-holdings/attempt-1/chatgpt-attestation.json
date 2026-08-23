@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+  "taskIndex": 453,
+  "companyName": "American Inland Marine Holdings",
+  "conversationUrl": "https://chatgpt.com/c/6a89bb86-220c-83ea-a591-497fa6571498",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5.",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": true
+  },
+  "initialSubmittedAt": "2026-08-22T15:08:53.555Z",
+  "initialCompletedAt": "2026-08-22T15:21:52.000Z",
+  "repairSubmittedAt": "2026-08-22T15:22:34.436Z",
+  "repairCompletedAt": "2026-08-22T15:23:29.000Z",
+  "repairCount": 1,
+  "initialOutcome": "RESEARCH_COMPLETE_OUTPUT_STALLED_AFTER_TRANSIENT_CHATGPT_RATE_LIMIT",
+  "finalOutcome": "VALID_CONTRACT_PACKET",
+  "transientRateLimit": {
+    "observed": true,
+    "uiMessage": "Too many requests — temporarily limited access to conversations",
+    "clearedBeforeRepair": true,
+    "newConversationStarted": false
+  },
+  "contentHashes": {
+    "promptSha256": "3bd2ed49754adb95f029c4c7301c7ca2b81be619f1bf8a3750d30c5f549000e6",
+    "initialResponseSha256": "940a18e83f259741b35fa3da79a0c34529e30cbdc40432de43de3a7cac2cf54c",
+    "acceptedResponseSha256": "655bbd01aaa9c516ecf2c78e2e6fcd94ba6ae58c422f65430db07becd51ac601",
+    "transcriptSha256": "810b2d63c329ac87225a081b36776ee9620ba93dfb48347b06cf025e07125fcb",
+    "repairPromptSha256": "aa831a1e606b8783b82e6467f1006225ba6072d6328890cc2bf5f0583b1f3639",
+    "repairResponseSha256": "655bbd01aaa9c516ecf2c78e2e6fcd94ba6ae58c422f65430db07becd51ac601"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM",
+  "captureNote": "The original Pro chat was preserved through a temporary conversation-rate limit. After cooldown, the same conversation was recovered, Pro 5/5 was reverified, and the single permitted repair produced the accepted packet."
+}

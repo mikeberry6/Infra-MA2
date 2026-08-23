@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0464:donjon-marine-co-llc:1f2eb8b6",
+  "taskIndex": 464,
+  "companyName": "Donjon Marine Co., LLC",
+  "verifiedAt": "2026-08-22T18:53:23.000Z",
+  "summary": {
+    "modelCitationUrls": 7,
+    "working": 4,
+    "browserBlockedButVerified": 3,
+    "dead": 0,
+    "replacementWorkingUrls": 0,
+    "materialModelCorrections": 1,
+    "sourceUrlOverrides": 0
+  },
+  "sources": [
+    {
+      "label": "Tallvine-Donjon",
+      "url": "https://www.businesswire.com/news/home/20250922868774/en/Tallvine-Partners-Launches-North-America-Marine-Infrastructure-Platform-with-Acquisition-of-Donjon-Marine-Co.-LLC",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "Confirms Tallvine acquired Donjon, launched its North American marine infrastructure strategy, retained the Donjon brand and management, and engaged Thoroughbred as industrial partner. Terms were undisclosed."
+    },
+    {
+      "label": "Houlihan Donjon",
+      "url": "https://hl.com/about-us/transactions/donjon-marine-tallvine-partners/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct advisor page",
+      "note": "Confirms Donjon was acquired by Tallvine and the transaction closed on September 19, 2025."
+    },
+    {
+      "label": "K&L Gates Donjon",
+      "url": "https://www.klgates.com/lawyers/Whitney-J-Smith/experience",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct legal-advisor experience page",
+      "note": "States that Donjon was sold to Tallvine Partners and Thoroughbred LLC, supporting co-buyer treatment while leaving economics undisclosed."
+    },
+    {
+      "label": "Tallvine-Lind",
+      "url": "https://www.businesswire.com/news/home/20260520867232/en/Tallvine-Partners-Expands-North-America-Marine-Infrastructure-Platform-with-Acquisition-of-Lind-Marine-LLC",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "Confirms Tallvine's acquisition of Lind as the second company under the same North American marine infrastructure platform and the continuation of Thoroughbred as industrial partner."
+    },
+    {
+      "label": "Kingswood Lind",
+      "url": "https://www.businesswire.com/news/home/20260521179207/en/Kingswood-Capital-Management-Announces-Sale-of-Lind-Marine-to-Tallvine-Partners",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "Supports Kingswood's sale of Lind to Tallvine; it does not disclose a separate platform legal entity or precise closing date."
+    },
+    {
+      "label": "Seneca Lind",
+      "url": "https://members.sbia.org/independent-sponsor-deals/Details/seneca-partners-announces-successful-exit-of-lind-marine-334682",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct SBIA-hosted seller announcement",
+      "note": "Confirms Seneca's exit from Lind in connection with the Tallvine transaction."
+    },
+    {
+      "label": "Donjon services",
+      "url": "https://donjon.com/services/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct current company page",
+      "note": "Supports Donjon's current dredging, salvage, heavy-lift, diving and marine-transport operations and its ownership and operation of dedicated marine assets."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "Business Wire blocks direct curl with HTTP 403, so all three Business Wire rows are classified as BROWSER_BLOCKED_BUT_VERIFIED rather than WORKING."
+  ],
+  "conclusion": "The evidence supports retaining one manager-level Tallvine marine-platform record anchored to Donjon and extending its boundary to include Lind as a second separately branded operator. Tallvine is the lead infrastructure sponsor; seller counsel identifies Thoroughbred as a co-buyer and Tallvine identifies it as the continuing industrial partner. Because no legal umbrella, fund, vehicle, economics or intercompany hierarchy is public, the display-name and ownership implementation requires later proposal review even though the list-level correction is supported."
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+  "taskIndex": 450,
+  "validatedAt": "2026-08-22T14:18:12.268Z",
+  "conversationUrl": "https://chatgpt.com/c/6a89a713-5b5c-83ea-b390-fd1f562b1ae4",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "a63f3e7ba4685479f240baac3f76240cb51763f8c9a6b7ef64d9e2247d20d2af",
+    "errors": [
+      "Generation stalled in web-research mode without emitting the required packet."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-22T14:13:43.012Z",
+    "completedAt": "2026-08-22T14:18:12.268Z",
+    "valid": true,
+    "responseSha256": "b43d04cb6a2adf27347a0404f8fe8a6acf81ebf3a751e12ec17aec6f114bf2c9",
+    "errors": []
+  },
+  "finalResponse": {
+    "characterCount": 5634,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "DEFERRED",
+    "confidence": "MEDIUM",
+    "canonicalName": "Proposed manager-level portfolio: UBS ERCOT Battery Storage Portfolio (2021)",
+    "evidenceCount": 6,
+    "currentOwnerCount": 0,
+    "unresolvedOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json"
+}
+

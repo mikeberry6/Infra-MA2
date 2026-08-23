@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0183:energy-storage:95c2200d",
+  "taskIndex": 183,
+  "companyName": "Energy Storage",
+  "verifiedAt": "2026-08-19T10:23:06.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.nbim.no/en/investments/investment-areas/investing-in-unlisted-infrastructure-through-a-fund/",
+      "finalUrl": "https://www.nbim.no/en/investments/investment-areas/investing-in-unlisted-infrastructure-through-a-fund/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 49931,
+      "contentSha256": "b29b6b0d4e236578cb3cb8c57152224a540d24f80a4c4c843f591acf4552817d",
+      "note": "Opened directly. Model purpose: separates CI V assets and reports their status."
+    },
+    {
+      "url": "https://www.edf-re.com/press-release/copenhagen-infrastructure-partners-acquires-beehive-battery-energy-storage-system-in-arizona-from-edf-power-solutions-north-america/",
+      "finalUrl": "https://www.edf-re.com/press-release/copenhagen-infrastructure-partners-acquires-beehive-battery-energy-storage-system-in-arizona-from-edf-power-solutions-north-america/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 86081,
+      "contentSha256": "101a73e3b527627bc929f7b250203e189ed45f8a882e4bffd18b556da297f534",
+      "note": "Opened directly. Model purpose: Beehive 100% acquisition and project facts."
+    },
+    {
+      "url": "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=table_6_03",
+      "finalUrl": "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=table_6_03",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 283283,
+      "contentSha256": "0d8a2dcb106beb946ccf2800935ba9fdf683d8528501fd849925bd49b47017e9",
+      "note": "Opened directly. Model purpose: Beehive SPV, capacity and April 2026 operating status."
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2024/09/24/2952556/0/en/CIP-Acquires-1-GWh-Scatter-Wash-Battery-Energy-Storage-Project-in-Arizona-from-Strata-Clean-Energy-and-Signs-Construction-and-Asset-Management-Agreements-with-Strata.html",
+      "finalUrl": "https://www.globenewswire.com/news-release/2024/09/24/2952556/0/en/CIP-Acquires-1-GWh-Scatter-Wash-Battery-Energy-Storage-Project-in-Arizona-from-Strata-Clean-Energy-and-Signs-Construction-and-Asset-Management-Agreements-with-Strata.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 65147,
+      "contentSha256": "e38f9907b5396dc98c61103cc8c65422bcf39f98f20118acf0ea9c5b003b391a",
+      "note": "Opened directly. Model purpose: CI V acquisition of Scatter Wash and retained Strata services."
+    },
+    {
+      "url": "https://goldendaleenergystorage.com/news.html",
+      "finalUrl": "https://goldendaleenergystorage.com/news.html",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_406",
+      "httpStatus": null,
+      "mediaType": "browser DOM text",
+      "bytes": 27056,
+      "contentSha256": "da9c2288b3c6e5c1e5140be9369c8390c26157fdaae6b0c299b8a38bc2a4d1e4",
+      "note": "Direct curl returned 406, but the full Goldendale project news page rendered in the browser. Model purpose: CI IV purchase and former joint-venture history."
+    },
+    {
+      "url": "https://www.ferc.gov/news-events/news/summaries-january-2026-commission-meeting",
+      "finalUrl": "https://www.ferc.gov/news-events/news/summaries-january-2026-commission-meeting",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_403",
+      "httpStatus": null,
+      "mediaType": "browser DOM text",
+      "bytes": 9061,
+      "contentSha256": "65ce42604421016e34812c23b1ecb5b77df62627831806be86f8ab3b2d8238af",
+      "note": "Direct curl returned 403, but the January 2026 FERC commission summary rendered in the browser. Model purpose: Goldendale licensee, capacity and license status."
+    },
+    {
+      "url": "https://www.slenergystorage.com/project.html",
+      "finalUrl": "https://www.slenergystorage.com/project.html",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_406",
+      "httpStatus": null,
+      "mediaType": "browser DOM text",
+      "bytes": 2224,
+      "contentSha256": "c6368d39ab984922f52c735ab66d2646340d4d3115659e9f31381a2ef631f855",
+      "note": "Direct curl returned 406, but the Swan Lake North project page rendered in the browser. Model purpose: SPV, purchase, capacity and development status."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserVerifiedAfterCurlBlockCount": 3,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Retire or exclude the generic Energy Storage row, preserve Beehive, Scatter Wash, Goldendale and Swan Lake North as separate canonical assets, and route Goldendale fund-transfer mechanics to the relevant asset-level follow-up."
+}

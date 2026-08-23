@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0432:stonepeak-infrastructure-logistics-platform:bb35d6ac",
+  "checkedAt": "2026-08-22T05:30:59.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks plus Stonepeak strategy, portfolio, transaction and regulatory inspection; operating-company test, real-estate classification, platform continuity and exit search",
+  "sources": [
+    {
+      "url": "https://stonepeak.com/investments/real-estate",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments/real-estate",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 55258,
+      "sha256": "5dea4979e424682fc970142c6a7a9f92d4992be647b778827c81f7d9b308df07",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak places supply-chain assets within its Real Estate strategy",
+        "Stonepeak describes the assets as real estate with infrastructure-like characteristics rather than operating infrastructure",
+        "The strategy centers on durable cash flows and property ownership and highlights warehouse portfolios near ports and intermodal terminals"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 303186,
+      "sha256": "4f0a72952bb2b8608989bf7b9830cb25487feb19eedc5bf3fd053b964cfd9224",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak uses Infrastructure Logistics Platform as a portfolio display label with a June 2021 investment date",
+        "No separate operating-company website, legal name or service business is disclosed",
+        "The portfolio page distinguishes actual operating transport businesses from property programs"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments/infrastructure/transport-logistics",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments/infrastructure/transport-logistics",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 41552,
+      "sha256": "e2a370ea12ea5a4139182a46cb577a04ae408fddba93c4d526fa3e9f741896f1",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak's infrastructure transport-and-logistics strategy emphasizes operating businesses and essential services",
+        "The warehouse-property program is not presented as an operating company on this strategy page"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2065460/000206546025000001/xslFormDX01/primary_doc.xml",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2065460/000206546025000001/xslFormDX01/primary_doc.xml",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "62a840a593bcb6372f78c40453bb3a363e9b67e3d55059a528e9f2d58dd80bdf",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verificationUrls": [
+        "https://reports.adviserinfo.sec.gov/reports/ADV/159699/PDF/159699.pdf"
+      ],
+      "verifiedClaims": [
+        "SREP Port Logistics (Co-Invest) Holdings LP is a private investment vehicle",
+        "Stonepeak Real Estate Associates LP is its general partner and Stonepeak Real Estate Advisors LLC its adviser",
+        "The filing does not establish a separate operating logistics company or the vehicle's full asset perimeter"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-completes-sale-of-1-3-million-square-foot-omni-industrial-campus-in-charleston-south-carolina",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/stonepeak-completes-sale-of-1-3-million-square-foot-omni-industrial-campus-in-charleston-south-carolina",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 34855,
+      "sha256": "b8863a496ed0c27c9ebacd51c7c40a569e6b93816cca9f7e93802311c3d711ac",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak sold the 1.3 million square foot Omni Industrial Campus on October 24, 2023",
+        "Stonepeak frames the asset as an industrial real-estate development and sale",
+        "Omni's realization does not prove a sale of one consolidated logistics operating platform"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-acquires-2-3-million-square-foot-logistics-portfolio-in-houston-texas",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/stonepeak-acquires-2-3-million-square-foot-logistics-portfolio-in-houston-texas",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 35349,
+      "sha256": "532509143bff0196e6eddfa0487be126da64c16efcff47865ebbcd58e4b0c5d0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak acquired six Houston logistics properties totaling 2.3 million square feet in December 2024",
+        "Stonepeak says its Real Estate team acquired 20 logistics assets totaling seven million square feet in 2024",
+        "The release describes supply-chain real estate near port infrastructure, not cargo-handling or freight services"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-acquires-logistics-portfolio-in-fort-worth-texas",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/stonepeak-acquires-logistics-portfolio-in-fort-worth-texas",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 35477,
+      "sha256": "811f3b8b284e9e0e749c1dc3d1ac00d78a5d62a5ffaaa9ffd0fc5a57445623d2",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak closed a two-building, approximately 748,000-square-foot Fort Worth property acquisition in 2025",
+        "The release identifies the Real Estate team and property leasing characteristics"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-acquires-rail-served-logistics-asset-in-fort-worth-texas",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/stonepeak-acquires-rail-served-logistics-asset-in-fort-worth-texas",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 35265,
+      "sha256": "1fb16e9dfa3bf50f23e00aa6c0b15e05a0aac547f6e2d72bfd55e37e8e4df7ec",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak's Real Estate team closed another Fort Worth warehouse acquisition on August 11, 2026",
+        "The 860,100-square-foot rail-served property confirms an active real-estate acquisition program through the cutoff",
+        "Rail adjacency does not establish a railroad, terminal or freight-service operating business"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T05:30:59.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "The warehouse real-estate acquisition program remained active through the August 11, 2026 Fort Worth closing. No sale, recapitalization, rename or pending transfer of a consolidated operating platform was found. The 2023 Omni sale is an asset-level property realization, not evidence of an operating-company exit."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButWebVerifiedCount": 1,
+  "responseSourceHealthCorrections": [
+    "The SEC Form D URL blocks direct automated retrieval but was independently verified through indexed SEC/AdviserInfo content; its recorded hash is the block-response hash.",
+    "The platform's 2021 entry date appears only on Stonepeak's portfolio display page; no primary launch or initial-close release was found.",
+    "The 2025 co-invest vehicle proves a real-estate fund structure but not full legal continuity across every warehouse property.",
+    "The August 2026 Fort Worth release initially returned a web-parser error but the direct page resolved HTTP 200 and its content was independently verified through Stonepeak's indexed release."
+  ],
+  "deadSourceCount": 0
+}
+

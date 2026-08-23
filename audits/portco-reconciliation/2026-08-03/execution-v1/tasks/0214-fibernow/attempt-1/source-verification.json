@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0214:fibernow:ea7c2ad3",
+  "taskIndex": 214,
+  "companyName": "Fibernow",
+  "verifiedAt": "2026-08-19T23:02:51.096Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.fibernow.com/",
+      "finalUrl": "https://www.fibernow.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 137219,
+      "contentSha256": "41261d746a27620dc4bd2a11956828a338dc934626539e3151437c929a77aa49",
+      "note": "The official website supports the active Fibernow brand and its fiber internet, cloud television, Wi-Fi and telephone offerings."
+    },
+    {
+      "url": "https://www.antin-ip.com/wp-content/uploads/2025/01/Antin-FY22-Results-PR-Final-1-1.pdf",
+      "finalUrl": "https://www.antin-ip.com/wp-content/uploads/2025/01/Antin-FY22-Results-PR-Final-1-1.pdf",
+      "status": "OPEN_PDF_VISUALLY_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 416042,
+      "contentSha256": "22090182658bab507050e4409a0f626181210bdf6e0e51952d892b0e6f923822",
+      "pageCount": 15,
+      "verifiedPage": 6,
+      "note": "The extracted and rendered page states that Antin terminated the OpticalTel transaction on March 8, 2023 because closing conditions were not satisfied."
+    },
+    {
+      "url": "https://ir.digitalbridge.com/node/15386/html",
+      "finalUrl": "https://ir.digitalbridge.com/node/15386/html",
+      "status": "BROWSER_OPEN_CURL_TRANSPORT_ERROR",
+      "httpStatus": null,
+      "mediaType": "text/html",
+      "bytes": 58278,
+      "contentSha256": "d8281fb65a09a0606d1aeb8f33290781a5b2e9bf17f8fedab0a408b6982c3a3b",
+      "contentHashBasis": "browser-rendered text",
+      "note": "The browser-rendered filing discusses the pending SoftBank merger and separately reports DBP III and InfraBridge fund series, supporting treatment as manager-level context rather than a Fibernow transfer."
+    },
+    {
+      "url": "https://www.digitalbridge.com/portfolio/fibernow",
+      "finalUrl": "https://www.digitalbridge.com/portfolio/fibernow",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 12993,
+      "contentSha256": "8a256a523bcde89aa71cea011803cc3d107b849fc1b08f507595b5d21077675f",
+      "note": "DigitalBridge's live portfolio page identifies Fibernow as a 2024 North American fiber investment and links the official company website."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20241022483738/en/OpticalTel-Transforms-into-Fibernow-Strengthening-Commitment-to-Advance-Cutting-Edge-Fiber-Technology-and-Excellent-Customer-Service",
+      "finalUrl": "https://www.businesswire.com/news/home/20241022483738/en/OpticalTel-Transforms-into-Fibernow-Strengthening-Commitment-to-Advance-Cutting-Edge-Fiber-Technology-and-Excellent-Customer-Service",
+      "status": "BROWSER_OPEN_CURL_TRANSPORT_ERROR",
+      "httpStatus": null,
+      "mediaType": "text/html",
+      "bytes": 6798,
+      "contentSha256": "6b9edbce087fd2737ff3d62ccbd5fdacf0165c6b621feb2684918637de1ef1c8",
+      "contentHashBasis": "browser-rendered text",
+      "note": "The browser-rendered October 22, 2024 release confirms that OpticalTel became Fibernow and was backed by a DigitalBridge investment affiliate."
+    },
+    {
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-total-commitments-117-billion-fund-and/",
+      "finalUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-total-commitments-117-billion-fund-and/",
+      "status": "BROWSER_OPEN_CURL_TRANSPORT_ERROR",
+      "httpStatus": null,
+      "mediaType": "text/html",
+      "bytes": 7116,
+      "contentSha256": "b1f0cfeb08c9484c5935e7a5264317715852be0d01daca36d985986e5f0eaea6",
+      "contentHashBasis": "browser-rendered text",
+      "note": "The browser-rendered DigitalBridge release expressly includes FiberNow in the DigitalBridge Partners III portfolio."
+    },
+    {
+      "url": "https://trellis.law/doc/265882303/response-to-req-for-admission-defendant-dbp-iii-snowbird-bidco-llc-s-amended-response-to-plaintiff-s-first-request-for-admissions",
+      "finalUrl": "https://trellis.law/doc/265882303/response-to-req-for-admission-defendant-dbp-iii-snowbird-bidco-llc-s-amended-response-to-plaintiff-s-first-request-for-admissions",
+      "status": "BROWSER_OPEN_CURL_BLOCKED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 75507,
+      "contentSha256": "d77dea8e9901e6cd0e06bea8bf6c7dcb51aaf8a73fdaf81420f697702daa1cc7",
+      "contentHashBasis": "browser-rendered text",
+      "curlBlockBytes": 5510,
+      "curlBlockContentSha256": "1991f07bde8b8f927623124a3d4117c103baf5538dac6de774718aec3633ef79",
+      "note": "The browser-rendered admissions document names DBP III Snowbird BidCo and states that the transaction occurred on February 29, 2024."
+    },
+    {
+      "url": "https://www.fcc.gov/ecfs/search/search-filings/filing/109141363824301",
+      "finalUrl": "https://www.fcc.gov/ecfs/search/search-filings/filing/109141363824301",
+      "status": "BROWSER_OPEN_CURL_BLOCKED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 1347,
+      "contentSha256": "844bfdcd379306363b058cd46c848bb32515e3bfc528e1797b3e52803baf924f",
+      "contentHashBasis": "browser-rendered text",
+      "curlBlockBytes": 434,
+      "curlBlockContentSha256": "c12d7d1ca5135787d1066f2d33cbb640de3170537a3983ea19ae241887442488",
+      "note": "The browser-rendered FCC filing detail names Optical Telecommunications, Inc. and HControl Corporation and supports the pre-rebrand legal identity without establishing a later legal-name change."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20250507667082/en/Fibernow-Acquires-Wavetechs-Adding-Robust-Managed-IT-Services-to-Business-Fiber-and-VoIP-Portfolio",
+      "finalUrl": "https://www.businesswire.com/news/home/20250507667082/en/Fibernow-Acquires-Wavetechs-Adding-Robust-Managed-IT-Services-to-Business-Fiber-and-VoIP-Portfolio",
+      "status": "BROWSER_OPEN_CURL_TRANSPORT_ERROR",
+      "httpStatus": null,
+      "mediaType": "text/html",
+      "bytes": 6213,
+      "contentSha256": "0fc7330d07d6abf5ff1c1f7995518027f1c0d2048c17ec840d1cf3830e49d4f5",
+      "contentHashBasis": "browser-rendered text",
+      "note": "The browser-rendered May 2025 release states that the Wavetechs acquisition closed in Q1 2025 and would be fully integrated into Fibernow Business."
+    },
+    {
+      "url": "https://www.infrabridge.com/our-portfolio",
+      "finalUrl": "https://www.infrabridge.com/our-portfolio",
+      "status": "OPEN_CONTENT_ABSENCE",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 53192,
+      "contentSha256": "2b049176f38f67a3eb3ef27239d822d682b3b553a35bb9c54d47e5bcef0a65d2",
+      "note": "The current and realized InfraBridge portfolio page contains neither Fibernow nor OpticalTel. Combined with direct DBP III evidence, this supports excluding InfraBridge as a direct owner."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allTransactionEvidenceUrlsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 6,
+    "antinPdfVisuallyVerified": true,
+    "identityAndRebrandVerified": true,
+    "fundAndVehicleVerified": true,
+    "entryDateVerified": true,
+    "infraBridgeDirectOwnershipExcluded": true,
+    "wavetechsBoundaryVerified": true,
+    "companyLevelExitNotEstablished": true,
+    "allCoreClaimsHaveDirectOpenEvidence": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Before any mutation, recapture the task-specific production and dependency snapshot and convert this research packet into a hash-bound proposal."
+}

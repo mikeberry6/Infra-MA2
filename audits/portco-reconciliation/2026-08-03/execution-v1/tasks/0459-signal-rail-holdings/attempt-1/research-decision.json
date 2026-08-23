@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+  "taskIndex": 459,
+  "companyName": "Signal Rail Holdings",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T17:35:52.753Z",
+  "modelDecision": null,
+  "confidence": null,
+  "stageState": "FAILED",
+  "applicationBlocked": true,
+  "rationale": "The GPT-5.6 Sol Pro research trace identified Signal Rail as an active Delaware joint venture that Trinity classifies as a nonconsolidated railcar investment vehicle rather than an operating rail company. However, the initial turn never emitted the required packet, and the sole repair returned an internal-server error. The partial finding cannot be promoted into an exclusion or mutation without a contract-valid response and independent evidence validation.",
+  "partialResearchLead": "A future retry should begin with the likely out-of-scope financial/asset-leasing classification and revalidate exact Wafra/Trinity stakes, vehicles, fleet ownership, current status and later transfers from Trinity SEC filings and Wafra sources.",
+  "recommendedNextAction": "Retry this company in a new authorized run; do not create, exclude, or mutate a company from the failed packet.",
+  "databaseMutationAuthorized": false
+}

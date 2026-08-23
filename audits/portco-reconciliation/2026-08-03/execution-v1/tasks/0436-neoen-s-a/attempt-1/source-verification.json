@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0436:neoen-s-a:ec19a5c4",
+  "checkedAt": "2026-08-22T07:02:14.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type, byte-length and content-hash checks; page-level review of Neoen offer and disclosure PDFs; direct Brookfield and SEC review for acquisition terms and the later syndication",
+  "sources": [
+    {
+      "url": "https://neoen.com/app/uploads/2025/07/Project-Volt-II-Disclosure-Supplement-1.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://neoen.com/app/uploads/2025/07/Project-Volt-II-Disclosure-Supplement-1.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 5610408,
+      "sha256": "2b1ec3b9834eceb2d4f392c1a47dc5d03ca11c94a225f42872ae6b65aeda0a31",
+      "healthStatus": "WORKING",
+      "pageVerification": [4, 6, 16, 25, 26, 59, 63, 117, 129, 387],
+      "verifiedClaims": [
+        "As of December 31, 2025 BGTF II and passive co-investors held approximately 85.4%, Temasek through Rosa held approximately 14.1%, and senior management held approximately 0.5%",
+        "Brookfield completed its approximately 53.12% block acquisition on December 27, 2024, followed by the March 2025 tender and April 2025 squeeze-out",
+        "Neoen had 6.8 GW operating and 1.5 GW under construction at December 31, 2025; the Americas had approximately 0.9 GW operating across ten projects and contributed 12% of revenue and EBITDA",
+        "Fox Coulee in Canada was 93 MW and El Llano in Mexico was 375 MW, for 468 MW of explicitly identified operating North American assets",
+        "Neoen Limited is the UK parent guarantor and Neoen France S.A.S. is the former Neoen S.A. operating group"
+      ]
+    },
+    {
+      "url": "https://bep.brookfield.com/brookfield-enters-exclusive-negotiations-impala-and-other-shareholders-acquire-majority-stake-neoen",
+      "httpStatus": 200,
+      "finalUrl": "https://bep.brookfield.com/brookfield-enters-exclusive-negotiations-impala-and-other-shareholders-acquire-majority-stake-neoen",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 206158,
+      "sha256": "aa8b25e47b87fe68eaf987e089fac2c8f41b8538f22acb5a17f848dce4ee446d",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Brookfield announced negotiations on May 30, 2024 to acquire approximately 53.32% at EUR39.85 per share",
+        "The offer implied EUR6.1 billion of equity value",
+        "The acquisition consortium included Temasek but the special-purpose vehicle was exclusively controlled by Brookfield"
+      ]
+    },
+    {
+      "url": "https://neoen.com/app/uploads/2025/02/2.-Brookfield-Renewable-Holdings-Offer-on-Neoen-securities-Offer-Document-12.02.2025.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://neoen.com/app/uploads/2025/02/2.-Brookfield-Renewable-Holdings-Offer-on-Neoen-securities-Offer-Document-12.02.2025.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 1032920,
+      "sha256": "ba280be165d0941fe3fde3c307e2d0fde58c6e2bcd4db8904f94f5339578fba8",
+      "healthStatus": "WORKING",
+      "pageVerification": [8, 12, 13, 18, 31],
+      "verifiedClaims": [
+        "Brookfield pursued the transaction through BGTF II with Brookfield Renewable Partners as cornerstone investor",
+        "Temasek held a minority interest in Holdco through Rosa Investments",
+        "Brookfield controlled the acquisition chain and Rosa entered a Holdco shareholders agreement"
+      ]
+    },
+    {
+      "url": "https://neoen.com/app/uploads/2025/03/Brookfield-x-Neoen-Offer-Results-20250319.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://neoen.com/app/uploads/2025/03/Brookfield-x-Neoen-Offer-Results-20250319.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 128850,
+      "sha256": "0c6aa7771cbe4784c051073e41b751280c78996e0846c17c914ee389839e2c67",
+      "healthStatus": "WORKING",
+      "pageVerification": [1],
+      "verifiedClaims": [
+        "After settlement-delivery the offeror and concert parties held 97.73% of Neoen shares",
+        "They held 100% of the 2020 OCEANEs and 95.76% of the remaining 2022 OCEANEs"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1533232/000153323226000026/bepq22026-ex993.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1533232/000153323226000026/bepq22026-ex993.htm",
+      "mediaType": "text/html",
+      "bytes": 1356455,
+      "sha256": "99fd3a6c88ca79be0948b48b57668d37eb0913f48b9b09fae050e3fbd6a5f122",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "A Brookfield Renewable affiliate syndicated a 1.63% Neoen interest to a Brookfield Fund in the second quarter of 2026 for approximately EUR160 million",
+        "The disclosure does not establish a sale of control or a Neoen company exit"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T07:02:14.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No company-level sale or Brookfield/Temasek exit was found. The disclosed Q2-2026 transfer was a 1.63% syndication within the Brookfield ecosystem and did not establish a control change. Neoen also sold individual Australian and French asset portfolios after the take-private, but those project-level disposals did not alter the canonical-company ownership conclusion."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "responseSourceHealthCorrections": [
+    "The response's 11% Americas share is a transparent 0.9 GW divided by 8.3 GW inference from the same direct disclosure, not a separately printed percentage.",
+    "The 85.4% figure includes passive co-investors alongside BGTF II and therefore is not represented as Brookfield's sole proprietary economic interest.",
+    "The 1.63% recipient is described only as a Brookfield Fund and remains not publicly identified.",
+    "The 468 MW North American figure is the sum of the directly disclosed 93 MW Fox Coulee and 375 MW El Llano assets; it is not treated as the complete Americas region."
+  ],
+  "deadSourceCount": 0
+}

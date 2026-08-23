@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0448:olympus-terminals:280295ff",
+  "taskIndex": 448,
+  "verifiedAt": "2026-08-22T13:18:18.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 8,
+    "working": 5,
+    "browserBlockedButVerified": 3,
+    "dead": 0,
+    "note": "All six evidence-array URLs and the two additional transaction evidence URLs were independently checked. PR Newswire and Wachtell were browser-verified after command-line blocking; the TPG earnings PDF opened in the browser's native PDF viewer after command-line transport failed."
+  },
+  "sources": [
+    {
+      "url": "https://www.tpg.com/news-and-insights/tpg-rise-climate-to-acquire-olympus-terminals-leading-renewable-fuels-logistics-provider",
+      "finalUrl": "https://www.tpg.com/news-and-insights/tpg-rise-climate-to-acquire-olympus-terminals-leading-renewable-fuels-logistics-provider",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 105638,
+      "sha256": "247cb7ebe9082aa738cacffa0653cbebd1906c6fe56b94e7b802c707ce587da4",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://shareholders.tpg.com/static-files/b16d78ba-d997-483b-8717-efe4b1f67ae5",
+      "finalUrl": "https://shareholders.tpg.com/static-files/b16d78ba-d997-483b-8717-efe4b1f67ae5",
+      "httpStatus": null,
+      "mediaType": "application/pdf",
+      "bytes": null,
+      "sha256": null,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserEvidence": "The exact URL opened without redirect in the browser's native PDF viewer; command-line HTTP/2 and HTTP/1.1 transfers failed before returning bytes."
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/investor-group-announces-acquisition-of-chemoil-terminals-301448040.html",
+      "finalUrl": "https://www.prnewswire.com/news-releases/investor-group-announces-acquisition-of-chemoil-terminals-301448040.html",
+      "httpStatus": 502,
+      "mediaType": "text/plain; charset=UTF-8",
+      "bytes": null,
+      "sha256": null,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserCharacters": 7393,
+      "browserSnapshotSha256": "6ee4f7feb444d2d6b95a1caed571c97acbf374ca9e44a9968483623bb9495ef1",
+      "browserEvidence": "Direct browser page rendered the title Investor Group Announces Acquisition of Chemoil Terminals."
+    },
+    {
+      "url": "https://www.intrepidfp.com/investment-management",
+      "finalUrl": "https://www.intrepidfp.com/investment-management",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 26119,
+      "sha256": "48ae1108e40cae10d32df78d185e7b2d9500011418b5596632db02bfbf0255ff",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1278752/000119312526208941/mfic-20260331.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1278752/000119312526208941/mfic-20260331.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 37832689,
+      "sha256": "1f4870ebd140da05f858fc19eec400029d5060f160b8c8b7a91ce57dcbf7a23b",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://olympusterminals.com/",
+      "finalUrl": "https://olympusterminals.com/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 7501,
+      "sha256": "9d0b70ff57a49ffb0ce0e7d9000b3debfef43bb966e41c1a02055db1eafe8270",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1837532/000095017025038785/ck0001837532-20241231.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1837532/000095017025038785/ck0001837532-20241231.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 35370564,
+      "sha256": "faba55fbdeee1c6a7f875fb4bd243b25a3987e08ef11d70a7909d30edf9e0b4b",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.wlrk.com/attorney/jrhoffman/",
+      "finalUrl": "https://www.wlrk.com/attorney/jrhoffman/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": null,
+      "sha256": null,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserCharacters": 12962,
+      "browserSnapshotSha256": "e8199f8eb60798aeb33775fa3931cd3df32f4caf9977bd47074fc3d2ba791154",
+      "browserEvidence": "Direct browser page rendered and contained Olympus transaction text."
+    }
+  ]
+}

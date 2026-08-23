@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0255:cleancapital-c-and-i-solar-spvs:38fec9c7",
+  "taskIndex": 255,
+  "companyName": "CleanCapital C&I Solar SPVs",
+  "verifiedAt": "2026-08-20T08:05:14.922Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://generatecapital.com/investment/",
+      "finalUrl": "https://generatecapital.com/investment/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 60049,
+      "contentSha256": "85d7561370e32f5f3ce842cbad60c4e6da93d391e7a1a3e58f67bcba6ee59979",
+      "browserVerified": false,
+      "note": "Generate's investment archive is the primary model-cited source for the 2017 distributed-generation acquisition warehouse and sell-down structure; it does not establish corporate equity in CleanCapital Holdings LLC or a current Generate-held portfolio."
+    },
+    {
+      "url": "https://cleancapital.com/about/our-story/",
+      "finalUrl": "https://cleancapital.com/about/our-story/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 72191,
+      "contentSha256": "81c701dcdb5d99b9f954af720d6668304d27c1a1952685ac2cb5ad9a5f23e6ee",
+      "browserVerified": false,
+      "note": "Official company history supports CleanCapital as the enduring operating platform."
+    },
+    {
+      "url": "https://cleancapital.com/resources/cleancapital-secures-300-million-commitment-from-manulife-investment-management-acquires-63-megawatts-of-operating-solar-projects/",
+      "finalUrl": "https://cleancapital.com/resources/cleancapital-secures-300-million-commitment-from-manulife-investment-management-acquires-63-megawatts-of-operating-solar-projects/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 80448,
+      "contentSha256": "4539c04bddec245801d7e38d1449232290d288eafa44fd96bfefed5cf366ee7c",
+      "browserVerified": false,
+      "note": "Official 2021 announcement supports Manulife capital and the separate BlackRock-linked operating portfolio transaction."
+    },
+    {
+      "url": "https://www.manulifeim.com/institutional/global/en/about-us/press-releases/cleancapital-receives-up-to-500-million-additional-commitment-from-manulife-investment-management",
+      "finalUrl": "https://www.manulifeim.com/institutional/global/en/about-us/press-releases/cleancapital-receives-up-to-500-million-additional-commitment-from-manulife-investment-management",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 989530,
+      "contentSha256": "97a141aa6d97fa6fafdfdece94cc74c63a9de33cef30ebb7dd0cd73f778812ee",
+      "browserVerified": false,
+      "note": "Official manager announcement supports Manulife's later commitment; the exact current shareholder schedule and stake percentages remain undisclosed."
+    },
+    {
+      "url": "https://cleancapital.com/resources/cleancapital-infranity-secure-300m-holdco-facility-to-accelerate-renewable-energy-growth/",
+      "finalUrl": "https://cleancapital.com/resources/cleancapital-infranity-secure-300m-holdco-facility-to-accelerate-renewable-energy-growth/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 79844,
+      "contentSha256": "81105f5d1297a49258d47692f207c03394ceaf1b0f715a456242dfa033dcf14e",
+      "browserVerified": false,
+      "note": "Official 2026 announcement identifies Infranity's capital as a HoldCo facility, not equity ownership, and reports platform scale."
+    },
+    {
+      "url": "https://www.orrick.com/en/News/2021/09/Orrick-Advises-CarVal-Investors-and-CleanCapital-on-Sale-of-129-MW-CI-Solar-Portfolio",
+      "finalUrl": "https://www.orrick.com/en/News/2021/09/Orrick-Advises-CarVal-Investors-and-CleanCapital-on-Sale-of-129-MW-CI-Solar-Portfolio",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 78479,
+      "contentSha256": "5d6b23e0ddffcde2dd245ecc9920343f4ff9bc53780658840525fb6255683582",
+      "browserVerified": false,
+      "note": "Transaction counsel supports a separate CarVal/CleanCapital project-portfolio sale, not ownership of CleanCapital Holdings LLC."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "primarySourceWorking": true,
+    "modelResponseLengthWithinContract": false,
+    "platformIdentityResolved": true,
+    "generateWarehouseStructureVerified": true,
+    "generateCorporateEquityVerified": false,
+    "generateExitDateResolved": false,
+    "currentManulifePositionSupported": true,
+    "currentFullCapTableVerified": false,
+    "projectAndPlatformOwnershipSeparatedByIndependentReview": true,
+    "infranityDebtSeparated": true,
+    "laterExitOrPendingTransactionNotFound": true,
+    "applicationBlocked": true
+  },
+  "modelEvidenceCorrections": [
+    "Retain CleanCapital Holdings LLC as the canonical operating platform and treat the generic SPV label as legacy scope.",
+    "Do not list CleanCapital as a current owner of itself when representing the parent-company cap table.",
+    "Do not list BlackRock or CarVal as former parent-company owners without evidence beyond their project-level portfolio transactions.",
+    "Preserve Generate as a former project-level warehouse participant only; do not infer CleanCapital corporate equity or a precise exit date.",
+    "Treat Infranity's 2026 HoldCo facility as debt, not ownership."
+  ],
+  "releaseRequirement": "Pause list application until the platform-level current owner set and Generate's treatment are normalized. The packet is useful research evidence but failed the one-repair output contract and contains ownership-scope overreach."
+}

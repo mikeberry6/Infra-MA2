@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0191:caturus:60afca03",
+  "taskIndex": 191,
+  "companyName": "Caturus",
+  "verifiedAt": "2026-08-19T15:44:41.000Z",
+  "researchOnly": true,
+  "sources": [
+    {"url":"https://www.prnewswire.com/news-releases/commonwealth-lng-closes-on-investment-and-agrees-to-terms-for-strategic-partnership-301898868.html","finalUrl":"https://www.prnewswire.com/news-releases/commonwealth-lng-closes-on-investment-and-agrees-to-terms-for-strategic-partnership-301898868.html","status":"OPEN","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":214483,"contentSha256":"72ba1b2c4e258f94bca772b03f8f04c9f6471472771441df772b5187343c6217","note":"Kimmeridge development-capital close."},
+    {"url":"https://www.energy.gov/sites/default/files/2025-09/Commonwealth%20LNG%20DOE%20Notice%20of%20Change%20in%20Control%20%28Mubadala-Caturus%29%20-%209.5.2025.pdf","finalUrl":"https://www.energy.gov/sites/default/files/2025-09/Commonwealth%20LNG%20DOE%20Notice%20of%20Change%20in%20Control%20%28Mubadala-Caturus%29%20-%209.5.2025.pdf","status":"OPEN","httpStatus":200,"mediaType":"application/pdf","bytes":286034,"contentSha256":"ea2ee5e6912f24f7911e26748bd9c45882ea9e07c065cc3420568a30118d8fda","note":"Mubadala close, SoTex rename and legal boundary."},
+    {"url":"https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-777-5-billion-at-second-quarter-fiscal-2026/","finalUrl":"https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-777-5-billion-at-second-quarter-fiscal-2026/","status":"BROWSER_VERIFIED_AFTER_EMPTY_HTTP_202","httpStatus":202,"mediaType":"browser DOM text","bytes":21473,"contentSha256":"46ae0bc72d128db33d6d63db4a4379584921bd41ea362e6a9c46457f8dd3dd7d","note":"Exact CPP page rendered in browser and named Caturus; command-line retrieval returned an empty 202 response."},
+    {"url":"https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf","finalUrl":"https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf","status":"OPEN","httpStatus":200,"mediaType":"application/pdf","bytes":335507,"contentSha256":"484e14ed055566c53cdbcef96c5dfc8f43eab90af843a08f83dd8f9128390295","note":"Legal chain, CPP close, 22.8% direct and 33.1% look-through."},
+    {"url":"https://www.energy.gov/documents/commonwealth-follow-questions","finalUrl":"https://www.energy.gov/documents/commonwealth-follow-questions","status":"OPEN","httpStatus":200,"mediaType":"application/pdf","bytes":202273,"contentSha256":"6b83bab6ed9c15137a885007b107798cbd2f1e6f643949f890fb649ce819a07e","note":"52.6% correction, 0.5% management and governance split."},
+    {"url":"https://caturus.com/caturus-announces-final-investment-decision-for-9-5-mtpa-commonwealth-lng-export-facility-in-cameron-la/","finalUrl":"https://caturus.com/caturus-announces-final-investment-decision-for-9-5-mtpa-commonwealth-lng-export-facility-in-cameron-la/","status":"OPEN","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":103614,"contentSha256":"fc48d10003546cb511ebb6bde5ab6223b88ba958d19381c865daf14116476a6a","note":"FID, financing, scope and operating scale."},
+    {"url":"https://caturus.com/caturus-closes-gulf-coast-galvan-ranch-acquisition-from-sm-energy/","finalUrl":"https://caturus.com/caturus-closes-gulf-coast-galvan-ranch-acquisition-from-sm-energy/","status":"OPEN","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":95534,"contentSha256":"2257cc3bc58d7242355a85b9d93365f6a016ae6ea79436ff0578816b993c1218","note":"Asset close, scale and subsidiary boundary."}
+  ],
+  "checks": {"allUrlsHttps":true,"allEvidenceRowsChecked":true,"allCoreClaimsHaveOpenOrBrowserVerifiedEvidence":true,"deadUrlCount":0,"browserVerifiedAfterEmptyResponseCount":1,"redirectConcernCount":0},
+  "releaseRequirement": "Maintain one Caturus parent, add CPP and Mubadala, update the four-holder cap table, supersede Caturus Energy and Commonwealth LNG as subordinate records, and preserve disclosed CPP percentage differences."
+}

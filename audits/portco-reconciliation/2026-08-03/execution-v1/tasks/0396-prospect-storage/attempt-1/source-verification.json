@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0396:prospect-storage:78e66bf0",
+  "checkedAt": "2026-08-21T22:45:00.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; court-PDF extraction and rendered-page inspection; ERCOT workbook row and header inspection",
+  "sources": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/glidepath/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/portfolio/glidepath/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 51073,
+      "sha256": "283da1a0f702fa4ab888faa947110f4bdd8128d9d98288a140a28b54e7efbb8a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook defines GlidePath as the manager-level portfolio company and lists Prospect among GlidePath's current operating projects"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/prospect-storage/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/projects/prospect-storage/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 47498,
+      "sha256": "517f3a80f004e623699f21f587e6c95bd495b59aa5b60765bd2fec4bb4c28690",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Prospect is an operational 9.9 MW/9.9 MWh battery project in West Columbia, Texas",
+        "The manager page reports a 2019 project year and December 2019 commercial operations"
+      ]
+    },
+    {
+      "url": "https://glidepath.net/glidepath-begins-construction-on-10-mw-10mwh-battery-storage-project-in-texas/",
+      "httpStatus": 200,
+      "finalUrl": "https://glidepath.net/glidepath-begins-construction-on-10-mw-10mwh-battery-storage-project-in-texas/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 52846,
+      "sha256": "324577a33a47bae1b94de12d1aa4308764c82b345b85ad885001e1c605372796",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "GlidePath announced greenfield construction on June 17, 2019 and described direct development from greenfield to operations",
+        "Powin is identified as a system supplier, not an owner"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 203226,
+      "sha256": "8a17d1d807177316a7fa89aa4977685766409d9c40878973268b333b03700982",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook states that the Quinbrook Low Carbon Power Fund acquired GlidePath in 2017"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/habitat-energy-launches-us-battery-storage-optimization-platform/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/habitat-energy-launches-us-battery-storage-optimization-platform/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 60160,
+      "sha256": "e60af624abba3fcf15f87580ec0b613c238f54b432114ba68715b96ad8028a93",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook identifies Prospect as GlidePath's 10 MW/10 MWh asset and Habitat as its optimizer"
+      ]
+    },
+    {
+      "url": "https://www.veritaglobal.net/powin/document/2516137251203000000000007",
+      "httpStatus": 200,
+      "finalUrl": "https://www.veritaglobal.net/powin/document/2516137251203000000000007",
+      "mediaType": "application/pdf",
+      "bytes": 1349199,
+      "sha256": "3b8704e0702623ca40fc459f5485e6357a044651b663915c65a60940fc22ceef",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 59,
+        "relevantPdfPages": [37],
+        "verifiedClaims": [
+          "The December 3, 2025 court filing identifies West Columbia Storage LLC as a wholly owned subsidiary of GlidePath Power Solutions LLC"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/search/documents/?controlNumber=53385&itemNumber=4458",
+      "httpStatus": 200,
+      "finalUrl": "https://interchange.puc.texas.gov/search/documents/?controlNumber=53385&itemNumber=4458",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 12067,
+      "sha256": "3249c1794ef5e146b7e6b2807bc2a6ff382a42950e7327c398849036370b2119",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The Texas filing page records a March 12, 2026 confidential emergency-operations-plan filing by West Columbia Storage, LLC"
+      ]
+    },
+    {
+      "url": "https://www.ercot.com/files/docs/2025/02/12/CapacityDemandandReservesReport_December2024.xlsx",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ercot.com/files/docs/2025/02/12/CapacityDemandandReservesReport_December2024.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 864521,
+      "sha256": "847018a349df09186900f17971ab7da0f68833e29e23832840e9507d4154ea77",
+      "healthStatus": "WORKING",
+      "workbookVerification": {
+        "sheet": "Unit Details",
+        "headerExcelRow": 9,
+        "relevantExcelRow": 1198,
+        "verifiedClaims": [
+          "ERCOT lists WEST COLUMBIA (PROSPECT STORAGE) (DGR), unit WCOLLOCL_BSS_U1, as an operating Brazoria County storage resource",
+          "ERCOT reports an in-service date of December 12, 2019 and 9.9 MW capacity"
+        ]
+      }
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

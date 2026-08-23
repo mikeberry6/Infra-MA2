@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0352:csv-midstream:d544fe04",
+  "taskIndex": 352,
+  "linkedTaskIdsCovered": ["ledger:0353:csv-midstream-solutions-corp:99793919"],
+  "companyName": "CSV Midstream",
+  "recommendedCanonicalName": "CSV Midstream Solutions Corp.",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "responseSha256": "6881ad73d27bfefd2dedae6a137a32d7040aeccff0d316237f17d128add871d2",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Merge the two repository records into one CSV Midstream Solutions Corp. canonical company. Retain CSV Midstream as an alias and redirect, deduplicate the Northleaf ownership periods into one active 100% period from June 28, 2019, preserve Apollo as the former owner, and keep all plants, systems and asset SPVs beneath the single platform.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": [
+    "Northleaf's exact fund or managed-account allocation is not publicly disclosed.",
+    "Apollo's exact fund, vehicle, stake and management rollover are not publicly disclosed.",
+    "A separate 2019 signing or legal-closing timestamp is not public; completion is established by June 28, 2019."
+  ],
+  "applicationBlocked": false,
+  "recommendedActions": [
+    "Keep production ID cmrxpjlu70171ivheax0ogxib as CSV Midstream Solutions Corp. and redirect cmrxpjltm0170ivheiq4ug9t2 to it.",
+    "Collapse the duplicate ownership records into one active 100% Northleaf period beginning June 28, 2019 and preserve Apollo-affiliated funds as the former owner.",
+    "Consolidate the unique milestones and citations from both records while keeping Karr, Resthaven, Pipestone South, Simonette, Valhalla, Albright, holding entities and asset SPVs beneath the one platform.",
+    "Treat task 353 as covered and superseded by this authoritative research packet."
+  ]
+}

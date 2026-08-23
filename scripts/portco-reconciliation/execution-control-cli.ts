@@ -43,6 +43,7 @@ import {
   verifyTaskSnapshotDependencySpec,
   type TaskSnapshotClient,
 } from "./task-snapshot";
+import { verifyBatchExecutionLedger } from "./batch-control";
 
 type Command = "init" | "status" | "next" | "snapshot" | "install-policy" | "auto-approve" | "decide" | "transition" | "recover";
 
@@ -72,6 +73,8 @@ const COMMAND_OPTIONS: Record<Command, { values: readonly string[]; flags: reado
       "expected-database",
       "target-company-id",
       "dependency-spec",
+      "task-id",
+      "batch-ledger",
     ],
     flags: ["legacy-schema"],
   },
@@ -263,7 +266,20 @@ async function next(values: Map<string, string>, flags: Set<string>): Promise<vo
 
 async function snapshot(values: Map<string, string>, flags: Set<string>): Promise<void> {
   const manifest = await readManifest(required(values, "manifest"));
-  if (!manifest.activeTaskId) throw new Error("Activate the next task before building its snapshot");
+  const requestedTaskId = values.get("task-id")?.trim();
+  const selectedTaskId = requestedTaskId ?? manifest.activeTaskId;
+  if (!selectedTaskId) throw new Error("Activate the next task or select a member of the active release bundle");
+  if (requestedTaskId) {
+    const batchLedgerPath = required(values, "batch-ledger");
+    const batchLedger = verifyBatchExecutionLedger(await readJson(batchLedgerPath));
+    const activeBatch = batchLedger.batches.find((batch) => batch.batchId === batchLedger.activeBatchId);
+    if (!activeBatch || !activeBatch.taskIds.includes(requestedTaskId)) {
+      throw new Error("--task-id must belong to the sole active release bundle");
+    }
+    if (batchLedger.runId !== manifest.runId) {
+      throw new Error("Batch ledger and execution manifest belong to different runs");
+    }
+  }
   if (/^https?:\/\//.test(manifest.source.proposalIndex.location)) {
     throw new Error("The immutable proposal queue must be available locally for task snapshotting");
   }
@@ -310,7 +326,7 @@ async function snapshot(values: Map<string, string>, flags: Set<string>): Promis
       };
       const seedCompanies = applyApprovedPortCoAfterImagesBeforeTask(
         baseCompanies,
-        manifest.activeTaskId,
+        selectedTaskId,
       );
       context = await buildTaskSnapshotContext({
         client,
@@ -326,6 +342,7 @@ async function snapshot(values: Map<string, string>, flags: Set<string>): Promis
         dependencySpec: values.has("dependency-spec")
           ? verifyTaskSnapshotDependencySpec(await readJson(required(values, "dependency-spec")))
           : undefined,
+        taskId: requestedTaskId,
       });
     } finally {
       await client.$disconnect();

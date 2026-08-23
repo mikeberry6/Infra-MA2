@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0446:ipx-power:dd940951",
+  "taskIndex": 446,
+  "companyName": "IPX Power",
+  "conversationUrl": "https://chatgpt.com/c/6a898e25-1cf8-83ea-9318-3fd67cf52c7e",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": false
+  },
+  "initialSubmittedAt": "2026-08-22T11:55:16.684Z",
+  "initialCompletedAt": "2026-08-22T12:18:09.226Z",
+  "repairSubmittedAt": null,
+  "repairCompletedAt": null,
+  "repairCount": 0,
+  "initialOutcome": "VALID",
+  "finalOutcome": "VALID",
+  "contentHashes": {
+    "promptSha256": "b24e36c0609f9d32b13b3ea963b4a9a5e2995ae629c2f72a1a98d754fe808581",
+    "initialResponseSha256": "02f42cc76cdca2d742a46e2dc539c84ca7fe00b6451146400c5a63e4c4fac6ce",
+    "acceptedResponseSha256": "02f42cc76cdca2d742a46e2dc539c84ca7fe00b6451146400c5a63e4c4fac6ce",
+    "transcriptSha256": "1c1e2a7ac0ecaf5e51575263adf674f0c53e69688988015467a5723ecf80146b",
+    "repairPromptSha256": null,
+    "repairResponseSha256": null
+  },
+  "captureMethod": "Visible signed-in ChatGPT web conversation; authoritative assistant DOM textContent after reloading the same conversation URL",
+  "captureNote": "GPT-5.6 Sol, Effort Pro and Pro 5 of 5 were visibly verified before submission. The UI continued to display an active-generation state after the assistant had completed the packet; reloading the same conversation URL revealed the complete initial answer. A repair prompt was drafted locally in the composer during recovery but was never submitted and was cleared. The initial response satisfied the strict delimiter, top-level key, exact owner-key, evidence-row, milestone and exactly-one-primary contracts."
+}

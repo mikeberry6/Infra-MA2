@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0423:evolve-transition-infrastructure-lp:984248b3",
+  "checkedAt": "2026-08-22T02:47:31.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; SEC and manager-page inspection; acquisition, deregistration, asset-sale and exit search",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1656530/000090514815000931/efc15-727_sc13d.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1656530/000090514815000931/efc15-727_sc13d.htm",
+      "mediaType": "text/html",
+      "bytes": 301537,
+      "sha256": "cd26ed931bd6890829b82b7b989466e484e3ec8fa37eed12fd8b3744048be0a3",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak's 2015 private preferred-equity investment, fund attribution, amount, rights and closing"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1362705/000110465924002758/tm242453d1_ex99-a3.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1362705/000110465924002758/tm242453d1_ex99-a3.htm",
+      "mediaType": "text/html",
+      "bytes": 463761,
+      "sha256": "460eb8c2e2a6663ea9879c6b633939539cd8d6b80d7ed9b5057c9290c3a7a389",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Security, control, limited-call and take-private history through February 2024"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1362705/000136270524000034/evolve-20240216.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1362705/000136270524000034/evolve-20240216.htm",
+      "mediaType": "text/html",
+      "bytes": 25206,
+      "sha256": "59d354aa72ee8b7eeebc81d3cc01b6734723783425c2788d629d8e32fe9a3294",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "February 16, 2024 limited-call closing, elimination of unaffiliated economic interests and trading suspension"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1362705/000136270523000018/snmp-20221231.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1362705/000136270523000018/snmp-20221231.htm",
+      "mediaType": "text/html",
+      "bytes": 1693573,
+      "sha256": "cef11028df96877282915d52bae618e1f8402d8b32d392350e3ef11efeccd1df",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak control, Catarina and Seco asset perimeter, capacities, throughput and customer concentration"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments",
+      "mediaType": "text/html",
+      "bytes": 303186,
+      "sha256": "4f0a72952bb2b8608989bf7b9830cb25487feb19eedc5bf3fd053b964cfd9224",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak continues to list Evolve as a current investment and describes its operating midstream systems"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000076/nvve-20241231.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000076/nvve-20241231.htm",
+      "mediaType": "text/html",
+      "bytes": 2968437,
+      "sha256": "dd40c338a46111c51d7ac4e94f6a42c283091d24c3bfa5e8e97061c1975ba1ac",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Levo interest transfer, cancellation and dissolution; Levo is not a current Evolve PortCo asset"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1362705/000136270515000010/spp-20141231x10k.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1362705/000136270515000010/spp-20141231x10k.htm",
+      "mediaType": "text/html",
+      "bytes": 3037881,
+      "sha256": "4a7e03812d789e9d2cf4d0dddf26d62bccc372be9461853924af00ce8d373220",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Constellation-to-Sanchez sponsor transfer and legal predecessor identity"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T02:47:31.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No later Stonepeak sale, liquidation, company bankruptcy, change of control or signed pending ownership transaction was identified. Stonepeak's live portfolio page still lists Evolve as current."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 0,
+  "responseSourceHealthCorrections": [
+    "All seven accepted-response evidence URLs returned HTTP 200 at their exact URLs.",
+    "The prompt's starting SEC URL used the wrong issuer CIK and returned 404; the accepted response replaced it with the correct Evolve filings."
+  ],
+  "deadSourceCount": 0
+}

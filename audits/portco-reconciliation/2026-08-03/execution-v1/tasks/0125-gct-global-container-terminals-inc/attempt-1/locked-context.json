@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0125:gct-global-container-terminals-inc:4810f4cf",
+  "taskIndex": 125,
+  "companyName": "GCT Global Container Terminals Inc.",
+  "generatedAt": "2026-08-23T04:27:32.151Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 125,
+    "taskId": "ledger:0125:gct-global-container-terminals-inc:4810f4cf",
+    "canonicalKey": "gct-global-container-terminals-inc|canada|census-1",
+    "companyName": "GCT Global Container Terminals Inc.",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 21,
+    "managers": [
+      "BCI"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "021-bci:holding:003:gct-global-container-terminals"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://globalterminals.com/ifm-investors-bci-join-ontario-teachers-equity-partners-gct-global-container-terminals-inc/"
+    ],
+    "candidateCanonicalKeys": [
+      "gct-global-container-terminals-inc|canada",
+      "gct-global-container-terminals|canada"
+    ],
+    "rationale": "Census identity matches multiple exact repository candidates: gct-global-container-terminals-inc|canada, gct-global-container-terminals|canada. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Census identity matches multiple exact repository candidates: gct-global-container-terminals-inc|canada, gct-global-container-terminals|canada."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpj8l000mmivhe1cfe4xs6",
+    "linkedQueueTaskId": "ledger:0304:gct-global-container-terminals-inc:7bd15d5c"
+  },
+  "resolvedCanonicalKey": "gct-global-container-terminals-inc|canada|census-1",
+  "targetCompanyImage": {
+    "id": "cmrxpj8l000mmivhe1cfe4xs6",
+    "name": "GCT Global Container Terminals Inc.",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Container terminals / ports",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "GCT Global Container Terminals is a marine terminal operator serving containerized trade flows through Canada's Pacific Gateway. Its customers are ocean carriers, logistics providers, railroads, truckers, and cargo owners that rely on terminal infrastructure for import, export, and intermodal flows. The business is asset-heavy and volume-linked because performance depends on terminal concessions, berths, yard capacity, cranes, rail infrastructure, and throughput levels. Current company materials identify GCT as the largest majority Canadian-owned container terminal operator on Canada's west coast, operating GCT Deltaport in Delta and GCT Vanterm in Vancouver with four berths and nearly 3.5 million TEUs of annual capacity. Ontario Teachers', IFM Global Infrastructure Fund (GIF), and BCI announced in 2018 that IFM and BCI would join Teachers as equity partners in GCT, with disclosed ownership of 37.5% Ontario Teachers', 37.5% IFM Investors, and 25% BCI.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://globalterminals.com/",
+    "yearFounded": 1907,
+    "headquarters": "British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtog01jsivhe5itt7b15",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "Infrastructure & Renewable Resources",
+        "stake": "25%",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjtp001jtivhep0scqftr",
+        "managerName": "IFM Investors",
+        "organizationName": "IFM Investors",
+        "fundName": "IFM Global Infrastructure Fund (GIF)",
+        "vehicleName": "IFM Global Infrastructure Fund (GIF)",
+        "stake": "37.5%",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjtpi01juivhelpzjg4ui",
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": "37.5%",
+        "investmentYear": 2007,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkuw802z7ivheahyhs096",
+        "date": "1907",
+        "event": "Public company history materials trace GCT's origins in Vancouver to 1907.",
+        "category": "OTHER",
+        "sortDate": "1907-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkuwp02z8ivhepo95ewrz",
+        "date": "1907",
+        "event": "GCT Global Container Terminals Inc. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1907-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkuxb02z9ivhe1ags325o",
+        "date": "2007",
+        "event": "OTPP / Ontario Teachers' established GCT as a wholly owned subsidiary after acquiring four North American container terminals.",
+        "category": "ACQUISITION",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkuxq02zaivhevmksemr3",
+        "date": "Jun 7, 2018",
+        "event": "Ontario Teachers' announced that IFM Global Infrastructure Fund (GIF) and BCI would join as equity partners in GCT.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-06-07T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkv0l02zbivhehueq2jnq",
+        "date": "Jun 7, 2018",
+        "event": "The transaction disclosures set ownership at 37.5% for Ontario Teachers', 37.5% for IFM, and 25% for BCI.",
+        "category": "FINANCING",
+        "sortDate": "2018-06-07T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjwa050divhewhhkqw4k",
+        "date": "1907",
+        "event": "GCT states that it has operated on the Vancouver waterfront since 1907.",
+        "category": "OTHER",
+        "sortDate": "1907-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjwu050eivhe9zzwxzrf",
+        "date": "1907",
+        "event": "GCT Global Container Terminals was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1907-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjyi050hivhemkal86dr",
+        "date": "2019",
+        "event": "The company disclosed an ownership split of 37.5% Ontario Teachers', 37.5% IFM, and 25% BCI.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [
+      {
+        "id": "cmrxpmx8605h7ivheo0sn8yz2",
+        "personName": "Eric Waltz",
+        "title": "President & Chief Executive Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmx9a05h9ivhevky8erma",
+        "personName": "Cheryl Yaremko",
+        "title": "Chief Financial Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxa805hbivhe9iqpbiyc",
+        "personName": "Daniel Howell",
+        "title": "Chief Operating Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxb905hdivhervpvk0y1",
+        "personName": "Erik Ward",
+        "title": "Chief Information Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxca05hfivhere57thbx",
+        "personName": "Chris Ng",
+        "title": "Chief Commercial Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      }
+    ],
+    "citations": [
+      {
+        "id": "cmrxppgnd087givhezj6ym2im",
+        "label": "Company profile source — GCT Global Container Terminals Inc.",
+        "url": "https://globalterminals.com/about/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Two-terminal Port of Vancouver operator and annual capacity",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppgoh087iivhezj6x8le2",
+        "label": "Management source — GCT Global Container Terminals Inc.",
+        "url": "https://globalterminals.com/about/leadership/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current GCT leadership team",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppgpj087kivhedqt6mbmp",
+        "label": "Investment date source — OTPP — GCT Global Container Terminals Inc.",
+        "url": "https://www.ourcommons.ca/Content/Committee/411/FINA/WebDoc/WD5138047/411_FINA_PBC2011_Briefs/Global%20Container%20Terminals%20E.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GCT established in 2007 as a wholly owned OTPP subsidiary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppgql087mivhe7iqc4krb",
+        "label": "Investment source — GCT Global Container Terminals Inc.",
+        "url": "https://globalterminals.com/ifm-investors-bci-join-ontario-teachers-equity-partners-gct-global-container-terminals-inc/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 25%, IFM 37.5%, Ontario Teachers' 37.5%",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppgrq087oivheprlacpxu",
+        "label": "Announcement date source — BCI — GCT Global Container Terminals Inc.",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ifm-investors-and-bci-to-join-ontario-teachers-as-equity-partners-in-gct-global-container-terminals-inc-/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppgvc087qivhei1qc5jbf",
+        "label": "Operations source — GCT Global Container Terminals Inc.",
+        "url": "https://bcmarineterminals.com/global-container-terminals/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Bcmarineterminals operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsiyb0cptivhevuvikr8y",
+        "label": "Company profile source — GCT Global Container Terminals Inc.",
+        "url": "https://globalterminals.com/about/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Globalterminals company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsj160cpxivheaiif6zh9",
+        "label": "Initial fund investment source — IFM Investors — GCT Global Container Terminals",
+        "url": "https://www.ifminvestors.com/en-gb/capabilities/infrastructure/our-portfolio/gct-global-container-terminals/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ifminvestors operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsj1q0cpyivhe4m5bx6ay",
+        "label": "Otpp — Pacifico Sur",
+        "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "GCT Global Container Terminals Inc.",
+    "investmentFirm": "BCI",
+    "sector": "Transportation",
+    "subsector": "Container terminals / ports",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Infrastructure & Renewable Resources",
+    "description": "GCT Global Container Terminals is a marine terminal operator serving containerized trade flows through Canada's Pacific Gateway. Its customers are ocean carriers, logistics providers, railroads, truckers, and cargo owners that rely on terminal infrastructure for import, export, and intermodal flows. The business is asset-heavy and volume-linked because performance depends on terminal concessions, berths, yard capacity, cranes, rail infrastructure, and throughput levels. Current company materials identify GCT as the largest majority Canadian-owned container terminal operator on Canada's west coast, operating GCT Deltaport in Delta and GCT Vanterm in Vancouver with four berths and nearly 3.5 million TEUs of annual capacity. Ontario Teachers', IFM Global Infrastructure Fund (GIF), and BCI announced in 2018 that IFM and BCI would join Teachers as equity partners in GCT, with disclosed ownership of 37.5% Ontario Teachers', 37.5% IFM Investors, and 25% BCI.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "website": "https://globalterminals.com/",
+    "yearFounded": 1907,
+    "investmentYear": 2018,
+    "headquarters": "British Columbia",
+    "milestones": [
+      {
+        "date": "1907",
+        "event": "Public company history materials trace GCT's origins in Vancouver to 1907.",
+        "category": "Other"
+      },
+      {
+        "date": "1907",
+        "event": "GCT Global Container Terminals Inc. was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2007",
+        "event": "OTPP / Ontario Teachers' established GCT as a wholly owned subsidiary after acquiring four North American container terminals.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 7, 2018",
+        "event": "Ontario Teachers' announced that IFM Global Infrastructure Fund (GIF) and BCI would join as equity partners in GCT.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 7, 2018",
+        "event": "The transaction disclosures set ownership at 37.5% for Ontario Teachers', 37.5% for IFM, and 25% for BCI.",
+        "category": "Financing"
+      }
+    ],
+    "management": [
+      {
+        "name": "Eric Waltz",
+        "title": "President & Chief Executive Officer"
+      },
+      {
+        "name": "Cheryl Yaremko",
+        "title": "Chief Financial Officer"
+      },
+      {
+        "name": "Daniel Howell",
+        "title": "Chief Operating Officer"
+      },
+      {
+        "name": "Erik Ward",
+        "title": "Chief Information Officer"
+      },
+      {
+        "name": "Chris Ng",
+        "title": "Chief Commercial Officer"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Company profile source — GCT Global Container Terminals Inc.",
+        "url": "https://globalterminals.com/about/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Two-terminal Port of Vancouver operator and annual capacity"
+      },
+      {
+        "label": "Management source — GCT Global Container Terminals Inc.",
+        "url": "https://globalterminals.com/about/leadership/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current GCT leadership team"
+      },
+      {
+        "label": "Investment date source — OTPP — GCT Global Container Terminals Inc.",
+        "url": "https://www.ourcommons.ca/Content/Committee/411/FINA/WebDoc/WD5138047/411_FINA_PBC2011_Briefs/Global%20Container%20Terminals%20E.html",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GCT established in 2007 as a wholly owned OTPP subsidiary"
+      },
+      {
+        "label": "Investment source — GCT Global Container Terminals Inc.",
+        "url": "https://globalterminals.com/ifm-investors-bci-join-ontario-teachers-equity-partners-gct-global-container-terminals-inc/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 25%, IFM 37.5%, Ontario Teachers' 37.5%"
+      },
+      {
+        "label": "Announcement date source — BCI — GCT Global Container Terminals Inc.",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ifm-investors-and-bci-to-join-ontario-teachers-as-equity-partners-in-gct-global-container-terminals-inc-/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Operations source — GCT Global Container Terminals Inc.",
+        "url": "https://bcmarineterminals.com/global-container-terminals/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BCI",
+        "ownershipVehicle": "Infrastructure & Renewable Resources",
+        "investmentYear": 2018,
+        "stake": "25%",
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "IFM Investors",
+        "ownershipVehicle": "IFM Global Infrastructure Fund (GIF)",
+        "investmentYear": 2018,
+        "stake": "37.5%",
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "OTPP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2007,
+        "stake": "37.5%",
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0477:gct-global-container-terminals:6046b469",
+      "sourceQueueEntrySha256": "38a20b956615a886f26f051c4b60ee072d660debbc24aee71576f65394cc442a",
+      "name": "GCT Global Container Terminals",
+      "country": "Canada",
+      "rawSeedEntrySha256": "a0af94cb55fe14217beb22b88a61476ef4e61ef10a1ebbada68ec42bb3da26c5",
+      "evaluatedSeedEntrySha256": "a0af94cb55fe14217beb22b88a61476ef4e61ef10a1ebbada68ec42bb3da26c5"
+    }
+  ],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1av00btivhe22q21yhy",
+        "fundName": "Infrastructure & Renewable Resources",
+        "managerId": "cmrxpi4wo000tivheupfc57xk",
+        "updatedAt": "2026-07-23T16:09:55.543Z"
+      },
+      {
+        "id": "cmrxpj2ra00dzivhegbwhzec2",
+        "fundName": "IFM Global Infrastructure Fund (GIF)",
+        "managerId": "cmrxpi9zp002eivheuaj1gpqj",
+        "updatedAt": "2026-07-23T16:09:57.431Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4wo000tivheupfc57xk",
+        "name": "BCI",
+        "updatedAt": "2026-07-23T16:09:13.560Z"
+      },
+      {
+        "id": "cmrxpi9zp002eivheuaj1gpqj",
+        "name": "IFM Investors",
+        "updatedAt": "2026-07-23T16:09:20.149Z"
+      },
+      {
+        "id": "cmrxpih16004mivhea7i805re",
+        "name": "OTPP",
+        "updatedAt": "2026-07-23T16:09:29.274Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjmcu017xivheetlsltdn",
+        "companyId": "cmrxpj8l000mmivhe1cfe4xs6",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:43.145Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0125:gct-global-container-terminals-inc:4810f4cf",
+    "taskIndex": 125,
+    "canonicalKey": "gct-global-container-terminals-inc|canada|census-1",
+    "capturedAt": "2026-08-23T04:27:32.151Z",
+    "databaseRevision": "revision:baf711649a35c32371ec465c187a349b665970e56f08f8ac733977d92fe29802",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "32b18cc977fe321f8e51562409becc428f871ba437f233a53aec0d6b02062060",
+    "productionSnapshotSha256": "7e48863c1e9747ffaf2e060a52ac9dfafb6623c4ed737775ac86e72b87809b60",
+    "targetCompanySnapshotSha256": "f6e5da441ae5c85552ea11cddccff3c4a4db0161fc8baafdde5c13d244fee33e",
+    "seedEntrySha256": "60f1a96658cb25155989c04ca78218343d223169dba28bb2df5f15f23852da9d",
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0477:gct-global-container-terminals:6046b469",
+        "sourceQueueEntrySha256": "38a20b956615a886f26f051c4b60ee072d660debbc24aee71576f65394cc442a",
+        "name": "GCT Global Container Terminals",
+        "country": "Canada",
+        "rawSeedEntrySha256": "a0af94cb55fe14217beb22b88a61476ef4e61ef10a1ebbada68ec42bb3da26c5",
+        "evaluatedSeedEntrySha256": "a0af94cb55fe14217beb22b88a61476ef4e61ef10a1ebbada68ec42bb3da26c5"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "e4a8174648935248180464a64f80818727588294fe3306d992deca7d056a64eb",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7698514cb10864feb98c0bac14d6123107c554f1ff062da54f517099df72e20a",
+      "organizationsSha256": "64c9ea8e1c565fd3deb68514f550f4c6b45890db15f796cb607b5f4febb4f5a1",
+      "citationsSha256": "6aa65ff2fb866f8b24295466e34b2b6df7502b0f5bd39d271cabd484527acf5a",
+      "redirectsSha256": "18a10036a08bea03631f7fddf49ac0e612a1f4f056c82899bf8a83e52d09f54d"
+    },
+    "dependencySha256": "ab1022ffef5e64cb7a31a2927b8b3b8207e29967f635519de1f4e1499982a280",
+    "stateSha256": "d24339f55b3b52ea995f2155834d654b8998bc667427dc173ce68e8861e55403",
+    "taskSnapshotSha256": "1a398e68e45a04bb14fd7cd66ba66bddab4fbce28f37631735de02a54c474f54"
+  },
+  "contextSha256": "df523301b44b93fb70b31f21ff1a32497a5c5df215a0c1ded2dc6188c1fc52a5"
+}

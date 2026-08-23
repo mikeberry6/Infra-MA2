@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0434:atlantica-sustainable-infrastructure-plc:4a99610b",
+  "taskIndex": 434,
+  "companyName": "Atlantica Sustainable Infrastructure plc",
+  "conversationUrl": "https://chatgpt.com/c/6a8934bc-cf68-83ea-9835-ef5c47a0278c",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": true
+  },
+  "initialSubmittedAt": "2026-08-22T05:33:48.335Z",
+  "initialCompletedAt": "2026-08-22T05:59:32.881Z",
+  "repairSubmittedAt": "2026-08-22T05:59:32.881Z",
+  "repairCompletedAt": "2026-08-22T06:03:58.670Z",
+  "repairCount": 1,
+  "initialOutcome": "STALLED_INTERNAL_SERVER_ERROR",
+  "finalOutcome": "VALID_AFTER_REPAIR",
+  "contentHashes": {
+    "promptSha256": "996bf0a48d5941e113c663ebc63ab93f139f3468b9eeb7c3d1306b16351f4874",
+    "initialResponseSha256": null,
+    "acceptedResponseSha256": "a026bffc3583143133dad32208774eeca6feeee8d2a17f9f731781139c1a03b1",
+    "transcriptSha256": "85e3837c9bab9664770a8bda311543f0a5b14e5fa1cb9c347fe69c024703d26f",
+    "repairPromptSha256": "829c37a1854c0b501314084d186cd882b0fa22020aad25e5aeb62a2d3f5df8d6",
+    "repairResponseSha256": "a026bffc3583143133dad32208774eeca6feeee8d2a17f9f731781139c1a03b1"
+  },
+  "captureMethod": "Visible signed-in ChatGPT web conversation; authoritative assistant DOM textContent",
+  "captureNote": "GPT-5.6 Sol, Effort Pro and Pro 5 of 5 were visibly verified before the initial submission and again before the sole repair. The initial generation completed extensive web and PDF research but stalled and ended with an Internal Server Error before producing the contracted payload. The same conversation was given one synthesis repair; its first service attempt returned Internal Server Error and the UI Retry regenerated that same repair request, after which Answer now produced one complete valid response. This was one substantive repair, not a second repair prompt. Rendered citation badges appended harmless provider tokens to the review paragraph; the JSON payload and evidence URLs were unaffected."
+}

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0407:dauntless-air:af9f18a7",
+  "checkedAt": "2026-08-21T23:42:14.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; direct web-page inspection for the dynamic Houlihan Lokey transaction page; government-PDF text extraction and rendered-page inspection; current acquisition-and-exit search",
+  "sources": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/dauntless-air/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/dauntless-air/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 172893,
+      "sha256": "061bc824544f3e63eecbc597b7ebc3702b29b08e294d18e5153db5ebf59b6d6d",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgewood's live portfolio identifies Dauntless Air as Unrealized and as emergency-management infrastructure",
+        "The page supports long-term government contracts and integrated aircraft, crew, maintenance, ground-support and mission-management services"
+      ]
+    },
+    {
+      "url": "https://hl.com/about-us/transactions/ridgewood-infrastructure-dauntless-air/",
+      "httpStatus": 200,
+      "finalUrl": "https://hl.com/about-us/transactions/ridgewood-infrastructure-dauntless-air/",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 212,
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "healthStatus": "WORKING_DYNAMIC_PAGE_VERIFIED",
+      "dynamicPageVerification": {
+        "verifiedAt": "2026-08-21T23:42:14.000Z",
+        "verifiedClaims": [
+          "Houlihan Lokey states Ridgewood acquired Dauntless Air",
+          "The transaction closed on June 4, 2026"
+        ]
+      }
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-acquires-dauntless-air-premier-provider-of-emergency-management-infrastructure-302795749.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-acquires-dauntless-air-premier-provider-of-emergency-management-infrastructure-302795749.html",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 219403,
+      "sha256": "a249bda26d8732606102bfb3a7d23e6bb62de4bba17266233f7445c170e289da",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgewood announced the acquisition on June 10, 2026",
+        "The release supports the infrastructure thesis, government-customer scope and continuation of Brett L'Esperance and the existing management team but does not establish management equity rollover"
+      ]
+    },
+    {
+      "url": "https://www.linkedin.com/posts/david-porter-1a437118_we-are-pleased-to-advise-that-this-week-activity-7471231360519606287-r8ae",
+      "httpStatus": 200,
+      "finalUrl": "https://www.linkedin.com/posts/david-porter-1a437118_we-are-pleased-to-advise-that-this-week-activity-7471231360519606287-r8ae",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 269679,
+      "sha256": "1cb6e7a2c1411b6e439e5c47c50eb134f5462f13bc667109a9a37432a4e76e1b",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Macquarie transaction-advisory personnel identify Tuckerman Capital and Mainspring Capital Partners as Dauntless's principal selling shareholders"
+      ]
+    },
+    {
+      "url": "https://evergreenmagazine.com/yes-mr-sheley-this-is-how-its-supposed-to-be-an-interview-with-brett-lesperance-dauntless-air/",
+      "httpStatus": 200,
+      "finalUrl": "https://evergreenmagazine.com/yes-mr-sheley-this-is-how-its-supposed-to-be-an-interview-with-brett-lesperance-dauntless-air/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 135876,
+      "sha256": "3e88ceef66b11149382f9327377f5711519e044aa2b820f3433c33c4b920b179",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Brett L'Esperance said Aero Spray had been owned by John Schwenk and that he was part of a group that bought the company in May 2017",
+        "The interview identifies L'Esperance as CEO and a shareholder at the time but does not establish his post-Ridgewood equity status"
+      ]
+    },
+    {
+      "url": "https://dnrc.mt.gov/_docs/forestry/Wildfire/fire-business/Fire-Contracts-Aviation/Aero_Spray_2024_CPI_Amphibious_Amendment_FINAL.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://dnrc.mt.gov/_docs/forestry/Wildfire/fire-business/Fire-Contracts-Aviation/Aero_Spray_2024_CPI_Amphibious_Amendment_FINAL.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 356158,
+      "sha256": "6c7de75ed6b9c83c24c681cb81fda86ac00e6cf669864444baa3915321ef9704",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 2,
+        "relevantPdfPages": [1],
+        "renderedPagesInspected": [1],
+        "verifiedClaims": [
+          "The agreement identifies Aero Spray, Inc. dba Dauntless Air at 50 W Sorenson Avenue, Appleton, Minnesota",
+          "The agreement confirms government-contract deployment of amphibious water scoopers"
+        ]
+      }
+    },
+    {
+      "url": "https://www.dauntlessair.com/our-fleet",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dauntlessair.com/our-fleet",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 194572,
+      "sha256": "3093479321406cde6e552dae278110a29cfd1c6f159bfd4c9a8447d638262be3",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Dauntless says it owns and operates 20 amphibious AT-802F Fire Boss aircraft"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-21T23:42:14.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No subsequent sale, recapitalization, signed pending transfer or successor owner was identified; Ridgewood's live portfolio continues to label Dauntless Unrealized."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0320:carboncount-holdings-1-llc:1dcdc974",
+  "taskIndex": 320,
+  "companyName": "CarbonCount Holdings 1 LLC",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T20:17:05.000Z",
+  "modelDecision": "EXCLUDED",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "CCH1 is a 50/50 HASI-KKR co-investment, aggregation and financing vehicle. It holds a mixed portfolio of equity-method investments, receivables and debt securities, is serviced through HASI affiliates, and has no evidenced standalone workforce or customer-facing operating business. The active legal entity and its senior notes do not convert it into a manager-level operating portfolio company.",
+  "repoReconciliation": {
+    "canonicalKey": "carboncount-holdings-1-llc|united-states",
+    "recommendedTreatment": "EXCLUDE_AND_RETIRE_PUBLISHED_PORTCO",
+    "preserve": "canonical identity, aliases, 50/50 vehicle ownership and durable exclusion lineage"
+  },
+  "proposalGuardrails": [
+    "Retire and unpublish the PortCo record while preserving its exclusion history and source evidence.",
+    "Do not create substitute PortCos from undisclosed underlying investments without their own manager-level evidence.",
+    "Do not label KKR Core Infrastructure as an exact named fund; the specific fund or account is not publicly disclosed.",
+    "Preserve the 50/50 HASI CarbonCount Holdings 1 / Hoops Midco membership as vehicle ownership context, not operating-company ownership.",
+    "Do not infer an exact formation or interest-closing day beyond the May 4, 2024 agreements and May 7 announcement.",
+    "Keep the 2025 and 2026 notes as financing-vehicle milestones, not proof of operating-company debt."
+  ],
+  "recommendedNextAction": "Prepare one later protected exclusion and publication-retirement proposal for CarbonCount Holdings 1 LLC, preserving all lineage and without adding underlying projects automatically.",
+  "databaseMutationAuthorized": false
+}

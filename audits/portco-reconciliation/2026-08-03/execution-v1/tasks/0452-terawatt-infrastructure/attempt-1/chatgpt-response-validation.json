@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+  "taskIndex": 452,
+  "validatedAt": "2026-08-22T15:05:28.040Z",
+  "conversationUrl": "https://chatgpt.com/c/6a89b47d-26d0-83ea-923f-15e9ed31f80a",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "904b3f37ef90bd176833d7217378c178d8257c2718cd908efcd27ea7cbf9769c",
+    "errors": [
+      "Initial generation completed research but did not emit a contract packet after a transient ChatGPT conversation-rate limit."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-22T15:01:06.940Z",
+    "completedAt": "2026-08-22T15:05:28.040Z",
+    "valid": true,
+    "responseSha256": "1e4b9289529b295a8022838ebc2e9d4e28b770bff6362495614dc69f17ddada4",
+    "errors": []
+  },
+  "finalResponse": {
+    "characterCount": 6519,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "DEFERRED",
+    "confidence": "MEDIUM_HIGH",
+    "evidenceCount": 6,
+    "currentOwnerCount": 1,
+    "unresolvedOwnerCount": 2,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "committedCapitalDistinguishedFromEquitySold": true,
+    "debtExcludedFromOwnerTable": true,
+    "withinOriginalCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "result": "PASS_WITH_SOURCE_HEALTH_OVERRIDE"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json"
+}

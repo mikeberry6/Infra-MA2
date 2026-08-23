@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+  "taskIndex": 452,
+  "companyName": "TeraWatt Infrastructure",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T15:05:28.040Z",
+  "modelDecision": "DEFERRED",
+  "confidence": "MEDIUM_HIGH",
+  "stageState": "STAGED_REVIEW_REQUIRED",
+  "applicationBlocked": true,
+  "rationale": "Vision Ridge's direct September 2022 company-level investment is supported and the repository already contains one active Vision Ridge owner row attributed to Sustainable Asset Fund III. The queued ADD_OWNER is therefore a false positive and must not create a duplicate. Application remains blocked because Keyframe and Cyrus current ownership continuity is not directly established, the US$1bn headline requires committed-capital clarification, and the model's primary Business Wire URL resolves to an unrelated release.",
+  "repoReconciliation": {
+    "seedOwner": {
+      "investmentFirm": "Vision Ridge",
+      "ownershipVehicle": "Sustainable Asset Fund III",
+      "investmentYear": 2022,
+      "status": "Active"
+    },
+    "ownershipAttributionManager": "Vision Ridge Partners",
+    "aliasResolution": "SAME_MANAGER",
+    "queuedAddOwnerTreatment": "SUPERSEDE_DUPLICATE_ACTION",
+    "productionSnapshotOwnershipPeriodCount": 1
+  },
+  "unresolvedQuestions": [
+    "Current direct ownership continuity for Keyframe and Cyrus.",
+    "Exact stakes, share classes and any co-investment vehicles.",
+    "Whether the existing scorecard should change founding year from public launch in 2021 to predecessor legal formation in 2018."
+  ],
+  "recommendedNextAction": "Do not add another Vision Ridge owner. Route TeraWatt to focused correction review for capital wording, the wrong Business Wire citation, formation year and unresolved Keyframe/Cyrus owner status.",
+  "databaseMutationAuthorized": false
+}

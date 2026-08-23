@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+  "taskIndex": 142,
+  "companyName": "Excelsior U.S. Solar & Storage Portfolio",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T03:55:20.000Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Excelsior U.S. Solar & Storage Portfolio",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "BlackRock's Lighthouse is the same 38-project, 89 MWDC operating portfolio later described by Excelsior. KeyBanc says the 100% membership-interest sale closed in December 2023, so March 12, 2024 is disclosure, not entry. Merge any GIP-side duplicate into one canonical record, but retain only legacy BlackRock/Evergreen ownership: BlackRock's later GIP acquisition did not itself transfer this investment. No later public exit was found.",
+    "identityResolution": {
+      "canonicalDisplayName": "Lighthouse (Excelsior U.S. Solar & Storage Portfolio)",
+      "canonicalLegalName": "NOT_PUBLICLY_DISCLOSED",
+      "aliases": [
+        "Lighthouse",
+        "Excelsior U.S. Solar & Storage Portfolio",
+        "Excelsior 89 MW solar/BESS DG portfolio"
+      ],
+      "entityType": "Operating C&I solar/storage asset platform; no standalone corporation disclosed",
+      "boundary": "One PortCo portfolio containing 38 project/SPV assets; do not count projects separately",
+      "officialWebsite": "NOT_PUBLICLY_DISCLOSED",
+      "headquarters": "NOT_APPLICABLE; six-state footprint",
+      "foundingYear": "NOT_PUBLICLY_DISCLOSED"
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Excelsior Energy Capital",
+          "organization": "Excelsior Energy Capital",
+          "fund": "Excelsior Renewable Energy Investment Fund I LP",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Sold 100% of its membership interests; total project equity NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-03-12",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": null,
+          "exitDate": "2023-12; day NOT_PUBLICLY_DISCLOSED",
+          "exitYear": 2023,
+          "isActive": false,
+          "transactionState": "CLOSED_EXIT"
+        },
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock, Inc.",
+          "fund": "Evergreen Infrastructure Partners Fund",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Acquired 100% of Excelsior's membership interests; total project equity NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2023-11-16",
+          "entryDate": "2023-12; day NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_CURRENT"
+        }
+      ],
+      "managerAttribution": "BlackRock/Evergreen only. Do not add GIP without an asset- or fund-level transfer.",
+      "gipRelationship": "BlackRock acquired GIP on 2024-10-01 and branded the combined platform GIP; no Lighthouse transfer was disclosed."
+    },
+    "operatingResolution": {
+      "listScope": "INCLUDE",
+      "infrastructureBasis": "Operational, asset-heavy and long-term contracted; not development-only, debt, public securities or LP exposure",
+      "sector": "Power & Energy Transition",
+      "subsector": "C&I distributed solar and solar-plus-storage",
+      "footprint": "38 operational projects; 89 MWDC; CA, CO, MA, MN, VT and WA",
+      "productsServices": "Distributed renewable generation and battery storage",
+      "customersEndMarkets": "Long-term contracted C&I offtakers; names NOT_PUBLICLY_DISCLOSED",
+      "currentOperatingStatus": "Active on last direct evidence; no later contrary event found"
+    },
+    "acquisitionExitCheck": {
+      "searchCutoff": "2026-08-18 ET; requested as-of date is 2026-08-19",
+      "entryFinding": "Signed 2023-11-16; closed December 2023; exact day NOT_PUBLICLY_DISCLOSED",
+      "laterEventSearch": "Lighthouse/Excelsior/BlackRock/Evergreen/38 projects/89 MWDC plus sale, exit, transfer, recapitalization, merger, rebrand and bankruptcy",
+      "result": "NO_LATER_PUBLIC_TRANSACTION_FOUND",
+      "pendingTransactions": [],
+      "currentConclusion": "BlackRock/Evergreen remains best-supported current owner; no current asset-level portfolio page was located."
+    },
+    "milestones": [
+      {
+        "date": "2023-11-16",
+        "event": "BlackRock signed to acquire Lighthouse, subject to closing conditions.",
+        "category": "Signed acquisition"
+      },
+      {
+        "date": "2023-12",
+        "event": "Evergreen acquired 100% of Excelsior's membership interests.",
+        "category": "Acquisition closing"
+      },
+      {
+        "date": "2024-03-12",
+        "event": "Excelsior announced the sale and full exit.",
+        "category": "Exit disclosure"
+      },
+      {
+        "date": "2024-10-01",
+        "event": "BlackRock closed its GIP acquisition; no Lighthouse transfer was disclosed.",
+        "category": "Manager event"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "KeyBanc transaction page",
+        "url": "https://www.key.com/businesses-institutions/our-transactions/deals.excelsior-energy-capital.html",
+        "purpose": "Closing, stake, fund and footprint",
+        "sourceTier": "Tier 1 - sell-side adviser",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "BlackRock-issued Lighthouse announcement",
+        "url": "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security",
+        "purpose": "Identity, signing and scope",
+        "sourceTier": "Tier 1 - buyer release",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Excelsior sale announcement",
+        "url": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+        "purpose": "Exit, scale, contracts and boundary",
+        "sourceTier": "Tier 1 - seller",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock GIP closing release",
+        "url": "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2024/BlackRock-Completes-Acquisition-of-Global-Infrastructure-Partners/default.aspx",
+        "purpose": "GIP corporate relationship",
+        "sourceTier": "Tier 1 - manager release",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      {
+        "field": "identity",
+        "before": "Excelsior U.S. Solar & Storage Portfolio",
+        "after": "Lighthouse, retaining current name as alias"
+      },
+      {
+        "field": "BlackRock entry",
+        "before": "2024 / 2024-03-12",
+        "after": "Closed 2023-12; signed 2023-11-16; disclosed 2024-03-12"
+      },
+      {
+        "field": "ownership",
+        "before": "BlackRock/GIP overlap",
+        "after": "One BlackRock/Evergreen period; no GIP owner period"
+      },
+      {
+        "field": "footprint",
+        "before": "Multiple U.S. states",
+        "after": "CA, CO, MA, MN, VT and WA"
+      }
+    ],
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "GIP-side company/owner row",
+        "disposition": "MERGE_WITHOUT_GIP_OWNERSHIP",
+        "reason": "Same portfolio; legacy BlackRock Evergreen investment with no transfer to GIP."
+      },
+      {
+        "candidate": "38 underlying projects/SPVs",
+        "disposition": "DO_NOT_SEPARATELY_COUNT",
+        "reason": "Already aggregated in one platform portfolio; legal roster not disclosed."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact holding company, SPV roster and website are NOT_PUBLICLY_DISCLOSED.",
+      "Exact December 2023 closing day and price are NOT_PUBLICLY_DISCLOSED.",
+      "Tax-equity/minority interests and total project-level economic stake are NOT_PUBLICLY_DISCLOSED."
+    ],
+    "recommendedListAction": "Merge any GIP-side duplicate proposal into production ID cmrxpj8x000n4ivhefbfwnig3; retain one portfolio record, lead with Lighthouse and keep the current name as alias, correct BlackRock entry to December 2023, retain Evergreen Infrastructure Partners Fund, and create no GIP owner period."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 4,
+    "openSourceCount": 1,
+    "blockedSourceCount": 1,
+    "unavailableSourceCount": 2,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

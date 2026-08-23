@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0158:arlington-industries:c7b020cc",
+  "taskIndex": 158,
+  "companyName": "Arlington Industries",
+  "verifiedAt": "2026-08-19T05:40:05.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-arlington-industries/",
+      "finalUrl": "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-arlington-industries/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5716,
+      "contentSha256": "e9acc083b945d7a6943f901ca3738d93b13e4e4b7ec5922a8859f2de1e22b33f",
+      "note": "Blackstone blocked curl, but independent browser retrieval opened the exact announcement and verified the identity, strategy, announcement date, and Stark-family history."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "2e016a0aca9101e134ae16d30c81b73b5e72ea20929ac1bbb3726f63a450d8d8",
+      "note": "SEC blocked curl, but independent browser retrieval opened Blackstone’s filed 2Q26 results and verified Arlington within capital deployed."
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260906",
+      "finalUrl": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260906",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 986147,
+      "contentSha256": "6c340f1c2a57574174b4e2b5366d8b132d177482eaa58c90be05dfc7b65d13bd",
+      "note": "FTC notice opened and identifies the BETP IV AIV acquirer."
+    },
+    {
+      "url": "https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/",
+      "finalUrl": "https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5897,
+      "contentSha256": "2ea74721182155e49a858bee28cd852d7a8967f6704199caf04e0920a4d24737",
+      "note": "Blackstone blocked curl, but independent browser retrieval opened the exact BETP IV final-close release."
+    },
+    {
+      "url": "https://www.sullcrom.com/Lawyers/Keith-A-Pagnani",
+      "finalUrl": "https://www.sullcrom.com/Lawyers/Keith-A-Pagnani",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 62341,
+      "contentSha256": "066585549669ea7bc0e615964b61f0cf5277881dc110ddfe91d14a216f03fe9c",
+      "note": "Counsel biography opened; its remaining pending wording is retained as contrary evidence."
+    },
+    {
+      "url": "https://www.aifittings.com/",
+      "finalUrl": "https://www.aifittings.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 70108,
+      "contentSha256": "0fd661d816bc6f47ea01dfbcc27e19a43cd9a0f6b290ee387528cb0b54e08383",
+      "note": "Official company homepage opened."
+    },
+    {
+      "url": "https://www.aifittings.com/media/catalogs/Arlington-75Years.pdf",
+      "finalUrl": "https://www.aifittings.com/media/catalogs/Arlington-75Years.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 3179686,
+      "contentSha256": "02bdb7d7d29f8d88755576b055a5f1bab4e7d0ff12f8efdd8ecae92a1dad86ad",
+      "note": "Official 75-year company history PDF opened and was hash-captured."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Reopen the SEC exhibit and every selected direct source against a fresh production snapshot before any proposal or mutation; do not infer an exact closing date, stake, or Stark-family rollover."
+}

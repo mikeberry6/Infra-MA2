@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0354:mercury-broadband:1dda7bce",
+  "taskIndex": 354,
+  "verifiedAt": "2026-08-21T13:48:35.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 9,
+    "working": 7,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The 2022 FCC control order returned HTTP 500 to direct curl but opened at its exact PDF URL in the signed-in browser and is classified BROWSER_BLOCKED_BUT_VERIFIED.",
+    "The Quickline leadership page returned HTTP 403 to direct curl but rendered at its exact URL in the signed-in browser and is classified BROWSER_BLOCKED_BUT_VERIFIED.",
+    "The canonical Mercury Fiber website URL appeared outside the evidence array and was independently verified in addition to all eight evidence rows."
+  ],
+  "sources": [
+    {"url":"https://mercuryfiber.com/","finalUrl":"https://mercuryfiber.com/","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":552271,"sha256":"2eb91324c85266fa305b4b514ae8f13e424714b812e3c26e411fceb542d61455","health":"WORKING"},
+    {"url":"https://www.efis.psc.mo.gov/Document/Display/459242","finalUrl":"https://www.efis.psc.mo.gov/Document/Display/459242","httpStatus":200,"mediaType":"application/pdf","bytes":170648,"sha256":"fd8511b4ad399826c22312cd721f0b64821b0dba0dc4c07c587a48395466c01c","health":"WORKING"},
+    {"url":"https://docs.fcc.gov/public/attachments/DA-22-1022A1.pdf","finalUrl":"https://docs.fcc.gov/public/attachments/DA-22-1022A1.pdf","httpStatus":500,"mediaType":"application/json; charset=UTF-8","bytes":328,"sha256":"36713b385db2ca0c8a6220b61c9456935b4de686a19c6b947af47d6dab79f3f3","health":"BROWSER_BLOCKED_BUT_VERIFIED","browserVerification":{"title":"DA-22-1022A1.pdf","exactUrlOpened":true,"browserSnapshotSha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}},
+    {"url":"https://www.northleafcapital.com/news/mercury-broadband-and-northleaf-announce-strategic-partnership-facilitate-companys-rural","finalUrl":"https://www.northleafcapital.com/news/mercury-broadband-and-northleaf-announce-strategic-partnership-facilitate-companys-rural","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":94584,"sha256":"066d57455599a64a6717f96e158046051d9195bb8a5974edfc2b13cc2c395c55","health":"WORKING"},
+    {"url":"https://mercuryfiber.com/news/mercury-fiber-strengthens-commitment-to-rural-internet-choice-and-innovation/","finalUrl":"https://mercuryfiber.com/news/mercury-fiber-strengthens-commitment-to-rural-internet-choice-and-innovation/","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":346851,"sha256":"bf6160c3e8c7f3ee3d07f5b094d859896a251d0458214b710f6985194c322557","health":"WORKING"},
+    {"url":"https://mercuryfiber.com/news/mercury-broadband-begins-construction-of-new-fiber-optic-network-in-overbrook-kansas/","finalUrl":"https://mercuryfiber.com/news/mercury-broadband-begins-construction-of-new-fiber-optic-network-in-overbrook-kansas/","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":347443,"sha256":"681cb3d32239cba5c29488a36d63f3a9b7bf7364e653b682c556606a7d1b3cc1","health":"WORKING"},
+    {"url":"https://mercuryfiber.com/policies/","finalUrl":"https://mercuryfiber.com/policies/","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":419373,"sha256":"b0e1ec37f0b658fd425620b0a6a8f923f7bce717201fe89aa6948d2906cfd891","health":"WORKING"},
+    {"url":"https://docs.fcc.gov/public/attachments/DA-26-497A1.pdf","finalUrl":"https://docs.fcc.gov/public/attachments/DA-26-497A1.pdf","httpStatus":200,"mediaType":"application/pdf; charset=UTF-8","bytes":203630,"sha256":"45479abdb9fd1ff86bd22da05ea7064caa3e4b2d4c2899387f3ff2d7707caade","health":"WORKING"},
+    {"url":"https://quickline.co.uk/about-us/leadership-team/","finalUrl":"https://quickline.co.uk/about-us/leadership-team/","httpStatus":403,"mediaType":"text/html","bytes":103,"sha256":"f261423d1da97890ff6bfccd31ff4ee0b74f69351cf75095fbe791cb16cbf5bd","health":"BROWSER_BLOCKED_BUT_VERIFIED","browserVerification":{"title":"Leadership Team - Quickline Communications Limited","exactUrlOpened":true,"browserSnapshotSha256":"d2044175d1acc520abf6d6a3f161553b2307d9d4c1b8d8d6270d3f5a4e0dc71c"}}
+  ]
+}

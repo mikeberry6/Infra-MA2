@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": null,
+  "taskId": "ledger:0241:live-oak-wind-farm:082ed40f",
+  "taskIndex": 241,
+  "validatedAt": "2026-08-20T04:28:25.679Z",
+  "conversationUrl": "https://chatgpt.com/c/6a8677e8-f39c-83ea-8066-38b27d25774e",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": null,
+    "errors": [
+      "The research completed but no final packet was visible after a page resynchronization."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-20T04:17:38.778Z",
+    "completedAt": "2026-08-20T04:22:02.692Z",
+    "valid": true,
+    "responseSha256": "b98079bf898c0351b91875e9cfe1f134ccb12d8e8a88b707910fd128d6e01ee4",
+    "errors": [],
+    "warnings": [
+      "The exact Equitix successor legal vehicle after Equitix Ether Bidco ceased as a person with significant control on March 27, 2026 is not publicly disclosed; Equitix's April 2, 2026 release nevertheless directly confirms Equitix remains a 50:50 JLIL co-owner."
+    ]
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "canonicalName": "Live Oak Wind Farm",
+    "legalProjectCompany": "Live Oak Wind Project, LLC",
+    "evidenceCount": 7,
+    "uniqueReturnedUrlCount": 10,
+    "currentManagerOwnerCount": 3,
+    "formerOwnerCount": 0,
+    "pendingDirectOwnershipTransactionCount": 0,
+    "projectBoundaryVerified": true,
+    "johnLaingHistoricalSeventyFivePercentVerified": true,
+    "engieRetainedTwentyFivePercentVerified": true,
+    "jlilFiftyFiftyControlVerified": true,
+    "equitixCurrentManagerOwnershipVerified": true,
+    "kkrJohnLaingCurrentManagerOwnershipVerified": true,
+    "managerLevelStakeNotConvertedToDirectProjectPercentages": true,
+    "northAmericaQualificationPresent": true,
+    "allReturnedUrlsChecked": true,
+    "exactlyOneRecommendedPrimary": true,
+    "applicationBlocked": false,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

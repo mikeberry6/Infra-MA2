@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0221:mantle-reach:c0dcf711",
+  "taskIndex": 221,
+  "companyName": "Mantle Reach",
+  "verifiedAt": "2026-08-19T23:45:30.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://mantlereach.com/",
+      "finalUrl": "https://mantlereach.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 6142,
+      "contentSha256": "3b2a83f8223d164e7581eb2c040853649b82e07df9a7fe55c5183d33c2558fef",
+      "note": "The official site identifies Mantle Reach Power LLC, describes a North American geothermal IPP that develops, owns and operates projects, and names EnCap Energy Transition Fund III as its sponsor."
+    },
+    {
+      "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/current/mantle-reach",
+      "finalUrl": "https://www.encapinvestments.com/about/energy-transition/portfolio/current/mantle-reach",
+      "status": "OPEN_STALE_DESCRIPTION",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 18949,
+      "contentSha256": "34f7ce89680935c195e8f14f13235964771ea5767fecf5f672bdf1fdf71f4ba6",
+      "note": "EnCap's current portfolio page lists Mantle Reach and reports a 2023 initial investment, but its legacy thermal-site-repurposing description is not used to infer continuity, a current Fund III entry date or an ownership stake."
+    },
+    {
+      "url": "https://investors.bakerhughes.com/news/press-releases/news-details/2026/Baker-Hughes-and-Mantle-Reach-Power-an-EnCap-Energy-Transition-Company-Announce-Strategic-Agreement-to-Accelerate-Large-scale-Geothermal-Across-North-America/default.aspx",
+      "finalUrl": "https://investors.bakerhughes.com/news/press-releases/news-details/2026/Baker-Hughes-and-Mantle-Reach-Power-an-EnCap-Energy-Transition-Company-Announce-Strategic-Agreement-to-Accelerate-Large-scale-Geothermal-Across-North-America/default.aspx",
+      "status": "BROWSER_OPEN_CURL_BLOCKED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 7236,
+      "contentSha256": "d21db30e856377131a0d0c6608bf76dfb0ecbc58dec3d039d8070c33021adb93",
+      "contentHashBasis": "browser-rendered text",
+      "curlBlockBytes": 6338,
+      "curlBlockContentSha256": "247ce74dfcb0d429429aeec98525af92090ab2f65ffebb7be8107742b341a08b",
+      "note": "The browser-opened transaction-party announcement identifies Mantle Reach Power as a Fund III portfolio company, describes its owner/developer/operator role across North America and states a target of up to 500 MW over five years."
+    },
+    {
+      "url": "https://www.linkedin.com/company/mantle-reach-power",
+      "finalUrl": "https://www.linkedin.com/company/mantle-reach-power",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 98126,
+      "contentSha256": "1b69e46f10b5d19c7c67a5334091185c7450468712634aae884d664bb8b91186",
+      "note": "The current company profile supports the Mantle Reach Power name, geothermal classification, North American mandate and small dedicated organization."
+    },
+    {
+      "url": "https://www.power-transitions.com/powertransitions-completes-acquisition-of-226-mw-seed-portfolio/",
+      "finalUrl": "https://www.power-transitions.com/powertransitions-completes-acquisition-of-226-mw-seed-portfolio/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 114309,
+      "contentSha256": "23a89d9982e5894bc3e05d35f472cdc7668b25962982df31d3ddbfe1b9e50503",
+      "note": "PowerTransitions' direct release establishes that it is a separate EnCap-origin platform acquired by Partners Group in September 2025, not a successor or duplicate of the current geothermal company."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 1,
+    "currentLegalIdentityVerified": true,
+    "currentEnCapFundIIIBackingVerified": true,
+    "northAmericanPlatformBoundaryVerified": true,
+    "entryDateStakeAndVehicleNotInferred": true,
+    "legacy2023HistoryKeptQualified": true,
+    "powerTransitionsDuplicateExcluded": true,
+    "laterDirectExitNotFound": true,
+    "allCoreCurrentClaimsHaveDirectOpenEvidence": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Before any mutation, recapture the task-specific production and dependency snapshot and convert this research packet into a hash-bound proposal. The proposal must not assign the 2023 history to Fund III or infer an entry date or stake."
+}

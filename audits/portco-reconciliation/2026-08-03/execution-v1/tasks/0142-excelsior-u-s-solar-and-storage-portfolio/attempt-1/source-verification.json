@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_SOURCE_VERIFICATION",
+  "taskId": "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+  "taskIndex": 142,
+  "companyName": "Excelsior U.S. Solar & Storage Portfolio",
+  "verifiedAt": "2026-08-19T03:55:20.000Z",
+  "verifier": "Codex independent URL retrieval, redirect and content-hash check",
+  "summary": {
+    "evidenceRows": 4,
+    "open": 1,
+    "browserBlockedPendingReleaseReopen": 1,
+    "unavailablePendingReleaseReopen": 2,
+    "dead": 0,
+    "researchPacketAccepted": true
+  },
+  "sources": [
+    {
+      "httpStatus": null,
+      "finalUrl": "https://www.key.com/businesses-institutions/our-transactions/deals.excelsior-energy-capital.html",
+      "workingStatus": "UNAVAILABLE_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": null,
+      "mediaType": null,
+      "retrievalNote": "HTTP/2 stream error; HTTP/1.1 retry timed out.",
+      "url": "https://www.key.com/businesses-institutions/our-transactions/deals.excelsior-energy-capital.html",
+      "label": "KeyBanc transaction page",
+      "purpose": "Closing, stake, fund and footprint",
+      "isRecommendedPrimary": true,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": null,
+      "finalUrl": "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security",
+      "workingStatus": "UNAVAILABLE_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": null,
+      "mediaType": null,
+      "retrievalNote": "HTTP/2 stream error during independent retrieval.",
+      "url": "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security",
+      "label": "BlackRock-issued Lighthouse announcement",
+      "purpose": "Identity, signing and scope",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "be762a558d6d673c700a21f79b42d88ad169e585c51aae0f909f2fece6e02ea7",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+      "label": "Excelsior sale announcement",
+      "purpose": "Exit, scale, contracts and boundary",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2024/BlackRock-Completes-Acquisition-of-Global-Infrastructure-Partners/default.aspx",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "092f7176cacd993eebeded62807396d285daa37e62ede11d747f43b0b4133633",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2024/BlackRock-Completes-Acquisition-of-Global-Infrastructure-Partners/default.aspx",
+      "label": "BlackRock GIP closing release",
+      "purpose": "GIP corporate relationship",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    }
+  ],
+  "note": "Staging verification only; reopen and claim-check every source against a fresh production snapshot before proposal or release."
+}
+

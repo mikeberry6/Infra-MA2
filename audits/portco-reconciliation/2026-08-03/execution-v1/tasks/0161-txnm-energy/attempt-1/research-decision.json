@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0161:txnm-energy:91e56a1f",
+  "taskIndex": 161,
+  "companyName": "TXNM Energy",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "responseSha256": "f33b8298972e740bf8c94fbc35098be8e45fa8c9bb205520985f7d19c2d5d5c9",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "TXNM Energy",
+    "requestedManagers": [
+      "Blackstone"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "TXNM is the correct company, but Blackstone is not a current owner. Its separate $400 million PIPE was voided and fully unwound on 2026-07-22; the 100% take-private remains signed and pending. BETP IV is unsupported.",
+    "identityResolution": {
+      "legalName": "TXNM Energy, Inc.",
+      "displayName": "TXNM Energy",
+      "canonicalKey": "txnm-energy|united-states",
+      "aliases": [
+        "PNM Resources, Inc.",
+        "PNM Resources"
+      ],
+      "continuity": "Same corporation; name changed 2024-08-02 without structural change.",
+      "formation": "Incorporated in 2000; holding-company structure began in 2001. TXNM was not formed by a 2000 PNM/TNMP merger; TNMP was acquired later.",
+      "boundary": "TXNM is the parent platform; PNM and TNMP are operating subsidiaries, not separate manager-level PortCos."
+    },
+    "ownershipResolution": {
+      "currentState": "Public-company shareholders; no active Blackstone stake after 2026-07-22.",
+      "owners": [
+        {
+          "manager": "Blackstone",
+          "organization": "Blackstone Infrastructure",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Troy TopCo LP",
+          "stake": "8,000,000 common shares; $400 million",
+          "announcementDate": "2025-05-19",
+          "entryDate": "2025-06-02",
+          "entryYear": 2025,
+          "exitDate": "2026-07-22",
+          "exitYear": 2026,
+          "isActive": false,
+          "transactionState": "VOIDED_AND_UNWOUND"
+        }
+      ],
+      "fundResolution": "Remove BETP IV. Public disclosures identify Blackstone Infrastructure and Blackstone Infrastructure Partners L.P.; no specific final fund/account allocation is disclosed.",
+      "pendingTransactions": [
+        {
+          "direction": "INCOMING",
+          "buyer": "Troy ParentCo LLC, a Blackstone Infrastructure affiliate",
+          "seller": "TXNM public shareholders",
+          "stake": "100% of outstanding common stock",
+          "announcementDate": "2025-05-19",
+          "closingDate": null,
+          "state": "SIGNED_PENDING_NMPRC_AND_NRC_APPROVALS",
+          "evidenceUrls": [
+            "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+            "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R37.htm",
+            "https://www.txnmenergy.com/investors/rates-and-filings/pnm-nmprc-filings.aspx"
+          ]
+        }
+      ]
+    },
+    "operatingResolution": {
+      "scope": "Qualifying North American regulated-utility platform upon closing; pending PortCo transaction only as of the as-of date.",
+      "status": "Active public company",
+      "website": "https://www.txnmenergy.com/",
+      "headquarters": "Albuquerque, New Mexico, United States",
+      "sector": "Utilities",
+      "subsector": "Regulated electric utility holding company",
+      "operations": "PNM generates, transmits and distributes electricity in New Mexico; TNMP transmits and distributes electricity in Texas.",
+      "customers": "More than 800,000 homes and businesses",
+      "footprint": "New Mexico and Texas",
+      "yearFounded": 2000,
+      "correction": "Current core operations are electric, not electric and gas; legacy gas distribution was sold in 2008."
+    },
+    "acquisitionExitCheck": {
+      "result": "No closing, termination, competing sale, divestiture, transfer, bankruptcy or successor transaction found through 2026-08-19.",
+      "completed": [
+        "Shareholder 2025-08-28",
+        "HSR 2026-01-13",
+        "FCC 2026-01-23",
+        "PUCT 2026-02-06",
+        "FERC 2026-02-20"
+      ],
+      "outstanding": [
+        "NMPRC",
+        "NRC"
+      ],
+      "outsideDate": "2027-05-31",
+      "expectedClosing": "H1 2027 company estimate; not a legal closing date.",
+      "pipe": "Closed 2025-06-02; voided 2026-07-02; $400 million repaid and all shares canceled 2026-07-22."
+    },
+    "milestones": [
+      {
+        "date": "2000-03-03",
+        "event": "Current legal entity incorporated; holding-company structure began in 2001.",
+        "category": "Founding"
+      },
+      {
+        "date": "2024-08-02",
+        "event": "PNM Resources renamed TXNM Energy with no structural change.",
+        "category": "Rebrand"
+      },
+      {
+        "date": "2025-05-19",
+        "event": "Blackstone take-private and separate $400 million PIPE announced.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026-07-22",
+        "event": "PIPE repayment and cancellation completed; full acquisition remained pending.",
+        "category": "Ownership"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "TXNM Q2 2026 10-Q merger note",
+        "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R37.htm",
+        "purpose": "Merger state, approvals and outside date",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "TXNM Q2 2026 10-Q financing note",
+        "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm",
+        "purpose": "PIPE close, void ruling and repayment",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "NMPRC compliance report",
+        "url": "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2025%20Blackstone%20Infrastructure/PNM/25-00060-UT-2026-07-27-PNM-Joint%20Applicants%20Compliance%20Report%20to%20Effectuate%20Final%20Order%20on%20the%20Show%20Cause.pdf",
+        "purpose": "Share cancellation and merger waiver",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Blackstone announcement",
+        "url": "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+        "purpose": "Terms and investing platform",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "SEC merger agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842625000048/a05192025txnmex21.htm",
+        "purpose": "Legal parties, sponsor and PIPE vehicle",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "TXNM NMPRC filings index",
+        "url": "https://www.txnmenergy.com/investors/rates-and-filings/pnm-nmprc-filings.aspx",
+        "purpose": "Current NMPRC docket through as-of date",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "TXNM corporate history",
+        "url": "https://www.txnmenergy.com/about-us/history.aspx",
+        "purpose": "Formation, subsidiaries and legacy gas exit",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Active Blackstone/BETP IV owner -> no current Blackstone owner; historical voided PIPE plus pending acquisition.",
+      "Electric-and-gas/New Mexico-and-Texas HQ -> electric utility holding company headquartered in Albuquerque with NM/TX operations.",
+      "2000 PNM/TNMP merger -> 2000 incorporation, 2001 holding-company launch and later TNMP acquisition."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "PNM: operating subsidiary already counted under TXNM.",
+      "TNMP: operating subsidiary already counted under TXNM.",
+      "Troy ParentCo, Troy Merger Sub and Troy TopCo: transaction vehicles, not PortCos."
+    ],
+    "unresolvedQuestions": [
+      "Exact Blackstone fund/account and passive co-investor allocation at closing is NOT_PUBLICLY_DISCLOSED.",
+      "Closing date remains unresolved; NMPRC, NRC and NMPRC docket 26-0000153-UT outcomes were outstanding."
+    ],
+    "recommendedListAction": "ADD_PENDING_TRANSACTION; retain the TXNM record; remove active Blackstone ownership and BETP IV; retain the PIPE only as historical VOIDED_AND_UNWOUND; correct operating, headquarters and founding fields."
+  }
+}

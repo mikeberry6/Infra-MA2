@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0255:cleancapital-c-and-i-solar-spvs:38fec9c7",
+  "taskIndex": 255,
+  "linkedTaskIdsCovered": [],
+  "companyName": "CleanCapital C&I Solar SPVs",
+  "canonicalName": "CleanCapital",
+  "legalName": "CleanCapital Holdings LLC",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "MEDIUM_HIGH_PLATFORM_IDENTITY_AND_GENERATE_WAREHOUSE_ROLE_CURRENT_CAP_TABLE_REVIEW_REQUIRED",
+  "responseSha256": "dc554cd48a247cba4c6b97e6765730283b1ff843efdf30b642e17b025d6999a8",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "The legacy generic SPV record should resolve to the enduring CleanCapital Holdings LLC platform. Generate's 2017 role was a project-acquisition warehouse and sell-down structure rather than proven corporate equity, and Infranity's 2026 capital is debt. Manulife is the largest disclosed platform shareholder, but the model mixed self/project ownership into the parent cap table and exceeded the one-repair length contract, so application is blocked for manual normalization.",
+  "blockingQuestions": [
+    "Normalize the parent-company owner array so CleanCapital is not represented as its own owner and project-level BlackRock/CarVal positions are not treated as parent equity.",
+    "Confirm whether Manulife alone is sufficient as the disclosed current sponsor representation or whether another current direct owner must be recorded.",
+    "Determine the safest historical disposition for Generate when the exact project-SPV sell-down dates and successor buyers are not publicly disclosed."
+  ],
+  "nonblockingDisclosureGaps": [
+    "Exact legal names and complete asset schedule for the 2017 Generate warehouse SPVs are not publicly disclosed.",
+    "Exact Manulife stake and complete current shareholder percentages are not publicly disclosed."
+  ],
+  "applicationBlocked": true
+}

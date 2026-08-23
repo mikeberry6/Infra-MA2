@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0360:harbor-logistics-llc:69a79d6e",
+  "taskIndex": 360,
+  "verifiedAt": "2026-08-21T16:11:37.740Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 8,
+    "working": 4,
+    "browserBlockedButVerified": 4,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The Harbor homepage, Harbor owner statement and Harbor/A&R combination page returned HTTP 403 to direct curl, but every exact URL rendered successfully in-browser.",
+    "The Business Wire ATS release returned an HTTP/2 transport error to curl, but the exact URL rendered successfully in-browser.",
+    "All four sources are classified BROWSER_BLOCKED_BUT_VERIFIED rather than dead."
+  ],
+  "sources": [
+    {
+      "url": "https://harborlogistics.com/",
+      "finalUrl": "https://harborlogistics.com/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5491,
+      "sha256": "28c32d4b9e46d57b9b79839d3107cdaaf0cb5c5d5de5994d8d5f11c55de24f6e",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "Home - Harbor Logistics",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "869662820c54de5d7cb8f658b50e8d7cd2ea51a19f34b812329cd77bc1ef253f"
+      }
+    },
+    {
+      "url": "https://harborlogistics.com/harbor-logistics-announces-leadership-transition-and-appointment-of-scott-auslund-as-chief-executive-officer/",
+      "finalUrl": "https://harborlogistics.com/harbor-logistics-announces-leadership-transition-and-appointment-of-scott-auslund-as-chief-executive-officer/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5491,
+      "sha256": "57bc860035dbe24580b4bd560e3ffc95041fbb4765042475bfc312007970648c",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "Harbor Logistics Announces Leadership Transition and Appointment of Scott Auslund as Chief Executive Officer - Harbor Logistics",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "532cff9d1db09a0b2ac82cc0c18a076bfc6438b6a5b3650bb55c10786b5889f2"
+      }
+    },
+    {
+      "url": "https://www.novainfrastructure.com/investments-index",
+      "finalUrl": "https://www.novainfrastructure.com/investments-index",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 220466,
+      "sha256": "a4427f71884ea656e7412b6b5bf226196df7520cfb0c3ebe8ba575c18d00365b",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.novainfrastructure.com/nova-invests-in-warehousing-logistics-business",
+      "finalUrl": "https://www.novainfrastructure.com/nova-invests-in-warehousing-logistics-business",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 79541,
+      "sha256": "1dcdefcd0f82e97b2b4b6375bba3e2eb7f64645d18175244121abca606f5ae4a",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20230105005247/en/NOVA-Infrastructure-Acquires-ATS-for-Harbor-Logistics",
+      "finalUrl": "https://www.businesswire.com/news/home/20230105005247/en/NOVA-Infrastructure-Acquires-ATS-for-Harbor-Logistics",
+      "httpStatus": 0,
+      "mediaType": null,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "HTTP/2 stream closed with INTERNAL_ERROR during direct retrieval.",
+      "browserVerification": {
+        "title": "NOVA Infrastructure Acquires ATS for Harbor Logistics",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "ec5e9541f5d5b8c4deb0162c767e8fa56f7888cac15b538b69aa849737551da0"
+      }
+    },
+    {
+      "url": "https://www.novainfrastructure.com/nova-infrastructure-fund-i-completes-eighth-platform-investment",
+      "finalUrl": "https://www.novainfrastructure.com/nova-infrastructure-fund-i-completes-eighth-platform-investment",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 84553,
+      "sha256": "a78808a5d424e2b71255dcaf3dce7c5da53fe65415445047acf95adbf676797d",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://harborlogistics.com/harbor-logistics-and-ar-bulk-pak-combine-to-provide-comprehensive-warehousing-transportation-transloading-and-brokerage-services-to-the-southeast-usa/",
+      "finalUrl": "https://harborlogistics.com/harbor-logistics-and-ar-bulk-pak-combine-to-provide-comprehensive-warehousing-transportation-transloading-and-brokerage-services-to-the-southeast-usa/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5491,
+      "sha256": "5d95b084dd3370a807e9e67e7f29a0f7951fb02edba8cfbad8faf46d67343721",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "Harbor Logistics and A&R Bulk-Pak Combine to Provide Comprehensive Warehousing, Transportation, Transloading, and Brokerage Services to the Southeast USA - Harbor Logistics",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "422a997ab95af6f0fc0608e927005113357c5138d594ebc2846b7c7870e8607a"
+      }
+    },
+    {
+      "url": "https://safer.fmcsa.dot.gov/query.asp?query_param=MC_MX&query_string=347563&query_type=queryCarrierSnapshot&searchtype=ANY",
+      "finalUrl": "https://safer.fmcsa.dot.gov/query.asp?query_param=MC_MX&query_string=347563&query_type=queryCarrierSnapshot&searchtype=ANY",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 46057,
+      "sha256": "c22d710b4fe9cae3cfa1af2f4c31ded5fce67aa6f60cc75f7ffd2b4a08753660",
+      "health": "WORKING"
+    }
+  ]
+}

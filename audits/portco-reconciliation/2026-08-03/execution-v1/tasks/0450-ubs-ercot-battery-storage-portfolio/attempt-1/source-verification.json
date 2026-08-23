@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+  "taskIndex": 450,
+  "companyName": "UBS ERCOT Battery Storage Portfolio",
+  "verifiedAt": "2026-08-22T14:18:12.268Z",
+  "summary": {
+    "total": 6,
+    "working": 3,
+    "browserBlockedButVerified": 1,
+    "dead": 2,
+    "redirected": 0,
+    "modelHealthOverrides": 3
+  },
+  "sources": [
+    {
+      "label": "UBS acquisition announcement",
+      "url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20211109-ubs-am-energy-storage.html",
+      "httpStatus": 404,
+      "finalUrl": "https://www.ubs.com/global/en/media/display-page-ndp/en-20211109-ubs-am-energy-storage.html",
+      "observedStatus": "DEAD",
+      "verificationMethod": "curl and browser DOM",
+      "note": "UBS currently renders an Error 404 page; overrides model-declared Verified."
+    },
+    {
+      "label": "Power Technology coverage",
+      "url": "https://www.power-technology.com/news/ubs-asset-management-energy-storage-texas/",
+      "httpStatus": 404,
+      "finalUrl": "https://www.power-technology.com/news/ubs-asset-management-energy-storage-texas/",
+      "observedStatus": "DEAD",
+      "verificationMethod": "curl and browser DOM",
+      "note": "Current page does not render the cited article and matches a not-found response; overrides model-declared Verified."
+    },
+    {
+      "label": "SMT Energy 400 MW sale",
+      "url": "https://www.prnewswire.com/news-releases/smt-energy-sells-400-megawatts-of-battery-energy-storage-facilities-to-ubs-asset-management-302055312.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/smt-energy-sells-400-megawatts-of-battery-energy-storage-facilities-to-ubs-asset-management-302055312.html",
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl"
+    },
+    {
+      "label": "Habitat Energy 730 MW portfolio",
+      "url": "https://www.businesswire.com/news/home/20240502931363/en/Habitat-Energy-to-optimize-UBS-Asset-Managements-730MW-ERCOT-battery-storage-portfolio",
+      "httpStatus": 403,
+      "finalUrl": "https://www.businesswire.com/news/home/20240502931363/en/Habitat-Energy-to-optimize-UBS-Asset-Managements-730MW-ERCOT-battery-storage-portfolio",
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "browser DOM after curl 403",
+      "note": "Browser rendered the May 2, 2024 release and its four-standalone-project description."
+    },
+    {
+      "label": "Black Mountain announcement",
+      "url": "https://bmenergystorage.com/press-release/ubs-asset-management-acquires-700mw-energy-storage-projects-from-black-mountain-energy-storage/",
+      "httpStatus": 200,
+      "finalUrl": "https://bmenergystorage.com/press-release/ubs-asset-management-acquires-700mw-energy-storage-projects-from-black-mountain-energy-storage/",
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl"
+    },
+    {
+      "label": "First Citizens financing",
+      "url": "https://newsroom.firstcitizens.com/2024-09-04-First-Citizens-Bank-Serves-as-Co-Lead-Arranger-on-315-7-Million-in-Financing-for-Four-Texas-Battery-Energy-Storage-Projects",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.firstcitizens.com/2024-09-04-First-Citizens-Bank-Serves-as-Co-Lead-Arranger-on-315-7-Million-in-Financing-for-Four-Texas-Battery-Energy-Storage-Projects",
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl"
+    }
+  ],
+  "conclusion": "The model packet remains usable only as a DEFERRED judgment. Its primary URL is dead, two declared source-health claims were wrong, and the surviving evidence does not prove continuity of the original five-project 2021 boundary through the as-of date."
+}
+

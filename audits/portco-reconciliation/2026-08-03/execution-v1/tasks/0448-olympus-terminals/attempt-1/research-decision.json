@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0448:olympus-terminals:280295ff",
+  "taskIndex": 448,
+  "linkedTaskIdsCovered": [],
+  "companyName": "Olympus Terminals",
+  "canonicalName": null,
+  "legalName": null,
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "FAILED",
+  "confidence": null,
+  "responseSha256": null,
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": null,
+  "summary": "The initial Pro stream stalled after completing research. The sole repair produced valid structured JSON and a review, but the persisted response was 7,889 characters and therefore exceeded the strict 7,500-character contract. No second repair is permitted.",
+  "blockingQuestions": [
+    "No contract-valid accepted packet exists after the one permitted repair because the repaired response exceeded the maximum response length by 389 persisted characters."
+  ],
+  "nonblockingDisclosureGaps": [],
+  "applicationBlocked": true,
+  "survivorCondition": null,
+  "diagnosticOnly": {
+    "decision": "EXCLUDED",
+    "confidence": "MEDIUM_HIGH",
+    "accepted": false,
+    "summary": "Diagnostic research indicates that TPG Rise Climate acquired control by 2024 year-end but is a nonqualifying climate private-equity strategy; Intrepid was historically qualifying and no retained qualifying owner was evidenced."
+  }
+}

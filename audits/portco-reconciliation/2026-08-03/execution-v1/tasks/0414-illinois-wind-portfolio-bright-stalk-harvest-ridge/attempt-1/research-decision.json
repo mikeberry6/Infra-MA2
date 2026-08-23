@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0414:illinois-wind-portfolio-bright-stalk-harvest-ridge:1410820d",
+  "sequence": 414,
+  "asOfDate": "2026-08-19",
+  "companyName": "Illinois Wind Portfolio (Bright Stalk, Harvest Ridge)",
+  "decision": "PROPOSED_NEW",
+  "confidence": "MEDIUM_HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "EDPR sold and regulated Bright Stalk and Harvest Ridge as one 405 MW Illinois portfolio. Direct transaction evidence establishes an initial 68% close on July 1, 2021 and an additional 12% close on September 8, 2021, leaving unnamed Greencoat-managed investors with 80% and EDPR with 20%. Current manager and directory evidence supports continued ownership, while the exact acquisition fund and upstream holding companies are not publicly disclosed.",
+  "recommendedChanges": [
+    "Create one canonical manager-level Illinois Wind Portfolio parent rather than separate Bright Stalk and Harvest Ridge PortCos.",
+    "Record unnamed Schroders Greencoat-managed investors as the 80% current owner and EDPR as the 20% current owner from September 8, 2021.",
+    "Preserve the July 1, 2021 initial 68% Greencoat-managed close and September 8, 2021 upsize as separate ownership milestones.",
+    "Treat Lexington Chenoa Wind Farm LLC and Broadlands Wind Farm LLC as child project SPVs and do not count them separately.",
+    "Do not invent a Greencoat fund, acquisition holdco or EDPR upstream holder."
+  ],
+  "unresolvedQuestions": [
+    "Exact Greencoat fund and co-investor names",
+    "Exact common acquisition holdco and EDPR upstream holder",
+    "Whether a named common legal parent above both project SPVs exists"
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "acceptedResponseSha256": "f1f2b032d32af2e442f1320376bba1618a75f5ef57124f1f2d6ace10e0da136e"
+}

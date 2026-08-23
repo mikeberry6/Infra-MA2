@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+  "taskIndex": 142,
+  "companyName": "Excelsior U.S. Solar & Storage Portfolio",
+  "validatedAt": "2026-08-19T03:55:20.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a8520fe-ded8-83ea-b270-6105c2df3fc3",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": null,
+    "responseSha256": "7a4131465c5099fcefce9271ae4a4cec8e8a7a4ca1246559d5d6fe135dbf8a88",
+    "errors": [
+      "Rendered citation widgets introduced literal line breaks inside JSON tokens."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-19T03:46:29.141Z",
+    "completedAt": "2026-08-19T03:54:21.790Z",
+    "valid": true,
+    "responseSha256": "e1fe383118083ec4f9ec72873b5a0a9b45bf7bdb6873137b1af1bdd849221c82",
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "canonicalName": "Lighthouse (Excelsior U.S. Solar & Storage Portfolio)",
+    "evidenceCount": 4,
+    "currentOwnerCount": 1,
+    "formerOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "recommendedPrimaryCount": 1,
+    "unresolvedQuestionCount": 3,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}
+

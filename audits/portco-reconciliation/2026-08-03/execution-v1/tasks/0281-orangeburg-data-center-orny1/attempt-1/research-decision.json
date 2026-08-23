@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+  "taskIndex": 281,
+  "linkedTaskIdsCovered": [
+    "ledger:0273:1547-critical-systems-realty:8e267688"
+  ],
+  "companyName": "Orangeburg Data Center (ORNY1)",
+  "canonicalName": "Orangeburg Data Center (ORNY1)",
+  "legalName": "1547 CSR - Orangeburg, LLC",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH_WITH_NONCRITICAL_PRIVATE_FUND_AND_STAKE_GAPS",
+  "responseSha256": "3937fb580dbf3fde7d15dad9a561e4228ced5de451263ae8d5cfe8c4f543b179",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Merge the standalone ORNY1 record into the corrected Harrison Street-1547 joint asset portfolio represented by task 273. ORNY1 is a facility/SPV under HSRE-CSR Fund II 1547 Portfolio, LLC, CIM exited in October 2021, and 1547 remains a co-owner and operator alongside Harrison Street. Remove the unsupported Harrison Street Digital Fund label and preserve the facility/SPV and CIM ownership history as asset detail.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": [
+    "The upstream Harrison Street-1547 ownership percentages and exact Harrison Street fund are not publicly disclosed.",
+    "Whether the holdco's CSR Fund II name maps directly to 1547 Data Center Real Estate Fund II was not proven.",
+    "The exact 2012 deed date and pre-2012 title chain remain unresolved."
+  ],
+  "applicationBlocked": false,
+  "survivorCondition": "Task 273 must survive as the Harrison Street-1547 joint asset portfolio/platform, not as evidence of Harrison Street ownership in the 1547 operating company."
+}

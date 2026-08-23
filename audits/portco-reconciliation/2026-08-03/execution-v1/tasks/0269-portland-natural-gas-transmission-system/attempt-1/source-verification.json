@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0269:portland-natural-gas-transmission-system:32d29304",
+  "taskIndex": 269,
+  "companyName": "Portland Natural Gas Transmission System",
+  "verifiedAt": "2026-08-20T12:21:19.145Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff",
+      "finalUrl": "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED_INDEXED_OFFICIAL_PDF",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 418,
+      "contentSha256": "49991e6ab84c1daad6239cf80e4f953da288b779010ea659e79aea931e8a5bc8",
+      "browserSnapshotSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "alternateOfficialUrl": "https://www.nhsec.nh.gov/projects/2024-01/documents/2024-01_petition_change_ownership_3-28-2024.PDF",
+      "note": "Both official NH delivery endpoints were direct-fetch blocked. The indexed official petition text states that BGIF IV and NHIP III each indirectly own 50% of Beehive Loop JV, with AcquisitionCo/StubCo receiving 99.99%/0.01% of PNGTS."
+    },
+    {
+      "url": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+      "finalUrl": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 115615,
+      "contentSha256": "275ba379e9563fae31541367fcad81b6365c5b98550a317d5ad7a515a43cade3",
+      "note": "Seller release supports the August 15, 2024 close, TC Energy and NNEIC seller interests, buyers, value and assumed notes."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1075607/000110465917049352/0001104659-17-049352-index.html",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1075607/000110465917049352/0001104659-17-049352-index.html",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_403",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "271e9b276216331c414c21645257a42b0b1173f0dd614206321e8f1580dcddd6",
+      "browserSnapshotSha256": "667ef7c679b50301fb2b17c5da8c5a9dc1ea18f5e2ad8f5de764008b181ab2fd",
+      "verifiedExhibitUrl": "https://www.sec.gov/Archives/edgar/data/1075607/000110465917049352/a17-13276_1ex10d4.htm",
+      "verifiedExhibitSnapshotSha256": "1bacf3c34329bcf87d5997b91c67bb8abf5f14fd35ac63a626c071bd9eb07ab7",
+      "note": "The visible filing index and Exhibit 10.4 support the Maine partnership identity, initial agreement/amendments and named historical partners."
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2026/07/29/2026-15292/portland-natural-gas-transmission-system-notice-of-request-under-blanket-authorization-and",
+      "finalUrl": "https://www.federalregister.gov/documents/2026/07/29/2026-15292/portland-natural-gas-transmission-system-notice-of-request-under-blanket-authorization-and",
+      "status": "BROWSER_VERIFIED_AFTER_DIRECT_UNBLOCK_REDIRECT",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 10596,
+      "contentSha256": "a611e681c7b5389dc20914efc7fd23ad3c488d7c30fccb3ecdeb50d984d8196d",
+      "browserSnapshotSha256": "84d6eaa2bf3c9e525d6cd4b583241d13b878c0f05c725b2984f18cf9b44acd1f",
+      "note": "The visible Federal Register notice supports the July 2026 CP26-553 capacity request and confirms it is operational/regulatory rather than an ownership transfer."
+    },
+    {
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 200248,
+      "contentSha256": "d6a763f3df142d947a6de7b0b205225642704fc364c01d6c7e24067bc8bc7bf3",
+      "note": "BlackRock release supports the October 1, 2024 manager-level GIP acquisition, which post-dated the PNGTS closing and did not create a GIP asset owner."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 1,
+    "browserBlockedButVerifiedCount": 3,
+    "primarySourceVerifiedThroughIndexedOfficialPdf": true,
+    "bgifIvCurrentOwnershipVerified": true,
+    "nhipIiiCurrentOwnershipVerified": true,
+    "currentUltimateOwnershipPercentTotal": 100,
+    "gipDirectOwnershipExcluded": true,
+    "linkedTask149FullyCovered": true,
+    "noLaterOwnershipTransferFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Replace the repository's generic BlackRock Diversified Infrastructure label with the disclosed BlackRock Global Infrastructure Fund IV vehicle and structured 50% indirect stake.",
+    "Replace the low-confidence inferred MSIP fund with the disclosed North Haven Infrastructure Partners III (AIV-B) vehicle and structured 50% indirect stake.",
+    "Do not create GIP as a PNGTS owner; BlackRock's later manager acquisition of GIP did not transfer PNGTS.",
+    "Resolve linked task 149 through this one canonical after-image and supersede the duplicate task only after release/application verification."
+  ],
+  "releaseRequirement": "Retain one active PNGTS company; record BGIF IV and NHIP III (AIV-B) as 50/50 current ultimate owners through Beehive, preserve the historical seller chain, exclude GIP, and supersede linked task 149 after the canonical correction is fully released and verified."
+}

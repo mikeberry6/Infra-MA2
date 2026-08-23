@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0132:aligned-data-centers:ce7a118d",
+  "taskIndex": 132,
+  "companyName": "Aligned Data Centers",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T02:57:30.587Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Aligned Data Centers",
+    "requestedManagers": [
+      "Global Infrastructure Partners",
+      "BlackRock",
+      "Macquarie Asset Management",
+      "Mubadala"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Official company and seller releases confirm a 2026-07-21 closing for 100% of Aligned at about US$40bn EV. EU records identify GIM/GIP and MGX as joint controllers. Retire MAM and Mubadala's direct periods, clear pending status and count GIP/BlackRock once.",
+    "identityResolution": {
+      "productionId": "cmrxpjghb00yoivhejmdrclkw",
+      "canonicalName": "Aligned Data Centers",
+      "website": "https://aligneddc.com/",
+      "result": "ONE_CANONICAL_PLATFORM",
+      "aliases": "Aligned; legacy Aligned Energy. Aligned Data Centers Holdings is a holding-label alias, not a verified separate entity.",
+      "legalPerimeter": "Aligned Energy Holdings, L.P.; Aligned Data Centers, LLC; Aligned Data Centers REIT, LLC; ADC International Latam entities.",
+      "boundary": "One platform; exclude ODATA, campuses, projects and legal/operating subsidiaries."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "Global Infrastructure Partners",
+          "organization": "Global Infrastructure Management, LLC (GIP; BlackRock-owned)",
+          "fund": "GIM-managed/advised funds via AIP; NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Mariana US Aggregator, L.P.",
+          "stake": "Joint control with MGX; % NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2025-10-15",
+          "entryDate": "2026-07-21",
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "MGX",
+          "organization": "MGX Fund Management Limited (Mubadala/G42-owned)",
+          "fund": "MGX-managed/advised funds; NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Mariana US Aggregator, L.P.",
+          "stake": "Joint control with GIM; % NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2025-10-15",
+          "entryDate": "2026-07-21",
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "formerOwners": [
+        {
+          "manager": "Macquarie Asset Management",
+          "organization": "Macquarie Asset Management",
+          "fund": "MIP IV; MIP V added an interest in July 2020",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Control group; % NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2018-04-23",
+          "entryDate": "2018-04-23",
+          "entryYear": 2018,
+          "exitDate": "2026-07-21",
+          "exitYear": 2026,
+          "isActive": false,
+          "transactionState": "CLOSED_EXIT"
+        },
+        {
+          "manager": "Mubadala",
+          "organization": "Mubadala Investment Company",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Minority; % NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2023-08-02",
+          "entryDate": "2023-08-02",
+          "entryYear": 2023,
+          "exitDate": "2026-07-21",
+          "exitYear": 2026,
+          "isActive": false,
+          "transactionState": "CLOSED_EXIT"
+        }
+      ],
+      "overlapTreatment": "No separate BlackRock period: GIP/GIM is its active owner record. AIP is the program, not another owner. Mubadala's direct stake exited; its new link is indirect through joint ownership of MGX."
+    },
+    "operatingResolution": {
+      "headquarters": "Dallas, Texas",
+      "foundedYear": 2013,
+      "scaleAndFootprint": "At close: 51 campuses and >6.4GW operational/planned across key U.S. markets and Latin America.",
+      "infrastructureStrategyBasis": "Data-center power, cooling and interconnection capacity for cloud, AI/HPC and enterprise users; digital infrastructure."
+    },
+    "acquisitionExitCheck": {
+      "transaction": {
+        "direction": "INCOMING",
+        "buyer": "AIP, MGX and BlackRock's GIP consortium",
+        "seller": "MAM-managed funds and co-investors",
+        "stake": "100% equity",
+        "announcementDate": "2025-10-15",
+        "closingDate": "2026-07-21",
+        "state": "CLOSED",
+        "evidenceUrls": [
+          "https://aligneddc.com/press-release/aip-mgx-and-blackrocks-gip-close-acquisition-of-aligned-data-centers/",
+          "https://www.macquarie.com/au/en/about/news/2026/macquarie-asset-management-announces-successful-close-of-aligned-data-centers-transaction.html"
+        ]
+      },
+      "laterOwnershipEvent": "None found through 2026-08-19.",
+      "postCloseFinancing": "US$1.183bn securitization closed 2026-07-28; debt only."
+    },
+    "milestones": [
+      "2018-04-23: MIP IV invested; MIP V added an interest in July 2020.",
+      "2023-08-02: Mubadala took a minority stake.",
+      "2025-10-15: 100% sale announced at about US$40bn EV.",
+      "2026-07-21: Sale closed; US$5bn growth capital committed."
+    ],
+    "evidence": [
+      {
+        "label": "Aligned closing release",
+        "url": "https://aligneddc.com/press-release/aip-mgx-and-blackrocks-gip-close-acquisition-of-aligned-data-centers/",
+        "purpose": "Closing, 100% sale, EV, scale and growth capital.",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "EU merger decision",
+        "url": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12259_10869557_118_3.pdf",
+        "purpose": "GIM/BlackRock-MGX joint control and legal perimeter.",
+        "sourceTier": "TIER_1_REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "FTC HSR entry",
+        "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260312",
+        "purpose": "U.S. acquisition vehicle and target entities.",
+        "sourceTier": "TIER_1_REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Macquarie sale announcement",
+        "url": "https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-to-lead-sale-of-aligned-data-centers-at-an-enterprise-value-of-us-40-billion.html",
+        "purpose": "Announcement, EV and MIP IV/V history.",
+        "sourceTier": "TIER_1_SELLER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Mubadala investment release",
+        "url": "https://www.mubadala.com/en/news/mubadala-invests-in-aligned-data-centers-a-pan-american-data-center-company",
+        "purpose": "Mubadala's 2023 minority investment.",
+        "sourceTier": "TIER_1_OWNER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Wells Fargo CEO interview",
+        "url": "https://www.wellsfargo.com/cib/insights/forging-whats-next/aligned/",
+        "purpose": "CEO states Aligned was founded in 2013.",
+        "sourceTier": "TIER_2_BANK_INTERVIEW",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Aligned securitization",
+        "url": "https://aligneddc.com/press-release/aligned-data-centers-completes-1-18-billion-securitization-financing/",
+        "purpose": "Post-close debt financing; no ownership transfer.",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "company": "Keep existing company; no merge.",
+      "dealState": "SIGNED_PENDING_INCOMING to CLOSED on 2026-07-21.",
+      "owners": "Retire MAM and Mubadala direct periods; add GIP/GIM and MGX from 2026-07-21.",
+      "overlap": "No separate BlackRock, AIP or retained-Mubadala period."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Aligned Data Centers Holdings: alias, not a second PortCo.",
+      "Aligned legal entities: acquisition perimeter, not separate PortCos.",
+      "ODATA and campuses/projects: subsidiary/assets, not platform duplicates."
+    ],
+    "unresolvedQuestions": [],
+    "recommendedListAction": "Keep cmrxpjghb00yoivhejmdrclkw; close the deal on 2026-07-21; retire MAM and Mubadala direct ownership; add active GIP/GIM and MGX periods; cross-reference BlackRock as GIP/GIM's parent and Mubadala as MGX's joint parent; add no AIP, separate BlackRock or retained-Mubadala period."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 7,
+    "openSourceCount": 7,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

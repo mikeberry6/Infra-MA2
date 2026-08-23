@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0234:crown-castle-small-cells-solutions:2b7e932b",
+  "taskIndex": 234,
+  "companyName": "Crown Castle Small Cells Solutions",
+  "verifiedAt": "2026-08-20T02:15:57Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://eqtgroup.com/about/current-portfolio/arium-networks",
+      "finalUrl": "https://eqtgroup.com/about/current-portfolio/arium-networks",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 211210,
+      "contentSha256": "87582d5a9c99d3b25f8a5475da0fd2cfa1648862567fc4cf95f1a248f8d2eea8",
+      "note": "EQT's live portfolio page supports the Arium name, EQT Active Core Infrastructure I attribution, 2026 entry and current status."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000052/cci-20260501.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000052/cci-20260501.htm",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "973e940949018af4a2b087a4caf49f05c7ff3e1ba3806580773888067e00f5b9",
+      "browserTextBytes": 13685,
+      "browserTextSha256": "a8fd60131781d8bf1001304ed2393b8cad07d05fcd785e97a36c9a0a25a2e504",
+      "note": "The browser-open SEC 8-K verifies the May 1, 2026 legal close, sale of the small-cell business to the EQT purchaser and the separate fiber sale to Zayo."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1051470/000095014225000762/eh250603725_ex0201.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1051470/000095014225000762/eh250603725_ex0201.htm",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "68dae0a1db183751e5ef6bc9fd8bc590711c4b9781f8d9aee683137868af6bfb",
+      "browserTextBytes": 649046,
+      "browserTextSha256": "589d7fc49697fcbb8bd531f09d48d91e0698883b6946580ebfcc98844c25a998",
+      "note": "The browser-open stock purchase agreement verifies Small Cells HoldCo Inc. as buyer, sponsor/holdco identities, transaction value context and the small-cell-versus-fiber boundary."
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/05/01/3285986/0/en/arium-networks-launches-following-completion-of-eqt-s-acquisition-of-crown-castle-s-small-cell-solutions-business.html",
+      "finalUrl": "https://www.globenewswire.com/news-release/2026/05/01/3285986/0/en/arium-networks-launches-following-completion-of-eqt-s-acquisition-of-crown-castle-s-small-cell-solutions-business.html",
+      "status": "BROWSER_OPEN_CURL_HTTP2_ERROR",
+      "httpStatus": null,
+      "mediaType": "text/html",
+      "bytes": 0,
+      "contentSha256": null,
+      "browserTextBytes": 18823,
+      "browserTextSha256": "c8449c55e5ba9abbac41720825820611387ce7342f91498a917d2acd189b2b87",
+      "note": "The browser-rendered launch release verifies the standalone Arium launch, Charlotte headquarters, customer base and 100,000-plus small-cell footprint across 43 states."
+    },
+    {
+      "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225590/106856",
+      "finalUrl": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225590/106856",
+      "status": "OPEN_PDF_TEXT_AND_VISUAL_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 762498,
+      "contentSha256": "60dca2a2fc05e600ce56470d8ddb68aeb85790939ac61bc50ac990d876659033",
+      "pageVerification": [
+        {
+          "page": 8,
+          "method": "pypdf text extraction plus pypdfium2 visual render",
+          "finding": "Post-close TopCo economic interests are 9.03%, 15.65%, 21.67%, 29.68% and 23.96%; Small Cells GP LLC is shown as the GP subject to final documentation."
+        }
+      ],
+      "note": "The direct Georgia PSC PDF supports the post-close ownership chain, co-investor economics, management/control structure and close-related financing description."
+    },
+    {
+      "url": "https://ariumwp.wpenginepowered.com/wp-content/uploads/2026/05/Terms-of-Use-Arium-Networks-043026.pdf",
+      "finalUrl": "https://ariumwp.wpenginepowered.com/wp-content/uploads/2026/05/Terms-of-Use-Arium-Networks-043026.pdf",
+      "status": "OPEN_PDF_TEXT_AND_VISUAL_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 264191,
+      "contentSha256": "93d4a5b5399a3fe309079fbc7416d21a10aa77492bb9f5c6152a93d245e53882",
+      "pageVerification": [
+        {
+          "page": 1,
+          "method": "pypdf text extraction plus pypdfium2 visual render",
+          "finding": "The document states that the website is owned by Arium Networks LLC."
+        }
+      ],
+      "note": "The direct company legal document supports Arium Networks LLC as the public-facing legal entity."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 3,
+    "pdfTextExtractionCount": 2,
+    "pdfVisualVerificationCount": 2,
+    "currentEqtStatusVerified": true,
+    "legalCloseVerified": true,
+    "transactionBuyerVerified": true,
+    "eqtFundAttributionVerified": true,
+    "acquisitionHoldcoVerified": true,
+    "publicLegalNameVerified": true,
+    "coInvestorEconomicsVerified": true,
+    "nestedEqtStakeNotInferred": true,
+    "smallCellAndFiberBoundaryVerified": true,
+    "laterDirectExitNotFound": true,
+    "allCoreClaimsHaveDirectOpenBrowserOrOfficialEvidence": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Before any mutation, recapture the task-specific production and dependency snapshot and translate this packet into a hash-bound correction that renames the canonical company to Arium Networks, preserves predecessor aliases, records the May 1, 2026 close and fund attribution, and does not infer a single EQT ownership percentage from nested co-investor interests."
+}
+

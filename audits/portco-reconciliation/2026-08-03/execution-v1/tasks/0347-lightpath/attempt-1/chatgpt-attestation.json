@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": null,
+  "taskId": "ledger:0347:lightpath:c411cbd2",
+  "taskIndex": 347,
+  "companyName": "Lightpath",
+  "conversationUrl": "https://chatgpt.com/c/6a882161-bf7c-83ea-bab0-65ed8265a8b0",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "ChatGPT Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-08-21T09:58:57.292Z",
+  "initialCompletedAt": "2026-08-21T10:44:40.293Z",
+  "repairSubmittedAt": "2026-08-21T10:45:00.486Z",
+  "repairCompletedAt": "2026-08-21T10:47:13.399Z",
+  "repairCount": 1,
+  "initialOutcome": "STALLED_WITHOUT_FINAL_ASSISTANT_MESSAGE",
+  "finalOutcome": "VALID_AFTER_ONE_REPAIR",
+  "contentHashes": {
+    "promptSha256": "be9321c212d90a09d4b575ec98ebc78e8b9d29a416c721598b14639dd4416896",
+    "initialResponseSha256": null,
+    "acceptedResponseSha256": "99962f965826c8184bca0dfd0922a2be3b1ba5fad83e6ced912f0e66d6f14845",
+    "transcriptSha256": "99962f965826c8184bca0dfd0922a2be3b1ba5fad83e6ced912f0e66d6f14845",
+    "repairPromptSha256": "1305a9b20f7b78dda13cbb907ef8c9d924846906d7ac3c1b2f4d551f8e7c36f8",
+    "repairResponseSha256": "99962f965826c8184bca0dfd0922a2be3b1ba5fad83e6ced912f0e66d6f14845"
+  },
+  "captureMethod": "Signed-in ChatGPT web app via the in-app browser.",
+  "captureNote": "GPT-5.6 Sol Pro 5/5 was visibly attested before submission. The initial generation continued for 45 minutes and produced research-progress traces but no final assistant message. It was stopped, the conversation was reloaded, and the single permitted narrowly scoped repair instructed the model to return the already-researched result without further browsing. The accepted response was captured from the final assistant DOM; presentational markup was removed without changing model-authored text."
+}

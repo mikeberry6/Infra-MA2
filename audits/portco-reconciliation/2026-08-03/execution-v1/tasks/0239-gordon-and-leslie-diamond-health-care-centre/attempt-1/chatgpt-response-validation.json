@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": null,
+  "taskId": "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
+  "taskIndex": 239,
+  "validatedAt": "2026-08-20T03:34:20Z",
+  "conversationUrl": "https://chatgpt.com/c/6a866d6e-9494-83ea-8f37-d06c10f2bbe4",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": null,
+    "errors": [
+      "No completed response packet was emitted after more than 25 minutes despite completed source research."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-20T03:28:56.057Z",
+    "completedAt": "2026-08-20T03:30:30.000Z",
+    "valid": true,
+    "responseSha256": "afbea5af391cb626a1374884d6a51f5ae398cbcb6e225478bfd1e231b500ec25",
+    "errors": [],
+    "warnings": [
+      "The returned Royal London homepage does not support the stated 2025 transaction; the direct completion release and Investment Canada notice were independently verified.",
+      "The returned QuotedData profile is contextual and does not itself prove AHV identity or JLIF's historical 100%; direct JLIF issuer evidence was independently verified."
+    ]
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "MEDIUM",
+    "canonicalName": "Gordon and Leslie Diamond Health Care Centre",
+    "projectCompany": "AHV Access Health Vancouver Ltd.",
+    "evidenceCount": 5,
+    "uniqueReturnedUrlCount": 5,
+    "currentOwnerCount": 0,
+    "unresolvedCurrentOwnerCount": 2,
+    "formerOwnerCount": 1,
+    "pendingDirectOwnershipTransactionCount": 0,
+    "projectBoundaryVerified": true,
+    "jlifHistorical100PercentVerified": true,
+    "jura2018CloseVerified": true,
+    "royalLondonDalmore2025ControlChangeVerified": true,
+    "equitixCurrentOwnershipUnresolved": true,
+    "dalmoreCurrentProjectStakeUnresolved": true,
+    "northAmericaQualificationPresent": true,
+    "allReturnedUrlsChecked": true,
+    "exactlyOneRecommendedPrimary": true,
+    "applicationBlocked": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

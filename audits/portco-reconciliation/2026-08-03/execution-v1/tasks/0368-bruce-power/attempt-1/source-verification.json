@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0368:bruce-power:9c7e76e5",
+  "taskIndex": 368,
+  "verifiedAt": "2026-08-21T18:27:30.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 7,
+    "working": 6,
+    "browserBlockedButVerified": 1,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The submitted prompt embedded stale census holding ID 074-omers-infrastructure:holding:001:bruce-power. The authoritative ledger row is 075-omers-infrastructure:holding:004:bruce-power; the exact task ID, canonical key, company, manager and evidence URL were correct, so the research scope and result are unaffected.",
+    "The SEC page returned HTTP 403 to direct curl but independently opened and parsed at the exact URL. It confirms Cameco's 31.6% Bruce Power L.P. interest in 2004 and is classified BROWSER_BLOCKED_BUT_VERIFIED.",
+    "Read-only PDF extraction independently confirmed TC Energy's reported 48.3% ownership in its Q2 2026 report and the December 2015 14.89% purchase for C$236 million plus the Bruce A/B merger in its Q4 2015 report."
+  ],
+  "sources": [
+    {
+      "url": "https://www.brucepower.com/about-us/",
+      "finalUrl": "https://www.brucepower.com/about-us/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 177986,
+      "sha256": "aef071633b7cf7cac9d263ee8a047755df6d356c9c2078707fd4900cc3a4907f",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://dbrs.morningstar.com/issuers/21946/bruce-power-lp",
+      "finalUrl": "https://dbrs.morningstar.com/issuers/21946/bruce-power-lp",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 183107,
+      "sha256": "520f7c2fbf05aea83a94686b64d00a7d438527e2ccce95dbff1383b64c5c2fec",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/news/omers-achieves-milestone-in-canadian-infrastructure-financing-with-bruce",
+      "finalUrl": "https://www.omersinfrastructure.com/news/omers-achieves-milestone-in-canadian-infrastructure-financing-with-bruce",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 154365,
+      "sha256": "021023f1f79f3a993f8206830c9ffd072d7e07fae0c11264ba99ec72688f4f3c",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.tcenergy.com/siteassets/pdfs/investors/reports-and-filings/annual-and-quarterly-reports/2026/tce-2026-q2-quarterly-report.pdf",
+      "finalUrl": "https://www.tcenergy.com/siteassets/pdfs/investors/reports-and-filings/annual-and-quarterly-reports/2026/tce-2026-q2-quarterly-report.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 713945,
+      "sha256": "9e4255d26aec5413f6971d1a8907b0b5917f0e02385c918dfb610dd91b1d2868",
+      "health": "WORKING",
+      "contentEvidence": "PDF page 33 states that TC Energy's reported results represent its 48.3% ownership interest in Bruce Power."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1009001/000113031905000179/o15894exv1.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1009001/000113031905000179/o15894exv1.htm",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "sha256": "3a046d2e6557e14a800b3e7573cfa0c0d929d3dadbaab0f484a849d2904dcf70",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserEvidence": "The exact SEC filing independently parsed and states that Cameco held a 31.6% limited partnership interest in Bruce Power through Cameco Bruce Holdings subsidiaries."
+    },
+    {
+      "url": "https://www.cameco.com/annual_report/2015/financial-information/notes/note-6/",
+      "finalUrl": "https://www.cameco.com/annual_report/2015/financial-information/notes/note-6/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 10719,
+      "sha256": "46bfbb45e686522f2f4256b1903ae9cf642659a418f7d967faf2f5925f584585",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.tcenergy.com/siteassets/pdfs/investors/reports-and-filings/annual-and-quarterly-reports/2015/transcanada-2015-q4-quarterly-report.pdf",
+      "finalUrl": "https://www.tcenergy.com/siteassets/pdfs/investors/reports-and-filings/annual-and-quarterly-reports/2015/transcanada-2015-q4-quarterly-report.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 732301,
+      "sha256": "2f5c1202c4f23cebc890a4830a7b3201bb3c714a410b762c1a21796aa54a6aa4",
+      "health": "WORKING",
+      "contentEvidence": "PDF page 27 confirms the December 3, 2015 purchase of an additional 14.89% Bruce B interest from OMERS for C$236 million and the December 4 Bruce A/B merger into one Bruce Power L.P. structure."
+    }
+  ]
+}

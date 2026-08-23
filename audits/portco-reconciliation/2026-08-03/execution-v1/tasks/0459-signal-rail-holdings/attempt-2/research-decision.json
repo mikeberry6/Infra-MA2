@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+  "taskIndex": 459,
+  "companyName": "Signal Rail Holdings",
+  "asOfDate": "2026-08-22",
+  "recordedAt": "2026-08-22T22:42:00.000Z",
+  "modelDecision": "EXCLUDED",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Signal Rail is a current Wafra/TILC railcar investment and asset-leasing vehicle, not a manager-level transportation operating company. Trinity's current filing identifies the 88.5%/11.5% ownership split and TILC servicing role, and no later control transfer, wind-down or Signal Rail exit was found.",
+  "repoReconciliation": {
+    "canonicalKey": "signal-rail-holdings|united-states",
+    "recommendedTreatment": "EXCLUDE_FINANCIAL_ASSET_LEASING_VEHICLE",
+    "preserveBoundary": "Signal Rail's financing SPVs, railcar pools, leases and individual railcars remain beneath the excluded vehicle; do not merge it with TrinityRail or other Trinity RIVs"
+  },
+  "proposalGuardrails": [
+    "Do not create Signal Rail as a PortCo under the direct operating-platform census definition.",
+    "Preserve the verified 88.5% Wafra Funds and 11.5% TILC ownership evidence in exclusion lineage rather than converting it into active PortCo ownership.",
+    "Do not create subordinate Signal Rail SPVs, railcar pools, leases or individual railcars as portfolio companies.",
+    "Do not merge Signal Rail with TrinityRail, TRIP, RIV 2013, Triumph, NP SPE or other distinct Trinity investment vehicles.",
+    "Treat the 2026 Napier exchange as unrelated to Signal Rail unless a later direct filing expressly says otherwise."
+  ],
+  "nonblockingDisclosureGaps": [
+    "Exact Wafra fund holders and equity classes",
+    "Full governance rights",
+    "Current fleet after dispositions",
+    "Lessee identities"
+  ],
+  "recommendedNextAction": "Record a durable exclusion for Signal Rail Holdings as a financial asset-leasing vehicle and preserve the direct ownership evidence in the reconciliation lineage.",
+  "databaseMutationAuthorized": false
+}

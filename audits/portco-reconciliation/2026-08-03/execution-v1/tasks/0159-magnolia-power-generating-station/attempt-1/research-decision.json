@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0159:magnolia-power-generating-station:a3187893",
+  "taskIndex": 159,
+  "companyName": "Magnolia Power Generating Station",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "responseSha256": "9c8f7234f90ad007b890ea77e33f4cce64ff3c70c4fa3d9afaff3f9c43159152",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Magnolia Power Generating Station",
+    "requestedManagers": [
+      "Blackstone"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Magnolia is an operating generating asset and project subsidiary beneath Kindle Energy, Blackstone's North American power platform. Separate manager-level rows for Kindle and Magnolia double-count one platform.",
+    "identityResolution": {
+      "canonicalDisplayName": "Magnolia Power Generating Station",
+      "canonicalLegalName": "Magnolia Power LLC",
+      "aliases": [
+        "Magnolia Power",
+        "MPGS"
+      ],
+      "predecessors": [],
+      "successors": [],
+      "parentPlatform": "Kindle Energy LLC",
+      "boundary": "Project company and station beneath Kindle; not a standalone manager-level PortCo.",
+      "officialWebsite": "https://kindle-energy.com/case-studies/magnolia",
+      "standaloneWebsite": "NOT_PUBLICLY_DISCLOSED"
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "Blackstone",
+          "organization": "Blackstone Energy Transition Partners",
+          "fund": "Blackstone Capital Partners VII; Blackstone Energy Partners II",
+          "vehicle": "Kindle Energy LLC; Magnolia Power LLC",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE_GREENFIELD_OWNERSHIP"
+        }
+      ],
+      "formerOwners": [],
+      "pendingTransactions": [],
+      "boundary": "Magnolia Power LLC is a Kindle subsidiary; Kindle is the manager-level PortCo. No separate Magnolia ownership period is warranted."
+    },
+    "operatingResolution": {
+      "status": "Operating",
+      "commercialOperationDate": "2026-02-26",
+      "completionDate": "2025-12",
+      "country": "United States",
+      "location": "Plaquemine, Iberville Parish, Louisiana",
+      "headquarters": "NOT_APPLICABLE_AS_PROJECT; Kindle is headquartered in Princeton, New Jersey",
+      "foundedYear": "NOT_APPLICABLE_AS_PROJECT; development began in 2021",
+      "sector": "Power generation infrastructure",
+      "subsector": "Natural-gas combined-cycle generation",
+      "capacity": "694 MW",
+      "technology": "Single-shaft advanced-class CCGT; GE 7HA.03",
+      "productsServices": "Wholesale electricity and capacity",
+      "customersEndMarkets": "Louisiana public-power and cooperative load, including 1803 Electric Cooperative",
+      "footprint": "One Louisiana station in MISO South",
+      "scale": "694 MW; enough power for more than 500,000 homes",
+      "operator": "Magnolia Management Company under Kindle Energy"
+    },
+    "acquisitionExitCheck": {
+      "entryType": "GREENFIELD_DEVELOPMENT",
+      "entryFinding": "Kindle began development in 2021 and construction in 2022; no acquisition announcement or closing was found.",
+      "searchedThrough": "2026-08-19",
+      "exitFinding": "No Magnolia sale, divestiture, transfer, merger, recapitalization, bankruptcy, rebrand or pending exit was found.",
+      "regulatoryCheck": "A July 31, 2026 FERC non-material change-in-status filing names Magnolia but discloses no buyer, sale or closing.",
+      "portfolioCheck": "TransAlta's June 2026 signed purchase covers Mountain Peak and Canyon Peak only and remained pending for Q4 2026; Magnolia is excluded.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Blackstone, through Kindle, began greenfield development.",
+        "category": "Development"
+      },
+      {
+        "date": "2022",
+        "event": "Construction began; counsel cites $580 million of development and construction financing.",
+        "category": "Construction/Financing"
+      },
+      {
+        "date": "2025-12",
+        "event": "Kindle records project completion.",
+        "category": "Completion"
+      },
+      {
+        "date": "2026-02-26",
+        "event": "Blackstone announced the 694 MW plant's commercial operation.",
+        "category": "Commercial Operation"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Blackstone Magnolia completion release",
+        "url": "https://www.businesswire.com/news/home/20260225463871/en/Blackstone-Energy-Transition-Partners-Announces-Completion-of-694MW-Magnolia-Power-Generating-Station-in-Louisiana",
+        "purpose": "PLATFORM_OWNERSHIP_AND_OPERATION",
+        "sourceTier": "MANAGER_RELEASE",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Louisiana PSC 1803 filing",
+        "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=szIv3sAmBmA%3D",
+        "purpose": "LEGAL_ENTITY_PARENT_AND_CONTRACT",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "LIVE_PDF",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Kindle current asset list",
+        "url": "https://kindle-energy.com/about",
+        "purpose": "CURRENT_PLATFORM_ASSET_BOUNDARY",
+        "sourceTier": "COMPANY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Kindle Magnolia case study",
+        "url": "https://kindle-energy.com/case-studies/magnolia",
+        "purpose": "LOCATION_COMPLETION_CUSTOMER_TERM",
+        "sourceTier": "COMPANY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Kirkland Magnolia financing matter",
+        "url": "https://www.kirkland.com/lawyers/m/monastyrskaya-tatiana",
+        "purpose": "FUNDS_AND_580M_FINANCING",
+        "sourceTier": "TRANSACTION_COUNSEL",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "FERC filing notice, August 17, 2026",
+        "url": "https://www.federalregister.gov/documents/2026/08/17/2026-16737/combined-notice-of-filings-2",
+        "purpose": "LATEST_CHANGE_STATUS_CHECK",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "TransAlta Q2 2026 filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000041/q22026newsreleasecombined.htm",
+        "purpose": "LATER_PORTFOLIO_SALE_SCOPE",
+        "sourceTier": "SEC_FILING",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Standalone active Blackstone row for Magnolia with 2021 as investment year.",
+      "after": "Kindle remains the Blackstone manager-level PortCo; Magnolia is retained as its 694 MW operating asset and Magnolia Power LLC as the project subsidiary.",
+      "changes": [
+        "Merge Magnolia into Kindle",
+        "Treat 2021 as development start, not acquisition close",
+        "Normalize capacity to 694 MW and status to Operating",
+        "Do not create a separate Blackstone ownership period"
+      ]
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "name": "Standalone Magnolia row",
+        "treatment": "DUPLICATE_UNDER_PLATFORM",
+        "reason": "Kindle project and subsidiary"
+      },
+      {
+        "name": "Magnolia Management Company",
+        "treatment": "EXCLUDED",
+        "reason": "O&M entity, not a PortCo"
+      },
+      {
+        "name": "Camellia Power",
+        "treatment": "DO_NOT_MERGE",
+        "reason": "Separate Kindle development asset, not an alias"
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact Blackstone-fund, Kindle and Magnolia equity percentages are not publicly disclosed.",
+      "The exact 2021 capitalization or ownership-effective date is not publicly disclosed."
+    ],
+    "recommendedListAction": {
+      "action": "MERGE_INTO_PLATFORM",
+      "target": "Kindle Energy",
+      "retainAs": "Operating asset and legal project subsidiary",
+      "ownerTreatment": "Keep one Blackstone relationship at Kindle; do not count Magnolia separately"
+    }
+  }
+}

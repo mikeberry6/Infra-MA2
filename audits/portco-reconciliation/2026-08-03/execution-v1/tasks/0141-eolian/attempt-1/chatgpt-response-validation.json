@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0141:eolian:ae9eb0a5",
+  "taskIndex": 141,
+  "companyName": "Eolian",
+  "validatedAt": "2026-08-19T03:55:00.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a85206c-f3ac-83ea-b9af-978dfca6182a",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": null,
+    "responseSha256": "db80eac9fcae9c1105029dec3c5966ae22938808cc9a5462fb299b4b4dac7627",
+    "errors": [
+      "Rendered citation widgets introduced literal line breaks inside JSON tokens."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-19T03:45:25.799Z",
+    "completedAt": "2026-08-19T03:53:03.601Z",
+    "valid": true,
+    "responseSha256": "e6a405a493f7fd50d1e36483a42f974394ab5d93fef1fbf4775216eb74229225",
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "canonicalName": "Eolian",
+    "evidenceCount": 7,
+    "currentOwnerCount": 2,
+    "formerOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "recommendedPrimaryCount": 1,
+    "unresolvedQuestionCount": 2,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}
+

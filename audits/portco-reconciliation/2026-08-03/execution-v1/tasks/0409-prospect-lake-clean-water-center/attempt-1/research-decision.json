@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "sequence": 409,
+  "asOfDate": "2026-08-19",
+  "companyName": "Prospect Lake Clean Water Center",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_REVIEW_REQUIRED",
+  "applicationBlocked": true,
+  "rationale": "Prospect Lake Clean Water Center is one Fort Lauderdale water-P3 project company, legally Prospect Lake Water, L.P. The census Ridgewood holding is the existing ownership period, not a duplicate. Municipal records and Ridgewood's April 2026 interview directly support IDE Technologies as the other equity owner. The status should be corrected from operating to commissioning/pre-COD as of the cutoff. Application remains blocked until the July 31, 2026 LP amendment is inspected and shown not to change ownership or the general-partner structure.",
+  "recommendedChanges": [
+    "Keep one canonical Prospect Lake Clean Water Center record mapped to Prospect Lake Water, L.P.",
+    "Retain and enrich the existing Ridgewood Infrastructure/Fund II period beginning February 14, 2023; do not add a duplicate Ridgewood row.",
+    "Add IDE Technologies through IDE PLCWC, Inc. as a separate active equity owner from February 14, 2023 without inventing the sponsor split.",
+    "Correct the selection milestone to March 1, 2022 and the cutoff status to commissioning/pre-COD.",
+    "Keep the City, Kiewit, PLCWC O&M, Fiveash and project components out of direct-owner and separate-PortCo treatment."
+  ],
+  "unresolvedQuestions": [
+    "The exact Ridgewood and IDE percentage stakes are not publicly disclosed.",
+    "The July 31, 2026 Prospect Lake Water, L.P. amendment has not yet been inspected for a possible ownership or general-partner change.",
+    "Final commissioning and commercial-operation acceptance had not occurred by the August 19, 2026 cutoff."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": false,
+  "proposalGenerationAllowed": false,
+  "sourceVerificationPassed": true,
+  "fieldCorrectionRequired": true,
+  "fieldCorrections": [
+    "Treat IDE as both equity owner and operating-technology partner, not merely a contractor.",
+    "Do not infer equal Ridgewood/IDE stakes from the joint 25-percent project-team capital contribution.",
+    "Do not describe the project as operating before commissioning and acceptance."
+  ],
+  "acceptedResponseSha256": "6650c691a70386f6b9f2620ba6ce781fc2b4cc3caff17c746cfbed750ad1cebf"
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0448:olympus-terminals:280295ff",
+  "taskIndex": 448,
+  "companyName": "Olympus Terminals",
+  "conversationUrl": "https://chatgpt.com/c/6a899a59-01a8-83ea-9421-57ddb7976ef3",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": true
+  },
+  "initialSubmittedAt": "2026-08-22T12:47:20.580Z",
+  "initialCompletedAt": null,
+  "repairSubmittedAt": "2026-08-22T13:09:49.637Z",
+  "repairCompletedAt": "2026-08-22T13:18:18.000Z",
+  "repairCount": 1,
+  "initialOutcome": "UI_STALLED_AFTER_RESEARCH_NO_FINAL_PACKET",
+  "finalOutcome": "FAILED_REPAIR_OVER_RESPONSE_LENGTH_LIMIT",
+  "contentHashes": {
+    "promptSha256": "5d1eccbc082ccf6fcd558798eec029097af0d2ccd22611fb9220250845ef770c",
+    "initialResponseSha256": "d59a3a43b5bf89e76d1dae7cafdb35096a5df5b5ab1de8200f6b39884675cb3b",
+    "acceptedResponseSha256": null,
+    "transcriptSha256": "8e5677fd610fa3980103a132a265fd12405a897278aca2c1466a7ecce4312c3b",
+    "repairPromptSha256": "f144381da1569b619b272afd7ddbafe9f8e223a1d338fb4dce5741bb34c0ec6f",
+    "repairResponseSha256": "b0c9b30d5c014beea01c9647c4e2784bae4e05f375baee83a9f24b570e87d0ad"
+  },
+  "captureMethod": "Visible signed-in ChatGPT web conversation; authoritative repair assistant DOM textContent persisted verbatim with a terminating newline.",
+  "captureNote": "GPT-5.6 Sol, Effort Pro and Pro 5 of 5 were visibly verified before the initial submission and recaptured before the sole repair. The initial run completed research but its output stream stalled. The repair returned parseable structured content, but the persisted response was 7,889 characters and breached the strict under-7,500-character contract; no second repair was attempted."
+}

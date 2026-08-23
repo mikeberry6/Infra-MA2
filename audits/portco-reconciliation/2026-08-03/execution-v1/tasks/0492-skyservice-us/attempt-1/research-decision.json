@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0492:skyservice-us:444ae080",
+  "taskIndex": 492,
+  "companyName": "Skyservice US",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T19:59:06.000Z",
+  "modelDecision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Instar's current fact sheet explicitly identifies Skyservice US as the former Leading Edge Jet Center and says it integrated with Skyservice in 2019. Current Instar and Napa County evidence still distinguishes the U.S. platform/legal group from the separately sponsored Canadian Skyservice investment. Therefore the two U.S. repo records are duplicates of one active Fund II-era U.S. PortCo, not two companies and not merely the Canadian parent's operating geography.",
+  "repoReconciliation": {
+    "censusCanonicalKey": "skyservice-us|united-states",
+    "duplicateCanonicalKey": "skyservice-us-formerly-leading-edge-jet-center|united-states",
+    "recommendedCanonicalKey": "skyservice-us|united-states",
+    "recommendedCanonicalIdentity": "Skyservice US",
+    "recommendedFormerName": "Leading Edge Jet Center",
+    "queuedActionTreatment": "MERGE_DUPLICATE_US_RECORD_INTO_SKYSERVICE_US_AND_PRESERVE_REDIRECT_LINEAGE"
+  },
+  "proposalGuardrails": [
+    "Keep one active U.S. PortCo and merge task 493's seed-only duplicate into task 492's existing production company.",
+    "Keep Skyservice Business Aviation Inc. as a separate related Canadian PortCo; do not copy its 2017 majority stake or Fund I ownership onto the U.S. record.",
+    "Retain InstarAGF Essential Infrastructure Fund II as the U.S. fund attribution with secondary-source qualification unless a direct primary acquisition record is obtained.",
+    "Use August 2019 precision only; no exact announcement or closing day was publicly established.",
+    "Do not infer the U.S. manager-level stake, co-investor cap table or acquisition vehicle.",
+    "Correct the Helena add-on to Exec Air Montana, including Montana Medical Transport, announced December 30, 2020.",
+    "Keep Kenmore, Exec Air Montana/Montana Medical Transport, airport sites, leases, hangars and later developments beneath Skyservice US.",
+    "Treat the November 2021 event as a four-location rebrand, not proof of an ownership transfer.",
+    "Preserve the U.S. platform's current active status and record no pending transaction absent new direct evidence."
+  ],
+  "recommendedNextAction": "Prepare one later protected merge and redirect proposal from Skyservice US (formerly Leading Edge Jet Center) into Skyservice US, preserving the Canadian-parent boundary and corrected U.S. ownership and milestone facts.",
+  "databaseMutationAuthorized": false
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": null,
+  "taskId": "ledger:0371:navisun-llc:67b86252",
+  "taskIndex": 371,
+  "validatedAt": "2026-08-21T19:23:52.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a889eb4-09f0-83ea-964c-dfc0ad8ae077",
+  "requiredTopLevelKeys": [
+    "asOfDate", "requestedCompany", "requestedManagers", "decision", "confidence", "rationale",
+    "identityResolution", "ownershipResolution", "operatingResolution", "acquisitionExitCheck",
+    "milestones", "evidence", "beforeAfterChanges", "excludedOrDuplicateCandidates",
+    "unresolvedQuestions", "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": true,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "bbd94e86d2e43cc634f22ad3f0ec25403e11f80b340b4a2709d57bd072172c40",
+    "errors": [],
+    "warnings": [
+      "The non-authoritative review paragraph contains citation-rendering residue. The strict JSON is complete, internally coherent and unchanged; all direct URLs were independently verified."
+    ]
+  },
+  "repair": {
+    "count": 0,
+    "limit": 1,
+    "submittedAt": null,
+    "completedAt": null,
+    "valid": null,
+    "responseSha256": null,
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "recommendedCanonicalName": "Navisun LLC",
+    "canonicalKey": "navisun-llc|united-states",
+    "evidenceCount": 5,
+    "returnedUrlCount": 6,
+    "recommendedPrimaryCount": 1,
+    "currentOwnerCount": 1,
+    "formerOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "unconfirmedSaleProcessCount": 1,
+    "omersEntryDate": "2022-01-18",
+    "omersStake": "100% through Magnet US Acquisition Corporation",
+    "duplicateOmersOwnerAvoided": true,
+    "aresFormerOwnershipPresent": true,
+    "platformBoundaryResolved": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "northAmericanPowerInfrastructureQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "allReturnedUrlsDirectHttps": true,
+    "unresolvedItemsAreNoncriticalFormerOwnershipDisclosureGaps": true,
+    "reviewRenderingNoiseIsNonSemantic": true,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion":1,
+  "artifactType":"PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId":"ledger:0364:uge-international-ltd:3aed0a3e",
+  "taskIndex":364,
+  "verifiedAt":"2026-08-21T17:26:00.000Z",
+  "allReturnedUrlsChecked":true,
+  "summary":{"urlCount":8,"working":7,"browserBlockedButVerified":0,"browserBlockedUnverified":1,"dead":0},
+  "modelEvidenceCorrections":["The TSXV bulletin timed out to direct curl and the browser verification attempt also timed out. It is noncritical because UGE's company closing release independently establishes the legal close and the exchange source is used only for delisting context."],
+  "sources":[
+    {"url":"https://www.osc.ca/en/securities-law/orders-rulings-decisions/uge-international-inc","finalUrl":"https://www.osc.ca/en/securities-law/orders-rulings-decisions/uge-international-inc","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":43308,"sha256":"bf4d519a046552dc186066d846c157f4c38d4727bebfbb819d86e692f7e57686","health":"WORKING"},
+    {"url":"https://ugei.com/uge-international-ltd-enters-into-arrangement-agreement-for-going-private-transaction-2/","finalUrl":"https://ugei.com/uge-international-ltd-enters-into-arrangement-agreement-for-going-private-transaction-2/","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":29920,"sha256":"0af15f6977a339fb144302fbc40ac8c874056e6de6795ca0645f3086eb4a7d05","health":"WORKING"},
+    {"url":"https://ugei.com/nova-completes-purchase-of-uge-international/","finalUrl":"https://ugei.com/nova-completes-purchase-of-uge-international/","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":27150,"sha256":"0107db57c1eb9d46dfa25e8bde091757029b7e689be17b1939d57491202fb13a","health":"WORKING"},
+    {"url":"https://infoventure.tsx.com/TSXVenture/TSXVentureHttpController?GetPage=NoticesContents&HC_FLAG2=on&NOTICE_ID=290949&PO_ID=1149452","finalUrl":"https://infoventure.tsx.com/TSXVenture/TSXVentureHttpController?GetPage=NoticesContents&HC_FLAG2=on&NOTICE_ID=290949&PO_ID=1149452","httpStatus":null,"mediaType":null,"bytes":0,"sha256":null,"health":"BROWSER_BLOCKED_UNVERIFIED","note":"Direct curl timed out after 25 seconds; browser verification also timed out. Noncritical delisting context only."},
+    {"url":"https://www.novainfrastructure.com/investments-index","finalUrl":"https://www.novainfrastructure.com/investments-index","httpStatus":200,"mediaType":"text/html;charset=utf-8","bytes":27613,"sha256":"a4427f71884ea656e7412b6b5bf226196df7520cfb0c3ebe8ba575c18d00365b","health":"WORKING"},
+    {"url":"https://www.novainfrastructure.com/article-nova-infrastructure-exceeds-target-and-raises-145-billion-in-aggregate-capital-commitments-for-nova-fund-ii","finalUrl":"https://www.novainfrastructure.com/article-nova-infrastructure-exceeds-target-and-raises-145-billion-in-aggregate-capital-commitments-for-nova-fund-ii","httpStatus":200,"mediaType":"text/html;charset=utf-8","bytes":19253,"sha256":"aa468057387b784e1b19e1b1fdb32e14f9a720a8ff193b555a6f58d1bedeb4c1","health":"WORKING"},
+    {"url":"https://ugei.com/uge-portfolio-grows-16-mw/","finalUrl":"https://ugei.com/uge-portfolio-grows-16-mw/","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":25564,"sha256":"0a4d442c69e16bbc4007d1ad96187e02258ee11fba41f26adfdd01091b378af5","health":"WORKING"},
+    {"url":"https://ugei.com/uge-acquires-122-development-stage-solar-projects-across-14-states/","finalUrl":"https://ugei.com/uge-acquires-122-development-stage-solar-projects-across-14-states/","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":25116,"sha256":"b3479a809fd4cc9e0042312638f2d50463c23ffae50f911c3e929c84ccffe798","health":"WORKING"}
+  ]
+}

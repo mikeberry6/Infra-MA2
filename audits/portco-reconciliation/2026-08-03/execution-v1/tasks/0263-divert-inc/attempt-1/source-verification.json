@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0263:divert-inc:e7a24939",
+  "taskIndex": 263,
+  "companyName": "Divert, Inc.",
+  "verifiedAt": "2026-08-20T10:28:38.841Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.arapartners.com/portfolio/",
+      "finalUrl": "https://www.arapartners.com/portfolio/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 216990,
+      "contentSha256": "7cf3c77b58fbc8684eea0aec6338dcd1027e07d40bfbf063e56c2c29d3434741",
+      "note": "Ara's current portfolio supports active status, Ara Fund II attribution, Private Equity strategy and June 2021 entry."
+    },
+    {
+      "url": "https://divertinc.com/divert-inc-announces-significant-business-momentum/",
+      "finalUrl": "https://divertinc.com/divert-inc-announces-significant-business-momentum/",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5491,
+      "contentSha256": "cd94f8c6d13b0ef4c0b215e5fd97199bab749a5522bce2f90b82bf88c93083be",
+      "browserSnapshotSha256": "3045fb020a125b457f88ff6b360fd1e6c2ed328e0ada6bda55a748efd1713583",
+      "note": "Direct fetch was blocked; the visible browser page loaded and supported founding, the Ara acquisition and the Ara/GIC/OPG $100 million round."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1725902/000172590218000002/xslFormDX01/primary_doc.xml",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1725902/000172590218000002/xslFormDX01/primary_doc.xml",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 41991,
+      "contentSha256": "51f69461c8f52d48eb54bfb3f3473af2eb51105a0a6490ca10b6178bbce37a5d",
+      "note": "SEC Form D/A supports the former name and the 2017 equity offering to undisclosed investors."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1969268/000156761923004988/xslFormDX01/primary_doc.xml",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1969268/000156761923004988/xslFormDX01/primary_doc.xml",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 42513,
+      "contentSha256": "40678f66d81361c2156349c9152bf1f4d5e9b93cadbf88bd51855e035e481f48",
+      "note": "Ara Divert HoldCo's Form D supports the parent identity and the March 1, 2023 $80 million first sale."
+    },
+    {
+      "url": "https://www.enbridge.com/media-center/news/details?id=123758&lang=en",
+      "finalUrl": "https://www.enbridge.com/media-center/news/details?id=123758&lang=en",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 162322,
+      "contentSha256": "e7924793653196072923d87ed8d33c6bea0105be7f66aa13649f3e390f2e08d4",
+      "note": "Enbridge's release supports its $80 million acquisition of a 10% equity stake and separates the project-development option."
+    },
+    {
+      "url": "https://divertinc.com/divert-inc-secures-funding-to-scale-infrastructure-addressing-the-wasted-food-crisis-in-north-america/",
+      "finalUrl": "https://divertinc.com/divert-inc-secures-funding-to-scale-infrastructure-addressing-the-wasted-food-crisis-in-north-america/",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5491,
+      "contentSha256": "fa245295a24198e3496133af50f4a1507f7d134132946aed339d02047b9776d6",
+      "browserSnapshotSha256": "87314ac2cd86df8007f175e0de1ec8386e727bdabf8d453bf5d19b8ab8717f73",
+      "note": "Browser verification supports Wittington's 2026 preferred-equity round, Ara continuity and OPG board representation."
+    },
+    {
+      "url": "https://divertinc.com/divert-secures-strategic-partnership-with-mitsubishi-to-scale-circular-infrastructure-across-north-america/",
+      "finalUrl": "https://divertinc.com/divert-secures-strategic-partnership-with-mitsubishi-to-scale-circular-infrastructure-across-north-america/",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5491,
+      "contentSha256": "45a62fea46e6897042dc9b02d856c1b7fcef45a1668bc1ee00a0b58d8eec2878",
+      "browserSnapshotSha256": "7adbabf32c250a5ce8cfa3243e779c25d8dbf265b2638ee0b682de7f46f1a47e",
+      "note": "Browser verification supports the closed Mitsubishi-led Series C and distinguishes the equity from ancillary offtake arrangements."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "browserBlockedButVerifiedCount": 3,
+    "primarySourceWorking": true,
+    "araFundIIAttributionVerified": true,
+    "opgPensionContinuitySupported": true,
+    "enbridgeTenPercentEntryVerified": true,
+    "wittingtonAndMitsubishiLaterEquitySupported": true,
+    "nuveenCreditExcluded": true,
+    "gicInfrastructureLabelUnsupported": true,
+    "gicCurrentContinuityUnresolved": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": false,
+    "applicationBlocked": true
+  },
+  "modelEvidenceCorrections": [
+    "Remove the unsupported 'GIC Infrastructure (Co-Investor)' strategy label.",
+    "Do not treat Nuveen's infrastructure-credit package as ownership.",
+    "Add Ara Fund II, OPG Pension Fund, Enbridge, Wittington and Mitsubishi as disclosed direct equity investors, subject to proposal-level dependency checks.",
+    "Keep facilities and project companies beneath the one Divert manager-level platform.",
+    "Do not mark GIC current without direct continuity evidence; its 2021 investment is verified but its current status and strategy require targeted review."
+  ],
+  "releaseRequirement": "Quarantine the correction until GIC's current continuity and sponsoring strategy are resolved or explicitly deferred. The eventual proposal should retain one Divert platform, add the verified direct equity investors, remove the unsupported GIC Infrastructure label, and keep Nuveen credit outside ownership."
+}

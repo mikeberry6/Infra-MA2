@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0461:i3-broadband:2d53909b",
+  "taskIndex": 461,
+  "companyName": "i3 Broadband",
+  "conversationUrl": "https://chatgpt.com/c/6a89de99-1e84-83ea-ba56-3c980ae8fb3a",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5.",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": true
+  },
+  "initialSubmittedAt": "2026-08-22T17:38:32.653Z",
+  "initialCompletedAt": "2026-08-22T17:48:10.915Z",
+  "repairSubmittedAt": "2026-08-22T17:48:33.268Z",
+  "repairCompletedAt": "2026-08-22T17:49:39.656Z",
+  "repairCount": 1,
+  "initialOutcome": "RESEARCH_COMPLETE_OUTPUT_STALLED",
+  "finalOutcome": "VALID_CONTRACT_PACKET_WITH_SOURCE_URL_OVERRIDES",
+  "contentHashes": {
+    "promptSha256": "475c48f3471c24ba2aee07aa8bb55a036d12f91ac2eb26f1aaf93eb2f204d5c8",
+    "initialResponseSha256": "d2c5c1f2b8134ff8de234ff4d12605505576590b26d10c7b17c8b02a2bc35e2f",
+    "acceptedResponseSha256": "d8fdf6180b280faf829df54575671f6e077c5107a620f5962dd9a7511b3b94a9",
+    "transcriptSha256": "9ec7f20ed7f5ed875328fdfe0933c5fb763ebbc86cba7a7de236bb1ef1d7d949",
+    "repairPromptSha256": "15a75c080cf3707d1c8ff59baae0b1b08804f446d6e6bd00c2c55ac894bdce7b",
+    "repairResponseSha256": "d8fdf6180b280faf829df54575671f6e077c5107a620f5962dd9a7511b3b94a9"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM",
+  "captureNote": "The initial Pro turn completed current-source and regulatory research but stalled before rendering the contract. The same conversation was reloaded, GPT-5.6 Sol Pro 5/5 was reverified, and the single permitted repair produced the accepted packet. Independent verification retained the decision while replacing two dead source URLs."
+}

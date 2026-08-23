@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0228:metrus-energy:3f2ae5fa",
+  "taskIndex": 228,
+  "companyName": "Metrus Energy",
+  "verifiedAt": "2026-08-20T01:00:12Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/metrus-energy",
+      "finalUrl": "https://www.ecpgp.com/equity/portfolio/metrus-energy",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 39376,
+      "contentSha256": "79d41a0e471e2ada5ea6c3ba8d45b0d6ad9dbaab7da851d9b14aebd26aef308f",
+      "note": "ECP's live portfolio page lists Metrus as Current, dates the investment to July 2022, provides the North America regional label and reports a 2009 founding year."
+    },
+    {
+      "url": "https://www.metrusenergy.com/resources/blog/metrus-acquisition-by-ecp",
+      "finalUrl": "https://www.metrusenergy.com/resources/blog/metrus-acquisition-by-ecp",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 51800,
+      "contentSha256": "5c4fc770f659a006b920dfa5c1c65d6181059e8d286c5f0fd47d524bca7c0700",
+      "note": "Metrus's July 7, 2022 announcement states that it had been acquired by ECP, confirms San Francisco headquarters and says financial terms were not disclosed."
+    },
+    {
+      "url": "https://www.metrusenergy.com/impact-reports/2025-impact-report",
+      "finalUrl": "https://www.metrusenergy.com/impact-reports/2025-impact-report",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 74133,
+      "contentSha256": "ca08fdf5ce919da2bec3882265f0c2ccaf853a5ed37efb74f499f52a5d1256a9",
+      "note": "Metrus's 2025 impact report supports active Energy-as-a-Service operations, equipment ownership and financing, more than 940 sites in 34 states and the current service/end-market profile."
+    },
+    {
+      "url": "https://www.renewablethermal.org/partner/",
+      "finalUrl": "https://www.renewablethermal.org/partner/",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5375,
+      "contentSha256": "a0418f16b920bc98b2322a8fd4f74ae4fb2f6d04efd7b7218adfc81051d4bb40",
+      "browserTextBytes": 13164,
+      "browserTextSha256": "23fa4773c656cce9c8ddb330ff1185f34e213923c232cf7da4ca0535f7bba97d",
+      "note": "The browser-rendered Renewable Thermal Collaborative locator lists Metrus Energy, Inc. and United States as its geographic scope, supporting the U.S.-only country correction."
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forl-m23000009728-8250e853-64e4-4e09-828f-7583f3ed57a3&directionType=Initial&inquirytype=EntityName&listNameOrder=METRUSENERGYATLANTIS+M170000056850&searchNameOrder=METRUSENERGYPROJECTALLOYCF+M230000097280&searchTerm=METRUS+ENERGY+-+ATLANTIS%2C+LLC",
+      "finalUrl": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forl-m23000009728-8250e853-64e4-4e09-828f-7583f3ed57a3&directionType=Initial&inquirytype=EntityName&listNameOrder=METRUSENERGYATLANTIS+M170000056850&searchNameOrder=METRUSENERGYPROJECTALLOYCF+M230000097280&searchTerm=METRUS+ENERGY+-+ATLANTIS%2C+LLC",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 6818,
+      "contentSha256": "fbd2101f6c3d07c043f7fe4c161e9e9af02b770fe16687f8bf11d6b7007f556a",
+      "browserTextBytes": 1459,
+      "browserTextSha256": "e310bcb1cac678db265909dca2f2687cc8dcdee685d43d1351e638375612ab9e",
+      "note": "The browser-rendered Florida record shows active Metrus Energy - Project Alloy CF, LLC with Metrus Energy, Inc. as member, supporting treatment as a subordinate project entity rather than a peer PortCo."
+    },
+    {
+      "url": "https://www.metrusenergy.com/resources/blog/university-northwestern-ohio",
+      "finalUrl": "https://www.metrusenergy.com/resources/blog/university-northwestern-ohio",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 50628,
+      "contentSha256": "3f498d06527055bcae715cc1f15e03e2c55c5fd34aa60632b67af1845dcac30a",
+      "note": "Metrus's University of Northwestern Ohio announcement distinguishes the customer, KeyBank equipment-finance provider and Centrica construction/services partner from corporate owners."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 2,
+    "ecpCurrentStatusVerified": true,
+    "completedAcquisitionVerified": true,
+    "legalIdentityAndHeadquartersVerified": true,
+    "usOnlyCountryEvidenceVerified": true,
+    "canadaNotSubstantiated": true,
+    "projectLlcBoundaryVerified": true,
+    "financiersCustomersAndInstallersExcluded": true,
+    "currentScaleVerified": true,
+    "laterDirectExitNotFound": true,
+    "allCoreClaimsHaveDirectOpenOrBrowserEvidence": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Before any mutation, recapture the task-specific production and dependency snapshot and convert this research packet into a hash-bound proposal."
+}

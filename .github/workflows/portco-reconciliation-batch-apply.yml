@@ -1,0 +1,367 @@
+name: Apply Approved PortCo Reconciliation Batch
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_sha:
+        description: Exact 40-character commit currently serving canonical production and at protected main
+        required: true
+        type: string
+      pull_request_number:
+        description: Merged pull request that produced release_sha
+        required: true
+        type: string
+      batch_manifest_path:
+        description: Repository-relative immutable PortCo batch manifest path
+        required: true
+        type: string
+      batch_sha256:
+        description: Exact lowercase PortCo batch SHA-256
+        required: true
+        type: string
+      confirmation:
+        description: Type APPLY_BATCH to authorize this exact approved PortCo bundle
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  checks: read
+  contents: read
+  deployments: read
+  pull-requests: read
+
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+
+jobs:
+  apply-approved-portco-batch:
+    name: Apply one approved PortCo bundle
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: production
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      RELEASE_SHA: ${{ inputs.release_sha }}
+      PULL_REQUEST_NUMBER: ${{ inputs.pull_request_number }}
+      BATCH_MANIFEST_PATH: ${{ inputs.batch_manifest_path }}
+      BATCH_SHA256: ${{ inputs.batch_sha256 }}
+      CONFIRMATION: ${{ inputs.confirmation }}
+      SEED_ARTIFACT_PATH: prisma/seed-data/approved-portco-after-images.json
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_3: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+      TARGET_DATABASE: production
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+      EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
+      PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+      CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
+      PUBLIC_BASE_PATH: /Infra-MA2
+      REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
+      REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
+
+    steps:
+      - name: Require protected-main dispatch and exact input shapes
+        env:
+          DISPATCH_REF: ${{ github.ref }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        shell: bash
+        run: |
+          if [ "$DISPATCH_REF" != "refs/heads/$DEFAULT_BRANCH" ]; then
+            echo "::error::Dispatch this workflow from refs/heads/$DEFAULT_BRANCH."
+            exit 1
+          fi
+          if [ "$DEFAULT_BRANCH" != "main" ]; then
+            echo "::error::The protected default branch must be main."
+            exit 1
+          fi
+          if [ "$CONFIRMATION" != "APPLY_BATCH" ]; then
+            echo "::error::confirmation must exactly equal APPLY_BATCH."
+            exit 1
+          fi
+          [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || {
+            echo "::error::release_sha must be an exact lowercase 40-character Git SHA."
+            exit 1
+          }
+          [[ "$PULL_REQUEST_NUMBER" =~ ^[1-9][0-9]*$ ]] || {
+            echo "::error::pull_request_number must be a positive integer."
+            exit 1
+          }
+          [[ "$BATCH_SHA256" =~ ^[0-9a-f]{64}$ ]] || {
+            echo "::error::batch_sha256 must be an exact lowercase SHA-256 digest."
+            exit 1
+          }
+          [[ "$BATCH_MANIFEST_PATH" =~ ^audits/portco-reconciliation/[0-9]{4}-[0-9]{2}-[0-9]{2}/batches/[A-Za-z0-9._-]+/batch-manifest\.json$ ]] || {
+            echo "::error::batch_manifest_path is outside the approved PortCo batch layout."
+            exit 1
+          }
+
+      - name: Checkout the current protected main branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Require a local main branch tracking the exact remote release
+        shell: bash
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          git checkout -B main refs/remotes/origin/main
+          git branch --set-upstream-to=origin/main main
+          if [ "$(git symbolic-ref --short HEAD)" != "main" ]; then
+            echo "::error::The production apply must run from a symbolic local main branch."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$RELEASE_SHA" ]; then
+            echo "::error::Protected main HEAD no longer equals the approved release SHA."
+            exit 1
+          fi
+          if [ "$(git rev-parse '@{upstream}')" != "$RELEASE_SHA" ]; then
+            echo "::error::origin/main no longer equals the approved release SHA."
+            exit 1
+          fi
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Bind the exact merged pull request to the release SHA
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+          EXPECTED_RELEASE_SHA: ${{ inputs.release_sha }}
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pull_number = Number(process.env.PR_NUMBER);
+            const expectedReleaseSha = process.env.EXPECTED_RELEASE_SHA;
+            const defaultBranch = context.payload.repository.default_branch;
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number });
+            if (
+              !pr.merged ||
+              !pr.merged_at ||
+              pr.merge_commit_sha !== expectedReleaseSha ||
+              pr.base.ref !== defaultBranch ||
+              pr.head.repo?.full_name !== `${owner}/${repo}`
+            ) {
+              core.setFailed(`PR #${pull_number} is not the same-repository merge that produced ${expectedReleaseSha} on ${defaultBranch}.`);
+            }
+
+      - name: Require complete protected production configuration
+        shell: bash
+        run: |
+          missing=0
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2 FORBIDDEN_DATABASE_HOST_3 VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL REVALIDATE_URL REVALIDATE_TOKEN; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required."
+              missing=1
+            fi
+          done
+          if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
+            echo "::error::PRODUCTION_URL does not match the canonical InfraSight production alias."
+            missing=1
+          fi
+          expected_revalidate_url="${CANONICAL_PRODUCTION_URL}${PUBLIC_BASE_PATH}/api/internal/fund-refresh/revalidate"
+          if [ "$REVALIDATE_URL" != "$expected_revalidate_url" ]; then
+            echo "::error::FUND_REFRESH_REVALIDATE_URL does not match the canonical production endpoint."
+            missing=1
+          fi
+          [[ "$REVALIDATE_TOKEN" =~ ^[A-Fa-f0-9]{64}$ ]] || {
+            echo "::error::FUND_REFRESH_REVALIDATE_TOKEN must be a 64-character hexadecimal secret."
+            missing=1
+          }
+          [[ "$EXPECTED_DATABASE_HOST" == *-pooler.* ]] || {
+            echo "::error::The PortCo apply must use the production pooler hostname."
+            missing=1
+          }
+          [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]] || {
+            echo "::error::VERCEL_PROJECT_ID must be an immutable prj_ identifier."
+            missing=1
+          }
+          for forbidden_name in FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2 FORBIDDEN_DATABASE_HOST_3; do
+            if [ "${!forbidden_name}" = "$EXPECTED_DATABASE_HOST" ]; then
+              echo "::error::$forbidden_name must not equal the approved pooler host."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Bind protected main, required build, and canonical deployment
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          mkdir -p tmp/portco-reconciliation/production
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/portco-reconciliation/production/release-provenance.json
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PRODUCTION_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --output=tmp/portco-reconciliation/production/canonical-deployment.json
+
+      - name: Verify committed immutable artifacts and approved seed overlay
+        shell: bash
+        run: |
+          artifact_paths="$(jq -r '[.sourceExecutionManifest.path, .researchHashNormalization.path] + [.members[] | if .kind == "MUTATION" then [.proposal.path, .authorization.path, .productionSnapshot.path, .taskSnapshot.path, .observedTaskSnapshot.path, .researchDecision.path, .sourceVerification.path] else [.decision.path] end] | flatten | .[]' "$BATCH_MANIFEST_PATH")"
+          terminal_lineage="$(jq -r '.members[] | select(.kind == "TERMINAL") | .decision.path' "$BATCH_MANIFEST_PATH" | while read -r decision; do jq -r '[.taskSnapshot.path, .researchDecision.path, .sourceVerification.path] | .[]' "$decision"; done)"
+          artifact_paths="$artifact_paths $terminal_lineage"
+          for path in "$BATCH_MANIFEST_PATH" "$SEED_ARTIFACT_PATH" $artifact_paths; do
+            git ls-files --error-unmatch -- "$path" >/dev/null
+            git diff --quiet HEAD -- "$path" || {
+              echo "::error::$path differs from the committed release."
+              exit 1
+            }
+          done
+          npx tsx scripts/portco-reconciliation/verify-batch-production-inputs.ts \
+            --batch-manifest="$BATCH_MANIFEST_PATH" \
+            --batch-sha256="$BATCH_SHA256" \
+            --seed-artifact="$SEED_ARTIFACT_PATH" \
+            --output=tmp/portco-reconciliation/production/input-verification.json
+
+      - name: Prove clean staged schema and exact production pooler target
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run db:generate
+          npx prisma validate
+          node --experimental-strip-types scripts/assert-database-target.ts
+          npx prisma migrate status 2>&1 | tee tmp/portco-reconciliation/production/migrate-status.log
+          npx prisma migrate diff \
+            --from-schema=prisma/schema.prisma \
+            --to-config-datasource \
+            --exit-code 2>&1 | tee tmp/portco-reconciliation/production/schema-drift.log
+
+      - name: Dry-run the exact approved bundle against fresh production state
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run portco:reconciliation:batch:apply -- \
+            --batch-manifest="$BATCH_MANIFEST_PATH" \
+            --batch-sha256="$BATCH_SHA256" \
+            2>&1 | tee tmp/portco-reconciliation/production/dry-run.log
+
+      - name: Prove cache revalidation readiness before database mutation
+        shell: bash
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --retry 3 \
+            --retry-delay 2 \
+            --retry-all-errors \
+            --request GET \
+            --header "Authorization: Bearer $REVALIDATE_TOKEN" \
+            "$REVALIDATE_URL" \
+            > tmp/portco-reconciliation/production/cache-preflight.json
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.ready !== true) throw new Error("Cache preflight did not confirm readiness")' \
+            tmp/portco-reconciliation/production/cache-preflight.json
+
+      - name: Final authorization, release, schema, target, and artifact recheck
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -o pipefail
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/portco-reconciliation/production/release-provenance-before-write.json
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PRODUCTION_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --output=tmp/portco-reconciliation/production/canonical-deployment-before-write.json
+          node --experimental-strip-types scripts/assert-database-target.ts
+          npx prisma migrate status 2>&1 | tee tmp/portco-reconciliation/production/migrate-status-before-write.log
+          npx prisma migrate diff \
+            --from-schema=prisma/schema.prisma \
+            --to-config-datasource \
+            --exit-code 2>&1 | tee tmp/portco-reconciliation/production/schema-drift-before-write.log
+          artifact_paths="$(jq -r '[.sourceExecutionManifest.path, .researchHashNormalization.path] + [.members[] | if .kind == "MUTATION" then [.proposal.path, .authorization.path, .productionSnapshot.path, .taskSnapshot.path, .observedTaskSnapshot.path, .researchDecision.path, .sourceVerification.path] else [.decision.path] end] | flatten | .[]' "$BATCH_MANIFEST_PATH")"
+          terminal_lineage="$(jq -r '.members[] | select(.kind == "TERMINAL") | .decision.path' "$BATCH_MANIFEST_PATH" | while read -r decision; do jq -r '[.taskSnapshot.path, .researchDecision.path, .sourceVerification.path] | .[]' "$decision"; done)"
+          artifact_paths="$artifact_paths $terminal_lineage"
+          git diff --quiet HEAD -- "$BATCH_MANIFEST_PATH" "$SEED_ARTIFACT_PATH" $artifact_paths
+          npx tsx scripts/portco-reconciliation/verify-batch-production-inputs.ts \
+            --batch-manifest="$BATCH_MANIFEST_PATH" \
+            --batch-sha256="$BATCH_SHA256" \
+            --seed-artifact="$SEED_ARTIFACT_PATH" \
+            --output=tmp/portco-reconciliation/production/input-verification-before-write.json
+
+      - name: Apply the exact approved PortCo bundle transactionally
+        id: apply
+        env:
+          PROTECTED_PRODUCTION_WRITE_APPROVAL_SHA256: ${{ inputs.batch_sha256 }}
+        shell: bash
+        run: |
+          set -o pipefail
+          receipt="tmp/portco-reconciliation/production/batch-apply-receipt.json"
+          npm run portco:reconciliation:batch:apply -- \
+            --batch-manifest="$BATCH_MANIFEST_PATH" \
+            --batch-sha256="$BATCH_SHA256" \
+            --seed-artifact="$SEED_ARTIFACT_PATH" \
+            --apply \
+            --write-token=APPLY_APPROVED_PORTCO_BATCH \
+            --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json \
+            --receipt="$receipt" \
+            --public-base-url="${PRODUCTION_URL}${PUBLIC_BASE_PATH}/" \
+            2>&1 | tee tmp/portco-reconciliation/production/apply.log
+
+      - name: Revalidate public PortCo caches after apply
+        if: steps.apply.outcome == 'success'
+        shell: bash
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --retry 3 \
+            --retry-delay 2 \
+            --retry-all-errors \
+            --request POST \
+            --header "Authorization: Bearer $REVALIDATE_TOKEN" \
+            "$REVALIDATE_URL" \
+            > tmp/portco-reconciliation/production/cache-revalidation.json
+          node -e 'const fs=require("node:fs"); const value=JSON.parse(fs.readFileSync(process.argv[1], "utf8")); if (value.revalidated !== true) throw new Error("PortCo cache revalidation did not succeed")' \
+            tmp/portco-reconciliation/production/cache-revalidation.json
+
+      - name: Verify batch receipt and every canonical detail API after apply
+        if: steps.apply.outcome == 'success'
+        shell: bash
+        run: |
+          npx tsx scripts/portco-reconciliation/verify-batch-receipt.ts \
+            --batch-manifest="$BATCH_MANIFEST_PATH" \
+            --batch-sha256="$BATCH_SHA256" \
+            --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json \
+            --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json \
+            --public-base-url="${PRODUCTION_URL}${PUBLIC_BASE_PATH}/" \
+            --output=tmp/portco-reconciliation/production/receipt-verification.json
+
+      - name: Upload immutable PortCo apply evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: portco-batch-production-${{ inputs.batch_sha256 }}-${{ inputs.release_sha }}-${{ github.run_id }}
+          path: tmp/portco-reconciliation/production/
+          if-no-files-found: warn
+          retention-days: 90

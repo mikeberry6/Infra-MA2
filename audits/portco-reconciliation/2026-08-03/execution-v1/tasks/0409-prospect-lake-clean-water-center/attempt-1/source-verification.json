@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "checkedAt": "2026-08-21T23:57:16.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; direct municipal and sponsor-page inspection; PDF extraction plus rendered-page inspection for the municipal memoranda and Ridgewood interview; acquisition-and-exit search; Florida entity-status review",
+  "sources": [
+    {
+      "url": "https://fortlauderdale.legistar.com/View.ashx?GUID=6738A01F-C55C-42E3-8573-1308AD6890D7&ID=11613272&M=F",
+      "httpStatus": 200,
+      "finalUrl": "https://fortlauderdale.legistar.com/View.ashx?GUID=6738A01F-C55C-42E3-8573-1308AD6890D7&ID=11613272&M=F",
+      "mediaType": "application/pdf",
+      "bytes": 344475,
+      "sha256": "8f4b1f4d3728e9db5fbbe966f06e4ffb91ab2b3860657dce66e5ad3e4804bd04",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 4,
+        "relevantPdfPages": [1, 2, 3],
+        "renderedPagesInspected": [2],
+        "verifiedClaims": [
+          "The City selected the Ridgewood-IDE team on March 1, 2022 and identifies Kiewit as design-builder",
+          "The project company was formed by Ridgewood and IDE, the City retains legal ownership of the site and plant, and the project team provides 25 percent of original capital expense",
+          "The agreement provides a 42-month construction period followed by a 30-year operating term for a 50-MGD plant"
+        ]
+      }
+    },
+    {
+      "url": "https://fortlauderdale.legistar.com/LegislationDetail.aspx?GUID=940E32C9-B17D-4A98-AD45-C7462F8C32F5&ID=6012622",
+      "httpStatus": 200,
+      "finalUrl": "https://fortlauderdale.legistar.com/LegislationDetail.aspx?GUID=940E32C9-B17D-4A98-AD45-C7462F8C32F5&ID=6012622",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 105420,
+      "sha256": "d23e07b8df1439fb02d9ac4ee48e9e64a882ca99d70f40e434cdc1c241e543b6",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "City records identify Prospect Lake Water, L.P., Prospect Lake Holdings, L.P. and IDE PLCWC, Inc. as the agreement parties",
+        "The executed comprehensive agreement and related documents are dated February 14, 2023"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-and-ide-technologies-announce-water-ppp-with-the-city-of-ft-lauderdale-301750220.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-and-ide-technologies-announce-water-ppp-with-the-city-of-ft-lauderdale-301750220.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 214243,
+      "sha256": "1e3d1a7fbdd36a61121650cbcf5b74732b99939abc2df20ee0582628585c5d63",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgewood and IDE announced closing of the public-private partnership on February 21, 2023",
+        "The release supports the joint sponsor relationship, 50-MGD capacity and IDE-City operating partnership"
+      ]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2026/04/Ridgewood_i3_04.26_SL.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/wp-content/uploads/2026/04/Ridgewood_i3_04.26_SL.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 1082444,
+      "sha256": "16931d47247c83747589696d5fca78fb95349932d5adb45467a5d167e077eed9",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 2,
+        "relevantPdfPages": [2],
+        "renderedPagesInspected": [2],
+        "verifiedClaims": [
+          "In an April 2026 sponsor interview Ridgewood expressly describes IDE Technologies as an equity owner in the project",
+          "The interview distinguishes Kiewit's construction role and IDE's technical and equity alignment"
+        ]
+      }
+    },
+    {
+      "url": "https://fortlauderdale.legistar.com/gateway.aspx?ID=d24ee427-ad38-4075-b330-a5c571f7aeb6.docx&M=F",
+      "httpStatus": 200,
+      "finalUrl": "https://fortlauderdale.legistar.com/View.ashx?M=F&ID=15393057&GUID=3DA47FD7-28BE-40A3-9808-CA32605331A8",
+      "mediaType": "application/pdf",
+      "bytes": 300124,
+      "sha256": "ec8acc887f260f13a67842e634014b2c46962243c5758b0b7ca1849e188ce0a6",
+      "healthStatus": "WORKING_REDIRECTED",
+      "pdfVerification": {
+        "pageCount": 2,
+        "relevantPdfPages": [1],
+        "renderedPagesInspected": [1],
+        "verifiedClaims": [
+          "The April 2026 City memo retains the same project and equity-provider parties",
+          "The memo says commissioning was expected in September 2026 and treats the proposed subordinate instrument as project financing rather than equity"
+        ]
+      }
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 132965,
+      "sha256": "a12f469c50cf1074f9e533c8f05d04f6a059673bcc5067406251d1a6643c37fd",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgewood attributes Prospect Lake to Fund II and describes its 30-year concession and expected share of Fort Lauderdale water supply"
+      ]
+    },
+    {
+      "url": "https://ide-tech.com/en/project/fort-lauderdale/",
+      "httpStatus": 200,
+      "finalUrl": "https://ide-tech.com/en/project/fort-lauderdale/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 76712,
+      "sha256": "02d78a11ec985d5cdedbb32a75d42f2f94c5c6f434a9aa0b8db79ddfa631a0f2",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "IDE identifies the Ridgewood-IDE team, Fort Lauderdale location, 50-MGD capacity, nanofiltration and ion-exchange technology and 2026 commissioning"
+      ]
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=ForwardList&inquirytype=EntityName&listNameOrder=PROSPECTJANITORIALSERVICES+P930000695060&searchNameOrder=PROSPECTLAKEWATER+B230000001560&searchTerm=PROSPECTIVE+RISK+MANAGEMENT+LLC",
+      "httpStatus": 403,
+      "finalUrl": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=ForwardList&inquirytype=EntityName&listNameOrder=PROSPECTJANITORIALSERVICES+P930000695060&searchNameOrder=PROSPECTLAKEWATER+B230000001560&searchTerm=PROSPECTIVE+RISK+MANAGEMENT+LLC",
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseBytes": 6867,
+      "blockedResponseSha256": "08acc544d93e75f785149693c678fa390487cc04da7d65a057b662a40e5bd7ca",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": [
+        "Florida records show Prospect Lake Water, L.P. active with Prospect Lake Holdings, L.P. as general partner and Ridgewood's address",
+        "An LP amendment was filed July 31, 2026; the filing image was browser-accessible but its substantive pages were not yet extracted for ownership-change review"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-21T23:57:16.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No announced sale, sponsor exit or signed transfer was identified. Current City and Ridgewood sources continue to identify the Ridgewood-IDE structure, but the July 31, 2026 LP amendment requires inspection before a full after-image can be approved."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

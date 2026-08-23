@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0170:alto:534d91d7",
+  "taskIndex": 170,
+  "companyName": "Alto",
+  "verifiedAt": "2026-08-19T06:42:33.982Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.canada.ca/en/treasury-board-secretariat/services/planned-government-spending/government-expenditure-plan-main-estimates/2025-26-estimates.html",
+      "finalUrl": "https://www.canada.ca/en/treasury-board-secretariat/services/planned-government-spending/government-expenditure-plan-main-estimates/2025-26-estimates.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 2095172,
+      "contentSha256": "9c57710fdd9a956922f51c7682342c48a76459af3762c06c7e7faacd5402f357",
+      "note": "Official Government of Canada page opened and supports Alto legal identity, VIA Rail ownership and public mandate."
+    },
+    {
+      "url": "https://cadence.info/sites/default/files/medias/pdf/Cadence%20Information%20Sessions-%20July%202026.pdf",
+      "finalUrl": "https://cadence.info/sites/default/files/medias/pdf/Cadence%20Information%20Sessions-%20July%202026.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 2229462,
+      "contentSha256": "6338c11e64a27acbb95d981cb30a2f8573d0059b52ba2fb819472d0eef53bf29",
+      "note": "Cadence governance PDF opened and supports the separate developer vehicle, its equity members and Alto/Cadence roles."
+    },
+    {
+      "url": "https://cdpqinfra.com/en/projects/alto",
+      "finalUrl": "https://cdpqinfra.com/en/projects/alto",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 33906,
+      "contentSha256": "c7b405fcb9df1833dfa8e1a4c1d8301d682f3b0698dea61da7a8474d60db7961",
+      "note": "CDPQ Infra project page opened and supports consortium-lead role and current development stage."
+    },
+    {
+      "url": "https://prod.cdpqinfra.com/en/news/pressreleases/toronto-quebec-city-high-speed-rail-first-major-milestone-reached",
+      "finalUrl": "https://prod.cdpqinfra.com/en/news/pressreleases/toronto-quebec-city-high-speed-rail-first-major-milestone-reached",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 36818,
+      "contentSha256": "71f25b1c66a92d8baeb94a8d7170f3ac9999e9e350d66916f2f99eccacd218d8",
+      "note": "CDPQ Infra March 2025 release opened and supports the development agreement scope and still-undetermined financial structure."
+    },
+    {
+      "url": "https://cadence.info/en/press-releases/alto-and-cadence-launch-market-engagement-canadas-high-speed-rail-project",
+      "finalUrl": "https://cadence.info/en/press-releases/alto-and-cadence-launch-market-engagement-canadas-high-speed-rail-project",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 29560,
+      "contentSha256": "b41c839f4987cde580100e4a27cc25568782166dab7fa49368eb68aa32edead7",
+      "note": "Cadence June 2026 release opened and supports the market-engagement stage and future federal investment decision."
+    },
+    {
+      "url": "https://www.altotrain.ca/en/shaping-canadas-future-high-speed-train",
+      "finalUrl": "https://www.altotrain.ca/en",
+      "status": "OPEN_REDIRECTED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 82163,
+      "contentSha256": "9aff04100106f6f22e9307561176216ac32afa75f9d29ced30cbea0e84b09094",
+      "note": "Alto project URL redirected to the current official English homepage, which supports the corridor and development scope."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Remove CDPQ as an Alto owner and reject the pending-transaction addition; retain Alto only as a government-owned project/counterparty unless the product scope separately includes public projects."
+}

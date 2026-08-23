@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": null,
+  "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+  "taskIndex": 238,
+  "validatedAt": "2026-08-20T03:34:20Z",
+  "conversationUrl": "https://chatgpt.com/c/6a866cae-33c4-83ea-8b9c-008135e357a5",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": null,
+    "errors": [
+      "No completed response packet was emitted after more than 25 minutes despite completed source research."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-20T03:25:30.085Z",
+    "completedAt": "2026-08-20T03:30:30.000Z",
+    "valid": true,
+    "responseSha256": "2ddd480b1e30e333e3f90b0a8550b7284ea6a218f90ba601d9ba9b922384c21d",
+    "errors": [],
+    "warnings": [
+      "The valid packet is 9,341 characters versus the requested maximum of 7,500; no second repair was sent.",
+      "The returned AtkinsRéalis PDF URL now returns 404. The current official 2025 financial-statements PDF was located and verified independently."
+    ]
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": 0.94,
+    "canonicalName": "Centre Hospitalier de l'Université de Montréal (CHUM) PPP",
+    "projectCompany": "Collectif Santé Montréal S.E.C.",
+    "evidenceCount": 7,
+    "uniqueReturnedUrlCount": 7,
+    "confirmedCurrentOwnerCount": 2,
+    "unresolvedHistoricalOwnerCount": 3,
+    "pendingDirectOwnershipTransactionCount": 0,
+    "johnLaing25PercentCloseVerified": true,
+    "atkinsRealis10PercentVerified": true,
+    "originalSyndicateVerified": true,
+    "equitixAttributionRejected": true,
+    "currentRemainingOwnershipUnresolved": true,
+    "platformBoundaryVerified": true,
+    "northAmericaQualificationPresent": true,
+    "allReturnedUrlsChecked": true,
+    "exactlyOneRecommendedPrimary": true,
+    "formatLengthReviewRequired": true,
+    "applicationBlocked": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

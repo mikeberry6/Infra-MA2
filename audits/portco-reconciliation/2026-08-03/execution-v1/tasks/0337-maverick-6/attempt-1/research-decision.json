@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0337:maverick-6:cf60cd63",
+  "taskIndex": 337,
+  "linkedTaskIdsCovered": ["ledger:0338:maverick-7:4af1c5e7"],
+  "companyName": "Maverick 6",
+  "canonicalName": "Maverick 6 & 7",
+  "legalName": "Maverick 67 HoldCo LLC",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "responseSha256": "ffdb518015a5edc5d1bfdeebcba02290795c5676af47f21b48c32d83fad80bda",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Create one active Maverick 6 & 7 portfolio at the shared M67 holdco boundary, with Munich Re/MEAG and EDF each holding 50%; do not create standalone PortCos for the two underlying project SPVs.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": ["Exact EDF-side split within the M67 entities.","Debt and tax-equity participants, POI and Maverick 6 acreage.","Day-specific solar and battery COD dates."],
+  "applicationBlocked": false,
+  "survivorCondition": "Count Maverick 6 & 7 once at the shared M67 holdco level; suppress Maverick Solar 6, LLC and Maverick Solar 7, LLC as underlying assets and reconcile the sibling task before proposal generation."
+}

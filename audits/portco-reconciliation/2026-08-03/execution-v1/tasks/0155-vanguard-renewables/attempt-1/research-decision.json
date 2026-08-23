@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0155:vanguard-renewables:39c75d98",
+  "taskIndex": 155,
+  "companyName": "Vanguard Renewables",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "responseSha256": "0c914d69cbc069077e10a5111de9c16be7fc4bebfee828262082ecad0b06bd4d",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Vanguard Renewables",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "BlackRock Real Assets closed its purchase from Vision Ridge on 2022-07-20 and identified Vanguard as a GEPIF III investment. BlackRock's 2024 GIP acquisition changed platform branding, but no Vanguard-specific transfer or new GIP entry was disclosed. Merge the BlackRock/GIP identities, retain the legacy fund attribution and remove the duplicate BlackRock owner row.",
+    "identityResolution": {
+      "displayName": "Vanguard Renewables",
+      "legalName": "Vanguard Renewables, LLC",
+      "canonicalKey": "vanguard-renewables|united-states",
+      "alias": "Vanguard Renewables, LLC",
+      "country": "United States",
+      "headquarters": "Weston, Massachusetts",
+      "foundedYear": 2014,
+      "website": "https://www.vanguardrenewables.com/",
+      "boundary": "Parent RNG/organics platform; business lines, facilities, JVs and bolt-ons are not separate parent PortCos."
+    },
+    "ownershipResolution": {
+      "attribution": "Keep BlackRock as 2022 manager and GEPIF III as fund; GIP/BlackRock is current branding, not a new owner period.",
+      "currentOwners": [
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock Real Assets / Diversified Infrastructure",
+          "fund": "Global Energy & Power Infrastructure Fund III (GEPIF III)",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Majority; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2022-07-20",
+          "entryDate": "2022-07-20",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "Ingka Investments",
+          "organization": "Ingka Group",
+          "fund": "Circular Investments portfolio",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Minority; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2025-09-18",
+          "entryDate": "2025-09-18",
+          "entryYear": 2025,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        }
+      ],
+      "formerOwners": [
+        {
+          "manager": "Vision Ridge Partners",
+          "organization": "Vision Ridge Partners",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": null,
+          "entryDate": null,
+          "entryYear": 2014,
+          "exitDate": "2022-07-20",
+          "exitYear": 2022,
+          "isActive": false,
+          "transactionState": "CLOSED"
+        }
+      ]
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "scope": "IN_SCOPE_MANAGER_LEVEL_PORTCO",
+      "profile": "U.S. energy/environmental infrastructure platform that processes food waste and owns/operates farm digesters and RNG upgrading systems for farms, food companies and energy buyers.",
+      "footprintScale": "Operates in the Northeast, Midwest and Southeast with nationwide development. Reported 17 facilities, about 260 staff and >440 GWh/year in 2024; three 2026 JV facilities total nearly 870,000 MMBtu/year."
+    },
+    "acquisitionExitCheck": {
+      "entry": "BlackRock acquisition closed 2022-07-20; Vision Ridge exited.",
+      "searchThrough": "2026-08-19",
+      "exitFound": false,
+      "result": "No disclosed parent sale, exit, transfer, recapitalization, merger, bankruptcy or pending sponsor exit found; 2026 materials still identify Vanguard as GIP, part of BlackRock.",
+      "pendingTransactions": [
+        {
+          "direction": "ENTRY",
+          "buyer": "CMA CGM Group through PULSE",
+          "seller": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Minority; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2025-08-20",
+          "closingDate": "NOT_PUBLICLY_DISCLOSED",
+          "state": "ANNOUNCED_PENDING",
+          "evidenceUrls": [
+            "https://www.vanguardrenewables.com/latest/vanguard-renewables-cma-cgm"
+          ]
+        }
+      ]
+    },
+    "milestones": [
+      {
+        "date": "2022-07-20",
+        "event": "BlackRock fund acquired Vanguard from Vision Ridge; closed.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2024-10-01",
+        "event": "BlackRock closed GIP acquisition; combined platform branded GIP, part of BlackRock.",
+        "category": "Manager combination"
+      },
+      {
+        "date": "2025-08-20",
+        "event": "CMA CGM/PULSE announced minority investment; no close found.",
+        "category": "Pending entry"
+      },
+      {
+        "date": "2025-09-18",
+        "event": "Ingka reported a completed minority investment.",
+        "category": "Minority entry"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "2022 acquisition",
+        "url": "https://www.businesswire.com/news/home/20220720005157/en/Vanguard-Renewables-Announces-Acquisition-by-BlackRock-Real-Assets",
+        "purpose": "Entry, seller, founding, business",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "BlackRock fund",
+        "url": "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close",
+        "purpose": "GEPIF III attribution",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock-GIP close",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "purpose": "Manager combination and branding",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "TotalEnergies JV",
+        "url": "https://www.vanguardrenewables.com/latest/joint-venture-announcement",
+        "purpose": "Majority status, scale, JV boundary",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2026 operating update",
+        "url": "https://www.vanguardrenewables.com/latest/vanguard-renewables-celebrates-milestone-completion-of-three-rng-projects",
+        "purpose": "Current status, HQ, footprint, scale",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CMA CGM/PULSE",
+        "url": "https://www.vanguardrenewables.com/latest/vanguard-renewables-cma-cgm",
+        "purpose": "Announced minority entry",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Ingka",
+        "url": "https://www.ingka.com/newsroom/turning-meatball-scraps-into-renewable-gas-ikea-u-s-and-vanguard-renewables-tackle-food-waste/",
+        "purpose": "Completed minority entry",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Merge BlackRock census and GIP repo-only identities into cmrxpjgn500yyivhe7tr8lc9h.",
+      "Replace two BlackRock/GEPIF III rows with one 2022 row; no 2024 GIP owner period.",
+      "Add former owner Vision Ridge, active minority owner Ingka and pending CMA CGM/PULSE; set HQ to Weston, Massachusetts."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "GIP as separate owner period: duplicate branding.",
+      "TotalEnergies: project-JV partner, not parent owner.",
+      "Vanguard business lines, facilities and bolt-ons: not separate parent PortCos."
+    ],
+    "unresolvedQuestions": [
+      "Acquisition vehicle, percentages and undisclosed co-investors are NOT_PUBLICLY_DISCLOSED.",
+      "CMA CGM/PULSE stake and closing date are NOT_PUBLICLY_DISCLOSED; keep pending."
+    ],
+    "recommendedListAction": "Merge into the existing record; deduplicate BlackRock; retain BlackRock/GEPIF III history; cross-reference GIP branding; add Vision Ridge, Ingka and pending CMA CGM/PULSE; exclude JVs and subsidiaries."
+  }
+}

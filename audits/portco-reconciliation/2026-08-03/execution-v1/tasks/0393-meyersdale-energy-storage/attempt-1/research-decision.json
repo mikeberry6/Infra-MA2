@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0393:meyersdale-energy-storage:efa8f53e",
+  "sequence": 393,
+  "asOfDate": "2026-08-19",
+  "companyName": "Meyersdale Energy Storage",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Direct sponsor and regulatory evidence identifies Meyersdale Storage, LLC as an operating battery project beneath GlidePath Power Solutions, Quinbrook's manager-level portfolio company. NextEra/FPL sold the project company to GlidePath Storage Operations on March 19, 2019. No separate Meyersdale sponsor mandate, project co-owner, later equity transfer or pending transaction was found.",
+  "recommendedChanges": [
+    "Merge/remove the standalone Meyersdale Energy Storage PortCo record into GlidePath Power Solutions.",
+    "Preserve Meyersdale Storage, LLC as an 18 MW/12 MWh operating project acquired March 19, 2019 and repowered in late 2024.",
+    "Roll Quinbrook fund attribution to GlidePath rather than creating a separate Meyersdale owner row.",
+    "Keep Meyersdale Windpower and Green Mountain Storage outside this canonical identity.",
+    "Treat 2015 as the service/operating year; do not invent an exact pre-2019 NextEra/FPL equity-entry date."
+  ],
+  "unresolvedQuestions": [
+    "The immediate pre-2019 NextEra/FPL member and purchase price are not publicly disclosed.",
+    "The Quinbrook fund economic split and project debt terms are not publicly disclosed.",
+    "The exact construction-start and repowering dates are not publicly disclosed."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "fieldCorrectionRequired": false,
+  "acceptedResponseSha256": "a5dc90c5ef4efe710df1e428ef92e8984813202740025a6b7379a0b0586ff47a"
+}

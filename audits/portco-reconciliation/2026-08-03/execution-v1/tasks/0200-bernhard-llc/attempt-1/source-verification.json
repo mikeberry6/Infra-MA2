@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0200:bernhard-llc:5339777c",
+  "taskIndex": 200,
+  "companyName": "Bernhard, LLC / ENFRA",
+  "verifiedAt": "2026-08-19T18:49:43.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://enfrasolutions.com/",
+      "finalUrl": "https://enfrasolutions.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 54657,
+      "contentSha256": "f3571e8185ed271d4c9c4f377196d8394577a89bf0273b1c20eee2864690b1eb",
+      "note": "The live ENFRA homepage confirms the successor brand and continuing operating platform."
+    },
+    {
+      "url": "https://enfrasolutions.com/about/rebrand",
+      "finalUrl": "https://enfrasolutions.com/about/rebrand",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 31182,
+      "contentSha256": "708b4d38cd0d6bb2e01241e8056e2efc0f3f568f0efb49874366dc8255156749",
+      "note": "Official FAQ states that Bernhard became ENFRA on May 1, 2025 and that the legal name change did not change the entity, EIN, ownership, legal structure, leadership or contracts."
+    },
+    {
+      "url": "https://enfrasolutions.com/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc",
+      "finalUrl": "https://enfrasolutions.com/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 29408,
+      "contentSha256": "4f094f9a76ccd20be48f890f298700a707fc40895fd4e059b43a9d9f6554eee2",
+      "note": "October 4, 2021 transaction-party release names DIF Infrastructure VI, Bernhard Capital Partners as seller and meaningful continuing management ownership."
+    },
+    {
+      "url": "https://www.bernhardcapital.com/bernhard-capital-partners-completes-sale-of-bernhard-llc-to-dif-capital-partners/",
+      "finalUrl": "https://www.bernhardcapital.com/bernhard-capital-partners-completes-sale-of-bernhard-llc-to-dif-capital-partners/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 932930,
+      "contentSha256": "8fdaea44f61a6bd689f678a46010d9c0737b0f0029206e138901992c281541ff",
+      "note": "Seller release and page metadata confirm completion of the sale on December 2, 2021."
+    },
+    {
+      "url": "https://www.cvc.com/media/news/2024/2024-07-03-completion-of-cvc-dif-and-acquisition-of-final-stake-in-cvc-secondary-partners/",
+      "finalUrl": "https://www.cvc.com/media/news/2024/2024-07-03-completion-of-cvc-dif-and-acquisition-of-final-stake-in-cvc-secondary-partners/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 97087,
+      "contentSha256": "7c63cce77a6aaac8d7bf92ee185b1213ced3bddf706c1e0624e049235b77b475",
+      "note": "CVC confirms completion of its initial 60% DIF manager acquisition and that DIF became CVC DIF while individual fund names and strategies remained unchanged."
+    },
+    {
+      "url": "https://enfrasolutions.com/about/company-leadership",
+      "finalUrl": "https://enfrasolutions.com/about/company-leadership",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 53418,
+      "contentSha256": "a395d250194e4c0e306ad8363c86ac9537fc15d6cc9433dc32ea1fa0bf9003c3",
+      "note": "Current leadership page identifies Rob Guthrie as CEO and CVC DIF as ENFRA's majority owner."
+    },
+    {
+      "url": "https://enfrasolutions.com/about",
+      "finalUrl": "https://enfrasolutions.com/about",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 34363,
+      "contentSha256": "79420fd8fe293d4560af90d82cdd1465d7d8d8b921f9df68d88c97bd1abc2e3c",
+      "note": "Official about page provides predecessor history, services and current scale, including 3,000+ employees and 29 offices."
+    },
+    {
+      "url": "https://enfrasolutions.com/contact",
+      "finalUrl": "https://enfrasolutions.com/contact",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 46029,
+      "contentSha256": "ed642cb1be70c0572cc3c3421f1e36a41d9132654ac4ca17e6b41f460fd700e4",
+      "note": "Official contact page identifies the Metairie, Louisiana corporate headquarters and an 18-state footprint."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveDirectOpenEvidence": true,
+    "deadUrlCount": 0,
+    "browserOrIndexFallbackCount": 0,
+    "redirectConcernCount": 0,
+    "sameEntityContinuityDirectlyProven": true,
+    "postCloseEvidencePresent": true,
+    "currentOwnershipEvidencePresent": true
+  },
+  "releaseRequirement": "Merge production Bernhard company cmrxpjctn00t5ivhet8mwenz9 into ENFRA company cmrxpjcwx00tbivhed8tnctp1, preserve Bernhard aliases and the single active CVC DIF ownership period through DIF Infrastructure VI, and correct the legal rebrand date to May 1, 2025."
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0385:aep-indiana-michigan-transmission-company:45ae9c1c",
+  "checkedAt": "2026-08-21T21:23:33.460Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.aeptransmission.com/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aeptransmission.com/",
+      "mediaType": "text/html",
+      "bytes": 35262,
+      "sha256": "f27f8b44856ed8376b4a10bd627460c04bb0ab5569accb6b11467eff39236a30",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/6879/000000490425000027/ex10b202410k.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/6879/000000490425000027/ex10b202410k.htm",
+      "mediaType": "text/html",
+      "bytes": 651868,
+      "sha256": "48830645780aae26f94b801a45358e0e3760e77e3219806947b70afbaf85b9ab",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000069/aep-20250605.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000069/aep-20250605.htm",
+      "mediaType": "text/xml",
+      "bytes": 37404,
+      "sha256": "b14e244785ceed7e5ecc4c485fb65ba1f7109fc6d6e96e6e3160df7ef129a2a3",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/kkr-and-psp-investments-acquire-minority-stake-in-two-american-electric-power-transmission-companies/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.investpsp.com/en/news/kkr-and-psp-investments-acquire-minority-stake-in-two-american-electric-power-transmission-companies/",
+      "mediaType": "text/html",
+      "bytes": 34918,
+      "sha256": "456d3e6150e3e19fcfbfaccdc7b5522de3e563fc83b0a760c0a59e664578a585",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://docs.aep.com/docs/investors/fercfilings/docs/2025/AEP%20IM%20Transmission%20Company%202025%20FF1_compressed.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aep.com/docs/investors/fercfilings/docs/2025/AEP%20IM%20Transmission%20Company%202025%20FF1_compressed.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 803689,
+      "sha256": "f77fd612d113c15db40eb6464378e1e749033388b06febb4fcea37f3fb4d6ec6",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 143,
+        "relevantPdfPages": [
+          8,
+          133,
+          141
+        ],
+        "verifiedClaims": [
+          "AEP Indiana Michigan Transmission Company identity and control chain",
+          "1,142 designated pole-miles, 55 other-structure pole-miles, 161 circuits and $2.268bn total line cost",
+          "2,822 MVA transmission-substation capacity"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/R59.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/R59.htm",
+      "mediaType": "text/html",
+      "bytes": 54150,
+      "sha256": "5393860ccf7d2712e6dc60eea7c4b8aad9ec9f04c0f6b4f653456915a43e3add",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

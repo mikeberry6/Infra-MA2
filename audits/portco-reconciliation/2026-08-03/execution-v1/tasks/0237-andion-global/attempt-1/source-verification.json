@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0237:andion-global:05d3742d",
+  "taskIndex": 237,
+  "companyName": "Andion Global",
+  "verifiedAt": "2026-08-20T02:53:22Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://gsk-lux.com/en/gsk-stockmann-advises-andion-ch4-renewables-on-the-first-capital-raise-after-its-migration-from-canada-to-luxembourg/",
+      "finalUrl": "https://gsk-lux.com/en/gsk-stockmann-advises-andion-ch4-renewables-on-the-first-capital-raise-after-its-migration-from-canada-to-luxembourg/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 120949,
+      "contentSha256": "20a72dd370a6679b085e6059c0268034ace05a0768fb52a69cf0af3b15bcffcb",
+      "note": "GSK's direct transaction page verifies the migration from Canada to Luxembourg and the first post-migration capital raise."
+    },
+    {
+      "url": "https://andionch4.com/andion-ch4-renewables-has-closed-its-recent-capital-raise/",
+      "finalUrl": "https://andionch4.com/andion-ch4-renewables-has-closed-its-recent-capital-raise/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 43474,
+      "contentSha256": "de14d2c0c37dc50a5ae8bc144c409621496e0e07143172d97654e2ecfb4dcf3d",
+      "note": "Andion's direct release verifies the January 2025 capital raise and investor context."
+    },
+    {
+      "url": "https://andionch4.com/",
+      "finalUrl": "https://andionch4.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 131439,
+      "contentSha256": "ba37de16242b17664c8c5c34c9e6d7cecdd7a1a3684ed1c2d9960a365bc49f83",
+      "note": "Andion's live site calls the business Europe's integrated biomethane platform and lists operating/development activity in Italy and Sweden/Northern Europe."
+    },
+    {
+      "url": "https://equitix.com/news/equitix-welcomes-financing-partnership-to-support-andions-european-biomethane-growth/",
+      "finalUrl": "https://equitix.com/news/equitix-welcomes-financing-partnership-to-support-andions-european-biomethane-growth/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 83974,
+      "contentSha256": "1f5499964c235dcef0d8702ec4876006576ec757a4d066be900432e8b8351b04",
+      "note": "Equitix's direct 2026 release states that existing shareholders led by the Equitix Next Generation Fund made a material equity contribution, that the fund has supported Andion for many years, and that the approximately €70 million facility supports Italy and the Nordic region. This directly resolves current shareholder continuity and corrects the model's €67 million figure."
+    },
+    {
+      "url": "https://ised-isde.canada.ca/cipo/trademark-search/pdf/2115854?lang=eng",
+      "finalUrl": "https://ised-isde.canada.ca/cipo/trademark-search/pdf/2115854?lang=eng",
+      "status": "OPEN_PDF_TEXT_AND_VISUAL_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 20209,
+      "contentSha256": "52bca4a58f947369359c0028fca0727a488d0a21c1cd5da95c201cd5f32dd5ac",
+      "pageVerification": [
+        {
+          "page": 2,
+          "method": "pypdf text extraction plus pypdfium2 visual render",
+          "finding": "The record shows a January 9, 2024 name change from Andion Global Inc. to Andion CH4 Renewables, a Luxembourg applicant address, and an April 7, 2026 assignment to Rianco2Epsilon S.à r.l."
+        }
+      ],
+      "note": "The Canadian government trademark record verifies the identity change and Luxembourg address; the trademark assignment is not by itself treated as a company ownership transfer."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "pdfTextExtractionCount": 1,
+    "pdfVisualVerificationCount": 1,
+    "canadaToLuxembourgMigrationVerified": true,
+    "identityChangeVerified": true,
+    "luxembourgAddressVerified": true,
+    "currentEquitixShareholderContinuityVerified": true,
+    "equitixNextGenerationFundVerified": true,
+    "europeanPlatformPositioningVerified": true,
+    "italyNordicFootprintVerified": true,
+    "northAmericaManagerLevelQualification": false,
+    "individualNorthAmericanProjectsExcludedFromPlatformQualification": true,
+    "financingQuantumCorrected": true,
+    "laterDirectExitNotFound": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Record the repo-only judgment as EXCLUDED: Andion CH4 Renewables is a Luxembourg-addressed European biomethane platform with current shareholders led by the Equitix Next Generation Fund, and individual legacy or underlying North American projects do not make the manager-level platform North American."
+}

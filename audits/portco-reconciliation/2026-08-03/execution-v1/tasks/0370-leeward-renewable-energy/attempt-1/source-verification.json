@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0370:leeward-renewable-energy:acc199f8",
+  "taskIndex": 370,
+  "verifiedAt": "2026-08-21T18:48:56.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 8,
+    "working": 6,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The LRE and ION Analytics pages returned HTTP 403 to direct curl but independently opened and parsed at their exact URLs; both are classified BROWSER_BLOCKED_BUT_VERIFIED rather than dead.",
+    "The TXF page is live and its public excerpt confirms the Commodore Leeward acquisition financing and a September 2018 close, but the exact September 6 day remains paywalled and is retained as a nonblocking secondary-source limitation.",
+    "Read-only extraction of the 2023 FERC Form 556 independently confirmed a 100% upstream chain through Leeward Renewable Energy, LLC and Commodore US Holding Corporation, with Commodore identified as an indirect investment entity of OMERS Administration Corporation."
+  ],
+  "sources": [
+    {
+      "url": "https://www.omersinfrastructure.com/investments/leeward",
+      "finalUrl": "https://www.omersinfrastructure.com/investments/leeward",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 156940,
+      "sha256": "d4c71267748715feaa5b0212bf777efadb5a3505362264140290de097d53901b",
+      "health": "WORKING",
+      "contentEvidence": "OMERS lists Leeward as an investment since 2018 and describes 30 wind, solar and storage projects totaling 4 GW across the United States."
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy",
+      "finalUrl": "https://www.omersinfrastructure.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 154548,
+      "sha256": "36c613cd102ccc65c0ea33853a8ccf9e157c6d3014d777c16c1e1722e1f0e8eb",
+      "health": "WORKING",
+      "contentEvidence": "The March 22, 2018 release confirms definitive documentation to acquire Leeward from ArcLight affiliates and an expected third-quarter close."
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/arclight-capital-partners-announces-closing-of-transaction-to-acquire-infigen-energys-us-assets-300168337.html",
+      "finalUrl": "https://www.prnewswire.com/news-releases/arclight-capital-partners-announces-closing-of-transaction-to-acquire-infigen-energys-us-assets-300168337.html",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 205644,
+      "sha256": "64c6ad9b0cc1ed076c1d118e665c12944b22ca57616d71e251fcf7973861524f",
+      "health": "WORKING",
+      "contentEvidence": "ArcLight announced the October 28, 2015 closing by its newly formed Leeward Renewable Energy LLC of Infigen's U.S. assets and operations business."
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20181019",
+      "finalUrl": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20181019",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 986493,
+      "sha256": "a5877fafbd20a0318a3f81321a1fd3b3022fd4f384dd8fdab2d115303e62f0b1",
+      "health": "WORKING",
+      "contentEvidence": "The FTC notice names Hamilton Infrastructure Trust as acquiring party, ArcLight Energy Partners Fund VI as acquired party and Leeward Renewable Energy, LLC as the acquired entity."
+    },
+    {
+      "url": "https://www.txfnews.com/news/15428/omers-closes-on-commodore-leeward-acquisition-facility",
+      "finalUrl": "https://www.txfnews.com/news/15428/omers-closes-on-commodore-leeward-acquisition-facility",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 28767,
+      "sha256": "373a60943034912213146d56fe8352b1777a315e182534314e9de4ab66934925",
+      "health": "WORKING_PARTIAL_PAYWALL",
+      "contentEvidence": "The public October 4, 2018 excerpt says OMERS reached financial close on debt backing its acquisition of the Commodore Leeward portfolio from ArcLight; the day text is truncated after 'on 6'."
+    },
+    {
+      "url": "https://dms.psc.sc.gov/Attachments/Matter/939f3f5a-d0ed-4732-a2f6-b52089f84011",
+      "finalUrl": "https://dms.psc.sc.gov/Attachments/Matter/939f3f5a-d0ed-4732-a2f6-b52089f84011",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 290098,
+      "sha256": "ca9680f6f8d65b3d4efeb9c961cb15eb2db7f10d549342f8afd7151321dfcea3",
+      "health": "WORKING",
+      "contentEvidence": "FERC Form 556 identifies successive 100% upstream interests through Leeward Renewable Energy, LLC and Commodore US Holding Corporation and states that Commodore is an indirect OMERS investment entity."
+    },
+    {
+      "url": "https://www.lreus.com/partner-with-us/investors/",
+      "finalUrl": "https://www.lreus.com/partner-with-us/investors/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5491,
+      "sha256": "d9697275a92a5d975b4505dc24ecb2a814fe64b679aec9885bd6aeb5bd15d18f",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserEvidence": "The exact page independently parsed and confirms LRE's Dallas headquarters, 20-year operating lineage, 30+ GW/130+ project development portfolio and Leeward Renewable Energy, LLC legal name."
+    },
+    {
+      "url": "https://ionanalytics.com/insights/infralogic/omers-sale-of-leeward-energy-enters-second-round/",
+      "finalUrl": "https://ionanalytics.com/insights/infralogic/omers-sale-of-leeward-energy-enters-second-round/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "sha256": "a88083e36c4841a40dbfd5c16e8c52166bdf691ebfbd862c9d58cb8b31afb8a5",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserEvidence": "The exact article independently parsed and reports an August 2024 minority or significant-minority sale process, without identifying a signed buyer or closed transfer."
+    }
+  ]
+}

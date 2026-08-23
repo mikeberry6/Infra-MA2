@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0187:sunstone-power:15729451",
+  "taskIndex": 187,
+  "companyName": "Sunstone Power",
+  "verifiedAt": "2026-08-19T12:23:18.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/08/06/3339981/0/en/copenhagen-infrastructure-partners-reaches-financial-close-and-starts-construction-on-its-first-project-in-mexico.html",
+      "finalUrl": "https://www.globenewswire.com/news-release/2026/08/06/3339981/0/en/copenhagen-infrastructure-partners-reaches-financial-close-and-starts-construction-on-its-first-project-in-mexico.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 64914,
+      "contentSha256": "58ebb4243bf1e2e859adc14a5a469e8047be8fba52c0e1477d40ad3c271c5482",
+      "note": "Opened directly. Model purpose: GMF II project equity, financing, construction, PPA and expected COD."
+    },
+    {
+      "url": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10512",
+      "finalUrl": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10512",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_REDIRECT_LOOP",
+      "httpStatus": null,
+      "mediaType": "browser DOM text",
+      "bytes": 3938,
+      "contentSha256": "91507675f970b34109a034b1e0eb157d85f2706dfa8ac1d311587a5286814ec0",
+      "note": "Curl encountered a redirect loop, but the exact CFE page rendered in the signed-in browser and named CIP associated with Sunstone in two signed renewable contracts."
+    },
+    {
+      "url": "https://www.sunstone-power.com/en/about-us/",
+      "finalUrl": "https://www.sunstone-power.com/en/about-us/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 14272,
+      "contentSha256": "1bcc10a2a296b5f7ea28026075e9ea1b452b2377ac9e3d73669c2c94700c48a1",
+      "note": "Opened directly. Model purpose: operating identity and mandate without a named owner."
+    },
+    {
+      "url": "https://lei.bloomberg.com/leis/view/98450051BAD17154DC07",
+      "finalUrl": "https://lei.bloomberg.com/leis/view/98450051BAD17154DC07",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 75034,
+      "contentSha256": "857690bd352bb8cb3c50ca78e8fb5e58f4ee1806471eece7ceb3c3ef22c4e0ad",
+      "note": "Opened directly. Model purpose: legal identity, formation, status and address without shareholder evidence."
+    },
+    {
+      "url": "https://lei.bloomberg.com/leis/view/984500D05DCB69413772",
+      "finalUrl": "https://lei.bloomberg.com/leis/view/984500D05DCB69413772",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 74187,
+      "contentSha256": "e97c5c1b39fd6e9919fa79900cf830edc11c1b81ed7f8666c9db78f72a99ac7b",
+      "note": "Opened directly. Model purpose: affiliated active entity whose parent remains unresolved."
+    },
+    {
+      "url": "https://www.pv-magazine-mexico.com/2026/03/23/aprueban-ambientalmente-el-proyecto-la-alegria-solar-de-788719-mwp-mas-bess-en-campeche/",
+      "finalUrl": "https://www.pv-magazine-mexico.com/2026/03/23/aprueban-ambientalmente-el-proyecto-la-alegria-solar-de-788719-mwp-mas-bess-en-campeche/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 203533,
+      "contentSha256": "13bd4472d0334fcf33444da2e334a7403737fb35c602451d353274e3ff6ed454",
+      "note": "Opened directly. Model purpose: La Alegría promoter, capacity, permit and related development context."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserVerifiedAfterCurlBlockCount": 1,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Retain Sunstone as an active Mexico renewable-development platform, but block direct CIP platform ownership from application until shareholder-chain evidence is found. Record GMF II only at the La Esperanza project level and keep Sunstone Power 2 and named projects subordinate."
+}

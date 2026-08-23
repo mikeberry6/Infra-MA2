@@ -1,0 +1,512 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+  "taskIndex": 122,
+  "companyName": "Cleco Corporate Holdings LLC",
+  "generatedAt": "2026-08-23T04:43:20.276Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 122,
+    "taskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+    "canonicalKey": "cleco-corporate-holdings-llc|united-states",
+    "companyName": "Cleco Corporate Holdings LLC",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 21,
+    "managers": [
+      "BCI",
+      "Macquarie Asset Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "021-bci:holding:002:cleco-corporate-holdings",
+      "065-macquarie-asset-management:holding:004:cleco-corporate-holdings-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjkkg0151ivhenxskmy7x"
+    ],
+    "seedKeys": [
+      "cleco corporate holdings llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco",
+      "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco"
+    ],
+    "candidateCanonicalKeys": [
+      "cleco|united-states"
+    ],
+    "rationale": "Census candidate cleco|united-states overlaps this record without an exact approved identity decision. Heuristic identity overlap with cleco-corporation|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Census candidate cleco|united-states overlaps this record without an exact approved identity decision.",
+      "Heuristic identity overlap with cleco-corporation|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjkkg0151ivhenxskmy7x",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "cleco-corporate-holdings-llc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjkkg0151ivhenxskmy7x",
+    "name": "Cleco Corporate Holdings LLC",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated electric utility and wholesale generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Cleco Corporate Holdings LLC is part of the privately held Cleco Group utility platform serving Louisiana through Cleco Power and related generation assets. Cleco serves approximately 298,000 residential, commercial, and industrial customers in 24 Louisiana parishes, owns eight generating units with 2,676 MW of rated capacity, and remains regulated by the Louisiana Public Service Commission. The business is asset-heavy and largely regulated, with earnings supported by utility networks, generation assets, and approved tariffs. A North American investor group led by Macquarie Infrastructure and Real Assets and BCI completed the take-private acquisition in April 2016. On April 27, 2026, Stonepeak and Bernhard Capital Partners announced an agreement to acquire Cleco from Macquarie Asset Management, BCI, and Manulife Investment Management, but the transaction remained subject to customary regulatory approvals as of May 12, 2026, so the BCI holding remains active until a closing is confirmed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.cleco.com/",
+    "yearFounded": 1933,
+    "headquarters": "Pineville, Louisiana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6nt0244ivhetvms2jd6",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk6od0245ivhe8mp691um",
+        "managerName": "Manulife Investment Management",
+        "organizationName": "Manulife Investment Management",
+        "fundName": null,
+        "vehicleName": "Cleco investor consortium",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk6re0246ivhen4ze6pdf",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "Infrastructure & Renewable Resources",
+        "stake": "36.9%",
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkuna02yuivhezutt20hw",
+        "date": "1933",
+        "event": "Cleco Corporation was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1933-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmase04p1ivheat4e9uo7",
+        "date": "1933",
+        "event": "Cleco's corporate history materials trace the company's founding to 1933.",
+        "category": "OTHER",
+        "sortDate": "1933-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmasy04p2ivhedxaq3w8y",
+        "date": "1933",
+        "event": "Cleco Corporate Holdings LLC was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1933-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmati04p3ivhe4d661jv4",
+        "date": "Oct 20, 2014",
+        "event": "Cleco announced an agreement to be acquired by an investor group led by Macquarie Infrastructure and Real Assets and BCI.",
+        "category": "ACQUISITION",
+        "sortDate": "2014-10-20T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmaty04p4ivhextnub48a",
+        "date": "2016",
+        "event": "Louisiana regulatory materials disclosed the post-closing ownership interests of Macquarie, BCI, and John Hancock Financial / Manulife.",
+        "category": "FINANCING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmauk04p5ivhe52wmo6r5",
+        "date": "Apr 13, 2016",
+        "event": "The investor group completed the acquisition of Cleco.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-04-13T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmav504p6ivherdppmeqr",
+        "date": "Apr 27, 2026",
+        "event": "Macquarie Asset Management, BCI, and Manulife Investment Management announced an agreement to sell Cleco Group to Stonepeak and Bernhard Capital Partners, subject to regulatory approvals.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-04-27T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [
+      {
+        "id": "cmrxpmxph05i0ivhe9e7vu7tx",
+        "personName": "William \"Bill\" Fontenot",
+        "title": "President and Chief Executive Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxq205i1ivhehr8an2v0",
+        "personName": "Kristin Guillory",
+        "title": "Chief Financial Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxqh05i2ivhex99g6so7",
+        "personName": "Robert Breedlove",
+        "title": "Chief Operations Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxqy05i3ivhe8g4k4rit",
+        "personName": "Justin \"Shane\" Hilton",
+        "title": "Chief Commercial Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxre05i4ivhexg26irkz",
+        "personName": "Sybil Montegut",
+        "title": "Chief Administrative & Sustainability Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxrz05i5ivhe6sn5wyod",
+        "personName": "Andre Guillory",
+        "title": "Chief Customer Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      }
+    ],
+    "citations": [
+      {
+        "id": "cmrxps3e10c2givheaxyj7554",
+        "label": "Company profile source — Cleco Corporation",
+        "url": "https://www.cleco.com/about/history",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Cleco company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps3en0c2hivheh18pq63i",
+        "label": "Management source — Cleco Corporation",
+        "url": "https://www.cleco.com/about/leadership-governance/executive-officers",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Cleco executive officers",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps3f90c2iivheorw1y5ev",
+        "label": "Announcement date source — BCI — Cleco Corporation",
+        "url": "https://www.cleco.com/media/press-releases/detail/2014/10/20/cleco-enters-agreement-to-be-acquired-by-north-american-investor-group-led-by-macquarie-infrastructure-and-real-assets-and-british-columbia-investment-management-corporation",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps3fr0c2jivher9geurwv",
+        "label": "Close date source — BCI — Cleco Corporation",
+        "url": "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps3g90c2kivhetjvtdy68",
+        "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+        "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 36.9% ownership interest in Cleco Corporation as of December 31, 2024",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps3j60c2livheuzi26j62",
+        "label": "Regulatory ownership source — Cleco Corporation",
+        "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=SnuJItgVr6k%3D",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Lpscpubvalence financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps3jx0c2mivhegf9kf6ac",
+        "label": "Pending sale source — Cleco Corporation",
+        "url": "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Sale announced April 27, 2026; subject to regulatory approvals",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Cleco Corporate Holdings LLC",
+    "investmentFirm": "Manulife",
+    "sector": "Utilities",
+    "subsector": "Regulated electric utility and wholesale generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Manulife Infrastructure Fund I",
+    "description": "Cleco Corporate Holdings LLC is part of the privately held Cleco Group utility platform serving Louisiana through Cleco Power and related generation assets. Cleco serves approximately 298,000 residential, commercial, and industrial customers in 24 Louisiana parishes, owns eight generating units with 2,676 MW of rated capacity, and remains regulated by the Louisiana Public Service Commission. The business is asset-heavy and largely regulated, with earnings supported by utility networks, generation assets, and approved tariffs. A North American investor group led by Macquarie Infrastructure and Real Assets and BCI completed the take-private acquisition in April 2016. On April 27, 2026, Stonepeak and Bernhard Capital Partners announced an agreement to acquire Cleco from Macquarie Asset Management, BCI, and Manulife Investment Management, but the transaction remained subject to customary regulatory approvals as of May 12, 2026, so the BCI holding remains active until a closing is confirmed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "website": "https://www.cleco.com/",
+    "yearFounded": 1933,
+    "investmentYear": 2016,
+    "headquarters": "Pineville, Louisiana",
+    "milestones": [
+      {
+        "date": "1933",
+        "event": "Cleco's corporate history materials trace the company's founding to 1933.",
+        "category": "Other"
+      },
+      {
+        "date": "1933",
+        "event": "Cleco Corporate Holdings LLC was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Oct 20, 2014",
+        "event": "Cleco announced an agreement to be acquired by an investor group led by Macquarie Infrastructure and Real Assets and BCI.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2016",
+        "event": "Louisiana regulatory materials disclosed the post-closing ownership interests of Macquarie, BCI, and John Hancock Financial / Manulife.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 13, 2016",
+        "event": "The investor group completed the acquisition of Cleco.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Apr 27, 2026",
+        "event": "Macquarie Asset Management, BCI, and Manulife Investment Management announced an agreement to sell Cleco Group to Stonepeak and Bernhard Capital Partners, subject to regulatory approvals.",
+        "category": "Divestiture"
+      }
+    ],
+    "management": [
+      {
+        "name": "William \"Bill\" Fontenot",
+        "title": "President and Chief Executive Officer"
+      },
+      {
+        "name": "Kristin Guillory",
+        "title": "Chief Financial Officer"
+      },
+      {
+        "name": "Robert Breedlove",
+        "title": "Chief Operations Officer"
+      },
+      {
+        "name": "Justin \"Shane\" Hilton",
+        "title": "Chief Commercial Officer"
+      },
+      {
+        "name": "Sybil Montegut",
+        "title": "Chief Administrative & Sustainability Officer"
+      },
+      {
+        "name": "Andre Guillory",
+        "title": "Chief Customer Officer"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Company profile source — Cleco Corporate Holdings LLC",
+        "url": "https://www.cleco.com/about/history",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Management source — Cleco Corporate Holdings LLC",
+        "url": "https://www.cleco.com/about/leadership-governance/executive-officers",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Cleco executive officers"
+      },
+      {
+        "label": "Announcement date source — BCI — Cleco Corporate Holdings LLC",
+        "url": "https://www.cleco.com/media/press-releases/detail/2014/10/20/cleco-enters-agreement-to-be-acquired-by-north-american-investor-group-led-by-macquarie-infrastructure-and-real-assets-and-british-columbia-investment-management-corporation",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — BCI — Cleco Corporate Holdings LLC",
+        "url": "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ownership interest source — BCI I&RR 2024 financial statements — Cleco Corporate Holdings LLC",
+        "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 36.9% ownership interest in Cleco Corporation as of December 31, 2024"
+      },
+      {
+        "label": "Regulatory ownership source — Cleco Corporate Holdings LLC",
+        "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=SnuJItgVr6k%3D",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Pending sale source — Cleco Corporate Holdings LLC",
+        "url": "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Sale announced April 27, 2026; subject to regulatory approvals"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Macquarie Asset Management",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2016,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Manulife Investment Management",
+        "ownershipVehicle": "Cleco investor consortium",
+        "investmentYear": 2016,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "BCI",
+        "ownershipVehicle": "Infrastructure & Renewable Resources",
+        "investmentYear": 2016,
+        "stake": "36.9%",
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1av00btivhe22q21yhy",
+        "fundName": "Infrastructure & Renewable Resources",
+        "managerId": "cmrxpi4wo000tivheupfc57xk",
+        "updatedAt": "2026-07-23T16:09:55.543Z"
+      },
+      {
+        "id": "cmrxpj31600egivheozs3cnth",
+        "fundName": "Macquarie Infrastructure Partners III",
+        "managerId": "cmrxpibdo002uivheekmgpdbp",
+        "updatedAt": "2026-07-23T16:09:57.786Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4wo000tivheupfc57xk",
+        "name": "BCI",
+        "updatedAt": "2026-07-23T16:09:13.560Z"
+      },
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      },
+      {
+        "id": "cmrxpibim002wivhet9rhv26m",
+        "name": "Manulife Investment Management",
+        "updatedAt": "2026-07-23T16:09:22.126Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpj8iu00miivhefl7xhjri",
+        "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:39.965Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+    "taskIndex": 122,
+    "canonicalKey": "cleco-corporate-holdings-llc|united-states",
+    "capturedAt": "2026-08-23T04:43:20.276Z",
+    "databaseRevision": "revision:19460473b2e8ddd9f1252bf7af0e84aa7d91fe9f05208f559171c3be00ed9fce",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "b65f4791b5606c3912cbf605191e63ecf0ab12c9a58c9d427d733d7b2a6b486b",
+    "productionSnapshotSha256": "5bec37ad9b07e44fd7f15c111e23ec7d60af5a43c61d2eb1a9880b4d087285e4",
+    "targetCompanySnapshotSha256": "04c369427df21c687a62bf2986c7e1a1ca8c155f2dad195fd66604b37b06f26e",
+    "seedEntrySha256": "3650ef186b0682340945d7c54f231d06d9766e9e9e30530546d9bd16d65726c9",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "ad8618ba7902198f93c7c15b01563917746dcd45e31a4e503fd9faf837b296a0",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "71122d6fcbb0e7d64d3466caf6239c7fbc9e1021be99773ac169f8acdb8697e1",
+      "organizationsSha256": "72100dacf723779e2786be04a816d859a2904276e6111200efd2f49cd4b49176",
+      "citationsSha256": "befa001fc9aac7297446b7ca85e8228de30e73af3fa388b498687664249ee2c9",
+      "redirectsSha256": "0ca7dbed5e08ab91535946688ff13457fe7650964673079291d172200b349eec"
+    },
+    "dependencySha256": "70d064be2a906505d07ddf9e26a3dfe3490b5cdcd361a1bd8a88de3c2dbf8fa7",
+    "stateSha256": "9502d27cd55d15be3d75cbca2d1092ac1c71b28023506b0aaca69211435c525c",
+    "taskSnapshotSha256": "732aa475a8109d0f2ad03fcfb251627e0805cc09926c683e125f22d43f52bc0b"
+  },
+  "contextSha256": "a1a3c98ef8c04c181f2a741f748dd9f8e06c6657f226e0897675b42d8cb2eb18"
+}

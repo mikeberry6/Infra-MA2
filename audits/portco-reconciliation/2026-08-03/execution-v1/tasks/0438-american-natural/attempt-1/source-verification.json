@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0438:american-natural:a714a5a7",
+  "checkedAt": "2026-08-22T07:55:50.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type, byte-length and content-hash checks; page-level review of the Tiger investment and CSP PDFs; direct SEC, Tiger, OIC and transaction-source review for entry, current involvement, retained operating perimeter and the 2023 retail divestiture",
+  "sources": [
+    {
+      "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 277095,
+      "sha256": "161e597bec5306f6999ba3cd1e1422af342a25f058dcc278af48f4e8486a7a2a",
+      "healthStatus": "WORKING",
+      "pageVerification": [1],
+      "verifiedClaims": [
+        "Tiger announced the closing of an investment in Cleopatra Resources LLC on May 28, 2015",
+        "Transaction terms were not disclosed",
+        "The company was established in 2011 and developed American Natural multi-fuel stations across Pennsylvania and Ohio",
+        "Tiger explicitly described the company as CNG energy infrastructure and described itself as an infrastructure investor"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/american-natural-closes-series-of-strategic-transactions-to-facilitate-growth-plan-300568637.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/american-natural-closes-series-of-strategic-transactions-to-facilitate-growth-plan-300568637.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 208092,
+      "sha256": "e707d17ecac7cbf767ec41d02e837c9f47a86b8589d2c49b7106bfa69c5d0803",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "American Natural Supply acquired the key business assets of Satterlee on December 7, 2017",
+        "Tiger led a concurrent parent-level equity investment and Orion provided financing to ANS",
+        "ANS operated a terminal and related-infrastructure network serving commercial and energy-sector customers"
+      ]
+    },
+    {
+      "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/585718_CSP_AN_Article.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/585718_CSP_AN_Article.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 1154409,
+      "sha256": "d068670411721fc0e2cd79f761283defc555e78377c51b8290c870adce3f2941",
+      "healthStatus": "WORKING",
+      "pageVerification": [4],
+      "verifiedClaims": [
+        "In 2018 the retail chain comprised 13 convenience stores: two American Natural Energy Centres and eleven conventional gasoline-branded stores",
+        "Jennifer Pomerantz founded Cleopatra Resources in 2011 to launch American Natural"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1543304/000154330422000003/xslFormDX01/primary_doc.xml",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1543304/000154330422000003/xslFormDX01/primary_doc.xml",
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "sha256": "c545d73f3abc65d75a06ffaf003a1ea4e6a78ab66dc680d1a79ab30f8097b431",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "Direct SEC filing was independently indexed and opened in the research browser despite SEC rate limiting the curl verifier",
+      "verifiedClaims": [
+        "Cleopatra Resources made a Rule 506(c) equity offering with a first sale on April 22, 2022",
+        "The filing reported a $25 million offering, $10 million sold and one investor",
+        "The filing does not identify the investor or disclose the resulting ownership percentage or control"
+      ]
+    },
+    {
+      "url": "https://jobbersworld.com/2023/12/18/giant-oil-inc-closes-acquisition-of-american-natural-retail-pa-llc/",
+      "httpStatus": 200,
+      "finalUrl": "https://jobbersworld.com/2023/12/18/giant-oil-inc-closes-acquisition-of-american-natural-retail-pa-llc/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 236621,
+      "sha256": "400b2c8037a075018a54dddc95cf7e175818067771787759c3ec8f2de70bbc23",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Cleopatra sold substantially all convenience-retail assets of American Natural Retail PA LLC to Giant Oil in December 2023",
+        "The transaction included eleven operating convenience stores and two additional retail locations scheduled for transaction closing in 2024",
+        "The announcement concerned the retail subsidiary and did not state that retained ANS wholesale operations were sold"
+      ]
+    },
+    {
+      "url": "https://www.tigerinfrastructure.com/team",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tigerinfrastructure.com/team",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 210821,
+      "sha256": "54a6342f6677cfed1795694be7938e0375ce2015820c2ca282e64e2359d45bc9",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Tiger General Counsel Danielle Hunt currently serves on the board of American Natural",
+        "Tiger Operating Partner Jonathan O'Donnell is identified as a recent American Natural CFO and describes American Natural as a Tiger portfolio company"
+      ]
+    },
+    {
+      "url": "https://oic.com/investments/american-natural-supply",
+      "httpStatus": 200,
+      "finalUrl": "https://oic.com/investments/american-natural-supply",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 996623,
+      "sha256": "d4ef62627b41b39286f4c0f9fab719043f647ce931f6dddef7114b7e566a191f",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "OIC currently presents American Natural Supply as an unrealized 2017 investment",
+        "OIC describes ANS as a Pittsburgh commercial fuel-supply and storage company with terminals and related infrastructure serving commercial, industrial and energy customers",
+        "OIC's unrealized status describes OIC's own position and does not establish Tiger's ownership percentage"
+      ]
+    },
+    {
+      "url": "https://www.tigerinfrastructure.com/portfolio/American-Natural",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tigerinfrastructure.com/portfolio/American-Natural",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 42692,
+      "sha256": "c780261bcbb89125531cccbddaa0b537a707595a6899c2bc35d294e4f90bafec",
+      "healthStatus": "WORKING_STALE_DESCRIPTION",
+      "verifiedClaims": [
+        "Tiger continues to publish American Natural with a 2015 initial investment, Energy Transition sector and North America geography",
+        "The page's operating copy still includes divested retail activity and therefore cannot define the current company perimeter by itself"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T07:55:50.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "The December 2023 sale removed substantially all convenience-retail assets, but no sale of the retained ANS wholesale fuel-supply and storage business or full Tiger exit was found. Current Tiger board representation and its live portfolio listing support continuing involvement. OIC independently continues to list ANS as unrealized."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "responseSourceHealthCorrections": [
+    "Tiger Infrastructure Partners Fund I and sole ownership are not directly disclosed by the reviewed primary sources; fund, vehicle, security, stake and full cap table remain NOT_PUBLICLY_DISCLOSED.",
+    "The 2022 Form D proves an equity sale to one investor but does not identify the investor or establish the effect on Tiger's percentage or control.",
+    "OIC's unrealized status confirms ANS continuity and OIC's own position; it is not treated as proof of Tiger's stake.",
+    "The two additional retail locations in the 2023 announcement were scheduled for transaction closing in 2024; they are not described as store closures.",
+    "Tiger's live portfolio copy is stale because it still describes retail operations sold to Giant, so the retained company boundary is ANS fuel supply, storage, terminals and logistics."
+  ],
+  "deadSourceCount": 0
+}

@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+  "taskIndex": 259,
+  "companyName": "SOLCAP (KeyState Renewables JVs)",
+  "verifiedAt": "2026-08-20T09:12:26.342Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://generatecapital.com/generate-capital-closes-85-million-community-solar-tax-equity-fund/",
+      "finalUrl": "https://generatecapital.com/generate-capital-closes-85-million-community-solar-tax-equity-fund/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 46969,
+      "contentSha256": "428bf9865e4f74cd221c6826efbb78e4e1f3871d4f306a85a465a558c505bf74",
+      "note": "Generate's Fund X release supports the community-solar tax-equity fund, KeyState's tax-credit administration role and Generate's developer/owner/operator role."
+    },
+    {
+      "url": "https://generatecapital.com/generate-capital-and-keystate-renewables-solcap-platform-deliver-53-5-mwdc-in-community-solar-across-11-projects-in-new-york-with-latest-joint-tax-equity-facility-close/",
+      "finalUrl": "https://generatecapital.com/generate-capital-and-keystate-renewables-solcap-platform-deliver-53-5-mwdc-in-community-solar-across-11-projects-in-new-york-with-latest-joint-tax-equity-facility-close/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 48157,
+      "contentSha256": "7b4648a52d2acbcba3d4705cf2e3d49c2ca0c25567dd566b1fb553c313a13fcb",
+      "note": "Generate's corrected release expressly describes a joint tax-equity facility, 11 New York projects and 53.5 MWdc, rather than a joint operating-company fund."
+    },
+    {
+      "url": "https://www.sol-cap.com/keystate-renewables-launches-solcap-fund-i-llc-a-solar-tax-credit-fund-for-community-bank-investors/",
+      "finalUrl": "https://www.sol-cap.com/keystate-renewables-launches-solcap-fund-i-llc-a-solar-tax-credit-fund-for-community-bank-investors/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5983,
+      "contentSha256": "20520f751cfa20bd6436106b57ec1a42008418a49f42405b1b623a657c7c4771",
+      "browserVerified": true,
+      "note": "Direct fetch returned 403, while the in-app browser loaded the SOLCAP Fund I page and visibly identified SOLCAP as a KeyState company and tax-credit fund for community-bank investors."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2014912/000109991024000121/xslFormDX01/primary_doc.xml",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2014912/000109991024000121/xslFormDX01/primary_doc.xml",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 50933,
+      "contentSha256": "edd1339b84c8b7d3af20c60ecb0bd06da4cc696fc469dc503dab9b18f91d7a99",
+      "note": "2024 Form D verifies the pooled-investment-vehicle filing, first-sale date and disclosed managing-member structure."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2060260/000206026025000003/xslFormDX01/primary_doc.xml",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2060260/000206026025000003/xslFormDX01/primary_doc.xml",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 43783,
+      "contentSha256": "51b1a7eb8dc9b14be0d1c7367c39e0fd550c96550a7271e07b2abbfe988c9403",
+      "note": "2025 Form D verifies a separate SOLCAP Generate 2025 pooled vehicle and investor count."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2145709/000214570926000001/xslFormDX01/primary_doc.xml",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2145709/000214570926000001/xslFormDX01/primary_doc.xml",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 43651,
+      "contentSha256": "c2662d32ebcd095fcf6a519911cfb605de9556411fb50a1db6500ebb7e33d93e",
+      "note": "2026-A Form D verifies another separate pooled vehicle, first sale and offering data."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2145713/000214571326000001/xslFormDX01/primary_doc.xml",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2145713/000214571326000001/xslFormDX01/primary_doc.xml",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 43824,
+      "contentSha256": "2c9057647e8a39fb22671a098a79280eacb0fb94fb6d1eb8d48dccd1424ba2f0",
+      "note": "2026-B Form D verifies a distinct pooled vehicle, first sale and offering data."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "httpBlockedCount": 1,
+    "browserFallbackCount": 1,
+    "primarySourceWorking": true,
+    "taxCreditFundIdentityVerified": true,
+    "keyStateManagerRoleVerified": true,
+    "generateProjectSponsorRoleVerified": true,
+    "managerLevelOperatingCompanyFound": false,
+    "laterSaleFlipBuyoutOrWindDownNotFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Treat Generate's public wording as a joint tax-equity facility, not a jointly owned operating-company fund.",
+    "Do not count the SOLCAP pooled LLCs as PortCos; they are tax-credit investment vehicles and financing exposures.",
+    "Keep Generate's underlying solar ownership under a genuine operating/project platform if separately qualified, without creating fund-LLC or project duplicates.",
+    "Do not infer investor identities, tax-allocation percentages, flip dates or Fund X vehicle mapping where public filings omit them."
+  ],
+  "releaseRequirement": "The research supports excluding and retiring SOLCAP from the active manager-level PortCo list. Preserve its sources as tax-equity financing context rather than direct PortCo ownership evidence."
+}

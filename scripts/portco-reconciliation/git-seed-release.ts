@@ -4,6 +4,7 @@ import { relative, resolve } from "node:path";
 import { promisify } from "node:util";
 import { sha256Text } from "./hash";
 import type {
+  ApprovedSeedBatchPublication,
   ApprovedSeedPublication,
 } from "./approved-seed";
 import type { ProductionReleaseEvidence } from "./apply-executor";
@@ -19,9 +20,9 @@ async function git(cwd: string, args: string[]): Promise<string> {
   return result.stdout.trim();
 }
 
-export async function verifySeedGitRelease(input: {
+async function verifySeedArtifactGitRelease(input: {
   repositoryRoot: string;
-  publication: ApprovedSeedPublication;
+  publication: Pick<ApprovedSeedPublication, "artifactPath" | "artifactSha256">;
   targetDatabase: "validation" | "production";
   approvalSha256: string;
   protectedProductionWriteApproved: boolean;
@@ -67,4 +68,27 @@ export async function verifySeedGitRelease(input: {
     committedSeedArtifactSha256,
     releaseSha: /^[a-f0-9]{40}$/i.test(head) ? head : null,
   };
+}
+
+export async function verifySeedGitRelease(input: {
+  repositoryRoot: string;
+  publication: ApprovedSeedPublication;
+  targetDatabase: "validation" | "production";
+  approvalSha256: string;
+  protectedProductionWriteApproved: boolean;
+}): Promise<ProductionReleaseEvidence> {
+  return verifySeedArtifactGitRelease(input);
+}
+
+export async function verifySeedBatchGitRelease(input: {
+  repositoryRoot: string;
+  publication: ApprovedSeedBatchPublication;
+  targetDatabase: "validation" | "production";
+  batchSha256: string;
+  protectedProductionWriteApproved: boolean;
+}): Promise<ProductionReleaseEvidence> {
+  return verifySeedArtifactGitRelease({
+    ...input,
+    approvalSha256: input.batchSha256,
+  });
 }

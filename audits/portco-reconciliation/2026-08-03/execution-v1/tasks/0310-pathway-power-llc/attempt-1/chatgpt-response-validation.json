@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": null,
+  "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+  "taskIndex": 310,
+  "validatedAt": "2026-08-21T00:14:17.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a879030-e884-83ea-9465-d90490942cba",
+  "requiredTopLevelKeys": ["asOfDate","requestedCompany","requestedManagers","decision","confidence","rationale","identityResolution","ownershipResolution","operatingResolution","acquisitionExitCheck","milestones","evidence","beforeAfterChanges","excludedOrDuplicateCandidates","unresolvedQuestions","recommendedListAction"],
+  "initialResponse": {
+    "valid": true,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "289000eb261b8dee957b7d693ba399a491764754be2f863591017a5c5763eb06",
+    "errors": [],
+    "warnings": [
+      "The exact Igneo fund/legal vehicle, percentage, preference economics, LLC-Holdings hierarchy, founder cap table and joint-governance counterparty remain non-blocking disclosure gaps.",
+      "Renova's August 2026 Texas-project disclosure resembles Greenridge but does not explicitly name it, so the match remains an inference and is not used as a platform ownership claim."
+    ]
+  },
+  "repair": {"count":0,"limit":1,"submittedAt":null,"completedAt":null,"valid":null,"responseSha256":null,"errors":[]},
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_NEW",
+    "confidence": "HIGH",
+    "canonicalName": "Pathway Power LLC",
+    "responseCharacterCount": 7316,
+    "evidenceCount": 8,
+    "uniqueReturnedUrlCount": 8,
+    "currentOwnerCount": 1,
+    "managerLevelPlatformCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "preferredEquityDistinguishedFromDebt": true,
+    "convertibleNoteNotMisclassifiedAsOrdinaryEquity": true,
+    "projectSpvsSubordinated": true,
+    "allReturnedUrlsChecked": true,
+    "exactlyOneRecommendedPrimary": true,
+    "subsequentExitSearchPresent": true,
+    "applicationBlocked": false,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0242:mobilinx:7d20cccb",
+  "taskIndex": 242,
+  "companyName": "Mobilinx",
+  "verifiedAt": "2026-08-20T05:01:57Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://media.webuildgroup.com/sites/default/files/2026-08/Interim_Financial_Report_2026.pdf",
+      "finalUrl": "https://media.webuildgroup.com/sites/default/files/2026-08/Interim_Financial_Report_2026.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 55683892,
+      "contentSha256": "e5acaef46da8e7fd058e2e87c461436cadcf4af218be73e9b93940b74ebe57ca",
+      "visuallyVerifiedPages": [
+        174
+      ],
+      "note": "Webuild's company schedule at June 30, 2026 shows a 53.85% Mobilinx Hurontario General Partnership interest, split 32.31% through Webuild Mobilinx Hurontario GP Inc. and 21.54% through Astaldi Mobilinx Hurontario GP Inc. The schedule does not disclose the residual ProjectCo cap table or JLIL transfer mechanics."
+    },
+    {
+      "url": "https://assets.metrolinx.com/image/upload/v1781899780/Documents/corporate/Item_11.2_-_CPG_Rapid_Transit_Update_En.pdf",
+      "finalUrl": "https://assets.metrolinx.com/image/upload/v1781899780/Documents/corporate/Item_11.2_-_CPG_Rapid_Transit_Update_En.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 29899814,
+      "contentSha256": "09fb45c6c386549e46b00a372fae0efd1d3c71a19ec1610b7bcfefbc5355c014",
+      "visuallyVerifiedPages": [
+        9,
+        16
+      ],
+      "note": "Metrolinx verifies the 18-kilometre, 19-stop Hazel McCallion Line remains under construction, the former DBFOM agreement was replaced by an Alliance design/build contract and a parallel 30-year O&M/lifecycle agreement, and planned completion is 2028."
+    },
+    {
+      "url": "https://www.infrastructureontario.ca/en/news-and-media/news/hurontario-light-rail-transit/contract-awarded-for-hurontario-lrt/",
+      "finalUrl": "https://www.infrastructureontario.ca/en/news-and-media/news/hurontario-light-rail-transit/contract-awarded-for-hurontario-lrt/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 65152,
+      "contentSha256": "0e0a3e46570418005418a6633191da1090ab66deaf649509d45cedccb8e08ac6",
+      "note": "Infrastructure Ontario's October 21, 2019 award identifies Mobilinx Hurontario General Partnership, the original applicant team, 18-kilometre and 19-stop scope, 30-year DBFOM term and Metrolinx public ownership."
+    },
+    {
+      "url": "https://www.climatebonds.net/files/drupal-files/files/2019-10_CA_Mobilinx_Hurontario_General_Partnership.pdf",
+      "finalUrl": "https://www.climatebonds.net/files/drupal-files/files/2019-10_CA_Mobilinx_Hurontario_General_Partnership.pdf",
+      "status": "CURL_403_BROWSER_PDF_OPEN_NO_DOM_CLAIM_INDEPENDENTLY_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 497,
+      "contentSha256": "a7631bbbea5a174989f89556708fb1a5809c68afd5ecd1a8986df611ffe0bdf0",
+      "claimSupportedAtReturnedUrl": null,
+      "correctedVerificationUrl": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_JLG_2020.pdf",
+      "correctedVerificationStatus": "OPEN",
+      "correctedVerificationBytes": 9163290,
+      "correctedVerificationSha256": "c6cc53b9a5a249eefbdd64768872f3dc9209682d27538687c4bec1ec6409199f",
+      "correctedVerificationVisuallyVerifiedPages": [
+        48,
+        192
+      ],
+      "note": "The Climate Bonds PDF was server-blocked to curl and exposed no browser DOM. John Laing's 2020 annual report independently verifies its historical 35% Mobilinx interest and the ProjectCo identity."
+    },
+    {
+      "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+      "finalUrl": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 34905,
+      "contentSha256": "ba60677fe597e6a53eb1703d674f5b9539e6acc7a202a9cae8ac79381b49cf0b",
+      "note": "The regulatory announcement verifies that KKR's acquisition of John Laing became legally effective on September 22, 2021; it does not establish a ProjectCo-level Mobilinx transfer."
+    },
+    {
+      "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+      "finalUrl": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4546,
+      "contentSha256": "60bba122c0f17a8bb21ef373dc2517aea3594e91ec0c210d791ffdcfaa47fc37",
+      "browserTextBytes": 6477,
+      "browserTextSha256": "41c951f507bc5e18a93f5044aca335d0f6f0cfea8ebda4c27e1116b807f24c32",
+      "note": "The browser-open direct page verifies the proposed bespoke Equitix-managed Pantheon vehicle and anticipated 50% JLIL shareholding. It does not prove Equitix's exact closing date, fund identity or Mobilinx-level ownership after the 2026 restructuring."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 2,
+    "pdfPageVisualVerificationCount": 4,
+    "projectBoundaryVerified": true,
+    "historicalJohnLaing35PercentVerified": true,
+    "kkrTakePrivateEffectiveDateVerified": true,
+    "equitixJILUpstreamStructureProposed": true,
+    "webuild2026StakeVerified": true,
+    "metrolinx2026RestructureVerified": true,
+    "currentResidualCapTableUnresolved": true,
+    "jlilExitMechanicsUnresolved": true,
+    "laterProjectSpecificSaleOrPendingTransactionNotFound": true,
+    "applicationBlocked": true
+  },
+  "releaseRequirement": "Do not mutate Mobilinx ownership until the JLIL exit/removal mechanics and current Hitachi Rail, Amico and Transdev ProjectCo percentages are directly resolved. Preserve the 2019 ProjectCo identity, historical John Laing 35%, Webuild's June 2026 53.85% interest and the contract restructuring evidence."
+}

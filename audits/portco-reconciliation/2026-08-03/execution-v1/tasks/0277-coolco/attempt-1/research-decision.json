@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0277:coolco:3d977a11",
+  "taskIndex": 277,
+  "linkedTaskIdsCovered": [
+    "ledger:0474:coolco-cincinnati-district-energy:47c3df2b"
+  ],
+  "companyName": "CoolCo",
+  "canonicalName": "CoolCo",
+  "legalName": "COOLCO LLC",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH_WITH_MEDIUM_LOW_PRE_DTE_HISTORY_GAPS",
+  "responseSha256": "b26fe0607acf61978eab537bd3b9eb92fa23d1740de762a2074d0584324d81e2",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Merge the seed-only CoolCo (Cincinnati District Energy) descriptor into the published CoolCo record. Harrison Street acquired ISQ CoolCo on behalf of HSSI in 2019 and the current operator still identifies Harrison Street as owner. Preserve the verified I Squared, DTE and Cinergy predecessor history, but do not infer Harrison's stake, legal closing date or a fully resolved intermediate entity chain.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": [
+    "Harrison Street's exact legal closing date, acquisition SPV and ownership percentage were not publicly disclosed.",
+    "The full HSSI-to-COOLCO intermediate entity chain is not publicly resolved; HS COOLCO, LLC is verified as a division name only.",
+    "The non-Cinergy member, subsequent buyout or rename, Duke transitions and DTE entry date remain incomplete."
+  ],
+  "applicationBlocked": false,
+  "supersessionCondition": "Task 474 may be superseded only after the eventual task 277 merge/correction is released and independently production-verified."
+}

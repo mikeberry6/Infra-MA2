@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0160:sabre-industries:6ac88af1",
+  "taskIndex": 160,
+  "companyName": "Sabre Industries",
+  "verifiedAt": "2026-08-19T05:50:10.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "a90f61b15f48e817dfae0d095ecd690f25f3f7075d5c02f792b4525801d6b81c",
+      "note": "SEC blocked curl, but independent browser retrieval opened Blackstone’s filed 2Q26 results and verified Sabre within realizations."
+    },
+    {
+      "url": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+      "finalUrl": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5849,
+      "contentSha256": "9c483da309e0770e6913426e6d503496522505df9c583c39e280a49eb0560d66",
+      "note": "Blackstone blocked curl, but independent browser retrieval opened the exact TPG majority/Blackstone significant-minority announcement."
+    },
+    {
+      "url": "https://www.blackstone.com/news/press/blackstone-to-acquire-sabre-industries-inc-a-leading-energy-and-telecom-infrastructure-provider/",
+      "finalUrl": "https://www.blackstone.com/news/press/blackstone-to-acquire-sabre-industries-inc-a-leading-energy-and-telecom-infrastructure-provider/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5858,
+      "contentSha256": "b272a711de4bc0a5c0f1b2f1b2e9c71fbf88147654fc9fff020bb74ecad33bf2",
+      "note": "Blackstone blocked curl, but independent browser retrieval opened the 2021 entry announcement."
+    },
+    {
+      "url": "https://www.marketscreener.com/quote/stock/BLACKSTONE-INC-60951400/news/Leadership-Team-and-Employees-of-Sabre-and-The-Blackstone-Group-Inc-NYSE-BX-completed-the-acquisi-40661125/",
+      "finalUrl": "https://www.marketscreener.com/quote/stock/BLACKSTONE-INC-60951400/news/Leadership-Team-and-Employees-of-Sabre-and-The-Blackstone-Group-Inc-NYSE-BX-completed-the-acquisi-40661125/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 616,
+      "contentSha256": "4a8baaa00ea9a77f1384c56c69e781b9933f3bef60a5b52c7d8ffdb77cc0ea29",
+      "note": "MarketScreener blocked curl, but independent browser retrieval opened the transaction-database page; it is supporting, lower-tier evidence only."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1490224/000104746911003455/a2202133zs-1a.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1490224/000104746911003455/a2202133zs-1a.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "b8714134c634fdce062f4af7cb376766ecc7d6693731caa1a201eb0af24edec2",
+      "note": "SEC blocked curl, but independent browser retrieval opened Sabre’s registration statement and verified predecessor identity history."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Reopen the SEC result and transaction-party releases against a fresh production snapshot before mutation; do not infer an exact closing date, percentage, or fund vehicle."
+}

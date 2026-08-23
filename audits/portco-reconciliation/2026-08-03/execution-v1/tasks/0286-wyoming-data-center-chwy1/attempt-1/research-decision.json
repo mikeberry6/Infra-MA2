@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0286:wyoming-data-center-chwy1:c8f7768a",
+  "taskIndex": 286,
+  "linkedTaskIdsCovered": [
+    "ledger:0273:1547-critical-systems-realty:8e267688"
+  ],
+  "companyName": "Wyoming Data Center (CHWY1)",
+  "canonicalName": "Cheyenne WY | CHWY1",
+  "legalName": null,
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH_BOUNDARY_MEDIUM_TITLE_CHAIN",
+  "responseSha256": "37a13d67edf7f03f709fd1798095165499cdbadfcd29f62ce88d0958efcf1658",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Merge task 286 into task 273 because CHWY1 at 340 Progress Circle is one facility within the four-asset portfolio CIM sold to the Harrison Street/1547 joint venture in 2021. Preserve CIM as former co-owner, 1547 as current co-owner and manager, Harrison Street as current co-owner, and CHWY1 as facility/SPV detail rather than a separate PortCo.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": [
+    "The current deed owner and complete facility-to-portfolio SPV chain remain unresolved.",
+    "The Harrison Street/1547 split, Harrison fund or vehicle, deed date and current tenant occupancy are not publicly disclosed.",
+    "The 38,000-square-foot 2021 figure and current 42,000-square-foot figure have not been reconciled to one measurement basis."
+  ],
+  "applicationBlocked": false,
+  "survivorCondition": "Task 273 survives as the platform/JV record; suppress the separate task-286 PortCo while retaining CHWY1 aliases, SPVs and facility facts beneath it."
+}

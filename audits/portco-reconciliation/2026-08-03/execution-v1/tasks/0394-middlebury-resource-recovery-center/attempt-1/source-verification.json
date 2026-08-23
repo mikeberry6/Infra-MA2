@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+  "checkedAt": "2026-08-21T22:31:30.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; PDF text extraction plus rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/portfolio/purposeenergy/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 53416,
+      "sha256": "3511f67e57c17806762e52df8c8466de063745ce00f80465f01ab3617cae48e0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook defines PurposeEnergy as the manager-level portfolio company acquired in 2023",
+        "Quinbrook lists Middlebury as one of PurposeEnergy's projects"
+      ]
+    },
+    {
+      "url": "https://purposeenergy.com/project/purposeenergy-middlebury/",
+      "httpStatus": 200,
+      "finalUrl": "https://purposeenergy.com/project/purposeenergy-middlebury/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 90967,
+      "sha256": "fb99e09038260e81eb073213398e649c0755693abd12ec8404463315342682d0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "PurposeEnergy presents Middlebury as its industrial-scale multi-feedstock anaerobic-digestion facility",
+        "The current page supports the project's operating profile, location, outputs and disclosed throughput"
+      ]
+    },
+    {
+      "url": "https://cms5.revize.com/revize/middlebury/document_center/Selectboard/Selectboard%20Meeting%20Packets/2018/18%20-%20July%2031%20SB%20Packet/08%20-%20Purpose%20Energy%20CPG%20-%20Request%20for%20Waiver%20of%2045-day%20Notice%20Requirement.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://cms5.revize.com/revize/middlebury/document_center/Selectboard/Selectboard%20Meeting%20Packets/2018/18%20-%20July%2031%20SB%20Packet/08%20-%20Purpose%20Energy%20CPG%20-%20Request%20for%20Waiver%20of%2045-day%20Notice%20Requirement.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 88718,
+      "sha256": "3366fda9e0807c26c3331eedaceec63ba687c1e9460d7c95e36e6f07509d1fbc",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 2,
+        "relevantPdfPages": [1],
+        "verifiedClaims": [
+          "A July 18, 2018 filing says MRRC LLC was created to own and operate the facility and Purpose Energy, Inc. was its sole member"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 56714,
+      "sha256": "bcd4cef521ec4c68e50379f1d9b38d125b23f00b10aa89e33d02141afd9567bf",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook announced its acquisition of PurposeEnergy on April 12, 2023",
+        "The release describes Middlebury as PurposeEnergy's project rather than the acquisition target"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 59476,
+      "sha256": "bee5837a27457a88af467fcc3c385f340b54ee598e3c299670d847f929bc085a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook lists PurposeEnergy among the Net Zero Power Fund strategy's investments"
+      ]
+    },
+    {
+      "url": "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 282849,
+      "sha256": "cb05ce14e39f3c82437dd1a529a82649cc7ed713effd7e2834857cbcfd22d00d",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 10,
+        "relevantPdfPages": [1, 2],
+        "verifiedClaims": [
+          "The review names Middlebury Resource Recovery Center, LLC as unit owner and PurposeEnergy LLC as operator",
+          "The review reports 1.014 MW AC and an October 21, 2024 commercial-operation date"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.veda.org/hubfs/2022-02-11%20Loan%20Committee%20-%20Final.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.veda.org/hubfs/2022-02-11%20Loan%20Committee%20-%20Final.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 149898,
+      "sha256": "f09ad3058067f3851a93cb17bade420356d681d019a2f2bd46e3b58819699257",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 6,
+        "relevantPdfPages": [4, 5],
+        "verifiedClaims": [
+          "VEDA approved a $2 million Commercial Energy loan secured by a second security interest",
+          "The minutes reference tax-equity discussions but do not identify an equity investor or ownership rights"
+        ],
+        "renderedPagesInspected": true
+      }
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0232:proenergy:f5e9cdb0",
+  "taskIndex": 232,
+  "companyName": "PROENERGY",
+  "verifiedAt": "2026-08-20T01:49:56Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners--ecp--acquires-majority-interest-in-proe",
+      "finalUrl": "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners--ecp--acquires-majority-interest-in-proe",
+      "status": "BROWSER_OPEN_CURL_JS_SHELL",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 1851,
+      "contentSha256": "54b87963443d0dc771b2480e9dc6bbac3879c46010aa812113c568a2672fe9ac",
+      "browserTextBytes": 6082,
+      "browserTextSha256": "5654fe7718026d0868ea3f4696cf0e47ac53dd2fec113e46312ddca960362329",
+      "note": "The browser-rendered ECP release confirms a completed majority acquisition from Eos/ACON affiliates, management investment alongside ECP, the September 5, 2024 announcement and business scope; exact percentage and closing day are not disclosed."
+    },
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/proenergy",
+      "finalUrl": "https://www.ecpgp.com/equity/portfolio/proenergy",
+      "status": "BROWSER_OPEN_CURL_JS_SHELL",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 1851,
+      "contentSha256": "37ed957a1a425a5fad81e6ad3200b928ae22ea0c57b3f58defc36972fbd2f45f",
+      "browserTextBytes": 3485,
+      "browserTextSha256": "50e321f7f90c44e79f86487f92b3a21d3ddb4814413b2247d99d81a261020303",
+      "note": "The browser-rendered ECP portfolio page lists PROENERGY as Current, identifies majority ownership, August 2024 entry and Sedalia, Missouri headquarters."
+    },
+    {
+      "url": "https://www.bridgepointgroup.com/content/dam/bridgepoint/corporate2022/documents/financial-information/results_reports_presentations/2026/bridgepoint-group-interim-results-2026-announcement.pdf.downloadasset.pdf",
+      "finalUrl": "https://www.bridgepointgroup.com/content/dam/bridgepoint/corporate2022/documents/financial-information/results_reports_presentations/2026/bridgepoint-group-interim-results-2026-announcement.pdf.downloadasset.pdf",
+      "status": "BROWSER_RENDERED_WEB_INDEX_VERIFIED_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 356,
+      "contentSha256": "fc1bda0ac99f91ef2414b50d1903b33fdb2aff916d9756f5b2b921400a60637f",
+      "browserPdfRendered": true,
+      "browserDomBytes": 0,
+      "webIndexVerified": true,
+      "note": "The direct PDF renders in the browser but rejects direct curl and exposes no DOM text. Independent indexing of the same URL verifies ECP V performance and continued PROENERGY performance through June 2026. Bridgepoint's official 2025 results at the related direct PDF URL separately describe the plant monetization as a partial exit from PROENERGY."
+    },
+    {
+      "url": "https://aconinvestments.com/news/proenergy-holdings-receives-equity-financing/",
+      "finalUrl": "https://aconinvestments.com/news/proenergy-holdings-receives-equity-financing/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 107230,
+      "contentSha256": "27bbc7960a859747852747724ccecf81efdf6737c4b69fd5808e98ef7df1b2f3",
+      "note": "Former-owner ACON's release supports the 2002 founding, Jeff Canon/management role, Sedalia headquarters and the prior Eos/ACON financing."
+    },
+    {
+      "url": "https://newsroom.cpsenergy.com/cps-energy-closes-on-previously-announced-acquisition-of-1632-megawatt-power-generation-portfolio-in-southeast-texas/",
+      "finalUrl": "https://newsroom.cpsenergy.com/cps-energy-closes-on-previously-announced-acquisition-of-1632-megawatt-power-generation-portfolio-in-southeast-texas/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 170995,
+      "contentSha256": "2b1b58d79d19c07b57da75df9bfd9af59ef67dfef0bbdec12a0126f7fb39fc2c",
+      "note": "CPS Energy's direct closing release verifies the September 24, 2025 purchase of four plants totaling 1,632 MW for $1.387 billion and retained service relationships."
+    },
+    {
+      "url": "https://www.proenergyservices.com/2026/04/proenergy-closes-agreement-with-south-texas-electric-cooperative-to-divest-braes-bayou-and-brotman-generating-stations/",
+      "finalUrl": "https://www.proenergyservices.com/2026/04/proenergy-closes-agreement-with-south-texas-electric-cooperative-to-divest-braes-bayou-and-brotman-generating-stations/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 234143,
+      "contentSha256": "0c0b28c4d4b03bfdd94dcb0f50316f55896f8b2da7b001036760bba6dabd5234",
+      "note": "PROENERGY's direct release verifies the April 10, 2026 sale of two plants totaling 768 MW for $768 million and continuation of O&M/lifecycle services."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 3,
+    "currentEcpStatusVerified": true,
+    "majorityAcquisitionVerified": true,
+    "ecpVAttributionVerified": true,
+    "managementRolloverVerified": true,
+    "formerSponsorContextVerified": true,
+    "august2024DatePrecisionPreserved": true,
+    "wattBridgeAndSegmentBoundaryVerified": true,
+    "plantSalesVerified": true,
+    "plantSalesExcludedFromPlatformExit": true,
+    "continuedPlatformPerformanceVerified": true,
+    "laterDirectExitNotFound": true,
+    "allCoreClaimsHaveDirectOpenBrowserOrIndexedOfficialEvidence": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Before any mutation, recapture the task-specific production and dependency snapshot and translate this packet into a hash-bound correction that preserves ECP V majority ownership and management co-investment while treating the six sold plants as asset realizations."
+}

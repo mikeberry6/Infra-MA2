@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0169:wanrack:62ec8ee0",
+  "taskIndex": 169,
+  "companyName": "WANRack",
+  "verifiedAt": "2026-08-19T06:49:14.991Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.gatewayfiber.com/news/gateway-fiber-unifies-under-single-brand-following-strategic-merger",
+      "finalUrl": "https://www.gatewayfiber.com/news/gateway-fiber-unifies-under-single-brand-following-strategic-merger",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 38289,
+      "contentSha256": "ae81f9a49e7c3a4a9a3ba366ccd02ae720b53bad1ddcaf870d21b0dbafe291c5",
+      "note": "Gateway Fiber merger/brand page opened and supports completed consolidation, survivor brand and WANRack sub-brand."
+    },
+    {
+      "url": "https://www.cbreim.com/press-releases/cbre-investment-management-funds-to-merge-fiber-portfolio-companies",
+      "finalUrl": "https://www.cbreim.com/press-releases/cbre-investment-management-funds-to-merge-fiber-portfolio-companies",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5740,
+      "contentSha256": "207c6cb06874fd968b2a2adc11c91a543e5e20cf02abb68e704fd486f560c632",
+      "note": "CBRE IM blocked curl, but independent browser retrieval opened the exact announcement and verified transaction scope and expected closing."
+    },
+    {
+      "url": "https://www.wanrack.com/about",
+      "finalUrl": "https://www.wanrack.com/about",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 183593,
+      "contentSha256": "0f5162f85a6bbb515052d6e8406d770f4f0d9e16cec96dd5efa5611161b939fb",
+      "note": "Current WANRack profile opened and supports live brand, operations, headquarters and scale."
+    },
+    {
+      "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557",
+      "finalUrl": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 436376,
+      "contentSha256": "daed3ea16e232f88874647ea34d746ccb136841c0fd47c0e559ac6a007604f15",
+      "note": "Georgia PSC filing opened and supports WANRack legal survival, continuing ultimate ownership and internal customer/asset transfers."
+    },
+    {
+      "url": "https://www.wanrack.com/news/blog-post-one-nt6jb-ns5wd-42tsj",
+      "finalUrl": "https://www.wanrack.com/news/blog-post-one-nt6jb-ns5wd-42tsj",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 318779,
+      "contentSha256": "28280eac7169a0b9c29b2bbfbd14e9e0003e0fdf2e1057fb8272c6d21acea585",
+      "note": "WANRack 2021 close page opened and supports CBRE close, fund/SMA sponsorship and management equity."
+    },
+    {
+      "url": "https://www.wanrack.com/news/3aij243b5fsb9toxikgct72kxdsaxs-zf4b2-paw8m-rkz5h-kr2xc",
+      "finalUrl": "https://www.wanrack.com/news/3aij243b5fsb9toxikgct72kxdsaxs-zf4b2-paw8m-rkz5h-kr2xc",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 127521,
+      "contentSha256": "a095ec0a5291f438249744c879b5e655c0c26fec7962d88857b6dff84d74bafb",
+      "note": "WANRack 2023 KwiKom page opened and supports transaction closing and lineage."
+    },
+    {
+      "url": "https://lightpathfiber.com/news/lightpath-acquires-wanracks-phoenix-business/",
+      "finalUrl": "https://lightpathfiber.com/news/lightpath-acquires-wanracks-phoenix-business/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 184068,
+      "contentSha256": "00c12187b8df8639934f78a43870a1b2c28b088975c3e7ddfd0c3a2b6ae49f9a",
+      "note": "Lightpath page opened and supports the partial Phoenix divestiture."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Merge WANRack into Gateway Fiber only through the canonical redirect workflow, preserving WANRack legal/operating aliases, 2021 ownership history, KwiKom history and Phoenix divestiture."
+}

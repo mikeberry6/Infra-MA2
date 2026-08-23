@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0162:duke-energy-florida:49a961e7",
+  "taskIndex": 162,
+  "companyName": "Duke Energy Florida",
+  "verifiedAt": "2026-08-19T05:58:10.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1326160/000132616026000040/duk-20260630.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1326160/000132616026000040/duk-20260630.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "70243f58a23cada1bd40882498f1f293d9794236a4e4c03fcdae7c753f3b669f",
+      "note": "SEC blocked curl and the web parser rejected the exact URL, while the Pro research chat opened and cited the filed 10-Q. Release review must reopen the parent filing before mutation."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37637/000110465926022610/tm267351d1_8k.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/37637/000110465926022610/tm267351d1_8k.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "93dfaa9d3c2c6601e5e43138200242ab32a861e2593ab172e64a2b7ec806e4f8",
+      "note": "SEC blocked curl, but independent browser retrieval opened the 8-K and verified the March 3, 2026 first close, 9.2% stake, holdco boundary, and staged follow-ons."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/30371/000132616025000192/duk-202509x10qxexx101.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/30371/000132616025000192/duk-202509x10qxexx101.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "5a060d63cef3576710b931c7eb5c80622247c9f5b5e81e803372c5121912e70c",
+      "note": "SEC blocked curl and the web parser rejected the exact exhibit URL; the signed Pro chat verified the investment agreement. Release review must reopen the filing index and exhibit."
+    },
+    {
+      "url": "https://www.brookfield.com/about-us/capabilities/infrastructure",
+      "finalUrl": "https://www.brookfield.com/about-us/capabilities/infrastructure",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 475443,
+      "contentSha256": "c8c0b0305d72d24b920a1c45633ec82c9e3a83e4055c47c8504f01375564eeab",
+      "note": "Official Brookfield infrastructure capability page opened."
+    },
+    {
+      "url": "https://investors.duke-energy.com/news/news-details/2026/Duke-Energy-Florida-delivers-50-million-in-customer-savings-avoids-2027-base-rate-increase-through-innovative-tax-strategy/default.aspx",
+      "finalUrl": "https://investors.duke-energy.com/news/news-details/2026/Duke-Energy-Florida-delivers-50-million-in-customer-savings-avoids-2027-base-rate-increase-through-innovative-tax-strategy/default.aspx",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 6124,
+      "contentSha256": "0d3f956fa5e5a75ef3e7f6c1d4dfee29a3618d989c8db910a82140d890ac59c1",
+      "note": "Duke investor site blocked curl, but independent browser retrieval opened the operating update."
+    },
+    {
+      "url": "https://illumination.duke-energy.com/articles/125-years-strong-celebrating-our-commitment-to-florida",
+      "finalUrl": "https://illumination.duke-energy.com/articles/125-years-strong-celebrating-our-commitment-to-florida",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 127568,
+      "contentSha256": "66e7747b6f20c5b8824c4614d64b0d498638542606516f0476e5009004312859",
+      "note": "Official Duke Florida history page opened."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Reopen the complete second-quarter 2026 10-Q and the investment agreement exhibit from their filing indexes before mutation; keep only the first tranche active and preserve later subscriptions as pending until each legal closing."
+}

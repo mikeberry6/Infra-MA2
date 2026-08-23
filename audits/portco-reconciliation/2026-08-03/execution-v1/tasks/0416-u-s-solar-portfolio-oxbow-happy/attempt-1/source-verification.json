@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+  "checkedAt": "2026-08-22T00:48:54.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; regulatory PDF text extraction and visual page verification; direct transaction-party and adviser inspection; acquisition-and-exit search",
+  "sources": [
+    {
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 17261,
+      "sha256": "cb927b7efcd0758b38467a6053bb3e656dfd9b5c90bc6bd95c4ef471b3bb0df0",
+      "healthStatus": "WORKING",
+      "pdfPages": 4,
+      "visuallyVerifiedPages": [4],
+      "verifiedClaims": ["JERA acquired Crawfish Solar Holdings 2, LLC and five downstream entities on August 2, 2024", "JERA reduced its direct or indirect voting interests from 100% to 50% effective July 30, 2025", "The filing lists Happy Solar 1, LLC and Oxbow Solar Farm 1, LLC inside the same entity chain"]
+    },
+    {
+      "url": "https://www.mayerbrown.com/en/news/2025/07/mayer-brown-advises-jera-nex-on-sale-of-50-equity-interest-in-solar-project-portfolio-to-affiliate-of-schroders-greencoat",
+      "httpStatus": 403,
+      "finalUrl": "https://www.mayerbrown.com/en/news/2025/07/mayer-brown-advises-jera-nex-on-sale-of-50-equity-interest-in-solar-project-portfolio-to-affiliate-of-schroders-greencoat",
+      "mediaType": "text/html",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_BROWSER_VERIFIED",
+      "verifiedClaims": ["Mayer Brown represented JERA Nex Americas LLC on its sale of 50% of Crawfish Solar Holdings 2, LLC to SG US Aggregator LLC, a Schroders Greencoat affiliate", "The portfolio contains 300 MW Oxbow and 95 MW Happy"]
+    },
+    {
+      "url": "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow",
+      "httpStatus": 200,
+      "finalUrl": "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 62455,
+      "sha256": "66effbaa070b2eee7af6890562f5ffcaab287085a0fce30db86353f7bab4d623",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["JERA's current project page identifies Happy and Oxbow as a combined 395 MW investment and lists JERA Nex 50% and Schroders Greencoat 50%"]
+    },
+    {
+      "url": "https://jeranex.com/schroders-greencoat-acquire-stake-in-jera-nex-solar-portfolio/",
+      "httpStatus": 200,
+      "finalUrl": "https://jeranex.com/schroders-greencoat-acquire-stake-in-jera-nex-solar-portfolio/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 127098,
+      "sha256": "48b2d75c66b9acb661c06a1d7e84f50bad766489ba2206f768143d002cfae60f",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["JERA Nex announced Schroders Greencoat's 50% ownership of the 395 MW U.S. solar portfolio containing Oxbow and Happy", "The page distinguishes ownership from continuing Lightsource bp asset-management and O&M services"]
+    },
+    {
+      "url": "https://lightsourcebp.com/news/jera-nex-expands-presence-in-us-with-395mw-solar-farms-acquisition-from-lightsource-bp/",
+      "httpStatus": 200,
+      "finalUrl": "https://lightsourcebp.com/news/jera-nex-expands-presence-in-us-with-395mw-solar-farms-acquisition-from-lightsource-bp/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 86320,
+      "sha256": "1a06173fda72a57b694efd8c9a32c5672e5bb3f31f6f49ed58234543449a09b8",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Lightsource bp announced JERA Nex's acquisition of the 395 MW Arkansas and Louisiana portfolio and the continuing service relationship"]
+    }
+  ],
+  "pdfVerification": {
+    "renderer": "pdfplumber page rasterization because the encrypted EDINET PDF rendered blank through Poppler",
+    "textExtractor": "pdfplumber",
+    "visualResult": "Page 4 was legible and visually confirmed the 100%-to-50% change and July 30, 2025 effective date",
+    "layoutDefects": []
+  },
+  "exitSearch": {
+    "searchedAt": "2026-08-22T00:48:54.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No later sponsor-equity sale, signed transfer, operator change, repowering or decommissioning was identified. JERA's current project page still lists JERA Nex and Schroders Greencoat at 50% each."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 1,
+  "deadSourceCount": 0
+}

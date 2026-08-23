@@ -80,6 +80,10 @@ export interface AuditEventWrite {
     seedArtifactSha256: string;
     approvedSeedEntrySha256?: string;
     transactionId: string;
+    batchId?: string;
+    batchSha256?: string;
+    batchOrdinal?: number;
+    batchSize?: number;
     reviewedBy: string;
     reviewedAt: string;
   };

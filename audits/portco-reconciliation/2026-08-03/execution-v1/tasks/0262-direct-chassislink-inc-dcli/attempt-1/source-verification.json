@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+  "taskIndex": 262,
+  "companyName": "Direct ChassisLink, Inc. (DCLI)",
+  "verifiedAt": "2026-08-20T10:04:01.940Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://dcli.com/about-us/",
+      "finalUrl": "https://dcli.com/about-us/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 295269,
+      "contentSha256": "481f2e2900a47b754597beef8851dc59dfd5cbe8a9ea848d154a4b730a7cb532",
+      "note": "DCLI's official overview supports identity, history, current owners, operating scale and one-platform boundary."
+    },
+    {
+      "url": "https://dcli.com/investor-information/",
+      "finalUrl": "https://dcli.com/investor-information/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 217714,
+      "contentSha256": "07b1c342a0b1c2096c47b674f62dad7b71a4427a9758c0ae1a048f72d4e0987c",
+      "note": "DCLI's investor page supports DCLI BidCo parentage, headquarters, scale and the distinction between refinancing and ownership changes."
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/littlejohn--co-completes-acquisition-of-direct-chassislink-inc-143510766.html",
+      "finalUrl": "https://www.prnewswire.com/news-releases/littlejohn--co-completes-acquisition-of-direct-chassislink-inc-143510766.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 199789,
+      "contentSha256": "51077a6367a5b6dc99e549db6f128d5e8795d324c9c21f618456c250e44f314f",
+      "note": "Contemporary transaction release supports the March 20, 2012 Littlejohn closing and Maersk carve-out."
+    },
+    {
+      "url": "https://eqtgroup.com/news/eqt-to-sell-majority-stake-in-direct-chassislink-to-funds-managed-by-affiliates-of-apollo-global-management-2019-03-07",
+      "finalUrl": "https://eqtgroup.com/news/eqt-to-sell-majority-stake-in-direct-chassislink-to-funds-managed-by-affiliates-of-apollo-global-management-2019-03-07",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 203591,
+      "contentSha256": "f1b0b2c1f1a763782d59e73ba6a81a8a83c5c720b131bcd8b4800ee6ee80fbe9",
+      "note": "EQT's official release supports the 2016 entry and 2019 Apollo control transaction with EQT rollover."
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc",
+      "finalUrl": "https://www.omersinfrastructure.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 164916,
+      "contentSha256": "d1b459ce4b33e6b82f75b3202c5f4e3025fe1134b09fc99c21aec9e870e4bbe1",
+      "note": "OMERS Infrastructure's signing release identifies the three-member buyer consortium and Apollo/EQT as sellers."
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:C:2022:402:FULL",
+      "finalUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:C:2022:402:FULL",
+      "status": "OFFICIAL_SEARCH_INDEX_VERIFIED_HTTP_202_EMPTY",
+      "httpStatus": 202,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 0,
+      "contentSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "alternateVerificationUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32022M10854",
+      "note": "The returned HTML endpoint yielded an empty HTTP 202 and blank browser page. EUR-Lex's independently opened official indexed M.10854 decision identifies Epsom/GICSI, KIA and OMERS as acquiring joint control of DCLI. Not classified dead."
+    },
+    {
+      "url": "https://www.linkedin.com/posts/direct-chassislink-inc-_gic-omers-infrastructure-and-wren-house-activity-7008545873626349568-axwv",
+      "finalUrl": "https://www.linkedin.com/posts/direct-chassislink-inc-_gic-omers-infrastructure-and-wren-house-activity-7008545873626349568-axwv",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 109348,
+      "contentSha256": "fd8509cf38f39e85c4a0a8b448d32bc88448bb5f326c831c4cef4a9d528fdb58",
+      "note": "DCLI's corporate post is retrievable and contains the December 13 closing announcement and all three consortium names."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "http202EmptyButOfficiallyVerifiedCount": 1,
+    "primarySourceWorking": true,
+    "duplicateIdentityResolved": true,
+    "jointControlVerified": true,
+    "apolloEqtExitVerified": true,
+    "currentConsortiumContinuitySupported": true,
+    "noLaterOwnershipChangeFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Merge the duplicate Direct ChassisLink identity rather than creating a second company.",
+    "Record Epsom Investment/GICSI, KIA/Wren House and OMERS as current joint controllers without inventing percentages.",
+    "Do not elevate unnamed OMERS SPP co-investors to direct owners.",
+    "Retire Apollo and EQT at the December 13, 2022 consortium closing while preserving prior Littlejohn and Maersk periods.",
+    "Do not treat the 2024 notes refinancing or the historical TRAC fleet add-on as ownership changes."
+  ],
+  "releaseRequirement": "Merge task 369's duplicate Direct ChassisLink record into the existing DCLI canonical company, preserve the full ownership history, and retain GIC, OMERS and KIA/Wren House as current joint controllers with percentages not publicly disclosed."
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0458:mission-clean-energy:ec7ef24e",
+  "taskIndex": 458,
+  "companyName": "Mission Clean Energy",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T17:22:22.000Z",
+  "modelDecision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Current company and transaction-party sources establish Mission Clean Energy LLC as a U.S. utility-scale solar and storage development platform and identify a Wafra-managed affiliate as its principal investor after Wafra's October 2022 acquisition of control. Ørsted invested $55 million in December 2024 and is a current strategic investor, while Mission remains independently operated. No Mission platform exit or signed pending control transfer was found through August 19, 2026; Bluebird was a project-level disposition only.",
+  "repoReconciliation": {
+    "censusCanonicalKey": "mission-clean-energy|united-states",
+    "recommendedCanonicalKey": "mission-clean-energy|united-states",
+    "queuedActionTreatment": "CREATE_ONE_ACTIVE_PLATFORM_WITH_WAFRA_CONTROL_AND_SEPARATELY_QUALIFIED_ORSTED_STRATEGIC_INVESTMENT"
+  },
+  "disclosureLimits": [
+    "Wafra's fund, legal investment vehicle, exact percentage and legal closing date are not publicly disclosed.",
+    "Ørsted's security and percentage are not publicly disclosed; the cited sources do not expressly use the word minority.",
+    "Aggregate Power Infrastructure invested alongside Wafra in 2022, but its current ownership is not established.",
+    "The current founder and management rollover ownership is not publicly disclosed."
+  ],
+  "proposalGuardrails": [
+    "Record Wafra as controlling principal investor with exact percentage not publicly disclosed.",
+    "If Ørsted is represented as an owner, describe it as a strategic investor with stake not publicly disclosed; do not infer minority percentage or control.",
+    "Do not add Aggregate Power Infrastructure as current without fresh continuity evidence.",
+    "Keep Mission Clean Energy Devco LLC and all solar/storage projects and SPVs beneath the canonical Mission platform.",
+    "Treat the Bluebird transaction as a project-level disposition, not a Mission ownership exit."
+  ],
+  "recommendedNextAction": "Generate a protected company-creation proposal for Mission Clean Energy LLC using the current investors page as primary ownership evidence and preserving all undisclosed fund, vehicle, percentage and retained-owner fields as not publicly disclosed.",
+  "databaseMutationAuthorized": false
+}

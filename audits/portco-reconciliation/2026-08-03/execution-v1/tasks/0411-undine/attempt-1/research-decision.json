@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0411:undine:ce0cb177",
+  "sequence": 411,
+  "asOfDate": "2026-08-19",
+  "companyName": "Undine",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Undine is one active Texas regulated water and wastewater platform. The existing generic Ridgewood row is the same continuous 2017 Ridgewood Infrastructure period and must not be duplicated. Ridgewood and Crosstimbers current portfolio pages, reinforced by Undine's Texas PUC response, prove both as current equity funders. The reported 2025 sale process was not found signed or closed.",
+  "recommendedChanges": [
+    "Keep one canonical Undine record and normalize the existing Ridgewood owner to Ridgewood Infrastructure rather than adding a duplicate.",
+    "Attribute the Ridgewood period to the Ridgewood Water & Strategic Infrastructure Fund and retain 2017 as the entry year without inventing an exact date or stake.",
+    "Add Crosstimbers Capital Group as a distinct active co-investor from June 2017 through XT Undine Co-Investment, LP without inventing its stake.",
+    "Record the 2025 sale effort only as a marketed process, not a signed pending or closed ownership transfer.",
+    "Keep regulated utility subsidiaries and acquired systems inside the single Undine platform boundary."
+  ],
+  "unresolvedQuestions": ["Exact Ridgewood 2017 close date and SPV","Exact current cap table, control rights and management rollover","Whether US Undine Co-Invest HoldCo reflects later syndication or reporting only"],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "fieldCorrectionRequired": true,
+  "fieldCorrections": ["Do not add a second Ridgewood owner period","Do not infer stakes from funding-line references","Do not treat the 2025 marketed sale process as a signed transaction"],
+  "acceptedResponseSha256": "28819a5f3becc1dbaa62c30faccbf79ef2260b18ddc05e372c37b1045ce80b50"
+}

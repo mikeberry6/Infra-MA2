@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+  "sequence": 412,
+  "asOfDate": "2026-08-19",
+  "companyName": "Valley Cold Storage & Transportation",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Valley Cold is one current Ridgewood/Fund II cold-storage and logistics platform, not a new owner period. Ridgewood announced the investment on December 3, 2024, later described it as a Q4 2024 founder-led recapitalization, and still marks it Unrealized. The current company site labels Clay and Jennifer Bush as owners; their percentages and Ridgewood's exact stake remain nonpublic and should not be inferred.",
+  "recommendedChanges": [
+    "Keep one canonical Valley Cold Storage & Transportation record and one Ridgewood ownership period beginning in 2024.",
+    "Normalize the manager to Ridgewood Infrastructure and attribute the investment to Ridgewood Fund II without inventing an acquisition vehicle or exact close date.",
+    "Retain Clay and Jennifer Bush as current founder owners with undisclosed percentages if founder ownership is represented in the data model.",
+    "Correct the platform history from a 2020 origin to establishment in 2008 and the Las Cruces warehouse opening in 2010.",
+    "Keep warehouses, transport operations and internal holding entities inside the single platform boundary."
+  ],
+  "unresolvedQuestions": ["Exact legal close date, acquisition SPV and control percentage","Exact founder percentages and any co-invest allocation","Full relationship among Valley Cold Storage & Transportation, LLC, VCST entities and the uncorroborated Inc. terms-page reference"],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "fieldCorrectionRequired": true,
+  "fieldCorrections": ["Do not add a duplicate Ridgewood owner period","Do not convert Clay or Jennifer Bush's owner titles into inferred percentage stakes","Use Q4 2024 as close precision and December 3, 2024 as announcement date"],
+  "acceptedResponseSha256": "9c942f6f70ba66ccefa93dcef99b813531e3656817328f5dd22cc442ec83e096"
+}

@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0156:vopak-industrial-infrastructure-americas:bef0b093",
+  "taskIndex": 156,
+  "companyName": "Vopak Industrial Infrastructure Americas",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "responseSha256": "2248c9696a22c0cb70c072518aea2d41d18da886e252df22fed70812e6aee74b",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Vopak Industrial Infrastructure Americas",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "VIIA is the single 2020 Vopak-BlackRock joint-venture platform that acquired three Dow Gulf Coast terminals. The regulator identifies BlackRock Alternatives Management, LLC for GEPIF III. BlackRock's 2024 GIP acquisition was a manager-level combination, not evidence of a VIIA stake transfer or separate GIP ownership period. No public exit or pending sale was found through the as-of date.",
+    "identityResolution": {
+      "canonicalLegalName": "Vopak Industrial Infrastructure Americas, LLC",
+      "displayName": "Vopak Industrial Infrastructure Americas",
+      "canonicalKey": "vopak-industrial-infrastructure-americas|united-states",
+      "aliases": [
+        "VIIA"
+      ],
+      "formationDate": "2020-09-10",
+      "predecessor": "Dow Gulf Coast terminal assets; not a predecessor company",
+      "successor": "NONE_FOUND",
+      "boundary": "One platform PortCo; Freeport, St. Charles and Plaquemine are nested sites/subsidiaries."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock Alternatives Management, LLC",
+          "fund": "Global Energy & Power Infrastructure Fund III, L.P.",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "50%",
+          "announcementDate": "2020-09-14",
+          "entryDate": "2020-12-02",
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "Royal Vopak",
+          "organization": "Koninklijke Vopak N.V.",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "NOT_APPLICABLE",
+          "stake": "50%",
+          "announcementDate": "2020-09-14",
+          "entryDate": "2020-12-02",
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "formerOwners": [],
+      "requestedManagerFindings": {
+        "BlackRock": "VERIFIED_CURRENT; retain the 2020 GEPIF III period.",
+        "Global Infrastructure Partners": "MATCHED_ELSEWHERE; no separate direct ownership period."
+      },
+      "assetSeller": "The Dow Chemical Company",
+      "pendingTransactions": []
+    },
+    "operatingResolution": {
+      "qualifies": true,
+      "status": "Active",
+      "sector": "Midstream",
+      "subsector": "Industrial terminals and bulk-liquid storage/logistics",
+      "foundedYear": 2020,
+      "headquarters": "Houston, Texas",
+      "officialWebsite": "Standalone site NOT_PUBLICLY_DISCLOSED; official terminal profiles are on vopak.com.",
+      "footprint": [
+        "Freeport, Texas",
+        "St. Charles/Hahnville, Louisiana",
+        "Plaquemine, Louisiana"
+      ],
+      "services": "Tank storage and marine, pipeline, rail and truck logistics under long-term agreements.",
+      "customersEndMarkets": "Dow is the disclosed anchor customer; chemicals and refined products.",
+      "scale": "At closing: three terminals, 852,000 cbm and 36 vessel berths; current aggregate capacity NOT_PUBLICLY_DISCLOSED.",
+      "scope": "Contracted, asset-heavy operating infrastructure; not debt, securities, fund exposure or upstream production."
+    },
+    "acquisitionExitCheck": {
+      "seller": "The Dow Chemical Company",
+      "price": "USD 620 million",
+      "announcementDate": "2020-09-14",
+      "closingDate": "2020-12-02",
+      "entryState": "CLOSED",
+      "searchThrough": "2026-08-19",
+      "exitResult": "NO_PUBLICLY_ANNOUNCED_OR_CLOSED_EXIT_FOUND",
+      "managerEvent": "BlackRock acquired GIP on 2024-10-01; no new VIIA ownership period.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2020-09-10",
+        "event": "VIIA formed in Delaware.",
+        "category": "Formation"
+      },
+      {
+        "date": "2020-09-14",
+        "event": "Vopak and BlackRock GEPIF announced the 50/50 USD 620 million acquisition.",
+        "category": "Announcement"
+      },
+      {
+        "date": "2020-12-02",
+        "event": "Acquisition closed; long-term Dow service agreements took effect.",
+        "category": "Closing"
+      },
+      {
+        "date": "2024-10-01",
+        "event": "BlackRock acquired GIP; no separate VIIA transfer was found.",
+        "category": "Manager event"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Vopak closing PDF",
+        "url": "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf",
+        "purpose": "Closing, ownership, assets and scale",
+        "sourceTier": "TIER_1_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "EU merger notice M.9999",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020M9999",
+        "purpose": "BAM, GEPIF III and joint control",
+        "sourceTier": "TIER_1_REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock-GIP close",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "purpose": "Manager-combination context",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "VIIA Freeport",
+        "url": "https://www.vopak.com/terminals/viia-freeport-texas",
+        "purpose": "Current Texas operation",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "VIIA St. Charles",
+        "url": "https://www.vopak.com/terminals/viia-st-charles-louisiana",
+        "purpose": "Current Louisiana operation",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "INDEXED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "VIIA Plaquemine",
+        "url": "https://www.vopak.com/terminals/viia-plaquemine-louisiana",
+        "purpose": "Current Louisiana operation",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "INDEXED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "VIIA LEI record",
+        "url": "https://lei.bloomberg.com/leis/view/25490057VTAOBH0Z9373",
+        "purpose": "Legal identity, formation, status and headquarters",
+        "sourceTier": "TIER_2_REGISTRY_MIRROR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "manager": {
+        "before": "BlackRock plus GIP duplicate attribution",
+        "after": "BlackRock/GEPIF III only; no separate GIP owner"
+      },
+      "fund": {
+        "before": "Global Energy & Power Infrastructure Fund",
+        "after": "Global Energy & Power Infrastructure Fund III, L.P."
+      },
+      "legalName": {
+        "before": "Vopak Industrial Infrastructure Americas",
+        "after": "Vopak Industrial Infrastructure Americas, LLC"
+      },
+      "headquarters": {
+        "before": "Louisiana and Texas",
+        "after": "Houston, Texas; Louisiana/Texas are the footprint"
+      },
+      "boundary": {
+        "before": "Potential duplicate treatment",
+        "after": "One platform with three nested terminal sites"
+      }
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "GIP ownership/company row",
+        "disposition": "MERGE_DUPLICATE",
+        "reason": "Legacy BlackRock GEPIF III investment; the later manager acquisition creates no separate entry."
+      },
+      {
+        "candidate": "Freeport, St. Charles and Plaquemine sites/entities",
+        "disposition": "NESTED_ASSETS",
+        "reason": "VIIA operating sites/subsidiaries, not separate manager-level PortCos."
+      }
+    ],
+    "unresolvedQuestions": [
+      "NOT_PUBLICLY_DISCLOSED: intermediate equity-holding SPV below GEPIF III.",
+      "NOT_PUBLICLY_DISCLOSED: current aggregate platform capacity.",
+      "No material identity or current-ownership uncertainty remains."
+    ],
+    "recommendedListAction": "Merge the GIP-attributed candidate into the existing VIIA record; retain one active U.S. PortCo owned 50/50 by BlackRock GEPIF III and Royal Vopak, preserve the 2020 BlackRock entry, and create no GIP ownership period."
+  }
+}

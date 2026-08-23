@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0384:407-international-inc:e9ed737e",
+  "checkedAt": "2026-08-21T21:17:05.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; PDF text extraction and rendered-page inspection; indexed-page verification for the JavaScript-blocked CPP page",
+  "sources": [
+    {
+      "url": "https://assets.ctfassets.net/oqdgumaqmw49/7onoKvOA39oX8idjWUjTCJ/dc9cace9a54d11c6b2d7af148c189887/AIF_-_YE2025.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://assets.ctfassets.net/oqdgumaqmw49/7onoKvOA39oX8idjWUjTCJ/dc9cace9a54d11c6b2d7af148c189887/AIF_-_YE2025.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 1807647,
+      "sha256": "35bcb2e0b09fcf3175e54b8c0aca31f56748e80f85e068d76a4a0150bc0cb8d8",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 81,
+        "relevantPdfPages": [
+          4,
+          28
+        ],
+        "verifiedClaims": [
+          "Current cap table: Cintra 48.29%, CPP Investments-controlled block 44.20%, PSP Investments 7.51%",
+          "PSP ownership through Spectre Infra Limited Partnership",
+          "June 2025 AtkinsRéalis exit allocations and parent/concessionaire boundary"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/psp-investments-and-cpp-investments-complete-407-etr-transactions/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.investpsp.com/en/news/psp-investments-and-cpp-investments-complete-407-etr-transactions/",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 33531,
+      "sha256": "17e732242d59048af54ebf465a6a9853591b2ed06b62096d57e46d7e2f1100fe",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://newsroom.ferrovial.com/en/press-releases/ferrovial-acquires-a-5-06-stake-in-the-407-etr/",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.ferrovial.com/en/press-releases/ferrovial-acquires-a-5-06-stake-in-the-407-etr/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 181901,
+      "sha256": "0595a7636813220f88d0cf4ac12de90668c93cb14bb63b7c6587359be38ba2a1",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://newsroom.407etr.com/2026-07-22-407-International-Reports-Second-Quarter-Results",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.407etr.com/2026-07-22-407-International-Reports-Second-Quarter-Results",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 124973,
+      "sha256": "a0b75eb6697f0845062ffcc0c468f0b8ce2e84a64e7a8944b16fa882affee684",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.cppinvestments.com/newsroom/cppib-increases-investment-407-international-inc/",
+      "httpStatus": 202,
+      "finalUrl": "https://www.cppinvestments.com/newsroom/cppib-increases-investment-407-international-inc/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 0,
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "The exact official CPP Investments page is live behind a JavaScript verification challenge; the current ownership record is independently established by 407 International's 2025 AIF."
+    },
+    {
+      "url": "https://newsroom.407etr.com/2004-10-26-Macquarie-Infrastructure-Canada-Inc-Acquires-13-87-Interest-in-407-International-Inc",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.407etr.com/2004-10-26-Macquarie-Infrastructure-Canada-Inc-Acquires-13-87-Interest-in-407-International-Inc",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 69732,
+      "sha256": "143079666a0856cadab15025c47a7503f78868895355cf86755632ab22ed111f",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.lexpert.ca/big-deals/macquarie-infrastructure-increases-stake-in-407/343389",
+      "httpStatus": 200,
+      "finalUrl": "https://www.lexpert.ca/big-deals/macquarie-infrastructure-increases-stake-in-407/343389",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 61436,
+      "sha256": "449220801a104754893bd4dcef22a6c163e15ac841e43722c32755733a304466",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

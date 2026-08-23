@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0222:anza-renewables:03b962a6",
+  "taskIndex": 222,
+  "companyName": "Anza Renewables",
+  "verifiedAt": "2026-08-20T00:09:58Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+      "finalUrl": "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 207015,
+      "contentSha256": "4df95e07d2ddbab07db4075257d299e7d97f8449f470f73062dc49a2e88d3585",
+      "note": "Anza's May 17, 2023 release confirms completed separation from Borrego, ECP Energy Transition Opportunities Fund and Angeleno participation, Oakland location and undisclosed transaction terms."
+    },
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/anza-renewables",
+      "finalUrl": "https://www.ecpgp.com/equity/portfolio/anza-renewables",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 38407,
+      "contentSha256": "e3bd5b36324bc8ae7e1b16fcf372cd7b2b8762739cd12d2d1b67048a59459028",
+      "note": "ECP's live portfolio page lists Anza Renewables as Current and dates the investment to May 2023."
+    },
+    {
+      "url": "https://www.walsin.com/2024annual-report/files/pdf/en/0.%20%E8%8B%B1%E6%96%87%E5%AE%8C%E6%95%B4%E7%89%88.pdf",
+      "finalUrl": "https://www.walsin.com/2024annual-report/files/pdf/en/0.%20%E8%8B%B1%E6%96%87%E5%AE%8C%E6%95%B4%E7%89%88.pdf",
+      "status": "OPEN_PDF_TEXT_AND_PAGE_VISUALLY_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 2707241,
+      "contentSha256": "bdc6dafe24abf51b2b3bddd41fd91816b772e9acd163790d02fae79ecc2415b6",
+      "pageEvidence": [
+        166
+      ],
+      "note": "Rendered PDF page 166 (printed page 164) confirms Borrego formed Anza RE, LLC, the counterparty Anza RE Buyer, LLC, February 24, 2023 contract date and US$26.74 million disposition price."
+    },
+    {
+      "url": "https://www.angelenogroup.com/portfolio/anza-renewables/",
+      "finalUrl": "https://www.angelenogroup.com/portfolio/anza-renewables/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 33356,
+      "contentSha256": "df8073714ee6b5e5448f68d2468a84d096ff8bd23709aa8a6517916480f6b83e",
+      "note": "Angeleno's live portfolio page identifies Anza Renewables as Active and gives Oakland, California headquarters."
+    },
+    {
+      "url": "https://www.bizprofile.net/ca/oakland/anza-re-llc",
+      "finalUrl": "https://www.bizprofile.net/ca/oakland/anza-re-llc",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5411,
+      "contentSha256": "3e111840632ff6299f0c0aef62f1987febc932e09a87c1b6e8d94cf8a7e4a9dc",
+      "browserTextBytes": 2880,
+      "browserTextSha256": "67de7b1bd1e23a590b102cead01261067b8c8c136751949ef78e171398d81745",
+      "note": "The browser-rendered registry mirror identifies active Anza Re, LLC in Oakland and states that it was formed in Delaware. Curl received a 403, so this is supporting identity evidence only."
+    },
+    {
+      "url": "https://www.anzarenewables.com/",
+      "finalUrl": "https://www.anzarenewables.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 277011,
+      "contentSha256": "36f5f991a5614a173cc2a6aa0b39a0730ee6c163b0762297c6fb84478894ea58",
+      "note": "The active company website supports solar, BESS and transformer procurement/data services, 80+ subscribers and disclosed support for more than 8 GW of PV and 5 GWh of BESS purchase orders."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 1,
+    "companySeparationAndInvestorConsortiumVerified": true,
+    "ecpCurrentStatusVerified": true,
+    "angelenoActiveStatusVerified": true,
+    "legalTargetBuyerAndPriceVerifiedFromAnnualReport": true,
+    "usCountryAndOaklandHeadquartersVerified": true,
+    "canadaFootprintNotSubstantiated": true,
+    "platformBoundaryVerified": true,
+    "laterDirectExitNotFound": true,
+    "allCoreClaimsHaveDirectOpenEvidence": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Before any mutation, recapture the task-specific production and dependency snapshot and convert this research packet into a hash-bound proposal."
+}

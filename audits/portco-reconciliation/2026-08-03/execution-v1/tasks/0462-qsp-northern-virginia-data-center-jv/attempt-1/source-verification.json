@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+  "taskIndex": 462,
+  "companyName": "QSP (Northern Virginia Data Center JV)",
+  "verifiedAt": "2026-08-22T18:12:38.000Z",
+  "summary": {
+    "modelCitationUrls": 6,
+    "working": 3,
+    "browserBlockedButVerified": 2,
+    "dead": 1,
+    "replacementWorkingUrls": 2,
+    "materialModelCorrections": 1,
+    "sourceUrlOverrides": 2
+  },
+  "sources": [
+    {
+      "label": "Model-cited legacy Wren House QSP URL",
+      "url": "https://wrenhouseinfra.com/portfolio/qsp/",
+      "httpStatus": 404,
+      "observedStatus": "DEAD_REPLACE",
+      "verificationMethod": "direct HTTP request",
+      "note": "The legacy URL is dead and does not support the model's stated 40% stake."
+    },
+    {
+      "label": "Current Wren House QSP portfolio",
+      "url": "https://www.whinfra.com/our-portfolio/qsp/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct current manager page",
+      "note": "Confirms QSP, a 2024 investment, is one three-facility Northern Virginia joint venture among Wren House, QTS and another investor. It does not disclose Wren House's percentage. Use this as the primary identity and current-status source."
+    },
+    {
+      "label": "Model-cited generic Wren House homepage",
+      "url": "https://wrenhouseinfra.com/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_BUT_REPLACE_WITH_DIRECT_PAGE",
+      "verificationMethod": "direct HTTP request with redirect",
+      "note": "The legacy domain redirects to a generic homepage and should be replaced by the direct transaction page."
+    },
+    {
+      "label": "Wren House QSP completion announcement",
+      "url": "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct official transaction page",
+      "note": "Confirms the November 13, 2024 completed recapitalization, that Wren House and another fund acquired a majority stake, that QTS retained ownership and operating roles, and that the three facilities total about 100 MW. It does not disclose a 40% Wren House stake."
+    },
+    {
+      "label": "CBRE H2 2024 data-center report",
+      "url": "https://www.cbre.com/insights/reports/north-america-data-center-trends-h2-2024",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct page and official CBRE Washington release",
+      "note": "Identifies Wren House and BlackRock as the investor pair in the $1.2 billion QTS joint venture for a majority stake in three stabilized Northern Virginia data centers."
+    },
+    {
+      "label": "Paul Weiss transaction experience",
+      "url": "https://www.paulweiss.com/professionals/partners-and-counsel/kelann-stirling",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct counsel page",
+      "note": "Corroborates BlackRock Global Infrastructure Fund's direct investment in the Wren House/QTS joint venture and the three-facility boundary."
+    },
+    {
+      "label": "KBRA preliminary rating release",
+      "url": "https://www.kbra.com/publications/FbCtxWJc/kbra-assigns-preliminary-ratings-to-bx-2024-vlt5?format=web",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct rating-agency page",
+      "note": "Supports the financing and three-property collateral boundary."
+    },
+    {
+      "label": "KBRA current surveillance release",
+      "url": "https://www.kbra.com/publications/tRLdQDbt/kbra-affirms-all-ratings-for-bx-2024-vlt5?format=web",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct rating-agency page",
+      "note": "As of November 13, 2025, confirms the same three facilities, 690,770 square feet and 99.6 MW. It identifies sponsor affiliates of QTS, Blackstone and BlackRock; Wren House's direct page separately establishes Wren House participation."
+    },
+    {
+      "label": "Blackstone QTS acquisition completion",
+      "url": "https://www.blackstone.com/news/press/blackstone-funds-complete-acquisition-of-qts-realty-trust/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct official page",
+      "note": "Confirms Blackstone affiliates completed the QTS acquisition on August 31, 2021, supporting Blackstone only as upstream QTS owner rather than substituting for direct BlackRock JV participation."
+    }
+  ],
+  "materialCorrections": [
+    {
+      "modelClaim": "Wren House owns 40% of QSP.",
+      "verifiedTreatment": "NOT_PUBLICLY_DISCLOSED",
+      "reason": "Neither the current Wren House QSP page nor its completion announcement discloses 40%. The searches found no reliable direct or transaction-level source for that percentage."
+    }
+  ],
+  "conclusion": "The PROPOSED_MERGE identity decision is strongly supported: the census label and canonical QSP are the same three-facility Northern Virginia investment, and later task 491 is duplicate coverage. Current direct evidence supports Wren House participation, BlackRock as the other direct investor, and QTS as retained owner/operator with Blackstone upstream. All direct JV percentages remain not publicly disclosed; the model's 40% Wren House claim must not be persisted."
+}

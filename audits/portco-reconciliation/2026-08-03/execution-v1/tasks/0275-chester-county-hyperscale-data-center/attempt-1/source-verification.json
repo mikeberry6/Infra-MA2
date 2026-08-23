@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+  "taskIndex": 275,
+  "verifiedAt": "2026-08-20T14:52:15.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 3,
+    "browserBlockedButVerified": 3,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.eastwhiteland.org/government/departments/planning_development/sentinel%2C_green_fig_data_center_on_swedesford_road.php",
+      "finalUrl": "https://www.eastwhiteland.org/government/departments/planning_development/sentinel%2C_green_fig_data_center_on_swedesford_road.php",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 344836,
+      "sha256": "4b0d4e154c063093e79cbda9c1a56279738858a90530f2f234f3da1a1b4894a8",
+      "health": "WORKING",
+      "claimCheck": "Current East Whiteland Township project page verifies the Sentinel/Green Fig project identity, 2026 applicant activity, active plan review and extensive approval/document chronology."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20220830005696/en/fifteenfortyseven-Critical-Systems-Realty-Adds-over-100-Acres-and-150-Megawatts-in-Pennsylvania-for-Massive-Data-Center-Expansion",
+      "finalUrl": "https://www.businesswire.com/news/home/20220830005696/en/fifteenfortyseven-Critical-Systems-Realty-Adds-over-100-Acres-and-150-Megawatts-in-Pennsylvania-for-Massive-Data-Center-Expansion",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": null,
+      "sha256": null,
+      "blockedResponseBytes": 716,
+      "blockedResponseSha256": "2720a155595e7e489d322b561f00e207e872049b85351ddaec16e257004631a6",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Direct-page browser extraction verified the August 30, 2022 1547/Green Fig land acquisition and joint-development announcement, 100-plus-acre boundary and announced capacity targets."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/chester-county-pa/",
+      "finalUrl": "https://www.1547realty.com/data-center/chester-county-pa/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": null,
+      "sha256": null,
+      "blockedResponseBytes": 4544,
+      "blockedResponseSha256": "0a33332e8229ddd84f020b028ca5063ea06d27182287d472cdbed0f09970ac5d",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Current 1547 page explicitly labels Chester County PA land Sold and describes it in past tense, supporting retirement of 1547's interest rather than current ownership attribution."
+    },
+    {
+      "url": "https://cms2.revize.com/revize/eastwhitelandtownshippa/Planning%20%26%20Development/Sentinel%2C%20Green%20Fig%20Data%20Center%20on%20Swedesford%20Road/Combined%20Comfort%20Letters.pdf?t=202605081424220",
+      "finalUrl": "https://cms2.revize.com/revize/eastwhitelandtownshippa/Planning%20%26%20Development/Sentinel%2C%20Green%20Fig%20Data%20Center%20on%20Swedesford%20Road/Combined%20Comfort%20Letters.pdf?t=202605081424220",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 298058,
+      "sha256": "e8a33c3bd644f4cca937f3496029ddb26b5533e25103e30198c9dff68af6800e",
+      "health": "WORKING_PDF_VERIFIED",
+      "pageCount": 15,
+      "claimCheck": "Downloaded official PDF was hashed and inspected with pdfplumber. Page 1 identifies Sentinel Green Fig II, LLC and its interest in acquiring title to parcel 42-3-130; page 8 identifies Sentinel Green Fig, LLC and its redevelopment plans for the other listed parcels."
+    },
+    {
+      "url": "https://www.datacenterdynamics.com/en/news/1547-csr-seeks-to-raise-250m-for-data-center-fund-report/",
+      "finalUrl": "https://www.datacenterdynamics.com/en/news/1547-csr-seeks-to-raise-250m-for-data-center-fund-report/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": null,
+      "sha256": null,
+      "blockedResponseBytes": 5803,
+      "blockedResponseSha256": "4e775a2d41ffee23b9d1326c48824814a47fa37c5f1bfc3f8100eca9ef50cbf9",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Trade-source page distinguishes 1547 Data Center Real Estate Fund II as an independent fund and separately names the specific Harrison Street/1547 transactions; it does not place Chester County in a Harrison Street vehicle."
+    },
+    {
+      "url": "https://elementix.com/investors/pa/edward-russo",
+      "finalUrl": "https://elementix.com/investors/pa/edward-russo",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 87111,
+      "sha256": "9539ddeed3224d5f1586751cabb2615c9ded2be74997ef2cc75725f0e1a43df3",
+      "health": "WORKING_CORROBORATIVE_ONLY",
+      "claimCheck": "Secondary property-record aggregation was reachable and retained only as corroborative evidence for reported deed/mortgage signals; official recorded images were not treated as retrieved."
+    }
+  ]
+}

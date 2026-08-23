@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+  "taskIndex": 375,
+  "validatedAt": "2026-08-21T20:13:07.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a88ab30-9b6c-83ea-9427-64c9813cf3f3",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": true,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "fcd6dadfae3ee77a9149fc4db97bde70251d77e505287d9feaa2e4d28c52eec5",
+    "errors": []
+  },
+  "repair": {
+    "count": 0,
+    "limit": 1,
+    "submittedAt": null,
+    "completedAt": null,
+    "valid": null,
+    "responseSha256": null,
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "MEDIUM_HIGH",
+    "canonicalName": "Sidewalk Infrastructure Partners, LLC",
+    "evidenceCount": 7,
+    "currentOwnerCount": 2,
+    "unresolvedCurrentOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "managerAliasResolved": true,
+    "duplicateOwnerAvoided": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": false,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "exactlyOneRecommendedPrimary": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "applicationBlocked": true,
+  "blockingReasons": [
+    "Alphabet's current direct equity status remains UNRESOLVED.",
+    "OTPP's current legal holder and exact stake are not publicly disclosed."
+  ],
+  "errors": [],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}
+

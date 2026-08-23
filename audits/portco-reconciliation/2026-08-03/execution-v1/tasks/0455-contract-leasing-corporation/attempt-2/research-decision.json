@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+  "taskIndex": 455,
+  "companyName": "Contract Leasing Corporation",
+  "asOfDate": "2026-08-22",
+  "recordedAt": "2026-08-22T22:27:14.000Z",
+  "modelDecision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Contract Leasing Corporation is one qualifying U.S. trailer and intermodal-chassis leasing platform backed by Wafra's Real Assets & Infrastructure strategy. Current Wafra portfolio/board evidence and CLC's equity-partner statement support continuing ownership; direct company sources correctly identify founder and CEO Michael Goor and establish the latest supported fleet scale without the prior attempt's inflation.",
+  "repoReconciliation": {
+    "canonicalKey": "contract-leasing-corporation|united-states",
+    "recommendedTreatment": "CREATE_ONE_CANONICAL_PORTCO_WITH_WAFRA_OWNERSHIP",
+    "preserveBoundary": "one CLC platform; aliases, fleet units, branches, depots, leasing contracts and service operations remain beneath it"
+  },
+  "proposalGuardrails": [
+    "Create CLC only once and attribute the active 2022 investment to Wafra without inventing a fund, vehicle, stake or purchase price.",
+    "Preserve Michael Goor as founder and current President/CEO; record his retained significant entry interest without inferring a current percentage.",
+    "Use approximately 15,700 units at acquisition and 18,000 units in January 2024; do not use the unsupported greater-than-30,000 figure.",
+    "Use August 2, 2022 as the attributable acquisition/entry date while noting that no separate legal closing date was publicly disclosed.",
+    "Do not create fleet units, branches, depots, CLC services or aliases as separate PortCos.",
+    "Keep later fleet and depot counts unavailable unless a newer direct source is opened during scorecard enrichment."
+  ],
+  "nonblockingDisclosureGaps": [
+    "Wafra fund and acquisition vehicle",
+    "Purchase price, sellers and exact Wafra/Goor stakes",
+    "Separate legal closing date",
+    "Post-January-2024 fleet and current depot count"
+  ],
+  "recommendedNextAction": "Prepare one later protected new-company proposal for Contract Leasing Corporation with Wafra as current owner and the corrected executive and fleet facts.",
+  "databaseMutationAuthorized": false
+}

@@ -120,6 +120,20 @@ export interface ApprovedSeedPublication {
   approvedSeedEntrySha256: string;
 }
 
+export interface ApprovedSeedBatchPublicationEntry {
+  taskId: string;
+  proposalSha256: string;
+  approvalSha256: string;
+  afterImageSha256: string;
+  approvedSeedEntrySha256: string;
+}
+
+export interface ApprovedSeedBatchPublication {
+  artifactPath: string;
+  artifactSha256: string;
+  entries: ApprovedSeedBatchPublicationEntry[];
+}
+
 function companyIdentityKey(company: { name: string; country: string }): string {
   return `${company.name.trim().toLowerCase()}\u0000${company.country.trim().toLowerCase()}`;
 }
@@ -262,6 +276,18 @@ export function renderApprovedSeedArtifact(
     throw new Error("An immutable approved seed proposal hash already has different contents");
   }
   const next = sameHash.length === 1 ? existing : [...existing, entry];
+  return `${JSON.stringify(next, null, 2)}\n`;
+}
+
+export function renderApprovedSeedArtifactBatch(
+  existing: unknown,
+  entries: readonly ApprovedSeedEntry[],
+): string {
+  if (entries.length === 0) throw new Error("Approved seed batch requires at least one entry");
+  let next: unknown = existing;
+  for (const entry of entries) {
+    next = JSON.parse(renderApprovedSeedArtifact(next, entry)) as unknown;
+  }
   return `${JSON.stringify(next, null, 2)}\n`;
 }
 
@@ -451,6 +477,80 @@ export async function verifyPublishedApprovedSeedAfterImage(
     throw new Error("Approved seed artifact bytes changed after publication");
   }
   verifyApprovedSeedText(text, publication);
+}
+
+/**
+ * Publish every approved seed after-image in one adjacent atomic rename. This
+ * is the filesystem half of the batch protocol; the database half is applied
+ * later in one serializable transaction.
+ */
+export async function publishApprovedSeedAfterImages(input: {
+  artifactPath: string;
+  members: ReadonlyArray<{
+    proposal: ReconciliationProposal;
+    approval: ReconciliationApproval;
+    approvedProductionSnapshot: ProductionSnapshot;
+  }>;
+}): Promise<ApprovedSeedBatchPublication> {
+  const artifactPath = resolve(input.artifactPath);
+  if (!artifactPath.endsWith(`/${APPROVED_SEED_BASENAME}`)) {
+    throw new Error(`Seed writes are target-pinned to ${APPROVED_SEED_BASENAME}`);
+  }
+  if (input.members.length === 0) throw new Error("Approved seed batch requires at least one mutation");
+  const entries = input.members.map((member) => buildApprovedSeedEntry(
+    member.proposal,
+    member.approval,
+    member.approvedProductionSnapshot,
+  ));
+  const proposalHashes = entries.map((entry) => entry.proposalSha256);
+  if (new Set(proposalHashes).size !== proposalHashes.length) {
+    throw new Error("Approved seed batch repeats a proposal hash");
+  }
+  const currentArtifact: unknown = JSON.parse(await readFile(artifactPath, "utf8"));
+  const rendered = renderApprovedSeedArtifactBatch(currentArtifact, entries);
+  const renderedArtifact: unknown = JSON.parse(rendered);
+  for (const entry of entries) {
+    verifyApprovedSeedText(rendered, entry);
+    verifyApprovedSeedProjection({ artifact: renderedArtifact, expectedEntry: entry });
+  }
+  const temporaryPath = `${artifactPath}.batch-stage-${process.pid}-${Date.now()}`;
+  const handle = await open(temporaryPath, "wx", 0o600);
+  try {
+    await handle.writeFile(rendered, "utf8");
+    await handle.sync();
+  } finally {
+    await handle.close();
+  }
+  await rename(temporaryPath, artifactPath);
+  const directory = await open(dirname(artifactPath), "r");
+  try {
+    await directory.sync();
+  } finally {
+    await directory.close();
+  }
+  const publication: ApprovedSeedBatchPublication = {
+    artifactPath,
+    artifactSha256: sha256Text(rendered),
+    entries: entries.map((entry) => ({
+      taskId: entry.taskId,
+      proposalSha256: entry.proposalSha256,
+      approvalSha256: entry.approvalSha256,
+      afterImageSha256: entry.afterImageSha256,
+      approvedSeedEntrySha256: sha256Canonical(entry),
+    })),
+  };
+  await verifyPublishedApprovedSeedBatch(publication);
+  return publication;
+}
+
+export async function verifyPublishedApprovedSeedBatch(
+  publication: ApprovedSeedBatchPublication,
+): Promise<void> {
+  const text = await readFile(publication.artifactPath, "utf8");
+  if (sha256Text(text) !== publication.artifactSha256) {
+    throw new Error("Approved seed batch artifact bytes changed after publication");
+  }
+  for (const entry of publication.entries) verifyApprovedSeedText(text, entry);
 }
 
 export async function removeStagedApprovedSeedAfterImage(input: {

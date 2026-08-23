@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0358:ascension-fbo-network:b081e384",
+  "taskIndex": 358,
+  "verifiedAt": "2026-08-21T16:03:42.345Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 4,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The Wafra and NexPhase URLs returned HTTP 403 to direct curl, but each exact URL rendered successfully in the signed-in browser and is classified BROWSER_BLOCKED_BUT_VERIFIED rather than dead.",
+    "The Infrastructure Investor URL returned HTTP 200 to independent retrieval even though the model conservatively labeled it INDEXED."
+  ],
+  "sources": [
+    {
+      "url": "https://ascensionfbo.com/",
+      "finalUrl": "https://ascensionfbo.com/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 48914,
+      "sha256": "44747ba558b1326b14011ba5924f24d36ec13b4f7d86e1bdbf7c1f78d3d381e5",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.novainfrastructure.com/investments-index",
+      "finalUrl": "https://www.novainfrastructure.com/investments-index",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 220466,
+      "sha256": "a4427f71884ea656e7412b6b5bf226196df7520cfb0c3ebe8ba575c18d00365b",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.wafra.com/our-people/michael-coleman-2/",
+      "finalUrl": "https://www.wafra.com/our-people/michael-coleman-2/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5533,
+      "sha256": "2549c3b90570b65717bdc7c2c42361c5a23bc653e943e32e9972779dc8db78b3",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "Michael Coleman | Wafra",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "fd81a664dec2816c547247bd058b86f698a3662ff8e0a5b64863e3c1ab103764"
+      }
+    },
+    {
+      "url": "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction",
+      "finalUrl": "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 61619,
+      "sha256": "c2f0dd513935543e5bfa5fdb16ff5ffc569ea1e3b5748d4ab2ac929c26eeace7",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.nexphase.com/hawthorne-global-aviation-services-acquires-excelaire-llc-a-new-york-based-fbo-aircraft-charter-management-company/",
+      "finalUrl": "https://www.nexphase.com/hawthorne-global-aviation-services-acquires-excelaire-llc-a-new-york-based-fbo-aircraft-charter-management-company/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "sha256": "407b201c2ce00ac61ec816c20b3ab09af9fc7a14736cc808295d878a3a7c3830",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "Hawthorne Global Aviation Services Acquires ExcelAire LLC, a New York-based FBO, Aircraft Charter & Management Company – NexPhase Capital",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "134c3c446872ea0a6f88e4bb026a8c83bc0e4398a63de6ddeab2a3b1c77d5d18"
+      }
+    },
+    {
+      "url": "https://www.infrastructureinvestordeals.com/deals/nova-infrastructure-backed-fbo-operator-moves-on-to-second-round-as-us-investors-seek-roll-ups",
+      "finalUrl": "https://www.infrastructureinvestordeals.com/deals/nova-infrastructure-backed-fbo-operator-moves-on-to-second-round-as-us-investors-seek-roll-ups",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 103234,
+      "sha256": "4b4a8947a683432fcfd2759cce80ed330d0f3225bd5010cdc54d943766314eb0",
+      "health": "WORKING"
+    }
+  ]
+}

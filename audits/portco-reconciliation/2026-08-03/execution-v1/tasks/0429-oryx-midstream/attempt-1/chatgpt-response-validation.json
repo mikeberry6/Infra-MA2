@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0429:oryx-midstream:eee190fa",
+  "taskIndex": 429,
+  "validatedAt": "2026-08-22T04:32:50.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a891b85-a270-83ea-a868-9119aeec902d",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "92806eab5246854f2b0754060359ecf4125d4aab6e114a261a3aebbd45b1ec09",
+    "errors": [
+      "No direct evidence URL supported the claimed June 2026 Oryx Funding refinancing or continuing 35% POPB interest.",
+      "The response treated QIA as current although its cited 2026 filing established affiliation but not continuing ownership."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-22T04:15:19.918Z",
+    "completedAt": "2026-08-22T04:30:58.045Z",
+    "valid": true,
+    "responseSha256": "604fafd5b8e8775c3cb6be28f926ba4399d0f536e56c7cb3d1adcfb948690a11",
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "canonicalName": "Oryx Midstream",
+    "evidenceCount": 8,
+    "currentOwnerCount": 2,
+    "historicalOrUnresolvedOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "duplicateIdentityProven": true,
+    "allLegacyAssetsJVBoundaryResolved": true,
+    "continuingOryx35PercentInterestSupported": true,
+    "stonepeakCurrentAttributionSupported": true,
+    "qiaCurrentOwnershipResolved": false,
+    "qiaEntryProven": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "exactlyOneRecommendedPrimary": true,
+    "unresolvedItemsAreNoncriticalDisclosureGaps": false,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "applicationBlocked": true,
+  "blockingReasons": [
+    "Qatar Investment Authority's ownership status as of the cutoff remains unresolved.",
+    "Do not apply the ownership after-image or supersede the linked duplicate task until the material current-owner ambiguity is adjudicated."
+  ],
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}
+

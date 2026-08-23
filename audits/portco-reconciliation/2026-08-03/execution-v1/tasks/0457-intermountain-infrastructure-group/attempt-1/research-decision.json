@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0457:intermountain-infrastructure-group:66d1e5b0",
+  "taskIndex": 457,
+  "companyName": "Intermountain Infrastructure Group",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T17:05:48.000Z",
+  "modelDecision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Direct regulatory and company evidence supports Intermountain Infrastructure Group, LLC as a U.S.-canonical fiber owner/operator under Intermountain Holdings LLC. The January 12, 2024 recapitalization brought Wafra and Post Road vehicles into the ownership structure. Current June 2026 company evidence names Wafra as majority shareholder and Future Standard as Post Road's successor institutional backer. Canada is a secondary footprint, all named routes remain beneath the one IIG platform, and no IIG-level realized or signed pending exit was found through August 19, 2026.",
+  "repoReconciliation": {
+    "censusCanonicalKey": "intermountain-infrastructure-group|canada",
+    "recommendedCanonicalKey": "intermountain-infrastructure-group|united-states",
+    "queuedActionTreatment": "CREATE_US_CANONICAL_ACTIVE_COMPANY_WITH_CORRECTED_COUNTRY_AND_TWO_CURRENT_OWNER_PERIODS"
+  },
+  "disclosureLimits": [
+    "Wafra's exact current majority percentage and the mechanics of its post-closing increase are not publicly disclosed.",
+    "Future Standard's exact current percentage after succeeding Post Road is not publicly disclosed.",
+    "Jeffrey Yount's current residual percentage and any other founder interests are not publicly disclosed.",
+    "The public sources do not quantify a dedicated Canadian route or mileage; Canada remains secondary geography only."
+  ],
+  "proposalGuardrails": [
+    "Do not convert the 2024 closing percentage ranges into exact current percentages.",
+    "Use the June 2026 IIG current-owner update as the primary active-ownership citation.",
+    "Preserve Future Standard as successor manager to Post Road's position rather than recording an IIG-level sale.",
+    "Keep Northern Tier, Northern Rockies and other routes as assets beneath the canonical IIG platform."
+  ],
+  "recommendedNextAction": "Generate a protected list proposal that creates or corrects the canonical U.S. company and records current Wafra and Future Standard/Post Road-successor ownership with exact current stakes marked not publicly disclosed.",
+  "databaseMutationAuthorized": false
+}

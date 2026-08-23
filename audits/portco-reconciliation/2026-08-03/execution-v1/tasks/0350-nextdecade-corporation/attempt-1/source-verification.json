@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0350:nextdecade-corporation:a6b7db27",
+  "taskIndex": 350,
+  "verifiedAt": "2026-08-21T12:02:47.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 8,
+    "working": 6,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The XRG source returned HTTP 200 and is independently classified WORKING, replacing the model's INDEX_ONLY;OPEN_TIMEOUT declaration.",
+    "Two NextDecade static-file sources timed out to direct curl but opened at their exact URLs in the signed-in browser and are classified BROWSER_BLOCKED_BUT_VERIFIED."
+  ],
+  "sources": [
+    {"url":"https://www.sec.gov/Archives/edgar/data/1612720/000094787119000953/ss158751_sc13d.htm","finalUrl":"https://www.sec.gov/Archives/edgar/data/1612720/000094787119000953/ss158751_sc13d.htm","httpStatus":200,"mediaType":"text/html","bytes":93673,"sha256":"f40aeed71221fe305358ec05ede4310e9bcd46c48444796a8e19d0680fa18fd8","health":"WORKING"},
+    {"url":"https://nextdecade.gcs-web.com/static-files/9a047404-b88c-4ed6-a0af-c96896ffcc8f","finalUrl":"https://nextdecade.gcs-web.com/static-files/9a047404-b88c-4ed6-a0af-c96896ffcc8f","httpStatus":0,"mediaType":null,"bytes":0,"sha256":null,"health":"BROWSER_BLOCKED_BUT_VERIFIED","browserVerification":{"title":"9a047404-b88c-4ed6-a0af-c96896ffcc8f","exactUrlOpened":true,"browserSnapshotSha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}},
+    {"url":"https://www.investors.next-decade.com/static-files/df3edcc3-aa72-4cd2-8d2d-872a11188191","finalUrl":"https://www.investors.next-decade.com/static-files/df3edcc3-aa72-4cd2-8d2d-872a11188191","httpStatus":0,"mediaType":null,"bytes":0,"sha256":null,"health":"BROWSER_BLOCKED_BUT_VERIFIED","browserVerification":{"title":"Form 8-K for Nextdecade Corp filed 02/03/2023","exactUrlOpened":true,"browserSnapshotSha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}},
+    {"url":"https://www.sec.gov/Archives/edgar/data/1612720/000161272026000018/next-20260423.htm","finalUrl":"https://www.sec.gov/Archives/edgar/data/1612720/000161272026000018/next-20260423.htm","httpStatus":200,"mediaType":"text/html","bytes":886723,"sha256":"2efe8441c99f97aa0060310943392145604ff6d248a19a36bd8bb6542803ac65","health":"WORKING"},
+    {"url":"https://www.sec.gov/Archives/edgar/data/1612720/000143774923023665/ex_555763.htm","finalUrl":"https://www.sec.gov/Archives/edgar/data/1612720/000143774923023665/ex_555763.htm","httpStatus":200,"mediaType":"text/html","bytes":1020069,"sha256":"7ac61230df65beb8e79cbdc3aa2d30aacc86fd56a0fff76dcfce2e642e21aa62","health":"WORKING"},
+    {"url":"https://www.sec.gov/Archives/edgar/data/1612720/000161272025000030/ex1013-3q25.htm","finalUrl":"https://www.sec.gov/Archives/edgar/data/1612720/000161272025000030/ex1013-3q25.htm","httpStatus":200,"mediaType":"text/html","bytes":1386058,"sha256":"ba4331ed14157f11f46ec3df2523c782580b5bb0f13159a1de3489f20222282a","health":"WORKING"},
+    {"url":"https://www.sec.gov/Archives/edgar/data/1612720/000161272025000021/next-20251013.htm","finalUrl":"https://www.sec.gov/Archives/edgar/data/1612720/000161272025000021/next-20251013.htm","httpStatus":200,"mediaType":"text/html","bytes":93793,"sha256":"71347f8f4bffa1b28dda3eb42a49c36b10f2ea8fc6cfd9422a5347164cf9daf3","health":"WORKING"},
+    {"url":"https://xrg.com/en/news/XRG-Strengthens-US-LNG-Position-with-Second-Rio-Grande-LNG-Transaction-Completion","finalUrl":"https://xrg.com/en/news/XRG-Strengthens-US-LNG-Position-with-Second-Rio-Grande-LNG-Transaction-Completion","httpStatus":200,"mediaType":"text/html; charset=utf-8","bytes":42272,"sha256":"4842110b5c874d1523191cbbda32ff4ee682040ac2a5c4195ab61a40942f625a","health":"WORKING"}
+  ]
+}

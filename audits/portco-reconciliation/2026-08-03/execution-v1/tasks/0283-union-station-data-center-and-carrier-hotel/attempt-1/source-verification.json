@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+  "taskIndex": 283,
+  "verifiedAt": "2026-08-20T17:27:08.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 5,
+    "browserBlockedButVerified": 1,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/",
+      "finalUrl": "https://harrisonst.com/wp-content/uploads/2025/06/fifteenfortyseven-Critical-Systems-Realty-and-Harrison-Street-Acquire-the-Union-Station-Data-Center.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 106885,
+      "sha256": "cb979a377ac9f2a0fcbc3a6e87d9c43f74438eb8896e299b1eb11263c08c7dde",
+      "health": "WORKING_REDIRECTED_PDF_TEXT_EXTRACTED",
+      "claimCheck": "Harrison Street's transaction announcement confirms the September 4, 2024 acquisition of Global Access Point Union Station in partnership with 1547."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/south-bend-in-sbin1/",
+      "finalUrl": "https://www.1547realty.com/data-center/south-bend-in-sbin1/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 228926,
+      "sha256": "4d336c851233148fc9cf8c0ae9ef30526095894cead2083da371b992ef826365",
+      "health": "WORKING",
+      "claimCheck": "The live 1547 page confirms current SBIN1 identity, address, operation, facility specifications and expansion capacity."
+    },
+    {
+      "url": "https://docs.southbendin.gov/WebLink/0/edoc/384113/5B8%20Development%20Agreement%20-%20Studebaker%20Admin%20Building%20with%20all%20Exhibits_signed.pdf",
+      "finalUrl": "https://docs.southbendin.gov/WebLink/0/edoc/384113/5B8%20Development%20Agreement%20-%20Studebaker%20Admin%20Building%20with%20all%20Exhibits_signed.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 2462615,
+      "sha256": "c58bafbaafcb1e0d3b15b6e3b6a091cfd706d45581d4e6e119cd4e1d996c1884",
+      "health": "WORKING_TEXT_EXTRACTED",
+      "claimCheck": "South Bend's signed development materials identify the city's $2.43 million acquisition of the Grand Hall and parking lot, supporting their separation from the data-center portion."
+    },
+    {
+      "url": "https://docs.southbendin.gov/WebLink/0/edoc/66644/2016%200302%20rdc%20minutes.pdf",
+      "finalUrl": "https://docs.southbendin.gov/WebLink/0/edoc/66644/2016%200302%20rdc%20minutes.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 173348,
+      "sha256": "d03ccbca78c5afa102a9972096fe3d924d5691b77696edba592531a4f2f57453",
+      "health": "WORKING_VISUALLY_VERIFIED_SCANNED_PDF",
+      "claimCheck": "Rendered minutes identify Union Station, L.P., its 2015 conversion to Union Station Properties LLC and Kevin Smith's continuing guarantor/signatory role."
+    },
+    {
+      "url": "https://www.datacenterdynamics.com/en/news/1547-csr-and-harrison-street-acquire-carrier-hotel-in-south-bend-indiana/",
+      "finalUrl": "https://www.datacenterdynamics.com/en/news/1547-csr-and-harrison-street-acquire-carrier-hotel-in-south-bend-indiana/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseBytes": 5916,
+      "blockedResponseSha256": "95228132fdaf5d5eaa550fd803508c8bacbba20b64dadde67eb7efa80ae8724a",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Independent browser retrieval verifies the SBIN1 alias, GAP/Kevin Smith seller history, 75,000-square-foot and 2.9 MW scale, and the carve-out of the data-center portion from the city's property acquisition."
+    },
+    {
+      "url": "https://lei.report/LEI/254900C6C5S7OIB4PX15/",
+      "finalUrl": "https://lei.report/LEI/254900C6C5S7OIB4PX15/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 12307,
+      "sha256": "a64c7214c0b7f3892192a8e53f1363c5b1815427146fbb9bfd1022bc184d3095",
+      "health": "WORKING",
+      "claimCheck": "The LEI registry page supports the 1547 CSR-South Bend site-entity identity and disclosed parent information."
+    }
+  ]
+}

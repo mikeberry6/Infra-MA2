@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0431:outpost-solar:b3b3fc4c",
+  "checkedAt": "2026-08-22T05:02:55.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks plus page-level extraction from the Repsol half-year report and European Commission decision; Stonepeak, Chinese competition authority, Texas Comptroller, Hecate and live-portfolio inspection; closing and exit search",
+  "sources": [
+    {
+      "url": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/resultados/2026/2t/interim-consolidated-management-report-first-half-2026.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/resultados/2026/2t/interim-consolidated-management-report-first-half-2026.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 3680381,
+      "sha256": "55e5a176bbdaba817fa5e7c2cf33160e193e07d04343cb2825d5fa051b4f4f77",
+      "healthStatus": "WORKING",
+      "verifiedPages": [
+        4,
+        24
+      ],
+      "verifiedClaims": [
+        "Repsol completed the transfer after satisfying the agreement conditions in February 2026",
+        "Stonepeak acquired 43.8% of the 629 MW Outpost solar project for $253 million",
+        "The report distinguishes the completed Outpost sale from later signed but unclosed transactions"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/repsol-advances-its-renewable-energy-strategy-in-the-us-with-a-new-deal-with-stonepeak",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/repsol-advances-its-renewable-energy-strategy-in-the-us-with-a-new-deal-with-stonepeak",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 36798,
+      "sha256": "29f7fba733e98d2a34e1bef492a362b3560c5f1e00fc860db924c57569a37c16",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The transaction was announced December 11, 2025",
+        "Stonepeak agreed to buy 43.8% for $252.5 million",
+        "Outpost is a 629 MW Webb County, Texas solar project that began commercial operation in August 2025 and has a long-term PPA",
+        "The transaction was initially subject to regulatory approvals"
+      ]
+    },
+    {
+      "url": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12192_10864806_83_3.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12192_10864806_83_3.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 115773,
+      "sha256": "c2630c71dca21492f2a7310c1cae6886700e8c9bd29f0217649b1365e47763ed",
+      "healthStatus": "WORKING",
+      "verifiedPages": [
+        1,
+        2
+      ],
+      "verifiedClaims": [
+        "The European Commission cleared the transaction January 15, 2026",
+        "Stonepeak and Repsol Renewables would acquire joint control of Outpost Solar SellCo LLC by share purchase",
+        "The target JV owns and operates the Outpost Project in Webb County, Texas"
+      ]
+    },
+    {
+      "url": "https://scjgj.beijing.gov.cn/ztzl/gpjzyqjc/jyzjzajgs/wtjpzjyzjzajgs/202601/t20260121_4452079.html",
+      "httpStatus": 200,
+      "finalUrl": "https://scjgj.beijing.gov.cn/ztzl/gpjzyqjc/jyzjzajgs/wtjpzjyzjzajgs/202601/t20260121_4452079.html",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 139398,
+      "sha256": "c234426d49308ee786c06135706399c6a8a7cad5d75f293d50f7394ab74ce424",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The Chinese competition-authority list records unconditional approval on January 5, 2026",
+        "The row identifies Stonepeak's acquisition of an equity interest in Outpost Solar SellCo LLC and Repsol Renewables as the counterparty"
+      ]
+    },
+    {
+      "url": "https://comptroller.texas.gov/economy/development/prop-tax/ch313/agreement-docs-details.php?id=1673",
+      "httpStatus": 200,
+      "finalUrl": "https://comptroller.texas.gov/economy/development/prop-tax/ch313/agreement-docs-details.php?id=1673",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 131574,
+      "sha256": "6c9ec3305175a297146378f5e20aac241860773d747e6752cf4704ec4f35d11b",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The Texas project record identifies Hecate Energy Outpost Solar LLC and its United ISD agreement history",
+        "The developer/project SPV is an underlying legal entity rather than evidence of a separate current manager-level platform"
+      ]
+    },
+    {
+      "url": "https://www.hecateenergy.com/projects/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.hecateenergy.com/projects/",
+      "mediaType": "text/html",
+      "bytes": 51217,
+      "sha256": "2921aec46e1ecbd25833d844498f536222ada8b5d703782f8a95ecb9f784a221",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Hecate's live project page does not present Outpost as a current Hecate-owned platform",
+        "The page is contextual developer-origin evidence and not current ownership evidence"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 303186,
+      "sha256": "4f0a72952bb2b8608989bf7b9830cb25487feb19eedc5bf3fd053b964cfd9224",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak's live portfolio page does not list Outpost by name",
+        "The page separately describes the July 2025 Frye and Jicarilla portfolio, so that holding is not merged into Outpost",
+        "The absent live card does not override Repsol's later direct closing evidence"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T05:02:55.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "The announced 43.8% Stonepeak acquisition closed in February 2026. No later cancellation, equity transfer, Stonepeak exit, Repsol exit or signed pending sale was found. The live Stonepeak portfolio page's separate Frye/Jicarilla holding is not Outpost and does not change the Outpost boundary."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButWebVerifiedCount": 0,
+  "responseSourceHealthCorrections": [
+    "Repsol's report is the legal-closing source; the December 2025 Stonepeak announcement remains announcement and operating-context evidence only.",
+    "Repsol's 56.2% retained share is an arithmetic inference from prior sole control plus the disclosed 43.8% transfer and joint-control evidence; it is not a separately stated cap-table percentage and must remain labeled as derived.",
+    "Hecate's live projects page no longer names Outpost and is not treated as current ownership evidence.",
+    "Stonepeak's live portfolio page names the separate Frye/Jicarilla portfolio but not Outpost; the absence does not negate Repsol's subsequent first-party closing report."
+  ],
+  "deadSourceCount": 0
+}
+

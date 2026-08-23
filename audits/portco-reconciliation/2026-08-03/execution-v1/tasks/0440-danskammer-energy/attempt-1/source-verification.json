@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0440:danskammer-energy:5987da36",
+  "checkedAt": "2026-08-22T09:05:18.492Z",
+  "method": "Independent direct HTTP status, final-URL, media-type, byte-length and SHA-256 checks; page-level extraction of court, regulator and system-operator PDFs; indexed-document review of the court-petition mirror; and a subsequent-sale/retirement sweep through the research cutoff",
+  "sources": [
+    {
+      "url": "https://www.tigerinfrastructure.com/portfolio/Danskammer-Energy",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tigerinfrastructure.com/portfolio/Danskammer-Energy",
+      "mediaType": "text/html",
+      "bytes": 42707,
+      "sha256": "b2ac4163e2b92ea509507519f3b3bda4ac1e615f806c71ef38bd123c3dbc7e25",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Tiger continues to publish Danskammer as an Energy-sector portfolio company with a 2017 initial investment",
+        "The page supports the continuing manager relationship but does not by itself establish the current cap table or bankruptcy-sale status"
+      ]
+    },
+    {
+      "url": "https://document.epiq11.com/document/getdocumentbycode?docId=4600729&projectCode=DKK&source=DM",
+      "httpStatus": 200,
+      "finalUrl": "https://document.epiq11.com/document/getdocumentbycode?docId=4600729&projectCode=DKK&source=DM",
+      "mediaType": "application/pdf",
+      "bytes": 694831,
+      "sha256": "956290f95d5344e539b286177f891d2a31ba0bcaebc265091bd16872c286f735",
+      "healthStatus": "WORKING",
+      "pageVerification": [
+        11
+      ],
+      "verifiedClaims": [
+        "The June 2026 bankruptcy schedules identify Danskammer Investments LLC as holder of the Danskammer HoldCo majority membership interests and voting control",
+        "The schedules confirm the controlling holder immediately before and during the Chapter 11 case"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B1D627558-A086-49BB-AC2C-DC1F2B540C23%7D",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B1D627558-A086-49BB-AC2C-DC1F2B540C23%7D",
+      "mediaType": "application/pdf",
+      "bytes": 201020,
+      "sha256": "dd9d6bee4d71dc510990ed330444b433957cff1bde7fc4e7ade0f454ba9a6693",
+      "healthStatus": "WORKING",
+      "pageVerification": [
+        3,
+        4,
+        5
+      ],
+      "verifiedClaims": [
+        "The NYPSC order identifies Danskammer Investments LLC and its direct or indirect ownership by Tiger Infrastructure Partners Fund II Danskammer AIV LP and affiliated Tiger vehicles",
+        "Danskammer Holdings agreed to acquire 100% of the operating-company membership interests from Mercuria's two seller entities",
+        "Mercuria and management were permitted passive sub-10% Buyer Parent interests and Agate held a passive sub-1% interest within Danskammer Investments"
+      ]
+    },
+    {
+      "url": "https://www.pacermonitor.com/public/filings/D4KDIAPA/Danskammer_HoldCo_LLC__debke-26-10950__0001.0.pdf",
+      "httpStatus": 403,
+      "finalUrl": "https://www.pacermonitor.com/public/filings/D4KDIAPA/Danskammer_HoldCo_LLC__debke-26-10950__0001.0.pdf",
+      "mediaType": "text/html",
+      "bytes": 20514,
+      "sha256": "4f4817ee690c07df6a7ee10af1da4aeab38af818f25999a4d06a786cda3a0318",
+      "healthStatus": "BROWSER_BLOCKED_BUT_INDEXED_VERIFIED",
+      "verifiedClaims": [
+        "The indexed petition cap table reports 70,333 total shares and 57,525 shares for Danskammer Investments LLC, or 81.79%",
+        "The petition identifies the remaining named minority holders and their share counts",
+        "Direct automated retrieval returned the publisher's HTML/captcha surface rather than the underlying PDF, so the exact cap table is treated as indexed court-mirror evidence and cross-checked against the Epiq schedules' majority-control disclosure"
+      ]
+    },
+    {
+      "url": "https://document.epiq11.com/document/getdocumentsbydocket/?docketId=1230403&docketNumber=12&projectCode=DKK&source=DM",
+      "httpStatus": 200,
+      "finalUrl": "https://document.epiq11.com/document/getdocumentsbydocket/?docketId=1230403&docketNumber=12&projectCode=DKK&source=DM",
+      "mediaType": "application/pdf",
+      "bytes": 899182,
+      "sha256": "c1b7d477f83493293ae8f10a2deed5f26e5ade96f2fbbbee5ee9fdcd201f5f36",
+      "healthStatus": "WORKING",
+      "pageVerification": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        12,
+        14,
+        15,
+        19,
+        21
+      ],
+      "verifiedClaims": [
+        "The debtor chain filed Chapter 11 on June 10, 2026 and Danskammer Energy directly owns the 532 MW nameplate Newburgh generating station",
+        "The declaration reconstructs the predecessor ownership, 2017 acquisition, repowering project, April 2025 purchase-debt forgiveness, proposed retirement and continuing plant operations",
+        "The debtors pursued an orderly court-supervised Section 363 sale of substantially all assets while continuing to operate the generating station",
+        "The repowering was not built and the operating legacy plant remains the qualifying infrastructure asset"
+      ]
+    },
+    {
+      "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 2666002,
+      "sha256": "43865c1cbe38ca2ef4c8319d11454881de2b9dde3e48867dbbd2e94855b908bf",
+      "healthStatus": "WORKING",
+      "pageVerification": [
+        93,
+        134
+      ],
+      "verifiedClaims": [
+        "NYISO lists four Danskammer units with 532 MW aggregate nameplate capacity",
+        "The unit rows support 511.1 MW aggregate CRIS and 493.5 MW summer and 502.8 MW winter dependable capability",
+        "The units are steam generators fueled by natural gas, with residual-oil backup shown for Units 1 and 2"
+      ]
+    },
+    {
+      "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q2-STAR-Report-vFinal.pdf/6c152ed8-9e77-e47d-3367-f6815bc1c0cd?t=1784056702794",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nyiso.com/documents/20142/16004172/2026-Q2-STAR-Report-vFinal.pdf/6c152ed8-9e77-e47d-3367-f6815bc1c0cd?t=1784056702794",
+      "mediaType": "application/pdf",
+      "bytes": 5390464,
+      "sha256": "e8818812c30485a9090923e69a900321225bd461e4e2ef6aa241025069c63c9c",
+      "healthStatus": "WORKING",
+      "pageVerification": [
+        4,
+        7,
+        26,
+        32
+      ],
+      "verifiedClaims": [
+        "Danskammer Units 1 through 4 could not deactivate on August 1, 2026 and were required to remain in service through at least January 15, 2027 absent earlier permanent solutions",
+        "The units became an Interim Service Provider compensated under an ISP rate beginning August 1, 2026"
+      ]
+    }
+  ],
+  "supplementalChecks": [
+    {
+      "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/582611_Danskammer_Press_Release_-_2017_09_14.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 307430,
+      "sha256": "d12eebbcbf6a3fe9a7e4fd6208a4aa6ea74fe9a680315ade51e1dcd1d9ae05e2",
+      "verifiedClaims": [
+        "Tiger announced the agreement on September 14, 2017 and identified Mercuria as seller, Agate Power as partner and the plant as a 500 MW NYISO Lower Hudson Valley facility"
+      ]
+    },
+    {
+      "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/585120_153_-_Danskammer_Press_Release_at_Closing_12-27-17_Final.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 114438,
+      "sha256": "132c877c439ccb7396c2c6380e57c2fce8d02f0673ca0baae41b7077669906d2",
+      "verifiedClaims": [
+        "Tiger announced legal closing on December 27, 2017 and again identified Agate Power as its investment partner"
+      ]
+    },
+    {
+      "url": "https://dec.ny.gov/news/press-releases/2021/10/statement-from-dec-commissioner-basil-seggos-on-denial-of-the-title-v-permit-for-the-danskammer-energy-center",
+      "httpStatus": 200,
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "NYSDEC denied the proposed Danskammer Energy Center's required Title V permit on October 27, 2021"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T09:05:18.492Z",
+    "scopeThrough": "2026-08-19",
+    "result": "The June 2026 Epiq court record shows a Section 363 sale process, but no public buyer, sale order, legal close, permanent retirement or completed Tiger transfer was identified by the cutoff. Tiger therefore remains the controlling current sponsor, the undisclosed buyer is not activated, and the outbound transaction remains visibly pending."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "responseSourceHealthCorrections": [
+    "The PacerMonitor cap-table URL resolves to an HTML/captcha surface for automated access and returns 403 through the browser fetch, so it is classified as browser-blocked but indexed and cross-verified rather than OPEN.",
+    "The exact 81.79% is a June 2026 petition cap-table figure; it should not be misdescribed as the percentage Tiger acquired in 2017 or as Fund II's internal economic allocation.",
+    "Mercuria sold the operating-company interests in 2017 but retained a passive HoldCo minority interest, so it is not treated as a full historical exit from the ownership chain.",
+    "The Section 363 process had no public buyer or close by the cutoff and therefore does not retire Tiger or activate a successor owner.",
+    "The denied and withdrawn 536 MW net repowering proposal is kept beneath Danskammer and excluded from operating capacity; the current 532 MW figure refers to the four legacy units."
+  ],
+  "deadSourceCount": 0
+}

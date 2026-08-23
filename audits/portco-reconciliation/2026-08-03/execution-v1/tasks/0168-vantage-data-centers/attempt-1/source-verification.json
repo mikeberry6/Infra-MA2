@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0168:vantage-data-centers:6c26d26a",
+  "taskIndex": 168,
+  "companyName": "Vantage Data Centers",
+  "verifiedAt": "2026-08-19T06:58:02.879Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1679688/000167968820000044/cny8-k07072020ex101.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1679688/000167968820000044/cny8-k07072020ex101.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "f4631b9c182cd72557a1a116dc5d2be03f88633690311a55fe0af17462954e6a",
+      "note": "SEC filing blocked curl but opened in the independent browser and displayed the executed investment agreement."
+    },
+    {
+      "url": "https://vantage-dc.com/news/vantageacquired/",
+      "finalUrl": "https://vantage-dc.com/news/vantageacquired/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 196765,
+      "contentSha256": "a8c9429c8d3936425633a30d76f762ca4e3acad6ad0d69c557ed5e618c3c67cb",
+      "note": "Vantage acquisition page opened directly."
+    },
+    {
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-completes-deconsolidation-vantage-sdc/",
+      "finalUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-completes-deconsolidation-vantage-sdc/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 501,
+      "contentSha256": "3d3a8861f3a04d50d2b6f0ba43e53f602e5b45c9b6b6eac6b002af6659b65add",
+      "note": "DigitalBridge page blocked curl but independently opened in the browser."
+    },
+    {
+      "url": "https://vantage-dc.com/news/vantage-data-centers-completes-9-2-billion-equity-investment-led-by-digitalbridge-and-silver-lake/",
+      "finalUrl": "https://vantage-dc.com/news/vantage-data-centers-completes-9-2-billion-equity-investment-led-by-digitalbridge-and-silver-lake/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 197565,
+      "contentSha256": "edf77c458578ee9a36076ff16bd2d0b0c527359c00eae1dc42cbb1c67e782289",
+      "note": "Vantage 2024 recapitalization page opened directly."
+    },
+    {
+      "url": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/investment-in-north-america-data-centre-business/7152044",
+      "finalUrl": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/investment-in-north-america-data-centre-business/7152044",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 56538,
+      "contentSha256": "020e7de823ce14118e6304de6b6e210e75b960b2f9d0b60a35aa4aa033ca870c",
+      "note": "Pantheon investment announcement opened directly."
+    },
+    {
+      "url": "https://annualreport.pantheoninfrastructure.com/",
+      "finalUrl": "https://annualreport.pantheoninfrastructure.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 628281,
+      "contentSha256": "58922e2a424a0abdfbfa87b76af1466fbdd3df20ff81612bcf033f741b6c35a3",
+      "note": "Pantheon annual report site opened directly."
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/psp-investments-completes-sale-of-majority-of-its-investment-in-vantage-data-centers/",
+      "finalUrl": "https://www.investpsp.com/en/news/psp-investments-completes-sale-of-majority-of-its-investment-in-vantage-data-centers/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 31772,
+      "contentSha256": "bb2fb58ca23211f02060b2bc4e73fc4ab39ce1d02f6bdee2131844dc31944229",
+      "note": "PSP majority-sale page opened directly."
+    },
+    {
+      "url": "https://www.investpsp.com/en/investors/",
+      "finalUrl": "https://www.investpsp.com/en/investors/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 57842,
+      "contentSha256": "fa8ba8b15fb5eb74cc991b07dac6eb01f3d807ece2dcc86da39a9e0268c5caf9",
+      "note": "PSP current-investors page opened directly."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Apply only after resolving the canonical owner-period treatment and preserving disclosed investor distinctions without inventing stakes, vehicles or closing dates."
+}

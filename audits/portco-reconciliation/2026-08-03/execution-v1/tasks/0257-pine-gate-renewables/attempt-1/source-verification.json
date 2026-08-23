@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0257:pine-gate-renewables:2f4fe856",
+  "taskIndex": 257,
+  "companyName": "Pine Gate Renewables",
+  "verifiedAt": "2026-08-20T08:39:41.624Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://pinegaterenewables.com/pine-gate-renewables-announces-a-650-million-total-investment-from-generate-capital-healthcare-of-ontario-pension-plan-and-hesta/",
+      "finalUrl": "https://pinegaterenewables.com/pine-gate-renewables-announces-a-650-million-total-investment-from-generate-capital-healthcare-of-ontario-pension-plan-and-hesta/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 84441,
+      "contentSha256": "13a8c333fc983afa8e76756e87d7b6aba6f0efb387ba861d26ccd2f29ce2e06f",
+      "browserVerified": false,
+      "note": "Official company announcement supports the April 2024 $650 million investment by Generate, HOOPP and HESTA, but public text does not disclose the equity/preferred/asset-financing allocation or percentages."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20220623005332/en/Generate-Capital-Provides-Pine-Gate-Renewables-with-%24500-Million-in-Strategic-Growth-Capital-and-Asset-Financing-to-Expand-Utility-Scale-Solar",
+      "finalUrl": "https://www.businesswire.com/news/home/20220623005332/en/Generate-Capital-Provides-Pine-Gate-Renewables-with-%24500-Million-in-Strategic-Growth-Capital-and-Asset-Financing-to-Expand-Utility-Scale-Solar",
+      "status": "BROWSER_BLOCKED_MODEL_OPENED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 716,
+      "contentSha256": "8b68f422f4fc85e39ce5b9373612c79ea89862c96061e301dd13d2b365a6f0d0",
+      "browserVerified": false,
+      "note": "Direct curl returned 403 and the independent in-app tab was blank. ChatGPT opened the source during research; treat it as blocked rather than dead. It supports mixed strategic growth capital and asset financing, not a clean common-equity stake."
+    },
+    {
+      "url": "https://www.kirkland.com/news/press-release/2024/04/kirkland-advises-generate-capital-in-investment-in-pine-gate-renewables",
+      "finalUrl": "https://www.kirkland.com/news/press-release/2024/04/kirkland-advises-generate-capital-in-investment-in-pine-gate-renewables",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4546,
+      "contentSha256": "12a166cc92382be3669edf93fe02500b0e4c1c411824cda63126fca952a0d70a",
+      "browserVerified": true,
+      "note": "Direct curl returned 403, while the in-app browser loaded the counsel release and visibly contained Pine Gate and the $650 million amount."
+    },
+    {
+      "url": "https://www.pgrsaleprocess.com/",
+      "finalUrl": "https://www.pgrsaleprocess.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 40330,
+      "contentSha256": "9219ccd8e797cf61d76693aa84c896822ba42ae2c2161399fb5e5c818ba1d736",
+      "browserVerified": true,
+      "note": "Official sale-process site confirms the Chapter 11 strategic sale process, platform scale and transfer context."
+    },
+    {
+      "url": "https://cases.omniagentsolutions.com/?clientId=3751",
+      "finalUrl": "https://cases.omniagentsolutions.com/?clientId=3751",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5603,
+      "contentSha256": "b02512dcaca6ac041528d23040da2dfcbc1afc89ab9ffcc197641d2bdb876a75",
+      "browserVerified": true,
+      "note": "Direct curl returned 403, while the in-app browser loaded the Pine Gate restructuring docket and plan interface. Exact purchaser identities are not exposed in the returned packet."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "httpBlockedCount": 3,
+    "browserFallbackCount": 2,
+    "primarySourceWorking": true,
+    "chapter11SaleProcessVerified": true,
+    "prepetitionSponsorOwnershipEndSupported": true,
+    "postConfirmationPurchasersIdentified": false,
+    "postSaleCanonicalPlatformBoundaryResolved": false,
+    "ownerArrayClosingDatesAligned": false,
+    "hestaDirectVersusManagedExposureResolved": false,
+    "identityResolved": true,
+    "activeOwnershipResolved": false,
+    "applicationBlocked": true
+  },
+  "modelEvidenceCorrections": [
+    "Retire Generate, HOOPP and HESTA as prepetition owners no later than plan effectiveness, but do not encode the model's announcement dates as legal closing dates without the regulatory evidence it referenced.",
+    "Do not create an active owner named only as an unresolved secured-lender purchaser group; identify the legal purchaser/platform first or mark the legacy Pine Gate entity realized.",
+    "Resolve whether the sold operating and development businesses continue as one canonical Pine Gate platform or were split among buyers before assigning current ownership.",
+    "Clarify whether HESTA held direct Pine Gate equity or exposure through a Generate-managed vehicle."
+  ],
+  "releaseRequirement": "Pause list application pending direct plan/order evidence that pins the purchaser entities and post-sale company boundary. The existing Generate-only active owner record is stale, but the correct current canonical owner/state is not yet resolved."
+}

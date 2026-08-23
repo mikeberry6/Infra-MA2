@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+  "taskIndex": 250,
+  "companyName": "MedCraft Medical Outpatient Portfolio",
+  "verifiedAt": "2026-08-20T07:03:54.403Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+      "finalUrl": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 58768,
+      "contentSha256": "2c6e0c61bc1bf2eccf30e2dd34b22cec05561ab32400b373c666cc536325303d",
+      "note": "Fengate's direct release verifies the September 2025 acquisition of 24 outpatient facilities across two states, more than 900,000 square feet, the first Fengate-MedCraft joint venture acquisition, and management for infrastructure investors and affiliated entities including a LiUNA pension fund. It does not attribute this portfolio to Fengate Infrastructure Fund IV."
+    },
+    {
+      "url": "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/",
+      "finalUrl": "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 293514,
+      "contentSha256": "45136f421b58a442d4ec63dae1ef087628c778825538c5b02dd7adf640ccd1a2",
+      "note": "The transaction report identifies Cleveland Clinic as seller and continuing long-term tenant, MedCraft as buyer, 24 properties, location-specific affiliates including FG MC II entities, transfer activity beginning September 4, 2025 and transaction financing."
+    },
+    {
+      "url": "https://wolfmediausa.com/2025/09/09/transactions-medcraft-buys-a-system-portfolio-for-an-estimated-300-million/",
+      "finalUrl": "https://wolfmediausa.com/2025/09/09/transactions-medcraft-buys-a-system-portfolio-for-an-estimated-300-million/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 41043,
+      "contentSha256": "1ff6552af73440ac623b95dcabb5a083dea432102a36716e8702493d2ddd3edb",
+      "note": "Healthcare Real Estate Insights reports 24 medical outpatient buildings totaling approximately 947,000 square feet, an estimated $300 million price and CBRE brokerage."
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResults?ListNameOrder=FGMCGM+L180001461780&inquiryDirectionType=CurrentList&inquiryType=EntityName&searchNameOrder=FGMCGM+L180001461780&searchTerm=FG+LAGUNA+TECH+INC",
+      "finalUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResults?ListNameOrder=FGMCGM+L180001461780&inquiryDirectionType=CurrentList&inquiryType=EntityName&searchNameOrder=FGMCGM+L180001461780&searchTerm=FG+LAGUNA+TECH+INC",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 6330,
+      "contentSha256": "dd72d9f15f585ee471b17c1bf754ec2f70ebb631f32bf2c8dce7fc052b9fd6e1",
+      "browserVerified": true,
+      "browserTitle": "Search Records",
+      "note": "Direct curl is blocked, but the official Florida registry loaded in the in-app browser and showed active FG MC II Hobe Sound, Port St Lucie, Stuart and Vero Beach LLC records."
+    },
+    {
+      "url": "https://myplace.cuyahogacounty.gov/NTgzMTQwMTE%3D?city=OTk%3D&dataRequested=UHJvcGVydHkgU3VtbWFyeSBSZXBvcnQ%3D&searchBy=UGFyY2Vs",
+      "finalUrl": "https://myplace.cuyahogacounty.gov/NTgzMTQwMTE%3D?city=OTk%3D&dataRequested=UHJvcGVydHkgU3VtbWFyeSBSZXBvcnQ%3D&searchBy=UGFyY2Vs",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 128090,
+      "contentSha256": "4a06a75697f1d5d766f7be6a199ab15b99d1de3fb8ec4bdf9b0fcc6ab4c93bee",
+      "note": "The county property record identifies FG MC II Broadview Heights LLC as current owner and a September 12, 2025 transfer from Cleveland Clinic Foundation."
+    },
+    {
+      "url": "https://fengate.com/news/fengate-acquires-16-medical-outpatient-facilities-in-the-united-states",
+      "finalUrl": "https://fengate.com/news/fengate-acquires-16-medical-outpatient-facilities-in-the-united-states",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 59079,
+      "contentSha256": "7e0ec1db816903d1201a8bbe09bdc232c57240913d2c30fc95e05bf529399637",
+      "note": "Fengate's direct release verifies that the 16-facility, 10-state Montecito partnership is a separate Fund IV portfolio and must not be merged into the 24-facility Cleveland Clinic portfolio."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 1,
+    "primarySourceWorking": true,
+    "closedSaleLeasebackVerified": true,
+    "fengateAndMedCraftJointOwnershipVerified": true,
+    "clevelandClinicFormerOwnerAndCurrentTenantVerified": true,
+    "twentyFourPropertyScopeVerified": true,
+    "montecitoPortfolioSeparated": true,
+    "managerLevelStakesPubliclyDisclosed": false,
+    "exactFundPubliclyDisclosed": false,
+    "completeAssetRosterPubliclyDisclosed": false,
+    "laterExitOrPendingTransactionNotFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Do not attribute the 24-facility Cleveland Clinic portfolio to Fengate Infrastructure Fund IV; the direct manager release only supports infrastructure-investor and LiUNA-affiliate attribution.",
+    "Keep the 24-facility Fengate-MedCraft portfolio separate from the 16-facility Fengate-Montecito Fund IV portfolio.",
+    "Treat Cleveland Clinic Foundation and title affiliates as former fee owners and continuing tenants/operators, not as current equity owners.",
+    "Do not infer manager-level ownership percentages from property-company records, and retain the one-facility roster gap as a noncritical disclosure limitation."
+  ],
+  "releaseRequirement": "Align the one existing production company and one seed record to the Fengate-MedCraft Cleveland Clinic outpatient portfolio, with Fengate and MedCraft as current owners at undisclosed stakes, Cleveland Clinic as former fee owner and continuing tenant/operator, a 2025 closed-active state, and no pending ownership transaction."
+}

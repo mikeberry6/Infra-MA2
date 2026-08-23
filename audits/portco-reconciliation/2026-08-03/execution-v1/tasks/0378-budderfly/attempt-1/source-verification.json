@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0378:budderfly:719981ef",
+  "checkedAt": "2026-08-21T20:44:50.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; independent indexed SEC filing verification; PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=cb7dc74e-032f-4f1d-8a48-bf3c85e01b9b",
+      "httpStatus": 200,
+      "finalUrl": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=cb7dc74e-032f-4f1d-8a48-bf3c85e01b9b",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 75979,
+      "sha256": "ab7ee5b611334791b3838c4bc131304ffb598541ad7e01f1d05219532e9d5317",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1447247/000139834426010605/fp0098460-3_ncsr.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1447247/000139834426010605/fp0098460-3_ncsr.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "9d03dad9dc7e906b319ccf1acd352f51fcc952e69bae8b63303cca214ede901c",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct curl was blocked, but the exact SEC filing was independently indexed; the schedule lists Encore Holdings LP common equity acquired 2022-07-01 and a later LP interest."
+    },
+    {
+      "url": "https://www.budderfly.com/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.budderfly.com/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 260489,
+      "sha256": "519dce171f0d8b70969b22bb6af9aa0bd62806f5f4304b9a97483931fad3bc52",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.edisonpartners.com/blog/edison-partners-successfully-exits-energy-industry-disruptor-budderfly",
+      "httpStatus": 200,
+      "finalUrl": "https://www.edisonpartners.com/blog/edison-partners-successfully-exits-energy-industry-disruptor-budderfly",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 79405,
+      "sha256": "681dc911c74d80246d1c24135b00e3faf72b68851f413ff75cfd84af057373c2",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.balancepointcapital.com/news-article/balance-point-capital-announces-its-investment-in-budderfly-inc",
+      "httpStatus": 200,
+      "finalUrl": "https://www.balancepointcapital.com/news-article/balance-point-capital-announces-its-investment-in-budderfly-inc",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 11925,
+      "sha256": "052cf1589ad3b8d1dacf03185d64105ead87a3162a914fb06c9ad0f668375c9c",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://ctinnovations.com/wp-content/uploads/2023/12/08-08-2024-Eli-InvMinutes-Final-signed.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://ctinnovations.com/wp-content/uploads/2023/12/08-08-2024-Eli-InvMinutes-Final-signed.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 192884,
+      "sha256": "13f350bc5d87cfb0feb40687e6da0fb94a514e5b8423b8a43883bb62a9e7d26f",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 4,
+        "relevantPdfPage": 2,
+        "verifiedClaims": [
+          "Encore Holdings, LLP dba Budderfly, Inc. identity",
+          "Connecticut Innovations investment history and 2024 follow-on approval"
+        ],
+        "renderedPageInspected": true
+      }
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}
+

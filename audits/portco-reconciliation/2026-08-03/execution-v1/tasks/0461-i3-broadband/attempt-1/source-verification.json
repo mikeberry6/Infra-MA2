@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0461:i3-broadband:2d53909b",
+  "taskIndex": 461,
+  "companyName": "i3 Broadband",
+  "verifiedAt": "2026-08-22T17:50:55.000Z",
+  "summary": {
+    "modelCitationUrls": 3,
+    "working": 1,
+    "dead": 2,
+    "replacementWorkingUrls": 3,
+    "materialModelCorrections": 0,
+    "sourceUrlOverrides": 2
+  },
+  "sources": [
+    {
+      "label": "Model-cited T-Mobile URL",
+      "url": "https://www.t-mobile.com/news/network/t-mobile-fiber-i3-broadband",
+      "httpStatus": 404,
+      "observedStatus": "DEAD_REPLACE",
+      "verificationMethod": "direct HTTP request",
+      "note": "The model's URL does not exist and must not be persisted."
+    },
+    {
+      "label": "T-Mobile definitive JV announcement",
+      "url": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct official transaction page",
+      "note": "The April 28, 2026 release says T-Mobile signed a 50/50 JV with Wren House to acquire i3, expects to invest approximately $700 million for a 50% equity interest at a targeted second-half 2026 closing, and describes the post-close wholesale model. Use this as the primary pending-transaction source."
+    },
+    {
+      "label": "Model-cited Wren House portfolio URL",
+      "url": "https://wrenhouseinfra.com/portfolio/i3-broadband/",
+      "httpStatus": 404,
+      "observedStatus": "DEAD_REPLACE",
+      "verificationMethod": "direct HTTP request",
+      "note": "The former portfolio-detail URL is dead and must be replaced."
+    },
+    {
+      "label": "Wren House digital-infrastructure portfolio",
+      "url": "https://wrenhouseinfra.com/our-investment-philosophy/digital/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct current manager page",
+      "note": "Wren House currently presents i3 as a portfolio highlight and a U.S. FTTH operator serving Illinois, Missouri and Rhode Island."
+    },
+    {
+      "label": "Wren House team and board roles",
+      "url": "https://wrenhouseinfra.com/about/meet-our-team/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct current manager page",
+      "note": "The current team page identifies two Wren House professionals as i3 board directors, corroborating continuing ownership and governance."
+    },
+    {
+      "label": "FCC Big River transfer notice",
+      "url": "https://docs.fcc.gov/public/attachments/DA-23-207A1.pdf",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct official PDF",
+      "note": "Supports the i3 ownership chain, Wren House control and treatment of i3 Circle and Big River as subsidiaries beneath the platform. The PDF is the durable equivalent of the model-cited DOCX."
+    }
+  ],
+  "conclusion": "The VERIFIED_NO_CHANGE decision is supported with source substitutions. Wren House remains the current legal owner; T-Mobile's April 28, 2026 agreement is a signed incoming 50% JV interest with a targeted second-half 2026 closing, and no closing evidence was found through August 19. The model's T-Mobile and Wren House URLs are both 404 and must be replaced by the working official pages above. The accepted packet's 2020 Wren House entry year is not directly established by its cited evidence and should remain unmodified unless a proposal reopens a direct entry source."
+}

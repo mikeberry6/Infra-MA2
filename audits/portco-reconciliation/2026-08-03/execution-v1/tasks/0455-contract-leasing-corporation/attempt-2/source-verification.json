@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+  "taskIndex": 455,
+  "companyName": "Contract Leasing Corporation",
+  "verifiedAt": "2026-08-22T22:27:14.000Z",
+  "summary": {
+    "modelCitationUrls": 5,
+    "working": 3,
+    "browserBlockedButVerified": 2,
+    "dead": 0,
+    "materialModelCorrections": 0
+  },
+  "sources": [
+    {
+      "label": "2022 acquisition release",
+      "url": "https://www.contractleasing.net/contract-leasing-corporation-announces-acquisition-by-wafra/",
+      "finalUrl": "https://www.contractleasing.net/contract-leasing-corporation-announces-acquisition-by-wafra/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 634085,
+      "contentSha256": "18700f6a975070adcf59936baa98d665820c7d088bc163189774863eb7a40b60",
+      "observedStatus": "WORKING",
+      "note": "Direct company release supports the Wafra acquisition, Michael Goor's retained significant interest, and the 15,700-unit/13-location acquisition baseline."
+    },
+    {
+      "label": "Wafra Real Assets & Infrastructure",
+      "url": "https://www.wafra.com/our-strategies/real-assets/",
+      "finalUrl": "https://www.wafra.com/our-strategies/real-assets/",
+      "httpStatus": 403,
+      "mediaType": "browser-rendered text/html",
+      "byteLength": 173139,
+      "contentSha256": "c52681a388f01678239692797914b63544c54af1548b7c1bf1527da8da63a062",
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "note": "Direct curl was denied, but the signed-in browser rendered Wafra's Real Assets & Infrastructure strategy and current portfolio context including CLC."
+    },
+    {
+      "label": "Wafra Edward Tsai bio",
+      "url": "https://www.wafra.com/our-people/edward-tsai/",
+      "finalUrl": "https://www.wafra.com/our-people/edward-tsai/",
+      "httpStatus": 403,
+      "mediaType": "browser-rendered text/html",
+      "byteLength": 171441,
+      "contentSha256": "ea81e49e9960fad8cac6b0397bc96db285e578c7d3e8f463632209238ebc83c9",
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "note": "Direct curl was denied, but the browser rendered the current Wafra biography naming Edward Tsai as head of Real Assets and Infrastructure and a current CLC director."
+    },
+    {
+      "label": "CLC president letter",
+      "url": "https://www.contractleasing.net/about/letter-from-the-president/",
+      "finalUrl": "https://www.contractleasing.net/about/letter-from-the-president/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 128386,
+      "contentSha256": "1d0d84a48179b581b0dae07e8d71a727a9880bfb49c47889cee11ec1a6367d07",
+      "observedStatus": "WORKING_CURRENT",
+      "note": "Current company letter supports Michael Goor's President/CEO role and identifies Wafra as CLC's equity partner."
+    },
+    {
+      "label": "CLC 2024 release",
+      "url": "https://www.contractleasing.net/contract-leasing-corporation-announces-joe-hite-as-svp-of-business-development/",
+      "finalUrl": "https://www.contractleasing.net/contract-leasing-corporation-announces-joe-hite-as-svp-of-business-development/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 633185,
+      "contentSha256": "8e1bb9cc1f1a5a4de040577e10e73634e49b74cba4773e45de7717702cc1a721",
+      "observedStatus": "WORKING",
+      "note": "Direct January 2024 company release supports the 18,000-unit fleet, 13 locations and Michael Goor identity."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "Both Wafra pages are browser-blocked to curl but rendered and were independently verified in the signed-in browser."
+  ],
+  "conclusion": "Direct CLC and Wafra evidence supports one active Wafra real-assets/infrastructure portfolio company, the correct Michael Goor identity, an acquisition baseline of 15,700 units and a latest directly sourced January 2024 count of 18,000 units."
+}

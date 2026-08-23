@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0388:firstlight-usa-llc:61bc946d",
+  "checkedAt": "2026-08-21T22:01:28.895Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; official FTC index verification for a direct page blocked to curl; PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.investpsp.com/en/news/psp-investments-announces-sale-of-firstlights-us-portfolio-to-hull-street-energy/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.investpsp.com/en/news/psp-investments-announces-sale-of-firstlights-us-portfolio-to-hull-street-energy/",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 32789,
+      "sha256": "3abfc5982785003a9e5f6d96c6e91a98281f91a18a00c2a8f7912d7dc8f259aa",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "PSP signed an agreement on May 19, 2026 to sell FirstLight's U.S. operations to Hull Street Energy",
+        "The sale remained subject to customary regulatory approvals and excluded the Canadian platform"
+      ]
+    },
+    {
+      "url": "https://hullstreetenergy.com/blog/hull-street-energy-to-acquire-firstlights-u-s-generation-fleet/",
+      "httpStatus": 200,
+      "finalUrl": "https://hullstreetenergy.com/blog/hull-street-energy-to-acquire-firstlights-u-s-generation-fleet/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 79103,
+      "sha256": "d228a31079a491da5446285c9f4e01da1d6e53daaaa6b9849c06e84f6cabf49d",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261658",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261658",
+      "mediaType": "text/html",
+      "bytes": 479,
+      "sha256": "a8070ef7ad529005ce4d22fbd79aa5c0090ffaaf93e7f04d7715f16c52ebf7bb",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserVerification": {
+        "verified": true,
+        "verificationUrl": "https://www.ftc.gov/legal-library/browse/early-termination-notices?page=4",
+        "verifiedClaims": [
+          "FTC early-termination notice 20261658 dated June 30, 2026 identifies Hull Street Energy Partners III, L.P. as acquirer, FirstLight Holding Inc. as acquired party and PSP FL USA LLC as acquired entity"
+        ]
+      }
+    },
+    {
+      "url": "https://nepool.com/wp-content/uploads/2026/08/Lit_Report_20260805.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://nepool.com/wp-content/uploads/2026/08/Lit_Report_20260805.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 1151039,
+      "sha256": "ae381a849367f626d4b888aba7e2d4ad82b38c99ba3a02255aa67a89e53f57bf",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 53,
+        "relevantPdfPages": [
+          33
+        ],
+        "verifiedClaims": [
+          "Hull Street affiliate HSE FirstLight sought to acquire 100% of PSP FL USA LLC",
+          "As of August 5, 2026, FERC EC26-110 remained pending"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/psp-investments-to-acquire-1-4gw-hydroelectric-assets-in-new-england/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.investpsp.com/en/news/psp-investments-to-acquire-1-4gw-hydroelectric-assets-in-new-england/",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 31306,
+      "sha256": "48d1e7d759094c87eb3a9a801a8f9a8420b1ad959d55dadb41e700f743181e1a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "PSP announced the definitive acquisition from ENGIE on February 25, 2016 for US$1.2 billion enterprise value"
+      ]
+    },
+    {
+      "url": "https://nepool.com/wp-content/uploads/2021/01/Lit_Report_20160701.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://nepool.com/wp-content/uploads/2021/01/Lit_Report_20160701.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 488541,
+      "sha256": "f1f4a2bb12a8b27808b95d03b76ae3e8c1e429a016b020498ce4537990c54f00",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 48,
+        "relevantPdfPages": [
+          25,
+          26
+        ],
+        "verifiedClaims": [
+          "FERC authorized transfer of FirstLight control to PSP H2O FL USA LLC",
+          "PSP reported that the transfer closed June 1, 2016"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/firstlight-power-enterprises-inc",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ecpgp.com/equity/portfolio/firstlight-power-enterprises-inc",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 38381,
+      "sha256": "d6afa083dffe02e9a9741bfe0ff7b25d04bcf80c673a81ecaa0574e5b6604d1a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "ECP created FirstLight Power in November 2006 through Energy Capital Partners I",
+        "The portfolio was sold to GDF SUEZ in December 2008"
+      ],
+      "fieldPrecisionCorrection": "The page does not support an exact November 1, 2006 investment date."
+    },
+    {
+      "url": "https://www.engie.com/sites/default/files/assets/documents/2021-03/gdf-suez-ddr08-vus-interactif1_Part2_0.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.engie.com/sites/default/files/assets/documents/2021-03/gdf-suez-ddr08-vus-interactif1_Part2_0.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 4941835,
+      "sha256": "d855c818da9552cbf38ed576ba2477db07d234aa9eb7f46f0ac227800a65b973",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 194,
+        "relevantPdfPages": [
+          126
+        ],
+        "verifiedClaims": [
+          "GDF SUEZ completed its acquisition of FirstLight from Energy Capital Partners on December 29, 2008",
+          "FirstLight was fully consolidated from December 31, 2008"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://firstlight.energy/contact-us/",
+      "httpStatus": 200,
+      "finalUrl": "https://firstlight.energy/contact-us/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 79255,
+      "sha256": "7795eff4c0605dbd9624182351fd12301480e1e6ea9d9ceb4d91f6ba3a56e0c2",
+      "healthStatus": "WORKING",
+      "supplemental": true,
+      "verifiedClaims": [
+        "FirstLight's U.S. office is at 100 District Avenue, Suite 102, Burlington, Massachusetts"
+      ]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

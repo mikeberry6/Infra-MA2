@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0417:bp-u-s-transportation-and-delivery-midstream-jv:d68b70ef",
+  "checkedAt": "2026-08-22T01:37:12.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; web-parser verification of blocked SEC, federal-court and FERC pages; direct manager and secondary-source inspection; acquisition-and-exit search",
+  "sources": [
+    {
+      "url": "https://sixthstreet.com/energy-renewables-infrastructure/",
+      "httpStatus": 200,
+      "finalUrl": "https://sixthstreet.com/energy-renewables-infrastructure/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 84502,
+      "sha256": "286332e637992ea27bcc0128aae4c7e096671deb47564911a0b3f27ec9a20e95",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Sixth Street currently lists US Energy Logistics as a select investment",
+        "The page describes a $700 million new JV platform with an energy major for core U.S. midstream logistics assets"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/313807/000165495421004651/a6518w.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/313807/000165495421004651/a6518w.htm",
+      "mediaType": "text/html",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_PARSER_VERIFIED",
+      "verifiedClaims": [
+        "BP disclosed $675 million of proceeds from a first-quarter 2021 sale of a 49% interest in a controlled affiliate holding refined-product and crude-logistics assets onshore U.S.",
+        "The controlled-affiliate treatment supports BP retaining 51% and control"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/313807/000031380723000027/a30092023bp6kq3.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/313807/000031380723000027/a30092023bp6kq3.htm",
+      "mediaType": "text/html",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_PARSER_VERIFIED",
+      "verifiedClaims": [
+        "BP disclosed $517 million of 2023 proceeds from another 49% sale in a controlled affiliate holding U.S. onshore midstream assets"
+      ]
+    },
+    {
+      "url": "https://law.justia.com/cases/federal/district-courts/washington/wawdce/2%3A2025cv01190/349738/72/",
+      "httpStatus": 403,
+      "finalUrl": "https://law.justia.com/cases/federal/district-courts/washington/wawdce/2%3A2025cv01190/349738/72/",
+      "mediaType": "text/html; charset=UTF-8",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_PARSER_VERIFIED",
+      "verifiedClaims": [
+        "A 2025 federal court order identifies BP Midwest Product Pipelines Holdings LLC and Lerado Investments, LLC in the ownership chain above Olympic Pipe Line",
+        "The order confirms Lerado has investment-fund ownership and that the legal chain remained active in 2025"
+      ]
+    },
+    {
+      "url": "https://www.ferc.gov/oil-matters-b",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ferc.gov/oil-matters-b",
+      "mediaType": "text/html; charset=UTF-8",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_PARSER_VERIFIED",
+      "verifiedClaims": [
+        "FERC's current oil-matters directory lists BP Midwest Product Pipelines Holdings LLC and BP Pipelines (North America) Inc. as operator"
+      ]
+    },
+    {
+      "url": "https://news.bloomberglaw.com/private-equity/sixth-street-injects-400-million-more-into-bp-pipelines-venture",
+      "httpStatus": 200,
+      "finalUrl": "https://news.bloomberglaw.com/private-equity/sixth-street-injects-400-million-more-into-bp-pipelines-venture",
+      "mediaType": "text/html",
+      "bytes": 113886,
+      "sha256": "459da9ce4ff0c7f9647b824d0956e09cf6129a0e92fe8e2bbb0100385f3014cb",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The reported 2023 $400 million investment expanded the existing BP Pipelines venture and left the 51%/49% split unchanged"
+      ]
+    },
+    {
+      "url": "https://www.bp.com/en_us/united-states/home/news/press-releases/bp-agrees-to-sell-stakes-in-us-pipelines-to-sixth-street.html",
+      "httpStatus": 403,
+      "finalUrl": "https://www.bp.com/en_us/united-states/home/news/press-releases/bp-agrees-to-sell-stakes-in-us-pipelines-to-sixth-street.html",
+      "mediaType": "text/html",
+      "bytes": 3939,
+      "sha256": "4911896da8042697d2e59bcfad4fbed2b39001c975a674ca52a4bda1652d579d",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_AND_WEB_PARSER_FAILED",
+      "verifiedClaims": []
+    },
+    {
+      "url": "https://www.bp.com/en/global/corporate/news-and-insights/press-releases/bp-expands-strategic-relationship-with-sixth-street.html",
+      "httpStatus": 403,
+      "finalUrl": "https://www.bp.com/en/global/corporate/news-and-insights/press-releases/bp-expands-strategic-relationship-with-sixth-street.html",
+      "mediaType": "text/html",
+      "bytes": 3939,
+      "sha256": "4911896da8042697d2e59bcfad4fbed2b39001c975a674ca52a4bda1652d579d",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_AND_WEB_PARSER_FAILED",
+      "verifiedClaims": []
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T01:37:12.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "Sixth Street's current investments page still lists US Energy Logistics. A 2025 federal order and the current FERC directory retain Lerado/BP Midwest and BP operator references. No public platform-level sale, redemption, repurchase, exit or signed transfer was found. The 2025 bpx Permian/Eagle Ford transaction is a separate asset perimeter."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 4,
+  "directFetchBlockedAndParserFailedCount": 2,
+  "responseSourceHealthCorrections": [
+    "Both BP press-release URLs returned HTTP 403 and the independent web parser also failed; they are retained as blocked starting sources, while BP's SEC filings independently substantiate the closed 49% transactions.",
+    "The 2023 exact affiliate and asset schedule remain undisclosed; the same-platform conclusion is supported by Sixth Street's canonical investment page and the contemporaneous secondary account rather than by an explicit BP entity schedule."
+  ],
+  "deadSourceCount": 0
+}

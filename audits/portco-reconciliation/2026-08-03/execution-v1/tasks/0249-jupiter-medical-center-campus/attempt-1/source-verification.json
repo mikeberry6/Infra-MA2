@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0249:jupiter-medical-center-campus:b484d033",
+  "taskIndex": 249,
+  "companyName": "Jupiter Medical Center Campus",
+  "verifiedAt": "2026-08-20T06:41:41.671Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://fengate.com/article/fengate-asset-management-breaks-ground-jupiter-medical-center-campus",
+      "finalUrl": "https://fengate.com/article/fengate-asset-management-breaks-ground-jupiter-medical-center-campus",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 60471,
+      "contentSha256": "73f18fd7bd48dd70e437a40bd5b711415584255e766396258cc6d52b5324d29e",
+      "note": "Fengate's direct release verifies its partnership with Stonemont and The Sina Companies; Fund IV and affiliated-entity attribution; a 53,000-square-foot microhospital and 47,000-square-foot outpatient facility; 15-year pre-leases to Jupiter Medical Center; groundbreaking; and expected 2028 completion."
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forl-m25000009489-615c984d-4eee-4a71-91a8-a645c14171bb&directionType=Initial&inquirytype=EntityName&listNameOrder=SFGOFFICES+P950000958221&searchNameOrder=SFGPBGMEDICAL+M250000094890&searchTerm=SFG+OFFICES%2C+INC.",
+      "finalUrl": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forl-m25000009489-615c984d-4eee-4a71-91a8-a645c14171bb&directionType=Initial&inquirytype=EntityName&listNameOrder=SFGOFFICES+P950000958221&searchNameOrder=SFGPBGMEDICAL+M250000094890&searchTerm=SFG+OFFICES%2C+INC.",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 6670,
+      "contentSha256": "c66f047891e277678330930db0a6695716076c9e6e3a106b890ebc146c8ee02d",
+      "browserVerified": true,
+      "browserTitle": "Detail by Entity Name",
+      "note": "Direct curl is blocked, but the official Florida record loaded in the in-app browser. It identifies SFG PBG Medical, LLC, document M25000009489, filing date July 2, 2025 and SFG PBG Medical JV, LLC as its member."
+    },
+    {
+      "url": "https://avenirpbg.com/palm-beach-county-hospital-to-break-ground/",
+      "finalUrl": "https://avenirpbg.com/palm-beach-county-hospital-to-break-ground/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 44496,
+      "contentSha256": "6bed9a201500a98f3e8ce55d9a9453314ba7688d9112f23cd3ac7476cbaaa489",
+      "note": "Avenir's direct property-party page verifies sale of about 13 acres by Avenir Development/Landstar to SFG PBG Medical LLC for $4.99 million, describes the buyer as a Sina/Stonemont JV, identifies Jupiter Medical Center as tenant and reports the 53,000/47,000-square-foot initial scope and early-2028 schedule."
+    },
+    {
+      "url": "https://www.sinacompanies.com/projects/health-park-at-avenir/",
+      "finalUrl": "https://www.sinacompanies.com/projects/health-park-at-avenir/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 299889,
+      "contentSha256": "426a6b6a911919d4e8fdb0ebf91b9b96687e5dc251b2f9c4ee256334bf65ee78",
+      "note": "Sina's live project page supplies the canonical Health Park at Avenir display name, identifies Sina as developer partner and Jupiter Medical Center as healthcare tenant/operator, and confirms construction has begun."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 1,
+    "primarySourceWorking": true,
+    "projectCoIdentityVerified": true,
+    "directMemberVerified": true,
+    "fengateFundIVAttributionVerified": true,
+    "stonemontAndSinaPartnerAttributionVerified": true,
+    "jupiterMedicalCenterTenantOnlyVerified": true,
+    "initialBuildingScopeVerified": true,
+    "closedActiveDevelopmentStateVerified": true,
+    "managerLevelStakesPubliclyDisclosed": false,
+    "laterExitOrPendingTransactionNotFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Use Health Park at Avenir as the display name and SFG PBG Medical, LLC as ProjectCo; preserve Jupiter Medical Center Campus as an alias.",
+    "Treat Jupiter Medical Center as 15-year tenant/operator, not as an equity owner.",
+    "Do not keep a signed-pending state: the land acquisition and construction financing had closed before the June 2026 groundbreaking.",
+    "Do not infer JV percentages, exact upper-tier membership or exact manager entry dates."
+  ],
+  "releaseRequirement": "Create one Health Park at Avenir manager-level social-infrastructure record with Fengate/Fund IV, Stonemont and Sina as current development partners at undisclosed stakes, SFG PBG Medical, LLC as ProjectCo, Jupiter Medical Center as tenant/operator, and no pending ownership transaction."
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+  "checkedAt": "2026-08-22T01:04:51.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; audited and regulatory PDF text extraction and visual page verification; SEC browser verification where direct requests were blocked; acquisition-and-exit search",
+  "sources": [
+    {
+      "url": "https://www.rwe.com/en/rwe-financial-statements-2025/",
+      "httpStatus": 200,
+      "redirected": true,
+      "finalUrl": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2025-GJ/Financial-statements-of-RWE-AG-2025.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 818030,
+      "sha256": "22d2b30a40ce48f00c0346f1d4eb11221aa8e133bef290ce36c2b97c2e6b1bdd",
+      "healthStatus": "WORKING_REDIRECTED_TO_PDF",
+      "pdfPages": 99,
+      "visuallyVerifiedPages": [74],
+      "verifiedClaims": ["RWE's 2025 financial statements list Vela Wind Holdco, LLC as a 25% equity-method associate"]
+    },
+    {
+      "url": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2021-GJ/2022-03-15-rwe-annual-report-2021.pdf?sc_lang=en",
+      "httpStatus": 200,
+      "finalUrl": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2021-GJ/2022-03-15-rwe-annual-report-2021.pdf?sc_lang=en",
+      "mediaType": "application/pdf",
+      "bytes": 8350958,
+      "sha256": "55e055cd87ae51bc47f0f0e9abf15cd4956d1fa9ab2945e0c54a5fca45b43990",
+      "healthStatus": "WORKING",
+      "pdfPages": 240,
+      "visuallyVerifiedPages": [42,96,212],
+      "verifiedClaims": ["RWE sold 51% to Algonquin and 24% to Greencoat while retaining 25% and remaining operator", "The first three farms closed in January 2021 and West Raymond in August 2021", "Vela Wind Holdco, LLC is the common parent and the four holdcos and project companies are downstream SPVs"]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1174169/000117416921000047/a2021q2-exhibit992xmda.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1174169/000117416921000047/a2021q2-exhibit992xmda.htm",
+      "mediaType": "text/html",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_BROWSER_VERIFIED",
+      "verifiedClaims": ["Algonquin closed its 51% West Raymond acquisition on August 12, 2021 and then owned 51% of the four-project 861 MW Texas Coastal Wind Facilities portfolio"]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1174169/000114036124037813/ef20034313_ex99-2.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1174169/000114036124037813/ef20034313_ex99-2.htm",
+      "mediaType": "text/html",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_BROWSER_VERIFIED",
+      "verifiedClaims": ["The executed sale agreement defines Vela Wind Holdco, LLC and includes its audited consolidated financial statements", "The buyer is Altius Renewables and its parent is LS Power Equity Partners Renewable V AIV, L.P."]
+    },
+    {
+      "url": "https://www.lspower.com/news/ls-power-completes-acquisition-of-algonquin-power-utilities-corp-s-large-scale-renewable-energy-business/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.lspower.com/news/ls-power-completes-acquisition-of-algonquin-power-utilities-corp-s-large-scale-renewable-energy-business/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 77753,
+      "sha256": "08cec820ce49b4a876d73b239c4615937e2707ad9354f8ec61c7e1731c7a1b9e",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["LS Power completed its acquisition of Algonquin's renewable-energy business on January 8, 2025 and formed Clearlight to manage the acquired operating portfolio"]
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/54891_1_1288597.PDF",
+      "httpStatus": 200,
+      "finalUrl": "https://interchange.puc.texas.gov/Documents/54891_1_1288597.PDF",
+      "mediaType": "application/pdf",
+      "bytes": 403694,
+      "sha256": "67ea0140bf5c57180785f9506622e917988e89355ed381ccc81abc95754e65b3",
+      "healthStatus": "WORKING",
+      "pdfPages": 5,
+      "visuallyVerifiedPages": [3],
+      "verifiedClaims": ["The 2023 Texas PUCT filing shows RWE 25%, Schroders Greencoat 24%, Greencoat Vela and Algonquin 51% in the ownership chain above Stella and Vela Wind Holdco"]
+    }
+  ],
+  "pdfVerification": {
+    "renderer": "pdfplumber page rasterization",
+    "textExtractor": "pdfplumber",
+    "visualResult": "All cited ownership and entity-chain pages were legible and agreed with extracted text",
+    "layoutDefects": []
+  },
+  "exitSearch": {
+    "searchedAt": "2026-08-22T01:04:51.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "Algonquin's 51% interest transferred to the LS Power acquisition perimeter on January 8, 2025. RWE's audited 2025 statements retain 25%, and no later Greencoat transfer, signed exit, operator change, repowering or decommissioning was found."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 2,
+  "responseSourceHealthCorrections": ["The Texas PUCT PDF returned HTTP 200 during independent verification, correcting the model's search-index/PDF-502 characterization"],
+  "deadSourceCount": 0
+}

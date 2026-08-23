@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0278:district-energy-system:55ee7b00",
+  "taskIndex": 278,
+  "verifiedAt": "2026-08-20T15:36:09.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 5,
+    "browserBlockedButVerified": 1,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.stblaw.com/about-us/news/view/2020/05/28/simpson-thacher-advises-blackrock-s-global-energy-power-infrastructure-fund-in-the-sale-of-its-fort-detrick-energy-production-facility",
+      "finalUrl": "https://www.stblaw.com/about-us/news/view/2020/05/28/simpson-thacher-advises-blackrock-s-global-energy-power-infrastructure-fund-in-the-sale-of-its-fort-detrick-energy-production-facility",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 131940,
+      "sha256": "daa71124a390d9537debb3cdf8430e46a1220e1843eeed56aa1e7495151aa323",
+      "health": "WORKING",
+      "claimCheck": "Seller counsel directly identifies BlackRock GEPIF's sale of its interest in the Fort Detrick Energy Production Facility and verifies the steam, chilled-water, conditioned-electricity and backup-power services under a contract expiring in March 2049."
+    },
+    {
+      "url": "https://realassets.ipe.com/news/harrison-street-buys-us-district-energy-system-from-blackrock/10045818.article",
+      "finalUrl": "https://realassets.ipe.com/news/harrison-street-buys-us-district-energy-system-from-blackrock/10045818.article",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 81898,
+      "sha256": "6251f8befd14b8ff650d6dd8189248f6d63dd21995962d9f8286b6d2fd032463",
+      "health": "WORKING_PARTIAL_PAYWALL",
+      "claimCheck": "The accessible direct page identifies Harrison Street's SIF as buyer of BlackRock GEPIF's Fort Detrick interest on May 27, 2020; transaction quantum and closing mechanics remain undisclosed."
+    },
+    {
+      "url": "https://www.harrisonst.com/wp-content/uploads/2020/05/HSRE_ESG-Impact_2019.pdf",
+      "finalUrl": "https://www.harrisonst.com/wp-content/uploads/2020/05/HSRE_ESG-Impact_2019.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 6069094,
+      "sha256": "ab42281e28bd44ed1e5a0d05c350160d2a5d765198e9b362e8b912376b2f947c",
+      "health": "WORKING_PDF_VERIFIED",
+      "pageCount": 16,
+      "claimCheck": "Downloaded official PDF was hashed and inspected with pdfplumber. Page 13 names the North American Social Infrastructure Fund, its 2018 launch, open-end structure, government-facing mandate and utility-infrastructure focus; it separately reports the fund's 2019 Cincinnati district-energy asset context."
+    },
+    {
+      "url": "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2017/BlackRock-Closes-Transaction-to-Acquire-Energy-Infrastructure-Franchise-from-First-Reserve/default.aspx",
+      "finalUrl": "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2017/BlackRock-Closes-Transaction-to-Acquire-Energy-Infrastructure-Franchise-from-First-Reserve/default.aspx",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": null,
+      "sha256": null,
+      "blockedResponseBytes": 6127,
+      "blockedResponseSha256": "0c5f28a59e0a518faa45587cc066ab63dbd878f81d819f6490c3dc847a42d50f",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Independent direct-page extraction verified BlackRock's June 5, 2017 closing of the acquisition of First Reserve Energy Infrastructure Funds, including its two closed-end equity infrastructure funds and investment advisers."
+    },
+    {
+      "url": "https://www.powersurety.com/portfolio-items/fort-detrick-microgrid/",
+      "finalUrl": "https://www.powersurety.com/portfolio-items/fort-detrick-microgrid/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 112913,
+      "sha256": "2aba2dd2dabe2667aec925c91a50006c9abec5c5803985eee98d1d9b45cb00de",
+      "health": "WORKING",
+      "claimCheck": "Project-participant history identifies Keenan Fort Detrick Energy, LLC as the single-purpose entity, First Reserve as an owner via acquisition, Energy Systems Group as operator and the public-private microgrid structure."
+    },
+    {
+      "url": "https://www.highergov.com/contract/W9124J19C0006/",
+      "finalUrl": "https://www.highergov.com/contract/W9124J19C0006/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 72426,
+      "sha256": "12d73858a61652af616bb8dfc30d741ce8fd69f5bc411237e0e16f6d3199e973",
+      "health": "WORKING_SECONDARY_FEDERAL_AGGREGATOR",
+      "claimCheck": "Current federal-contract aggregation identifies awardee Keenan Ft Detrick Energy, contract W9124J19C0006, Fort Detrick performance location and the conditioned-electricity, backup-power, steam and chilled-water scope; it does not establish beneficial ownership."
+    }
+  ]
+}

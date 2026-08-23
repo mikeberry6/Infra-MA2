@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0421:bmo-transportation-finance:551a3f7b",
+  "checkedAt": "2026-08-22T02:09:14.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks where fetchable; browser PDF/page verification for BMO resources that timed out under direct curl; direct buyer, seller and trade-name inspection; acquisition-and-exit search",
+  "sources": [
+    {
+      "url": "https://www.bmo.com/ir/files/F26%20Files/05112026.pdf",
+      "directFetchStatus": "TIMEOUT",
+      "browserVerified": true,
+      "browserPageCount": 4,
+      "mediaType": "application/pdf",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": [
+        "Stonepeak signed to acquire the Transportation and Vendor Finance assets",
+        "The perimeter represented approximately C$14.5 billion of loans",
+        "BMO planned a 19.9% non-voting ownership stake with governance rights",
+        "Closing was expected in fiscal Q4 2026 subject to approvals"
+      ]
+    },
+    {
+      "url": "https://newsroom.bmo.com/2026-05-11-BMO-Announces-Strategic-Sale-of-Transportation-and-Vendor-Finance-Businesses",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.bmo.com/2026-05-11-BMO-Announces-Strategic-Sale-of-Transportation-and-Vendor-Finance-Businesses",
+      "mediaType": "text/html",
+      "bytes": 908329,
+      "sha256": "83948f1ee44da6ba302b3a78d8408331837ccc0cd3ddac247e164708998e42f7",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Signed combined-business sale and related loan/lease perimeter",
+        "C$14.5 billion portfolio and 19.9% BMO rollover",
+        "Transportation Finance and Vendor Finance operate as equipment-finance businesses"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-to-acquire-bmo-transportation-and-vendor-finance",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/stonepeak-to-acquire-bmo-transportation-and-vendor-finance",
+      "mediaType": "text/html",
+      "bytes": 37725,
+      "sha256": "e2db9d6ad1d7bd0ea06a8746de431d853c8c45988d4b421a46e31719f9c35f75",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak transaction attribution and signed status",
+        "Irving headquarters, 700-plus employees and U.S./Canada footprint",
+        "Asset-leasing and commercial-equipment-finance characterization"
+      ]
+    },
+    {
+      "url": "https://www.bmoasset.com/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bmoasset.com/",
+      "mediaType": "text/html",
+      "bytes": 190933,
+      "sha256": "ae5eafbc9a87ae1e7aee36252fdeb62c9fd9daeee2372c4d38a8f762cfeed870",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "BMO Transportation Finance is a trade name of BMO Bank N.A.",
+        "The business offers lending and leasing rather than operating transportation infrastructure"
+      ]
+    },
+    {
+      "url": "https://newsroom.bmo.com/2015-12-01-BMO-Financial-Group-Completes-Acquisition-of-General-Electric-Capital-Corporations-Transportation-Finance-Business",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.bmo.com/2015-12-01-BMO-Financial-Group-Completes-Acquisition-of-General-Electric-Capital-Corporations-Transportation-Finance-Business",
+      "mediaType": "text/html",
+      "bytes": 903106,
+      "sha256": "5225c38f96de1815e3f3955b54b0c770fe0a3ae7e934fa6f852a44f20c570f31",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "BMO completed its acquisition of GE Capital Transportation Finance on December 1, 2015",
+        "GE Capital is the former business owner"
+      ]
+    },
+    {
+      "url": "https://www.bmo.com/main/about-bmo/investor-relations/acquisitions",
+      "directFetchStatus": "TIMEOUT",
+      "browserVerified": true,
+      "mediaType": "text/html",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": [
+        "BMO's transaction tracker listed only the May 2026 sale announcement and additional information, with no completion release through the cutoff",
+        "The tracker separately lists both announcement and completion links when a historical transaction has closed"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T02:09:14.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No public closing, successor name, rebrand, later owner, sale or ownership-changing recapitalization was found. BMO's tracker still showed only the sale announcement and transaction information; the May investor presentation expected a fiscal-Q4-2026 closing."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 2,
+  "responseSourceHealthCorrections": [
+    "The stale prompt Stonepeak URL was replaced by the live official URL ending /stonepeak-to-acquire-bmo-transportation-and-vendor-finance.",
+    "The BMO PDF and acquisition tracker timed out under direct curl but were independently opened and verified in the web parser.",
+    "The transaction remained signed and pending; Stonepeak was not converted into an active owner."
+  ],
+  "deadSourceCount": 0
+}

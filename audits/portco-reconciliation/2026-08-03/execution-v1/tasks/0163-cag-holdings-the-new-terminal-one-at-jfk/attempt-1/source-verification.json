@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0163:cag-holdings-the-new-terminal-one-at-jfk:057d63fe",
+  "taskIndex": 163,
+  "companyName": "CAG Holdings / The New Terminal One at JFK",
+  "verifiedAt": "2026-08-19T06:13:10.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "c28d86c3fdea81c07bfca270d053d5df5ab7999132cb1956d5a8b5b997d7842a",
+      "note": "SEC blocked curl, but independent browser retrieval opened Ferrovial’s filed 2026 factbook and verified current project stakes and future option dates."
+    },
+    {
+      "url": "https://www.carlyle.com/global-insights/jfk-new-terminal-one",
+      "finalUrl": "https://www.carlyle.com/global-insights/jfk-new-terminal-one",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5795,
+      "contentSha256": "0b8408da82afd609f0d04ebb032e5294ad2f47996b10a5a17a99c39f54f039f2",
+      "note": "Carlyle blocked curl, but independent browser retrieval opened the 2026 case study and verified partial-sale language and continued involvement."
+    },
+    {
+      "url": "https://newsroom.ferrovial.com/en/press-releases/ferrovial-jfk-agreement/",
+      "finalUrl": "https://newsroom.ferrovial.com/en/press-releases/ferrovial-jfk-agreement/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 163036,
+      "contentSha256": "3a2b57ebc6e2d80a69c2c1ccba6c9004fc48392ddbe65cb3891700c1b48f3a2a",
+      "note": "Official Ferrovial stake announcement opened and was hash-captured."
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-together-with-the-consortium-building-new-terminal-one-at-jfk-airport",
+      "finalUrl": "https://www.carlyle.com/media-room/news-release-archive/carlyle-together-with-the-consortium-building-new-terminal-one-at-jfk-airport",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5795,
+      "contentSha256": "c061c398281e2f51715a9749d3895e433c7d2f240a78f4afa8885c06f87f5ac3",
+      "note": "Carlyle blocked curl, but independent browser retrieval opened the 2022 financial-close release."
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/dr-gerrard-p-bushell-named-executive-chair-new-terminal-one",
+      "finalUrl": "https://www.carlyle.com/media-room/news-release-archive/dr-gerrard-p-bushell-named-executive-chair-new-terminal-one",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5795,
+      "contentSha256": "0cb1ce521199079eae78ae8044d3c9cc40d7709539ba195bb94d2826f701e4fe",
+      "note": "Carlyle blocked curl, but independent browser retrieval opened the CAG platform and fund identity release."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026050224/q22026-ferrovialresultsp.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026050224/q22026-ferrovialresultsp.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "d8465bb07ef5d123f1a6cd0aa4948f56d51548b7699f36ccd62fa37c5dd7031e",
+      "note": "SEC blocked curl, but independent browser retrieval opened Ferrovial’s filed H1 2026 results and verified current construction progress."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Reopen the SEC factbook and current results before mutation; retain Carlyle’s residual interest unless a later legal transfer is found, and treat JFK NTO LLC as the project SPV beneath CAG."
+}

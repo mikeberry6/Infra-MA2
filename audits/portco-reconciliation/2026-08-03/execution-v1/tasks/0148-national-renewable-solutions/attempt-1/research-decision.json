@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0148:national-renewable-solutions:2d543538",
+  "taskIndex": 148,
+  "companyName": "National Renewable Solutions",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T04:34:35.000Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "National Renewable Solutions",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Keep one NRS record. BlackRock's legacy renewable-power strategy acquired 100% in 2021 through GRP III; transaction counsel identifies GRP III Norse Holdings LP as buyer. Current NRS materials still report ownership by a BlackRock-managed fund. BlackRock's 2024 acquisition of GIP did not evidence an NRS transfer or a separate GIP ownership period.",
+    "identityResolution": {
+      "canonicalKey": "national-renewable-solutions|united-states",
+      "legalName": "National Renewable Solutions, LLC",
+      "displayName": "National Renewable Solutions",
+      "aliases": [
+        "NRS"
+      ],
+      "predecessorSuccessor": "NONE_FOUND",
+      "platformBoundary": "Manager-level U.S. renewable developer/IPP; its projects and project subsidiaries roll up to NRS.",
+      "country": "United States",
+      "officialWebsite": "https://natrs.com/",
+      "headquarters": "Minnetonka, Minnesota",
+      "foundedYear": 2011,
+      "infrastructureEligibility": "INCLUDE"
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock Real Assets / Global Renewable Power",
+          "fund": "Global Renewable Power Fund III (GRP III; entry fund)",
+          "vehicle": "GRP III Norse Holdings LP (entry vehicle)",
+          "stake": "100% at entry; current exact stake NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2021-08-18",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_CURRENT"
+        }
+      ],
+      "currentDisclosure": "An August 2025 NRS release says a BlackRock-managed fund owns NRS but does not restate the fund, vehicle or percentage.",
+      "formerOwners": "NOT_PUBLICLY_DISCLOSED",
+      "gipResolution": "NO_DIRECT_OWNERSHIP_PERIOD; no NRS equity transfer to legacy GIP was found."
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "sector": "Power & ET",
+      "subsector": "Renewable power development and IPP",
+      "business": "Develops, finances, owns and operates utility-scale wind, solar and storage.",
+      "footprint": "United States",
+      "scale": "3,000+ MW in development; 1,200+ MW commercialized; 190 MW owned and operated.",
+      "customersEndMarkets": "Wholesale power/offtake customers, utilities, cooperatives and project buyers."
+    },
+    "acquisitionExitCheck": {
+      "searchThrough": "2026-08-19",
+      "entryState": "CLOSED before or by the 2021-08-18 announcement; exact legal closing date NOT_PUBLICLY_DISCLOSED.",
+      "companyLevelExitFound": false,
+      "pendingTransactions": [],
+      "laterDealCheck": "NRS sold a 7.6 MW Maine solar portfolio to Nautilus at project level. No company sale, exit, merger, recapitalization, rebrand or bankruptcy was found."
+    },
+    "milestones": [
+      {
+        "date": "2011",
+        "event": "NRS was founded."
+      },
+      {
+        "date": "2021-08-18",
+        "event": "NRS announced BlackRock's recently completed 100% acquisition through its Global Renewable Power strategy; exact closing date was not disclosed."
+      },
+      {
+        "date": "2025-08-15",
+        "event": "Shallow Basket Energy entered operation; NRS described itself as a renewable IPP owned by a BlackRock-managed fund."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "NRS/BlackRock acquisition release",
+        "url": "https://natrs.com/wp-content/uploads/2022/04/BlackRockAcquiresNRS_PressRelease_Final.pdf",
+        "purpose": "OWNERSHIP_ENTRY",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Mayer Brown counsel biography",
+        "url": "https://www.mayerbrown.com/en/people/c/castro-federica-m",
+        "purpose": "BUYER_VEHICLE",
+        "sourceTier": "T2",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "NRS Shallow Basket release",
+        "url": "https://natrs.com/nrss-shallow-basket-energy-project-brings-renewable-energy-to-jicarilla-apache-nation-building-on-legacy-of-environmental-stewardship/",
+        "purpose": "CURRENT_OWNER_AND_STATUS",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "NRS projects page",
+        "url": "https://natrs.com/projects/",
+        "purpose": "SCALE_AND_PLATFORM",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "GIP disclosures",
+        "url": "https://www.global-infra.com/additional-disclosures/",
+        "purpose": "BLACKROCK_GIP_RELATIONSHIP",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "NRS/Nautilus Maine release",
+        "url": "https://natrs.com/nautilus-makes-headway-in-maines-versant-utility-territory-with-acquisition-of-7-6mw-community-solar-portfolio/",
+        "purpose": "PROJECT_EXIT_SCREEN",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      {
+        "field": "manager",
+        "before": "BlackRock plus GIP candidate",
+        "after": "One legacy BlackRock/GRP III attribution; no GIP owner period"
+      },
+      {
+        "field": "fund",
+        "before": "Global Energy & Power Infrastructure Fund III",
+        "after": "Global Renewable Power Fund III"
+      },
+      {
+        "field": "vehicle",
+        "before": "n.a.",
+        "after": "GRP III Norse Holdings LP at entry"
+      },
+      {
+        "field": "headquarters",
+        "before": "Minnesota and multi-state United States",
+        "after": "Minnetonka, Minnesota"
+      },
+      {
+        "field": "subsector",
+        "before": "Renewable project development",
+        "after": "Renewable power development and IPP"
+      }
+    ],
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Global Infrastructure Partners",
+        "resolution": "DUPLICATE_MANAGER_ATTRIBUTION",
+        "reason": "BlackRock's GIP acquisition did not create an NRS ownership period."
+      },
+      {
+        "candidate": "NRS projects",
+        "resolution": "PROJECTS_UNDER_PLATFORM",
+        "reason": "Count under NRS, not as manager-level PortCos."
+      },
+      {
+        "candidate": "Nautilus Maine portfolio",
+        "resolution": "PROJECT_ASSET_SALE",
+        "reason": "Not a sale of NRS."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact legal closing date in 2021.",
+      "Pre-BlackRock member names and stakes.",
+      "Current exact equity percentage and legal holding vehicle; current disclosure confirms only a BlackRock-managed fund."
+    ],
+    "recommendedListAction": {
+      "action": "MERGE_COMPANIES",
+      "survivingProductionCompanyId": "cmrxpj90b00naivhedtmfwflb",
+      "instructions": "Keep one active NRS record under BlackRock; suppress the GIP candidate; correct the fund/vehicle, headquarters and IPP description."
+    }
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 6,
+    "openSourceCount": 6,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

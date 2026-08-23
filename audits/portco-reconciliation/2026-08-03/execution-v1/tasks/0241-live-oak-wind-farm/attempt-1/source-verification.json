@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0241:live-oak-wind-farm:082ed40f",
+  "taskIndex": 241,
+  "companyName": "Live Oak Wind Farm",
+  "verifiedAt": "2026-08-20T04:28:25.679Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/J/LSE_JLG_2019.pdf",
+      "finalUrl": "https://www.annualreports.com/HostedData/AnnualReportArchive/J/LSE_JLG_2019.pdf",
+      "status": "OPEN_PDF_TEXT_AND_VISUAL_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 10257887,
+      "contentSha256": "57fa2db0a1e4028fcedf644544e406e3bceaa49709728f960a0c99cc7444c21e",
+      "pages": 192,
+      "verifiedPages": [
+        182
+      ],
+      "note": "John Laing's 2019 annual report lists the Live Oak SPV chain at 75%, directly supporting the historical project block."
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/49483_8_1023029.PDF",
+      "finalUrl": "https://interchange.puc.texas.gov/Documents/49483_8_1023029.PDF",
+      "status": "OPEN_PDF_TEXT_AND_VISUAL_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 127947,
+      "contentSha256": "88880e64540e494bef5ccfd21c3bdade2113da71324c31ab00f288f92a0b5c00",
+      "pages": 4,
+      "verifiedPages": [
+        2
+      ],
+      "note": "Texas PUCT staff filing states John Laing intended to buy 75% from ENGIE, ENGIE would retain 25%, and identifies the Live Oak Partners/HoldCo/ProjectCo chain and 199.5 MW project."
+    },
+    {
+      "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+      "finalUrl": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 34905,
+      "contentSha256": "f5b28603654bb9bf2b5adfb3c97440e753523eab615723ce9c5a2ad5453709ba",
+      "note": "FCA-hosted RNS verifies the KKR/John Laing scheme became effective on September 22, 2021."
+    },
+    {
+      "url": "https://find-and-update.company-information.service.gov.uk/company/00780225/filing-history?page=4",
+      "finalUrl": "https://find-and-update.company-information.service.gov.uk/company/00780225/filing-history?page=4",
+      "status": "OPEN_BROWSER_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 68960,
+      "contentSha256": "f256d8126ae19d53c116646b22a69936509a51aaa39f98cb76375af6bf7530d0",
+      "browserTextBytes": 34945,
+      "browserTextSha256": "73e1623b37ec71c3f1d53e2f645b6c1c5511b0ba5eb98ee58e3d4143cf5b1a88",
+      "note": "Companies House filing history records JLIL capital allotments and board changes on October 6, 2021, supporting the Equitix co-control entry timing."
+    },
+    {
+      "url": "https://www.engie-na.com/live_oak_financing/",
+      "finalUrl": "https://www.engie-na.com/live_oak_financing/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 164610,
+      "contentSha256": "e2b15d28685a9b6f8e33fa5043ea9c21cc8b7ae9be31fd3ffd7b3e51dfa2e2bb",
+      "note": "ENGIE verifies Live Oak's 2018 construction financing, tax equity and hedge; those providers are financing counterparties, not manager owners."
+    },
+    {
+      "url": "https://www.engie-na.com/houston_headquarters_powered_by_wind/",
+      "finalUrl": "https://www.engie-na.com/houston_headquarters_powered_by_wind/",
+      "status": "OPEN_BROWSER_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 6058,
+      "contentSha256": "a0ced0b89dab92a3cf24b45d73613e645d69b4ee77e5dedfeadf44b03fa40f08",
+      "browserTextBytes": 11361,
+      "browserTextSha256": "047d27e1316ab33eca73c4383f6f61e643901153c1db34958b76e82888512ee9",
+      "note": "ENGIE calls itself developer, owner and operator of Live Oak and says the 200 MW project is owned in partnership with a John Laing affiliate, supporting continuity of the 25%/75% sponsor structure."
+    },
+    {
+      "url": "https://www.laing.com/portfolio/live-oak-us/",
+      "finalUrl": "https://www.laing.com/portfolio/live-oak-us/",
+      "status": "OPEN_BROWSER_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 127396,
+      "contentSha256": "d72404dd824cef70ee0cca8189c839235d67a62e6bd8003b24f538bd33e49941",
+      "browserTextBytes": 8515,
+      "browserTextSha256": "3d524d3c9cac5755c899dabadc454ebc2614aa2051d52e8d2c24a9d4bfc6b89d",
+      "note": "John Laing's live portfolio page lists Live Oak as an operational 200 MW Texas wind farm."
+    },
+    {
+      "url": "https://www.lse.co.uk/rns/recommended-cash-acquisition-of-john-laing-group-jps0bk861zdyk32.html",
+      "finalUrl": "https://www.lse.co.uk/rns/recommended-cash-acquisition-of-john-laing-group-jps0bk861zdyk32.html",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5665,
+      "contentSha256": "a5113f3c9912b9947207034af53919d0e8086b824365d5a8f59d0e1e31306927",
+      "browserTextBytes": 236060,
+      "browserTextSha256": "f83adf56b5e2008771f590b080c28499b932c1aff0484aa346f3ef1c16de15ca",
+      "note": "Browser-open RNS states Equitix would acquire 50% of JLIL, funded with Equitix/Pantheon capital, while the existing asset portfolio remained managed by John Laing."
+    },
+    {
+      "url": "https://find-and-update.company-information.service.gov.uk/company/00780225/filing-history",
+      "finalUrl": "https://find-and-update.company-information.service.gov.uk/company/00780225/filing-history",
+      "status": "OPEN_BROWSER_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 67159,
+      "contentSha256": "f5e2ad890db042d6049a4dd6d12e1ecfbca685dfa82b75031dae6b236df9317b",
+      "browserTextBytes": 34360,
+      "browserTextSha256": "34953f99d304ae7d6faeebaa77e36b29c5f9c2579a91a42207639fa8fa99647a",
+      "note": "Companies House records Equitix Ether Bidco's PSC cessation on March 27, 2026 and subsequent JLIL capital/PSC changes; it does not name Equitix's successor legal vehicle."
+    },
+    {
+      "url": "https://equitix.com/news/equitix-strengthens-north-american-footprint-with-increased-ownership-of-the-i-4-ultimate-project-in-florida/",
+      "finalUrl": "https://equitix.com/news/equitix-strengthens-north-american-footprint-with-increased-ownership-of-the-i-4-ultimate-project-in-florida/",
+      "status": "OPEN_BROWSER_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 85453,
+      "contentSha256": "2cdee700706a53b95125a7d496ac280dd90cc0cb2fe36d76f8941b913adfbbbd",
+      "browserTextBytes": 12129,
+      "browserTextSha256": "9d9e61d0768153dbe8875210a43fe6fe6fe7a9b077f4d120f0a1ab4537b13c37",
+      "note": "Equitix's April 2, 2026 release directly states JLIL is jointly owned 50:50 by Equitix and John Laing Group Limited, confirming current manager-level co-control despite the legal-vehicle change."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "nestedTransactionUrlsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 1,
+    "pdfPageTextVerified": true,
+    "pdfVisualVerified": true,
+    "projectBoundaryVerified": true,
+    "johnLaingHistoricalSeventyFivePercentVerified": true,
+    "engieRetainedTwentyFivePercentVerified": true,
+    "jlilFiftyFiftyControlVerified": true,
+    "currentEquitixAndJohnLaingManagerControlVerified": true,
+    "exactEquitixSuccessorVehicleNotPublic": true,
+    "directThirtySevenPointFivePercentStakesNotInferred": true,
+    "laterProjectSpecificExitNotFound": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Correct Live Oak's entry year to 2019; retain the project as active; represent ENGIE's 25% sponsor interest and JLIL's 75% block; attribute JLIL manager-level co-control to Equitix and KKR/John Laing at 50:50 without converting those manager percentages into unsupported direct 37.5% project stakes; leave Equitix's post-March-2026 successor legal vehicle undisclosed."
+}

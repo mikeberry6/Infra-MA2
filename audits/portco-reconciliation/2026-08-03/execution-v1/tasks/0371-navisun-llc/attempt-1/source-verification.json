@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0371:navisun-llc:67b86252",
+  "taskIndex": 371,
+  "verifiedAt": "2026-08-21T19:23:52.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 4,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The Texas PUC-hosted FERC PDF returned HTTP 200 during independent verification, correcting the model's stale ORIGIN_502 health note.",
+    "The SEC filing returned HTTP 403 to direct curl and exceeded the web parser's size limit, but the exact SEC filing and other official Ares Capital filings were indexed and independently corroborated the 2017 entry, Series A preferred and 55% Class A positions; it is classified BROWSER_BLOCKED_BUT_VERIFIED.",
+    "The ION Analytics page returned HTTP 403 to direct curl but independently opened at the exact URL and confirms only an ongoing 2026 sale process and advanced talks, not a signed or closed transfer.",
+    "Catalyze must remain an unconfirmed process candidate rather than a pending ownership transaction; the approved list representation should retain OMERS as current owner unless a definitive agreement or closing is later proven.",
+    "The review paragraph contains non-semantic citation-rendering residue. The strict JSON, direct URLs and ownership conclusions are unaffected."
+  ],
+  "sources": [
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/54941_631_1559824.PDF",
+      "finalUrl": "https://interchange.puc.texas.gov/Documents/54941_631_1559824.PDF",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 1664824,
+      "sha256": "aeaff73992ee95506317c56b743956ae304b956ea1dced7923f526fc7aab3f4e",
+      "health": "WORKING",
+      "contentEvidence": "PDF extraction states that Magnet US Acquisition Corporation acquired indirect ownership effective January 18, 2022; Navisun LLC is its wholly owned subsidiary, MUAC is wholly owned by Magnet Acquisition Holdings Corporation, and MAHC is an indirect OMERS investment entity."
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/investments/navisun",
+      "finalUrl": "https://www.omersinfrastructure.com/investments/navisun",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 157088,
+      "sha256": "879c25bcaa03620d74347785ab7d16056a48db450afe4a0684e1043297c859fc",
+      "health": "WORKING",
+      "contentEvidence": "OMERS currently lists Navisun as a U.S. distributed-generation solar and storage investment with a 2022 investment year."
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of",
+      "finalUrl": "https://www.omersinfrastructure.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 166829,
+      "sha256": "6e38d12ca3838d9cd83cbf5be430f42e22af73778315aff8d1aaaf51745587f0",
+      "health": "WORKING",
+      "contentEvidence": "The November 2, 2021 release confirms a signed agreement to acquire 100% from an Ares-managed fund and says closing was expected in Q1 2022 subject to regulatory requirements."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1287750/000128775022000007/arccq4-202110k.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1287750/000128775022000007/arccq4-202110k.htm",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "sha256": "6affd820a79210033c67ee153901a9ffbec1c5cf8d12f3eb07b687396cd1369c",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserEvidence": "The exact SEC filing was indexed but too large for the page parser; indexed official Ares filings corroborate Navisun LLC/Navisun Holdings LLC securities acquired beginning November 15, 2017, including 100% Series A preferred and 55% Class A units."
+    },
+    {
+      "url": "https://www.navisunllc.com/news/powering-growth-and-communities-navisun-reflects-on-a-year-of-success",
+      "finalUrl": "https://www.navisunllc.com/news/powering-growth-and-communities-navisun-reflects-on-a-year-of-success",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 161843,
+      "sha256": "13e7798d343d8bde72dfe0d52e893d6bf3db1c3374b20898f174abcd52c799b5",
+      "health": "WORKING",
+      "contentEvidence": "Navisun reports more than 130 MWdc nationwide at 2025 year-end, approximately 16 MWdc solar and 9 MWh storage commissioned in 2025, and about 100 MWdc in advanced development entering 2026."
+    },
+    {
+      "url": "https://ionanalytics.com/insights/infralogic/omers-in-advanced-talks-to-sell-navisun-to-catalyze/",
+      "finalUrl": "https://ionanalytics.com/insights/infralogic/omers-in-advanced-talks-to-sell-navisun-to-catalyze/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "sha256": "dcd69c02e5f9a3966b5b1a64f16500fe16bdf77309e2e0de2c9212cefbee074a",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserEvidence": "The exact March 4, 2026 article says OMERS was in advanced talks with Catalyze and explicitly describes the sale process as ongoing; it identifies no signed agreement or closing."
+    }
+  ]
+}

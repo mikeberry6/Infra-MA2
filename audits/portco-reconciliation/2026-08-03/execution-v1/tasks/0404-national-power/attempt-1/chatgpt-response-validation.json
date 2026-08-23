@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0404:national-power:872e462e",
+  "taskIndex": 404,
+  "validatedAt": "2026-08-21T23:26:45.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a88d8ea-3020-83ea-ba1e-212288e822ba",
+  "requiredTopLevelKeys": ["asOfDate", "requestedCompany", "requestedManagers", "decision", "confidence", "rationale", "identityResolution", "ownershipResolution", "operatingResolution", "acquisitionExitCheck", "milestones", "evidence", "beforeAfterChanges", "excludedOrDuplicateCandidates", "unresolvedQuestions", "recommendedListAction"],
+  "initialResponse": {
+    "valid": true,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "05a9f992fa142cbc485d70bcc9bb7f80bc8d66bbde5c7cc8942b63d0860c76fd",
+    "errors": []
+  },
+  "repair": {
+    "count": 0,
+    "limit": 1,
+    "submittedAt": null,
+    "completedAt": null,
+    "valid": null,
+    "responseSha256": null,
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_NEW",
+    "decisionConfidence": "HIGH",
+    "capTableConfidence": "MEDIUM",
+    "canonicalName": "National Power, LLC",
+    "evidenceCount": 7,
+    "ownerRows": 5,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeInstitutionalOwnerResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "platformBoundaryResolved": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "exactlyOneRecommendedPrimary": true,
+    "unresolvedFounderRollover": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "applicationBlocked": true,
+  "blockingReasons": [
+    "Public evidence proves Eddie Youngblood retained a minority interest in 2019 but does not establish whether that interest rolled into, was sold in or changed at the 2023 Ridgemont recapitalization.",
+    "Ridgemont's exact stake, co-investor roster, vehicle and separate legal closing date are not publicly disclosed."
+  ],
+  "errors": [],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

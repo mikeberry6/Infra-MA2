@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+  "taskIndex": 451,
+  "companyName": "Cartier (U.S. District Energy Platform)",
+  "verifiedAt": "2026-08-22T14:37:25.927Z",
+  "summary": {
+    "total": 6,
+    "working": 5,
+    "browserBlockedButVerified": 1,
+    "dead": 0,
+    "redirected": 0,
+    "modelHealthOverrides": 1
+  },
+  "sources": [
+    {
+      "label": "Cartier Energy Holding CEO announcement",
+      "url": "https://www.prnewswire.com/news-releases/adam-schiff-is-appointed-ceo-of-cartier-energy-holding-a-vauban-infrastructure-partners-investment-funds-owned-company-301593623.html",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl"
+    },
+    {
+      "label": "Vauban signing release",
+      "url": "https://www.prnewswire.com/news-releases/vauban-infrastructure-partners-announces-the-signing-of-an-agreement-for-the-acquisition-of-a-leading-district-energy-platform-located-in-the-united-states-301456170.html",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl"
+    },
+    {
+      "label": "Vauban closing release",
+      "url": "https://www.prnewswire.com/news-releases/vauban-infrastructure-partners-announces-the-closing-of-the-acquisition-of-a-leading-district-energy-platform-located-in-the-united-states-301552231.html",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl"
+    },
+    {
+      "label": "Pantheon current portfolio",
+      "url": "https://www.pantheoninfrastructure.com/portfolio/?sector=power-and-utilities",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl content inspection",
+      "note": "Current portfolio page names Cartier Energy Holdings and describes the eight-system platform."
+    },
+    {
+      "label": "Michigan PSC approval",
+      "url": "https://www.michigan.gov/mpsc/commission/news-releases/2022/05/12/mpsc-approves-umerc-long-range-energy-plan-settlement-agreement",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "browser DOM after curl 403",
+      "note": "The multi-topic MPSC release includes approval of the transfer of Detroit Thermal control to Cartier Energy LLC."
+    },
+    {
+      "label": "Vauban Article 29 disclosure",
+      "url": "https://vauban-ip.com/_assets/showcase-container/815006e7-be74-426b-b6ac-f03687068d83_Vauban%20IP%20-%20Energy%20Climate%20Law%20Article%2029%20Disclosure%20-%202025.pdf",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl, PDF metadata and page-level text extraction",
+      "mediaType": "application/pdf",
+      "sha256": "36cafe71c0c0557995e3fbfe1f90e6684e3f5984fc0b53b5185a073d8cf5a4a2",
+      "pageEvidence": 23,
+      "note": "Page 23 lists Cartier Energy Fund SCS and Cartier Energy Fund II SCS as Article 8 co-investment funds; embedded PDF title says 2024 and creation date is June 27, 2025."
+    }
+  ],
+  "conclusion": "All six direct URLs were independently verified. The evidence supports one Cartier platform and current Vauban/Pantheon ownership; the requested census label should be superseded into the existing Cartier Energy Holding record rather than creating or merging a second production company."
+}

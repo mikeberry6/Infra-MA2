@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+  "taskIndex": 276,
+  "verifiedAt": "2026-08-20T14:40:45.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 2,
+    "browserBlockedButVerified": 4,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.businesswire.com/news/home/20211102006036/en/CIM-Group-Sells-Portfolio-of-Four-Data-Center-Assets",
+      "finalUrl": "https://www.businesswire.com/news/home/20211102006036/en/CIM-Group-Sells-Portfolio-of-Four-Data-Center-Assets",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": null,
+      "sha256": null,
+      "blockedResponseBytes": 716,
+      "blockedResponseSha256": "430a33c3230cb36e6f2b9fc80d4ab77308deac934e1ef5d723134c5bf1330a5c",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Direct-page browser extraction verified CIM's November 2, 2021 completed sale of four data centers, including 725 South Wells, to a Harrison Street Real Estate Capital/1547 joint venture; it also states 1547 had been CIM's prior joint-venture partner."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+      "finalUrl": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": null,
+      "sha256": null,
+      "blockedResponseBytes": 4544,
+      "blockedResponseSha256": "36cbc999164366993a33c215f9c851b401135f913b6a0028cf073900a28f2260",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Direct 1547 page verified the November 2, 2021 acquisition, CHIL2/725 Wells inclusion, four-asset portfolio boundary, Harrison Street/1547 partnership and 1547's continuing management role."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-acquires-data-center-in-chicagos-central-business-district",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-group-acquires-data-center-in-chicagos-central-business-district",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 110604,
+      "sha256": "e6da138914f8819eb829eb9fd0e1081a0e341cdea1999508c93f819dac1d0df9",
+      "health": "WORKING",
+      "claimCheck": "Official CIM release verified the December 18, 2018 CIM/1547 acquisition of 725 South Wells from Digital Capital Partners, the facility identity and then-disclosed 5 MW capacity."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/chicago-il-chil2/",
+      "finalUrl": "https://www.1547realty.com/data-center/chicago-il-chil2/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": null,
+      "sha256": null,
+      "blockedResponseBytes": 4544,
+      "blockedResponseSha256": "0fb672b7906de65888d72926f515da8c1868bb161cf7e5b6802956ed6b458474",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Current 1547 facility page verified CHIL2 at 725 South Wells, active operating presentation, nine stories, 66,000 gross and 42,000 data-center square feet, 6.6 MW and current carrier/provider disclosures."
+    },
+    {
+      "url": "https://harrisonst.com/harrison-street-closes-600-million-for-digital-asset-investments/",
+      "finalUrl": "https://harrisonst.com/harrison-street-closes-600-million-for-digital-asset-investments/",
+      "httpStatus": 403,
+      "mediaType": "application/pdf",
+      "bytes": null,
+      "sha256": null,
+      "blockedResponseBytes": 5491,
+      "blockedResponseSha256": "d0f29c4960acabd43e47a911b4b32509dd85a7ec2c88ed8e3bace865fb4b83af",
+      "health": "BROWSER_BLOCKED_PDF_BUT_VERIFIED",
+      "claimCheck": "Official two-page PDF was independently parsed and verified that the approximately $600 million HS Digital Fund and associated vehicles represented Harrison Street's first dedicated digital-asset capital pool and had a December 2024 final close, so it cannot be assigned to the 2021 CHIL2 acquisition without separate evidence."
+    },
+    {
+      "url": "https://elementix.com/investors/il/todd-raymond",
+      "finalUrl": "https://elementix.com/investors/il/todd-raymond",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 74990,
+      "sha256": "9c27eed067b1daa04afe9da5c9a093d31fdcb717e72583936a7ccc55982d5f91",
+      "health": "WORKING_CORROBORATIVE_ONLY",
+      "claimCheck": "Secondary property-record aggregation was reachable and was retained only as corroborative context for reported SPV and mortgage details; it is not used as primary current-title evidence."
+    }
+  ]
+}

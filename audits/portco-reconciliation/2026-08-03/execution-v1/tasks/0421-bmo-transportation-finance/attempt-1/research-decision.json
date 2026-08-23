@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0421:bmo-transportation-finance:551a3f7b",
+  "sequence": 421,
+  "asOfDate": "2026-08-19",
+  "companyName": "BMO Transportation and Vendor Finance",
+  "decision": "EXCLUDED",
+  "confidence": 0.98,
+  "normalizedConfidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "The Stonepeak transaction remained signed and unclosed at the cutoff. Its true perimeter is the combined BMO Transportation and Vendor Finance businesses plus approximately C$14.5 billion of loans and leases. The business originates, services and remarkets equipment financing rather than operating transportation infrastructure, so it is outside the direct infrastructure-equity census. BMO remains the legal owner, and Stonepeak plus BMO's 19.9% rollover remain pending only.",
+  "recommendedChanges": [
+    "Exclude the BMO Transportation Finance source holding from the PortCo census.",
+    "Do not create a company or active Stonepeak ownership period.",
+    "Retain an off-ledger pending transaction note identifying BMO as current owner and Stonepeak as signed pending incoming.",
+    "Use BMO Transportation and Vendor Finance as the resolved combined-business identity; preserve BMO Transportation Finance as a trade name.",
+    "Keep financed equipment, customers, receivables trusts, securitization SPVs, PGIM and BofA outside the ownership roster."
+  ],
+  "unresolvedQuestions": [
+    "Newco name, Stonepeak fund and acquisition SPVs, price, syndication, management rollover, regulatory approvals, exact closing date and loan-versus-lease mix were not publicly disclosed."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "acceptedResponseSha256": "a9a205e91492470284ff2b8f180e586ee45061b84ddfa6e71a4939d2385a50f9"
+}

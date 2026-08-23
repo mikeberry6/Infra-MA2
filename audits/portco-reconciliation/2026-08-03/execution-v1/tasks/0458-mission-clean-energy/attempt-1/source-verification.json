@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0458:mission-clean-energy:ec7ef24e",
+  "taskIndex": 458,
+  "companyName": "Mission Clean Energy",
+  "verifiedAt": "2026-08-22T17:22:22.000Z",
+  "summary": {
+    "citationUrls": 7,
+    "working": 7,
+    "browserBlockedButVerified": 0,
+    "materialModelCorrections": 0,
+    "sourceQualifiers": 1
+  },
+  "sources": [
+    {
+      "label": "Mission investors",
+      "url": "https://missioncleanenergy.com/investors/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct current company page",
+      "note": "Mission currently calls a Wafra-managed affiliate its principal investor and says Ørsted invested in December 2024. This is the strongest current-ownership primary."
+    },
+    {
+      "label": "Wafra controlling-interest announcement",
+      "url": "https://www.wafra.com/wafra-acquires-controlling-interest-in-mission-clean-energy/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct transaction-party page",
+      "note": "Wafra announced acquiring a controlling interest in Mission and said Aggregate Power Infrastructure invested alongside it; no Wafra fund, vehicle, percentage or legal closing date is disclosed."
+    },
+    {
+      "label": "Business Wire transaction release",
+      "url": "https://www.businesswire.com/news/home/20221018005548/en/Wafra-Acquires-Controlling-Interest-in-Mission-Clean-Energy",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct issued release",
+      "note": "Corroborates the October 2022 control acquisition, 3 GW pipeline, U.S. infrastructure focus and API co-investment."
+    },
+    {
+      "label": "Mission and Ørsted BESS partnership",
+      "url": "https://missioncleanenergy.com/orsted-partners-with-mission-clean-energy-to-develop-1-gw-of-storage-projects-across-the-midwest/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct company/transaction-party page",
+      "note": "States that Mission owned four development-stage Midwest BESS projects totaling 1 GW and that Ørsted initially held options to acquire project interests, not platform control."
+    },
+    {
+      "label": "Mission Ørsted strategic-investment announcement",
+      "url": "https://missioncleanenergy.com/mission-clean-energy-receives-strategic-investment-from-orsted/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct company page",
+      "note": "Supports a $55 million strategic investment, continued Wafra support, an independent Mission business and an 11+ GW development portfolio. The page does not expressly call Ørsted's platform investment a minority stake, so the proposal must use strategic investor with percentage not publicly disclosed rather than the model's minority label."
+    },
+    {
+      "label": "Mission about page",
+      "url": "https://missioncleanenergy.com/about/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct current company page",
+      "note": "Supports utility-scale solar/storage development, a footprint in more than a dozen U.S. states and the current leadership team. Its 4 GW experience statement includes prior roles and is not Mission-owned operating scale."
+    },
+    {
+      "label": "rPlus Bluebird acquisition",
+      "url": "https://www.rplusenergies.com/rplus-energies-acquires-900-mw-of-solar-and-storage-projects-in-ada-county-idaho",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct buyer page",
+      "note": "Supports rPlus's November 2025 acquisition of Bluebird Solar and Blacks Creek Energy Center as project-level transactions; it does not evidence a Mission platform exit."
+    }
+  ],
+  "conclusion": "The PROPOSED_NEW decision is supported. Mission Clean Energy LLC is a manager-level U.S. renewable-development platform whose current site identifies a Wafra-managed affiliate as principal investor after Wafra's 2022 control acquisition. Ørsted is a separately evidenced current strategic investor, but the sources do not expressly describe that platform investment as minority; record its percentage as not publicly disclosed. API's current ownership is not established. Development projects and SPVs remain beneath Mission, and the Bluebird sale is a project disposition rather than a platform exit."
+}

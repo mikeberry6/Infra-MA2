@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0437:psa-international-pte-ltd:b5676593",
+  "checkedAt": "2026-08-22T07:28:44.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type, byte-length and content-hash checks; page-level review of the PSA FY2025 results and Halifax factsheet PDFs; direct PSA and Temasek page review for ownership, legal history, footprint and the 2026 Temasek portfolio-management reorganization",
+  "sources": [
+    {
+      "url": "https://www.globalpsa.com/psa-international/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.globalpsa.com/psa-international/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 128482,
+      "sha256": "30232b5e4d3703378763eeec0013fcfdf53ceffab864296b3ffb9e9cfe9407fe",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "PSA International is headquartered at PSA Horizons in Singapore",
+        "PSA International is the global strategic and investment holding company for the PSA group"
+      ]
+    },
+    {
+      "url": "https://www.temasek.com.sg/en/our-investments/our-portfolio",
+      "httpStatus": 200,
+      "finalUrl": "https://www.temasek.com.sg/en/our-investments/our-portfolio",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 163639,
+      "sha256": "b89104501133141b809a89775ae911fc4b24b740bb978bcfa4888280af160a2d",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Temasek reports a 100% PSA International shareholding as at March 31, 2026",
+        "Temasek classifies PSA International as a Singapore-based Temasek Portfolio Company"
+      ]
+    },
+    {
+      "url": "https://links.sgx.com/1.0.0/corporate-announcements/95NK8ERBQEE9WRYZ/877752_260309%20PSA%20Group%20Financial%20Results%20FY2025.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://links.sgx.com/FileOpen/260309%20PSA%20Group%20Financial%20Results%20FY2025.ashx?App=Announcement&FileID=877752",
+      "mediaType": "application/pdf",
+      "bytes": 319684,
+      "sha256": "30de8b7971e7b4d85886fffbc12096b751c5cdc716c47fee3772ac5c3d8d3f55",
+      "healthStatus": "WORKING_REDIRECTED",
+      "pageVerification": [1, 2],
+      "verifiedClaims": [
+        "PSA handled 105.0 million TEU in 2025",
+        "PSA reported 2025 revenue of S$8,264 million and operating profit of S$1,419 million",
+        "PSA reported operations in 45 countries at more than 180 locations and more than 70 terminals"
+      ]
+    },
+    {
+      "url": "https://www.globalpsa.com/global-network/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.globalpsa.com/global-network/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 322979,
+      "sha256": "ef1689ac272df5e6e770ec492fa1c23d50fd5e5dfbd7505fbd6451782caf0b79",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The current PSA network lists Ashcroft Terminal and PSA Halifax in Canada and PSA Penn Terminals in the United States",
+        "No Mexico port operation is listed",
+        "Four North American physical terminal or inland-terminal operations are identified when PSA Halifax's two terminals are counted separately"
+      ]
+    },
+    {
+      "url": "https://www.globalpsa.com/wp-content/uploads/2026/04/PSA-HALIFAX.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.globalpsa.com/wp-content/uploads/2026/04/PSA-HALIFAX.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 2721158,
+      "sha256": "458c1f95d343a291225da548176686a1a065a94c1cb2cb0c6f27395b63f2e3cd",
+      "healthStatus": "WORKING",
+      "pageVerification": [1, 2],
+      "verifiedClaims": [
+        "PSA Halifax comprises the Atlantic Hub and Fairview Cove terminals in Nova Scotia"
+      ]
+    },
+    {
+      "url": "https://www.globalpsa.com/heritage-tab/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.globalpsa.com/heritage-tab/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 135488,
+      "sha256": "560a97c97523413b12ab4461ea873e2705581707f6f545de6d3b4ecfff5ce1c9",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "PSA Corporation succeeded the statutory authority on October 1, 1997 as a wholly owned Temasek subsidiary, while regulatory functions moved to the Maritime and Port Authority of Singapore",
+        "PSA International was established in December 2003 as the main PSA Group holding company"
+      ]
+    },
+    {
+      "url": "https://www.temasek.com.sg/en/news-and-resources/news-room/news/2025/temasek-positions-organisation-for-the-new-global-environment",
+      "httpStatus": 200,
+      "finalUrl": "https://www.temasek.com.sg/en/news-and-resources/news-room/news/2025/temasek-positions-organisation-for-the-new-global-environment",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 85150,
+      "sha256": "2af14fa34c9772bdfe82ed9701b4406de7d7302b50e2b3d75ae0e2dd48ba1677",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Temasek Singapore began managing Singapore-based Temasek Portfolio Companies on April 1, 2026",
+        "The announcement describes a portfolio-management and organizational change, not a PSA International share transfer"
+      ]
+    },
+    {
+      "url": "https://www.temasek.com.sg/en/about-us/faqs",
+      "httpStatus": 200,
+      "finalUrl": "https://www.temasek.com.sg/en/about-us/faqs",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 206458,
+      "sha256": "98cfd6c01cffd93d0e07bfeeaa27cc3c6f6ecc40b637dc7b0d02e4833026a1ec",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Singapore's Minister for Finance is Temasek's sole shareholder",
+        "Temasek operates independently on a commercial basis"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T07:28:44.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No PSA International-level sale, listing, partial privatization, dilution, exit or signed ownership transfer was found. Temasek's March 31, 2026 portfolio disclosure still reports 100% ownership. The April 2026 Temasek Singapore change concerns portfolio management and oversight rather than a disclosed transfer of PSA International shares."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "responseSourceHealthCorrections": [
+    "The four-operation North American terminal indicator is a direct network-enumeration inference, not a separately reported PSA regional metric.",
+    "PSA BDP is a global logistics subsidiary headquartered in Philadelphia and is not counted as a physical port terminal or a standalone Temasek holding.",
+    "North America-only throughput, revenue and EBITDA are not publicly disclosed.",
+    "The immediate registered-shareholder consequence, if any, of the April 2026 Temasek portfolio-management reorganization is not publicly disclosed; it does not disturb Temasek's reported 100% economic ownership."
+  ],
+  "deadSourceCount": 0
+}

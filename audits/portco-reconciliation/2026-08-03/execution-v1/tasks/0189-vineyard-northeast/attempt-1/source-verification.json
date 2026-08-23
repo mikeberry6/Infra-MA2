@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0189:vineyard-northeast:2c3d1cf2",
+  "taskIndex": 189,
+  "companyName": "Vineyard Northeast",
+  "verifiedAt": "2026-08-19T13:20:53.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50D13E96-0000-C9A4-A57C-1AF6D4575681%7D&DocTitle=VNE+NY+Segment_Appendix+E+PIP",
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50D13E96-0000-C9A4-A57C-1AF6D4575681%7D&DocTitle=VNE+NY+Segment_Appendix+E+PIP",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 695958,
+      "contentSha256": "725cf63ece78c236b42e521e6d32c0130674c7feb28673adda37c0dd1a25a903",
+      "note": "Opened directly. Model purpose: current lessee, CIP ownership and Vineyard Offshore platform boundary."
+    },
+    {
+      "url": "https://www.boem.gov/renewable-energy/lease-and-grant-information",
+      "finalUrl": "https://www.boem.gov/renewable-energy/lease-and-grant-information",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 81619,
+      "contentSha256": "b8497a6117c6b7c907ec956a194f856008253fc7d2599492307c1f3e0e7fe2fc",
+      "note": "Opened directly. Model purpose: active OCS-A 0522 lease and Vineyard Northeast LLC lessee."
+    },
+    {
+      "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/vineyard-wind-2/vineyard-northeast/",
+      "finalUrl": "https://www.vineyardoffshore.com/where-we-work/east-coast/vineyard-wind-2/vineyard-northeast/",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "browser DOM text",
+      "bytes": 2303,
+      "contentSha256": "10f8639d0f49611e091fd7d9f05be0684eb5b2d7a84ba7b9f6d7239871b535a0",
+      "note": "Command-line retrieval was blocked, but the exact page rendered in the in-app browser and directly states that Vineyard Wind 2 sits inside the broader Vineyard Northeast lease area."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1634997/000119312521277812/d409108dex101.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1634997/000119312521277812/d409108dex101.htm",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "browser DOM text",
+      "bytes": 129599,
+      "contentSha256": "75fb7e1d42381a88d368395220b0493245d5d032af7e06179bad0471442e1409",
+      "note": "Command-line retrieval was blocked, but the SEC exhibit rendered in the in-app browser and identifies the restructuring parties, 522 HoldCo transfer and CI IV transferee."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1634997/000163499722000056/R28.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1634997/000163499722000056/R28.htm",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "browser DOM text",
+      "bytes": 5159,
+      "contentSha256": "c5067c3551d1093252c0003fd7faf3d68b1f5b73dc0f3a2e6e1baa8a8bb820b9",
+      "note": "Command-line retrieval was blocked, but the SEC XBRL disclosure rendered in the in-app browser and supports the January 10, 2022 close, CIP acquisition and JV restructuring."
+    },
+    {
+      "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-northeast",
+      "finalUrl": "https://www.boem.gov/renewable-energy/state-activities/vineyard-northeast",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 72298,
+      "contentSha256": "1980d2c7417cdce119568e4b542e1247ba8bef6c4e294411a51e949d5030666e",
+      "note": "Opened directly. Model purpose: 2018 auction, acreage and April 2019 lease effectiveness."
+    },
+    {
+      "url": "https://www.permits.performance.gov/permitting-project/fast-41-covered-projects/vineyard-northeast",
+      "finalUrl": "https://www.permits.performance.gov/permitting-project/fast-41-covered-projects/vineyard-northeast",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "browser DOM text",
+      "bytes": 4384,
+      "contentSha256": "d1761175a80ddd9261c47bd6019d5274f0fc2d193ae31ec7c98dae870ce75143",
+      "note": "Command-line retrieval was blocked, but the exact federal dashboard rendered in the in-app browser and showed the project permitting status as paused."
+    },
+    {
+      "url": "https://www.offshore-mag.com/renewable-energy/news/55251964/vineyard-wind-2-shelved-after-connecticut-withdraws-from-project",
+      "finalUrl": "https://www.offshore-mag.com/renewable-energy/news/55251964/vineyard-wind-2-shelved-after-connecticut-withdraws-from-project",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 179577,
+      "contentSha256": "4d9f893026a68121178c5c7ad79892f00730b868376b83aa080d329d9acc61da",
+      "note": "Opened directly. Model purpose: procurement withdrawal and Vineyard Offshore's quoted statement."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserVerifiedAfterCurlBlockCount": 4,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Keep Vineyard Offshore as the one manager-level CIP platform, consolidate Vineyard Northeast into it, preserve Vineyard Northeast LLC as the lease SPV and Vineyard Wind 2 as the project, record CIP's January 2022 full-control close, and do not classify the paused/shelved project as an ownership exit."
+}

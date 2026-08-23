@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0223:avolta-renewable-holdings:7181d627",
+  "taskIndex": 223,
+  "companyName": "Avolta Renewable Holdings",
+  "verifiedAt": "2026-08-19T23:57:30.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://avoltadevelopment.com/",
+      "finalUrl": "https://avoltadevelopment.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 77610,
+      "contentSha256": "1f5225ef65dd4c8245811d1c11c32a7eba0a1a8598a9b63e093b5c7b75766e38",
+      "note": "The official operating site supports the Avolta Development brand, Avolta, LLC footer and RNG developer/owner/operator business."
+    },
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings",
+      "finalUrl": "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings",
+      "status": "OPEN_BROWSER_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 1908,
+      "contentSha256": "4c8ec1d35f551d08dfbeadc199b8c37dfd2a906460a5b516d2117cdd4154a2df",
+      "browserTextBytes": 2774,
+      "browserTextSha256": "4f19cf0775caa6e82c873f121df19e20fdce94225d8ada535c05a79fc2630d4a",
+      "note": "ECP's live page identifies Avolta Renewable Holdings, LLC as a current February 2022 newly formed JV with Avolta, LLC, lists Texas and Florida, and separately identifies Nacelle as another investment."
+    },
+    {
+      "url": "https://apps.sos.wv.gov/business/corporations/organization.aspx?org=468751",
+      "finalUrl": "https://apps.sos.wv.gov/business/corporations/organization.aspx?org=468751",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 22098,
+      "contentSha256": "7a59483c0ee3b06e0e1155a83780e8feb1fa5249da21b515e416b358f000d166",
+      "note": "The West Virginia registry identifies Avolta LLC, its January 2019 effective date, current Charleston office and listed managers and members."
+    },
+    {
+      "url": "https://avoltadevelopment.com/beyond-the-pipeline-what-a-digester-actually-changes-on-a-dairy-farm/",
+      "finalUrl": "https://avoltadevelopment.com/beyond-the-pipeline-what-a-digester-actually-changes-on-a-dairy-farm/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 70135,
+      "contentSha256": "cbdc9a7c02ea8a4276f4eee6cfe472c0827536168ca0a4b347866d58bad73cd6",
+      "note": "Avolta's May 2026 case study provides direct current operating evidence at a central-Texas dairy RNG project."
+    },
+    {
+      "url": "https://www.pathward.com/news/pathward-and-avolta-partnership-brings-two-renewable-natural-gas/",
+      "finalUrl": "https://www.pathward.com/news/pathward-and-avolta-partnership-brings-two-renewable-natural-gas/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 109186,
+      "contentSha256": "f3cec7ac5d7429de3f9beb3094773f202bee7806f58acf166d44b1e269c3cf54",
+      "note": "The financing-party release supports two Arizona project financings and operating scale without establishing a platform ownership transfer."
+    },
+    {
+      "url": "https://www.avoltaenergy.com/",
+      "finalUrl": "https://www.avoltaenergy.com/",
+      "status": "BROWSER_OPEN_CURL_NOT_ACCEPTABLE",
+      "httpStatus": 406,
+      "mediaType": "text/html",
+      "bytes": 3161,
+      "contentSha256": "2cc592e2ff5b017f07c2e73980e76478b52b84171c189618ed1951b8589afb16",
+      "contentHashBasis": "browser-rendered text",
+      "curlBlockBytes": 226,
+      "curlBlockContentSha256": "80a265bed528211aa708dcd58f7a95db36eeb7f873c6fe4ddab0b3a1dc0973a4",
+      "note": "The browser-opened Spanish-language site describes a Costa Rican solar and storage business, confirming that it is an unrelated namesake and not the U.S. RNG platform's website."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 2,
+    "ecpCurrentJvAttributionVerified": true,
+    "avoltaDevelopmentOperatingBrandVerified": true,
+    "charlestonLegalPresenceVerified": true,
+    "projectFinancingKeptSubordinate": true,
+    "costaRicanNamesakeExcluded": true,
+    "nacelleBoundaryVerified": true,
+    "laterDirectExitNotFound": true,
+    "allCoreClaimsHaveDirectOpenEvidence": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Before any mutation, recapture the task-specific production and dependency snapshot and convert this research packet into a hash-bound proposal."
+}

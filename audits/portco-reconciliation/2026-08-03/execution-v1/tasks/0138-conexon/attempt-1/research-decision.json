@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0138:conexon:5a11e528",
+  "taskIndex": 138,
+  "companyName": "Conexon",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T03:33:28.170Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Conexon",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "BlackRock's current page lists Conexon in BlackRock Impact Opportunities (BIO), its social-impact platform, not an infrastructure fund. TAP Advisors says only that BlackRock-managed funds and accounts invested in 2023; it does not identify GEPIF III, a stake or a closing date. BlackRock's acquisition of GIP does not establish transfer of this BIO holding. The company is digital infrastructure, but the documented manager strategy is out of scope.",
+    "identityResolution": {
+      "canonicalDisplayName": "Conexon",
+      "canonicalLegalName": "Conexon, LLC",
+      "canonicalKey": "conexon|united-states",
+      "predecessorSuccessor": "NONE_FOUND",
+      "officialWebsite": "https://conexon.us/",
+      "headquarters": "Kansas City, Missouri, United States",
+      "founded": 2015,
+      "boundary": "Count Conexon, LLC once. Conexon Connect, LLC is its ISP subsidiary, launched in 2021. Cooperative FTTH networks are customer/project networks, not separate Conexon PortCos absent ownership proof."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock Impact Opportunities (BIO)",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Funds and accounts managed by BlackRock",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2023-12",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED; exact closing date not publicly disclosed"
+        }
+      ],
+      "formerOwners": [],
+      "BlackRock": "Current BIO attribution supported; infrastructure-list scope excluded.",
+      "GlobalInfrastructurePartners": "No direct ownership, participating vehicle or transfer from BIO found; do not create a GIP period.",
+      "unsupportedProductionClaim": "BlackRock Global Energy & Power Infrastructure Fund III"
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "geography": "Multi-state rural United States",
+      "business": "Designs, finances, builds, manages and operates FTTH networks with electric cooperatives and communities; Connect supplies ISP and network operations.",
+      "customers": "Electric cooperatives, rural communities, residential and business subscribers.",
+      "scale": "Company materials state 800+ employees, 300+ cooperatives assisted, 80+ deployments, 200,000+ fiber miles designed and 1.8 million+ subscribers connected.",
+      "footprint": "Connect operations are listed in AZ, CO, FL, GA, IL, KY, LA, MS and MO.",
+      "scopeTest": "Digital-infrastructure operating company, but held through a documented non-infrastructure BlackRock strategy."
+    },
+    "acquisitionExitCheck": {
+      "searchThrough": "2026-08-19",
+      "result": "No sale, exit, merger, rebrand, bankruptcy or legal transfer to GIP found.",
+      "signedPendingTransactions": [],
+      "laterProcess": "Green Street/IJGlobal reported a TAP-led capital raise on 2026-03-17. No buyer, signed agreement, stake, closing or party announcement was found; it is not a pending ownership change.",
+      "currentState": "BlackRock's BIO page continues to list Conexon."
+    },
+    "milestones": [
+      {
+        "date": "2015",
+        "event": "Conexon founded in Kansas City, Missouri.",
+        "category": "Founding"
+      },
+      {
+        "date": "2021",
+        "event": "Conexon Connect launched as the ISP subsidiary.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2023-12",
+        "event": "TAP disclosed investment by BlackRock-managed funds and accounts; BIO records investment year 2023.",
+        "category": "Ownership"
+      },
+      {
+        "date": "2026-03-17",
+        "event": "A TAP-led capital raise was reported; no signed counterparty or closing found.",
+        "category": "Market process"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "BlackRock Impact Opportunities — portfolio",
+        "url": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+        "purpose": "OWNER_STRATEGY_AND_INVESTMENT_YEAR",
+        "sourceTier": "MANAGER_PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "TAP Advisors — selected transactions",
+        "url": "https://www.tapadvisors.com/selected-tap-advisors-transactions",
+        "purpose": "2023_INVESTMENT_ANNOUNCEMENT",
+        "sourceTier": "ADVISER_PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Conexon — About",
+        "url": "https://conexon.us/about/about-conexon/",
+        "purpose": "IDENTITY_BOUNDARY_OPERATIONS_AND_FOOTPRINT",
+        "sourceTier": "COMPANY_PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock — GIP acquisition closing",
+        "url": "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2024/BlackRock-Completes-Acquisition-of-Global-Infrastructure-Partners/default.aspx",
+        "purpose": "MANAGER_COMBINATION_NOT_PORTCO_TRANSFER",
+        "sourceTier": "MANAGER_PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Green Street/IJGlobal — capital-raise report",
+        "url": "https://www.linkedin.com/posts/infrastructure-journal_blackrock-backed-rural-fiber-broadband-network-activity-7439746340701540353-QawN",
+        "purpose": "LATER_TRANSACTION_CHECK",
+        "sourceTier": "TRADE_PRESS_SECONDARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      {
+        "field": "Disposition",
+        "before": "Active BlackRock infrastructure PortCo",
+        "after": "Exclude from BlackRock and GIP infrastructure lists; company remains active"
+      },
+      {
+        "field": "Owner attribution",
+        "before": "BlackRock GEPIF III; legacy holding matched to GIP",
+        "after": "BIO; exact fund/stake undisclosed; no GIP period"
+      },
+      {
+        "field": "Boundary/action",
+        "before": "MERGE_COMPANIES review",
+        "after": "No company merge; retain one Conexon parent and roll up Connect"
+      }
+    ],
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Conexon Connect, LLC",
+        "treatment": "DUPLICATE_SUBSIDIARY",
+        "rationale": "ISP arm of Conexon; consolidate under parent."
+      },
+      {
+        "candidate": "Global Infrastructure Partners owner row",
+        "treatment": "EXCLUDE_UNSUPPORTED",
+        "rationale": "BlackRock's GIP acquisition does not prove transfer of BIO's investment."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact BlackRock legal holder, fund/account, stake and 2023 closing date are not publicly disclosed.",
+      "No public evidence showed the reported 2026 capital raise reaching a signed or closed transaction."
+    ],
+    "recommendedListAction": {
+      "action": "EXCLUDED",
+      "scope": "BlackRock and Global Infrastructure Partners North American infrastructure PortCo lists",
+      "instruction": "Retain one Conexon identity outside this census; do not add GIP; consolidate Connect; replace GEPIF III with BIO and NOT_PUBLICLY_DISCLOSED fields."
+    }
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 5,
+    "openSourceCount": 4,
+    "blockedSourceCount": 1,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

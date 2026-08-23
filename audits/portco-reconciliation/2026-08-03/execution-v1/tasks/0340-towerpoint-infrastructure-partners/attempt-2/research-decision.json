@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0340:towerpoint-infrastructure-partners:4a5032aa",
+  "taskIndex": 340,
+  "companyName": "TowerPoint Infrastructure Partners",
+  "asOfDate": "2026-08-22",
+  "recordedAt": "2026-08-22T21:26:13.000Z",
+  "modelDecision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "TowerPoint Infrastructure Partners is one qualifying U.S. digital-infrastructure platform. Direct company, manager and regulatory evidence corrects the published sole-UIF view to three evidenced current institutional owners: Meritage, Ullico/UIF and Munich Re through MEAG/MR Highland LP, with the latter holding 15.0%. TowerPoint Capital is evidenced as manager, not as a countable owner.",
+  "repoReconciliation": {
+    "canonicalKey": "towerpoint-infrastructure-partners|united-states",
+    "recommendedTreatment": "CORRECT_EXISTING_COMPANY_AND_CURRENT_OWNERSHIP",
+    "preserveBoundary": "one TowerPoint Infrastructure Partners platform; keep TowerPoint Capital, affiliates, towers, leases and financing SPVs beneath or outside the PortCo boundary as appropriate"
+  },
+  "proposalGuardrails": [
+    "Replace the sole-UIF ownership view with the three evidenced institutional owners; do not infer undisclosed Meritage or UIF percentages.",
+    "Record Munich Re's 15.0% through MR Highland LP with MEAG as manager and do not convert the 2026 securitization into ownership.",
+    "Do not add TowerPoint Capital as an owner; public sources call it the manager and disclose no material stake.",
+    "Treat any small management participation as not publicly disclosed and noncountable unless later direct evidence establishes it.",
+    "Use December 2024 for the recap closing period and by September 30, 2025 for Munich Re's entry; retain exact days as unavailable.",
+    "Do not create towers, leases, TowerPoint affiliates or MTP ABS Funding as separate PortCos."
+  ],
+  "nonblockingDisclosureGaps": [
+    "Meritage and UIF exact stakes and deal vehicles",
+    "Exact recap and Munich Re closing days",
+    "Specific Munich Re account",
+    "Any small management co-investment"
+  ],
+  "recommendedNextAction": "Prepare one later protected correction proposal for TowerPoint Infrastructure Partners, preserving one canonical company and adding the complete evidenced owner roster without inferring undisclosed stakes.",
+  "databaseMutationAuthorized": false
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0151:rio-grande-lng:e7985cce",
+  "taskIndex": 151,
+  "companyName": "Rio Grande LNG",
+  "verifiedAt": "2026-08-19T04:56:15.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.federalregister.gov/documents/2023/09/05/2023-19051/change-in-control-rio-grande-lng-llc",
+      "finalUrl": "https://www.federalregister.gov/documents/2023/09/05/2023-19051/change-in-control-rio-grande-lng-llc",
+      "status": "OPEN_VIA_BROWSER",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "contentSha256": null,
+      "note": "Direct curl redirected to an unblock page; independent browser retrieval opened the exact Federal Register document and verified the July 12, 2023 ownership changes and percentages."
+    },
+    {
+      "url": "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf",
+      "finalUrl": "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 346577,
+      "contentSha256": "8e4960f150f9c6a47764223dc11a9dd6418d6c6f63b4ca9cb167109da092405e",
+      "note": "DOE consolidated change-in-control response opened and was parsed independently."
+    },
+    {
+      "url": "https://corporate.totalenergies.us/news/totalenergies-reaches-final-investment-decision-its-partners-rio-grande-lng-train-4-10-direct",
+      "finalUrl": "https://corporate.totalenergies.us/news/totalenergies-reaches-final-investment-decision-its-partners-rio-grande-lng-train-4-10-direct",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 145653,
+      "contentSha256": "1a38a600c2fc8cf301b6685b5cd6532578589ef9be1c70dc487fd7d318490b20",
+      "note": "Transaction-party Train 4 FID page opened."
+    },
+    {
+      "url": "https://www.energy.gov/sites/default/files/2025-11/RGLNG%205%20CIC.pdf",
+      "finalUrl": "https://www.energy.gov/sites/default/files/2025-11/RGLNG%205%20CIC.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 242401,
+      "contentSha256": "95dbeaefe69fd757a30060b682b6207dd408770520f3ceba106b6f8872aa93a2",
+      "note": "DOE Train 5 filing opened; its ownership chart independently verified 36.9% GIP-vehicle and 13.2% aggregate GIC/Mubadala interests."
+    },
+    {
+      "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-provides-second-quarter-2026-business-update",
+      "finalUrl": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-provides-second-quarter-2026-business-update",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 517,
+      "contentSha256": "576c5ddff42d02fdc93f1998ab7bd06c9269be3f3b75191a4f9b788f3b47191a",
+      "note": "Direct curl was blocked, but independent browser retrieval opened the exact NextDecade release and verified June 2026 construction percentages and first-LNG expectation."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Reopen every selected source against a fresh production snapshot before any proposal or mutation."
+}
+

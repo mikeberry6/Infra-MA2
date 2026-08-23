@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "createdAt": "2026-08-23T04:21:00.000Z",
+  "updatedAt": "2026-08-23T05:06:00.000Z",
+  "activeBatchId": "batch-0121-0125-v1",
+  "batches": [
+    {
+      "batchId": "batch-0121-0125-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0121:r-e-l-a-m:186bc13d",
+        "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+        "ledger:0123:connaught-oil-and-gas:bf7f3998",
+        "ledger:0124:corex-resources-ltd:b7545232",
+        "ledger:0125:gct-global-container-terminals-inc:4810f4cf"
+      ],
+      "taskIndexes": [
+        121,
+        122,
+        123,
+        124,
+        125
+      ],
+      "createdAt": "2026-08-23T04:21:00.000Z",
+      "updatedAt": "2026-08-23T05:06:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/batch-manifest.json",
+        "sha256": "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T04:21:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T05:05:00.000Z",
+          "evidenceSha256": [
+            "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-23T05:06:00.000Z",
+          "evidenceSha256": [
+            "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
+          ],
+          "reason": null
+        }
+      ]
+    }
+  ],
+  "ledgerSha256": "1a772a6e083d3fc74ccd8b8b23b3685fc566274ad69cfccc135e6f4f1e093d0d"
+}

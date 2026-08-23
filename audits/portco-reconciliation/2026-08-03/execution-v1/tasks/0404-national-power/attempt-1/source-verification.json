@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0404:national-power:872e462e",
+  "checkedAt": "2026-08-21T23:26:45.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; claim-level HTML inspection; text extraction and rendered-page inspection of both Ridgemont PDFs",
+  "sources": [
+    {
+      "url": "https://www.ridgemontep.com/wp-content/uploads/REP-Brochure-4.8.26.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/wp-content/uploads/REP-Brochure-4.8.26.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 3167082,
+      "sha256": "1ae69c8fdf64345fd390f58c1487a19679403b2172e49f37a6ed91a4faaf842e",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 9,
+        "relevantPdfPages": [6],
+        "verifiedClaims": [
+          "The April 2026 Ridgemont brochure visually places National Power under Select Investments (Active) in Environmental, Power & Infrastructure Services",
+          "The PDF's extracted reading order interleaves the active and exited columns, so rendered-page inspection was necessary to avoid a false exit conclusion"
+        ],
+        "renderedPagesInspected": [6]
+      }
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-leads-recapitalization-to-support-national-powers-growth/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-leads-recapitalization-to-support-national-powers-growth/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 62561,
+      "sha256": "63570608e9d5d5cb4821ed7cb0fc19f59f130c550c4f6efc267b0bab1760a063",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgemont announced its recapitalization of National Power on October 25, 2023 and classified the business within its infrastructure-services focus",
+        "The release reports Raleigh headquarters, U.S. operations and more than 1,500 customers; it does not disclose stake, vehicle, co-investors or a separate legal closing date"
+      ]
+    },
+    {
+      "url": "https://ionanalytics.com/insights/mergermarket/ridgemont-looks-to-maintain-consistent-investment-exit-pace-despite-macro-volatility/",
+      "httpStatus": 200,
+      "finalUrl": "https://ionanalytics.com/insights/mergermarket/ridgemont-looks-to-maintain-consistent-investment-exit-pace-despite-macro-volatility/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 170301,
+      "sha256": "bb0d29ae718bb2c79ea313b94cee32241ca36fd5ea40521da2e4750b69b9810f",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "A July 2025 direct interview with Ridgemont states that Fund IV backed National Power in 2023"
+      ]
+    },
+    {
+      "url": "https://www.tecum.com/tecum-capital-announces-investment-in-national-power-corp-to-drive-future-growth/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tecum.com/tecum-capital-announces-investment-in-national-power-corp-to-drive-future-growth/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 80603,
+      "sha256": "b8bcc9fbd601cd76ffa5ba262b11130b7c06a17110f290076669f0dc6ab5abe0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Tecum says Valley Ridge led the 2019 transaction, Tecum and C3 provided subordinated debt and equity, and founder Eddie Youngblood retained a minority stake",
+        "It says National Power Corp. became National Power, LLC and confirms Raleigh headquarters and 1985 founding"
+      ]
+    },
+    {
+      "url": "https://www.tecum.com/portfolio/national-power/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tecum.com/portfolio/national-power/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 67097,
+      "sha256": "a1c9cad7195aff4fa7758bc24afe4d583cb015c60f8ea08e1add52cbd953b95c",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Tecum lists National Power as exited, attributes the investment to Junior Capital Fund II and gives the investment date as June 28, 2019"
+      ]
+    },
+    {
+      "url": "https://mergr.com/transaction/valley-ridge-investment-partners-exits-national-power",
+      "httpStatus": 200,
+      "finalUrl": "https://mergr.com/transaction/valley-ridge-investment-partners-exits-national-power",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 71724,
+      "sha256": "f4a61f9a37535a79e78fa403b977dd20c4dfb013f4644db97b368225785527e1",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The secondary transaction record reports that Ridgemont invested on October 25, 2023 from Tecum, C3 and Valley Ridge",
+        "This secondary record does not resolve founder/management rollover"
+      ]
+    },
+    {
+      "url": "https://www.ridgemontep.com/wp-content/uploads/Ridgemont-Sustainability-Report-2025-1.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/wp-content/uploads/Ridgemont-Sustainability-Report-2025-1.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 3075279,
+      "sha256": "62b34b903475a04298c9825182220051c420c1aadfe5fff45e2cf579ca58d8b4",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 21,
+        "relevantPdfPages": [14],
+        "verifiedClaims": [
+          "Ridgemont presents National Power as an infrastructure-services portfolio company and reports 2024 scale of 2,000 mission-critical facilities, approximately 10,000 generators and nearly 90 million uptime-hours"
+        ],
+        "renderedPagesInspected": [14]
+      }
+    },
+    {
+      "url": "https://www.ridgemontep.com/portfolio/national-power/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/portfolio/national-power/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 61358,
+      "sha256": "4b720b1eaf7da7972df74555d1cd76448833642367b7f0c2ca89ff4ae8dac20f",
+      "healthStatus": "WORKING",
+      "supplementalIndependentSource": true,
+      "verifiedClaims": [
+        "Ridgemont's live company page labels National Power Current and lists 2023 as the investment year"
+      ]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

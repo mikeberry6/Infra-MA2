@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0464:donjon-marine-co-llc:1f2eb8b6",
+  "taskIndex": 464,
+  "companyName": "Donjon Marine Co., LLC",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T18:53:23.000Z",
+  "modelDecision": "PROPOSED_CORRECTION",
+  "confidence": "MEDIUM_HIGH",
+  "stageState": "STAGED_REVIEW_REQUIRED",
+  "applicationBlocked": true,
+  "rationale": "Tallvine's releases establish Donjon as the 2025 cornerstone and Lind as the 2026 second acquisition under one North American marine infrastructure platform. Donjon and Lind remain separately branded operators, and no distinct legal umbrella was found. Advisor evidence confirms the Donjon close; seller counsel names Tallvine and Thoroughbred as buyers, while Tallvine consistently describes Thoroughbred as the platform's industrial partner. The canonical list should therefore retain the Donjon key as a manager-level proxy, but the broader display name and any separate Thoroughbred owner row should receive proposal-level review because the legal structure and economics are not public.",
+  "repoReconciliation": {
+    "censusCanonicalKey": "donjon-marine-co-llc|united-states",
+    "recommendedCanonicalKey": "donjon-marine-co-llc|united-states",
+    "recommendedDisplayName": "Tallvine North America Marine Infrastructure Platform",
+    "queuedActionTreatment": "CORRECT_EXISTING_DONJON_RECORD_WITH_PLATFORM_BOUNDARY_AND_PRESERVE_OPERATOR_LINEAGE"
+  },
+  "proposalGuardrails": [
+    "Retain the existing Donjon canonical key and do not create a speculative legal umbrella entity.",
+    "Keep Donjon Marine and Lind Marine as separately branded operators beneath the manager-level platform proxy; keep their vessels, yards, drydocks, subsidiaries and Moose Boats below the PortCo boundary.",
+    "Record Tallvine as lead infrastructure sponsor from the September 19, 2025 Donjon close.",
+    "Treat Thoroughbred as a documented co-buyer/industrial partner, but do not infer its percentage, governance rights, fund or vehicle; review whether the production ownership schema should express it as an owner or partner note.",
+    "Do not invent a Donjon seller, Witte-family rollover, Lind-family rollover, transaction value, fund, vehicle or platform holdco.",
+    "Preserve the May 2026 Lind acquisition as a platform expansion milestone while leaving its exact closing date not publicly disclosed.",
+    "No later platform exit or signed pending transfer was found through the cutoff."
+  ],
+  "blockingReasons": [
+    "The public record does not identify a legal umbrella joining Donjon and Lind.",
+    "Thoroughbred is identified as both buyer and industrial partner, but its ownership economics and governance are undisclosed."
+  ],
+  "recommendedNextAction": "Stage the correction for later protected proposal review; continue research sequencing without applying any database, seed, release or deployment change.",
+  "databaseMutationAuthorized": false
+}

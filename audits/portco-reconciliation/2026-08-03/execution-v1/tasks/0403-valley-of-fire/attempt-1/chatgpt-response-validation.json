@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+  "taskIndex": 403,
+  "validatedAt": "2026-08-21T23:20:43.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a88d84c-eb8c-83ea-a1cd-b7e2cda0433c",
+  "requiredTopLevelKeys": ["asOfDate", "requestedCompany", "requestedManagers", "decision", "confidence", "rationale", "identityResolution", "ownershipResolution", "operatingResolution", "acquisitionExitCheck", "milestones", "evidence", "beforeAfterChanges", "excludedOrDuplicateCandidates", "unresolvedQuestions", "recommendedListAction"],
+  "initialResponse": {
+    "valid": true,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "e2220ed0f8bb2c68a475c8f8fcfb9c51a7f080e3bbcb851746e006b0a4c01734",
+    "errors": []
+  },
+  "repair": {
+    "count": 0,
+    "limit": 1,
+    "submittedAt": null,
+    "completedAt": null,
+    "valid": null,
+    "responseSha256": null,
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "canonicalName": "Valley of Fire Solar, LLC",
+    "evidenceCount": 6,
+    "currentOwnerCount": 2,
+    "formerOwnerCount": 2,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeManagerAndFundResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "operatorBoundaryResolved": true,
+    "projectBoundaryPartiallyResolved": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "exactlyOneRecommendedPrimary": true,
+    "unresolvedCurrentCapTable": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "applicationBlocked": true,
+  "blockingReasons": [
+    "The complete current Valley of Fire Solar, LLC cap table, unnamed minority holders and intermediate holding-company chain are unresolved.",
+    "The March 2026 SEC filing proves that Emily Cohen owns securities in Valley of Fire Solar, LLC but does not disclose the security class, percentage or whether it is comparable with the fund's sponsor interest."
+  ],
+  "errors": [],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

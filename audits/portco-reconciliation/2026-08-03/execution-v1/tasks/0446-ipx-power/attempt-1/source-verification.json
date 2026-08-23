@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0446:ipx-power:dd940951",
+  "checkedAt": "2026-08-22T12:18:09.226Z",
+  "method": "Independent direct HTTP status, final-URL, media-type, byte-length and SHA-256 checks of every accepted evidence URL, with visible browser retrieval of the SEC and IPX pages blocked to direct command-line access, together with the acquisition and later-exit sweep in the GPT-5.6 Sol Pro research conversation",
+  "sources": [
+    {
+      "url": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 104514,
+      "sha256": "96da8f4a08821eaef4925e146e9f555cdfde17f5d433d8d45da06d48b81e3905",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Google closed the $4.75bn Intersect transaction on March 10, 2026",
+        "IPX launched with the excluded grid-tied portfolio and TPG Rise Climate majority backing plus CAI and Greenbelt support",
+        "The release supports the portfolio scale and California/Texas boundary"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "99daa1148acd7e5ef4c75f87e2e5e85237b4e6efac637988079b4bb6f5d6b2bf",
+      "healthStatus": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "The browser-rendered filing classifies TPG Rise Climate within TPG's private-equity products",
+        "The filing separately identifies Transition Infrastructure, preventing a false infrastructure-mandate inference"
+      ]
+    },
+    {
+      "url": "https://www.climateadaptiveinfra.com/news-and-insights/climate-adaptive-infrastructure-raises-over-dollar1-billion/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.climateadaptiveinfra.com/news-and-insights/climate-adaptive-infrastructure-raises-over-dollar1-billion",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 21479,
+      "sha256": "bc09f810ff25145501bd3efb3f830842e3b10c30430e00b3f19ac8a0edd55509",
+      "healthStatus": "REDIRECTED_WORKING",
+      "verifiedClaims": [
+        "CAI invested in Intersect through Climate Adaptive Infrastructure Fund LP",
+        "CAI expressly describes the fund as an infrastructure investment vehicle",
+        "The fund basis supports retaining IPX through CAI after the carve-out"
+      ]
+    },
+    {
+      "url": "https://www.greenbeltcapital.com/news/inaugural-fund-close-1b.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.greenbeltcapital.com/news/inaugural-fund-close-1b.html",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 14319,
+      "sha256": "b7941c31fc1ea08393e6b983a04bd30bf50f40e0d5343460efc5f6fd16b573df",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Greenbelt describes its current fund as private equity rather than a dedicated infrastructure vehicle",
+        "The source does not identify the exact legacy vehicle that holds IPX"
+      ]
+    },
+    {
+      "url": "https://ipxpower.com/",
+      "httpStatus": 403,
+      "finalUrl": "https://ipxpower.com/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "sha256": "078eb16ea855c91e8ffa4c15a5155cb4cb7cc3a023e73f5d56759d0073126b19",
+      "healthStatus": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "IPX describes itself as an owner, developer and operator of U.S. utility-scale clean-energy assets",
+        "The live portfolio totals 4.4 GW of solar PV and 8.8 GWh of battery storage in California and Texas",
+        "Oberon, Lumina, Athos III and Radian are operating while Aramis, Easley and Darden are in construction"
+      ]
+    },
+    {
+      "url": "https://ipxpower.com/ipx-power-secures-800-million-corporate-credit-facility-to-support-expansion-of-its-clean-energy-platform/",
+      "httpStatus": 403,
+      "finalUrl": "https://ipxpower.com/ipx-power-secures-800-million-corporate-credit-facility-to-support-expansion-of-its-clean-energy-platform/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "sha256": "6ebee30d8ab2850617f238451dc9b714c7f93550b6d84b7ad59978afcddd5a9c",
+      "healthStatus": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "IPX Power, LLC announced an $800mm corporate credit facility on August 6, 2026",
+        "The release states IPX was formed from Intersect's grid-tied business and remains backed by TPG Rise Climate, CAI and Greenbelt",
+        "The financing supports continuing operations and does not transfer sponsor ownership"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T12:18:09.226Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No later IPX platform sale, sponsor exit or signed pending ownership transfer was identified. The August 6, 2026 financing release reaffirmed all three backers and did not change ownership."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrBrowserVerified": true,
+  "responseSourceHealthCorrections": [
+    "The SEC and both IPX URLs return 403 to direct command-line retrieval but render normally in the browser and are not dead.",
+    "CAI provides the qualifying infrastructure-fund ownership basis; TPG Rise Climate and Greenbelt remain factual owners but do not independently qualify under the fixed mandate rule.",
+    "Sponsor percentages, securities, consideration, governance and exact TPG/Greenbelt vehicles remain not publicly disclosed.",
+    "Google and post-close Intersect are carve-out boundary parties rather than IPX owners."
+  ],
+  "deadSourceCount": 0
+}

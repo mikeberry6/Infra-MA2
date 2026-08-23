@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0182:aira-solar:bed31b0f",
+  "taskIndex": 182,
+  "companyName": "Aira Solar",
+  "verifiedAt": "2026-08-19T09:43:51.500Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.horizonnewenergy.ca/backed-by-cip",
+      "finalUrl": "https://www.horizonnewenergy.ca/backed-by-cip",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 244911,
+      "contentSha256": "35f7475258c912d6d23c0ddf42f89309e0e2fee7d036e41aae2da03b722e853b",
+      "note": "Opened directly. Model purpose: Identifies Horizon as a CIP-managed Canadian portfolio company."
+    },
+    {
+      "url": "https://www.horizonnewenergy.ca/projects",
+      "finalUrl": "https://www.horizonnewenergy.ca/projects",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 495839,
+      "contentSha256": "aa5e2017fd9fcb6098f28be751b4ee1d9041e817f6ce46d2f77f76513e59d4b0",
+      "note": "Opened directly. Model purpose: Lists Aira as Horizon's project and states current stage, size and permits."
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2023/11/21/2783918/0/en/Copenhagen-Infrastructure-Partners-launches-Horizon-New-Energy-dedicated-to-renewable-energy-in-Canada.html",
+      "finalUrl": "https://www.globenewswire.com/news-release/2023/11/21/2783918/0/en/Copenhagen-Infrastructure-Partners-launches-Horizon-New-Energy-dedicated-to-renewable-energy-in-Canada.html",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_TIMEOUT",
+      "httpStatus": null,
+      "mediaType": "browser DOM snapshot",
+      "bytes": 19392,
+      "contentSha256": "3c3907e5378fe458fd6756acc5cfad4cef713a53fdde20f4564045b6bc7e046b",
+      "note": "Direct curl timed out, but the page rendered fully in the browser with Horizon/CIP content present. Model purpose: Establishes Horizon's launch and assumption of Alberta assets."
+    },
+    {
+      "url": "https://kings-printer.alberta.ca/documents/gazette/2023/text/21_Nov15_Registrar.cfm",
+      "finalUrl": "https://kings-printer.alberta.ca/documents/gazette/2023/text/21_Nov15_Registrar.cfm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 627827,
+      "contentSha256": "d404aef5877631f609027c779224061e9608f70a894cf85718ada3b3c608584c",
+      "note": "Opened directly. Model purpose: Records the CI V Aira GP and Horizon Devco entities."
+    },
+    {
+      "url": "https://kings-printer.alberta.ca/documents/gazette/2025/text/06_Mar31_Registrar.cfm",
+      "finalUrl": "https://kings-printer.alberta.ca/documents/gazette/2025/text/06_Mar31_Registrar.cfm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 470564,
+      "contentSha256": "64a63d443a70c9b31984e0c2756db3adb33ac80a5fbaf2ebb7d478de3aa4e97f",
+      "note": "Opened directly. Model purpose: Records the amalgamation into CI V Aira Holdco Ltd."
+    },
+    {
+      "url": "https://www.aeso.ca/grid/transmission-projects/aira-solar-project-connection-2461/",
+      "finalUrl": "https://www.aeso.ca/grid/transmission-projects/aira-solar-project-connection-2461/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 70222,
+      "contentSha256": "ab71185fa4c12cf7b4bd66e75ee43f9e879e7fe6d63b7d54f7220b84e602c4e0",
+      "note": "Opened directly. Model purpose: Identifies the former applicant and connection approval."
+    },
+    {
+      "url": "https://www.aeso.ca/assets/Uploads/project-reporting/August-2026-Project-List.xlsx",
+      "finalUrl": "https://www.aeso.ca/assets/Uploads/project-reporting/August-2026-Project-List.xlsx",
+      "status": "DIRECT_DOWNLOAD_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 40702,
+      "contentSha256": "69135c1a6c8e75a99e6d68cf734cc83a88e6242a6cfe1ab6680aa146e11c8bea",
+      "note": "Downloaded directly as the August 2026 AESO workbook. Model purpose: Shows Active Stage 5, 450 MW STS and requested 2027-12-15 ISD."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserVerifiedAfterCurlTimeoutCount": 1,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Merge the standalone Aira Solar record under Horizon New Energy, preserve Aira as project history, correct the active vehicle context from CI IV to CI V, and do not treat the 2025 amalgamation as an ownership sale."
+}

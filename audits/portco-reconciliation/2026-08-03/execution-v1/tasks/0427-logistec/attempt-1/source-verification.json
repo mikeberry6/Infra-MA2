@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0427:logistec:49cd6941",
+  "checkedAt": "2026-08-22T03:20:18.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; manager, issuer, corporate-registry and antitrust-regulator inspection; acquisition, separation, closing and exit search",
+  "sources": [
+    {
+      "url": "https://www.bluewolfcapital.com/news/logistec-corporation-enters-into-definitive-agreement-to-be-acquired-by-blue-wolf-capital-partners/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bluewolfcapital.com/news/logistec-corporation-enters-into-definitive-agreement-to-be-acquired-by-blue-wolf-capital-partners/",
+      "mediaType": "text/html",
+      "bytes": 79236,
+      "sha256": "644ace1a56a476b4d3212583ebfd957125489af8d136f5e497e8be80ae66179a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Blue Wolf's purchaser signed for all LOGISTEC shares on October 16, 2023",
+        "Blue Wolf supplied managed private-equity and co-investment capital while Stonepeak supplied an additional preferred investment"
+      ]
+    },
+    {
+      "url": "https://www.newswire.ca/news-releases/blue-wolf-capital-partners-completes-acquisition-of-logistec-corporation-814993814.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.newswire.ca/news-releases/blue-wolf-capital-partners-completes-acquisition-of-logistec-corporation-814993814.html",
+      "mediaType": "text/html",
+      "bytes": 206792,
+      "sha256": "8cf7feca1037ad8d5bf3add038738edfccead8f5c21478d089f1062c76215354",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The purchaser acquired 100% of LOGISTEC under the arrangement on January 8, 2024",
+        "Stonepeak's capital was described as preferred-equity financing"
+      ]
+    },
+    {
+      "url": "https://free.bcpublications.ca/civix/document/id/corpreg/corpreg/crpn0620fin0524",
+      "httpStatus": 200,
+      "finalUrl": "https://free.bcpublications.ca/civix/document/id/corpreg/corpreg/crpn0620fin0524",
+      "mediaType": "text/html",
+      "bytes": 18925,
+      "sha256": "8ae8860018e3e2215e4ff237554d4f8175df29d303e7ae9790f70ee3ec8506a1",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Corporate-registry renames support the LOGISTEC Marine Services ULC and LOGISTEC Marine TopCo ULC boundary"
+      ]
+    },
+    {
+      "url": "https://enstructure.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/",
+      "httpStatus": 403,
+      "finalUrl": "https://enstructure.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/",
+      "mediaType": "text/html",
+      "bytes": 525,
+      "sha256": "889403e5cfbb7981f7a26aced0d7492524e5397d6996f7fccd67562d2a4a71a3",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationUrl": "https://www.logistec.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/",
+      "verifiedClaims": [
+        "The June 15, 2026 agreement covers all LOGISTEC marine terminal operations including Gulf Stream Marine and LOGISTEC Direct",
+        "Blue Wolf would remain invested in the combined Enstructure business and retain majority ownership of CoreAqua and SANEXEN",
+        "The transaction remained subject to customary closing conditions"
+      ]
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261756",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261756",
+      "mediaType": "text/html",
+      "bytes": 98639,
+      "sha256": "0fa49112ef6e22dc5a4d6757f4d98306e8b1335d3b0561e32dd8cb830a3ec3bb",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "HSR early termination was granted July 28, 2026",
+        "The filing identifies Enstructure Holdco LLC and BW Phoenix Co-Invest, L.P.; clearance is not closing evidence"
+      ]
+    },
+    {
+      "url": "https://bureau-concurrence.canada.ca/fusions-acquisitions/rapport-examens-fusions-termines?Open=1&wbdisable=true",
+      "httpStatus": 200,
+      "finalUrl": "https://bureau-concurrence.canada.ca/fr/fusions-acquisitions/rapport-examens-fusions-termines?Open=1&wbdisable=true",
+      "mediaType": "text/html",
+      "bytes": 208618,
+      "sha256": "8aff65d2324844059742172eacc951e4b95c23b4755425290c75c28395eb19ae",
+      "healthStatus": "WORKING_REDIRECTED",
+      "verifiedClaims": [
+        "Canada's review record identifies Enstructure Tidal Holdings and LOGISTEC Marine TopCo ULC",
+        "The August 3, 2026 no-action treatment is regulatory clearance and does not establish transaction closing"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T03:20:18.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No direct announcement of closing or termination was found by the cutoff. The marine sale remained signed pending despite U.S. and Canadian regulatory clearances, so Blue Wolf and Stonepeak remain active pre-close owners."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 1,
+  "responseSourceHealthCorrections": [
+    "Five accepted-response evidence URLs returned HTTP 200; the Enstructure page returned HTTP 403 to direct fetch but was verified in the signed-in browser and against LOGISTEC's official mirror.",
+    "The Canadian Competition Bureau URL redirected to its French canonical path while preserving the merger-review record.",
+    "Regulatory clearance dates were retained as clearance evidence only and were not converted into a legal closing date."
+  ],
+  "deadSourceCount": 0
+}

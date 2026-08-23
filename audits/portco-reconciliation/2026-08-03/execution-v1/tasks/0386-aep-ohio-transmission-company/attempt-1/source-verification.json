@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0386:aep-ohio-transmission-company:b61a164a",
+  "checkedAt": "2026-08-21T21:30:31.725Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.aeptransmission.com/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aeptransmission.com/",
+      "mediaType": "text/html",
+      "bytes": 35262,
+      "sha256": "f27f8b44856ed8376b4a10bd627460c04bb0ab5569accb6b11467eff39236a30",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000069/aep-20250605.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000069/aep-20250605.htm",
+      "mediaType": "text/xml",
+      "bytes": 37404,
+      "sha256": "b14e244785ceed7e5ecc4c485fb65ba1f7109fc6d6e96e6e3160df7ef129a2a3",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000141/ex10aaeptco20252q.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000141/ex10aaeptco20252q.htm",
+      "mediaType": "text/html",
+      "bytes": 653438,
+      "sha256": "b3bbb6cc780e770f5a9ea472c699b313276cea8ea733b9c81775f6f06105df5e",
+      "healthStatus": "WORKING",
+      "verificationNote": "The agreement names Infra-PSP Canada Inc. as an equity-commitment provider; it does not establish that entity as PSP's fund or managed account."
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/kkr-and-psp-investments-acquire-minority-stake-in-two-american-electric-power-transmission-companies/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.investpsp.com/en/news/kkr-and-psp-investments-acquire-minority-stake-in-two-american-electric-power-transmission-companies/",
+      "mediaType": "text/html",
+      "bytes": 34918,
+      "sha256": "9bd9ba09d3d4f98cd484b56819089077d1ada9d598f7a2fddf1ecc59705c53bf",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://docs.aep.com/docs/investors/fercfilings/docs/2025/AEP%20Ohio%20Transmission%20Company%202025%20FF1_compressed.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aep.com/docs/investors/fercfilings/docs/2025/AEP%20Ohio%20Transmission%20Company%202025%20FF1_compressed.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 858245,
+      "sha256": "437976e0ac93f5cb3a41b096b9a8c55be62d26162899b3007ec5edd3e96217b2",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 149,
+        "relevantPdfPages": [
+          8,
+          17,
+          136,
+          147
+        ],
+        "verifiedClaims": [
+          "AEP Ohio Transmission Company identity and direct control chain",
+          "$7.069bn net utility plant",
+          "1,953.11 own-structure pole-miles, 17.25 other-structure pole-miles and 326 circuits",
+          "17,742 MVA transmission-substation capacity"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-02-11/html/2025-02439.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.govinfo.gov/content/pkg/FR-2025-02-11/html/2025-02439.htm",
+      "mediaType": "text/html",
+      "bytes": 23791,
+      "sha256": "08dc63a9c00a6e5b5f3c3229f3ce8d0b94420b1817aa2b34a2ee88945a80380f",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/50172/000000490426000059/R59.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/50172/000000490426000059/R59.htm",
+      "mediaType": "text/html",
+      "bytes": 54150,
+      "sha256": "5393860ccf7d2712e6dc60eea7c4b8aad9ec9f04c0f6b4f653456915a43e3add",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}
