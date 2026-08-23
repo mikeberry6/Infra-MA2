@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T07:44:00.000Z",
-  "activeBatchId": "batch-0131-0135-v1",
+  "updatedAt": "2026-08-23T07:55:00.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -205,7 +205,7 @@
     },
     {
       "batchId": "batch-0131-0135-v1",
-      "state": "READY",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0131:green-meadow-sustainable-solutions:bf30ae0e",
         "ledger:0132:aligned-data-centers:ce7a118d",
@@ -221,14 +221,17 @@
         135
       ],
       "createdAt": "2026-08-23T07:06:00.000Z",
-      "updatedAt": "2026-08-23T07:44:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T07:55:00.000Z",
+      "completedAt": "2026-08-23T07:55:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/batch-manifest.json",
         "sha256": "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec"
       },
-      "releaseSha": null,
-      "receipt": null,
+      "releaseSha": "cb6afacc56912ae8355c627278ae0ec09efc9db7",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "a6b1874723f2ac1fe53ce313d1543f85d63e468dfa26aa2dd5b403134e6fc3d6"
+      },
       "reason": null,
       "history": [
         {
@@ -248,9 +251,51 @@
             "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-23T07:45:00.000Z",
+          "evidenceSha256": [
+            "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-23T07:46:00.000Z",
+          "evidenceSha256": [
+            "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-23T07:47:00.000Z",
+          "evidenceSha256": [
+            "a6b1874723f2ac1fe53ce313d1543f85d63e468dfa26aa2dd5b403134e6fc3d6",
+            "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T07:55:00.000Z",
+          "evidenceSha256": [
+            "a6b1874723f2ac1fe53ce313d1543f85d63e468dfa26aa2dd5b403134e6fc3d6",
+            "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "fd577ec3913886de30ec0a8f2317e6fea119c00fe3720bed019b751d4441ff20"
+  "ledgerSha256": "6fb127ca63a263d2b82907ab48f093f68f84d5ba035b17c790bc2b68d0d96ced"
 }

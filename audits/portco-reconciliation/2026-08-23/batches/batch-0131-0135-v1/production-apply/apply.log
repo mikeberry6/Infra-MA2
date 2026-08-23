@@ -1,0 +1,142 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/batch-manifest.json --batch-sha256=c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3618) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0131-0135-v1",
+    "batchSha256": "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec",
+    "releaseSha": "cb6afacc56912ae8355c627278ae0ec09efc9db7",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "df566e24-e7cf-4c34-8b8f-b0420bae475b",
+    "appliedAt": "2026-08-23T07:46:43.685Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0131:green-meadow-sustainable-solutions:bf30ae0e",
+        "taskIndex": 131,
+        "companyName": "Green Meadow Sustainable Solutions",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "36655fd6e0a018b0259f5e02d4b5f94124853078eba9561b221308224fde1c96"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0132:aligned-data-centers:ce7a118d",
+        "taskIndex": 132,
+        "companyName": "Aligned Data Centers",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0132:aligned-data-centers:ce7a118d",
+          "taskIndex": 132,
+          "companyName": "Aligned Data Centers",
+          "companyId": "cmrxpjghb00yoivhejmdrclkw",
+          "proposalSha256": "8b17f5a15b3837ea9404f169d8522c5e3373fbc34ba93a66f0383278607a990e",
+          "approvalSha256": "ca01c17b0f9ff8fbcf8d99bc7795cb1b639f173748c3f13af1585f6bae4b7e0f",
+          "productionSnapshotSha256": "8188d8eaad3d083fc7acc1a568171e0c3a0881174a66557a84b47d57220295cd",
+          "beforeCompanySnapshotSha256": "9b9279d68587c65b95d99c2e47ebe8d20dcc618595d91d12f7e16a9a3ba83518",
+          "appliedAfterImageSha256": "3b3944362a84a8d919adf362cd52bb47c2ded67eb377f561da4c8be2474dcbd1",
+          "seedAfterImageSha256": "3b3944362a84a8d919adf362cd52bb47c2ded67eb377f561da4c8be2474dcbd1",
+          "approvedSeedEntrySha256": "e77654fe7c3f31bf92df5f31e64f7a00c1c1bb0cb4325e833c906bd2c71012ab",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "df566e24-e7cf-4c34-8b8f-b0420bae475b",
+          "auditEventId": "cmt5i72kb000asiyydsmteyp3",
+          "appliedAt": "2026-08-23T07:46:43.685Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "4ed8fd577ffdadf35ff8007918cd688d31c26d7ee9dd3b9d6ee99002df911f86"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0133:allete-inc:3a7edb92",
+        "taskIndex": 133,
+        "companyName": "ALLETE, Inc.",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0133:allete-inc:3a7edb92",
+          "taskIndex": 133,
+          "companyName": "ALLETE, Inc.",
+          "companyId": "cmrxpjgi100ypivhehaw4at9a",
+          "proposalSha256": "918867107a194fd02c502314aadc1cf178e47411f6a012fcb888c407ac4bcd26",
+          "approvalSha256": "4b8cecdffe643835b8fe08ba11bdc8da8af9f0d4ef29006fc512c51db4e97936",
+          "productionSnapshotSha256": "d29446e830d54122a135f83bc67d132acf23add52061a07792881c3397f85e99",
+          "beforeCompanySnapshotSha256": "1a60b8f066468f1ea714b04d84230e36681bf98e5df2680a10db0dae14134e63",
+          "appliedAfterImageSha256": "8d7b4ab9dd4528c3fe6bf1fae4f89779f8da2211575b2479a0ce2b32d0e7e149",
+          "seedAfterImageSha256": "8d7b4ab9dd4528c3fe6bf1fae4f89779f8da2211575b2479a0ce2b32d0e7e149",
+          "approvedSeedEntrySha256": "67dc144aa2233defd9c4cea62064be9859d1b2c0601bf3d8f67d5f2d06fd1b94",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "df566e24-e7cf-4c34-8b8f-b0420bae475b",
+          "auditEventId": "cmt5i77ms000msiyyfosxcho9",
+          "appliedAt": "2026-08-23T07:46:43.685Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "a7dd44fc1e41d01043a403b60ce1c05400db8f8696295e4735172effbefa9bc7"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0134:atlas-renewable-energy:8663d3ab",
+        "taskIndex": 134,
+        "companyName": "Atlas Renewable Energy",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "7a51c213aa89e94e4afaafb64db034389285431dfe153e5d8f54c295f3f7ec18"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0135:bluepoint-wind:3ec3aaa5",
+        "taskIndex": 135,
+        "companyName": "Bluepoint Wind",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0135:bluepoint-wind:3ec3aaa5",
+          "taskIndex": 135,
+          "companyName": "Bluepoint Wind",
+          "companyId": "cmrxpjgj600yrivhex07hc3al",
+          "proposalSha256": "adb4eb034eb42e7a82786ca95d8f47fb1fb1bebfded07a17428d5314ceb34d83",
+          "approvalSha256": "b87cbd7aef2424a814cef001be1f6ff2f3d3d5ff69c961b854d636ed1cd8df8e",
+          "productionSnapshotSha256": "50a4b42a787d5a14c1aed141e456372757af22aa9d61322bc0932e50a2fdd51d",
+          "beforeCompanySnapshotSha256": "1fb66eafd08d702053d092e7c1c63b8f99ea12af8080b59b36ae795886bec1c2",
+          "appliedAfterImageSha256": "74a4ef2d2b875a469dbd182f2424a63387e1c6327d9a71b1aa08972cf7d9e83d",
+          "seedAfterImageSha256": "74a4ef2d2b875a469dbd182f2424a63387e1c6327d9a71b1aa08972cf7d9e83d",
+          "approvedSeedEntrySha256": "3cec1a48ee35673a45c5c1eb7e51b84ebb50a7f0893f953a368d2fe2b896a15f",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "df566e24-e7cf-4c34-8b8f-b0420bae475b",
+          "auditEventId": "cmt5i7bp0000wsiyy2wbwd3nf",
+          "appliedAt": "2026-08-23T07:46:43.685Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "50f28fa999010e1e69413504d5bbd546b6a4eba8c0dd4aaaaaeed91b3607c3ac"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "a6b1874723f2ac1fe53ce313d1543f85d63e468dfa26aa2dd5b403134e6fc3d6"
+  }
+}

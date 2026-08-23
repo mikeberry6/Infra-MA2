@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0131-0135-v1",
+  "batchSha256": "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec",
+  "releaseSha": "cb6afacc56912ae8355c627278ae0ec09efc9db7",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "df566e24-e7cf-4c34-8b8f-b0420bae475b",
+  "appliedAt": "2026-08-23T07:46:43.685Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0131:green-meadow-sustainable-solutions:bf30ae0e",
+      "taskIndex": 131,
+      "companyName": "Green Meadow Sustainable Solutions",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "36655fd6e0a018b0259f5e02d4b5f94124853078eba9561b221308224fde1c96"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0132:aligned-data-centers:ce7a118d",
+      "taskIndex": 132,
+      "companyName": "Aligned Data Centers",
+      "proposalSha256": "8b17f5a15b3837ea9404f169d8522c5e3373fbc34ba93a66f0383278607a990e",
+      "approvalSha256": "ca01c17b0f9ff8fbcf8d99bc7795cb1b639f173748c3f13af1585f6bae4b7e0f",
+      "afterImageSha256": "3b3944362a84a8d919adf362cd52bb47c2ded67eb377f561da4c8be2474dcbd1",
+      "approvedSeedEntrySha256": "e77654fe7c3f31bf92df5f31e64f7a00c1c1bb0cb4325e833c906bd2c71012ab",
+      "companyId": "cmrxpjghb00yoivhejmdrclkw",
+      "auditEventId": "cmt5i72kb000asiyydsmteyp3"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0133:allete-inc:3a7edb92",
+      "taskIndex": 133,
+      "companyName": "ALLETE, Inc.",
+      "proposalSha256": "918867107a194fd02c502314aadc1cf178e47411f6a012fcb888c407ac4bcd26",
+      "approvalSha256": "4b8cecdffe643835b8fe08ba11bdc8da8af9f0d4ef29006fc512c51db4e97936",
+      "afterImageSha256": "8d7b4ab9dd4528c3fe6bf1fae4f89779f8da2211575b2479a0ce2b32d0e7e149",
+      "approvedSeedEntrySha256": "67dc144aa2233defd9c4cea62064be9859d1b2c0601bf3d8f67d5f2d06fd1b94",
+      "companyId": "cmrxpjgi100ypivhehaw4at9a",
+      "auditEventId": "cmt5i77ms000msiyyfosxcho9"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0134:atlas-renewable-energy:8663d3ab",
+      "taskIndex": 134,
+      "companyName": "Atlas Renewable Energy",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "7a51c213aa89e94e4afaafb64db034389285431dfe153e5d8f54c295f3f7ec18"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0135:bluepoint-wind:3ec3aaa5",
+      "taskIndex": 135,
+      "companyName": "Bluepoint Wind",
+      "proposalSha256": "adb4eb034eb42e7a82786ca95d8f47fb1fb1bebfded07a17428d5314ceb34d83",
+      "approvalSha256": "b87cbd7aef2424a814cef001be1f6ff2f3d3d5ff69c961b854d636ed1cd8df8e",
+      "afterImageSha256": "74a4ef2d2b875a469dbd182f2424a63387e1c6327d9a71b1aa08972cf7d9e83d",
+      "approvedSeedEntrySha256": "3cec1a48ee35673a45c5c1eb7e51b84ebb50a7f0893f953a368d2fe2b896a15f",
+      "companyId": "cmrxpjgj600yrivhex07hc3al",
+      "auditEventId": "cmt5i7bp0000wsiyy2wbwd3nf"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "e3cb75ce25340b3a0a805510f344e658b26c3c53bd561b5033226a745635dd29"
+}

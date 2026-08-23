@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_RENDERED_CARD_VERIFICATION",
+  "verifiedAt": "2026-08-23T07:54:46.000Z",
+  "batchId": "batch-0131-0135-v1",
+  "batchSha256": "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec",
+  "canonicalProductionUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "productionDeployment": {
+    "id": "dpl_5XvdZDFFZYd5NAL9C9ZktPLKSLah",
+    "immutableUrl": "infra-ma-2-3f3dayk2u-mberry.vercel.app",
+    "githubCommitSha": "cb6afacc56912ae8355c627278ae0ec09efc9db7",
+    "readyState": "READY",
+    "canonicalAliasBound": true
+  },
+  "renderedChecks": {
+    "browser": "Codex In-app Browser",
+    "publicPortCoCount": 1138,
+    "aligned": {
+      "filteredCompanyRows": 1,
+      "canonicalNameVisible": true,
+      "drawerVisible": true,
+      "currentOwnersVisible": ["MGX", "GIP"],
+      "formerOwnersVisible": ["Mubadala", "Macquarie Asset Management"],
+      "blackRockSeparateOwnerAbsent": true,
+      "aipSeparateOwnerAbsent": true,
+      "sourceCount": 9,
+      "milestoneCount": 5,
+      "domSnapshotSha256": "1a0a084fdee3b7c03701b7a26c6a6b4cba116df154ba92e86667881babc26da4"
+    },
+    "allete": {
+      "filteredCompanyRows": 1,
+      "canonicalNameVisible": true,
+      "drawerVisible": true,
+      "currentOwnersVisible": ["GIP", "CPP Investments"],
+      "currentStakesVisible": ["60% indirect", "40% indirect"],
+      "blackRockSeparateOwnerAbsent": true,
+      "internalReorganizationNotRenderedAsExit": true,
+      "sourceCount": 11,
+      "milestoneCount": 5,
+      "domSnapshotSha256": "f19e627b4aa5cd48b16b44eaabde052b51281614566b01a7e48026c1531a69b8"
+    },
+    "bluepoint": {
+      "filteredCompanyRows": 1,
+      "canonicalNameVisible": true,
+      "drawerVisible": true,
+      "currentOwnersVisible": ["Ocean Winds", "GIP"],
+      "currentStakesVisible": ["50% of Bluepoint Winds Holdings, LLC", "50% of Bluepoint Winds Holdings, LLC"],
+      "blackRockSeparateOwnerAbsent": true,
+      "conditionalTerminationStillPendingVisible": true,
+      "completedCancellationOrExitAbsent": true,
+      "sourceCount": 7,
+      "milestoneCount": 2,
+      "domSnapshotSha256": "d4c537858b7afecb38e4b232f26ddb60bbc0152a5cd58cbaca9d23a8e051de51"
+    },
+    "terminalDecisions": {
+      "greenMeadowIntroducesNoPortCo": true,
+      "atlasRenewableEnergyIntroducesNoNorthAmericanPortCo": true
+    },
+    "browserConsoleIssueCount": 0
+  },
+  "apiChecks": [
+    {
+      "companyName": "Aligned Data Centers",
+      "companyId": "cmrxpjghb00yoivhejmdrclkw",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 6902,
+      "responseContentSha256": "9880e7cf79a1f64147b4f870d948757e3e26d37a126220f5b3a8914a9be8148e",
+      "currentOwnerCount": 2,
+      "formerOwnerCount": 2
+    },
+    {
+      "companyName": "ALLETE, Inc.",
+      "companyId": "cmrxpjgi100ypivhehaw4at9a",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 6661,
+      "responseContentSha256": "e9032e698a85f9cf12b87c55066798719494dcd90b17a546540dabbdae520fc6",
+      "currentOwnerCount": 2,
+      "formerOwnerCount": 0
+    },
+    {
+      "companyName": "Bluepoint Wind",
+      "companyId": "cmrxpjgj600yrivhex07hc3al",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 4671,
+      "responseContentSha256": "a7f71df39b27a30df2e542b1f0447a034cad9dbde5d38b67c26e915a6292a4b7",
+      "currentOwnerCount": 2,
+      "formerOwnerCount": 0
+    }
+  ],
+  "boundaryConclusion": "Production renders Aligned with MGX and GIP current and Macquarie Asset Management and Mubadala former; ALLETE with the supported 60% GIP-managed and 40% CPP indirect ownership; and Bluepoint with Ocean Winds and GIP each holding 50% while the lease-termination process remains conditional. BlackRock and AIP are not rendered as separate owners, and no raw pending state or completed Bluepoint exit is shown. Both exclusions introduced no public company mutation. No browser console errors were observed.",
+  "passed": true
+}
