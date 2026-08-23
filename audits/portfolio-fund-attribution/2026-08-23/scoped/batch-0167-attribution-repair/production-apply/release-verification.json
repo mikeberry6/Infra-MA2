@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-23T18:58:21.237Z",
+  "manifestSha256": "13c583837c997247383c551d8d3ecf236daef0a997ea819c3e061ef2651eecfa",
+  "approvalSha256": "e67433e593f7228f0867b9789ebe8f8f6aacfc32fb2a9287694e0e12dd10bd6a",
+  "receiptSha256": "f20a43cb7125f3cc6b16c34de1879f8111fc2b6f3a8e3bfc19277c36b8ab41dd",
+  "mutationCount": 9,
+  "changed": 9,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-REPAIR-0167-AIO-CBRE",
+      "companyId": "cmrxpjamu00puivhe9q2wp35l",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjamu00puivhe9q2wp35l?verification=13c583837c997247383c551d8d3ecf236daef0a997ea819c3e061ef2651eecfa",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CBRE AIO Infra Holdings Inc. / CBRE Musselshell Infrastructure Investments, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "CBRE Investment Management's AIO materials and reviewed ownership filings identify the CBRE AIO Infra Holdings and CBRE Musselshell investment vehicles, but do not establish a link to a fund in the current fund database."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0168-VANTAGE-DB-SDC",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdda00u1ivhe4o7z4w3s?verification=13c583837c997247383c551d8d3ecf236daef0a997ea819c3e061ef2651eecfa",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DigitalBridge's deconsolidation announcement describes the retained 12.8% Vantage SDC interest as a balance-sheet position rather than a named third-party fund investment."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0168-VANTAGE-DB-2017",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdda00u1ivhe4o7z4w3s?verification=13c583837c997247383c551d8d3ecf236daef0a997ea819c3e061ef2651eecfa",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The 2017 acquisition materials establish DigitalBridge's current platform ownership, but the reviewed evidence does not identify the applicable DigitalBridge fund or legal investment vehicle; the stale DigitalBridge Partners estimate is removed."
+      }
+    }
+  ],
+  "passed": true
+}

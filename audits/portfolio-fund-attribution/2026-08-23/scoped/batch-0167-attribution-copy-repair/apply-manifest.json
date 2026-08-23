@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-23",
+  "ledgerSha256": "cf4d040c61cf51bd3f25091fb88149ee3b2d64a2a0e3247c1bcfc4bcf92a2a0b",
+  "sourceSnapshotSha256": "ea78abb8676b16ff4e9831facb1bf16910cc2f552ad5a66c3fe3a903c59b1d72",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 2
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 3,
+  "mutations": [
+    {
+      "recordId": "OFA-COPY-0168-VANTAGE-DB-2017",
+      "ownershipPeriodId": "cmrxpjyxx01s4ivhe0q4r5fsd",
+      "companyName": "Vantage Data Centers",
+      "country": "United States / Canada",
+      "investmentFirm": "DigitalBridge",
+      "currentVehicleName": "DigitalBridge-managed vehicle(s)",
+      "databaseVehicleName": "DigitalBridge-managed vehicle(s)",
+      "investmentYear": 2017,
+      "stake": "Lead North American platform interest; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The 2017 acquisition materials establish DigitalBridge as a current platform owner. The applicable DigitalBridge fund or legal investment vehicle is not publicly disclosed in the reviewed evidence."
+      },
+      "evidenceUrls": [
+        "https://vantage-dc.com/news/vantageacquired/",
+        "https://www.silverlake.com/consortium-of-digital-bridge-psp-investments-and-tiaa-investments-acquires-vantage-data-centers/"
+      ]
+    },
+    {
+      "recordId": "OFA-COPY-0168-VANTAGE-CBRE",
+      "ownershipPeriodId": "cmrxpjyyh01s5ivhe4pze24xz",
+      "companyName": "Vantage Data Centers",
+      "country": "United States / Canada",
+      "investmentFirm": "CBRE Investment Management",
+      "currentVehicleName": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+      "databaseVehicleName": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+      "investmentYear": 2020,
+      "stake": "Significant minority interest in the 12-asset Vantage SDC portfolio; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "CBRE Caledon's announcement and Vantage SDC transaction documents identify CBRE Caledon Valhalla Aggregator Holdings, LP as the investment vehicle. The reviewed sources do not identify a separate underlying fund."
+      },
+      "evidenceUrls": [
+        "https://www.cbrecaledon.com/wp-content/uploads/2020/07/Vantage-Data-Centers-Investment-Press-Release.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1679688/000167968820000044/cny8-k07072020ex101.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-COPY-0171-BORALEX-LACAISSE",
+      "ownershipPeriodId": "cmrxpjv5701m4ivheldnfexl5",
+      "companyName": "Boralex Inc.",
+      "country": "United States / Canada / France / United Kingdom",
+      "investmentFirm": "La Caisse de dépôt (CDPQ)",
+      "currentVehicleName": "Direct equity through the BIF Thunder acquisition structure",
+      "databaseVehicleName": "Direct equity through the BIF Thunder acquisition structure",
+      "investmentYear": 2017,
+      "stake": "30% current; 17.3% at 2017 entry and approximately 15% immediately before closing",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's 2017 entry and August 2026 closing releases establish its current 30% direct equity interest. The reviewed sources do not identify a distinct La Caisse fund vehicle."
+      },
+      "evidenceUrls": [
+        "https://www.newswire.ca/news-releases/la-caisse-acquires-a-173-interest-in-boralex-inc-636940823.html",
+        "https://www.lacaisse.com/en/news/pressreleases/brookfield-caisse-complete-acquisition-boralex"
+      ]
+    }
+  ],
+  "manifestSha256": "fc1c07a93e5e98d9202f2c665ff0581c069ebdb4ed333a7ecf6e18b0c5a36b26"
+}
