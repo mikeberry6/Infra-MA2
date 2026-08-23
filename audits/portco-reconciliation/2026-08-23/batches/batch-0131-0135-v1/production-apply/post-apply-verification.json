@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_POST_APPLY_VERIFICATION",
+  "verifiedAt": "2026-08-23T07:54:46.000Z",
+  "batchId": "batch-0131-0135-v1",
+  "batchSha256": "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec",
+  "releaseSha": "cb6afacc56912ae8355c627278ae0ec09efc9db7",
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32626383146",
+  "transactionId": "df566e24-e7cf-4c34-8b8f-b0420bae475b",
+  "commitReceiptSha256": "e3cb75ce25340b3a0a805510f344e658b26c3c53bd561b5033226a745635dd29",
+  "finalReceiptSha256": "a6b1874723f2ac1fe53ce313d1543f85d63e468dfa26aa2dd5b403134e6fc3d6",
+  "receiptVerificationSha256": "f6c37a8fcc038ba8aa6ea455e13121a952de5cfc99cbd98a14a068e5c356f6c3",
+  "atomicity": {
+    "databaseTransactionCommitted": true,
+    "databaseTransactionIdSharedByAllMutations": true,
+    "partialDatabaseApplication": false,
+    "mutationCount": 3,
+    "terminalDecisionCount": 2
+  },
+  "mutations": [
+    {
+      "taskIndex": 132,
+      "companyName": "Aligned Data Centers",
+      "companyId": "cmrxpjghb00yoivhejmdrclkw",
+      "auditEventId": "cmt5i72kb000asiyydsmteyp3",
+      "afterImageSha256": "3b3944362a84a8d919adf362cd52bb47c2ded67eb377f561da4c8be2474dcbd1",
+      "recordStatus": "PUBLISHED",
+      "companyStatus": "ACTIVE",
+      "ownershipPeriodCount": 4,
+      "activeOwnerCount": 2,
+      "pendingOwnershipTransactionCount": 0,
+      "milestoneCount": 5,
+      "citationCount": 9,
+      "primaryCitationCount": 1,
+      "databaseMatchesAfterImage": true,
+      "seedMatchesAfterImage": true,
+      "detailApiVerified": true,
+      "renderedDrawerVerified": true
+    },
+    {
+      "taskIndex": 133,
+      "companyName": "ALLETE, Inc.",
+      "companyId": "cmrxpjgi100ypivhehaw4at9a",
+      "auditEventId": "cmt5i77ms000msiyyfosxcho9",
+      "afterImageSha256": "8d7b4ab9dd4528c3fe6bf1fae4f89779f8da2211575b2479a0ce2b32d0e7e149",
+      "recordStatus": "PUBLISHED",
+      "companyStatus": "ACTIVE",
+      "ownershipPeriodCount": 2,
+      "activeOwnerCount": 2,
+      "pendingOwnershipTransactionCount": 0,
+      "milestoneCount": 5,
+      "citationCount": 11,
+      "primaryCitationCount": 1,
+      "databaseMatchesAfterImage": true,
+      "seedMatchesAfterImage": true,
+      "detailApiVerified": true,
+      "renderedDrawerVerified": true
+    },
+    {
+      "taskIndex": 135,
+      "companyName": "Bluepoint Wind",
+      "companyId": "cmrxpjgj600yrivhex07hc3al",
+      "auditEventId": "cmt5i7bp0000wsiyy2wbwd3nf",
+      "afterImageSha256": "74a4ef2d2b875a469dbd182f2424a63387e1c6327d9a71b1aa08972cf7d9e83d",
+      "recordStatus": "PUBLISHED",
+      "companyStatus": "ACTIVE",
+      "ownershipPeriodCount": 2,
+      "activeOwnerCount": 2,
+      "pendingOwnershipTransactionCount": 0,
+      "milestoneCount": 2,
+      "citationCount": 7,
+      "primaryCitationCount": 1,
+      "databaseMatchesAfterImage": true,
+      "seedMatchesAfterImage": true,
+      "detailApiVerified": true,
+      "renderedDrawerVerified": true
+    }
+  ],
+  "terminalDecisions": [
+    {
+      "taskIndex": 131,
+      "companyName": "Green Meadow Sustainable Solutions",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "36655fd6e0a018b0259f5e02d4b5f94124853078eba9561b221308224fde1c96",
+      "reason": "BCP Fund II is a services and waste-sector fund rather than a dedicated infrastructure strategy, so the holding does not meet the infrastructure-strategy inclusion rule.",
+      "databaseMutationExpected": false,
+      "databaseMutationObserved": false
+    },
+    {
+      "taskIndex": 134,
+      "companyName": "Atlas Renewable Energy",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "7a51c213aa89e94e4afaafb64db034389285431dfe153e5d8f54c295f3f7ec18",
+      "reason": "Atlas Renewable Energy is primarily dedicated to Latin America and does not qualify as a manager-level company primarily based in or dedicated to the United States, Canada, or Mexico.",
+      "databaseMutationExpected": false,
+      "databaseMutationObserved": false
+    }
+  ],
+  "passed": true
+}
