@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T14:21:30.000Z",
+  "updatedAt": "2026-08-23T14:30:00.000Z",
   "activeBatchId": "batch-0152-0156-v1",
   "batches": [
     {
@@ -785,7 +785,7 @@
     },
     {
       "batchId": "batch-0152-0156-v1",
-      "state": "VERIFYING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0152:saavi-energia:20878d92",
         "ledger:0153:stratos:4f72c101",
@@ -801,7 +801,7 @@
         156
       ],
       "createdAt": "2026-08-23T13:24:30.000Z",
-      "updatedAt": "2026-08-23T14:21:30.000Z",
+      "updatedAt": "2026-08-23T14:30:00.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0152-0156-v1/batch-manifest-v2.json",
@@ -812,7 +812,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0152-0156-v1/production-apply/batch-apply-receipt.json",
         "sha256": "00adb897adad21aa4fc3afc2d82749096d31e651ae05e8ebb3d771da2c35076e"
       },
-      "reason": null,
+      "reason": "Independent rendered-card verification found stale or unresolved fund-attribution metadata on Saavi GIP, STRATOS Occidental, AES public ownership, Vanguard Ingka and former Vision Ridge, plus stale Vopak BlackRock and unresolved Vopak corporate attribution. The atomic PortCo after-images are correct; these seven attribution rows must be repaired before completion.",
       "history": [
         {
           "sequence": 1,
@@ -862,9 +862,20 @@
             "7de097a43b4e7d5cafbf7bdf16fa057a749227ab0568c09279449847dc8f42e3"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-23T14:30:00.000Z",
+          "evidenceSha256": [
+            "00adb897adad21aa4fc3afc2d82749096d31e651ae05e8ebb3d771da2c35076e",
+            "7de097a43b4e7d5cafbf7bdf16fa057a749227ab0568c09279449847dc8f42e3"
+          ],
+          "reason": "Independent rendered-card verification found stale or unresolved fund-attribution metadata on Saavi GIP, STRATOS Occidental, AES public ownership, Vanguard Ingka and former Vision Ridge, plus stale Vopak BlackRock and unresolved Vopak corporate attribution. The atomic PortCo after-images are correct; these seven attribution rows must be repaired before completion."
         }
       ]
     }
   ],
-  "ledgerSha256": "1e31c78a479c111f70efcb7eaad143ed14355612bcd61bcca17096f3441d0768"
+  "ledgerSha256": "795bf6239702975a631ccaac130a343c9652fbd524ebb1c67f53f5ed2755d0e8"
 }
