@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-23",
+  "companyId": "cmrxpjbw800rsivhe6s7g89eh",
+  "companyName": "Permanent Power Company",
+  "triggerBatchId": "batch-0177-0181-v4",
+  "triggerBatchSha256": "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a",
+  "decision": "CORRECT_STALE_ATTRIBUTION_METADATA",
+  "rationale": "The PortCo transaction correctly preserved the disclosed 66.7% CIM Opportunity Zone Fund interest and the historical CIM/joint-venture period, but older attribution metadata independently inferred CIM Infrastructure Fund III and CIM Infrastructure Fund I. The reviewed evidence names CIM Opportunity Zone Fund, L.P. for the current 66.7% interest and does not support either infrastructure-fund inference. Classify the current named vehicle as DISCLOSED without linking it to an unrelated normalized fund, and classify the former period as UNRESOLVED without altering ownership history.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmrxpjxay01pmivhevwqj1bv4",
+      "isActive": true,
+      "from": "INFERRED — CIM Infrastructure Fund III — LOW",
+      "to": "DISCLOSED — CIM Opportunity Zone Fund, L.P. — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjxbg01pnivhe6uy36dxh",
+      "isActive": false,
+      "from": "INFERRED — CIM Infrastructure Fund I — LOW",
+      "to": "UNRESOLVED — no named fund — no normalized fund link"
+    }
+  ],
+  "nonChanges": [
+    "Company identity and canonical redirect",
+    "Ownership organizations, vehicles, stakes and dates",
+    "Active/former ownership state",
+    "Milestones, citations and primary source",
+    "The current 33.3% other-CIM-affiliates ownership period"
+  ],
+  "evidenceUrls": [
+    "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+    "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm",
+    "https://www.cimgroup.com/press-releases/cim-group-forms-westlands-electric-power-company",
+    "https://www.cimgroup.com/case-studies/aquamarine-solar-project"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}

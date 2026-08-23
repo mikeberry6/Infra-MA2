@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_VERIFICATION_FAILURE",
+  "verifiedAt": "2026-08-23T22:31:00.000Z",
+  "batchId": "batch-0177-0181-v4",
+  "releaseSha": "9e4d1da909137b461f47a040c9746a6f91427bc5",
+  "receiptSha256": "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+  "canonicalProductionDeploymentId": "dpl_9o2wQS5FafffJG9EeQPN7PfF4dtE",
+  "canonicalProductionDeploymentSha": "6bcef248302386421bbbf3e5f11ecef7a92f07d1",
+  "companyId": "cmrxpjbw800rsivhe6s7g89eh",
+  "companyName": "Permanent Power Company",
+  "result": "FAIL",
+  "failedCheck": "The 66.7% CIM Opportunity Zone Fund ownership period rendered an unsupported 'CIM Infrastructure Fund III — Estimated · Low confidence' attribution.",
+  "rootCause": "The PortCo after-image does not include OwnershipPeriod fund-attribution metadata, so the atomic PortCo apply preserved an older independent INFERRED attribution even though the seed attribution ledger had already stopped linking this ownership to a normalized fund.",
+  "containment": "The batch ledger was moved from VERIFYING to VERIFYING_FAILED. No subsequent release bundle may start until the protected attribution-only correction and renewed API and rendered-card checks pass."
+}

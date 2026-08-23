@@ -66,7 +66,7 @@ describe("portfolio fund attribution seed manifest", () => {
     expect(manifest.policy.fundUpdates).toBe(0);
     expect(manifest.policy.inferredAssignments).toBe(555);
     expect(inferred).toHaveLength(555);
-    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(17);
+    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(18);
     expect(manifest.records.every((record) => (
       record.fundAttribution !== "INFERRED"
       || (

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-23",
+  "ledgerSha256": "04fed66cf0a4bfde6b16f8b5a7d208b29f68f87d1ad5117bc45928c1302a7e12",
+  "sourceSnapshotSha256": "faef059ecb7ac022c8b0b8658edf6ee89a65c5b0e57a1ae23994011cf0eebdfe",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 2,
+  "mutations": [
+    {
+      "recordId": "OFA-REPAIR-0177-PERMANENT-POWER-CURRENT",
+      "ownershipPeriodId": "cmrxpjxay01pmivhevwqj1bv4",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+      "databaseVehicleName": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+      "investmentYear": 2025,
+      "stake": "66.7% total economic interest at March 31, 2026 (63.2% direct plus approximately 3.5% through COZ 1, LLC)",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CIM Opportunity Zone Fund, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund, L.P. as holding the controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1. No matching normalized fund row exists, so preserve the disclosed vehicle without inferring CIM Infrastructure Fund III."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0177-PERMANENT-POWER-FORMER",
+      "ownershipPeriodId": "cmrxpjxbg01pnivhe6uy36dxh",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "CIM Group / undisclosed Westlands joint-venture partner",
+      "databaseVehicleName": "CIM Group / undisclosed Westlands joint-venture partner",
+      "investmentYear": 2014,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's Westlands development history supports the former CIM and joint-venture ownership period, but the reviewed public evidence does not identify a specific CIM fund or the joint-venture partner. Remove the unsupported CIM Infrastructure Fund I inference while preserving the historical ownership period."
+      },
+      "evidenceUrls": [
+        "https://www.cimgroup.com/press-releases/cim-group-forms-westlands-electric-power-company",
+        "https://www.cimgroup.com/case-studies/aquamarine-solar-project",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm"
+      ]
+    }
+  ],
+  "manifestSha256": "459ccb6e7f7fbba7f5a76e0283f18e7334c929e45590222479a1871a01529613"
+}
