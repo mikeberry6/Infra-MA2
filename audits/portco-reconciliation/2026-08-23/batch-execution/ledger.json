@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T10:43:00.000Z",
-  "activeBatchId": "batch-0141-0145-v2",
+  "updatedAt": "2026-08-23T11:28:11.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -491,7 +491,7 @@
     },
     {
       "batchId": "batch-0141-0145-v2",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0141:eolian:ae9eb0a5",
         "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
@@ -507,8 +507,8 @@
         145
       ],
       "createdAt": "2026-08-23T10:30:30.000Z",
-      "updatedAt": "2026-08-23T10:43:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T11:28:11.000Z",
+      "completedAt": "2026-08-23T11:28:11.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v2/batch-manifest.json",
         "sha256": "e05bc11faa495f10ac0b386c45c68932cbee598027551c8f65857a6d8caa46d7"
@@ -518,7 +518,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v2/production-apply/batch-apply-receipt.json",
         "sha256": "f54635d9de735d5adb2e609b1629a84e8a23c475132678d8049618bed596131d"
       },
-      "reason": null,
+      "reason": "Atomic batch receipt, nine-row attribution repair receipt, four published APIs and rendered drawers, one expected archived-company absence, and canonical deployment verification passed.",
       "history": [
         {
           "sequence": 1,
@@ -568,9 +568,20 @@
             "f54635d9de735d5adb2e609b1629a84e8a23c475132678d8049618bed596131d"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T11:28:11.000Z",
+          "evidenceSha256": [
+            "e05bc11faa495f10ac0b386c45c68932cbee598027551c8f65857a6d8caa46d7",
+            "f54635d9de735d5adb2e609b1629a84e8a23c475132678d8049618bed596131d"
+          ],
+          "reason": "Atomic batch receipt, nine-row attribution repair receipt, four published APIs and rendered drawers, one expected archived-company absence, and canonical deployment verification passed."
         }
       ]
     }
   ],
-  "ledgerSha256": "37bd7c7e8d14fd5ab71dfadf81df1d126306e7a073ae1c75246fabed82b7e6e0"
+  "ledgerSha256": "bf2ef450c59823b887829ac7f510db914e08031fe561ab37e8acbda9462e0fda"
 }
