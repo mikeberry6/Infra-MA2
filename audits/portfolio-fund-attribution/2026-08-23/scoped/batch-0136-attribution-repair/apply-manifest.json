@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-23",
+  "ledgerSha256": "bc9f12bbf81487ce5f58439fb40000b64abc98660e65a293755b4efb63e52e43",
+  "sourceSnapshotSha256": "0722bb986c21896216d116ec32a8095ec0de7cef4c19019ec1fd7188d945f609",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 4,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 4,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 8,
+  "mutations": [
+    {
+      "recordId": "OFA-REPAIR-0136-CLEANCAPITAL-FORMER",
+      "ownershipPeriodId": "cmrxpju2c01keivhesnzgo23j",
+      "companyName": "CleanCapital Holdings, LLC",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "BlackRock Renewable Power Group funds; exact vehicle not publicly disclosed",
+      "databaseVehicleName": "BlackRock Renewable Power Group funds; exact vehicle not publicly disclosed",
+      "investmentYear": 2019,
+      "stake": "Former direct equity investment; exact stake and exit timing not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CleanCapital's official announcement identifies a direct investment from BlackRock's Renewable Power Group but does not name a commingled fund; the prior Evergreen Infrastructure Fund estimate was unsupported and is removed."
+      },
+      "evidenceUrls": [
+        "https://cleancapital.com/resources/cleancapital-announces-new-investment-from-blackrocks-renewable-power-group/",
+        "https://cleancapital.com/project-acquisition/capital/"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0137-CLEARWAY-FORMER-GIP",
+      "ownershipPeriodId": "cmrxpk2cd01xcivhef8mj5h2n",
+      "companyName": "Clearway Energy Group",
+      "country": "United States",
+      "investmentFirm": "GIP",
+      "currentVehicleName": "Global Infrastructure Partners III via GIP III Zephyr Acquisition Partners, L.P.",
+      "databaseVehicleName": "Global Infrastructure Partners III via GIP III Zephyr Acquisition Partners, L.P.",
+      "investmentYear": 2018,
+      "stake": "100%",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Global Infrastructure Partners III via GIP III Zephyr Acquisition Partners, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Clearway's launch and subsequent ownership disclosures identify Global Infrastructure Partners III and its Zephyr acquisition vehicle directly; the prior Evergreen Infrastructure Fund estimate was unsupported and is removed."
+      },
+      "evidenceUrls": [
+        "https://www.clearwayenergygroup.com/press-releases/clearway-energy-group-launches-operations/",
+        "https://totalenergies.com/news/press-releases/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0137-CLEARWAY-CURRENT-GIP",
+      "ownershipPeriodId": "cmt5klrvp000cy8yy6vilhswq",
+      "companyName": "Clearway Energy Group",
+      "country": "United States",
+      "investmentFirm": "GIP",
+      "currentVehicleName": "Global Infrastructure Partners III via Zephyr Holdings, L.P.",
+      "databaseVehicleName": "Global Infrastructure Partners III via Zephyr Holdings, L.P.",
+      "investmentYear": 2022,
+      "stake": "50%",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Global Infrastructure Partners III via Zephyr Holdings, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Clearway, TotalEnergies and current SEC ownership evidence directly identify GIP's 50% interest through Zephyr Holdings and its Global Infrastructure Partners III vehicle."
+      },
+      "evidenceUrls": [
+        "https://www.clearwayenergygroup.com/about/",
+        "https://totalenergies.com/news/press-releases/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable",
+        "https://www.sec.gov/Archives/edgar/data/1567683/000110465926039297/xslF345X06/tm2611002-1_4seq1.xml"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0137-CLEARWAY-CURRENT-TOTALENERGIES",
+      "ownershipPeriodId": "cmt5kls1m000ey8yygpdp3jzh",
+      "companyName": "Clearway Energy Group",
+      "country": "United States",
+      "investmentFirm": "TotalEnergies",
+      "currentVehicleName": "TotalEnergies Renewables USA, LLC via Zephyr Holdings, L.P.",
+      "databaseVehicleName": "TotalEnergies Renewables USA, LLC via Zephyr Holdings, L.P.",
+      "investmentYear": 2022,
+      "stake": "50%",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "TotalEnergies Renewables USA, LLC via Zephyr Holdings, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "TotalEnergies and current Clearway disclosures directly identify TotalEnergies' 50% ownership through TotalEnergies Renewables USA and Zephyr Holdings."
+      },
+      "evidenceUrls": [
+        "https://www.clearwayenergygroup.com/about/",
+        "https://totalenergies.com/news/press-releases/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable",
+        "https://www.sec.gov/Archives/edgar/data/1567683/000110465922100053/xslF345X02/tm2225825-1_3seq1.xml"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0139-ELECTRADA-FORMER",
+      "ownershipPeriodId": "cmrxpju4l01kiivheyfgagvuj",
+      "companyName": "Electrada",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "BlackRock Climate Infrastructure; exact vehicle not publicly disclosed",
+      "databaseVehicleName": "BlackRock Climate Infrastructure; exact vehicle not publicly disclosed",
+      "investmentYear": 2021,
+      "stake": "Exact percentage not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Electrada's announcement identifies BlackRock's Climate Infrastructure business as the investor but does not disclose a specific fund; the prior Global Energy & Power Infrastructure Fund III estimate was unsupported and is removed."
+      },
+      "evidenceUrls": [
+        "https://electrada.com/news/blackrock-ev-charging-expansion/",
+        "https://brite.org/electrada-lands-22m-in-additional-investment-from-blackrock-to-expand-ev-charging-footprint/"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0140-E360-BLACKROCK",
+      "ownershipPeriodId": "cmrxpju7d01kjivhel2xkl0z1",
+      "companyName": "Environmental 360 Solutions",
+      "country": "Canada",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "BlackRock Global Infrastructure Fund IV, SCSp",
+      "databaseVehicleName": "BlackRock Global Infrastructure Fund IV, SCSp",
+      "investmentYear": 2023,
+      "stake": "Majority; exact percentage not publicly disclosed",
+      "targetLinkedFundName": "BlackRock GIF IV",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "BlackRock GIF IV"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Infrastructure Fund IV, SCSp",
+        "attributionConfidence": null,
+        "attributionRationale": "E360S's closing announcement and the Canadian Competition Bureau directly identify BlackRock Global Infrastructure Fund IV, SCSp as the majority acquisition vehicle; the prior Fund III estimate was incorrect."
+      },
+      "evidenceUrls": [
+        "https://e360s.ca/our-media/environmental-360-solutions-inc-announces-closing-of-acquisition-by-blackrock-alternatives/",
+        "https://competition-bureau.canada.ca/mergers-and-acquisitions/archived-report-merger-reviews?wbdisable=true"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0140-E360-FOUNDER",
+      "ownershipPeriodId": "cmt5km2dm000xy8yyazng49cl",
+      "companyName": "Environmental 360 Solutions",
+      "country": "Canada",
+      "investmentFirm": "Donato Ardellini",
+      "currentVehicleName": "Donato Ardellini",
+      "databaseVehicleName": null,
+      "investmentYear": 2018,
+      "stake": "Significant founder stake; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "E360S's current shareholder disclosure identifies founder Donato Ardellini as a significant direct shareholder rather than as a managed fund vehicle."
+      },
+      "evidenceUrls": [
+        "https://e360s.ca/about-us/shareholders/"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0140-E360-CBGF",
+      "ownershipPeriodId": "cmt5km2j9000zy8yy8pv6w1xt",
+      "companyName": "Environmental 360 Solutions",
+      "country": "Canada",
+      "investmentFirm": "Canadian Business Growth Fund",
+      "currentVehicleName": "Canadian Business Growth Fund",
+      "databaseVehicleName": null,
+      "investmentYear": 2020,
+      "stake": "Minority; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "E360S's current shareholder disclosure identifies Canadian Business Growth Fund as a direct minority shareholder without naming a separate managed fund vehicle."
+      },
+      "evidenceUrls": [
+        "https://e360s.ca/about-us/shareholders/"
+      ]
+    }
+  ],
+  "manifestSha256": "31c19d4279cd0570c0b3cc6eb3d345188cfbf969570863614f41977ccf974cb3"
+}

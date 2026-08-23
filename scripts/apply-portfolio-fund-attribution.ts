@@ -119,7 +119,10 @@ export async function observeManifest(
   const observed: ObservedRow[] = [];
   for (const mutation of manifest.mutations) {
     const period = periodsById.get(mutation.ownershipPeriodId!);
-    if (!period || !period.isActive) throw new Error(`${mutation.recordId}: active ownership period does not exist`);
+    const expectedIsActive = mutation.expectedIsActive ?? true;
+    if (!period || period.isActive !== expectedIsActive) {
+      throw new Error(`${mutation.recordId}: expected ${expectedIsActive ? "active" : "former"} ownership period does not exist`);
+    }
     if (
       period.company.name !== mutation.companyName
       || period.company.country !== mutation.country
