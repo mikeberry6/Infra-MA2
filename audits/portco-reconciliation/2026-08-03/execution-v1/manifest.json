@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-23T20:55:00.000Z",
+  "updatedAt": "2026-08-23T22:55:01.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -22462,23 +22462,44 @@
       "managerIndex": 30,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "813c324e21c166041d46be8d99aa1ebb691b183b214b28bc8ce80a366292863b",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T22:09:01.000Z",
+      "updatedAt": "2026-08-23T22:55:01.000Z",
+      "completedAt": "2026-08-23T22:55:01.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "70bc6ff5f1f592828121d60ca0966e8081fcf211d695234b45768d0271704a58",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0177-infraestructura-energetica-nova-transportation-company-ientc/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "70bc6ff5f1f592828121d60ca0966e8081fcf211d695234b45768d0271704a58"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0177-ientc-telecomunicaciones-v1/proposal.json",
+          "sha256": "d4458020da42b938ea54a8542eb9177a0f14734b13a65eb2e8330e1caf91fe7b"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0177-ientc-telecomunicaciones-v1.json",
+          "sha256": "483d8519ef38eca50888e4748789505d6394975c7eefe43935fc9cf661dddb8f"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "7608266ffd7b75610cdd65216b52d22967b5aecc03b547873f70cbc5f679b926"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0177-ientc-telecomunicaciones-v1/proposal.json#afterImage",
+          "sha256": "f93c89d0c399b744afdf0f3e2e9e4735972256163da88b275a39c22b469cf6ca"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-23T22:55:01.000Z",
+        "auditEventId": "cmt6dgr08000hznyykxjasadx",
+        "transactionId": "af6ea18a-ab56-4fa0-a10e-c392b7bc6255",
+        "receiptSha256": "7608266ffd7b75610cdd65216b52d22967b5aecc03b547873f70cbc5f679b926",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32670270920"
+      },
       "history": [
         {
           "sequence": 1,
@@ -22489,6 +22510,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T22:55:01.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0177-0181-v4.",
+          "taskSnapshotSha256": "70bc6ff5f1f592828121d60ca0966e8081fcf211d695234b45768d0271704a58",
+          "evidenceSha256": [
+            "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+            "483d8519ef38eca50888e4748789505d6394975c7eefe43935fc9cf661dddb8f",
+            "70bc6ff5f1f592828121d60ca0966e8081fcf211d695234b45768d0271704a58",
+            "7608266ffd7b75610cdd65216b52d22967b5aecc03b547873f70cbc5f679b926",
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a",
+            "d4458020da42b938ea54a8542eb9177a0f14734b13a65eb2e8330e1caf91fe7b",
+            "f93c89d0c399b744afdf0f3e2e9e4735972256163da88b275a39c22b469cf6ca"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -22500,20 +22539,26 @@
       "managerIndex": 30,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "6ebdafbe86533f551c875ed1f30783165dc89866253d16349b23d8cae576a9f1",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T22:09:01.000Z",
+      "updatedAt": "2026-08-23T22:55:01.000Z",
+      "completedAt": "2026-08-23T22:55:01.000Z",
+      "exceptionReason": "Primary evidence resolves Kelso Valley as CIM's label for ReNu Resources LLC and the Onyx Ranch land, water and renewables-development investment, distinct from Permanent Power. Assets were sold in 2008, 2013 and 2014, but CIM still reported oversight in 2021 and no later direct source establishes ReNu's current legal existence, residual assets or rights, the current CIM/Renewable Resources Group ownership split, or a final exit. Because active ownership remains materially unresolved, no production mutation is inferred.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "cc67698dcfba90df15c63c7747b7295c8ee184cd6b5fe709892067d97e1270d9",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-1/locked-task-snapshot.json",
+          "sha256": "cc67698dcfba90df15c63c7747b7295c8ee184cd6b5fe709892067d97e1270d9"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-1/terminal-decision.json",
+          "sha256": "439a6ef72704f88f879c6e42fe61695e19064e39e3ac668a527593907c7c7e0c"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -22527,6 +22572,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-23T22:55:01.000Z",
+          "reason": "Primary evidence resolves Kelso Valley as CIM's label for ReNu Resources LLC and the Onyx Ranch land, water and renewables-development investment, distinct from Permanent Power. Assets were sold in 2008, 2013 and 2014, but CIM still reported oversight in 2021 and no later direct source establishes ReNu's current legal existence, residual assets or rights, the current CIM/Renewable Resources Group ownership split, or a final exit. Because active ownership remains materially unresolved, no production mutation is inferred.",
+          "taskSnapshotSha256": "cc67698dcfba90df15c63c7747b7295c8ee184cd6b5fe709892067d97e1270d9",
+          "evidenceSha256": [
+            "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+            "439a6ef72704f88f879c6e42fe61695e19064e39e3ac668a527593907c7c7e0c",
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a",
+            "cc67698dcfba90df15c63c7747b7295c8ee184cd6b5fe709892067d97e1270d9"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -22538,23 +22598,44 @@
       "managerIndex": 30,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "7a805e5e1e26be8ac27f74e3e4ae6aabe271f6fb7972714ae30e1a9f448e72d9",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T22:09:01.000Z",
+      "updatedAt": "2026-08-23T22:55:01.000Z",
+      "completedAt": "2026-08-23T22:55:01.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "5e018f1b27a13a81c518d85cbeb11dd24890c70fdbad02c3baf2640666d38af5",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0179-solarbank-joint-venture-new-holdco/attempt-1/locked-task-snapshot.json",
+          "sha256": "5e018f1b27a13a81c518d85cbeb11dd24890c70fdbad02c3baf2640666d38af5"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0179-solarbank-new-holdco-v1/proposal.json",
+          "sha256": "05b52d7effede1f80fef35868c23be2cd7fc39baece2baf89e81ab1bb692f1ea"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0179-solarbank-new-holdco-v1.json",
+          "sha256": "d7b9c29e9fa2967b26677921e550ad78d754a8c2ee9cd64c931e0f7083920980"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "11489b0b75ffaba0b18b9624107c54ea7d9d4cf2420933dfe4086f1983c8ab6b"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0179-solarbank-new-holdco-v1/proposal.json#afterImage",
+          "sha256": "b5e075f1168bda67ce351f2f91fe45a3989a77bce5a45cfbbf83010e9b78c4c4"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-23T22:55:01.000Z",
+        "auditEventId": "cmt6dgvor000tznyyfzv18fca",
+        "transactionId": "af6ea18a-ab56-4fa0-a10e-c392b7bc6255",
+        "receiptSha256": "11489b0b75ffaba0b18b9624107c54ea7d9d4cf2420933dfe4086f1983c8ab6b",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32670270920"
+      },
       "history": [
         {
           "sequence": 1,
@@ -22565,6 +22646,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T22:55:01.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0177-0181-v4.",
+          "taskSnapshotSha256": "5e018f1b27a13a81c518d85cbeb11dd24890c70fdbad02c3baf2640666d38af5",
+          "evidenceSha256": [
+            "05b52d7effede1f80fef35868c23be2cd7fc39baece2baf89e81ab1bb692f1ea",
+            "11489b0b75ffaba0b18b9624107c54ea7d9d4cf2420933dfe4086f1983c8ab6b",
+            "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+            "5e018f1b27a13a81c518d85cbeb11dd24890c70fdbad02c3baf2640666d38af5",
+            "b5e075f1168bda67ce351f2f91fe45a3989a77bce5a45cfbbf83010e9b78c4c4",
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a",
+            "d7b9c29e9fa2967b26677921e550ad78d754a8c2ee9cd64c931e0f7083920980"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -22576,20 +22675,26 @@
       "managerIndex": 30,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "23febfb056d5551994e333058df67e560377d12e24d7d308178e358f66db460c",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T22:09:01.000Z",
+      "updatedAt": "2026-08-23T22:55:01.000Z",
+      "completedAt": "2026-08-23T22:55:01.000Z",
+      "exceptionReason": "Task 181's focused GPT-5.6 Sol Pro adjudication resolved Westlands Solar Park, Aquamarine Solar and WEPCO as one canonical Permanent Power Company boundary. The Task 181 approved after-image will retain the existing WEPCO production ID as Permanent Power, preserve WEPCO as a former legal name, fold Westlands/Aquamarine history into that record and retire the duplicate Westlands company. A separate Task 180 mutation would duplicate and collide with the same canonical correction.",
+      "supersededByTaskId": "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4",
+      "taskSnapshotSha256": "28f96ba16ccdb52793a3dbf5385f954c28c0a4c4a53553484f0e5a722c28f028",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0180-westlands-electric-power-company-wepco/attempt-1/locked-task-snapshot.json",
+          "sha256": "28f96ba16ccdb52793a3dbf5385f954c28c0a4c4a53553484f0e5a722c28f028"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0180-westlands-electric-power-company-wepco/attempt-1/terminal-decision.json",
+          "sha256": "a513ea0d7178f11c1061f7aed0f4067bdde05d54b2436032f556aadf1fded871"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -22603,6 +22708,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-23T22:55:01.000Z",
+          "reason": "Task 181's focused GPT-5.6 Sol Pro adjudication resolved Westlands Solar Park, Aquamarine Solar and WEPCO as one canonical Permanent Power Company boundary. The Task 181 approved after-image will retain the existing WEPCO production ID as Permanent Power, preserve WEPCO as a former legal name, fold Westlands/Aquamarine history into that record and retire the duplicate Westlands company. A separate Task 180 mutation would duplicate and collide with the same canonical correction.",
+          "taskSnapshotSha256": "28f96ba16ccdb52793a3dbf5385f954c28c0a4c4a53553484f0e5a722c28f028",
+          "evidenceSha256": [
+            "28f96ba16ccdb52793a3dbf5385f954c28c0a4c4a53553484f0e5a722c28f028",
+            "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+            "a513ea0d7178f11c1061f7aed0f4067bdde05d54b2436032f556aadf1fded871",
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -22614,23 +22734,44 @@
       "managerIndex": 30,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "5b9cf56caa8934d4c3096c0e6063ff19e27c5f8f9bae7426a3b2ad57c1c05c1e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T22:09:01.000Z",
+      "updatedAt": "2026-08-23T22:55:01.000Z",
+      "completedAt": "2026-08-23T22:55:01.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "6ab97b93378695f282325c303ef533bfbf52ce9d127fc27860b39fac62e147bb",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "6ab97b93378695f282325c303ef533bfbf52ce9d127fc27860b39fac62e147bb"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0181-permanent-power-company-v4/proposal.json",
+          "sha256": "87e788d3e850dc18246e4892dd7b7fa38b0d5f4f54b6080ececc0bfdf4fd266c"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0181-permanent-power-company-v4.json",
+          "sha256": "067f2ec68e53698812ea582a0318fce93066e01823cc45462d85c987cd61ef8f"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/production-apply/batch-apply-receipt.json#members/4/receipt",
+          "sha256": "f191f10d04ab87138333eacfd2fa146c1995c8b60f154933b0517eb853aa9b26"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0181-permanent-power-company-v4/proposal.json#afterImage",
+          "sha256": "257e326d5c2b0e699f9999aafdc6e0e106d451ba93e727f350b7c14c5c7a4e25"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-23T22:55:01.000Z",
+        "auditEventId": "cmt6dh3lc0016znyy9fb6ts4n",
+        "transactionId": "af6ea18a-ab56-4fa0-a10e-c392b7bc6255",
+        "receiptSha256": "f191f10d04ab87138333eacfd2fa146c1995c8b60f154933b0517eb853aa9b26",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32670270920"
+      },
       "history": [
         {
           "sequence": 1,
@@ -22641,6 +22782,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T22:55:01.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0177-0181-v4.",
+          "taskSnapshotSha256": "6ab97b93378695f282325c303ef533bfbf52ce9d127fc27860b39fac62e147bb",
+          "evidenceSha256": [
+            "067f2ec68e53698812ea582a0318fce93066e01823cc45462d85c987cd61ef8f",
+            "257e326d5c2b0e699f9999aafdc6e0e106d451ba93e727f350b7c14c5c7a4e25",
+            "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+            "6ab97b93378695f282325c303ef533bfbf52ce9d127fc27860b39fac62e147bb",
+            "87e788d3e850dc18246e4892dd7b7fa38b0d5f4f54b6080ececc0bfdf4fd266c",
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a",
+            "f191f10d04ab87138333eacfd2fa146c1995c8b60f154933b0517eb853aa9b26"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -34787,5 +34946,5 @@
       ]
     }
   ],
-  "manifestSha256": "5bc49602dce54b07ea3d9e6670472e29b02b848510012c5475c1a80d2f61518c"
+  "manifestSha256": "5e6391cdd5d6b35d4dda0ff1cec250f35fa2b6fd7c29ab78a85129aa3c6a14a9"
 }

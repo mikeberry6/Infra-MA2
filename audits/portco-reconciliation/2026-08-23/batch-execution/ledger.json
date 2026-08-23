@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T22:34:00.000Z",
-  "activeBatchId": "batch-0177-0181-v4",
+  "updatedAt": "2026-08-23T22:55:02.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -1845,7 +1845,7 @@
     },
     {
       "batchId": "batch-0177-0181-v4",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
         "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
@@ -1861,8 +1861,8 @@
         181
       ],
       "createdAt": "2026-08-23T22:09:01.000Z",
-      "updatedAt": "2026-08-23T22:34:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T22:55:02.000Z",
+      "completedAt": "2026-08-23T22:55:02.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/batch-manifest.json",
         "sha256": "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
@@ -1872,7 +1872,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/production-apply/batch-apply-receipt.json",
         "sha256": "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f"
       },
-      "reason": "Rendered production verification found stale ownership-attribution metadata on Permanent Power: the current CIM Opportunity Zone Fund ownership period was incorrectly displayed as estimated CIM Infrastructure Fund III, and former-owner history retained an unsupported CIM Infrastructure Fund I estimate. The PortCo database transaction and receipt remain durable; the bundle is frozen pending a protected attribution-only correction and renewed API/rendered verification.",
+      "reason": "All five members reached their verified terminal outcomes. The three mutations match their approved database and seed after-images, both terminal decisions are durable, and the Permanent Power attribution correction is receipt-bound and rendered correctly in production.",
       "history": [
         {
           "sequence": 1,
@@ -1933,9 +1933,31 @@
             "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
           ],
           "reason": "Rendered production verification found stale ownership-attribution metadata on Permanent Power: the current CIM Opportunity Zone Fund ownership period was incorrectly displayed as estimated CIM Infrastructure Fund III, and former-owner history retained an unsupported CIM Infrastructure Fund I estimate. The PortCo database transaction and receipt remain durable; the bundle is frozen pending a protected attribution-only correction and renewed API/rendered verification."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-23T22:55:00.000Z",
+          "evidenceSha256": [
+            "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
+          ],
+          "reason": "Protected attribution workflow 32671526049 corrected the two stale Permanent Power fund-attribution labels; receipt 5e9b5a1d011e477c4183c7c1efa43345f9c17b48337b26e1b414510e38340ea1, API checks and rendered-card verification now pass."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T22:55:02.000Z",
+          "evidenceSha256": [
+            "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
+          ],
+          "reason": "All five members reached their verified terminal outcomes. The three mutations match their approved database and seed after-images, both terminal decisions are durable, and the Permanent Power attribution correction is receipt-bound and rendered correctly in production."
         }
       ]
     }
   ],
-  "ledgerSha256": "b556c73faf6827545907d66158b01b3b7b6ba7cd1f040ed7bce47ae55e39ba8c"
+  "ledgerSha256": "6f528fd7dff22c83cda2ff3f47b25c9589125b9d094c156615fa0e511ef0218a"
 }
