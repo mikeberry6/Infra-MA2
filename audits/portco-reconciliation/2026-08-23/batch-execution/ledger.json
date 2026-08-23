@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T05:50:28.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T06:35:00.000Z",
+  "activeBatchId": "batch-0126-0130-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -109,7 +109,55 @@
           "reason": "Atomic transaction, seed overlay, terminal decisions, three detail APIs and rendered production cards verified; no partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0126-0130-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0126:mosaic-forest-management:d54ba16b",
+        "ledger:0127:nexus-water-group:287d18eb",
+        "ledger:0128:puget-energy:f96cd6be",
+        "ledger:0129:puget-sound-energy:3d2f76d8",
+        "ledger:0130:cleco:aacd195e"
+      ],
+      "taskIndexes": [
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "createdAt": "2026-08-23T06:01:30.000Z",
+      "updatedAt": "2026-08-23T06:35:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/batch-manifest.json",
+        "sha256": "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T06:01:30.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T06:35:00.000Z",
+          "evidenceSha256": [
+            "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "4241205dc75f4e9a2235e9ba4116c7ea0a3484383d09fa54a87e6c74f0e49fdc"
+  "ledgerSha256": "089b5410540cb3c9bc831e7299f3f122ad2a732a8158a32feec87bf9675a3286"
 }

@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0128:puget-energy:f96cd6be",
+  "taskIndex": 128,
+  "companyName": "Puget Energy",
+  "generatedAt": "2026-08-23T06:27:16.963Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 128,
+    "taskId": "ledger:0128:puget-energy:f96cd6be",
+    "canonicalKey": "puget-energy|united-states",
+    "companyName": "Puget Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 21,
+    "managers": [
+      "BCI"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "021-bci:holding:001:puget-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj4fp00ghivhebe9bfh5k"
+    ],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.bci.ca/powering-the-pacific-northwest-bcis-strategic-investment-in-puget-sound-energy/",
+      "https://www.pse.com/en/about-us"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The company appears on only one repository side; reconcile production and evaluated seed through an individually approved correction.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj4fp00ghivhebe9bfh5k",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "puget-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj4fp00ghivhebe9bfh5k",
+    "name": "Puget Energy",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated electricity and gas distribution",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Puget Energy is the holding company for Puget Sound Energy, Washington's regulated electric and gas utility. The utility serves approximately 1.2 million electric customers and 900,000 natural gas customers across a 6,000-square-mile service territory in 10 counties. Its operating model is asset-heavy and regulated, with revenue supported by utility rate structures, generation assets, transmission, distribution, and long-lived network infrastructure. AIMCo has held the investment since the 2009 take-private and increased its stake in 2018, while the current public consortium also includes Macquarie, Ontario Teachers', OMERS, BCI, and PGGM. BCI's 2024 I&RR financial statements disclose a 20.9% ownership interest in Puget Sound Energy, and BCI continued to describe PSE as one of its largest and longest-standing infrastructure investments in 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Washington",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpk701d2ivhenespe9dw",
+        "managerName": "AIMCo",
+        "organizationName": "AIMCo",
+        "fundName": "AIMCo Direct Infrastructure Investment",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2009,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjpks01d3ivhe9nm9wwth",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "Infrastructure & Renewable Resources",
+        "stake": "20.9%",
+        "investmentYear": 2009,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkds302erivhe7gtyyfay",
+        "date": "Feb 6, 2009",
+        "event": "Puget Holdings completed the take-private acquisition of Puget Energy through a consortium of infrastructure investors including AIMCo and BCI.",
+        "category": "ACQUISITION",
+        "sortDate": "2009-02-06T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkdsr02esivhe432860z4",
+        "date": "Mar 2018",
+        "event": "AIMCo announced that it had increased its stake in Puget Sound Energy's parent company.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkdt802etivhe8bwni68x",
+        "date": "Dec 2021",
+        "event": "Macquarie Asset Management and Ontario Teachers' signed an agreement to acquire a stake in Puget Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkdtu02euivhe0k7q35ln",
+        "date": "Jan 2022",
+        "event": "Macquarie and Ontario Teachers' completed the transaction and each disclosed a 15.8% ownership interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpom6p06xyivhe2llzqfq7",
+        "label": "Aimco — Puget Energy / Puget Sound Energy",
+        "url": "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Aimco — Puget Energy / Puget Sound Energy",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpom7w06y0ivhen2v4sy6l",
+        "label": "Investment date source — AIMCo — Puget Energy / Puget Sound Energy",
+        "url": "https://assets.ctfassets.net/lyt4cjmefjno/5aorUTYWwgPMIGc9cNPx9r/8518334d4637dbde57c10a376b60c10c/puget_investment.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "AIMCo initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpom9806y2ivheyjodqb3m",
+        "label": "Close date source — AIMCo — Puget Energy / Puget Sound Energy",
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/d8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "AIMCo closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoma806y4ivhecd4mit52",
+        "label": "Pse — Puget Energy / Puget Sound Energy",
+        "url": "https://www.pse.com/en/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pse company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpombb06y6ivheetsvfc1r",
+        "label": "Pse — Puget Energy / Puget Sound Energy",
+        "url": "https://www.pse.com/en/Customer-Service/pse-locations-2",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Pse operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpomch06y8ivhepfhrsu6c",
+        "label": "Current investment source — BCI — Puget Sound Energy",
+        "url": "https://www.bci.ca/powering-the-pacific-northwest-bcis-strategic-investment-in-puget-sound-energy/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 2009 initial investment and continuing PSE ownership context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpomdi06yaivheen3dwdgf",
+        "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+        "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 20.9% ownership interest in Puget Sound Energy as of December 31, 2024",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj0r500ayivhejf0kb254",
+        "fundName": "AIMCo Direct Infrastructure Investment",
+        "managerId": "cmrxpi2rj0005ivhejt9pabwk",
+        "updatedAt": "2026-07-23T16:09:54.833Z"
+      },
+      {
+        "id": "cmrxpj1av00btivhe22q21yhy",
+        "fundName": "Infrastructure & Renewable Resources",
+        "managerId": "cmrxpi4wo000tivheupfc57xk",
+        "updatedAt": "2026-07-23T16:09:55.543Z"
+      },
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2rj0005ivhejt9pabwk",
+        "name": "AIMCo",
+        "updatedAt": "2026-07-23T16:09:10.783Z"
+      },
+      {
+        "id": "cmrxpi4wo000tivheupfc57xk",
+        "name": "BCI",
+        "updatedAt": "2026-07-23T16:09:13.560Z"
+      },
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      },
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      },
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpic940034ivhenahrlxw7",
+        "name": "Ontario Teachers' Pension Plan",
+        "updatedAt": "2026-07-23T16:09:23.080Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      },
+      {
+        "id": "cmrxpijwb005iivhe0mu2v1yh",
+        "name": "PGGM",
+        "updatedAt": "2026-07-23T16:09:32.987Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0128:puget-energy:f96cd6be",
+    "taskIndex": 128,
+    "canonicalKey": "puget-energy|united-states",
+    "capturedAt": "2026-08-23T06:27:16.963Z",
+    "databaseRevision": "revision:e2d0dc712848d8006eac841dda225de012cab97769596735c6d294372d899ef5",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3fd668abb47e7502a975c01a2b0f8971bf28bcdc0067c4115d5809dbdd2fed79",
+    "productionSnapshotSha256": "c5e2ee6a23ef8855f804595abdd6cd60258f1e164f556a0482387ec7b2408675",
+    "targetCompanySnapshotSha256": "959773e56e2d96ae58e3576433decc82285c7be75fb3db6541da5616c92ed3a0",
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d31d7f32cb5185434e19ae3f48f399f223567c185886550e3f8bf3726c1ed1fc",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f03ba903b6e86ca23aa7fac229839c4456789797eb458daa2139859042131866",
+      "organizationsSha256": "3b1ec8f764e240c90ac5f5ccac4e4f5ed66b407a6c3a0eb858a4b8f64a89f49d",
+      "citationsSha256": "fed2757974789112dc0e672879773574bbec07535ec61e0aeb7f868debcaf195",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "84ee98bb2b0792245ca24a16bad6ef84c359de5d758233f40bd06da27ab1f791",
+    "stateSha256": "801145668c911695c913875c214d21d0a8f8316a06801414021a80343a421683",
+    "taskSnapshotSha256": "613349ae401c5888eae149d7a8d47f793e8892b1de8cc01de5bbf4280a22b4ab"
+  },
+  "contextSha256": "83497643db3d99a6393e232419ca807d859413c51b3d149565ac7922f6269832"
+}

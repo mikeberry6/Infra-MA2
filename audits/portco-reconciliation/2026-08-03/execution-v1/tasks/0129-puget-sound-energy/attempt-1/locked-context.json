@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0129:puget-sound-energy:3d2f76d8",
+  "taskIndex": 129,
+  "companyName": "Puget Sound Energy",
+  "generatedAt": "2026-08-23T06:17:35.150Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0129-puget-sound-energy/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 129,
+    "taskId": "ledger:0129:puget-sound-energy:3d2f76d8",
+    "canonicalKey": "puget-sound-energy|united-states",
+    "companyName": "Puget Sound Energy",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 21,
+    "managers": [
+      "BCI",
+      "Macquarie Asset Management",
+      "OMERS Infrastructure",
+      "Ontario Teachers Pension Plan"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "065-macquarie-asset-management:holding:022:puget-sound-energy",
+      "075-omers-infrastructure:holding:003:puget-sound-energy",
+      "076-ontario-teachers-pension-plan:holding:010:puget-sound-energy"
+    ],
+    "sourceRepoOnlyIds": [
+      "021-bci:repo-only:001:puget-sound-energy"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjkcr014rivhero16klvt"
+    ],
+    "seedKeys": [
+      "puget sound energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.bci.ca/powering-the-pacific-northwest-bcis-strategic-investment-in-puget-sound-energy/",
+      "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+      "https://www.omersinfrastructure.com/investments/puget-sound-energy",
+      "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/macquarie-asset-management-and-ontario-teachers--complete-acquis/",
+      "https://www.pse.com/en/about-us"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Heuristic identity overlap with puget-energy-puget-sound-energy|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Heuristic identity overlap with puget-energy-puget-sound-energy|united-states; no automatic merge was made.",
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjkcr014rivhero16klvt",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "puget-sound-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjkcr014rivhero16klvt",
+    "name": "Puget Sound Energy",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated electric and gas utility",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Puget Sound Energy is a regulated electric and natural gas utility serving residential, commercial, and industrial customers in Washington. Public disclosures state that the company serves about 1.2 million electric customers and nearly 900,000 natural gas customers across a 6,000-square-mile territory in 10 counties. The operating model is asset-heavy and predominantly regulated, supported by generation, transmission, and distribution assets with revenues recovered through approved tariffs. Company materials describe owned and contracted hydro, wind, solar, natural gas, biomass, and other power resources, while BCI noted in September 2025 that PSE planned to phase out all coal-based electric generation by the end of 2025 and continue adding renewable and non-emitting resources. PSE was taken private in 2009 by a long-term infrastructure consortium that included BCI, and BCI's 2024 I&RR financial statements disclose a 20.9% ownership interest in Puget Sound Energy.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1997,
+    "headquarters": "Washington",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6fp023pivhewnh4gzo7",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": null,
+        "vehicleName": "MGIF",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk6gd023qivheeomwf03t",
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk6gr023rivhel4dhkwrw",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk6h9023sivhes2ip9z2h",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "Infrastructure & Renewable Resources",
+        "stake": "20.9%",
+        "investmentYear": 2009,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk6hr023tivhe66aoa5c5",
+        "managerName": "AIMCo",
+        "organizationName": "AIMCo",
+        "fundName": "AIMCo Direct Infrastructure Investment",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2009,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk6id023uivheusj162vx",
+        "managerName": "PGGM",
+        "organizationName": "PGGM",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": "10%",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm9ux04nyivherbfs0ct9",
+        "date": "1997",
+        "event": "Puget Sound Energy was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1997-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9vl04nzivhenzqnkvhj",
+        "date": "Feb 6, 2009",
+        "event": "Puget Holdings completed the take-private acquisition of Puget Energy and Puget Sound Energy with AIMCo and BCI included in the original investor consortium.",
+        "category": "ACQUISITION",
+        "sortDate": "2009-02-06T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9w504o0ivheez2uo5g1",
+        "date": "Aug 2018",
+        "event": "OMERS Infrastructure announced an investment representing approximately 24% of Puget Holdings.",
+        "category": "FINANCING",
+        "sortDate": "2018-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9wl04o1ivhe9u0z5vnw",
+        "date": "Aug 8, 2018",
+        "event": "AIMCo and BCI increased their Puget Holdings positions, while OMERS and PGGM acquired initial stakes of 23.9% and 10%, respectively.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-08-08T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9za04o2ivhe98a0sl3g",
+        "date": "Feb 22, 2022",
+        "event": "Macquarie Asset Management and Ontario Teachers' (OTPP) completed the acquisition of a 31.6% stake in Puget Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-02-22T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps1t90bzzivhedkwat936",
+        "label": "Pse — Puget Energy / Puget Sound Energy",
+        "url": "https://www.pse.com/en/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pse company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps1u90c01ivhebtb7mz9s",
+        "label": "Close date source — OTPP — Puget Sound Energy",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/macquarie-asset-management-and-ontario-teachers--complete-acquis/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps1wz0c02ivhemibrpu7o",
+        "label": "Pse — Puget Energy / Puget Sound Energy",
+        "url": "https://www.pse.com/en/Customer-Service/pse-locations-2",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Pse operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps1y60c04ivhea446lple",
+        "label": "Omers — Puget Sound Energy",
+        "url": "https://www.omers.com/news/omers-infrastructure-announces-investment-in-puget-sound-energy",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Puget Sound Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps1za0c06ivhebsg3pxud",
+        "label": "Close date source — AIMCo — Puget Sound Energy",
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/dex991.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "AIMCo closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps1zp0c07ivheuuj28po1",
+        "label": "Close date source — AIMCo — Puget Sound Energy",
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/dex991.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "BCI closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps20w0c09ivheyeq6t0av",
+        "label": "Close date source — Macquarie Asset Management — Puget Sound Energy",
+        "url": "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Macquarie Asset Management closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps2200c0bivhe3e3vgrpe",
+        "label": "Investment date source — PGGM — Puget Sound Energy",
+        "url": "https://pggm.nl/en/press/puget-sound-energy-welcomes-new-investment",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PGGM acquired a 10% position in Puget Sound Energy in 2018",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps22h0c0civhek00s6fg1",
+        "label": "Current investment source — BCI — Puget Sound Energy",
+        "url": "https://www.bci.ca/powering-the-pacific-northwest-bcis-strategic-investment-in-puget-sound-energy/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 2009 initial investment and continuing PSE ownership context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps22y0c0divhezfhqk6gj",
+        "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+        "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 20.9% ownership interest in Puget Sound Energy as of December 31, 2024",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Puget Sound Energy",
+    "investmentFirm": "Macquarie Asset Management",
+    "sector": "Utilities",
+    "subsector": "Regulated electric and gas utility",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "MGIF",
+    "description": "Puget Sound Energy is a regulated electric and natural gas utility serving residential, commercial, and industrial customers in Washington. Public disclosures state that the company serves about 1.2 million electric customers and nearly 900,000 natural gas customers across a 6,000-square-mile territory in 10 counties. The operating model is asset-heavy and predominantly regulated, supported by generation, transmission, and distribution assets with revenues recovered through approved tariffs. Company materials describe owned and contracted hydro, wind, solar, natural gas, biomass, and other power resources, while BCI noted in September 2025 that PSE planned to phase out all coal-based electric generation by the end of 2025 and continue adding renewable and non-emitting resources. PSE was taken private in 2009 by a long-term infrastructure consortium that included BCI, and BCI's 2024 I&RR financial statements disclose a 20.9% ownership interest in Puget Sound Energy.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1997,
+    "investmentYear": 2022,
+    "headquarters": "Washington",
+    "milestones": [
+      {
+        "date": "1997",
+        "event": "Puget Sound Energy was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Feb 6, 2009",
+        "event": "Puget Holdings completed the take-private acquisition of Puget Energy and Puget Sound Energy with AIMCo and BCI included in the original investor consortium.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 2018",
+        "event": "OMERS Infrastructure announced an investment representing approximately 24% of Puget Holdings.",
+        "category": "Financing"
+      },
+      {
+        "date": "Aug 8, 2018",
+        "event": "AIMCo and BCI increased their Puget Holdings positions, while OMERS and PGGM acquired initial stakes of 23.9% and 10%, respectively.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 22, 2022",
+        "event": "Macquarie Asset Management and Ontario Teachers' (OTPP) completed the acquisition of a 31.6% stake in Puget Holdings.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Pse — Puget Sound Energy",
+        "url": "https://www.pse.com/en/about-us",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — OTPP — Puget Sound Energy",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/macquarie-asset-management-and-ontario-teachers--complete-acquis/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Pse — Puget Sound Energy",
+        "url": "https://www.pse.com/en/Customer-Service/pse-locations-2",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Omers — Puget Sound Energy",
+        "url": "https://www.omers.com/news/omers-infrastructure-announces-investment-in-puget-sound-energy",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Close date source — AIMCo — Puget Sound Energy",
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/dex991.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Close date source — BCI — Puget Sound Energy",
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/dex991.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Close date source — Macquarie Asset Management — Puget Sound Energy",
+        "url": "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — PGGM — Puget Sound Energy",
+        "url": "https://pggm.nl/en/press/puget-sound-energy-welcomes-new-investment",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PGGM acquired a 10% position in Puget Sound Energy in 2018"
+      },
+      {
+        "label": "Current investment source — BCI — Puget Sound Energy",
+        "url": "https://www.bci.ca/powering-the-pacific-northwest-bcis-strategic-investment-in-puget-sound-energy/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 2009 initial investment and continuing PSE ownership context"
+      },
+      {
+        "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+        "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 20.9% ownership interest in Puget Sound Energy as of December 31, 2024"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Macquarie Asset Management",
+        "ownershipVehicle": "MGIF",
+        "investmentYear": 2022,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "OTPP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "OMERS",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2018,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "BCI",
+        "ownershipVehicle": "Infrastructure & Renewable Resources",
+        "investmentYear": 2009,
+        "stake": "20.9%",
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "AIMCo",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2009,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "PGGM",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2018,
+        "stake": "10%",
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj0r500ayivhejf0kb254",
+        "fundName": "AIMCo Direct Infrastructure Investment",
+        "managerId": "cmrxpi2rj0005ivhejt9pabwk",
+        "updatedAt": "2026-07-23T16:09:54.833Z"
+      },
+      {
+        "id": "cmrxpj1av00btivhe22q21yhy",
+        "fundName": "Infrastructure & Renewable Resources",
+        "managerId": "cmrxpi4wo000tivheupfc57xk",
+        "updatedAt": "2026-07-23T16:09:55.543Z"
+      },
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2rj0005ivhejt9pabwk",
+        "name": "AIMCo",
+        "updatedAt": "2026-07-23T16:09:10.783Z"
+      },
+      {
+        "id": "cmrxpi4wo000tivheupfc57xk",
+        "name": "BCI",
+        "updatedAt": "2026-07-23T16:09:13.560Z"
+      },
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      },
+      {
+        "id": "cmrxpih16004mivhea7i805re",
+        "name": "OTPP",
+        "updatedAt": "2026-07-23T16:09:29.274Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      },
+      {
+        "id": "cmrxpijwb005iivhe0mu2v1yh",
+        "name": "PGGM",
+        "updatedAt": "2026-07-23T16:09:32.987Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0129:puget-sound-energy:3d2f76d8",
+    "taskIndex": 129,
+    "canonicalKey": "puget-sound-energy|united-states",
+    "capturedAt": "2026-08-23T06:17:35.150Z",
+    "databaseRevision": "revision:c7c0f844d4a96e5d35dcf3e59c4124ec2f460e0b7844df14b299aa7e2df8b7d2",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "dd6bc20286f47d5730cd26fb1e54d8c04d1aea4ae1f78c0d0a1925bad603c2d1",
+    "productionSnapshotSha256": "90b724cfd5bfae7083ff0689f174a4db8341aad9065dcab2069d9f8a9e2c70d4",
+    "targetCompanySnapshotSha256": "21f1db837875cff25440af77c4ddfb7b6e98e3545ee004bc761337ad6f2a4460",
+    "seedEntrySha256": "7402d70d2f4dff653c6d6e8f37486e68a300bdca8e9cd53b32b66e4b24273cc6",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "53b451e885d42a9dfc18e566b3661fc71732dce478067e826a4a4ee55e502359",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f03ba903b6e86ca23aa7fac229839c4456789797eb458daa2139859042131866",
+      "organizationsSha256": "17cb0b1ded82ccb3054edd38e33f4e162d6c77a3a8cf4745e80c37bf34d703b1",
+      "citationsSha256": "f3d3893f064346ca693cd61ff6ddda494c43c6cfce90118c56586b4ac77c9121",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "33c438101e005981c7c71fbf89622d37013eda4d2c07a8c0d6e6e0e7bd427c7e",
+    "stateSha256": "d3804543bcecf35454f1e3df12b8d11231aba7568e389d19be124e8e6d2333e2",
+    "taskSnapshotSha256": "9052f0c82b32e5fdddcd15046c3d32353dac883d0762622d8d62a6ccb7068ef9"
+  },
+  "contextSha256": "3ab926433d3e7d384a9cd067d5ce80ecc92ac30ed3b6da20c9fb1e37b20f9d9b"
+}

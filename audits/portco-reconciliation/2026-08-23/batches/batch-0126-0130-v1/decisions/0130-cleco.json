@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0130:cleco:aacd195e",
+  "taskIndex": 130,
+  "companyName": "Cleco",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-08-23T06:32:00.000Z",
+  "rationale": "Cleco is the trade and group name for the same canonical Louisiana utility platform already corrected by task 122 as Cleco Corporate Holdings LLC. Stonepeak and Bernhard remain announced buyers under a signed pending transaction and are not current owners before closing. Task 130 therefore adds no second company or owner and is superseded by task 122's completed after-image.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0130-cleco/attempt-1/locked-task-snapshot.json",
+    "sha256": "ff7fff608a763e1dee5decfcfd139948c4b01946d63ec540703a342b00b17b37"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0130-cleco/attempt-1/research-decision.json",
+    "sha256": "718c4e9c2837756124601cda8a004c0cf9cc376afb21bfaa9d1802a50ca24e9a"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0130-cleco/attempt-1/source-verification.json",
+    "sha256": "8918842753159b1917ff7f5e31cf6906882d564527b5a83d1c9c09cdabd08ccd"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1089819/000108981926000010/cnl-20260331.htm",
+      "purpose": "Current Cleco corporate hierarchy and pending sale status"
+    },
+    {
+      "url": "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+      "purpose": "Signed pending 100% Cleco Group sale and buyer identities"
+    },
+    {
+      "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32834",
+      "purpose": "Open regulatory proceeding confirming no legal closing"
+    }
+  ],
+  "supersededByTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+  "decisionSha256": "81e197817a90c7f35266c2d63dd886334e2cb3d8766dbcaa2c02650670f15992"
+}

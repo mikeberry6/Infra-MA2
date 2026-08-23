@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0127:nexus-water-group:287d18eb",
+  "taskIndex": 127,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T06:21:00.000Z",
+  "canonicalKey": "nexus-water-group|united-states-canada",
+  "companyName": "Nexus Water Group",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "021-bci:holding:006:nexus-water-group",
+    "062-j-p-morgan-asset-management:holding:005:nexus-water-group",
+    "066-meag:holding:005:nexus-water-group"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing record to the legal name Nexus Water Group, Inc. and preserve it as the single regulated water and wastewater platform. The verified 50% BCI / 50% SWMAC structure and SWMAC's 75% IIF / 25% Bazos split produce current indirect interests of 50.0% for BCI, 37.5% for J.P. Morgan Asset Management's IIF and 12.5% for the MEAG-managed Munich Re vehicle. The 2026 dispositions are subsidiary asset sales and do not change platform ownership.",
+  "evidence": [
+    {
+      "url": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+      "purpose": "Current BCI ownership",
+      "supports": [
+        "BCI held 50.0% of Nexus Water Group at December 31, 2025",
+        "The investment remains within BCI's Infrastructure & Renewable Resources program"
+      ]
+    },
+    {
+      "url": "https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M498/K678/498678388.PDF",
+      "purpose": "Regulatory ownership structure",
+      "supports": [
+        "BCI-side and SWMAC-side interests each equal 50%",
+        "IIF and Bazos hold 75% and 25% of the SWMAC side"
+      ]
+    },
+    {
+      "url": "https://tpucdockets.tn.gov/archive/filings/2022/2200114c.pdf",
+      "purpose": "IIF and MEAG-managed ownership chain",
+      "supports": [
+        "J.P. Morgan's IIF vehicle and Bazos are the two SWMAC owners",
+        "Bazos is indirectly owned by Munich Re and managed by MEAG"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "9cf674ebe0b65d5af92120bc16e00ba1058dbc7ecb120e127795fe387085b414",
+  "currentCompanySnapshotSha256": "3aa3d93a11ebc140f6e12f97104e0acef18386fe1602bd24ff4cbb5c8e50ea0c",
+  "executionLock": {
+    "taskSnapshotSha256": "9bdf96832c514c21d4f4095a43bc30b8e489627b5b8092d7301f7585ee23e263",
+    "taskStateSha256": "99fceadab64c3d693437c4eb09c2a0b24e41ed3a3c1c5c7d0843dc69068705f3",
+    "taskDependencySha256": "84b3ec776640dc5faa1bec5c93d42f14f54a707be24444cf0aea62de0409a507",
+    "seedEntrySha256": "f32b165b229cb7d3e8f86a30375d685a1149ae24162dd2a59aa2606b1d1b476d",
+    "dependencies": {
+      "ownershipPeriodsSha256": "38457df9827c1eb03ae08939270635b0c848690a09f5ed697be73b720d19bfc4",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "a4d6ee1fdda8fa0666e53d54503eabd29409399e341332163d20843624de4a0a",
+      "organizationsSha256": "24286374d5b95182e523563cf0707066478114b60ff6d79bc7487f2a8f6dcea5",
+      "citationsSha256": "2a59ad0b8f8ec668a9616c4bb50066c14d468f878314a777971e6f16e9b52feb",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1av00btivhe22q21yhy",
+        "fundName": "Infrastructure & Renewable Resources",
+        "managerId": "cmrxpi4wo000tivheupfc57xk",
+        "updatedAt": "2026-07-23T16:09:55.543Z"
+      },
+      {
+        "id": "cmrxpj2wc00e8ivhey9g23bh2",
+        "fundName": "Infrastructure Investments Fund (IIF)",
+        "managerId": "cmrxpiavd002oivhe0incyak4",
+        "updatedAt": "2026-07-23T16:09:57.612Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4wo000tivheupfc57xk",
+        "name": "BCI",
+        "updatedAt": "2026-07-23T16:09:13.560Z"
+      },
+      {
+        "id": "cmrxpiavd002oivhe0incyak4",
+        "name": "J.P. Morgan Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.289Z"
+      },
+      {
+        "id": "cmrxpin85006kivhejb3tntsv",
+        "name": "MEAG",
+        "updatedAt": "2026-07-23T16:09:37.301Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj8n500mqivhe8jt4n9mw",
+    "name": "Nexus Water Group",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Water and wastewater utility",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Nexus Water Group is a regulated water and wastewater utility platform formed through the combination of Corix Infrastructure's U.S. regulated water and wastewater business and SouthWest Water Company. The platform serves residential, commercial, and municipal utility customers through owned water distribution, wastewater collection, and treatment systems. Nexus reported at launch that it employed more than 1,300 professionals serving more than 1.3 million people across North America through over 670 water systems and over 360 wastewater systems, with local operations across 20 U.S. states and two Canadian provinces. The merger closed on April 1, 2024, and BCI's 2024 I&RR financial statements disclose a 50.0% ownership interest in Nexus Water Group Inc. Nexus announced asset-sale agreements with American Water in 2025 and California Water Service Group in 2026, but the company stated the Nevada/Oregon sale was expected to close by the end of 2026 following required regulatory approvals, so BCI's Nexus holding remains active as of May 12, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://nexuswatergroup.com/",
+    "yearFounded": 2024,
+    "headquarters": "Sugar Land, Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtvk01k1ivhe0phin08t",
+        "managerName": "J.P. Morgan Asset Management",
+        "organizationName": "J.P. Morgan Asset Management",
+        "fundName": "Infrastructure Investments Fund (IIF)",
+        "vehicleName": "Infrastructure Investments Fund (IIF)",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjtw401k2ivhe8o927nx7",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "Infrastructure & Renewable Resources",
+        "stake": "50.0%",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkv7x02zlivhe7vaxq6qx",
+        "date": "2024",
+        "event": "Nexus Water Group was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkv8h02zmivhejp3t0974",
+        "date": "Apr 1, 2024",
+        "event": "BCI-controlled Corix Infrastructure's U.S. regulated water and wastewater business and J.P. Morgan Asset Management IIF-backed SouthWest Water completed their merger to create Nexus Water Group.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkv9502znivheuanv62f7",
+        "date": "Apr 2, 2024",
+        "event": "Nexus Water Group formally announced the closing of the merger.",
+        "category": "OTHER",
+        "sortDate": "2024-04-02T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkv9k02zoivhee1ieegm7",
+        "date": "May 19, 2025",
+        "event": "Nexus announced a definitive agreement to sell operations and assets in eight states to American Water.",
+        "category": "DIVESTITURE",
+        "sortDate": "2025-05-19T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkva502zpivhe2wbyboax",
+        "date": "Feb 25, 2026",
+        "event": "Nexus announced an agreement to sell its Nevada and Oregon assets to California Water Service Group, with closing expected by the end of 2026 after required regulatory approvals.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-02-25T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [
+      {
+        "id": "cmrxpmxde05hhivhe8vpm515r",
+        "personName": "Rob MacLean",
+        "title": "President & Chief Executive Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxgo05hjivheoxvp1wd0",
+        "personName": "Richard Rich",
+        "title": "Chief Operating Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxhx05hlivhe4x5vkvwt",
+        "personName": "Alison Zimlich",
+        "title": "Chief Financial Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxiu05hnivhekp847jo5",
+        "personName": "Jim Devine",
+        "title": "Chief Services Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxjx05hpivhedrxo6374",
+        "personName": "Joanne Elliott",
+        "title": "Chief Human Resources Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxl105hrivhewxwywo12",
+        "personName": "Joseph Park",
+        "title": "Chief Legal Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxlx05htivhe7e276crt",
+        "personName": "Don Sudduth",
+        "title": "Chief Growth Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      }
+    ],
+    "citations": [
+      {
+        "id": "cmrxpphfu088mivheej0p7b5m",
+        "label": "Nexuswatergroup — Nexus Water Group",
+        "url": "https://www.nexuswatergroup.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Nexuswatergroup company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpphh6088oivheb8ghzvtd",
+        "label": "Management source — Nexus Water Group",
+        "url": "https://nexuswatergroup.com/our-company/executive-leadership-team/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Nexus executive leadership team",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphhr088pivheor9hnzlu",
+        "label": "Water business separation source — Nexus Water Group",
+        "url": "https://nexuswatergroup.com/2024/04/02/nexus-water-group-press-release/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Corix and SouthWest Water merger closed April 1, 2024",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphir088rivhe00ndpw1e",
+        "label": "Close date source — J.P. Morgan Asset Management — Nexus Water Group",
+        "url": "https://app.mergerlinks.com/transactions/2022-08-29-corix-infrastructure-water-and-wastewater-businesses/service-providers",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "J.P. Morgan Asset Management closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphju088tivhe3bp6ajne",
+        "label": "Nexuswatergroup — Nexus Water Group",
+        "url": "https://nexuswatergroup.com/2025/05/19/nexus-water-group-enters-into-a-definitive-agreement-to-sell-assets-in-eight-states-to-american-water/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Nexuswatergroup transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphky088vivhewj7xhyn7",
+        "label": "Pending asset-sale source — Nexus Water Group",
+        "url": "https://nexuswatergroup.com/2026/02/25/nexus-water-group-agrees-to-sell-nevada-and-oregon-assets-to-california-water-service-group/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Nevada/Oregon sale announced February 25, 2026; closing expected by year-end 2026",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphlj088wivhehvlds4wx",
+        "label": "Investment date source — BCI — Corix District Energy",
+        "url": "https://myutility.nexuswatergroup.com/docs/default-source/communities/communities-common/application---corix-restructuring-and-business-combination-transactions.pdf?sfvrsn=1c2b6b5d_2",
+        "sourceType": "PRESENTATION",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Myutility financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphof088xivhegzdzubqb",
+        "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+        "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 50.0% ownership interest in Nexus Water Group Inc as of December 31, 2024",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "3aa3d93a11ebc140f6e12f97104e0acef18386fe1602bd24ff4cbb5c8e50ea0c",
+  "afterImage": {
+    "id": "cmrxpj8n500mqivhe8jt4n9mw",
+    "name": "Nexus Water Group, Inc.",
+    "aliases": [
+      "Nexus Water Group",
+      "Nexus Water Group Holdings, Inc."
+    ],
+    "sector": "UTILITIES",
+    "subsector": "Water and wastewater utility",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Nexus Water Group, Inc. is a regulated water and wastewater utility platform formed when the U.S. regulated operations of Corix Infrastructure combined with SouthWest Water Company on April 1, 2024. The business operates locally branded systems across the United States and Canada and serves more than 1.3 million people. BCI owns 50.0% through its Infrastructure & Renewable Resources program. The other 50% is held through SWMAC Holdco, producing indirect platform interests of 37.5% for J.P. Morgan Asset Management's Infrastructure Investments Fund and 12.5% for a Munich Re vehicle managed by MEAG. Nexus completed the sale of systems in eight states to American Water on June 1, 2026, while its announced Nevada and Oregon asset sale remained pending; neither transaction is a sponsor sale or platform exit.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://nexuswatergroup.com/",
+    "yearFounded": 2024,
+    "headquarters": "Sugar Land, Texas",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtvk01k1ivhe0phin08t",
+        "managerName": "J.P. Morgan Asset Management",
+        "organizationName": "J.P. Morgan Asset Management",
+        "fundName": "Infrastructure Investments Fund (IIF)",
+        "vehicleName": "IIF Subway Investment LP / SWMAC Holdco",
+        "stake": "37.5% indirect",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjtw401k2ivhe8o927nx7",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "Corix Infrastructure Inc. affiliate holdings",
+        "stake": "50.0%",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "MEAG",
+        "organizationName": "MEAG",
+        "fundName": null,
+        "vehicleName": "Bazos CIV, L.P. / SWMAC Holdco (Munich Re capital managed by MEAG)",
+        "stake": "12.5% indirect",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkv7x02zlivhe7vaxq6qx",
+        "date": "Apr 1, 2024",
+        "event": "The U.S. regulated water and wastewater businesses of Corix Infrastructure and SouthWest Water combined to form Nexus Water Group.",
+        "category": "FOUNDING",
+        "sortDate": "2024-04-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://nexuswatergroup.com/2024/04/02/nexus-water-group-press-release/"
+        ]
+      },
+      {
+        "id": "cmrxpkv8h02zmivhejp3t0974",
+        "date": "Apr 1, 2024",
+        "event": "BCI's Corix interests and the IIF/Bazos-backed SouthWest platform completed their combination, establishing the 50% BCI and 50% SWMAC ownership structure.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-04-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://nexuswatergroup.com/2024/04/02/nexus-water-group-press-release/",
+          "https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M498/K678/498678388.PDF"
+        ]
+      },
+      {
+        "id": "cmrxpkv9502znivheuanv62f7",
+        "date": "Jun 14, 2018",
+        "event": "MEAG completed a 25% investment in predecessor SouthWest Water on behalf of Munich Re, an interest later carried into Nexus through Bazos and SWMAC Holdco.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-06-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.meag.com/de/informieren/14521.html",
+          "https://tpucdockets.tn.gov/archive/filings/2022/2200114c.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpkv9k02zoivhee1ieegm7",
+        "date": "Jun 1, 2026",
+        "event": "American Water completed its purchase of Nexus systems in eight states; the transaction was an asset divestiture and did not change ownership of the Nexus platform.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://newsroom.amwater.com/2026-06-01-American-Water-Completes-Purchase-of-Nexus-Water-Group-Systems-in-Eight-States"
+        ]
+      },
+      {
+        "id": "cmrxpkva502zpivhe2wbyboax",
+        "date": "Feb 25, 2026",
+        "event": "Nexus agreed to sell its Nevada and Oregon systems to California Water Service Group; the asset sale remained pending regulatory approval in the buyer's July 29, 2026 filing.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-02-25T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://nexuswatergroup.com/2026/02/25/nexus-water-group-agrees-to-sell-nevada-and-oregon-assets-to-california-water-service-group/",
+          "https://www.calwatergroup.com/news/press-releases/detail/794/california-water-service-group-reports-strong-second-quarter-2026-financial-results"
+        ]
+      }
+    ],
+    "managementRoles": [
+      {
+        "id": "cmrxpmxde05hhivhe8vpm515r",
+        "personName": "Rob MacLean",
+        "title": "President & Chief Executive Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxgo05hjivheoxvp1wd0",
+        "personName": "Richard Rich",
+        "title": "Chief Operating Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxhx05hlivhe4x5vkvwt",
+        "personName": "Alison Zimlich",
+        "title": "Chief Financial Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxiu05hnivhekp847jo5",
+        "personName": "Jim Devine",
+        "title": "Chief Services Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxjx05hpivhedrxo6374",
+        "personName": "Joanne Elliott",
+        "title": "Chief Human Resources Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxl105hrivhewxwywo12",
+        "personName": "Joseph Park",
+        "title": "Chief Legal Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxlx05htivhe7e276crt",
+        "personName": "Don Sudduth",
+        "title": "Chief Growth Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      }
+    ],
+    "citations": [
+      {
+        "id": "cmrxpphfu088mivheej0p7b5m",
+        "label": "Nexuswatergroup — Nexus Water Group",
+        "url": "https://www.nexuswatergroup.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Nexus company profile and operating status",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphh6088oivheb8ghzvtd",
+        "label": "Management source — Nexus Water Group",
+        "url": "https://nexuswatergroup.com/our-company/executive-leadership-team/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Nexus executive leadership team",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphhr088pivheor9hnzlu",
+        "label": "Water business separation source — Nexus Water Group",
+        "url": "https://nexuswatergroup.com/2024/04/02/nexus-water-group-press-release/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 1, 2024 Nexus formation and platform launch",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphir088rivhe00ndpw1e",
+        "label": "Close date source — J.P. Morgan Asset Management — Nexus Water Group",
+        "url": "https://app.mergerlinks.com/transactions/2022-08-29-corix-infrastructure-water-and-wastewater-businesses/service-providers",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "J.P. Morgan Asset Management closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphju088tivhe3bp6ajne",
+        "label": "Nexuswatergroup — Nexus Water Group",
+        "url": "https://nexuswatergroup.com/2025/05/19/nexus-water-group-enters-into-a-definitive-agreement-to-sell-assets-in-eight-states-to-american-water/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Nexuswatergroup transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphky088vivhewj7xhyn7",
+        "label": "Pending asset-sale source — Nexus Water Group",
+        "url": "https://nexuswatergroup.com/2026/02/25/nexus-water-group-agrees-to-sell-nevada-and-oregon-assets-to-california-water-service-group/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Nevada/Oregon sale announced February 25, 2026; closing expected by year-end 2026",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphlj088wivhehvlds4wx",
+        "label": "Investment date source — BCI — Corix District Energy",
+        "url": "https://myutility.nexuswatergroup.com/docs/default-source/communities/communities-common/application---corix-restructuring-and-business-combination-transactions.pdf?sfvrsn=1c2b6b5d_2",
+        "sourceType": "PRESENTATION",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Myutility financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphof088xivhegzdzubqb",
+        "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+        "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 50.0% Nexus ownership at December 31, 2024",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BCI — I&RR Program financial statements 2025",
+        "url": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Audited BCI 50.0% Nexus ownership at December 31, 2025",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "California Public Utilities Commission — Nexus ownership appendix",
+        "url": "https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M498/K678/498678388.PDF",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "50% BCI / 50% SWMAC structure and SWMAC's 75% IIF / 25% Bazos split",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Tennessee Public Utility Commission — Nexus ownership testimony",
+        "url": "https://tpucdockets.tn.gov/archive/filings/2022/2200114c.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "IIF, Bazos, Munich Re and MEAG ownership chain",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "MEAG — SouthWest Water investment close",
+        "url": "https://www.meag.com/de/informieren/14521.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MEAG-managed Munich Re predecessor investment completed June 14, 2018",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "American Water — Nexus eight-state asset acquisition close",
+        "url": "https://newsroom.amwater.com/2026-06-01-American-Water-Completes-Purchase-of-Nexus-Water-Group-Systems-in-Eight-States",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "June 1, 2026 close of the eight-state asset divestiture",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "California Water Service Group — second-quarter 2026 results",
+        "url": "https://www.calwatergroup.com/news/press-releases/detail/794/california-water-service-group-reports-strong-second-quarter-2026-financial-results",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Nevada and Oregon asset sale remained pending at July 29, 2026",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "cbf84decfa0ab31709362b5afd3af545333c2bb120e58153c2e2410e5591efe8",
+  "proposalSha256": "31d24e373962ed55b43dd57a226cdaae9d90a488ccb16d790fed82a7f42b0956"
+}

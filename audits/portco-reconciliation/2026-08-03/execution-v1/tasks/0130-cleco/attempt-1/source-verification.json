@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_LINKED_SOURCE_VERIFICATION",
+  "taskId": "ledger:0130:cleco:aacd195e",
+  "taskIndex": 130,
+  "companyName": "Cleco",
+  "verifiedAt": "2026-08-23T06:25:00.000Z",
+  "verifier": "CODEX_LINKED_ADJUDICATION",
+  "linkedCanonicalTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+  "summary": {
+    "evidenceRows": 3,
+    "open": 2,
+    "browserBlockedButVerified": 1,
+    "dead": 0,
+    "linkedAdjudicationAccepted": true
+  },
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1089819/000108981926000010/cnl-20260331.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1089819/000108981926000010/cnl-20260331.htm",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "e0eda4dcf7202fe311d9d5ace2ff8b8928c86a7cf61bf582a55e5143ed4d2255",
+      "mediaType": "text/html",
+      "label": "2026 Q1 Form 10-Q",
+      "purpose": "Hierarchy, aliases, assets and pending sale",
+      "isRecommendedPrimary": true
+    },
+    {
+      "url": "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+      "httpStatus": 403,
+      "finalUrl": "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+      "workingStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "contentCaptured": true,
+      "sha256": "2efd430e4d978fd74fe33e84cfd4e03a64be6190fb368fda22911bb1dff92f60",
+      "mediaType": "text/html; charset=UTF-8",
+      "label": "2026 Cleco sale release",
+      "purpose": "Buyers, sellers, transaction terms and pending closing",
+      "isRecommendedPrimary": false
+    },
+    {
+      "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32834",
+      "httpStatus": 200,
+      "finalUrl": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32834",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "01c47e6b6a62f4cf62b0dc12df2e3e2474ebc6b1b28d52566b0db15027a7a198",
+      "mediaType": "text/html; charset=utf-8",
+      "label": "LPSC U-37963",
+      "purpose": "Open sale regulatory proceeding",
+      "isRecommendedPrimary": false
+    }
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0126-0130-v1",
+  "createdAt": "2026-08-23T06:33:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "53cbba6e337b20bee229dd99693b6bc0ed3934a04aa93fe92e25185a67445b1c"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0126:mosaic-forest-management:d54ba16b",
+      "taskIndex": 126,
+      "companyName": "Mosaic Forest Management",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0126-mosaic-forest-management-v1/proposal.json",
+        "sha256": "bd719a7f8cd58e9a3d135e3b0b977e392c7add138502994a41395890717ade92"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0126-mosaic-forest-management-v1.json",
+        "sha256": "f1e356b066269ee9e58377b3e64a74736f0ecc6024759c778bed9317e6db6fca"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/locked-production-snapshot.json",
+        "sha256": "91c4db2401e3ee546657211abfd3e3fe8e83b4ac3214b362fea28b3798f2d35b"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/locked-task-snapshot.json",
+        "sha256": "96d71feeb93b5ffb852569a8298df8cf0a84f3ea4511c36ad3c28f55e2fbc687"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "f3ec19d9f45d6124338a2e961964ba0cec5243a7e767054f8c9b7e344fdd29c1"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/research-decision.json",
+        "sha256": "0cad5b6d1230ae5e821cca28737a78681056f14a108292bc918daf467964533a"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/source-verification.json",
+        "sha256": "e2f4e5f494464f0d5f4be7a18ac2b0411fd4610c01bfa15f2c8eda8b759e92a3"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "ead3a4a9f93c6afe9b0a90360ced9c8b80baf40a2e6a2378e501eaaf1bd31c61",
+      "dependencySha256": "6be11872406c170eaca564c047119f7e72889f50300b168c1e2d6567632b89a5",
+      "afterImageSha256": "faa53b914e4fb1d504d5a37d9e407587a378a01057c1753b3f090463aa31e07b",
+      "targetClaims": [
+        "canonical:mosaic-forest-management|canada",
+        "company:cmrxpj8mm00mpivhecizreyp5",
+        "relation:cmrxpjtuf01jzivhepih49uhp",
+        "relation:cmrxpjtv101k0ivhec6b6y0bg",
+        "relation:cmrxpkv6c02zjivheaxm94zng",
+        "relation:cmrxpkv6t02zkivhegcgx01o9",
+        "relation:cmrxpphax088divhe9uia9ish",
+        "relation:cmrxpphbx088fivhem1s6qyrh",
+        "relation:cmrxpphd2088hivhe93x7k8mc",
+        "relation:cmrxpphe7088jivheq3597exl",
+        "relation:cmrxppheo088kivheysb8cazk",
+        "seed:mosaic forest management|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://newnavigationtwo.squarespace.com/s/Mosaic-2024-Supply-Chain-Report.pdf",
+          "label": "Newnavigationtwo — Mosaic Forest Management",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://scalca.blob.core.windows.net/2024/Mosaic_Forest_Management_Corporation_Mosaic_Forest_Management_Limited_Partnership_Island_Timberlands_Limited_Partnership_Island_Timberlands_GP_Ltd._Ti_2024_2cHhS1.pdf",
+          "label": "Mosaic — 2024 statutory report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://scalca.blob.core.windows.net/2026/Mosaic_Forest_Management_Corporation%2C_Mosaic_Forest_Management_Limited_Partnership%2C_Island_Timberlands_Limited_Partnership%2C_Island_Timberlands_GP_Ltd%2C_2026_QHpdiL.pdf",
+          "label": "Mosaic — 2026 statutory report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+          "label": "BCI — I&RR Program financial statements 2025",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.investpsp.com/en/news/canadian-institutional-investment-managers-enter-an-agreement-to-affiliate-timberwest-forest-corporation-and-island-timberlands-limited-partnership/",
+          "label": "PSP Investments — TimberWest and Island Timberlands affiliation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.mosaicforests.com/",
+          "label": "Mosaicforests — Mosaic Forest Management",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.mosaicforests.com/news-views/2018/11/mosaic-forest-management-launch-wbcjc",
+          "label": "Investment date source — BCI — Mosaic Forest Management",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.mosaicforests.com/timberlands",
+          "label": "Mosaicforests — Mosaic Forest Management",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0127:nexus-water-group:287d18eb",
+      "taskIndex": 127,
+      "companyName": "Nexus Water Group",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0127-nexus-water-group-v1/proposal.json",
+        "sha256": "31d24e373962ed55b43dd57a226cdaae9d90a488ccb16d790fed82a7f42b0956"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0127-nexus-water-group-v1.json",
+        "sha256": "ae7f1d8dafad997ad9d4c9b95d73b6452ada23048d15fe8c1daf27f28823803b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/locked-production-snapshot.json",
+        "sha256": "9cf674ebe0b65d5af92120bc16e00ba1058dbc7ecb120e127795fe387085b414"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/locked-task-snapshot.json",
+        "sha256": "9bdf96832c514c21d4f4095a43bc30b8e489627b5b8092d7301f7585ee23e263"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "83b548f0cddd81cfb88eb66705b7c066ff12a001f59305bf0fa231bd88a2c02f"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/research-decision.json",
+        "sha256": "456e0f5b6101324f192dde5315963aac4ca282f29c05d27b6538f6ddef940fba"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/source-verification.json",
+        "sha256": "90bff29a63e5e179d85eed1ca7ce6d61ee69d552161d615fa5746fbb3825f7ea"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "99fceadab64c3d693437c4eb09c2a0b24e41ed3a3c1c5c7d0843dc69068705f3",
+      "dependencySha256": "84b3ec776640dc5faa1bec5c93d42f14f54a707be24444cf0aea62de0409a507",
+      "afterImageSha256": "cbf84decfa0ab31709362b5afd3af545333c2bb120e58153c2e2410e5591efe8",
+      "targetClaims": [
+        "canonical:nexus-water-group|united-states-canada",
+        "company:cmrxpj8n500mqivhe8jt4n9mw",
+        "relation:cmrxpjtvk01k1ivhe0phin08t",
+        "relation:cmrxpjtw401k2ivhe8o927nx7",
+        "relation:cmrxpkv7x02zlivhe7vaxq6qx",
+        "relation:cmrxpkv8h02zmivhejp3t0974",
+        "relation:cmrxpkv9502znivheuanv62f7",
+        "relation:cmrxpkv9k02zoivhee1ieegm7",
+        "relation:cmrxpkva502zpivhe2wbyboax",
+        "relation:cmrxpmxde05hhivhe8vpm515r",
+        "relation:cmrxpmxgo05hjivheoxvp1wd0",
+        "relation:cmrxpmxhx05hlivhe4x5vkvwt",
+        "relation:cmrxpmxiu05hnivhekp847jo5",
+        "relation:cmrxpmxjx05hpivhedrxo6374",
+        "relation:cmrxpmxl105hrivhewxwywo12",
+        "relation:cmrxpmxlx05htivhe7e276crt",
+        "relation:cmrxpphfu088mivheej0p7b5m",
+        "relation:cmrxpphh6088oivheb8ghzvtd",
+        "relation:cmrxpphhr088pivheor9hnzlu",
+        "relation:cmrxpphir088rivhe00ndpw1e",
+        "relation:cmrxpphju088tivhe3bp6ajne",
+        "relation:cmrxpphky088vivhewj7xhyn7",
+        "relation:cmrxpphlj088wivhehvlds4wx",
+        "relation:cmrxpphof088xivhegzdzubqb",
+        "seed:nexus water group, inc.|united states / canada",
+        "seed:nexus water group|united states / canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://app.mergerlinks.com/transactions/2022-08-29-corix-infrastructure-water-and-wastewater-businesses/service-providers",
+          "label": "Close date source — J.P. Morgan Asset Management — Nexus Water Group",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M498/K678/498678388.PDF",
+          "label": "California Public Utilities Commission — Nexus ownership appendix",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://myutility.nexuswatergroup.com/docs/default-source/communities/communities-common/application---corix-restructuring-and-business-combination-transactions.pdf?sfvrsn=1c2b6b5d_2",
+          "label": "Investment date source — BCI — Corix District Energy",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://newsroom.amwater.com/2026-06-01-American-Water-Completes-Purchase-of-Nexus-Water-Group-Systems-in-Eight-States",
+          "label": "American Water — Nexus eight-state asset acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://nexuswatergroup.com/2024/04/02/nexus-water-group-press-release/",
+          "label": "Water business separation source — Nexus Water Group",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://nexuswatergroup.com/2025/05/19/nexus-water-group-enters-into-a-definitive-agreement-to-sell-assets-in-eight-states-to-american-water/",
+          "label": "Nexuswatergroup — Nexus Water Group",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://nexuswatergroup.com/2026/02/25/nexus-water-group-agrees-to-sell-nevada-and-oregon-assets-to-california-water-service-group/",
+          "label": "Pending asset-sale source — Nexus Water Group",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://nexuswatergroup.com/our-company/executive-leadership-team/",
+          "label": "Management source — Nexus Water Group",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://tpucdockets.tn.gov/archive/filings/2022/2200114c.pdf",
+          "label": "Tennessee Public Utility Commission — Nexus ownership testimony",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+          "label": "BCI — I&RR Program financial statements 2025",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.calwatergroup.com/news/press-releases/detail/794/california-water-service-group-reports-strong-second-quarter-2026-financial-results",
+          "label": "California Water Service Group — second-quarter 2026 results",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.meag.com/de/informieren/14521.html",
+          "label": "MEAG — SouthWest Water investment close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.nexuswatergroup.com/",
+          "label": "Nexuswatergroup — Nexus Water Group",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0128:puget-energy:f96cd6be",
+      "taskIndex": 128,
+      "companyName": "Puget Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0128-puget-energy-v1/proposal.json",
+        "sha256": "c579f09caa89779cb49d9aecada0638377ed8aab7d30989af7357ce54d604036"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0128-puget-energy-v1.json",
+        "sha256": "cfdff69e5a30ec8011584f24c515830c64309a2b7985572714f2a9f556226f9b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/locked-production-snapshot.json",
+        "sha256": "5e94c1d6dfe2f19ca15145ffd18c89c15581ab30aaf594a3264cb1f80900040e"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/locked-task-snapshot.json",
+        "sha256": "1ad86562062412b5988747a040f617f7836ab1c605632efc0731df13a38b5dee"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "613349ae401c5888eae149d7a8d47f793e8892b1de8cc01de5bbf4280a22b4ab"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/research-decision.json",
+        "sha256": "1732ae5af6a3db2622afb0ce8baa4305e383c29cf04bb269dd4150851edaa33e"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/source-verification.json",
+        "sha256": "66ab039197cd87186631752681e04c98ac33b91ff7d77bedf82e1c88e4a9f4bd"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "801145668c911695c913875c214d21d0a8f8316a06801414021a80343a421683",
+      "dependencySha256": "84ee98bb2b0792245ca24a16bad6ef84c359de5d758233f40bd06da27ab1f791",
+      "afterImageSha256": "796302af1244bfd24e9c7e5d02d5cfbe8ed1f1ca244e003cbabc27217d07e5b3",
+      "targetClaims": [
+        "canonical:puget-energy|united-states",
+        "company:cmrxpj4fp00ghivhebe9bfh5k",
+        "company:cmrxpjkcr014rivhero16klvt",
+        "relation:cmrxpjpk701d2ivhenespe9dw",
+        "relation:cmrxpjpks01d3ivhe9nm9wwth",
+        "relation:cmrxpk6h9023sivhes2ip9z2h",
+        "relation:cmrxpk6hr023tivhe66aoa5c5",
+        "relation:cmrxpkds302erivhe7gtyyfay",
+        "relation:cmrxpkdsr02esivhe432860z4",
+        "relation:cmrxpkdt802etivhe8bwni68x",
+        "relation:cmrxpkdtu02euivhe0k7q35ln",
+        "relation:cmrxpm9vl04nzivhenzqnkvhj",
+        "relation:cmrxpm9wl04o1ivhe9u0z5vnw",
+        "relation:cmrxpm9za04o2ivhe98a0sl3g",
+        "relation:cmrxpom6p06xyivhe2llzqfq7",
+        "relation:cmrxpom7w06y0ivhen2v4sy6l",
+        "relation:cmrxpom9806y2ivheyjodqb3m",
+        "relation:cmrxpoma806y4ivhecd4mit52",
+        "relation:cmrxpombb06y6ivheetsvfc1r",
+        "relation:cmrxpomch06y8ivhepfhrsu6c",
+        "relation:cmrxpomdi06yaivheen3dwdgf",
+        "seed:puget energy, inc.|united states",
+        "seed:puget energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://assets.ctfassets.net/lyt4cjmefjno/5aorUTYWwgPMIGc9cNPx9r/8518334d4637dbde57c10a376b60c10c/puget_investment.pdf",
+          "label": "Investment date source — AIMCo — Puget Energy / Puget Sound Energy",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://pggm.nl/en/press/puget-sound-energy-welcomes-new-investment",
+          "label": "Investment date source — PGGM — Puget Sound Energy",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy",
+          "label": "Aimco — Puget Energy / Puget Sound Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.bci.ca/powering-the-pacific-northwest-bcis-strategic-investment-in-puget-sound-energy/",
+          "label": "Current investment source — BCI — Puget Sound Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+          "label": "Close date source — Macquarie Asset Management — Puget Sound Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.omers.com/news/omers-infrastructure-announces-investment-in-puget-sound-energy",
+          "label": "Omers — Puget Sound Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/macquarie-asset-management-and-ontario-teachers--complete-acquis/",
+          "label": "Close date source — OTPP — Puget Sound Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pse.com/en/about-us",
+          "label": "Pse — Puget Energy / Puget Sound Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pse.com/en/Customer-Service/pse-locations-2",
+          "label": "Pse — Puget Energy / Puget Sound Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.pugetenergy.com/",
+          "label": "Puget Energy — Company profile",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1085392/000108539226000008/psd-20251231.htm",
+          "label": "Puget Energy and PSE — 2025 Form 10-K",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1085392/000108539226000016/exhibit101-pugetenergy2026.htm",
+          "label": "Puget Energy — 2026 credit agreement subsidiary schedule",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1085392/000108539226000016/psd-20260630.htm",
+          "label": "Puget Energy and PSE — second-quarter 2026 Form 10-Q",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/d8k.htm",
+          "label": "Close date source — AIMCo — Puget Energy / Puget Sound Energy",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/dex991.htm",
+          "label": "Close date source — AIMCo — Puget Sound Energy",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312519110918/d696857d8k.htm",
+          "label": "Puget Energy — 2019 ownership transition Form 8-K",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312526084011/d109936dex991.htm",
+          "label": "Puget Energy — Spring 2026 investor presentation",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0129:puget-sound-energy:3d2f76d8",
+      "taskIndex": 129,
+      "companyName": "Puget Sound Energy",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/decisions/0129-puget-sound-energy.json",
+        "sha256": "6104e79a0f5739319959fca3170cd429782d5d0334b1f7e76437ba6d347de119"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0130:cleco:aacd195e",
+      "taskIndex": 130,
+      "companyName": "Cleco",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/decisions/0130-cleco.json",
+        "sha256": "81e197817a90c7f35266c2d63dd886334e2cb3d8766dbcaa2c02650670f15992"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "eefe783522eeed34be9f5114f0538eb04a8d417a669f7fb8fc9edb42fad6ae49",
+    "sharedSourceUrls": [
+      "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+      "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf"
+    ],
+    "conflicts": []
+  },
+  "batchSha256": "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8"
+}

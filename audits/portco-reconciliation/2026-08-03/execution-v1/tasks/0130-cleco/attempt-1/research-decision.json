@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_LINKED_RESEARCH_DECISION",
+  "taskId": "ledger:0130:cleco:aacd195e",
+  "taskIndex": 130,
+  "companyName": "Cleco",
+  "asOfDate": "2026-08-23",
+  "stagedAt": "2026-08-23T06:25:00.000Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "linkedCanonicalTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+  "linkedResearchDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/research-decision.json",
+  "result": {
+    "decision": "SUPERSEDED",
+    "confidence": "HIGH",
+    "rationale": "Cleco is the trade and group name for the same canonical Louisiana utility platform already corrected by task 122 as Cleco Corporate Holdings LLC. Stonepeak and Bernhard remain announced buyers under a signed pending transaction and are not current owners before closing. Task 130 therefore adds no second company or owner and is superseded by task 122's completed after-image.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1089819/000108981926000010/cnl-20260331.htm",
+        "purpose": "Current Cleco corporate hierarchy and pending sale status"
+      },
+      {
+        "url": "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+        "purpose": "Signed pending 100% Cleco Group sale and buyer identities"
+      },
+      {
+        "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32834",
+        "purpose": "Open regulatory proceeding confirming no legal closing"
+      }
+    ]
+  }
+}
