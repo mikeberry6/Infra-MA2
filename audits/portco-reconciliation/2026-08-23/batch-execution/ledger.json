@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T10:15:31.000Z",
-  "activeBatchId": "batch-0141-0145-v1",
+  "updatedAt": "2026-08-23T10:33:11.000Z",
+  "activeBatchId": "batch-0141-0145-v2",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -413,7 +413,7 @@
     },
     {
       "batchId": "batch-0141-0145-v1",
-      "state": "RELEASING",
+      "state": "FAILED",
       "taskIds": [
         "ledger:0141:eolian:ae9eb0a5",
         "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
@@ -429,15 +429,15 @@
         145
       ],
       "createdAt": "2026-08-23T09:35:00.000Z",
-      "updatedAt": "2026-08-23T10:15:31.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T10:30:00.000Z",
+      "completedAt": "2026-08-23T10:30:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v1/batch-manifest.json",
         "sha256": "d162e873fc24b0dd3ac9ac18e0a820050caf417de7601c5317a0df2690dacd36"
       },
-      "releaseSha": null,
+      "releaseSha": "9199f1f7a22f57ea427418d4ba95092816d3b823",
       "receipt": null,
-      "reason": null,
+      "reason": "Protected workflow 32633798518 failed before schema validation, dry-run, or database mutation because the batch root references used file-byte hashes instead of the artifacts canonical internal hashes; no database write occurred.",
       "history": [
         {
           "sequence": 1,
@@ -466,9 +466,87 @@
             "d162e873fc24b0dd3ac9ac18e0a820050caf417de7601c5317a0df2690dacd36"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-23T10:24:30.000Z",
+          "evidenceSha256": [
+            "d162e873fc24b0dd3ac9ac18e0a820050caf417de7601c5317a0df2690dacd36"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "FAILED",
+          "at": "2026-08-23T10:30:00.000Z",
+          "evidenceSha256": [
+            "d162e873fc24b0dd3ac9ac18e0a820050caf417de7601c5317a0df2690dacd36"
+          ],
+          "reason": "Protected workflow 32633798518 failed before schema validation, dry-run, or database mutation because the batch root references used file-byte hashes instead of the artifacts canonical internal hashes; no database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0141-0145-v2",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0141:eolian:ae9eb0a5",
+        "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+        "ledger:0143:gigapower:24d5d5d3",
+        "ledger:0144:harquahala-generation-company:a9e2eada",
+        "ledger:0145:indian-energy:6a5ea3ff"
+      ],
+      "taskIndexes": [
+        141,
+        142,
+        143,
+        144,
+        145
+      ],
+      "createdAt": "2026-08-23T10:30:30.000Z",
+      "updatedAt": "2026-08-23T10:33:11.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v2/batch-manifest.json",
+        "sha256": "e05bc11faa495f10ac0b386c45c68932cbee598027551c8f65857a6d8caa46d7"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T10:30:30.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T10:33:10.000Z",
+          "evidenceSha256": [
+            "e05bc11faa495f10ac0b386c45c68932cbee598027551c8f65857a6d8caa46d7"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-23T10:33:11.000Z",
+          "evidenceSha256": [
+            "e05bc11faa495f10ac0b386c45c68932cbee598027551c8f65857a6d8caa46d7"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "5932ab15774bf1da2ca705944e8455a13e8b898d5effc4430b708657487bebaf"
+  "ledgerSha256": "2be195b922c58a6863f923afad7fa96869901df2d88883b1cf340b13a666655c"
 }
