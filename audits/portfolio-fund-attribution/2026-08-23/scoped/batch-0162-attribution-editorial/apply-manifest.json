@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-23",
+  "ledgerSha256": "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569",
+  "sourceSnapshotSha256": "4ba819d513c9d59ccdbe831f21590dfc4c1e6b29cbbba978463512b90cba38eb",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 2
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 2,
+  "mutations": [
+    {
+      "recordId": "OFA-EDITORIAL-0164-COPIA",
+      "ownershipPeriodId": "cmrxpjvxx01neivheya8o7kr4",
+      "companyName": "Copia Power",
+      "country": "United States",
+      "investmentFirm": "Carlyle Infrastructure",
+      "currentVehicleName": "Carlyle Infrastructure",
+      "databaseVehicleName": null,
+      "investmentYear": 2021,
+      "stake": "100% (last expressly disclosed); sale to EQT Infrastructure VII signed but not closed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Public materials identify Carlyle as Copia Power's owner but do not disclose the specific Carlyle fund or acquisition vehicle. The signed sale to EQT Infrastructure VII remained pending as of August 19, 2026."
+      },
+      "evidenceUrls": [
+        "https://www.carlyle.com/media-room/news-release-archive/carlyle-launches-copia-power-platform-develop-7gwac-renewable",
+        "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure",
+        "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09"
+      ]
+    },
+    {
+      "recordId": "OFA-EDITORIAL-0165-FERMATA",
+      "ownershipPeriodId": "cmrxpjvyz01ngivhepbsr5vxc",
+      "companyName": "Fermata Energy",
+      "country": "United States",
+      "investmentFirm": "Carlyle Infrastructure",
+      "currentVehicleName": "Carlyle Infrastructure",
+      "databaseVehicleName": null,
+      "investmentYear": 2021,
+      "stake": null,
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Carlyle publicly disclosed its 2021 investment in Fermata Energy but not the specific fund or investment vehicle. Fermata Energy LLC sold substantially all operating assets on April 25, 2025, ending Carlyle's active ownership period."
+      },
+      "evidenceUrls": [
+        "https://www.carlyle.com/media-room/news-release-archive/carlyle-commits-over-100-million-battery-storage-electric-vehicle-infrastructure-energy-transition",
+        "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000092/nvve-20250425.htm",
+        "https://www.sec.gov/Archives/edgar/data/1836875/000183687526000059/nvve-20260331.htm"
+      ]
+    }
+  ],
+  "manifestSha256": "0e2743095fb9d48e0a134b506f581f777af76f7667bcc35da14655cafde176a6"
+}
