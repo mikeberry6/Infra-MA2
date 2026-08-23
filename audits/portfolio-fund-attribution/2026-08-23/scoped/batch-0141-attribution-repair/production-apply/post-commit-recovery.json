@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_POST_COMMIT_RECOVERY",
+  "manifestSha256": "f3761bccd4cc8ca4628b359caffd3202c89dac2899f4806905d9bc7441095b48",
+  "approvalSha256": "15cffb799b36fedb5a4919380c253f8558ac9ffe23d975b237f9ff1f750f8037",
+  "receiptSha256": "b918bc4d2eaccdded8abb5b44477d681aac5e2e28b22c4df69f31a6183aaa3c8",
+  "releaseSha": "65810c82c20687ca7173133285b9849a0033ac24",
+  "pullRequestNumber": 675,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32635685512",
+  "attempts": [
+    {
+      "attempt": 1,
+      "outcome": "FAILED_PRE_WRITE",
+      "stage": "RELEASE_PROVENANCE",
+      "databaseWriteAttempted": false,
+      "reason": "The protected workflow checked the merge commit before its main-branch build check had completed. The same exact build later completed successfully."
+    },
+    {
+      "attempt": 2,
+      "outcome": "DATABASE_COMMITTED_PUBLIC_VERIFICATION_RECOVERED",
+      "stage": "PUBLIC_VERIFICATION",
+      "databaseWriteAttempted": true,
+      "databaseWriteCommitted": true,
+      "cacheRevalidated": true,
+      "reason": "The original sample verifier treated the expected 404 for archived Indian Energy as a failure after the nine-row transaction committed. All eight published ownership rows returned 200 and matched the receipt; the archived former debt row returned the expected 404 and was independently verified in the production database."
+    }
+  ],
+  "recovery": {
+    "verificationScope": "ALL_RECEIPT_ROWS",
+    "publishedRowsVerified": 8,
+    "expectedNonPublishedRowsVerified": 1,
+    "unexpectedFailures": 0,
+    "partialApplication": false,
+    "result": "PASS",
+    "verifiedAt": "2026-08-23T11:16:30.000Z",
+    "artifacts": {
+      "applyReceipt": {
+        "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0141-attribution-repair/production-apply/apply-receipt.json",
+        "canonicalSha256": "b918bc4d2eaccdded8abb5b44477d681aac5e2e28b22c4df69f31a6183aaa3c8",
+        "fileSha256": "fa440b32226bcc2b6c9c792148e8c19f3990f048e93c771328e4f56c852ef34c"
+      },
+      "cacheRevalidation": {
+        "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0141-attribution-repair/production-apply/cache-revalidation.json",
+        "fileSha256": "ccd0e40ffe55f02886be9f187f294513003d9d7e2ee044500c3c0b36bfb76144"
+      },
+      "releaseVerification": {
+        "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0141-attribution-repair/production-apply/release-verification.json",
+        "fileSha256": "61a3d5729a06d833c125efd03229b84426fb9cd1773f83ccf233cd1ccdef0da1"
+      }
+    }
+  }
+}

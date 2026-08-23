@@ -6,6 +6,10 @@ import {
   verifyApproval,
   verifyManifest,
 } from "./portfolio-fund-attribution/schema.ts";
+import {
+  isExpectedNonPublicFormerRow,
+  selectAttributionVerificationRows,
+} from "./portfolio-fund-attribution/release-verification.ts";
 
 function args(argv: string[]): Map<string, string> {
   const result = new Map<string, string>();
@@ -45,19 +49,9 @@ async function main(): Promise<void> {
     throw new Error("Apply receipt does not bind the selected manifest and approval");
   }
 
-  const samples = [];
-  const seen = new Set<string>();
-  for (const status of ["DISCLOSED", "INFERRED", "DIRECT_PROGRAM", "UNRESOLVED"] as const) {
-    const row = receipt.rows.find((candidate) => candidate.after.fundAttribution === status);
-    if (row) {
-      samples.push(row);
-      seen.add(row.recordId);
-    }
-  }
-  for (const row of receipt.rows.filter((candidate) => candidate.before.linkedFundName !== candidate.after.linkedFundName)) {
-    if (!seen.has(row.recordId)) samples.push(row);
-    if (samples.length >= 8) break;
-  }
+  const verifyAll = values.get("all") === "true";
+  const samples = selectAttributionVerificationRows(receipt.rows, verifyAll);
+  const mutationsByRecordId = new Map(manifest.mutations.map((mutation) => [mutation.recordId, mutation]));
 
   const baseUrl = `${new URL(required(values, "public-base-url")).toString().replace(/\/?$/, "/")}`;
   const results = [];
@@ -65,6 +59,19 @@ async function main(): Promise<void> {
     const url = new URL(`api/portfolio/${encodeURIComponent(sample.companyId)}`, baseUrl);
     url.searchParams.set("verification", manifest.manifestSha256);
     const response = await fetch(url, { headers: { accept: "application/json" } });
+    const mutation = mutationsByRecordId.get(sample.recordId);
+    if (!mutation) throw new Error(`${sample.recordId}: receipt row is absent from the reviewed manifest`);
+    if (!response.ok && isExpectedNonPublicFormerRow(response.status, mutation.expectedIsActive)) {
+      results.push({
+        recordId: sample.recordId,
+        companyId: sample.companyId,
+        url: url.toString(),
+        publicState: "NOT_PUBLISHED_EXPECTED",
+        responseStatus: response.status,
+        observed: null,
+      });
+      continue;
+    }
     if (!response.ok) throw new Error(`${sample.recordId}: public detail API returned ${response.status}`);
     const payload = await response.json() as {
       company?: { owners?: Array<{
@@ -88,7 +95,14 @@ async function main(): Promise<void> {
     if (JSON.stringify(observed) !== JSON.stringify(sample.after)) {
       throw new Error(`${sample.recordId}: public detail API does not match the applied attribution`);
     }
-    results.push({ recordId: sample.recordId, companyId: sample.companyId, url: url.toString(), observed });
+    results.push({
+      recordId: sample.recordId,
+      companyId: sample.companyId,
+      url: url.toString(),
+      publicState: "PUBLISHED",
+      responseStatus: response.status,
+      observed,
+    });
   }
 
   const report = {
@@ -100,6 +114,7 @@ async function main(): Promise<void> {
     receiptSha256: receipt.receiptSha256,
     mutationCount: receipt.mutationCount,
     changed: receipt.changed,
+    verificationScope: verifyAll ? "ALL_RECEIPT_ROWS" : "BOUNDED_STATUS_SAMPLE",
     sampledRows: results,
     passed: true,
   };
