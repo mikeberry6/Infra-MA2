@@ -1,0 +1,443 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0141-0145-v2",
+  "createdAt": "2026-08-23T10:31:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "c369ede9a809333e54eee6279f5575ad8566da7321593798a6c97a5c54a7b807"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0141:eolian:ae9eb0a5",
+      "taskIndex": 141,
+      "companyName": "Eolian",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0141-eolian-v1/proposal.json",
+        "sha256": "b4ad93574d376c88db93fa40c483ab05f922eef0df4b75fce881a2332abd2b32"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0141-eolian-v1.json",
+        "sha256": "6391b0612b5643af68eda305605c1715160d5c0fa53c852a12533714f1ada781"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/locked-production-snapshot.json",
+        "sha256": "7fe3b410d74a38f6f34737582e32cac27a33de5e1018c0dd68c514787aadae94"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/locked-task-snapshot.json",
+        "sha256": "d808ab5ac8e59af349293ece5fe0a9e3c88c1e860dd9c5e15083085ee392d36a"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "f2e22503cdab7f69b9f451a8fbd1736fe27b6383ad4782de70fe5b13119ce9bb"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/research-decision.json",
+        "sha256": "83c25e156add928651cc19e35770d136d6de9675a445d96764789f08ac71d1e3"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/source-verification.json",
+        "sha256": "64d2b2e82e115676d37cc8441f2a2954caa230b4e4f75ccd8f144e8243cb3cff"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "2b8109e3dabbf66efafa0887706af91b30102ff591991d261534b2ba8a7b47af",
+      "dependencySha256": "d4d7f1fe07da33e03232e3534c04a3c13ad9c6613d195e94eb5de9c701781f92",
+      "afterImageSha256": "5b026f8949cd8ac754ffd15e08462727531aa2c172a54b554ae506c4452f6fb7",
+      "targetClaims": [
+        "canonical:eolian|united-states",
+        "company:cmrxpjgka00ytivhen28z6djw",
+        "relation:cmrxpk2ct01xdivheok0jco5h",
+        "relation:cmrxpltv00459ivhe8y1ufybq",
+        "relation:cmrxpltvk045aivhecrwo2esn",
+        "relation:cmrxpr9p50atjivhekkj1lpq3",
+        "relation:cmrxpr9q30atlivheiryo6qwn",
+        "relation:cmrxpr9s90atnivheocn4yeik",
+        "seed:eolian|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.eolianenergy.com/",
+          "label": "Eolianenergy — Eolian",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.eolianenergy.com/press/eolian-acquires-remaining-ownership-interests-in-able-grid-energy-solutions",
+          "label": "Eolianenergy — Eolian",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+          "label": "Announcement date source — Global Infrastructure Partners — Eolian",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.global-infra.com/portfolio-page/eolian/",
+          "label": "Global Infrastructure Partners — Eolian portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/eolian-a-global-infrastructure-partners-portfolio-company-announces-acquisition-of-able-grid-development-interests-301450429.html",
+          "label": "Eolian — Able Grid development interests acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/eolian-announces-1-gwh-flint-grid-bess-pjms-largest-battery-energy-storage-project-now-under-construction-to-support-americas-fastest-growing-data-center-and-industrial-corridor-near-columbus-ohio-302837697.html",
+          "label": "Eolian — Flint Grid BESS construction announcement",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+      "taskIndex": 142,
+      "companyName": "Excelsior U.S. Solar & Storage Portfolio",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0142-lighthouse-v1/proposal.json",
+        "sha256": "68de232f7ca0c596a042ddaa0df73e94cc329c4283020638c4fbe20ba05ac8b6"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0142-lighthouse-v1.json",
+        "sha256": "98497a5ae3d2273d87c90768780b6a9e94fc106b29a90fe0e0acca69f4dab538"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/locked-production-snapshot.json",
+        "sha256": "9c5e1a3ba07b0807208e6db0c2332d1696eb23e2e045ee315d11f30431d707f9"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/locked-task-snapshot.json",
+        "sha256": "a755e9b6169b7c373ff8fc5bbf77e76015e986ebf16ac819addfe6bc03d882f3"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "84e23786a47629d90874035770dc41c51e26ddba1c6415d7d46a318e9bc42e17"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/research-decision.json",
+        "sha256": "3bff51896c51e80daef94bd7135f0d19c3b0d3dfd97e392b4e8ad191c3dcb271"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/source-verification.json",
+        "sha256": "fa62f3e775a38cce32fbf50c72432de1f31e6de7b44b6f9cf9eb2781db9ad9d9"
+      },
+      "supersededTaskIds": [
+        "ledger:0147:lighthouse:ab3fb5b8"
+      ],
+      "taskStateSha256": "a91200428291cd43b3984f86b62580e0b3aca2e55cabfefc6c6f42a8866a88fa",
+      "dependencySha256": "712846049843a0d6d4eff58b68c890f6faabd7d6411fc22cf44c38198ad62b21",
+      "afterImageSha256": "c614aa02bfa4e2034bf7cfa8b13fa36bc865d052f4d0dcab72169dd321b656e7",
+      "targetClaims": [
+        "canonical:excelsior-u-s-solar-and-storage-portfolio|united-states",
+        "company:cmrxpj8x000n4ivhefbfwnig3",
+        "company:cmrxpj8zq00n9ivhed9tgikrv",
+        "relation:cmrxpju7s01kkivheqy4idfr6",
+        "relation:cmrxpjuac01kpivhefe29onwu",
+        "relation:cmrxpkw9x030vivheldsxdx9k",
+        "relation:cmrxpkwab030wivhe1gfqjdt7",
+        "relation:cmrxpkwkg031aivheflvs0dd9",
+        "relation:cmrxppjtg08c2ivhev6rdob4o",
+        "relation:cmrxppjui08c4ivhez13wpcrd",
+        "relation:cmrxppjvk08c6ivhenq51szsb",
+        "seed:excelsior u.s. solar & storage portfolio|united states",
+        "seed:lighthouse|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://excelsiorcapital.com/",
+          "label": "Excelsiorcapital — Excelsior U.S. Solar & Storage Portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+          "label": "Investment date source — BlackRock — Excelsior U.S. Solar & Storage Portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security",
+          "label": "Announcement date source — BlackRock — Lighthouse",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.key.com/businesses-institutions/our-transactions/deals.excelsior-energy-capital.html",
+          "label": "KeyBanc Capital Markets — Excelsior portfolio sale",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.naturalpower.com/us/news/news-post/natural-power-supports-blackrocks-portfolio-acquisition-from-excelsior-energy-capital",
+          "label": "Naturalpower — Excelsior U.S. Solar & Storage Portfolio",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0143:gigapower:24d5d5d3",
+      "taskIndex": 143,
+      "companyName": "Gigapower",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0143-gigapower-v1/proposal.json",
+        "sha256": "6cd55636973f236a8c58ccbfc020de43250377d278375f2ec2670d5ca88bb84f"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0143-gigapower-v1.json",
+        "sha256": "d8135e9efaf6df615bcc1ed98ab23128dad33a89dfca994e792c93170311dc24"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/locked-production-snapshot.json",
+        "sha256": "b17c725d5ca1fa59ab4aa122be14d485fb63595eaa62017b369964919cb19986"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/locked-task-snapshot.json",
+        "sha256": "6cf0d0e06e66eec63780827281e7932dad56c346365cbc886e2443dfa1e7321d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "517e99cee7029455af76f036704a147734d994249bd7a9f48d4503a47a3c9dae"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/research-decision-current-task.json",
+        "sha256": "bb1f52a344fbb32b1191c1e460bab0cdea127369dbdc861700b0b3ed0b094531"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/source-verification.json",
+        "sha256": "94857fa1bd023b07ebb9181f9fe11f2f39e11d6f2a56eeb9deebd026bbff0394"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "e24d372319e01e52b0d94bbcd9684da11f4a322da946a7299c4c2f7f9ae7f904",
+      "dependencySha256": "0e1475fcc449f00e8513d83efe9631c3561998ebb0442a73d1d29fa9835c9a63",
+      "afterImageSha256": "ac4e61b585ee104c0bfa868b3179ef65c0fbcfe2fe15d334e0986d40c0f5f55c",
+      "targetClaims": [
+        "canonical:gigapower|united-states",
+        "company:cmrxpj8xk00n5ivhezp5xja2f",
+        "relation:cmrxpju8701klivhews3qe3yr",
+        "relation:cmrxpkwbb030xivhecrh2g6hu",
+        "relation:cmrxpkwbw030yivhepvh4ep6u",
+        "relation:cmrxppjwn08c8ivheijk0clpi",
+        "relation:cmrxppjxs08caivheza4x8wik",
+        "relation:cmrxppjyu08ccivheto4x3n66",
+        "seed:gigapower|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://about.att.com/story/2023/gigapower.html",
+          "label": "Close date source — BlackRock — Gigapower",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284",
+          "label": "South Carolina Public Service Commission — Gigapower application",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+          "label": "BlackRock — GIP acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider",
+          "label": "Announcement date source — BlackRock — Gigapower",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20250828592914/en/Gigapower-Accelerates-High-Speed-Broadband-Fiber-Network-Deployment-with-Expansion-Across-Six-States",
+          "label": "Gigapower — six-state expansion",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260602690771/en/Gigapower-Appoints-Jonathan-Mullen-as-Chief-Administrative-Officer-and-General-Counsel",
+          "label": "Gigapower — June 2026 company update",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.gigapower.com/about-us",
+          "label": "Gigapower — Gigapower",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm",
+          "label": "AT&T — 2025 Form 10-K",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0144:harquahala-generation-company:a9e2eada",
+      "taskIndex": 144,
+      "companyName": "Harquahala Generation Company",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0144-harquahala-generation-company-v1/proposal.json",
+        "sha256": "ab5ac596755de05dc598078a1e0995962bbfd2a46d8f1272bf979e1594882423"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0144-harquahala-generation-company-v1.json",
+        "sha256": "064e3d1beef6e19088e23243a9a56f555211c6f61927e0ee9169647a3a9bed41"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0144-harquahala-generation-company/attempt-1/locked-production-snapshot.json",
+        "sha256": "327e99f0c8f41c4b8c4663da53a3e5fe60e7b9838dcd556927fcd38b6f899d02"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0144-harquahala-generation-company/attempt-1/locked-task-snapshot.json",
+        "sha256": "c84365e3850eac3bbb6fdc9ac321bf7dfcf89ef12419f52a5677e022511f1149"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0144-harquahala-generation-company/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "0d712a80574868256e02a92fb4cfc039ee7169b01ba1ef473de459b40d6dab1e"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0144-harquahala-generation-company/attempt-1/research-decision.json",
+        "sha256": "842e5e725f64b0f02601d6f49d5ceaefd14d069f4fb8b9deba9efeb7d8dd04c6"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0144-harquahala-generation-company/attempt-1/source-verification.json",
+        "sha256": "2c97d375c305daee8865943569a3920b7aa615f0c18e9e30b2b25ab506570fde"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "53caa658e0830ea1e044b684b9d62dcd4c24e30fc7320f47dfb0f1a2b3a84737",
+      "dependencySha256": "93e8131bc0ce8175d6c13e11397558d8c654350afa262f581e2b7835c6b4f770",
+      "afterImageSha256": "3c9567950932db926725952acc1a646a39c251aed33b1a932977f67249a32b9a",
+      "targetClaims": [
+        "canonical:harquahala-generation-company|united-states",
+        "company:cmrxpj8y400n6ivhelufjsj1z",
+        "relation:cmrxpju8p01kmivhernfcvtau",
+        "relation:cmrxpkwcy030zivhegm9jpagm",
+        "relation:cmrxpkwdk0310ivhepyugvcws",
+        "relation:cmrxpkwe50311ivhedhmrdaos",
+        "relation:cmrxppjzy08ceivhe1raqh9sq",
+        "relation:cmrxppk1308cgivhezrz3wzcy",
+        "relation:cmrxppk4c08ciivheuwmdwso0",
+        "seed:harquahala generation company|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/",
+          "label": "Capitalpower — Harquahala Generation Company",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+          "label": "Close date source — BlackRock — Harquahala Generation Company",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.capitalpower.com/operations/harquahala/",
+          "label": "Capitalpower — Harquahala Generation Company",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.capitalpower.com/wp-content/uploads/2026/03/Capital-Power-2025-Integrated-Annual-Report.pdf",
+          "label": "Capital Power — 2025 integrated annual report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.capitalpower.com/wp-content/uploads/2026/07/Capital-Power-2026-Q2-Report.pdf",
+          "label": "Capital Power — Q2 2026 report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-12-12/html/2023-27224.htm",
+          "label": "Federal Register — Harquahala FERC application notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1534126/000119312521067728/d105498dsc13d.htm",
+          "label": "SEC — Global Energy & Power Infrastructure Fund III filing",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0145:indian-energy:6a5ea3ff",
+      "taskIndex": 145,
+      "companyName": "Indian Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0145-indian-energy-v1/proposal.json",
+        "sha256": "dab9f186920fbcd778828b63c792bd0f8b877e99cd6820dee22d252dd059c4c8"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0145-indian-energy-v1.json",
+        "sha256": "15147351a0afc922216b8463e7fca0ebf292b242a9c877a49a0e313899bbbb96"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0145-indian-energy/attempt-1/locked-production-snapshot.json",
+        "sha256": "8bfa541daa388ac5cb58b9f268130c537d6c4dd7230c31f0724f319419ff007f"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0145-indian-energy/attempt-1/locked-task-snapshot.json",
+        "sha256": "9588cc0281ce8f42531350a0be566f661bd57033d2681327b025bee77be7a5fd"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0145-indian-energy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "91ffc25ad3fa45b76b02643ffaba8efa8f7f7b565f8991efae22bbfcee5d69dc"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0145-indian-energy/attempt-1/research-decision.json",
+        "sha256": "911fb37bfdba6f18f4ae09bd75f41a533a7b6fe1c37ced8ad208818fa9affe51"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0145-indian-energy/attempt-1/source-verification.json",
+        "sha256": "1fecb3f662b70be264b5d4a2266b45d128797af303975dae9691b70411319236"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "5ecc97ae5ab29ad2065840f679a375e4e2c2a3205634c777fd7e6750542b1333",
+      "dependencySha256": "44a7e78134bbb149a11c22682d87988b7d4fb2a8b1d160b75cf0e9a2aaf7e43d",
+      "afterImageSha256": "b33613491040b51551d6edc07c95f23e12e0088251549cbcc07aace5d354fc0a",
+      "targetClaims": [
+        "canonical:indian-energy|united-states",
+        "company:cmrxpj8yo00n7ivhe4ceylarx",
+        "relation:cmrxpju9601knivheepwf2q66",
+        "relation:cmrxpkwf70312ivherj0a3qfb",
+        "relation:cmrxpkwfq0313ivhe833rn4wg",
+        "relation:cmrxpkwg70314ivhel3nc4f3e",
+        "relation:cmrxppk5f08ckivhe8l4w29wd",
+        "relation:cmrxppk6j08cmivhedupmxp5e",
+        "relation:cmrxppk7408cnivhevcko7m33",
+        "seed:indian energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://indianenergy.com/about-ie/",
+          "label": "Indianenergy — Indian Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://indianenergy.com/indian-energy-announces-financial-close-on-the-viejas-enterprise-microgrid-project/",
+          "label": "Indianenergy — Indian Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://media.mcguirewoods.com/podcasts/2026/Accessing-The-Pipeline-Ep16.pdf",
+          "label": "McGuireWoods — BlackRock Impact Opportunities interview transcript",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://saulttribe.com/images/07.02.24_BoD_Meeting_Announcement_Packet.pdf",
+          "label": "Sault Ste. Marie Tribe — July 2024 meeting packet",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+          "label": "Investment date source — BlackRock — Conexon",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "0fafc9862bc974f9037384aae4190d3a5d8e5913a5fc5785412d4936db19c92a",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "e05bc11faa495f10ac0b386c45c68932cbee598027551c8f65857a6d8caa46d7"
+}
