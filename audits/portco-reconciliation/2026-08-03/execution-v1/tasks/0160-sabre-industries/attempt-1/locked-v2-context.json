@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0160:sabre-industries:6ac88af1",
+  "taskIndex": 160,
+  "companyName": "Sabre Industries",
+  "generatedAt": "2026-08-23T15:08:57.776Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0160-sabre-industries/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 160,
+    "taskId": "ledger:0160:sabre-industries:6ac88af1",
+    "canonicalKey": "sabre-industries|united-states",
+    "companyName": "Sabre Industries",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 24,
+    "managers": [
+      "Blackstone"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "024-blackstone:holding:025:sabre-industries"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj9ht00o2ivheap8w7ncx"
+    ],
+    "seedKeys": [
+      "sabre industries|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj9ht00o2ivheap8w7ncx",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "sabre-industries|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj9ht00o2ivheap8w7ncx",
+    "name": "Sabre Industries",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Transmission, telecom and data center infrastructure components",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Sabre Industries manufactures engineered steel structures, utility poles, towers, and related products used in electric transmission, telecommunications, and data center infrastructure. Its customers include electric utilities, telecom operators, EPC contractors, and data center developers that require large engineered components for network buildout. The business is asset-heavy, with fabrication capacity and project execution tied to utility and communications infrastructure capex cycles. Public reporting in 2026 described Sabre as employing roughly 2,800 people. Blackstone acquired Sabre in 2021, and in February 2026 TPG announced a signed agreement to acquire a majority stake while Blackstone said it would retain a significant minority position.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1977,
+    "headquarters": "Texas and multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjusn01lkivhegi1fcvj9",
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": null,
+        "vehicleName": "Blackstone Energy Transition Partners",
+        "stake": "Significant minority retained under signed 2026 sale",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjut401llivheziczslxt",
+        "managerName": "TPG",
+        "organizationName": "TPG",
+        "fundName": "TPG Peppertree Fund X",
+        "vehicleName": "n.a.",
+        "stake": "Majority",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkywm0346ivheguzttxny",
+        "date": "1977",
+        "event": "Sabre Industries was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1977-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkyx10347ivhejy7hh6gk",
+        "date": "2021",
+        "event": "Sabre benefited from rising utility, telecom, and data center infrastructure spending.",
+        "category": "OTHER",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkyxf0348ivhe11txz09x",
+        "date": "Apr 2021",
+        "event": "Blackstone and Sabre's leadership team completed the acquisition of Sabre Industries.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkyxu0349ivheixog16jf",
+        "date": "Apr 13, 2021",
+        "event": "Blackstone announced an agreement to acquire Sabre Industries from The Jordan Company.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-04-13T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkyyg034aivhe9ixlih5s",
+        "date": "Feb 6, 2026",
+        "event": "TPG announced a signed agreement to acquire a majority stake in Sabre from Blackstone, with Blackstone retaining a significant minority stake.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-06T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppoc108inivhes206v6hr",
+        "label": "Announcement date source — Blackstone — Sabre Industries",
+        "url": "https://www.blackstone.com/news/press/blackstone-to-acquire-sabre-industries-inc-a-leading-energy-and-telecom-infrastructure-provider/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppod308ipivhemjld1f9i",
+        "label": "Close date source — Blackstone — Sabre Industries",
+        "url": "https://www.marketscreener.com/quote/stock/BLACKSTONE-INC-60951400/news/Leadership-Team-and-Employees-of-Sabre-and-The-Blackstone-Group-Inc-NYSE-BX-completed-the-acquisi-40661125/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppoe708irivhe9rl6ujd7",
+        "label": "Investment date source — Blackstone — Sabre Industries",
+        "url": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppofb08itivhez5lyoqig",
+        "label": "Sabreindustries — Sabre Industries",
+        "url": "https://www.sabreindustries.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Sabreindustries company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppogd08ivivheij3iubc5",
+        "label": "Reuters — Sabre Industries",
+        "url": "https://www.reuters.com/legal/transactional/tpg-buys-majority-stake-35-billion-power-infrastructure-firm-sabre-industries-2026-02-06/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Reuters — Sabre Industries",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppok108iwivhef26nsekq",
+        "label": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260205906188/en/TPG-to-Acquire-Majority-Stake-in-Sabre-Industries-from-Blackstone-Energy-Transition-Partners",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Business Wire - INF-2026-038 - Sabre Industries",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Sabre Industries",
+    "investmentFirm": "Blackstone",
+    "sector": "Power & ET",
+    "subsector": "Transmission, telecom and data center infrastructure components",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Blackstone Energy Transition Partners",
+    "description": "Sabre Industries manufactures engineered steel structures, utility poles, towers, and related products used in electric transmission, telecommunications, and data center infrastructure. Its customers include electric utilities, telecom operators, EPC contractors, and data center developers that require large engineered components for network buildout. The business is asset-heavy, with fabrication capacity and project execution tied to utility and communications infrastructure capex cycles. Public reporting in 2026 described Sabre as employing roughly 2,800 people. Blackstone acquired Sabre in 2021, and in February 2026 TPG announced a signed agreement to acquire a majority stake while Blackstone said it would retain a significant minority position.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1977,
+    "investmentYear": 2021,
+    "headquarters": "Texas and multiple U.S. states",
+    "milestones": [
+      {
+        "date": "1977",
+        "event": "Sabre Industries was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2021",
+        "event": "Sabre benefited from rising utility, telecom, and data center infrastructure spending.",
+        "category": "Other"
+      },
+      {
+        "date": "Apr 2021",
+        "event": "Blackstone and Sabre's leadership team completed the acquisition of Sabre Industries.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Apr 13, 2021",
+        "event": "Blackstone announced an agreement to acquire Sabre Industries from The Jordan Company.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 6, 2026",
+        "event": "TPG announced a signed agreement to acquire a majority stake in Sabre from Blackstone, with Blackstone retaining a significant minority stake.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Blackstone — Sabre Industries",
+        "url": "https://www.blackstone.com/news/press/blackstone-to-acquire-sabre-industries-inc-a-leading-energy-and-telecom-infrastructure-provider/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Blackstone — Sabre Industries",
+        "url": "https://www.marketscreener.com/quote/stock/BLACKSTONE-INC-60951400/news/Leadership-Team-and-Employees-of-Sabre-and-The-Blackstone-Group-Inc-NYSE-BX-completed-the-acquisi-40661125/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Blackstone — Sabre Industries",
+        "url": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Sabreindustries — Sabre Industries",
+        "url": "https://www.sabreindustries.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Reuters — Sabre Industries",
+        "url": "https://www.reuters.com/legal/transactional/tpg-buys-majority-stake-35-billion-power-infrastructure-firm-sabre-industries-2026-02-06/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Business Wire - INF-2026-038 - Sabre Industries",
+        "url": "https://www.businesswire.com/news/home/20260205906188/en/TPG-to-Acquire-Majority-Stake-in-Sabre-Industries-from-Blackstone-Energy-Transition-Partners",
+        "type": "PRESS_RELEASE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Blackstone",
+        "ownershipVehicle": "Blackstone Energy Transition Partners",
+        "investmentYear": 2021,
+        "stake": "Significant minority retained under signed 2026 sale",
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "TPG",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2026,
+        "stake": "Majority",
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3wu00fnivheczhkg90v",
+        "fundName": "TPG Peppertree Fund X",
+        "managerId": "cmrxpiec5003sivhekn2yjy5t",
+        "updatedAt": "2026-07-23T16:09:58.926Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      },
+      {
+        "id": "cmrxpiec5003sivhekn2yjy5t",
+        "name": "TPG",
+        "updatedAt": "2026-07-23T16:09:25.781Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0160:sabre-industries:6ac88af1",
+    "taskIndex": 160,
+    "canonicalKey": "sabre-industries|united-states",
+    "capturedAt": "2026-08-23T15:08:57.776Z",
+    "databaseRevision": "revision:476f9018f5d835d3b7e0621da6d70a837e1ce63204e9f1dfc5dd5aca6d77206d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "506cc094f6c78763e82ace8fb9d1b9e18f1251e4dd9931796d9502d5eb2fb8e1",
+    "productionSnapshotSha256": "f178ade6cb8a68d9b2b160c8e8be5742ab8fc1f207314abf3aff23357e95812c",
+    "targetCompanySnapshotSha256": "d2b9ffd1cdd30d51cb86a680069ad60f0ed6657714e90bc254dcad327cd4d903",
+    "seedEntrySha256": "dfde883726746bec899a8aa411c2b77d3b6701d18ddffc35288afdd045f96162",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8bf0c22d5257bcb04b1d5323f2c3e3416c91bfe0d7d01e47ec7cbcbbd84bb5c8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "51f7041279a7806315e6c6ba7d913e1b89399d8c91755f8d76616112ba6c46e0",
+      "organizationsSha256": "99cf626177f82fdbf0c9c103a4afb16725a6d3d6d8fa5082d6ea9757671c1225",
+      "citationsSha256": "155123dd3ffe9a058b56dcbf580f180a5d2cc79962677a81fad01b9e2e4a8218",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "29a07a2eceacc5a833bba0ef65e5ca6f5263d3bfb9b14295bdd3297667db4667",
+    "stateSha256": "6af631804ea9157a6bd35ba680c489d8a5efff4dbe9078c39bbc0098e30e7c43",
+    "taskSnapshotSha256": "4e67b4de2fb15660c96c97a1be4a4a9085616bdac7b0d5ef7a197bc59d78012b"
+  },
+  "contextSha256": "9c6d46dc3a79996d8b9ca620abf00c1c92ed6093d414e87ba00e591f656f2046"
+}

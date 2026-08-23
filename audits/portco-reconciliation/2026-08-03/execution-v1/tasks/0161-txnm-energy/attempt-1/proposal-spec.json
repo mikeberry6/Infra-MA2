@@ -1,0 +1,253 @@
+{
+  "generatedAt": "2026-08-23T15:14:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "ADD_OWNER",
+    "ADD_PENDING_TRANSACTION"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Retain TXNM Energy as the canonical public utility holding company, retire Blackstone's separate $400 million PIPE ownership after the shares were cancelled and repaid on July 22, 2026, restore public shareholders as the current legal owners, and keep the 100% Blackstone take-private visibly signed and pending. Remove the unsupported BETP IV attribution; public documents identify Blackstone Infrastructure and transaction vehicles but no final fund allocation.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R37.htm",
+      "purpose": "Current merger state and outstanding approvals",
+      "supports": [
+        "The 100% Blackstone take-private remained signed and pending"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm",
+      "purpose": "PIPE close and unwind",
+      "supports": [
+        "The $400 million PIPE closed in June 2025 and was fully unwound in July 2026"
+      ]
+    },
+    {
+      "url": "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2025%20Blackstone%20Infrastructure/PNM/25-00060-UT-2026-07-27-PNM-Joint%20Applicants%20Compliance%20Report%20to%20Effectuate%20Final%20Order%20on%20the%20Show%20Cause.pdf",
+      "purpose": "Share cancellation and merger waiver",
+      "supports": [
+        "The eight million Blackstone shares were cancelled and the $400 million was repaid on July 22, 2026"
+      ]
+    },
+    {
+      "url": "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+      "purpose": "Take-private terms and buyer strategy",
+      "supports": [
+        "Blackstone Infrastructure signed to acquire 100% of TXNM"
+      ]
+    },
+    {
+      "url": "https://www.txnmenergy.com/about-us/history.aspx",
+      "purpose": "Canonical identity and corporate history",
+      "supports": [
+        "TXNM is the renamed PNM Resources holding company above PNM and TNMP"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "TXNM Energy, Inc.",
+      "PNM Resources",
+      "PNM Resources, Inc."
+    ],
+    "subsector": "Regulated electric utility holding company",
+    "description": "TXNM Energy, Inc. is the Albuquerque, New Mexico-based public holding company above regulated electric utilities Public Service Company of New Mexico and Texas-New Mexico Power. The platform serves residential, commercial and industrial customers in New Mexico and Texas through rate-regulated generation, transmission and distribution infrastructure. The corporation was incorporated in 2000, established its holding-company structure in 2001 and changed its name from PNM Resources to TXNM Energy in August 2024. Blackstone Infrastructure signed an agreement on May 19, 2025 to acquire 100% of TXNM. A separate $400 million PIPE for eight million shares closed on June 2, 2025, but a New Mexico order caused those shares to be cancelled and the investment repaid on July 22, 2026. TXNM therefore remains publicly owned while the take-private remains signed and pending regulatory approvals. No specific final Blackstone fund allocation or legal closing date is publicly disclosed.",
+    "website": "https://www.txnmenergy.com/",
+    "headquarters": "Albuquerque, New Mexico",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjuvp01lqivheohs4h1mf",
+      "set": {
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": null,
+        "vehicleName": "Troy TopCo LP",
+        "stake": "8,000,000 common shares acquired for $400 million; fully cancelled and repaid",
+        "investmentYear": 2025,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Public Market",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "Publicly traded; dispersed public shareholders",
+      "investmentYear": null,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [
+    {
+      "id": null,
+      "direction": "INCOMING",
+      "transactionState": "SIGNED_PENDING_INCOMING",
+      "counterpartyName": "Troy ParentCo LLC (Blackstone Infrastructure affiliate)",
+      "transactionDescription": "Signed acquisition of 100% of TXNM Energy's outstanding common stock; legal closing remained subject to outstanding regulatory approvals.",
+      "announcedAt": "2025-05-19",
+      "expectedClosing": null,
+      "relatedOwnershipPeriodIds": [],
+      "evidenceUrls": [
+        "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+        "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R37.htm",
+        "https://www.txnmenergy.com/investors/rates-and-filings/pnm-nmprc-filings.aspx"
+      ]
+    }
+  ],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpkzdm034sivhep1exvzj8",
+      "set": {
+        "date": "2000–2001",
+        "event": "PNM Resources was incorporated in 2000 and established its utility holding-company structure in 2001; the company later became TXNM Energy.",
+        "category": "FOUNDING",
+        "sortDate": "2001-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.txnmenergy.com/about-us/history.aspx"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkze7034tivheicbdny5c",
+      "set": {
+        "date": "May 19, 2025",
+        "event": "TXNM signed an agreement to be acquired in full by a Blackstone Infrastructure affiliate and separately agreed to a $400 million PIPE.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-05-19T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+          "https://www.sec.gov/Archives/edgar/data/1108426/000110842625000048/a05192025txnmex21.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkzgw034uivhebqkjmh3b",
+      "set": {
+        "date": "Jun 2, 2025",
+        "event": "Blackstone's Troy TopCo LP acquired eight million TXNM common shares for $400 million through the separate PIPE investment.",
+        "category": "FINANCING",
+        "sortDate": "2025-06-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkzhg034vivhel2bhvp63",
+      "set": {
+        "date": "Jul 22, 2026",
+        "event": "TXNM cancelled the eight million PIPE shares and repaid Blackstone's $400 million investment; the separate 100% take-private remained signed and pending.",
+        "category": "FINANCING",
+        "sortDate": "2026-07-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm",
+          "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2025%20Blackstone%20Infrastructure/PNM/25-00060-UT-2026-07-27-PNM-Joint%20Applicants%20Compliance%20Report%20to%20Effectuate%20Final%20Order%20on%20the%20Show%20Cause.pdf"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxppp6g08jqivhecrq8uv7o",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Official acquisition and regulatory-filing index",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxppp7r08jsivhe4nmji1a0",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Signed 100% take-private terms and buyer strategy",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxppp8y08juivhemgyeuz0z",
+      "set": {
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Initial $400 million PIPE disclosure",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpppaf08jwivhein7gfy5p",
+      "set": {
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "FERC approval and then-outstanding approval context",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "TXNM Energy — Second-quarter 2026 merger note",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R37.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current signed-pending merger state and outstanding approvals",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "TXNM Energy — Second-quarter 2026 financing note",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "PIPE close, cancellation and repayment",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "NMPRC — TXNM compliance report",
+      "url": "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2025%20Blackstone%20Infrastructure/PNM/25-00060-UT-2026-07-27-PNM-Joint%20Applicants%20Compliance%20Report%20to%20Effectuate%20Final%20Order%20on%20the%20Show%20Cause.pdf",
+      "sourceType": "OTHER",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "July 22, 2026 share cancellation, repayment and merger waiver",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "TXNM Energy — Merger agreement",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842625000048/a05192025txnmex21.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Legal transaction parties and acquisition vehicles",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "TXNM Energy — NMPRC filings",
+      "url": "https://www.txnmenergy.com/investors/rates-and-filings/pnm-nmprc-filings.aspx",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current New Mexico regulatory docket and pending-close check",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "TXNM Energy — Corporate history",
+      "url": "https://www.txnmenergy.com/about-us/history.aspx",
+      "sourceType": "WEBSITE",
+      "purpose": "COMPANY_PROFILE",
+      "evidenceLabel": "Formation, name continuity and regulated subsidiary boundary",
+      "isPrimary": false
+    }
+  ]
+}

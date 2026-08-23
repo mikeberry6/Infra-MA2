@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T14:47:32.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T15:30:35Z",
+  "activeBatchId": "batch-0157-0161-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -897,7 +897,55 @@
           "reason": "Atomic PortCo receipt, seven-row attribution repair, five public APIs, five rendered drawers, ownership histories, sources, milestones and exact canonical deployment verification passed."
         }
       ]
+    },
+    {
+      "batchId": "batch-0157-0161-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
+        "ledger:0158:arlington-industries:c7b020cc",
+        "ledger:0159:magnolia-power-generating-station:a3187893",
+        "ledger:0160:sabre-industries:6ac88af1",
+        "ledger:0161:txnm-energy:91e56a1f"
+      ],
+      "taskIndexes": [
+        157,
+        158,
+        159,
+        160,
+        161
+      ],
+      "createdAt": "2026-08-23T15:02:14Z",
+      "updatedAt": "2026-08-23T15:30:35Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0157-0161-v1/batch-manifest.json",
+        "sha256": "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T15:02:14Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T15:30:35Z",
+          "evidenceSha256": [
+            "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "7ecf455f6d625cc70bcf73612f7ea8e21279223c760df9fd99de8e77188f5d47"
+  "ledgerSha256": "5670712a43b23fb10c840be18b857fab7e134d353f61f254dda340f3fb5899f7"
 }
