@@ -98,7 +98,7 @@ jobs:
             echo "::error::batch_sha256 must be an exact lowercase SHA-256 digest."
             exit 1
           }
-          [[ "$BATCH_MANIFEST_PATH" =~ ^audits/portco-reconciliation/[0-9]{4}-[0-9]{2}-[0-9]{2}/batches/[A-Za-z0-9._-]+/batch-manifest\.json$ ]] || {
+          [[ "$BATCH_MANIFEST_PATH" =~ ^audits/portco-reconciliation/[0-9]{4}-[0-9]{2}-[0-9]{2}/batches/[A-Za-z0-9._-]+/batch-manifest(-v[1-9][0-9]*)?\.json$ ]] || {
             echo "::error::batch_manifest_path is outside the approved PortCo batch layout."
             exit 1
           }
