@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_PREWRITE_FAILURE",
+  "batchId": "batch-0157-0161-v1",
+  "batchSha256": "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6",
+  "releaseSha": "86b36b34138cf717efe652b5cef692cd1486e85d",
+  "workflowRunId": 32649170597,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32649170597",
+  "failedAt": "2026-08-23T15:39:47.362Z",
+  "stage": "RELEASE_GATE_BEFORE_TRANSACTION",
+  "databaseTransactionStarted": false,
+  "databaseWrites": 0,
+  "error": "Production batch apply requires the exact seed artifact and release commit",
+  "rootCause": "The approved seed overlay was 2,004,827 bytes, exceeding the release verifier's 2,000,000-byte child-process stdout buffer. git show therefore raised a maxBuffer error and the verifier conservatively classified the committed artifact hash as unavailable.",
+  "correctiveAction": "Increase the bounded git stdout buffer to 32,000,000 bytes and add a regression test that verifies a committed and pushed seed artifact larger than 2 MB.",
+  "retryDisposition": "Retry the same immutable batch only after the corrective release is merged, canonically deployed and bound to its exact new release SHA.",
+  "failureSha256": "f8e19c660f5051b02c7b28e0996373f1be1b835d695bf36e949a880d2527f5e2"
+}
