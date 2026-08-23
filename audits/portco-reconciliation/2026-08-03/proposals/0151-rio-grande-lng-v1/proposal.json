@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0151:rio-grande-lng:e7985cce",
+  "taskIndex": 151,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T11:44:00.000Z",
+  "canonicalKey": "rio-grande-lng|united-states",
+  "companyName": "Rio Grande LNG",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "047-gic:holding:010:rio-grande-lng",
+    "048-global-infrastructure-partners:holding:007:rio-grande-lng"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one Rio Grande LNG terminal record and correct its multi-vehicle ownership. GIP, GIC and Mubadala acquired Phase 1 interests at the July 12, 2023 closing and reinvested in Trains 4 and 5. NextDecade and TotalEnergies remain project equity partners, and XRG acquired partial interests from GIP in transactions that closed in September 2025 and July 2026. Those were partial sell-downs, not a GIP exit. BlackRock's acquisition of GIP changed the manager's corporate parent but did not create a separate BlackRock or GEPIF III terminal stake. Train and holding entities remain subordinate project vehicles within the one terminal record.",
+  "evidence": [
+    {
+      "url": "https://www.federalregister.gov/documents/2023/09/05/2023-19051/change-in-control-rio-grande-lng-llc",
+      "purpose": "Phase 1 closing, owners, vehicles and stakes",
+      "supports": [
+        "the Phase 1 ownership transaction closed on July 12, 2023",
+        "GIP, GIC and Mubadala invested through the disclosed vehicles and percentages"
+      ]
+    },
+    {
+      "url": "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf",
+      "purpose": "Train 4, Train 5 and XRG Phase 1 transaction evidence",
+      "supports": [
+        "the Train 4 and Train 5 ownership transactions closed in 2025",
+        "XRG's 11.7% Phase 1 acquisition from GIP closed on September 22, 2025"
+      ]
+    },
+    {
+      "url": "https://corporate.totalenergies.us/news/totalenergies-reaches-final-investment-decision-its-partners-rio-grande-lng-train-4-10-direct",
+      "purpose": "Train 4 equity split",
+      "supports": [
+        "Train 4's disclosed entry split included 36.9% GIP, 7.9% GIC, 5.2% Mubadala, 10% TotalEnergies and 40% NextDecade"
+      ]
+    },
+    {
+      "url": "https://www.energy.gov/sites/default/files/2025-11/RGLNG%205%20CIC.pdf",
+      "purpose": "Train 5 vehicles and ownership split",
+      "supports": [
+        "Train 5's disclosed entry split included 36.9% GIP and 13.2% combined GIC and Mubadala interests"
+      ]
+    },
+    {
+      "url": "https://xrg.com/en/news/XRG-Strengthens-US-LNG-Position-with-Second-Rio-Grande-LNG-Transaction-Completion",
+      "purpose": "Second XRG partial sell-down closing",
+      "supports": [
+        "XRG completed a 7.6% acquisition across Trains 4 and 5 from a GIP vehicle on July 2, 2026",
+        "the transaction was a partial GIP sell-down rather than a complete exit"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "ec3a88ef25a678ecee939646d9af9fa05b8ec5d7980153cda9fdac8351965c49",
+  "currentCompanySnapshotSha256": "e8465b2d7afc902882bed28c72b3a33a5018dae45496d0c43db5429e3499c9a9",
+  "executionLock": {
+    "taskSnapshotSha256": "82a048252585b33fc2fa58152dc7f14da03019bb8bd390b5d8141cb349a5ed99",
+    "taskStateSha256": "bea8e63e1dd7b9aea27aeeea5fa45932cf6354b827c9b1e4a7dc951366c39e28",
+    "taskDependencySha256": "5ad2f437eed0f09b7aa22e3ce400191388879465b3546af3c35f3a07f035b01f",
+    "seedEntrySha256": "86a7968d053a30db9d0a81e63518c202f830cb42388efa328f214e9785f64aba",
+    "dependencies": {
+      "ownershipPeriodsSha256": "89da8655146fb40020671ca20b261b55b16f52a2a4b5205f01b280395afb3817",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "53c886019b714f9796c12ac52ada6f2bd6d0d2e4be18975f7818ca7218a6c5f6",
+      "organizationsSha256": "30685bec32d8860f59c683d63323a72c2d261a2755f1f0abf475bf3e5c23bb34",
+      "citationsSha256": "5da12b550de86fb9cfcb4ae241cec369b3c0b3938e7d2b4e8838678a2ce0cbd7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2gj00dkivhejraeavgi",
+        "fundName": "GIC Infrastructure",
+        "managerId": "cmrxpi8wm0022ivhessbkv786",
+        "updatedAt": "2026-07-23T16:09:57.043Z"
+      },
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      },
+      {
+        "id": "cmrxpihu7004vivheoemw7s8z",
+        "name": "Mubadala",
+        "updatedAt": "2026-07-23T16:09:30.319Z"
+      },
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjgli00yvivheorrptcgd",
+    "name": "Rio Grande LNG",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "LNG liquefaction and export terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Rio Grande LNG is a large-scale liquefied natural gas export project under development and construction in Brownsville, Texas. Its customers are global LNG buyers and offtakers seeking long-term liquefaction capacity and LNG supply from the U.S. Gulf Coast. The project is an asset-heavy midstream development whose economics depend on long-term sale and purchase agreements, large-scale project financing, and multiyear construction execution. Public materials state that Phase 1 consists of three liquefaction trains with roughly 18 million tonnes per annum of LNG production capacity and that the broader project is designed for larger total capacity across additional trains. NextDecade announced positive final investment decision on Phase 1 in July 2023 with Global Infrastructure Partners, TotalEnergies, GIC, Mubadala, and other project stakeholders involved in the financing structure. The latest public disclosures reviewed here indicate expected first LNG from Phase 1 in 2027, but they do not fully disclose the current project-company ownership breakdown across all investors.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2dz01xfivhe6czef2co",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": "GIC Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2ef01xgivhe1pzzw4h7",
+        "managerName": "Mubadala",
+        "organizationName": "Mubadala",
+        "fundName": null,
+        "vehicleName": "MIC TI Holding LLC",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2f101xhivhej18k131a",
+        "managerName": "BlackRock",
+        "organizationName": "GIP",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltzc045fivhegl6cdurd",
+        "date": "2019",
+        "event": "Rio Grande LNG received federal approvals for the Brownsville project.",
+        "category": "OTHER",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltzw045givhebwxjaek4",
+        "date": "Sep 2023",
+        "event": "Federal Register materials disclosed the post-transaction ownership structure for Rio Grande LNG Phase 1.",
+        "category": "FINANCING",
+        "sortDate": "2023-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu0g045hivhe73vd8jh2",
+        "date": "Jul 2023",
+        "event": "Phase 1 construction began following notice to proceed to Bechtel.",
+        "category": "EXPANSION",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu10045iivhejsujusd3",
+        "date": "Jul 12, 2023",
+        "event": "NextDecade executed and closed the Rio Grande LNG Phase 1 joint venture with financial commitments from Global Infrastructure Partners (GIP), GIC, Mubadala, and TotalEnergies.",
+        "category": "FINANCING",
+        "sortDate": "2023-07-12T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu1k045jivhevxfdl0bu",
+        "date": "Oct 2025",
+        "event": "NextDecade announced a positive final investment decision for Train 5 at the Rio Grande LNG complex.",
+        "category": "FINANCING",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu24045kivheu9dumav9",
+        "date": "Sep 11, 2025",
+        "event": "NextDecade announced a positive final investment decision on Train 4 and disclosed the continuing equity partner group.",
+        "category": "FINANCING",
+        "sortDate": "2025-09-11T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9wi0atvivheh4w5a68k",
+        "label": "Close date source — Global Infrastructure Partners — Rio Grande LNG",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr9wz0atwivhedmrpasvw",
+        "label": "Close date source — Global Infrastructure Partners — Rio Grande LNG",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra0w0atyivhel2zyhz1e",
+        "label": "Close date source — Mubadala — Rio Grande LNG",
+        "url": "https://corporate.totalenergies.us/news/totalenergies-and-its-partners-make-final-investment-decision-rglng-project-texas",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Mubadala closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra200au0ivhe2m4mxdt3",
+        "label": "Next Decade — Rio Grande LNG",
+        "url": "https://www.next-decade.com/our-business/rio-grande-lng/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Next Decade — Rio Grande LNG",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra310au2ivhe33aslq35",
+        "label": "Riograndelng — Rio Grande LNG, LLC",
+        "url": "https://www.riograndelng.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Riograndelng company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra430au4ivhecf1a6nc3",
+        "label": "Federalregister — Rio Grande LNG, LLC",
+        "url": "https://www.federalregister.gov/documents/2023/09/05/2023-19122/change-in-control-notice-regarding-rio-grande-lng-llc-and-rio-bravo-pipeline-company-llc",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Federalregister — Rio Grande LNG, LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "e8465b2d7afc902882bed28c72b3a33a5018dae45496d0c43db5429e3499c9a9",
+  "afterImage": {
+    "id": "cmrxpjgli00yvivheorrptcgd",
+    "name": "Rio Grande LNG",
+    "aliases": [
+      "RGLNG",
+      "Rio Grande LNG Terminal",
+      "Rio Grande LNG, LLC"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "LNG liquefaction and export terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Rio Grande LNG is a large-scale LNG liquefaction and export terminal under construction at the Port of Brownsville, Texas. NextDecade operates the project, which is planned for approximately 30 million tonnes per annum across five trains and serves global long-term LNG offtakers. Phase 1 closed on July 12, 2023 with equity from Global Infrastructure Partners, GIC, Mubadala, TotalEnergies and NextDecade. The same investor group participated in later Train 4 and Train 5 transactions through separate project vehicles. XRG subsequently acquired partial GIP interests: 11.7% of Phase 1 and 7.6% across Trains 4 and 5. GIP remains an active investor after those partial sell-downs. BlackRock's October 2024 acquisition of GIP did not create a separate Rio Grande LNG ownership period. At June 2026, Trains 1 and 2 were 74.0% complete, Train 3 was 50.4%, Train 4 was 15.5% and Train 5 was 9.4%, with first Train 1 LNG expected in the first half of 2027. Train and holding entities are treated as project vehicles beneath the one terminal record. No signed pending company-level exit was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.next-decade.com/our-business/rio-grande-lng/",
+    "yearFounded": null,
+    "headquarters": "Houston, Texas",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2dz01xfivhe6czef2co",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": null,
+        "vehicleName": "Devonshire Investment Pte. Ltd.",
+        "stake": "Phase 1 minimum 9.85%; Train 4 7.9%; Train 5 included in 13.2% combined GIC/Mubadala interest",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2ef01xgivhe1pzzw4h7",
+        "managerName": "Mubadala",
+        "organizationName": "Mubadala",
+        "fundName": null,
+        "vehicleName": "MIC TI Holding Company 2 RSC Limited",
+        "stake": "Phase 1 minimum 6.57%; Train 4 5.2%; Train 5 included in 13.2% combined GIC/Mubadala interest",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2f101xhivhej18k131a",
+        "managerName": "Global Infrastructure Partners",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "GIP V Velocity Acquisition Partners, L.P.; GIM Participation Velocity, L.P.; GIP V Velocity Aggregator, L.P.; Train 4 and Train 5 analogues",
+        "stake": "Phase 1 minimum 46.12% and Trains 4/5 36.9% at entry; current residual not publicly disclosed after XRG partial sell-downs",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "NextDecade Corporation",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "NextDecade LNG, LLC and project affiliates",
+        "stake": "Phase 1 up to 20.79%; Train 4 40%; Train 5 50% at entry",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "TotalEnergies",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "TotalEnergies project investment affiliates",
+        "stake": "Phase 1 16.67%; Train 4 10%",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "XRG P.J.S.C.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Raven Holding Company LLC and Train 4/5 acquisition affiliate",
+        "stake": "Phase 1 11.7%; Trains 4/5 7.6% aggregate",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltzc045fivhegl6cdurd",
+        "date": "Jul 12, 2023",
+        "event": "Rio Grande LNG reached Phase 1 final investment decision and closed the joint-venture equity transaction with GIP, GIC, Mubadala, TotalEnergies and NextDecade.",
+        "category": "FINANCING",
+        "sortDate": "2023-07-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.federalregister.gov/documents/2023/09/05/2023-19051/change-in-control-rio-grande-lng-llc"
+        ]
+      },
+      {
+        "id": "cmrxpltzw045givhebwxjaek4",
+        "date": "Sep 9, 2025",
+        "event": "The Train 4 equity transaction closed with NextDecade at 40%, GIP at 36.9%, TotalEnergies at 10%, GIC at 7.9% and Mubadala at 5.2% at entry.",
+        "category": "FINANCING",
+        "sortDate": "2025-09-09T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf",
+          "https://corporate.totalenergies.us/news/totalenergies-reaches-final-investment-decision-its-partners-rio-grande-lng-train-4-10-direct"
+        ]
+      },
+      {
+        "id": "cmrxplu0g045hivhe73vd8jh2",
+        "date": "Sep 22, 2025",
+        "event": "XRG completed its acquisition of an 11.7% indirect Phase 1 interest from a GIP vehicle, reducing but not eliminating GIP's ownership.",
+        "category": "DIVESTITURE",
+        "sortDate": "2025-09-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf"
+        ]
+      },
+      {
+        "id": "cmrxplu10045iivhejsujusd3",
+        "date": "Oct 16, 2025",
+        "event": "The Train 5 equity transaction closed with NextDecade at 50%, GIP at 36.9% and GIC/Mubadala holding a combined 13.2% at entry.",
+        "category": "FINANCING",
+        "sortDate": "2025-10-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.energy.gov/sites/default/files/2025-11/RGLNG%205%20CIC.pdf"
+        ]
+      },
+      {
+        "id": "cmrxplu1k045jivhevxfdl0bu",
+        "date": "Jul 2, 2026",
+        "event": "XRG completed a second acquisition from a GIP vehicle, taking a 7.6% aggregate interest across Trains 4 and 5 while GIP retained a residual stake.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-07-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://xrg.com/en/news/XRG-Strengthens-US-LNG-Position-with-Second-Rio-Grande-LNG-Transaction-Completion"
+        ]
+      },
+      {
+        "id": "cmrxplu24045kivheu9dumav9",
+        "date": "Jun 30, 2026",
+        "event": "NextDecade reported Trains 1 and 2 at 74.0% completion, Train 3 at 50.4%, Train 4 at 15.5% and Train 5 at 9.4%, with first Train 1 LNG expected in the first half of 2027.",
+        "category": "EXPANSION",
+        "sortDate": "2026-06-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-provides-second-quarter-2026-business-update"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9wi0atvivheh4w5a68k",
+        "label": "Close date source — Global Infrastructure Partners — Rio Grande LNG",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Phase 1 final investment decision and closing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9wz0atwivhedmrpasvw",
+        "label": "Close date source — Global Infrastructure Partners — Rio Grande LNG",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Duplicate Phase 1 closing citation retained for lineage",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra0w0atyivhel2zyhz1e",
+        "label": "Close date source — Mubadala — Rio Grande LNG",
+        "url": "https://corporate.totalenergies.us/news/totalenergies-and-its-partners-make-final-investment-decision-rglng-project-texas",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Phase 1 partner participation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra200au0ivhe2m4mxdt3",
+        "label": "Next Decade — Rio Grande LNG",
+        "url": "https://www.next-decade.com/our-business/rio-grande-lng/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Official terminal profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra310au2ivhe33aslq35",
+        "label": "Riograndelng — Rio Grande LNG, LLC",
+        "url": "https://www.riograndelng.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Legacy Rio Grande LNG website",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra430au4ivhecf1a6nc3",
+        "label": "Federal Register — Rio Grande LNG change in control",
+        "url": "https://www.federalregister.gov/documents/2023/09/05/2023-19051/change-in-control-rio-grande-lng-llc",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 2023 Phase 1 owners, vehicles, stakes and closing",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "U.S. Department of Energy — Rio Grande LNG change-in-control response",
+        "url": "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Train 4, Train 5 and XRG Phase 1 ownership closings",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "TotalEnergies — Rio Grande LNG Train 4 FID",
+        "url": "https://corporate.totalenergies.us/news/totalenergies-reaches-final-investment-decision-its-partners-rio-grande-lng-train-4-10-direct",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Train 4 entry ownership split",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "U.S. Department of Energy — Rio Grande LNG Train 5 filing",
+        "url": "https://www.energy.gov/sites/default/files/2025-11/RGLNG%205%20CIC.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Train 5 vehicles and entry ownership split",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NextDecade — Second-quarter 2026 business update",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-provides-second-quarter-2026-business-update",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "June 2026 train-construction progress and first-LNG expectation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "XRG — Second Rio Grande LNG transaction completion",
+        "url": "https://xrg.com/en/news/XRG-Strengthens-US-LNG-Position-with-Second-Rio-Grande-LNG-Transaction-Completion",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 2, 2026 partial GIP sell-down across Trains 4 and 5",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "78aff165ea508217167790f528227ccbf7504db29ef70dc989cf13afde863eff",
+  "proposalSha256": "cbdc490bbe699271989d45211f9672c8b364f8f176d2beed8dadf4e3df514b5a"
+}

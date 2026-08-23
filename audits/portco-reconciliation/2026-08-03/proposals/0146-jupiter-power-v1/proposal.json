@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0146:jupiter-power:85379278",
+  "taskIndex": 146,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T11:40:00.000Z",
+  "canonicalKey": "jupiter-power|united-states",
+  "companyName": "Jupiter Power",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "023-blackrock:holding:003:jupiter-power"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one active Jupiter Power platform and correct its evidence, dates, operating scale and BlackRock/GIP attribution. BlackRock's legacy Diversified Infrastructure business announced the acquisition from EnCap, Yorktown and Mercuria on November 15, 2022 and transaction records show the acquisition closed on December 21, 2022. Current Jupiter materials use GIP-backed branding after BlackRock's upstream acquisition of GIP, but no asset-level transfer, second vehicle or separate GIP ownership period was found. The current platform develops, owns and operates utility-scale battery storage across U.S. power markets, and no later sale or signed pending exit was identified through August 23, 2026.",
+  "evidence": [
+    {
+      "url": "https://jupiterpower.io/encap-investments-sells-jupiter-power-to-blackrock/",
+      "purpose": "Ownership announcement, buyer, sellers and platform profile",
+      "supports": [
+        "BlackRock agreed to acquire Jupiter Power from EnCap and its co-investors on November 15, 2022",
+        "Jupiter is a U.S. utility-scale battery-storage platform"
+      ]
+    },
+    {
+      "url": "https://lazard.com/api/TransactionSearch/DownloadTransactions?transactionTypeIds=1",
+      "purpose": "Transaction closing date",
+      "supports": [
+        "the BlackRock acquisition closed on December 21, 2022"
+      ]
+    },
+    {
+      "url": "https://jupiterpower.io/solutions/",
+      "purpose": "Current operations, scale and GIP platform branding",
+      "supports": [
+        "Jupiter remains an active storage developer, owner and operator",
+        "current materials report 8,800 MWh operating, under construction or under contract and more than 20,000 MW in active development"
+      ]
+    },
+    {
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "purpose": "Manager-level BlackRock and GIP relationship",
+      "supports": [
+        "BlackRock completed its acquisition of GIP on October 1, 2024",
+        "the upstream manager transaction does not itself evidence a Jupiter ownership transfer"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "7fcb95179a92e27fe072bef7bf11ca2003125b56180146f4cd17065e3dacdfc7",
+  "currentCompanySnapshotSha256": "b96283cbe2138b295ace6ffbbbe8c6ca842a68f2d47b06af5bb28f883edcf97f",
+  "executionLock": {
+    "taskSnapshotSha256": "343530f124c92922106897e490b9723d70cbf50ef3a6d065f767eade82775d36",
+    "taskStateSha256": "02b8a09db822d5c79809024050207e14a0bcec17340a8d9e4f8db57a4e1d9bfd",
+    "taskDependencySha256": "0d200c7f8a6e03e8aff07642bfa978680245aabbe075947e54fba7145e707d37",
+    "seedEntrySha256": "3c1700fc9c7e4c3db954ec678fe121be3817eb73d51bc06e644a23874ffa4d28",
+    "dependencies": {
+      "ownershipPeriodsSha256": "4375cb87b3ca92e8744a018b46ede7dc6e8c1b797e37f4f1b0f8813f155dc882",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "bf9aa446a13a59b5fcef0dc40359cce5716ab4fe4c83892fe722ba2af886de2a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj8z800n8ivhe1tqmwbzz",
+    "name": "Jupiter Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Battery energy storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Jupiter Power develops, owns, and operates utility-scale battery energy storage projects in the United States. Its counterparties include utilities, load-serving entities, and power-market participants that contract for dispatchable storage capacity and ancillary services. The operating model is asset-heavy because the company owns large-scale battery systems and monetizes them through contracted and market-based storage revenues. Company materials describe an operating and development pipeline exceeding 11,000 MW, making it one of the larger dedicated storage platforms in the US market. Its footprint spans multiple US power markets rather than a single-region buildout. BlackRock acquired Jupiter Power from EnCap Investments in 2022, and public transaction materials described the company as having been sold to BlackRock.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2017,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju9r01koivhe4bl83vdo",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Diversified Infrastructure",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwh50315ivhetiue4oxz",
+        "date": "2017",
+        "event": "Company materials identify Jupiter Power's founding year as 2017.",
+        "category": "FOUNDING",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwhn0316ivhe4npp7mii",
+        "date": "Nov 15, 2022",
+        "event": "EnCap Investments announced an agreement to sell Jupiter Power to BlackRock.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-11-15T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwi70317ivheq7sfk6y9",
+        "date": "2024",
+        "event": "Jupiter announced new battery storage projects totaling 652 MWh.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwis0318ivhewauo7vuw",
+        "date": "Jan 28, 2025",
+        "event": "Jupiter announced a $500 million upsized corporate credit facility to support expansion.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-28T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppk8808cpivhekxzz7j8g",
+        "label": "Jupiterpower — Jupiter Power",
+        "url": "https://www.jupiterpower.io/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Jupiterpower company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppk9808crivhelpptrnmz",
+        "label": "Announcement date source — BlackRock — Jupiter Power",
+        "url": "https://www.jupiterpower.io/post/encap-investments-sells-jupiter-power-to-blackrock",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkad08ctivhec2ovagnx",
+        "label": "Jupiterpower — Jupiter Power",
+        "url": "https://www.jupiterpower.io/post/jupiter-power-secures-500-million-in-upsized-corporate-credit-facility-to-accelerate-portfolio-expansion",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Jupiterpower operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkbg08cvivhe3iatyqvl",
+        "label": "Jupiterpower — Jupiter Power",
+        "url": "https://www.jupiterpower.io/post/jupiter-power-announces-652-megawatt-hours-of-battery-storage-projects",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Jupiterpower operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "b96283cbe2138b295ace6ffbbbe8c6ca842a68f2d47b06af5bb28f883edcf97f",
+  "afterImage": {
+    "id": "cmrxpj8z800n8ivhe1tqmwbzz",
+    "name": "Jupiter Power",
+    "aliases": [
+      "Jupiter Power LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Battery energy storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Jupiter Power LLC is a U.S. utility-scale battery-energy-storage platform that develops, owns and operates BESS projects serving energy, capacity and ancillary-services markets. Current company materials report 8,800 MWh operating, under construction or under contract and more than 20,000 MW in active development across eight U.S. RTO/ISO markets. BlackRock's legacy Diversified Infrastructure business announced the acquisition of Jupiter from EnCap Investments and co-investors Yorktown Partners and Mercuria Energy on November 15, 2022, and the acquisition closed on December 21, 2022. Jupiter now uses GIP-backed branding following BlackRock's October 2024 acquisition of GIP, but no separate Jupiter asset transfer or second GIP ownership period was disclosed. Austin, Houston and Chicago are disclosed office hubs; a single legal headquarters is not publicly disclosed. No later company sale or signed pending exit was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://jupiterpower.io/",
+    "yearFounded": 2017,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju9r01koivhe4bl83vdo",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Legacy BlackRock Diversified Infrastructure-managed fund",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwh50315ivhetiue4oxz",
+        "date": "2017",
+        "event": "Jupiter Power was founded as a U.S. utility-scale battery-storage developer and operator.",
+        "category": "FOUNDING",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://jupiterpower.io/encap-investments-sells-jupiter-power-to-blackrock/"
+        ]
+      },
+      {
+        "id": "cmrxpkwhn0316ivhe4npp7mii",
+        "date": "Dec 21, 2022",
+        "event": "BlackRock's legacy Diversified Infrastructure business completed its acquisition of Jupiter Power after the transaction was announced on November 15, 2022.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-21T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://jupiterpower.io/encap-investments-sells-jupiter-power-to-blackrock/",
+          "https://lazard.com/api/TransactionSearch/DownloadTransactions?transactionTypeIds=1"
+        ]
+      },
+      {
+        "id": "cmrxpkwi70317ivheq7sfk6y9",
+        "date": "Feb 9, 2021",
+        "event": "Jupiter announced six battery-storage projects totaling 652 MWh across the ERCOT grid.",
+        "category": "EXPANSION",
+        "sortDate": "2021-02-09T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://jupiterpower.io/jupiter-power-announces-652-megawatt-hours-of-battery-storage-projects/"
+        ]
+      },
+      {
+        "id": "cmrxpkwis0318ivhewauo7vuw",
+        "date": "Jan 28, 2026",
+        "event": "Jupiter closed an upsized $500 million corporate credit facility to support continued portfolio expansion.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-28T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://jupiterpower.io/jupiter-power-secures-500-million-in-upsized-corporate-credit-facility-to-accelerate-portfolio-expansion/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppk8808cpivhekxzz7j8g",
+        "label": "Jupiterpower — Jupiter Power",
+        "url": "https://www.jupiterpower.io/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Legacy Jupiter website source",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppk9808crivhelpptrnmz",
+        "label": "Announcement date source — BlackRock — Jupiter Power",
+        "url": "https://www.jupiterpower.io/post/encap-investments-sells-jupiter-power-to-blackrock",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legacy acquisition-announcement URL",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkad08ctivhec2ovagnx",
+        "label": "Jupiterpower — Jupiter Power",
+        "url": "https://www.jupiterpower.io/post/jupiter-power-secures-500-million-in-upsized-corporate-credit-facility-to-accelerate-portfolio-expansion",
+        "sourceType": "WEBSITE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Legacy corporate-credit-facility URL",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkbg08cvivhe3iatyqvl",
+        "label": "Jupiterpower — Jupiter Power",
+        "url": "https://www.jupiterpower.io/post/jupiter-power-announces-652-megawatt-hours-of-battery-storage-projects",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Legacy 652 MWh project-announcement URL",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Jupiter Power — BlackRock acquisition announcement",
+        "url": "https://jupiterpower.io/encap-investments-sells-jupiter-power-to-blackrock/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Buyer, sellers, November 2022 announcement and platform profile",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Lazard — Jupiter Power transaction record",
+        "url": "https://lazard.com/api/TransactionSearch/DownloadTransactions?transactionTypeIds=1",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 21, 2022 acquisition closing date",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Jupiter Power — Solutions",
+        "url": "https://jupiterpower.io/solutions/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current operating model, U.S. market footprint and disclosed scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BlackRock — GIP acquisition close",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Upstream manager combination and current branding context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Jupiter Power — 2026 corporate credit facility",
+        "url": "https://jupiterpower.io/jupiter-power-secures-500-million-in-upsized-corporate-credit-facility-to-accelerate-portfolio-expansion/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "January 2026 facility, operating scale and current status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Jupiter Power — 652 MWh storage portfolio",
+        "url": "https://jupiterpower.io/jupiter-power-announces-652-megawatt-hours-of-battery-storage-projects/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "February 2021 six-project battery-storage announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "cfac6c9a0ccb4ce309e69f55a919bd324bacae605e2464d4111869cf15b04ab4",
+  "proposalSha256": "c64c82f9e174a5a48c4ca81c2269987737cb133104863d5ef4c4e5c356872cf6"
+}

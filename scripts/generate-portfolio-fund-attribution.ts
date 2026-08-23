@@ -680,11 +680,13 @@ const DIRECT_PROGRAM_FIRMS = new Set([
   "keyera",
   "masdar",
   "norges bank investment management",
+  "nextdecade corporation",
   "ocean winds",
   "pggm",
   "psp investments",
   "qia",
   "talen energy",
+  "totalenergies",
   "united community bank",
   "wren house",
   "tract capital",
@@ -701,6 +703,8 @@ const DIRECT_PROGRAM_FIRMS = new Set([
   "qic",
   "tract capital management",
   "ugi utilities",
+  "xrg p.j.s.c.",
+  "ørsted",
   "harbert management corp (harbert infra / gulf pacific)",
 ].map(canonical));
 

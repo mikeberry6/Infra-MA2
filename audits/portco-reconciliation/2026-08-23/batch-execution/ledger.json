@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T11:28:11.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T12:25:00.000Z",
+  "activeBatchId": "batch-0146-0151-v3",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -581,7 +581,141 @@
           "reason": "Atomic batch receipt, nine-row attribution repair receipt, four published APIs and rendered drawers, one expected archived-company absence, and canonical deployment verification passed."
         }
       ]
+    },
+    {
+      "batchId": "batch-0146-0151-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0146:jupiter-power:85379278",
+        "ledger:0148:national-renewable-solutions:2d543538",
+        "ledger:0149:portland-natural-gas-transmission-system:15040b8a",
+        "ledger:0150:revolution-wind-and-south-fork-wind:141c088f",
+        "ledger:0151:rio-grande-lng:e7985cce"
+      ],
+      "taskIndexes": [
+        146,
+        148,
+        149,
+        150,
+        151
+      ],
+      "createdAt": "2026-08-23T11:37:26.000Z",
+      "updatedAt": "2026-08-23T12:02:00.000Z",
+      "completedAt": "2026-08-23T12:02:00.000Z",
+      "batchManifest": null,
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write batch dry-run failed because approved ownership organizations for TC Energy, Énergir, Eversource, NextDecade and XRG were neither existing captured dependencies nor exact provisionable organizations. No seed or database write occurred; rebuilding the same members with corrected organization lineage as v2.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T11:37:26.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "FAILED",
+          "at": "2026-08-23T12:02:00.000Z",
+          "evidenceSha256": [],
+          "reason": "Pre-write batch dry-run failed because approved ownership organizations for TC Energy, Énergir, Eversource, NextDecade and XRG were neither existing captured dependencies nor exact provisionable organizations. No seed or database write occurred; rebuilding the same members with corrected organization lineage as v2."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0146-0151-v2",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0146:jupiter-power:85379278",
+        "ledger:0148:national-renewable-solutions:2d543538",
+        "ledger:0149:portland-natural-gas-transmission-system:15040b8a",
+        "ledger:0150:revolution-wind-and-south-fork-wind:141c088f",
+        "ledger:0151:rio-grande-lng:e7985cce"
+      ],
+      "taskIndexes": [
+        146,
+        148,
+        149,
+        150,
+        151
+      ],
+      "createdAt": "2026-08-23T12:03:00.000Z",
+      "updatedAt": "2026-08-23T12:17:00.000Z",
+      "completedAt": "2026-08-23T12:17:00.000Z",
+      "batchManifest": null,
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write batch dry-run rejected two GIP ownership rows because the approved manager label Global Infrastructure Partners could not round-trip through the existing canonical organization named GIP. No seed or database write occurred; rebuilding with exact persisted organization identity as v3.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T12:03:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "FAILED",
+          "at": "2026-08-23T12:17:00.000Z",
+          "evidenceSha256": [],
+          "reason": "Pre-write batch dry-run rejected two GIP ownership rows because the approved manager label Global Infrastructure Partners could not round-trip through the existing canonical organization named GIP. No seed or database write occurred; rebuilding with exact persisted organization identity as v3."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0146-0151-v3",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0146:jupiter-power:85379278",
+        "ledger:0148:national-renewable-solutions:2d543538",
+        "ledger:0149:portland-natural-gas-transmission-system:15040b8a",
+        "ledger:0150:revolution-wind-and-south-fork-wind:141c088f",
+        "ledger:0151:rio-grande-lng:e7985cce"
+      ],
+      "taskIndexes": [
+        146,
+        148,
+        149,
+        150,
+        151
+      ],
+      "createdAt": "2026-08-23T12:18:00.000Z",
+      "updatedAt": "2026-08-23T12:25:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/batch-manifest.json",
+        "sha256": "5e52499d1a5ceef9a15a29f4ca0bf229f085f321f0c68903c6298970b90f4940"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T12:18:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T12:25:00.000Z",
+          "evidenceSha256": [
+            "5e52499d1a5ceef9a15a29f4ca0bf229f085f321f0c68903c6298970b90f4940"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "bf2ef450c59823b887829ac7f510db914e08031fe561ab37e8acbda9462e0fda"
+  "ledgerSha256": "b5eae26e7ef182ec2a3136c9d4cfeadf561e5188eae29930c97db61572345e42"
 }

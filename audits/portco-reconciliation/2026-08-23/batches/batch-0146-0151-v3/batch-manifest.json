@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0146-0151-v3",
+  "createdAt": "2026-08-23T12:21:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "3189075abb46d0d0db4e1996ed336684d25b3bab912dbfaf8f3b441a8d20e0bc"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0146:jupiter-power:85379278",
+      "taskIndex": 146,
+      "companyName": "Jupiter Power",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0146-jupiter-power-v3/proposal.json",
+        "sha256": "a7f10db5512f798ce7d474a93839eb8f86d6a136c3852d64d8f381ec1aea400b"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0146-jupiter-power-v3.json",
+        "sha256": "9bc08da1cae6a88fd549f70b24f4a0cb9d006146f5986bbf3e90b4cf353c90e0"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0146-jupiter-power/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "3e881bd5530ee6bc6ac77a157569aaf9fb0c7f62cbfa019bf9431c3cb49d20c4"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0146-jupiter-power/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "0d8ac9f145adc3c4ee00b9f3881ad0d2d1a90e3718a421015b784ce692883581"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0146-jupiter-power/attempt-1/authorization-observed-v2-task-snapshot.json",
+        "sha256": "40fc1726513ec0f7bb84ac3943633de8db8d5dd2fc408bff7ec9a46478d22191"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0146-jupiter-power/attempt-1/research-decision.json",
+        "sha256": "39ce7836fc87df7e272801f1c73b99d5cdd1f9620f8da5468277c198e6ec015c"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0146-jupiter-power/attempt-1/source-verification.json",
+        "sha256": "6abe4e94d5d45f4a7e6e24dcc434ca501d9350804b2a63d8f0548596b856e361"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "02b8a09db822d5c79809024050207e14a0bcec17340a8d9e4f8db57a4e1d9bfd",
+      "dependencySha256": "0d200c7f8a6e03e8aff07642bfa978680245aabbe075947e54fba7145e707d37",
+      "afterImageSha256": "cfac6c9a0ccb4ce309e69f55a919bd324bacae605e2464d4111869cf15b04ab4",
+      "targetClaims": [
+        "canonical:jupiter-power|united-states",
+        "company:cmrxpj8z800n8ivhe1tqmwbzz",
+        "relation:cmrxpju9r01koivhe4bl83vdo",
+        "relation:cmrxpkwh50315ivhetiue4oxz",
+        "relation:cmrxpkwhn0316ivhe4npp7mii",
+        "relation:cmrxpkwi70317ivheq7sfk6y9",
+        "relation:cmrxpkwis0318ivhewauo7vuw",
+        "relation:cmrxppk8808cpivhekxzz7j8g",
+        "relation:cmrxppk9808crivhelpptrnmz",
+        "relation:cmrxppkad08ctivhec2ovagnx",
+        "relation:cmrxppkbg08cvivhe3iatyqvl",
+        "seed:jupiter power|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://jupiterpower.io/encap-investments-sells-jupiter-power-to-blackrock/",
+          "label": "Jupiter Power — BlackRock acquisition announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://jupiterpower.io/jupiter-power-announces-652-megawatt-hours-of-battery-storage-projects/",
+          "label": "Jupiter Power — 652 MWh storage portfolio",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://jupiterpower.io/jupiter-power-secures-500-million-in-upsized-corporate-credit-facility-to-accelerate-portfolio-expansion/",
+          "label": "Jupiter Power — 2026 corporate credit facility",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://jupiterpower.io/solutions/",
+          "label": "Jupiter Power — Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://lazard.com/api/TransactionSearch/DownloadTransactions?transactionTypeIds=1",
+          "label": "Lazard — Jupiter Power transaction record",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+          "label": "BlackRock — GIP acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.jupiterpower.io/",
+          "label": "Jupiterpower — Jupiter Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.jupiterpower.io/post/encap-investments-sells-jupiter-power-to-blackrock",
+          "label": "Announcement date source — BlackRock — Jupiter Power",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.jupiterpower.io/post/jupiter-power-announces-652-megawatt-hours-of-battery-storage-projects",
+          "label": "Jupiterpower — Jupiter Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.jupiterpower.io/post/jupiter-power-secures-500-million-in-upsized-corporate-credit-facility-to-accelerate-portfolio-expansion",
+          "label": "Jupiterpower — Jupiter Power",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0148:national-renewable-solutions:2d543538",
+      "taskIndex": 148,
+      "companyName": "National Renewable Solutions",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0148-national-renewable-solutions-v3/proposal.json",
+        "sha256": "c3968ae4d28af2a4b8be3b56cbdfa37bc9c333aa22e313ad05500755c8d65480"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0148-national-renewable-solutions-v3.json",
+        "sha256": "0b7939472a4fb41e6e57f82cfe916fa323d65028f9e222eb9b842ee0478a199c"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "4174b413897e9073b2c9432d638415d870da834c8988a7d4fc3dbf1e0fb96e89"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "bc763a79dd740897eab598225589c03d255a70d70b7dbe4a94c266442423d707"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/authorization-observed-v2-task-snapshot.json",
+        "sha256": "a55960b481dd056daf14a04db85475ba938028331ee0e7f8bc857bd7ad9093b3"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/research-decision.json",
+        "sha256": "f9c28d710d4dd09f47443be01436292f01a49fdba35b194ba68698333c13b9a3"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/source-verification.json",
+        "sha256": "98129ccd9494db2855f952e2d8f603b7bfd9d20a3fc021865f257909652f3cf1"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "eea477d1997d83f6094fff2abb4705d22560233c5a63f18b5cc21c0596c7e198",
+      "dependencySha256": "611e94d6cf8613d078b5a6f55e10332b806cf3d021fa7d60f062a81782fe2634",
+      "afterImageSha256": "f8eed98a78e217b979d522eab2dc7977040b69be25d3e9eecc20a0ca238f665e",
+      "targetClaims": [
+        "canonical:national-renewable-solutions|united-states",
+        "company:cmrxpj90b00naivhedtmfwflb",
+        "relation:cmrxpjuas01kqivhe76y9ulx8",
+        "relation:cmrxpkwnx031bivhe4yhx4v3d",
+        "relation:cmrxpkwok031civhevz1ikytp",
+        "relation:cmrxppkfv08d3ivhe9n1itngr",
+        "relation:cmrxppkjh08d5ivhenxqrxdne",
+        "relation:cmrxppkkg08d7ivhe39xv0u7d",
+        "seed:national renewable solutions|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://natrs.com/",
+          "label": "Natrs — National Renewable Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://natrs.com/about/",
+          "label": "Natrs — National Renewable Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://natrs.com/nautilus-makes-headway-in-maines-versant-utility-territory-with-acquisition-of-7-6mw-community-solar-portfolio/",
+          "label": "National Renewable Solutions — Nautilus project sale",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://natrs.com/nrss-shallow-basket-energy-project-brings-renewable-energy-to-jicarilla-apache-nation-building-on-legacy-of-environmental-stewardship/",
+          "label": "National Renewable Solutions — Shallow Basket Energy",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://natrs.com/projects/",
+          "label": "National Renewable Solutions — Projects",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://natrs.com/wp-content/uploads/2022/04/BlackRockAcquiresNRS_PressRelease_Final.pdf",
+          "label": "Investment date source — BlackRock — National Renewable Solutions",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.global-infra.com/additional-disclosures/",
+          "label": "GIP — Additional disclosures",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.mayerbrown.com/en/people/c/castro-federica-m",
+          "label": "Mayer Brown — GRP III NRS transaction",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0149:portland-natural-gas-transmission-system:15040b8a",
+      "taskIndex": 149,
+      "companyName": "Portland Natural Gas Transmission System",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0149-portland-natural-gas-transmission-system-v3/proposal.json",
+        "sha256": "bcc169b405db816e87b92310c0d09f7eec0510d21efd1c721edef6868b3b591b"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0149-portland-natural-gas-transmission-system-v3.json",
+        "sha256": "209568b6a7710c60410fcc5d1af166ac997e875fbd8b711bd3a7a99362ffb75f"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0149-portland-natural-gas-transmission-system/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "abb3a15a2df1740cecb121ee548db18f117365ed6d27777b4ea29435786cd52c"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0149-portland-natural-gas-transmission-system/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "cec9c8d980e9433b4a606229d06b1e1403c937a8f880f966f5a98f0577bf4936"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0149-portland-natural-gas-transmission-system/attempt-1/authorization-observed-v2-task-snapshot.json",
+        "sha256": "ec27cbd884a9c80361fe90dde1bc03c47b2e74a43f8b00efba44cabc1003fb59"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0149-portland-natural-gas-transmission-system/attempt-1/research-decision.json",
+        "sha256": "039499f5797075abbefa30764878cc79a5998d102481761f1c7a3771953e218a"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0149-portland-natural-gas-transmission-system/attempt-1/source-verification.json",
+        "sha256": "d2b8954410933fe8bb55cd0df02fe511055ae5f58aac9f86df58350c6e0d973a"
+      },
+      "supersededTaskIds": [
+        "ledger:0269:portland-natural-gas-transmission-system:32d29304"
+      ],
+      "taskStateSha256": "2b5771222c96ddb075247b1d866e9e6142df44be0d954c2913b90e2b193b442e",
+      "dependencySha256": "8baa2a4bb775645f2a3e3f718b94957612ea41ff83cef01d2cc8cc12e39e1f89",
+      "afterImageSha256": "7040a45dbc33320028d602bd3908b5cbcacc2048b16c8000a3c71c18a2a33e82",
+      "targetClaims": [
+        "canonical:portland-natural-gas-transmission-system|united-states-canada",
+        "company:cmrxpj90w00nbivhe1yvbf58m",
+        "relation:cmrxpjub601krivheoda5cutx",
+        "relation:cmrxpjubo01ksivhed9ljaa2e",
+        "relation:cmrxpkwpj031divhekm0fiu00",
+        "relation:cmrxpkwq6031eivhe2ih5skb0",
+        "relation:cmrxpkwqo031fivhe4roghjro",
+        "relation:cmrxpkwr7031givhevlsicw37",
+        "relation:cmrxpkwru031hivheciox71za",
+        "relation:cmrxppklj08d9ivhej78xzp85",
+        "relation:cmrxppkm408daivhef0s2vwtn",
+        "relation:cmrxppkn608dcivheu97jmln8",
+        "relation:cmrxppkoa08deivhenwt9dd2j",
+        "relation:cmrxppkpf08dgivhes9dnmgdr",
+        "seed:portland natural gas transmission system|united states / canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.federalregister.gov/documents/2026/07/29/2026-15292/portland-natural-gas-transmission-system-notice-of-request-under-blanket-authorization-and",
+          "label": "Federal Register — PNGTS blanket authorization notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.fitchratings.com/research/corporate-finance/fitch-affirms-portland-natural-gas-transmission-system-at-a-outlook-stable-09-08-2024",
+          "label": "Fitchratings — Portland Natural Gas Transmission System",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-ie/intermediary-investor/companies/portland-natural-gas-transmission-system.html",
+          "label": "Investment date source — MSIP — Portland Natural Gas Transmission System",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/portland-natural-gas-transmission-system.html",
+          "label": "Morgan Stanley Infrastructure Partners — PNGTS",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pngts.com/",
+          "label": "Pngts — Portland Natural Gas Transmission System",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pngts.com/press-insights/blog-post-title-one-xawhb",
+          "label": "PNGTS — Standalone company transition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.pngts.com/who-we-are",
+          "label": "PNGTS — Who we are",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff",
+          "label": "New Hampshire PUC — PNGTS transfer order",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.tcenergy.com/announcements/2024/2024-03-04-tc-energy-announces-sale-of-portland-natural-gas-transmission-system/",
+          "label": "TC Energy — PNGTS sale announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+          "label": "Close date source — BlackRock — Portland Natural Gas Transmission System",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0150:revolution-wind-and-south-fork-wind:141c088f",
+      "taskIndex": 150,
+      "companyName": "Revolution Wind & South Fork Wind",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0150-revolution-wind-and-south-fork-wind-v3/proposal.json",
+        "sha256": "431e52ca65cbd7ecb93e0cada8029a773a6a9c83cbc18463fa97be05b6208f42"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0150-revolution-wind-and-south-fork-wind-v3.json",
+        "sha256": "f7337e75a01ed0243017ecf11464823efae6bd583cfd6656b55507b25f9e85c8"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0150-revolution-wind-and-south-fork-wind/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "2cd28155c38ce31d29815aae4975f71d9d3e41074728c49a358380ff4533aab8"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0150-revolution-wind-and-south-fork-wind/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "675d5e660235efcc295394b92622854f3e0fa517250dcb602735faf364ef2f75"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0150-revolution-wind-and-south-fork-wind/attempt-1/authorization-observed-v2-task-snapshot.json",
+        "sha256": "82e2b837ef61253746aae7e280fd1cc8c9e43bf6830db7d52a8d1faca8484fe3"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0150-revolution-wind-and-south-fork-wind/attempt-1/research-decision.json",
+        "sha256": "7cba2344c44cf0a4df888eae9b2bd36f430307bbdc396d1ec76502d4983c9509"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0150-revolution-wind-and-south-fork-wind/attempt-1/source-verification.json",
+        "sha256": "a372f19d7fdfeeaef73cf9e39877da3c7302de4da7cad67313f539fa0a2a2993"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "ead362e3f38472c040a237b9cbacd6a8fba5ec823eb4e213a1612f409f883bea",
+      "dependencySha256": "85c5958a26956069ecaebe64d8f0bdb546f4a636d79e9fb5114fd1db5de7a98e",
+      "afterImageSha256": "ae8b8ff30666a98ea06f99029d71789c7a8e67fa23c81f0469085bb329dc1d2e",
+      "targetClaims": [
+        "canonical:revolution-wind-and-south-fork-wind|united-states",
+        "company:cmrxpjgkv00yuivhek3goid87",
+        "relation:cmrxpk2dc01xeivheu69xialw",
+        "relation:cmrxpltwo045bivheu6vm8vte",
+        "relation:cmrxpltx8045civhe66ldk74c",
+        "relation:cmrxpltxs045divheof61h06b",
+        "relation:cmrxpltyc045eivhemwqgv18d",
+        "relation:cmrxpr9tb0atpivhel3d8y48d",
+        "relation:cmrxpr9u80atrivheqyoe3tps",
+        "relation:cmrxpr9vg0attivhe5xz08dg2",
+        "seed:revolution wind & south fork wind|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ctmirror.org/2026/08/13/revolution-wind-completed-2026-orsted/",
+          "label": "CT Mirror — Revolution Wind 2026 update",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC09E878F-0000-CA75-B0A2-F8C5D3DB3507%7D",
+          "label": "New York PSC — South Fork ownership ruling",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://revolution-wind.com/about-revolution-wind",
+          "label": "Revolution Wind — Revolution Wind & South Fork Wind",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://us.orsted.com/news-archive/2024/03/south-fork-wind-powers-up-new-era-for-american-clean-energy",
+          "label": "Ørsted — South Fork commercial operation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+          "label": "BlackRock — GIP acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.boem.gov/renewable-energy/lease-and-grant-information",
+          "label": "BOEM — Renewable-energy leases",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20240930672791/en/Eversource-Energy-Completes-Exit-of-Offshore-Wind-Business",
+          "label": "Close date source — Global Infrastructure Partners — Revolution Wind & South Fork Wind",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/72741/000110465924104387/tm2425236d1_ex99-1.htm",
+          "label": "Eversource — Offshore-wind divestiture close",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.skybornrenewables.com/articles/newsroom/skyborn_enters_us_joint_venture",
+          "label": "Close date source — Global Infrastructure Partners / Skyborn — Revolution Wind & South Fork Wind",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0151:rio-grande-lng:e7985cce",
+      "taskIndex": 151,
+      "companyName": "Rio Grande LNG",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0151-rio-grande-lng-v3/proposal.json",
+        "sha256": "e882f7bce6a6ab08a71eb270bacd169040e9fcb925fc55a5423cf48beb4d4ab3"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0151-rio-grande-lng-v3.json",
+        "sha256": "9c84586fc442430d977c23f851a4faafcef46be9f3b41f6edeeb3c9c7aafe644"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "1436894b0ee2c6c670665780fbf31f1707fa649ceb0f8588780690ba4359e7bf"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "2318612027906afc256f2df9d1887fb350fe9abca2c07b3ae31c03637e2bb141"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/authorization-observed-v2-task-snapshot.json",
+        "sha256": "b91c879ada6931e53b5dfbcfd468ea1ce74fa0780e2d7648e1993fe7fa8ed160"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/research-decision.json",
+        "sha256": "872561003296aa3c9a858a08a13b3f3586b9dacb794b8bc662a293f5447c5154"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/source-verification.json",
+        "sha256": "7688d644cb76de5e39925c97ff723a1cfe11181d814b13f26a89397a442db260"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "5a7705769108477367c8dc6e56c106e3c9368ce381b7a5e710d530c12a30127f",
+      "dependencySha256": "c099f16a2f39d93930534ab9c30795fde5ecc8c2e9d7d2d03d3314058746f450",
+      "afterImageSha256": "3c5ae10865937e7cbd4bdf1979a9fa89ea1dbf7f70fb5d7aa7a18b11136174b3",
+      "targetClaims": [
+        "canonical:rio-grande-lng|united-states",
+        "company:cmrxpjgli00yvivheorrptcgd",
+        "relation:cmrxpk2dz01xfivhe6czef2co",
+        "relation:cmrxpk2ef01xgivhe1pzzw4h7",
+        "relation:cmrxpk2f101xhivhej18k131a",
+        "relation:cmrxpltzc045fivhegl6cdurd",
+        "relation:cmrxpltzw045givhebwxjaek4",
+        "relation:cmrxplu0g045hivhe73vd8jh2",
+        "relation:cmrxplu10045iivhejsujusd3",
+        "relation:cmrxplu1k045jivhevxfdl0bu",
+        "relation:cmrxplu24045kivheu9dumav9",
+        "relation:cmrxpr9wi0atvivheh4w5a68k",
+        "relation:cmrxpr9wz0atwivhedmrpasvw",
+        "relation:cmrxpra0w0atyivhel2zyhz1e",
+        "relation:cmrxpra200au0ivhe2m4mxdt3",
+        "relation:cmrxpra310au2ivhe33aslq35",
+        "relation:cmrxpra430au4ivhecf1a6nc3",
+        "seed:rio grande lng|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://corporate.totalenergies.us/news/totalenergies-and-its-partners-make-final-investment-decision-rglng-project-texas",
+          "label": "Close date source — Mubadala — Rio Grande LNG",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://corporate.totalenergies.us/news/totalenergies-reaches-final-investment-decision-its-partners-rio-grande-lng-train-4-10-direct",
+          "label": "TotalEnergies — Rio Grande LNG Train 4 FID",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+          "label": "Close date source — Global Infrastructure Partners — Rio Grande LNG",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-provides-second-quarter-2026-business-update",
+          "label": "NextDecade — Second-quarter 2026 business update",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.energy.gov/sites/default/files/2025-11/RGLNG%205%20CIC.pdf",
+          "label": "U.S. Department of Energy — Rio Grande LNG Train 5 filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf",
+          "label": "U.S. Department of Energy — Rio Grande LNG change-in-control response",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.federalregister.gov/documents/2023/09/05/2023-19051/change-in-control-rio-grande-lng-llc",
+          "label": "Federal Register — Rio Grande LNG change in control",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.next-decade.com/our-business/rio-grande-lng/",
+          "label": "Next Decade — Rio Grande LNG",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.riograndelng.com/",
+          "label": "Riograndelng — Rio Grande LNG, LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://xrg.com/en/news/XRG-Strengthens-US-LNG-Position-with-Second-Rio-Grande-LNG-Transaction-Completion",
+          "label": "XRG — Second Rio Grande LNG transaction completion",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "d56e3403ab085547b0b68a2bd1fcef3101828a46821e0143a038fecdc6def981",
+    "sharedSourceUrls": [
+      "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners"
+    ],
+    "conflicts": []
+  },
+  "batchSha256": "5e52499d1a5ceef9a15a29f4ca0bf229f085f321f0c68903c6298970b90f4940"
+}

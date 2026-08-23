@@ -245,6 +245,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "Energy Transfer LP": "CORPORATE",
   "Eolian employees": "OTHER",
   "ePointZero": "CORPORATE",
+  "Eversource Energy": "CORPORATE",
   "Excelsior Energy Capital": "FUND_MANAGER",
   "Extendicare Inc.": "CORPORATE",
   "Ferrovial N.V.": "CORPORATE",
@@ -255,10 +256,14 @@ const approvedOwnershipOrganizationProvisioning = {
   "MAP Energy, LLC": "FUND_MANAGER",
   "MGX": "FUND_MANAGER",
   "Ocean Winds": "CORPORATE",
+  "NextDecade Corporation": "CORPORATE",
   "OPTrust": "PENSION",
   "PUC Inc.": "CORPORATE",
   "Revera Inc.": "CORPORATE",
+  "TC Energy Corporation": "CORPORATE",
   "TotalEnergies": "CORPORATE",
+  "XRG P.J.S.C.": "CORPORATE",
+  "Énergir L.P.": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(

@@ -60,6 +60,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Energy Transfer LP")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Eolian employees")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("ePointZero")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Eversource Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Excelsior Energy Capital")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Extendicare Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Ferrovial N.V.")).toEqual(["CORPORATE"]);
@@ -70,10 +71,14 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("MAP Energy, LLC")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("MGX")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Ocean Winds")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("NextDecade Corporation")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("OPTrust")).toEqual(["PENSION"]);
     expect(ownershipOrganizationTypes("PUC Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Revera Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("TC Energy Corporation")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("TotalEnergies")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("XRG P.J.S.C.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Énergir L.P.")).toEqual(["CORPORATE"]);
   });
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
@@ -89,6 +94,7 @@ describe("approved ownership organization provisioning", () => {
       ["Energy Transfer LP", "CORPORATE"],
       ["Eolian employees", "OTHER"],
       ["ePointZero", "CORPORATE"],
+      ["Eversource Energy", "CORPORATE"],
       ["Excelsior Energy Capital", "FUND_MANAGER"],
       ["Extendicare Inc.", "CORPORATE"],
       ["Ferrovial N.V.", "CORPORATE"],
@@ -99,10 +105,14 @@ describe("approved ownership organization provisioning", () => {
       ["MAP Energy, LLC", "FUND_MANAGER"],
       ["MGX", "FUND_MANAGER"],
       ["Ocean Winds", "CORPORATE"],
+      ["NextDecade Corporation", "CORPORATE"],
       ["OPTrust", "PENSION"],
       ["PUC Inc.", "CORPORATE"],
       ["Revera Inc.", "CORPORATE"],
+      ["TC Energy Corporation", "CORPORATE"],
       ["TotalEnergies", "CORPORATE"],
+      ["XRG P.J.S.C.", "CORPORATE"],
+      ["Énergir L.P.", "CORPORATE"],
     ] as const) {
       const create = vi.fn().mockResolvedValue({
         id: `org-${name}`,
