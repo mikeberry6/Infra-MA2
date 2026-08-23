@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0154:the-aes-corporation:c65cb3c1",
+  "taskIndex": 154,
+  "companyName": "The AES Corporation",
+  "generatedAt": "2026-08-23T13:33:16.552Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0154-the-aes-corporation/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 154,
+    "taskId": "ledger:0154:the-aes-corporation:c65cb3c1",
+    "canonicalKey": "the-aes-corporation|united-states",
+    "companyName": "The AES Corporation",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "EQT Infrastructure",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY",
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "048-global-infrastructure-partners:holding:003:the-aes-corporation"
+    ],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:010:the-aes-corporation",
+      "043-eqt-infrastructure:repo-only:001:the-aes-corporation"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjgmk00yxivhegkkxve01"
+    ],
+    "seedKeys": [
+      "the aes corporation|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.aes.com/",
+      "https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes",
+      "https://www.prnewswire.com/news-releases/consortium-led-by-global-infrastructure-partners-and-eqt-agrees-to-acquire-aes-302700916.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock MATCHED_ELSEWHERE: Consortium led by GIP; attributed to GIP task rather than direct BlackRock strategy. EQT Infrastructure OUT_OF_SCOPE: Classified as public-market exposure and excluded per scope despite announced transaction",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change.",
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjgmk00yxivhegkkxve01",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "the-aes-corporation|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjgmk00yxivhegkkxve01",
+    "name": "The AES Corporation",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Electric utilities and global power generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "The AES Corporation is a publicly traded power company with utility, generation, and renewable-energy businesses in the United States and international markets. Its customer base includes regulated utility customers, commercial and industrial buyers, and wholesale power-market counterparties. The company operates an asset-heavy model spanning utilities, thermal generation, renewable development, storage, and related energy infrastructure. Public disclosures reviewed here show that AES remained a public company at the time of the latest announced transaction and that its equity was broadly held rather than owned by a single infrastructure sponsor. In March 2026, a consortium led by Global Infrastructure Partners and EQT announced an agreement to acquire AES, with CalPERS and the Qatar Investment Authority also participating in the consortium. AES stated that the transaction is expected to close in late 2026 or early 2027, subject to shareholder approval and regulatory clearances.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1981,
+    "headquarters": "Indiana, Ohio, and broader U.S. and international markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2g601xjivhe6vydxayj",
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "EQT Infrastructure VI",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2gn01xkivhelfk4tc6z",
+        "managerName": "EQT Infrastructure",
+        "organizationName": "EQT Infrastructure",
+        "fundName": "EQT Infrastructure Fund VI",
+        "vehicleName": "EQT Infrastructure Fund VI",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplu7v045oivhegzcxth4c",
+        "date": "1981",
+        "event": "Public company materials identify AES as founded in 1981.",
+        "category": "FOUNDING",
+        "sortDate": "1981-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu8h045pivhe0nu0vkga",
+        "date": "Mar 2, 2026",
+        "event": "Global Infrastructure Partners (GIP) and EQT announced a definitive agreement for their consortium to acquire AES.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-02T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu90045qivheh8indgc7",
+        "date": "Mar 2, 2026",
+        "event": "AES stated that transaction closing is expected in late 2026 or early 2027, subject to approvals.",
+        "category": "OTHER",
+        "sortDate": "2026-03-02T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpra9b0aueivhecsakoixb",
+        "label": "Aes — The AES Corporation",
+        "url": "https://www.aes.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Aes company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpraac0augivhezjoy19gv",
+        "label": "Announcement date source — Global Infrastructure Partners — The AES Corporation",
+        "url": "https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprabk0auhivhe41s48qkd",
+        "label": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/consortium-led-by-global-infrastructure-partners-and-eqt-agrees-to-acquire-aes-302700916.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT Infrastructure transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "The AES Corporation",
+    "investmentFirm": "Global Infrastructure Partners",
+    "sector": "Utilities",
+    "subsector": "Electric utilities and global power generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "EQT Infrastructure VI",
+    "description": "The AES Corporation is a publicly traded power company with utility, generation, and renewable-energy businesses in the United States and international markets. Its customer base includes regulated utility customers, commercial and industrial buyers, and wholesale power-market counterparties. The company operates an asset-heavy model spanning utilities, thermal generation, renewable development, storage, and related energy infrastructure. Public disclosures reviewed here show that AES remained a public company at the time of the latest announced transaction and that its equity was broadly held rather than owned by a single infrastructure sponsor. In March 2026, a consortium led by Global Infrastructure Partners and EQT announced an agreement to acquire AES, with CalPERS and the Qatar Investment Authority also participating in the consortium. AES stated that the transaction is expected to close in late 2026 or early 2027, subject to shareholder approval and regulatory clearances.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1981,
+    "investmentYear": 2026,
+    "headquarters": "Indiana, Ohio, and broader U.S. and international markets",
+    "milestones": [
+      {
+        "date": "1981",
+        "event": "Public company materials identify AES as founded in 1981.",
+        "category": "Founding"
+      },
+      {
+        "date": "Mar 2, 2026",
+        "event": "Global Infrastructure Partners (GIP) and EQT announced a definitive agreement for their consortium to acquire AES.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 2, 2026",
+        "event": "AES stated that transaction closing is expected in late 2026 or early 2027, subject to approvals.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Aes — The AES Corporation",
+        "url": "https://www.aes.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Global Infrastructure Partners — The AES Corporation",
+        "url": "https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Announcement date source — EQT Infrastructure — The AES Corporation",
+        "url": "https://www.prnewswire.com/news-releases/consortium-led-by-global-infrastructure-partners-and-eqt-agrees-to-acquire-aes-302700916.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Global Infrastructure Partners",
+        "ownershipVehicle": "EQT Infrastructure VI",
+        "investmentYear": 2026,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "EQT Infrastructure",
+        "ownershipVehicle": "EQT Infrastructure Fund VI",
+        "investmentYear": 2026,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2an00d9ivhelympksid",
+        "fundName": "EQT Infrastructure Fund VI",
+        "managerId": "cmrxpi7yv001rivhe44fyzxcs",
+        "updatedAt": "2026-07-23T16:09:56.831Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi7yv001rivhe44fyzxcs",
+        "name": "EQT Infrastructure",
+        "updatedAt": "2026-07-23T16:09:17.527Z"
+      },
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0154:the-aes-corporation:c65cb3c1",
+    "taskIndex": 154,
+    "canonicalKey": "the-aes-corporation|united-states",
+    "capturedAt": "2026-08-23T13:33:16.552Z",
+    "databaseRevision": "revision:3ea209babb57723635dc327ed38f750c41238e88ec1b6527fc1ebfde453ec118",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d23aaf6100854cc4f0efbfbe59a19b7a8bece957dd15dbd08bf6eb59a20ebfbe",
+    "productionSnapshotSha256": "26289824aa6dad72f6353deac45bc33caccc86ec17fa2df15e239b797040e281",
+    "targetCompanySnapshotSha256": "7ccfb8804ae57442095650df2bb04f6ca5381e7261f5c517fcab6fe0fe265e65",
+    "seedEntrySha256": "87af25c8217373a9b3cd3bd2d71618a1b92c26d501b0db49b5e44eed3b4ac718",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "527d0a7dd91d0c2f92d30ea7910605f83f5b1d827dbe6801c22f0c4675733323",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e90356b92ba4b1ec8450342e7e54e84026f4b899e8250b6432c93ca3e8b41e97",
+      "organizationsSha256": "4ff70b8a81f475c30f36e4e95e40c0de0169b631ac119c2eaad601707144e097",
+      "citationsSha256": "3ea0d8d0eaad38be5390fee64f3eda91a4224d9109e00774b610ed1cd2a8c85f",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "868efa31007cef9daeefd5f8d971ba48e60402a3a79db0d01dc7eed77b0f3d99",
+    "stateSha256": "cde470819076674cfc0bdff75f60d31567c512259d44090819fae93121724b38",
+    "taskSnapshotSha256": "0aafd083ad230fb74b6bcc120faa5a399b945d170362725e2ea01d68748b7ee3"
+  },
+  "contextSha256": "376757e6d6f77ee67f25e09ffbd86c581a15ccfa2bb1b6c0af283beecff5b1ba"
+}

@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0153:stratos:4f72c101",
+  "taskIndex": 153,
+  "companyName": "STRATOS",
+  "generatedAt": "2026-08-23T13:33:14.752Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0153-stratos/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 153,
+    "taskId": "ledger:0153:stratos:4f72c101",
+    "canonicalKey": "stratos|united-states",
+    "companyName": "STRATOS",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "023-blackrock:holding:008:stratos"
+    ],
+    "sourceRepoOnlyIds": [
+      "048-global-infrastructure-partners:repo-only:016:stratos"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj91y00ndivhejiuocayx"
+    ],
+    "seedKeys": [
+      "stratos|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.1pointfive.com/news/1pointfive-holds-groundbreaking",
+      "https://www.1pointfive.com/news/occidental-and-blackrock-form-joint-venture-to-develop-stratos"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj91y00ndivhejiuocayx",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "stratos|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj91y00ndivhejiuocayx",
+    "name": "STRATOS",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Direct air capture / carbon removal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "STRATOS is a direct-air-capture project being developed in Ector County, Texas. The facility is intended to remove carbon dioxide directly from the atmosphere and serve carbon-management and sequestration markets rather than conventional power demand. Its operating model is asset-heavy and project-based because value depends on a large-scale carbon-removal facility, associated sequestration infrastructure, and contracted carbon-management demand. 1PointFive's public materials state that the project is designed to capture up to 500,000 tonnes of carbon dioxide per year. Operations are concentrated in Texas as a single flagship carbon-removal facility. Occidental and BlackRock announced a joint venture for the project in 2023, but public sources do not disclose the final ownership percentages between 1PointFive and BlackRock clients.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2023,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjucr01kuivhepouw6j00",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Diversified Infrastructure",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwvg031mivhe00jge9w2",
+        "date": "Nov 7, 2023",
+        "event": "Occidental and BlackRock signed a definitive agreement to form a joint venture to own and develop STRATOS.",
+        "category": "FINANCING",
+        "sortDate": "2023-11-07T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwvx031nivhed6yplrws",
+        "date": "Sep 22, 2023",
+        "event": "1PointFive held the groundbreaking ceremony for the facility.",
+        "category": "EXPANSION",
+        "sortDate": "2023-09-22T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwwf031oivhei8618tls",
+        "date": "Apr 3, 2025",
+        "event": "Occidental and 1PointFive announced receipt of Class VI permits for STRATOS.",
+        "category": "OTHER",
+        "sortDate": "2025-04-03T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppkwx08dqivhe1657p8nd",
+        "label": "1Pointfive — STRATOS",
+        "url": "https://www.1pointfive.com/projects/ector-county-tx",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "1Pointfive operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppky408dsivhek6qwkt9k",
+        "label": "Announcement date source — BlackRock — STRATOS",
+        "url": "https://www.1pointfive.com/news/occidental-and-blackrock-form-joint-venture-to-develop-stratos",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkz808duivhezidmqr32",
+        "label": "1Pointfive — STRATOS",
+        "url": "https://www.1pointfive.com/news/1pointfive-holds-groundbreaking",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "1Pointfive — STRATOS",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppl0b08dwivhe147qjwav",
+        "label": "1Pointfive — STRATOS",
+        "url": "https://www.1pointfive.com/news/occidental-and-1pointfive-secure-class-vi-permits-for-stratos-direct-air-capture-facility",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "1Pointfive — STRATOS",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "STRATOS",
+    "investmentFirm": "BlackRock",
+    "sector": "Power & ET",
+    "subsector": "Direct air capture / carbon removal",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Diversified Infrastructure",
+    "description": "STRATOS is a direct-air-capture project being developed in Ector County, Texas. The facility is intended to remove carbon dioxide directly from the atmosphere and serve carbon-management and sequestration markets rather than conventional power demand. Its operating model is asset-heavy and project-based because value depends on a large-scale carbon-removal facility, associated sequestration infrastructure, and contracted carbon-management demand. 1PointFive's public materials state that the project is designed to capture up to 500,000 tonnes of carbon dioxide per year. Operations are concentrated in Texas as a single flagship carbon-removal facility. Occidental and BlackRock announced a joint venture for the project in 2023, but public sources do not disclose the final ownership percentages between 1PointFive and BlackRock clients.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2023,
+    "investmentYear": 2023,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "Nov 7, 2023",
+        "event": "Occidental and BlackRock signed a definitive agreement to form a joint venture to own and develop STRATOS.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 22, 2023",
+        "event": "1PointFive held the groundbreaking ceremony for the facility.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Apr 3, 2025",
+        "event": "Occidental and 1PointFive announced receipt of Class VI permits for STRATOS.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "1Pointfive — STRATOS",
+        "url": "https://www.1pointfive.com/projects/ector-county-tx",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — BlackRock — STRATOS",
+        "url": "https://www.1pointfive.com/news/occidental-and-blackrock-form-joint-venture-to-develop-stratos",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "1Pointfive — STRATOS",
+        "url": "https://www.1pointfive.com/news/1pointfive-holds-groundbreaking",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "1Pointfive — STRATOS",
+        "url": "https://www.1pointfive.com/news/occidental-and-1pointfive-secure-class-vi-permits-for-stratos-direct-air-capture-facility",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "Diversified Infrastructure",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0153:stratos:4f72c101",
+    "taskIndex": 153,
+    "canonicalKey": "stratos|united-states",
+    "capturedAt": "2026-08-23T13:33:14.752Z",
+    "databaseRevision": "revision:18e32e257ceee7a5148eeeca04f1084e26fbe0d0784fb2676b31b60d110a3857",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "f50483a19ac5d074538780a9e36b4abb484017f9c722581c272b700906a31970",
+    "productionSnapshotSha256": "f06ca122968200a8455fa1abdf61f5e64deee11e3e7ac047bad45f9367c59a49",
+    "targetCompanySnapshotSha256": "64c8395e2e446be5f54d15e07275de115904bb6228f2e3e8ea08b09e13e0c9db",
+    "seedEntrySha256": "130542f63d65d7f642fe0bd82f4668982828e9f3a96ec4db2cc1ddcdbd6d5502",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "dbd11c141de5afbc3443bb247246a452757eab21dd7749b95e11b0d5c3df010c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "1a5e6baaf52a4bca2c25d60b2c39abbdb3c124afe921e4818fc15ac18f03b13a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1f12e748af31e87c072ca5e3f1034f2b8f2d21c1865777ace0a5c1dbf921c0e0",
+    "stateSha256": "8836cf7500c6d19d158740eff96374f96a073fb4630c7b54ee5ecc46a64d5a62",
+    "taskSnapshotSha256": "c2082c25100560c9b37ee5f442da2d8331bc0e3664bb27bea3bfbaf946badce1"
+  },
+  "contextSha256": "6d20e31cc7a52cbe2faf40fafed2dd651083b2f9c022393fdafcce2b7d35d569"
+}

@@ -18,6 +18,7 @@ export type ApplyMutationKind =
   | "CORRECT_COMPANY"
   | "ADD_OWNER"
   | "RETIRE_OWNERSHIP"
+  | "RETRACT_ERRONEOUS_OWNERSHIP"
   | "ADD_PENDING_TRANSACTION"
   | "RESOLVE_PENDING_TRANSACTION"
   | "MERGE_COMPANIES"
@@ -389,7 +390,7 @@ function assertHistoryPreserved(
   const afterMilestones = new Set(after.milestones.flatMap((row) => row.id ? [row.id] : []));
   for (const source of sourceImages) {
     for (const id of byRequiredId(source.ownershipPeriods, "ownership period").keys()) {
-      if (!afterOwnership.has(id)) {
+      if (!afterOwnership.has(id) && !proposal.actions.includes("RETRACT_ERRONEOUS_OWNERSHIP")) {
         throw new Error(`Ownership history ${id} is missing from the approved after-image`);
       }
     }
@@ -535,7 +536,17 @@ function deriveMutations(
   const retiredOwners = ownership.changed.filter((row) => row.transactionState === "REALIZED");
   const otherOwnershipChanges = ownership.changed.filter((row) => row.transactionState !== "REALIZED");
   if (ownership.removed.length > 0) {
-    throw new Error("Ownership periods may be retired, but never deleted from an approved after-image");
+    if (!proposal.actions.includes("RETRACT_ERRONEOUS_OWNERSHIP")) {
+      throw new Error(
+        "Ownership periods may be retired, but a proven erroneous period requires RETRACT_ERRONEOUS_OWNERSHIP",
+      );
+    }
+    changedFields.push("ownershipPeriods");
+    mutations.push({
+      kind: "RETRACT_ERRONEOUS_OWNERSHIP",
+      relationIds: ownership.removed.flatMap((row) => row.id ? [row.id] : []),
+      detail: `Retract ${ownership.removed.length} proven erroneous ownership period(s); revision history preserves the prior claim.`,
+    });
   }
   if (addedOwners.length > 0) {
     changedFields.push("ownershipPeriods");
@@ -645,6 +656,7 @@ const actionForMutation: Record<ApplyMutationKind, ReconciliationProposal["actio
   CORRECT_COMPANY: "CORRECT_COMPANY",
   ADD_OWNER: "ADD_OWNER",
   RETIRE_OWNERSHIP: "RETIRE_OWNERSHIP",
+  RETRACT_ERRONEOUS_OWNERSHIP: "RETRACT_ERRONEOUS_OWNERSHIP",
   ADD_PENDING_TRANSACTION: "ADD_PENDING_TRANSACTION",
   RESOLVE_PENDING_TRANSACTION: "RESOLVE_PENDING_TRANSACTION",
   MERGE_COMPANIES: "MERGE_COMPANIES",

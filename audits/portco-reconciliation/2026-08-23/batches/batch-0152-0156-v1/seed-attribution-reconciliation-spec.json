@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0152-0156-v1",
+  "batchSha256": "7de097a43b4e7d5cafbf7bdf16fa057a749227ab0568c09279449847dc8f42e3",
+  "reconciledAt": "2026-08-23T13:45:00.000Z",
+  "sourceManifestSha256": "487e7dc11be3f4506e7c9c78f95acfada995b13171e3e49119a7d87cb01c0325",
+  "rationale": "Align the seed ownership-attribution manifest with the approved Saavi, STRATOS, AES, Vanguard Renewables and Vopak after-images while replacing stale manager aliases, false signed-buyer ownership, and incomplete co-owner identities without changing unrelated reviewed records.",
+  "removeRecordIds": [
+    "OFA-92D494B5B80D",
+    "OFA-998A16F0D618",
+    "OFA-43B8F57C49ED",
+    "OFA-A52D3E2FE7D2",
+    "OFA-2734D5A2B129",
+    "OFA-A11D7EA497A7",
+    "OFA-DEF6B2F3841F"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-E9D2CF0C86EB",
+      "companyName": "Saavi Energía",
+      "country": "Mexico",
+      "investmentFirm": "GIP",
+      "currentVehicleName": "GIP Emerging Markets Fund I",
+      "investmentYear": 2021,
+      "stake": "100%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "GIP Emerging Markets Fund I",
+      "attributionConfidence": null,
+      "attributionRationale": "Official GIP acquisition and portfolio materials identify Saavi as an investment of GIP Emerging Markets Fund I; that disclosed fund is not yet a curated fund-list record, so no database fund link is inferred.",
+      "evidenceUrls": [
+        "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/",
+        "https://www.global-infra.com/portfolio-page/saavi-energia/",
+        "https://www.prnewswire.com/news-releases/saavi-energia-announces-the-agreement-signed-by-global-infrastructure-partners-gip-to-combine-power-generation-assets-with-those-of-grupo-mexico-sab-de-cv-302754442.html"
+      ]
+    },
+    {
+      "recordId": "OFA-53661DF144C0",
+      "companyName": "STRATOS",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "Legacy BlackRock Diversified Infrastructure-managed fund",
+      "investmentYear": 2023,
+      "stake": "Noncontrolling interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Diversified Infrastructure",
+      "attributionConfidence": null,
+      "attributionRationale": "Official SEC and transaction materials identify a legacy BlackRock Diversified Infrastructure-managed fund as the noncontrolling investor; the disclosed vehicle is retained without inferring a GIP fund link.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/797468/000079746824000095/oxy-20240331.htm",
+        "https://www.1pointfive.com/news/occidental-and-blackrock-form-joint-venture-to-develop-stratos",
+        "https://www.oxy.com/news/news-releases/occidental-and-blackrock-form-joint-venture-to-develop-stratos-the-worlds-largest-direct-air-capture-plant/",
+        "https://www.1pointfive.com/projects/ector-county-tx",
+        "https://www.1pointfive.com/news/1pointfive-holds-groundbreaking"
+      ]
+    },
+    {
+      "recordId": "OFA-F09499555D3F",
+      "companyName": "STRATOS",
+      "country": "United States",
+      "investmentFirm": "Occidental Petroleum Corporation",
+      "currentVehicleName": "1PointFive",
+      "investmentYear": 2023,
+      "stake": "Consolidating controlling interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Official SEC and transaction materials identify Occidental's 1PointFive platform as the consolidating co-owner; no separate infrastructure fund vehicle is publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/797468/000079746824000095/oxy-20240331.htm",
+        "https://www.1pointfive.com/news/occidental-and-blackrock-form-joint-venture-to-develop-stratos",
+        "https://www.oxy.com/news/news-releases/occidental-and-blackrock-form-joint-venture-to-develop-stratos-the-worlds-largest-direct-air-capture-plant/",
+        "https://www.1pointfive.com/projects/ector-county-tx",
+        "https://www.1pointfive.com/news/1pointfive-holds-groundbreaking"
+      ]
+    },
+    {
+      "recordId": "OFA-0AEF7B332AB6",
+      "companyName": "The AES Corporation",
+      "country": "United States",
+      "investmentFirm": "Public Market",
+      "currentVehicleName": "Public Market",
+      "investmentYear": null,
+      "stake": "Publicly traded; dispersed public shareholders",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "AES remains publicly traded with dispersed public shareholders until the announced consortium acquisition legally closes; the signed buyers are represented only as pending incoming ownership.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm",
+        "https://www.sec.gov/Archives/edgar/data/874761/000114036126026562/ef20076870_8k.htm",
+        "https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes"
+      ]
+    },
+    {
+      "recordId": "OFA-A08891398105",
+      "companyName": "Vanguard Renewables",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "BlackRock Global Energy & Power Infrastructure Fund III",
+      "investmentYear": 2022,
+      "stake": "Majority interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+      "fundAttribution": "INFERRED",
+      "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+      "attributionConfidence": "LOW",
+      "attributionRationale": "Preserves the existing curated GEPIF III link because BlackRock Real Assets acquired the majority interest and the approved after-image names that vehicle; public acquisition disclosure does not independently identify the exact fund.",
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20220720005157/en/Vanguard-Renewables-Announces-Acquisition-by-BlackRock-Real-Assets",
+        "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close",
+        "https://www.vanguardrenewables.com/latest/vanguard-renewables-cma-cgm",
+        "https://www.vanguardrenewables.com/",
+        "https://www.vanguardrenewables.com/our-story"
+      ]
+    },
+    {
+      "recordId": "OFA-7EA870636697",
+      "companyName": "Vanguard Renewables",
+      "country": "United States",
+      "investmentFirm": "Ingka Investments",
+      "currentVehicleName": "Ingka circular-investments portfolio",
+      "investmentYear": 2025,
+      "stake": "Minority interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Ingka's official disclosure supports a direct minority investment through its circular-investments portfolio; no separate infrastructure fund vehicle is publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.ingka.com/newsroom/turning-meatball-scraps-into-renewable-gas-ikea-u-s-and-vanguard-renewables-tackle-food-waste/",
+        "https://www.businesswire.com/news/home/20220720005157/en/Vanguard-Renewables-Announces-Acquisition-by-BlackRock-Real-Assets",
+        "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close"
+      ]
+    },
+    {
+      "recordId": "OFA-329762E936A1",
+      "companyName": "Vopak Industrial Infrastructure Americas",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "BlackRock Global Energy & Power Infrastructure Fund III",
+      "investmentYear": 2020,
+      "stake": "50%",
+      "targetLinkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+      "attributionConfidence": null,
+      "attributionRationale": "Official Vopak transaction materials disclose BlackRock's Global Energy & Power Infrastructure Fund as the 50% investor; the approved after-image links it to the exact GEPIF III fund record.",
+      "evidenceUrls": [
+        "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-acquire-three-industrial-terminals-dow-us-gulf-coast?language_content_entity=en",
+        "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-successfully-completed-acquisition-three-industrial",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020M9999",
+        "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-2DF4FB4D3B1B",
+      "companyName": "Vopak Industrial Infrastructure Americas",
+      "country": "United States",
+      "investmentFirm": "Koninklijke Vopak N.V.",
+      "currentVehicleName": "Koninklijke Vopak N.V.",
+      "investmentYear": 2020,
+      "stake": "50%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Official Vopak transaction materials disclose Royal Vopak's retained 50% interest; it is corporate direct ownership with no infrastructure fund vehicle.",
+      "evidenceUrls": [
+        "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-acquire-three-industrial-terminals-dow-us-gulf-coast?language_content_entity=en",
+        "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-successfully-completed-acquisition-three-industrial",
+        "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf"
+      ]
+    }
+  ],
+  "specSha256": "e896cae274fcfabb8926ee2a748e6849dd60dcd955e069426e9cfdf18e115aed"
+}

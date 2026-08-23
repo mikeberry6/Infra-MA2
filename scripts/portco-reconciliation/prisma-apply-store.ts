@@ -264,6 +264,9 @@ const approvedOwnershipOrganizationProvisioning = {
   "TotalEnergies": "CORPORATE",
   "XRG P.J.S.C.": "CORPORATE",
   "Énergir L.P.": "CORPORATE",
+  "Ingka Investments": "CORPORATE",
+  "Koninklijke Vopak N.V.": "CORPORATE",
+  "Occidental Petroleum Corporation": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(
@@ -501,7 +504,23 @@ async function syncOwnerships(
   companyId: string,
   allowedCompanyIds: string[],
   image: CompanyImage,
+  retractedOwnershipIds: string[],
 ): Promise<void> {
+  if (retractedOwnershipIds.length > 0) {
+    const approvedIds = new Set(existingIds(image.ownershipPeriods));
+    if (new Set(retractedOwnershipIds).size !== retractedOwnershipIds.length) {
+      throw new Error("Retracted ownership ids must be unique");
+    }
+    if (retractedOwnershipIds.some((id) => approvedIds.has(id))) {
+      throw new Error("A retracted ownership period is still present in the approved after-image");
+    }
+    const deleted = await delegate(transaction, "ownershipPeriod").deleteMany({
+      where: { id: { in: retractedOwnershipIds }, companyId },
+    });
+    if (deleted.count !== retractedOwnershipIds.length) {
+      throw new Error("Retracted ownership period set changed inside the transaction");
+    }
+  }
   for (const owner of image.ownershipPeriods) {
     const links = await ownershipLinks(transaction, owner, "APPLY");
     const data = {
@@ -921,7 +940,15 @@ export function createPrismaApprovedApplyStore(options: {
       }
 
       await syncCitations(transaction, companyId, allowedCompanyIds, image);
-      await syncOwnerships(transaction, companyId, allowedCompanyIds, image);
+      await syncOwnerships(
+        transaction,
+        companyId,
+        allowedCompanyIds,
+        image,
+        plan.mutations
+          .filter((mutation) => mutation.kind === "RETRACT_ERRONEOUS_OWNERSHIP")
+          .flatMap((mutation) => mutation.relationIds),
+      );
       await syncPendingTransactions(transaction, companyId, allowedCompanyIds, image);
       await syncMilestones(transaction, companyId, allowedCompanyIds, image);
       await syncManagement(transaction, companyId, allowedCompanyIds, image);

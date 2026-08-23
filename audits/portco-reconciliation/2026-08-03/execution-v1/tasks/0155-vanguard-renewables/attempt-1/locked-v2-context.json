@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0155:vanguard-renewables:39c75d98",
+  "taskIndex": 155,
+  "companyName": "Vanguard Renewables",
+  "generatedAt": "2026-08-23T13:33:18.395Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 155,
+    "taskId": "ledger:0155:vanguard-renewables:39c75d98",
+    "canonicalKey": "vanguard-renewables|united-states",
+    "companyName": "Vanguard Renewables",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "023-blackrock:holding:004:vanguard-renewables"
+    ],
+    "sourceRepoOnlyIds": [
+      "048-global-infrastructure-partners:repo-only:017:vanguard-renewables"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjgn500yyivhe7tr8lc9h"
+    ],
+    "seedKeys": [
+      "vanguard renewables|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.businesswire.com/news/home/20220720005157/en/Vanguard-Renewables-Announces-Acquisition-by-BlackRock-Real-Assets"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjgn500yyivhe7tr8lc9h",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "vanguard-renewables|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjgn500yyivhe7tr8lc9h",
+    "name": "Vanguard Renewables",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Anaerobic digestion and renewable natural gas",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Vanguard Renewables develops and operates anaerobic digestion and renewable natural gas projects that process agricultural and food waste. Its customers and counterparties include farms, food and beverage companies, waste generators, and energy buyers that use low-carbon gas and organics-management solutions. The business uses an asset-heavy model built around owned digestion, gas upgrading, and related collection infrastructure, with revenues supported by long-term commercial relationships and environmental-credit markets. The company’s project footprint is multi-state, and its farm-based platform is concentrated in U.S. agricultural and food-processing regions. Vanguard states that it is a portfolio company of Global Infrastructure Partners, a part of BlackRock, following BlackRock Real Assets’ acquisition of the business in 2022. In 2024, Vanguard and TotalEnergies announced an equally owned joint venture for future U.S. farm-based renewable natural gas projects.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2014,
+    "headquarters": "Northeast United States and national project pipeline",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2h701xlivhe02mz7fdk",
+        "managerName": "BlackRock",
+        "organizationName": "GIP",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2hr01xmivhevyothznb",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplu9z045rivhekhohkctm",
+        "date": "2014",
+        "event": "Company materials identify Vanguard Renewables' founding year as 2014.",
+        "category": "FOUNDING",
+        "sortDate": "2014-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpluak045sivheqjjxw56f",
+        "date": "Jul 20, 2022",
+        "event": "BlackRock Real Assets acquired Vanguard Renewables from Vision Ridge Partners; the investment is now identified with Global Infrastructure Partners (GIP) as part of BlackRock.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-20T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplub4045tivhelsvt5agm",
+        "date": "Mar 12, 2024",
+        "event": "Vanguard and TotalEnergies announced an equally owned joint venture for future U.S. farm-based RNG projects.",
+        "category": "FINANCING",
+        "sortDate": "2024-03-12T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpraek0aujivheh3an63sq",
+        "label": "Vanguardrenewables — Vanguard Renewables",
+        "url": "https://www.vanguardrenewables.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Vanguardrenewables company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprag60aulivhels4euz7m",
+        "label": "Vanguardrenewables — Vanguard Renewables",
+        "url": "https://www.vanguardrenewables.com/our-story",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Vanguardrenewables — Vanguard Renewables",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprahb0aunivhexcqd3nqn",
+        "label": "Close date source — BlackRock — Vanguard Renewables",
+        "url": "https://www.businesswire.com/news/home/20220720005157/en/Vanguard-Renewables-Announces-Acquisition-by-BlackRock-Real-Assets",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprahu0auoivherrov0sq3",
+        "label": "Vanguardrenewables — Vanguard Renewables",
+        "url": "https://www.vanguardrenewables.com/our-story",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners / BlackRock initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpraip0auqivheb07fdzjh",
+        "label": "Vanguardrenewables — Vanguard Renewables",
+        "url": "https://www.vanguardrenewables.com/latest/joint-venture-announcement",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Vanguardrenewables — Vanguard Renewables",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprajr0ausivher62g709f",
+        "label": "Totalenergies — Vanguard Renewables",
+        "url": "https://totalenergies.com/news/press-releases/totalenergies-and-vanguard-renewables-portfolio-company-blackrocks-diversified",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Totalenergies operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Vanguard Renewables",
+    "investmentFirm": "Global Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Anaerobic digestion and renewable natural gas",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Vanguard Renewables develops and operates anaerobic digestion and renewable natural gas projects that process agricultural and food waste. Its customers and counterparties include farms, food and beverage companies, waste generators, and energy buyers that use low-carbon gas and organics-management solutions. The business uses an asset-heavy model built around owned digestion, gas upgrading, and related collection infrastructure, with revenues supported by long-term commercial relationships and environmental-credit markets. The company’s project footprint is multi-state, and its farm-based platform is concentrated in U.S. agricultural and food-processing regions. Vanguard states that it is a portfolio company of Global Infrastructure Partners, a part of BlackRock, following BlackRock Real Assets’ acquisition of the business in 2022. In 2024, Vanguard and TotalEnergies announced an equally owned joint venture for future U.S. farm-based renewable natural gas projects.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2014,
+    "investmentYear": 2022,
+    "headquarters": "Northeast United States and national project pipeline",
+    "milestones": [
+      {
+        "date": "2014",
+        "event": "Company materials identify Vanguard Renewables' founding year as 2014.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jul 20, 2022",
+        "event": "BlackRock Real Assets acquired Vanguard Renewables from Vision Ridge Partners; the investment is now identified with Global Infrastructure Partners (GIP) as part of BlackRock.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 12, 2024",
+        "event": "Vanguard and TotalEnergies announced an equally owned joint venture for future U.S. farm-based RNG projects.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Vanguardrenewables — Vanguard Renewables",
+        "url": "https://www.vanguardrenewables.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Vanguardrenewables — Vanguard Renewables",
+        "url": "https://www.vanguardrenewables.com/our-story",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Close date source — BlackRock — Vanguard Renewables",
+        "url": "https://www.businesswire.com/news/home/20220720005157/en/Vanguard-Renewables-Announces-Acquisition-by-BlackRock-Real-Assets",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Global Infrastructure Partners / BlackRock — Vanguard Renewables",
+        "url": "https://www.vanguardrenewables.com/our-story",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Vanguardrenewables — Vanguard Renewables",
+        "url": "https://www.vanguardrenewables.com/latest/joint-venture-announcement",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Totalenergies — Vanguard Renewables",
+        "url": "https://totalenergies.com/news/press-releases/totalenergies-and-vanguard-renewables-portfolio-company-blackrocks-diversified",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Global Infrastructure Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      },
+      {
+        "id": "cmrxpiezd003zivhejz4t2u7b",
+        "name": "Vision Ridge Partners",
+        "updatedAt": "2026-07-23T16:09:26.617Z"
+      },
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0155:vanguard-renewables:39c75d98",
+    "taskIndex": 155,
+    "canonicalKey": "vanguard-renewables|united-states",
+    "capturedAt": "2026-08-23T13:33:18.395Z",
+    "databaseRevision": "revision:2e82c464a2bced12c2d589fe54f61de2d999f9226d0471e574c33daa652608be",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "0b623de03aa14da90336937588ef3468271f7e9d74b0ef2606df9823b1d9f1cc",
+    "productionSnapshotSha256": "01cb4f8b44dc5c54a45feb95661c6a7d05fcf4d9d0cbee62847c544d67cd6ce4",
+    "targetCompanySnapshotSha256": "9ea169b47f92291fcc85ddb2a7cc878bea0224b704741aa834c37fc4830d2fc8",
+    "seedEntrySha256": "12dd2c937dc3bebb1186f1e65e7fa85cc14cb911a2c815e2fb0085280d8381b2",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8b12a36e27e5f1d949024c6cbe21ff34f97a9763a87c7c8136c1d223af8d98d8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "23734810695ca54e0caafc48106c6853013a7c46975b18e29b56a93fef2d884c",
+      "citationsSha256": "54403efe209769f446638e719676d0f2755b57cd121d5ceb797334449c70575f",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "5ecd73c2e0989c8dd35d4f3ba45e3716e4c11bd1173204c82971921aff553417",
+    "stateSha256": "e3ea991a4b75e9eeb985abce5b4dabbf532f5b87d9fd4b6da27071e01dcbbac7",
+    "taskSnapshotSha256": "f6690da171a70544da73aa9d40e09bb21b4c78d400df7209c3b856d0455e7ee5"
+  },
+  "contextSha256": "2066620517f8c67f1a844dccbc42ea52a6de81f30957f3cbe9e53cec93bd1b76"
+}
