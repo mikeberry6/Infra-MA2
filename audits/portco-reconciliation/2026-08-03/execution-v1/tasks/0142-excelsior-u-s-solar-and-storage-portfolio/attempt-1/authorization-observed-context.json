@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+  "taskIndex": 142,
+  "companyName": "Excelsior U.S. Solar & Storage Portfolio",
+  "generatedAt": "2026-08-23T10:02:30.826Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 142,
+    "taskId": "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+    "canonicalKey": "excelsior-u-s-solar-and-storage-portfolio|united-states",
+    "companyName": "Excelsior U.S. Solar & Storage Portfolio",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "023-blackrock:holding:010:excelsior-u-s-solar-and-storage-portfolio"
+    ],
+    "sourceRepoOnlyIds": [
+      "048-global-infrastructure-partners:repo-only:007:excelsior-u-s-solar-storage-portfolio"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj8x000n4ivhefbfwnig3"
+    ],
+    "seedKeys": [
+      "excelsior u.s. solar & storage portfolio|United States"
+    ],
+    "evidenceUrls": [
+      "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8x000n4ivhefbfwnig3",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "excelsior-u-s-solar-and-storage-portfolio|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8x000n4ivhefbfwnig3",
+    "name": "Excelsior U.S. Solar & Storage Portfolio",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar and solar-plus-storage portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "This portfolio comprises operating US solar and solar-plus-storage assets acquired from Excelsior Energy Capital. The assets sell power under contracted structures and therefore have an operating model tied to long-lived renewable generation infrastructure rather than a development-only pipeline. Its revenue profile is asset-heavy and contracted because cash flows depend on the operating performance of the underlying projects and customer agreements. Public transaction materials described a 38-project portfolio totaling 89 MW across multiple US states. The assets form part of BlackRock's Evergreen Infrastructure strategy focused on energy transition and energy security investments. BlackRock's Evergreen Infrastructure fund acquired the portfolio in March 2024, and Excelsior announced that it had sold the sub-portfolio to BlackRock.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju7s01kkivheqy4idfr6",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "Evergreen Infrastructure Fund",
+        "vehicleName": "Evergreen Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkw9x030vivheldsxdx9k",
+        "date": "2024",
+        "event": "Natural Power announced support for BlackRock's acquisition of the operating portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwab030wivhe1gfqjdt7",
+        "date": "Mar 12, 2024",
+        "event": "Excelsior Energy Capital announced the sale of a sub-portfolio of solar and solar-plus-storage assets to BlackRock.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-03-12T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjtg08c2ivhev6rdob4o",
+        "label": "Investment date source — BlackRock — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppjui08c4ivhez13wpcrd",
+        "label": "Naturalpower — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://www.naturalpower.com/us/news/news-post/natural-power-supports-blackrocks-portfolio-acquisition-from-excelsior-energy-capital",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Naturalpower transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjvk08c6ivhenq51szsb",
+        "label": "Excelsiorcapital — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://excelsiorcapital.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Excelsiorcapital company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Excelsior U.S. Solar & Storage Portfolio",
+    "investmentFirm": "BlackRock",
+    "sector": "Power & ET",
+    "subsector": "Solar and solar-plus-storage portfolio",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Evergreen Infrastructure Fund",
+    "description": "This portfolio comprises operating US solar and solar-plus-storage assets acquired from Excelsior Energy Capital. The assets sell power under contracted structures and therefore have an operating model tied to long-lived renewable generation infrastructure rather than a development-only pipeline. Its revenue profile is asset-heavy and contracted because cash flows depend on the operating performance of the underlying projects and customer agreements. Public transaction materials described a 38-project portfolio totaling 89 MW across multiple US states. The assets form part of BlackRock's Evergreen Infrastructure strategy focused on energy transition and energy security investments. BlackRock's Evergreen Infrastructure fund acquired the portfolio in March 2024, and Excelsior announced that it had sold the sub-portfolio to BlackRock.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "Multiple U.S. states",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "Natural Power announced support for BlackRock's acquisition of the operating portfolio.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 12, 2024",
+        "event": "Excelsior Energy Capital announced the sale of a sub-portfolio of solar and solar-plus-storage assets to BlackRock.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — BlackRock — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Naturalpower — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://www.naturalpower.com/us/news/news-post/natural-power-supports-blackrocks-portfolio-acquisition-from-excelsior-energy-capital",
+        "type": "WEBSITE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Excelsiorcapital — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://excelsiorcapital.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "Evergreen Infrastructure Fund",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1cv00bxivhe247gfqwa",
+        "fundName": "Evergreen Infrastructure Fund",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-07-23T16:09:55.615Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+    "taskIndex": 142,
+    "canonicalKey": "excelsior-u-s-solar-and-storage-portfolio|united-states",
+    "capturedAt": "2026-08-23T10:02:30.826Z",
+    "databaseRevision": "revision:b93f206fcf12c4a4c78da4a5cf8731fc83a253e394c0d0e305026588a9400b65",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "aa7b36f7369ed86f7b1e9023ca750f524b43e5f76dea5f9d85384c9e6cc497a7",
+    "productionSnapshotSha256": "02405db97e62653b08492d99f5bd7367768dc89508bc7718aa1e44003c3d9643",
+    "targetCompanySnapshotSha256": "ae09df241eb0d5c1c0d4ba0261fdc6ed8ef62346eee2a3f752fa7c89564684ec",
+    "seedEntrySha256": "245f0dcc4d53a808cdfcee5b039c3d1da4350d41d52e0787e1825335a4dc37e2",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "473ab06c72d0ef320239b6b115be6f477a55591c30537afbab6811db01f93744",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "d2b61ffca022121ad2d96284773b2bf1e2607a59fb80f5ba36851fe1d60bdd21",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "13cdfa86c80a413a470a5ac20ad9be0e9753ba349c62d8d9499315a666e5d065",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "712846049843a0d6d4eff58b68c890f6faabd7d6411fc22cf44c38198ad62b21",
+    "stateSha256": "a91200428291cd43b3984f86b62580e0b3aca2e55cabfefc6c6f42a8866a88fa",
+    "taskSnapshotSha256": "84e23786a47629d90874035770dc41c51e26ddba1c6415d7d46a318e9bc42e17"
+  },
+  "contextSha256": "c27d15ffa67e93c5241f8fc2557bdd0b6d89986727a53cfd903a7178b44202f1"
+}

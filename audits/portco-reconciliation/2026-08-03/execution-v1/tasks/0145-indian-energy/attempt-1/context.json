@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0145:indian-energy:6a5ea3ff",
+  "taskIndex": 145,
+  "companyName": "Indian Energy",
+  "generatedAt": "2026-08-23T09:38:35.886Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0145-indian-energy/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 145,
+    "taskId": "ledger:0145:indian-energy:6a5ea3ff",
+    "canonicalKey": "indian-energy|united-states",
+    "companyName": "Indian Energy",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:015:indian-energy",
+      "048-global-infrastructure-partners:repo-only:010:indian-energy"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj8yo00n7ivhe4ceylarx"
+    ],
+    "seedKeys": [
+      "indian energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock OUT_OF_SCOPE: Held under Impact Opportunities, not infrastructure. Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change.",
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8yo00n7ivhe4ceylarx",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "indian-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8yo00n7ivhe4ceylarx",
+    "name": "Indian Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Microgrids and distributed energy",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Indian Energy develops and integrates microgrids, renewable generation, energy storage, and related distributed-energy systems. Its customer base includes tribal communities, commercial users, and institutional clients seeking resilient on-site power infrastructure. The business combines development, engineering, and systems integration with ownership participation in selected projects rather than a pure equipment-sales model. Company materials identify a headquarters in Southern California and state that the company is 100% Native American-owned, with a development pipeline that includes utility-scale renewable generation and long-duration storage. Operations are concentrated in California, with broader project activity in tribal and distributed-energy markets. BlackRock Impact Opportunities identified Indian Energy as a portfolio investment made in 2023, but public sources do not disclose the fund's ownership percentage or the company's full current capitalization.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2009,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju9601knivheepwf2q66",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwf70312ivherj0a3qfb",
+        "date": "2009",
+        "event": "Company materials identify Indian Energy's founding year as 2009.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwfq0313ivhe833rn4wg",
+        "date": "2023",
+        "event": "BlackRock Impact Opportunities identified Indian Energy as a portfolio investment.",
+        "category": "FINANCING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwg70314ivhel3nc4f3e",
+        "date": "Aug 20, 2024",
+        "event": "Indian Energy announced financial close on the Viejas Enterprise microgrid project.",
+        "category": "FINANCING",
+        "sortDate": "2024-08-20T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppk5f08ckivhe8l4w29wd",
+        "label": "Indianenergy — Indian Energy",
+        "url": "https://indianenergy.com/about-ie/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Indianenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppk6j08cmivhedupmxp5e",
+        "label": "Indianenergy — Indian Energy",
+        "url": "https://indianenergy.com/indian-energy-announces-financial-close-on-the-viejas-enterprise-microgrid-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Indianenergy operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppk7408cnivhevcko7m33",
+        "label": "Investment date source — BlackRock — Conexon",
+        "url": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Indian Energy",
+    "investmentFirm": "BlackRock",
+    "sector": "Power & ET",
+    "subsector": "Microgrids and distributed energy",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Indian Energy develops and integrates microgrids, renewable generation, energy storage, and related distributed-energy systems. Its customer base includes tribal communities, commercial users, and institutional clients seeking resilient on-site power infrastructure. The business combines development, engineering, and systems integration with ownership participation in selected projects rather than a pure equipment-sales model. Company materials identify a headquarters in Southern California and state that the company is 100% Native American-owned, with a development pipeline that includes utility-scale renewable generation and long-duration storage. Operations are concentrated in California, with broader project activity in tribal and distributed-energy markets. BlackRock Impact Opportunities identified Indian Energy as a portfolio investment made in 2023, but public sources do not disclose the fund's ownership percentage or the company's full current capitalization.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2009,
+    "investmentYear": 2023,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "2009",
+        "event": "Company materials identify Indian Energy's founding year as 2009.",
+        "category": "Founding"
+      },
+      {
+        "date": "2023",
+        "event": "BlackRock Impact Opportunities identified Indian Energy as a portfolio investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Aug 20, 2024",
+        "event": "Indian Energy announced financial close on the Viejas Enterprise microgrid project.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Indianenergy — Indian Energy",
+        "url": "https://indianenergy.com/about-ie/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Indianenergy — Indian Energy",
+        "url": "https://indianenergy.com/indian-energy-announces-financial-close-on-the-viejas-enterprise-microgrid-project/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Investment date source — BlackRock — Indian Energy",
+        "url": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0145:indian-energy:6a5ea3ff",
+    "taskIndex": 145,
+    "canonicalKey": "indian-energy|united-states",
+    "capturedAt": "2026-08-23T09:38:35.886Z",
+    "databaseRevision": "revision:ec6811a00cf64b57c3d87be9011deebc8469ce55ec386996861d4889522e9989",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "97de7591c3310cf5f82760c444df984bd3d80071a6f68cebf31e9cd06e0cb3fe",
+    "productionSnapshotSha256": "5f0a35a793c49eccae4be60ea1c629e03296a3c073a6720e9e8b61f985c04275",
+    "targetCompanySnapshotSha256": "3e1120dd9ffee4bd58b6721a5ffa4498f5216e7b12942394f1b4cfdb03e66872",
+    "seedEntrySha256": "35bb020ccc87db0708c0a266c9729ad7c66e636c9b3c7911a06800867f8faf77",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "a32292715b17c4fa954e2f7cc120a88faf84bb06f75eacc2866cc5e61ba6528b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "55bf583321db1fc92b16c4752ea8c0ad00d6be61ea3df0e050f6f8f3ba29e9bb",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "44a7e78134bbb149a11c22682d87988b7d4fb2a8b1d160b75cf0e9a2aaf7e43d",
+    "stateSha256": "5ecc97ae5ab29ad2065840f679a375e4e2c2a3205634c777fd7e6750542b1333",
+    "taskSnapshotSha256": "ef4e26515c85124c6f4b78f063df096c364d015eead79b75a032f6b03e90aff1"
+  },
+  "contextSha256": "498635b65eae51b6956dccd950853a1b5c1b807e184ed154446b0acf0ba4bce9"
+}
