@@ -1,0 +1,158 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v7/batch-manifest.json --batch-sha256=295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa
+
+(node:3741) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0172-0176-v7",
+  "batchSha256": "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Renewa",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, yearFounded, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website",
+        "yearFounded"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "TramCité",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, subsector, description, recordStatus, website, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "RETRACT_ERRONEOUS_OWNERSHIP",
+          "relationIds": [
+            "cmrxpjx3c01p8ivhe5b2bx44z"
+          ],
+          "detail": "Retract 1 proven erroneous ownership period(s); revision history preserves the prior claim."
+        },
+        {
+          "kind": "REALIZE_COMPANY",
+          "relationIds": [],
+          "detail": "Mark the company realized after all active ownership has ended."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "companyStatus",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "recordStatus",
+        "subsector",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Vertical Bridge",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Novva Data Centers",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "RETIRE_OWNERSHIP",
+          "relationIds": [
+            "cmrxpjx5d01pcivhejo8qz5ky"
+          ],
+          "detail": "Retire 1 ownership period(s) without deleting history."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjbrb00rjivhekt5680ah"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "redirects",
+        "website"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjbrb00rjivhekt5680ah"
+      ]
+    },
+    {
+      "companyName": "Bolder Industries",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}

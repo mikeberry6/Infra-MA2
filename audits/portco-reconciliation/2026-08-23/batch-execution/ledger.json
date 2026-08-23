@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T20:50:00Z",
+  "updatedAt": "2026-08-23T20:53:00Z",
   "activeBatchId": "batch-0172-0176-v7",
   "batches": [
     {
@@ -1593,7 +1593,7 @@
     },
     {
       "batchId": "batch-0172-0176-v7",
-      "state": "RELEASING",
+      "state": "VERIFYING",
       "taskIds": [
         "ledger:0172:renewa:4e75f8f4",
         "ledger:0173:tramcite:9155b156",
@@ -1609,14 +1609,17 @@
         176
       ],
       "createdAt": "2026-08-23T20:46:31Z",
-      "updatedAt": "2026-08-23T20:50:00Z",
+      "updatedAt": "2026-08-23T20:53:00Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v7/batch-manifest.json",
         "sha256": "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa"
       },
-      "releaseSha": null,
-      "receipt": null,
+      "releaseSha": "1a48e41950baf93dd245e6143c3ca2a931620f9d",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v7/production-apply/batch-apply-receipt.json",
+        "sha256": "faf4b89733081f5854e7dd8bbd0f98d9f6a2637ac097f356348aaf558e5b4133"
+      },
       "reason": null,
       "history": [
         {
@@ -1646,9 +1649,30 @@
             "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-23T20:52:00Z",
+          "evidenceSha256": [
+            "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-23T20:53:00Z",
+          "evidenceSha256": [
+            "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa",
+            "faf4b89733081f5854e7dd8bbd0f98d9f6a2637ac097f356348aaf558e5b4133"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "092b17ed13d50560e4487709cc8f81fdfb8ee0b17b0f8e6f354b28485197a9f6"
+  "ledgerSha256": "d19215a46996518df48da5010462d0edd2601c53b315cd7c659c1ee2517ead9d"
 }
