@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0164:copia-power:4a395f9a",
+  "taskIndex": 164,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T16:45:12.000Z",
+  "canonicalKey": "copia-power|united-states",
+  "companyName": "Copia Power",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_PENDING_TRANSACTION"
+  ],
+  "sourceHoldingIds": [
+    "026-carlyle-infrastructure:holding:007:copia-power"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain Copia Power as a current Carlyle infrastructure platform and add the signed outbound sale to EQT Infrastructure VII as pending. Carlyle announced Copia as a wholly owned platform in 2021, but no direct source reviewed identifies Carlyle Global Infrastructure Opportunity Fund or another specific Carlyle fund or vehicle, so the unsupported production attribution is removed. Carlyle and EQT announced the sale on July 9, 2026 and described it as subject to customary conditions with an expected closing by year-end; no closing release was found through August 19, 2026. Carlyle therefore remains the current owner until legal closing. Birch Infrastructure's renewable-energy business was combined into Copia, while the individual development projects beneath the platform are not separate manager-level PortCos.",
+  "evidence": [
+    {
+      "url": "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+      "purpose": "Signed pending sale, buyer fund and closing condition",
+      "supports": [
+        "EQT Infrastructure VII signed to acquire Copia Power",
+        "The transaction remained conditional and was expected to close by the end of 2026"
+      ]
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure",
+      "purpose": "Carlyle ownership and signed sale status",
+      "supports": [
+        "Carlyle remained Copia's seller and current owner at announcement",
+        "The disposition was agreed but not described as closed"
+      ]
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-launches-copia-power-platform-develop-7gwac-renewable",
+      "purpose": "Platform formation and original ownership",
+      "supports": [
+        "Carlyle launched Copia in 2021 as a wholly owned U.S. infrastructure platform"
+      ]
+    },
+    {
+      "url": "https://www.copiapower.com/overview",
+      "purpose": "Current operations, platform boundary and disclosed scale",
+      "supports": [
+        "Copia develops and operates power and digital infrastructure projects in the United States",
+        "The company reports its operating, construction and development portfolio scale"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "0f5e7c1e6515ddd4fb278bdfeeaa828c3cdb4588758b4b5a3d461b8a186517a5",
+  "currentCompanySnapshotSha256": "9107a9774a3e5a70358871788e3d070f8334d9c339f4b7a7cb6f5f5503e495a0",
+  "executionLock": {
+    "taskSnapshotSha256": "2ca74449dc732d43e217878d7d7ea8abfef764181655280ae45eb9c3d2ae249a",
+    "taskStateSha256": "8a2e3ee17cdaa8700a3848b479ff10fd7ef869ad24ea35f8bf3b3d7d0e50326f",
+    "taskDependencySha256": "06478a207f33b846dd07c2544c32ce06d19fe54ebb82e82b99b6cdd9943c41c2",
+    "seedEntrySha256": "a1bcbca31af6eec29719dc464486818d9319ddce3a5bee92373694059a0a7455",
+    "dependencies": {
+      "ownershipPeriodsSha256": "46aa263f31415d517adac6e4cc250ade79d5c45d9947518e55f0dda7748e5abe",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4980cc291075dfbb4e12a1d698df96082c7b121fc876d7911992bc66063dd6d7",
+      "organizationsSha256": "0adc66f0d46cee0d2ec210b349c9b27fb7b5f35b52b56b129ceae99684e0f41d",
+      "citationsSha256": "aa3084553fbf1e7fbfc3bbbda4c2743390d0c1bc4a8ce003f842be91cb5b4f54",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1ps00cgivheracnxars",
+        "fundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "managerId": "cmrxpi5tu0013ivhee73e72lz",
+        "updatedAt": "2026-07-23T16:09:56.080Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi7yv001rivhe44fyzxcs",
+        "name": "EQT Infrastructure",
+        "updatedAt": "2026-07-23T16:09:17.527Z"
+      },
+      {
+        "id": "cmrxpihrg004uivhein80q50e",
+        "name": "Carlyle Infrastructure",
+        "updatedAt": "2026-07-23T16:09:30.220Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjakf00ppivhe197wcvey",
+    "name": "Copia Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar, storage, and power development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Copia Power develops utility-scale solar, battery storage, and related power infrastructure projects in the western United States. Its customers include utilities, corporate buyers, and large-load power users that need contracted or dedicated generation and storage capacity. The business follows an asset-heavy development model because it originates, finances, procures, and advances physical infrastructure assets rather than acting only as an advisory platform. Company materials state that the platform was founded by Carlyle in 2021 and, by late 2025, had more than 1,500 MW and 4,469 MWh operating or under construction, with a much larger multi-sector development pipeline. Carlyle remains the disclosed sponsor, and Copia also announced a $300 million corporate credit facility in 2024 to accelerate development and procurement.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2021,
+    "headquarters": "Western United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjvxx01neivheya8o7kr4",
+        "managerName": "Carlyle Group",
+        "organizationName": "Carlyle Infrastructure",
+        "fundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl42803ajivhe588gk705",
+        "date": "Mar 2021",
+        "event": "Copia Power states that Carlyle invested in Birch Infrastructure and simultaneously launched Copia Power.",
+        "category": "FINANCING",
+        "sortDate": "2021-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl42s03akivheczurvrro",
+        "date": "2024",
+        "event": "Copia said its western solar and storage development portfolio exceeded 17 GW.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl43b03alivhe5ju3ze5r",
+        "date": "Apr 2, 2024",
+        "event": "Copia announced a $300 million corporate credit facility.",
+        "category": "FINANCING",
+        "sortDate": "2024-04-02T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppyts08vyivhe8zecis95",
+        "label": "Copiapower — Copia Power",
+        "url": "https://www.copiapower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Copiapower company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppyut08w0ivhe506xjht3",
+        "label": "Copiapower — Copia Power",
+        "url": "https://www.copiapower.com/overview",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Copiapower — Copia Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppyvt08w2ivhe4jiuqpip",
+        "label": "Investment date source — Carlyle Infrastructure — Copia Power",
+        "url": "https://www.copiapower.com/history",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Carlyle Infrastructure initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppywz08w4ivhee750qyiw",
+        "label": "Copiapower — Copia Power",
+        "url": "https://www.copiapower.com/news/copia-power-closes-300-million-corporate-credit-facility-to-accelerate-development-and-procurement-efforts-on-its-western-solar-and-storage-portfolio",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Copiapower operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "9107a9774a3e5a70358871788e3d070f8334d9c339f4b7a7cb6f5f5503e495a0",
+  "afterImage": {
+    "id": "cmrxpjakf00ppivhe197wcvey",
+    "name": "Copia Power",
+    "aliases": [
+      "Copia"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar, storage, and power development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Copia Power is a Carlyle-owned U.S. power and digital infrastructure platform that develops, owns and operates utility-scale solar, battery storage, dispatchable generation, transmission and substation infrastructure, and data-center campuses. Its customers include utilities, public-power entities, hyperscalers, industrial users and other large-load customers. Carlyle launched Copia as a wholly owned platform in 2021 and later combined it with Birch Infrastructure's renewable-energy business. Carlyle and EQT announced a signed agreement on July 9, 2026 for EQT Infrastructure VII to acquire Copia, but the transaction remained subject to customary conditions and no closing was verified through August 19, 2026. Carlyle therefore remains the active owner while the sale is shown separately as pending. Copia's exact legal entity name, the applicable Carlyle fund and vehicle, and the sale consideration and exact legal closing date are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.copiapower.com/",
+    "yearFounded": 2021,
+    "headquarters": "Dana Point, California",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjvxx01neivheya8o7kr4",
+        "managerName": "Carlyle Group",
+        "organizationName": "Carlyle Infrastructure",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "100% (last expressly disclosed); sale to EQT Infrastructure VII signed but not closed",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "SIGNED_PENDING_EXIT"
+      }
+    ],
+    "pendingOwnershipTransactions": [
+      {
+        "id": null,
+        "direction": "EXIT",
+        "transactionState": "SIGNED_PENDING_EXIT",
+        "counterpartyName": "EQT Infrastructure VII",
+        "transactionDescription": "Carlyle signed an agreement to sell Copia Power to EQT Infrastructure VII; the transaction remained conditional and had not legally closed as of August 19, 2026.",
+        "announcedAt": "2026-07-09",
+        "expectedClosing": "By year-end 2026",
+        "relatedOwnershipPeriodIds": [
+          "cmrxpjvxx01neivheya8o7kr4"
+        ],
+        "evidenceUrls": [
+          "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+          "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure"
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "id": "cmrxpl42803ajivhe588gk705",
+        "date": "Jul 21, 2021",
+        "event": "Carlyle publicly launched Copia Power as a wholly owned U.S. infrastructure platform focused on utility-scale renewable power and storage development.",
+        "category": "FINANCING",
+        "sortDate": "2021-07-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.carlyle.com/media-room/news-release-archive/carlyle-launches-copia-power-platform-develop-7gwac-renewable"
+        ]
+      },
+      {
+        "id": "cmrxpl42s03akivheczurvrro",
+        "date": "Sep 2022",
+        "event": "Copia combined with Birch Infrastructure's renewable-energy business, expanding the Carlyle-backed platform without changing its manager-level ownership.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.birch.coop/carlyle-backed-copia-power-completes-strategic-combination"
+        ]
+      },
+      {
+        "id": "cmrxpl43b03alivhe5ju3ze5r",
+        "date": "Jul 9, 2026",
+        "event": "Carlyle agreed to sell Copia Power to EQT Infrastructure VII; the transaction remained subject to customary closing conditions and was not treated as a completed exit.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-07-09T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+          "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppyts08vyivhe8zecis95",
+        "label": "Copiapower — Copia Power",
+        "url": "https://www.copiapower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official company website and platform identity",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppyut08w0ivhe506xjht3",
+        "label": "Copiapower — Copia Power",
+        "url": "https://www.copiapower.com/overview",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current operating profile, customers, infrastructure scope and disclosed scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppyvt08w2ivhe4jiuqpip",
+        "label": "Investment date source — Carlyle Infrastructure — Copia Power",
+        "url": "https://www.copiapower.com/history",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Carlyle-backed platform history and 2021 formation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppywz08w4ivhee750qyiw",
+        "label": "Copiapower — Copia Power",
+        "url": "https://www.copiapower.com/news/copia-power-closes-300-million-corporate-credit-facility-to-accelerate-development-and-procurement-efforts-on-its-western-solar-and-storage-portfolio",
+        "sourceType": "WEBSITE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "April 2024 corporate credit facility",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Eqtgroup",
+        "url": "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Signed EQT Infrastructure VII acquisition, conditional status and expected timing",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Carlyle — Copia Power sale agreement",
+        "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Carlyle seller status, platform history and pending disposition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Carlyle — Copia Power platform launch",
+        "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-launches-copia-power-platform-develop-7gwac-renewable",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2021 wholly owned platform formation and initial strategy",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Birch Infrastructure — Copia strategic combination",
+        "url": "https://www.birch.coop/carlyle-backed-copia-power-completes-strategic-combination",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2022 combination with Birch Infrastructure's renewable-energy business",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Copia Power — Headquarters",
+        "url": "https://www.copiapower.com/map-collection-locations/blog-post-title-four-8dab2",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Dana Point, California headquarters",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "2bbe16bff36afb6f828b1866b28337878b79aa758890a9092d5b84d2a16992be",
+  "proposalSha256": "83cb161568df8e7a0f2408bdf0144679fceb534cc3ebce906756b4d54056f9e7"
+}

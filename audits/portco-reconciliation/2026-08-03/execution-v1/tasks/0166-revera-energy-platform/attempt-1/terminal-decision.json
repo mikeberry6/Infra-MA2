@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0166:revera-energy-platform:658a9bc6",
+  "taskIndex": 166,
+  "companyName": "Revera Energy Platform",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-08-23T16:45:12.000Z",
+  "rationale": "Revera Energy is a distinct Carlyle-controlled platform, but its businesses, assets and stated markets are Australia and the UK, not North America. The Canada key appears to reflect predecessor Amp Energy's Toronto base. Reject North American CREATE_COMPANY and ADD_OWNER.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0166-revera-energy-platform/attempt-1/locked-task-snapshot.json",
+    "sha256": "ceb916abe726ad402cc87f91f3376d49fde94b4b18d847dbd02e73047ddbca2c"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0166-revera-energy-platform/attempt-1/research-decision.json",
+    "sha256": "4cd482d98648e8078de6b466ec963f6026e463b288b98661909f1ebe40bc1b3d"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0166-revera-energy-platform/attempt-1/source-verification.json",
+    "sha256": "384e45b0b0524a3df3758ca6af84159a313c20146cb78c44b7b7d6b23f9cc4be"
+  },
+  "evidence": [
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/revera-launches-independent-energy-infrastructure-platform-backed",
+      "purpose": "Identity, owner, carve-out, geography"
+    },
+    {
+      "url": "https://revera.energy/projects/australia",
+      "purpose": "Assets, footprint and scale"
+    },
+    {
+      "url": "https://revera.energy/news/revera-energy-breaks-ground-on-windyhill-bess",
+      "purpose": "Latest owner and operating-status check"
+    },
+    {
+      "url": "https://www.amp.energy/news/amp-energys-australia-and-uk-businesses-acquired-by-revera-energy-and-longtime-partner-carlyle",
+      "purpose": "Completed Australia/UK sale"
+    },
+    {
+      "url": "https://abr.business.gov.au/AbnHistory/View?id=75618201380",
+      "purpose": "Entity name history and active status"
+    },
+    {
+      "url": "https://find-and-update.company-information.service.gov.uk/company/16228457/persons-with-significant-control",
+      "purpose": "Holdco status and Carlyle control"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "7db35e8adfda4b0660423e9acebf26a8a8b4a1133765995608d49bab647bcc47"
+}
