@@ -476,6 +476,18 @@ function getAttributionColor(attribution: OwnerView["fundAttribution"]): string 
   return "#71717a";
 }
 
+function getEditorialAttributionRationale(
+  attribution: OwnerView["fundAttribution"],
+): string | null {
+  if (attribution === "INFERRED") {
+    return "Public sources do not name the exact fund. The displayed fund is an estimate based on the disclosed manager, investment timing, and the fund's investment mandate.";
+  }
+  if (attribution === "DIRECT_PROGRAM") {
+    return "Public sources support ownership through a direct investment, managed account, or program, but do not identify a specific fund.";
+  }
+  return null;
+}
+
 function EstimateDisclosure({
   label,
   rationale,
@@ -570,17 +582,17 @@ function EstimateDisclosure({
 function AttributionDisclosure({
   attribution,
   confidence,
-  rationale,
 }: {
   attribution: OwnerView["fundAttribution"];
   confidence?: OwnerView["attributionConfidence"];
-  rationale?: string | null;
 }) {
   const label = getAttributionLabel(attribution, confidence);
   if (!label) return null;
 
-  if (attribution === "INFERRED" && rationale) {
-    return <EstimateDisclosure label={label} rationale={rationale} />;
+  const editorialRationale = getEditorialAttributionRationale(attribution);
+
+  if (attribution === "INFERRED" && editorialRationale) {
+    return <EstimateDisclosure label={label} rationale={editorialRationale} />;
   }
 
   return <Tag color={getAttributionColor(attribution)}>{label}</Tag>;
@@ -628,15 +640,13 @@ function SponsorFundLine({ row }: { row: SponsorFundRow }) {
           <AttributionDisclosure
             attribution={row.fundAttribution}
             confidence={row.attributionConfidence}
-            rationale={row.attributionRationale}
           />
         </div>
       )}
-      {row.attributionRationale
-        && row.fundAttribution !== "DISCLOSED"
-        && row.fundAttribution !== "INFERRED" && (
+      {getEditorialAttributionRationale(row.fundAttribution)
+        && row.fundAttribution === "DIRECT_PROGRAM" && (
         <p className="mt-2 type-micro leading-relaxed text-[var(--text-tertiary)]">
-          {row.attributionRationale}
+          {getEditorialAttributionRationale(row.fundAttribution)}
         </p>
       )}
       {row.stake && (
@@ -781,15 +791,13 @@ function OwnerLine({
           <AttributionDisclosure
             attribution={owner.fundAttribution}
             confidence={owner.attributionConfidence}
-            rationale={owner.attributionRationale}
           />
         </div>
       )}
-      {owner.attributionRationale
-        && owner.fundAttribution !== "DISCLOSED"
-        && owner.fundAttribution !== "INFERRED" && (
+      {getEditorialAttributionRationale(owner.fundAttribution)
+        && owner.fundAttribution === "DIRECT_PROGRAM" && (
         <p className="mt-2 type-micro leading-relaxed text-[var(--text-tertiary)]">
-          {owner.attributionRationale}
+          {getEditorialAttributionRationale(owner.fundAttribution)}
         </p>
       )}
     </div>

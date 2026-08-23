@@ -153,28 +153,31 @@ describe("PortCoDrawer ownership periods", () => {
     expect(screen.getByText("Estimated · Medium confidence")).toBeInTheDocument();
     expect(screen.queryByText(inferredOwner.attributionRationale!)).not.toBeInTheDocument();
 
+    const editorialRationale = "Public sources do not name the exact fund. The displayed fund is an estimate based on the disclosed manager, investment timing, and the fund's investment mandate.";
+
     const trigger = screen.getByRole("button", {
       name: "Estimated · Medium confidence. Show estimate rationale",
     });
 
     await user.hover(trigger);
-    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredOwner.attributionRationale!);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(editorialRationale);
+    expect(screen.getByRole("tooltip")).not.toHaveTextContent(inferredOwner.attributionRationale!);
     await user.unhover(trigger);
     expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
 
     fireEvent.focus(trigger);
-    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredOwner.attributionRationale!);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(editorialRationale);
     fireEvent.blur(trigger);
     expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
 
     fireEvent.focus(trigger);
-    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredOwner.attributionRationale!);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(editorialRationale);
     fireEvent.keyDown(trigger, { key: "Escape" });
     expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
     expect(screen.getByRole("dialog", { name: "Chief Power" })).toBeInTheDocument();
 
     await user.click(trigger);
-    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredOwner.attributionRationale!);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(editorialRationale);
     await user.click(screen.getByRole("heading", { name: "Chief Power" }));
     expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
   });
@@ -208,10 +211,13 @@ describe("PortCoDrawer ownership periods", () => {
 
     expect(screen.queryByText(inferredFormerOwner.attributionRationale!)).not.toBeInTheDocument();
     await user.hover(trigger);
-    expect(screen.getByRole("tooltip")).toHaveTextContent(inferredFormerOwner.attributionRationale!);
+    expect(screen.getByRole("tooltip")).toHaveTextContent(
+      "Public sources do not name the exact fund. The displayed fund is an estimate based on the disclosed manager, investment timing, and the fund's investment mandate.",
+    );
+    expect(screen.getByRole("tooltip")).not.toHaveTextContent(inferredFormerOwner.attributionRationale!);
   });
 
-  it("leaves disclosed and direct-program ownership presentation unchanged", () => {
+  it("keeps disclosed ownership understated and editorializes direct-program rationale", () => {
     const directProgramOwner: OwnerView = {
       ...financeIiOwner,
       id: "direct-program",
@@ -241,7 +247,10 @@ describe("PortCoDrawer ownership periods", () => {
     );
 
     expect(screen.getByText("Direct / program investment")).toBeInTheDocument();
-    expect(screen.getByText(directProgramOwner.attributionRationale!)).toBeInTheDocument();
+    expect(screen.queryByText(directProgramOwner.attributionRationale!)).not.toBeInTheDocument();
+    expect(screen.getByText(
+      "Public sources support ownership through a direct investment, managed account, or program, but do not identify a specific fund.",
+    )).toBeInTheDocument();
     expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
   });
 });
