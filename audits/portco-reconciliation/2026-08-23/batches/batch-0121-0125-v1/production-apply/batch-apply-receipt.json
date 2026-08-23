@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0121-0125-v1",
+  "batchSha256": "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf",
+  "releaseSha": "012fc4958ead835a48a6494dbc28edc04962c9ca",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "655cbe74-5435-4b4a-8e4c-04b5d091f9b8",
+  "appliedAt": "2026-08-23T05:37:36.195Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0121:r-e-l-a-m:186bc13d",
+      "taskIndex": 121,
+      "companyName": "R.E.L.A.M.",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0121:r-e-l-a-m:186bc13d",
+        "taskIndex": 121,
+        "companyName": "R.E.L.A.M.",
+        "companyId": "cmt5dkowd0000ujyy2xt5zh9z",
+        "proposalSha256": "1c1d926a2ecd292d81e86a37c9c3e3af1c2f91d0219aacde7f5c7090c89569db",
+        "approvalSha256": "7b8d4b31ba84b6e626b00eb481827a6bf3eddb733dcae88f655e6f011c212edd",
+        "productionSnapshotSha256": "54fe8b3fe845451519d1d273d22a3256dec89dd7d0e5f93f7b927a0db819b473",
+        "beforeCompanySnapshotSha256": null,
+        "appliedAfterImageSha256": "c853cbafb05cb31bcf2aa416ad77b7dc8c74f86608b57accd22b35e43ef11b39",
+        "seedAfterImageSha256": "c853cbafb05cb31bcf2aa416ad77b7dc8c74f86608b57accd22b35e43ef11b39",
+        "approvedSeedEntrySha256": "6b22b6f49c2b54fc3f438ec04099a866084aa4d07a9bf73ccf82275671addd04",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "655cbe74-5435-4b4a-8e4c-04b5d091f9b8",
+        "auditEventId": "cmt5dksxh000pujyy9lcfzyjb",
+        "appliedAt": "2026-08-23T05:37:36.195Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "d8b05c609bedee0188107ac2dc8720344ddf629abc81d7c78823d54bc7cbd954"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+      "taskIndex": 122,
+      "companyName": "Cleco Corporate Holdings LLC",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+        "taskIndex": 122,
+        "companyName": "Cleco Corporate Holdings LLC",
+        "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+        "proposalSha256": "0cf9cab89dfb8ad09276950ccff124e710c55ee7385551fe8f8d15c406cbb21f",
+        "approvalSha256": "ac2f02532fb8414e8e7afc3b823602268c925d74d37e48f587273c45c8b11e32",
+        "productionSnapshotSha256": "cb966fba5c36d05e5fab3b7b7b4a0e43274aba7fd0d9190a0118230fe3ebf5ec",
+        "beforeCompanySnapshotSha256": "04c369427df21c687a62bf2986c7e1a1ca8c155f2dad195fd66604b37b06f26e",
+        "appliedAfterImageSha256": "9508e51a7e3fb6858471e0322fd2d63503814c8f59aa78aeedb48e9f8463d406",
+        "seedAfterImageSha256": "9508e51a7e3fb6858471e0322fd2d63503814c8f59aa78aeedb48e9f8463d406",
+        "approvedSeedEntrySha256": "4db55d91ef206107dfe2bcec0bcc794663bb9992e8be2fd859801405e4838cb4",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "655cbe74-5435-4b4a-8e4c-04b5d091f9b8",
+        "auditEventId": "cmt5dl1ik0012ujyyvfm3dccj",
+        "appliedAt": "2026-08-23T05:37:36.195Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "4574fd1dabf48ab369f15a14a3c91ac96e4ac89da0aa9d992e1b1b2a9847bf7c"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0123:connaught-oil-and-gas:bf7f3998",
+      "taskIndex": 123,
+      "companyName": "Connaught Oil and Gas",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "0170f13d5fbd96ce231bc3f7d28d44e0120a0e3c70577bcf7d3a18e8702b6d90"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0124:corex-resources-ltd:b7545232",
+      "taskIndex": 124,
+      "companyName": "Corex Resources Ltd.",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "52c6df1f113dab295d1ee3d0eb8fac9c85dca35ef1f780ecc5b69261390c3e3c"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0125:gct-global-container-terminals-inc:4810f4cf",
+      "taskIndex": 125,
+      "companyName": "GCT Global Container Terminals Inc.",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0125:gct-global-container-terminals-inc:4810f4cf",
+        "taskIndex": 125,
+        "companyName": "GCT Global Container Terminals Inc.",
+        "companyId": "cmrxpj8l000mmivhe1cfe4xs6",
+        "proposalSha256": "e02e11923daef49fef7673702baa60ae7638246d669a4607d53a32d505f21032",
+        "approvalSha256": "7813530b8f96d93ba29533107c8d10c35e7ffbfce7946bd20e1b15d522b4fe9a",
+        "productionSnapshotSha256": "7e48863c1e9747ffaf2e060a52ac9dfafb6623c4ed737775ac86e72b87809b60",
+        "beforeCompanySnapshotSha256": "f6e5da441ae5c85552ea11cddccff3c4a4db0161fc8baafdde5c13d244fee33e",
+        "appliedAfterImageSha256": "849e0d0117868857fae496cda38bc3c3332701553e1b3ae383906cbcaf69bbc4",
+        "seedAfterImageSha256": "849e0d0117868857fae496cda38bc3c3332701553e1b3ae383906cbcaf69bbc4",
+        "approvedSeedEntrySha256": "975476758b8e1c79fe3ca95fb15bdad893f1829c6d2df7e34392f06af30319f6",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "655cbe74-5435-4b4a-8e4c-04b5d091f9b8",
+        "auditEventId": "cmt5dl9o5001cujyyx9tz5hbm",
+        "appliedAt": "2026-08-23T05:37:36.195Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "bed622f09b7f60a37cb6b105da9c5deacc72cf315e1905d51166ac0f58b02c6e"
+      }
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerified": true,
+    "allDetailApisVerified": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "482937a50b045ce83b20a53f5e5d3e371fc17a8dd728cac7be6d3948bf819497"
+}

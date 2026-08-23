@@ -3,12 +3,12 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T05:06:00.000Z",
-  "activeBatchId": "batch-0121-0125-v1",
+  "updatedAt": "2026-08-23T05:50:28.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
-      "state": "RELEASING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0121:r-e-l-a-m:186bc13d",
         "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
@@ -24,15 +24,18 @@
         125
       ],
       "createdAt": "2026-08-23T04:21:00.000Z",
-      "updatedAt": "2026-08-23T05:06:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T05:50:28.000Z",
+      "completedAt": "2026-08-23T05:50:28.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/batch-manifest.json",
         "sha256": "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "012fc4958ead835a48a6494dbc28edc04962c9ca",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "482937a50b045ce83b20a53f5e5d3e371fc17a8dd728cac7be6d3948bf819497"
+      },
+      "reason": "Atomic transaction, seed overlay, terminal decisions, three detail APIs and rendered production cards verified; no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -61,9 +64,52 @@
             "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-23T05:32:30.000Z",
+          "evidenceSha256": [
+            "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-23T05:38:38.000Z",
+          "evidenceSha256": [
+            "2001d983ceba3856a876dba78e0d6bb215292eb72e2de72bce6fbd88db522c0b",
+            "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
+          ],
+          "reason": "Atomic production transaction committed, but final receipt verification compared approvedSeedEntrySha256 to seedAfterImageSha256 for mutation member 1. Pipeline frozen pending verifier correction and durable-receipt recovery."
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-23T05:41:33.000Z",
+          "evidenceSha256": [
+            "482937a50b045ce83b20a53f5e5d3e371fc17a8dd728cac7be6d3948bf819497",
+            "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
+          ],
+          "reason": "Recovered from durable commit receipt after correcting the approved seed-entry hash comparison; corrected verifier passed all three canonical detail APIs."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T05:50:28.000Z",
+          "evidenceSha256": [
+            "482937a50b045ce83b20a53f5e5d3e371fc17a8dd728cac7be6d3948bf819497",
+            "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
+          ],
+          "reason": "Atomic transaction, seed overlay, terminal decisions, three detail APIs and rendered production cards verified; no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "1a772a6e083d3fc74ccd8b8b23b3685fc566274ad69cfccc135e6f4f1e093d0d"
+  "ledgerSha256": "4241205dc75f4e9a2235e9ba4116c7ea0a3484383d09fa54a87e6c74f0e49fdc"
 }

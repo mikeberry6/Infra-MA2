@@ -2,6 +2,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import {
+  assertPortCoBatchReceiptMatchesCommit,
   verifyPortCoBatchCommitReceipt,
   verifyPortCoBatchManifest,
   verifyPortCoBatchReceipt,
@@ -37,26 +38,13 @@ async function main(): Promise<void> {
     JSON.parse(await readFile(resolve(required(values, "commit-receipt")), "utf8")),
     manifest,
   );
-  if (commitReceipt.transactionId !== receipt.transactionId
-    || commitReceipt.appliedAt !== receipt.appliedAt
-    || commitReceipt.releaseSha !== receipt.releaseSha
-    || commitReceipt.databaseTargetFingerprint !== receipt.databaseTargetFingerprint) {
-    throw new Error("Final batch receipt does not match the durable database commit receipt");
-  }
+  assertPortCoBatchReceiptMatchesCommit(commitReceipt, receipt);
   const members = await resolveBatchMembers(root, manifest);
   const verifyDetailApi = createPublicDetailApiVerifier({ baseUrl: required(values, "public-base-url") });
   for (const [index, member] of members.entries()) {
     if (member.kind !== "MUTATION") continue;
     const receiptMember = receipt.members[index];
     if (receiptMember.kind !== "MUTATION") throw new Error(`Receipt member ${index + 1} kind mismatch`);
-    const commitMember = commitReceipt.members[index];
-    if (commitMember.kind !== "MUTATION"
-      || commitMember.companyId !== receiptMember.receipt.companyId
-      || commitMember.auditEventId !== receiptMember.receipt.auditEventId
-      || commitMember.afterImageSha256 !== receiptMember.receipt.appliedAfterImageSha256
-      || commitMember.approvedSeedEntrySha256 !== receiptMember.receipt.seedAfterImageSha256) {
-      throw new Error(`Final receipt member ${index + 1} differs from the durable commit receipt`);
-    }
     await verifyDetailApi(receiptMember.receipt.companyId!, member.proposal.afterImage!, member.proposal.retiredCompanyIds);
   }
   const withoutHash = {
