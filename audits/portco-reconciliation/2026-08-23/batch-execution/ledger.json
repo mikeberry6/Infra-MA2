@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T20:53:00Z",
-  "activeBatchId": "batch-0172-0176-v7",
+  "updatedAt": "2026-08-23T20:55:30.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -1593,7 +1593,7 @@
     },
     {
       "batchId": "batch-0172-0176-v7",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0172:renewa:4e75f8f4",
         "ledger:0173:tramcite:9155b156",
@@ -1609,8 +1609,8 @@
         176
       ],
       "createdAt": "2026-08-23T20:46:31Z",
-      "updatedAt": "2026-08-23T20:53:00Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T20:55:30.000Z",
+      "completedAt": "2026-08-23T20:55:30.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v7/batch-manifest.json",
         "sha256": "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa"
@@ -1620,7 +1620,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v7/production-apply/batch-apply-receipt.json",
         "sha256": "faf4b89733081f5854e7dd8bbd0f98d9f6a2637ac097f356348aaf558e5b4133"
       },
-      "reason": null,
+      "reason": "Atomic receipt, APIs, redirects, archived record and rendered production drawers verified; PR #708 removed internal attribution prose without changing data.",
       "history": [
         {
           "sequence": 1,
@@ -1670,9 +1670,20 @@
             "faf4b89733081f5854e7dd8bbd0f98d9f6a2637ac097f356348aaf558e5b4133"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T20:55:30.000Z",
+          "evidenceSha256": [
+            "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa",
+            "faf4b89733081f5854e7dd8bbd0f98d9f6a2637ac097f356348aaf558e5b4133"
+          ],
+          "reason": "Atomic receipt, APIs, redirects, archived record and rendered production drawers verified; PR #708 removed internal attribution prose without changing data."
         }
       ]
     }
   ],
-  "ledgerSha256": "d19215a46996518df48da5010462d0edd2601c53b315cd7c659c1ee2517ead9d"
+  "ledgerSha256": "f98903dad12ac01cd81169ec20852c47e01b82e84d0ac8f459d18f04d500a853"
 }
