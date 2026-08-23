@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T12:40:48.000Z",
+  "updatedAt": "2026-08-23T12:51:25.000Z",
   "activeBatchId": "batch-0146-0151-v3",
   "batches": [
     {
@@ -670,7 +670,7 @@
     },
     {
       "batchId": "batch-0146-0151-v3",
-      "state": "VERIFYING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0146:jupiter-power:85379278",
         "ledger:0148:national-renewable-solutions:2d543538",
@@ -686,7 +686,7 @@
         151
       ],
       "createdAt": "2026-08-23T12:18:00.000Z",
-      "updatedAt": "2026-08-23T12:40:48.000Z",
+      "updatedAt": "2026-08-23T12:51:25.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/batch-manifest.json",
@@ -697,7 +697,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/production-apply/batch-apply-receipt.json",
         "sha256": "eaf3a53ca94d46dc24af97a262fd080c95ea3ce43050a50d6ba7123f137653d1"
       },
-      "reason": null,
+      "reason": "Rendered production verification found seven direct corporate ownership rows still labeled FUND_ATTRIBUTION_PENDING: former TC Energy and Énergir at PNGTS; current Ørsted and former Eversource at Revolution/South Fork; and current XRG, TotalEnergies and NextDecade at Rio Grande LNG. The atomic PortCo transaction and after-images are correct; attribution metadata must be repaired before completion.",
       "history": [
         {
           "sequence": 1,
@@ -747,9 +747,20 @@
             "eaf3a53ca94d46dc24af97a262fd080c95ea3ce43050a50d6ba7123f137653d1"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-23T12:51:25.000Z",
+          "evidenceSha256": [
+            "5e52499d1a5ceef9a15a29f4ca0bf229f085f321f0c68903c6298970b90f4940",
+            "eaf3a53ca94d46dc24af97a262fd080c95ea3ce43050a50d6ba7123f137653d1"
+          ],
+          "reason": "Rendered production verification found seven direct corporate ownership rows still labeled FUND_ATTRIBUTION_PENDING: former TC Energy and Énergir at PNGTS; current Ørsted and former Eversource at Revolution/South Fork; and current XRG, TotalEnergies and NextDecade at Rio Grande LNG. The atomic PortCo transaction and after-images are correct; attribution metadata must be repaired before completion."
         }
       ]
     }
   ],
-  "ledgerSha256": "e889679ed16f9a3b4304babbf94da3d097126a3cf7cc79ba7cd08a5191a57b3c"
+  "ledgerSha256": "e9a6d8a41fca1a8545edf979a0fb11baaab5dad5cb36016be65259e9ab77041c"
 }

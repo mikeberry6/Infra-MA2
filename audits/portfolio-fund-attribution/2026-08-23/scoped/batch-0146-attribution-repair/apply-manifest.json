@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-23",
+  "ledgerSha256": "5e52499d1a5ceef9a15a29f4ca0bf229f085f321f0c68903c6298970b90f4940",
+  "sourceSnapshotSha256": "03a0c93b2d3f14d5a7d2af1f067fc67fc8c6deab480628c5d4b999f0eace8e0b",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 7,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 7,
+  "mutations": [
+    {
+      "recordId": "OFA-REPAIR-0149-FORMER-ENERGIR",
+      "ownershipPeriodId": "cmt5so1l500142oyyg2h5z3lc",
+      "companyName": "Portland Natural Gas Transmission System",
+      "country": "United States / Canada",
+      "investmentFirm": "Énergir L.P.",
+      "currentVehicleName": "Northern New England Investment Company, Inc.",
+      "databaseVehicleName": "Northern New England Investment Company, Inc.",
+      "investmentYear": null,
+      "stake": "38.3% immediately before the August 2024 sale",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Énergir directly held its former PNGTS corporate interest through Northern New England Investment Company; the disclosed corporate holding vehicle is not an infrastructure fund."
+      },
+      "evidenceUrls": [
+        "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+        "https://www.tcenergy.com/announcements/2024/2024-03-04-tc-energy-announces-sale-of-portland-natural-gas-transmission-system/"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0149-FORMER-TC-ENERGY",
+      "ownershipPeriodId": "cmt5so1km00122oyyo7ja4wx5",
+      "companyName": "Portland Natural Gas Transmission System",
+      "country": "United States / Canada",
+      "investmentFirm": "TC Energy Corporation",
+      "currentVehicleName": "TC Pipelines, Inc.",
+      "databaseVehicleName": "TC Pipelines, Inc.",
+      "investmentYear": null,
+      "stake": "61.7% immediately before the August 2024 sale",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TC Energy directly held its former PNGTS corporate interest through TC Pipelines, Inc.; the disclosed corporate holding vehicle is not an infrastructure fund."
+      },
+      "evidenceUrls": [
+        "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+        "https://www.tcenergy.com/announcements/2024/2024-03-04-tc-energy-announces-sale-of-portland-natural-gas-transmission-system/"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0150-ORSTED",
+      "ownershipPeriodId": "cmt5so20o001i2oyyqi0xxuqi",
+      "companyName": "Revolution Wind & South Fork Wind",
+      "country": "United States",
+      "investmentFirm": "Ørsted",
+      "currentVehicleName": "Ørsted DevCo, LLC; Ørsted SF Class B Member, LLC",
+      "databaseVehicleName": "Ørsted DevCo, LLC; Ørsted SF Class B Member, LLC",
+      "investmentYear": 2018,
+      "stake": "50% of each project since 2019",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ørsted owns its 50% project interests through disclosed corporate project entities; no managed infrastructure fund is involved."
+      },
+      "evidenceUrls": [
+        "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC09E878F-0000-CA75-B0A2-F8C5D3DB3507%7D",
+        "https://us.orsted.com/news-archive/2024/03/south-fork-wind-powers-up-new-era-for-american-clean-energy"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0150-FORMER-EVERSOURCE",
+      "ownershipPeriodId": "cmt5so213001k2oyygj5nzrm5",
+      "companyName": "Revolution Wind & South Fork Wind",
+      "country": "United States",
+      "investmentFirm": "Eversource Energy",
+      "currentVehicleName": "North East Offshore, LLC; South Fork Class B Member, LLC",
+      "databaseVehicleName": "North East Offshore, LLC; South Fork Class B Member, LLC",
+      "investmentYear": 2019,
+      "stake": "Former 50% of each project",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Eversource formerly owned its 50% interests through corporate project entities and sold those interests to GIP in 2024; the former ownership was not held through an infrastructure fund."
+      },
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20240930672791/en/Eversource-Energy-Completes-Exit-of-Offshore-Wind-Business",
+        "https://www.sec.gov/Archives/edgar/data/72741/000110465924104387/tm2425236d1_ex99-1.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0151-XRG",
+      "ownershipPeriodId": "cmt5so2i300222oyywym8y1a1",
+      "companyName": "Rio Grande LNG",
+      "country": "United States",
+      "investmentFirm": "XRG P.J.S.C.",
+      "currentVehicleName": "Raven Holding Company LLC and Train 4/5 acquisition affiliate",
+      "databaseVehicleName": "Raven Holding Company LLC and Train 4/5 acquisition affiliate",
+      "investmentYear": 2025,
+      "stake": "Phase 1 11.7%; Trains 4/5 7.6% aggregate",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "XRG's Rio Grande LNG interests are direct strategic corporate investments held through acquisition affiliates; no managed infrastructure fund is disclosed."
+      },
+      "evidenceUrls": [
+        "https://xrg.com/en/news/XRG-Strengthens-US-LNG-Position-with-Second-Rio-Grande-LNG-Transaction-Completion",
+        "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0151-TOTALENERGIES",
+      "ownershipPeriodId": "cmt5so2hq00202oyye9cc3m3s",
+      "companyName": "Rio Grande LNG",
+      "country": "United States",
+      "investmentFirm": "TotalEnergies",
+      "currentVehicleName": "TotalEnergies project investment affiliates",
+      "databaseVehicleName": "TotalEnergies project investment affiliates",
+      "investmentYear": 2023,
+      "stake": "Phase 1 16.67%; Train 4 10%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TotalEnergies' Rio Grande LNG interests are direct strategic corporate investments held through project affiliates; no managed infrastructure fund is disclosed."
+      },
+      "evidenceUrls": [
+        "https://corporate.totalenergies.us/news/totalenergies-and-its-partners-make-final-investment-decision-rglng-project-texas",
+        "https://corporate.totalenergies.us/news/totalenergies-reaches-final-investment-decision-its-partners-rio-grande-lng-train-4-10-direct"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0151-NEXTDECADE",
+      "ownershipPeriodId": "cmt5so2hh001z2oyyjxzfgmon",
+      "companyName": "Rio Grande LNG",
+      "country": "United States",
+      "investmentFirm": "NextDecade Corporation",
+      "currentVehicleName": "NextDecade LNG, LLC and project affiliates",
+      "databaseVehicleName": "NextDecade LNG, LLC and project affiliates",
+      "investmentYear": 2023,
+      "stake": "Phase 1 up to 20.79%; Train 4 40%; Train 5 50% at entry",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "NextDecade's retained Rio Grande LNG interests are direct sponsor and corporate project ownership rather than a managed infrastructure-fund investment."
+      },
+      "evidenceUrls": [
+        "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+        "https://www.next-decade.com/our-business/rio-grande-lng/"
+      ]
+    }
+  ],
+  "manifestSha256": "71d3176e1f846b924e3732ae25513c350600dddc8adfc1614d38950704652e12"
+}
