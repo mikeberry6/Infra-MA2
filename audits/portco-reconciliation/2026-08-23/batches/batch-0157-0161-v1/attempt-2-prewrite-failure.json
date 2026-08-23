@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_PREWRITE_FAILURE",
+  "batchId": "batch-0157-0161-v1",
+  "batchSha256": "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6",
+  "releaseSha": "a66f6469b3ae29e94b463daba8ff953f030bacae",
+  "workflowRunId": 32649753241,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32649753241",
+  "failedAt": "2026-08-23T15:50:19.271Z",
+  "stage": "RELEASE_PROVENANCE_BEFORE_TRANSACTION",
+  "databaseTransactionStarted": false,
+  "databaseWrites": 0,
+  "error": "Required GitHub Actions check build has not succeeded for a66f6469b3ae29e94b463daba8ff953f030bacae.",
+  "rootCause": "The canonical Vercel deployment was ready before the required protected-main build check finished. The release provenance gate correctly refused to proceed.",
+  "correctiveAction": "Wait for protected-main CI run 32649674998 to complete successfully, then retry the same immutable batch against the unchanged release SHA.",
+  "retryDisposition": "Retried only after the required build succeeded; the later protected workflow run 32649849814 applied the bundle atomically.",
+  "failureSha256": "4f8b709cf8f81bbe3c00a43ae48efc9276c70d94b7c4b1195a3749704a9c46df"
+}
