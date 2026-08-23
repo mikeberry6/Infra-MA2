@@ -218,6 +218,31 @@ export const attributionRollbackApprovalSchema = z.strictObject({
   approvalSha256: sha256Value,
 });
 
+export const attributionSeedRecordSchema = z.strictObject({
+  recordId: nonEmpty,
+  companyName: nonEmpty,
+  country: nonEmpty,
+  investmentFirm: nonEmpty,
+  currentVehicleName: nonEmpty,
+  investmentYear: z.number().int().min(1900).max(2200).nullable(),
+  stake: nonEmpty.nullable(),
+  targetLinkedFundName: nonEmpty.nullable(),
+  fundAttribution: attribution,
+  attributedFundName: nonEmpty.nullable(),
+  attributionConfidence: confidence.nullable(),
+  attributionRationale: nonEmpty,
+  evidenceUrls: z.array(z.string().url()).min(1),
+});
+
+const attributionSeedReconciliationSchema = z.strictObject({
+  batchId: nonEmpty,
+  batchSha256: sha256Value,
+  reconciledAt: z.string().datetime({ offset: true }),
+  sourceManifestSha256: sha256Value,
+  specSha256: sha256Value,
+  changesSha256: sha256Value,
+});
+
 export const attributionSeedManifestSchema = z.strictObject({
   schemaVersion: z.literal(1),
   artifactType: z.literal("PORTFOLIO_FUND_ATTRIBUTION_SEED_MANIFEST"),
@@ -229,21 +254,8 @@ export const attributionSeedManifestSchema = z.strictObject({
     inferredAssignments: z.number().int().positive(),
   }),
   recordCount: z.number().int().positive(),
-  records: z.array(z.strictObject({
-    recordId: nonEmpty,
-    companyName: nonEmpty,
-    country: nonEmpty,
-    investmentFirm: nonEmpty,
-    currentVehicleName: nonEmpty,
-    investmentYear: z.number().int().min(1900).max(2200).nullable(),
-    stake: nonEmpty.nullable(),
-    targetLinkedFundName: nonEmpty.nullable(),
-    fundAttribution: attribution,
-    attributedFundName: nonEmpty.nullable(),
-    attributionConfidence: confidence.nullable(),
-    attributionRationale: nonEmpty,
-    evidenceUrls: z.array(z.string().url()).min(1),
-  })).min(1),
+  records: z.array(attributionSeedRecordSchema).min(1),
+  reconciliations: z.array(attributionSeedReconciliationSchema).optional(),
   manifestSha256: sha256Value,
 }).superRefine((manifest, context) => {
   if (manifest.recordCount !== manifest.records.length) {
@@ -251,6 +263,11 @@ export const attributionSeedManifestSchema = z.strictObject({
   }
   if (new Set(manifest.records.map((record) => record.recordId)).size !== manifest.records.length) {
     context.addIssue({ code: "custom", path: ["records"], message: "Seed attribution record IDs must be unique" });
+  }
+  if (manifest.reconciliations) {
+    if (new Set(manifest.reconciliations.map((entry) => entry.batchId)).size !== manifest.reconciliations.length) {
+      context.addIssue({ code: "custom", path: ["reconciliations"], message: "Seed reconciliation batch IDs must be unique" });
+    }
   }
   let inferredAssignments = 0;
   for (const [index, record] of manifest.records.entries()) {

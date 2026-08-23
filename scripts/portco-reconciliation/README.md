@@ -235,6 +235,11 @@ all mutations inside one Prisma serializable transaction; a failure in any
 member rolls back the full database bundle. Terminal members never write to
 the database.
 
+If a bundle adds, retires, or changes an active seed owner identity, also run
+the hash-bound `portfolio:fund-attribution:reconcile-seed` control. It preserves
+reviewed fund attributions outside the bundle and proves one-to-one coverage of
+the evaluated seed before the release can pass the full test suite.
+
 After the database commit, the protected workflow writes a durable commit
 receipt before public API checks. A final receipt is created only after every
 detail API passes. This split makes a post-commit verification failure
