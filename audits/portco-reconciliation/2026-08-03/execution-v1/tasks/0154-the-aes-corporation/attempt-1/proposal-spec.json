@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-23T13:35:00.000Z",
+  "actions": ["CORRECT_COMPANY", "RETRACT_ERRONEOUS_OWNERSHIP", "ADD_OWNER", "ADD_PENDING_TRANSACTION"],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Retain the canonical AES parent, retract the two erroneous pre-closing GIP and EQT rows that were stored as active ownership, and represent the consortium take-private only as a signed pending incoming transaction. AES remained publicly owned as of August 23, 2026; stockholder approval and HSR expiry did not constitute legal closing, and other regulatory reviews remained open.",
+  "evidence": [
+    {"url": "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm", "purpose": "Merger agreement and buyer structure", "supports": ["Horizon Parent is jointly controlled by GIP-managed vehicles and EQT Infrastructure VI", "the transaction is a signed pending 100% acquisition"]},
+    {"url": "https://www.sec.gov/Archives/edgar/data/874761/000114036126026562/ef20076870_8k.htm", "purpose": "Latest completed approvals", "supports": ["AES stockholders approved the transaction on June 26, 2026", "the HSR waiting period expired on June 22, 2026"]},
+    {"url": "https://dps.ny.gov/event/comments-period-begins-horizon-merger-sub-inc-and-aes-corporation-petition-seeking", "purpose": "Open regulatory review", "supports": ["New York review remained open after the stockholder vote"]},
+    {"url": "https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes", "purpose": "Transaction announcement", "supports": ["AES announced the consortium agreement on March 2, 2026"]}
+  ],
+  "unresolvedQuestions": [],
+  "afterImage": {
+    "id": "cmrxpjgmk00yxivhegkkxve01",
+    "name": "The AES Corporation",
+    "aliases": ["AES", "AES Corporation", "Applied Energy Services, Inc."],
+    "sector": "UTILITIES",
+    "subsector": "Electric utilities and global power generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": ["United States"],
+    "description": "The AES Corporation is a publicly traded, U.S.-headquartered power and utilities company with regulated utilities, conventional generation, renewable energy, battery storage and related infrastructure across the United States and international markets. Its customers include regulated residential, commercial and industrial utility users, corporate and technology buyers, utilities and wholesale-market counterparties. AES remained publicly owned as of August 23, 2026. A consortium jointly controlled by GIP-managed vehicles and EQT Infrastructure VI signed an agreement on March 1, 2026 to acquire 100% of AES through Horizon Parent, L.P.; CalPERS and QIA are also participants. Stockholders approved the merger and the HSR waiting period expired in June 2026, but other regulatory reviews remained open and no legal closing was found. GIP, EQT, CalPERS and QIA are therefore pending buyers, not current owners.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.aes.com/",
+    "yearFounded": 1981,
+    "headquarters": "Arlington, Virginia, United States",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Public Market",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Publicly traded; dispersed public shareholders",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [
+      {
+        "id": null,
+        "direction": "INCOMING",
+        "transactionState": "SIGNED_PENDING_INCOMING",
+        "counterpartyName": "Horizon Parent, L.P. consortium",
+        "transactionDescription": "Signed 100% take-private jointly controlled by GIP-managed vehicles and EQT Infrastructure VI, with CalPERS and QIA participation; legal closing remained pending.",
+        "announcedAt": "2026-03-02",
+        "expectedClosing": "Late 2026 or early 2027 company guidance; not a legal closing date",
+        "relatedOwnershipPeriodIds": [],
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm",
+          "https://www.sec.gov/Archives/edgar/data/874761/000114036126026562/ef20076870_8k.htm",
+          "https://dps.ny.gov/event/comments-period-begins-horizon-merger-sub-inc-and-aes-corporation-petition-seeking"
+        ]
+      }
+    ],
+    "milestones": [
+      {"id": "cmrxplu7v045oivhegzcxth4c", "date": "Jan 28, 1981", "event": "Applied Energy Services, Inc., now The AES Corporation, was incorporated.", "category": "FOUNDING", "sortDate": "1981-01-28T05:00:00.000Z", "evidenceUrls": ["https://www.aes.com/"]},
+      {"id": "cmrxplu8h045pivhe0nu0vkga", "date": "Mar 2, 2026", "event": "AES announced a definitive agreement for a GIP- and EQT-led consortium to acquire 100% of the company through Horizon Parent, L.P.", "category": "ACQUISITION", "sortDate": "2026-03-02T05:00:00.000Z", "evidenceUrls": ["https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes", "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm"]},
+      {"id": "cmrxplu90045qivheh8indgc7", "date": "Jun 26, 2026", "event": "AES stockholders approved the merger after the HSR waiting period expired; other regulatory approvals and legal closing remained pending.", "category": "OTHER", "sortDate": "2026-06-26T04:00:00.000Z", "evidenceUrls": ["https://www.sec.gov/Archives/edgar/data/874761/000114036126026562/ef20076870_8k.htm", "https://dps.ny.gov/event/comments-period-begins-horizon-merger-sub-inc-and-aes-corporation-petition-seeking"]}
+    ],
+    "managementRoles": [],
+    "citations": [
+      {"id": "cmrxpra9b0aueivhecsakoixb", "label": "Aes — The AES Corporation", "url": "https://www.aes.com/", "sourceType": "WEBSITE", "purpose": "COMPANY_PROFILE", "evidenceLabel": "Official company identity and current operating profile", "isPrimary": false},
+      {"id": "cmrxpraac0augivhezjoy19gv", "label": "Announcement date source — Global Infrastructure Partners — The AES Corporation", "url": "https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes", "sourceType": "PRESS_RELEASE", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "March 2026 signed consortium acquisition announcement", "isPrimary": false},
+      {"id": "cmrxprabk0auhivhe41s48qkd", "label": "PR Newswire", "url": "https://www.prnewswire.com/news-releases/consortium-led-by-global-infrastructure-partners-and-eqt-agrees-to-acquire-aes-302700916.html", "sourceType": "PRESS_RELEASE", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "Transaction announcement and participating consortium members", "isPrimary": false},
+      {"id": null, "label": "SEC — AES merger agreement", "url": "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm", "sourceType": "SEC_FILING", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "Horizon Parent structure, GIP and EQT control, and signed pending mechanics", "isPrimary": true},
+      {"id": null, "label": "SEC — AES June 2026 Form 8-K", "url": "https://www.sec.gov/Archives/edgar/data/874761/000114036126026562/ef20076870_8k.htm", "sourceType": "SEC_FILING", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "Stockholder approval, HSR expiry and continuing pre-close status", "isPrimary": false},
+      {"id": null, "label": "New York DPS — AES merger review", "url": "https://dps.ny.gov/event/comments-period-begins-horizon-merger-sub-inc-and-aes-corporation-petition-seeking", "sourceType": "WEBSITE", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "Open New York regulatory review after stockholder approval", "isPrimary": false}
+    ]
+  }
+}

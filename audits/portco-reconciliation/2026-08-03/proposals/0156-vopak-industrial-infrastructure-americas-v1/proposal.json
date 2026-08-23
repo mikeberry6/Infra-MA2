@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0156:vopak-industrial-infrastructure-americas:bef0b093",
+  "taskIndex": 156,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T13:39:00.000Z",
+  "canonicalKey": "vopak-industrial-infrastructure-americas|united-states",
+  "companyName": "Vopak Industrial Infrastructure Americas",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "023-blackrock:holding:009:vopak-industrial-infrastructure-americas"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one VIIA platform containing the Freeport, St. Charles and Plaquemine terminals, correct BlackRock's vehicle to GEPIF III, add Royal Vopak as the 50% co-owner, and reject a separate GIP owner period. BlackRock's 2024 acquisition of GIP was a manager-level combination and did not transfer the VIIA interest.",
+  "evidence": [
+    {
+      "url": "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf",
+      "purpose": "Closing, ownership and asset scope",
+      "supports": [
+        "Vopak and BlackRock closed the three-terminal acquisition on December 2, 2020",
+        "the joint venture is owned 50% by each partner"
+      ]
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020M9999",
+      "purpose": "Fund and control attribution",
+      "supports": [
+        "BlackRock Alternatives Management invested through GEPIF III",
+        "BlackRock and Vopak jointly control the platform"
+      ]
+    },
+    {
+      "url": "https://www.vopak.com/terminals/viia-freeport-texas",
+      "purpose": "Current operating status",
+      "supports": [
+        "VIIA continues to operate the Freeport terminal"
+      ]
+    },
+    {
+      "url": "https://lei.bloomberg.com/leis/view/25490057VTAOBH0Z9373",
+      "purpose": "Legal identity and headquarters",
+      "supports": [
+        "The legal entity is Vopak Industrial Infrastructure Americas, LLC and is headquartered in Houston"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "3a4ee6409d122601c5af9188e235f2d07c7915ffdbe3008e6ac12e24116911ad",
+  "currentCompanySnapshotSha256": "2ee58976af5389e87e5716fff1254e17b08ddc530c928f7a3bcf4fb59a6447b2",
+  "executionLock": {
+    "taskSnapshotSha256": "77034e7e72515a293b2b3a247c23cd30dc4280bd6d2944c92388ef048fe495b1",
+    "taskStateSha256": "c4bdd06d79616656f9c2ccb230616793c49f07f695afd4c3250150a08c128055",
+    "taskDependencySha256": "eea16aa4c45bd7123668fa97b8d34a6a578eda4614a03f4f0453ae047e898f1a",
+    "seedEntrySha256": "fc4cb11bf98901663555ed7c9b4646e9170a85bc291447726046ea8b14bb4ffa",
+    "dependencies": {
+      "ownershipPeriodsSha256": "2b3b012e00cd597689a21ca2f5821f40cd12b2c5891cb133083c0676265b1cd8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "c0c9d56ed1dd3a43a42dd30221da2903bb140c472db048c92db563d9af8ec9ec",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj92i00neivheuthp9gpg",
+    "name": "Vopak Industrial Infrastructure Americas",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Industrial terminals and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Vopak Industrial Infrastructure Americas is an industrial-terminal platform on the US Gulf Coast. The assets provide storage, logistics, and industrial infrastructure services to a large chemical customer base rather than directly serving consumer end markets. Its operating model is asset-heavy and contracted because value depends on terminal infrastructure and long-term service agreements. Public transaction materials describe three terminals acquired from Dow in Plaquemine, Saint Charles, and Freeport, giving the platform exposure to both Louisiana and Texas. Operations are concentrated on the US Gulf Coast, where the assets are integrated with Dow's industrial footprint. Royal Vopak and BlackRock's Global Energy & Power Infrastructure Fund formed the 50-50 venture in 2020 and completed the acquisition of the terminals the same year.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Louisiana and Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjudc01kvivhe8vpflp22",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Global Energy & Power Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwxk031pivhe1m3us369",
+        "date": "2020",
+        "event": "The partners established a 50-50 industrial infrastructure joint venture covering terminals in Louisiana and Texas.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwy0031qivheohe9ruj0",
+        "date": "Sep 14, 2020",
+        "event": "Vopak and BlackRock's GEPIF announced the acquisition of three industrial terminals from Dow on the U.S. Gulf Coast.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-14T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwym031rivhey759ju7x",
+        "date": "Dec 2, 2020",
+        "event": "Vopak and BlackRock's GEPIF successfully completed the acquisition of the three industrial terminals from Dow.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-02T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppl1g08dyivhev48kyypg",
+        "label": "Announcement date source — BlackRock — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-acquire-three-industrial-terminals-dow-us-gulf-coast?language_content_entity=en",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppl3o08e0ivhe5sngh37w",
+        "label": "Close date source — BlackRock — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-successfully-completed-acquisition-three-industrial",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppl4r08e2ivhe3vmwix3c",
+        "label": "Vopak — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Vopak — Vopak Industrial Infrastructure Americas",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "2ee58976af5389e87e5716fff1254e17b08ddc530c928f7a3bcf4fb59a6447b2",
+  "afterImage": {
+    "id": "cmrxpj92i00neivheuthp9gpg",
+    "name": "Vopak Industrial Infrastructure Americas",
+    "aliases": [
+      "Vopak Industrial Infrastructure Americas, LLC",
+      "VIIA"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "Industrial terminals and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Vopak Industrial Infrastructure Americas, LLC is a contracted industrial-terminal and bulk-liquid-storage platform on the U.S. Gulf Coast. Its Freeport, St. Charles and Plaquemine sites provide tank storage and marine, pipeline, rail and truck logistics under long-term service agreements, with Dow as the disclosed anchor customer. Royal Vopak and BlackRock's Global Energy & Power Infrastructure Fund III formed the 50/50 joint venture and completed the $620 million acquisition of the three terminals from Dow on December 2, 2020. The terminals are nested operating sites beneath one VIIA PortCo. BlackRock's October 2024 acquisition of GIP did not create a separate VIIA ownership period, and no later sale or signed pending ownership transfer was found through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Houston, Texas, United States",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjudc01kvivhe8vpflp22",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": null,
+        "stake": "50%",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Koninklijke Vopak N.V.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "50%",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwxk031pivhe1m3us369",
+        "date": "Sep 10, 2020",
+        "event": "Vopak Industrial Infrastructure Americas, LLC was formed as the 50/50 Vopak-BlackRock joint-venture platform.",
+        "category": "FOUNDING",
+        "sortDate": "2020-09-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://lei.bloomberg.com/leis/view/25490057VTAOBH0Z9373",
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020M9999"
+        ]
+      },
+      {
+        "id": "cmrxpkwy0031qivheohe9ruj0",
+        "date": "Sep 14, 2020",
+        "event": "Vopak and BlackRock's GEPIF III announced the $620 million acquisition of three Dow terminals on the U.S. Gulf Coast.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-acquire-three-industrial-terminals-dow-us-gulf-coast?language_content_entity=en",
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020M9999"
+        ]
+      },
+      {
+        "id": "cmrxpkwym031rivhey759ju7x",
+        "date": "Dec 2, 2020",
+        "event": "The 50/50 Vopak-BlackRock venture completed the acquisition of the Freeport, St. Charles and Plaquemine terminals from Dow.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-02T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppl1g08dyivhev48kyypg",
+        "label": "Announcement date source — BlackRock — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-acquire-three-industrial-terminals-dow-us-gulf-coast?language_content_entity=en",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "September 2020 acquisition announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppl3o08e0ivhe5sngh37w",
+        "label": "Close date source — BlackRock — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-successfully-completed-acquisition-three-industrial",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 2020 acquisition closing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppl4r08e2ivhe3vmwix3c",
+        "label": "Vopak — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Closing, 50/50 ownership, terminal scope and disclosed scale",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "European Commission — BlackRock/Vopak terminal venture",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020M9999",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GEPIF III attribution and joint control",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BlackRock — GIP acquisition close",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Manager-level combination, not a VIIA transfer",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Vopak — VIIA Freeport",
+        "url": "https://www.vopak.com/terminals/viia-freeport-texas",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Texas terminal operation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Vopak — VIIA St. Charles",
+        "url": "https://www.vopak.com/terminals/viia-st-charles-louisiana",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Louisiana terminal operation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Vopak — VIIA Plaquemine",
+        "url": "https://www.vopak.com/terminals/viia-plaquemine-louisiana",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Louisiana terminal operation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "GLEIF registry mirror — VIIA",
+        "url": "https://lei.bloomberg.com/leis/view/25490057VTAOBH0Z9373",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Legal identity, formation and Houston headquarters",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "905a493eb3ead4d2574b93a5d953c19abcc69ccd7cfd679488a386fad9e03a56",
+  "proposalSha256": "73e2d47ab5c67d4e293245f1a93d67cffaf703e46d76a25b2535c918784645ec"
+}

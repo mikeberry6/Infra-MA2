@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0152:saavi-energia:20878d92",
+  "taskIndex": 152,
+  "companyName": "Saavi Energía",
+  "generatedAt": "2026-08-23T13:33:12.641Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0152-saavi-energia/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 152,
+    "taskId": "ledger:0152:saavi-energia:20878d92",
+    "canonicalKey": "saavi-energia|mexico",
+    "companyName": "Saavi Energía",
+    "country": "Mexico",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "048-global-infrastructure-partners:holding:008:saavi-energia"
+    ],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:009:saavi-energia"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjgly00ywivhe8rs5yjnm"
+    ],
+    "seedKeys": [
+      "saavi energía|Mexico"
+    ],
+    "evidenceUrls": [
+      "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/",
+      "https://www.saavienergia.com/en/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock MATCHED_ELSEWHERE: GIP power platform in Mexico; reconciled under GIP.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjgly00ywivhe8rs5yjnm",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "saavi-energia|mexico",
+  "targetCompanyImage": {
+    "id": "cmrxpjgly00ywivhe8rs5yjnm",
+    "name": "Saavi Energía",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-fired generation and gas infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Saavi Energía generates and commercializes electricity and natural gas infrastructure services in Mexico. Its end markets include the Mexican power market, qualified-supply and legacy contractual arrangements, and reserve-capacity and export-linked markets connected to California. The company follows an asset-heavy operating model built around combined-cycle plants, gas compression stations, mobile turbines, and associated pipeline infrastructure. Current company materials describe a portfolio of six combined-cycle plants, one solar plant, three gas compression stations, three mobile turbines, and a 40-mile gas pipeline with more than 3.7 GW of installed capacity. Global Infrastructure Partners acquired Saavi from Actis in August 2021, and later company materials described GIP as the majority shareholder. Operations are concentrated in Mexico’s major industrial corridors, with assets in states including Baja California, Chihuahua, Guanajuato, and Jalisco.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1995,
+    "headquarters": "Baja California; Chihuahua; Guanajuato; Jalisco",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2fk01xiivhetq7dtfj4",
+        "managerName": "BlackRock",
+        "organizationName": "GIP",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplu37045livher3tvnc2c",
+        "date": "1995",
+        "event": "InterGen México, the predecessor business identified by the company, was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1995-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu3u045mivhe48mbpu4j",
+        "date": "2018",
+        "event": "Actis acquired InterGen México’s portfolio and the Saavi Energía brand was established.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu4a045nivhefyzksxvb",
+        "date": "Aug 20, 2021",
+        "event": "Global Infrastructure Partners (GIP) announced the acquisition of Saavi Energía from Actis.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-08-20T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpra530au6ivhep2q82l6m",
+        "label": "Saavienergia — Saavi Energía",
+        "url": "https://www.saavienergia.com/en/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Saavienergia — Saavi Energía",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpra630au8ivhen9bn1wbq",
+        "label": "Saavienergia — Saavi Energía",
+        "url": "https://www.saavienergia.com/en/about-saavi/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Saavienergia company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra720auaivhe3rqjmygt",
+        "label": "Saavienergia — Saavi Energía",
+        "url": "https://www.saavienergia.com/en/our-sites/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Saavienergia — Saavi Energía",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra820aucivhe775e0eyk",
+        "label": "Announcement date source — Global Infrastructure Partners — Saavi Energía",
+        "url": "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Saavi Energía",
+    "investmentFirm": "Global Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Gas-fired generation and gas infrastructure",
+    "region": "North America",
+    "country": "Mexico",
+    "ownershipVehicle": "n.a.",
+    "description": "Saavi Energía generates and commercializes electricity and natural gas infrastructure services in Mexico. Its end markets include the Mexican power market, qualified-supply and legacy contractual arrangements, and reserve-capacity and export-linked markets connected to California. The company follows an asset-heavy operating model built around combined-cycle plants, gas compression stations, mobile turbines, and associated pipeline infrastructure. Current company materials describe a portfolio of six combined-cycle plants, one solar plant, three gas compression stations, three mobile turbines, and a 40-mile gas pipeline with more than 3.7 GW of installed capacity. Global Infrastructure Partners acquired Saavi from Actis in August 2021, and later company materials described GIP as the majority shareholder. Operations are concentrated in Mexico’s major industrial corridors, with assets in states including Baja California, Chihuahua, Guanajuato, and Jalisco.",
+    "status": "Active",
+    "countryTags": [
+      "Mexico"
+    ],
+    "yearFounded": 1995,
+    "investmentYear": 2021,
+    "headquarters": "Baja California; Chihuahua; Guanajuato; Jalisco",
+    "milestones": [
+      {
+        "date": "1995",
+        "event": "InterGen México, the predecessor business identified by the company, was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2018",
+        "event": "Actis acquired InterGen México’s portfolio and the Saavi Energía brand was established.",
+        "category": "Founding"
+      },
+      {
+        "date": "Aug 20, 2021",
+        "event": "Global Infrastructure Partners (GIP) announced the acquisition of Saavi Energía from Actis.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Saavienergia — Saavi Energía",
+        "url": "https://www.saavienergia.com/en/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Saavienergia — Saavi Energía",
+        "url": "https://www.saavienergia.com/en/about-saavi/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Saavienergia — Saavi Energía",
+        "url": "https://www.saavienergia.com/en/our-sites/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — Global Infrastructure Partners — Saavi Energía",
+        "url": "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Global Infrastructure Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpif4s0041ivheo1wu6c3q",
+        "name": "Actis",
+        "updatedAt": "2026-07-23T16:09:26.812Z"
+      },
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0152:saavi-energia:20878d92",
+    "taskIndex": 152,
+    "canonicalKey": "saavi-energia|mexico",
+    "capturedAt": "2026-08-23T13:33:12.641Z",
+    "databaseRevision": "revision:c2adffdb87d2f8749ff03335b079e4b2461a068167b13993c897d0ab158c4a76",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "65aef82fdf1ea6d6b0b7fb2e18226b11a01d64034215aa7a72bdd8eed1ca7550",
+    "productionSnapshotSha256": "d5e3123150949a4ddcce74fdee6e8d0f75ba0d6346de45d953a0d4635df81847",
+    "targetCompanySnapshotSha256": "3894708ef755db2621b7c078bb84c9c562129ae2afad3dad1853b46ecf2d786a",
+    "seedEntrySha256": "fdfd5dd0e6076c694ed4f001453f54c582ca6491e6436557f9ff0bd4fd0e1e8a",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "6f3946d832a77fe5ba6369502c8645019236198dbd702305d7a866c10a3331e0",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "f719602302dab2e033b4d450add972c1fb1d42437725e6aa4c8954316b2b40f3",
+      "citationsSha256": "12c221c162740ff0f66daca7bc7901ede1d498ea351669dd7f15c238af379522",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "84637c6f668bab50c9d840ff375b184813375c03ca441c3942585f51568b99d4",
+    "stateSha256": "56a73a1fa27993fcdb42b1bbd44e1d214208fb0f267fa90a747964a7735606ee",
+    "taskSnapshotSha256": "75f6cd5c1a7812e124dd8ee70d0d3eaad0e9900ec540726974ec62d4c554a011"
+  },
+  "contextSha256": "5dbc8fc93cb5481d97ba8e5acd3766329f035ed217af7d5bc9a5dda4b98e67af"
+}

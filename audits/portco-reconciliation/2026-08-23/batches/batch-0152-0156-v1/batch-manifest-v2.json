@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0152-0156-v1",
+  "createdAt": "2026-08-23T13:43:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "3435b56f1be7a02b049690a5926de807922bf1e367c3a9a623a9bab40cf956c6"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0152:saavi-energia:20878d92",
+      "taskIndex": 152,
+      "companyName": "Saavi Energía",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0152-saavi-energia-v1/proposal.json",
+        "sha256": "f4be5400296aa02f2ab9d81cff42dac0f2e0813327d19adc56306c92e05b2cfc"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0152-saavi-energia-v1.json",
+        "sha256": "ea199c40b72873f0f7a28f572ea96dcf47b8709af543f13e46e781392645f7bb"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0152-saavi-energia/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "d5e3123150949a4ddcce74fdee6e8d0f75ba0d6346de45d953a0d4635df81847"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0152-saavi-energia/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "75f6cd5c1a7812e124dd8ee70d0d3eaad0e9900ec540726974ec62d4c554a011"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0152-saavi-energia/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "2ae5588dbeada46bc9a8d11744f6c9c0e7863ad8889fb901ed6c3ed9642c04ec"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0152-saavi-energia/attempt-1/research-decision.json",
+        "sha256": "c7763d479b64d56517594782e9b1a6d28135efea95a1c122a32548b71c4f9b36"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0152-saavi-energia/attempt-1/source-verification.json",
+        "sha256": "99db96ce967243d7207c93ce4cd2d0806781ba32a16f977425bcb3734b9304ba"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "56a73a1fa27993fcdb42b1bbd44e1d214208fb0f267fa90a747964a7735606ee",
+      "dependencySha256": "84637c6f668bab50c9d840ff375b184813375c03ca441c3942585f51568b99d4",
+      "afterImageSha256": "a11908dd304bf6920512923162c471df29043bc3d6a0035bf361f7f11423a7b2",
+      "targetClaims": [
+        "canonical:saavi-energia|mexico",
+        "company:cmrxpjgly00ywivhe8rs5yjnm",
+        "relation:cmrxpk2fk01xiivhetq7dtfj4",
+        "relation:cmrxplu37045livher3tvnc2c",
+        "relation:cmrxplu3u045mivhe48mbpu4j",
+        "relation:cmrxplu4a045nivhefyzksxvb",
+        "relation:cmrxpra530au6ivhep2q82l6m",
+        "relation:cmrxpra630au8ivhen9bn1wbq",
+        "relation:cmrxpra720auaivhe3rqjmygt",
+        "relation:cmrxpra820aucivhe775e0eyk",
+        "seed:saavi energía|mexico"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+          "label": "BlackRock — GIP acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cofece.mx/wp-content/uploads/2021/09/VEP_20210805_31.pdf",
+          "label": "COFECE — Saavi acquisition resolution",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/",
+          "label": "Announcement date source — Global Infrastructure Partners — Saavi Energía",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.global-infra.com/portfolio-page/saavi-energia/",
+          "label": "GIP — Saavi Energía portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/saavi-energia-announces-the-agreement-signed-by-global-infrastructure-partners-gip-to-combine-power-generation-assets-with-those-of-grupo-mexico-sab-de-cv-302754442.html",
+          "label": "PR Newswire",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.saavienergia.com/en/",
+          "label": "Saavienergia — Saavi Energía",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.saavienergia.com/en/about-saavi/",
+          "label": "Saavienergia — Saavi Energía",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.saavienergia.com/en/our-sites/",
+          "label": "Saavienergia — Saavi Energía",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0153:stratos:4f72c101",
+      "taskIndex": 153,
+      "companyName": "STRATOS",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0153-stratos-v1/proposal.json",
+        "sha256": "1b8f8446ad6447f4d15fbf929277e90f35364610e6d3ffbf0380c3b10fbbef71"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0153-stratos-v1.json",
+        "sha256": "ffcccd58a630221349005de157088ab7d345d7218982e349ab5f5359896e1488"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0153-stratos/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "f06ca122968200a8455fa1abdf61f5e64deee11e3e7ac047bad45f9367c59a49"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0153-stratos/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "c2082c25100560c9b37ee5f442da2d8331bc0e3664bb27bea3bfbaf946badce1"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0153-stratos/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "11e377def55d281e1301000c62e22d4b91ca98e971d9e56ab673766e0fdbbea5"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0153-stratos/attempt-1/research-decision.json",
+        "sha256": "191c611b09ac3f20b2d08ad7ad4ec78c10e57b066bdb462727f81ae69aa10c86"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0153-stratos/attempt-1/source-verification.json",
+        "sha256": "195ebf33830e3f7a5e9839e85c9ec090fe3d9eef0331c54ba87158b8fcf3b502"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "8836cf7500c6d19d158740eff96374f96a073fb4630c7b54ee5ecc46a64d5a62",
+      "dependencySha256": "1f12e748af31e87c072ca5e3f1034f2b8f2d21c1865777ace0a5c1dbf921c0e0",
+      "afterImageSha256": "53e692caf736d4472f642d41346d47508ab541c7696975b97cba2da14924a5df",
+      "targetClaims": [
+        "canonical:stratos|united-states",
+        "company:cmrxpj91y00ndivhejiuocayx",
+        "relation:cmrxpjucr01kuivhepouw6j00",
+        "relation:cmrxpkwvg031mivhe00jge9w2",
+        "relation:cmrxpkwvx031nivhed6yplrws",
+        "relation:cmrxpkwwf031oivhei8618tls",
+        "relation:cmrxppkwx08dqivhe1657p8nd",
+        "relation:cmrxppky408dsivhek6qwkt9k",
+        "relation:cmrxppkz808duivhezidmqr32",
+        "relation:cmrxppl0b08dwivhe147qjwav",
+        "seed:stratos|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.1pointfive.com/news/1pointfive-holds-groundbreaking",
+          "label": "1Pointfive — STRATOS",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.1pointfive.com/news/occidental-and-1pointfive-secure-class-vi-permits-for-stratos-direct-air-capture-facility",
+          "label": "1Pointfive — STRATOS",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.1pointfive.com/news/occidental-and-blackrock-form-joint-venture-to-develop-stratos",
+          "label": "Announcement date source — BlackRock — STRATOS",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1pointfive.com/projects/ector-county-tx",
+          "label": "1Pointfive — STRATOS",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1pointfive.com/projects/stratos",
+          "label": "1PointFive — STRATOS project",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+          "label": "BlackRock — GIP acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.epa.gov/newsreleases/epa-issues-final-permits-geologic-sequestration-carbon-dioxide-texas",
+          "label": "EPA — STRATOS Class VI permits",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.oxy.com/news/news-releases/occidental-and-blackrock-form-joint-venture-to-develop-stratos-the-worlds-largest-direct-air-capture-plant/",
+          "label": "Occidental — STRATOS joint venture",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/797468/000079746824000095/oxy-20240331.htm",
+          "label": "Occidental — First-quarter 2024 Form 10-Q",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0154:the-aes-corporation:c65cb3c1",
+      "taskIndex": 154,
+      "companyName": "The AES Corporation",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0154-the-aes-corporation-v2/proposal.json",
+        "sha256": "8a442316a28ed122c37919a8acb6aee1df60a79cc696a71e4ad7cd21f079c2ad"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0154-the-aes-corporation-v2.json",
+        "sha256": "6d68b1100fd15d1d74b9f84b506eabe6ed52afed8be1f0732ab0308843f6ebab"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0154-the-aes-corporation/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "26289824aa6dad72f6353deac45bc33caccc86ec17fa2df15e239b797040e281"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0154-the-aes-corporation/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "0aafd083ad230fb74b6bcc120faa5a399b945d170362725e2ea01d68748b7ee3"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0154-the-aes-corporation/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "25f5069b388e4b3c4825d73384213a41a553204bc2100b0d88eb9773a788331b"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0154-the-aes-corporation/attempt-1/research-decision.json",
+        "sha256": "b7263172d8ecd2ebaf67e3247d917d4a6a8e0e02471a4af22df115b239640109"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0154-the-aes-corporation/attempt-1/source-verification.json",
+        "sha256": "81d4d594256fa855cc61ebaaf5ba4d3d047f14e6cbb934f00b02f52c22238b6a"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "cde470819076674cfc0bdff75f60d31567c512259d44090819fae93121724b38",
+      "dependencySha256": "868efa31007cef9daeefd5f8d971ba48e60402a3a79db0d01dc7eed77b0f3d99",
+      "afterImageSha256": "018db92b4fa0244664602fc7a958dd85107d67bdca7d6ea54e1e838782b1e100",
+      "targetClaims": [
+        "canonical:the-aes-corporation|united-states",
+        "company:cmrxpjgmk00yxivhegkkxve01",
+        "relation:cmrxpk2g601xjivhe6vydxayj",
+        "relation:cmrxpk2gn01xkivhelfk4tc6z",
+        "relation:cmrxplu7v045oivhegzcxth4c",
+        "relation:cmrxplu8h045pivhe0nu0vkga",
+        "relation:cmrxplu90045qivheh8indgc7",
+        "relation:cmrxpra9b0aueivhecsakoixb",
+        "relation:cmrxpraac0augivhezjoy19gv",
+        "relation:cmrxprabk0auhivhe41s48qkd",
+        "seed:the aes corporation|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://dps.ny.gov/event/comments-period-begins-horizon-merger-sub-inc-and-aes-corporation-petition-seeking",
+          "label": "New York DPS — AES merger review",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.aes.com/",
+          "label": "Aes — The AES Corporation",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes",
+          "label": "Announcement date source — Global Infrastructure Partners — The AES Corporation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/consortium-led-by-global-infrastructure-partners-and-eqt-agrees-to-acquire-aes-302700916.html",
+          "label": "PR Newswire",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/874761/000114036126026562/ef20076870_8k.htm",
+          "label": "SEC — AES June 2026 Form 8-K",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm",
+          "label": "SEC — AES merger agreement",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0155:vanguard-renewables:39c75d98",
+      "taskIndex": 155,
+      "companyName": "Vanguard Renewables",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0155-vanguard-renewables-v1/proposal.json",
+        "sha256": "418f48e530bf09011ad1c170356a7da5796247674e95e77398361aaaa5cab867"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0155-vanguard-renewables-v1.json",
+        "sha256": "4adecc093321c4202b0aa165c85994630f57c8287f453fa2ff9a94c328bf2f00"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "01cb4f8b44dc5c54a45feb95661c6a7d05fcf4d9d0cbee62847c544d67cd6ce4"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "f6690da171a70544da73aa9d40e09bb21b4c78d400df7209c3b856d0455e7ee5"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "004effc888702fd238fbb88ef13fa3cd50a378a64b106872600e34979fec715d"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/research-decision.json",
+        "sha256": "433170589bc6a52bfc310a8f8462c66d41317522aa08cb1a5b7ff3cd911a52ac"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/source-verification.json",
+        "sha256": "66a167d03e6532911e8baae504a576e6ff515056a8a564156478a37bf710cba8"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "e3ea991a4b75e9eeb985abce5b4dabbf532f5b87d9fd4b6da27071e01dcbbac7",
+      "dependencySha256": "5ecd73c2e0989c8dd35d4f3ba45e3716e4c11bd1173204c82971921aff553417",
+      "afterImageSha256": "3c2ae31adf0aca94cf09c946cbef304b1063b1b13eb7194565e5ee1fa1eeb16a",
+      "targetClaims": [
+        "canonical:vanguard-renewables|united-states",
+        "company:cmrxpjgn500yyivhe7tr8lc9h",
+        "relation:cmrxpk2h701xlivhe02mz7fdk",
+        "relation:cmrxpk2hr01xmivhevyothznb",
+        "relation:cmrxplu9z045rivhekhohkctm",
+        "relation:cmrxpluak045sivheqjjxw56f",
+        "relation:cmrxplub4045tivhelsvt5agm",
+        "relation:cmrxpraek0aujivheh3an63sq",
+        "relation:cmrxprag60aulivhels4euz7m",
+        "relation:cmrxprahb0aunivhexcqd3nqn",
+        "relation:cmrxprahu0auoivherrov0sq3",
+        "relation:cmrxpraip0auqivheb07fdzjh",
+        "relation:cmrxprajr0ausivher62g709f",
+        "seed:vanguard renewables|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://totalenergies.com/news/press-releases/totalenergies-and-vanguard-renewables-portfolio-company-blackrocks-diversified",
+          "label": "Totalenergies — Vanguard Renewables",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+          "label": "BlackRock — GIP acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20220720005157/en/Vanguard-Renewables-Announces-Acquisition-by-BlackRock-Real-Assets",
+          "label": "Close date source — BlackRock — Vanguard Renewables",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close",
+          "label": "BlackRock GIF IV",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ingka.com/newsroom/turning-meatball-scraps-into-renewable-gas-ikea-u-s-and-vanguard-renewables-tackle-food-waste/",
+          "label": "Ingka — Vanguard Renewables investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.vanguardrenewables.com/",
+          "label": "Vanguardrenewables — Vanguard Renewables",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.vanguardrenewables.com/latest/joint-venture-announcement",
+          "label": "Vanguardrenewables — Vanguard Renewables",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.vanguardrenewables.com/latest/vanguard-renewables-celebrates-milestone-completion-of-three-rng-projects",
+          "label": "Vanguard Renewables — 2026 operating update",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.vanguardrenewables.com/latest/vanguard-renewables-cma-cgm",
+          "label": "Vanguard Renewables — CMA CGM/PULSE investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.vanguardrenewables.com/our-story",
+          "label": "Vanguardrenewables — Vanguard Renewables",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0156:vopak-industrial-infrastructure-americas:bef0b093",
+      "taskIndex": 156,
+      "companyName": "Vopak Industrial Infrastructure Americas",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0156-vopak-industrial-infrastructure-americas-v1/proposal.json",
+        "sha256": "73e2d47ab5c67d4e293245f1a93d67cffaf703e46d76a25b2535c918784645ec"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0156-vopak-industrial-infrastructure-americas-v1.json",
+        "sha256": "22a4b76bad47372a888b484b8d74a19b2ee205718380cbc2c9018a960fd6c01a"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/locked-v3-production-snapshot.json",
+        "sha256": "3a4ee6409d122601c5af9188e235f2d07c7915ffdbe3008e6ac12e24116911ad"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/locked-v3-task-snapshot.json",
+        "sha256": "77034e7e72515a293b2b3a247c23cd30dc4280bd6d2944c92388ef048fe495b1"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "ee6c7526bb3384c776b81064bfffb4079fa870ac73f61ce4568a3f9114ad3f2f"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/research-decision.json",
+        "sha256": "5a774b5070b327cc3f5bce5cad4442e6112351126c63dd260ac8da4d8b48952d"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/source-verification.json",
+        "sha256": "fa4007eaaf7e3cf7f641199b032bc8f27fc048a2d566d98c30f2e2280ce83ceb"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "c4bdd06d79616656f9c2ccb230616793c49f07f695afd4c3250150a08c128055",
+      "dependencySha256": "eea16aa4c45bd7123668fa97b8d34a6a578eda4614a03f4f0453ae047e898f1a",
+      "afterImageSha256": "905a493eb3ead4d2574b93a5d953c19abcc69ccd7cfd679488a386fad9e03a56",
+      "targetClaims": [
+        "canonical:vopak-industrial-infrastructure-americas|united-states",
+        "company:cmrxpj92i00neivheuthp9gpg",
+        "relation:cmrxpjudc01kvivhe8vpflp22",
+        "relation:cmrxpkwxk031pivhe1m3us369",
+        "relation:cmrxpkwy0031qivheohe9ruj0",
+        "relation:cmrxpkwym031rivhey759ju7x",
+        "relation:cmrxppl1g08dyivhev48kyypg",
+        "relation:cmrxppl3o08e0ivhe5sngh37w",
+        "relation:cmrxppl4r08e2ivhe3vmwix3c",
+        "seed:vopak industrial infrastructure americas|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020M9999",
+          "label": "European Commission — BlackRock/Vopak terminal venture",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://lei.bloomberg.com/leis/view/25490057VTAOBH0Z9373",
+          "label": "GLEIF registry mirror — VIIA",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+          "label": "BlackRock — GIP acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-acquire-three-industrial-terminals-dow-us-gulf-coast?language_content_entity=en",
+          "label": "Announcement date source — BlackRock — Vopak Industrial Infrastructure Americas",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-successfully-completed-acquisition-three-industrial",
+          "label": "Close date source — BlackRock — Vopak Industrial Infrastructure Americas",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf",
+          "label": "Vopak — Vopak Industrial Infrastructure Americas",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.vopak.com/terminals/viia-freeport-texas",
+          "label": "Vopak — VIIA Freeport",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.vopak.com/terminals/viia-plaquemine-louisiana",
+          "label": "Vopak — VIIA Plaquemine",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.vopak.com/terminals/viia-st-charles-louisiana",
+          "label": "Vopak — VIIA St. Charles",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "0cf062da65dc46af9b5f2e769bece8544c909e7e07bb6f1fe2c24f45c30e8b18",
+    "sharedSourceUrls": [
+      "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners"
+    ],
+    "conflicts": []
+  },
+  "batchSha256": "7de097a43b4e7d5cafbf7bdf16fa057a749227ab0568c09279449847dc8f42e3"
+}

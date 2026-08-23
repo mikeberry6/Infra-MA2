@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0156:vopak-industrial-infrastructure-americas:bef0b093",
+  "taskIndex": 156,
+  "companyName": "Vopak Industrial Infrastructure Americas",
+  "generatedAt": "2026-08-23T13:40:04.410Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/locked-v3-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 156,
+    "taskId": "ledger:0156:vopak-industrial-infrastructure-americas:bef0b093",
+    "canonicalKey": "vopak-industrial-infrastructure-americas|united-states",
+    "companyName": "Vopak Industrial Infrastructure Americas",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "023-blackrock:holding:009:vopak-industrial-infrastructure-americas"
+    ],
+    "sourceRepoOnlyIds": [
+      "048-global-infrastructure-partners:repo-only:018:vopak-industrial-infrastructure-americas"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj92i00neivheuthp9gpg"
+    ],
+    "seedKeys": [
+      "vopak industrial infrastructure americas|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-acquire-three-industrial-terminals-dow-us-gulf-coast"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj92i00neivheuthp9gpg",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "vopak-industrial-infrastructure-americas|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj92i00neivheuthp9gpg",
+    "name": "Vopak Industrial Infrastructure Americas",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Industrial terminals and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Vopak Industrial Infrastructure Americas is an industrial-terminal platform on the US Gulf Coast. The assets provide storage, logistics, and industrial infrastructure services to a large chemical customer base rather than directly serving consumer end markets. Its operating model is asset-heavy and contracted because value depends on terminal infrastructure and long-term service agreements. Public transaction materials describe three terminals acquired from Dow in Plaquemine, Saint Charles, and Freeport, giving the platform exposure to both Louisiana and Texas. Operations are concentrated on the US Gulf Coast, where the assets are integrated with Dow's industrial footprint. Royal Vopak and BlackRock's Global Energy & Power Infrastructure Fund formed the 50-50 venture in 2020 and completed the acquisition of the terminals the same year.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Louisiana and Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjudc01kvivhe8vpflp22",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Global Energy & Power Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwxk031pivhe1m3us369",
+        "date": "2020",
+        "event": "The partners established a 50-50 industrial infrastructure joint venture covering terminals in Louisiana and Texas.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwy0031qivheohe9ruj0",
+        "date": "Sep 14, 2020",
+        "event": "Vopak and BlackRock's GEPIF announced the acquisition of three industrial terminals from Dow on the U.S. Gulf Coast.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-14T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwym031rivhey759ju7x",
+        "date": "Dec 2, 2020",
+        "event": "Vopak and BlackRock's GEPIF successfully completed the acquisition of the three industrial terminals from Dow.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-02T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppl1g08dyivhev48kyypg",
+        "label": "Announcement date source — BlackRock — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-acquire-three-industrial-terminals-dow-us-gulf-coast?language_content_entity=en",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppl3o08e0ivhe5sngh37w",
+        "label": "Close date source — BlackRock — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-successfully-completed-acquisition-three-industrial",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppl4r08e2ivhe3vmwix3c",
+        "label": "Vopak — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Vopak — Vopak Industrial Infrastructure Americas",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Vopak Industrial Infrastructure Americas",
+    "investmentFirm": "BlackRock",
+    "sector": "Midstream",
+    "subsector": "Industrial terminals and storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Global Energy & Power Infrastructure Fund",
+    "description": "Vopak Industrial Infrastructure Americas is an industrial-terminal platform on the US Gulf Coast. The assets provide storage, logistics, and industrial infrastructure services to a large chemical customer base rather than directly serving consumer end markets. Its operating model is asset-heavy and contracted because value depends on terminal infrastructure and long-term service agreements. Public transaction materials describe three terminals acquired from Dow in Plaquemine, Saint Charles, and Freeport, giving the platform exposure to both Louisiana and Texas. Operations are concentrated on the US Gulf Coast, where the assets are integrated with Dow's industrial footprint. Royal Vopak and BlackRock's Global Energy & Power Infrastructure Fund formed the 50-50 venture in 2020 and completed the acquisition of the terminals the same year.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2020,
+    "investmentYear": 2020,
+    "headquarters": "Louisiana and Texas",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "The partners established a 50-50 industrial infrastructure joint venture covering terminals in Louisiana and Texas.",
+        "category": "Founding"
+      },
+      {
+        "date": "Sep 14, 2020",
+        "event": "Vopak and BlackRock's GEPIF announced the acquisition of three industrial terminals from Dow on the U.S. Gulf Coast.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 2, 2020",
+        "event": "Vopak and BlackRock's GEPIF successfully completed the acquisition of the three industrial terminals from Dow.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — BlackRock — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-acquire-three-industrial-terminals-dow-us-gulf-coast?language_content_entity=en",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — BlackRock — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-successfully-completed-acquisition-three-industrial",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Vopak — Vopak Industrial Infrastructure Americas",
+        "url": "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "Global Energy & Power Infrastructure Fund",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0156:vopak-industrial-infrastructure-americas:bef0b093",
+    "taskIndex": 156,
+    "canonicalKey": "vopak-industrial-infrastructure-americas|united-states",
+    "capturedAt": "2026-08-23T13:40:04.410Z",
+    "databaseRevision": "revision:564b36c9dc6d26e954861c6858ec786b9ef9d2c73e0c2365b77e9d483c2abada",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "437bbca914d07be1899b3d847938bf75386179921832bba99b4b3edb3d9610b1",
+    "productionSnapshotSha256": "3a4ee6409d122601c5af9188e235f2d07c7915ffdbe3008e6ac12e24116911ad",
+    "targetCompanySnapshotSha256": "2ee58976af5389e87e5716fff1254e17b08ddc530c928f7a3bcf4fb59a6447b2",
+    "seedEntrySha256": "fc4cb11bf98901663555ed7c9b4646e9170a85bc291447726046ea8b14bb4ffa",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2b3b012e00cd597689a21ca2f5821f40cd12b2c5891cb133083c0676265b1cd8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "c0c9d56ed1dd3a43a42dd30221da2903bb140c472db048c92db563d9af8ec9ec",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "eea16aa4c45bd7123668fa97b8d34a6a578eda4614a03f4f0453ae047e898f1a",
+    "stateSha256": "c4bdd06d79616656f9c2ccb230616793c49f07f695afd4c3250150a08c128055",
+    "taskSnapshotSha256": "77034e7e72515a293b2b3a247c23cd30dc4280bd6d2944c92388ef048fe495b1"
+  },
+  "contextSha256": "1d6d4e50f8b52bf06658151d273bbb249db3f50101d926c67a214dd14836c371"
+}

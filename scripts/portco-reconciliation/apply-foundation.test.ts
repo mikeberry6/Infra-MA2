@@ -79,6 +79,9 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("TotalEnergies")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("XRG P.J.S.C.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Énergir L.P.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Ingka Investments")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Koninklijke Vopak N.V.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Occidental Petroleum Corporation")).toEqual(["CORPORATE"]);
   });
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
@@ -356,6 +359,39 @@ describe("approved PortCo apply planner", () => {
     });
     expect(plan.mutations.map((mutation) => mutation.kind)).toEqual(["CORRECT_COMPANY"]);
     expect(plan.changedFields).toEqual(["description"]);
+  });
+
+  it("retracts only explicitly approved erroneous ownership while preserving it in revision inputs", () => {
+    const before = companyImageFixture();
+    const after = companyImageFixture("Approved correction after retracting a false pre-close owner.");
+    after.ownershipPeriods = [];
+    const { proposal, approval } = approvedCorrection({
+      before,
+      after,
+      actions: ["CORRECT_COMPANY", "RETRACT_ERRONEOUS_OWNERSHIP"],
+    });
+    const plan = planApprovedApply({
+      proposal,
+      approval,
+      approvedProductionSnapshot: productionSnapshotFixture(),
+      fresh: freshState(before),
+    });
+    expect(proposal.beforeImage?.ownershipPeriods).toHaveLength(1);
+    expect(plan.mutations).toEqual([
+      expect.objectContaining({ kind: "CORRECT_COMPANY" }),
+      expect.objectContaining({
+        kind: "RETRACT_ERRONEOUS_OWNERSHIP",
+        relationIds: ["owner_1"],
+      }),
+    ]);
+
+    const missingAction = approvedCorrection({ before, after, actions: ["CORRECT_COMPANY"] });
+    expect(() => planApprovedApply({
+      proposal: missingAction.proposal,
+      approval: missingAction.approval,
+      approvedProductionSnapshot: productionSnapshotFixture(),
+      fresh: freshState(before),
+    })).toThrow(/Ownership history owner_1 is missing/);
   });
 
   it("rejects unsupported citation source types before opening the mutation path", () => {

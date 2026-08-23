@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T13:16:15.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T14:08:00.000Z",
+  "activeBatchId": "batch-0152-0156-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -782,7 +782,55 @@
           "reason": "Atomic PortCo batch receipt, seven-row direct-program attribution repair, five public APIs, five rendered drawers, ownership histories, sources, milestones, and exact canonical deployment verification passed."
         }
       ]
+    },
+    {
+      "batchId": "batch-0152-0156-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0152:saavi-energia:20878d92",
+        "ledger:0153:stratos:4f72c101",
+        "ledger:0154:the-aes-corporation:c65cb3c1",
+        "ledger:0155:vanguard-renewables:39c75d98",
+        "ledger:0156:vopak-industrial-infrastructure-americas:bef0b093"
+      ],
+      "taskIndexes": [
+        152,
+        153,
+        154,
+        155,
+        156
+      ],
+      "createdAt": "2026-08-23T13:24:30.000Z",
+      "updatedAt": "2026-08-23T14:08:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0152-0156-v1/batch-manifest-v2.json",
+        "sha256": "7de097a43b4e7d5cafbf7bdf16fa057a749227ab0568c09279449847dc8f42e3"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T13:24:30.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T14:08:00.000Z",
+          "evidenceSha256": [
+            "7de097a43b4e7d5cafbf7bdf16fa057a749227ab0568c09279449847dc8f42e3"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "7ef31c9875f6c618161300d90d0b88b1c22b558e3e38fb24338e6479f2e0e953"
+  "ledgerSha256": "d6d763b3f698d7b40c8800e137240d5a5150aba6c815fff0f33af27a3e708d56"
 }

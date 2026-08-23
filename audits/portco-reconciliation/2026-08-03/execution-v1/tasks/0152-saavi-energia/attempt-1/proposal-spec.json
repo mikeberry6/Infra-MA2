@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-08-23T13:31:00.000Z",
+  "actions": ["CORRECT_COMPANY", "ADD_OWNER", "ADD_PENDING_TRANSACTION"],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Retain one Saavi Energía platform, correct the current owner from a mislabeled BlackRock/GEPIF III row to GIP through its Emerging Markets Fund I program, preserve Actis as the former owner, and record the signed but unclosed Grupo México combination as pending. BlackRock's 2024 acquisition of GIP was a manager-parent transaction, not a Saavi asset transfer.",
+  "evidence": [
+    {
+      "url": "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/",
+      "purpose": "2021 acquisition and owner attribution",
+      "supports": ["GIP acquired 100% of Saavi from Actis in August 2021"]
+    },
+    {
+      "url": "https://www.global-infra.com/portfolio-page/saavi-energia/",
+      "purpose": "Current portfolio status",
+      "supports": ["GIP continues to list Saavi as an unrealized portfolio investment"]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/saavi-energia-announces-the-agreement-signed-by-global-infrastructure-partners-gip-to-combine-power-generation-assets-with-those-of-grupo-mexico-sab-de-cv-302754442.html",
+      "purpose": "Signed pending transaction",
+      "supports": ["Grupo México is to own 70% and GIP 30% only after the announced combination closes"]
+    },
+    {
+      "url": "https://www.saavienergia.com/en/",
+      "purpose": "Current company profile",
+      "supports": ["Saavi operates power generation and gas infrastructure in Mexico"]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": ["Saavi Energia", "InterGen México"],
+    "description": "Saavi Energía is a Mexico-based power-generation and gas-infrastructure platform serving wholesale, commercial and industrial electricity users and gas-services customers. The platform operates more than 3.7 GW across six combined-cycle plants, one solar plant, three gas-compression stations, three mobile turbines and a 40-mile pipeline. Actis formed Saavi from the InterGen México business in 2018 and sold 100% of the platform to Global Infrastructure Partners in August 2021 through GIP's emerging-markets infrastructure program. GIP remains the current legal owner. On April 27, 2026, GIP signed an agreement to combine Saavi with Grupo México power assets; if it closes, Grupo México would own 70% and GIP 30%. No legal closing was identified through August 23, 2026.",
+    "website": "https://www.saavienergia.com/en/",
+    "headquarters": "Mexico City, Mexico",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk2fk01xiivhetq7dtfj4",
+      "set": {
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "GIP Emerging Markets Fund I",
+        "stake": "100%",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Actis",
+      "organizationName": "Actis",
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "100%",
+      "investmentYear": 2018,
+      "exitYear": 2021,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [
+    {
+      "id": null,
+      "direction": "EXIT",
+      "transactionState": "SIGNED_PENDING_EXIT",
+      "counterpartyName": "Grupo México",
+      "transactionDescription": "Signed combination of Saavi with Grupo México power-generation assets; at closing Grupo México would own 70% and GIP would retain 30%.",
+      "announcedAt": "2026-04-27",
+      "expectedClosing": null,
+      "relatedOwnershipPeriodIds": ["cmrxpk2fk01xiivhetq7dtfj4"],
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/saavi-energia-announces-the-agreement-signed-by-global-infrastructure-partners-gip-to-combine-power-generation-assets-with-those-of-grupo-mexico-sab-de-cv-302754442.html"
+      ]
+    }
+  ],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxplu37045livher3tvnc2c",
+      "set": {
+        "date": "1995",
+        "event": "InterGen México, Saavi's predecessor operating business, was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1995-01-01T00:00:00.000Z",
+        "evidenceUrls": ["https://www.saavienergia.com/en/about-saavi/"]
+      }
+    },
+    {
+      "id": "cmrxplu3u045mivhe48mbpu4j",
+      "set": {
+        "date": "2018",
+        "event": "Actis acquired the InterGen México portfolio and established the Saavi Energía platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": ["https://www.saavienergia.com/en/about-saavi/"]
+      }
+    },
+    {
+      "id": "cmrxplu4a045nivhefyzksxvb",
+      "set": {
+        "date": "Aug 20, 2021",
+        "event": "GIP completed its acquisition of 100% of Saavi Energía from Actis.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-08-20T04:00:00.000Z",
+        "evidenceUrls": ["https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/"]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {"id": "cmrxpra530au6ivhep2q82l6m", "set": {"purpose": "COMPANY_PROFILE", "evidenceLabel": "Current company operations and scale", "isPrimary": false}},
+    {"id": "cmrxpra630au8ivhen9bn1wbq", "set": {"purpose": "COMPANY_PROFILE", "evidenceLabel": "Company history and platform formation", "isPrimary": false}},
+    {"id": "cmrxpra720auaivhe3rqjmygt", "set": {"purpose": "OPERATIONS_ASSETS", "evidenceLabel": "Operating asset footprint", "isPrimary": false}},
+    {"id": "cmrxpra820aucivhe775e0eyk", "set": {"purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "GIP's August 2021 acquisition of 100% from Actis", "isPrimary": true}}
+  ],
+  "citationAdditions": [
+    {"id": null, "label": "GIP — Saavi Energía portfolio", "url": "https://www.global-infra.com/portfolio-page/saavi-energia/", "sourceType": "WEBSITE", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "Current unrealized GIP portfolio status", "isPrimary": false},
+    {"id": null, "label": "PR Newswire", "url": "https://www.prnewswire.com/news-releases/saavi-energia-announces-the-agreement-signed-by-global-infrastructure-partners-gip-to-combine-power-generation-assets-with-those-of-grupo-mexico-sab-de-cv-302754442.html", "sourceType": "ARTICLE", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "April 2026 signed Grupo México combination and 70%/30% post-close structure", "isPrimary": false},
+    {"id": null, "label": "COFECE — Saavi acquisition resolution", "url": "https://www.cofece.mx/wp-content/uploads/2021/09/VEP_20210805_31.pdf", "sourceType": "OTHER", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "2021 acquisition vehicle and emerging-markets program context", "isPrimary": false},
+    {"id": null, "label": "BlackRock — GIP acquisition close", "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners", "sourceType": "PRESS_RELEASE", "purpose": "SUPPORTING_CONTEXT", "evidenceLabel": "Upstream manager combination, not a Saavi asset transfer", "isPrimary": false}
+  ]
+}
