@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0172:renewa:4e75f8f4",
+  "taskIndex": 172,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T19:32:00.000Z",
+  "canonicalKey": "renewa|united-states",
+  "companyName": "Renewa",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "028-cdpq:holding:015:renewa",
+    "082-qic-global-infrastructure:holding:003:renewa"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one active Renewa platform, add the two current manager relationships and preserve EnCap as the former predecessor owner. QIC acquired Paloma Solar & Wind for managed client capital in 2022, the business rebranded as Renewa that year, and La Caisse invested US$200 million of primary equity in 2025. Public sources do not disclose the QIC client or fund, either current ownership percentage, or a named La Caisse fund, so those fields remain expressly unavailable.",
+  "evidence": [
+    {
+      "url": "https://www.qic.com/News-and-Insights/La-Caisse-invests-US%24200-million-in-QIC-backed-Renewa",
+      "purpose": "Current QIC-managed ownership and La Caisse equity entry",
+      "supports": [
+        "QIC-managed capital remained invested in Renewa",
+        "La Caisse invested US$200 million of primary equity on July 15, 2025"
+      ]
+    },
+    {
+      "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/realized/paloma-solar-wind",
+      "purpose": "Predecessor identity and former EnCap ownership",
+      "supports": [
+        "EnCap founded Paloma Solar & Wind in 2021",
+        "EnCap realized the investment in 2022"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20220920005334/en/Paloma-Solar-Wind-Announces-Company-Name-Change-to-Renewa-Reflecting-the-Companys-Evolution-and-Expansion",
+      "purpose": "Canonical identity and rebrand continuity",
+      "supports": [
+        "Paloma Solar & Wind changed its name to Renewa on September 20, 2022"
+      ]
+    },
+    {
+      "url": "https://www.renewa.com/renewa-secures-us502million-in-financing-to-support-clean-energy-land-investments/",
+      "purpose": "Current backing, financing and operating scale",
+      "supports": [
+        "Renewa remained backed by QIC-managed funds and La Caisse in January 2026",
+        "Capital commitments exceeded US$1.25 billion"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "0943d73eb149f289f276cf9735a675464263ca543934b99df5844df144472d3f",
+  "currentCompanySnapshotSha256": "46a3f5588ce11d9bf41b70db9ece8857da30d02d2d7f6f85b4f4443b0ad1e670",
+  "executionLock": {
+    "taskSnapshotSha256": "99758c7073d5a7318f010a412ed8598331ca98841a1831ecc261de690e0b9229",
+    "taskStateSha256": "85fc20f00a8dda31f9a4d7d0028cb94e000a4ac1476dfdd1366ffe5a2ccd8110",
+    "taskDependencySha256": "206df0d2fac0c3020c64cb27e4b013430641eb07eb7d1839f9c7e581416c024e",
+    "seedEntrySha256": "ffed10b8c931e3fa0c507f443a135723af29c305b66d3b1bda6e76882424f74a",
+    "dependencies": {
+      "ownershipPeriodsSha256": "73b598b493e0144d9b2e7f64bed0b05514b3c826f3661054679abd403e5102d2",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "2396dc1f6d16688ce3fa077c7dcb439d5c3a04b950f6c94144f749c5c2854a19",
+      "organizationsSha256": "7e1610ed148abdeccb73da927b3a2799682fe58679f4530339468b0198c9ce7c",
+      "citationsSha256": "9dcb2cacd07740594ee19eb7b4bf5c1ccb6d83cc4d8b711d7f0a0c6d19d667e9",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2zw00eeivheitsxgrz6",
+        "fundName": "CDPQ Infrastructure",
+        "managerId": "cmrxpib3m002rivherwm9fg8c",
+        "updatedAt": "2026-07-23T16:09:57.740Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpib3m002rivherwm9fg8c",
+        "name": "La Caisse de dépôt (CDPQ)",
+        "updatedAt": "2026-07-23T16:09:21.586Z"
+      },
+      {
+        "id": "cmrxpiclq0038ivhe8d6qcg7j",
+        "name": "QIC",
+        "updatedAt": "2026-07-23T16:09:23.534Z"
+      },
+      {
+        "id": "cmrxpifcq0043ivhe5112opir",
+        "name": "EnCap Investments",
+        "updatedAt": "2026-07-23T16:09:27.098Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjbnh00rcivheoc17wxk3",
+    "name": "Renewa",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Land-under-infrastructure for renewable projects",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Renewa acquires and manages land interests under utility-scale renewable-energy projects. Its customers are renewable developers, project owners, and infrastructure investors that need long-duration land control rather than conventional project-level equipment financing. The business is contract-based and infrastructure-linked because value depends on long-term ground leases and site-control arrangements under operating and planned clean-energy projects. CDPQ stated in 2025 that Renewa had attracted more than $750 million of funding commitments since its inception in 2022. Its principal operating footprint is in the United States. CDPQ announced a $200 million investment in July 2025 alongside QIC-backed ownership, and public materials reviewed do not disclose the current ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjwxu01p2ivhet3z3ze2b",
+        "managerName": "La Caisse de dépôt (CDPQ)",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "fundName": "CDPQ Infrastructure",
+        "vehicleName": "Sustainable Land Management Strategy",
+        "stake": "Stake acquired; exact percentage not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjwyh01p3ivheanfbimsd",
+        "managerName": "QIC",
+        "organizationName": "QIC",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl8wj03gaivhewkzcqxcd",
+        "date": "2022",
+        "event": "Renewa was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl8x403gbivheuth6c9a2",
+        "date": "2022",
+        "event": "QIC acquired Renewa on behalf of a managed client.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl8xp03gcivhety79naf7",
+        "date": "Aug 2023",
+        "event": "QIC-backed Renewa secured $450 million of capital.",
+        "category": "FINANCING",
+        "sortDate": "2023-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl8y603gdivheguurv846",
+        "date": "Jul 15, 2025",
+        "event": "CDPQ (La Caisse) made a $200 million primary equity commitment in QIC-backed Renewa, acquiring a stake in the business.",
+        "category": "FINANCING",
+        "sortDate": "2025-07-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl8yr03geivhebulg9sbf",
+        "date": "Jul 15, 2025",
+        "event": "CDPQ stated that Renewa had secured more than $750 million of commitments since inception.",
+        "category": "OTHER",
+        "sortDate": "2025-07-15T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq612096pivheerd16aj6",
+        "label": "Investment date source — QIC — Renewa",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Renewa",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "QIC initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq623096rivhekgwrohwo",
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/News-and-Insights/US-land-under-infrastructure-company-Renewa",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qic — Renewa",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq639096tivheuzabn1g7",
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/News-and-Insights/QIC-Infrastructure-backed-Renewa-secures-US450m-of-capital",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qic — Renewa",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq64k096vivhee7qd5d5f",
+        "label": "Investment date source — CDPQ — Renewa",
+        "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CDPQ acquired stake; exact percentage not publicly disclosed",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq65k096xivhe8m3wt4b1",
+        "label": "Renewa — Renewa",
+        "url": "https://www.renewa.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Renewa company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq66m096zivhejsybgyis",
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/news/media-release-qic-backed-renewa-secures-200m-investment-from-cdpq/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qic — Renewa",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "46a3f5588ce11d9bf41b70db9ece8857da30d02d2d7f6f85b4f4443b0ad1e670",
+  "afterImage": {
+    "id": "cmrxpjbnh00rcivheoc17wxk3",
+    "name": "Renewa",
+    "aliases": [
+      "Renewa LLC",
+      "Paloma Solar & Wind",
+      "PSW"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Land-under-infrastructure for renewable projects",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Renewa LLC acquires land, lease interests, rental streams and royalties beneath operating and planned U.S. renewable-energy and power infrastructure, providing long-term site-control capital to landowners, developers, project owners, operators and independent power producers. EnCap founded the predecessor Paloma Solar & Wind in May 2021 and sold it to QIC-managed client capital in 2022; the platform adopted the Renewa name on September 20, 2022. La Caisse invested US$200 million of primary equity on July 15, 2025 through its Sustainable Land Management initiative. Renewa reported more than 160 facilities, more than 85 developers and over US$1.25 billion of capital commitments after a January 2026 financing. QIC manages a current ownership interest for undisclosed client or fund capital, and La Caisse is a current direct-equity owner; their percentages and exact legal vehicles are not publicly disclosed. Parcels, leases, financing SPVs and underlying projects remain assets rather than separate PortCos. No later platform sale, exit or signed pending ownership transaction was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.renewa.com/",
+    "yearFounded": 2021,
+    "headquarters": "Houston, Texas",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjwxu01p2ivhet3z3ze2b",
+        "managerName": "La Caisse de dépôt (CDPQ)",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "fundName": null,
+        "vehicleName": "Sustainable Land Management initiative",
+        "stake": "US$200 million primary equity investment; percentage not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjwyh01p3ivheanfbimsd",
+        "managerName": "QIC Global Infrastructure",
+        "organizationName": "QIC",
+        "fundName": null,
+        "vehicleName": "Managed client / QIC-managed funds; exact vehicle not publicly disclosed",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "EnCap Investments",
+        "organizationName": "EnCap Investments",
+        "fundName": null,
+        "vehicleName": "Paloma Solar & Wind predecessor platform",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2021,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl8wj03gaivhewkzcqxcd",
+        "date": "May 2021",
+        "event": "EnCap founded Paloma Solar & Wind, the predecessor of Renewa.",
+        "category": "FOUNDING",
+        "sortDate": "2021-05-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.encapinvestments.com/about/energy-transition/portfolio/realized/paloma-solar-wind"
+        ]
+      },
+      {
+        "id": "cmrxpl8x403gbivheuth6c9a2",
+        "date": "2022",
+        "event": "QIC acquired Paloma Solar & Wind for managed client capital; the platform adopted the Renewa name on September 20.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-09-20T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.qic.com/News-and-Insights/US-land-under-infrastructure-company-Renewa",
+          "https://www.businesswire.com/news/home/20220920005334/en/Paloma-Solar-Wind-Announces-Company-Name-Change-to-Renewa-Reflecting-the-Companys-Evolution-and-Expansion"
+        ]
+      },
+      {
+        "id": "cmrxpl8xp03gcivhety79naf7",
+        "date": "Aug 2023",
+        "event": "QIC-backed Renewa secured US$450 million of capital to expand its U.S. land-under-infrastructure portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2023-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.qic.com/News-and-Insights/QIC-Infrastructure-backed-Renewa-secures-US450m-of-capital"
+        ]
+      },
+      {
+        "id": "cmrxpl8y603gdivheguurv846",
+        "date": "Jul 15, 2025",
+        "event": "La Caisse invested US$200 million of primary equity in QIC-backed Renewa through its Sustainable Land Management initiative.",
+        "category": "FINANCING",
+        "sortDate": "2025-07-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.qic.com/News-and-Insights/La-Caisse-invests-US%24200-million-in-QIC-backed-Renewa",
+          "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under"
+        ]
+      },
+      {
+        "id": "cmrxpl8yr03geivhebulg9sbf",
+        "date": "Jan 15, 2026",
+        "event": "Renewa secured US$502 million of financing, lifting total capital commitments above US$1.25 billion while remaining backed by QIC-managed funds and La Caisse.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-15T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.renewa.com/renewa-secures-us502million-in-financing-to-support-clean-energy-land-investments/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq612096pivheerd16aj6",
+        "label": "Investment date source — QIC — Renewa",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Renewa",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current QIC portfolio listing, Houston headquarters and operating footprint",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq623096rivhekgwrohwo",
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/News-and-Insights/US-land-under-infrastructure-company-Renewa",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "QIC managed-client acquisition of the Paloma predecessor",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq639096tivheuzabn1g7",
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/News-and-Insights/QIC-Infrastructure-backed-Renewa-secures-US450m-of-capital",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "August 2023 US$450 million capital raise",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq64k096vivhee7qd5d5f",
+        "label": "Investment date source — CDPQ — Renewa",
+        "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "La Caisse US$200 million primary-equity investment and initiative",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq65k096xivhe8m3wt4b1",
+        "label": "Renewa — Renewa",
+        "url": "https://www.renewa.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Renewa company profile and land-under-infrastructure business",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq66m096zivhejsybgyis",
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/news/media-release-qic-backed-renewa-secures-200m-investment-from-cdpq/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Earlier QIC account of La Caisse's Renewa investment",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "QIC — La Caisse investment in Renewa",
+        "url": "https://www.qic.com/News-and-Insights/La-Caisse-invests-US%24200-million-in-QIC-backed-Renewa",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current QIC-managed backing and La Caisse's July 2025 equity entry",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "EnCap — Paloma Solar & Wind",
+        "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/realized/paloma-solar-wind",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Paloma predecessor formation and EnCap's 2022 realization",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Business Wire — Renewa rebrand",
+        "url": "https://www.businesswire.com/news/home/20220920005334/en/Paloma-Solar-Wind-Announces-Company-Name-Change-to-Renewa-Reflecting-the-Companys-Evolution-and-Expansion",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "September 2022 Paloma Solar & Wind name change to Renewa",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Renewa — US$502 million financing",
+        "url": "https://www.renewa.com/renewa-secures-us502million-in-financing-to-support-clean-energy-land-investments/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "January 2026 financing, continuing backing and capital-commitment scale",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "c1094a0699346c8d6ffff5044f9e52ca2db05234aec76b9cfca0261e4dc8b4b7",
+  "proposalSha256": "83b3951982852172e6e1e85fab6c61ef67a65552fa21634b8e6838da769a9e26"
+}

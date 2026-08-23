@@ -1,0 +1,549 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0172-0176-v7",
+  "createdAt": "2026-08-23T20:47:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "89a208c1a5a826acf5405b73c7af54e0b4f91b9082f4f6d24968c35a1f5892c6"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0172:renewa:4e75f8f4",
+      "taskIndex": 172,
+      "companyName": "Renewa",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0172-renewa-v3/proposal.json",
+        "sha256": "a8eba7356567d71d0dee1628e84cd909ecd42e0483cb836ab7fa392613e8f98c"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0172-renewa-v3.json",
+        "sha256": "c61778762a6235767ba184f12bd7ce484dfaa4f76badf44f66a8206cde5027cb"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "0943d73eb149f289f276cf9735a675464263ca543934b99df5844df144472d3f"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "99758c7073d5a7318f010a412ed8598331ca98841a1831ecc261de690e0b9229"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/authorization-observed-v2-task-snapshot.json",
+        "sha256": "47ccced8df96db9dfe6537f0e2d6d282c0e7e3aa428768bfe142991d189647ed"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/research-decision.json",
+        "sha256": "b11b42e7aa31416a3d64dc164b73fbc50ff6ef91a9cbbc7b7846696bf67b7a68"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/source-verification.json",
+        "sha256": "94fd6b0a1699d39b6f8b127e2f770ea86703d4288531dc547e036816f90cbc65"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "85fc20f00a8dda31f9a4d7d0028cb94e000a4ac1476dfdd1366ffe5a2ccd8110",
+      "dependencySha256": "206df0d2fac0c3020c64cb27e4b013430641eb07eb7d1839f9c7e581416c024e",
+      "afterImageSha256": "a507ca646e379be8a1f79be68cf5d3ff17fcab0e1032ed65e61cd08566044cc1",
+      "targetClaims": [
+        "canonical:renewa|united-states",
+        "company:cmrxpjbnh00rcivheoc17wxk3",
+        "relation:cmrxpjwxu01p2ivhet3z3ze2b",
+        "relation:cmrxpjwyh01p3ivheanfbimsd",
+        "relation:cmrxpl8wj03gaivhewkzcqxcd",
+        "relation:cmrxpl8x403gbivheuth6c9a2",
+        "relation:cmrxpl8xp03gcivhety79naf7",
+        "relation:cmrxpl8y603gdivheguurv846",
+        "relation:cmrxpl8yr03geivhebulg9sbf",
+        "relation:cmrxpq612096pivheerd16aj6",
+        "relation:cmrxpq623096rivhekgwrohwo",
+        "relation:cmrxpq639096tivheuzabn1g7",
+        "relation:cmrxpq64k096vivhee7qd5d5f",
+        "relation:cmrxpq65k096xivhe8m3wt4b1",
+        "relation:cmrxpq66m096zivhejsybgyis",
+        "seed:renewa|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.businesswire.com/news/home/20220920005334/en/Paloma-Solar-Wind-Announces-Company-Name-Change-to-Renewa-Reflecting-the-Companys-Evolution-and-Expansion",
+          "label": "Business Wire — Renewa rebrand",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/realized/paloma-solar-wind",
+          "label": "EnCap — Paloma Solar & Wind",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+          "label": "Investment date source — CDPQ — Renewa",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Renewa",
+          "label": "Investment date source — QIC — Renewa",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.qic.com/News-and-Insights/La-Caisse-invests-US%24200-million-in-QIC-backed-Renewa",
+          "label": "QIC — La Caisse investment in Renewa",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.qic.com/News-and-Insights/QIC-Infrastructure-backed-Renewa-secures-US450m-of-capital",
+          "label": "Qic — Renewa",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.qic.com/News-and-Insights/US-land-under-infrastructure-company-Renewa",
+          "label": "Qic — Renewa",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.qic.com/news/media-release-qic-backed-renewa-secures-200m-investment-from-cdpq/",
+          "label": "Qic — Renewa",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.renewa.com/about/",
+          "label": "Renewa — Renewa",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.renewa.com/renewa-secures-us502million-in-financing-to-support-clean-energy-land-investments/",
+          "label": "Renewa — US$502 million financing",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0173:tramcite:9155b156",
+      "taskIndex": 173,
+      "companyName": "TramCité",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0173-tramcite-v1/proposal.json",
+        "sha256": "eeb9c0a70acb9cf69c491f0ba4aed401c08d967ae9aa3e199471dde17bb9c559"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0173-tramcite-v1.json",
+        "sha256": "0bc5d77bd55b4d2aebb042bbe3621ea0fd75278f99fac86cfab926ab34709a8c"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0173-tramcite/attempt-1/locked-production-snapshot.json",
+        "sha256": "4f7dd0dfdae6f10e5f0c9157f290546b013e6fb18fab582199788a04e2b41f53"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0173-tramcite/attempt-1/locked-task-snapshot.json",
+        "sha256": "87eb24c3fdb408881e3ce8156d798bf647f0ecd2b7ad084de96dc8c4a874ed8b"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0173-tramcite/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "faeed886912db728df34d08395715020e2b0b7437fcaaabe2a89e5da0519e6e9"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0173-tramcite/attempt-1/research-decision.json",
+        "sha256": "7050b3370448b161f91653638427a65aec3e0eb389fa5630aca2843aef79a16b"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0173-tramcite/attempt-1/source-verification.json",
+        "sha256": "c53ab48aab1280e2b9932baad6af0905fa306830256270dc30cba5f5d58cdc48"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "52fe32bf983626698fe960584357fe43ea8c130227658e921fd967b5c3b35ee2",
+      "dependencySha256": "6bb94e69d4c976076387ce12fa19810b95985fc33d4d79948efd9e3cf486b534",
+      "afterImageSha256": "40ee44b70ea15f02da08a7cb3a299569431de4f24a863948a566d0e952c5631e",
+      "targetClaims": [
+        "canonical:tramcite|canada",
+        "company:cmrxpjbq800rhivhed5w05kc5",
+        "relation:cmrxpjx3c01p8ivhe5b2bx44z",
+        "relation:cmrxpl9c303guivheerd1k7cw",
+        "relation:cmrxpl9co03gvivhe530n73lh",
+        "relation:cmrxpl9da03gwivhetwssofhq",
+        "relation:cmrxpq6v8097xivhedvcqs0uj",
+        "relation:cmrxpq6wc097zivhewslevmbh",
+        "relation:cmrxpq6xh0981ivhea0xr853o",
+        "relation:cmrxpq6yg0983ivhenwwpjepu",
+        "seed:tramcité|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cdpqinfra.com/en/news/pressreleases/cdpq-infra-launches-a-procurement-notice-for-the-tramcite-project",
+          "label": "Agreement date source — CDPQ — TramCité",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://cdpqinfra.com/en/news/pressreleases/tramcite-announces-selected-consortia-for-the-civil-and-systems-contracts",
+          "label": "Preferred bidders source — CDPQ — TramCité",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://cdpqinfra.com/en/projects/tramcite",
+          "label": "CDPQ Infra — TramCité project",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://cdpqinfra.com/sites/cdpqinfrad8/files/2025-03/Seance_information_avis_marche_TramCite-EN_web_0.pdf",
+          "label": "Cdpqinfra — TramCité",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://cdpqinfra.com/sites/cdpqinfrad8/files/2025-05/Entente_gestion_interfaces_TramCite-2025.pdf",
+          "label": "CDPQ Infra — TramCité interface agreement",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://cdpqinfra.com/sites/cdpqinfrad8/files/medias/img/B8_TramCite/20241205-025_Entente%20CPDPi.pdf",
+          "label": "CDPQ Infra — TramCité implementation agreement",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.newswire.ca/news-releases/tramcite-takes-an-important-step-forward-with-the-announcement-of-the-qualified-consortia-for-two-major-contracts-834300933.html",
+          "label": "Qualified consortia source — CDPQ — TramCité",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0174:vertical-bridge:62c32643",
+      "taskIndex": 174,
+      "companyName": "Vertical Bridge",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0174-vertical-bridge-v2/proposal.json",
+        "sha256": "bc688cd1e0bb26680bfbf87419d4471f808966c06fa239f7cb4b634cfb850e4a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0174-vertical-bridge-v2.json",
+        "sha256": "afd456f46b93b1c760e0172ef72b483122c9eada622e30158f484faf832be6d1"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/locked-production-snapshot.json",
+        "sha256": "c455459513c787db2518a7b681a66bb915aad72e3b2e75bd068ffe4f353bc05f"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/locked-task-snapshot.json",
+        "sha256": "05fa597bf79a11e9be7988c2330269d0f6995c606cd17b9d8354f7f01944f28d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "185bf20847e89998184a90dfab4c400947faece688e7e6f5ba8004f8624acabd"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/research-decision.json",
+        "sha256": "f02d89a2cd35c6d1cc2ff0bcbf5bc260c0a86ddd914f1f02f77ad5673fa76739"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/source-verification.json",
+        "sha256": "e9515bb8937cf696927fe554a69b3154f65e5eb8591319a8483b31ec00315ee0"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "f6b1c0e268ac7a04541755410bc583be6be3701d121c8d750002630f9afe138a",
+      "dependencySha256": "f34e975f4bae161f60266fa6ab357123549d9e88a28c7f17b78c326a2cb37416",
+      "afterImageSha256": "eaea573a402a045e0cf81c7404136ebccf001f1b4ad2f689aa01daf38aa64d35",
+      "targetClaims": [
+        "canonical:vertical-bridge|united-states",
+        "company:cmrxpjbqt00riivhe4i0hbeof",
+        "relation:cmrxpjx3r01p9ivhecnt245kc",
+        "relation:cmrxpjx4d01paivhemkp8i7lc",
+        "relation:cmrxpjx4w01pbivheojejxaas",
+        "relation:cmrxpl9eb03gxivhetdre6q4q",
+        "relation:cmrxpl9ev03gyivheu6p0ayve",
+        "relation:cmrxpl9fg03gzivheg9i5ibjx",
+        "relation:cmrxpl9g003h0ivhed5kha56p",
+        "relation:cmrxpl9gk03h1ivhejxwe5dkc",
+        "relation:cmrxpq6zm0985ivhedz7iom1i",
+        "relation:cmrxpq70q0987ivhefmubyuui",
+        "relation:cmrxpq71u0989ivhe7rbzjjgo",
+        "relation:cmrxpq72y098bivhekrlg1lc7",
+        "relation:cmrxpq771098divheryjzatrw",
+        "relation:cmrxpq77j098eivheutkssmqd",
+        "seed:vertical bridge|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.centerviewpartners.com/transactions.aspx",
+          "label": "Centerview — Vertical Bridge transaction",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/news/2021-10-13-digitalbridge-completes-acquisition-of-controlling-stake-in-vertical-bridge",
+          "label": "Digitalbridge — Vertical Bridge",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/news/2023-02-02-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+          "label": "Owner relationship source — DigitalBridge — InfraBridge",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/portfolio/vertical-bridge",
+          "label": "DigitalBridge — Vertical Bridge portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.lacaisse.com/en/news/perspectives/cdpq-vertical-bridge-relationship-based-trust-targetted-towards-accelerating-growth",
+          "label": "La Caisse — Vertical Bridge partnership",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.lacaisse.com/en/news/pressreleases/cdpq-to-acquire-30-stake-in-us-wireless-infrastructure-leader-vertical-bridge",
+          "label": "Announcement date source — CDPQ — Vertical Bridge",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.verticalbridge.com/about",
+          "label": "Verticalbridge — Vertical Bridge",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.verticalbridge.com/network-infrastructure/towers",
+          "label": "Verticalbridge — Vertical Bridge",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+          "label": "Vertical Bridge",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-holdings-completes-second-round-capital-raise-equity-commitments-now-total-750-million",
+          "label": "Investment date source — DigitalBridge — Vertical Bridge",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0175:400-paul-avenue-data-center:e79f51df",
+      "taskIndex": 175,
+      "companyName": "400 Paul Avenue Data Center",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0175-400-paul-avenue-data-center-v3/proposal.json",
+        "sha256": "84566e837adbddd538b1311aa834b3575c6f281b644a5e393ba35fa159abdedb"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0175-400-paul-avenue-data-center-v3.json",
+        "sha256": "fc61b5393b66e12590ee41a86f22bf9c48bfa11c588a48609be6e6eff0c04ba5"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0175-400-paul-avenue-data-center/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "e6252aebe87304890b760769a2726b9b1b2756448580ae06e3d65c666dbfa173"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0175-400-paul-avenue-data-center/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "e49603e8a99c154fb4a111c9d6964f4613206e72bd0188bd3a64c09de55b0030"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0175-400-paul-avenue-data-center/attempt-1/authorization-observed-v2-task-snapshot.json",
+        "sha256": "a9543a9b33978d13c6fb2298b06919f3f5a75754f63e66e0108e5a7116770796"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0175-400-paul-avenue-data-center/attempt-1/research-decision.json",
+        "sha256": "e036a29fef30c13e966252dd253b334fe9240f00e20f71077e2f110217a89a0b"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0175-400-paul-avenue-data-center/attempt-1/source-verification.json",
+        "sha256": "d7074fdd3234270a47995a0f4d9ddb35f4de53416d9ef8682a54122fc1d2cc89"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "f89a70b598485d5e382ff1565a2c6e23d84df17f429608d64f00a30af6509734",
+      "dependencySha256": "4b51662b4999066814148f39885be0c0fad95fa50756298e9bc983e0b65922b9",
+      "afterImageSha256": "219a83ff939370c467df67271fa9dd0249ad78d778ce0ce6a2ca49c31e92f092",
+      "targetClaims": [
+        "canonical:novva-data-centers|united-states",
+        "company:cmrxpjbrb00rjivhekt5680ah",
+        "company:cmrxpjbtk00rnivhe9ciub2bp",
+        "relation:cmrxpjx8301phivheeumzkpvn",
+        "relation:cmrxpl9t303hfivhe6fo27fl7",
+        "relation:cmrxpl9tm03hgivheda65sys1",
+        "relation:cmrxpl9u503hhivheqfx1nt44",
+        "relation:cmrxpl9uq03hiivheyskb5icy",
+        "relation:cmrxpq7u7099civhefnv5yc39",
+        "relation:cmrxpq7v7099eivhex9xea0gm",
+        "relation:cmrxpq7wf099givhey4paf5kh",
+        "relation:cmrxpq7zz099iivhee6cm2uzc",
+        "relation:cmrxpq80x099kivheqkwsx3bd",
+        "seed:novva data centers|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.bisnow.com/news/san-francisco/data-center/first-data-center-in-10-years-to-be-built-in-san-francisco-77571",
+          "label": "Bisnow — 400 Paul Avenue closing",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cimgroup.com/case-studies/data-center-expertise",
+          "label": "CIM Group — Data center expertise",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.cimgroup.com/press-releases/cim-group-and-fifteenfortyseven-critical-systems-realty-begin-construction-of-bay-area-data-center-campus",
+          "label": "Construction start source — CIM Group — 400 Paul Avenue Data Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cimgroup.com/press-releases/cim-group-and-novva-data-centers-announce-2-billion-in-new-financing-to-accelerate-growth-in-delivering-sustainable-efficient-data-centers-across-the-western-u-s",
+          "label": "Financing source — CIM Group — Novva Data Centers",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/1547-and-cim-are-planning-a-data-center-in-san-francisco/",
+          "label": "Investment date source — CIM Group — 400 Paul Avenue Data Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/cim-group-offering-24mw-data-center-for-lease-in-san-francisco/",
+          "label": "Data Center Dynamics — 400 Paul Avenue Data Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.novva.com/",
+          "label": "Novva — Novva Data Centers",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.novva.com/about/",
+          "label": "Novva — Novva Data Centers",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.novva.com/data-center-facilities/san-francisco-ca/",
+          "label": "Novva — San Francisco data center",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.novva.com/media-center/novva-data-centers-expanding-to-san-francisco/",
+          "label": "Novva — San Francisco acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.novva.com/media-center/novva-data-centers-is-growing-to-the-tune-of-355m-in-investments-from-cim-group/",
+          "label": "Investment date source — CIM Group — Novva Data Centers",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/novva-data-centers-receives-355m-growth-equity-investment-from-cim-group-to-aid-expansion-efforts-301558538.html",
+          "label": "Additional investment source — CIM Group — Novva Data Centers",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0176:bolder-industries:57e25d60",
+      "taskIndex": 176,
+      "companyName": "Bolder Industries",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0176-bolder-industries-v2/proposal.json",
+        "sha256": "0b4325ef67981cc6ec599fca9c697ead8b5ac9ee48987a6d9973a4cd695ea996"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0176-bolder-industries-v2.json",
+        "sha256": "312d2f4d1613723bd2366181804b12b4c7fb4928bb55ed35bba8a7e7a2d780dc"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/locked-production-snapshot.json",
+        "sha256": "b2e52b61ffd5605fa2ab337b5a0b4d1fc0081e36298ff4550da99536b8b9cd43"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/locked-task-snapshot.json",
+        "sha256": "06621337e02bdb49cb1a90c6dfc2a4ba90c99526cc45e263c75d1a7559a8f8a8"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "ceb860ef070f6975578fcb7fe62998dbc857623945d6f428c58200abbcf0f4eb"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/research-decision.json",
+        "sha256": "966a56b02bcb1341adb19c73d16d4091a1d6dd33a1e9d048b17b2477b5ff522a"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/source-verification.json",
+        "sha256": "e3f5532a63e10cf7d943d777d781a88497ed86295ddbb94e33c71c73c6f0ae42"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "690bc652a93349443748c8d025e5895c6a3749bbaf53a3896f5d4fa130c04c1a",
+      "dependencySha256": "e20b4e6164371667a36599be220c80419830ddebac29f78c6660c12e4d5d5b68",
+      "afterImageSha256": "ac37ad04f43c13fedbbedcf819f934590ab19cb2d2370a59a34472a38cabcea6",
+      "targetClaims": [
+        "canonical:bolder-industries|united-states",
+        "company:cmrxpjbsf00rlivhe8c3xqhxg",
+        "relation:cmrxpjx6h01peivhehagglx73",
+        "relation:cmrxpjx7001pfivheodnrp1ll",
+        "relation:cmrxpl9o603h8ivhevkh0lb20",
+        "relation:cmrxpl9os03h9ivhen8g4giiv",
+        "relation:cmrxpl9pb03haivhe62o8ha6t",
+        "relation:cmrxpl9pv03hbivhe8i509rzm",
+        "relation:cmrxpl9qb03hcivheyxfg2a9z",
+        "relation:cmrxpq7g6098uivhethxj7mpk",
+        "relation:cmrxpq7ha098wivheztew59gy",
+        "relation:cmrxpq7kf098yivhetld0yuks",
+        "relation:cmrxpq7lw0990ivherwpy0nyv",
+        "relation:cmrxpq7mu0992ivhe84d0omeb",
+        "relation:cmrxpq7o40994ivhe9w2gzbnp",
+        "seed:bolder industries|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://scraptirenews.com/2022/09/01/bolder-industries-and-liberty-tire-formalize-elt-supply-agreement/",
+          "label": "Scraptirenews — Bolder Industries",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.bolderindustries.com/",
+          "label": "Bolderindustries — Bolder Industries",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.bolderindustries.com/prgroundbreaking",
+          "label": "Bolderindustries — Bolder Industries",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cimgroup.com/about-us/leadership",
+          "label": "CIM Group — Leadership",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.cimgroup.com/press-releases/cim-group-expands-investment-in-end-of-life-tire-recycling-company-bolder-industries-a-certified-b-corporation",
+          "label": "Investment date source — CIM Group — Bolder Industries",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.newswire.com/news/bolder-industries-raises-80m-to-advance-commercial-scalability-and-use-21518060",
+          "label": "Bolder Industries — 2021 financing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-completes-transformational-growth-investment-in-bolder-industries-a-circular-economy-infrastructure-platform-converting-end-of-life-tires-into-sustainable-materials-302372336.html",
+          "label": "Investment date source — Tiger — Bolder Industries",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.stblaw.com/about-us/news/view/2025/02/13/simpson-thacher-represents-cim-group-in-recapitalization-of-bolder-industries",
+          "label": "Simpson Thacher — Bolder recapitalization",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/portfolio/Bolder-Industries",
+          "label": "Tigerinfrastructure — Bolder Industries",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "5008b795f203b5ab534890ee2169af48e5233cc09cb3a86e431d885b5d13b9c2",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa"
+}

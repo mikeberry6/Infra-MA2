@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0175:400-paul-avenue-data-center:e79f51df",
+  "taskIndex": 175,
+  "companyName": "400 Paul Avenue Data Center",
+  "generatedAt": "2026-08-23T19:27:12.762Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0175-400-paul-avenue-data-center/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 175,
+    "taskId": "ledger:0175:400-paul-avenue-data-center:e79f51df",
+    "canonicalKey": "400-paul-avenue-data-center|united-states",
+    "companyName": "400 Paul Avenue Data Center",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 30,
+    "managers": [
+      "CIM Group"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "030-cim-group:repo-only:001:400-paul-avenue-data-center"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjbrb00rjivhekt5680ah"
+    ],
+    "seedKeys": [
+      "400 paul avenue data center|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.datacenterdynamics.com/en/news/novva-takes-over-400-paul-avenue/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: CIM Group MATCHED_ELSEWHERE: Consolidated beneath the manager-level Novva Data Centers platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjbrb00rjivhekt5680ah",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "400-paul-avenue-data-center|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjbrb00rjivhekt5680ah",
+    "name": "400 Paul Avenue Data Center",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale and wholesale data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "400 Paul Avenue Data Center is a Bay Area data-center campus being developed on a 7.3-acre site in San Francisco. The project is intended to serve hyperscale, cloud, and enterprise customers that require large blocks of powered shell or wholesale data-center capacity in a supply-constrained market. Its operating model is asset-heavy because value is tied to land, power infrastructure, and purpose-built data-center space rather than an asset-light services platform. Public project materials describe a planned campus of roughly 240,000 square feet, including a purpose-built data center and renovated support buildings, with marketing materials later referencing approximately 24 MW of capacity. Public reporting in 2017 said CIM Group and fifteenfortyseven Critical Systems Realty had bought the land for the project, and public sources do not disclose the partners' ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjx5d01pcivhejo8qz5ky",
+        "managerName": "CIM Group",
+        "organizationName": "CIM Group",
+        "fundName": null,
+        "vehicleName": "CIM Group / 1547 CSR JV",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl9hn03h2ivhe4v2vb9ju",
+        "date": "2017",
+        "event": "CIM Group invested in 400 Paul Avenue Data Center through CIM Group / 1547 CSR JV.",
+        "category": "FINANCING",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9i903h3ivhe16qyajux",
+        "date": "Apr 16, 2018",
+        "event": "CIM Group and fifteenfortyseven Critical Systems Realty marked the start of construction on the 400 Paul Avenue data-center campus in San Francisco.",
+        "category": "EXPANSION",
+        "sortDate": "2018-04-16T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9kx03h4ivhehalnoxpl",
+        "date": "2022",
+        "event": "Marketing materials for the campus referenced approximately 24 MW of powered-shell capacity for lease.",
+        "category": "EXPANSION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq78m098givhexa287zpw",
+        "label": "Investment date source — CIM Group — 400 Paul Avenue Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/1547-and-cim-are-planning-a-data-center-in-san-francisco/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CIM Group initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq79m098iivheysiu2178",
+        "label": "Construction start source — CIM Group — 400 Paul Avenue Data Center",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-and-fifteenfortyseven-critical-systems-realty-begin-construction-of-bay-area-data-center-campus",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Construction start source — CIM Group — 400 Paul Avenue Data Center",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7ai098kivheiui4ool4",
+        "label": "Data Center Dynamics — 400 Paul Avenue Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/cim-group-offering-24mw-data-center-for-lease-in-san-francisco/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Data Center Dynamics — 400 Paul Avenue Data Center",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7bl098mivhedihj97rr",
+        "label": "Baxtel — 400 Paul Avenue Data Center",
+        "url": "https://baxtel.com/data-center/400-paul-ave-1547",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Baxtel — 400 Paul Avenue Data Center",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "400 Paul Avenue Data Center",
+    "investmentFirm": "CIM Group",
+    "sector": "Digital",
+    "subsector": "Hyperscale and wholesale data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "CIM Group / 1547 CSR JV",
+    "description": "400 Paul Avenue Data Center is a Bay Area data-center campus being developed on a 7.3-acre site in San Francisco. The project is intended to serve hyperscale, cloud, and enterprise customers that require large blocks of powered shell or wholesale data-center capacity in a supply-constrained market. Its operating model is asset-heavy because value is tied to land, power infrastructure, and purpose-built data-center space rather than an asset-light services platform. Public project materials describe a planned campus of roughly 240,000 square feet, including a purpose-built data center and renovated support buildings, with marketing materials later referencing approximately 24 MW of capacity. Public reporting in 2017 said CIM Group and fifteenfortyseven Critical Systems Realty had bought the land for the project, and public sources do not disclose the partners' ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2017,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "2017",
+        "event": "CIM Group invested in 400 Paul Avenue Data Center through CIM Group / 1547 CSR JV.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 16, 2018",
+        "event": "CIM Group and fifteenfortyseven Critical Systems Realty marked the start of construction on the 400 Paul Avenue data-center campus in San Francisco.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2022",
+        "event": "Marketing materials for the campus referenced approximately 24 MW of powered-shell capacity for lease.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — CIM Group — 400 Paul Avenue Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/1547-and-cim-are-planning-a-data-center-in-san-francisco/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Construction start source — CIM Group — 400 Paul Avenue Data Center",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-and-fifteenfortyseven-critical-systems-realty-begin-construction-of-bay-area-data-center-campus",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Data Center Dynamics — 400 Paul Avenue Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/cim-group-offering-24mw-data-center-for-lease-in-san-francisco/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Baxtel — 400 Paul Avenue Data Center",
+        "url": "https://baxtel.com/data-center/400-paul-ave-1547",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CIM Group",
+        "ownershipVehicle": "CIM Group / 1547 CSR JV",
+        "investmentYear": 2017,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi63o0016ivhechqv2snf",
+        "name": "CIM Group",
+        "updatedAt": "2026-07-23T16:09:15.109Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0175:400-paul-avenue-data-center:e79f51df",
+    "taskIndex": 175,
+    "canonicalKey": "400-paul-avenue-data-center|united-states",
+    "capturedAt": "2026-08-23T19:27:12.762Z",
+    "databaseRevision": "revision:43b4477a40770399734881005a88e567f30ed09cd04bd85019099ea6d822da39",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "84d232226ad46b2d6653df0024b20d6778ced13a58671c66ae53afd52ee46e1f",
+    "productionSnapshotSha256": "505af14126d5f1e212f9e085ab2d2dbe15c5eee6d50c0bb28ad0c8082758e22a",
+    "targetCompanySnapshotSha256": "75ab36c944319e84b00e3b04e398abbf4b710ebbf2acc4961941c2f23049066d",
+    "seedEntrySha256": "40852bd75c70ca2303ab22a9baed1989a746115a143ba2a88df9556d78a9a9d7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d4f4170ee18bd79f92f5b64f3050e2951e1ec047ea402e8fe82300462434b56e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "d6a02d402704eee7e41721198a8893941ac51e7899a35d87b09706a7cbfc5646",
+      "citationsSha256": "911aae1d3305adda8719bb147dab2c85e153abd6c5430dc625c99c3ddf7b536b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c18e5343c5d77d2ee10eb028f9b820a29e00d25e3f6332dc13786b637a3d933b",
+    "stateSha256": "37032263938b228d0a0b44d84d315e421a6ded723fa9cd8f876588683a84a0b0",
+    "taskSnapshotSha256": "1d3fe2cfa76dac69993fc4b4f8dad8f8717e63349499f1e19ddf1578e21d6fb7"
+  },
+  "contextSha256": "7dfd10bb17fd42eea71b967e9f74ae1ad76166373c8c944e362fc9a07d0ceb02"
+}

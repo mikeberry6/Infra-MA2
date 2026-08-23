@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0175:400-paul-avenue-data-center:e79f51df",
+  "taskIndex": 175,
+  "companyName": "400 Paul Avenue Data Center",
+  "generatedAt": "2026-08-23T19:44:59.540Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0175-400-paul-avenue-data-center/attempt-1/authorization-observed-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 175,
+    "taskId": "ledger:0175:400-paul-avenue-data-center:e79f51df",
+    "canonicalKey": "400-paul-avenue-data-center|united-states",
+    "companyName": "400 Paul Avenue Data Center",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 30,
+    "managers": [
+      "CIM Group"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "030-cim-group:repo-only:001:400-paul-avenue-data-center"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjbrb00rjivhekt5680ah"
+    ],
+    "seedKeys": [
+      "400 paul avenue data center|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.datacenterdynamics.com/en/news/novva-takes-over-400-paul-avenue/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: CIM Group MATCHED_ELSEWHERE: Consolidated beneath the manager-level Novva Data Centers platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjbtk00rnivhe9ciub2bp",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpjbrb00rjivhekt5680ah"
+  },
+  "resolvedCanonicalKey": "novva-data-centers|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjbtk00rnivhe9ciub2bp",
+    "name": "Novva Data Centers",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Wholesale and colocation data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Novva Data Centers develops and operates wholesale and colocation data centers across the western United States. Its customers include hyperscale, cloud, and enterprise users that require large-scale power, cooling, and connectivity for critical workloads. The business is asset-heavy because it depends on purpose-built campuses and significant electrical and mechanical infrastructure rather than a services-only model. Company materials describe an operating footprint spanning Utah, Colorado, Nevada, California, and Arizona, with growth centered on large, sustainability-oriented campuses. Public company materials state that Novva was founded in 2020 and backed by funding from CIM Group and Novva's founders; CIM later provided a $355 million growth-equity investment in 2022 and, with Novva, announced $2 billion of new financing in 2025 to accelerate expansion. Public sources do not disclose the current ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Utah; Colorado; Nevada; California; Arizona",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjx8301phivheeumzkpvn",
+        "managerName": "CIM Group",
+        "organizationName": "CIM Group",
+        "fundName": null,
+        "vehicleName": "CIM Infrastructure Platform",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl9t303hfivhe6fo27fl7",
+        "date": "2020",
+        "event": "Novva was founded and backed by $100 million of funding from CIM Group and Novva's founders.",
+        "category": "FINANCING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9tm03hgivheda65sys1",
+        "date": "2020",
+        "event": "Novva Data Centers was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9u503hhivheqfx1nt44",
+        "date": "Jun 1, 2022",
+        "event": "Novva announced an additional $355 million growth-equity investment from CIM Group.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9uq03hiivheyskb5icy",
+        "date": "Mar 5, 2025",
+        "event": "CIM Group and Novva announced $2 billion of new financing to accelerate development across the western United States.",
+        "category": "FINANCING",
+        "sortDate": "2025-03-05T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq7u7099civhefnv5yc39",
+        "label": "Novva — Novva Data Centers",
+        "url": "https://www.novva.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Novva company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq7v7099eivhex9xea0gm",
+        "label": "Novva — Novva Data Centers",
+        "url": "https://www.novva.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Novva company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7wf099givhey4paf5kh",
+        "label": "Investment date source — CIM Group — Novva Data Centers",
+        "url": "https://www.novva.com/media-center/novva-data-centers-is-growing-to-the-tune-of-355m-in-investments-from-cim-group/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CIM Group initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7zz099iivhee6cm2uzc",
+        "label": "Additional investment source — CIM Group — Novva Data Centers",
+        "url": "https://www.prnewswire.com/news-releases/novva-data-centers-receives-355m-growth-equity-investment-from-cim-group-to-aid-expansion-efforts-301558538.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Additional investment source — CIM Group — Novva Data Centers",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq80x099kivheqkwsx3bd",
+        "label": "Financing source — CIM Group — Novva Data Centers",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-and-novva-data-centers-announce-2-billion-in-new-financing-to-accelerate-growth-in-delivering-sustainable-efficient-data-centers-across-the-western-u-s",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Cimgroup financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Novva Data Centers",
+    "investmentFirm": "CIM Group",
+    "sector": "Digital",
+    "subsector": "Wholesale and colocation data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "CIM Infrastructure Platform",
+    "description": "Novva Data Centers develops and operates wholesale and colocation data centers across the western United States. Its customers include hyperscale, cloud, and enterprise users that require large-scale power, cooling, and connectivity for critical workloads. The business is asset-heavy because it depends on purpose-built campuses and significant electrical and mechanical infrastructure rather than a services-only model. Company materials describe an operating footprint spanning Utah, Colorado, Nevada, California, and Arizona, with growth centered on large, sustainability-oriented campuses. Public company materials state that Novva was founded in 2020 and backed by funding from CIM Group and Novva's founders; CIM later provided a $355 million growth-equity investment in 2022 and, with Novva, announced $2 billion of new financing in 2025 to accelerate expansion. Public sources do not disclose the current ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2020,
+    "investmentYear": 2020,
+    "headquarters": "Utah; Colorado; Nevada; California; Arizona",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "Novva was founded and backed by $100 million of funding from CIM Group and Novva's founders.",
+        "category": "Financing"
+      },
+      {
+        "date": "2020",
+        "event": "Novva Data Centers was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jun 1, 2022",
+        "event": "Novva announced an additional $355 million growth-equity investment from CIM Group.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 5, 2025",
+        "event": "CIM Group and Novva announced $2 billion of new financing to accelerate development across the western United States.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Novva — Novva Data Centers",
+        "url": "https://www.novva.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Novva — Novva Data Centers",
+        "url": "https://www.novva.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — CIM Group — Novva Data Centers",
+        "url": "https://www.novva.com/media-center/novva-data-centers-is-growing-to-the-tune-of-355m-in-investments-from-cim-group/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Additional investment source — CIM Group — Novva Data Centers",
+        "url": "https://www.prnewswire.com/news-releases/novva-data-centers-receives-355m-growth-equity-investment-from-cim-group-to-aid-expansion-efforts-301558538.html",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Financing source — CIM Group — Novva Data Centers",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-and-novva-data-centers-announce-2-billion-in-new-financing-to-accelerate-growth-in-delivering-sustainable-efficient-data-centers-across-the-western-u-s",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CIM Group",
+        "ownershipVehicle": "CIM Infrastructure Platform",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi63o0016ivhechqv2snf",
+        "name": "CIM Group",
+        "updatedAt": "2026-07-23T16:09:15.109Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0175:400-paul-avenue-data-center:e79f51df",
+    "taskIndex": 175,
+    "canonicalKey": "400-paul-avenue-data-center|united-states",
+    "capturedAt": "2026-08-23T19:44:59.540Z",
+    "databaseRevision": "revision:4d3b868cfe1a731fcba7588f2219000993f5ead0539e728985eec8533384602c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "84d232226ad46b2d6653df0024b20d6778ced13a58671c66ae53afd52ee46e1f",
+    "productionSnapshotSha256": "00ee9b46d13ac0938aa86bf6666fb714c21f12a74d883b73fac95eebe4286ab5",
+    "targetCompanySnapshotSha256": "e6dabfc626415515cd22e4db51ebe351cf3d2a6d6b8bddd110f26f0ce874b410",
+    "seedEntrySha256": "3e524f92c694e9bde6071d348463f0a29575ecfa2470f58306e43a650b0496e1",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "cf48900705b9a437a02d2e1ad8ef890b6630218fc71f23cb3bbe947f07f3f0eb",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "d6a02d402704eee7e41721198a8893941ac51e7899a35d87b09706a7cbfc5646",
+      "citationsSha256": "d1914f96169ad70036aa07dbef327c65302e0125bca5294c7354ec48afd242b5",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4b51662b4999066814148f39885be0c0fad95fa50756298e9bc983e0b65922b9",
+    "stateSha256": "f89a70b598485d5e382ff1565a2c6e23d84df17f429608d64f00a30af6509734",
+    "taskSnapshotSha256": "a9543a9b33978d13c6fb2298b06919f3f5a75754f63e66e0108e5a7116770796"
+  },
+  "contextSha256": "6c4387b753b9e78f6f7a4c5dce945ed89cd94a6665df1028a8f6381ea43d63d5"
+}
