@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0185:helax-istmo:d1195262",
+  "taskIndex": 185,
+  "companyName": "Helax Istmo",
+  "generatedAt": "2026-08-23T23:25:13.017Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0185-helax-istmo/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 185,
+    "taskId": "ledger:0185:helax-istmo:d1195262",
+    "canonicalKey": "helax-istmo|mexico",
+    "companyName": "Helax Istmo",
+    "country": "Mexico",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 31,
+    "managers": [
+      "Copenhagen Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "031-copenhagen-infrastructure-partners:holding:022:helax-istmo"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjc5000s4ivherillpvgj"
+    ],
+    "seedKeys": [
+      "helax istmo|Mexico"
+    ],
+    "evidenceUrls": [
+      "https://www.business-humanrights.org/en/latest-news/response-of-copenhagen-infrastructure-partners/",
+      "https://www.globenewswire.com/news-release/2023/12/22/2800776/0/en/Copenhagen-Infrastructure-Partners-signs-MoU-with-Mexican-authorities-for-Helax-Istmo-a-green-hydrogen-project.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 031-copenhagen-infrastructure-partners:holding:022:helax-istmo: Repository entity matches the project, but public evidence primarily documents an MoU-stage development and leaves committed-equity ownership uncertain; therefore attribution remains under review. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 031-copenhagen-infrastructure-partners:holding:022:helax-istmo: Repository entity matches the project, but public evidence primarily documents an MoU-stage development and leaves committed-equity ownership uncertain; therefore attribution remains under review."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjc5000s4ivherillpvgj",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "helax-istmo|mexico",
+  "targetCompanyImage": {
+    "id": "cmrxpjc5000s4ivherillpvgj",
+    "name": "Helax Istmo",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Green hydrogen and maritime fuels",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Helax Istmo is a development-stage project intended to produce green hydrogen and green maritime fuels in southern Mexico. Its target end markets are shipping and other industrial users seeking lower-carbon fuel supply rather than retail electricity customers. The operating model is asset-heavy and pre-development in nature, with value tied to renewable generation, fuel-processing infrastructure, port and logistics integration, and future contracted offtake. Public announcements describe the project as part of Mexico's Interoceanic Corridor strategy and note that it is located in Oaxaca and remains in pre-development. Copenhagen Infrastructure Partners announced the project in late 2023 through its Growth Markets Fund II and Energy Transition Fund I strategies, and the current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Oaxaca",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxjm01pyivhetajdb7q8",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "organizationName": "Copenhagen Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "CI Growth Markets Fund II / CI Energy Transition Fund I",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplb7103j2ivhe8jyxojuy",
+        "date": "Dec 22, 2023",
+        "event": "Copenhagen Infrastructure Partners announced an MoU with Mexican authorities for the Helax Istmo green hydrogen project.",
+        "category": "FINANCING",
+        "sortDate": "2023-12-22T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplb7n03j3ivhed4i4kneo",
+        "date": "2024",
+        "event": "Helax Istmo advanced as part of the Interoceanic Corridor fuel and logistics strategy.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplb8703j4ivhepvgxzcfl",
+        "date": "Dec 2024",
+        "event": "Helax Istmo targeted an operating timeframe around 2028, subject to development progress.",
+        "category": "EXPANSION",
+        "sortDate": "2024-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqa8t09cyivheq8xjv3c6",
+        "label": "Announcement date source — Copenhagen Infrastructure Partners — Helax Istmo",
+        "url": "https://www.globenewswire.com/news-release/2023/12/22/2800776/0/en/Copenhagen-Infrastructure-Partners-signs-MoU-with-Mexican-authorities-for-Helax-Istmo-a-green-hydrogen-project.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Copenhagen Infrastructure Partners transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqaa209d0ivheu9jnz1gx",
+        "label": "Business Humanrights — Helax Istmo",
+        "url": "https://www.business-humanrights.org/en/latest-news/response-of-copenhagen-infrastructure-partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Business Humanrights — Helax Istmo",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqabh09d2ivhe0avt5szf",
+        "label": "LinkedIn — Helax Istmo",
+        "url": "https://www.linkedin.com/posts/copenhagen-infrastructure-partners-k-s_we-ended-2023-on-a-high-shortly-before-activity-7148198819447431168-gHZm",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "LinkedIn — Helax Istmo",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqafs09d4ivhe1z96j4p1",
+        "label": "Fuelcellsworks — Helax Istmo",
+        "url": "https://fuelcellsworks.com/2024/12/06/green-hydrogen/mexico-major-green-hydrogen-and-ammonia-plant-to-begin-operations-in-isthmus-of-tehuantepec-by-2028",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Fuelcellsworks operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Helax Istmo",
+    "investmentFirm": "Copenhagen Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Green hydrogen and maritime fuels",
+    "region": "North America",
+    "country": "Mexico",
+    "ownershipVehicle": "CI Growth Markets Fund II / CI Energy Transition Fund I",
+    "description": "Helax Istmo is a development-stage project intended to produce green hydrogen and green maritime fuels in southern Mexico. Its target end markets are shipping and other industrial users seeking lower-carbon fuel supply rather than retail electricity customers. The operating model is asset-heavy and pre-development in nature, with value tied to renewable generation, fuel-processing infrastructure, port and logistics integration, and future contracted offtake. Public announcements describe the project as part of Mexico's Interoceanic Corridor strategy and note that it is located in Oaxaca and remains in pre-development. Copenhagen Infrastructure Partners announced the project in late 2023 through its Growth Markets Fund II and Energy Transition Fund I strategies, and the current ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "Mexico"
+    ],
+    "investmentYear": 2023,
+    "headquarters": "Oaxaca",
+    "milestones": [
+      {
+        "date": "Dec 22, 2023",
+        "event": "Copenhagen Infrastructure Partners announced an MoU with Mexican authorities for the Helax Istmo green hydrogen project.",
+        "category": "Financing"
+      },
+      {
+        "date": "2024",
+        "event": "Helax Istmo advanced as part of the Interoceanic Corridor fuel and logistics strategy.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Dec 2024",
+        "event": "Helax Istmo targeted an operating timeframe around 2028, subject to development progress.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Copenhagen Infrastructure Partners — Helax Istmo",
+        "url": "https://www.globenewswire.com/news-release/2023/12/22/2800776/0/en/Copenhagen-Infrastructure-Partners-signs-MoU-with-Mexican-authorities-for-Helax-Istmo-a-green-hydrogen-project.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Business Humanrights — Helax Istmo",
+        "url": "https://www.business-humanrights.org/en/latest-news/response-of-copenhagen-infrastructure-partners/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "LinkedIn — Helax Istmo",
+        "url": "https://www.linkedin.com/posts/copenhagen-infrastructure-partners-k-s_we-ended-2023-on-a-high-shortly-before-activity-7148198819447431168-gHZm",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Fuelcellsworks — Helax Istmo",
+        "url": "https://fuelcellsworks.com/2024/12/06/green-hydrogen/mexico-major-green-hydrogen-and-ammonia-plant-to-begin-operations-in-isthmus-of-tehuantepec-by-2028",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Copenhagen Infrastructure Partners",
+        "ownershipVehicle": "CI Growth Markets Fund II / CI Energy Transition Fund I",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi66e0017ivheel3xod17",
+        "name": "Copenhagen Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:15.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0185:helax-istmo:d1195262",
+    "taskIndex": 185,
+    "canonicalKey": "helax-istmo|mexico",
+    "capturedAt": "2026-08-23T23:25:13.017Z",
+    "databaseRevision": "revision:f7a749950a8bf93fbf05885b39ca6899ac1c9a9ecc81b4497a1485bac7fd2de4",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2912a79f28b915d56ea8f72af1d7ff7d0e118b4f5817a2a46aab33b632b20880",
+    "productionSnapshotSha256": "2ae225c8fa6dfefef55cc0fb6a8992dfe391eb3a388f76147b340b30354f078a",
+    "targetCompanySnapshotSha256": "e075e2cfb0d1015943177937d8ba7fa222c5e26aa9d2c4ae1e2ede000e76a1ef",
+    "seedEntrySha256": "da54b36775ab200c433416864dca888c97c3d2773199a4dc3e79c2163521c1c2",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "859446c3a1b4c064ea1c73bf6e11829835c56311314cec323d5cfeb38ba1484e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "e44800072983a0697af1aa770f11a5e263004ae330e81d75e3592716938e4c8d",
+      "citationsSha256": "852857f4cad238a513e0b822e88ae07818187a9ae01cbbbfd8a8e04072f39bc0",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "0a6247e7644df1be3551c2b2f53d012948ef2a327db4bb79f042fccb898cc37c",
+    "stateSha256": "4136a701b3f47719353858f316a66bfd0de81da4ef9d284a37dc7bdfdea0ab2d",
+    "taskSnapshotSha256": "22f570302c879f1849529a54531717814547346c8b1bb81c867af8a53da20925"
+  },
+  "contextSha256": "e9bd6ba630bbccd85629194f7fad97120bf8e36e5daad07f2b3cafd665eedf44"
+}

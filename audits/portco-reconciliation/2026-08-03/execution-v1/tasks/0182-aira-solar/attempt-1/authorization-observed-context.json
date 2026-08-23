@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0182:aira-solar:bed31b0f",
+  "taskIndex": 182,
+  "companyName": "Aira Solar",
+  "generatedAt": "2026-08-23T23:24:49.876Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0182-aira-solar/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 182,
+    "taskId": "ledger:0182:aira-solar:bed31b0f",
+    "canonicalKey": null,
+    "companyName": "Aira Solar",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "REPO_ONLY_JUDGMENT",
+    "earliestManagerIndex": 31,
+    "managers": [
+      "Copenhagen Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "031-copenhagen-infrastructure-partners:repo-only:001:aira-solar"
+    ],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.globenewswire.com/news-release/2023/11/21/2783918/0/en/Copenhagen-Infrastructure-Partners-launches-Horizon-New-Energy-dedicated-to-renewable-energy-in-Canada.html",
+      "https://www.horizonnewenergy.ca/projects"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted repo-only MATCHED_ELSEWHERE judgment for Copenhagen Infrastructure Partners: Consolidated beneath the separately counted Horizon New Energy platform to avoid double counting an underlying project.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment.",
+      "Repo-only identity has no matching production or evaluated-seed record in the captured snapshots."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_POST_QUEUE_EXACT_IDENTITY",
+    "targetCompanyId": "cmrxpjc5l00s5ivheovw4f1er",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "horizon-new-energy|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjc5l00s5ivheovw4f1er",
+    "name": "Horizon New Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable development platform",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Horizon New Energy is CIP's dedicated renewable development platform for Canada. The platform develops utility-scale solar, onshore wind, and battery storage projects for the Canadian power market. Its model is asset-heavy because it focuses on originating, permitting, interconnecting, financing, and building physical generation and storage assets. CIP announced the launch on behalf of its Flagship Funds in 2023 and said the initial portfolio comprised about 1.2 GW of Alberta-based development assets. Public materials position Horizon as the local development vehicle for multiple Alberta projects including Aira Solar.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2023,
+    "headquarters": "Alberta",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxk701pzivherzmrpqna",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "organizationName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure IV (CI IV)",
+        "vehicleName": "CIP Flagship Funds",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplb9903j5ivhe253m8gdg",
+        "date": "2023",
+        "event": "CIP said the new platform started with about 1.2 GW of Alberta renewable development assets.",
+        "category": "FOUNDING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplb9t03j6ivhev2nq5x53",
+        "date": "2023",
+        "event": "Horizon New Energy was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplbae03j7ivhej5q60qof",
+        "date": "Nov 21, 2023",
+        "event": "Copenhagen Infrastructure Partners, on behalf of its Flagship Funds, announced the launch of Horizon New Energy.",
+        "category": "FINANCING",
+        "sortDate": "2023-11-21T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplbay03j8ivheii3rq9kg",
+        "date": "2024",
+        "event": "Horizon publicly listed Alberta projects including Aira Solar and other renewable developments.",
+        "category": "IPO",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqagv09d6ivhet7oq4p3o",
+        "label": "Horizonnewenergy — Horizon New Energy",
+        "url": "https://www.horizonnewenergy.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Horizonnewenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqahx09d8ivhe6iutmd4v",
+        "label": "Horizonnewenergy — Horizon New Energy",
+        "url": "https://www.horizonnewenergy.ca/news-contact",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Horizonnewenergy — Horizon New Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqaik09d9ivhe8uw0d44b",
+        "label": "Investment date source — Copenhagen Infrastructure Partners — Aira Solar",
+        "url": "https://www.globenewswire.com/news-release/2023/11/21/2783918/0/en/Copenhagen-Infrastructure-Partners-launches-Horizon-New-Energy-dedicated-to-renewable-energy-in-Canada.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Copenhagen Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Horizon New Energy",
+    "investmentFirm": "Copenhagen Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Renewable development platform",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "CIP Flagship Funds",
+    "description": "Horizon New Energy is CIP's dedicated renewable development platform for Canada. The platform develops utility-scale solar, onshore wind, and battery storage projects for the Canadian power market. Its model is asset-heavy because it focuses on originating, permitting, interconnecting, financing, and building physical generation and storage assets. CIP announced the launch on behalf of its Flagship Funds in 2023 and said the initial portfolio comprised about 1.2 GW of Alberta-based development assets. Public materials position Horizon as the local development vehicle for multiple Alberta projects including Aira Solar.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 2023,
+    "investmentYear": 2023,
+    "headquarters": "Alberta",
+    "milestones": [
+      {
+        "date": "2023",
+        "event": "CIP said the new platform started with about 1.2 GW of Alberta renewable development assets.",
+        "category": "Founding"
+      },
+      {
+        "date": "2023",
+        "event": "Horizon New Energy was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Nov 21, 2023",
+        "event": "Copenhagen Infrastructure Partners, on behalf of its Flagship Funds, announced the launch of Horizon New Energy.",
+        "category": "Financing"
+      },
+      {
+        "date": "2024",
+        "event": "Horizon publicly listed Alberta projects including Aira Solar and other renewable developments.",
+        "category": "IPO"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Horizonnewenergy — Horizon New Energy",
+        "url": "https://www.horizonnewenergy.ca/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Horizonnewenergy — Horizon New Energy",
+        "url": "https://www.horizonnewenergy.ca/news-contact",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — Copenhagen Infrastructure Partners — Horizon New Energy",
+        "url": "https://www.globenewswire.com/news-release/2023/11/21/2783918/0/en/Copenhagen-Infrastructure-Partners-launches-Horizon-New-Energy-dedicated-to-renewable-energy-in-Canada.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Copenhagen Infrastructure Partners",
+        "ownershipVehicle": "CIP Flagship Funds",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1t300cmivhe0oa89ru2",
+        "fundName": "Copenhagen Infrastructure IV (CI IV)",
+        "managerId": "cmrxpi66e0017ivheel3xod17",
+        "updatedAt": "2026-07-23T16:09:56.199Z"
+      },
+      {
+        "id": "cmrxpj1vy00cnivhedgnninkj",
+        "fundName": "Copenhagen Infrastructure V (CI V)",
+        "managerId": "cmrxpi66e0017ivheel3xod17",
+        "updatedAt": "2026-07-23T16:09:56.302Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi66e0017ivheel3xod17",
+        "name": "Copenhagen Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:15.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0182:aira-solar:bed31b0f",
+    "taskIndex": 182,
+    "canonicalKey": null,
+    "capturedAt": "2026-08-23T23:24:49.876Z",
+    "databaseRevision": "revision:e598a79c667b6020fe3bf0ebf0f7e2a1173907de6eb5037f8b3e493fda9d5c0f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "49c3b54ee6ee6be36b437af5d51b8eac4285d39317dcdff3bf13681efba076ce",
+    "productionSnapshotSha256": "5686630d5cf88c0678819bc401a1514e498dbc244f4ca07f0113886f6a03d69d",
+    "targetCompanySnapshotSha256": "0b6374f9a56593d95399172a22812fb0e8d723cf81720fd68330c67ef6229339",
+    "seedEntrySha256": "865e81de7c52fd31db3eb6e33c56bb8209e3e283d1d91f19fdac526690ff5e9c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "fc5613a4dbb6a64454342c312bb180844d38b33f1c6fcaf1ec5bf7228cc0a14b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "2e84f5b9cbb943e69cd5824090e691fc9110c45866f6127cdb60881491e60315",
+      "organizationsSha256": "e44800072983a0697af1aa770f11a5e263004ae330e81d75e3592716938e4c8d",
+      "citationsSha256": "8decf2c40f1151d487205eccc7f05d43619acc500b34380088395efc502b8395",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4d6cb9c1048490a3864692b25ad5046e269305de7e590fa306f72e7661c54009",
+    "stateSha256": "6abc7fdaccca1eb617dab96fef506de19357bd84312fd4df41c8de10edf0e098",
+    "taskSnapshotSha256": "53b5dc7ccfcf4c64ae50f371c95fd64e593a136dccb09117f7d8f3ad9103f1a2"
+  },
+  "contextSha256": "852f767682d6f88192cce883140a2163003e331e15cefff707888e823a0033a3"
+}

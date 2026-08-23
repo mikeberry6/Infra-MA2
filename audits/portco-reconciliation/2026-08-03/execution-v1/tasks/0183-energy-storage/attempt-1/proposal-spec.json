@@ -1,0 +1,185 @@
+{
+  "generatedAt": "2026-08-23T23:20:00.000Z",
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "unresolvedQuestions": [],
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETRACT_ERRONEOUS_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "rationale": "Archive and exclude the generic Energy Storage row because no legal entity or unified CIP platform with that name was verified. Beehive, Scatter Wash, Goldendale and Swan Lake North are separate projects and SPVs with different CI IV or CI V histories. Remove the umbrella ownership period and preserve those projects as separate canonical records without fabricating a cross-project cap table.",
+  "evidence": [
+    {
+      "url": "https://www.nbim.no/en/investments/investment-areas/investing-in-unlisted-infrastructure-through-a-fund/",
+      "purpose": "Separate asset and fund identities",
+      "supports": [
+        "The cited storage holdings are separate CI V assets"
+      ]
+    },
+    {
+      "url": "https://www.edf-re.com/press-release/copenhagen-infrastructure-partners-acquires-beehive-battery-energy-storage-system-in-arizona-from-edf-power-solutions-north-america/",
+      "purpose": "Beehive boundary",
+      "supports": [
+        "Beehive is a distinct project/SPV"
+      ]
+    },
+    {
+      "url": "https://goldendaleenergystorage.com/news.html",
+      "purpose": "Goldendale boundary",
+      "supports": [
+        "Goldendale has its own project identity and history"
+      ]
+    }
+  ],
+  "afterImage": {
+    "id": "cmrxpjc2f00rzivhet6bxi4hg",
+    "name": "Energy Storage",
+    "aliases": [
+      "CIP Energy Storage (generic umbrella)"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Archived generic energy-storage umbrella",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Archived repository umbrella formerly used to group unrelated Copenhagen Infrastructure Partners energy-storage assets. Direct sources identify Beehive Energy Storage, Scatter Wash Energy Storage, Goldendale and Swan Lake North as separate projects and legal SPVs, with different CI IV or CI V fund histories and no common company, unified cap table or manager-level platform named Energy Storage. The umbrella is therefore excluded from the PortCo census and carries no ownership period. The four underlying project records remain separate; this archived row does not merge, replace or infer ownership across them. No sale or signed pending transaction of a unified Energy Storage company was found because no such company was verified.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "ARCHIVED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplatd03imivhenqlvtb1c",
+        "date": "2020",
+        "event": "CI IV acquired the distinct Swan Lake North and Goldendale pumped-storage projects; the transaction did not create a company named Energy Storage.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-11-13T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://goldendaleenergystorage.com/news.html",
+          "https://www.slenergystorage.com/project.html"
+        ]
+      },
+      {
+        "id": "cmrxplaty03inivhey3a1rltj",
+        "date": "2024–2025",
+        "event": "CI V acquired the distinct Scatter Wash battery project, which later entered operation; it remained a project/SPV rather than part of a unified Energy Storage company.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-09-24T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.globenewswire.com/news-release/2024/09/24/2952556/0/en/CIP-Acquires-1-GWh-Scatter-Wash-Battery-Energy-Storage-Project-in-Arizona-from-Strata-Clean-Energy-and-Signs-Construction-and-Asset-Management-Agreements-with-Strata.html"
+        ]
+      },
+      {
+        "id": "cmrxplaui03ioivhef6hnry69",
+        "date": "Aug 15, 2025",
+        "event": "CI V acquired 100% of the distinct Beehive battery project; it remained a project/SPV rather than part of a unified Energy Storage company.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-08-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.edf-re.com/press-release/copenhagen-infrastructure-partners-acquires-beehive-battery-energy-storage-system-in-arizona-from-edf-power-solutions-north-america/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq9fu09brivhekl5dxycr",
+        "label": "Cip — Energy Storage",
+        "url": "https://www.cip.com/about-cip/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Cip company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq9gx09btivhelarxmkdq",
+        "label": "Cip — Energy Storage",
+        "url": "https://www.cip.com/funds/flagship-funds/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cip — Energy Storage",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq9i709bvivhemhuonq6w",
+        "label": "Investment date source — Copenhagen Infrastructure Partners — Energy Storage",
+        "url": "https://www.renewableenergyworld.com/energy-storage/pumped-storage/cip-acquires-393-mw-swan-lake-1200-mw-goldendale-pumped-storage-hydro-projects-in-u-s/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Copenhagen Infrastructure Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq9lp09bxivheuog8bpf4",
+        "label": "Cip — Energy Storage",
+        "url": "https://www.cip.com/media/oljjxc22/cip-annual-report-2024.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cip — Energy Storage",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq9n209bzivhetg7r7vor",
+        "label": "Cip — Energy Storage",
+        "url": "https://www.cip.com/media/qe1ljfnt/copenhagen-infrastructure-v-eur-blocker-feeder-scsp-2025-periodic-disclosure.pdf?rnd=134188218845870000",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cip — Energy Storage",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NBIM — CI V infrastructure investments",
+        "url": "https://www.nbim.no/en/investments/investment-areas/investing-in-unlisted-infrastructure-through-a-fund/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Separate CI V project identities and current status",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Close date source — Copenhagen Infrastructure Partners — Beehive Battery Energy Storage System",
+        "url": "https://www.edf-re.com/press-release/copenhagen-infrastructure-partners-acquires-beehive-battery-energy-storage-system-in-arizona-from-edf-power-solutions-north-america/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Beehive's separate SPV identity and CI V acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Investment date source — Copenhagen Infrastructure Partners — Scatter Wash Battery Energy Storage System",
+        "url": "https://www.globenewswire.com/news-release/2024/09/24/2952556/0/en/CIP-Acquires-1-GWh-Scatter-Wash-Battery-Energy-Storage-Project-in-Arizona-from-Strata-Clean-Energy-and-Signs-Construction-and-Asset-Management-Agreements-with-Strata.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Scatter Wash's separate project identity and CI V acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Goldendaleenergystorage — Goldendale Energy Storage",
+        "url": "https://goldendaleenergystorage.com/news.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Goldendale's separate project identity and acquisition history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Slenergystorage — Swan Lake North Pumped Storage Project",
+        "url": "https://www.slenergystorage.com/project.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Swan Lake North's separate project identity and acquisition history",
+        "isPrimary": false
+      }
+    ]
+  }
+}

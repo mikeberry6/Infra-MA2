@@ -1,0 +1,268 @@
+{
+  "generatedAt": "2026-08-23T23:20:00.000Z",
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjxc201poivhewm4gmixz",
+      "canonicalRelationId": "cmrxpjxk701pzivherzmrpqna",
+      "rationale": "Both rows represent CIP's same Horizon/Aira platform ownership period; the canonical period carries the corrected current CI V vehicle context."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplaff03i5ivhewzokiv13",
+      "canonicalRelationId": "cmrxplb9t03j6ivhev2nq5x53",
+      "rationale": "Both rows describe CIP's November 2023 Horizon platform launch and Aira's inclusion beneath it."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "unresolvedQuestions": [],
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjbxc00ruivhei137tu46"
+  ],
+  "rationale": "Merge Aira Solar into Horizon New Energy because Horizon is CIP's Canadian manager-level platform and Aira is one of its Alberta development projects. Preserve Aira's regulatory, entity and project history on Horizon; retire the separate Aira company and its duplicate CI IV ownership period. Current registry evidence identifies CI V-named Horizon and Aira vehicles, while the 2025 amalgamation was an internal reorganization rather than a sale. Stake, exact entry close, FID, financing, construction start, offtaker and COD remain not publicly disclosed and are not inferred.",
+  "evidence": [
+    {
+      "url": "https://www.horizonnewenergy.ca/backed-by-cip",
+      "purpose": "Canonical platform and manager",
+      "supports": [
+        "Horizon is the CIP-managed Canadian portfolio platform"
+      ]
+    },
+    {
+      "url": "https://www.horizonnewenergy.ca/projects",
+      "purpose": "Project boundary",
+      "supports": [
+        "Aira is listed as a Horizon project",
+        "Aira is a 450 MWac Alberta development"
+      ]
+    },
+    {
+      "url": "https://kings-printer.alberta.ca/documents/gazette/2025/text/06_Mar31_Registrar.cfm",
+      "purpose": "Current vehicle and reorganization",
+      "supports": [
+        "The current Aira holdco is CI V-named",
+        "The March 2025 event was an amalgamation"
+      ]
+    }
+  ],
+  "afterImage": {
+    "id": "cmrxpjc5l00s5ivheovw4f1er",
+    "name": "Horizon New Energy",
+    "aliases": [
+      "Aira Solar",
+      "Aira Solar Project",
+      "CI V Aira Holdco Ltd",
+      "CI V Aira Solar GP Ltd",
+      "CI V Horizon New Energy Devco Ltd"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Renewable development platform",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Horizon New Energy is Copenhagen Infrastructure Partners' Canadian renewable-development platform. CIP launched Horizon in November 2023 with approximately 1.2 GW of Alberta solar, wind and battery-storage projects. Horizon lists the 450 MWac Aira Solar development near Seven Persons, Alberta as one of its projects; Aira is therefore an underlying project and associated SPVs rather than a second manager-level PortCo. Alberta registry records identify CI V Horizon New Energy Devco Ltd and CI V Aira entities, including a March 2025 internal amalgamation into CI V Aira Holdco Ltd. The project has received AESO connection and Alberta Utilities Commission approvals and remained active in AESO's August 2026 project list, but a final investment decision, financing close, construction start, offtaker and commercial-operation date were not publicly disclosed. No third-party platform sale, Aira transfer or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.horizonnewenergy.ca/",
+    "yearFounded": 2023,
+    "headquarters": "Alberta",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxk701pzivherzmrpqna",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "organizationName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure V (CI V)",
+        "vehicleName": "CI V Horizon New Energy Devco Ltd",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplb9903j5ivhe253m8gdg",
+        "date": "2023",
+        "event": "CIP established Horizon New Energy as a Canadian renewable-development platform with approximately 1.2 GW of initial Alberta projects.",
+        "category": "FOUNDING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.globenewswire.com/news-release/2023/11/21/2783918/0/en/Copenhagen-Infrastructure-Partners-launches-Horizon-New-Energy-dedicated-to-renewable-energy-in-Canada.html"
+        ]
+      },
+      {
+        "id": "cmrxplb9t03j6ivhev2nq5x53",
+        "date": "Nov 21, 2023",
+        "event": "CIP publicly launched Horizon New Energy and identified it as the platform for its existing Canadian development assets, including Alberta projects.",
+        "category": "FINANCING",
+        "sortDate": "2023-11-21T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.horizonnewenergy.ca/backed-by-cip",
+          "https://www.globenewswire.com/news-release/2023/11/21/2783918/0/en/Copenhagen-Infrastructure-Partners-launches-Horizon-New-Energy-dedicated-to-renewable-energy-in-Canada.html"
+        ]
+      },
+      {
+        "id": "cmrxplbae03j7ivhej5q60qof",
+        "date": "Nov 21, 2023",
+        "event": "Horizon identified Aira Solar as an underlying 450 MWac Alberta project rather than a standalone operating platform.",
+        "category": "OTHER",
+        "sortDate": "2023-11-21T05:01:00.000Z",
+        "evidenceUrls": [
+          "https://www.horizonnewenergy.ca/projects"
+        ]
+      },
+      {
+        "id": "cmrxplbay03j8ivheii3rq9kg",
+        "date": "2024",
+        "event": "Aira received AESO connection approval and Alberta project and substation approvals while remaining a Horizon development project.",
+        "category": "EXPANSION",
+        "sortDate": "2024-03-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.horizonnewenergy.ca/projects",
+          "https://www.aeso.ca/grid/transmission-projects/aira-solar-project-connection-2461/"
+        ]
+      },
+      {
+        "id": "cmrxplag103i6ivhexzwcfb7g",
+        "date": "Feb 28, 2024",
+        "event": "AESO approved the Aira Solar Project connection under the abbreviated needs-approval process.",
+        "category": "EXPANSION",
+        "sortDate": "2024-02-28T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.aeso.ca/grid/transmission-projects/aira-solar-project-connection-2461/"
+        ]
+      },
+      {
+        "id": "cmrxplagm03i7ivhegmgrysst",
+        "date": "Mar 21, 2024",
+        "event": "The Alberta Utilities Commission approved the Aira Solar Project and associated substation.",
+        "category": "EXPANSION",
+        "sortDate": "2024-03-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.horizonnewenergy.ca/projects"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Mar 1, 2025",
+        "event": "Aira Wind Power Inc. and CI IV Whisper Holdco Ltd amalgamated as CI V Aira Holdco Ltd in an internal reorganization, not a third-party sale of Aira or Horizon.",
+        "category": "OTHER",
+        "sortDate": "2025-03-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://kings-printer.alberta.ca/documents/gazette/2025/text/06_Mar31_Registrar.cfm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqagv09d6ivhet7oq4p3o",
+        "label": "Horizonnewenergy — Horizon New Energy",
+        "url": "https://www.horizonnewenergy.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Horizonnewenergy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqahx09d8ivhe6iutmd4v",
+        "label": "Horizonnewenergy — Horizon New Energy",
+        "url": "https://www.horizonnewenergy.ca/news-contact",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Horizonnewenergy — Horizon New Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqaik09d9ivhe8uw0d44b",
+        "label": "Investment date source — Copenhagen Infrastructure Partners — Aira Solar",
+        "url": "https://www.globenewswire.com/news-release/2023/11/21/2783918/0/en/Copenhagen-Infrastructure-Partners-launches-Horizon-New-Energy-dedicated-to-renewable-energy-in-Canada.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Copenhagen Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq8p009anivhepiiuyeis",
+        "label": "Majorprojects — Aira Solar",
+        "url": "https://majorprojects.alberta.ca/details/Aira-Solar-Project/11104",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Historical Aira project scope and Alberta location",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq8sk09apivhe5kvnn96t",
+        "label": "Investment date source — Copenhagen Infrastructure Partners — Aira Solar",
+        "url": "https://www.globenewswire.com/news-release/2023/11/21/2783918/0/en/Copenhagen-Infrastructure-Partners-launches-Horizon-New-Energy-dedicated-to-renewable-energy-in-Canada.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Historical Aira citation to the Horizon platform launch",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq8tv09arivhe8bvxodej",
+        "label": "Horizonnewenergy — Aira Solar",
+        "url": "https://www.horizonnewenergy.ca/projects",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Aira project boundary, capacity, location and development status",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq8uw09ativhe9h39f7wy",
+        "label": "Aeso — Aira Solar",
+        "url": "https://www.aeso.ca/grid/transmission-projects/aira-solar-project-connection-2461/",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Aira connection approval and former applicant",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Horizon New Energy — Backed by CIP",
+        "url": "https://www.horizonnewenergy.ca/backed-by-cip",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CIP-managed platform identity and Canadian ownership boundary",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Alberta Gazette — CI V Aira and Horizon entities",
+        "url": "https://kings-printer.alberta.ca/documents/gazette/2023/text/21_Nov15_Registrar.cfm",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CI V Aira Solar GP and Horizon New Energy Devco registrations",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Alberta Gazette — Aira amalgamation",
+        "url": "https://kings-printer.alberta.ca/documents/gazette/2025/text/06_Mar31_Registrar.cfm",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "March 2025 internal amalgamation into CI V Aira Holdco Ltd",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "AESO — August 2026 Project List",
+        "url": "https://www.aeso.ca/assets/Uploads/project-reporting/August-2026-Project-List.xlsx",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current active Stage 5 status and 450 MW requested connection",
+        "isPrimary": false
+      }
+    ]
+  }
+}

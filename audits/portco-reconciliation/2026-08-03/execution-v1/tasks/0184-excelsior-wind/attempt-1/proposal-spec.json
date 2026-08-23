@@ -1,0 +1,281 @@
+{
+  "generatedAt": "2026-08-23T23:20:00.000Z",
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjxhh01puivhepuxctfse",
+      "canonicalRelationId": "cmrxpjxr801qcivhep94oama6",
+      "rationale": "Both rows represent the same CIP and CI IV ownership of the Vineyard Offshore platform and its Excelsior project."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplavy03iqivhegntca8xi",
+      "canonicalRelationId": "cmrxplc5s03k6ivhet6rhp1u9",
+      "rationale": "Both rows describe the October 2023 provisional selection of Excelsior Wind within Vineyard Offshore."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "unresolvedQuestions": [],
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjc2u00s0ivhew9be7sm4"
+  ],
+  "rationale": "Merge Excelsior Wind into Vineyard Offshore because Excelsior is a named project within the Vineyard Mid-Atlantic lease and Vineyard Offshore platform, not a separate CIP portfolio company. Preserve its lease, procurement and permitting history on Vineyard Offshore; retain the single current CI IV platform ownership period and retire the duplicate Excelsior row. Do not merge distinct Vineyard Wind projects.",
+  "evidence": [
+    {
+      "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic",
+      "purpose": "Leaseholder and project boundary",
+      "supports": [
+        "Vineyard Mid-Atlantic LLC is the current OCS-A 0544 lessee",
+        "Excelsior sits within the broader federal project"
+      ]
+    },
+    {
+      "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/excelsior-wind-1/",
+      "purpose": "Current project identity",
+      "supports": [
+        "Excelsior remains a 1,350 MW Vineyard Offshore project"
+      ]
+    },
+    {
+      "url": "https://cop.dk/vineyard-offshores-excelsior-wind-project-selected-as-next-wave-of-offshore-wind-in-new-york/",
+      "purpose": "Fund and platform",
+      "supports": [
+        "CI IV is the identified fund",
+        "Vineyard Offshore is the platform"
+      ]
+    }
+  ],
+  "afterImage": {
+    "id": "cmrxpjcex00siivhegwj7n0ow",
+    "name": "Vineyard Offshore",
+    "aliases": [
+      "Excelsior Wind",
+      "Vineyard Mid-Atlantic LLC",
+      "Vineyard Mid-Atlantic Offshore Wind Project",
+      "OCS-A 0544"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Offshore wind development platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Vineyard Offshore is Copenhagen Infrastructure Partners' U.S. offshore-wind development platform, established in 2022 with lease areas held through CI IV. Excelsior Wind is the current 1,350 MW New York project configuration within the broader Vineyard Mid-Atlantic federal lease and construction-and-operations-plan envelope, whose legal lessee is Vineyard Mid-Atlantic LLC. Excelsior is therefore a nested project and lease SPV history, not a second manager-level PortCo. The lease became effective in May 2022; New York provisionally selected an earlier 1,314 MW configuration in 2023, but no final award or executed offtake followed, and the later 1,350 MW bid received no award when the 2024 solicitation closed in February 2026. BOEM began environmental review in January 2025, and the project remains in development and uncontracted. No lease transfer, sale, relinquishment, CIP exit or signed pending ownership transaction was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.vineyardoffshore.com/",
+    "yearFounded": 2022,
+    "headquarters": "Massachusetts; New York; California",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxr801qcivhep94oama6",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "organizationName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure IV (CI IV)",
+        "vehicleName": "Copenhagen Infrastructure IV (CI IV)",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplc4n03k4ivhew53lzd2s",
+        "date": "2022",
+        "event": "Public platform materials state that Copenhagen Infrastructure Partners-supported Vineyard Offshore was established in 2022 with initial lease areas owned by Copenhagen Infrastructure IV (CI IV).",
+        "category": "FINANCING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic"
+        ]
+      },
+      {
+        "id": "cmrxplc5a03k5ivhehkfysqrj",
+        "date": "2022",
+        "event": "Vineyard Offshore was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.vineyardoffshore.com/who-we-are/"
+        ]
+      },
+      {
+        "id": "cmrxplc5s03k6ivhet6rhp1u9",
+        "date": "Oct 24, 2023",
+        "event": "Vineyard Offshore announced New York's provisional selection of an earlier Excelsior Wind configuration, but the round closed without a final award or executed offtake.",
+        "category": "EXPANSION",
+        "sortDate": "2023-10-24T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations"
+        ]
+      },
+      {
+        "id": "cmrxplc6c03k7ivhemh337oo7",
+        "date": "Mar 27, 2024",
+        "event": "Vineyard Offshore announced Vineyard Northeast for New England.",
+        "category": "OTHER",
+        "sortDate": "2024-03-27T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplavk03ipivhegsk3r2td",
+        "date": "May 1, 2022",
+        "event": "Federal lease OCS-A 0544 became effective for Vineyard Mid-Atlantic LLC, the lease SPV for the area containing Excelsior Wind.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-05-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic"
+        ]
+      },
+      {
+        "id": "cmrxplawj03irivhe30e1altt",
+        "date": "Jan 15, 2025",
+        "event": "BOEM issued its notice of intent to prepare an environmental impact statement for the broader Vineyard Mid-Atlantic project.",
+        "category": "OTHER",
+        "sortDate": "2025-01-15T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic"
+        ]
+      },
+      {
+        "id": "cmrxplax003isivhedbgt2fjz",
+        "date": "Feb 13, 2026",
+        "event": "NYSERDA closed the 2024 offshore-wind solicitation without awards, leaving Excelsior's 1,350 MW bid uncontracted.",
+        "category": "OTHER",
+        "sortDate": "2026-02-13T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations/2024-Solicitation"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqc5u09fnivhebnd7evsx",
+        "label": "Vineyardoffshore — Vineyard Offshore",
+        "url": "https://www.vineyardoffshore.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Vineyardoffshore company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqc6v09fpivhe200k6l1n",
+        "label": "Vineyardoffshore — Vineyard Offshore",
+        "url": "https://www.vineyardoffshore.com/who-we-are/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Vineyardoffshore — Vineyard Offshore",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqc7x09frivhe40euzk16",
+        "label": "Investment date source — Copenhagen Infrastructure Partners — Vineyard Offshore",
+        "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-offshore-fact-sheet",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Copenhagen Infrastructure Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqc8w09ftivhe9ccjhtk8",
+        "label": "Windtech International — Vineyard Offshore",
+        "url": "https://www.windtech-international.com/company-news/team-behind-vineyard-wind-launches-vineyard-offshore",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Launch reporting stated that both initial lease areas were owned by the CI-IV fund managed by Copenhagen Infrastructure Partners.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq9ob09c1ivhetc3ns5me",
+        "label": "Vineyardoffshore — Excelsior Wind",
+        "url": "https://www.vineyardoffshore.com/article/vineyard-offshores-excelsior-wind-selected-for-the-next-wave-of-offshore-wind-power-in-new-york/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Historical provisional selection announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq9pd09c3ivhemyt9rg7f",
+        "label": "Vineyardoffshore — Excelsior Wind",
+        "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/excelsior-wind-1/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Excelsior project identity, capacity, geography and development stage",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq9sf09c9ivhe9pxs6hc7",
+        "label": "Nyserda — Excelsior Wind",
+        "url": "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations/2024-Solicitation",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Excelsior rebid and February 2026 no-award solicitation close",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq9qb09c5ivheypqg95r4",
+        "label": "Investment date source — Copenhagen Infrastructure Partners — Excelsior Wind",
+        "url": "https://www.energyglobal.com/wind/28022022/lease-area-won-by-mid-atlantic-offshore-wind/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Historical secondary reporting of the 2022 lease award",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq9r809c7ivhes3n21xro",
+        "label": "BOEM lease source — Excelsior Wind",
+        "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic-ocs-0544",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Historical BOEM lease-page citation retained for lineage",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BOEM — Vineyard Mid-Atlantic",
+        "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current lessee, lease identity, project boundary and federal review",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Vineyard Offshore — Vineyard Mid-Atlantic",
+        "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/excelsior-wind-1/vineyard-mid-atlantic/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Excelsior project boundary within the Vineyard Mid-Atlantic lease envelope",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Copenhagen Offshore Partners — Excelsior selection",
+        "url": "https://cop.dk/vineyard-offshores-excelsior-wind-project-selected-as-next-wave-of-offshore-wind-in-new-york/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CI IV fund attribution and Vineyard Offshore platform boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NYSERDA — Offshore-wind solicitation history",
+        "url": "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2023 provisional selection and absence of a final award",
+        "isPrimary": false
+      }
+    ]
+  }
+}

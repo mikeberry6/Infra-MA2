@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0186:sunrise-renewables:49611daa",
+  "taskIndex": 186,
+  "companyName": "Sunrise Renewables",
+  "generatedAt": "2026-08-23T23:25:15.139Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0186-sunrise-renewables/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 186,
+    "taskId": "ledger:0186:sunrise-renewables:49611daa",
+    "canonicalKey": "sunrise-renewables|united-states",
+    "companyName": "Sunrise Renewables",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 31,
+    "managers": [
+      "Copenhagen Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "031-copenhagen-infrastructure-partners:holding:019:sunrise-renewables"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjc9d00scivhe5ub7c3d3"
+    ],
+    "seedKeys": [
+      "sunrise renewables|United States"
+    ],
+    "evidenceUrls": [
+      "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2A_Lost_City_Attachment_A_Corporate_Information.pdf",
+      "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/03212025051535/01_Response_to_KSB_RFI-1.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 031-copenhagen-infrastructure-partners:holding:019:sunrise-renewables: Attribution to CIP relies on indirect regulatory filings rather than explicit CIP or company disclosures; ownership remains plausible but not fully verified. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 031-copenhagen-infrastructure-partners:holding:019:sunrise-renewables: Attribution to CIP relies on indirect regulatory filings rather than explicit CIP or company disclosures; ownership remains plausible but not fully verified."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjc9d00scivhe5ub7c3d3",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "sunrise-renewables|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjc9d00scivhe5ub7c3d3",
+    "name": "Sunrise Renewables",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar, storage, and green hydrogen development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Sunrise Renewables is a CIP-affiliated development platform for utility-scale solar, battery storage, and green hydrogen projects in the United States. Its customers are expected to be utilities, corporate buyers, and industrial energy users that contract for large-scale renewable generation and related decarbonization infrastructure. The model is asset-heavy because it depends on project origination, permitting, interconnection, and eventual construction of large energy assets. Kentucky regulatory filings identify project entities such as CI V Sunrise Renewables LLC and describe Sunrise as using CIP development processes and personnel. The filings also identify the Lost City project entity as a wholly owned affiliate of Copenhagen Infrastructure Partners' CI V Master DevCo LLC structure. The public record therefore supports Sunrise as a CIP-sponsored CI V development vehicle, although the platform's full ownership structure and ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Kentucky; multiple United States markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxo001q6ivhezy6w5aze",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "organizationName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure IV (CI IV)",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplbq703joivhebgs9fp5x",
+        "date": "Jun 21, 2022",
+        "event": "A Copenhagen Infrastructure Partners-backed Lost City project entity was formed under the CI V Sunrise Renewables ownership chain.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-21T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplbqt03jpivherx1po3q5",
+        "date": "Jan 2025",
+        "event": "Kentucky regulatory filings for the Lost City project tied Sunrise entities to CIP-managed fund structures.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqbd209elivhewu17ucxe",
+        "label": "Psc — Sunrise Renewables",
+        "url": "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2_KSB_Lost_City_Application.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Psc operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqbe209enivhegi0bean2",
+        "label": "Psc — Sunrise Renewables",
+        "url": "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2A_Lost_City_Attachment_A_Corporate_Information.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Psc — Sunrise Renewables",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqbf409epivhek06hw22o",
+        "label": "Psc — Sunrise Renewables",
+        "url": "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/03212025051535/01_Response_to_KSB_RFI-1.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Psc transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqbg209erivhevrrreaz1",
+        "label": "Psc — Sunrise Renewables",
+        "url": "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/06062025050850/Lost_City_Witness_List.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Psc — Sunrise Renewables",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Sunrise Renewables",
+    "investmentFirm": "Copenhagen Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar, storage, and green hydrogen development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Sunrise Renewables is a CIP-affiliated development platform for utility-scale solar, battery storage, and green hydrogen projects in the United States. Its customers are expected to be utilities, corporate buyers, and industrial energy users that contract for large-scale renewable generation and related decarbonization infrastructure. The model is asset-heavy because it depends on project origination, permitting, interconnection, and eventual construction of large energy assets. Kentucky regulatory filings identify project entities such as CI V Sunrise Renewables LLC and describe Sunrise as using CIP development processes and personnel. The filings also identify the Lost City project entity as a wholly owned affiliate of Copenhagen Infrastructure Partners' CI V Master DevCo LLC structure. The public record therefore supports Sunrise as a CIP-sponsored CI V development vehicle, although the platform's full ownership structure and ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "Kentucky; multiple United States markets",
+    "milestones": [
+      {
+        "date": "Jun 21, 2022",
+        "event": "A Copenhagen Infrastructure Partners-backed Lost City project entity was formed under the CI V Sunrise Renewables ownership chain.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jan 2025",
+        "event": "Kentucky regulatory filings for the Lost City project tied Sunrise entities to CIP-managed fund structures.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Psc — Sunrise Renewables",
+        "url": "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2_KSB_Lost_City_Application.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Psc — Sunrise Renewables",
+        "url": "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2A_Lost_City_Attachment_A_Corporate_Information.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Psc — Sunrise Renewables",
+        "url": "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/03212025051535/01_Response_to_KSB_RFI-1.pdf",
+        "type": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Psc — Sunrise Renewables",
+        "url": "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/06062025050850/Lost_City_Witness_List.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Copenhagen Infrastructure Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1t300cmivhe0oa89ru2",
+        "fundName": "Copenhagen Infrastructure IV (CI IV)",
+        "managerId": "cmrxpi66e0017ivheel3xod17",
+        "updatedAt": "2026-07-23T16:09:56.199Z"
+      },
+      {
+        "id": "cmrxpj1vy00cnivhedgnninkj",
+        "fundName": "Copenhagen Infrastructure V (CI V)",
+        "managerId": "cmrxpi66e0017ivheel3xod17",
+        "updatedAt": "2026-07-23T16:09:56.302Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi66e0017ivheel3xod17",
+        "name": "Copenhagen Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:15.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0186:sunrise-renewables:49611daa",
+    "taskIndex": 186,
+    "canonicalKey": "sunrise-renewables|united-states",
+    "capturedAt": "2026-08-23T23:25:15.139Z",
+    "databaseRevision": "revision:08bd9c04a74d984c1d71c02bf67a634abe416fab0ef97cdeca2165d2859b50a1",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "74aa5126c357d5b87ddbbd5e3e1fb2a0cab156c81a01b4ababe5ba701517b428",
+    "productionSnapshotSha256": "2e78248777a2d6a6b6ae71b7627ef23b29b305b439d83534ccacad92cb73afed",
+    "targetCompanySnapshotSha256": "3a24a0e1768571c7c7bf3133dfbedccebfeebe3cac12c2c07da7db201e9b23cf",
+    "seedEntrySha256": "56cc036ab5e2aa40228d25fdbaab189931267f9c6634e63fa6dce54d74034559",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "99fc39c555be684365cfa149f3c9f141f20bc6f8d5d36cad9c7529307714aeec",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "2e84f5b9cbb943e69cd5824090e691fc9110c45866f6127cdb60881491e60315",
+      "organizationsSha256": "e44800072983a0697af1aa770f11a5e263004ae330e81d75e3592716938e4c8d",
+      "citationsSha256": "1e2f7cf2d3830283263d4066208b8515521a14403d4284bb9779353dd988ac00",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "88583c1316e3d624690af393467eab3a1736c170e9ba223658b4ce2a17aa7206",
+    "stateSha256": "09a96294783d12ad05373bd49560b4a8491017ff37671a890335d4a6307fb4e6",
+    "taskSnapshotSha256": "e9b122b2b58c2abd202d180da88852e4c39ae5c1fec927391bb2abc78a288f51"
+  },
+  "contextSha256": "77e7d1088ff3275db538476bc961763af605ef48325d2907f498ee7497acdfc7"
+}

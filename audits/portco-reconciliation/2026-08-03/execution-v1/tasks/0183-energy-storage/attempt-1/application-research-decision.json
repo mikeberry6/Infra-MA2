@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0183:energy-storage:95c2200d",
+  "taskIndex": 183,
+  "companyName": "Energy Storage",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-23T23:25:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Energy Storage",
+    "requestedManagers": [
+      "Copenhagen Infrastructure Partners"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "“Energy Storage” is a repository umbrella. Sources identify four distinct projects/SPVs across CI IV and CI V; merging them would fabricate a company and cap table.",
+    "identityResolution": {
+      "finding": "No legal entity or CIP platform named Energy Storage was found.",
+      "assets": [
+        "Beehive|Beehive Energy Storage, LLC",
+        "Scatter Wash|Scatter Wash Energy Storage, LLC",
+        "Goldendale|FFP Project 101, LLC",
+        "Swan Lake North|Swan Lake North Hydro LLC"
+      ],
+      "boundary": "“Scatter Wash II (Beehive)” is a reporting alias, not the Scatter Wash SPV. Goldendale Energy Storage LLC appears on the project site, but its relationship to FFP Project 101, LLC is UNRESOLVED."
+    },
+    "ownershipResolution": [
+      {
+        "asset": "Beehive",
+        "owners": [
+          {
+            "manager": "Copenhagen Infrastructure Partners",
+            "organization": "Beehive Energy Storage, LLC",
+            "fund": "CI V",
+            "stake": "100%",
+            "announcementDate": "2025-08-15",
+            "entryYear": 2025,
+            "isActive": true,
+            "transactionState": "CLOSED; exact close NOT_PUBLICLY_DISCLOSED"
+          },
+          {
+            "manager": "EDF power solutions North America",
+            "organization": "Beehive Energy Storage, LLC",
+            "exitYear": 2025,
+            "isActive": false,
+            "transactionState": "SOLD_TO_CI_V; stake NOT_PUBLICLY_DISCLOSED"
+          }
+        ]
+      },
+      {
+        "asset": "Scatter Wash",
+        "owners": [
+          {
+            "manager": "Copenhagen Infrastructure Partners",
+            "organization": "Scatter Wash Energy Storage, LLC",
+            "fund": "CI V",
+            "stake": "NOT_PUBLICLY_DISCLOSED",
+            "announcementDate": "2024-09-24",
+            "entryYear": "UNRESOLVED",
+            "isActive": true,
+            "transactionState": "CLOSED; date NOT_PUBLICLY_DISCLOSED"
+          },
+          {
+            "manager": "Strata Clean Energy",
+            "organization": "Scatter Wash Energy Storage, LLC",
+            "isActive": false,
+            "transactionState": "SOLD_TO_CI_V; stake/exit date NOT_PUBLICLY_DISCLOSED; services retained"
+          }
+        ]
+      },
+      {
+        "asset": "Goldendale",
+        "owners": [
+          {
+            "manager": "Copenhagen Infrastructure Partners",
+            "organization": "FFP Project 101, LLC",
+            "fund": "CI V",
+            "stake": "NOT_PUBLICLY_DISCLOSED",
+            "announcementDate": "2026-01-22",
+            "entryDate": "UNRESOLVED",
+            "isActive": true,
+            "transactionState": "CURRENT_CI_V_ATTRIBUTION"
+          },
+          {
+            "manager": "Copenhagen Infrastructure Partners",
+            "organization": "FFP Project 101, LLC",
+            "fund": "CI IV",
+            "vehicle": "Copenhagen Infrastructure IV K/S",
+            "announcementDate": "2020-11-13",
+            "entryYear": 2020,
+            "isActive": false,
+            "transactionState": "HISTORICAL; CI_IV_TO_CI_V_TRANSFER_UNRESOLVED"
+          },
+          {
+            "manager": "Rye Development / National Grid JV",
+            "organization": "Goldendale project",
+            "exitYear": 2020,
+            "isActive": false,
+            "transactionState": "SOLD_TO_CI_IV; stake/close date NOT_PUBLICLY_DISCLOSED"
+          }
+        ]
+      },
+      {
+        "asset": "Swan Lake North",
+        "owners": [
+          {
+            "manager": "Copenhagen Infrastructure Partners",
+            "organization": "Swan Lake North Hydro LLC",
+            "fund": "CI IV",
+            "vehicle": "Copenhagen Infrastructure IV K/S",
+            "stake": "NOT_PUBLICLY_DISCLOSED",
+            "announcementDate": "2020-11-13",
+            "entryDate": "2020-02",
+            "entryYear": 2020,
+            "isActive": true,
+            "transactionState": "CLOSED; exact day NOT_PUBLICLY_DISCLOSED"
+          },
+          {
+            "manager": "Rye Development / National Grid JV",
+            "organization": "Swan Lake North Hydro LLC",
+            "exitDate": "2020-02",
+            "exitYear": 2020,
+            "isActive": false,
+            "transactionState": "SOLD_TO_CI_IV; stake NOT_PUBLICLY_DISCLOSED"
+          }
+        ]
+      }
+    ],
+    "operatingResolution": {
+      "Beehive": "Peoria, AZ; 250 MW/1,000 MWh BESS; operating from April 2026.",
+      "ScatterWash": "Phoenix, AZ; 255 MW/1,020 MWh BESS; operational by 2025-12-31.",
+      "Goldendale": "Klickitat County, WA; 1,200 MW/12-hour pumped storage; licensed development, not operating.",
+      "SwanLakeNorth": "Klamath County, OR; 393.3 MW/up to 9.5-hour pumped storage; licensed/unconstructed."
+    },
+    "acquisitionExitCheck": {
+      "finding": "Through 2026-08-19 no later sale, cancellation or signed pending ownership transaction was found.",
+      "pendingTransactions": [],
+      "gaps": "Beehive/Scatter Wash close dates and Goldendale ownership-transfer mechanics."
+    },
+    "milestones": [
+      "2020-02: CI IV purchased Swan Lake North.",
+      "2020-11-13/2026-01-22: CI IV announced Goldendale acquisition; current disclosure attributes it to CI V and FERC later licensed it.",
+      "2024-09-24/2025: CI V announced Scatter Wash acquisition; later disclosure reports it operational.",
+      "2025-08-15/2026-04: CI V announced full ownership of Beehive; EIA reports operation."
+    ],
+    "evidence": [
+      {
+        "label": "NBIM CI V",
+        "url": "https://www.nbim.no/en/investments/investment-areas/investing-in-unlisted-infrastructure-through-a-fund/",
+        "purpose": "Separate CI V assets/status.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "EDF Beehive",
+        "url": "https://www.edf-re.com/press-release/copenhagen-infrastructure-partners-acquires-beehive-battery-energy-storage-system-in-arizona-from-edf-power-solutions-north-america/",
+        "purpose": "100% acquisition/project facts.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "EIA Beehive",
+        "url": "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=table_6_03",
+        "purpose": "SPV/MW/April 2026 operation.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CIP Scatter Wash",
+        "url": "https://www.globenewswire.com/news-release/2024/09/24/2952556/0/en/CIP-Acquires-1-GWh-Scatter-Wash-Battery-Energy-Storage-Project-in-Arizona-from-Strata-Clean-Energy-and-Signs-Construction-and-Asset-Management-Agreements-with-Strata.html",
+        "purpose": "CI V acquisition terms.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Goldendale history",
+        "url": "https://goldendaleenergystorage.com/news.html",
+        "purpose": "CI IV purchase/former JV.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "FERC Goldendale",
+        "url": "https://www.ferc.gov/news-events/news/summaries-january-2026-commission-meeting",
+        "purpose": "Licensee/MW/license.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Swan Lake North",
+        "url": "https://www.slenergystorage.com/project.html",
+        "purpose": "SPV/purchase/capacity/status.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Generic row aggregates four projects under CI IV.",
+      "after": "Exclude it; retain four project canonicals with separate SPVs and funds."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Energy Storage|United States—exclude non-entity.",
+      "Scatter Wash II (Beehive)—alias only; no merge.",
+      "Goldendale Energy Storage LLC—no second asset pending entity proof.",
+      "US Battery Storage Portfolio - Phase II—does not unify these four."
+    ],
+    "unresolvedQuestions": [
+      "Goldendale CI IV-to-CI V transfer date/vehicle/stake and any continuing CI IV interest.",
+      "Goldendale Energy Storage LLC relationship to FFP Project 101, LLC.",
+      "Exact Scatter Wash and Goldendale closing dates/stakes."
+    ],
+    "recommendedListAction": {
+      "action": "RETIRE_OR_EXCLUDE_GENERIC_ROW",
+      "retain": [
+        "Beehive",
+        "Scatter Wash",
+        "Goldendale",
+        "Swan Lake North"
+      ],
+      "mergeAssets": false,
+      "note": "Keep only a noncanonical technology tag; attach no ownership."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0183-energy-storage/attempt-1/research-decision.json",
+      "sha256": "7115184f041e7a157bdd5ae2a1b7d74990fec90580d7948ccdf354d826deb017"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0183-energy-storage/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "887ebaa52db2a62218e1e6328284da7ccc68bd9a51771a5ff3163c3d5ac35dd8"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0183-energy-storage/attempt-1/source-verification.json",
+      "sha256": "3c966418084bf3891ca885024bbd4f4266fcd3ee76addee53ff6691bbda12de4"
+    },
+    "acceptedResponseSha256": "887ebaa52db2a62218e1e6328284da7ccc68bd9a51771a5ff3163c3d5ac35dd8",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

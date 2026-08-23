@@ -296,6 +296,89 @@ describe("task snapshot target resolution", () => {
     });
   });
 
+  it("pins a repo-only project judgment to its evidenced canonical platform despite a stale queue country", () => {
+    const active = entry({
+      taskId: "task-aira",
+      canonicalKey: null,
+      queueKind: "REPO_ONLY_JUDGMENT",
+      companyName: "Aira Solar",
+      country: "United States",
+      sourceRepoOnlyIds: ["repo-only-aira"],
+      evidenceUrls: ["https://example.com/horizon-launch"],
+      rationale: "Consolidated beneath the separately counted Horizon New Energy platform.",
+    });
+    const resolution = resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-horizon",
+    });
+    const horizon = {
+      id: "company-horizon",
+      name: "Horizon New Energy",
+      aliases: [],
+      country: "Canada",
+      description: "Horizon develops the Aira Solar project in Alberta.",
+      citations: [{ url: "https://example.com/horizon-launch" }],
+    } as CompanyImage;
+
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry: active,
+      targetResolution: resolution,
+      targetCompanyImage: horizon,
+      productionCompanies: [
+        { id: "company-horizon", name: "Horizon New Energy", country: "Canada" },
+        { id: "company-aira", name: "Aira Solar", country: "Canada" },
+      ],
+    })).not.toThrow();
+    expect(resolvedTaskCanonicalKey({
+      queueEntry: active,
+      targetResolution: resolution,
+      targetCompanyImage: horizon,
+    })).toBe("horizon-new-energy|canada");
+    expect(resolvedTaskSeedKeys({
+      queueEntry: active,
+      queueEntries: [active],
+      targetResolution: resolution,
+      targetCompanyImage: horizon,
+    })).toEqual(["horizon new energy|Canada"]);
+  });
+
+  it("rejects a repo-only cross-country platform target without shared immutable evidence", () => {
+    const active = entry({
+      taskId: "task-aira",
+      canonicalKey: null,
+      queueKind: "REPO_ONLY_JUDGMENT",
+      companyName: "Aira Solar",
+      country: "United States",
+      sourceRepoOnlyIds: ["repo-only-aira"],
+      evidenceUrls: ["https://example.com/horizon-launch"],
+      rationale: "Consolidated beneath the separately counted Horizon New Energy platform.",
+    });
+    const resolution = resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-horizon",
+    });
+    const horizon = {
+      id: "company-horizon",
+      name: "Horizon New Energy",
+      aliases: [],
+      country: "Canada",
+      description: "Horizon develops the Aira Solar project in Alberta.",
+      citations: [{ url: "https://example.com/unrelated" }],
+    } as CompanyImage;
+
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry: active,
+      targetResolution: resolution,
+      targetCompanyImage: horizon,
+      productionCompanies: [
+        { id: "company-horizon", name: "Horizon New Energy", country: "Canada" },
+        { id: "company-aira", name: "Aira Solar", country: "Canada" },
+      ],
+    })).toThrow("does not exactly match the immutable task identity");
+  });
+
   it("pins a census DBA identity to the exact post-queue legal company", () => {
     const active = entry({
       taskId: "task-takanock",
