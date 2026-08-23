@@ -1,0 +1,151 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0182-0186-v1/batch-manifest.json --batch-sha256=9ffa0cdb0d33349894fcd58fad0cffba402a113ad06d284f4e93df2235d367b5
+
+(node:3649) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0182-0186-v1",
+  "batchSha256": "9ffa0cdb0d33349894fcd58fad0cffba402a113ad06d284f4e93df2235d367b5",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Horizon New Energy",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjbxc00ruivhei137tu46"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "redirects",
+        "website"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjbxc00ruivhei137tu46"
+      ]
+    },
+    {
+      "companyName": "Energy Storage",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, subsector, description, recordStatus, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "RETRACT_ERRONEOUS_OWNERSHIP",
+          "relationIds": [
+            "cmrxpjxgy01ptivheyowjixol"
+          ],
+          "detail": "Retract 1 proven erroneous ownership period(s); revision history preserves the prior claim."
+        },
+        {
+          "kind": "REALIZE_COMPANY",
+          "relationIds": [],
+          "detail": "Mark the company realized after all active ownership has ended."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "companyStatus",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "recordStatus",
+        "subsector"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Vineyard Offshore",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjc2u00s0ivhew9be7sm4"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "milestones",
+        "redirects",
+        "website"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjc2u00s0ivhew9be7sm4"
+      ]
+    },
+    {
+      "companyName": "Helax Istmo",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to subsector, description, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "subsector"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Sunrise Renewables",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, subsector, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "subsector",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
