@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T16:27:02Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T16:58:00Z",
+  "activeBatchId": "batch-0162-0166-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -1012,7 +1012,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0162-0166-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0162:duke-energy-florida:49a961e7",
+        "ledger:0163:cag-holdings-the-new-terminal-one-at-jfk:057d63fe",
+        "ledger:0164:copia-power:4a395f9a",
+        "ledger:0165:fermata-energy:b28311a9",
+        "ledger:0166:revera-energy-platform:658a9bc6"
+      ],
+      "taskIndexes": [
+        162,
+        163,
+        164,
+        165,
+        166
+      ],
+      "createdAt": "2026-08-23T16:37:00Z",
+      "updatedAt": "2026-08-23T16:58:00Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0162-0166-v1/batch-manifest-v2.json",
+        "sha256": "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T16:37:00Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T16:58:00Z",
+          "evidenceSha256": [
+            "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "2545ba169dd3c80ce37d57624d0fdf94e8ebc0d66dc56d09509fe5fb9de06be1"
+  "ledgerSha256": "b29ef3f4fdf07a584f811dbc251ae4a4bfa9970b86fbbb4eb73162b7cab2cc6e"
 }

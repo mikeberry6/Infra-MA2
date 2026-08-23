@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0162-0166-v1",
+  "createdAt": "2026-08-23T16:37:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "cd05a7ad29e4ba537db7a5c3adff00de37abdba6abd97fd5616521a8bc2e1cb0"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0162:duke-energy-florida:49a961e7",
+      "taskIndex": 162,
+      "companyName": "Duke Energy Florida",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0162-duke-energy-florida-v1/proposal.json",
+        "sha256": "344b5b6ce78676da183bba00b738704cc2a559e461280ba2b40c6b77a2979968"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0162-duke-energy-florida-v1.json",
+        "sha256": "e53bc18aac9f32c6a40bcd4216fca66a9858672b46a79a396d0657993d96862e"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/locked-production-snapshot.json",
+        "sha256": "04bc24f10025185d64884b10af69d158afc62b6f8d6ea5c06fd23e8541705279"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/locked-task-snapshot.json",
+        "sha256": "ee19a702c0343afb0253ed595a1c3d0aa4971e2afc749e1759240bd60a2ea812"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "12015a7f7c05d127d90a8382e960b8410ff26e5fbdb6dd960172e569873830b1"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/research-decision.json",
+        "sha256": "654d91b821048c71da9e39ca6348d27321841cecf042004d18d35f44fd2431fd"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/source-verification.json",
+        "sha256": "564e434bca02632af864443e6737067931a71869fec1aea880a6a8b4144b3e12"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "f942ba8ac8fcb88e8c656372d4c6477631f10a750e213cab05615a8771b9837e",
+      "dependencySha256": "4ed71d7599dd331f119f84c6cce4826a5d5ebe9bcf46db219735dd600c757f2c",
+      "afterImageSha256": "ac851a1a44029ce05240e0a19f6d2ea7d27439ad9df8dadc2e9a87b8ea641346",
+      "targetClaims": [
+        "canonical:duke-energy-florida|united-states",
+        "company:cmrxpj9zn00orivhel69huml1",
+        "relation:cmrxpjv8s01mbivhez214hok2",
+        "relation:cmrxpl14a036uivhe622mki3k",
+        "relation:cmrxpl14u036vivhet8dnj1pt",
+        "relation:cmrxpl15c036wivheb084bfg2",
+        "relation:cmrxppssa08nwivhebui0b6mt",
+        "relation:cmrxppste08nyivhe2lbbqo4a",
+        "relation:cmrxppsuq08o0ivheq63h5psm",
+        "seed:duke energy florida|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://illumination.duke-energy.com/articles/125-years-strong-celebrating-our-commitment-to-florida",
+          "label": "Duke Energy — Florida utility history",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://investors.duke-energy.com/news/news-details/2025/Duke-Energy-partners-with-Brookfield-to-secure-investment-in-Duke-Energy-Florida-expands-capital-plan-to-87-billion/default.aspx",
+          "label": "Announcement date source — Brookfield Asset Management — Duke Energy Florida",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.kirkland.com/news/press-release/2025/08/kirkland-advises-brookfield-on-investment-in-duke-energy-florida-for-%246-billion",
+          "label": "Kirkland — Duke Energy Florida",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1326160/000132616026000040/duk-20260630.htm",
+          "label": "Duke Energy — Second-quarter 2026 Form 10-Q",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/30371/000132616025000192/duk-202509x10qxexx101.htm",
+          "label": "Duke Energy — 2025 investment agreement",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/37637/000110465926022610/tm267351d1_8k.htm",
+          "label": "Close date source — Brookfield Asset Management — Duke Energy Florida",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0163:cag-holdings-the-new-terminal-one-at-jfk:057d63fe",
+      "taskIndex": 163,
+      "companyName": "CAG Holdings / The New Terminal One at JFK",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0163-cag-holdings-v1/proposal.json",
+        "sha256": "4b15e319cbca77242665099327db3e7c583c5c1aedd1e31985864fa5fd49d399"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0163-cag-holdings-v1.json",
+        "sha256": "9b266a0ac1ff17bfe81ca37932240f3c591a383152b615fafde20d37f8f408bc"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0163-cag-holdings-the-new-terminal-one-at-jfk/attempt-1/locked-production-snapshot.json",
+        "sha256": "e8f4a1a3cd973a5d53a51f622659220e15b89bbd8ac6f88b7fab9b464295a109"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0163-cag-holdings-the-new-terminal-one-at-jfk/attempt-1/locked-task-snapshot.json",
+        "sha256": "983b2dfb5c3688693ae51511a623bde6a4363e8d79f68b775a8f267a1a8ea4ad"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0163-cag-holdings-the-new-terminal-one-at-jfk/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "a4b2cca03b2a083adba6d9d4892441114201a664c59be6ffc937cb01e0a94dd9"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0163-cag-holdings-the-new-terminal-one-at-jfk/attempt-1/research-decision.json",
+        "sha256": "bbeb984454c015ff88f04bd7957a6b4f80338da864dd4fd96cb9bf96ea845d64"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0163-cag-holdings-the-new-terminal-one-at-jfk/attempt-1/source-verification.json",
+        "sha256": "fc41edcde3710a0768046363ac363ffb893605e2c91273fdba61282d97c816bd"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "6cb825f2d17fff16d402d16dafd40c81313d78ef0f023dcf9ddcab24e53084b4",
+      "dependencySha256": "4289ff222acbe4baeeab0a8dae8b1a16526b8e5c5c251396cd87ba4ba30fb84c",
+      "afterImageSha256": "4118a831056565d34b2e25e04cc0e3261090cc7dde46f3611bce4552d2ca5e70",
+      "targetClaims": [
+        "canonical:cag-holdings-the-new-terminal-one-at-jfk|united-states",
+        "company:cmrxpjajc00pnivhebltqp86n",
+        "relation:cmrxpjvws01ncivhet9l9o37h",
+        "relation:cmrxpl3u703abivhehcqn54dv",
+        "relation:cmrxpl3x403acivhebggmchio",
+        "relation:cmrxpl3xr03adivhesuydxp9w",
+        "relation:cmrxpl3yb03aeivhen2iinlze",
+        "relation:cmrxppyk508vkivhegc8ar1zd",
+        "relation:cmrxppyl408vmivhep8e47hwf",
+        "relation:cmrxppyog08voivhe4gtrelhv",
+        "relation:cmrxppypt08vqivheqlgugkxv",
+        "seed:cag holdings / the new terminal one at jfk|united states",
+        "seed:cag holdings|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://newsroom.ferrovial.com/en/press-releases/ferrovial-jfk-agreement/",
+          "label": "Ferrovial — New Terminal One stake agreement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.anewjfk.com/",
+          "label": "Anewjfk — CAG Holdings / The New Terminal One at JFK",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.carlyle.com/global-insights/jfk-new-terminal-one",
+          "label": "Carlyle — JFK New Terminal One case study",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-together-with-the-consortium-building-new-terminal-one-at-jfk-airport",
+          "label": "Carlyle — CAG Holdings / The New Terminal One at JFK",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.carlyle.com/media-room/news-release-archive/dr-gerrard-p-bushell-named-executive-chair-new-terminal-one",
+          "label": "Investment date source — Carlyle Infrastructure — CAG Holdings / The New Terminal One at JFK",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.panynj.gov/airports/en/jfk/new-terminal-one.html",
+          "label": "Panynj — CAG Holdings / The New Terminal One at JFK",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+          "label": "Ferrovial — 2026 Factbook",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026050224/q22026-ferrovialresultsp.htm",
+          "label": "Ferrovial — First-half 2026 results",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0164:copia-power:4a395f9a",
+      "taskIndex": 164,
+      "companyName": "Copia Power",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0164-copia-power-v1/proposal.json",
+        "sha256": "83cb161568df8e7a0f2408bdf0144679fceb534cc3ebce906756b4d54056f9e7"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0164-copia-power-v1.json",
+        "sha256": "e28ca89057e0a1ced99639ed104fa26e49487d41eab8a547d1f285c0000c56aa"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/locked-production-snapshot.json",
+        "sha256": "0f5e7c1e6515ddd4fb278bdfeeaa828c3cdb4588758b4b5a3d461b8a186517a5"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/locked-task-snapshot.json",
+        "sha256": "2ca74449dc732d43e217878d7d7ea8abfef764181655280ae45eb9c3d2ae249a"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "e16cf3bbe9a6be03e9c743ace713601fa5c917fd945981a65245263f8f011853"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/research-decision.json",
+        "sha256": "44a1ddd6866745371842049897e90b94c468d7a1bfd20e10dc05f5c14f31910a"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/source-verification.json",
+        "sha256": "28219e18401556918b63e34c183c16d9c488e59c1b71cbe8f49ed548469d84c2"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "8a2e3ee17cdaa8700a3848b479ff10fd7ef869ad24ea35f8bf3b3d7d0e50326f",
+      "dependencySha256": "06478a207f33b846dd07c2544c32ce06d19fe54ebb82e82b99b6cdd9943c41c2",
+      "afterImageSha256": "2bbe16bff36afb6f828b1866b28337878b79aa758890a9092d5b84d2a16992be",
+      "targetClaims": [
+        "canonical:copia-power|united-states",
+        "company:cmrxpjakf00ppivhe197wcvey",
+        "relation:cmrxpjvxx01neivheya8o7kr4",
+        "relation:cmrxpl42803ajivhe588gk705",
+        "relation:cmrxpl42s03akivheczurvrro",
+        "relation:cmrxpl43b03alivhe5ju3ze5r",
+        "relation:cmrxppyts08vyivhe8zecis95",
+        "relation:cmrxppyut08w0ivhe506xjht3",
+        "relation:cmrxppyvt08w2ivhe4jiuqpip",
+        "relation:cmrxppywz08w4ivhee750qyiw",
+        "seed:copia power|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+          "label": "Eqtgroup",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.birch.coop/carlyle-backed-copia-power-completes-strategic-combination",
+          "label": "Birch Infrastructure — Copia strategic combination",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure",
+          "label": "Carlyle — Copia Power sale agreement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-launches-copia-power-platform-develop-7gwac-renewable",
+          "label": "Carlyle — Copia Power platform launch",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.copiapower.com/",
+          "label": "Copiapower — Copia Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.copiapower.com/history",
+          "label": "Investment date source — Carlyle Infrastructure — Copia Power",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.copiapower.com/map-collection-locations/blog-post-title-four-8dab2",
+          "label": "Copia Power — Headquarters",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.copiapower.com/news/copia-power-closes-300-million-corporate-credit-facility-to-accelerate-development-and-procurement-efforts-on-its-western-solar-and-storage-portfolio",
+          "label": "Copiapower — Copia Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.copiapower.com/overview",
+          "label": "Copiapower — Copia Power",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0165:fermata-energy:b28311a9",
+      "taskIndex": 165,
+      "companyName": "Fermata Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0165-fermata-energy-v1/proposal.json",
+        "sha256": "30237494f2c65d033ea2ba61afc90cca90a15c0b953503fb328476402657077a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0165-fermata-energy-v1.json",
+        "sha256": "2a12c9b1ad40df57aa42c14a8f262a4c278fc93b583c018ae7126daf59872c3c"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0165-fermata-energy/attempt-1/locked-production-snapshot.json",
+        "sha256": "146ac0864d6c9a8a46b07822f7de7d500a895dc03e44dff4b318f838f6e2b031"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0165-fermata-energy/attempt-1/locked-task-snapshot.json",
+        "sha256": "fa8b3e6fad709574c84544b2b5b833db45fa0975210551ca9c14370eb230efba"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0165-fermata-energy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "60a8d2bb44ab9d0fbb1be4515ab122b3cd4ec9ebead16e1571872201f869dd6c"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0165-fermata-energy/attempt-1/research-decision.json",
+        "sha256": "d13134da4712fc215006a5b07c4bcdbeef14a27c25a00201ee05576fb7c509d2"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0165-fermata-energy/attempt-1/source-verification.json",
+        "sha256": "0d4e6f178047d77f82db6a81160227d23e6d50dd179d53217120a46fe4408273"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "6235c26d77a28300770a5c3eead6d3126e7ef68320414a0e2e2d7cc7d9ea2b16",
+      "dependencySha256": "570c7f10f83f265231826edcb080da478bfd3a95b037e6300998d7ed548f3f08",
+      "afterImageSha256": "3545933c9582f3f92efbdc5bd3a62bcdc6df635bc7dc7f224469e7c6d1bab771",
+      "targetClaims": [
+        "canonical:fermata-energy|united-states",
+        "company:cmrxpjalg00privheqmhw1bjb",
+        "relation:cmrxpjvyz01ngivhepbsr5vxc",
+        "relation:cmrxpl47l03arivhe3glgg6vw",
+        "relation:cmrxpl48803asivhekollo2cu",
+        "relation:cmrxpl48p03ativhev233ku54",
+        "relation:cmrxpl4bp03auivhe7kkw1zrj",
+        "relation:cmrxppz7s08wgivhecat58ycp",
+        "relation:cmrxppz9008wiivhe66k0p5tn",
+        "relation:cmrxppzab08wkivhe6xj5z0zw",
+        "relation:cmrxppzb708wmivheva015w86",
+        "seed:fermata energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://fermataenergy.com/about/",
+          "label": "Fermataenergy — Fermata Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://investors.nuvve.com/static-files/84b0dfdb-e40a-42e0-bb8e-0fe795b9972c",
+          "label": "Investors — Fermata Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://nuvve.com/nuvve-expands-ip-revenue-and-market-reach-with-strategic-assets-acquisition-of-fermata-energy/",
+          "label": "Nuvve — Fermata Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20220906005819/en/Nissan-Approves-Fermata-Energys-Bidirectional-Charger-as-First-for-Use-with-Nissan-LEAF-in-the-U.S.",
+          "label": "Business Wire — Fermata Energy company profile",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-commits-over-100-million-battery-storage-electric-vehicle-infrastructure-energy-transition",
+          "label": "Investment date source — Carlyle Infrastructure — Fermata Energy",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000092/nvve-20250425.htm",
+          "label": "Nuvve — Fermata acquisition Form 8-K",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000102/nuvve-fermataxassetpurchas.htm",
+          "label": "Nuvve — Fermata asset purchase agreement",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687526000059/nvve-20260331.htm",
+          "label": "Nuvve — First-quarter 2026 Form 10-Q",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0166:revera-energy-platform:658a9bc6",
+      "taskIndex": 166,
+      "companyName": "Revera Energy Platform",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0166-revera-energy-platform/attempt-1/terminal-decision.json",
+        "sha256": "7db35e8adfda4b0660423e9acebf26a8a8b4a1133765995608d49bab647bcc47"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "678d5a502d10e6332544d26e68582366b15610ec2cad5b5bb4f659e2408e7c07",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "628733efca31ca3fa96e050cadac43c127b0f7ad05d2df490e5287210780136c"
+}

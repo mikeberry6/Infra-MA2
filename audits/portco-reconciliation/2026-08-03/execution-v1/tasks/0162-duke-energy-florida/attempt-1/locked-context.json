@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0162:duke-energy-florida:49a961e7",
+  "taskIndex": 162,
+  "companyName": "Duke Energy Florida",
+  "generatedAt": "2026-08-23T16:39:40.281Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 162,
+    "taskId": "ledger:0162:duke-energy-florida:49a961e7",
+    "canonicalKey": "duke-energy-florida|united-states",
+    "companyName": "Duke Energy Florida",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 25,
+    "managers": [
+      "Brookfield Asset Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "025-brookfield-asset-management:holding:009:duke-energy-florida"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj9zn00orivhel69huml1"
+    ],
+    "seedKeys": [
+      "duke energy florida|United States"
+    ],
+    "evidenceUrls": [
+      "https://investors.duke-energy.com/news/news-details/2025/Duke-Energy-partners-with-Brookfield-to-secure-investment-in-Duke-Energy-Florida-expands-capital-plan-to-87-billion/default.aspx"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj9zn00orivhel69huml1",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "duke-energy-florida|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj9zn00orivhel69huml1",
+    "name": "Duke Energy Florida",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated electric utility",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Duke Energy Florida is a regulated electric utility serving retail customers in Florida. Its customer base consists of residential, commercial, and industrial users served under state-regulated tariffs and capital programs. The business is asset-heavy and rate-based, with earnings driven by investment in generation, transmission, distribution, and storm-hardening infrastructure. Duke Energy announced a staged capital partnership with Brookfield in 2025 to support Duke Energy Florida's enlarged capital plan. The initial closing occurred in March 2026, at which point Brookfield held a 9.2% non-controlling interest and Duke Energy retained 90.8%, with additional phases expected to increase Brookfield's stake over time.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Florida",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjv8s01mbivhez214hok2",
+        "managerName": "Brookfield",
+        "organizationName": "Brookfield Asset Management",
+        "fundName": "Brookfield BISS",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl14a036uivhe622mki3k",
+        "date": "2025",
+        "event": "The transaction was structured in phases with an eventual target ownership interest of approximately 19.9%.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl14u036vivhet8dnj1pt",
+        "date": "Aug 5, 2025",
+        "event": "Duke Energy announced a partnership with Brookfield to fund part of Duke Energy Florida's capital plan.",
+        "category": "FINANCING",
+        "sortDate": "2025-08-05T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl15c036wivheb084bfg2",
+        "date": "Mar 3, 2026",
+        "event": "The initial closing occurred and Brookfield acquired a 9.2% interest in Duke Energy Florida.",
+        "category": "FINANCING",
+        "sortDate": "2026-03-03T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppssa08nwivhebui0b6mt",
+        "label": "Announcement date source — Brookfield Asset Management — Duke Energy Florida",
+        "url": "https://investors.duke-energy.com/news/news-details/2025/Duke-Energy-partners-with-Brookfield-to-secure-investment-in-Duke-Energy-Florida-expands-capital-plan-to-87-billion/default.aspx",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Brookfield Asset Management transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppste08nyivhe2lbbqo4a",
+        "label": "Kirkland — Duke Energy Florida",
+        "url": "https://www.kirkland.com/news/press-release/2025/08/kirkland-advises-brookfield-on-investment-in-duke-energy-florida-for-%246-billion",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Kirkland — Duke Energy Florida",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppsuq08o0ivheq63h5psm",
+        "label": "Close date source — Brookfield Asset Management — Duke Energy Florida",
+        "url": "https://www.sec.gov/Archives/edgar/data/37637/000110465926022610/tm267351d1_8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Brookfield Asset Management closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Duke Energy Florida",
+    "investmentFirm": "Brookfield Asset Management",
+    "sector": "Utilities",
+    "subsector": "Regulated electric utility",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Duke Energy Florida is a regulated electric utility serving retail customers in Florida. Its customer base consists of residential, commercial, and industrial users served under state-regulated tariffs and capital programs. The business is asset-heavy and rate-based, with earnings driven by investment in generation, transmission, distribution, and storm-hardening infrastructure. Duke Energy announced a staged capital partnership with Brookfield in 2025 to support Duke Energy Florida's enlarged capital plan. The initial closing occurred in March 2026, at which point Brookfield held a 9.2% non-controlling interest and Duke Energy retained 90.8%, with additional phases expected to increase Brookfield's stake over time.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2026,
+    "headquarters": "Florida",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "The transaction was structured in phases with an eventual target ownership interest of approximately 19.9%.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 5, 2025",
+        "event": "Duke Energy announced a partnership with Brookfield to fund part of Duke Energy Florida's capital plan.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 3, 2026",
+        "event": "The initial closing occurred and Brookfield acquired a 9.2% interest in Duke Energy Florida.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Brookfield Asset Management — Duke Energy Florida",
+        "url": "https://investors.duke-energy.com/news/news-details/2025/Duke-Energy-partners-with-Brookfield-to-secure-investment-in-Duke-Energy-Florida-expands-capital-plan-to-87-billion/default.aspx",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Kirkland — Duke Energy Florida",
+        "url": "https://www.kirkland.com/news/press-release/2025/08/kirkland-advises-brookfield-on-investment-in-duke-energy-florida-for-%246-billion",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Close date source — Brookfield Asset Management — Duke Energy Florida",
+        "url": "https://www.sec.gov/Archives/edgar/data/37637/000110465926022610/tm267351d1_8k.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Brookfield Asset Management",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2026,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1o700cdivheszk2iuaf",
+        "fundName": "Brookfield BISS",
+        "managerId": "cmrxpi5qu0012ivhe6qnjjtse",
+        "updatedAt": "2026-07-23T16:09:56.023Z"
+      },
+      {
+        "id": "cmrxpj1p700cfivhe0z6k6g01",
+        "fundName": "Brookfield Super-Core Infrastructure Partners",
+        "managerId": "cmrxpi5qu0012ivhe6qnjjtse",
+        "updatedAt": "2026-07-23T16:09:56.059Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5qu0012ivhe6qnjjtse",
+        "name": "Brookfield",
+        "updatedAt": "2026-07-23T16:09:14.646Z"
+      },
+      {
+        "id": "cmrxpifpw0047ivhexsim174k",
+        "name": "Brookfield Asset Management",
+        "updatedAt": "2026-07-23T16:09:27.572Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0162:duke-energy-florida:49a961e7",
+    "taskIndex": 162,
+    "canonicalKey": "duke-energy-florida|united-states",
+    "capturedAt": "2026-08-23T16:39:40.281Z",
+    "databaseRevision": "revision:de75c29e27d9437b7b99c11188d5ce7ed176e643cbab2423781b2627e0137527",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "32ba6081544b290f618e4382460515596bf051b374414f7838019e89b9aeaeee",
+    "productionSnapshotSha256": "04bc24f10025185d64884b10af69d158afc62b6f8d6ea5c06fd23e8541705279",
+    "targetCompanySnapshotSha256": "6798ccf5a36d33fc2e7dd213bcab7695bba94d89ad6eef4f5f7a1e35981f059e",
+    "seedEntrySha256": "9992b02908ef81f8f04c5936ef2b8de0b951c17be8cbd76e18c54563b59a8b3a",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "ef5f5c9bcf94bb687f0a2d61355f3a0dafaf518da604fc20303ddd8cd8caff0c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "619767cd47d3e3bd91b416cb00c412d686bb613e1be771ccce4225346624f1cf",
+      "organizationsSha256": "7a8c65713f2b4bbf688e8241c1dd7e25d22feb13c544460af5f4fb5717daa291",
+      "citationsSha256": "99870d52f1bcc84652300f590255576a60ed3c371795b355cda9d3ed62c9f2e4",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4ed71d7599dd331f119f84c6cce4826a5d5ebe9bcf46db219735dd600c757f2c",
+    "stateSha256": "f942ba8ac8fcb88e8c656372d4c6477631f10a750e213cab05615a8771b9837e",
+    "taskSnapshotSha256": "ee19a702c0343afb0253ed595a1c3d0aa4971e2afc749e1759240bd60a2ea812"
+  },
+  "contextSha256": "e34a78b28a86da35a7466739adf58abc821c14bad4d79266ce6b08a7b9ce9530"
+}

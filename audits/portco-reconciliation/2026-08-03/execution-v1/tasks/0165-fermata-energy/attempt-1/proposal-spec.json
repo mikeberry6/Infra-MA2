@@ -1,0 +1,199 @@
+{
+  "generatedAt": "2026-08-23T16:45:12.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Preserve Fermata Energy LLC as the historical Carlyle PortCo but retire Carlyle's ownership effective April 25, 2025 and mark the company realized. The executed asset purchase agreement and Nuvve's Form 8-K show that substantially all operating assets, contracts, intellectual property, names and goodwill transferred at closing to the newly formed Fermata Energy II LLC, which is controlled 51% by Nuvve. This was an operating-business asset sale rather than a disclosed transfer of Carlyle equity, but the operating PortCo left Carlyle and no current infrastructure-fund owner remains. Fermata Energy II is a separate successor and is not merged into the legacy Carlyle record. Direct sources do not identify the specific Carlyle fund, vehicle, stake or legal closing of the 2021 investment, so the unsupported CRSEF II attribution is removed and the 2021 entry year is retained from Carlyle's 2022 disclosure that it invested the prior year.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000102/nuvve-fermataxassetpurchas.htm",
+      "purpose": "Asset-sale scope, parties and legal closing",
+      "supports": [
+        "Fermata Energy LLC sold substantially all operating assets, contracts, intellectual property, names and goodwill",
+        "The buyer was the newly formed Fermata Energy II LLC and the closing date was April 25, 2025"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000092/nvve-20250425.htm",
+      "purpose": "Completed transaction state and successor ownership",
+      "supports": [
+        "Nuvve disclosed the completed acquisition of Fermata Energy's assets",
+        "Nuvve received 51% of Fermata Energy II and former noteholders received 49%"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687526000059/nvve-20260331.htm",
+      "purpose": "Successor ownership and later-status check",
+      "supports": [
+        "Nuvve continued to report 51% ownership of Fermata Energy II in 2026"
+      ]
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-commits-over-100-million-battery-storage-electric-vehicle-infrastructure-energy-transition",
+      "purpose": "Historical Carlyle investment and infrastructure-strategy basis",
+      "supports": [
+        "Carlyle disclosed participating in Fermata Energy's financing in 2021",
+        "Carlyle described the investment as part of its battery-storage and electric-vehicle infrastructure activity"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "Fermata Energy LLC",
+      "Fermata Energy 1.0"
+    ],
+    "description": "Fermata Energy LLC was a Charlottesville, Virginia-based vehicle-to-grid technology and services business founded in 2010. It developed bidirectional-charging software, charging integrations and grid and behind-the-meter services for electric-vehicle fleets, site hosts and power-market participants. Carlyle disclosed in January 2022 that it had invested in the company during 2021 as part of its battery-storage and electric-vehicle infrastructure activity. On April 25, 2025, Fermata Energy LLC sold substantially all operating assets, contracts, intellectual property, names and goodwill to a newly formed successor, Fermata Energy II LLC, which became 51% controlled by Nuvve. The legacy Carlyle PortCo is therefore realized; the Nuvve-controlled successor is a separate operating entity and is not merged into this record. The specific Carlyle fund, vehicle and stake, and the legacy seller's residual corporate disposition, are not publicly disclosed.",
+    "companyStatus": "REALIZED",
+    "website": null,
+    "headquarters": "Charlottesville, Virginia",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjvyz01ngivhepbsr5vxc",
+      "set": {
+        "managerName": "Carlyle Infrastructure",
+        "organizationName": "Carlyle Infrastructure",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpl47l03arivhe3glgg6vw",
+      "set": {
+        "date": "2010",
+        "event": "Fermata Energy was founded in Charlottesville, Virginia to develop vehicle-to-grid technology and services.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20220906005819/en/Nissan-Approves-Fermata-Energys-Bidirectional-Charger-as-First-for-Use-with-Nissan-LEAF-in-the-U.S."
+        ]
+      }
+    },
+    {
+      "id": "cmrxpl48803asivhekollo2cu",
+      "set": {
+        "date": "2021 (announced Jan 14, 2022)",
+        "event": "Fermata raised $40 million, including a Carlyle-led Series A investment made in 2021; the specific Carlyle fund and stake were not disclosed.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.carlyle.com/media-room/news-release-archive/carlyle-commits-over-100-million-battery-storage-electric-vehicle-infrastructure-energy-transition"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpl48p03ativhev233ku54",
+      "set": {
+        "date": "Apr 25, 2025",
+        "event": "Fermata Energy LLC sold substantially all operating assets, contracts, intellectual property, names and goodwill to the newly formed Fermata Energy II LLC.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-04-25T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000102/nuvve-fermataxassetpurchas.htm",
+          "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000092/nvve-20250425.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpl4bp03auivhe7kkw1zrj",
+      "set": {
+        "date": "Mar 31, 2026",
+        "event": "Nuvve continued to report 51% ownership of the separate Fermata Energy II successor, confirming that the acquired operating business remained outside the legacy Carlyle PortCo.",
+        "category": "OTHER",
+        "sortDate": "2026-03-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1836875/000183687526000059/nvve-20260331.htm"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxppz7s08wgivhecat58ycp",
+      "set": {
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Legacy Fermata Energy profile and company history",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxppz9008wiivhe66k0p5tn",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Historical 2021 Carlyle investment and infrastructure-strategy basis",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxppzab08wkivhe6xj5z0zw",
+      "set": {
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Public announcement of the completed Fermata asset acquisition",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxppzb708wmivheva015w86",
+      "set": {
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Nuvve investor materials on the successor business",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Nuvve — Fermata asset purchase agreement",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000102/nuvve-fermataxassetpurchas.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Substantially-all-assets sale scope, parties, closing and transferred Fermata name and goodwill",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "Nuvve — Fermata acquisition Form 8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000092/nvve-20250425.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "April 25, 2025 legal closing and successor ownership structure",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Nuvve — First-quarter 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687526000059/nvve-20260331.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Continued 51% Nuvve ownership of the separate Fermata Energy II successor",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Business Wire — Fermata Energy company profile",
+      "url": "https://www.businesswire.com/news/home/20220906005819/en/Nissan-Approves-Fermata-Energys-Bidirectional-Charger-as-First-for-Use-with-Nissan-LEAF-in-the-U.S.",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "COMPANY_PROFILE",
+      "evidenceLabel": "2010 founding, Charlottesville headquarters and vehicle-to-grid product profile",
+      "isPrimary": false
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0162-0166-v1",
+  "batchSha256": "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569",
+  "reconciledAt": "2026-08-23T17:02:00.000Z",
+  "sourceManifestSha256": "1e7e6b04724f0f15aba51733982faa57f25e6c0cd0df483aa38e21eb238beb80",
+  "rationale": "Align the active-owner attribution manifest with the approved Duke Energy Florida, CAG Holdings, Copia Power and Fermata Energy after-images. Replace Duke's stale BISS estimate with disclosed BSIP and Peninsula Power evidence, update CAG's renamed canonical identity and current vehicle/stake fields, remove Copia's unsupported Carlyle fund estimate, and remove Fermata's realized Carlyle period from the active-owner manifest.",
+  "removeRecordIds": [
+    "OFA-92FBCFF7F104"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-11FAF168D3AD",
+      "companyName": "Duke Energy Florida",
+      "country": "United States",
+      "investmentFirm": "Brookfield Asset Management",
+      "currentVehicleName": "Peninsula Power Holdings L.P.",
+      "investmentYear": 2026,
+      "stake": "9.19% indirect non-controlling interest via Florida Progress, LLC",
+      "targetLinkedFundName": "Brookfield Super-Core Infrastructure Partners",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Brookfield Super-Core Infrastructure Partners",
+      "attributionConfidence": null,
+      "attributionRationale": "Duke's executed agreement identifies Brookfield Super-Core Infrastructure Partners commitment entities and Peninsula Power Holdings L.P., while Duke's first-closing and second-quarter 2026 filings establish the closed 9.19% indirect interest.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/30371/000132616025000192/duk-202509x10qxexx101.htm",
+        "https://www.sec.gov/Archives/edgar/data/37637/000110465926022610/tm267351d1_8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1326160/000132616026000040/duk-20260630.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-724AB61420A0",
+      "companyName": "CAG Holdings",
+      "country": "United States",
+      "investmentFirm": "Carlyle Infrastructure",
+      "currentVehicleName": "CAG Holdings, LLC / CGI Phoenix Aggregator, L.P.",
+      "investmentYear": null,
+      "stake": "CAG platform stake not publicly disclosed; approximately 2% indirect interest in The New Terminal One after the June 2022 partial sale",
+      "targetLinkedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Carlyle identifies CAG Holdings as a Carlyle Global Infrastructure Opportunity Fund platform, and Ferrovial's 2026 SEC materials confirm Carlyle's retained approximately 2% indirect New Terminal One interest after the 2022 partial sale.",
+      "evidenceUrls": [
+        "https://www.carlyle.com/media-room/news-release-archive/dr-gerrard-p-bushell-named-executive-chair-new-terminal-one",
+        "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+        "https://newsroom.ferrovial.com/en/press-releases/ferrovial-jfk-agreement/"
+      ]
+    },
+    {
+      "recordId": "OFA-E700A66E38ED",
+      "companyName": "Copia Power",
+      "country": "United States",
+      "investmentFirm": "Carlyle Infrastructure",
+      "currentVehicleName": "Carlyle Infrastructure",
+      "investmentYear": 2021,
+      "stake": "100% (last expressly disclosed); sale to EQT Infrastructure VII signed but not closed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Carlyle disclosed Copia as a wholly owned platform and remains the current owner pending the signed EQT sale, but no reviewed direct source identifies the applicable Carlyle fund or investment vehicle; the prior CGI Opportunity Fund estimate is removed rather than inferred.",
+      "evidenceUrls": [
+        "https://www.carlyle.com/media-room/news-release-archive/carlyle-launches-copia-power-platform-develop-7gwac-renewable",
+        "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure",
+        "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+        "https://www.copiapower.com/overview"
+      ]
+    }
+  ],
+  "specSha256": "10933de1ce3f79eb0067e61e98066e6b7cd0f58e3337b17c1ba0c22f2029bf87"
+}

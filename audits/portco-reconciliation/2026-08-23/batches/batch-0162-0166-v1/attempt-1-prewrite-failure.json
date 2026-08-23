@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_PREWRITE_FAILURE",
+  "batchId": "batch-0162-0166-v1",
+  "batchSha256": "628733efca31ca3fa96e050cadac43c127b0f7ad05d2df490e5287210780136c",
+  "failedAt": "2026-08-23T16:54:06.000Z",
+  "stage": "LOCAL_DRY_RUN_BEFORE_RELEASE",
+  "databaseTransactionStarted": false,
+  "databaseWrites": 0,
+  "error": "Approved ownership manager Carlyle Group cannot round-trip through the linked fund/organization manager Carlyle Infrastructure",
+  "rootCause": "The Copia Power and Fermata Energy correction specs retained the legacy Carlyle Group display label while linking their fund-null ownership periods to the canonical Carlyle Infrastructure organization. The persistence layer correctly requires the approved manager name to round-trip through that linked organization.",
+  "correctiveAction": "Issue v2 proposals for Copia Power and Fermata Energy using the canonical Carlyle Infrastructure manager name, regenerate their hash-bound authorizations and rebuild the bundle manifest. Preserve all v1 artifacts as failed prewrite lineage.",
+  "retryDisposition": "Retry only after the replacement manifest passes the full local production dry-run and shared-source collision checks.",
+  "failureSha256": "d58a33836724378f449af4790fdd2642b60ba613d98272aadd9b11db7c41e7c6"
+}
