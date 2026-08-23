@@ -1,0 +1,163 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0152-attribution-repair/apply-manifest.json --manifest-sha256=7708ca83c4317d852e2c6fa333cbc0560b604eeee9d0c5f306db2b50e1920eb6 --production-snapshot=audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0152-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0152-attribution-repair/approval.json --approval-sha256=6ddee01319a2231c371b9f856da8edd0e7be9884ae6af598a7227dd2c1967c0c --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3128) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "7708ca83c4317d852e2c6fa333cbc0560b604eeee9d0c5f306db2b50e1920eb6",
+  "approvalSha256": "6ddee01319a2231c371b9f856da8edd0e7be9884ae6af598a7227dd2c1967c0c",
+  "environment": "production",
+  "pipelineRunId": "cmt5x4hfa0000ewyy0jj6zuuk",
+  "mutationCount": 7,
+  "changed": 7,
+  "idempotent": false,
+  "beforeFingerprint": "bbce8eaaaba8507a9938ff061f06d0ec34cda7779af6ac08642a5da52d46adc6",
+  "afterFingerprint": "a9ee9c912f71bb976ea450bdfbbad216e2d198fa725bf9d19ea8479a3f0cf628",
+  "rows": [
+    {
+      "recordId": "OFA-REPAIR-0152-SAAVI-GIP",
+      "ownershipPeriodId": "cmrxpk2fk01xiivhetq7dtfj4",
+      "companyId": "cmrxpjgly00ywivhe8rs5yjnm",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2020 is 1 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GIP Emerging Markets Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "GIP's acquisition release and live portfolio page identify Saavi as an investment of GIP Emerging Markets Fund I; the disclosed fund is not yet a curated fund-list record, so no different fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0153-OCCIDENTAL",
+      "ownershipPeriodId": "cmt5w98ik000kwyyy4uhfhtk8",
+      "companyId": "cmrxpj91y00ndivhejiuocayx",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Occidental holds and consolidates STRATOS through its 1PointFive corporate platform; no separate managed infrastructure fund is disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0154-AES-PUBLIC",
+      "ownershipPeriodId": "cmt5w9df6000twyyy3y57d5th",
+      "companyId": "cmrxpjgmk00yxivhegkkxve01",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "AES remains a publicly traded company held by dispersed public shareholders until the announced GIP/EQT acquisition legally closes; public ownership is not an infrastructure fund vehicle."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0155-INGKA",
+      "ownershipPeriodId": "cmt5w9kcr0016wyyy0oyf3sff",
+      "companyId": "cmrxpjgn500yyivhe7tr8lc9h",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ingka's official disclosure supports a direct minority investment through its circular-investments portfolio; no separate managed infrastructure fund is disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0155-FORMER-VISION-RIDGE",
+      "ownershipPeriodId": "cmrxpk2h701xlivhe02mz7fdk",
+      "companyId": "cmrxpjgn500yyivhe7tr8lc9h",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2020 is 2 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Vision Ridge was Vanguard Renewables' former owner, but the reviewed public sources do not disclose the exact Vision Ridge fund vehicle; the stale BlackRock GEPIF III estimate is unrelated and is removed."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0156-BLACKROCK",
+      "ownershipPeriodId": "cmrxpjudc01kvivhe8vpflp22",
+      "companyId": "cmrxpj92i00neivheuthp9gpg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Global Energy & Power Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: BlackRock | Fund: Global Energy & Power Infrastructure Fund | Ownership Interest: 50% Seed milestones or source evidence explicitly name the current fund vehicle."
+      },
+      "after": {
+        "linkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "Official Vopak transaction materials disclose BlackRock's Global Energy & Power Infrastructure Fund as the 50% investor; the ownership period is linked to the exact curated GEPIF III fund record."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0156-VOPAK-CORPORATE",
+      "ownershipPeriodId": "cmt5w9qk5001mwyyybcywef64",
+      "companyId": "cmrxpj92i00neivheuthp9gpg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Royal Vopak directly retains 50% of the industrial-terminal platform as corporate ownership; no managed infrastructure fund is involved."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-23T14:44:25.497Z",
+  "receiptSha256": "07408486b2ad3f251eb2eb899037c81f42518211de50e9e56f27fb1940c69e9e"
+}
