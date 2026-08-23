@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0167-0171-v1",
+  "batchSha256": "cf4d040c61cf51bd3f25091fb88149ee3b2d64a2a0e3247c1bcfc4bcf92a2a0b",
+  "reconciledAt": "2026-08-23T18:30:00.000Z",
+  "sourceManifestSha256": "b070daaa05ff73c13dbfd58425b1816ea655327f67e9947779e46510090c93c8",
+  "rationale": "Align the active-owner attribution manifest with the approved Accelerate Infrastructure Opportunities, Vantage Data Centers, Gateway Fiber, Alto and Boralex after-images. Add Mubadala, Pantheon and PSP ownership; preserve disclosed vehicles without inventing fund links; remove the duplicate Vantage financing row, retired WANRack identity and archived Alto record; and replace Boralex's unsupported BISS and CDPQ Infrastructure labels with the disclosed BIF V structure and an unresolved La Caisse vehicle.",
+  "removeRecordIds": [
+    "OFA-F1BB2A8EA5FE",
+    "OFA-B4979A1CF17F",
+    "OFA-98B952E2A3D9"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-71E87B8F915B",
+      "companyName": "Accelerate Infrastructure Opportunities",
+      "country": "United States",
+      "investmentFirm": "CBRE Investment Management",
+      "currentVehicleName": "CBRE AIO Infra Holdings Inc. / CBRE Musselshell Infrastructure Investments, LP (disclosed 2024 vehicles)",
+      "investmentYear": 2022,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "CBRE AIO Infra Holdings Inc. / CBRE Musselshell Infrastructure Investments, LP",
+      "attributionConfidence": null,
+      "attributionRationale": "CBRE Investment Management's AIO materials and reviewed ownership filings identify the CBRE AIO Infra Holdings and CBRE Musselshell investment vehicles, but they do not establish a link to a fund in the current fund database.",
+      "evidenceUrls": [
+        "https://www.cbreim.com/press-releases/accelerate-and-cbreim-launch-partnership-to-acquire-infrastructure-ground-leases",
+        "https://www.cbreim.com/press-releases/cbre-im-backed-accelerate-surpasses-1-25-billion-dollars-of-equity-commitments"
+      ]
+    },
+    {
+      "recordId": "OFA-F88B49C0BFA5",
+      "companyName": "Accelerate Infrastructure Opportunities",
+      "country": "United States",
+      "investmentFirm": "Mubadala Investment Company",
+      "currentVehicleName": "Mubadala Investment Company",
+      "investmentYear": 2026,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "The closed May 2026 equity raise and Mubadala's own announcement establish Mubadala as a current AIO investor, but no reviewed source identifies a separate fund or investment vehicle.",
+      "evidenceUrls": [
+        "https://www.cbreim.com/press-releases/cbre-im-backed-accelerate-surpasses-1-25-billion-dollars-of-equity-commitments",
+        "https://www.mubadala.com/en/thebrief"
+      ]
+    },
+    {
+      "recordId": "OFA-52B6CA136B87",
+      "companyName": "Vantage Data Centers",
+      "country": "United States / Canada",
+      "investmentFirm": "DigitalBridge",
+      "currentVehicleName": "DigitalBridge-managed vehicle(s)",
+      "investmentYear": 2017,
+      "stake": "Lead North American platform interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "The 2017 acquisition materials establish DigitalBridge's current platform ownership, but the reviewed evidence does not identify the applicable DigitalBridge fund or legal investment vehicle.",
+      "evidenceUrls": [
+        "https://vantage-dc.com/news/vantageacquired/",
+        "https://www.silverlake.com/consortium-of-digital-bridge-psp-investments-and-tiaa-investments-acquires-vantage-data-centers/"
+      ]
+    },
+    {
+      "recordId": "OFA-0D5070195FBC",
+      "companyName": "Vantage Data Centers",
+      "country": "United States / Canada",
+      "investmentFirm": "CBRE Investment Management",
+      "currentVehicleName": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+      "investmentYear": 2020,
+      "stake": "Significant minority interest in the 12-asset Vantage SDC portfolio; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+      "attributionConfidence": null,
+      "attributionRationale": "CBRE Caledon's announcement and Vantage SDC transaction documents identify the Valhalla Aggregator vehicle; no reviewed source links that vehicle to a fund in the current fund database.",
+      "evidenceUrls": [
+        "https://www.cbrecaledon.com/wp-content/uploads/2020/07/Vantage-Data-Centers-Investment-Press-Release.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1679688/000167968820000044/cny8-k07072020ex101.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-6CD228A79ED4",
+      "companyName": "Vantage Data Centers",
+      "country": "United States / Canada",
+      "investmentFirm": "GCM Grosvenor",
+      "currentVehicleName": "Labor Impact Fund, L.P. / Infrastructure Advantage Strategy",
+      "investmentYear": 2020,
+      "stake": "North American growth-platform equity commitment; percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Labor Impact Fund, L.P. / Infrastructure Advantage Strategy",
+      "attributionConfidence": null,
+      "attributionRationale": "GCM Grosvenor's impact report identifies its Labor Impact Fund and Infrastructure Advantage Strategy as the Vantage investment vehicles; neither has a matching published fund record.",
+      "evidenceUrls": [
+        "https://www.gcmgrosvenor.com/wp-content/uploads/GCM-Grosvenor-LIF-2020-Impact-Report.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-F62424B891C9",
+      "companyName": "Vantage Data Centers",
+      "country": "United States / Canada",
+      "investmentFirm": "DigitalBridge",
+      "currentVehicleName": "DigitalBridge balance-sheet interest in Vantage SDC",
+      "investmentYear": 2020,
+      "stake": "12.8% non-controlling interest in Vantage SDC",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "DigitalBridge's deconsolidation announcement describes the retained 12.8% interest as a balance-sheet ownership position rather than a named third-party fund investment.",
+      "evidenceUrls": [
+        "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-completes-deconsolidation-vantage-sdc/"
+      ]
+    },
+    {
+      "recordId": "OFA-655D3AD35ADB",
+      "companyName": "Vantage Data Centers",
+      "country": "United States / Canada",
+      "investmentFirm": "Silver Lake",
+      "currentVehicleName": "Silver Lake",
+      "investmentYear": 2024,
+      "stake": "Lead investor in the closed 2024 platform equity investment; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Silver Lake Partners VII",
+      "attributionConfidence": null,
+      "attributionRationale": "Silver Lake's Fund VII final-close announcement identifies the Vantage reinvestment as Fund VII activity, while the Vantage closing announcement establishes the completed platform investment.",
+      "evidenceUrls": [
+        "https://www.silverlake.com/silver-lake-closes-20-5-billion-fundraise-for-slp-vii/",
+        "https://vantage-dc.com/news/vantage-data-centers-completes-9-2-billion-equity-investment-led-by-digitalbridge-and-silver-lake/"
+      ]
+    },
+    {
+      "recordId": "OFA-3F3E719F2AAF",
+      "companyName": "Vantage Data Centers",
+      "country": "United States / Canada",
+      "investmentFirm": "Pantheon",
+      "currentVehicleName": "Pantheon Infrastructure plc (PINT)",
+      "investmentYear": 2022,
+      "stake": "$34.7 million direct North American co-investment; percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Pantheon Infrastructure plc (PINT)",
+      "attributionConfidence": null,
+      "attributionRationale": "PINT's announcement and current annual report identify its direct North American Vantage co-investment and continuing exposure; PINT does not match a published fund record.",
+      "evidenceUrls": [
+        "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/investment-in-north-america-data-centre-business/7152044",
+        "https://annualreport.pantheoninfrastructure.com/"
+      ]
+    },
+    {
+      "recordId": "OFA-63DB5CA29111",
+      "companyName": "Vantage Data Centers",
+      "country": "United States / Canada",
+      "investmentFirm": "PSP Investments",
+      "currentVehicleName": "PSP Investments",
+      "investmentYear": 2024,
+      "stake": "Residual Vantage interest; percentage and ownership layer not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "PSP's 2024 sale announcement and current portfolio listing support a residual direct PSP interest, but do not identify a separate fund vehicle.",
+      "evidenceUrls": [
+        "https://www.investpsp.com/en/news/psp-investments-completes-sale-of-majority-of-its-investment-in-vantage-data-centers/",
+        "https://www.investpsp.com/en/investors/"
+      ]
+    },
+    {
+      "recordId": "OFA-6B5BCB28AF24",
+      "companyName": "Gateway Fiber",
+      "country": "United States",
+      "investmentFirm": "CBRE Investment Management",
+      "currentVehicleName": "Sponsored fund and one separately managed account; CBRE Caledon WR Holdings, LP / CBRE Infra Fiber LLC chain",
+      "investmentYear": 2021,
+      "stake": "Controlling interest; exact current economics not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Sponsored fund and one separately managed account",
+      "attributionConfidence": null,
+      "attributionRationale": "WANRack's 2021 close announcement discloses a CBRE-sponsored fund and separately managed account, and the 2025 merger evidence establishes Gateway Fiber as the surviving platform without identifying a specific fund name.",
+      "evidenceUrls": [
+        "https://www.wanrack.com/news/blog-post-one-nt6jb-ns5wd-42tsj",
+        "https://www.gatewayfiber.com/news/gateway-fiber-unifies-under-single-brand-following-strategic-merger"
+      ]
+    },
+    {
+      "recordId": "OFA-425E6CAAAEB7",
+      "companyName": "Boralex Inc.",
+      "country": "United States / Canada / France / United Kingdom",
+      "investmentFirm": "Brookfield",
+      "currentVehicleName": "BIF Thunder Holdings Inc.; participating partners include Brookfield Renewable Partners",
+      "investmentYear": 2026,
+      "stake": "70%",
+      "targetLinkedFundName": "Brookfield BIF V",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Brookfield BIF V",
+      "attributionConfidence": null,
+      "attributionRationale": "Boralex's management circular identifies Brookfield Infrastructure Fund V and BIF Thunder, and the August 2026 closing release confirms Brookfield's current 70% ownership.",
+      "evidenceUrls": [
+        "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+        "https://www.boralex.com/en/press-releases/brookfield-and-la-caisse-complete-acquisition-boralex"
+      ]
+    },
+    {
+      "recordId": "OFA-B77DB437C882",
+      "companyName": "Boralex Inc.",
+      "country": "United States / Canada / France / United Kingdom",
+      "investmentFirm": "La Caisse de dépôt (CDPQ)",
+      "currentVehicleName": "Direct equity through the BIF Thunder acquisition structure",
+      "investmentYear": 2017,
+      "stake": "30% current; 17.3% at 2017 entry and approximately 15% immediately before closing",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "La Caisse's 2017 entry and August 2026 closing releases establish its current 30% direct equity interest, but the reviewed sources do not identify a distinct La Caisse fund vehicle.",
+      "evidenceUrls": [
+        "https://www.newswire.ca/news-releases/la-caisse-acquires-a-173-interest-in-boralex-inc-636940823.html",
+        "https://www.lacaisse.com/en/news/pressreleases/brookfield-caisse-complete-acquisition-boralex"
+      ]
+    }
+  ],
+  "specSha256": "3042aa409303bcc4823201cb3c58ca593c50cddd3a51fb60c5503faa285fd635"
+}

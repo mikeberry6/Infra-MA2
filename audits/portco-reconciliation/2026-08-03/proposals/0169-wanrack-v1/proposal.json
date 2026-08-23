@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0169:wanrack:62ec8ee0",
+  "taskIndex": 169,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T18:16:00.000Z",
+  "canonicalKey": "gateway-fiber|united-states",
+  "companyName": "WANRack",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [
+    "cmrxpjase00q0ivhe08oo2btg"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjw3q01npivhekdfll2d8",
+      "canonicalRelationId": "cmrxpjw3701noivhe6fyso0sj",
+      "rationale": "Both rows describe CBRE Investment Management's continuing control of the predecessor platforms that now form the single Gateway Fiber platform; the canonical row preserves the combined ownership relationship from CBRE's first predecessor entry in 2021."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpl56f03bqivheczf6a7k0",
+      "canonicalRelationId": "cmrxpl51f03bmivhehgwq2xaa",
+      "rationale": "Both 2025 milestones describe the same Gateway Fiber-WANRack combination; the canonical Gateway milestone is updated to the verified completed state."
+    }
+  ],
+  "rationale": "Merge the standalone WANRack production and seed record into Gateway Fiber because the same-sponsor combination was completed by July 29, 2025 and Gateway Fiber became the umbrella platform name. Preserve WANRack, LLC and WANRack Powered by Gateway Fiber as legal, operating and education-market aliases; retain WANRack's 2021 CBRE entry, KwiKom history and Phoenix partial divestiture; and maintain one current CBRE Investment Management ownership record for the combined platform. The later GW Operating transfers are internal reorganizations with unchanged ultimate ownership, not a pending external sale.",
+  "evidence": [
+    {
+      "url": "https://www.gatewayfiber.com/news/gateway-fiber-unifies-under-single-brand-following-strategic-merger",
+      "purpose": "Completed combination, canonical survivor and WANRack sub-brand",
+      "supports": [
+        "The Gateway Fiber-WANRack combination was complete by July 29, 2025",
+        "Gateway Fiber became the umbrella platform name",
+        "WANRack remained an education-facing brand"
+      ]
+    },
+    {
+      "url": "https://www.wanrack.com/news/blog-post-one-nt6jb-ns5wd-42tsj",
+      "purpose": "CBRE ownership entry and predecessor ownership history",
+      "supports": [
+        "CBRE Caledon completed its acquisition of WANRack on July 2, 2021",
+        "Management retained equity and the investing fund and SMA were not named"
+      ]
+    },
+    {
+      "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557",
+      "purpose": "Current legal survival and unchanged ultimate ownership",
+      "supports": [
+        "WANRack, LLC continued as a legal operating entity beneath the combined platform",
+        "The GW Operating transfers did not change ultimate ownership"
+      ]
+    },
+    {
+      "url": "https://lightpathfiber.com/news/lightpath-acquires-wanracks-phoenix-business/",
+      "purpose": "Partial asset divestiture",
+      "supports": [
+        "Lightpath completed the acquisition of WANRack's Phoenix assets and customers",
+        "The transaction was not a sale of the full platform"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "07b20bacda766850d24f0259b417123b09ef27380a60739f30ce51c7e688167c",
+  "currentCompanySnapshotSha256": "82ccec73de674b7822f22af1ea91bf25b66f4fd18403f68f84500a9c00b6bffa",
+  "executionLock": {
+    "taskSnapshotSha256": "8603f226dfcea5cda4b42acbb3ebee97bafa76738401994a462034c14a861120",
+    "taskStateSha256": "230eda8ec6b67e96691f34d874bae7615ae9056b1ef7a77a39afa8a7a2becfe8",
+    "taskDependencySha256": "b462e81f3a45ca70160544b242b707dfc8dc3222c623b777428ce566821fd955",
+    "seedEntrySha256": "f5e3f65bce04b83259cb5ba7ef2fe863caaf7df69b29bacf83e3c4246562bc42",
+    "dependencies": {
+      "ownershipPeriodsSha256": "984fc6d34f5956028e2bf852c8dd6fcabef026dc075d487d4c550722f9451d8f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "ab599cb61b7a956d1d8470c1b18f7c57dceb581e5c3b64d35c0eb738ce1efa21",
+      "citationsSha256": "f5853ada6f25b81af64eb978f15f37e462b6f07cd83a17cfd56ae2af5dd98d0a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi5yr0014ivheox7bkitj",
+        "name": "CBRE Investment Management",
+        "updatedAt": "2026-07-23T16:09:14.931Z"
+      },
+      {
+        "id": "cmrxpi8z00023ivhekbhinm8w",
+        "name": "Grain Management",
+        "updatedAt": "2026-07-23T16:09:18.828Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjapk00pzivhepnv4hgyt",
+    "name": "Gateway Fiber",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Fiber-to-the-home broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Gateway Fiber builds and operates fiber-to-the-home broadband networks in the United States. Its customers are residential and small-business subscribers that purchase high-speed internet access over newly built fiber infrastructure. The business is asset-heavy because value depends on network construction, customer take-up, and recurring broadband subscriptions. Company materials state that Gateway Fiber was founded in 2019 and is based in Wright City, Missouri, while later transaction materials describe an expanded footprint after combining with other fiber platforms. Its principal operating footprint is in the United States. CBRE IM acquired Gateway Fiber in 2023 and announced a strategic merger of Gateway Fiber and WANRack in 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "Missouri and multiple US states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjw3701noivhe6fyso0sj",
+        "managerName": "CBRE Investment Management",
+        "organizationName": "CBRE Investment Management",
+        "fundName": null,
+        "vehicleName": "CBRE Private Infrastructure",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl4zr03bjivhe5s5ry6wn",
+        "date": "2019",
+        "event": "Gateway Fiber was founded in Wright City, Missouri.",
+        "category": "FOUNDING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl50f03bkivhevybed3e4",
+        "date": "Jan 27, 2023",
+        "event": "CBRE Investment Management signed a definitive agreement to acquire Gateway Fiber from Crosstimbers Capital Group.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-27T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl50v03blivhegz9ix1jm",
+        "date": "Feb 19, 2023",
+        "event": "Gateway Fiber announced its new financial partnership with CBRE Investment Management, ending its original Crosstimbers investment relationship.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-02-19T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl51f03bmivhehgwq2xaa",
+        "date": "2025",
+        "event": "CBRE IM announced a strategic merger of Gateway Fiber and WANRack.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl52103bnivhesxfsx4wu",
+        "date": "2025",
+        "event": "The combined platform was described as serving communities across 25 states.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq0bc08xzivhenhsfj4lz",
+        "label": "Gatewayfiber — Gateway Fiber",
+        "url": "https://www.gatewayfiber.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Gatewayfiber company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq0cg08y1ivhexvevuyss",
+        "label": "Cbreim — Gateway Fiber",
+        "url": "https://www.cbreim.com/press-releases/cbre-investment-management-funds-to-merge-fiber-portfolio-companies",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Cbreim operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0do08y3ivheq68t5mpq",
+        "label": "Gatewayfiber — Gateway Fiber",
+        "url": "https://www.gatewayfiber.com/news/gateway-fiber-and-wanrack-unite-to-connect-more-communities-in-strategic-merger",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Gatewayfiber — Gateway Fiber",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0ep08y5ivheslvtxl6b",
+        "label": "Announcement date source — CBRE Investment Management — Gateway Fiber",
+        "url": "https://www.bankstreet.com/transactions/gatewayfiber-a-portfolio-company-of-crosstimbers-capital-group-has-entered-into-a-definitive-agreement-to-be-acquired-by-cbre-investment-management/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CBRE Investment Management transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0fo08y7ivhezxbsj8zo",
+        "label": "Close date source — CBRE Investment Management — Gateway Fiber",
+        "url": "https://www.bankstreet.com/app/uploads/2025/10/2023-02-19_cbre_investment_management_gateway_fiber_closing_press_release.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CBRE Investment Management closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "82ccec73de674b7822f22af1ea91bf25b66f4fd18403f68f84500a9c00b6bffa",
+  "afterImage": {
+    "id": "cmrxpjapk00pzivhepnv4hgyt",
+    "name": "Gateway Fiber",
+    "aliases": [
+      "WANRack",
+      "WANRack, LLC",
+      "WANRack Powered by Gateway Fiber",
+      "KwiKom"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Fiber broadband and institutional connectivity",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Gateway Fiber is a CBRE Investment Management-owned U.S. fiber-broadband platform serving residential and business subscribers, schools, municipalities and institutional customers. The platform builds and operates fiber-to-the-home networks and lit-fiber, dark-fiber, E-Rate, special-construction and private-WAN infrastructure. Gateway Fiber was founded in 2019; CBRE first entered the combined predecessor group through its July 2021 acquisition of WANRack and acquired Gateway Fiber in 2023. WANRack acquired KwiKom in 2023. CBRE announced the Gateway Fiber-WANRack combination in February 2025, and Gateway Fiber confirmed by July 29, 2025 that the merger was complete and the combined business operated under the Gateway Fiber umbrella. WANRack, LLC remains an active legal and education-facing operating brand presented as WANRack Powered by Gateway Fiber, while KwiKom's consumer operations use the Gateway Fiber brand. WANRack reported 232 fiber WANs in 23 states and CBRE described the combined platform as serving communities or schools across approximately 25 states. Grain Management's former controlling WANRack interest ended at the 2021 CBRE closing. CBRE remains the current controlling sponsor; exact current economics and fund or SMA names are not publicly disclosed. The March 2025 Phoenix asset sale was a partial divestiture, and 2026 transfers to GW Operating were internal reorganizations with unchanged ultimate ownership. No later external platform sale or signed pending ownership transaction was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.gatewayfiber.com/",
+    "yearFounded": 2019,
+    "headquarters": "Wright City, Missouri",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjw3701noivhe6fyso0sj",
+        "managerName": "CBRE Investment Management",
+        "organizationName": "CBRE Investment Management",
+        "fundName": null,
+        "vehicleName": "Sponsored fund and one separately managed account; CBRE Caledon WR Holdings, LP / CBRE Infra Fiber LLC chain",
+        "stake": "Controlling interest; exact current economics not publicly disclosed",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Grain Management",
+        "organizationName": "Grain Management",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Former controlling WANRack interest; exact percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": 2021,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl4zr03bjivhe5s5ry6wn",
+        "date": "2019",
+        "event": "Gateway Fiber was founded in Wright City, Missouri.",
+        "category": "FOUNDING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.gatewayfiber.com/about-us"
+        ]
+      },
+      {
+        "id": "cmrxpl55b03boivhec18wb99g",
+        "date": "Jul 2, 2021",
+        "event": "CBRE Caledon completed the acquisition of WANRack from Grain Management after receiving regulatory approvals; management retained equity.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-07-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.wanrack.com/news/blog-post-one-nt6jb-ns5wd-42tsj"
+        ]
+      },
+      {
+        "id": "cmrxpl50f03bkivhevybed3e4",
+        "date": "Jan 27, 2023",
+        "event": "CBRE Investment Management signed a definitive agreement to acquire Gateway Fiber from Crosstimbers Capital Group.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-27T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.bankstreet.com/transactions/gatewayfiber-a-portfolio-company-of-crosstimbers-capital-group-has-entered-into-a-definitive-agreement-to-be-acquired-by-cbre-investment-management/"
+        ]
+      },
+      {
+        "id": "cmrxpl50v03blivhegz9ix1jm",
+        "date": "Feb 19, 2023",
+        "event": "Gateway Fiber announced the closing of its new financial partnership with CBRE Investment Management.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-02-19T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.bankstreet.com/app/uploads/2025/10/2023-02-19_cbre_investment_management_gateway_fiber_closing_press_release.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpl55w03bpivhe95ax2q0e",
+        "date": "Feb 1, 2023",
+        "event": "WANRack completed the acquisition of KwiKom, expanding the predecessor platform's broadband footprint.",
+        "category": "EXPANSION",
+        "sortDate": "2023-02-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.wanrack.com/news/3aij243b5fsb9toxikgct72kxdsaxs-zf4b2-paw8m-rkz5h-kr2xc"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Mar 4, 2025",
+        "event": "Lightpath completed the acquisition of WANRack's Phoenix assets and customers, a partial divestiture that did not transfer the full platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-04T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://lightpathfiber.com/news/lightpath-acquires-wanracks-phoenix-business/"
+        ]
+      },
+      {
+        "id": "cmrxpl51f03bmivhehgwq2xaa",
+        "date": "Jul 29, 2025",
+        "event": "Gateway Fiber confirmed that its strategic merger with WANRack was complete, established Gateway Fiber as the umbrella platform name and retained WANRack as an education-focused sub-brand.",
+        "category": "OTHER",
+        "sortDate": "2025-07-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.gatewayfiber.com/news/gateway-fiber-unifies-under-single-brand-following-strategic-merger",
+          "https://www.cbreim.com/press-releases/cbre-investment-management-funds-to-merge-fiber-portfolio-companies"
+        ]
+      },
+      {
+        "id": "cmrxpl52103bnivhesxfsx4wu",
+        "date": "2025",
+        "event": "The combined Gateway Fiber platform was described as serving communities and schools across approximately 25 states.",
+        "category": "EXPANSION",
+        "sortDate": "2025-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cbreim.com/press-releases/cbre-investment-management-funds-to-merge-fiber-portfolio-companies",
+          "https://www.wanrack.com/about"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq0bc08xzivhenhsfj4lz",
+        "label": "Gatewayfiber — Gateway Fiber",
+        "url": "https://www.gatewayfiber.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official Gateway Fiber company profile and founding history",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0cg08y1ivhexvevuyss",
+        "label": "Cbreim — Gateway Fiber",
+        "url": "https://www.cbreim.com/press-releases/cbre-investment-management-funds-to-merge-fiber-portfolio-companies",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CBRE-sponsored Gateway Fiber-WANRack merger announcement and platform scope",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0do08y3ivheq68t5mpq",
+        "label": "Gatewayfiber — Gateway Fiber",
+        "url": "https://www.gatewayfiber.com/news/gateway-fiber-and-wanrack-unite-to-connect-more-communities-in-strategic-merger",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Gateway Fiber-WANRack strategic merger announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0ep08y5ivheslvtxl6b",
+        "label": "Announcement date source — CBRE Investment Management — Gateway Fiber",
+        "url": "https://www.bankstreet.com/transactions/gatewayfiber-a-portfolio-company-of-crosstimbers-capital-group-has-entered-into-a-definitive-agreement-to-be-acquired-by-cbre-investment-management/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "January 2023 CBRE Investment Management acquisition agreement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0fo08y7ivhezxbsj8zo",
+        "label": "Close date source — CBRE Investment Management — Gateway Fiber",
+        "url": "https://www.bankstreet.com/app/uploads/2025/10/2023-02-19_cbre_investment_management_gateway_fiber_closing_press_release.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "February 2023 Gateway Fiber acquisition close",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0gv08y9ivhe3mziqzza",
+        "label": "Wanrack — WANRack",
+        "url": "https://www.wanrack.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current WANRack Powered by Gateway Fiber brand, operations and scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0i308ybivhevfooplpi",
+        "label": "Close date source — CBRE Investment Management — WANRack",
+        "url": "https://www.wanrack.com/news/blog-post-one-nt6jb-ns5wd-42tsj",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 2, 2021 CBRE acquisition close, sponsored-fund and SMA structure",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq0iz08ydivheyawt4iax",
+        "label": "Wanrack — WANRack",
+        "url": "https://www.wanrack.com/news/3aij243b5fsb9toxikgct72kxdsaxs-zf4b2-paw8m-rkz5h-kr2xc",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "February 2023 KwiKom acquisition close and lineage",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Gateway Fiber — Completed WANRack merger",
+        "url": "https://www.gatewayfiber.com/news/gateway-fiber-unifies-under-single-brand-following-strategic-merger",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Completed merger, Gateway Fiber survivor and continuing WANRack sub-brand",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Georgia PSC — WANRack internal reorganization filing",
+        "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "WANRack legal survival and unchanged ultimate ownership through GW Operating transfers",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Lightpath — WANRack Phoenix acquisition close",
+        "url": "https://lightpathfiber.com/news/lightpath-acquires-wanracks-phoenix-business/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "March 2025 partial Phoenix asset and customer divestiture",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "fa45f48cbf152e2e0a2ee50fbf9bfad6810adf044380b7aaa9a37b09ecca9eae",
+  "proposalSha256": "c4b5319bfa535ccfbd2a66acad69384ca1a5967bafe5049ef2920eeb26b539ec"
+}

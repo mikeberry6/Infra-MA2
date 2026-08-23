@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0167-0171-v1",
+  "createdAt": "2026-08-23T18:24:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "31f37c97c8479e62c8699c192f8e36eaa0ee995815876edaa6c2896ff1bf8f8d"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0167:accelerate-infrastructure-opportunities:cc039b14",
+      "taskIndex": 167,
+      "companyName": "Accelerate Infrastructure Opportunities",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0167-accelerate-infrastructure-opportunities-v1/proposal.json",
+        "sha256": "55e0f5b0511cc19949669c2058da9fce035d55d7bfd9181db3758220e8430d2c"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0167-accelerate-infrastructure-opportunities-v1.json",
+        "sha256": "be632c487a393ac1e6872b005beb4f7eb0ce3b60731a4fa1a445fa2d5ff787b5"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0167-accelerate-infrastructure-opportunities/attempt-1/locked-production-snapshot.json",
+        "sha256": "a48c266941f0ee078c2a1e0f87753023c922ccad90fc5bd825fc6913b801862f"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0167-accelerate-infrastructure-opportunities/attempt-1/locked-task-snapshot.json",
+        "sha256": "92ad119dd71040ad46e0bc048dc68b416b56b40f87eea0825fe415bf7b787060"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0167-accelerate-infrastructure-opportunities/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "82c90392df015ca0529bd91af64f67ff5ad8230205e90ffbf0b22a9ca53f3444"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0167-accelerate-infrastructure-opportunities/attempt-1/research-decision.json",
+        "sha256": "641d80b15df711a2d7660756f21e8c7617708b697f6cdca08fbf00b13c828cbc"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0167-accelerate-infrastructure-opportunities/attempt-1/source-verification.json",
+        "sha256": "27ece44b3f968ccdcf356e32e802c6437e4cf21283e6a02960423299b9887f4f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "54572e75fd81ac0ddaa7c292751e74489a2087fc3ea2b396c44bd55724b2c0b9",
+      "dependencySha256": "f4ecf319cfdfec46ce92a96de75a84b8b01d6e78c7bbea454fcff00c3cf08519",
+      "afterImageSha256": "907e7692801af311abcf83d22c12904c0fbe7602f1879998ea1609ea96e05e5a",
+      "targetClaims": [
+        "canonical:accelerate-infrastructure-opportunities|united-states",
+        "company:cmrxpjamu00puivhe9q2wp35l",
+        "relation:cmrxpjw0o01njivheuyjl6ls5",
+        "relation:cmrxpl4ij03b4ivhe6wj6kkl8",
+        "relation:cmrxpl4j303b5ivhepgu0jq7k",
+        "relation:cmrxpl4jo03b6ivheefmnf2sh",
+        "relation:cmrxpl4k603b7ivhesdkiynbo",
+        "relation:cmrxppznz08x5ivheksh0bsv0",
+        "relation:cmrxppzov08x7ivhekrwmnrh1",
+        "relation:cmrxppzq108x9ivhepwutv7dh",
+        "seed:accelerate infrastructure opportunities|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://we-are-accelerate.com/",
+          "label": "We Are Accelerate — Accelerate Infrastructure Opportunities",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://we-are-accelerate.com/news-insights/accelerate-and-cbre-im-launch-partnership-to-acquire-infrastructure-ground-leases/",
+          "label": "AIO — CBRE IM partnership launch",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://we-are-accelerate.com/news-insights/accelerate-investment-partners-rebrands-as-accelerate-infrastructure-opportunities/",
+          "label": "AIO — Rebrand announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cbreim.com/insights/articles/webcast-replay-no-limit-on-opportunity-mid-market-core-infrastructure-open-end-funds",
+          "label": "CBRE Investment Management — AIO webcast",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cbreim.com/press-releases/accelerate-and-cbreim-launch-partnership-to-acquire-infrastructure-ground-leases",
+          "label": "Cbreim — Accelerate Infrastructure Opportunities",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cbreim.com/press-releases/accelerate-infrastructure-opportunities-raises-630-million-from-cbre-im",
+          "label": "Investment date source — CBRE Investment Management — Accelerate Infrastructure Opportunities",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cbreim.com/press-releases/cbre-im-backed-accelerate-surpasses-1-25-billion-dollars-of-equity-commitments",
+          "label": "Cbreim",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.mubadala.com/en/thebrief",
+          "label": "Mubadala — The Brief",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0168:vantage-data-centers:6c26d26a",
+      "taskIndex": 168,
+      "companyName": "Vantage Data Centers",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0168-vantage-data-centers-v1/proposal.json",
+        "sha256": "b6d6aae2d402a022a22b69aeb0d2cacdb297c0be187dc2edd0a54a419775725e"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0168-vantage-data-centers-v1.json",
+        "sha256": "dd2503d2f2e76857e7dcd1dc23764dc397d757df10b8d0e7cd62cbcbb4ef49bf"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0168-vantage-data-centers/attempt-1/locked-production-snapshot.json",
+        "sha256": "81e00b126fcc640c34ae82d3ef55ca2e53143a2db92b7a1e2bd4f9a26bea8dba"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0168-vantage-data-centers/attempt-1/locked-task-snapshot.json",
+        "sha256": "8421f193043382410702f92e364b5c0c928908eaecfffd5c63762fc57aed9020"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0168-vantage-data-centers/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "4a6dfe1dbe09fb1f5049c6d63a278bda0c51f5a601e764566ce5d29874b44f27"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0168-vantage-data-centers/attempt-1/research-decision.json",
+        "sha256": "21e50973453e281a3482b1d91190a0ef9ae3712760bd7c2d844d12bd6f713221"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0168-vantage-data-centers/attempt-1/source-verification.json",
+        "sha256": "51ca9a371cc65c11828cbcf553973afc9f60d3795b9eb5011b02bace5d95973c"
+      },
+      "supersededTaskIds": [
+        "ledger:0313:vantage-data-centers:2a0dcd1f"
+      ],
+      "taskStateSha256": "cea9f889efa83fbed821de76aea7127eacd06614d32803ea21ac19d6cae096ff",
+      "dependencySha256": "8bfcfd04b04396a2003d612e36f72578c4a34cdbec9dcddc144e0813ef984e56",
+      "afterImageSha256": "ace159eda7059ad6126c48b9e9845ce4d71b5fa48b766be2824c042df7675c0f",
+      "targetClaims": [
+        "canonical:vantage-data-centers|united-states-canada",
+        "company:cmrxpjdda00u1ivhe4o7z4w3s",
+        "relation:cmrxpjyxx01s4ivhe0q4r5fsd",
+        "relation:cmrxpjyyh01s5ivhe4pze24xz",
+        "relation:cmrxpjyz001s6ivheb7flugph",
+        "relation:cmrxpjyzj01s7ivhe86monwqb",
+        "relation:cmrxplgro03pqivhec2nma1xr",
+        "relation:cmrxplgs903privhexucv9g0k",
+        "relation:cmrxplguu03psivhe1hfd48po",
+        "relation:cmrxplgv903ptivhe8h1jnnfq",
+        "relation:cmrxplgvt03puivhejs8k1x3n",
+        "relation:cmrxplgwd03pvivhelu0edm3p",
+        "relation:cmrxpqjza09rcivhe6vsaxzjg",
+        "relation:cmrxpqk0809reivhen2z14aix",
+        "relation:cmrxpqk1309rgivhe3hu5vn0a",
+        "relation:cmrxpqk4z09riivhedmnymd1m",
+        "relation:cmrxpqk6409rkivherqi1cx6r",
+        "relation:cmrxpqk7409rmivhe1gd9gsxq",
+        "relation:cmrxpqk8909roivhe188ltbuy",
+        "seed:vantage data centers|united states / canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://annualreport.pantheoninfrastructure.com/",
+          "label": "Pantheon Infrastructure — 2025 annual report",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-completes-deconsolidation-vantage-sdc/",
+          "label": "DigitalBridge — Vantage SDC deconsolidation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://vantage-dc.com/",
+          "label": "Vantage Dc — Vantage Data Centers",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://vantage-dc.com/news/vantage-data-centers-completes-9-2-billion-equity-investment-led-by-digitalbridge-and-silver-lake/",
+          "label": "Vantage Data Centers — 2024 equity investment close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://vantage-dc.com/news/vantageacquired/",
+          "label": "Close date source — DigitalBridge — Vantage Data Centers",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cbrecaledon.com/wp-content/uploads/2020/07/Vantage-Data-Centers-Investment-Press-Release.pdf",
+          "label": "Close date source — CBRE Investment Management — Vantage Data Centers stabilized portfolio",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.digitalbridge.com/news/2024-06-13-vantage-data-centers-completes-92-billion-equity-investment-led-by-digitalbridge-and-silver-lake",
+          "label": "Digitalbridge — Vantage Data Centers",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/portfolio/vantage-data-centers-north-america",
+          "label": "Digitalbridge — Vantage Data Centers North America",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.gcmgrosvenor.com/wp-content/uploads/GCM-Grosvenor-LIF-2020-Impact-Report.pdf",
+          "label": "Investment date source — GCM Grosvenor — Vantage Data Centers",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/investment-in-north-america-data-centre-business/7152044",
+          "label": "Pantheon Infrastructure — Vantage co-investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.investpsp.com/en/investors/",
+          "label": "PSP Investments — Current portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.investpsp.com/en/news/psp-investments-completes-sale-of-majority-of-its-investment-in-vantage-data-centers/",
+          "label": "PSP Investments — Vantage platform sale",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1679688/000167968820000044/cny8-k07072020ex101.htm",
+          "label": "SEC — Vantage SDC contribution agreement",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.silverlake.com/consortium-of-digital-bridge-psp-investments-and-tiaa-investments-acquires-vantage-data-centers/",
+          "label": "Close date source — Silver Lake — Vantage Data Centers",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0169:wanrack:62ec8ee0",
+      "taskIndex": 169,
+      "companyName": "WANRack",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0169-wanrack-v1/proposal.json",
+        "sha256": "c4b5319bfa535ccfbd2a66acad69384ca1a5967bafe5049ef2920eeb26b539ec"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0169-wanrack-v1.json",
+        "sha256": "255b91e5abad89c73005eabf60bb3520bea5a69e056c59de85dd10b100af5b2b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0169-wanrack/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "07b20bacda766850d24f0259b417123b09ef27380a60739f30ce51c7e688167c"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0169-wanrack/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "8603f226dfcea5cda4b42acbb3ebee97bafa76738401994a462034c14a861120"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0169-wanrack/attempt-1/authorization-observed-v2-task-snapshot.json",
+        "sha256": "d0883fcdecf66c51955cb6da370e838995245be94a33b44aae727837b2bda68d"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0169-wanrack/attempt-1/research-decision.json",
+        "sha256": "7d611a22cf7658aada88eec1dbb4280993cae098fc922a4275b06cd71942cea7"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0169-wanrack/attempt-1/source-verification.json",
+        "sha256": "d1a27efba36f0b29f0b51f738e6ae1f8d206e002dd4c0556c74a4b31fe03455e"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "230eda8ec6b67e96691f34d874bae7615ae9056b1ef7a77a39afa8a7a2becfe8",
+      "dependencySha256": "b462e81f3a45ca70160544b242b707dfc8dc3222c623b777428ce566821fd955",
+      "afterImageSha256": "fa45f48cbf152e2e0a2ee50fbf9bfad6810adf044380b7aaa9a37b09ecca9eae",
+      "targetClaims": [
+        "canonical:gateway-fiber|united-states",
+        "company:cmrxpjapk00pzivhepnv4hgyt",
+        "company:cmrxpjase00q0ivhe08oo2btg",
+        "relation:cmrxpjw3701noivhe6fyso0sj",
+        "relation:cmrxpjw3q01npivhekdfll2d8",
+        "relation:cmrxpl4zr03bjivhe5s5ry6wn",
+        "relation:cmrxpl50f03bkivhevybed3e4",
+        "relation:cmrxpl50v03blivhegz9ix1jm",
+        "relation:cmrxpl51f03bmivhehgwq2xaa",
+        "relation:cmrxpl52103bnivhesxfsx4wu",
+        "relation:cmrxpl56f03bqivheczf6a7k0",
+        "relation:cmrxpq0bc08xzivhenhsfj4lz",
+        "relation:cmrxpq0cg08y1ivhexvevuyss",
+        "relation:cmrxpq0do08y3ivheq68t5mpq",
+        "relation:cmrxpq0ep08y5ivheslvtxl6b",
+        "relation:cmrxpq0fo08y7ivhezxbsj8zo",
+        "seed:gateway fiber|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://lightpathfiber.com/news/lightpath-acquires-wanracks-phoenix-business/",
+          "label": "Lightpath — WANRack Phoenix acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225282/106557",
+          "label": "Georgia PSC — WANRack internal reorganization filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.bankstreet.com/app/uploads/2025/10/2023-02-19_cbre_investment_management_gateway_fiber_closing_press_release.pdf",
+          "label": "Close date source — CBRE Investment Management — Gateway Fiber",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.bankstreet.com/transactions/gatewayfiber-a-portfolio-company-of-crosstimbers-capital-group-has-entered-into-a-definitive-agreement-to-be-acquired-by-cbre-investment-management/",
+          "label": "Announcement date source — CBRE Investment Management — Gateway Fiber",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cbreim.com/press-releases/cbre-investment-management-funds-to-merge-fiber-portfolio-companies",
+          "label": "Cbreim — Gateway Fiber",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.gatewayfiber.com/about-us",
+          "label": "Gatewayfiber — Gateway Fiber",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.gatewayfiber.com/news/gateway-fiber-and-wanrack-unite-to-connect-more-communities-in-strategic-merger",
+          "label": "Gatewayfiber — Gateway Fiber",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.gatewayfiber.com/news/gateway-fiber-unifies-under-single-brand-following-strategic-merger",
+          "label": "Gateway Fiber — Completed WANRack merger",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.wanrack.com/about",
+          "label": "Wanrack — WANRack",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.wanrack.com/news/3aij243b5fsb9toxikgct72kxdsaxs-zf4b2-paw8m-rkz5h-kr2xc",
+          "label": "Wanrack — WANRack",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.wanrack.com/news/blog-post-one-nt6jb-ns5wd-42tsj",
+          "label": "Close date source — CBRE Investment Management — WANRack",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0170:alto:534d91d7",
+      "taskIndex": 170,
+      "companyName": "Alto",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0170-alto-v1/proposal.json",
+        "sha256": "a74c50bde1b520145485d56777eeb3c0476049e2ff86c51176ed698b0446fe5a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0170-alto-v1.json",
+        "sha256": "188106213d655552515e37d4171aed74f8661df1b01ffa146f849c212e9f5257"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0170-alto/attempt-1/locked-production-snapshot.json",
+        "sha256": "50db77b07664643b5bf79d6c7b5ec5e036279af5cc5d78915ee1e1b75eb1d808"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0170-alto/attempt-1/locked-task-snapshot.json",
+        "sha256": "3931358030367f61e07ca5f676f72dc96a5b174de0282cc8ea6e2196ea01aca0"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0170-alto/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "5aebba14466c0b3bd851b6a051225a85552c20c729c1b4926250de775421343a"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0170-alto/attempt-1/research-decision.json",
+        "sha256": "e5db7733f0c993cf3b4f7bb231d24441f69b68ebec8e10c399c43b83e7c19f54"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0170-alto/attempt-1/source-verification.json",
+        "sha256": "c698cdf050c6b19b959abd957cf5e53e77bb3788bd7156f1d703fc7a260fb83f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "4f552cdb0641e23794f5ae5d43d817eb63bf7a28b58dd9328e72ae6018fbd1e0",
+      "dependencySha256": "6318dbc8b2061a161b56a26a1bea876aefdeddc8563b4ed03ef5821a5fa4927d",
+      "afterImageSha256": "bd200c143dda1325d8ba809d5a9cf21edb0b58bf3585b10d8f2a70569db7256e",
+      "targetClaims": [
+        "canonical:alto|canada",
+        "company:cmrxpjbg200r3ivhecia5jup6",
+        "relation:cmrxpjwsl01osivhenhrcrmwb",
+        "relation:cmrxpl86k03ffivhe84gcq5ik",
+        "relation:cmrxpl87403fgivhep2paznxs",
+        "relation:cmrxpl87s03fhivhe1xi6btgg",
+        "relation:cmrxpq4ne094qivhel8xj7xvg",
+        "relation:cmrxpq4qk094sivhen9rht8gc",
+        "relation:cmrxpq4s2094uivheql6fvavg",
+        "seed:alto|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cadence.info/en",
+          "label": "Cadence — Alto",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://cadence.info/en/press-releases/alto-and-cadence-launch-market-engagement-canadas-high-speed-rail-project",
+          "label": "Cadence — Alto market engagement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://cadence.info/sites/default/files/medias/pdf/Cadence%20Information%20Sessions-%20July%202026.pdf",
+          "label": "Cadence — July 2026 information sessions",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://cdpqinfra.com/en/projects/alto",
+          "label": "CDPQ Infra — Alto project",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://prod.cdpqinfra.com/en/news/pressreleases/toronto-quebec-city-high-speed-rail-first-major-milestone-reached",
+          "label": "Investment date source — CDPQ — Alto",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.altotrain.ca/en/shaping-canadas-future-high-speed-train",
+          "label": "Altotrain — Alto",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.canada.ca/en/treasury-board-secretariat/services/planned-government-spending/government-expenditure-plan-main-estimates/2025-26-estimates.html",
+          "label": "Government of Canada — VIA HFR–VIA TGF estimates",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0171:boralex-inc:d6b39758",
+      "taskIndex": 171,
+      "companyName": "Boralex Inc.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0171-boralex-inc-v1/proposal.json",
+        "sha256": "b36ff8d549092ab2364bc9a8397f7c8427243bc5720f47a7eecf0adfb08cca2a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0171-boralex-inc-v1.json",
+        "sha256": "a2af08d22347b8cd84bfedaa57392e53aa870862415d67fa6a8d70ef83b1c8be"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/locked-production-snapshot.json",
+        "sha256": "7d9d81d9518d7c55d0b24b0850d653142c2c80e21e16b9380d1b6c78444ba1ce"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/locked-task-snapshot.json",
+        "sha256": "e7750a56f121d156a986d972f6ac3d7b2584d91e6cafd10f26281d027d7d882f"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "02b84e5a4b61a55e716b1ba26337013ef9f0a8a43817e14f5c899c802bfda248"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/research-decision.json",
+        "sha256": "9e1c3c47c0a9520f5349411d5e4b36a168e5111f118437265d10a639af6cd9c4"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/source-verification.json",
+        "sha256": "7765aaa261ecd794366769337ce5800d731c366d400fcf87468b7baac93fdcea"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "9877bd68a3d4c5ff6fe2a137cba50489584967890d63b5462946eab47d1080b2",
+      "dependencySha256": "feb480266a91947b0a2b82658815d49fe2fd3682834aa519e8ae145e9d65f420",
+      "afterImageSha256": "e3587f64c665904d1ffc18eb6261d31eb0315f7c1c2dc9f956ae598661084e83",
+      "targetClaims": [
+        "canonical:boralex-inc|united-states-canada-france-united-kingdom",
+        "company:cmrxpj9tv00okivhe1bj1dtst",
+        "relation:cmrxpjv4o01m3ivhekpgpv69r",
+        "relation:cmrxpjv5701m4ivheldnfexl5",
+        "relation:cmrxpl0h00363ivhe1glyfe7m",
+        "relation:cmrxpl0hl0364ivhez2el1mtg",
+        "relation:cmrxpl0i50365ivhelsbbpeb2",
+        "relation:cmrxpl0in0366ivhervypu2ly",
+        "relation:cmrxpl0j70367ivheasief32b",
+        "relation:cmrxpmxnt05hxivhelpna4jtg",
+        "relation:cmrxpmxp105hzivhe012kqsul",
+        "relation:cmrxppri208mdivheuo67idzd",
+        "relation:cmrxpprjn08meivhenpmhfw7j",
+        "relation:cmrxpprkk08mgivhegqopgu8z",
+        "relation:cmrxpprln08miivheebhrmvsf",
+        "relation:cmrxpprmj08mkivhe64o4gzu0",
+        "relation:cmrxppro008mmivhegkz5d794",
+        "seed:boralex inc.|united states / canada / france / united kingdom"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+          "label": "Boralex — Management information circular",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://us.boralex.com/en/press-releases/boralex-announces-departure-its-chief-financial-officer",
+          "label": "CFO transition source — Boralex Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://us.boralex.com/en/press-releases/boralex-annual-results-2025",
+          "label": "Scale source — Boralex Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.boralex.com/",
+          "label": "Boralex — Boralex Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.boralex.com/en/investors/our-governance/patrick-decostre",
+          "label": "Management source — Boralex Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse",
+          "label": "Boralex",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.boralex.com/en/press-releases/boralex-regulatory-approvals-brookfield-la-caisse-arrangement",
+          "label": "Boralex — Arrangement approvals",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.boralex.com/en/press-releases/brookfield-and-la-caisse-complete-acquisition-boralex",
+          "label": "Boralex — Acquisition closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.lacaisse.com/en/news/pressreleases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-caisse",
+          "label": "Announcement date source — La Caisse — Boralex Inc.",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.lacaisse.com/en/news/pressreleases/brookfield-caisse-complete-acquisition-boralex",
+          "label": "La Caisse — Boralex acquisition closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-fondaction-invest-250-million-way-subordinated-loan-boralex",
+          "label": "La Caisse — Boralex subordinated loan",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.newswire.ca/news-releases/la-caisse-acquires-a-173-interest-in-boralex-inc-636940823.html",
+          "label": "La Caisse — Boralex 2017 equity acquisition",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "c13a6d9889655ef5cc74a72f54669c6bae4d6534aad77f7cc944eee6846fbb73",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "cf4d040c61cf51bd3f25091fb88149ee3b2d64a2a0e3247c1bcfc4bcf92a2a0b"
+}

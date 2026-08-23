@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0171:boralex-inc:d6b39758",
+  "taskIndex": 171,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T18:20:00.000Z",
+  "canonicalKey": "boralex-inc|united-states-canada-france-united-kingdom",
+  "companyName": "Boralex Inc.",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "028-cdpq:holding:005:boralex-inc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct Boralex from a pro forma pending take-private presentation to the closed ownership structure effective August 14, 2026. Brookfield owns 70% through Brookfield Infrastructure Fund V and BIF Thunder Holdings Inc.; La Caisse owns 30% after continuing and increasing the equity position it began in 2017. Remove the unsupported Brookfield BISS and CDPQ Infrastructure fund attributions, distinguish La Caisse's equity from its separate debt financing, and preserve one global Boralex operating-company record.",
+  "evidence": [
+    {
+      "url": "https://www.boralex.com/en/press-releases/brookfield-and-la-caisse-complete-acquisition-boralex",
+      "purpose": "Legal closing and current ownership structure",
+      "supports": [
+        "The take-private closed on August 14, 2026",
+        "Boralex became a private company owned 70% by Brookfield and 30% by La Caisse"
+      ]
+    },
+    {
+      "url": "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+      "purpose": "Fund and acquisition-vehicle attribution",
+      "supports": [
+        "Brookfield Infrastructure Fund V and BIF Thunder Holdings Inc. are disclosed in the acquisition structure"
+      ]
+    },
+    {
+      "url": "https://www.newswire.ca/news-releases/la-caisse-acquires-a-173-interest-in-boralex-inc-636940823.html",
+      "purpose": "La Caisse historical equity entry",
+      "supports": [
+        "La Caisse acquired a 17.3% Boralex interest on July 27, 2017"
+      ]
+    },
+    {
+      "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-fondaction-invest-250-million-way-subordinated-loan-boralex",
+      "purpose": "Debt and equity distinction",
+      "supports": [
+        "La Caisse's 2025 subordinated loan was debt rather than a separate ownership period"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "7d9d81d9518d7c55d0b24b0850d653142c2c80e21e16b9380d1b6c78444ba1ce",
+  "currentCompanySnapshotSha256": "db422fd27de9d19177cdde1bb3486fc8571d64033c24a33f151f0f8eca629545",
+  "executionLock": {
+    "taskSnapshotSha256": "e7750a56f121d156a986d972f6ac3d7b2584d91e6cafd10f26281d027d7d882f",
+    "taskStateSha256": "9877bd68a3d4c5ff6fe2a137cba50489584967890d63b5462946eab47d1080b2",
+    "taskDependencySha256": "feb480266a91947b0a2b82658815d49fe2fd3682834aa519e8ae145e9d65f420",
+    "seedEntrySha256": "32f4d99b307503331b72c79866dbdf0c829b6792d24c173294a4c8cd4fc213fd",
+    "dependencies": {
+      "ownershipPeriodsSha256": "1ffc3fc1affb00b1e746ee88e01366cc60464760b3250a7c7e32e38318cc7be1",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "9884c0381a913cb12457d75ac6743e62794817095db5b2e241c47067c798b473",
+      "organizationsSha256": "e123cf2445e5884bc4a847898f582fe56472e28e4d7effd7bce03847a6fd6f9a",
+      "citationsSha256": "9eeaeb5cdaf58ccad0d33d197aeed96200a0f7c406c1b08f6b0ac67ccb664e13",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1n000cbivhevccdk1sw",
+        "fundName": "Brookfield BIF V",
+        "managerId": "cmrxpi5qu0012ivhe6qnjjtse",
+        "updatedAt": "2026-07-23T16:09:55.980Z"
+      },
+      {
+        "id": "cmrxpj1o700cdivheszk2iuaf",
+        "fundName": "Brookfield BISS",
+        "managerId": "cmrxpi5qu0012ivhe6qnjjtse",
+        "updatedAt": "2026-07-23T16:09:56.023Z"
+      },
+      {
+        "id": "cmrxpj2zw00eeivheitsxgrz6",
+        "fundName": "CDPQ Infrastructure",
+        "managerId": "cmrxpib3m002rivherwm9fg8c",
+        "updatedAt": "2026-07-23T16:09:57.740Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5qu0012ivhe6qnjjtse",
+        "name": "Brookfield",
+        "updatedAt": "2026-07-23T16:09:14.646Z"
+      },
+      {
+        "id": "cmrxpib3m002rivherwm9fg8c",
+        "name": "La Caisse de dépôt (CDPQ)",
+        "updatedAt": "2026-07-23T16:09:21.586Z"
+      },
+      {
+        "id": "cmrxpifpw0047ivhexsim174k",
+        "name": "Brookfield Asset Management",
+        "updatedAt": "2026-07-23T16:09:27.572Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj9tv00okivhe1bj1dtst",
+    "name": "Boralex Inc.",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable power generation and development",
+    "region": "GLOBAL",
+    "country": "United States / Canada / France / United Kingdom",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Boralex develops, builds, owns, and operates renewable power and energy storage assets across Canada, the United States, France, and the United Kingdom. Its customers and counterparties include utilities, corporate offtakers, public procurement entities, and power-market participants that buy contracted renewable electricity, capacity, and related environmental attributes. The business is asset-heavy because value depends on wind, solar, hydroelectric, and battery storage facilities plus a development pipeline rather than on advisory or services revenue alone. Boralex reported 3,783 MW of installed capacity as of December 31, 2025 and an 8.2 GW portfolio of projects in development and construction. Brookfield and La Caisse announced a definitive agreement in March 2026 to acquire Boralex in an all-cash take-private transaction, with Brookfield expected to hold 70% and La Caisse expected to increase its ownership to 30% after closing; the transaction was expected to close by Q4 2026 subject to shareholder, court, regulatory, and other customary approvals.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.boralex.com/",
+    "yearFounded": 1990,
+    "headquarters": "Quebec; United States; France; United Kingdom",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjv4o01m3ivhekpgpv69r",
+        "managerName": "Brookfield",
+        "organizationName": "Brookfield Asset Management",
+        "fundName": "Brookfield BISS",
+        "vehicleName": "Brookfield flagship infrastructure strategy",
+        "stake": "70% pro forma post-close",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjv5701m4ivheldnfexl5",
+        "managerName": "La Caisse de dépôt (CDPQ)",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "fundName": "CDPQ Infrastructure",
+        "vehicleName": "CDPQ Infrastructure",
+        "stake": "30% pro forma post-close; 15% pre-close",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl0h00363ivhe1glyfe7m",
+        "date": "1990",
+        "event": "Boralex was founded in Quebec as a renewable energy producer.",
+        "category": "FOUNDING",
+        "sortDate": "1990-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl0hl0364ivhez2el1mtg",
+        "date": "2017",
+        "event": "CDPQ / La Caisse began supporting Boralex as a shareholder and lender, according to the March 2026 transaction announcement.",
+        "category": "FINANCING",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl0i50365ivhelsbbpeb2",
+        "date": "Q4 2026",
+        "event": "The parties expected the Boralex take-private transaction to close by Q4 2026, subject to required approvals and other customary closing conditions.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-10-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl0in0366ivhervypu2ly",
+        "date": "Mar 25, 2026",
+        "event": "The transaction announcement stated that La Caisse would own 30% and Brookfield would own 70% of Boralex after closing.",
+        "category": "FINANCING",
+        "sortDate": "2026-03-25T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl0j70367ivheasief32b",
+        "date": "Mar 25, 2026",
+        "event": "Brookfield and La Caisse announced a definitive agreement to acquire Boralex for C$37.25 per share in cash.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-25T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [
+      {
+        "id": "cmrxpmxnt05hxivhelpna4jtg",
+        "personName": "Patrick Decostre",
+        "title": "President and Chief Executive Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxp105hzivhe012kqsul",
+        "personName": "Stéphane Milot",
+        "title": "Executive Vice President and Chief Financial Officer (interim)",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      }
+    ],
+    "citations": [
+      {
+        "id": "cmrxppri208mdivheuo67idzd",
+        "label": "Boralex — Boralex Inc.",
+        "url": "https://www.boralex.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Boralex company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpprjn08meivhenpmhfw7j",
+        "label": "Boralex",
+        "url": "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "La Caisse 30% pro forma post-close; 15% pre-close",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpprkk08mgivhegqopgu8z",
+        "label": "Announcement date source — La Caisse — Boralex Inc.",
+        "url": "https://www.lacaisse.com/en/news/pressreleases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-caisse",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "La Caisse transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpprln08miivheebhrmvsf",
+        "label": "Scale source — Boralex Inc.",
+        "url": "https://us.boralex.com/en/press-releases/boralex-annual-results-2025",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Scale source — Boralex Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpprmj08mkivhe64o4gzu0",
+        "label": "Management source — Boralex Inc.",
+        "url": "https://www.boralex.com/en/investors/our-governance/patrick-decostre",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Management source — Boralex Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppro008mmivhegkz5d794",
+        "label": "CFO transition source — Boralex Inc.",
+        "url": "https://us.boralex.com/en/press-releases/boralex-announces-departure-its-chief-financial-officer",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "CFO transition source — Boralex Inc.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "db422fd27de9d19177cdde1bb3486fc8571d64033c24a33f151f0f8eca629545",
+  "afterImage": {
+    "id": "cmrxpj9tv00okivhe1bj1dtst",
+    "name": "Boralex Inc.",
+    "aliases": [
+      "Boralex",
+      "BIF Thunder Holdings Inc. (acquisition vehicle)"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Renewable power generation and development",
+    "region": "GLOBAL",
+    "country": "United States / Canada / France / United Kingdom",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Boralex Inc. develops, builds, owns and operates wind, solar, hydroelectric and battery-storage assets across Canada, the United States, France and the United Kingdom. The company reported 3,822 MW of installed capacity and a nearly 8.2 GW development pipeline when its take-private closed on August 14, 2026. Boralex now operates as a private company owned 70% by Brookfield and 30% by La Caisse. Brookfield's interest is held through the Brookfield Infrastructure Fund V acquisition structure and BIF Thunder Holdings Inc., with Brookfield Renewable Partners among the participating partners. La Caisse first acquired 17.3% of Boralex on July 27, 2017, held approximately 15% before the take-private and continued or increased its equity to 30% at closing; no named La Caisse fund is publicly disclosed. A separate 2025 subordinated loan was debt and is not an ownership period. BIF Thunder is an acquisition vehicle rather than a separate PortCo. No later ownership transfer or signed pending sale was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.boralex.com/",
+    "yearFounded": 1982,
+    "headquarters": "Kingsey Falls, Québec, Canada",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjv4o01m3ivhekpgpv69r",
+        "managerName": "Brookfield",
+        "organizationName": "Brookfield",
+        "fundName": "Brookfield BIF V",
+        "vehicleName": "BIF Thunder Holdings Inc.; participating partners include Brookfield Renewable Partners",
+        "stake": "70%",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjv5701m4ivheldnfexl5",
+        "managerName": "La Caisse de dépôt (CDPQ)",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "fundName": null,
+        "vehicleName": "Direct equity through the BIF Thunder acquisition structure",
+        "stake": "30% current; 17.3% at 2017 entry and approximately 15% immediately before closing",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl0h00363ivhe1glyfe7m",
+        "date": "1982",
+        "event": "Boralex originated as a Québec joint venture; its renewable-power operating history began in 1990.",
+        "category": "FOUNDING",
+        "sortDate": "1982-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.boralex.com/"
+        ]
+      },
+      {
+        "id": "cmrxpl0hl0364ivhez2el1mtg",
+        "date": "Jul 27, 2017",
+        "event": "La Caisse acquired Cascades' 17.3% interest in Boralex, establishing its continuing equity position.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-07-27T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.newswire.ca/news-releases/la-caisse-acquires-a-173-interest-in-boralex-inc-636940823.html"
+        ]
+      },
+      {
+        "id": "cmrxpl0i50365ivhelsbbpeb2",
+        "date": "Aug 14, 2026",
+        "event": "Brookfield and La Caisse completed the take-private, establishing current ownership at 70% and 30%, respectively.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-08-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.boralex.com/en/press-releases/brookfield-and-la-caisse-complete-acquisition-boralex",
+          "https://www.lacaisse.com/en/news/pressreleases/brookfield-caisse-complete-acquisition-boralex"
+        ]
+      },
+      {
+        "id": "cmrxpl0in0366ivhervypu2ly",
+        "date": "Jun 4–5, 2026",
+        "event": "Boralex shareholders approved the arrangement and the Québec Superior Court issued its final order.",
+        "category": "OTHER",
+        "sortDate": "2026-06-05T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.boralex.com/en/press-releases/boralex-regulatory-approvals-brookfield-la-caisse-arrangement"
+        ]
+      },
+      {
+        "id": "cmrxpl0j70367ivheasief32b",
+        "date": "Mar 25, 2026",
+        "event": "Brookfield and La Caisse announced an all-cash agreement to take Boralex private for C$37.25 per share.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-25T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse"
+        ]
+      }
+    ],
+    "managementRoles": [
+      {
+        "id": "cmrxpmxnt05hxivhelpna4jtg",
+        "personName": "Patrick Decostre",
+        "title": "President and Chief Executive Officer",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmxp105hzivhe012kqsul",
+        "personName": "Stéphane Milot",
+        "title": "Executive Vice President and Chief Financial Officer (interim)",
+        "isCurrent": true,
+        "startDate": null,
+        "endDate": null,
+        "evidenceUrls": []
+      }
+    ],
+    "citations": [
+      {
+        "id": "cmrxppri208mdivheuo67idzd",
+        "label": "Boralex — Boralex Inc.",
+        "url": "https://www.boralex.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official Boralex operating-company profile and history",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpprjn08meivhenpmhfw7j",
+        "label": "Boralex",
+        "url": "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 2026 take-private announcement and proposed 70%/30% structure",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpprkk08mgivhegqopgu8z",
+        "label": "Announcement date source — La Caisse — Boralex Inc.",
+        "url": "https://www.lacaisse.com/en/news/pressreleases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-caisse",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "La Caisse announcement of the take-private and continuing equity role",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpprln08miivheebhrmvsf",
+        "label": "Scale source — Boralex Inc.",
+        "url": "https://us.boralex.com/en/press-releases/boralex-annual-results-2025",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "2025 installed capacity and development-pipeline scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpprmj08mkivhe64o4gzu0",
+        "label": "Management source — Boralex Inc.",
+        "url": "https://www.boralex.com/en/investors/our-governance/patrick-decostre",
+        "sourceType": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current chief executive profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppro008mmivhegkz5d794",
+        "label": "CFO transition source — Boralex Inc.",
+        "url": "https://us.boralex.com/en/press-releases/boralex-announces-departure-its-chief-financial-officer",
+        "sourceType": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current chief financial officer transition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Boralex — Acquisition closing",
+        "url": "https://www.boralex.com/en/press-releases/brookfield-and-la-caisse-complete-acquisition-boralex",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 14, 2026 legal closing and current 70% Brookfield / 30% La Caisse ownership",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Boralex — Management information circular",
+        "url": "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Brookfield Infrastructure Fund V and BIF Thunder acquisition structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "La Caisse — Boralex 2017 equity acquisition",
+        "url": "https://www.newswire.ca/news-releases/la-caisse-acquires-a-173-interest-in-boralex-inc-636940823.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 27, 2017 acquisition of a 17.3% Boralex interest",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Boralex — Arrangement approvals",
+        "url": "https://www.boralex.com/en/press-releases/boralex-regulatory-approvals-brookfield-la-caisse-arrangement",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Shareholder, court and required regulatory approvals before closing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "La Caisse — Boralex acquisition closing",
+        "url": "https://www.lacaisse.com/en/news/pressreleases/brookfield-caisse-complete-acquisition-boralex",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "La Caisse's continuing 30% equity ownership at legal closing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "La Caisse — Boralex subordinated loan",
+        "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-fondaction-invest-250-million-way-subordinated-loan-boralex",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "2025 subordinated debt distinguished from La Caisse's equity interest",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "e3587f64c665904d1ffc18eb6261d31eb0315f7c1c2dc9f956ae598661084e83",
+  "proposalSha256": "b36ff8d549092ab2364bc9a8397f7c8427243bc5720f47a7eecf0adfb08cca2a"
+}
